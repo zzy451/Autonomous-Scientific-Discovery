@@ -1,0 +1,1845 @@
+                                                   ResearchAgent: Iterative Research Idea Generation
+                                                 over Scientific Literature with Large Language Models
+
+                                            Jinheon Baek1 Sujay Kumar Jauhar2 Silviu Cucerzan2 Sung Ju Hwang1,3
+                                                                KAIST1 Microsoft Research2 DeepAuto.ai3
+
+                                       {jinheon.baek, sungju.hwang}@kaist.ac.kr {sjauhar, silviu}@microsoft.com
+
+                                                             Abstract                            (A) Scientific Knowledge Sources                                   Academic Graph                   A
+                                                                                                                                                                                              LLaMA       B
+                                            The pace of scientific research, vital for improv-    Paper: Language Models are Few-Shot Learners
+                                            ing human life, is complex, slow, and needs spe-      (…) Here we show that scaling up language models greatly                                             D
+                                            cialized expertise. Meanwhile, novel, impact-         improves task-agnostic, few-shot performance, sometimes
+                                            ful research often stems from both a deep under-      even reaching (…). Specifically, we train GPT-3, (…)
+                                            standing of prior work, and a cross-pollination
+                                            of ideas across domains and fields. To enhance                      Entity-Centric Knowledge Store                          GPT-3
+                                            the productivity of researchers, we propose Re-
+arXiv:2404.07738v2 [cs.CL] 9 Feb 2025       searchAgent, which leverages the encyclopedic        Physics GPT-3     Entity A Entity B Occurrence
+                                            knowledge and linguistic reasoning capabilities
+                                            of Large Language Models (LLMs) to assist                              GPT-3  Physics  78                                              CoT
+                                            them in their work. This system automatically
+                                            defines novel problems, proposes methods and                 Entity    …      …                …                Entity
+                                            designs experiments, while iteratively refining
+                                            them based on the feedback from collabora-           CoT     Retrieval GPT-3  CoT      17,326                   Extraction  C
+                                            tive LLM-powered reviewing agents. Specifi-
+                                            cally, starting with a core scientific paper, Re-    (B) Systematic Approach for Research Idea Generation
+                                            searchAgent is augmented not only with rel-
+                                            evant publications by connecting information         Paper:               Research Ideas:                       Method                 Experiment
+                                            over an academic graph but also entities re-         GPT-3                                                                             Design
+                                            trieved from a knowledge store derived from                                Problem
+                                            shared underlying concepts mined across nu-
+                                            merous papers. Then, mimicking a scientific          Academic Graph:      Identification Development
+                                            approach to improving ideas with peer discus-        RLHF, Physics
+                                            sions, we leverage multiple LLM-based Re-                                                    Reviews & Feedback
+                                            viewingAgents that provide reviews and feed-
+                                            back via iterative revision processes. These         Knowledge Store:         Reviewing Agents                          Human-Induced     Human
+                                            reviewing agents are instantiated with human         CoT                                                                Criteria       Judgements
+                                            preference-aligned LLMs whose criteria for
+                                            evaluation are elicited from actual human judg-      Figure 1: (A) The scientific knowledge used for research idea
+                                            ments via LLM prompting. We experimentally           generation consists of a paper, its relationships over an aca-
+                                            validate our ResearchAgent on scientific pub-        demic graph, and entities within a knowledge store extracted
+                                            lications across multiple disciplines, showing       from numerous papers. (B) Given them, the proposed re-
+                                            its effectiveness in generating novel, clear, and    search idea generation process involves problem identification,
+                                            valid ideas based on both human and model-           method development, and experiment design. Those are also
+                                            based evaluation results. Our initial foray into     iteratively refined by reviews and feedback from reviewing
+                                            AI-mediated scientific research has important        agents, aligned with criteria induced from human judgements.
+                                            implications for the development of future sys-
+                                            tems aimed at supporting researchers in their        lems, expanding our understanding of the world,
+                                            ideation and operationalization of novel work1.      and ultimately improving the lives of people in tan-
+                                                                                                 gible ways. This process usually consists of two
+                                       1 Introduction                                            key components: the formulation of new research
+                                                                                                 ideas and the validation of these ideas through well-
+                                       Scientific research plays a crucial role in driving       crafted experiments, which are typically conducted
+                                       innovation, advancing knowledge, solving prob-            by human researchers (Hope et al., 2023; Wang
+                                                                                                 et al., 2023a; Huang et al., 2023). However, this
+                                           1Code: https://github.com/JinheonBaek/ResearchAgent.  is a slow, effort-intensive process, which requires
+                                                                                                 reading and synthesizing overwhelming amounts
+                                                                                                 of knowledge over the vast corpus of rapidly grow-
+                                                                                                 ing scientific literature to formulate research ideas,
+                                                                                                 as well as design and perform experimental valida-
+                                                                                                 tions of those ideas. For example, the number of
+                                                                                                 academic papers published per year is more than
+                                                                                                 7 million (Fire and Guestrin, 2019). Similarly, the
+                                                                                                 process of testing a new pharmaceutical drug re-
+                                                                                                 quires deep expertise, and is massively expensive
+                                                                                                 and labor-intensive, often taking several years (Va-
+                                                                                                 mathevan et al., 2019).
+
+                                                                                                    In the meantime, recent Large Language Mod-
+                                                                                                 els (LLMs) (Touvron et al., 2023; OpenAI, 2023;
+                                                                                                 Anil et al., 2023) have shown impressive capabili-
+ties in processing and generating text with remark-    tific literature. This repository is aimed at capturing
+able accuracy, even outperforming human experts        novel underlying relationships within and across
+across diverse specialized domains including math,     domains, thereby increasing the chances of a cross-
+physics, history, law, medicine, and ethics. They      pollination of ideas (Wahle et al., 2023). Finally, to
+are able to process and analyze large volumes of       simulate robust feedback mechanisms, we instanti-
+data at speeds and scales far exceeding human ca-      ate a number of LLM-powered ReviewingAgents
+pabilities, have internalized large swaths of human    that help the ResearchAgent to iterate on research
+knowledge from being trained on virtually the en-      idea generation with constructive critiques. Cru-
+tire web, and can identify patterns, trends, and cor-  cially, these ReviewingAgents are prompted with
+relations that may not be immediately apparent to      evaluation criteria that are induced from real re-
+human researchers (such as the usage of quantum        searchers’ judgements, thus aligning them with ac-
+mechanics in medical imaging or applying psycho-       tual scientific preferential standards. An illustration
+logical insights in AI). This renders them ideally     of our system is provided in Figure 1.
+poised to become foundational tools to accelerate
+the two phases of the scientific research process:        We validate the effectiveness of ResearchAgent
+ideation of novel research opportunities, and scien-   for research idea generation based on scientific liter-
+tific validation of those research hypotheses.         ature across multiple disciplines. Then, on a battery
+                                                       of tests conducted with both human- and model-
+   A few recent papers in the domain of LLM-           based evaluations, we demonstrate that ResearchA-
+augmented scientific discovery have focused on the     gent outperforms strong LLM-powered baselines
+second phase. Specifically, they attempt (Huang        by large margins, generating more clear, relevant,
+et al., 2023; AI4Science and Quantum, 2023; Bran       and significant ideas that are especially novel. Fur-
+et al., 2023) to mainly accelerate the experimental    thermore, analyses show the efficacy of our com-
+validation process, by writing code for machine-       prehensive approach to modeling ResearchAgent:
+learning models, facilitating the exploration of       the entity-centric knowledge store and the itera-
+chemical spaces, or advancing the simulation of        tive idea refinement steps help the system generate
+molecular dynamics. Thus, in this paper, we lever-     meaningfully better ideas compared with an instan-
+age LLMs in the first phase of scientific research     tiation that is purely based on prior related work.
+– specifically idea generation, whose key focus is
+conceptualizing novel research questions, method-         These findings highlight the immense potential
+ologies, and experiments. To the best of our knowl-    of AI-mediated research assistants like ResearchA-
+edge, our work is the first to leverage and evaluate   gent to enhance the ideation process in scientific
+the capabilities of LLMs to act as mediators in        research. In practice, it can support researchers by
+scientific idea generation in an open-ended setting.   identifying knowledge gaps, proposing novel prob-
+                                                       lem statements, and suggesting potential method-
+   Given our goal to build an LLM-powered Re-          ologies early in the research process. Also, it can
+searchAgent, we draw inspiration from how human        assist in designing experiments and streamline the
+researchers position themselves to come up with        writing and refinement of research papers by gener-
+novel research ideas. We draw distinctions between     ating drafts and offering feedback on how to effec-
+three key components of their workflow: a broad        tively frame contributions and cite relevant work.
+and deep understanding of related scientific liter-
+ature, an encyclopedic view of concepts and how        2 Related Work
+they relate to one another both within and across
+domains, and a community of colleagues on which        Large Language Models LLMs have shown im-
+to rely for feedback and constructive criticism.       pressive performances across various tasks (Ope-
+                                                       nAI, 2023; Anil et al., 2023), including scientific
+   We model each of these three aspects in our         fields such as mathematics, physics, medicine, and
+ResearchAgent. Specifically, in order to imbibe re-    computer science (Portenoy et al., 2021; Romera-
+lated work, the system begins with a core scientific   Paredes et al., 2023; Bran et al., 2023; Huang et al.,
+paper and then explores a range of related papers      2023; Liu et al., 2024). For instance, GPT-4 can
+through references and citation relationships. Fur-    understand DNA sequences, design biomolecules,
+ther, to develop an encyclopedic view of related       predict molecular behavior, and solve PDE prob-
+concepts, we build and then augment ResearchA-         lems (AI4Science and Quantum, 2023). However,
+gent with an entity-centric knowledge store derived    LLMs have mainly been used for accelerating the
+from co-occurrences of key concepts in the scien-
+experimental validation of already identified re-         2023; Wu et al., 2023). In contrast to these efforts,
+search ideas, but not for identifying new problems.       which use knowledge units piecemeal, we instead
+                                                          jointly leverage accumulated knowledge over mas-
+Hypothesis Generation The principle of hypoth-            sive troves of scientific papers. Also, Baek et al.
+esis generation is based on literature-based discov-      (2024) proposes to use entities for query suggestion,
+ery (Swanson, 1986), which aims to discover rela-         which – while similar – has the entirely different
+tionships between concepts (Henry and McInnes,            objective of narrowing the focus of LLMs to enti-
+2017). For instance, these concepts could be a spe-       ties already present in their context. Instead, our
+cific disease and a compound not yet considered as        approach retrieves and integrates entities outside
+a treatment for it. Early works on automatic hypoth-      the given context, enabling LLMs to explore other
+esis generation first build a corpus of discrete con-     concepts for research idea generation.
+cepts, and then identify their relationships with ma-
+chine learning approaches, e.g., using similarities       Iterative Refinements with LLMs Similar to
+between word (concept) vectors (Tshitoyan et al.,         humans, LLMs do not always generate optimal
+2019) or applying link prediction methods over a          outputs on their first attempt. To tackle this, draw-
+graph (where concepts are nodes) (Sybrandt et al.,        ing inspiration from humans who can iteratively
+2020; Nadkarni et al., 2021). Recent approaches           refine their thoughts based on critiques from them-
+are further powered by LLMs (Wang et al., 2023b;          selves and their peers, many recent studies have
+Qi et al., 2023; Yang et al., 2023), leveraging their     investigated the potential of LLMs to correct and
+prior knowledge about scientific disciplines. Yet,        refine their outputs, demonstrating that they indeed
+all these approaches perform idea generation in           possess those capabilities (Welleck et al., 2023;
+a localized manner and are designed to identify           Madaan et al., 2023; Shridhar et al., 2023; Ganguli
+potential relationships between two variables or          et al., 2023; Wang et al., 2023b; Qi et al., 2023;
+generate sentence-level connections, which may be         Yang et al., 2023). Based on their findings, we ex-
+sub-optimal to capture the complexity and multi-          tend this paradigm (and further test their capability)
+faceted nature of real-world problems (e.g., urban        to our novel scenario of research idea generation.
+planning involves numerous interacting variables).
+Meanwhile, we do not artificially restrict the target     3 Method
+research idea to be a predictive single concept or
+simple binary link, instead allowing the model to         We present ResearchAgent, a system that automati-
+generate ideas in a more open-ended fashion.              cally proposes research ideas with LLMs.
+
+   We note that there has been a recent surge of in-      3.1 LLM-Powered Research Idea Generation
+terest in exploring scientific idea generation: from
+Li et al. (2024) that focus on evaluating whether         We begin by formally introducing the new prob-
+LLMs can generate research ideas that are better          lem of research idea generation, followed by an
+than human ideas, to Lu et al. (2024) that aim to au-     explanation of how LLMs are utilized to tackle it.
+tomatically generate full research papers (including
+idea development, code writing, and experiment            Research Idea Generation The goal of the re-
+execution), to Li et al. (2024) that enhance the idea     search idea generation task is to formulate new
+generation process by organizing a sequential chain       and valid research ideas, to enhance the overall
+of literature, all of which acknowledge and build         efficiency of the first phase of scientific discov-
+upon insights from a prior version of our paper.          ery. While we acknowledge that the real process
+                                                          by which humans conduct research is varied and
+Knowledge-Augmented LLMs The approach to                  complex to an extent well beyond the scope of this
+augment LLMs with external knowledge makes                scientific study, we attempt to model simulacra in
+them more accurate and relevant to target contexts.       three systematic steps that would likely be maxi-
+Much prior work aims at improving the factuality          mally beneficial to a researcher seeking assistance
+of LLM responses to queries by retrieving the rele-       from an AI system. These are namely, identifying
+vant documents and injecting them into the LLM            novel research ideas, proposing methods to validate
+input (Lazaridou et al., 2022; Ram et al., 2023; Shi      these ideas, and designing experiments to measure
+et al., 2023). In addition, given that entities or facts  the success of these methods in relation to the ideas.
+are atomic units for representing knowledge, re-
+cent studies augment LLMs with them (Baek et al.,            To accomplish the aforementioned steps, we uti-
+                                                          lize the existing literature (such as academic pub-
+lications) as a primary source, which provides in-              and deep understanding of related work, an ency-
+sights about existing knowledge along with gaps                 clopedic perspective on the interconnectedness of
+and unanswered questions2. Formally, let L be                   concepts within and across scientific domains, and
+the literature, and o be the ideas that consist of              a community of peers who help iteratively improve
+the problem p, method m, and experiment design                  ideas through constructive critiques. We describe
+d, as follows: o = [p, m, d] where each item                    our operationalization of these three desiderata us-
+consists of a sequence of tokens. Then, the idea                ing the prior literature and LLMs in what follows.
+generation model f can be represented as follows:
+o = f (L), which is further decomposed into three               Citation Graph-based Literature Survey Due
+submodular steps: p = f (L) for identifying prob-               to the constraints on their input lengths and their
+lems, m = f (p, L) for developing methods, and                  reasoning abilities, particularly over very long con-
+d = f (p, m, L) for designing experiments. We                   texts (Liu et al., 2023a), it is not possible to incorpo-
+operationalize f with LLMs, leveraging their capa-              rate all the existing publications from the literature
+bility to understand and generate academic text.                L into the LLM input. Instead, we need to find a
+                                                                meaningful subset relevant to the problem at hand.
+Large Language Models Before describing the                     To achieve this, we mirror the process followed by
+LLM in the context of our problem setup, let us first           human researchers, who expand their knowledge of
+provide its general definition, which takes an input            a paper by perusing other papers that either cite or
+sequence of tokens x and generates an output se-                are cited by it. Concretely, for the LLM, we initiate
+quence of tokens y, as follows: y = LLMθ(T (x)).                its literature review process by providing a core
+Here, the model parameters θ are typically fixed                paper l0 from L and then selectively incorporat-
+after training, due to the high costs of further fine-          ing subsequent papers {l1, ..., ln} that are directly
+tuning. In addition, the prompt template T serves               connected based on a citation graph. This proce-
+as a structured format that outlines the context (in-           dure makes the LLM input for idea generation more
+cluding the task descriptions and instructions) to              manageable and coherent. In addition, we oper-
+direct the model in generating the desired outputs.             ationalize the selection process of the core paper
+                                                                and its relevant citations with two design choices:
+3.2 Knowledge-Augmented LLMs                                    1) the core paper is selected based on its citation
+      for Research Idea Generation                              count (e.g., exceeding 100 over 3 months) typi-
+                                                                cally indicating high impact; 2) its relevant papers
+We now turn to our primary focus of automati-                   (which may be potentially numerous) are further
+cally generating research ideas with LLMs. Re-                  narrow-downed based on their similarities of ab-
+call that we aim to produce a complete idea con-                stracts with the core paper, ensuring a more focused
+sisting of the problem, method, and experiment                  and relevant set of related work.
+design (o = [p, m, d]), while using the exist-
+ing literature L as a primary source of informa-                   However, despite the simplicity and intuitiveness
+tion. We operationalize this with LLMs by instan-               of this idea generation approach, there exists one
+tiating the aforementioned research idea genera-                major limitation. This approach relies exclusively
+tion function f with LLM coupled with the task-                 on a set of given papers (the core paper and its cita-
+specific template. Formally, p = LLM(Tp(L)) in-                 tions); however, since scientific knowledge is not
+dicates the problem identification step, followed               confined to specific studies but rather accumulates
+by m = LLM(Tm(p, L)) for method development                     across a wide range of publications (across various
+and d = LLM(Te(p, m, L)) for experiment design,                 fields), we should ideally harness this extensive,
+which constitutes the full idea: o = [p, m, d].                 interconnected, and relevant scientific knowledge
+                                                                in our method for research idea generation.
+   Following this general formulation, the impor-
+tant question to answer is how the body of scientific           Entity-Centric Knowledge Augmentation In
+literature is leveraged for actually generating re-             order to model an encyclopedic view of inter-
+search ideas with LLMs. Here, we outline three key              connected concepts, we must effectively design a
+desiderata that contribute to the success of human              framework to extract, store and effectively leverage
+researchers ideating novel research ideas: a broad              the vast amount of knowledge in scientific litera-
+                                                                ture L. In this work, we view entities as the atomic
+    2We focus on the existing literature-based idea generation  units of knowledge, which allows for ease of repre-
+by following the paradigm that a new idea is more often than    sentation and accumulation over papers in a unified
+not just a new combination of old elements (Young, 2003).
+manner across different disciplines. For example,                   probabilistic form of retrieving the top-k relevant
+                                                                    external entities can be represented as follows:
+we can easily extract the term “database” whenever
+
+it appears in any paper, using existing off-the-shelf               Ret({l0, ..., ln} ; K) = arg max   P (ei|E{l0,...,ln}), (1)
+
+entity linking methods and then aggregate their                                       I ⊂[m]:|I |=k
+
+linked occurrences into a knowledge store. Then, if                 where [m] = {1, ..., m} and ei ∈/ E{l0,...,ln}. Also,
+                                                                    for simplicity, by applying Bayes’ rule and assum-
+the term “database” is prevalent within the realm of                ing that entities are independent, the retrieval oper-
+                                                                    ation (Equation 1) can be approximated as follows:
+medical science but less so in hematology (which
+
+is a subdomain of medical science), the constructed
+
+knowledge store can capture the affinity between
+
+those two domains based on overlapping entities.                      arg max      (                   P (ej |ei)) × P (ei), (2)
+
+This representational paradigm can then be used                     I ⊂[m]:|I |=k  ej ∈E{l0 ,...,ln }
+
+to suggest the term “database” when formulating                     where P (ej|ei) and P (ei) can be derived from val-
+                                                                    ues in the two-dimensional matrix K, suitably nor-
+the ideas about hematology. In other words, this                    malized. We note that the formulation in Equa-
+                                                                    tion 2 is only one instance of operationalizing re-
+approach enables providing novel and interdisci-                    trieval; this could be replaced with other retrieval
+                                                                    strategies – for example, embedding-based re-
+plinary insights by leveraging the interconnected-                  trieval (discussions and results are provided in Ap-
+                                                                    pendix B.3). Hereafter, the instantiation of research
+ness of entities across various fields.                             proposal generation augmented with relevant entity-
+                                                                    centric knowledge is formalized as follows: o =
+   Formally, we design the knowledge store as a                     LLM(T ({l0, ..., ln} , Ret({l0, ..., ln} ; K)))5. We
+two-dimensional matrix K ∈ Rm×m where m is                          call this knowledge-augmented LLM-powered idea
+                                                                    generation approach ResearchAgent, and provide
+the total number of unique entities identified and                  the templates to instantiate it in Tables 6, 7, and 8.
+
+K is implemented in a sparse format. This knowl-
+
+edge store is constructed by extracting entities over
+all the available scientific articles in literature L3,
+
+which not only counts the co-occurrences between
+
+entity pairs within individual papers but also quan-
+
+tifies the count for each entity. Our approach is
+
+versatile, thus, we can use any entity linker; in this              Iterative Research Idea Refinements We note
+                                                                    that attempting to write a full research idea in one
+paper we use one developed by Wu et al. (2020).                     go may not be an effective strategy. Humans write
+                                                                    drafts that are continually improved based on multi-
+This off-the-shelf system proves capable of extract-                ple rounds of reviews and feedback. Therefore, we
+                                                                    lastly model a community of peers for iterative idea
+ing key scientific entities (which is demonstrated                  improvement by introducing a set of LLM-powered
+                                                                    reviewing agents (called ReviewingAgents), which
+in Table 16) despite its lack of customized training                provide the ResearchAgent with reviews and feed-
+                                                                    back according to various criteria for improvement.
+for the scientific domain. Specifically, this linker
+                                                                       Specifically, similar to our approach to instan-
+tags and canonicalizes entities in a paper l from                   tiate ResearchAgent with an LLM (LLM) and tem-
+                                                                    plate (T ), ReviewingAgents are instantiated sim-
+L, formalized as follows: El = EL(l) where El                       ilarly but with different templates (See Tables 9,
+                                                                    10, and 11). Then, with ReviewingAgents, each
+denotes a multiset of entities (allowing for repeti-                of the generated research ideas (problem, method,
+tions) appearing in l4. Upon extracting entities E,                 and experiment design) is separately evaluated ac-
+                                                                    cording to its own specific five criteria6, which are
+to store them into the knowledge store K, we con-                   provided in labels of Figure 2 and detailed in Ta-
+                                                                    ble 12. Based on the reviews and feedback from
+sider all possible pairs of E represented as follows:               ReviewingAgents, the ResearchAgent iteratively
+                                                                    updates and refines its generation of research ideas.
+{ei, ej }(i,j)∈C(|E|,2) where e ∈ E .
+   Given this knowledge store K, our next goal                          5There may be additional knowledge sources (beyond the
+                                                                    existing literature and entities) for research idea generation,
+is to enhance the previous vanilla research idea                    and we leave exploring them as future work.
+
+generation process implemented based on a group                         6We select the top five criteria which we consider as the
+                                                                    most important, and leave exploring others as future work.
+of interconnected papers, denoted as follows: o =
+
+LLM(T ({l0, l1, ..., ln})). We do this by augmenting
+the LLM with the relevant entities from K, which
+
+expand the context that LLMs consume with addi-
+
+tional knowledge. Formally, let us define entities
+
+extracted from the group of interconnected papers,
+
+as follows: E{l0,...,ln} =  n    EL(li).  Then, the
+                            i=0
+
+    3As extracting entities on all articles is computationally
+infeasible, we target papers appearing after May 01, 2023.
+
+    4Due to the extensive length of scientific publications, the
+target of entity extraction is restricted to titles and abstracts.
+   Despite the proficiency of LLMs in the evalua-                  4.2 Baselines and Our Model
+tion of machine-generated texts (Zheng et al., 2023;
+Fu et al., 2023), their judgments on research ideas                As we target the novel task of research idea genera-
+may not be aligned with the judgments of real hu-                  tion involving the generation of problems, methods,
+man researchers. However, there are no ground                      and experimental designs, there are no baselines
+truth reference judgments available, and collect-                  for direct comparison. Thus, we mainly compare
+ing them to align LLMs is expensive and often                      our full ResearchAgent model against its ablated
+infeasible. Ideally, the judgments made by LLMs                    variants, outlined as follows:
+should be similar to the ones made by humans, and
+we aim to ensure this by automatically generat-                    1. Naive ResearchAgent – which uses only a core
+ing human preference-aligned evaluation criteria                      paper to generate research ideas.
+(used for automatic evaluations) with a few human
+annotations. Specifically, to obtain these human-                  2. ResearchAgent w/o Entity Retrieval – which
+aligned evaluation criteria, we first collect 10 pairs                uses the core paper and its relevant references
+of research ideas and their associated scores for                     without considering entities.
+every evaluation criterion on a 5-point Likert scale,
+annotated by human researchers having at least 3                   3. ResearchAgent – which is our full model that
+papers. After that, we prompt the LLM with these                      uses the relevant references and entities along
+human-annotated pairs to induce detailed descrip-                     with the core paper, to augment LLMs.
+tions for evaluation criteria (Lin et al., 2024) (See
+Tables 13, 14, and 15). These criteria reflect the                 In addition to this set of core baselines, we also
+underlying human preferences7 and are used as                      compare our approach against existing hypothesis
+evaluation criteria by the ReviewingAgents.                        generation work from prior literature in Table 3.
+
+4 Experimental Setup                                               4.3 Evaluation Setup
+
+4.1 Data                                                           Given our formulation of idea generation (Sec 3.1),
+                                                                   there are no ground-truth answers to measure the
+The main source to generate research ideas is the                  quality of the generated ideas. Yet, exhaustively
+scientific literature L, which we obtain from the Se-              listing pairs of core papers and reference research
+mantic Scholar Academic Graph API8. From this,                     ideas is suboptimal, since there may exist a large
+we select papers appearing after May 01, 2023, be-                 number of valid research ideas for each core paper,
+cause LLMs that we use in our experiments are                      and this process requires much time, effort and ex-
+trained on data from the open web available before                 pertise on the part of human researchers. Thus, we
+this point. This follows the procedure of existing                 use a combination of model-based automatic eval-
+literature-based hypothesis generation work (Qi                    uation and manual human evaluation to validate
+et al., 2023). Then, we select high-impact papers                  different models on our experimental benchmark.
+(that have more than 20 citations) as core papers,
+mirroring human researchers’ tendency to leverage                  Model-based Evaluation Following the recent
+influential work, to ensure the high quality of gen-               trends in using LLMs to judge the quality of out-
+erated ideas. The resulting data is still very large;              put texts (especially in the setting of reference-free
+thus, we further sample a subset of 300 papers as                  evaluations) (Zheng et al., 2023; Fu et al., 2023;
+core papers to obtain a reasonably sized benchmark                 Liu et al., 2023b), we use GPT-4 to judge the qual-
+dataset. The average number of reference papers                    ity of research ideas. Note that each of the problem,
+for each core paper is 87; the abstract of each paper              method, and experiment design is evaluated with
+has 2.17 entities on average. The distribution of                  five different criteria (See labels of Figure 2 for
+disciplines for all papers is provided in Figure 7.                criteria and see Table 12 for their detailed descrip-
+                                                                   tions). We ask the LLM-based evaluation model to
+    7We additionally ask five human annotators, who evaluate       either rate the generated idea on a 5-point Likert
+research ideas, to judge the quality of the induced criteria; two  scale for each criterion or perform pairwise compar-
+of them agree strongly, while the other three agree moderately.    isons between two ideas from different models. We
+                                                                   provide the prompts for evaluations in Appendix A.
+    8https://www.semanticscholar.org/product/api
+                                                                   Human Evaluation Similar to model-based eval-
+                                                                   uations, we perform human evaluations that involve
+                                                                   assigning a score for each criterion and conducting
+                                                                   pairwise comparisons between two ideas. As the
+                                 Problem                                                                                     Method                                                    Experiment
+                                    Average                                                                                          Average                                                Average
+
+                                                    4                                                       Clarity                                     4             Clarity                                        4          Clarity
+
+                    Significance                                                                                     Generalizability                                             Reproducibility
+                                                    3                                                                                                   3                                                            3
+
+                                                                                                     2                                2                                                          2
+
+                    Feasibility                                                                             Relevance Innovativeness                                  Validity Feasibility                                      Validity
+
+                                  Originality                                                                                 Rigorousness                                                   Robustness
+                                 Naive ResearchAgent                                                                 ResearchAgent w/o Entity Retrieval                                ResearchAgent (Ours)
+
+                                 Problem                                                                                  (a) Human Evaluation                                          Experiment
+                                    Average                                                                                                                                                   Average
+                                                                                                                          Method
+                                                                                                                                 Average
+
+                    Significance                                                                     4.5    Clarity Generalizability 4.5                              Clarity Reproducibility 4.5                               Clarity
+                                                                                                                                                                 4                                                         4
+                                                                                                     4                                                           3.5                                                       3.5
+
+                                                                                                     3.5
+
+                    Feasibility                                                                             Relevance Innovativeness                                  Validity Feasibility                                      Validity
+
+                                  Originality                                                                                 Rigorousness                                                   Robustness
+                                 Naive ResearchAgent                                                                 ResearchAgent w/o Entity Retrieval                                ResearchAgent (Ours)
+
+                                                                                                                     (b) Model-based Evaluation
+
+Figure 2: Main results on our research idea generation task with human- (top) and model-based (bottom) evaluations, where we
+report the score of each idea (problem, method, or experiment design) based on its own five criteria and their average score.
+
+               100  Human-based Evaluation                                                           100    Model-based Evaluation       Table 1: Results of agreements between two human annotation
+                80           NRReeassiveeeaarrRccehhsAAeggaeernnctthAw(Og/ouernEstn) tity Retrieval   80                                 results and between human and model evaluation results.
+Win Ratio (%)
+               60                                                                                       60                                                            Categories       Metrics Problem Method Experiment
+
+               40                                                                                       40
+
+               20                                                                                       20                                                            Human and Human  Scoring                          0.83    0.76      0.67
+                                                                                                                                                                                       Pairwise                         0.62    0.62      0.41
+               0 Problem Method Experiment 0 Problem Method Experiment
+
+Figure 3: Results of pairwise comparisons between ideas from                                                                                                          Human and Model  Scoring                          0.64    0.58      0.49
+two of any different approaches, where we report the win ratio.                                                                                                                        Pairwise                         0.71    0.62      0.52
+
+generated ideas are knowledge-intensive, we care-                                                                                        which number 50,091 in total. We provide detailed
+fully select annotators who are well-versed in the                                                                                       prompts used to elicit responses for research idea
+field and provide them with ideas that are highly                                                                                        generation in Appendix A.3.
+relevant to their field of expertise9. Specifically, we
+choose ten expert researchers who have authored                                                                                          5 Experimental Results and Analyses
+at least three papers and ask them to judge only the
+ideas that are generated based on their own papers.                                                                                      Main Results Our main results on scoring with
+                                                                                                                                         human and model-based evaluations are provided
+4.4 Implementation Details                                                                                                               in Figure 2. These demonstrate that our full Re-
+                                                                                                                                         searchAgent outperforms all baselines by large mar-
+We mainly use the GPT-4 (OpenAI, 2023) release                                                                                           gins on every metric across problems, methods, and
+from Nov 06, 2023, as the basis for all models,                                                                                          experiment designs (constituting the complete re-
+which is, notably, reported to be trained with data                                                                                      search ideas). Particularly, the full ResearchAgent
+up to Apr 2023 (meanwhile, the papers used for                                                                                           augmented with relevant entities exhibits strong
+idea generation appear after May 2023). To ex-                                                                                           gains on metrics related to creativity (such as Orig-
+tract entities and build the entity-centric knowl-                                                                                       inality for problems and Innovativeness for meth-
+edge store, we use the off-the-shelf BLINK entity                                                                                        ods) since entities may offer novel concepts and
+linker (Wu et al., 2020), with papers from May                                                                                           views that may not be observable in the group of
+01, 2023, to Dec 31, 2023 (available from Se-                                                                                            citation-based papers alone. In addition, the results
+mantic Scholar API) along with their references,                                                                                         of pairwise comparisons between models with both
+                                                                                                                                         human and model-based evaluations – shown in
+    9We also experiment with human evaluation using non-                                                                                 Figure 3 – demonstrate that the full ResearchAgent
+domain-experts, but this proves to be suboptimal therefore, we                                                                           shows the highest win ratio over its baselines.
+focus on experts for reliable judgments of generated ideas.
+        5.00  Problem 5.00                                                          Method                                                                 4.50 Experiment                                                                               Human Evaluation           Model Evaluation  Human-Aligned Model Evaluation
+
+        4.75                                                               4.75                                                                            4.25                                                                     Percentage (%)  20                         60                     40
+        4.50                                                               4.50
+Scores                                                                                                                                                                                                                                              10                         40                     20
+        4.25                                                               4.25                                                                            4.00
+                                                                                                                                                                                                                                                                               20
+        Refinement Steps Refinement Steps Refinement Steps 4.00            4.00
+              CRAvelaelerrivataygnece  OSFeirgaignsiiinfbiacillaiitntyyce           AVCavlaleirrdiatitygye     GRIniengnooevrroaautliisvzneaenbseislsitsy  3.75     CAVavlaleirrdiatitygye    RFReeoapbsruiosbdtinluietcysibsility                  01 2 3 4 5 01 2 3 4 5 01 2 3 4 5
+        3.75                                                               3.75                                                                            3.50
+        3.50 0 12                        34                                3.50  0    1                     2      34                                            0   1                      234                                     Figure 5: Distributions of model-based evaluation results with
+
+                                                                                                                                                                                                                                    and without the human-induced score criteria alignment (mid-
+
+Figure 4: Results with varying the number of refinement steps.                                                                                                                                                                      dle and right), as well as human evaluation results (left).
+
+Table 2: Results of ablation study on references and entities.                                                                                                                                                                                      5.0  Problem               4.5  Method            4.5 Experiment
+                                                                                                                                                                                                                                                    4.8                        4.4
+        Methods                                                                     Problem Method Experiment                                                                                                                                             AClolmputer Science                         4.4
+
+        ResearchAgent                                                               4.52                       4.28                                                                         4.18                                    Score           4.6                        4.3                    4.3
+
+        - w/o Entities                                                              4.35                       4.13                                                                         4.02                                                    4.4                        4.2                    4.2
+        - w/ Random Entities
+                                                                                    4.41                       4.19                                                                         4.13                                                    4.2                        4.1                    4.1
+
+        - w/o References                                                            4.26                       4.08                                                                         3.97                                                    4.0 Low Middle High 4.0 Low Middle High 4.0 Low Middle High
+
+        - w/ Random References                                                      4.35                       4.16                                                                         4.02                                    Figure 6: Results with bucketing papers based on citations.
+
+        - w/o Entities & References 4.20                                                                       4.03                                                                         3.92
+
+Analysis on Inter-Annotator Agreements To                                                                                                                                                                                           improvements in the quality of generated ideas with
+validate the quality and reliability of human anno-                                                                                                                                                                                 increased refinement steps. Yet, the performance
+tations, we measure the inter-annotator agreements,                                                                                                                                                                                 becomes saturated after three iterations, which may
+where 20% of the generated ideas are evaluated by                                                                                                                                                                                   indicate diminishing returns for subsequent itera-
+two human judges, and report results in Table 1.                                                                                                                                                                                    tion steps, which aligns with the pattern observed
+Specifically, for the scoring, we first rank scores                                                                                                                                                                                 in agent-based refinement work (Du et al., 2023).
+from each annotator and measure Spearman’s corre-
+lation coefficient (Pirie, 2006) between the ranked                                                                                                                                                                                 Ablation on Knowledge Sources Recall that the
+scores of two annotators. For the pairwise com-                                                                                                                                                                                     full ResearchAgent is augmented with two different
+parison between two judges, we measure Cohen’s                                                                                                                                                                                      knowledge sources, namely relevant references and
+kappa coefficient (Cohen, 1960). Table 1 shows                                                                                                                                                                                      entities. To see their individual contribution, we
+that the inter-annotator agreement is high, confirm-                                                                                                                                                                                perform an ablation study by either excluding one
+ing the reliability of our assessments about the qual-                                                                                                                                                                              of the knowledge sources or replacing it with ran-
+ity of generated research ideas. Also, while agree-                                                                                                                                                                                 dom elements. As shown in Table 2, each knowl-
+ment scores for experimental designs are slightly                                                                                                                                                                                   edge source contributes to performance improve-
+lower than other aspects, this does not necessarily                                                                                                                                                                                 ment, and the relevant references are especially
+indicate a shortcoming in the quality of experimen-                                                                                                                                                                                 helpful. We also note that providing random ele-
+tal designs produced by ResearchAgent, as demon-                                                                                                                                                                                    ments is more helpful than providing no elements
+strated in Figures 2 and 3. Instead, we view this as                                                                                                                                                                                at all; we hypothesize that this may be due to the
+the inherent subjectivity and variability in how such                                                                                                                                                                               LLM’s capability to filter out noise while still gain-
+designs are perceived and evaluated by different                                                                                                                                                                                    ing incidental value from random inputs.
+annotators (i.e., the nature of the variability itself
+makes achieving high agreement challenging).                                                                                                                                                                                        Analysis on Human Alignment for Evaluation
+                                                                                                                                                                                                                                    Recall that to align judgments from model-based
+Analysis on Human-Model Agreements Sim-                                                                                                                                                                                             evaluations with actual human preferences, we gen-
+ilar to what we did for the aforementioned inter-                                                                                                                                                                                   erated the evaluation criteria based on human eval-
+annotator agreements, we measure agreements be-                                                                                                                                                                                     uation results and used them as the criteria for
+tween human-based and model-based evaluations,                                                                                                                                                                                      model-based evaluations. Figure 5 demonstrates
+to ensure the reliability of model-based evaluations.                                                                                                                                                                               the efficacy of this strategy, presenting the score
+As shown in Table 1, we further confirm that agree-                                                                                                                                                                                 distribution of human evaluation compared with the
+ments between humans and models are high, indi-                                                                                                                                                                                     distributions of model-based evaluations with and
+cating that model-based evaluations are a reason-                                                                                                                                                                                   without human alignment. We find that the score
+able proxy to judge research idea generation.                                                                                                                                                                                       distribution of model-based evaluations without
+                                                                                                                                                                                                                                    alignment is skewed and different from the score
+Analysis of Refinement Steps To see the effec-                                                                                                                                                                                      distribution of human judgments. Meanwhile, after
+tiveness of iterative refinements of research ideas                                                                                                                                                                                 aligning the model-based evaluations with human-
+with ReviewingAgents, in Figure 4, we report the                                                                                                                                                                                    induced score criteria, the calibrated distribution
+averaged scores on the generated ideas as a func-                                                                                                                                                                                   more closely resembles the distribution of humans.
+tion of refinement steps. We first observe initial
+Table 3: Comparisons of ResearchAgent with hypothesis gen-             Table 4: Results with different, open and proprietary LLMs.
+eration methods (Wang et al., 2023b; Yang et al., 2023).
+                                                                       LLMs     Models                     Problem Method Experiment
+
+Methods        Clarity Relevance Originality Feasibility Significance
+
+                                                                       GPT-4.0  Naive ResearchAgent 4.20         4.03  3.92
+
+SciMON         4.04 4.37       4.56  3.98  4.15                                 ResearchAgent (Ours) 4.52        4.28  4.18
+
+Hypothesis Proposer 3.97 4.14  4.07  4.01  4.11
+
+ResearchAgent  4.11 4.88       4.77  4.05  4.81                        GPT-3.5  Naive ResearchAgent 3.56         3.56  3.63
+
+                                                                                ResearchAgent (Ours) 3.58        3.58  3.60
+
+Correlation on Citation Counts We further in-                          Llama3 (8B) Naive ResearchAgent     3.76  3.69  3.54
+vestigate whether a high-impact paper (when used
+as a core paper) leads to high-quality research ideas.                          ResearchAgent (Ours) 4.18        4.03  3.95
+To measure this, we categorize papers by their cita-
+tion count (as a proxy for impact), and visualize the                  Mixtral (8x7B) Naive ResearchAgent  3.31  3.27  3.20
+average score of each bucket (with model-based
+evaluations) in Figure 6. We find that ideas from                               ResearchAgent (Ours) 3.28        3.35  3.31
+high-impact papers tend to be of higher quality,
+likely due to their ability to identify research gaps,                 Qwen1.5 (32B) Naive ResearchAgent   3.64  3.74  3.66
+propose feasible methods, and connect with other
+works. Additionally, based on the paper distribu-                               ResearchAgent (Ours) 4.02        3.97  3.94
+tion (See Figure 7) and for the ease of manual qual-
+ity check, evaluation criteria for model-based eval-                   ResearchAgent become marginal (for Mixtral and
+uations are induced mainly with computer science                       GPT-3.5), which indicates that they might struggle
+papers. To see whether those criteria are applica-                     with capturing complex concepts between scientific
+ble to diverse fields, we also compare a correlation                   papers. This can likely be attributed to the emer-
+between scores of computer science papers and all                      gent abilities of LLMs for complex reasoning (but
+papers in Figure 6. From this, we observe that the                     not in smaller LMs) (Wei et al., 2022), although
+scores increase when the citation increases for both                   other subtle issues may also be contributing factors.
+domains, which may support the generalizability
+of human-preference-induced evaluation criteria.                       Qualitative Analysis We provide qualitative re-
+                                                                       sults on generated research ideas in Table 16. One
+Comparisons to Hypothesis Generation Recall                            representative example in the last row highlights
+that existing methods for hypothesis generation fo-                    the advantage of entity-centric knowledge augmen-
+cus on predicting links between variables or gener-                    tation, where two entities (such as Drosophila Ge-
+ating hypotheses based on these links, which differs                   netic Reference Panel and CRISPR) retrieved from
+from our experimental setup of generating open-                        the entity-centric knowledge store enable the gen-
+ended research ideas (problems, methods, and ex-                       eration of a novel research idea: bridging genetic
+periments). Nevertheless, to understand how the                        variability and CRISPR applications. This exempli-
+quality of the generated research ideas from prior                     fies how external entity-based knowledge uncovers
+works (Wang et al., 2023b; Yang et al., 2023) dif-                     non-trivial relations between scientific concepts.
+fers from our ResearchAgent, we perform com-
+parisons. As shown in Table 3, we observe that                         6 Conclusion
+ResearchAgent is capable of generating superior
+research hypotheses, due to the utilization of broad                   In this work, we introduced ResearchAgent, a sys-
+and deep knowledge across domains as well as the                       tem designed to assist researchers by generating re-
+iterative review and refinement procedures.                            search ideas, which encompass problem identifica-
+                                                                       tion, method development, and experiment design.
+Analysis using Different LLMs To assess how                            Inspired by the human process of ideation, our ap-
+ResearchAgent’s performance changes with dif-                          proach conducts broad and deep literature reviews,
+ferent LLMs, we conduct an auxiliary analysis                          integrates knowledge across domains to foster idea
+with Llama3, Mixtral, Qwen1.5, and GPT-3.5 (Bai                        cross-pollination, and employs a community of re-
+et al., 2023; Jiang et al., 2024), as shown in Table 4.                viewing agents to iteratively refine the generated
+These results show a significant performance drop                      ideas. Our evaluations, both human and model-
+with less capable models. Moreover, the perfor-                        based, demonstrated that ResearchAgent produces
+mance differences between the Naive ResearchA-                         ideas that are more creative, valid, and clear com-
+gent without knowledge augmentation and the full                       pared to baselines. While this initial foray shows
+                                                                       promising results, multiple challenges remain to op-
+                                                                       erationalize ResearchAgent in real-world research
+                                                                       settings. Practical considerations include scaling
+                                                                       the knowledge store to encompass diverse research
+                                                                       domains, and keeping it current with the latest pub-
+                                                                       lications, through which the system can become
+                                                                       adaptable even to emerging fields.
+Limitations                                               generating ideas in certain domains, such as theo-
+                                                          retical sciences, where mathematical reasoning and
+ResearchAgent has some limitations that we hope           proof generation play a central role. However, its
+to address in future work.                                flexibility allows for customization through specific
+                                                          instructions, enabling the integration of reasoning-
+   First, recall that we built the entity-centric knowl-  based models and techniques to cater to the needs
+edge store to propose beneficial entities during idea     of theoretical research. For instance, in theoreti-
+generation; however this store is constructed by          cal mathematics, we can instruct (reasoning-based)
+extracting entities from the titles and abstracts of a    LLMs to focus on generating proofs or methods
+limited number of publications (due to the costs of       and omit experimental design steps that are less
+processing them) thereby precluding a large num-          relevant. This as an exciting area for future work,
+ber of other entities and their interconnectedness.       where specialized techniques tailored to each do-
+                                                          main could be included to broaden its applicability.
+   In addition, the number of entities that we ob-
+tain from the BLINK entity linker (Wu et al., 2020)       Ethics Statement
+amounts to 3 per paper on average, indicating lim-
+ited coverage (it is an open-domain linker after          We are aware that the ResearchAgent may have the
+all), although it does exhibit generally strong un-       potential to be misused for nefarious purposes, such
+derstanding of scientific contexts, as demonstrated       as generating research ideas about new explosives,
+by the improvement achieved by the inclusion of           malicious software, and invasive surveillance tools.
+its predictions (See Figures 2 and 3, and Table 16).      Notably, this vulnerability is not unique to our ap-
+                                                          proach but a common challenge faced by existing
+   Furthermore, since our ResearchAgent is pow-           LLMs that possess significant creative and reason-
+ered by LLMs, similar to any other approaches             ing capabilities, occasionally generating content
+based on LLMs, it may hallucinate the generated           that may be deemed undesirable. Consequently, it
+research ideas. While our proposed ResearchAgent          underscores the necessity to enhance the robustness
+can partially mitigate this problem by augmenting         and safety of LLMs more broadly.
+LLMs with additional elements, such as references
+to the target paper and greater entity-centric knowl-        Also, we recognize the risks of unintentional
+edge, which help ground the generation process in         plagiarism associated with using ResearchAgent,
+more accurate and relevant information, validating        where the system might generate ideas that closely
+these generated research ideas with experiments is        mirror existing research due to the regurgitation of
+essential to truly accelerate scientific research.        training data. While mitigation strategies, such as
+                                                          integrating access to a comprehensive knowledge
+   Moreover, while our iterative refinement process       base to inform users of prior work, can be em-
+with ReviewingAgents demonstrates promising re-           ployed, we understand that building and maintain-
+sults, it has inherent limitations in scope. Although     ing such a resource is inherently complex and may
+we employed diverse perspectives by utilizing 15          not fully eliminate the risk. To further reduce the
+ReviewingAgents to evaluate three different ideas         possibility of plagiarism, recording and tracking
+(problem, method, and experimental design) with           all generated ideas could help identify similarities
+five specific criteria for each, this approach may        and guide the model to avoid repetition, though this
+not fully capture the broad range of potential per-       approach would necessitate explicit user consent.
+spectives and criteria necessary for comprehensive
+evaluation across all different research domains.         Acknowledgements
+As acknowledged in the paper, our selection of cri-
+teria was informed by their presumed importance,          This work was supported by the National Research
+but conducting an exhaustive exploration of all pos-      Foundation of Korea (NRF) grant funded by the Ko-
+sible criteria over diverse domains is beyond the         rea government (MSIT) (No. RS-2023-00256259),
+scope of this work (given the complexity of cat-          the grant of the Korea Machine Learning Ledger
+egorizing and balancing all relevant factors and          Orchestration for Drug Discovery Project (K-
+perspectives). However, we believe the potential          MELLODDY) funded by the Ministry of Health &
+of our modular approach allows for customizing            Welfare and Ministry of Science and ICT, Repub-
+and aligning updated or even new criteria to any          lic of Korea (grant number: RS-2024-12345678),
+specific target domain with novel applications, and       the Artificial intelligence industrial convergence
+we leave further expanding them as future work.
+
+   Lastly, our ResearchAgent may be less suited for
+cluster development project funded by the Ministry         Andrés M Bran, Sam Cox, Oliver Schilter, Carlo Baldas-
+of Science and ICT (MSIT, Korea) & Gwangju                    sari, Andrew D. White, and Philippe Schwaller. 2023.
+Metropolitan City, and the Institute for Information          Chemcrow: Augmenting large-language models with
+& communications Technology Planning & Evalu-                 chemistry tools.
+ation (IITP) grant funded by the Korea government
+(MSIT) (RS-2019-II190075, Artificial Intelligence          Jacob Cohen. 1960. A coefficient of agreement for
+Graduate School Program (KAIST)).                             nominal scales. Educational and Psychological Mea-
+                                                              surement, 20:37 – 46.
+References
+                                                           Yilun Du, Shuang Li, Antonio Torralba, Joshua B.
+Microsoft Research AI4Science and Microsoft Azure             Tenenbaum, and Igor Mordatch. 2023. Improving
+   Quantum. 2023. The impact of large language mod-           factuality and reasoning in language models through
+   els on scientific discovery: a preliminary study using     multiagent debate. arXiv preprint arXiv:2305.14325.
+   gpt-4. arXiv preprint arXiv:2311.07361.
+                                                           Michael Fire and Carlos Guestrin. 2019. Over-
+Rohan Anil, Sebastian Borgeaud, Yonghui Wu, Jean-             optimization of academic publishing metrics: Ob-
+   Baptiste Alayrac, Jiahui Yu, Radu Soricut, Johan           serving goodhart’s law in action. GigaScience, 8.
+   Schalkwyk, Andrew M. Dai, Anja Hauth, Katie Mil-
+   lican, David Silver, Slav Petrov, Melvin Johnson,       Jinlan Fu, See-Kiong Ng, Zhengbao Jiang, and Pengfei
+   Ioannis Antonoglou, Julian Schrittwieser, Amelia           Liu. 2023. Gptscore: Evaluate as you desire. arXiv
+   Glaese, Jilin Chen, Emily Pitler, Timothy P. Lilli-        preprint arXiv:2302.04166.
+   crap, Angeliki Lazaridou, Orhan Firat, James Molloy,
+   Michael Isard, Paul Ronald Barham, Tom Henni-           Deep Ganguli, Amanda Askell, Nicholas Schiefer,
+   gan, Benjamin Lee, Fabio Viola, Malcolm Reynolds,          Thomas I. Liao, Kamile Lukosiute, Anna Chen,
+   Yuanzhong Xu, Ryan Doherty, Eli Collins, Clemens           Anna Goldie, Azalia Mirhoseini, Catherine Olsson,
+   Meyer, Eliza Rutherford, Erica Moreira, Kareem             Danny Hernandez, Dawn Drain, Dustin Li, Eli Tran-
+   Ayoub, Megha Goel, George Tucker, Enrique Pi-              Johnson, Ethan Perez, Jackson Kernion, Jamie Kerr,
+   queras, Maxim Krikun, Iain Barr, Nikolay Savinov,          Jared Mueller, Joshua Landau, Kamal Ndousse, Ka-
+   Ivo Danihelka, Becca Roelofs, Anaïs White, Anders          rina Nguyen, Liane Lovitt, Michael Sellitto, Nelson
+   Andreassen, Tamara von Glehn, Lakshman Yagati,             Elhage, Noemí Mercado, Nova DasSarma, Oliver
+   Mehran Kazemi, Lucas Gonzalez, Misha Khalman,              Rausch, Robert Lasenby, Robin Larson, Sam Ringer,
+   Jakub Sygnowski, and et al. 2023. Gemini: A family         Sandipan Kundu, Saurav Kadavath, Scott Johnston,
+   of highly capable multimodal models. arXiv preprint        Shauna Kravec, Sheer El Showk, Tamera Lanham,
+   arXiv:2312.11805.                                          Timothy Telleen-Lawton, Tom Henighan, Tristan
+                                                              Hume, Yuntao Bai, Zac Hatfield-Dodds, Ben Mann,
+Jinheon Baek, Alham Fikri Aji, and Amir Saffari. 2023.        Dario Amodei, Nicholas Joseph, Sam McCandlish,
+   Knowledge-augmented language model prompting               Tom Brown, Christopher Olah, Jack Clark, Samuel R.
+   for zero-shot knowledge graph question answering.          Bowman, and Jared Kaplan. 2023. The capacity
+   In Proceedings of the 1st Workshop on Natural              for moral self-correction in large language models.
+   Language Reasoning and Structured Explanations             arXiv preprint arXiv:2302.07459.
+   (NLRSE), pages 78–106, Toronto, Canada. Associa-
+   tion for Computational Linguistics.                     Sam Henry and Bridget T. McInnes. 2017. Literature
+                                                              based discovery: Models, methods, and trends. Jour-
+Jinheon Baek, Nirupama Chandrasekaran, Silviu                 nal of biomedical informatics, 74:20–32.
+   Cucerzan, Allen Herring, and Sujay Kumar Jauhar.
+   2024. Knowledge-augmented large language models         Tom Hope, Doug Downey, Daniel S. Weld, Oren Et-
+   for personalized contextual query suggestion. WWW.         zioni, and Eric Horvitz. 2023. A computational
+                                                              inflection for scientific discovery. Commun. ACM,
+Jinze Bai, Shuai Bai, Yunfei Chu, Zeyu Cui, Kai Dang,         66(8):62–73.
+   Xiaodong Deng, Yang Fan, Wenhang Ge, Yu Han,
+   Fei Huang, Binyuan Hui, Luo Ji, Mei Li, Junyang         Qian Huang, Jian Vora, Percy Liang, and Jure Leskovec.
+   Lin, Runji Lin, Dayiheng Liu, Gao Liu, Chengqiang          2023. Benchmarking large language models as AI
+   Lu, K. Lu, Jianxin Ma, Rui Men, Xingzhang Ren,             research agents. arXiv preprint arXiv:2310.03302.
+   Xuancheng Ren, Chuanqi Tan, Sinan Tan, Jianhong
+   Tu, Peng Wang, Shijie Wang, Wei Wang, Shengguang        Albert Q. Jiang, Alexandre Sablayrolles, Antoine
+   Wu, Benfeng Xu, Jin Xu, An Yang, Hao Yang, Jian            Roux, Arthur Mensch, Blanche Savary, Chris Bam-
+   Yang, Jian Yang, Shusheng Yang, Yang Yao, Bowen            ford, Devendra Singh Chaplot, Diego de Las Casas,
+   Yu, Yu Bowen, Hongyi Yuan, Zheng Yuan, Jianwei             Emma Bou Hanna, Florian Bressand, Gianna
+   Zhang, Xing Zhang, Yichang Zhang, Zhenru Zhang,            Lengyel, Guillaume Bour, Guillaume Lample,
+   Chang Zhou, Jingren Zhou, Xiaohuan Zhou, and               L’elio Renard Lavaud, Lucile Saulnier, Marie-
+   Tianhang Zhu. 2023. Qwen technical report. arXiv           Anne Lachaux, Pierre Stock, Sandeep Subramanian,
+   preprint arXiv:2309.16609.                                 Sophia Yang, Szymon Antoniak, Teven Le Scao,
+                                                              Théophile Gervet, Thibaut Lavril, Thomas Wang,
+                                                              Timothée Lacroix, and William El Sayed. 2024. Mix-
+                                                              tral of experts. arXiv preprint arXiv: 2401.04088.
+Angeliki Lazaridou, Elena Gribovskaya, Wojciech                Scientific language models for biomedical knowl-
+   Stokowiec, and Nikolai Grigorev. 2022. Internet-            edge base completion: An empirical study. ArXiv,
+   augmented language models through few-shot                  abs/2106.09700.
+   prompting for open-domain question answering.
+   arXiv preprint arXiv:2203.05115.                         OpenAI. 2023. GPT-4 technical report. arXiv preprint
+                                                               arXiv:2303.08774.
+Long Li, Weiwen Xu, Jiayan Guo, Ruochen Zhao,
+   Xingxuan Li, Yuqian Yuan, Boqiang Zhang, Yuming          W. Pirie. 2006. Spearman Rank Correlation Coefficient,
+   Jiang, Yifei Xin, Ronghao Dang, Deli Zhao, Yu Rong,         volume 8.
+   Tian Feng, and Lidong Bing. 2024. Chain of ideas:
+   Revolutionizing research via novel idea development      Jason Portenoy, Marissa Radensky, Jevin West, Eric
+   with llm agents.                                            Horvitz, Daniel S. Weld, and Tom Hope. 2021.
+                                                               Bridger: Toward bursting scientific filter bubbles
+Ying-Chun Lin, Jennifer Neville, Jack W Stokes,                and boosting innovation via novel author discovery.
+   Longqi Yang, Tara Safavi, Mengting Wan, Scott               arXiv preprint arXiv:2108.05669.
+   Counts, Siddharth Suri, Reid Andersen, Xiaofeng
+   Xu, Deepak Gupta, Sujay Kumar Jauhar, Xia Song,          Biqing Qi, Kaiyan Zhang, Haoxiang Li, Kai Tian, Si-
+   Georg Buscher, Saurabh Tiwary, Brent Hecht, and             hang Zeng, Zhang-Ren Chen, and Bowen Zhou. 2023.
+   Jaime Teevan. 2024. Interpretable user satisfaction         Large language models are zero shot hypothesis pro-
+   estimation for conversational systems with large lan-       posers. arXiv preprint arXiv:2311.05965.
+   guage models. arXiv preprint arXiv:2403.12388.
+                                                            Ori Ram, Yoav Levine, Itay Dalmedigos, Dor Muhlgay,
+Nelson F. Liu, Kevin Lin, John Hewitt, Ashwin Paran-           Amnon Shashua, Kevin Leyton-Brown, and Yoav
+   jape, Michele Bevilacqua, Fabio Petroni, and Percy          Shoham. 2023. In-context retrieval-augmented lan-
+   Liang. 2023a. Lost in the middle: How language              guage models. Transactions of the Association for
+   models use long contexts. Transactions of the Asso-         Computational Linguistics, 11:1316–1331.
+   ciation for Computational Linguistics, 12:157–173.
+                                                            Bernardino Romera-Paredes, Mohammadamin
+Yang Liu, Dan Iter, Yichong Xu, Shuohang Wang,                 Barekatain, Alexander Novikov, Matej Balog,
+   Ruochen Xu, and Chenguang Zhu. 2023b. G-eval:               M Pawan Kumar, Emilien Dupont, Francisco J. R.
+   NLG evaluation using gpt-4 with better human align-         Ruiz, Jordan S. Ellenberg, Pengming Wang, Omar
+   ment. In Proceedings of the 2023 Conference on              Fawzi, Pushmeet Kohli, Alhussein Fawzi, Josh
+   Empirical Methods in Natural Language Process-              Grochow, Andrea Lodi, Jean-Baptiste Mouret, Talia
+   ing, EMNLP 2023, Singapore, December 6-10, 2023,            Ringer, and Tao Yu. 2023. Mathematical discoveries
+   pages 2511–2522. Association for Computational              from program search with large language models.
+   Linguistics.                                                Nature, 625:468 – 475.
+
+Yiren Liu, Si Chen, Haocong Cheng, Mengxia Yu, Xiao         Weijia Shi, Sewon Min, Michihiro Yasunaga, Min-
+   Ran, Andrew Mo, Yiliu Tang, and Yun Huang. 2024.            joon Seo, Rich James, Mike Lewis, Luke Zettle-
+   How AI processing delays foster creativity: Explor-         moyer, and Wen tau Yih. 2023. Replug: Retrieval-
+   ing research question co-creation with an llm-based         augmented black-box language models. arXiv
+   agent. In Proceedings of the CHI Conference on              preprint arXiv:2301.12652.
+   Human Factors in Computing Systems, CHI 2024,
+   Honolulu, HI, USA, May 11-16, 2024, pages 17:1–          Kumar Shridhar, Koustuv Sinha, Andrew Cohen, Tianlu
+   17:25. ACM.                                                 Wang, Ping Yu, Ram Pasunuru, Mrinmaya Sachan,
+                                                               Jason Weston, and Asli Celikyilmaz. 2023. The ART
+Chris Lu, Cong Lu, Robert Tjarko Lange, Jakob Foer-            of LLM refinement: Ask, refine, and trust. arXiv
+   ster, Jeff Clune, and David Ha. 2024. The ai scientist:     preprint arXiv:2311.07961.
+   Towards fully automated open-ended scientific dis-
+   covery.                                                  Don R. Swanson. 1986. Undiscovered public knowl-
+                                                               edge. The Library Quarterly, 56:103–118.
+Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler
+   Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon,           Justin Sybrandt, Ilya Tyagin, M. Shtutman, and Ilya
+   Nouha Dziri, Shrimai Prabhumoye, Yiming Yang,               Safro. 2020. Agatha: Automatic graph mining and
+   Shashank Gupta, Bodhisattwa Prasad Majumder,                transformer based hypothesis generation approach.
+   Katherine Hermann, Sean Welleck, Amir Yazdan-               Proceedings of the 29th ACM International Confer-
+   bakhsh, and Peter Clark. 2023. Self-refine: Itera-          ence on Information & Knowledge Management.
+   tive refinement with self-feedback. In Advances in
+   Neural Information Processing Systems 36: Annual         Hugo Touvron, Louis Martin, Kevin Stone, Peter Al-
+   Conference on Neural Information Processing Sys-            bert, Amjad Almahairi, Yasmine Babaei, Nikolay
+   tems 2023, NeurIPS 2023, New Orleans, LA, USA,              Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti
+   December 10 - 16, 2023.                                     Bhosale, Dan Bikel, Lukas Blecher, Cristian Canton-
+                                                               Ferrer, Moya Chen, Guillem Cucurull, David Esiobu,
+R.K. Nadkarni, David Wadden, Iz Beltagy, Noah A.               Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller,
+   Smith, Hannaneh Hajishirzi, and Tom Hope. 2021.             Cynthia Gao, Vedanuj Goswami, Naman Goyal, An-
+                                                               thony Hartshorn, Saghar Hosseini, Rui Hou, Hakan
+   Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa,         Choi. 2023. Generating sequences by learning to
+   Isabel Kloumann, Artem Korenev, Punit Singh Koura,         self-correct. In The Eleventh International Confer-
+   Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Di-         ence on Learning Representations, ICLR 2023, Ki-
+   ana Liskovich, Yinghai Lu, Yuning Mao, Xavier Mar-         gali, Rwanda, May 1-5, 2023. OpenReview.net.
+   tinet, Todor Mihaylov, Pushkar Mishra, Igor Moly-
+   bog, Yixin Nie, Andrew Poulton, Jeremy Reizen-          Ledell Wu, Fabio Petroni, Martin Josifoski, Sebastian
+   stein, Rashi Rungta, Kalyan Saladi, Alan Schelten,         Riedel, and Luke Zettlemoyer. 2020. Scalable zero-
+   Ruan Silva, Eric Michael Smith, Ranjan Subrama-            shot entity linking with dense entity retrieval. In
+   nian, Xiaoqing Ellen Tan, Binh Tang, Ross Tay-             Proceedings of the 2020 Conference on Empirical
+   lor, Adina Williams, Jian Xiang Kuan, Puxin Xu,            Methods in Natural Language Processing (EMNLP),
+   Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan,         pages 6397–6407, Online. Association for Computa-
+   Melanie Kambadur, Sharan Narang, Aurélien Ro-              tional Linguistics.
+   driguez, Robert Stojnic, Sergey Edunov, and Thomas
+   Scialom. 2023. Llama 2: Open foundation and fine-       Yike Wu, Nan Hu, Sheng Bi, Guilin Qi, J. Ren, An-
+   tuned chat models. arXiv preprint arXiv:2307.09288.        huan Xie, and Wei Song. 2023. Retrieve-rewrite-
+                                                              answer: A kg-to-text enhanced llms framework for
+Vahe Tshitoyan, John Dagdelen, Leigh Weston, Alex             knowledge graph question answering. arXiv preprint
+   Dunn, Ziqin Rong, Olga Vitalievna Kononova,                arXiv:2309.11206.
+   Kristin A. Persson, Gerbrand Ceder, and Anubhav
+   Jain. 2019. Unsupervised word embeddings capture        Zonglin Yang, Xinya Du, Junxian Li, Jie Zheng,
+   latent knowledge from materials science literature.        Soujanya Poria, and Erik Cambria. 2023. Large
+   Nature, 571:95 – 98.                                       language models for automated open-domain sci-
+                                                              entific hypotheses discovery. arXiv preprint
+Jessica Vamathevan, Dominic Clark, Paul Czodrowski,           arXiv:2309.02726.
+   Ian Dunham, Edgardo Ferran, George Lee, Bin Li,
+   Anant Madabhushi, Parantu Shah, Michaela Spitzer,       J. Young. 2003. A Technique for Producing Ideas. Mc-
+   and Shanrong Zhao. 2019. Applications of machine           Graw Hill LLC.
+   learning in drug discovery and development. Nature
+   reviews. Drug discovery, 18(6):463—477.                 Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan
+                                                              Zhuang, Zhanghao Wu, Yonghao Zhuang, Zi Lin,
+Jan Philip Wahle, Terry Ruas, Mohamed Abdalla, Bela           Zhuohan Li, Dacheng Li, Eric P. Xing, Haotong
+   Gipp, and Saif M. Mohammad. 2023. We are who we            Zhang, Joseph Gonzalez, and Ion Stoica. 2023. Judg-
+   cite: Bridges of influence between natural language        ing llm-as-a-judge with mt-bench and chatbot arena.
+   processing and other academic fields. In Proceed-          arXiv preprint arXiv:2306.05685.
+   ings of the 2023 Conference on Empirical Methods
+   in Natural Language Processing, EMNLP 2023, Sin-
+   gapore, December 6-10, 2023, pages 12896–12913.
+   Association for Computational Linguistics.
+
+Hanchen Wang, Tianfan Fu, Yuanqi Du, Wenhao
+   Gao, Kexin Huang, Ziming Liu, Payal Chandak,
+   Shengchao Liu, Peter Van Katwyk, Andreea Deac,
+   Anima Anandkumar, Karianne Bergen, Carla P.
+   Gomes, Shirley Ho, Pushmeet Kohli, Joan Lasenby,
+   Jure Leskovec, Tie-Yan Liu, Arjun Manrai, Deb-
+   ora S. Marks, Bharath Ramsundar, Le Song, Jimeng
+   Sun, Jian Tang, Petar Velickovic, Max Welling, Lin-
+   feng Zhang, Connor W. Coley, Yoshua Bengio, and
+   Marinka Zitnik. 2023a. Scientific discovery in the
+   age of artificial intelligence. Nat., 620(7972):47–60.
+
+Qingyun Wang, Doug Downey, Heng Ji, and Tom Hope.
+   2023b. Learning to generate novel scientific direc-
+   tions with contextualized literature-based discovery.
+   arXiv preprint arXiv:2305.14259.
+
+Jason Wei, Yi Tay, Rishi Bommasani, Colin Raf-
+   fel, Barret Zoph, Sebastian Borgeaud, Dani Yo-
+   gatama, Maarten Bosma, Denny Zhou, Donald Met-
+   zler, Ed Huai hsin Chi, Tatsunori Hashimoto, Oriol
+   Vinyals, Percy Liang, Jeff Dean, and William Fedus.
+   2022. Emergent abilities of large language models.
+   arXiv preprint arXiv:2206.07682.
+
+Sean Welleck, Ximing Lu, Peter West, Faeze Brah-
+   man, Tianxiao Shen, Daniel Khashabi, and Yejin
+Distribution of Paper Categories                                                 Problem              Method                                           Experiment
+                                Computer Science                                    Average             Average                                             Average
+
+                                                                    Significance  4.5        Clarity Generalizability 4.5                              Clarity Reproducibility 4.5                               Clarity
+                                                                                                                                                  4                                                         4
+                                                                                  4                                                               3.5                                                       3.5
+
+                       25.3%                                                      3.5
+
+Medicine                                                            Feasibility              Relevance Innovativeness                                  Validity Feasibility                                      Validity
+
+             20.7%                                 Others                         Originality                  Rigorousness                                  Robustness
+                                       7.7%                                      Naive ResearchAgent  ResearchAgent w/o Entity Retrieval               ResearchAgent (Ours)
+
+                                       2.7%      Mathematics        Figure 8: Results on our research idea generation task with
+                                       4.7%     Chemistry
+                                             Physics                model-based evaluation, where we exclude refinement steps.
+                              5.3%
+             13.0%
+                       7.7% 7.3% 5.7%
+Engineering                                                         to the cost associated with human annotations, we
+                                                                    are able to fully evaluate a total of 150 ideas.
+                                       Materials Science
+                                                                    A.3 Prompts for Ideas Generation
+Environmental Science  Biology
+                                                                    We provide the prompts used to elicit the idea gener-
+Figure 7: Visualization of the distribution of disciplines for all  ations from our full ResearchAgent, specifically for
+core papers, selected for research idea generation.                 instantiating problem identification, method devel-
+                                                                    opment, and experiment design in Table 6, Table 7,
+A Additional Experimental Details                                   and Table 8, respectively.
+
+In this section, we provide additional details on                   A.4 Prompts for Idea Validation
+experiments, including datasets, human evaluation
+setups, prompts (used for research idea generation                  We provide the prompts used to elicit the idea val-
+and validation), and human-induced criteria.                        idation from our ReviewingAgents as well as the
+                                                                    model-based evaluations, specifically for instanti-
+A.1 Data Statistics                                                 ating problem validation, method validation, and
+                                                                    experiment design validation in Table 9, Table 10,
+We visualize a distribution of core paper categories                and Table 11, respectively. In addition, we pro-
+used for idea generation in Figure 7, where the cat-                vide the criteria used, which are induced by human
+egories are obtained from Semantic Scholar API10.                   judgments in the next subsection (Appendix A.5).
+From this, we find that the top 3 categories are
+computer science, medicine, and engineering.                        A.5 Criteria Induced by Human Judgements
+
+A.2 Details on Human Evaluation                                     Recall that, to align model-based evaluations with
+                                                                    human preferences, we induce the criteria (used
+To conduct evaluations with human judges, we                        for automatic evaluations) with actual human judg-
+recruited 10 researchers from the United States                     ments. We note that this is done by prompting
+and South Korea, majoring in computer science,                      GPT-4 with 10 pairs of generated ideas and (ran-
+medicine, and biology, each with a minimum of 3                     domly selected) human judgments. We provide the
+published papers. For annotation, they were pro-                    resulting criteria for validations of problems, meth-
+vided with a 6-page guideline document, which                       ods, and experiment designs in Table 13, Table 14,
+includes the task instruction and annotation exam-                  and Table 15, respectively.
+ples. After reading this document, the annotators
+access the Label Studio platform, on which they                     B Additional Experimental Results
+first read the title and abstract of the target paper,
+and then review and evaluate the generated research                 We provide additional experimental results, includ-
+ideas from different models. During the evaluation                  ing comparisons without refinements and examples
+process, they are allowed to use any external tools,                of the generated research ideas.
+such as web searches. We note that they were
+compensated at a rate of $22.20 per hour. Also,                     B.1 Results without Refinement Steps
+on average, for one hour, they evaluated 3 sets of
+research ideas (that are generated from their own                   To see whether the proposed ResearchAgent is con-
+papers), with each set comprising three sub-ideas                   sistently effective even without ReviewingAgents,
+(the problem, method, and experiment design) from                   we show the model-based evaluation results with-
+three different approaches (i.e., a total of 9 ideas                out any refinement steps in Figure 8. From this, we
+for one hour). We perform three rounds of human                     clearly observe that the full ResearchAgent outper-
+evaluations with refinements in between, and, due                   forms its variants, demonstrating its effectiveness.
+
+   10https://www.semanticscholar.org/product/api
+                        Problem                                              Method                    Experiment
+                           Average                                             Average                      Average
+
+         Significance           4.5  Clarity Generalizability 4.5                              Clarity Reproducibility 4.5                               Clarity
+                                                                                          4                                                         4
+                                4                                                         3.5                                                       3.5
+
+                                3.5
+
+         Feasibility                 Relevance Innovativeness                                  Validity Feasibility                                      Validity
+
+                        Originality                                          Rigorousness                            Robustness                          MAlal thematics
+         MCoemdipcuinteer Science          EEnngviirnoenemrienngtal Science  MBiaotloegriyals Science  PChhyesmicisstry
+
+Figure 9: Breakdown results of the research ideas generated from our full ResearchAgent across different domains.
+
+Table 5: Results with different entity retrieval strategies.                 unlike the previous co-occurrence-based entity re-
+                                                                             trieval that may retrieve entities that have oppo-
+Methods                              Problem Method Experiment               site concepts to the main idea of the current core
+                                                                             paper (since we often mention limitations of pre-
+ResearchAgent                                                                vious work along with the proposed ideas), this
+                                                                             embedding-based approach may provide the Re-
+- w/ Co-occurrence-based Retrieval 4.52    4.28  4.18                        searchAgent with mostly the entities having similar
+                                                                             concepts to the core paper. Nevertheless, as shown
+- w/ Embedding-based Retrieval       4.49  4.34  4.16                        in Table 5, the results with the strategy of entity co-
+                                                                             occurrence-based retrieval are comparable to the
+- w/o Entity Retrieval               4.35  4.13  4.02                        results with the new embedding-based contextual
+                                                                             retrieval. These results might confirm that there is
+B.2 Results on Generated Ideas by Domain                                     not much difference in the quality of entity retrieval
+                                                                             among those two strategies, i.e., most entities re-
+To see the quality of the generated research ideas                           trieved from the co-occurrence-based retrieval are
+across different domains, we breakdown the per-                              contextually relevant for generating research ideas.
+formance of ResearchAgent according to the cate-
+gories of core papers in Figure 7, and present the
+results in Figure 9. From this, we observe that the
+generated research ideas on the high-resource do-
+mains (such as Computer Science, Medicine, and
+Engineering where there is a greater volume of
+existing literature as shown in Figure 7) are su-
+perior to those generated from the low-resource
+domain papers (such as Physics, Chemistry, and
+Mathematics). This disparity might be attributed
+to the fact that the underlying LLMs used to gen-
+erate research ideas are likely trained on data pre-
+dominantly sourced from high-resource domains,
+which leads to enhancing their ability to compre-
+hend scientific concepts and produce relevant re-
+search ideas.
+
+B.3 Analysis with Different Entity Retrieval
+
+To see the effectiveness of different entity retrieval
+strategies, we perform additional experiments, re-
+placing the co-occurrence-based entity retrieval in
+Equation 2 to the contextual embedding-based re-
+trieval. Notably, this contextual embedding-based
+retrieval approach uses the entities that have the
+highest similarity to the entities appearing in the
+current literature (i.e., core paper and its references)
+used for idea generation, where the similarities are
+calculated based on embedding-level similarities
+between entities over the latent space represented
+by the entity linker (Wu et al., 2020). Therefore,
+       Table 6: The prompt used in the full instantiation of ResearchAgent for problem identification.
+
+Types           Texts
+
+System Message  You are an AI assistant whose primary goal is to identify promising, new, and key scientific
+                problems based on existing scientific literature, in order to aid researchers in discovering novel
+                and significant research opportunities that can advance the field.
+
+                You are going to generate a research problem that should be original, clear, feasible, relevant, and
+                significant to its field. This will be based on the title and abstract of the target paper, those of
+                {len(references)} related papers in the existing literature, and {len(entities)} entities potentially
+                connected to the research area.
+
+                Understanding of the target paper, related papers, and entities is essential:
+                - The target paper is the primary research study you aim to enhance or build upon through future
+                research, serving as the central source and focus for identifying and developing the specific
+                research problem.
+                - The related papers are studies that have cited the target paper, indicating their direct relevance
+                and connection to the primary research topic you are focusing on, and providing additional context
+                and insights that are essential for understanding and expanding upon the target paper.
+                - The entities can include topics, keywords, individuals, events, or any subjects with possible
+                direct or indirect connections to the target paper or the related studies, serving as auxiliary sources
+                of inspiration or information that may be instrumental in formulating the research problem.
+
+User Message    Your approach should be systematic:
+                - Start by thoroughly reading the title and abstract of the target paper to understand its core focus.
+                - Next, proceed to read the titles and abstracts of the related papers to gain a broader perspective
+                and insights relevant to the primary research topic.
+                - Finally, explore the entities to further broaden your perspective, drawing upon a diverse pool of
+                inspiration and information, while keeping in mind that not all may be relevant.
+
+                I am going to provide the target paper, related papers, and entities, as follows:
+                Target paper title: {paper[’title’]}
+                Target paper abstract: {paper[’abstract’]}
+                Related paper titles: {relatedPaper[’titles’]}
+                Related paper abstracts: {relatedPaper[’abstracts’]}
+                Entities: {Entities}
+
+                With the provided target paper, related papers, and entities, your objective now is to formulate a
+                research problem that not only builds upon these existing studies but also strives to be original,
+                clear, feasible, relevant, and significant. Before crafting the research problem, revisit the title
+                and abstract of the target paper, to ensure it remains the focal point of your research problem
+                identification process.
+
+                Target paper title: {paper[’title’]}
+                Target paper abstract: {paper[’abstract’]}
+
+                Then, following your review of the above content, please proceed to generate one research
+                problem with the rationale, in the format of
+                Problem:
+                Rationale:
+       Table 7: The prompt used in the full instantiation of ResearchAgent for method development.
+
+Types           Texts
+
+System Message  You are an AI assistant whose primary goal is to propose innovative, rigorous, and valid method-
+                ologies to solve newly identified scientific problems derived from existing scientific literature, in
+                order to empower researchers to pioneer groundbreaking solutions that catalyze breakthroughs in
+                their fields.
+
+                You are going to propose a scientific method to address a specific research problem. Your method
+                should be clear, innovative, rigorous, valid, and generalizable. This will be based on a deep
+                understanding of the research problem, its rationale, existing studies, and various entities.
+
+                Understanding of the research problem, existing studies, and entities is essential:
+                - The research problem has been formulated based on an in-depth review of existing studies
+                and a potential exploration of relevant entities, which should be the cornerstone of your method
+                development.
+                - The existing studies refer to the target paper that has been pivotal in identifying the problem, as
+                well as the related papers that have been additionally referenced in the problem discovery phase,
+                all serving as foundational material for developing the method.
+                - The entities can include topics, keywords, individuals, events, or any subjects with possible
+                direct or indirect connections to the existing studies, serving as auxiliary sources of inspiration or
+                information that may be instrumental in method development.
+
+User Message    Your approach should be systematic:
+                - Start by thoroughly reading the research problem and its rationale, to understand your primary
+                focus.
+                - Next, proceed to review the titles and abstracts of existing studies, to gain a broader perspective
+                and insights relevant to the primary research topic.
+                - Finally, explore the entities to further broaden your perspective, drawing upon a diverse pool of
+                inspiration and information, while keeping in mind that not all may be relevant.
+
+                I am going to provide the research problem, existing studies (target paper & related papers), and
+                entities, as follows:
+                Research problem: {researchProblem}
+                Rationale: {researchProblemRationale}
+                Target paper title: {paper[’title’]}
+                Target paper abstract: {paper[’abstract’]}
+                Related paper titles: {relatedPaper[’titles’]}
+                Related paper abstracts: {relatedPaper[’abstracts’]}
+                Entities: {Entities}
+
+                With the provided research problem, existing studies, and entities, your objective now is to
+                formulate a method that not only leverages these resources but also strives to be clear, innovative,
+                rigorous, valid, and generalizable. Before crafting the method, revisit the research problem, to
+                ensure it remains the focal point of your method development process.
+
+                Research problem: {researchProblem}
+                Rationale: {researchProblemRationale}
+
+                Then, following your review of the above content, please proceed to propose your method with
+                its rationale, in the format of
+                Method:
+                Rationale:
+              Table 8: The prompt used in the full instantiation of ResearchAgent for experiment design.
+
+Types           Texts
+
+System Message  You are an AI assistant whose primary goal is to design robust, feasible, and impactful ex-
+                periments based on identified scientific problems and proposed methodologies from existing
+                scientific literature, in order to enable researchers to systematically test hypotheses and validate
+                groundbreaking discoveries that can transform their respective fields.
+
+                You are going to design an experiment, aimed at validating a proposed method to address a
+                specific research problem. Your experiment design should be clear, robust, reproducible, valid,
+                and feasible. This will be based on a deep understanding of the research problem, scientific
+                method, existing studies, and various entities.
+
+                Understanding of the research problem, scientific method, existing studies, and entities is essential:
+                - The research problem has been formulated based on an in-depth review of existing studies and a
+                potential exploration of relevant entities.
+                - The scientific method has been proposed to tackle the research problem, which has been
+                informed by insights gained from existing studies and relevant entities.
+                - The existing studies refer to the target paper that has been pivotal in identifying the problem and
+                method, as well as the related papers that have been additionally referenced in the discovery phase
+                of the problem and method, all serving as foundational material for designing the experiment.
+                - The entities can include topics, keywords, individuals, events, or any subjects with possible
+                direct or indirect connections to the existing studies, serving as auxiliary sources of inspiration or
+                information that may be instrumental in your experiment design.
+
+                Your approach should be systematic:
+                - Start by thoroughly reading the research problem and its rationale followed by the proposed
+                method and its rationale, to pinpoint your primary focus.
+                - Next, proceed to review the titles and abstracts of existing studies, to gain a broader perspective
+                and insights relevant to the primary research topic.
+                - Finally, explore the entities to further broaden your perspective, drawing upon a diverse pool of
+                inspiration and information, while keeping in mind that not all may be relevant.
+
+User Message    I am going to provide the research problem, scientific method, existing studies (target paper &
+                related papers), and entities, as follows:
+                Research problem: {researchProblem}
+                Rationale: {researchProblemRationale}
+                Scientific method: {scientificMethod}
+                Rationale: {scientificMethodRationale}
+                Target paper title: {paper[’title’]}
+                Target paper abstract: {paper[’abstract’]}
+                Related paper titles: {relatedPaper[’titles’]}
+                Related paper abstracts: {relatedPaper[’abstracts’]}
+                Entities: {Entities}
+
+                With the provided research problem, scientific method, existing studies, and entities, your
+                objective now is to design an experiment that not only leverages these resources but also strives to
+                be clear, robust, reproducible, valid, and feasible. Before crafting the experiment design, revisit
+                the research problem and proposed method, to ensure they remain at the center of your experiment
+                design process.
+
+                Research problem: {researchProblem}
+                Rationale: {researchProblemRationale}
+                Scientific method: {scientificMethod}
+                Rationale: {scientificMethodRationale}
+
+                Then, following your review of the above content, please proceed to outline your experiment with
+                its rationale, in the format of
+                Experiment:
+                Rationale:
+       Table 9: The prompt used in the full instantiation of ReviewingAgent for problem validation.
+
+Types           Texts
+
+System Message  You are an AI assistant whose primary goal is to assess the quality and validity of scientific
+                problems across diverse dimensions, in order to aid researchers in refining their problems based
+                on your evaluations and feedback, thereby enhancing the impact and reach of their work.
+
+                You are going to evaluate a research problem for its {metric}, focusing on how well it is defined
+                in a clear, precise, and understandable manner.
+
+                As part of your evaluation, you can refer to the existing studies that may be related to the problem,
+                which will help in understanding the context of the problem for a more comprehensive assessment.
+                - The existing studies refer to the target paper that has been pivotal in identifying the problem, as
+                well as the related papers that have been additionally referenced in the discovery phase of the
+                problem.
+
+                The existing studies (target paper & related papers) are as follows:
+                Target paper title: {paper[’title’]}
+                Target paper abstract: {paper[’abstract’]}
+                Related paper titles: {relatedPaper[’titles’]}
+                Related paper abstracts: {relatedPaper[’abstracts’]}
+
+User Message    Now, proceed with your {metric} evaluation approach that should be systematic:
+                - Start by thoroughly reading the research problem and its rationale, keeping in mind the context
+                provided by the existing studies mentioned above.
+                - Next, generate a review and feedback that should be constructive, helpful, and concise, focusing
+                on the {metric} of the problem.
+                - Finally, provide a score on a 5-point Likert scale, with 1 being the lowest, please ensuring a
+                discerning and critical evaluation to avoid a tendency towards uniformly high ratings (4-5) unless
+                fully justified:
+                {criteria}
+
+                I am going to provide the research problem with its rationale, as follows:
+                Research problem: {researchProblem}
+                Rationale: {researchProblemRationale}
+
+                After your evaluation of the above content, please provide your review, feedback, and rating, in
+                the format of
+                Review:
+                Feedback:
+                Rating (1-5):
+       Table 10: The prompt used in the full instantiation of ReviewingAgent for method validation.
+
+Types           Texts
+
+System Message  You are an AI assistant whose primary goal is to assess the quality and soundness of scientific
+                methods across diverse dimensions, in order to aid researchers in refining their methods based on
+                your evaluations and feedback, thereby enhancing the impact and reach of their work.
+
+                You are going to evaluate a scientific method for its {metric} in addressing a research problem,
+                focusing on how well it is described in a clear, precise, and understandable manner that allows for
+                replication and comprehension of the approach.
+
+                As part of your evaluation, you can refer to the research problem, and existing studies, which will
+                help in understanding the context of the proposed method for a more comprehensive assessment.
+                - The research problem has been used as the cornerstone of the method development, formulated
+                based on an in-depth review of existing studies and a potential exploration of relevant entities.
+                - The existing studies refer to the target paper that has been pivotal in identifying the problem
+                and method, as well as the related papers that have been additionally referenced in the discovery
+                phase of the problem and method.
+
+User Message    The research problem and existing studies (target paper & related papers) are as follows:
+                Research problem: {researchProblem}
+                Rationale: {researchProblemRationale}
+                Target paper title: {paper[’title’]}
+                Target paper abstract: {paper[’abstract’]}
+                Related paper titles: {relatedPaper[’titles’]}
+                Related paper abstracts: {relatedPaper[’abstracts’]}
+
+                Now, proceed with your {metric} evaluation approach that should be systematic:
+                - Start by thoroughly reading the proposed method and its rationale, keeping in mind the context
+                provided by the research problem, and existing studies mentioned above.
+                - Next, generate a review and feedback that should be constructive, helpful, and concise, focusing
+                on the {metric} of the method.
+                - Finally, provide a score on a 5-point Likert scale, with 1 being the lowest, please ensuring a
+                discerning and critical evaluation to avoid a tendency towards uniformly high ratings (4-5) unless
+                fully justified:
+                {criteria}
+
+                I am going to provide the proposed method with its rationale, as follows:
+                Scientific method: {scientificMethod}
+                Rationale: {scientificMethodRationale}
+
+                After your evaluation of the above content, please provide your review, feedback, and rating, in
+                the format of
+                Review:
+                Feedback:
+                Rating (1-5):
+       Table 11: The prompt used in the full instantiation of ReviewingAgent for experiment design validation.
+
+Types           Texts
+
+System Message  You are an AI assistant whose primary goal is to meticulously evaluate the experimental designs
+                of scientific papers across diverse dimensions, in order to aid researchers in refining their experi-
+                mental approaches based on your evaluations and feedback, thereby amplifying the quality and
+                impact of their scientific contributions.
+
+                You are going to evaluate an experiment design for its {metric} in validating a scientific method
+                to address a research problem, focusing on how well it is described in a clear, precise, and
+                understandable manner, enabling others to grasp the setup, procedure, and expected outcomes.
+
+                As part of your evaluation, you can refer to the research problem, scientific method, and existing
+                studies, which will help in understanding the context of the designed experiment for a more
+                comprehensive assessment.
+                - The research problem has been formulated based on an in-depth review of existing studies and a
+                potential exploration of relevant entities.
+                - The scientific method has been proposed to tackle the research problem, which has been
+                informed by insights gained from existing studies and relevant entities.
+                - The existing studies refer to the target paper that has been pivotal in identifying the problem,
+                method, and experiment, as well as the related papers that have been additionally referenced in
+                their discovery phases.
+
+User Message    The research problem, scientific method, and existing studies (target paper & related papers) are
+                as follows:
+                Research problem: {researchProblem}
+                Rationale: {researchProblemRationale}
+                Scientific method: {scientificMethod}
+                Rationale: {scientificMethodRationale}
+                Target paper title: {paper[’title’]}
+                Target paper abstract: {paper[’abstract’]}
+                Related paper titles: {relatedPaper[’titles’]}
+                Related paper abstracts: {relatedPaper[’abstracts’]}
+
+                Now, proceed with your {metric} evaluation approach that should be systematic:
+                - Start by thoroughly reading the experiment design and its rationale, keeping in mind the context
+                provided by the research problem, scientific method, and existing studies mentioned above.
+                - Next, generate a review and feedback that should be constructive, helpful, and concise, focusing
+                on the {metric} of the experiment.
+                - Finally, provide a score on a 5-point Likert scale, with 1 being the lowest, please ensuring a
+                discerning and critical evaluation to avoid a tendency towards uniformly high ratings (4-5) unless
+                fully justified:
+                {criteria}
+
+                I am going to provide the designed experiment with its rationale, as follows:
+                Experiment design: {experimentDesign}
+                Rationale: {experimentDesignRationale}
+
+                After your evaluation of the above content, please provide your review, feedback, and rating, in
+                the format of
+                Review:
+                Feedback:
+                Rating (1-5):
+Table 12: The criteria used for evaluating research ideas: problems, methods, and experiment designs.
+
+Types       Criteria          Texts
+Problem
+Method      Clarity           It assesses whether the problem is defined in a clear, precise, and understandable manner.
+
+Experiment  Relevance         It measures whether the problem is pertinent and applicable to the current field or context of study.
+
+            Originality       It evaluates whether the problem presents a novel challenge or unique perspective that has not been extensively
+                              explored before.
+
+            Feasibility       It examines whether the problem can realistically be investigated or solved with the available resources and
+                              within reasonable constraints.
+
+            Significance      It assesses the importance and potential impact of solving the problem, including its contribution to the field or
+                              its broader implications.
+
+            Clarity           It assesses whether the method is described in a clear, precise, and understandable manner that allows for
+            Validity          replication and comprehension of the approach.
+            Rigorousness
+                              It measures the accuracy, relevance, and soundness of the method in addressing the research problem, ensuring
+                              that it is appropriate and directly relevant to the objectives of the study.
+
+                              It examines the thoroughness, precision, and consistency of the method, ensuring that the approach is systematic,
+                              well-structured, and adheres to high standards of research quality.
+
+            Innovativeness It evaluates whether the method introduces new techniques, approaches, or perspectives to the research field
+                                  that differ from standard research practices and advance them in the field.
+
+            Generalizability  It assesses the extent to which the method can be applied to or is relevant for other contexts, populations, or
+                              settings beyond the scope of the study.
+
+            Clarity           It determines whether the experiment design is described in a clear, precise, and understandable manner,
+            Validity          enabling others to grasp the setup, procedure, and expected outcomes.
+
+                              It measures the appropriateness and soundness of the experimental design in accurately addressing the research
+                              questions or effectively validating the proposed methods, ensuring that the design effectively tests what it is
+                              intended to examine.
+
+            Robustness        It evaluates the durability of the experimental design across a wide range of conditions and variables, ensuring
+            Feasibility       that the outcomes are not reliant on a few specific cases and remain consistent across a broad spectrum of
+                              scenarios.
+
+                              It evaluates whether the experiment design can realistically be implemented with the available resources, time,
+                              and technological or methodological constraints, ensuring that the experiment is practical and achievable.
+
+            Reproducibility It examines whether the information provided is sufficient and detailed enough for other researchers to reproduce
+                                  the experiment using the same methodology and conditions, ensuring the reliability of the findings.
+Table 13: The criteria induced from human judgments for validating the identified problems, which are used to align model-based
+evaluations with actual human preferences.
+
+Types    Criteria      Texts
+Problem  Clarity
+         Relevance     1. The problem is presented in a highly ambiguous manner, lacking clear definition and leaving significant
+         Originality   room for interpretation or confusion.
+         Feasibility   2. The problem is somewhat defined but suffers from vague terms and insufficient detail, making it challenging
+         Significance  to grasp the full scope or objective.
+                       3. The problem is stated in a straightforward manner, but lacks the depth or specificity needed to fully convey
+                       the nuances and boundaries of the research scope.
+                       4. The problem is clearly articulated with precise terminology and sufficient detail, providing a solid under-
+                       standing of the scope and objectives with minimal ambiguity.
+                       5. The problem is exceptionally clear, concise, and specific, with every term and aspect well-defined, leaving
+                       no room for misinterpretation and fully encapsulating the research scope and aims.
+
+                       1. The problem shows almost no relevance to the current field, failing to connect with the established context
+                       or build upon existing work.
+                       2. The problem has minimal relevance, with only superficial connections to the field and a lack of meaningful
+                       integration with prior studies.
+                       3. The problem is somewhat relevant, making a moderate attempt to align with the field but lacking significant
+                       innovation or depth.
+                       4. The problem is relevant and well-connected to the field, demonstrating a good understanding of existing
+                       work and offering promising contributions.
+                       5. The problem is highly relevant, deeply integrated with the current context, and represents a significant
+                       advancement in the field.
+
+                       1. The problem exhibits no discernible originality, closely mirroring existing studies without introducing any
+                       novel perspectives or challenges.
+                       2. The problem shows minimal originality, with slight variations from known studies, lacking significant new
+                       insights or innovative approaches.
+                       3. The problem demonstrates moderate originality, offering some new insights or angles, but these are not
+                       sufficiently groundbreaking or distinct from existing work.
+                       4. The problem is notably original, presenting a unique challenge or perspective that is well-differentiated from
+                       existing studies, contributing valuable new understanding to the field.
+                       5. The problem is highly original, introducing a pioneering challenge or perspective that has not been explored
+                       before, setting a new direction for future research.
+
+                       1. The problem is fundamentally infeasible due to insurmountable resource constraints, lack of foundational
+                       research, or critical methodological flaws.
+                       2. The problem faces significant feasibility challenges related to resource availability, existing knowledge gaps,
+                       or technical limitations, making progress unlikely.
+                       3. The problem is feasible to some extent but faces notable obstacles in resources, existing research support, or
+                       technical implementation, which could hinder significant advancements.
+                       4. The problem is mostly feasible with manageable challenges in resources, supported by adequate existing
+                       research, and has a clear, achievable methodology, though minor issues may persist.
+                       5. The problem is highly feasible with minimal barriers, well-supported by existing research, ample resources,
+                       and a robust, clear methodology, promising significant advancements.
+
+                       1. The problem shows minimal to no significance, lacking relevance or potential impact in advancing the field
+                       or contributing to practical applications.
+                       2. The problem has limited significance, with a narrow scope of impact and minor contributions to the field,
+                       offering little to no practical implications.
+                       3. The problem demonstrates average significance, with some contributions to the field and potential practical
+                       implications, but lacks innovation or broader impact.
+                       4. The problem is significant, offering notable contributions to the field and valuable practical implications,
+                       with evidence of potential for broader impact and advancement.
+                       5. The problem presents exceptional significance, with groundbreaking contributions to the field, broad and
+                       transformative potential impacts, and substantial practical applications across diverse domains.
+Table 14: The criteria induced from human judgments for validating the developed methods, which used to align model-based
+evaluations with actual human preferences.
+
+Types   Criteria          Texts
+Method
+        Clarity           1. The method is explained in an extremely vague or ambiguous manner, making it impossible to understand or
+                          replicate the approach without additional information or clarification.
+                          2. The method is described with some detail, but significant gaps in explanation or logic leave the reader with
+                          considerable confusion and uncertainty about how to apply or replicate the approach.
+                          3. The method is described with sufficient detail to understand the basic approach, but lacks the precision or
+                          specificity needed to fully replicate or grasp the nuances of the methodology without further guidance.
+                          4. The method is clearly and precisely described, with most details provided to allow for replication and
+                          comprehension, though minor areas may benefit from further clarification or elaboration.
+                          5. The method is articulated in an exceptionally clear, precise, and detailed manner, enabling straightforward
+                          replication and thorough understanding of the approach with no ambiguities.
+
+        Validity          1. The method shows a fundamental misunderstanding of the research problem and lacks any credible alignment
+        Rigorousness      with established scientific principles or relevant studies.
+                          2. The method partially addresses the research problem but exhibits significant flaws in its scientific underpin-
+                          ning, making its validity questionable despite some alignment with existing literature.
+                          3. The method adequately addresses the research problem but with some limitations in its scientific validity,
+                          showing a mix of strengths and weaknesses in its alignment with related studies.
+                          4. The method effectively addresses the research problem, demonstrating a strong scientific basis and sound
+                          alignment with existing literature, albeit with minor areas for improvement.
+                          5. The method exemplifies an exceptional understanding of the research problem, grounded in a robust scientific
+                          foundation, and shows exemplary integration and advancement of existing studies’ findings.
+
+                          1. The method demonstrates a fundamental lack of systematic approach, with significant inconsistencies and
+                          inaccuracies in addressing the research problem, showing a disregard for established research standards.
+                          2. The method shows a minimal level of systematic effort but is marred by notable inaccuracies, lack of
+                          precision, and inconsistencies that undermine the rigorousness of the method in tackling the research problem.
+                          3. The method exhibits an average level of systematic structure and adherence to research standards but lacks
+                          the thoroughness, precision, and consistency required for a rigorous scientific inquiry.
+                          4. The method is well-structured and systematic, with a good level of precision and consistency, indicating a
+                          strong adherence to research standards, though it falls short of exemplifying the highest level of rigorousness.
+                          5. The method exemplifies exceptional rigorousness, with outstanding thoroughness, precision, and consistency
+                          in its systematic approach, setting a benchmark for high standards in scientific research quality.
+
+        Innovativeness    1. The method introduces no novel elements, fully relying on existing techniques without any attempt to modify
+                          or adapt them for the specific research problem, showing a lack of innovativeness.
+                          2. The method shows minimal innovation, with only slight modifications to existing techniques that do not
+                          substantially change or improve the approach to the research problem.
+                          3. The method demonstrates moderate innovativeness, incorporating known techniques with some new elements
+                          or combinations that offer a somewhat fresh approach to the research problem but fall short of a significant
+                          breakthrough.
+                          4. The method is highly innovative, introducing new techniques or novel combinations of existing methods that
+                          significantly differ from standard practices, offering a new perspective or solution to the research problem.
+                          5. The method represents a groundbreaking innovation, fundamentally transforming the approach to the
+                          research problem with novel techniques or methodologies that redefine the field’s standard practices.
+
+                          1. The method shows no adaptability, failing to extend its applicability beyond its original context or dataset,
+
+                          showing a complete lack of generalizability.
+
+                          2. The method demonstrates minimal adaptability, with limited evidence of potential applicability to contexts
+
+                          slightly different from the original.
+
+        Generalizability  3. The method exhibits some level of adaptability, suggesting it could be applicable to related contexts or
+                          datasets with modifications.
+
+                          4. The method is adaptable and shows evidence of applicability to a variety of contexts or datasets beyond the
+
+                          original.
+
+                          5. The method is highly adaptable, demonstrating clear evidence of broad applicability across diverse contexts,
+
+                          populations, and settings.
+Table 15: The criteria induced from human judgments for validating the experiment designs, which are used to align model-based
+evaluations with actual human preferences.
+
+Types       Criteria         Texts
+Experiment
+            Clarity          1. The experiment design is extremely unclear, with critical details missing or ambiguous, making it nearly
+                             impossible for others to understand the setup, procedure, or expected outcomes.
+                             2. The experiment design lacks significant clarity, with many important aspects poorly explained or omitted,
+                             challenging others to grasp the essential elements of the setup, procedure, or expected outcomes.
+                             3. The experiment design is moderately clear, but some aspects are not detailed enough, leaving room for
+                             interpretation or confusion about the setup, procedure, or expected outcomes.
+                             4. The experiment design is mostly clear, with most aspects well-described, allowing others to understand the
+                             setup, procedure, and expected outcomes with minimal ambiguity.
+                             5. The experiment design is exceptionally clear, precise, and detailed, enabling easy understanding of the setup,
+                             procedure, and expected outcomes, with no ambiguity or need for further clarification.
+
+            Validity         1. The experiment design demonstrates a fundamental misunderstanding of the research problem, lacks
+                             alignment with scientific methods, and shows no evidence of validity in addressing the research questions or
+                             testing the proposed methods.
+                             2. The experiment design has significant flaws in its approach to the research problem and scientific method,
+                             with minimal or questionable evidence of validity, making it largely ineffective in addressing the research
+                             questions or testing the proposed methods.
+                             3. The experiment design is generally aligned with the research problem and scientific method but has some
+                             limitations in its validity, offering moderate evidence that it can somewhat effectively address the research
+                             questions or test the proposed methods.
+                             4. The experiment design is well-aligned with the research problem and scientific method, providing strong
+                             evidence of validity and effectively addressing the research questions and testing the proposed methods, despite
+                             minor limitations.
+                             5. The experiment design excellently aligns with the research problem and scientific method, demonstrating
+                             robust evidence of validity and outstandingly addressing the research questions and testing the proposed
+                             methods without significant limitations.
+
+            Robustness       1. The experiment design demonstrates a fundamental lack of understanding of the scientific method, with no
+                             evidence of durability or adaptability across varying conditions, leading to highly unreliable and non-replicable
+                             results.
+                             2. The experiment design shows minimal consideration for robustness, with significant oversights in addressing
+                             variability and ensuring consistency across different scenarios, resulting in largely unreliable outcomes.
+                             3. The experiment design adequately addresses some aspects of robustness but lacks comprehensive measures
+                             to ensure durability and consistency across a wide range of conditions, leading to moderate reliability.
+                             4. The experiment design incorporates a solid understanding of robustness, with clear efforts to ensure the
+                             experiment’s durability and consistency across diverse conditions, though minor improvements are still possible
+                             for optimal reliability.
+                             5. The experiment design exemplifies an exceptional commitment to robustness, with meticulous attention to
+                             durability and adaptability across all possible conditions, ensuring highly reliable and universally applicable
+                             results.
+
+            Feasibility      1. The experiment design is fundamentally unfeasible, with insurmountable resource, time, or technological
+                             constraints that make implementation virtually impossible within the proposed framework.
+                             2. The experiment design faces significant feasibility challenges, including major resource, time, or technologi-
+                             cal limitations, that heavily compromise its practical execution and likelihood of success.
+                             3. The experiment design is somewhat feasible, with moderate constraints on resources, time, or technology
+                             that could be addressed with adjustments, though these may not guarantee success.
+                             4. The experiment design is largely feasible, with minor resource, time, or technological limitations that can be
+                             effectively managed or mitigated, ensuring a high probability of successful implementation.
+                             5. The experiment design is highly feasible, with no significant constraints on resources, time, or technology,
+                             indicating that it can be implemented smoothly and successfully within the proposed framework.
+
+            Reproducibility  1. The experiment design lacks critical details, making it virtually impossible for other researchers to replicate
+                             the study under the same conditions or methodologies.
+                             2. The experiment provides some essential information but omits significant details needed for replication,
+                             leading to considerable ambiguity in methodology or conditions.
+                             3. The experiment design includes sufficient details for replication, but lacks clarity or completeness in certain
+                             areas, posing challenges for seamless reproducibility.
+                             4. The experiment is well-documented with clear, detailed instructions and methodologies that allow for
+                             consistent replication, albeit with minor areas for improvement.
+                             5. The experiment design is exemplary in its clarity, detail, and comprehensiveness, ensuring that other
+                             researchers can precisely and effortlessly replicate the study under identical conditions and methodologies.
+       Table 16: The examples of research idea generation results from the proposed full ResearchAgent.
+
+Index  Types    Texts
+1      Input    Title: Knowledge-Augmented Language Model Prompting for Zero-Shot Knowledge Graph Question Answering
+
+                Abstract: Large Language Models (LLMs) are capable of performing zero-shot closed-book question answering tasks, based on
+                their internal knowledge stored in parameters during pre-training. However, such internalized knowledge might be insufficient and
+                incorrect, which could lead LLMs to generate factually wrong answers. Furthermore, fine-tuning LLMs to update their knowledge
+                is expensive. To this end, we propose to augment the knowledge directly in the input of LLMs. Specifically, we first retrieve the
+                relevant facts to the input question from the knowledge graph based on semantic similarities between the question and its associated
+                facts. After that, we prepend the retrieved facts to the input question in the form of the prompt, which is then forwarded to LLMs to
+                generate the answer. Our framework, Knowledge-Augmented language model PromptING (KAPING), requires no model training,
+                thus completely zero-shot. We validate the performance of our KAPING framework on the knowledge graph question answering
+                task, that aims to answer the user’s question based on facts over a knowledge graph, on which ours outperforms relevant zero-shot
+                baselines by up to 48% in average, across multiple LLMs of various sizes.
+
+                Entities: [’Natural language’, ’Learning management system’, ’Question answering’, ’Wikipedia’, ’Artificial intelligence’, ’Named-
+                entity recognition’, ’Quality assurance’, ’Long short-term memory’, ’English language’, ’Google Books’, ’Natural-language
+                programming’, ’LMS color space’, ’GitHub’, ’Logic learning machine’, ’Machine translation’, ’DBpedia’, ’Integrated library system’,
+                ’Spanish language’, ’Neural machine translation’, ’ArXiv’, ’Artificial general intelligence’, ’Natural-language understanding’,
+                ’Nonlinear programming’, ’Codex’, ’LoRa’, ’Adhesive’, ’Common Crawl’, ’ROUGE (metric)’, ’Transformer’, ’Tomas Mikolov’]
+
+       Problem  Developing a Multimodal Knowledge-Aware Prompting System for Multilingual Zero-Shot Question Answering across Structured
+                and Unstructured Data Sources
+
+                Continued on the next page
+Index  Types                                   Table 16 – Continued from the previous page
+                   Texts
+       Method      The further refined and enhanced method for developing a multimodal knowledge-aware prompting system for multilingual zero-shot
+                   question answering (MMKP-ZSQA) incorporates advanced refinements in the following components to address the requirements for
+       Experiment  innovativeness, clarity, and generalizability:
+
+                   1. Interconnected Multimodal Knowledge Orchestration (IMKO):
+                   - IMKO is an advanced evolution of SMKI, incorporating state-of-the-art language and vision models to handle data verbalization
+                   with context-aware disambiguation methods.
+                   - Techniques like attention mechanisms are employed to weigh the relevance of different data pieces when integrated, revealing how
+                   textual and visual data augment each other in a synthesized representation.
+
+                   2. Linguistically Inclusive Retrieval Engine (LIRE):
+                   - LIRE extends EMKA with an emphasis on semantic understanding, using transformer-based models trained on diverse datasets,
+                   including idiomatic and cultural nuances across languages.
+                   - Specific algorithms to handle linguistic phenomena such as code-switching and transliteration are included, enhancing the application
+                   to a broader set of languages and dialects.
+
+                   3. Prompt Learning and Optimization Nexus (PLON):
+                   - Building on AMPL, PLON focuses on creating a library of optimized prompts categorized by linguistic features and data modalities,
+                   using Bayesian optimization algorithms.
+                   - It includes domain adaptation techniques and a wider array of meta-learning strategies with case studies for high and low-resource
+                   languages, and outlines theoretical frameworks for their implementation.
+
+                   4. Cross-Modal Integrative Learning System (C-MILS):
+                   - C-MILS advances SCAS by detailing the use of multi-head attention across modalities for effective and scalable reasoning, with
+                   exemplifications on how each modality can enhance comprehension synergistically.
+                   - The component now incorporates a layer of abstraction to distill knowledge into a modality-agnostic format, aiding reasoning and
+                   facilitating interpretability across languages and data types.
+
+                   5. User-Centric Adaptation and Privacy Framework (UCAPF):
+                   - UCAPF enriches ALCUM with a user-centric design, focusing on interaction protocols that describe user engagement cycles,
+                   feedback loops, and privacy-preserving active learning paradigms, with practical workflows and pseudocode.
+                   - Aligns with GDPR and other privacy frameworks to fortify trust and address the ethical use of data in dynamic learning environments.
+
+                   6. Global Evaluation and Reflective Testing System (GERTS):
+                   - GERTS expands CEB by presenting a multi-tiered validation and reflection methodology to adjust system components based on a
+                   diverse set of metrics, including fairness, bias, interpretability, and computational efficiency.
+                   - Offers a structured approach to cross-cultural evaluation, including the use of demographic and regional diversity in forming test
+                   cohorts.
+                   The experiment, named "Refined Experiment for Multimodal Knowledge-Aware Prompting System for Multilingual Zero-shot
+                   Question Answering (RE-MKP-ZSQA)", aims to methodically develop and validate an advanced AI system. The experiment is
+                   streamlined to address feasibility, clarity, and reproducibility concerns while upholding robustness and validity by adhering to the
+                   following refined phases:
+
+                   1. Detailed System Implementation Plan:
+                   - Provide a publicly accessible project roadmap with specific milestones, resource allocation, and timelines.
+
+                   2. Dataset Curation with Clear Guidelines:
+                   - Publish precise annotation guidelines with strategies to prevent bias.
+                   - Document the dataset assembly process, including source selection and data processing procedures.
+
+                   3. Transparent System Training:
+                   - Offer a detailed training protocol with hyperparameters, optimization strategies, and Bayesian optimization processes used in PLON.
+
+                   4. Structured Zero-Shot Evaluation:
+                   - Outline evaluation metrics derived from GERTS with benchmark datasets to test zero-shot capabilities.
+
+                   5. Clearer Interdisciplinary Evaluation Protocol:
+                   - Specify the composition of the evaluation committee, criteria for assessments, and methods for integrating the feedback.
+
+                   6. Iterative Improvement with Validation Metrics:
+                   - Describe statistical methods for reflective assessment and continuous improvement, aligned with multi-tiered GERTS methodology.
+
+                   7. User-Centric Design and Privacy Compliance Evaluation:
+                   - Structure user studies with targeted data points to assess usability and cultural adaptability.
+                   - Outline privacy compliance protocols to adhere to international standards.
+
+                   8. Detailed Global Scalability Evaluation Method:
+                   - Define evaluation metrics for scalability tests and describe diverse infrastructural setups.
+
+                   9. Enhanced Reporting for Reproducibility:
+                   - Commit to creating a comprehensive report with precise specifications, configurations, and instructions for replication purposes.
+                   - Utilize GitHub for version-controlled deposition of code and datasets, and arXiv for openly accessible experiment protocols and
+                   findings.
+
+                                                                                                                                             Continued on the next page
+                                Table 16 – Continued from the previous page
+
+Index  Types             Texts
+
+       Input             Title: Test-Time Self-Adaptive Small Language Models for Question Answering
+
+                         Abstract: Recent instruction-finetuned large language models (LMs) have achieved notable performances in various tasks, such as
+                         question-answering (QA). However, despite their ability to memorize a vast amount of general knowledge across diverse tasks, they
+                         might be suboptimal on specific tasks due to their limited capacity to transfer and adapt knowledge to target tasks. Moreover, further
+                         finetuning LMs with labeled datasets is often infeasible due to their absence, but it is also questionable if we can transfer smaller LMs
+                         having limited knowledge only with unlabeled test data. In this work, we show and investigate the capabilities of smaller self-adaptive
+                         LMs, only with unlabeled test data. In particular, we first stochastically generate multiple answers, and then ensemble them while
+                         filtering out low-quality samples to mitigate noise from inaccurate labels. Our proposed self-adaption strategy demonstrates significant
+                         performance improvements on benchmark QA datasets with higher robustness across diverse prompts, enabling LMs to stay stable.
+
+                         Entities: [’Codex’, ’Natural language’, ’English language’, ’United States’, ’Question answering’, ’Natural-language programming’,
+                         ’GTRI Information and Communications Laboratory’, ’Artificial intelligence’, ’LoRa’, ’Llama’, ’Python (programming language)’,
+                         ’Learning management system’, ’Natural language processing’, ’Reinforcement learning’, ’LMS color space’, ’Wikipedia’, ’GitHub’,
+                         ’Natural-language understanding’, ’London, Midland and Scottish Railway’, ’Integrated library system’, ’Language model’, ’Chinese
+                         language’, ’Lumen (unit)’, ’Spanish language’, ’English Wikipedia’, ’Logic learning machine’, ’Gradient descent’, ’Alternative
+                         public offering’, ’Technology transfer’, ’Dialogue system’]
+
+                Problem  Developing a Scalable, Domain-Adaptive Test-Time Training Protocol for Low-Resource Language QA Using Small Language
+2                        Models
+
+                         1. Selection of Scalable Compact Language Models (CLMs): Identify and evaluate existing CLMs suitable for adaptation, emphasizing
+                         models with minimal computational requirements.
+
+                         2. Creation of a Multilingual Test-Time Training (TTT) Framework: Develop a TTT protocol that enables CLMs to adapt to new
+                         domains and languages during the inference phase, leveraging unsupervised learning techniques and pseudo-label generation.
+
+                         3. Synthetic and Unsupervised Data Generation: Utilize a combination of unsupervised and synthetic data generation methods to
+                         produce multilingual QA pairs, employing techniques such as back-translation and context-based question synthesis.
+
+                         4. Domain-Adaptive Mechanisms: Introduce domain-adaptive components, including feature adaptation layers and meta-learning
+                         algorithms, which tailor the model’s behavior to new contexts and languages at test time.
+
+       Method
+
+                         5. Incremental Language Addition and Dominance Assessment: Start with a subset of linguistically diverse, low-resource languages.
+                         Evaluate domain adaptability for each language via an iterative process, ensuring models learn to prioritize resource efficiency.
+
+                         6. Model Robustness and Generalization: Perform robustness tuning (RT) to prepare models for unforeseen linguistic variations and
+                         conduct thorough evaluations across multiple domains to ensure models can generalize their learning effectively.
+
+                         7. Human-In-The-Loop Evaluation: Conduct evaluations with native speakers and domain experts to validate the relevance and
+                         accuracy of the QA outputs, incorporating feedback into the iterative training process.
+
+                         8. Open-Sourcing and Community Collaboration: Make the TTT protocol, trained models, and evaluation benchmarks publicly
+                         available for the research community, fostering collaboration and further innovation.
+
+                                                                                                                                                  Continued on the next page
+Index  Types                                         Table 16 – Continued from the previous page
+                         Texts
+       Experiment        1. Selection and Preparation:
+                         - Identify potential compact language models (CLMs) suitable for domain adaptation and test-time training, focusing on those with
+                Input    minimal computational requirement and the ability to be fine-tuned or adapted in an unsupervised manner.
+3                        - Prepare a diverse set of low-resource languages and corresponding text corpora, ensuring linguistic diversity and sociocultural
+                         significance. Select benchmark datasets for these languages if available.
+                Problem
+                         2. Training and Adaptation Procedure:
+                         - Create a Test-Time Training (TTT) framework that allows selected CLMs to adapt to various domains in the selected low-resource
+                         languages during the inference phase.
+                         - Implement unsupervised learning techniques and pseudo-label generation to produce QA pairs, utilizing back-translation and
+                         context-based question synthesis to generate synthetic datasets for languages with limited or no available QA datasets.
+                         - Integrate domain-adaptive components and meta-learning algorithms into the CLMs to enable domain-specific adaptations at test
+                         time.
+
+                         3. Iterative Evaluation and Refinement:
+                         - Begin adaptation and training with a single low-resource language and gradually add additional languages, monitoring the domain
+                         adaptability and model performance metrics after each addition.
+                         - Perform robustness tuning and cross-domain evaluations for each CLM and language adaptation to ensure generalizability and
+                         prevent overfitting.
+
+                         4. Human-In-The-Loop Assessment:
+                         - Enlist native speakers and domain experts to evaluate the relevance and accuracy of the model’s QA outputs for each language.
+                         - Incorporate feedback into the iterative training process, refining and re-adapting the models accordingly.
+
+                         5. Open-Sourcing and Community Feedback:
+                         - Make the TTT protocol, adaptive CLMs, evaluation benchmarks, and any synthetic datasets publicly available for the research
+                         community.
+
+                         6. Experiment Monitoring and Documentation:
+                         - Record all the parameters, datasets, model configurations, and evaluation metrics meticulously to ensure robustness and reproducibil-
+                         ity.
+                         - Document any challenges faced, unexpected results, or adaptions made during the experiment for open-sourcing purposes.
+
+                         7. Data Analysis and Reporting:
+                         - Analyze the collected performance data quantitatively, using appropriate statistical methods to compare with non-adaptive baselines.
+                         - Report qualitative findings from human-in-the-loop evaluations, interpreting the implications for language model performance in
+                         low-resource language domains.
+
+                         Title: Whole-brain annotation and multi-connectome cell typing quantifies circuit stereotypy in Drosophila
+
+                         Abstract: The fruit fly Drosophila melanogaster combines surprisingly sophisticated behaviour with a highly tractable nervous
+                         system. A large part of the fly’s success as a model organism in modern neuroscience stems from the concentration of collaboratively
+                         generated molecular genetic and digital resources. As presented in our FlyWire companion paper1, this now includes the first full
+                         brain connectome of an adult animal. Here we report the systematic and hierarchical annotation of this 130,000-neuron connectome
+                         including neuronal classes, cell types and developmental units (hemilineages). This enables any researcher to navigate this huge
+                         dataset and find systems and neurons of interest, linked to the literature through the Virtual Fly Brain database2. Crucially, this
+                         resource includes 4,552 cell types. 3,094 are rigorous consensus validations of cell types previously proposed in the “hemibrain”
+                         connectome3. In addition, we propose 1,458 new cell types, arising mostly from the fact that the FlyWire connectome spans the whole
+                         brain, whereas the hemibrain derives from a subvolume. Comparison of FlyWire and the hemibrain showed that cell type counts and
+                         strong connections were largely stable, but connection weights were surprisingly variable within and across animals. Further analysis
+                         defined simple heuristics for connectome interpretation: connections stronger than 10 unitary synapses or providing >1% of the input
+                         to a target cell are highly conserved. Some cell types showed increased variability across connectomes: the most common cell type in
+                         the mushroom body, required for learning and memory, is almost twice as numerous in FlyWire as the hemibrain. We find evidence
+                         for functional homeostasis through adjustments of the absolute amount of excitatory input while maintaining the excitation-inhibition
+                         ratio. Finally, and surprisingly, about one third of the cell types proposed in the hemibrain connectome could not yet be reliably
+                         identified in the FlyWire connectome. We therefore suggest that cell types should be defined to be robust to inter-individual variation,
+                         namely as groups of cells that are quantitatively more similar to cells in a different brain than to any other cell in the same brain. Joint
+                         analysis of the FlyWire and hemibrain connectomes demonstrates the viability and utility of this new definition. Our work defines
+                         a consensus cell type atlas for the fly brain and provides both an intellectual framework and open source toolchain for brain-scale
+                         comparative connectomics.
+
+                         Entities: [’Virtual Fly Brain’, ’Central nervous system’, ’Transposable element’, ’SUMO protein’, ’Kenyon cell’, ’Romani people’,
+                         ’Induced stem cells’, ’Ventral nerve cord’, ’FlyBase’, "Parkinson’s disease", ’Virtual Network Computing’, ’P element’, ’Piwi-
+                         interacting RNA’, ’Drosophila Genetic Reference Panel’, ’Bateson–Dobzhansky–Muller model’, ’J. B. S. Haldane’, ’ATG7’,
+                         "Haldane’s rule", ’Oxford Nanopore Technologies’, ’Drosophila mauritiana’, ’Germline’, ’PINK1’, ’Migratory locust’, ’CRISPR’,
+                         ’Heliconius’, ’GINS (protein complex)’, ’Parkin (ligase)’, ’Lepidoptera’, ’Illumina, Inc.’, ’Drosophila’]
+
+                         Investigating the Functional Implications of Connectome Variability in Drosophila’s Learning and Memory Circuits Across Different
+                         Environmental and Genetic Contexts
+
+                                                                                                                                                   Continued on the next page
+Index  Types                                   Table 16 – Continued from the previous page
+                   Texts
+       Method      The proposed method involves a multi-tiered approach that integrates connectomics, behavioral assays, genetic manipulation, and
+                   computational modeling to investigate the functional implications of connectome variability in Drosophila’s learning and memory
+       Experiment  circuits. The method consists of the following steps:
+
+                   1. Connectome Mapping and Variability Analysis:
+                   a. Utilize the Virtual Fly Brain database to identify and compare individual connectomes, focusing on the mushroom body.
+                   b. Quantify the variability in connection weights and cell type counts using statistical methods and machine learning algorithms to
+                   identify patterns of variability.
+
+                   2. Behavioral Assays:
+                   a. Design a series of learning and memory tasks for Drosophila, such as olfactory conditioning or visual pattern recognition.
+                   b. Test groups of flies with known connectome profiles under controlled environmental conditions to establish baseline behavioral
+                   data.
+
+                   3. Environmental and Genetic Perturbations:
+                   a. Expose different groups of flies to varied learning paradigms and sensory inputs to create environmental perturbations.
+                   b. Use CRISPR-Cas9 technology to introduce targeted mutations in genes like PINK1 or Parkin, creating genetic perturbations.
+                   c. Assess the impact of these perturbations on connectome structure using high-resolution imaging and reconstruction techniques.
+
+                   4. Transcriptomic and Spatial Analysis:
+                   a. Apply single-cell RNA sequencing and spatial transcriptomics to profile gene expression changes in response to environmental and
+                   genetic perturbations.
+                   b. Correlate transcriptomic data with connectome changes to identify molecular pathways associated with structural and functional
+                   plasticity.
+
+                   5. Computational Modeling and Network Analysis:
+                   a. Develop computational models to simulate the effects of connectome variability on neural circuit function.
+                   b. Use network analysis tools to explore information flow and circuit dynamics, integrating data from related papers on olfactory
+                   projection neurons and information flow in the olfactory system.
+
+                   6. Synthesis and Validation:
+                   a. Integrate findings from behavioral assays, connectome mapping, transcriptomic analysis, and computational modeling.
+                   b. Validate the proposed models and hypotheses through iterative experimentation and refinement.
+
+                   1. Pre-experimental Setup:
+                   a. Establish a Drosophila melanogaster breeding program to ensure a consistent supply of genetically similar flies for the experiments.
+                   b. Develop a standardized protocol for rearing flies under controlled conditions to minimize pre-experimental variability.
+                   c. Select and validate CRISPR-Cas9 constructs for targeted gene editing of PINK1, Parkin, and other genes of interest.
+                   d. Train personnel in the use of the Virtual Fly Brain database and relevant computational tools for connectome analysis.
+
+                   2. Connectome Mapping and Variability Analysis:
+                   a. Randomly assign individual flies to either a control group or various treatment groups (environmental and genetic perturbations).
+                   b. Utilize high-resolution imaging techniques to map the connectomes of flies from each group, with a focus on the mushroom body.
+                   c. Apply statistical and machine learning algorithms to quantify and compare the variability in connection weights and cell type
+                   counts across groups.
+
+                   3. Behavioral Assays:
+                   a. Design and validate a series of learning and memory tasks, such as olfactory conditioning and visual pattern recognition, ensuring
+                   tasks are sensitive to subtle differences in performance.
+                   b. Test flies from each group in the behavioral tasks and record performance metrics.
+                   c. Analyze behavioral data to establish correlations with connectome profiles.
+
+                   4. Environmental and Genetic Perturbations:
+                   a. Expose flies to different learning paradigms and sensory inputs to induce environmental perturbations.
+                   b. Perform gene editing using CRISPR-Cas9 to create genetic perturbations in the treatment groups.
+                   c. Re-map connectomes post-perturbation to assess structural changes.
+
+                   5. Transcriptomic and Spatial Analysis:
+                   a. Collect brain tissue from flies post-behavioral assays and perform single-cell RNA sequencing and spatial transcriptomics.
+                   b. Analyze transcriptomic data to identify gene expression changes and correlate these with observed connectome and behavioral
+                   variations.
+
+                   6. Computational Modeling and Network Analysis:
+                   a. Develop computational models to simulate the impact of observed connectome variability on neural circuit function.
+                   b. Use network analysis to integrate behavioral, connectomic, and transcriptomic data, focusing on information flow and circuit
+                   dynamics.
+
+                   7. Synthesis and Validation:
+                   a. Integrate findings across all experimental components to formulate a cohesive understanding of the functional implications of
+                   connectome variability.
+                   b. Validate models and refine hypotheses through additional targeted experiments, informed by initial findings.
+

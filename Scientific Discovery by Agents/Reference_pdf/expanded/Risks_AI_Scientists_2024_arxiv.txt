@@ -1,0 +1,1109 @@
+arXiv:2402.04247v5 [cs.CY] 21 Jul 2025  Risks of AI Scientists: Prioritizing Safeguarding Over Autonomy
+
+                                                             Xiangru Tang1, Qiao Jin2, Kunlun Zhu3, Tongxin Yuan4, Yichi Zhang1,
+                                                        Wangchunshu Zhou5, Meng Qu3, Yilun Zhao1, Jian Tang3, Zhuosheng Zhang4,
+                                                      Arman Cohan1, Dov Greenbaum 6,10, Zhiyong Lu2, and Mark Gerstein1,7,8,9,10,
+
+                                        1 Department of Computer Science, Yale University
+                                        2 Division of Intramural Research, National Library of Medicine, National Institutes of Health
+                                        3 Mila-Quebec AI Institute
+                                        4 Shanghai Jiao Tong University
+                                        5 OPPO Research Institute
+                                        6 Reichman University
+                                        7 Program in Computational Biology & Bioinformatics, Yale University
+                                        9 Department of Molecular Biophysics & Biochemistry, Yale University
+                                        9 Department of Statistics & Data Science, Yale University
+                                        10 Department of Biomedical Informatics & Data Science, Yale University
+
+                                         Corresponding Author: Mark Gerstein, e-mail: pi@gersteinlab.org.
+
+                                        Abstract
+
+                                            AI scientists powered by large language models have demonstrated substantial promise in au-
+                                        tonomously conducting experiments and facilitating scientific discoveries across various disciplines.
+                                        While their capabilities are promising, these agents also introduce novel vulnerabilities that require
+                                        careful consideration for safety. However, there has been limited comprehensive exploration of
+                                        these vulnerabilities. This perspective examines vulnerabilities in AI scientists, shedding light on
+                                        potential risks associated with their misuse, and emphasizing the need for safety measures. We
+                                        begin by providing an overview of the potential risks inherent to AI scientists, taking into account
+                                        user intent, the specific scientific domain, and their potential impact on the external environment.
+                                        Then, we explore the underlying causes of these vulnerabilities and provide a scoping review of the
+                                        limited existing works. Based on our analysis, we propose a triadic framework involving human
+                                        regulation, agent alignment, and an understanding of environmental feedback (agent regulation) to
+
+                                                                                                  1
+mitigate these identified risks. Furthermore, we highlight the limitations and challenges associated
+with safeguarding AI scientists and advocate for the development of improved models, robust
+benchmarks, and comprehensive regulations.
+
+                                                          2
+1 Introduction
+
+    Recently, the advancement of large language models (LLMs) has marked a revolutionary
+breakthrough, demonstrating their effectiveness across a wide spectrum of tasks [1, 2, 3, 4, 5, 6].
+When equipped with the ability to use external tools and execute actions, these LLMs can function as
+autonomous agents [7, 8, 9] capable of complex decision-making and task completion [10, 11, 12].
+Researchers have begun deploying such agents as "AI scientists" -- autonomous systems that can
+conduct scientific research by combining LLMs' reasoning capabilities with specialized scientific
+tools. For instance, in chemistry and biology, these AI scientists can design experiments, control
+laboratory equipment, and make research decisions [13, 14, 2, 15, 16, 17]. While AI scientists
+do not match the comprehensive capabilities of human scientists, they have demonstrated specific
+abilities such as selecting appropriate analytical tools [17, 18, 19, 20, 21], planning experimental
+procedures [22, 14], and automating routine laboratory tasks [23, 24, 25]. Recent systems like
+ChemCrow [2] and Coscientist [13] exhibit their potential impact on scientific research automation.
+
+Fig. 1: A workflow and potential pitfalls in an example of antibody synthesis by AI scientists. A step-by-step
+process for automating antibody synthesis using AI scientists is illustrated, with correct actions, potential
+errors, and the associated risks highlighted for each step.
+
+    While the promise of AI scientists is evident, they introduce unique safety concerns, as shown
+                                                          3
+a                                     b                                                               c
+
+             User Intent                                  Scientific Domain of Agents                                Environment
+
+                    Malicious                                   Chemical                Biological                                Nature
+                     & Direct
+                                                       Chemical weapons      Pathogen manipulation                  Short-term or long-term
+             Directly harmful                          Explosive materials    Unethical gene editing                Negative effects on the
+                 objective                             Harmful pesticides    Biohazardous outcomes
+                                                                                                                      natural environment
+
+                          Malicious                  Radiological                       Physical                             Human Health
+                          & Indirect
+                                            Radioactive leakage              Robot malfunctions                     Damage to individual
+             Benign intermediate for         Exposure incidents              Infrastructure failure                  well-being or public
+              harmful end objective           Nuclear weapons
+                                                                               Energy overload                                health
+                      Unintended                      Information
+                      Consequences                                                  Emerging Tech                           Socioeconomics
+                Unpredictable and        Misinformation campaign
+              unforeseen outcomes         Data privacy breaches              Uncontrolled AI self-                   Dramatically change
+             from purposeful actions          Bias propogation                   improvement                             the social and
+
+                                                                              Quantum security                          economic status
+
+d
+
+User Intent   A byproduct has           Synthesized           Generating     Robotic arms hurt      Training on        Energy AI             Environment
+              long-term effects          antibiotics       byproducts that      people while     personal health     breakthrough
+             on global warming          contribute to                           executing its   data leaks privacy
+                                      drug resistance           become            objectives                            leads to
+                                                          radioactive waste                         information     unemployment
+
+             User asks AI to          User directly asks  Use nuclear plant  User attacks the   Uncontrolled AI     AI agent uses
+              synthesize a              AI to transform   techs to develop   vision system of         agent            quantum
+               precursor of               pathogens       nuclear weapons
+                explosives                                                     autonomous        disseminates       computing for
+                                                                              infrastructures   disinformation      cyber-attacks
+
+                                                                                           Scientific Domain
+
+Fig. 2: Potential risks of AI scientists. a, Risks are classified by the origin of user intents, including direct
+and indirect malicious intents, as well as unintended consequences. b, Risk types are classified by the
+scientific domain of agent applications, including chemical, biological, radiological, physical, informational,
+and emerging technology. c, Risk types are classified by the impacts on the external environment, including
+the natural environment, human health, and the socioeconomic environment. d, Specific risk examples with
+their classifications are visualized using the corresponding icons shown in a, b, and c.
+
+in Figure 1. As their capabilities approach or surpass those of humans, monitoring their behavior
+and safeguarding against harm becomes increasingly challenging, potentially leading to unforeseen
+consequences. For example, in biological research, an AI scientist's mistake in pathogen manip-
+ulation could lead to biosafety risks, or in chemistry, incorrect reaction parameters could trigger
+dangerous explosions. These risks are particularly challenging because scientific domains involve
+complex, interconnected systems where small errors can cascade into significant hazards. Given that
+EU-wide AI regulations have started to take effect, it is notable that a comprehensive risk definition
+and analysis framework tailored to the scientific context is still lacking. Thus, our objective is to
+define and scope the "risks of AI scientists," helping to provide a foundation for future endeavors
+
+                                                          4
+in developing oversight mechanisms and risk mitigation strategies, potentially contributing to the
+secure, efficient, and ethical utilization of AI scientists.
+
+     Specifically, this perspective paper illuminates the potential risks stemming from the misuse
+of AI scientists and advocates for their responsible development. We prioritize systematic safe-
+guarding -- developing processes to protecting humans and the environment from potential harms
+-- over the pursuit of more powerful capabilities. Our exploration focuses on three intertwined
+components in the safeguarding process: the roles of the user, agent, and environment, as shown
+in Figure 3: (1) Human regulation: We propose a series of measures, including formal training
+and licensing for users and developers, ongoing audits of usage logs, and an emphasis on ethical
+and safety-oriented development practices. (2) Agent Alignment: Improving the safety of AI
+scientists involves refining their decision-making capabilities, enhancing their risk awareness, and
+guiding these already-capable models toward achieving desired outcomes. Agents should align
+with both human intent and their operational environment, boosting their awareness of laboratory
+conditions and potential broader impacts while preempting potentially harmful actions. (3) Agent
+Regulation and Environmental Feedback: The regulation of the agent's actions includes oversight
+of tool usage, such as how agents operate scientific instruments and software (e.g., robotic arms,
+analytical equipment, and specialized research software), as well as the agent's interpretation and
+interaction with environmental feedback -- crucial for understanding and mitigating potentially
+negative outcomes or hazards from complex actions.
+
+            Agent Alignment
+
+             Red Teaming                                 Agent
+                                                      Regulation
+            Benchmarking               Feedback
+                   ...
+
+                                Agent
+
+ Human Intent                          Align
+Regulation
+
+                         Align
+
+   Users                         Simulation
+Developers                      Human Data
+
+    ...                              ...
+
+            Human                             Environment
+
+Fig. 3: In our work, we advocate for a triadic safeguarding framework that includes human regulation, agent
+alignment, and agent regulation. The components of user, agent, and environment are intertwined.
+
+2 Risks of AI Scientists
+
+2.1 Problem Scope
+
+    We define AI scientists as autonomous systems with scientific domain capabilities, such as
+accessing specific biological databases and performing chemical experiments--ranging from in
+silico computational analyses to physical laboratory procedures. AI scientists can automatically
+plan and take necessary actions to accomplish an objective. For example, consider an AI scientist
+tasked with discovering a new biochemical mechanism. It might first access biological databases to
+
+                                                          5
+gather existing data, then use LLMs to hypothesize new pathways, and employ robotics for iterative
+experimental testing.
+
+    The domain capabilities and autonomous nature of AI scientists make them vulnerable to various
+risks. We discuss these safety risks from three perspectives: (1) User Intent, i.e., whether the
+risk originates from malicious intent or is an unintended consequence of legitimate task objectives,
+(2) Scientific Domain, where the agent generates or facilitates risks, encompassing chemical,
+biological, radiological, physical, and informational risks, as well as those associated with emerging
+technologies, and (3) Environmental Impact, including the natural environment, human health, and
+socioeconomic environment affected by these agents. Figure 2 shows the potential risks classified
+by these aspects. It should be noted that our classification is not mutually exclusive. For example, a
+misinformation campaign facilitated by language agents could pertain to a specific chemical.
+
+    Regarding the origin of user intents, risks associated with AI scientists can be categorized as
+stemming from either malicious intent or unintended consequences. Malicious intent includes cases
+where users directly aim to create dangerous situations. Users may also employ an indirect "divide
+and conquer" approach by instructing the agent to synthesize or produce innocuous components
+that collectively lead to a harmful outcome. In contrast, unintended consequences include scenarios
+where dangerous steps or explorations occur within otherwise benign targets. This might result
+in either a hazardous main product or dangerous byproducts, with negative effects that can be
+immediate or long-term. As AI systems become more intelligent, the likelihood of unintended safety
+issues increases, making these consequences harder to detect and potentially more damaging. Recent
+studies have highlighted the complexity of unintended outcomes. For instance, AI systems might
+learn undesired behaviors that are highly rewarded due to misspecified training goals. Similarly,
+unintended behaviors such as unfaithful explanations during chain-of-thought prompting ([26]) or
+the emergence of deceptive strategies in large language models ([27]) underscore the subtleties
+and risks of unintended consequences. These unintended consequences might result in either a
+hazardous main product or dangerous byproducts, with negative effects that can be immediate or
+long-term. Each scenario necessitates specific detection and prevention strategies to ensure the safe
+operation of AI scientists.
+
+    Similarly, each scientific domain in our classification presents distinct risks, each requiring
+tailored safeguards to mitigate the inherent dangers.
+
+    · Natural Science Risks:
+
+           ­ Chemical Risks involve the exploitation of agents to synthesize chemical weapons, as
+             well as the creation or release of hazardous substances during autonomous chemical
+              experiments. This category also includes the risks arising from the use of advanced
+              materials, such as nanomaterials, which may have unknown or unpredictable chemical
+              properties.
+
+           ­ Biological Risks encompass the dangerous modification of pathogens and unethical ma-
+              nipulation of genetic material, potentially leading to unforeseen biohazardous outcomes.
+
+           ­ Radiological Risks involve both immediate operational hazards, such as exposure
+              incidents or containment failures during the automated handling of radioactive materials,
+
+                                                          6
+              and broader security concerns regarding the potential misuse of AI systems in nuclear
+              research.
+
+           ­ Physical (Mechanical) Risks are associated with robotics and automated systems,
+             which could lead to equipment malfunctions or physical harm in laboratory settings.
+
+    · Information Science Risks: These risks pertain to the misuse, misinterpretation, or leakage
+       of data, which can lead to erroneous conclusions or the unintentional dissemination of
+       sensitive information, such as private patient data or proprietary research. Recent research
+       has demonstrated how LLMs can be exploited to generate malicious medical literature that
+       poisons knowledge graphs, potentially manipulating downstream biomedical applications and
+       compromising the integrity of medical knowledge discovery [28]. Such risks are pervasive
+       across all scientific domains.
+
+    In addition, the impact of AI scientists on the external environment spans three distinct domains:
+the natural environment, human health, and the socioeconomic environment. Risks to the natural
+environment include ecological disruptions and pollution, which may be exacerbated by energy
+consumption and waste output. Human health risks encompass damage to both individual and public
+well-being, such as the negative impact on mental health through the dissemination of inaccurate
+scientific content. Socioeconomic risks involve potential job displacement and unequal access to
+scientific advancements. Addressing these risks demands comprehensive frameworks that integrate
+risk assessment, ethical considerations, and regulatory measures, ensuring alignment with societal
+and environmental sustainability through multidisciplinary collaboration.
+
+2.2 Vulnerabilities of AI Scientists
+
+    LLM-powered agents, including AI scientists, typically encompass five fundamental modules:
+LLMs, planning, action, external tools, and memory & knowledge [7, 10]. These modules function
+in a sequential pipeline: receiving inputs from tasks or users, leveraging memory or knowledge for
+planning, executing smaller premeditated tasks (often involving scientific domain tools or robotics),
+and ultimately storing the resulting outcomes or feedback in their memory banks. Despite the
+extensive applications, several notable vulnerabilities exist within these modules, giving rise to
+unique risks and practical challenges (see Figure 4). In this section, we provide an overview of the
+high-level concept of each module and summarize the vulnerabilities associated with each.
+
+2.2.1 LLMs (The Base Models)
+
+    LLMs empower agents with fundamental capabilities. However, there are certain risks associated
+with them:
+
+    Factual Errors: LLMs are prone to generating plausible but false information, which is
+particularly problematic in the scientific domain, where accuracy and trustworthiness are crucial
+[29, 31, 32, 30].
+
+                                                          7
+Fig. 4: This diagram illustrates the structural framework and potential vulnerabilities of LLM-based AI
+scientists. The agent is organized into five interconnected modules: LLMs, planning, action, external tools,
+and memory & knowledge. Each module exhibits unique vulnerabilities. The arrows depict the sequential
+flow of operations, starting from memory & knowledge to the use of external tools, underscoring the cyclic
+and interdependent nature of these modules in the context of scientific discovery and application.
+
+    Vulnerable to Jailbreak Attacks: LLMs are susceptible to jailbreak attacks--manipulative
+prompting techniques that bypass safety measures [34, 33]. For instance, while an LLM might
+refuse a direct request to synthesize illegal substances, it may unknowingly provide instructions
+when the same request is rephrased using chemical formulas or technical terminology. Similarly,
+common jailbreak attacks employ creative misdirection through roleplaying scenarios--such as
+asking the model to help write a fictional play where one character explains dangerous processes to
+another, or requesting the model to participate in a hypothetical game where harmful information
+must be shared.
+
+    Reasoning Capability Deficiencies: LLMs often struggle with deep logical reasoning and
+handling complex scientific arguments [35, 36, 37]. Their inability to perform such tasks can result
+in flawed planning and interaction, as they may resort to using inappropriate tools [38].
+
+    Lack of Up-to-Date Knowledge: LLMs, which are trained on pre-existing datasets, may
+lack the latest scientific developments, leading to potential misalignments with contemporary
+scientific knowledge [39]. Despite the advent of Retrieval-Augmented Generation, challenges
+remain in sourcing the most recent knowledge. Recent advances in model editing techniques offer
+promising solutions for efficiently updating LLMs' knowledge in specific domains while preserving
+performance on other tasks [40], though maintaining long-term model relevancy remains an open
+challenge.
+
+                                                          8
+2.2.2 Planning Module
+
+    Given a task, the planning module is designed to break down the task into smaller, manageable
+components. Nevertheless, the following vulnerabilities exist:
+
+    Lack of Awareness of Risks in Long-term Planning: Agents often struggle to fully com-
+prehend and account for the potential risks associated with their long-term plans of action. This
+issue arises because LLMs are primarily designed to solve specific tasks rather than to evaluate the
+long-term consequences of actions with an understanding of potential future impacts [41, 42].
+
+    Resource Waste and Dead Loops: Agents may engage in ineffective planning processes,
+leading to resource wastage and becoming stuck in non-productive cycles [43, 44, 45]. A pertinent
+example is when an agent is unable to determine whether it can complete a task or continously fails
+when using a tool it relies on. This uncertainty can cause the agent to repeatedly attempt various
+strategies repeatedly, unaware that these efforts are unlikely to yield success.
+
+    Inadequate Multi-task Planning: Agents often face challenges in handling multi-goal or multi-
+tool tasks due to their design, which typically optimizes them for single-task performance [19].
+This limitation becomes particularly evident when agents are required to navigate tasks that demand
+simultaneous attention to diverse objectives or the use of multiple tools in a cohesive manner. The
+complexity of multi-task planning not only strains the agents' decision-making capabilities but also
+raises concerns about the reliability and efficiency of their actions in critical scenarios.
+
+    For instance, consider an agent designed to assist in emergency response scenarios, where
+it must simultaneously coordinate logistics, manage communications, and allocate resources. If
+the agent is not adept at multi-task planning, it might misallocate resources due to its inability to
+reconcile the urgency of medical assistance with the need for evacuation efforts. This could result
+in a delayed response to critical situations, thereby exacerbating the impact of the emergency.
+
+2.2.3 Action Module
+
+    Once the task has been decomposed, the action module executes a sequence of actions, specifi-
+cally by calling tools.
+
+    Deficient Oversight in Tool Usage: A lack of efficient supervision over how agents use tools
+can lead to potentially harmful situations. For instance, incorrect selection or misuse of tools can
+trigger hazardous reactions, including explosions. Agents may not be fully aware of the risks
+associated with the tools they use, as the tools may function as black boxes to the agents. This is
+especially true in specialized scientific tasks, where the results of tool usage might be unpredicted
+and unsafe. Thus, it is crucial to enhance safeguards by learning from real-world tool usage.
+
+    Lack of Regulations on Human-Agent Interactions for Actions: Strengthening regulations
+on human-agent interactions is crucial as the rising use of agents in scientific discovery highlights
+the urgent need for ethical guidelines, particularly in sensitive domains like genetics. Despite this,
+the development of such regulatory frameworks is still at an early stage, as indicated by [46].
+Moreover, the propensity of LLMs to amplify and misinterpret human intentions adds another layer
+of complexity. Given the decoding mechanisms of LLMs, their limitations in hallucination can
+
+                                                          9
+lead to the generation of content that presents non-existent counterfactuals, potentially misleading
+humans.
+
+2.2.4 External Tools
+
+    During task execution, AI scientists interact with various external software and hardware
+tools (e.g., robotic arms, chemical analysis software, or molecular design toolkits like RDKit) to
+accomplish their objectives. While these tools extend the capabilities of AI scientists from planning
+to physical execution, they also introduce potential risks when misused. For instance, an AI
+scientist might issue incorrect commands to a robotic arm controller handling chemical substances,
+potentially leading to hazardous spills or reactions. The challenge lies not in the tools themselves
+but in the AI scientist's ability to appropriately utilize these specialized external interfaces and
+anticipate their real-world consequences.
+
+2.2.5 Memory and Knowledge Module
+
+    LLMs' knowledge can become muddled in practice, much like human memory lapses. The
+memory and knowledge module attempts to mitigate this issue by leveraging external databases for
+knowledge retrieval and integration. However, several challenges persist:
+
+    Limitations in Domain-Specific Safety Knowledge: Agents' knowledge shortfalls in spe-
+cialties like biotechnology or nuclear engineering can lead to safety-critical reasoning lapses. For
+instance, an agent for nuclear reactor design might overlook risks like radiation leaks or meltdowns,
+while an agent involved in compound synthesis may fail to assess toxicity, stability, or environmental
+impacts [48].
+
+    Limitations in Human Feedback: Insufficient, uneven, or low-quality human feedback may
+hinder agents' alignment with human values and scientific objectives. Although human feedback
+plays a crucial role in refining performance and correcting biases, it is often difficult to obtain
+comprehensively and may not cover all human preferences, especially in complex or ethical
+scenarios [49]. This underscores the need for improved methods to effectively collect and apply
+human feedback data.
+
+    Inadequate Environmental Feedback: Despite some work on embodied agents [50], agents
+may not receive or correctly interpret environmental feedback, such as the state of the world or the
+behavior of other agents. This can lead to misinformed decisions that may harm the environment
+or the agents themselves [51]. For example, an agent trained to manage water resources may not
+account for rainfall variability, the differing user demands, or the impacts of climate change.
+
+    Unreliable Research Sources: Agents might utilize or train on outdated or unreliable scientific
+information, leading to the dissemination of incorrect or harmful knowledge. For example, LLMs
+run the risk of plagiarism of copyrighted content, content fabrication, or producing false results
+[52].
+
+2.3 Recent Work in Safeguarding AI scientists
+
+                                                         10
+                               Safeguarding LLMs   Content Evaluation            Standard        SafetyBench [58]
+                                                                       Alignment-breaking based
+LLM Safeguard                                       Safety Alignment                             Jailbroken [33], Assert [68]
+                                                                                   RLHF          BIPIA [69], MasterKey [67]
+                              Safeguarding Agents  Alignment-breaking
+                                                   Defense                      Fine-tuning      RLHF [60],
+                                                                                                 Safe RLHF [62]
+                                                     General Agents              Inference
+                                                    Scientific Agents           Prompting        Shadow Alignment [65],
+                                                                        Parameter Manipulation   Compromised Fine-tuning [64],
+                                                                                Evaluation       Stay-Tuned LLaMAs [66]
+                                                                              Risk Detection
+                                                                          Memory Mechanism       RAIN [63]
+                                                                          External Tool Using
+                                                                                                 Self Defense [70], RA-LLM [72],
+                                                                                                 Goal Prioritization [71]
+
+                                                                                                 Parameter Pruning [73], Jatmo [74]
+
+                                                                                                 R-Judge [56], AgentMonitor [55]
+
+                                                                                                 Toolemu [44]
+
+                                                                                                 Sciguard [53]
+
+                                                                                                 Chemcrow [2], CLAIRify [24],
+                                                                                                 Coscientist [13]
+
+Fig. 5: Survey of related work in safeguarding LLMs and agents, among which scientific agents are
+specifically stated.
+
+    AI scientists could directly or indirectly produce harmful outputs. A key concern lies in the
+gap between syntactic correctness and runtime safety. For example, in programming, both human
+programmers and AI agents like Copilot can write code that is syntactically correct and appears bug-
+free, yet may produce unexpected errors or incorrect outputs when deployed. Similarly, in chemical
+experiments, an AI scientist might follow all the correct procedural steps but still inadvertently
+generate toxic gases or dangerous byproducts during synthesis. While human experts can often
+anticipate and prevent such issues through their experience and knowledge, AI scientists may lack
+the capability to foresee potential dangerous outcomes. A survey of recent studies on the risks of
+LLMs and agents is shown in Figure 5 and Table 1.
+
+    Coscientist [13] proposed a chemical agent with access to scientific tools and highlighted the
+safety risks agents confront, using practical examples to emphasize the need for safety assurance
+in AI scientists. To address these safety concerns, ChemCrow [2] introduced a safety tool that
+reviews user queries to prevent agents from inadvertently creating hazardous chemicals during
+synthesis in response to malicious commands. In addition to filters for user inputs, CLAIRify
+[24] designed specialized safety mechanisms for its chemical agents. Furthermore, SciGuard [53]
+developed a specialized agent for risk control that incorporates long-term memory to enhance safety.
+To evaluate the security of the current models, SciGuard created a benchmark called SciMT-Safety.
+This benchmark evaluates a model's harmlessness based on its ability to reject malicious queries
+and gauges its helpfulness based on how effectively it handles benign queries.
+
+2.4 Current Limitations
+
+    Since AI scientists confront ubiquitous risks, effective safety mechanisms should consider user
+inputs, agent actions, and environmental consequences. However, current efforts remain incomplete.
+
+    (1) Lack of safety constraints on action space. Most work on safeguarding AI scientists
+
+                                                         11
+Type of      LLMs                                                         AI Scientists
+Safety                                                                    (agents)
+Risk         Risks Identified: Issues such as offensiveness, unfairness,
+Content      illegal activities, and ethical concerns [58, 59].           Tool Interaction
+Safety       Evaluation Methods: SafetyBench with multiple-choice         Risks:
+Risks        questions covering seven categories of safety risks [58].    Identifying risks
+             Alignment Methods: Reinforcement learning from human         of agents with an
+Jailbreak    feedback (RLHF) [60, 61]. Safe RLHF, decoupling              emulator [44].
+Vulnerabil-  helpfulness and harmlessness [62]. Self-evaluation and
+ities        training-free alignment via RAIN [63].                       Evaluation of
+             Fine-tuning Safety: Adversarial examples and benign data     Risk Awareness:
+             can inadvertently compromise model safety during             Techniques like
+             fine-tuning [64, 65]. Reassuringly, extra safety examples    AgentMonitor
+             can improve this concern, an excess may hinder it [66].      [55] and R-Judge
+             Alignment-Breaking Attacks: Evaluated under                  [56].
+             jailbreaking conditions [33, 67, 68, 69].
+             Defenses: Prompt techniques (self-examination)
+             [70, 71, 72], parameter pruning [73], fine-tuning [74].
+
+Table 1: Summary of LLMs and AI scientists (agents) safety concerns and solutions. Here, LLMs refer to
+base language models that primarily process and generate text, while AI scientists are autonomous systems
+that combine LLMs with the ability to use external tools (e.g., laboratory equipment, scientific software) and
+take actions in the physical world. For example, while an LLM might generate text describing a chemical
+reaction, an AI scientist could execute that reaction using robotic equipment.
+
+demand the use of external tools [53]. However, the limited capabilities of agents can lead to the
+unintentional misuse of tools and harmful outcomes, which can be more severe when misled by
+adversaries. A fundamental solution is to constrain the input domain of possible actions. Leading
+agent frameworks [54, 44] demonstrate this by predefining a fixed and finite action space to balance
+safety and functionality. For example, AutoGPT limits a code agent's file system access to `read file'
+operations only, preventing potentially dangerous `write file' operations. Such domain constraints
+on tool functions can be systematically applied when developing AI scientists to ensure safer
+operation.
+
+    (2) Lack of specialized models for risk control. Apart from SciGuard [53], specialized safety
+mechanisms for AI scientists are largely lacking. Current approaches mainly rely on input filtering
+to prevent harmful commands or LLM-based monitoring [44, 55, 56] to screen agent behaviors
+during execution. However, more proactive approaches, such as adversarial models explicitly
+trained to identify potential exploits in AI scientists, are needed, similar to GAN-style security
+
+                                                         12
+testing. These specialized safety measures are particularly crucial given the high-stakes nature of
+scientific experiments compared to general web or software tasks.
+
+    (3) Lack of domain-specific expert knowledge. Compared with general-purpose agents that
+handle web browsing [57] or basic tool usage [20], AI scientists require sophisticated domain
+expertise. For example, synthesizing small molecules demands deep biochemistry knowledge to
+understand molecular properties and reaction mechanisms. Such expertise is critical for two aspects
+of safety: (1) enabling proper experimental planning and tool usage to prevent accidents, and (2)
+recognizing potential hazards in advance. For instance, an agent with chemistry expertise would
+understand that certain chemical combinations can trigger dangerous exothermic reactions and
+avoid such combinations.
+
+    (4) Ineffective evaluations on the safety of AI scientists. To date, benchmarks evaluating safety
+in the scientific realm, such as SciMT-safety [53], only consider the harmlessness of models by
+examining their ability to deny malicious requests. Considering the multifaceted issues mentioned
+above, safeguarding AI scientists demands additional benchmarks focused on comprehensive risk
+scopes (Section 2.1) and various agent vulnerabilities (Section 2.2).
+
+3 Proposition
+
+    It has become increasingly evident that developers must prioritize risk control over autonomous
+capabilities. While autonomy is an admirable goal and significant for enhancing productivity across
+various scientific disciplines, it cannot be pursued at the expense of generating serious risks and
+vulnerabilities. Consequently, we must balance autonomy with security and employ comprehensive
+strategies to ensure the safe deployment and use of AI scientists.
+
+    Moreover, the emphasis should shift from output safety to behavioral safety, which signifies
+a comprehensive approach that evaluates not only the accuracy of the agent's output but also the
+actions and decisions it takes. Behavioral safety is critical in the scientific domain, as the same
+action in different contexts can lead to vastly different consequences, some of which may be
+detrimental. Here, we propose fostering a triadic relationship involving humans, machines, and
+the environment. This framework recognizes the importance of robust and dynamic environmental
+feedback, in addition to human feedback.
+
+    To address current limitations in safety requirements and domain expertise, we propose a dual-
+pronged interim strategy that combines enhanced human supervision with conservative operational
+constraints. First, we recommend implementing heightened expert oversight in domains where
+autonomous safety measures are still evolving, ensuring continuous monitoring and validation of
+AI system behaviors. Second, we advocate restricting autonomous operations to well-characterized,
+lower-risk scenarios where safety parameters and operational boundaries have been thoroughly
+validated through empirical testing and expert review.
+
+                                                         13
+3.1 Agent Alignment and Safety Evaluation
+
+3.1.1 Agent Alignment
+
+    Improving LLM Alignment: The foundation of AI scientist safety lies in better-aligned
+LLMs--ensuring they generate responses that adhere to safety guidelines and legal requirements.
+Current alignment efforts focus on several complementary approaches: filtering harmful or illegal
+content through careful data curation, applying Constitutional AI principles [76], and using targeted
+knowledge editing techniques to detoxify model behaviors [77].
+
+    Towards Agent-level Alignment: Agent alignment, however, presents a unique challenge:
+controlling sequences of actions that may be individually benign but potentially harmful in specific
+contexts. While LLM alignment can be achieved through output filtering, agent alignment requires
+understanding and replicating human expert workflows. For instance, in biological research, an
+agent needs to learn not just what to do, but how expert researchers systematically investigate genetic
+variants--consulting literature, analyzing similar variants, and understanding gene interactions. This
+kind of sequential decision-making cannot be learned through simple prompting or output filtering.
+Instead, it requires: (1) comprehensive datasets of human expert workflows, capturing step-by-step
+research methodologies; (2) domain experts providing feedback on action sequences, similar to
+how autonomous driving systems learn from real-world driving data; and (3) reward models that
+evaluate not just individual actions but entire research strategies. The key challenge is that, while
+we have abundant data on what researchers write (e.g., papers, answers), we lack structured data on
+how they conduct research--their sequence of actions, tool usage, and decision-making processes.
+
+3.1.2 Safety Evaluation
+
+    Red Teaming: Identifying potential vulnerabilities that may cause hazardous activities to users
+and the environment is essential for evaluating agent safety. Red-teaming[78], i.e., adversarially
+probing LLMs for harmful outputs, has been widely used in the development of general LLMs.
+For example, jailbreaks that challenge model safety are used in red-teaming evaluations and have
+been specifically noted as alignment-breaking techniques in Table 1. Furthermore, red-teaming
+datasets can be utilized to train LLMs for harm reduction and alignment reinforcement. However,
+specialized red-teaming for AI scientists is absent. Considering the severe risks in the scientific
+domain (Section 2.1), we advocate for red-teaming against AI scientists. The criteria for effective
+red-teaming of AI scientists include: (1) Domain-specificity: Testing scenarios must reflect realistic
+scientific workflows and domain-specific safety concerns; (2) Complexity gradients: Scenarios
+should progress from simple protocol deviations to complex multi-step safety violations; (3) Cross-
+domain interactions: Tests should examine how safety measures in one domain affect operations in
+others. Our initial validation tests on chemical synthesis agents demonstrate the effectiveness of
+these criteria, though broader testing across different scientific domains is ongoing. Red-teaming
+for AI scientists differs from general LLM testing in several key aspects: (1) Physical safety
+implications: Tests must account for real-world consequences beyond text generation; (2) Domain
+expertise requirements: Red team members need both security expertise and domain-specific
+
+                                                         14
+knowledge; (3) Tool interaction complexity: Tests must cover both language model responses and
+tool usage patterns.
+
+    Benchmarking: To address the various risks stated in Section 2.1, comprehensive benchmarks
+should cover a wider range of risk categories and provide a more thorough coverage across domains.
+To address vulnerabilities stated in Section 2.2, effective benchmarks should focus on various
+dimensions such as tool usage [75], risk awareness [55, 56], and resistance to red-teaming [67, 68,
+69].
+
+    Task Alignment: Our framework implements a graduated autonomy approach to address the
+challenge of maintaining agent performance while ensuring safety. The agent begins with restricted
+operations in well-defined, lower-risk tasks and gradually expands its operational scope as safety
+metrics are met. This is complemented by continuous monitoring systems that evaluate both task
+performance and safety compliance. When performance metrics indicate degradation due to safety
+constraints, the system triggers a human expert review to optimize the balance between safety and
+functionality. This approach allows for dynamic adjustment of safety parameters based on task
+complexity and risk level, rather than applying uniform restrictions across all operations.
+
+3.2 Human Regulation
+
+    In addition to steering already-capable models, it is also important to impose certain regulations
+on the developers and users of these highly capable models.
+
+3.2.1 Developer Regulation
+
+    The primary goal of developer regulation is to ensure AI scientists are created and maintained in
+a safe, ethical, and responsible manner. Similar to how automobile manufacturers must meet safety
+standards and certification requirements before being authorized to produce vehicles, developers
+should be required to obtain certification before being authorized to develop AI scientists.
+
+    First, developers of AI scientists should adhere to an internationally recognized code of ethics.
+This includes mandatory training in ethical AI development, with an emphasis on understanding
+the potential societal impacts of their creations across global contexts. Second, we need a practical
+framework for safety and ethical compliance checks that can work across jurisdictions. This could
+combine international standards, regional certification bodies, automated testing tools, and peer
+review mechanisms, though enforcing such oversight globally remains challenging.
+
+    Furthermore, developers should implement robust security measures to prevent unauthorized
+access and misuse. This includes ensuring data privacy, securing communication channels, and
+safeguarding against cyber threats. The development life cycle should incorporate regular security
+assessments conducted by both internal teams and independent third-party auditors, although estab-
+lishing consistent international oversight remains challenging. Lastly, there should be transparency
+in the development process. Developers must maintain detailed logs of their development activities,
+algorithms used, and decision-making processes. These records should be accessible for audits and
+reviews, ensuring accountability and facilitating continuous improvement.
+
+                                                         15
+3.2.2 User Regulation
+
+    Regulating the use of autonomous agents in research is crucial. First, potential users should
+obtain a license to access AI scientists, analogous to how drivers must be licensed before operating
+vehicles. To acquire this license, users should be required to undergo relevant training and pass a
+knowledge evaluation on the responsible use of AI scientists. Usage monitoring should balance
+safety oversight with laboratory privacy, focusing on critical safety incidents and anonymized usage
+patterns while respecting institutional autonomy and intellectual property rights.
+
+    Similar to clinical studies requiring Institutional Review Board (IRB) approval, autonomous
+scientific research needs institutional oversight. However, rather than relying on researcher self-
+disclosure, specialized committees with AI safety expertise should provide standardized risk assess-
+ment protocols and evaluations.
+
+    Our framework implements a layered oversight approach: (1) Institution-Level Controls: Pri-
+mary oversight resides with institutional review boards specifically trained in AI safety protocols,
+allowing organizations to maintain control over their research processes while ensuring compliance.
+(2) Privacy-Preserving Auditing: External safety monitoring focuses on aggregated metrics and
+anonymized usage patterns rather than granular research details. This approach enables effec-
+tive safety oversight while protecting sensitive intellectual property and research data. (3) Tiered
+Reporting Structure: A graduated reporting system where only critical safety incidents require
+detailed external review, with clear guidelines protecting proprietary information and research
+confidentiality. However, more thorough safety checks inevitably increase response latency. This
+time-complexity trade-off means that achieving higher safety standards often comes at the cost of
+decreased operational speed, potentially limiting real-time applications.
+
+3.3 Agent Regulation and Environmental Feedback
+
+    Understanding and interpreting environmental feedback is critical for AI scientists to operate
+safely. Such feedback includes various factors, such as the physical world, societal laws, and
+developments within the scientific system.
+
+    Simulated Environment for Result Anticipation: AI scientists can significantly benefit from
+training and operating within simulated environments designed specifically to mimic real-world
+conditions and outcomes. This process allows the model to gauge the potential implications of
+certain actions or sequences of actions without causing real harm. For example, in a simulated
+biology lab, an autonomous agent can experiment and learn that improper handling of biohazardous
+material can lead to environmental contamination. Through trials within the simulation, the model
+can understand that specific actions or procedural deviations may lead to dangerous situations,
+helping to establish a safety-first operating principle.
+
+    Our simulated environments are evaluated using: (1) Physical fidelity metrics comparing
+simulation outputs with real-world experimental results across key parameters; (2) Process fidelity
+metrics measuring the accuracy of simulated workflow sequences against recorded laboratory
+procedures; (3) Error propagation analysis to understand how simulation uncertainties affect decision
+outcomes. The environments undergo continuous calibration using real-world feedback, with
+
+                                                         16
+particular attention to edge cases and failure modes identified during actual laboratory operations.
+    Agent Regulation: Agent regulation may focus on the symbolic control of autonomous
+
+agents [79] and multi-agent or human-agent interaction scenarios. A specialized design, such
+as a "safety check" standard operating procedure, could be applied to control when and how agents
+utilize scientific tools that could be exploited for malicious intents or result in unintended conse-
+quences. Specifically, to mitigate the risk of unintended consequences, agents could be programmed
+to incorporate dynamic safety checks that assess not only the direct effects of their actions but also
+potential secondary or indirect impacts. Additionally, the implementation of a consequence-aware
+regulation system could require agents to simulate and evaluate the long-term consequences of
+their actions before execution. Another possible solution is to require autonomous agents to obtain
+approval from a committee consisting of human experts before each query involving critical tools
+and APIs that may lead to potential safety concerns.
+
+    Real-time Decision Making: Our framework implements a multi-level decision validation
+system: (1) A fast-response layer for immediate safety-critical decisions using pre-validated action
+templates; (2) A medium-latency layer for complex decisions requiring rapid but non-immediate
+responses, incorporating real-time environmental feedback; (3) A deliberative layer for decisions
+with longer-term implications, allowing for a more comprehensive risk assessment. This hierarchical
+approach enables the system to balance response speed with safety considerations while maintaining
+operational efficiency.
+
+    Critic Models: Beyond standard safety checks, specialized oversight models can play crucial
+roles in safety verification. Critic models can serve as additional layers that assess and refine outputs.
+By identifying potential errors, biases, or harmful recommendations, critic models contribute
+significantly to reducing risks associated with the AI's operation [80, 81]. Additionally, adversarial
+models, similar to GANs, can be specifically trained to identify potential exploits and vulnerabilities.
+
+    Tuning Agents with Action Data: Unlike the setup for LLM alignment, where the aim is to train
+the LLM or directly impose an operational procedure on an agent, using annotated data that reflect
+potential risks of certain actions can enhance agents' anticipation of harmful consequences. By
+leveraging extensive annotations made by experts--such as marking actions and their results during
+laboratory work--we can continue to fine-tune agents. For example, a chemical study agent would
+understand that certain mixes can lead to harmful reactions. Additionally, training should incorporate
+mechanisms that limit agents' access to dangerous tools or substances, relying on annotated data or
+simulated environmental feedback. In biochemistry or chemical labs, agents could learn to avoid
+interactions that may lead to biohazard contamination or hazardous reactions. To address the gaps
+in sequential decision-making data, our framework employs three complementary strategies: (1)
+Hybrid data collection combining direct expert observation with automated workflow logging. (2)
+Synthetic data generation using validated expert-designed templates: This approach creates diverse
+simulated interaction scenarios specifically designed to test the AI scientist's decision-making
+capabilities across a spectrum of challenging conditions. Similar to how automobile manufacturers
+test vehicles on specially designed courses with various obstacles, steep gradients, and difficult
+terrain before real-world deployment, we can systematically generate synthetic interaction scenarios
+that don't necessarily correspond to specific real-world use cases but effectively stress-test the
+
+                                                         17
+system's safety boundaries. These synthetic scenarios would include adversarial prompts, edge
+cases, intentionally ambiguous instructions, and complex multi-step tasks with hidden safety
+implications. And (3) Active learning approaches where the system identifies knowledge gaps and
+requests specific expert demonstrations. Additionally, we could implement a confidence-based
+execution system where actions with insufficient supporting data require explicit expert validation
+before execution.
+
+Acknowledgement
+
+    Xiangru Tang and Mark Gerstein are supported by Schmidt Futures. Qiao Jin and Zhiyong Lu
+are supported by the NIH Intramural Research Program, National Library of Medicine.
+
+Competing Interests
+
+    The authors declare no competing interests.
+
+Author Contributions Statements
+
+    XT and QJ co-initiated the project, with XT leading the writing of the manuscript and contributed
+to the theoretical framework. XT, QJ, KZ, TY, and YCZ contributed to writing specific chapters. WZ
+and YLZ contributed to the risk analysis framework. MQ and JT provided expertise on drug design
+applications. ZZ contributed to the safety alignment approaches. AC provided guidance on natural
+language processing. DG contributed expertise on ethical considerations and regulatory frameworks.
+ZL provided domain expertise on biomedical applications. MG supervised the overall project and
+provided strategic guidance. XT was responsible for revising and refining the entire manuscript. All
+authors provided valuable suggestions and feedback, contributed to the interpretation of results, and
+approved the final version of the paper.
+
+References
+
+ [1] Karan Singhal, Shekoofeh Azizi, Tao Tu, S Sara Mahdavi, Jason Wei, Hyung Won Chung,
+      Nathan Scales, Ajay Tanwani, Heather Cole-Lewis, Stephen Pfohl, et al. Large language
+      models encode clinical knowledge. Nature, 620(7972):172­180, 2023.
+
+ [2] Andres M. Bran, Sam Cox, Oliver Schilter, Carlo Baldassari, Andrew D White, and Philippe
+      Schwaller. Augmenting large language models with chemistry tools. Nature Machine Intelli-
+      gence, pages 1­11, 2024.
+
+                                                         18
+ [3] Arun James Thirunavukarasu, Darren Shu Jeng Ting, Kabilan Elangovan, Laura Gutierrez,
+      Ting Fang Tan, and Daniel Shu Wei Ting. Large language models in medicine. Nature medicine,
+      29(8):1930­1940, 2023.
+
+ [4] Daniil A Boiko, Robert MacKnight, Ben Kline, and Gabe Gomes. Autonomous chemical
+      research with large language models. Nature, 624(7992):570­578, 2023.
+
+ [5] Murray Shanahan, Kyle McDonell, and Laria Reynolds. Role play with large language models.
+      Nature, 623(7987):493­498, 2023.
+
+ [6] Yupeng Chang, Xu Wang, Jindong Wang, Yuan Wu, Linyi Yang, Kaijie Zhu, Hao Chen,
+      Xiaoyuan Yi, Cunxiang Wang, Yidong Wang, et al. A survey on evaluation of large language
+      models. ACM transactions on intelligent systems and technology, 15(3):1­45, 2024.
+
+ [7] Joon Sung Park, Joseph O'Brien, Carrie Jun Cai, Meredith Ringel Morris, Percy Liang,
+      and Michael S Bernstein. Generative agents: Interactive simulacra of human behavior. In
+      Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology,
+      pages 1­22, 2023.
+
+ [8] Guohao Li, Hasan Abed Al Kader Hammoud, Hani Itani, Dmitrii Khizbullin, and Bernard
+      Ghanem. CAMEL: Communicative agents for "mind" exploration of large language model
+      society. In Thirty-seventh Conference on Neural Information Processing Systems, 2023.
+
+ [9] Weize Chen, Yusheng Su, Jingwei Zuo, Cheng Yang, Chenfei Yuan, Chen Qian, Chi-Min Chan,
+      Yujia Qin, Yaxi Lu, Ruobing Xie, et al. Agentverse: Facilitating multi-agent collaboration and
+      exploring emergent behaviors in agents. In The Twelfth International Conference on Learning
+      Representations, 2024.
+
+[10] Lei Wang, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhiyuan Chen,
+      Jiakai Tang, Xu Chen, Yankai Lin, et al. A survey on large language model based autonomous
+      agents. Frontiers of Computer Science, 18(6):186345, 2024.
+
+[11] Zhuosheng Zhang, Yao Yao, Aston Zhang, Xiangru Tang, Xinbei Ma, Zhiwei He, Yiming
+      Wang, Mark Gerstein, Rui Wang, Gongshen Liu, et al. Igniting language intelligence: The
+      hitchhiker's guide from chain-of-thought reasoning to language agents. ACM Computing
+      Surveys, 57(8):1­39, 2025.
+
+[12] Zhiheng Xi, Wenxiang Chen, Xin Guo, Wei He, Yiwen Ding, Boyang Hong, Ming Zhang,
+      Junzhe Wang, Senjie Jin, Enyu Zhou, et al. The rise and potential of large language model
+      based agents: A survey. Science China Information Sciences, 68(2):121101, 2025.
+
+[13] Daniil A. Boiko, Robert MacKnight, Ben Kline, and Gabe Gomes. Autonomous chemical
+      research with large language models. Nature, 624(7992):570­578, Dec 2023.
+
+                                                         19
+[14] Steven A Lehr, Aylin Caliskan, Suneragiri Liyanage, and Mahzarin R Banaji. Chatgpt
+      as research scientist: Probing gpt's capabilities as a research librarian, research ethicist,
+      data generator, and data predictor. Proceedings of the National Academy of Sciences,
+      121(35):e2404328121, 2024.
+
+[15] Gary Tom, Stefan P Schmid, Sterling G Baird, Yang Cao, Kourosh Darvish, Han Hao, Stanley
+      Lo, Sergio Pablo-Garc´ia, Ella M Rajaonson, Marta Skreta, et al. Self-driving laboratories for
+      chemistry and materials science. Chemical Reviews, 2024.
+
+[16] Shanghua Gao, Ada Fang, Yepeng Huang, Valentina Giunchiglia, Ayush Noori, Jonathan
+      Richard Schwarz, Yasha Ektefaie, Jovana Kondic, and Marinka Zitnik. Empowering biomedi-
+      cal discovery with ai agents. Cell, 187(22):6125­6151, 2024.
+
+[17] Mayk Caldas Ramos, Christopher J Collison, and Andrew D White. A review of large language
+      models and autonomous agents in chemistry. Chemical Science, 2025.
+
+[18] Yujia Qin, Shengding Hu, Yankai Lin, Weize Chen, Ning Ding, Ganqu Cui, Zheni Zeng,
+      Xuanhe Zhou, Yufei Huang, Chaojun Xiao, et al. Tool learning with foundation models. ACM
+      Computing Surveys, 57(4):1­40, 2024.
+
+[19] Yujia Qin, Shihao Liang, Yining Ye, Kunlun Zhu, Lan Yan, Yaxi Lu, Yankai Lin, Xin Cong,
+      Xiangru Tang, Bill Qian, et al. ToolLLM: Facilitating large language models to master 16000+
+      real-world APIs. In The Twelfth International Conference on Learning Representations, 2024.
+
+[20] Timo Schick, Jane Dwivedi-Yu, Roberto Dessi, Roberta Raileanu, Maria Lomeli, Eric Hambro,
+      Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom. Toolformer: Language models can
+      teach themselves to use tools. In Thirty-seventh Conference on Neural Information Processing
+      Systems, 2023.
+
+[21] Qiao Jin, Yifan Yang, Qingyu Chen, and Zhiyong Lu. Genegpt: Augmenting large language
+      models with domain tools for improved access to biomedical information. Bioinformatics,
+      40(2):btae075, 2024.
+
+[22] Alireza Ghafarollahi and Markus J Buehler. Protagents: protein discovery via large language
+      model multi-agent collaborations combining physics and machine learning. Digital Discovery,
+      2024.
+
+[23] Kourosh Darvish, Marta Skreta, Yuchi Zhao, Naruki Yoshikawa, Sagnik Som, Miroslav
+      Bogdanovic, Yang Cao, Han Hao, Haoping Xu, Ala´n Aspuru-Guzik, et al. Organa: a robotic
+      assistant for automated chemistry experimentation and characterization. Matter, 8(2), 2025.
+
+[24] Naruki Yoshikawa, Marta Skreta, Kourosh Darvish, Sebastian Arellano-Rubach, Zhi Ji, Lasse
+      Bjorn Kristensen, Andrew Zou Li, Yuchi Zhao, Haoping Xu, Artur Kuramshin, et al. Large
+      language models for chemistry robotics. Autonomous Robots, 47(8):1057­1086, 2023.
+
+                                                         20
+[25] Oliver Bayley, Elia Savino, Aidan Slattery, and Timothy Noe¨l. Autonomous chemistry: Navi-
+      gating self-driving labs in chemical and material sciences. Matter, 7(7):2382­2398, 2024.
+
+[26] Miles Turpin, Julian Michael, Ethan Perez, and Samuel Bowman. Language models don't
+      always say what they think: unfaithful explanations in chain-of-thought prompting. Advances
+      in Neural Information Processing Systems, 36, 2024.
+
+[27] Thilo Hagendorff. Deception abilities emerged in large language models. Proceedings of the
+      National Academy of Sciences, 121(24):e2317967121, 2024.
+
+[28] Junwei Yang, Hanwen Xu, Srbuhi Mirzoyan, Tong Chen, Zixuan Liu, Zequn Liu, Wei Ju,
+      Luchen Liu, Zhiping Xiao, Ming Zhang, et al. Poisoning medical knowledge using large
+      language models. Nature Machine Intelligence, 6(10):1156­1168, 2024.
+
+[29] Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Ye Jin Bang,
+      Andrea Madotto, and Pascale Fung. Survey of hallucination in natural language generation.
+      ACM Computing Surveys, 55(12):1­38, 2023.
+
+[30] Lei Huang, Weijiang Yu, Weitao Ma, Weihong Zhong, Zhangyin Feng, Haotian Wang, Qiang-
+      long Chen, Weihua Peng, Xiaocheng Feng, Bing Qin, and others. A survey on hallucination in
+      large language models: Principles, taxonomy, challenges, and open questions. ACM Transac-
+      tions on Information Systems, 43(2):1­55, 2025.
+
+[31] Yejin Bang, Samuel Cahyawijaya, Nayeon Lee, Wenliang Dai, Dan Su, Bryan Wilie, Holy
+      Lovenia, Ziwei Ji, Tiezheng Yu, Willy Chung, et al. A multitask, multilingual, multimodal
+      evaluation of chatgpt on reasoning, hallucination, and interactivity. In Proceedings of the 13th
+      International Joint Conference on Natural Language Processing and the 3rd Conference of
+      the Asia-Pacific Chapter of the Association for Computational Linguistics (Volume 1: Long
+      Papers), pages 675­718, 2023.
+
+[32] Shubo Tian, Qiao Jin, Lana Yeganova, Po-Ting Lai, Qingqing Zhu, Xiuying Chen, Yifan
+      Yang, Qingyu Chen, Won Kim, Donald C Comeau, et al. Opportunities and challenges for
+      chatgpt and large language models in biomedicine and health. Briefings in Bioinformatics,
+      25(1):bbad493, 2024.
+
+[33] Alexander Wei, Nika Haghtalab, and Jacob Steinhardt. Jailbroken: How does LLM safety
+      training fail? In Thirty-seventh Conference on Neural Information Processing Systems, 2023.
+
+[34] Wei Emma Zhang, Quan Z Sheng, Ahoud Alhazmi, and Chenliang Li. Adversarial attacks
+      on deep-learning models in natural language processing: A survey. ACM Transactions on
+      Intelligent Systems and Technology (TIST), 11(3):1­41, 2020.
+
+[35] Jie Huang and Kevin Chen-Chuan Chang. Towards reasoning in large language models: A
+      survey. In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, Findings of the
+
+                                                         21
+      Association for Computational Linguistics: ACL 2023, pages 1049­1065, Toronto, Canada,
+      July 2023. Association for Computational Linguistics.
+
+[36] Karthik Valmeekam, Alberto Olmo, Sarath Sreedharan, and Subbarao Kambhampati. Large
+      language models still can't plan (a benchmark for LLMs on planning and reasoning about
+      change). In NeurIPS 2022 Foundation Models for Decision Making Workshop, 2022.
+
+[37] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, brian ichter, Fei Xia, Ed H. Chi,
+      Quoc V Le, and Denny Zhou. Chain of thought prompting elicits reasoning in large language
+      models. In Alice H. Oh, Alekh Agarwal, Danielle Belgrave, and Kyunghyun Cho, editors,
+      Advances in Neural Information Processing Systems, 2022.
+
+[38] Michael Wornow, Yizhe Xu, Rahul Thapa, Birju Patel, Ethan Steinberg, Scott Fleming,
+      Michael A Pfeffer, Jason Fries, and Nigam H Shah. The shaky foundations of large language
+      models and foundation models for electronic health records. npj Digital Medicine, 6(1):135,
+      2023.
+
+[39] Anja Thieme, Aditya Nori, Marzyeh Ghassemi, Rishi Bommasani, Tariq Osman Andersen,
+      and Ewa Luger. Foundation models in healthcare: Opportunities, risks & strategies forward.
+      In Extended Abstracts of the 2023 CHI Conference on Human Factors in Computing Systems,
+      pages 1­4, 2023.
+
+[40] Yunzhi Yao, Peng Wang, Bozhong Tian, Siyuan Cheng, Zhoubo Li, Shumin Deng, Huajun
+      Chen, and Ningyu Zhang. Editing large language models: Problems, methods, and oppor-
+      tunities. In Houda Bouamor, Juan Pino, and Kalika Bali, editors, Proceedings of the 2023
+      Conference on Empirical Methods in Natural Language Processing, pages 10222­10240,
+      Singapore, December 2023. Association for Computational Linguistics.
+
+[41] Michael Chui, James Manyika, and David Schwartz. The real-world potential and limitations
+      of artificial intelligence. The McKinsey Quarterly, 2018.
+
+[42] Stephen Cave and Sea´n S O´ hE´ igeartaigh. Bridging near-and long-term concerns about ai.
+      Nature Machine Intelligence, 1(1):5­6, 2019.
+
+[43] Jin Xu, Xiaojiang Liu, Jianhao Yan, Deng Cai, Huayang Li, and Jian Li. Learning to break
+      the loop: Analyzing and mitigating repetitions for neural text generation. Advances in Neural
+      Information Processing Systems, 35:3082­3095, 2022.
+
+[44] Yangjun Ruan, Honghua Dong, Andrew Wang, Silviu Pitis, Yongchao Zhou, Jimmy Ba, Yann
+      Dubois, Chris Maddison, and Tatsunori Hashimoto. Identifying the risks of LM agents with an
+      LM-emulated sandbox. In The Twelfth International Conference on Learning Representations
+      (ICLR), 2024.
+
+[45] Huayang Li, Tian Lan, Zihao Fu, Deng Cai, Lemao Liu, Nigel Collier, Taro Watanabe, and
+      Yixuan Su. Repetition in repetition out: Towards understanding neural text degeneration from
+
+                                                         22
+      the data perspective. Advances in Neural Information Processing Systems, 36:72888­72903,
+      2023.
+
+[46] Sean C. McConnell and Alessandro Blasimme. Ethics, values, and responsibility in human
+      genome editing. AMA Journal of Ethics, 21(12):E1017­E1020, 2019.
+
+[47] Jose N. Paredes, Juan Carlos L. Teze, Gerardo I. Simari, and Maria Vanina Martinez. On
+      the importance of domain-specific explanations in ai-based cybersecurity systems (technical
+      report), 2021.
+
+[48] Alya A Arabi. Artificial intelligence in drug design: algorithms, applications, challenges and
+      ethics. Future Drug Discovery, 3(2):FDD59, 2021.
+
+[49] Thilo Hagendorff and Sarah Fabi. Methodological reflections for ai alignment research using
+      human feedback, 2022.
+
+[50] Danny Driess, Fei Xia, Mehdi S. M. Sajjadi, Corey Lynch, Aakanksha Chowdhery, Brian
+      Ichter, Ayzaan Wahid, Jonathan Tompson, Quan Vuong, Tianhe Yu, Wenlong Huang, Yevgen
+      Chebotar, Pierre Sermanet, Daniel Duckworth, Sergey Levine, Vincent Vanhoucke, Karol
+      Hausman, Marc Toussaint, Klaus Greff, Andy Zeng, Igor Mordatch, and Pete Florence. Palm-e:
+      an embodied multimodal language model. In Proceedings of the 40th International Conference
+      on Machine Learning, ICML'23. JMLR.org, 2023.
+
+[51] Junyi Wu and Shari Shang. Managing uncertainty in ai-enabled decision making and achieving
+      sustainability. Sustainability, 12(21):8758, 2020.
+
+[52] Qiao Jin, Robert Leaman, and Zhiyong Lu. Retrieve, summarize, and verify: How will chatgpt
+      impact information seeking from the medical literature? Journal of the American Society of
+      Nephrology, pages 10­1681, 2023.
+
+[53] Jiyan He, Weitao Feng, Yaosen Min, Jingwei Yi, Kunsheng Tang, Shuai Li, Jie Zhang, Kejiang
+      Chen, Wenbo Zhou, Xing Xie, and others. Control risk for potential misuse of artificial
+      intelligence in science. arXiv preprint arXiv:2312.06632, 2023.
+
+[54] Significant-Gravitas Team. Autogpt: Accessible ai for everyone, 2023. MIT license.
+
+[55] Silen Naihin, David Atkinson, Marc Green, Merwane Hamadi, Craig Swift, Douglas Schon-
+      holtz, Adam Tauman Kalai, and David Bau. Testing language model agents safely in the wild.
+      In Socially Responsible Language Modelling Research, 2023.
+
+[56] Tongxin Yuan, Zhiwei He, Lingzhong Dong, Yiming Wang, Ruijie Zhao, Tian Xia, Lizhen
+      Xu, Binglin Zhou, Fangqi Li, Zhuosheng Zhang, et al. R-judge: Benchmarking safety risk
+      awareness for llm agents. In Findings of the Association for Computational Linguistics:
+      EMNLP 2024, pages 1467­1490, 2024.
+
+                                                         23
+[57] Shunyu Yao, Howard Chen, John Yang, and Karthik Narasimhan. Webshop: Towards scalable
+      real-world web interaction with grounded language agents. Advances in Neural Information
+      Processing Systems, 35:20744­20757, 2022.
+
+[58] Zhexin Zhang, Leqi Lei, Lindong Wu, Rui Sun, Yongkang Huang, Chong Long, Xiao Liu,
+      Xuanyu Lei, Jie Tang, and Minlie Huang. Safetybench: Evaluating the safety of large language
+      models with multiple choice questions, 2023.
+
+[59] Xi Zhiheng, Zheng Rui, and Gui Tao. Safety and ethical concerns of large language models. In
+      Proceedings of the 22nd Chinese National Conference on Computational Linguistics (Volume
+      4: Tutorial Abstracts), pages 9­16, 2023.
+
+[60] Long Ouyang, Jeffrey Wu, Xu Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin,
+      Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, et al. Training language models
+      to follow instructions with human feedback. Advances in Neural Information Processing
+      Systems, 35:27730­27744, 2022.
+
+[61] Stephen Casper, Xander Davies, Claudia Shi, Thomas Krendl Gilbert, Je´re´my Scheurer,
+      Javier Rando Ramirez, Rachel Freedman, Tomasz Korbak, David Lindner, Pedro Freire, et al.
+      Open problems and fundamental limitations of reinforcement learning from human feedback.
+      Transactions on Machine Learning Research, 2023.
+
+[62] Josef Dai, Xuehai Pan, Ruiyang Sun, Jiaming Ji, Xinbo Xu, Mickel Liu, Yizhou Wang, and
+      Yaodong Yang. Safe rlhf: Safe reinforcement learning from human feedback. In The Twelfth
+      International Conference on Learning Representations, 2024.
+
+[63] Yuhui Li, Fangyun Wei, Jinjing Zhao, Chao Zhang, and Hongyang Zhang. Rain: Your language
+      models can align themselves without finetuning. In The Twelfth International Conference on
+      Learning Representations, 2024.
+
+[64] Xiangyu Qi, Yi Zeng, Tinghao Xie, Pin-Yu Chen, Ruoxi Jia, Prateek Mittal, and Peter
+      Henderson. Fine-tuning aligned language models compromises safety, even when users do not
+      intend to! In The Twelfth International Conference on Learning Representations, 2024.
+
+[65] Xianjun Yang, Xiao Wang, Qi Zhang, Linda Ruth Petzold, William Yang Wang, Xun Zhao,
+      and Dahua Lin. Shadow alignment: The ease of subverting safely-aligned language models. In
+      ICLR 2024 Workshop on Secure and Trustworthy Large Language Models, 2024.
+
+[66] Federico Bianchi, Mirac Suzgun, Giuseppe Attanasio, Paul Rottger, Dan Jurafsky, Tatsunori
+      Hashimoto, and James Zou. Safety-tuned llamas: Lessons from improving the safety of large
+      language models that follow instructions. In The Twelfth International Conference on Learning
+      Representations, 2024.
+
+                                                         24
+[67] Yue Deng, Wenxuan Zhang, Sinno Jialin Pan, and Lidong Bing. Multilingual jailbreak chal-
+      lenges in large language models. In The Twelfth International Conference on Learning Repre-
+      sentations, 2023.
+
+[68] Alex Mei, Sharon Levy, and William Yang Wang. Assert: Automated safety scenario red
+      teaming for evaluating the robustness of large language models. In The 2023 Conference on
+      Empirical Methods in Natural Language Processing, 2023.
+
+[69] Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario
+      Fritz. Not what you've signed up for: Compromising real-world llm-integrated applications
+      with indirect prompt injection. In Proceedings of the 16th ACM Workshop on Artificial
+      Intelligence and Security, pages 79­90, 2023.
+
+[70] Mansi Phute, Alec Helbling, Matthew Daniel Hull, ShengYun Peng, Sebastian Szyller, Cory
+      Cornelius, and Duen Horng Chau. Llm self defense: By self examination, llms know they are
+      being tricked. In The Second Tiny Papers Track at ICLR 2024, 2024.
+
+[71] Zhexin Zhang, Junxiao Yang, Pei Ke, Fei Mi, Hongning Wang, and Minlie Huang. Defending
+      large language models against jailbreaking attacks through goal prioritization. In Proceedings
+      of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long
+      Papers), pages 8865­8887, 2024.
+
+[72] Bochuan Cao, Yuanpu Cao, Lu Lin, and Jinghui Chen. Defending against alignment-breaking
+      attacks via robustly aligned llm. In 62nd Annual Meeting of the Association for Computational
+      Linguistics, ACL 2024, pages 10542­10560, 2024.
+
+[73] Adib Hasan, Ileana Rugina, and Alex Wang. Pruning for protection: Increasing jailbreak
+      resistance in aligned llms without fine-tuning, 2024.
+
+[74] Julien Piet, Maha Alrashed, Chawin Sitawarin, Sizhe Chen, Zeming Wei, Elizabeth Sun, Basel
+      Alomair, and David Wagner. Jatmo: Prompt injection defense by task-specific finetuning. In
+      European Symposium on Research in Computer Security, pages 105­124, 2024.
+
+[75] Shijue Huang, Wanjun Zhong, Jianqiao Lu, Qi Zhu, Jiahui Gao, Weiwen Liu, Yutai Hou,
+      Xingshan Zeng, Yasheng Wang, Lifeng Shang, and others. Planning, creation, usage: Bench-
+      marking llms for comprehensive tool utilization in real-world complex scenarios. In Findings
+      of the Association for Computational Linguistics ACL 2024, pages 4363­4400, 2024.
+
+[76] Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones,
+      Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron McKinnon, Carol Chen, Catherine
+      Olsson, Christopher Olah, Danny Hernandez, Dawn Drain, Deep Ganguli, Dustin Li, Eli
+      Tran-Johnson, Ethan Perez, Jamie Kerr, Jared Mueller, Jeffrey Ladish, Joshua Landau, Kamal
+      Ndousse, Kamile Lukosuite, Liane Lovitt, Michael Sellitto, Nelson Elhage, Nicholas Schiefer,
+      Noemi Mercado, Nova DasSarma, Robert Lasenby, Robin Larson, Sam Ringer, Scott Johnston,
+
+                                                         25
+      Shauna Kravec, Sheer El Showk, Stanislav Fort, Tamera Lanham, Timothy Telleen-Lawton,
+      Tom Conerly, Tom Henighan, Tristan Hume, Samuel R. Bowman, Zac Hatfield-Dodds, Ben
+      Mann, Dario Amodei, Nicholas Joseph, Sam McCandlish, Tom Brown, and Jared Kaplan.
+      Constitutional ai: Harmlessness from ai feedback, 2022.
+[77] Mengru Wang, Ningyu Zhang, Ziwen Xu, Zekun Xi, Shumin Deng, Yunzhi Yao, Qishen
+      Zhang, Linyi Yang, Jindong Wang, and Huajun Chen. Detoxifying large language models via
+      knowledge editing. In Lun-Wei Ku, Andre Martins, and Vivek Srikumar, editors, Proceedings
+      of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long
+      Papers), pages 3093­3118, Bangkok, Thailand, August 2024. Association for Computational
+      Linguistics.
+[78] Michael Feffer, Anusha Sinha, Wesley H Deng, Zachary C Lipton, and Hoda Heidari. Red-
+      teaming for generative ai: Silver bullet or security theater? In Proceedings of the AAAI/ACM
+      Conference on AI, Ethics, and Society, volume 7, pages 421­437, 2024.
+[79] Sirui Hong, Mingchen Zhuge, Jonathan Chen, Xiawu Zheng, Yuheng Cheng, Ceyao Zhang,
+      Jinlin Wang, Zili Wang, Steven Ka Shing Yau, Zijuan Lin, Liyang Zhou, Chenyu Ran, Lingfeng
+      Xiao, Chenglin Wu, and Ju¨rgen Schmidhuber. Metagpt: Meta programming for a multi-agent
+      collaborative framework, 2023.
+[80] Zhaoyi Xu and Joseph Homer Saleh. Machine learning for reliability engineering and safety
+      applications: Review of current status and future opportunities. Reliability Engineering &
+      System Safety, 211:107530, 2021.
+[81] Sina Mohseni, Haotao Wang, Chaowei Xiao, Zhiding Yu, Zhangyang Wang, and Jay Yadawa.
+      Taxonomy of machine learning safety: A survey and primer. ACM Computing Surveys, 55(8):1­
+      38, 2022.
+
+                                                         26
+

@@ -1,0 +1,1438 @@
+[
+  {
+    "idx": 1,
+    "text": "Abbasian et al. [2023] Mahyar Abbasian, Iman Azimi, Amir M Rahmani, and Ramesh Jain. Conversational health agents: A personalized llm-powered agent framework. arXiv preprint arXiv:2310.02374 , 2023."
+  },
+  {
+    "idx": 2,
+    "text": "Abramson et al. [2024] Josh Abramson, Jonas Adler, Jack Dunger, Richard Evans, Tim Green, Alexander Pritzel, Olaf Ronneberger, Lindsay Willmore, Andrew J Ballard, Joshua Bambrick, et al. Accurate structure prediction of biomolecular interactions with alphafold 3. Nature , 630(8016):493–500, 2024."
+  },
+  {
+    "idx": 3,
+    "text": "Agarwal et al. [2024] Shubham Agarwal, Gaurav Sahu, Abhay Puri, Issam H Laradji, Krishnamurthy DJ Dvijotham, Jason Stanley, Laurent Charlin, and Christopher Pal. Litllm: A toolkit for scientific literature review. arXiv preprint arXiv:2402.01788 , 2024."
+  },
+  {
+    "idx": 4,
+    "text": "Ahadian and Guan [2024] Pegah Ahadian and Qiang Guan. Ai trustworthy challenges in drug discovery. In Hao Chen, Yuyin Zhou, Daguang Xu, and Varut Vince Vardhanabhuti, editors, Trustworthy Artificial Intelligence for Healthcare , pages 1–12, Cham, 2024. Springer Nature Switzerland. ISBN 978-3-031-67751-9."
+  },
+  {
+    "idx": 5,
+    "text": "Alber et al. [2025] Samuel Alber, Bowen Chen, Eric Sun, Alina Isakova, Aaron James Wilk, and James Zou. Cellvoyager: Ai compbio agent generates new insights by autonomously analyzing biological data. bioRxiv , pages 2025–06, 2025."
+  },
+  {
+    "idx": 6,
+    "text": "Ansari and Moosavi [2024] Mehrad Ansari and Seyed Mohamad Moosavi. Agent-based learning of materials datasets from the scientific literature. Digital Discovery , 3(12):2607–2617, 2024."
+  },
+  {
+    "idx": 7,
+    "text": "Ansari et al. [2024] Mehrad Ansari, Jeffrey Watchorn, Carla E Brown, and Joseph S Brown. dziner: Rational inverse design of materials with ai agents. arXiv preprint arXiv:2410.03963 , 2024."
+  },
+  {
+    "idx": 8,
+    "text": "Ao et al. [2024] Jicong Ao, Fan Wu, Yansong Wu, Abdalla Swikir, and Sami Haddadin. Llm as bt-planner: Leveraging llms for behavior tree generation in robot task planning. arXiv preprint arXiv:2409.10444 , 2024."
+  },
+  {
+    "idx": 9,
+    "text": "Averly et al. [2025] Reza Averly, Frazier N Baker, and Xia Ning. Liddia: Language-based intelligent drug discovery agent. arXiv preprint arXiv:2502.13959 , 2025."
+  },
+  {
+    "idx": 10,
+    "text": "Avsec et al. [2025] Žiga Avsec, Natasha Latysheva, Jun Cheng, Guido Novati, Kyle R Taylor, Tom Ward, Clare Bycroft, Lauren Nicolaisen, Eirini Arvaniti, Joshua Pan, et al. Alphagenome: advancing regulatory variant effect prediction with a unified dna sequence model. bioRxiv , pages 2025–06, 2025."
+  },
+  {
+    "idx": 11,
+    "text": "Baek et al. [2024] Jinheon Baek, Sujay Kumar Jauhar, Silviu Cucerzan, and Sung Ju Hwang. Researchagent: Iterative research idea generation over scientific literature with large language models. arXiv preprint arXiv:2404.07738 , 2024."
+  },
+  {
+    "idx": 12,
+    "text": "Baek et al. [2025] Jinheon Baek, Sujay Kumar Jauhar, Silviu Cucerzan, and Sung Ju Hwang. Researchagent: Iterative research idea generation over scientific literature with large language models, 2025. URL https://arxiv.org/abs/2404.07738 ."
+  },
+  {
+    "idx": 13,
+    "text": "Bagal et al. [2021] Viraj Bagal, Rishal Aggarwal, PK Vinod, and U Deva Priyakumar. Molgpt: molecular generation using a transformer-decoder model. Journal of chemical information and modeling , 62(9):2064–2076, 2021."
+  },
+  {
+    "idx": 14,
+    "text": "Banerjee et al. [2024] Soumya Banerjee et al. On the ethical considerations of generative agents. arXiv preprint arXiv:2411.19211 , 2024."
+  },
+  {
+    "idx": 15,
+    "text": "Bano et al. [2023] Muneera Bano, Didar Zowghi, Pip Shea, and Georgina Ibarra. Investigating responsible ai for scientific research: an empirical study. arXiv preprint arXiv:2312.09561 , 2023."
+  },
+  {
+    "idx": 16,
+    "text": "Batatia et al. [2023] Ilyes Batatia, Philipp Benner, Yuan Chiang, Alin M Elena, Dávid P Kovács, Janosh Riebesell, Xavier R Advincula, Mark Asta, Matthew Avaylon, William J Baldwin, et al. A foundation model for atomistic materials chemistry. arXiv preprint arXiv:2401.00096 , 2023."
+  },
+  {
+    "idx": 17,
+    "text": "Bazgir et al. [2025] Adib Bazgir, Yuwen Zhang, et al. Multicrossmodal automated agent for integrating diverse materials science data. arXiv preprint arXiv:2505.15132 , 2025."
+  },
+  {
+    "idx": 18,
+    "text": "Belouadi et al. [2024] Jonas Belouadi, Anne Lauscher, and Steffen Eger. Automatikz: Text-guided synthesis of scientific vector graphics with tikz, 2024. URL https://arxiv.org/abs/2310.00367 ."
+  },
+  {
+    "idx": 19,
+    "text": "Bengio et al. [2025] Yoshua Bengio, Michael Cohen, Damiano Fornasiere, Joumana Ghosn, Pietro Greiner, Matt MacDermott, Sören Mindermann, Adam Oberman, Jesse Richardson, Oliver Richardson, et al. Superintelligent agents pose catastrophic risks: Can scientist ai offer a safer path? arXiv preprint arXiv:2502.15657 , 2025."
+  },
+  {
+    "idx": 20,
+    "text": "Bengio et al. [20252] Yoshua Bengio, Michael Cohen, Damiano Fornasiere, Joumana Ghosn, Pietro Greiner, Matt MacDermott, Sören Mindermann, Adam Oberman, Jesse Richardson, Oliver Richardson, Marc-Antoine Rondeau, Pierre-Luc St-Charles, and David Williams-King. Superintelligent agents pose catastrophic risks: Can scientist ai offer a safer path?, 20252. URL https://arxiv.org/abs/2502.15657 ."
+  },
+  {
+    "idx": 21,
+    "text": "Bhat et al. [2024] Vineet Bhat, Ali Umut Kaypak, Prashanth Krishnamurthy, Ramesh Karri, and Farshad Khorrami. Grounding llms for robot task planning using closed-loop state feedback. arXiv preprint arXiv:2402.08546 , 2024."
+  },
+  {
+    "idx": 22,
+    "text": "Boiko et al. [2023] Daniil A Boiko, Robert MacKnight, Ben Kline, and Gabe Gomes. Autonomous chemical research with large language models. Nature , 624(7992):570–578, 2023."
+  },
+  {
+    "idx": 23,
+    "text": "Bou et al. [2024] Albert Bou, Morgan Thomas, Sebastian Dittert, Carles Navarro, Maciej Majewski, Ye Wang, Shivam Patel, Gary Tresadern, Mazen Ahmad, Vincent Moens, et al. Acegen: Reinforcement learning of generative chemical agents for drug discovery. Journal of Chemical Information and Modeling , 64(15):5900–5911, 2024."
+  },
+  {
+    "idx": 24,
+    "text": "Bran et al. [2024] Andres Bran, Sam Cox, Oliver Schilter, Carlo Baldassari, Andrew D. White, and Philippe Schwaller. Augmenting large language models with chemistry tools. Nature Machine Intelligence , 6(5):525–535, May 2024. ISSN 2522-5839. 10.1038/s42256-024-00832-8 . URL https://doi.org/10.1038/s42256-024-00832-8 ."
+  },
+  {
+    "idx": 25,
+    "text": "Bran et al. [2023] Andres M Bran, Sam Cox, Oliver Schilter, Carlo Baldassari, Andrew D White, and Philippe Schwaller. Chemcrow: Augmenting large-language models with chemistry tools. arXiv preprint arXiv:2304.05376 , 2023."
+  },
+  {
+    "idx": 26,
+    "text": "Browne et al. [2012] Cameron B Browne, Edward Powley, Daniel Whitehouse, Simon M Lucas, Peter I Cowling, Philipp Rohlfshagen, Stephen Tavener, Diego Perez, Spyridon Samothrakis, and Simon Colton. A survey of monte carlo tree search methods. IEEE Transactions on Computational Intelligence and AI in games , 4(1):1–43, 2012."
+  },
+  {
+    "idx": 27,
+    "text": "Brundage et al. [2020] Miles Brundage, Shahar Avin, Jasmine Wang, Haydn Belfield, Gretchen Krueger, Gillian Hadfield, Heidy Khlaaf, Jingying Yang, Helen Toner, Ruth Fong, et al. Toward Trustworthy AI Development: Mechanisms for Supporting Verifiable Claims. arXiv preprint arXiv:2004.07213 , 2020."
+  },
+  {
+    "idx": 28,
+    "text": "Callahan et al. [2025] Tiffany J Callahan, Nathaniel H Park, and Sara Capponi. Agentic mixture-of-workflows for multi-modal chemical search. arXiv preprint arXiv:2502.19629 , 2025."
+  },
+  {
+    "idx": 29,
+    "text": "Canabarro et al. [2019] Askery Canabarro, Felipe Fernandes Fanchini, André Luiz Malvezzi, Rodrigo Pereira, and Rafael Chaves. Unveiling phase transitions with machine learning. Physical Review B , 100(4):045129, 2019."
+  },
+  {
+    "idx": 30,
+    "text": "Cao et al. [2024] Shuxiang Cao, Zijian Zhang, Mohammed Alghadeer, Simone D Fasciati, Michele Piscitelli, Mustafa Bakr, Peter Leek, and Alán Aspuru-Guzik. Agents for self-driving laboratories applied to quantum computing. arXiv preprint arXiv:2412.07978 , 2024."
+  },
+  {
+    "idx": 31,
+    "text": "Carta et al. [2023] Thomas Carta, Clément Romac, Thomas Wolf, Sylvain Lamprier, Olivier Sigaud, and Pierre-Yves Oudeyer. Grounding large language models in interactive environments with online reinforcement learning. In Andreas Krause, Emma Brunskill, Kyunghyun Cho, Barbara Engelhardt, Sivan Sabato, and Jonathan Scarlett, editors, Proceedings of the 40th International Conference on Machine Learning , volume 202 of Proceedings of Machine Learning Research , pages 3676–3713. PMLR, 23–29 Jul 2023. URL https://proceedings.mlr.press/v202/carta23a.html ."
+  },
+  {
+    "idx": 32,
+    "text": "Chai et al. [2025] Jingyi Chai, Shuo Tang, Rui Ye, Yuwen Du, Xinyu Zhu, Mengcheng Zhou, Yanfeng Wang, Siheng Chen, et al. Scimaster: Towards general-purpose scientific ai agents, part i. x-master as foundation: Can we lead on humanity’s last exam? arXiv preprint arXiv:2507.05241 , 2025."
+  },
+  {
+    "idx": 33,
+    "text": "Chan et al. [2025] Jun Shern Chan, Neil Chowdhury, Oliver Jaffe, James Aung, Dane Sherburn, Evan Mays, Giulio Starace, Kevin Liu, Leon Maksin, Tejal Patwardhan, Lilian Weng, and Aleksander Mądry. Mle-bench: Evaluating machine learning agents on machine learning engineering, 2025. URL https://arxiv.org/abs/2410.07095 ."
+  },
+  {
+    "idx": 34,
+    "text": "Che et al. [2025] Xinhao Che, Yujing Zhao, Qilei Liu, Fang Yu, Hanyu Gao, and Lei Zhang. Csstep: Step-by-step exploration of the chemical space of drug molecules via multi-agent and multi-stage reinforcement learning. Chemical Engineering Science , page 122048, 2025."
+  },
+  {
+    "idx": 35,
+    "text": "Chen et al. [2024] Bei Chen, Gaolei Li, Xi Lin, Zheng Wang, and Jianhua Li. Blockagents: Towards byzantine-robust llm-based multi-agent coordination via blockchain. In ACM Turing Award Celebration Conference , pages 187–192, 2024."
+  },
+  {
+    "idx": 36,
+    "text": "Chen et al. [2023] Justin Chih-Yao Chen, Swarnadeep Saha, and Mohit Bansal. Reconcile: Round-table conference improves reasoning via consensus among diverse llms. arXiv preprint arXiv:2309.13007 , 2023."
+  },
+  {
+    "idx": 37,
+    "text": "Chen et al. [20232] Kexin Chen, Junyou Li, Kunyi Wang, Yuyang Du, Jiahui Yu, Jiamin Lu, Lanqing Li, Jiezhong Qiu, Jianzhang Pan, Yi Huang, et al. Chemist-x: Large language model-empowered agent for reaction condition recommendation in chemical synthesis. arXiv preprint arXiv:2311.10776 , 20232."
+  },
+  {
+    "idx": 38,
+    "text": "Chen et al. [20242] Kexin Chen, Hanqun Cao, Junyou Li, Yuyang Du, Menghao Guo, Xin Zeng, Lanqing Li, Jiezhong Qiu, Pheng Ann Heng, and Guangyong Chen. An autonomous large language model agent for chemical literature data mining. arXiv preprint arXiv:2402.12993 , 20242."
+  },
+  {
+    "idx": 39,
+    "text": "Chen et al. [2025] Qiguang Chen, Mingda Yang, Libo Qin, Jinhao Liu, Zheng Yan, Jiannan Guan, Dengyun Peng, Yiyan Ji, Hanjing Li, Mengkang Hu, et al. Ai4research: A survey of artificial intelligence for scientific research. arXiv preprint arXiv:2507.01903 , 2025."
+  },
+  {
+    "idx": 40,
+    "text": "Chiang et al. [2024] Yuan Chiang, Elvis Hsieh, Chia-Hong Chou, and Janosh Riebesell. Llamp: Large language model made powerful for high-fidelity materials knowledge retrieval and distillation. arXiv preprint arXiv:2401.17244 , 2024."
+  },
+  {
+    "idx": 41,
+    "text": "Choi et al. [2025] Jae-Woo Choi, Hyungmin Kim, Hyobin Ong, Youngwoo Yoon, Minsu Jang, Jaehong Kim, et al. Reactree: Hierarchical task planning with dynamic tree expansion using llm agent nodes. 2025."
+  },
+  {
+    "idx": 42,
+    "text": "Cui et al. [2024] Haotian Cui, Chloe Wang, Hassaan Maan, Kuan Pang, Fengning Luo, Nan Duan, and Bo Wang. scgpt: toward building a foundation model for single-cell multi-omics using generative ai. Nature methods , 21(8):1470–1480, 2024."
+  },
+  {
+    "idx": 43,
+    "text": "Dafoe et al. [2020] Allan Dafoe et al. Open problems in cooperative ai, 2020."
+  },
+  {
+    "idx": 44,
+    "text": "Dai et al. [2024] Tianwei Dai, Sriram Vijayakrishnan, Filip T Szczypi ’nski, Jean-Fran ccois Ayme, Ehsan Simaei, Thomas Fellowes, Rob Clowes, Lyubomir Kotopanov, Caitlin E Shields, Zhengxue Zhou, et al. Autonomous mobile robots for exploratory synthetic chemistry. Nature , 635(8040):890–897, 2024."
+  },
+  {
+    "idx": 45,
+    "text": "Dalla-Torre et al. [2025] Hugo Dalla-Torre, Liam Gonzalez, Javier Mendoza-Revilla, Nicolas Lopez Carranza, Adam Henryk Grzywaczewski, Francesco Oteri, Christian Dallago, Evan Trop, Bernardo P de Almeida, Hassan Sirelkhatim, et al. Nucleotide transformer: building and evaluating robust foundation models for human genomics. Nature Methods , 22(2):287–297, 2025."
+  },
+  {
+    "idx": 46,
+    "text": "D’Arcy et al. [2024] Mike D’Arcy et al. Marg: Multi-agent review generation for scientific papers, 2024."
+  },
+  {
+    "idx": 47,
+    "text": "Darvish et al. [2024] Kourosh Darvish, Marta Skreta, Yuchi Zhao, Naruki Yoshikawa, Sagnik Som, Miroslav Bogdanovic, Yang Cao, Han Hao, Haoping Xu, Alán Aspuru-Guzik, et al. Organa: A robotic assistant for automated chemistry experimentation and characterization. arXiv preprint arXiv:2401.06949 , 2024."
+  },
+  {
+    "idx": 48,
+    "text": "Das et al. [2023] Ayushman Das et al. Enabling synergistic knowledge sharing and reasoning in large language models with collaborative multi-agents. In IEEE International Conference on Collaboration and Internet Computing , 2023."
+  },
+  {
+    "idx": 49,
+    "text": "de Cerqueira et al. [2024] José Antonio Siqueira de Cerqueira, Mamia Agbese, Rebekah Rousi, Nannan Xi, Juho Hamari, and Pekka Abrahamsson. Can we trust ai agents? an experimental study towards trustworthy llm-based multi-agent systems for ai ethics. arXiv preprint arXiv:2411.08881 , 2024."
+  },
+  {
+    "idx": 50,
+    "text": "Ding et al. [2024] Ning Ding, Shang Qu, Linhai Xie, Yifei Li, Zaoqu Liu, Kaiyan Zhang, Yibai Xiong, Yuxin Zuo, Zhangren Chen, Ermo Hua, et al. Automating exploratory proteomics research via language models. arXiv preprint arXiv:2411.03743 , 2024."
+  },
+  {
+    "idx": 51,
+    "text": "Dong et al. [2025] Zhehao Dong, Zhen Lu, and Yue Yang. Fine-tuning a large language model for automating computational fluid dynamics simulations. Theoretical and Applied Mechanics Letters , page 100594, 2025."
+  },
+  {
+    "idx": 52,
+    "text": "Du et al. [2023] Yilun Du, Shuang Li, Antonio Torralba, Joshua B Tenenbaum, and Igor Mordatch. Improving factuality and reasoning in language models through multiagent debate. 2023."
+  },
+  {
+    "idx": 53,
+    "text": "Durfee [2001] Edmund H Durfee. Distributed problem solving and planning. In ECCAI Advanced Course on Artificial Intelligence , pages 118–149. Springer, 2001."
+  },
+  {
+    "idx": 54,
+    "text": "Edge et al. [2024] Darren Edge, Ha Trinh, Newman Cheng, Joshua Bradley, Alex Chao, Apurva Mody, Steven Truitt, Dasha Metropolitansky, Robert Osazuwa Ness, and Jonathan Larson. From local to global: A graph rag approach to query-focused summarization. arXiv preprint arXiv:2404.16130 , 2024."
+  },
+  {
+    "idx": 55,
+    "text": "Fehlis et al. [2025] Yao Fehlis, Charles Crain, Aidan Jensen, Michael Watson, James Juhasz, Paul Mandel, Betty Liu, Shawn Mahon, Daren Wilson, Nick Lynch-Jonely, et al. Accelerating drug discovery through agentic ai: A multi-agent approach to laboratory automation in the dmta cycle. arXiv preprint arXiv:2507.09023 , 2025."
+  },
+  {
+    "idx": 56,
+    "text": "Feng et al. [2025] Jingsen Feng, Ran Xu, and Xu Chu. Openfoamgpt 2.0: end-to-end, trustworthy automation for computational fluid dynamics. arXiv preprint arXiv:2504.19338 , 2025."
+  },
+  {
+    "idx": 57,
+    "text": "Ferrag et al. [2025] Mohamed Amine Ferrag, Norbert Tihanyi, and Merouane Debbah. From llm reasoning to autonomous ai agents: A comprehensive review. arXiv preprint arXiv:2504.19678 , 2025."
+  },
+  {
+    "idx": 58,
+    "text": "Gandhi et al. [2025] Shubham Gandhi, Dhruv Shah, Manasi Patwardhan, Lovekesh Vig, and Gautam Shroff. Researchcodeagent: An llm multi-agent system for automated codification of research methodologies. In International Workshop on AI for Transportation , pages 3–37. Springer, 2025."
+  },
+  {
+    "idx": 59,
+    "text": "Gao et al. [2025] Bowen Gao, Yanwen Huang, Yiqiao Liu, Wenxuan Xie, Wei-Ying Ma, Ya-Qin Zhang, and Yanyan Lan. Pharmagents: Building a virtual pharma with large language model agents. arXiv preprint arXiv:2503.22164 , 2025."
+  },
+  {
+    "idx": 60,
+    "text": "Gao et al. [2024] Changnan Gao, Wenjie Bao, Shuang Wang, Jianyang Zheng, Lulu Wang, Yongqi Ren, Linfang Jiao, Jianmin Wang, and Xun Wang. Dockingga: enhancing targeted molecule generation using transformer neural network and genetic algorithm with docking simulation. Briefings in Functional Genomics , 23(5):595–606, 04 2024. ISSN 2041-2657. 10.1093/bfgp/elae011 . URL https://doi.org/10.1093/bfgp/elae011 ."
+  },
+  {
+    "idx": 61,
+    "text": "Gao et al. [20252] Huan-ang Gao, Jiayi Geng, Wenyue Hua, Mengkang Hu, Xinzhe Juan, Hongzhang Liu, Shilong Liu, Jiahao Qiu, Xuan Qi, Yiran Wu, et al. A survey of self-evolving agents: On path to artificial super intelligence. arXiv preprint arXiv:2507.21046 , 20252."
+  },
+  {
+    "idx": 62,
+    "text": "Gao et al. [2023] Jialin Gao, Jianyu Chen, Jiaqi Wei, Bin Jiang, and A-Li Luo. Deep multimodal networks for m-type star classification with paired spectrum and photometric image. Publications of the Astronomical Society of the Pacific , 135(1046):044503, 2023."
+  },
+  {
+    "idx": 63,
+    "text": "Gao et al. [20253] Muhan Gao, Jash Shah, Weiqi Wang, and Daniel Khashabi. Science hierarchography: Hierarchical organization of science literature, 20253. URL https://arxiv.org/abs/2504.13834 ."
+  },
+  {
+    "idx": 64,
+    "text": "Gao et al. [20242] Shanghua Gao, Ada Fang, Yepeng Huang, Valentina Giunchiglia, Ayush Noori, Jonathan Richard Schwarz, Yasha Ektefaie, Jovana Kondic, and Marinka Zitnik. Empowering biomedical discovery with ai agents. Cell , 187(22):6125–6151, 20242."
+  },
+  {
+    "idx": 65,
+    "text": "Gao et al. [20254] Shanghua Gao, Richard Zhu, Zhenglun Kong, Ayush Noori, Xiaorui Su, Curtis Ginder, Theodoros Tsiligkaridis, and Marinka Zitnik. Txagent: An ai agent for therapeutic reasoning across a universe of tools. arXiv preprint arXiv:2503.10970 , 20254."
+  },
+  {
+    "idx": 66,
+    "text": "Ge et al. [2025] Yubin Ge, Neeraja Kirtane, Hao Peng, and Dilek Hakkani-Tür. Llms are vulnerable to malicious prompts disguised as scientific language. arXiv preprint arXiv:2501.14073 , 2025."
+  },
+  {
+    "idx": 67,
+    "text": "Ghafarollahi and Buehler [2024] Alireza Ghafarollahi and Markus J Buehler. Atomagents: Alloy design and discovery through physics-aware multi-modal multi-agent artificial intelligence. arXiv preprint arXiv:2407.10022 , 2024."
+  },
+  {
+    "idx": 68,
+    "text": "Ghafarollahi and Buehler [20242] Alireza Ghafarollahi and Markus J Buehler. Protagents: protein discovery via large language model multi-agent collaborations combining physics and machine learning. Digital Discovery , 20242."
+  },
+  {
+    "idx": 69,
+    "text": "Ghafarollahi and Buehler [20243] Alireza Ghafarollahi and Markus J Buehler. Rapid and automated alloy design with graph neural network-powered llm-driven multi-agent systems. arXiv preprint arXiv:2410.13768 , 20243."
+  },
+  {
+    "idx": 70,
+    "text": "Ghafarollahi and Buehler [20244] Alireza Ghafarollahi and Markus J. Buehler. Sciagents: Automating scientific discovery through multi-agent intelligent graph reasoning, 20244. URL https://arxiv.org/abs/2409.05556 ."
+  },
+  {
+    "idx": 71,
+    "text": "Ghafarollahi and Buehler [2025] Alireza Ghafarollahi and Markus J Buehler. Automating alloy design and discovery with physics-aware multimodal multiagent ai. Proceedings of the National Academy of Sciences , 122(4):e2414074122, 2025."
+  },
+  {
+    "idx": 72,
+    "text": "Ghafarollahi and Buehler [20252] Alireza Ghafarollahi and Markus J Buehler. Sciagents: automating scientific discovery through bioinspired multi-agent intelligent graph reasoning. Advanced Materials , 37(22):2413523, 20252."
+  },
+  {
+    "idx": 73,
+    "text": "Ghafarollahi and Buehler [20253] Alireza Ghafarollahi and Markus J Buehler. Sparks: Multi-agent artificial intelligence model discovers protein design principles. arXiv preprint arXiv:2504.19017 , 20253."
+  },
+  {
+    "idx": 74,
+    "text": "Ghareeb et al. [2025] Ali Essam Ghareeb, Benjamin Chang, Ludovico Mitchener, Angela Yiu, Caralyn J Szostkiewicz, Jon M Laurent, Muhammed T Razzak, Andrew D White, Michaela M Hinks, and Samuel G Rodriques. Robin: A multi-agent system for automating scientific discovery. arXiv preprint arXiv:2505.13400 , 2025."
+  },
+  {
+    "idx": 75,
+    "text": "Gottweis et al. [2025] Juraj Gottweis, Wei-Hung Weng, Alexander Daryin, Tao Tu, Anil Palepu, Petar Sirkovic, Artiom Myaskovsky, Felix Weissenberger, Keran Rong, Ryutaro Tanno, et al. Towards an ai co-scientist, 2025. URL https://arxiv.org/abs/2502.18864 ."
+  },
+  {
+    "idx": 76,
+    "text": "Gottweis et al. [20252] Juraj Gottweis, Wei-Hung Weng, Alexander Daryin, Tao Tu, Anil Palepu, Petar Sirkovic, Artiom Myaskovsky, Felix Weissenberger, Keran Rong, Ryutaro Tanno, et al. Towards an ai co-scientist. arXiv preprint arXiv:2502.18864 , 20252."
+  },
+  {
+    "idx": 77,
+    "text": "Gou et al. [2023] Zhibin Gou, Zhihong Shao, Yeyun Gong, Yelong Shen, Yujiu Yang, Minlie Huang, Nan Duan, and Weizhu Chen. Tora: A tool-integrated reasoning agent for mathematical problem solving. arXiv preprint arXiv:2309.17452 , 2023."
+  },
+  {
+    "idx": 78,
+    "text": "Gou et al. [2024] Zhibin Gou, Zhihong Shao, Yeyun Gong, Yelong Shen, Yujiu Yang, Minlie Huang, Nan Duan, and Weizhu Chen. Tora: A tool-integrated reasoning agent for mathematical problem solving. In The Twelfth International Conference on Learning Representations, ICLR 2024, Vienna, Austria, May 7-11, 2024 . OpenReview.net, 2024. URL https://openreview.net/forum?id=Ep0TtjVoap ."
+  },
+  {
+    "idx": 79,
+    "text": "Gou et al. [20242] Zhibin Gou, Zhihong Shao, Yeyun Gong, Yujiu Yang, Nan Duan, Weizhu Chen, et al. Critic: Large language models can self-correct with tool-interactive critiquing. 20242."
+  },
+  {
+    "idx": 80,
+    "text": "Greplova et al. [2020] Eliska Greplova, Agnes Valenti, Gregor Boschung, Frank Schäfer, Niels Lörch, and Sebastian D Huber. Unsupervised identification of topological phase transitions using predictive models. New Journal of Physics , 22(4):045003, 2020."
+  },
+  {
+    "idx": 81,
+    "text": "Gridach et al. [2025] Mourad Gridach, Jay Nanavati, Khaldoun Zine El Abidine, Lenon Mendes, and Christina Mack. Agentic ai for scientific discovery: A survey of progress, challenges, and future directions. arXiv preprint arXiv:2503.08979 , 2025."
+  },
+  {
+    "idx": 82,
+    "text": "Guo et al. [2025] Daya Guo, Dejian Yang, Haowei Zhang, Junxiao Song, Ruoyu Zhang, Runxin Xu, Qihao Zhu, Shirong Ma, Peiyi Wang, Xiao Bi, et al. Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning. arXiv preprint arXiv:2501.12948 , 2025."
+  },
+  {
+    "idx": 83,
+    "text": "Guo et al. [2024] Hongyi Guo, Zhihan Liu, Yufeng Zhang, and Zhaoran Wang. Can large language models play games? a case study of a self-play approach. arXiv preprint arXiv:2403.05632 , 2024."
+  },
+  {
+    "idx": 84,
+    "text": "Guo et al. [20242] Siyuan Guo, Cheng Deng, Ying Wen, Hechang Chen, Yi Chang, and Jun Wang. Ds-agent: Automated data science by empowering large language models with case-based reasoning. arXiv preprint arXiv:2402.17453 , 20242."
+  },
+  {
+    "idx": 85,
+    "text": "Guo et al. [20243] Taicheng Guo, Xiuying Chen, Yaqi Wang, Ruidi Chang, Shichao Pei, Nitesh V Chawla, Olaf Wiest, and Xiangliang Zhang. Large language model based multi-agents: A survey of progress and challenges. arXiv preprint arXiv:2402.01680 , 20243."
+  },
+  {
+    "idx": 86,
+    "text": "Han et al. [2025] Siwei Han, Peng Xia, Ruiyi Zhang, Tong Sun, Yun Li, Hongtu Zhu, and Huaxiu Yao. Mdocagent: A multi-modal multi-agent framework for document understanding. arXiv preprint arXiv:2503.13964 , 2025."
+  },
+  {
+    "idx": 87,
+    "text": "Hao et al. [2024] Minsheng Hao, Jing Gong, Xin Zeng, Chiming Liu, Yucheng Guo, Xingyi Cheng, Taifeng Wang, Jianzhu Ma, Xuegong Zhang, and Le Song. Large-scale foundation model on single-cell transcriptomics. Nature methods , 21(8):1481–1491, 2024."
+  },
+  {
+    "idx": 88,
+    "text": "Hao et al. [2025] Minsheng Hao, Yongju Lee, Hanchen Wang, Gabriele Scalia, and Aviv Regev. Perturboagent: A self-planning agent for boosting sequential perturb-seq experiments. bioRxiv , pages 2025–05, 2025."
+  },
+  {
+    "idx": 89,
+    "text": "Harris [2025] Kenneth D Harris. Airus: a simple workflow for ai-assisted exploration of scientific data. bioRxiv , pages 2025–02, 2025."
+  },
+  {
+    "idx": 90,
+    "text": "Hayes et al. [2025] Thomas Hayes, Roshan Rao, Halil Akin, Nicholas J Sofroniew, Deniz Oktay, Zeming Lin, Robert Verkuil, Vincent Q Tran, Jonathan Deaton, Marius Wiggert, et al. Simulating 500 million years of evolution with a language model. Science , 387(6736):850–858, 2025."
+  },
+  {
+    "idx": 91,
+    "text": "He et al. [2023] Jiyan He, Weitao Feng, Yaosen Min, Jingwei Yi, Kunsheng Tang, Shuai Li, Jie Zhang, Kejiang Chen, Wenbo Zhou, Xing Xie, Weiming Zhang, Nenghai Yu, and Shuxin Zheng. Control risk for potential misuse of artificial intelligence in science, 2023. URL https://arxiv.org/abs/2312.06632 ."
+  },
+  {
+    "idx": 92,
+    "text": "He et al. [20232] Zhitao He et al. LEGO: A multi-agent collaborative framework with role-playing and iterative feedback for causality explanation generation. In Houda Bouamor, Juan Pino, and Kalika Bali, editors, Findings of the Association for Computational Linguistics: EMNLP 2023 , pages 9142–9163, Singapore, December 20232. Association for Computational Linguistics."
+  },
+  {
+    "idx": 93,
+    "text": "Hong et al. [2024] Sirui Hong, Xiawu Zheng, Jonathan Chen, Yuheng Cheng, Jinlin Wang, Ceyao Zhang, Zili Wang, Steven Ka Shing Yau, Zijuan Lin, Liyang Zhou, et al. Metagpt: Meta programming for a multi-agent collaborative framework. 2024."
+  },
+  {
+    "idx": 94,
+    "text": "Horwood and Noutahi [2020] Julien Horwood and Emmanuel Noutahi. Molecular design in synthetically accessible chemical space via deep reinforcement learning. ACS omega , 5(51):32984–32994, 2020."
+  },
+  {
+    "idx": 95,
+    "text": "Hosseini et al. [2024] Arian Hosseini, Xingdi Yuan, Nikolay Malkin, Aaron Courville, Alessandro Sordoni, and Rishabh Agarwal. V-star: Training verifiers for self-taught reasoners. arXiv preprint arXiv:2402.06457 , 2024."
+  },
+  {
+    "idx": 96,
+    "text": "Hu et al. [2025] Jinming Hu, Hassan Nawaz, Yuting Rui, Lijie Chi, Arif Ullah, and Pavlo O Dral. Aitomia: Your intelligent assistant for ai-driven atomistic and quantum chemical simulations. arXiv preprint arXiv:2505.08195 , 2025."
+  },
+  {
+    "idx": 97,
+    "text": "Hu et al. [2023] Mengkang Hu, Yao Mu, Xinmiao Yu, Mingyu Ding, Shiguang Wu, Wenqi Shao, Qiguang Chen, Bin Wang, Yu Qiao, and Ping Luo. Tree-planner: Efficient close-loop task planning with large language models. arXiv preprint arXiv:2310.08582 , 2023."
+  },
+  {
+    "idx": 98,
+    "text": "Hu et al. [20252] Shengguo Hu, Mingyi Li, Jiawen Xu, Hongrui Zhang, Shanghang Zhang, Tie Jun Cui, Philipp Del Hougne, and Lianlin Li. Electromagnetic metamaterial agent. Light: Science & Applications , 14(1):12, 20252."
+  },
+  {
+    "idx": 99,
+    "text": "Hu et al. [2024] Xiang Hu, Hongyu Fu, Jinge Wang, Yifeng Wang, Zhikun Li, Renjun Xu, Yu Lu, Yaochu Jin, Lili Pan, and Zhenzhong Lan. Nova: An iterative planning and search approach to enhance novelty and diversity of llm generated ideas. arXiv preprint arXiv:2410.14255 , 2024."
+  },
+  {
+    "idx": 100,
+    "text": "Hu et al. [20253] Zhaolin Hu, Yixiao Zhou, Zhongan Wang, Xin Li, Weimin Yang, Hehe Fan, and Yi Yang. OSDA agent: Leveraging large language models for de novo design of organic structure directing agents. In The Thirteenth International Conference on Learning Representations , 20253. URL <https://openreview.net/forum?id=9YNyiCJE3k> ."
+  },
+  {
+    "idx": 101,
+    "text": "Huang et al. [2022] Changwu Huang, Zeqi Zhang, Bifei Mao, and Xin Yao. An overview of artificial intelligence ethics. IEEE Transactions on Artificial Intelligence , 4(4):799–819, 2022."
+  },
+  {
+    "idx": 102,
+    "text": "Huang et al. [2025] Di Huang, Hao Li, Wenyu Li, Heming Zhang, Patricia Dickson, Ming Zhan, J Philip Miller, Carlos Cruchaga, Michael Province, Yixin Chen, Philip Payne, and Fuhai Li. Omnicellagent: Towards ai co-scientists for scientific discovery in precision medicine. August 2025. 10.1101/2025.07.31.667797 . URL http://dx.doi.org/10.1101/2025.07.31.667797 ."
+  },
+  {
+    "idx": 103,
+    "text": "Huang et al. [2024] Kaixuan Huang, Yuanhao Qu, Henry Cousins, William A Johnson, Di Yin, Mihir Shah, Denny Zhou, Russ Altman, Mengdi Wang, and Le Cong. Crispr-gpt: An llm agent for automated design of gene-editing experiments. arXiv preprint arXiv:2404.18021 , 2024."
+  },
+  {
+    "idx": 104,
+    "text": "Huang et al. [20252] Kexin Huang, Serena Zhang, Hanchen Wang, Yuanhao Qu, Yingzhou Lu, Yusuf Roohani, Ryan Li, Lin Qiu, Junze Zhang, Yin Di, et al. Biomni: A general-purpose biomedical ai agent. bioRxiv , pages 2025–05, 20252."
+  },
+  {
+    "idx": 105,
+    "text": "Huang et al. [20253] Lei Huang, Weijiang Yu, Weitao Ma, Weihong Zhong, Zhangyin Feng, Haotian Wang, Qianglong Chen, Weihua Peng, Xiaocheng Feng, Bing Qin, et al. A survey on hallucination in large language models: Principles, taxonomy, challenges, and open questions. ACM Transactions on Information Systems , 43(2):1–55, 20253."
+  },
+  {
+    "idx": 106,
+    "text": "Huang et al. [20242] Xu Huang, Weiwen Liu, Xiaolong Chen, Xingmei Wang, Hao Wang, Defu Lian, Yasheng Wang, Ruiming Tang, and Enhong Chen. Understanding the planning of llm agents: A survey. arXiv preprint arXiv:2402.02716 , 20242."
+  },
+  {
+    "idx": 107,
+    "text": "Inizan et al. [2025] Theo Jaffrelot Inizan, Sherry Yang, Aaron Kaplan, Yen-hsu Lin, Jian Yin, Saber Mirzaei, Mona Abdelgaid, Ali H Alawadhi, KwangHwan Cho, Zhiling Zheng, et al. System of agentic ai for the discovery of metal-organic frameworks. arXiv preprint arXiv:2504.14110 , 2025."
+  },
+  {
+    "idx": 108,
+    "text": "Inoue et al. [2024] Yoshitaka Inoue, Tianci Song, and Tianfan Fu. Drugagent: Explainable drug repurposing agent with large language model-based reasoning. arXiv preprint arXiv:2408.13378 , 2024."
+  },
+  {
+    "idx": 109,
+    "text": "Jablonka et al. [2023] Kevin Maik Jablonka, Qianxiang Ai, Alexander Al-Feghali, Shruti Badhwar, Joshua D Bocarsly, Andres M Bran, Stefan Bringuier, L Catherine Brinson, Kamal Choudhary, Defne Circi, et al. 14 examples of how llms can transform materials science and chemistry: a reflection on a large language model hackathon. Digital Discovery , 2(5):1233–1250, 2023."
+  },
+  {
+    "idx": 110,
+    "text": "Jafaripour et al. [2025] Masoud Jafaripour, Shadan Golestan, Shotaro Miwa, Yoshihiro Mitsuka, and Osmar Zaiane. Adaptive iterative feedback prompting for obstacle-aware path planning via llms. In AAAI Workshop , 2025."
+  },
+  {
+    "idx": 111,
+    "text": "Jaiswal et al. [2024] Raj Jaiswal, Dhruv Jain, Harsh Parimal Popat, Avinash Anand, Abhishek Dharmadhikari, Atharva Marathe, and Rajiv Ratn Shah. Improving physics reasoning in large language models using mixture of refinement agents. arXiv preprint arXiv:2412.00821 , 2024."
+  },
+  {
+    "idx": 112,
+    "text": "Jansen et al. [2024] Peter Jansen, Marc-Alexandre Côté, Tushar Khot, Erin Bransom, Bhavana Dalvi Mishra, Bodhisattwa Prasad Majumder, Oyvind Tafjord, and Peter Clark. Discoveryworld: A virtual environment for developing and evaluating automated scientific discovery agents. Advances in Neural Information Processing Systems , 37:10088–10116, 2024."
+  },
+  {
+    "idx": 113,
+    "text": "Jansen et al. [2025] Peter Jansen, Oyvind Tafjord, Marissa Radensky, Pao Siangliulue, Tom Hope, Bhavana Dalvi Mishra, Bodhisattwa Prasad Majumder, Daniel S Weld, and Peter Clark. Codescientist: End-to-end semi-automated scientific discovery with code-based experimentation. arXiv preprint arXiv:2503.22708 , 2025."
+  },
+  {
+    "idx": 114,
+    "text": "Jeyakumar et al. [2024] Shankar Kumar Jeyakumar, Alaa Alameer Ahmad, and Adrian Garret Gabriel. Advancing agentic systems: Dynamic task decomposition, tool integration and evaluation using novel metrics and dataset. In NeurIPS 2024 Workshop on Open-World Agents , 2024."
+  },
+  {
+    "idx": 115,
+    "text": "Jia et al. [2024] Shuyi Jia, Chao Zhang, and Victor Fung. Llmatdesign: Autonomous materials discovery with large language models. arXiv preprint arXiv:2406.13163 , 2024."
+  },
+  {
+    "idx": 116,
+    "text": "Jiang et al. [2023] Huiqiang Jiang, Qianhui Wu, Chin-Yew Lin, Yuqing Yang, and Lili Qiu. Llmlingua: Compressing prompts for accelerated inference of large language models. pages 13358–13376, 2023."
+  },
+  {
+    "idx": 117,
+    "text": "Jiang et al. [2024] Jinhao Jiang, Zhipeng Chen, Yingqian Min, Jie Chen, Xiaoxue Cheng, Jiapeng Wang, Yiru Tang, Haoxiang Sun, Jia Deng, Wayne Xin Zhao, et al. Technical report: Enhancing llm reasoning with reward-guided tree search. arXiv preprint arXiv:2411.11694 , 2024."
+  },
+  {
+    "idx": 118,
+    "text": "Jiang et al. [20232] Shuyang Jiang, Yuhao Wang, and Yu Wang. Selfevolve: A code evolution framework via large language models. arXiv preprint arXiv:2306.02907 , 20232."
+  },
+  {
+    "idx": 119,
+    "text": "Jiang et al. [2025] Zhengyao Jiang, Dominik Schmidt, Dhruv Srikanth, Dixing Xu, Ian Kaplan, Deniss Jacenko, and Yuxiang Wu. Aide: Ai-driven exploration in the space of code, 2025. URL https://arxiv.org/abs/2502.13138 ."
+  },
+  {
+    "idx": 120,
+    "text": "Jin et al. [2025] Ruofan Jin, Zaixi Zhang, Mengdi Wang, and Le Cong. Stella: Self-evolving llm agent for biomedical research. arXiv preprint arXiv:2507.02004 , 2025."
+  },
+  {
+    "idx": 121,
+    "text": "Jumper et al. [2021] John Jumper, Richard Evans, Alexander Pritzel, Tim Green, Michael Figurnov, Olaf Ronneberger, Kathryn Tunyasuvunakool, Russ Bates, Augustin Žídek, Anna Potapenko, et al. Highly accurate protein structure prediction with alphafold. nature , 596(7873):583–589, 2021."
+  },
+  {
+    "idx": 122,
+    "text": "Jun et al. [2025] A Jun, Xiang Zhang, Xiaofan Zhang, Jiaqi Wei, Te Zhang, Yamin Deng, Pu Liu, Zongxiang Nie, Yi Chen, Nanqin Dong, et al. Massnet: billion-scale ai-friendly mass spectral corpus enables robust de novo peptide sequencing. bioRxiv , 2025."
+  },
+  {
+    "idx": 123,
+    "text": "Kang and Kim [2023] Yeonghun Kang and Jihan Kim. Chatmof: An autonomous ai system for predicting and generating metal-organic frameworks. arXiv preprint arXiv:2308.01423 , 2023."
+  },
+  {
+    "idx": 124,
+    "text": "Khan et al. [2024] Akbir Khan, John Hughes, Dan Valentine, Laura Ruis, Kshitij Sachan, Ansh Radhakrishnan, Edward Grefenstette, Samuel R Bowman, Tim Rocktäschel, and Ethan Perez. Debating with more persuasive llms leads to more truthful answers. arXiv preprint arXiv:2402.06782 , 2024."
+  },
+  {
+    "idx": 125,
+    "text": "Kim et al. [2024] Byeonghwi Kim, Minhyuk Seo, and Jonghyun Choi. Online continual learning for interactive instruction following agents, 2024. URL https://arxiv.org/abs/2403.07548 ."
+  },
+  {
+    "idx": 126,
+    "text": "Kim et al. [2025] Hyomin Kim, Yunhui Jang, and Sungsoo Ahn. Mt-mol: Multi agent system with tool-based reasoning for molecular optimization. arXiv preprint arXiv:2505.20820 , 2025."
+  },
+  {
+    "idx": 127,
+    "text": "Kim et al. [20242] Kyungha Kim, Sangyun Lee, Kung-Hsiang Huang, Hou Pong Chan, Manling Li, and Heng Ji. Can llms produce faithful explanations for fact-checking? towards faithful explainable fact-checking via multi-agent debate. arXiv preprint arXiv:2402.07401 , 20242."
+  },
+  {
+    "idx": 128,
+    "text": "Kim et al. [20243] Yubin Kim, Chanwoo Park, Hyewon Jeong, Yik Siu Chan, Xuhai Xu, Daniel McDuff, Hyeonhoon Lee, Marzyeh Ghassemi, Cynthia Breazeal, Hae Park, et al. Mdagents: An adaptive collaboration of llms for medical decision-making. 37:79410–79452, 20243."
+  },
+  {
+    "idx": 129,
+    "text": "Kirkpatrick et al. [2017] James Kirkpatrick, Razvan Pascanu, Neil Rabinowitz, Joel Veness, Guillaume Desjardins, Andrei A Rusu, Kieran Milan, John Quan, Tiago Ramalho, Agnieszka Grabska-Barwinska, et al. Overcoming catastrophic forgetting in neural networks. Proceedings of the national academy of sciences , 114(13):3521–3526, 2017."
+  },
+  {
+    "idx": 130,
+    "text": "Kojima et al. [2022] Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. Large language models are zero-shot reasoners. 35:22199–22213, 2022."
+  },
+  {
+    "idx": 131,
+    "text": "Koldunov and Jung [2024] Nikolay Koldunov and Thomas Jung. Local climate services for all, courtesy of large language models. Communications Earth & Environment , 5(1):13, Jan 2024. ISSN 2662-4435. 10.1038/s43247-023-01199-1 . URL https://doi.org/10.1038/s43247-023-01199-1 ."
+  },
+  {
+    "idx": 132,
+    "text": "Kostunin et al. [2025] Dmitriy Kostunin, Vladimir Sotnikov, Sergo Golovachev, and Alexandre Strube. Ai agents for ground-based gamma astronomy. arXiv preprint arXiv:2503.00821 , 2025."
+  },
+  {
+    "idx": 133,
+    "text": "Kumar et al. [2023] Varun Kumar, Leonard Gleyzer, Adar Kahana, Khemraj Shukla, and George Em Karniadakis. Mycrunchgpt: A llm assisted framework for scientific machine learning. Journal of Machine Learning for Modeling and Computing , 4(4), 2023."
+  },
+  {
+    "idx": 134,
+    "text": "Kumbhar et al. [2025] Shrinidhi Kumbhar, Venkatesh Mishra, Kevin Coutinho, Divij Handa, Ashif Iquebal, and Chitta Baral. Hypothesis generation for materials discovery and design using goal-driven and constraint-guided llm agents. arXiv preprint arXiv:2501.13299 , 2025."
+  },
+  {
+    "idx": 135,
+    "text": "Lai et al. [2022] Yuhang Lai, Chengxi Li, Yiming Wang, Tianyi Zhang, Ruiqi Zhong, Luke Zettlemoyer, Scott Wen tau Yih, Daniel Fried, Sida Wang, and Tao Yu. Ds-1000: A natural and reliable benchmark for data science code generation, 2022. URL https://arxiv.org/abs/2211.11501 ."
+  },
+  {
+    "idx": 136,
+    "text": "Lai and Pu [2025] Zheyuan Lai and Yingming Pu. Prim: Principle-inspired material discovery through multi-agent collaboration. arXiv preprint arXiv:2504.08810 , 2025."
+  },
+  {
+    "idx": 137,
+    "text": "Lála et al. [2023] Jakub Lála, Odhran O’Donoghue, Aleksandar Shtedritski, Sam Cox, Samuel G Rodriques, and Andrew D White. Paperqa: Retrieval-augmented generative agent for scientific research. 2023."
+  },
+  {
+    "idx": 138,
+    "text": "Laleh and Ahmadabadi [2024] Alireza Rashidi Laleh and Majid Nili Ahmadabadi. A survey on enhancing reinforcement learning in complex environments: Insights from human and llm feedback. arXiv preprint arXiv:2411.13410 , 2024."
+  },
+  {
+    "idx": 139,
+    "text": "Laverick et al. [2024] Andrew Laverick, Kristen Surrao, Inigo Zubeldia, Boris Bolliet, Miles Cranmer, Antony Lewis, Blake Sherwin, and Julien Lesgourgues. Multi-agent system for cosmological parameter analysis. arXiv preprint arXiv:2412.00431 , 2024."
+  },
+  {
+    "idx": 140,
+    "text": "Lee et al. [2025] Namkyeong Lee, Edward De Brouwer, Ehsan Hajiramezanali, Tommaso Biancalani, Chanyoung Park, and Gabriele Scalia. Rag-enhanced collaborative llm agents for drug discovery. arXiv preprint arXiv:2502.17506 , 2025."
+  },
+  {
+    "idx": 141,
+    "text": "Lewis et al. [2020] Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, et al. Retrieval-augmented generation for knowledge-intensive nlp tasks. Advances in neural information processing systems , 33:9459–9474, 2020."
+  },
+  {
+    "idx": 142,
+    "text": "Li et al. [2025] Bingxuan Li, Yiwei Wang, Jiuxiang Gu, Kai-Wei Chang, and Nanyun Peng. Metal: A multi-agent framework for chart generation with test-time scaling. arXiv preprint arXiv:2502.17651 , 2025."
+  },
+  {
+    "idx": 143,
+    "text": "Li et al. [2023] Guohao Li, Hasan Abed Al Kader Hammoud, Hani Itani, Dmitrii Khizbullin, and Bernard Ghanem. Camel: Communicative agents for \"mind\" exploration of large language model society. 2023."
+  },
+  {
+    "idx": 144,
+    "text": "Li et al. [20232] Haoyuan Li, Hao Jiang, Tianke Zhang, Zhelun Yu, Aoxiong Yin, Hao Cheng, Siming Fu, Yuhao Zhang, and Wanggui He. Traineragent: Customizable and efficient model training through llm-powered multi-agent system. arXiv preprint arXiv:2311.06622 , 20232."
+  },
+  {
+    "idx": 145,
+    "text": "Li et al. [2024] Junkai Li, Yunghwei Lai, Weitao Li, Jingyi Ren, Meng Zhang, Xinhui Kang, Siyu Wang, Peng Li, Ya-Qin Zhang, Weizhi Ma, et al. Agent hospital: A simulacrum of hospital with evolvable medical agents. arXiv preprint arXiv:2405.02957 , 2024."
+  },
+  {
+    "idx": 146,
+    "text": "Li et al. [20252] Junyi Li, Yongqiang Chen, Chenxi Liu, Qianyi Cai, Tongliang Liu, Bo Han, Kun Zhang, and Hui Xiong. Can large language models help experimental design for causal discovery?, 20252. URL https://arxiv.org/abs/2503.01139 ."
+  },
+  {
+    "idx": 147,
+    "text": "Li et al. [20253] Rui Li, Zixuan Hu, Wenxi Qu, Jinouwen Zhang, Zhenfei Yin, Sha Zhang, Xuantuo Huang, Hanqing Wang, Tai Wang, Jiangmiao Pang, et al. Labutopia: High-fidelity simulation and hierarchical benchmark for scientific embodied agents. arXiv preprint arXiv:2505.22634 , 20253."
+  },
+  {
+    "idx": 148,
+    "text": "Li et al. [20242] Shimin Li, Tianxiang Sun, Qinyuan Cheng, and Xipeng Qiu. Agent alignment in evolving social norms, 20242. URL https://arxiv.org/abs/2401.04620 ."
+  },
+  {
+    "idx": 149,
+    "text": "Li and Pan [2024] Weichen Li and Weimin Pan. Enhancing chain-of-thought reasoning in large language models through text style diversity and prompt fusion. In EIBDCT , volume 13181, pages 226–232. SPIE, 2024."
+  },
+  {
+    "idx": 150,
+    "text": "Li et al. [20254] Yifei Li, Hanane Nour Moussa, Ziru Chen, Shijie Chen, Botao Yu, Mingyi Xue, Benjamin Burns, Tzu-Yao Chiu, Vishal Dey, Zitong Lu, et al. Autosdt: Scaling data-driven discovery tasks toward open co-scientists. arXiv preprint arXiv:2506.08140 , 20254."
+  },
+  {
+    "idx": 151,
+    "text": "Li et al. [2021] Yiming Li, Shunli Ren, Pengxiang Wu, Siheng Chen, Chen Feng, and Wenjun Zhang. Learning distilled collaboration graph for multi-agent perception. 34:29541–29552, 2021."
+  },
+  {
+    "idx": 152,
+    "text": "Li et al. [20255] Zhucong Li, Bowei Zhang, Jin Xiao, Zhijian Zhou, Fenglei Cao, Jiaqing Liang, and Yuan Qi. Chemhas: Hierarchical agent stacking for enhancing chemistry tools. arXiv preprint arXiv:2505.21569 , 20255."
+  },
+  {
+    "idx": 153,
+    "text": "Liang et al. [2023] Tian Liang, Zhiwei He, Wenxiang Jiao, Xing Wang, Yan Wang, Rui Wang, Yujiu Yang, Shuming Shi, and Zhaopeng Tu. Encouraging divergent thinking in large language models through multi-agent debate. arXiv preprint arXiv:2305.19118 , 2023."
+  },
+  {
+    "idx": 154,
+    "text": "Liang et al. [2024] Tian Liang, Zhiwei He, Wenxiang Jiao, Xing Wang, Yan Wang, Rui Wang, Yujiu Yang, Shuming Shi, and Zhaopeng Tu. Encouraging divergent thinking in large language models through multi-agent debate. pages 17889–17904, 2024."
+  },
+  {
+    "idx": 155,
+    "text": "Liang et al. [20242] Xuechen Liang, Yangfan He, Yinghui Xia, Xinyuan Song, Jianhui Wang, Meiling Tao, Li Sun, Xinhang Yuan, Jiayi Su, Keqin Li, et al. Self-evolving agents with reflective and memory-augmented abilities. arXiv preprint arXiv:2409.00872 , 20242."
+  },
+  {
+    "idx": 156,
+    "text": "Lino et al. [2023] Mario Lino, Stathi Fotiadis, Anil A Bharath, and Chris D Cantwell. Current and emerging deep-learning methods for the simulation of fluid dynamics. Proceedings of the Royal Society A , 479(2275):20230058, 2023."
+  },
+  {
+    "idx": 157,
+    "text": "Liu et al. [2025] Bang Liu, Xinfeng Li, Jiayi Zhang, Jinlin Wang, Tanjin He, Sirui Hong, Hongzhang Liu, Shaokun Zhang, Kaitao Song, Kunlun Zhu, et al. Advances and challenges in foundation agents: From brain-inspired intelligence to evolutionary, collaborative, and safe systems. arXiv preprint arXiv:2504.01990 , 2025."
+  },
+  {
+    "idx": 158,
+    "text": "Liu et al. [2024] Haoyang Liu, Yijiang Li, Jinglin Jian, Yuxuan Cheng, Jianrong Lu, Shuyi Guo, Jinglei Zhu, Mianchen Zhang, Miantong Zhang, and Haohan Wang. Toward a team of ai-made scientists for scientific discovery from gene expression data. arXiv preprint arXiv:2402.12391 , 2024."
+  },
+  {
+    "idx": 159,
+    "text": "Liu et al. [20252] Jiachen Liu, Ziheng Geng, Ran Cao, Lu Cheng, Paolo Bocchini, and Minghui Cheng. A large language model-empowered agent for reliable and robust structural analysis. arXiv preprint arXiv:2507.02938 , 20252."
+  },
+  {
+    "idx": 160,
+    "text": "Liu et al. [20242] Junhua Liu, Fanfan Lin, Xinze Li, Kwan Hui Lim, and Shuai Zhao. Physics-informed llm-agent for automated modulation design in power electronics systems. arXiv preprint arXiv:2411.14214 , 20242."
+  },
+  {
+    "idx": 161,
+    "text": "Liu et al. [2023] Ruibo Liu, Jason Wei, Shixiang Shane Gu, Te-Yen Wu, Soroush Vosoughi, Claire Cui, Denny Zhou, and Andrew M. Dai. Mind’s eye: Grounded language model reasoning through simulation. In The Eleventh International Conference on Learning Representations, ICLR 2023, Kigali, Rwanda, May 1-5, 2023 . OpenReview.net, 2023. URL https://openreview.net/forum?id=4rXMRuoJlai ."
+  },
+  {
+    "idx": 162,
+    "text": "Liu et al. [20243] Sizhe Liu, Yizhou Lu, Siyu Chen, Xiyang Hu, Jieyu Zhao, Yingzhou Lu, and Yue Zhao. Drugagent: Automating ai-aided drug discovery programming through llm multi-agent collaboration. arXiv preprint arXiv:2411.15692 , 20243."
+  },
+  {
+    "idx": 163,
+    "text": "Liu et al. [20253] Wanhao Liu, Zonglin Yang, Jue Wang, Lidong Bing, Di Zhang, Dongzhan Zhou, Yuqiang Li, Houqiang Li, Erik Cambria, and Wanli Ouyang. Moose-chem3: Toward experiment-guided hypothesis ranking via simulated experimental feedback. arXiv preprint arXiv:2505.17873 , 20253."
+  },
+  {
+    "idx": 164,
+    "text": "Liu et al. [20244] Yang Liu, Peng Sun, and Hang Li. Large language models as agents in two-player games. arXiv preprint arXiv:2402.08078 , 20244."
+  },
+  {
+    "idx": 165,
+    "text": "Liu et al. [20245] Zijun Liu, Kaiming Liu, Yiqi Zhu, Xuanyu Lei, Zonghan Yang, Zhenhe Zhang, Peng Li, and Yang Liu. Aigs: Generating science from ai-powered automated falsification. arXiv preprint arXiv:2411.11910 , 20245."
+  },
+  {
+    "idx": 166,
+    "text": "Liu et al. [20246] Zijun Liu, Yanzhe Zhang, Peng Li, Yang Liu, and Diyi Yang. A dynamic llm-powered agent network for task-oriented agent collaboration. In COLM , 20246."
+  },
+  {
+    "idx": 167,
+    "text": "Liu et al. [20247] Zijun Liu et al. A dynamic LLM-powered agent network for task-oriented agent collaboration. In First Conference on Language Modeling , Oct. 20247."
+  },
+  {
+    "idx": 168,
+    "text": "Long [2023] Jieyi Long. Large language model guided tree-of-thought. arXiv preprint arXiv:2305.08291 , 2023."
+  },
+  {
+    "idx": 169,
+    "text": "Lu et al. [2024] Chris Lu, Cong Lu, Robert Tjarko Lange, Jakob Foerster, Jeff Clune, and David Ha. The ai scientist: Towards fully automated open-ended scientific discovery. arXiv preprint arXiv:2408.06292v3 , 2024. URL https://www.arxiv.org/abs/2408.06292v3 ."
+  },
+  {
+    "idx": 170,
+    "text": "Lu et al. [2025] Darui Lu, Jordan M Malof, and Willie J Padilla. An agentic framework for autonomous metamaterial modeling and inverse design. arXiv preprint arXiv:2506.06935 , 2025."
+  },
+  {
+    "idx": 171,
+    "text": "Luo et al. [2025] Yi Luo, Linghang Shi, Yihao Li, Aobo Zhuang, Yeyun Gong, Ling Liu, and Chen Lin. From intention to implementation: automating biomedical research via llms. Science China Information Sciences , 68(7):1–18, 2025."
+  },
+  {
+    "idx": 172,
+    "text": "Luo et al. [20252] Ziming Luo, Zonglin Yang, Zexin Xu, Wei Yang, and Xinya Du. Llm4sr: A survey on large language models for scientific research. arXiv preprint arXiv:2501.04306 , 20252."
+  },
+  {
+    "idx": 173,
+    "text": "Lykov et al. [2023] Artem Lykov, Maria Dronova, Nikolay Naglov, Mikhail Litvinov, Sergei Satsevich, Artem Bazhenov, Vladimir Berman, Aleksei Shcherbak, and Dzmitry Tsetserukou. Llm-mars: Large language model for behavior tree generation and nlp-enhanced dialogue in multi-agent robot systems. arXiv preprint arXiv:2312.09348 , 2023."
+  },
+  {
+    "idx": 174,
+    "text": "Ma et al. [2023] Chengdong Ma, Ziran Yang, Hai Ci, Jun Gao, Minquan Gao, Xuehai Pan, and Yaodong Yang. Evolving diverse red-team language models in multi-round multi-agent games. arXiv preprint arXiv:2310.00322 , 2023."
+  },
+  {
+    "idx": 175,
+    "text": "Ma et al. [2024] Hao Ma, Tianyi Hu, Zhiqiang Pu, Liu Boyin, Xiaolin Ai, Yanyan Liang, and Min Chen. Coevolving with the other you: Fine-tuning llm with sequential cooperative multi-agent reinforcement learning. 37:15497–15525, 2024."
+  },
+  {
+    "idx": 176,
+    "text": "Ma [2025] Kangyong Ma. Ai agents in chemical research: Gvim–an intelligent research assistant system. Digital Discovery , 4(2):355–375, 2025."
+  },
+  {
+    "idx": 177,
+    "text": "Ma et al. [20242] Yubo Ma, Zhibin Gou, Junheng Hao, Ruochen Xu, Shuohang Wang, Liangming Pan, Yujiu Yang, Yixin Cao, and Aixin Sun. Sciagent: Tool-augmented language models for scientific reasoning. In Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen, editors, Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, EMNLP 2024, Miami, FL, USA, November 12-16, 2024 , pages 15701–15736. Association for Computational Linguistics, 20242. URL https://aclanthology.org/2024.emnlp-main.880 ."
+  },
+  {
+    "idx": 178,
+    "text": "Ma et al. [20243] Yubo Ma, Zhibin Gou, Junheng Hao, Ruochen Xu, Shuohang Wang, Liangming Pan, Yujiu Yang, Yixin Cao, Aixin Sun, Hany Awadalla, et al. Sciagent: Tool-augmented language models for scientific reasoning. arXiv preprint arXiv:2402.11451 , 20243."
+  },
+  {
+    "idx": 179,
+    "text": "Madaan et al. [2023] Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, et al. Self-refine: Iterative refinement with self-feedback. 36:46534–46594, 2023."
+  },
+  {
+    "idx": 180,
+    "text": "Majumder et al. [2023] Bodhisattwa Prasad Majumder, Bhavana Dalvi Mishra, Peter Jansen, Oyvind Tafjord, Niket Tandon, Li Zhang, Chris Callison-Burch, and Peter Clark. Clin: A continually learning language agent for rapid task adaptation and generalization, 2023. URL https://arxiv.org/abs/2310.10134 ."
+  },
+  {
+    "idx": 181,
+    "text": "Mandal et al. [2024] Indrajeet Mandal, Jitendra Soni, Mohd Zaki, Morten M Smedskjaer, Katrin Wondraczek, Lothar Wondraczek, Nitya Nand Gosvami, and NM Krishnan. Autonomous microscopy experiments through large language model agents. arXiv preprint arXiv:2501.10385 , 2024."
+  },
+  {
+    "idx": 182,
+    "text": "Maranto [2024] David Maranto. Llmsat: A large language model-based goal-oriented agent for autonomous space exploration. arXiv preprint arXiv:2405.01392 , 2024."
+  },
+  {
+    "idx": 183,
+    "text": "Masry et al. [2022] Ahmed Masry, Do Xuan Long, Jia Qing Tan, Shafiq Joty, and Enamul Hoque. Chartqa: A benchmark for question answering about charts with visual and logical reasoning, 2022. URL https://arxiv.org/abs/2203.10244 ."
+  },
+  {
+    "idx": 184,
+    "text": "Masterman et al. [2024] Tula Masterman, Sandi Besen, Mason Sawtell, and Alex Chao. The landscape of emerging ai agent architectures for reasoning, planning, and tool calling: A survey. arXiv preprint arXiv:2404.11584 , 2024."
+  },
+  {
+    "idx": 185,
+    "text": "McNaughton et al. [2024] Andrew D McNaughton, Gautham Krishna Sankar Ramalaxmi, Agustin Kruel, Carter R Knutson, Rohith A Varikoti, and Neeraj Kumar. Cactus: Chemistry agent connecting tool usage to science. ACS omega , 9(46):46563–46573, 2024."
+  },
+  {
+    "idx": 186,
+    "text": "Mehandru et al. [2025] Nikita Mehandru, Amanda K Hall, Olesya Melnichenko, Yulia Dubinina, Daniel Tsirulnikov, David Bamman, Ahmed Alaa, Scott Saponas, and Venkat S Malladi. Bioagents: Democratizing bioinformatics analysis with multi-agent systems. arXiv preprint arXiv:2501.06314 , 2025."
+  },
+  {
+    "idx": 187,
+    "text": "Mei et al. [2025] Lingrui Mei, Jiayu Yao, Yuyao Ge, Yiwei Wang, Baolong Bi, Yujun Cai, Jiazhi Liu, Mingyu Li, Zhong-Zhi Li, Duzhen Zhang, et al. A survey of context engineering for large language models. arXiv preprint arXiv:2507.13334 , 2025."
+  },
+  {
+    "idx": 188,
+    "text": "Moss [2025] Adam Moss. The ai cosmologist i: An agentic system for automated data analysis. arXiv preprint arXiv:2504.03424 , 2025."
+  },
+  {
+    "idx": 189,
+    "text": "Naumov et al. [2025] Vladimir Naumov, Diana Zagirova, Sha Lin, Yupeng Xie, Wenhao Gou, Anatoly Urban, Nina Tikhonova, Khadija Alawi, Mike Durymanov, Fedor Galkin, et al. Dora ai scientist: Multi-agent virtual research team for scientific exploration discovery and automated report generation. bioRxiv , 2025."
+  },
+  {
+    "idx": 190,
+    "text": "Newman et al. [2024] Benjamin Newman, Yoonjoo Lee, Aakanksha Naik, Pao Siangliulue, Raymond Fok, Juho Kim, Daniel S. Weld, Joseph Chee Chang, and Kyle Lo. Arxivdigestables: Synthesizing scientific literature into tables using language models, 2024. URL https://arxiv.org/abs/2410.22360 ."
+  },
+  {
+    "idx": 191,
+    "text": "Nguyen et al. [2024] Eric Nguyen, Michael Poli, Matthew G Durrant, Brian Kang, Dhruva Katrekar, David B Li, Liam J Bartie, Armin W Thomas, Samuel H King, Garyk Brixi, et al. Sequence modeling and design from molecular to genome scale with evo. Science , 386(6723):eado9336, 2024."
+  },
+  {
+    "idx": 192,
+    "text": "Nguyen et al. [2023] Tuan Dung Nguyen, Yuan-Sen Ting, Ioana Ciucă, Charlie O’Neill, Ze-Chang Sun, Maja Jabłońska, Sandor Kruk, Ernest Perkowski, Jack Miller, Jason Li, et al. Astrollama: Towards specialized foundation models in astronomy. arXiv preprint arXiv:2309.06126 , 2023."
+  },
+  {
+    "idx": 193,
+    "text": "Ni and Buehler [2024] Bo Ni and Markus J Buehler. Mechagents: Large language model multi-agent collaborations can solve mechanics problems, generate new data, and integrate knowledge. Extreme Mechanics Letters , 67:102131, 2024."
+  },
+  {
+    "idx": 194,
+    "text": "Ni et al. [2024] Ziqi Ni, Yahao Li, Kaijia Hu, Kunyuan Han, Ming Xu, Xingyu Chen, Fengqi Liu, Yicong Ye, and Shuxin Bai. Matpilot: an llm-enabled ai materials scientist under the framework of human-machine collaboration. arXiv preprint arXiv:2411.08063 , 2024."
+  },
+  {
+    "idx": 195,
+    "text": "Niyakan and Qian [2025] Seyednami Niyakan and Xiaoning Qian. Phenograph: A multi-agent framework for phenotype-driven discovery in spatial transcriptomics data augmented with knowledge graphs. bioRxiv , pages 2025–06, 2025."
+  },
+  {
+    "idx": 196,
+    "text": "Novikov et al. [2025] Alexander Novikov, Ngân Vũ, Marvin Eisenberger, Emilien Dupont, Po-Sen Huang, Adam Zsolt Wagner, Sergey Shirobokov, Borislav Kozlovskii, Francisco JR Ruiz, Abbas Mehrabian, et al. Alphaevolve: A coding agent for scientific and algorithmic discovery. arXiv preprint arXiv:2506.13131 , 2025."
+  },
+  {
+    "idx": 197,
+    "text": "Ock et al. [2025] Janghoon Ock, Radheesh Sharma Meda, Srivathsan Badrinarayanan, Neha S Aluru, Achuth Chandrasekhar, and Amir Barati Farimani. Large language model agent for modular task execution in drug discovery. arXiv preprint arXiv:2507.02925 , 2025."
+  },
+  {
+    "idx": 198,
+    "text": "O’Donoghue et al. [2023] Odhran O’Donoghue, Aleksandar Shtedritski, John Ginger, Ralph Abboud, Ali Essa Ghareeb, Justin Booth, and Samuel G Rodriques. Bioplanner: Automatic evaluation of llms on protocol planning in biology, 2023. URL https://arxiv.org/abs/2310.10632 ."
+  },
+  {
+    "idx": 199,
+    "text": "Ou et al. [2025] Jiefu Ou, William Gantt Walden, Kate Sanders, Zhengping Jiang, Kaiser Sun, Jeffrey Cheng, William Jurayj, Miriam Wanner, Shaobo Liang, Candice Morgan, Seunghoon Han, Weiqi Wang, Chandler May, Hannah Recknor, Daniel Khashabi, and Benjamin Van Durme. Claimcheck: How grounded are llm critiques of scientific papers?, 2025. URL https://arxiv.org/abs/2503.21717 ."
+  },
+  {
+    "idx": 200,
+    "text": "Packer et al. [2023] Charles Packer, Vivian Fang, Shishir G Patil, Kevin Lin, Sarah Wooders, and Joseph E Gonzalez. Memgpt: Towards llms as operating systems. CoRR , 2023."
+  },
+  {
+    "idx": 201,
+    "text": "Pan et al. [2025] Haining Pan, Nayantara Mudur, William Taranto, Maria Tikhanovskaya, Subhashini Venugopalan, Yasaman Bahri, Michael P Brenner, and Eun-Ah Kim. Quantum many-body physics calculations with large language models. Communications Physics , 8(1):49, 2025."
+  },
+  {
+    "idx": 202,
+    "text": "Pandey et al. [2025] Sandeep Pandey, Ran Xu, Wenkang Wang, and Xu Chu. Openfoamgpt: a rag-augmented llm agent for openfoam-based computational fluid dynamics. arXiv preprint arXiv:2501.06327 , 2025."
+  },
+  {
+    "idx": 203,
+    "text": "Pang et al. [2024] Jing-Cheng Pang, Pengyuan Wang, Kaiyuan Li, Xiong-Hui Chen, Jiacheng Xu, Zongzhang Zhang, and Yang Yu. Language model self-improvement by reinforcement learning contemplation. 2024."
+  },
+  {
+    "idx": 204,
+    "text": "Pauloski et al. [2025] J Gregory Pauloski, Yadu Babuji, Ryan Chard, Mansi Sakarvadia, Kyle Chard, and Ian Foster. Empowering scientific workflows with federated agents. arXiv preprint arXiv:2505.05428 , 2025."
+  },
+  {
+    "idx": 205,
+    "text": "Pham et al. [2025] Thang D Pham, Aditya Tanikanti, and Murat Keçeli. Chemgraph: An agentic framework for computational chemistry workflows. arXiv preprint arXiv:2506.06363 , 2025."
+  },
+  {
+    "idx": 206,
+    "text": "Polat et al. [2025] Can Polat, Mehmet Tuncel, Mustafa Kurban, Erchin Serpedin, and Hasan Kurban. xchemagents: Agentic ai for explainable quantum chemistry. arXiv preprint arXiv:2505.20574 , 2025."
+  },
+  {
+    "idx": 207,
+    "text": "Pournaras [2023] Evangelos Pournaras. Science in the era of chatgpt, large language models and generative ai. KI-Kritik/AI Critique Volume 6 , page 275, 2023."
+  },
+  {
+    "idx": 208,
+    "text": "Pu et al. [2025] Yingming Pu, Tao Lin, and Hongyu Chen. Piflow: Principle-aware scientific discovery with multi-agent collaboration. arXiv preprint arXiv:2505.15047 , 2025."
+  },
+  {
+    "idx": 209,
+    "text": "Qi et al. [2023] Biqing Qi, Kaiyan Zhang, Haoxiang Li, Kai Tian, Sihang Zeng, Zhang-Ren Chen, and Bowen Zhou. Large language models are zero shot hypothesis proposers. arXiv preprint arXiv:2311.05965 , 2023."
+  },
+  {
+    "idx": 210,
+    "text": "Qian et al. [2024] Chen Qian et al. ChatDev: Communicative agents for software development. In Proceedings of the Annual Meeting of the Association for Computational Linguistics , Aug. 2024."
+  },
+  {
+    "idx": 211,
+    "text": "Qiao et al. [2023] Shuofei Qiao, Honghao Gui, Chengfei Lv, Qianghuai Jia, Huajun Chen, and Ningyu Zhang. Making language models better tool learners with execution feedback. arXiv preprint arXiv:2305.13068 , 2023."
+  },
+  {
+    "idx": 212,
+    "text": "Qiao et al. [2024] Shuofei Qiao, Runnan Fang, Ningyu Zhang, Yuqi Zhu, Xiang Chen, Shumin Deng, Yong Jiang, Pengjun Xie, Fei Huang, and Huajun Chen. Agent planning with world knowledge model. 37:114843–114871, 2024."
+  },
+  {
+    "idx": 213,
+    "text": "Qiao et al. [20242] Shuofei Qiao, Ningyu Zhang, Runnan Fang, Yujie Luo, Wangchunshu Zhou, Yuchen Eleanor Jiang, Chengfei Lv, and Huajun Chen. Autoact: Automatic agent learning from scratch for qa via self-planning. arXiv preprint arXiv:2401.05268 , 20242."
+  },
+  {
+    "idx": 214,
+    "text": "Qiu et al. [2025] Zijie Qiu, Jiaqi Wei, Xiang Zhang, Sheng Xu, Kai Zou, Zhi Jin, Zhiqiang Gao, Nanqing Dong, and Siqi Sun. Universal biological sequence reranking for improved de novo peptide sequencing. arXiv preprint arXiv:2505.17552 , 2025."
+  },
+  {
+    "idx": 215,
+    "text": "Qu et al. [2025] Shang Qu, Ning Ding, Linhai Xie, Yifei Li, Zaoqu Liu, Kaiyan Zhang, Yibai Xiong, Yuxin Zuo, Zhangren Chen, Ermo Hua, et al. Automating exploratory multiomics research via language models. arXiv preprint arXiv:2506.07591 , 2025."
+  },
+  {
+    "idx": 216,
+    "text": "Quan et al. [2024] Xin Quan, Marco Valentino, Louise A. Dennis, and André Freitas. Verification and refinement of natural language explanations through llm-symbolic theorem proving, 2024. URL https://arxiv.org/abs/2405.01379 ."
+  },
+  {
+    "idx": 217,
+    "text": "Rabby et al. [2025] Gollam Rabby, Diyana Muhammed, Prasenjit Mitra, and Sören Auer. Iterative hypothesis generation for scientific discovery with monte carlo nash equilibrium self-refining trees, 2025. URL https://arxiv.org/abs/2503.19309 ."
+  },
+  {
+    "idx": 218,
+    "text": "Ramos et al. [2025] Mayk Caldas Ramos, Christopher J Collison, and Andrew D White. A review of large language models and autonomous agents in chemistry. Chemical Science , 2025."
+  },
+  {
+    "idx": 219,
+    "text": "Rao et al. [2021] Roshan M Rao, Jason Liu, Robert Verkuil, Joshua Meier, John Canny, Pieter Abbeel, Tom Sercu, and Alexander Rives. Msa transformer. In International conference on machine learning , pages 8844–8856. PMLR, 2021."
+  },
+  {
+    "idx": 220,
+    "text": "Ren et al. [2025] Shuo Ren, Pu Jian, Zhenjiang Ren, Chunlin Leng, Can Xie, and Jiajun Zhang. Towards scientific intelligence: A survey of llm-based scientific agents. arXiv preprint arXiv:2503.24047 , 2025."
+  },
+  {
+    "idx": 221,
+    "text": "Rivera et al. [2024] Corban Rivera, Grayson Byrd, William Paul, Tyler Feldman, Meghan Booker, Emma Holmes, David Handelman, Bethany Kemp, Andrew Badger, Aurora Schmidt, et al. Conceptagent: Llm-driven precondition grounding and tree search for robust task planning and execution. arXiv preprint arXiv:2410.06108 , 2024."
+  },
+  {
+    "idx": 222,
+    "text": "Roohani et al. [2024] Yusuf Roohani, Andrew Lee, Qian Huang, Jian Vora, Zachary Steinhart, Kexin Huang, Alexander Marson, Percy Liang, and Jure Leskovec. Biodiscoveryagent: An ai agent for designing genetic perturbation experiments. arXiv preprint arXiv:2405.17631 , 2024."
+  },
+  {
+    "idx": 223,
+    "text": "Ruan et al. [2024] Yixiang Ruan, Chenyin Lu, Ning Xu, Yuchen He, Yixin Chen, Jian Zhang, Jun Xuan, Jianzhang Pan, Qun Fang, Hanyu Gao, et al. An automatic end-to-end chemical synthesis development platform powered by large language models. Nature communications , 15(1):10160, 2024."
+  },
+  {
+    "idx": 224,
+    "text": "Ruan et al. [20242] Yixiang Ruan, Chenyin Lu, Ning Xu, Jian Zhang, Jun Xuan, Jianzhang Pan, Qun Fang, Hanyu Gao, Xiaodong Shen, Ning Ye, et al. Accelerated end-to-end chemical synthesis development with large language models. doi:10.26434/chemrxiv-2024-6wmg4 , 20242."
+  },
+  {
+    "idx": 225,
+    "text": "Saeedi et al. [2025] Daniel Saeedi, Denise Buckner, Jose C Aponte, and Amirali Aghazadeh. Astroagents: A multi-agent ai for hypothesis generation from mass spectrometry data. arXiv preprint arXiv:2503.23170 , 2025."
+  },
+  {
+    "idx": 226,
+    "text": "Sauter et al. [2023] Andreas WM Sauter, Erman Acar, and Vincent Francois-Lavet. A meta-reinforcement learning algorithm for causal discovery. In Conference on Causal Learning and Reasoning , pages 602–619. PMLR, 2023."
+  },
+  {
+    "idx": 227,
+    "text": "Schmidgall and Moor [2025] Samuel Schmidgall and Michael Moor. Agentrxiv: Towards collaborative autonomous research. arXiv preprint arXiv:2503.18102 , 2025."
+  },
+  {
+    "idx": 228,
+    "text": "Schmidgall et al. [2025] Samuel Schmidgall, Yusheng Su, Ze Wang, Ximeng Sun, Jialian Wu, Xiaodong Yu, Jiang Liu, Zicheng Liu, and Emad Barsoum. Agent laboratory: Using llm agents as research assistants. arXiv preprint arXiv:2501.04227 , 2025."
+  },
+  {
+    "idx": 229,
+    "text": "Schneider [2025] Johannes Schneider. Generative to agentic ai: Survey, conceptualization, and challenges. arXiv preprint arXiv:2504.18875 , 2025."
+  },
+  {
+    "idx": 230,
+    "text": "Seo et al. [2024] SeungWon Seo, Junhyeok Lee, SeongRae Noh, and HyeongYeop Kang. Llm-based cooperative agents using information relevance and plan validation. arXiv preprint arXiv:2405.16751 , 2024."
+  },
+  {
+    "idx": 231,
+    "text": "Shen et al. [2025] Haiyang Shen, Yue Li, Desong Meng, Dongqi Cai, Sheng Qi, Li Zhang, Mengwei Xu, and Yun Ma. Shortcutsbench: A large-scale real-world benchmark for api-based agents. In The Thirteenth International Conference on Learning Representations , 2025."
+  },
+  {
+    "idx": 232,
+    "text": "Shi et al. [2025] Zhengliang Shi, Shen Gao, Lingyong Yan, Yue Feng, Xiuyi Chen, Zhumin Chen, Dawei Yin, Suzan Verberne, and Zhaochun Ren. Tool learning in the wild: Empowering language models as automatic tool agents. In Proceedings of the ACM on Web Conference 2025 , pages 2222–2237, 2025."
+  },
+  {
+    "idx": 233,
+    "text": "Shinn et al. [2023] Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu Yao. Reflexion: Language agents with verbal reinforcement learning. 36:8634–8652, 2023."
+  },
+  {
+    "idx": 234,
+    "text": "Si et al. [2024] Chenglei Si, Diyi Yang, and Tatsunori Hashimoto. Can llms generate novel research ideas? a large-scale human study with 100+ nlp researchers. arXiv preprint arXiv:2409.04109 , 2024."
+  },
+  {
+    "idx": 235,
+    "text": "Smbatyan et al. [2025] Khachik Smbatyan, Tsolak Ghukasyan, Tigran Aghajanyan, Hovhannes Dabaghyan, Sergey Adamyan, Aram Bughdaryan, Vahagn Altunyan, Gagik Navasardyan, Aram Davtyan, Anush Hakobyan, et al. Can ai agents design and implement drug discovery pipelines? arXiv preprint arXiv:2504.19912 , 2025."
+  },
+  {
+    "idx": 236,
+    "text": "Song et al. [2024] Tao Song, Man Luo, Linjiang Chen, Yan Huang, Qing Zhu, Daobin Liu, Baicheng Zhang, Gang Zou, Fei Zhang, Weiwei Shang, Jun Jiang, and Yi Luo. A multi-agent-driven robotic ai chemist enabling autonomous chemical research on demand. ChemRxiv , July 2024. 10.26434/chemrxiv-2024-w953h-v2 . URL https://chemrxiv.org/engage/chemrxiv/article-details/66a8c11bc9c6a5c07a7a59c0 . Preprint."
+  },
+  {
+    "idx": 237,
+    "text": "Song et al. [2025] Tao Song, Man Luo, Xiaolong Zhang, Linjiang Chen, Yan Huang, Jiaqi Cao, Qing Zhu, Daobin Liu, Baicheng Zhang, Gang Zou, et al. A multiagent-driven robotic ai chemist enabling autonomous chemical research on demand. Journal of the American Chemical Society , 147(15):12534–12545, 2025."
+  },
+  {
+    "idx": 238,
+    "text": "Song et al. [20242] Yifan Song, Da Yin, Xiang Yue, Jie Huang, Sujian Li, and Bill Yuchen Lin. Trial and error: Exploration-based trajectory optimization of llm agents. pages 7584–7600, 20242."
+  },
+  {
+    "idx": 239,
+    "text": "Sprueill et al. [2024] Henry W Sprueill, Carl Edwards, Khushbu Agarwal, Mariefel V Olarte, Udishnu Sanyal, Conrad Johnston, Hongbin Liu, Heng Ji, and Sutanay Choudhury. Chemreasoner: Heuristic search over a large language model’s knowledge space using quantum-chemical feedback. arXiv preprint arXiv:2402.10980 , 2024."
+  },
+  {
+    "idx": 240,
+    "text": "Srinivas et al. [2025] Sakhinana Sagar Srinivas, Shivam Gupta, and Venkataramana Runkana. Autochemschematic ai: A closed-loop, physics-aware agentic framework for auto-generating chemical process and instrumentation diagrams. arXiv preprint arXiv:2505.24584 , 2025."
+  },
+  {
+    "idx": 241,
+    "text": "Strieth-Kalthoff et al. [2024] Felix Strieth-Kalthoff, Han Hao, Vandana Rathore, Joshua Derasp, Théophile Gaudin, Nicholas H Angello, Martin Seifrid, Ekaterina Trushina, Mason Guy, Junliang Liu, et al. Delocalized, asynchronous, closed-loop discovery of organic laser emitters. Science , 384(6697):eadk9227, 2024."
+  },
+  {
+    "idx": 242,
+    "text": "Su et al. [2025] Haoyang Su, Renqi Chen, Shixiang Tang, Zhenfei Yin, Xinzhe Zheng, Jinzhe Li, Biqing Qi, Qi Wu, Hui Li, Wanli Ouyang, Philip Torr, Bowen Zhou, and Nanqing Dong. Many heads are better than one: Improved scientific idea generation by a LLM-based multi-agent system. In Wanxiang Che, Joyce Nabende, Ekaterina Shutova, and Mohammad Taher Pilehvar, editors, Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers) , pages 28201–28240, Vienna, Austria, July 2025. Association for Computational Linguistics. ISBN 979-8-89176-251-0. URL https://aclanthology.org/2025.acl-long.1368/ ."
+  },
+  {
+    "idx": 243,
+    "text": "Su et al. [20252] Houcheng Su, Weicai Long, and Yanlin Zhang. Biomaster: Multi-agent system for automated bioinformatics analysis workflow. bioRxiv , pages 2025–01, 20252."
+  },
+  {
+    "idx": 244,
+    "text": "Sun et al. [2023] Haotian Sun, Yuchen Zhuang, Lingkai Kong, Bo Dai, and Chao Zhang. Adaplanner: Adaptive planning from feedback with language models. 36:58202–58245, 2023."
+  },
+  {
+    "idx": 245,
+    "text": "Sun et al. [2025] Jiankai Sun, Chuanyang Zheng, Enze Xie, Zhengying Liu, Ruihang Chu, Jianing Qiu, Jiaqi Xu, Mingyu Ding, Hongyang Li, Mengzhe Geng, et al. A survey of reasoning with foundation models: Concepts, methodologies, and outlook. ACM Computing Surveys , 57(11):1–43, 2025."
+  },
+  {
+    "idx": 246,
+    "text": "Sun et al. [2024] Zechang Sun, Yuan-Sen Ting, Yaobo Liang, Nan Duan, Song Huang, and Zheng Cai. Interpreting multi-band galaxy observations with large language model-based agents. arXiv preprint arXiv:2409.14807 , 2024."
+  },
+  {
+    "idx": 247,
+    "text": "Suzgun and Kalai [2024] Mirac Suzgun and Adam Tauman Kalai. Meta-prompting: Enhancing language models with task-agnostic scaffolding. arXiv preprint arXiv:2401.12954 , 2024."
+  },
+  {
+    "idx": 248,
+    "text": "Swanson et al. [2024] Kyle Swanson, Wesley Wu, Nash L Bulaong, John E Pak, and James Zou. The virtual lab: Ai agents design new sars-cov-2 nanobodies with experimental validation. bioRxiv , pages 2024–11, 2024."
+  },
+  {
+    "idx": 249,
+    "text": "Szymanski et al. [2023] Nathan J Szymanski, Bernardus Rendy, Yuxing Fei, Rishi E Kumar, Tanjin He, David Milsted, Matthew J McDermott, Max Gallant, Ekin Dogus Cubuk, Amil Merchant, et al. An autonomous laboratory for the accelerated synthesis of novel materials. Nature , 624(7990):86–91, 2023."
+  },
+  {
+    "idx": 250,
+    "text": "Tadas and Agarmore [2024] Pratiksha Tadas and Sudhir Agarmore. Redefining Work in the Age of AI: Challenges and Pathways to Opportunities. In SPICES , pages 1–5. IEEE, 2024."
+  },
+  {
+    "idx": 251,
+    "text": "Takagi et al. [2023] Shiro Takagi, Ryutaro Yamauchi, and Wataru Kumagai. Towards autonomous hypothesis verification via language models with minimal guidance, 2023. URL https://arxiv.org/abs/2311.09706 ."
+  },
+  {
+    "idx": 252,
+    "text": "Tan et al. [2025] Qian Tan, Dongzhan Zhou, Peng Xia, Wanhao Liu, Wanli Ouyang, Lei Bai, Yuqiang Li, and Tianfan Fu. Chemmllm: Chemical multimodal large language model. arXiv preprint arXiv:2505.16326 , 2025."
+  },
+  {
+    "idx": 253,
+    "text": "Tang et al. [2025] Xiangru Tang, Tianyu Hu, Muyang Ye, Yanjun Shao, Xunjian Yin, Siru Ouyang, Wangchunshu Zhou, Pan Lu, Zhuosheng Zhang, Yilun Zhao, et al. Chemagent: Self-updating library in large language models improves chemical reasoning. arXiv preprint arXiv:2501.06590 , 2025."
+  },
+  {
+    "idx": 254,
+    "text": "Tang et al. [2024] Xiangru Tang et al. MedAgents: Large language models as collaborators for zero-shot medical reasoning. In Findings of the Association for Computational Linguistics , Aug. 2024."
+  },
+  {
+    "idx": 255,
+    "text": "Tao et al. [2024] Mingxu Tao, Dongyan Zhao, and Yansong Feng. Chain-of-discussion: A multi-model framework for complex evidence-based question answering. arXiv preprint arXiv:2402.16313 , 2024."
+  },
+  {
+    "idx": 256,
+    "text": "Team et al. [2025] Kimi Team, Angang Du, Bofei Gao, Bowei Xing, Changjiu Jiang, Cheng Chen, Cheng Li, Chenjun Xiao, Chenzhuang Du, Chonghua Liao, et al. Kimi k1. 5: Scaling reinforcement learning with llms. arXiv preprint arXiv:2501.12599 , 2025."
+  },
+  {
+    "idx": 257,
+    "text": "Team et al. [20252] NovelSeek Team, Bo Zhang, Shiyang Feng, Xiangchao Yan, Jiakang Yuan, Zhiyin Yu, Xiaohan He, Songtao Huang, Shaowei Hou, Zheng Nie, et al. Novelseek: When agent becomes the scientist–building closed-loop system from hypothesis to verification. arXiv preprint arXiv:2505.16938 , 20252."
+  },
+  {
+    "idx": 258,
+    "text": "Thulke et al. [2024] David Thulke, Yingbo Gao, Petrus Pelser, Rein Brune, Rricha Jalota, Floris Fok, Michael Ramos, Ian van Wyk, Abdallah Nasir, Hayden Goldstein, et al. Climategpt: Towards ai synthesizing interdisciplinary research on climate change. arXiv preprint arXiv:2401.09646 , 2024."
+  },
+  {
+    "idx": 259,
+    "text": "Tian et al. [2025] Chuan Tian et al. Optimizing collaboration of large language model based agents for autonomous finite element analysis. 2025."
+  },
+  {
+    "idx": 260,
+    "text": "Tian et al. [20252] Jie Tian, Martin Taylor Sobczak, Dhanush Patil, Jixin Hou, Lin Pang, Arunachalam Ramanathan, Libin Yang, Xianyan Chen, Yuval Golan, Xiaoming Zhai, et al. A multi-agent framework integrating large language models and generative ai for accelerated metamaterial design. arXiv preprint arXiv:2503.19889 , 20252."
+  },
+  {
+    "idx": 261,
+    "text": "Tian et al. [2024] Minyang Tian, Luyu Gao, Shizhuo Dylan Zhang, Xinan Chen, Cunwei Fan, Xuefei Guo, Roland Haas, Pan Ji, Kittithat Krongchon, Yao Li, Shengyan Liu, Di Luo, Yutao Ma, Hao Tong, Kha Trinh, Chenyu Tian, Zihan Wang, Bohao Wu, Yanyu Xiong, Shengzhu Yin, Minhui Zhu, Kilian Lieret, Yanxin Lu, Genglin Liu, Yufeng Du, Tianhua Tao, Ofir Press, Jamie Callan, Eliu Huerta, and Hao Peng. Scicode: A research coding benchmark curated by scientists, 2024. URL https://arxiv.org/abs/2407.13168 ."
+  },
+  {
+    "idx": 262,
+    "text": "Todorov et al. [2012] Emanuel Todorov, Tom Erez, and Yuval Tassa. Mujoco: A physics engine for model-based control. In 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems , pages 5026–5033. IEEE, 2012. 10.1109/IROS.2012.6386109 ."
+  },
+  {
+    "idx": 263,
+    "text": "Tran et al. [2025] Khanh-Tung Tran, Dung Dao, Minh-Duong Nguyen, Quoc-Viet Pham, Barry O’Sullivan, and Hoang D Nguyen. Multi-agent collaboration mechanisms: A survey of llms. arXiv preprint arXiv:2501.06322 , 2025."
+  },
+  {
+    "idx": 264,
+    "text": "Trivedi et al. [2022] Harsh Trivedi, Niranjan Balasubramanian, Tushar Khot, and Ashish Sabharwal. Interleaving retrieval with chain-of-thought reasoning for knowledge-intensive multi-step questions. arXiv preprint arXiv:2212.10509 , 2022."
+  },
+  {
+    "idx": 265,
+    "text": "van Weesep et al. [2025] Laura van Weesep, Samuel Genheden, Ola Engkvist, and Jens Sjölund. Exploring modularity of agentic systems for drug discovery. arXiv preprint arXiv:2506.22189 , 2025."
+  },
+  {
+    "idx": 266,
+    "text": "Wan et al. [2024] Guangya Wan, Yuqi Wu, Jie Chen, and Sheng Li. Dynamic self-consistency: Leveraging reasoning paths for efficient llm sampling. arXiv preprint arXiv:2408.17017 , 2024."
+  },
+  {
+    "idx": 267,
+    "text": "Wang et al. [2024] Cunshi Wang, Xinjie Hu, Yu Zhang, Xunhao Chen, Pengliang Du, Yiming Mao, Rui Wang, Yuyang Li, Ying Wu, Hang Yang, et al. Starwhisper telescope: Agent-based observation assistant system to approach ai astrophysicist. arXiv preprint arXiv:2412.06412 , 2024."
+  },
+  {
+    "idx": 268,
+    "text": "Wang et al. [2023] Guanzhi Wang, Yuqi Xie, Yunfan Jiang, Ajay Mandlekar, Chaowei Xiao, Yuke Zhu, Linxi Fan, and Anima Anandkumar. Voyager: An open-ended embodied agent with large language models. 2023."
+  },
+  {
+    "idx": 269,
+    "text": "Wang et al. [2025] Hanchen Wang, Yichun He, Paula P Coelho, Matthew Bucci, Abbas Nazir, Bob Chen, Linh Trinh, Serena Zhang, Kexin Huang, Vineethkrishna Chandrasekar, et al. Spatialagent: An autonomous ai agent for spatial biology. bioRxiv , pages 2025–04, 2025."
+  },
+  {
+    "idx": 270,
+    "text": "Wang et al. [20242] Haoran Wang, Pingzhi Li, Min Chen, Jinglei Cheng, Junyu Liu, and Tianlong Chen. Grovergpt: A large language model with 8 billion parameters for quantum searching. arXiv preprint arXiv:2501.00135 , 20242."
+  },
+  {
+    "idx": 271,
+    "text": "Wang et al. [20252] Kun Wang, Guibin Zhang, Zhenhong Zhou, Jiahao Wu, Miao Yu, Shiqian Zhao, Chenlong Yin, Jinhu Fu, Yibo Yan, Hanjun Luo, et al. A comprehensive survey in llm (-agent) full stack safety: Data, training and deployment. arXiv preprint arXiv:2504.15585 , 20252."
+  },
+  {
+    "idx": 272,
+    "text": "Wang et al. [20232] Lei Wang, Wanyu Xu, Yihuai Lan, Zhiqiang Hu, Yunshi Lan, Roy Ka-Wei Lee, and Ee-Peng Lim. Plan-and-solve prompting: Improving zero-shot chain-of-thought reasoning by large language models. arXiv preprint arXiv:2305.04091 , 20232."
+  },
+  {
+    "idx": 273,
+    "text": "Wang et al. [20243] Qineng Wang, Zihao Wang, Ying Su, Hanghang Tong, and Yangqiu Song. Rethinking the bounds of llm reasoning: Are multi-agent discussions the key? arXiv preprint arXiv:2402.18272 , 20243."
+  },
+  {
+    "idx": 274,
+    "text": "Wang et al. [20253] Wenxuan Wang, Zizhan Ma, Zheng Wang, Chenghan Wu, Jiaming Ji, Wenting Chen, Xiang Li, and Yixuan Yuan. A survey of llm-based agents in medicine: How far are we from baymax? arXiv preprint arXiv:2502.11211 , 20253."
+  },
+  {
+    "idx": 275,
+    "text": "Wang et al. [2022] Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed Chi, Sharan Narang, Aakanksha Chowdhery, and Denny Zhou. Self-consistency improves chain of thought reasoning in language models. arXiv preprint arXiv:2203.11171 , 2022."
+  },
+  {
+    "idx": 276,
+    "text": "Wang et al. [20254] Yi Wang, Yuejie Hou, Lin Yang, Shisen Li, Weiting Tang, Hui Tang, Qiushun He, Siyuan Lin, Yanyan Zhang, Xingyu Li, et al. Accelerating primer design for amplicon sequencing using large language model-powered agents. Nature Biomedical Engineering , pages 1–16, 20254."
+  },
+  {
+    "idx": 277,
+    "text": "Wang et al. [20244] Zhizheng Wang, Qiao Jin, Chih-Hsuan Wei, Shubo Tian, Po-Ting Lai, Qingqing Zhu, Chi-Ping Day, Christina Ross, and Zhiyong Lu. Geneagent: Self-verification language agent for gene set knowledge discovery using domain databases. arXiv preprint arXiv:2405.16205 , 20244."
+  },
+  {
+    "idx": 278,
+    "text": "Wang et al. [20245] Zilong Wang, Hao Zhang, Chun-Liang Li, Julian Martin Eisenschlos, Vincent Perot, Zifeng Wang, Lesly Miculicich, Yasuhisa Fujii, Jingbo Shang, Chen-Yu Lee, and Tomas Pfister. Chain-of-table: Evolving tables in the reasoning chain for table understanding, 20245. URL https://arxiv.org/abs/2401.04398 ."
+  },
+  {
+    "idx": 279,
+    "text": "Wang et al. [20246] Zirui Wang, Mengzhou Xia, Luxi He, Howard Chen, Yitao Liu, Richard Zhu, Kaiqu Liang, Xindi Wu, Haotian Liu, Sadhika Malladi, Alexis Chevalier, Sanjeev Arora, and Danqi Chen. Charxiv: Charting gaps in realistic chart understanding in multimodal llms, 20246. URL https://arxiv.org/abs/2406.18521 ."
+  },
+  {
+    "idx": 280,
+    "text": "Wei et al. [2022] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed Chi, Quoc V Le, Denny Zhou, et al. Chain-of-thought prompting elicits reasoning in large language models. 35:24824–24837, 2022."
+  },
+  {
+    "idx": 281,
+    "text": "Wei et al. [2023] Jiaqi Wei, Bin Jiang, and Yanxia Zhang. Identification of blue horizontal branch stars with multimodal fusion. Publications of the Astronomical Society of the Pacific , 135(1050):084501, 2023."
+  },
+  {
+    "idx": 282,
+    "text": "Wei et al. [2025] Jiaqi Wei, Hao Zhou, Xiang Zhang, Di Zhang, Zijie Qiu, Wei Wei, Jinzhe Li, Wanli Ouyang, and Siqi Sun. Alignrag: Leveraging critique learning for evidence-sensitive retrieval-augmented reasoning. arXiv preprint arXiv:2504.14858 , 2025."
+  },
+  {
+    "idx": 283,
+    "text": "Wen et al. [2020] Bo Wen, Wen-Feng Zeng, Yuxing Liao, Zhiao Shi, Sara R Savage, Wen Jiang, and Bing Zhang. Deep learning in proteomics. Proteomics , 20(21-22):1900335, 2020."
+  },
+  {
+    "idx": 284,
+    "text": "Weng et al. [2025] Yixuan Weng, Minjun Zhu, Guangsheng Bao, Hongbo Zhang, Jindong Wang, Yue Zhang, and Linyi Yang. Cycleresearcher: Improving automated research via automated review. In The Thirteenth International Conference on Learning Representations , 2025. URL https://openreview.net/forum?id=bjcsVLoHYs ."
+  },
+  {
+    "idx": 285,
+    "text": "Wu et al. [2025] Mengsong Wu, YaFei Wang, Yidong Ming, Yuqi An, Yuwei Wan, Wenliang Chen, Binbin Lin, Yuqiang Li, Tong Xie, and Dongzhan Zhou. Chemagent: Enhancing llms for chemistry and materials science through tree-search based tool learning. arXiv preprint arXiv:2506.07551 , 2025."
+  },
+  {
+    "idx": 286,
+    "text": "Wu et al. [2023] Qingyun Wu, Gagan Bansal, Jieyu Zhang, Yiran Wu, Beibin Li, Erkang Zhu, Li Jiang, Xiaoyun Zhang, Shaokun Zhang, Jiale Liu, Ahmed Hassan Awadallah, Ryen W White, Doug Burger, and Chi Wang. Autogen: Enabling next-gen llm applications via multi-agent conversation, 2023."
+  },
+  {
+    "idx": 287,
+    "text": "Wu et al. [2024] Qingyun Wu et al. Autogen: Enabling next-gen LLM applications via multi-agent conversation, 2024."
+  },
+  {
+    "idx": 288,
+    "text": "Wu et al. [20232] Shengguang Wu, Keming Lu, Benfeng Xu, Junyang Lin, Qi Su, and Chang Zhou. Self-evolved diverse data sampling for efficient instruction tuning. arXiv preprint arXiv:2311.08182 , 20232."
+  },
+  {
+    "idx": 289,
+    "text": "Xiang et al. [2025] Yanzheng Xiang, Hanqi Yan, Shuyin Ouyang, Lin Gui, and Yulan He. Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers. arXiv preprint arXiv:2504.00255 , 2025."
+  },
+  {
+    "idx": 290,
+    "text": "Xiang et al. [20252] Yanzheng Xiang, Hanqi Yan, Shuyin Ouyang, Lin Gui, and Yulan He. Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers, 20252. URL https://arxiv.org/abs/2504.00255 ."
+  },
+  {
+    "idx": 291,
+    "text": "Xiao et al. [2024] Yihang Xiao, Jinyi Liu, Yan Zheng, Xiaohan Xie, Jianye Hao, Mingzhi Li, Ruitao Wang, Fei Ni, Yuxiao Li, Jintian Luo, et al. Cellagent: An llm-driven multi-agent framework for automated single-cell data analysis. bioRxiv , pages 2024–05, 2024."
+  },
+  {
+    "idx": 292,
+    "text": "Xie et al. [2024] Junlin Xie, Zhihong Chen, Ruifei Zhang, Xiang Wan, and Guanbin Li. Large multimodal agents: A survey. arXiv preprint arXiv:2402.15116 , 2024."
+  },
+  {
+    "idx": 293,
+    "text": "Xie et al. [2025] Qiujie Xie, Yixuan Weng, Minjun Zhu, Fuchen Shen, Shulin Huang, Zhen Lin, Jiahui Zhou, Zilan Mao, Zijie Yang, Linyi Yang, et al. How far are ai scientists from changing the world? arXiv preprint arXiv:2507.23276 , 2025."
+  },
+  {
+    "idx": 294,
+    "text": "Xin et al. [2024] Qi Xin, Quyu Kong, Hongyi Ji, Yue Shen, Yuqi Liu, Yan Sun, Zhilin Zhang, Zhaorong Li, Xunlong Xia, Bing Deng, et al. Bioinformatics agent (bia): Unleashing the power of large language models to reshape bioinformatics workflow. bioRxiv , pages 2024–05, 2024."
+  },
+  {
+    "idx": 295,
+    "text": "Xiong et al. [2023] Kai Xiong et al. Examining inter-consistency of large language models collaboration: An in-depth analysis via debate. In Findings of the Association for Computational Linguistics: EMNLP 2023 , Dec. 2023."
+  },
+  {
+    "idx": 296,
+    "text": "Xu et al. [2025] Wujiang Xu, Kai Mei, Hang Gao, Juntao Tan, Zujie Liang, and Yongfeng Zhang. A-mem: Agentic memory for llm agents. arXiv preprint arXiv:2502.12110 , 2025."
+  },
+  {
+    "idx": 297,
+    "text": "Xu et al. [20252] Yinggan Xu, Hana Kimlee, Yijia Xiao, and Di Luo. Advancing ai-scientist understanding: Making llm think like a physicist with interpretable reasoning, 20252. URL https://arxiv.org/abs/2504.01911 ."
+  },
+  {
+    "idx": 298,
+    "text": "Xue et al. [2024] Zhaoqian Xue, Beichen Wang, Suiyuan Zhu, Kai Mei, Hua Tang, Wenyue Hua, Mengnan Du, and Yongfeng Zhang. What if llms have different world views: Simulating alien civilizations with llm-based agents. arXiv preprint arXiv:2402.13184 , 2024."
+  },
+  {
+    "idx": 299,
+    "text": "Yamada et al. [2025] Yutaro Yamada, Robert Tjarko Lange, Cong Lu, Shengran Hu, Chris Lu, Jakob Foerster, Jeff Clune, and David Ha. The ai scientist-v2: Workshop-level automated scientific discovery via agentic tree search. arXiv preprint arXiv:2504.08066 , 2025."
+  },
+  {
+    "idx": 300,
+    "text": "Yan et al. [2022] Keqiang Yan, Yi Liu, Yuchao Lin, and Shuiwang Ji. Periodic graph transformers for crystal material property prediction. Advances in Neural Information Processing Systems , 35:15066–15080, 2022."
+  },
+  {
+    "idx": 301,
+    "text": "Yan et al. [2024] Keqiang Yan, Cong Fu, Xiaofeng Qian, Xiaoning Qian, and Shuiwang Ji. Complete and efficient graph transformers for crystal material property prediction. arXiv preprint arXiv:2403.11857 , 2024."
+  },
+  {
+    "idx": 302,
+    "text": "Yang et al. [2024] Han Yang, Chenxi Hu, Yichi Zhou, Xixian Liu, Yu Shi, Jielan Li, Guanzhi Li, Zekun Chen, Shuizhou Chen, Claudio Zeni, et al. Mattersim: A deep learning atomistic model across elements, temperatures and pressures. arXiv preprint arXiv:2405.04967 , 2024."
+  },
+  {
+    "idx": 303,
+    "text": "Yang et al. [20242] Junwei Yang, Hanwen Xu, Srbuhi Mirzoyan, Tong Chen, Zixuan Liu, Zequn Liu, Wei Ju, Luchen Liu, Zhiping Xiao, Ming Zhang, et al. Poisoning medical knowledge using large language models. Nature Machine Intelligence , 6(10):1156–1168, 20242."
+  },
+  {
+    "idx": 304,
+    "text": "Yang et al. [20243] Kevin Yang, Dan Klein, Asli Celikyilmaz, Nanyun Peng, and Yuandong Tian. Rlcd: Reinforcement learning from contrastive distillation for lm alignment. 20243."
+  },
+  {
+    "idx": 305,
+    "text": "Yang et al. [2023] Rui Yang, Lin Song, Yanwei Li, Sijie Zhao, Yixiao Ge, Xiu Li, and Ying Shan. Gpt4tools: Teaching large language model to use tools via self-instruction. 36:71995–72007, 2023."
+  },
+  {
+    "idx": 306,
+    "text": "Yang et al. [20232] Zhenyu Yang, Xiaoxi Zeng, Yi Zhao, and Runsheng Chen. Alphafold2 and its applications in the fields of biology and medicine. Signal Transduction and Targeted Therapy , 8(1):115, 20232."
+  },
+  {
+    "idx": 307,
+    "text": "Yang et al. [20233] Zonglin Yang, Xinya Du, Junxian Li, Jie Zheng, Soujanya Poria, and Erik Cambria. Large language models for automated open-domain scientific hypotheses discovery. arXiv preprint arXiv:2309.02726 , 20233."
+  },
+  {
+    "idx": 308,
+    "text": "Yang et al. [20244] Zonglin Yang, Xinya Du, Junxian Li, Jie Zheng, Soujanya Poria, and Erik Cambria. Large language models for automated open-domain scientific hypotheses discovery. In Findings of the Association for Computational Linguistics ACL 2024 , pages 13545–13565, 20244."
+  },
+  {
+    "idx": 309,
+    "text": "Yang et al. [20245] Zonglin Yang, Wanhao Liu, Ben Gao, Tong Xie, Yuqiang Li, Wanli Ouyang, Soujanya Poria, Erik Cambria, and Dongzhan Zhou. Moose-chem: Large language models for rediscovering unseen chemistry scientific hypotheses. arXiv preprint arXiv:2410.07076 , 20245."
+  },
+  {
+    "idx": 310,
+    "text": "Yao et al. [2023] Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao. React: Synergizing reasoning and acting in language models. 2023."
+  },
+  {
+    "idx": 311,
+    "text": "Yax et al. [2024] Nicolas Yax, Hernán Anlló, and Stefano Palminteri. Studying and improving reasoning in humans and machines. Communications Psychology , 2(1):51, 2024."
+  },
+  {
+    "idx": 312,
+    "text": "Yehudai et al. [2025] Asaf Yehudai, Lilach Eden, Alan Li, Guy Uziel, Yilun Zhao, Roy Bar-Haim, Arman Cohan, and Michal Shmueli-Scheuer. Survey on evaluation of llm-based agents. arXiv preprint arXiv:2503.16416 , 2025."
+  },
+  {
+    "idx": 313,
+    "text": "Yin et al. [2023] Zhangyue Yin et al. Exchange-of-thought: Enhancing large language model capabilities through cross-model communication. In Houda Bouamor, Juan Pino, and Kalika Bali, editors, Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing , pages 15135–15153, Singapore, December 2023. Association for Computational Linguistics."
+  },
+  {
+    "idx": 314,
+    "text": "Yoshikawa et al. [2023] Naruki Yoshikawa, Marta Skreta, Kourosh Darvish, Sebastian Arellano-Rubach, Zhi Ji, Lasse Bjørn Kristensen, Andrew Zou Li, Yuchi Zhao, Haoping Xu, Artur Kuramshin, Alán Aspuru-Guzik, Florian Shkurti, and Animesh Garg. Large language models for chemistry robotics. Autonomous Robots , 47:1057–1086, 2023. 10.1007/s10514-023-10136-2 . URL https://link.springer.com/article/10.1007/s10514-023-10136-2 ."
+  },
+  {
+    "idx": 315,
+    "text": "Yu et al. [2024] Botao Yu, Frazier N Baker, Ziru Chen, Garrett Herb, Boyu Gou, Daniel Adu-Ampratwum, Xia Ning, and Huan Sun. Chemtoolagent: The impact of tools on language agents for chemistry problem solving. arXiv preprint arXiv:2411.07228 , 2024."
+  },
+  {
+    "idx": 316,
+    "text": "Yu et al. [2025] Miao Yu, Fanci Meng, Xinyun Zhou, Shilong Wang, Junyuan Mao, Linsey Pan, Tianlong Chen, Kun Wang, Xinfeng Li, Yongfeng Zhang, et al. A survey on trustworthy llm agents: Threats and countermeasures. In Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V. 2 , pages 6216–6226, 2025."
+  },
+  {
+    "idx": 317,
+    "text": "Yuan et al. [2025] Jiakang Yuan, Xiangchao Yan, Botian Shi, Tao Chen, Wanli Ouyang, Bo Zhang, Lei Bai, Yu Qiao, and Bowen Zhou. Dolphin: Closed-loop open-ended auto-research through thinking, practice, and feedback. arXiv e-prints , pages arXiv–2501, 2025."
+  },
+  {
+    "idx": 318,
+    "text": "Yuan et al. [2024] Siyu Yuan, Kaitao Song, Jiangjie Chen, Xu Tan, Yongliang Shen, Ren Kan, Dongsheng Li, and Deqing Yang. Easytool: Enhancing llm-based agents with concise tool instruction. arXiv preprint arXiv:2401.06201 , 2024."
+  },
+  {
+    "idx": 319,
+    "text": "Yuan et al. [20242] Weizhe Yuan, Richard Yuanzhe Pang, Kyunghyun Cho, Xian Li, Sainbayar Sukhbaatar, Jing Xu, and Jason Weston. Self-rewarding language models, 20242."
+  },
+  {
+    "idx": 320,
+    "text": "Yue et al. [2025] Ling Yue, Nithin Somasekharan, Yadi Cao, and Shaowu Pan. Foam-agent: Towards automated intelligent cfd workflows. arXiv preprint arXiv:2505.04997 , 2025."
+  },
+  {
+    "idx": 321,
+    "text": "Zadeh et al. [2025] Fatemeh Pesaran Zadeh, Juyeon Kim, Jin-Hwa Kim, and Gunhee Kim. Text2chart31: Instruction tuning for chart generation with automatic feedback, 2025. URL https://arxiv.org/abs/2410.04064 ."
+  },
+  {
+    "idx": 322,
+    "text": "Zelikman et al. [2024] Eric Zelikman, YH Wu, Jesse Mu, and Noah D Goodman. Star: Self-taught reasoner bootstrapping reasoning with reasoning. volume 1126, 2024."
+  },
+  {
+    "idx": 323,
+    "text": "Zeng et al. [2024] Shenglai Zeng, Jiankun Zhang, Pengfei He, Yue Xing, Yiding Liu, Han Xu, Jie Ren, Shuaiqiang Wang, Dawei Yin, Yi Chang, et al. The good and the bad: Exploring privacy issues in retrieval-augmented generation (rag). arXiv preprint arXiv:2402.16893 , 2024."
+  },
+  {
+    "idx": 324,
+    "text": "Zeni et al. [2025] Claudio Zeni, Robert Pinsler, Daniel Zügner, Andrew Fowler, Matthew Horton, Xiang Fu, Zilong Wang, Aliaksandra Shysheya, Jonathan Crabbé, Shoko Ueda, et al. A generative model for inorganic materials design. Nature , 639(8055):624–632, 2025."
+  },
+  {
+    "idx": 325,
+    "text": "Zhang et al. [2025] Baohua Zhang, Xin Li, Huangchao Xu, Zhong Jin, Quansheng Wu, and Ce Li. Topomas: Large language model driven topological materials multiagent system. arXiv preprint arXiv:2507.04053 , 2025."
+  },
+  {
+    "idx": 326,
+    "text": "Zhang et al. [2024] Ceyao Zhang, Kaijie Yang, Siyi Hu, Zihao Wang, Guanghe Li, Yihang Sun, Cheng Zhang, Zhaowei Zhang, Anji Liu, Song-Chun Zhu, et al. Proagent: building proactive cooperative agents with large language models. volume 38, pages 17591–17599, 2024."
+  },
+  {
+    "idx": 327,
+    "text": "Zhang et al. [20242] Dan Zhang, Sining Zhoubian, Ziniu Hu, Yisong Yue, Yuxiao Dong, and Jie Tang. Rest-mcts*: Llm self-training via process reward guided tree search. 37:64735–64772, 20242."
+  },
+  {
+    "idx": 328,
+    "text": "Zhang et al. [20243] Di Zhang, Wei Liu, Qian Tan, Jingdan Chen, Hang Yan, Yuliang Yan, Jiatong Li, Weiran Huang, Xiangyu Yue, Wanli Ouyang, et al. Chemllm: A chemical large language model. arXiv preprint arXiv:2402.06852 , 20243."
+  },
+  {
+    "idx": 329,
+    "text": "Zhang et al. [20252] Guorui Zhang, Chao Song, Liyuan Liu, Qiuyu Wang, and Chunquan Li. Transagent: Dynamizing transcriptional regulation analysis via multi-omics-aware ai agent. bioRxiv , pages 2025–04, 20252."
+  },
+  {
+    "idx": 330,
+    "text": "Zhang et al. [20253] Haotian Zhang, Yu H Sun, Wenxing Hu, Xu Cui, Zhengyu Ouyang, Derrick Cheng, Xinmin Zhang, and Baohong Zhang. Compbioagent: An llm-powered agent for single-cell rna-seq data exploration. bioRxiv , pages 2025–03, 20253."
+  },
+  {
+    "idx": 331,
+    "text": "Zhang et al. [20254] Haoxuan Zhang, Ruochi Li, Yang Zhang, Ting Xiao, Jiangping Chen, Junhua Ding, and Haihua Chen. The evolving role of large language models in scientific innovation: Evaluator, collaborator, and scientist. arXiv preprint arXiv:2507.11810 , 20254."
+  },
+  {
+    "idx": 332,
+    "text": "Zhang et al. [20244] Huan Zhang, Yu Song, Ziyu Hou, Santiago Miret, and Bang Liu. HoneyComb: A flexible LLM-based agent system for materials science. In Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen, editors, Findings of the Association for Computational Linguistics: EMNLP 2024 , pages 3369–3382, Miami, Florida, USA, nov 20244. Association for Computational Linguistics. 10.18653/v1/2024.findings-emnlp.192 . URL https://aclanthology.org/2024.findings-emnlp.192/ ."
+  },
+  {
+    "idx": 333,
+    "text": "Zhang et al. [20245] Huan Zhang, Yu Song, Ziyu Hou, Santiago Miret, and Bang Liu. Honeycomb: A flexible llm-based agent system for materials science. arXiv preprint arXiv:2409.00135 , 20245."
+  },
+  {
+    "idx": 334,
+    "text": "Zhang et al. [20255] Jian Zhang, Zhiyuan Wang, Zhangqi Wang, Xinyu Zhang, Fangzhi Xu, Qika Lin, Rui Mao, Erik Cambria, and Jun Liu. Maps: A multi-agent framework based on big seven personality and socratic guidance for multimodal scientific problem solving. arXiv preprint arXiv:2503.16905 , 20255."
+  },
+  {
+    "idx": 335,
+    "text": "Zhang et al. [20256] Jiayi Zhang, Jinyu Xiang, Zhaoyang Yu, Fengwei Teng, Xiong-Hui Chen, Jiaqi Chen, Mingchen Zhuge, Xin Cheng, Sirui Hong, Jinlin Wang, Bang Liu, Yuyu Luo, and Chenglin Wu. AFlow: Automating agentic workflow generation. 20256."
+  },
+  {
+    "idx": 336,
+    "text": "Zhang et al. [20246] Jintian Zhang et al. Exploring collaboration mechanisms for LLM agents: A social psychology view. In Proceedings of the Annual Meeting of the Association for Computational Linguistics , Aug. 20246."
+  },
+  {
+    "idx": 337,
+    "text": "Zhang et al. [20257] Qiang Zhang, Keyan Ding, Tianwen Lv, Xinda Wang, Qingyu Yin, Yiwen Zhang, Jing Yu, Yuhao Wang, Xiaotong Li, Zhuoyi Xiang, et al. Scientific large language models: A survey on biological & chemical domains. ACM Computing Surveys , 57(6):1–38, 20257."
+  },
+  {
+    "idx": 338,
+    "text": "Zhang et al. [20258] Xiang Zhang, Juntai Cao, Jiaqi Wei, Chenyu You, and Dujian Ding. Why prompt design matters and works: A complexity analysis of prompt search space in llms. arXiv preprint arXiv:2503.10084 , 20258."
+  },
+  {
+    "idx": 339,
+    "text": "Zhang et al. [20259] Xiang Zhang, Tianze Ling, Zhi Jin, Sheng Xu, Zhiqiang Gao, Boyan Sun, Zijie Qiu, Jiaqi Wei, Nanqing Dong, Guangshuai Wang, et al. π \\pi -primenovo: an accurate and efficient non-autoregressive deep learning model for de novo peptide sequencing. Nature Communications , 16(1):267, 20259."
+  },
+  {
+    "idx": 340,
+    "text": "Zhang et al. [202510] Xiang Zhang, Jiaqi Wei, Zijie Qiu, Sheng Xu, Nanqing Dong, Zhiqiang Gao, and Siqi Sun. Curriculum learning for biological sequence prediction: The case of de novo peptide sequencing. arXiv preprint arXiv:2506.13485 , 202510."
+  },
+  {
+    "idx": 341,
+    "text": "Zhang et al. [202511] Xiaowen Zhang, Zhenyu Bi, Xuan Wang, Tiziana Di Matteo, and Rupert AC Croft. Bridging literature and the universe via a multi-agent large language model system. arXiv preprint arXiv:2507.08958 , 202511."
+  },
+  {
+    "idx": 342,
+    "text": "Zhang and Di Ventra [2023] Yuan-Hang Zhang and Massimiliano Di Ventra. Transformer quantum state: A multipurpose model for quantum many-body problems. Physical Review B , 107(7):075147, 2023."
+  },
+  {
+    "idx": 343,
+    "text": "Zhang et al. [202512] Yue Zhang, Yafu Li, Leyang Cui, Deng Cai, Lemao Liu, Tingchen Fu, Xinting Huang, Enbo Zhao, Yu Zhang, Yulong Chen, et al. Siren’s song in the ai ocean: A survey on hallucination in large language models. Computational Linguistics , pages 1–45, 202512."
+  },
+  {
+    "idx": 344,
+    "text": "Zhang et al. [202513] Zhongyue Zhang, Zijie Qiu, Yingcheng Wu, Shuya Li, Dingyan Wang, Zhuomin Zhou, Duo An, Yuhan Chen, Yu Li, Yongbo Wang, et al. Origene: A self-evolving virtual disease biologist automating therapeutic target discovery. bioRxiv , pages 2025–06, 202513."
+  },
+  {
+    "idx": 345,
+    "text": "Zhao et al. [2024] Andrew Zhao, Daniel Huang, Quentin Xu, Matthieu Lin, Yong-Jin Liu, and Gao Huang. Expel: Llm agents are experiential learners. pages 19632–19642, 2024."
+  },
+  {
+    "idx": 346,
+    "text": "Zheng et al. [2025] Tianshi Zheng, Zheye Deng, Hong Ting Tsang, Weiqi Wang, Jiaxin Bai, Zihao Wang, and Yangqiu Song. From automation to autonomy: A survey on large language models in scientific discovery. arXiv preprint arXiv:2505.13259 , 2025."
+  },
+  {
+    "idx": 347,
+    "text": "Zhong et al. [2023] Qihuang Zhong, Liang Ding, Juhua Liu, Bo Du, and Dacheng Tao. Self-evolution learning for discriminative language model pretraining. pages 4130–4145, 2023."
+  },
+  {
+    "idx": 348,
+    "text": "Zhong et al. [2024] Tianyang Zhong, Zhengliang Liu, Yi Pan, Yutong Zhang, Yifan Zhou, Shizhe Liang, Zihao Wu, Yanjun Lyu, Peng Shu, Xiaowei Yu, et al. Evaluation of openai o1: Opportunities and challenges of agi. arXiv preprint arXiv:2409.18486 , 2024."
+  },
+  {
+    "idx": 349,
+    "text": "Zhou et al. [2025] Lianhao Zhou, Hongyi Ling, Keqiang Yan, Kaiji Zhao, Xiaoning Qian, Raymundo Arróyave, Xiaofeng Qian, and Shuiwang Ji. Toward greater autonomy in materials discovery agents: Unifying planning, physics, and scientists. arXiv preprint arXiv:2506.05616 , 2025."
+  },
+  {
+    "idx": 350,
+    "text": "Zhou et al. [2024] Wangchunshu Zhou, Yixin Ou, Shengwei Ding, Long Li, Jialong Wu, Tiannan Wang, Jiamin Chen, Shuai Wang, Xiaohua Xu, Ningyu Zhang, et al. Symbolic learning enables self-evolving agents. arXiv preprint arXiv:2406.18532 , 2024."
+  },
+  {
+    "idx": 351,
+    "text": "Zhou et al. [20252] Yuhao Zhou, Yiheng Wang, Xuming He, Ruoyao Xiao, Zhiwei Li, Qiantai Feng, Zijie Guo, Yuejin Yang, Hao Wu, Wenxuan Huang, et al. Scientists’ first exam: Probing cognitive abilities of mllm via perception, understanding, and reasoning. arXiv preprint arXiv:2506.10521 , 20252."
+  },
+  {
+    "idx": 352,
+    "text": "Zhou et al. [20253] Zekun Zhou, Xiaocheng Feng, Lei Huang, Xiachong Feng, Ziyun Song, Ruihan Chen, Liang Zhao, Weitao Ma, Yuxuan Gu, Baoxin Wang, et al. From hypothesis to publication: A comprehensive survey of ai-driven research support systems. arXiv preprint arXiv:2503.01424 , 20253."
+  },
+  {
+    "idx": 353,
+    "text": "Zhou et al. [20254] Zhenhong Zhou, Zherui Li, Jie Zhang, Yuanhe Zhang, Kun Wang, Yang Liu, and Qing Guo. Corba: Contagious recursive blocking attacks on multi-agent systems based on large language models. arXiv preprint arXiv:2502.14529 , 20254."
+  },
+  {
+    "idx": 354,
+    "text": "Zhu et al. [2024] Max Zhu, Adrián Bazaga, and Pietro Liò. Fluid-llm: Learning computational fluid dynamics with spatiotemporal-aware large language models. arXiv preprint arXiv:2406.04501 , 2024."
+  },
+  {
+    "idx": 355,
+    "text": "Zhu et al. [2025] Pengyu Zhu, Zhenhong Zhou, Yuanhe Zhang, Shilinlu Yan, Kun Wang, and Sen Su. Demonagent: Dynamically encrypted multi-backdoor implantation attack on llm-based agent. arXiv preprint arXiv:2502.12575 , 2025."
+  },
+  {
+    "idx": 356,
+    "text": "Zhu et al. [20252] Yinghao Zhu, Yifan Qi, Zixiang Wang, Lei Gu, Dehao Sui, Haoran Hu, Xichen Zhang, Ziyi He, Liantao Ma, and Lequan Yu. Healthflow: A self-evolving ai agent with meta planning for autonomous healthcare research. arXiv preprint arXiv:2508.02621 , 20252."
+  },
+  {
+    "idx": 357,
+    "text": "Zhu et al. [20242] Yuqi Zhu, Shuofei Qiao, Yixin Ou, Shumin Deng, Ningyu Zhang, Shiwei Lyu, Yue Shen, Lei Liang, Jinjie Gu, and Huajun Chen. Knowagent: Knowledge-augmented planning for llm-based agents. arXiv preprint arXiv:2403.03101 , 20242."
+  },
+  {
+    "idx": 358,
+    "text": "Zhuang et al. [2025] Xiang Zhuang, Keyan Ding, Tianwen Lyu, Yinuo Jiang, Xiaotong Li, Zhuoyi Xiang, Zeyuan Wang, Ming Qin, Kehua Feng, Jike Wang, et al. Advancing biomolecular understanding and design following human instructions. Nature Machine Intelligence , pages 1–14, 2025."
+  },
+  {
+    "idx": 359,
+    "text": "Zou et al. [2025] Yunheng Zou, Austin H. Cheng, Abdulrahman Aldossary, Jiaru Bai, Shi Xuan Leong, Jorge Arturo Campos-Gonzalez-Angulo, Changhyeok Choi, Cher Tian Ser, Gary Tom, Andrew Wang, Zijian Zhang, Ilya Yakavets, Han Hao, Chris Crebolder, Varinia Bernales, and Alán Aspuru-Guzik. El Agente: An Autonomous Agent for Quantum Chemistry. arXiv e-prints , art. arXiv:2505.02484, May 2025. 10.48550/arXiv.2505.02484 . Generated on Mon Aug 18 05:27:40 2025 by L a T e XML"
+  }
+]

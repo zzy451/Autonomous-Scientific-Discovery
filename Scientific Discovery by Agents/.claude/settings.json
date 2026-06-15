@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find \"c:/Users/20683/Desktop/综述/Scientific Discovery by Agents\" -type f 2>/dev/null | head -50)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Read(c:/Users/20683/Desktop/综述/Scientific Discovery by Agents/**)",
+      "Write(c:/Users/20683/Desktop/综述/Scientific Discovery by Agents/**)",
+      "Edit(c:/Users/20683/Desktop/综述/Scientific Discovery by Agents/**)"
+    ],
+    "additionalDirectories": [
+      "C:/Users/20683/Desktop/综述/Scientific Discovery by Agents"
+    ]
+  }
+}

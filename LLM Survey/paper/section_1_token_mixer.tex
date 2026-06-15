@@ -1,0 +1,605 @@
+% =============================================================
+% Section 1: Token Mixer (Attention Mechanism)
+% =============================================================
+% NOTE: This file begins at \subsection level.
+% The \section{Token Mixer} command should appear in main.tex.
+
+\subsection{Standard Dot-Product Attention (MHA)}
+\label{subsec:mha}
+
+The standard multi-head attention (MHA) mechanism, introduced by Vaswani et al.~\cite{vaswani2017attention}, serves as the foundational token mixer for all Transformer-based language models. By dispensing with the sequential dependency inherent to recurrent neural networks and the locality constraint of convolutional networks, MHA demonstrated for the first time that a purely attention-based architecture is sufficient for high-quality sequence modeling. The design revolves around three learned projections---Query ($Q$), Key ($K$), and Value ($V$)---which together implement a differentiable information retrieval system where every output token aggregates information from the entire input sequence.
+
+Concretely, given an input $X \in \mathbb{R}^{N \times d}$, MHA projects it into $Q = XW^Q$, $K = XW^K$, $V = XW^V$ and computes
+\begin{equation}
+\text{Attention}(Q, K, V) = \text{softmax}\!\left(\frac{QK^\top}{\sqrt{d_k}}\right) V,
+\label{eq:mha}
+\end{equation}
+where the scaling factor $\sqrt{d_k}$ prevents the dot-product magnitudes from growing large enough to saturate the softmax gradients. The multi-head variant partitions the representation space into $h$ subspaces and computes attention independently in each:
+\begin{equation}
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \ldots, \text{head}_h)\, W^O,
+\end{equation}
+where $\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$. This decomposition enables each head to specialize in capturing distinct relational patterns---syntactic dependencies, coreference chains, or positional cues---thereby enriching the overall representational capacity.
+
+MHA incurs $O(N^2 d)$ FLOPs and $O(N^2 + Nd)$ memory, making it the dominant computational bottleneck for long sequences. The quadratic scaling is an inherent consequence of the softmax operation, which requires each token to attend to every other token in the sequence. In practice, early landmark models such as GPT-2, GPT-3, and BERT employed vanilla MHA directly. By 2023, however, the majority of production-scale models transitioned to parameter-sharing variants (GQA, MLA) for inference efficiency, although smaller models such as Llama~2 7B and Baichuan-M1~\cite{baichuan2025m1} retain full MHA due to its superior quality at moderate sequence lengths. More recently, Qiu et al.~\cite{qiu2025gated} proposed Gated Self-Attention, which applies a learned gate $g = \sigma(W_g x)$ to the attention output, providing fine-grained control over the information flow and mitigating the attention sink phenomenon whereby initial tokens accumulate disproportionate attention mass.
+
+From a theoretical perspective, softmax attention has been shown to be equivalent to Nadaraya--Watson kernel regression with an exponential kernel~\cite{tay2020efficient}, and it has been proven that sufficiently wide and deep Transformers are universal approximators of continuous sequence-to-sequence functions. Despite these strengths, several open challenges persist: the attention sink phenomenon, whereby LLMs allocate disproportionate weight to the beginning-of-sequence token as a softmax ``garbage collector''~\cite{xiao2023streamingllm}; the zero-sum constraint imposed by softmax normalization, which limits the expressivity of attention weights; and the progressive rank collapse of attention matrices observed in deeper layers. Nevertheless, MHA remains the strongest quality baseline, and algorithmic innovations such as FlashAttention~\cite{dao2022flashattention} have demonstrated that IO-aware kernel design can yield multi-fold wall-clock speedups without altering the mathematical formulation. The prevailing trend is not to replace MHA entirely but to preserve it in critical layers while delegating the remainder to more efficient alternatives.
+
+
+\subsection{KV-Cache Optimization (MQA $\to$ GQA $\to$ MLA $\to$ CLA)}
+\label{subsec:kv-cache-opt}
+
+During autoregressive inference, the key--value (KV) cache constitutes the primary memory bottleneck: at each decoding step the model must load the full history of cached KV pairs, rendering inference memory-bandwidth-bound rather than compute-bound. For a model with $L$ layers, $H$ attention heads, and head dimension $d_h$, storing 128K tokens in FP16 requires roughly $4LHd_h \times 128\text{K}$ bytes---on the order of 160\,GB for a 70B-class model. The community has developed four complementary strategies that attack this bottleneck along orthogonal dimensions: head sharing (MQA, GQA), latent compression (MLA), cross-layer sharing (CLA), and matrix factorization (MFA).
+
+\textbf{Multi-Query Attention (MQA).}\quad Shazeer~\cite{shazeer2019fast} proposed sharing a single KV head across all $H$ query heads, achieving an $H$-fold reduction (typically $\sim$32$\times$) in KV-cache size. While MQA was adopted by PaLM and StarCoder, the aggressive sharing incurs a measurable quality degradation, motivating the development of intermediate solutions.
+
+\textbf{Grouped-Query Attention (GQA).}\quad Ainslie et al.~\cite{ainslie2023gqa} introduced a balanced compromise in which $H$ query heads are partitioned into $G$ groups, each sharing one set of KV projections. GQA with $G = 1$ degenerates to MQA, while $G = H$ recovers full MHA. A key practical contribution is the \emph{uptrain} procedure, which converts an existing MHA checkpoint by mean-pooling the KV heads within each group, requiring only $\sim$5\% of the original pretraining cost. GQA with $G = 8$ has become the de facto industry standard since 2024, adopted by Llama~3~\cite{grattafiori2024llama3}, Mistral~\cite{jiang2023mistral}, Qwen~2.5/3~\cite{yang2024qwen25,yang2025qwen3}, Gemma~3~\cite{gemma2025gemma3}, Llama~4~\cite{meta2025llama4}, and Phi-4~\cite{abdin2024phi4}, with quality within 0.5 BLEU of MHA on standard benchmarks.
+
+\textbf{Multi-Head Latent Attention (MLA).}\quad DeepSeek-V2~\cite{deepseekv2_2024_mla} introduced a fundamentally different approach that operates along the \emph{rank} dimension rather than the head dimension. MLA jointly compresses the KV representations into a low-dimensional latent vector:
+\begin{equation}
+c_t^{KV} = W^{DKV} h_t, \quad K_t = W^{UK}\, c_t^{KV}, \quad V_t = W^{UV}\, c_t^{KV},
+\end{equation}
+where $c_t^{KV} \in \mathbb{R}^{d_c}$ with $d_c \ll Hd_h$ (e.g., $d_c = 512$ vs.\ $Hd_h = 32{,}768$). At inference time only $c_t^{KV}$ is cached, compressing the KV cache by 93.3\%. A technical subtlety is that RoPE is incompatible with low-rank compression; DeepSeek addresses this through \emph{Decoupled RoPE}, which generates a small additional RoPE-embedded key that is concatenated with the compressed key. MLA has been deployed across the entire DeepSeek series (V2, V3~\cite{liu2024deepseek}, R1~\cite{deepseek2025r1}), where it not only matches but surpasses MHA quality.
+
+\textbf{Cross-Layer Attention (CLA).}\quad Brandon et al.~\cite{brandon2024reducing} proposed sharing KV caches across every $S$ consecutive layers, operating along the \emph{depth} dimension orthogonally to head-level sharing. CLA with stride $S = 2$ increases perplexity by only 0.1--0.2 points while halving the total KV-cache footprint. Hunyuan-Large~\cite{sun2024hunyuan} and Yi-Lightning~\cite{yi2024lightning} have deployed CLA in production, demonstrating that it composes well with GQA for multiplicative savings.
+
+\textbf{Multi-Matrix Factorization Attention (MFA).}\quad Step-2 introduced MFA as a fourth KV-cache optimization route based on matrix decomposition, representing an alternative low-rank factorization strategy to MLA. While details remain limited, MFA suggests that the space of factorization approaches for KV compression is far from exhausted.
+
+Table~\ref{tab:kv-cache-comparison} summarizes the key characteristics of these approaches.
+
+\begin{table}[t]
+\centering
+\caption{Comparison of KV-cache optimization methods. Compression ratios are relative to standard MHA.}
+\label{tab:kv-cache-comparison}
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Method} & \textbf{Compression Dim.} & \textbf{Ratio} & \textbf{Quality Impact} & \textbf{Representative Models} \\
+\midrule
+MQA  & Head $\to$ 1    & $\sim$32$\times$  & Moderate drop    & PaLM, StarCoder \\
+GQA-8 & Head $\to$ $G$  & 4$\times$         & Negligible       & Llama 3, Mistral, Qwen, Gemma 3 \\
+MLA  & Head $\to$ low-rank & $\sim$57$\times$ & Matches/exceeds MHA & DeepSeek V2/V3/R1 \\
+CLA-2 & Layer sharing   & 2$\times$         & Near-lossless    & Hunyuan-Large, Yi-Lightning \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The evolution from MQA to MLA reveals an important insight: the KV cache admits compression along multiple dimensions---head count, latent rank, layer depth, numerical precision, and matrix factorization---and these dimensions are largely orthogonal, suggesting that future architectures may jointly optimize across all five for maximal efficiency. The optimal configuration is likely model-size-dependent: smaller models benefit less from aggressive compression (where the quality--efficiency trade-off is less favorable), while frontier-scale models stand to gain the most from multi-dimensional KV-cache reduction.
+
+
+
+\subsection{Sparse Attention}
+\label{subsec:sparse-attn}
+
+The full $N \times N$ attention matrix computed in standard MHA is empirically highly sparse: for typical language modeling tasks, the vast majority of attention weights are near zero, with each token concentrating its attention mass on a small subset of informative positions~\cite{child2019generating}. Sparse attention methods exploit this observation by restricting each query to attend only to a structured or learned subset of key--value positions, reducing the quadratic complexity to $O(N\sqrt{N})$, $O(NW)$, or $O(N \log N)$ depending on the sparsity pattern. The resulting computational savings are particularly significant for long-context modeling, where $N$ ranges from 32K to over 1M tokens in modern LLMs.
+
+The field has evolved through four distinct phases: fixed factorized patterns (2019), combinatorial fixed patterns with theoretical guarantees (2020), hand-crafted heterogeneous layer-wise mixtures deployed in production (2023--2025), and learnable dynamic sparsity that adapts to input content (2024--2025). Throughout this evolution, a recurring theme is the tension between expressivity (the ability to capture arbitrary long-range dependencies) and hardware efficiency (the ability to map sparse access patterns onto contiguous GPU memory operations). We use $N$ for sequence length, $d$ for head dimension, $W$ for window size, $B$ for block size, and $k$ for the number of selected blocks or buckets throughout this subsection.
+
+
+% ================================================================
+\subsubsection{Fixed-Pattern Sparsity}
+\label{subsubsec:fixed-pattern}
+
+The earliest approaches to sparse attention replace the dense attention matrix with a predetermined sparsity pattern that is fixed across all inputs and all layers. The central design question is how to choose this pattern so that information can still propagate globally through the composition of multiple layers, despite each individual layer having only local or structured connectivity.
+
+\paragraph{Sparse Transformer.}
+Child et al.~\cite{child2019generating} introduced the first systematic study of sparse attention patterns for autoregressive generation. The key idea is to factorize the full attention into two complementary sparse patterns: a \emph{strided} pattern in which each token attends to every $\ell$-th previous token (capturing periodic long-range dependencies), and a \emph{fixed} pattern in which each token attends to a contiguous local window plus a set of fixed ``summary'' positions. Formally, for a sequence of length $N$ and stride $\ell = \lfloor\sqrt{N}\rfloor$, the strided pattern defines the attention set for position $i$ as:
+\begin{equation}
+\mathcal{A}_{\text{strided}}(i) = \{j : (i - j) \bmod \ell = 0,\; j \leq i\},
+\label{eq:sparse-strided}
+\end{equation}
+yielding $|\mathcal{A}(i)| = O(\sqrt{N})$ per position and $O(N\sqrt{N})$ total complexity. The fixed pattern replaces the stride with summary tokens: each block of $\ell$ consecutive positions designates its last $c$ tokens as aggregators, and all other tokens attend within their block and to these aggregators. By composing strided and fixed patterns across consecutive layers, information can propagate from any position to any other position within two layers, preserving the global receptive field of full attention.
+
+The Sparse Transformer demonstrated that autoregressive models with $O(N\sqrt{N})$ attention can generate high-quality images (CIFAR-10 at 2.80 bits/dim), text (Enwik8 at 0.99 bits/char), and raw audio waveforms with global coherence over sequences of up to 65K time steps. The accompanying engineering contributions---custom block-sparse CUDA kernels, gradient checkpointing, and mixed-precision training---were equally influential, establishing the template for hardware-aware sparse attention implementations that would be followed by all subsequent work.
+
+\paragraph{Longformer.}
+Beltagy et al.~\cite{beltagy2020longformer} proposed a more practical sparsity pattern tailored to document-level NLP tasks. The central observation is that most tokens require only local context for syntactic processing, while a small number of task-specific tokens (e.g., the \texttt{[CLS]} token for classification, or question tokens for QA) need a global view of the entire sequence. Longformer combines three attention components: (1)~a \emph{sliding window} of size $W$ centered on each token, capturing local context; (2)~a \emph{dilated sliding window} that extends the receptive field by skipping positions at regular intervals with gap $d_g$, expanding the effective window to $W \times d_g$; and (3)~a small number of \emph{global tokens} ($g$ positions) that attend to and are attended by all positions in the sequence. The per-layer complexity is:
+\begin{equation}
+C_{\text{Longformer}} = O(N \cdot W) + O(N \cdot g),
+\label{eq:longformer-complexity}
+\end{equation}
+which is linear in $N$ when $W$ and $g$ are constants. A key practical insight is that different layers can use different window sizes---smaller windows in lower layers and larger windows in upper layers---creating a pyramidal receptive field that mirrors the hierarchical nature of linguistic structure. Stacking $L$ layers with window size $W$ yields a theoretical receptive field of $L \times W$ tokens, which for $L = 12$ and $W = 512$ covers 6,144 positions. The global token mechanism is particularly elegant: by making the global positions task-dependent, Longformer bridges the gap between generic sparse attention and task-specific information routing, a design principle that has proven influential in subsequent production deployments.
+
+\paragraph{BigBird.}
+Zaheer et al.~\cite{zaheer2020big} extended the fixed-pattern approach by adding a \emph{random} attention component to the sliding window and global token mechanisms. Each token additionally attends to $r$ randomly selected positions, yielding the combined attention pattern:
+\begin{equation}
+\mathcal{A}_{\text{BigBird}}(i) = \underbrace{\mathcal{A}_{\text{window}}(i)}_{\text{local}} \;\cup\; \underbrace{\mathcal{A}_{\text{random}}(i)}_{\text{random}} \;\cup\; \underbrace{\mathcal{A}_{\text{global}}}_{\text{global}},
+\label{eq:bigbird}
+\end{equation}
+where $\mathcal{A}_{\text{random}}(i)$ contains $r$ randomly sampled positions, $\mathcal{A}_{\text{window}}(i)$ is a local window of size $W$, and $\mathcal{A}_{\text{global}}$ is a fixed set of $g$ global positions. The random component is motivated by the theory of random graphs: Erd\H{o}s--R\'{e}nyi graphs with $O(\log N)$ random edges per node have $O(\log N)$ diameter, ensuring that information can propagate between any two tokens in logarithmically many layers. BigBird's most significant contribution is theoretical: the authors proved that the BigBird attention pattern is a \emph{universal approximator} of continuous sequence-to-sequence functions and is Turing complete, establishing that $O(N)$ attention connections per layer suffice for universal computation provided the sparsity pattern includes both local and global components. The overall complexity is $O(N \cdot (W + r + g))$, linear in $N$ for fixed hyperparameters.
+
+The fixed-pattern methods share a common limitation: the sparsity structure is determined at design time and cannot adapt to the input. A sliding window of size 512 treats all tokens identically, regardless of whether the current query requires local syntactic information or long-range coreference resolution. This rigidity motivated the development of data-dependent sparsity methods.
+
+
+% ================================================================
+\subsubsection{Hash-Based Sparsity}
+\label{subsubsec:hash-sparsity}
+
+\paragraph{Reformer (LSH Attention).}
+Kitaev et al.~\cite{kitaev2020reformer} took a fundamentally different approach by using \emph{locality-sensitive hashing} (LSH) to identify, for each query, the keys that are most likely to receive high attention weights. The core idea is that if $q_i$ and $k_j$ have a high dot product, they are likely to hash to the same bucket under a random hyperplane projection. The hash function is defined as:
+\begin{equation}
+h(x) = \arg\max\bigl([xR;\; -xR]\bigr), \quad R \in \mathbb{R}^{d \times b/2},
+\label{eq:lsh-hash}
+\end{equation}
+where $R$ is a random projection matrix and $b$ is the number of buckets. After hashing, tokens are sorted by bucket, and attention is computed only within each bucket (with an additional local window to handle bucket boundaries). Using $n_r$ rounds of independent hashing ($n_r = 8$ is recommended) to reduce the probability of missing high-attention pairs, the expected complexity is $O(N \cdot n_r \cdot N/b)$, which reduces to $O(N \log N)$ when the bucket size is set to $b = O(N / \log N)$.
+
+Reformer also introduced reversible residual layers (RevNet), which eliminate the need to store intermediate activations during backpropagation by computing $y_1 = x_1 + F(x_2)$, $y_2 = x_2 + G(y_1)$, reducing activation memory from $O(N \cdot L)$ to $O(N)$. This dual contribution---algorithmic sparsity plus memory-efficient backpropagation---made Reformer the first model to demonstrate training on sequences of 64K tokens.
+
+Despite its theoretical elegance, LSH attention has several practical limitations that explain its limited adoption in production LLMs. The multi-round hashing introduces significant constant-factor overhead, effectively multiplying the per-token cost by $n_r$. The sorting operation disrupts the regular memory access patterns that GPUs are optimized for, resulting in wall-clock speedups that fall far short of the theoretical $O(N \log N / N^2)$ ratio. The approximation quality degrades when the attention distribution is not sufficiently peaked, which is common in lower layers of deep Transformers where attention tends to be more diffuse. These factors led the community to gravitate toward simpler fixed-pattern methods for production use, though Reformer's conceptual contribution---that data-dependent sparsity can be achieved through hashing---directly influenced subsequent work on learnable routing mechanisms such as NSA and MoBA.
+
+
+% ================================================================
+\subsubsection{Heterogeneous Layer-Wise Mixtures in Production}
+\label{subsubsec:heterogeneous-sparse}
+
+The second generation of sparse attention, deployed in production-scale LLMs from 2023 onward, abandons the goal of a single universal sparsity pattern in favor of \emph{heterogeneous} configurations that assign different attention types to different layers. This approach is motivated by the empirical observation that shallow layers primarily capture local syntactic patterns (for which a small window suffices), while deeper layers require broader context for semantic reasoning.
+
+\paragraph{Sliding Window Attention (SWA).}
+Mistral 7B~\cite{jiang2023mistral} demonstrated that a simple sliding window of size $W = 4{,}096$ applied uniformly across all layers can achieve competitive quality with full attention for models up to 7B parameters. The key insight is that information propagates across windows through the stacking of layers: after $L$ layers, the effective receptive field is $L \times W$ tokens, which for $L = 32$ and $W = 4{,}096$ covers 131K tokens---far exceeding the training context length. SWA reduces the per-layer complexity from $O(N^2)$ to $O(NW)$ and, critically, caps the KV-cache size at $W$ entries per layer regardless of the total sequence length. The \emph{rolling buffer KV cache} implements this as a fixed-size circular buffer where position $i$ is stored at index $i \bmod W$, enabling constant-memory streaming inference over arbitrarily long inputs. Combined with grouped-query attention (GQA with 8 KV heads for 32 query heads), Mistral~7B established SWA as the most hardware-friendly sparse attention variant, requiring no custom kernels beyond a simple causal mask modification.
+
+\paragraph{Interleaved Local/Global Attention.}
+Gemma~2~\cite{gemma2024improving} introduced a more nuanced approach by interleaving sliding-window (local) and full (global) attention layers in a 1:1 ratio. The local layers handle fine-grained syntactic processing with $O(NW)$ cost, while the global layers provide the cross-sequence information flow needed for long-range reasoning at $O(N^2)$ cost. Since only half the layers compute full attention, the amortized complexity is $O(N^2/2 + NW/2)$---a meaningful reduction for long sequences. Gemma~3~\cite{gemma2025gemma3} sharpened this ratio to 5:1 (local-to-global) with a reduced local window ($W = 1{,}024$) and, crucially, distinct RoPE base frequencies for each layer type: $\theta_{\text{local}} = 10{,}000$ for local layers and $\theta_{\text{global}} = 1{,}000{,}000$ for global layers. This frequency differentiation allows global layers to encode much longer-range positional information without degrading the local layers' resolution for nearby tokens. The 5:1 ratio means that only ${\sim}17\%$ of layers incur quadratic cost, making the architecture substantially more efficient for long contexts while maintaining quality within 1\% of full-attention baselines. The independent convergence of Gemma~3's 5:1 ratio with the attention-to-recurrence ratios observed in hybrid architectures (Section~\ref{subsec:hybrid}) suggests a natural balance point between local and global processing.
+
+\paragraph{Temporal Convolution on KV.}
+Baichuan-M1~\cite{baichuan2025m1} introduced a complementary technique: applying a short causal depthwise one-dimensional convolution (kernel size 3--7) over the key and value representations before attention computation. The convolved representations $K' = \text{CausalConv1D}(K)$ and $V' = \text{CausalConv1D}(V)$ fuse information from adjacent tokens along the sequence dimension, effectively injecting local context into the KV representations themselves rather than relying solely on the attention mask. The causality constraint ensures that position $t$ depends only on positions $\leq t$, maintaining compatibility with autoregressive generation. This adds less than 1\% additional FLOPs while improving the model's ability to capture fine-grained temporal patterns---particularly valuable in the medical domain targeted by Baichuan-M1, where drug names, diagnostic codes, and numerical sequences require precise local pattern matching. The design echoes the short convolution branches in Mamba~\cite{gu2024mamba} and H3, but embeds them \emph{within} the attention mechanism rather than as a replacement, preserving full compatibility with standard Transformer infrastructure and KV-cache-based inference.
+
+\paragraph{Design considerations.}
+The choice of window size $W$ involves a three-way trade-off among quality, memory, and latency. Empirically, $W = 4{,}096$ (Mistral) provides strong general-purpose performance, while $W = 1{,}024$ (Gemma~3) is viable when interleaved with global layers. An emerging best practice is to use different positional encoding configurations for local and global layers, as the optimal frequency spectrum for short-range and long-range position encoding differs substantially. The heterogeneous approach has become the dominant strategy in production LLMs as of 2025. Table~\ref{tab:sparse-production} summarizes the configurations adopted by major models.
+
+\begin{table}[t]
+\centering
+\caption{Sparse attention configurations in production LLMs. $W$: sliding window size. The local:global ratio indicates the fraction of layers using each attention type.}
+\label{tab:sparse-production}
+\small
+\begin{tabular}{lcccl}
+\toprule
+\textbf{Model} & \textbf{Local:Global} & \textbf{Window $W$} & \textbf{RoPE Diff.} & \textbf{Additional} \\
+\midrule
+Mistral 7B     & All local    & 4,096  & No  & Rolling buffer KV cache \\
+Gemma 2        & 1:1          & 4,096  & No  & Logit soft-capping \\
+Gemma 3        & 5:1          & 1,024  & Yes ($\theta$: 10K/1M) & --- \\
+Yi-Lightning   & Hybrid       & Varies & No  & Cross-layer KV sharing \\
+Baichuan-M1    & Hybrid       & Varies & No  & Temporal conv on KV \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ================================================================
+\subsubsection{Learnable Dynamic Sparsity}
+\label{subsubsec:learnable-sparse}
+
+The most recent phase of sparse attention development (2024--2025) replaces hand-crafted patterns with \emph{learned} sparsity that adapts dynamically to the input content. The key motivation is that the optimal set of tokens to attend to varies not only across layers but across inputs and even across individual query positions within a single input. This shift parallels the evolution from fixed expert assignment to learned routing in Mixture-of-Experts architectures and represents a fundamental change in how attention budgets are allocated.
+
+\paragraph{Native Sparse Attention (NSA).}
+Yuan et al.~\cite{yuan2025native}, developed at DeepSeek, introduced a hardware-aligned, natively trainable three-branch architecture. NSA decomposes attention into three complementary branches---compression, selection, and sliding window---and aggregates their outputs via learned gates:
+\begin{equation}
+o_i = g_1^{(i)} \cdot o_{\text{compress}}^{(i)} + g_2^{(i)} \cdot o_{\text{select}}^{(i)} + g_3^{(i)} \cdot o_{\text{window}}^{(i)},
+\label{eq:nsa}
+\end{equation}
+where the gates $g_1, g_2, g_3$ are per-head scalars produced by a linear projection followed by sigmoid activation, modulated by the input. The \emph{compression branch} partitions the KV sequence into blocks of size $B$ and compresses each block into a single summary token via mean pooling, providing a coarse global view at $O(N/B)$ cost. The \emph{selection branch} uses the compressed attention scores to identify the top-$k$ most relevant blocks, then computes fine-grained attention only within those blocks, at $O(kB)$ cost per query. The \emph{sliding window branch} attends to the most recent $W$ tokens for local context. The total per-query complexity is $O(N/B + kB + W)$, which is linear in $N$ when $k$ and $B$ are treated as constants.
+
+A critical design principle is \emph{hardware alignment}: all three branches operate on contiguous memory blocks, ensuring that the sparse access patterns map efficiently onto GPU tensor cores. The block selection mechanism is implemented via Triton kernels that maintain coalesced memory access patterns, directly addressing the hardware inefficiency that plagued Reformer's LSH-based approach. NSA is trained end-to-end with the sparsity pattern emerging from the learned gates, rather than being imposed as a fixed prior. Empirically, NSA achieves quality comparable to full attention on language modeling benchmarks while reducing the effective attention computation by 4--8$\times$ for sequences of 64K tokens.
+
+\paragraph{Mixture of Block Attention (MoBA).}
+Lu et al.~\cite{lu2025moba}, developed at Moonshot AI (Kimi), drew a direct analogy between sparse attention and Mixture-of-Experts: just as MoE routes each token to the most relevant expert FFN layers, MoBA routes each query to the most relevant KV blocks. The KV sequence is partitioned into $B_{\text{total}}$ blocks of size $B$, and each query token routes to the top-$k$ most relevant blocks via a lightweight router:
+\begin{equation}
+s_{i,j} = q_i \cdot \bar{k}_j, \quad \bar{k}_j = \frac{1}{|\mathcal{B}_j|}\sum_{t \in \mathcal{B}_j} k_t,
+\label{eq:moba-router}
+\end{equation}
+where $\bar{k}_j$ is the mean key vector of block $j$. Each query selects the top-$k$ blocks with the highest scores and computes standard attention within them, supplemented by a causal sliding window to ensure local coverage. MoBA achieves sub-quadratic complexity ($O(NkB)$ with $kB \ll N$) while preserving the mathematical equivalence to full attention when $k$ equals the total number of blocks. A notable property is that MoBA is a strict generalization of sliding window attention: if the router always selects the blocks closest to the query position, MoBA degenerates to SWA. In practice, MoBA always includes the most recent block (analogous to a sliding window) and routes to $k - 1$ additional blocks, combining the reliability of local attention with the flexibility of content-based routing. On 128K-context benchmarks, MoBA achieves performance close to full attention with substantially reduced computation. A key practical advantage is seamless compatibility with existing full-attention models: during training, some layers can use MoBA while others retain full attention, and the routing mechanism can be toggled off to recover exact full attention for verification.
+
+\paragraph{Mixture of Attention (MoA).}
+Fu et al.~\cite{fu2024moa} addressed a complementary question: rather than designing a single sparsity pattern for all layers and heads, can we automatically assign the optimal pattern to each head? MoA constructs a search space of candidate attention patterns---full attention, sliding window (with varying sizes), local-plus-global, block sparse, and static sparse---and uses profiling on calibration data to measure the approximation error of each pattern for each head. An evolutionary search under a given compute budget then selects the per-head configuration that minimizes total approximation error. Applied to Llama-2 models (7B and 13B), MoA reduces attention computation by 50--70\% with less than 1\% quality degradation on LongBench, and reveals that the optimal pattern varies substantially across layers: lower layers tend to require more full attention heads, while upper layers can tolerate aggressive sparsity. Unlike NSA and MoBA, which learn sparsity patterns during pretraining, MoA operates as a \emph{post-training} compression method, making it applicable to any pretrained model without retraining. With compatible sparse attention kernels, MoA achieves 1.5--2$\times$ inference speedup on long-context workloads. This finding provides empirical support for the heterogeneous layer designs adopted by Gemma~2/3 and validates the intuition that a one-size-fits-all sparsity pattern is suboptimal.
+
+
+% ================================================================
+\subsubsection{Comparison and Analysis}
+\label{subsubsec:sparse-comparison}
+
+Table~\ref{tab:sparse-attn-comparison} provides a comprehensive comparison of sparse attention methods across the four phases of development.
+
+\begin{table}[t]
+\centering
+\caption{Comparison of sparse attention methods. $N$: sequence length, $W$: window size, $B$: block size, $k$: number of selected blocks, $g$: number of global tokens, $r$: number of random connections, $R$: local-to-global layer ratio.}
+\label{tab:sparse-attn-comparison}
+\small
+\begin{tabular}{lccccl}
+\toprule
+\textbf{Method} & \textbf{Year} & \textbf{Complexity} & \textbf{Pattern Type} & \textbf{Trainable} & \textbf{Representative Models} \\
+\midrule
+Sparse Transformer & 2019 & $O(N\sqrt{N})$ & Fixed (strided) & No & --- \\
+Longformer         & 2020 & $O(NW + Ng)$   & Fixed (window+global) & No & --- \\
+BigBird            & 2020 & $O(NW + Ng + Nr)$ & Fixed (window+global+random) & No & --- \\
+Reformer           & 2020 & $O(N \log N)$  & Hash-based (LSH) & No & --- \\
+Mistral SWA        & 2023 & $O(NW)$        & Fixed (window) & No & Mistral 7B \\
+Gemma 2/3          & 2024 & $O(NW + N^2/R)$ & Heterogeneous (interleaved) & No & Gemma 2, Gemma 3 \\
+NSA                & 2025 & $O(N/B{+}kB{+}W)$ & Learned (3-branch gated) & Yes & DeepSeek \\
+MoBA               & 2025 & $O(NkB)$       & Learned (block routing) & Yes & Kimi \\
+MoA                & 2024 & varies         & Searched (per-head) & Post-hoc & Llama-2 (compressed) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The evolution from fixed-pattern to learnable sparsity reveals several recurring themes that provide guidance for future sparse attention design.
+
+\emph{Locality is the strongest prior.} Every successful sparse attention method retains a sliding window or local attention component, reflecting the empirical observation that adjacent tokens are almost always relevant. The methods differ primarily in how they handle long-range dependencies on top of this local base---through global tokens (Longformer, BigBird), hash-based grouping (Reformer), interleaved global layers (Gemma), or learned block selection (NSA, MoBA). This universality of the local window suggests that it captures a fundamental property of natural language: the strong locality of syntactic and short-range semantic dependencies.
+
+\emph{Hardware alignment is as important as algorithmic complexity.} Reformer's $O(N \log N)$ theoretical complexity did not translate into practical speedups because its irregular memory access patterns---sorting, bucketing, and gathering---are poorly suited to GPU architectures optimized for coalesced, sequential memory access. In contrast, Mistral's simpler $O(NW)$ sliding window achieves substantial wall-clock savings through regular, predictable memory access patterns that map directly to FlashAttention-style tiling~\cite{dao2022flashattention}. NSA explicitly addresses this lesson by designing all operations around contiguous block access patterns, and MoBA's block-level routing similarly maintains memory locality. The practical speedup of a sparse attention method depends not only on the number of non-zero entries but on the \emph{contiguity} of those memory accesses---a principle that is likely to become even more important as models scale to longer contexts and are deployed on diverse accelerator architectures.
+
+\emph{Heterogeneous configurations outperform uniform ones.} The transition from homogeneous patterns (all layers use the same window) to heterogeneous configurations---pioneered by Gemma~2/3 and validated by MoA's automated per-head search---reveals that the optimal attention pattern varies across the depth of the network. Lower layers, which build local syntactic representations, benefit from dense local attention, while upper layers, which perform more abstract reasoning, can tolerate sparser patterns or benefit from selective global attention. This observation connects sparse attention to the broader theme of layer-wise specialization that also appears in hybrid architectures (Section~\ref{subsec:hybrid}).
+
+\emph{From fixed to learned sparsity.} The convergence of MoE-style routing (MoBA), multi-branch gating (NSA), and automated search (MoA) points toward a future where sparse attention patterns are fully learned end-to-end, with each layer and each head independently determining its attention budget based on the input. This trajectory mirrors the broader deep learning trend of replacing hand-crafted inductive biases with learned ones, and suggests that the distinction between ``sparse attention'' and ``full attention'' may eventually dissolve into a continuum of learned attention allocation.
+
+The relationship between sparse attention and other token mixer families is complementary rather than competitive. Sparse attention composes naturally with KV-cache optimization (e.g., GQA + sliding window in Gemma~3), with KV-cache compression (e.g., evicting tokens that receive zero attention weight), and with linear attention or SSM layers in hybrid architectures (Section~\ref{subsec:hybrid}). The combination of sparse attention with temporal convolution on KV (Baichuan-M1) further illustrates that sparsity in the attention mask and local feature extraction in the representation space are orthogonal and complementary mechanisms. Open challenges include: (i)~developing efficient training algorithms that can learn sparsity patterns without requiring full attention as a teacher signal; (ii)~extending dynamic sparsity to the prefill phase, where the quadratic cost is most acute; (iii)~establishing theoretical frameworks for selecting optimal sparsity configurations---window sizes, local-to-global ratios, and block sizes---that go beyond empirical ablation; and (iv)~co-designing sparse attention kernels with emerging hardware architectures to close the gap between theoretical and realized throughput.
+
+
+\subsection{Linear Attention}
+\label{subsec:linear-attn}
+
+Linear attention methods seek to reduce the quadratic complexity of softmax attention to $O(Nd^2)$ or $O(Nd)$ by exploiting a kernel reformulation of the attention computation. The foundational insight, formalized by Katharopoulos et al.~\cite{katharopoulos2020transformers}, is that softmax attention can be decomposed via a feature map $\phi(\cdot)$ such that $\text{softmax}(QK^\top)V \approx \phi(Q)(\phi(K)^\top V)$, where the change of associativity eliminates the explicit $N \times N$ attention matrix. This reformulation further reveals a fundamental duality: linear attention computed left-to-right is mathematically equivalent to a linear recurrent neural network with state $S_t = S_{t-1} + \phi(k_t)v_t^\top$. This duality---later formalized as the Structured State Space Duality (SSD) by Dao and Gu~\cite{dao2024transformers}---unifies linear attention, state space models, and structured matrix transformations as three views of the same underlying computation, and provides the theoretical foundation for the entire family of sub-quadratic token mixers.
+
+The evolution of linear attention can be understood as a progression along two axes: \emph{expressivity} (from simple kernel substitution to sophisticated memory update rules) and \emph{hardware efficiency} (from naive implementations to IO-aware algorithms that fully exploit GPU tensor cores). We organize this subsection accordingly, tracing the development from kernel-based methods (2020) through gated variants (2024) to delta-rule formulations (2024--2025) and hardware-efficient training algorithms.
+
+\subsubsection{Kernel-Based Linear Attention}
+\label{subsubsec:kernel-linear}
+
+The kernel perspective on attention begins with the observation that softmax attention can be written as a kernel function. For queries $q_i$ and keys $k_j$, the softmax attention weight $\alpha_{ij} \propto \exp(q_i^\top k_j / \sqrt{d})$ defines a kernel $\kappa(q, k) = \exp(q^\top k / \sqrt{d})$. If this kernel can be decomposed as $\kappa(q, k) = \phi(q)^\top \phi(k)$ for some feature map $\phi: \mathbb{R}^d \to \mathbb{R}^D$, then the attention output can be rewritten using the associativity of matrix multiplication.
+
+\paragraph{Linear Transformers (Katharopoulos et al., 2020).}
+Katharopoulos et al.~\cite{katharopoulos2020transformers} proposed replacing the exponential kernel with a general feature map $\phi(x) = \text{elu}(x) + 1$, yielding the linear attention formulation:
+\begin{equation}
+\text{LinAttn}(Q, K, V)_i = \frac{\phi(Q_i)^\top \left(\sum_{j \leq i} \phi(K_j) V_j^\top\right)}{\phi(Q_i)^\top \left(\sum_{j \leq i} \phi(K_j)\right)}.
+\label{eq:linear-attn}
+\end{equation}
+The key insight is that the numerator and denominator can be computed incrementally via recurrent state updates:
+\begin{equation}
+S_i = S_{i-1} + \phi(k_i) v_i^\top, \quad z_i = z_{i-1} + \phi(k_i), \quad o_i = \frac{\phi(q_i)^\top S_i}{\phi(q_i)^\top z_i},
+\label{eq:linear-attn-recurrent}
+\end{equation}
+where $S_i \in \mathbb{R}^{D \times d_v}$ is the recurrent state and $z_i \in \mathbb{R}^D$ is the normalizer. This formulation supports two computation modes: a \emph{parallel} mode (matrix form, $O(N^2 D)$ but parallelizable) for training, and a \emph{recurrent} mode ($O(D d_v)$ per step) for inference. The recurrent mode transforms the Transformer into an RNN with constant per-step cost, eliminating the need for a KV cache entirely. However, the simple additive state update $S_i = S_{i-1} + \phi(k_i) v_i^\top$ suffers from a fundamental limitation: information accumulates monotonically and can never be forgotten or overwritten, leading to degraded performance on tasks requiring precise associative recall.
+
+\paragraph{Performer (FAVOR+).}
+Choromanski et al.~\cite{choromanski2021rethinking} proposed approximating the softmax kernel more faithfully using random feature maps. The FAVOR+ (Fast Attention Via positive Orthogonal Random features) mechanism constructs:
+\begin{equation}
+\phi(x) = \frac{1}{\sqrt{m}} \exp\!\left(-\frac{\|x\|^2}{2}\right) \left[\exp(\omega_1^\top x), \ldots, \exp(\omega_m^\top x)\right]^\top,
+\label{eq:favor}
+\end{equation}
+where $\omega_1, \ldots, \omega_m$ are orthogonal random vectors drawn from a Gaussian distribution. The orthogonality reduces the variance of the kernel approximation compared to i.i.d.\ random features, and the positive exponential ensures non-negative attention weights. With $m$ random features, the complexity is $O(Nmd)$, which is linear in $N$ when $m$ is fixed. However, achieving a good approximation of softmax requires $m = \Omega(d \log d)$ features, and the approximation quality degrades for sharp attention distributions (where a few tokens receive most of the attention mass), precisely the regime that matters most for language modeling. These limitations have prevented Performer from achieving competitive quality with softmax attention on standard LLM benchmarks.
+
+\paragraph{Linformer.}
+Wang et al.~\cite{wang2020linformer} took a different approach to linearization: rather than approximating the kernel, Linformer projects the key and value matrices to a fixed lower dimension $k \ll N$ using learned projection matrices $E, F \in \mathbb{R}^{k \times N}$:
+\begin{equation}
+\text{Linformer}(Q, K, V) = \text{softmax}\!\left(\frac{Q (EK)^\top}{\sqrt{d}}\right) (FV),
+\label{eq:linformer}
+\end{equation}
+yielding $O(Nkd)$ complexity. The theoretical justification relies on the Johnson--Lindenstrauss lemma: if the attention matrix is approximately low-rank (which empirical studies confirm for typical language modeling tasks), then a random projection to $k = O(\log N)$ dimensions preserves the attention distribution with high probability. However, Linformer requires the sequence length $N$ to be known at design time (since $E$ and $F$ have $N$ columns), limiting its applicability to variable-length and autoregressive settings.
+
+\subsubsection{Taylor-Expansion Approaches}
+\label{subsubsec:taylor-linear}
+
+\paragraph{Based.}
+Arora et al.~\cite{eyuboglu2024based} proposed a principled middle ground between exact softmax and crude kernel approximation. Based uses a second-order Taylor expansion of the exponential kernel:
+\begin{equation}
+\exp(q^\top k) \approx 1 + q^\top k + \frac{(q^\top k)^2}{2},
+\label{eq:based-taylor}
+\end{equation}
+which yields a feature map of dimension $O(d^2)$---larger than the $O(d)$ of simple kernels but much smaller than the $O(d \log d)$ required by random features. To compensate for the limited recall capability of the linear attention component, Based combines it with a short sliding-window softmax attention over a small local window, creating a hybrid that balances global linear attention (for throughput) with local softmax attention (for recall). The authors provide a systematic analysis of the \emph{recall--throughput trade-off}: linear attention achieves high throughput but low recall on associative retrieval tasks, while softmax attention achieves high recall but low throughput. Based's hybrid design explicitly targets the Pareto frontier of this trade-off.
+
+\subsubsection{Gated Linear Attention}
+\label{subsubsec:gated-linear}
+
+The fundamental limitation of vanilla linear attention---monotonic state accumulation without forgetting---motivated the introduction of data-dependent gating mechanisms that control how much of the previous state is retained at each time step.
+
+\paragraph{Gated Linear Attention (GLA).}
+Yang et al.~\cite{yang2024gla} introduced a gating mechanism that modulates the state update with a data-dependent forget gate:
+\begin{equation}
+S_t = G_t \odot S_{t-1} + k_t v_t^\top, \quad o_t = q_t^\top S_t,
+\label{eq:gla}
+\end{equation}
+where $G_t = \sigma(W_g x_t) \in \mathbb{R}^{d_k \times d_v}$ is a matrix-valued gate that controls, for each entry of the state matrix, how much of the previous state is retained. When $G_t = \mathbf{1}$ (all ones), GLA reduces to vanilla linear attention; when $G_t$ is a scalar times the identity, it reduces to RetNet's~\cite{sun2023retentive} exponential decay. The matrix-valued gate provides fine-grained control over which dimensions of the state are preserved and which are forgotten, enabling the model to selectively retain relevant information while discarding noise.
+
+A key practical contribution is the \textsc{FlashLinearAttention} algorithm, which enables hardware-efficient training through a chunk-wise parallel scan. The sequence is divided into chunks of size $C$; within each chunk, the recurrence is unrolled into a matrix multiplication (exploiting GPU tensor cores), while across chunks, the state is propagated via the recurrence. This achieves $O(NC^2 + NC d_k d_v / C)$ complexity, which for optimal chunk size $C = O(\sqrt{d_k d_v})$ yields $O(N d_k d_v)$---linear in sequence length and fully hardware-efficient.
+
+\paragraph{HGRN and HGRN2.}
+Qin et al.~\cite{qin2023hgrn} introduced the Hierarchically Gated Recurrent Neural Network (HGRN), which imposes a \emph{layer-wise hierarchy} on the gating mechanism: shallow layers use gates with small lower bounds (enabling fast forgetting for local patterns), while deep layers use gates with large lower bounds (enabling slow forgetting for long-range dependencies). The lower bound for layer $l$ is set to $b_l = l/L$, providing a principled multi-scale temporal structure without additional hyperparameters. HGRN2~\cite{qin2024hgrn2} extends this framework with \emph{state expansion} via outer products: the state update becomes $S_t = G_t \odot S_{t-1} + k_t \otimes v_t$, where $S_t \in \mathbb{R}^{d_k \times d_v}$ is a matrix-valued state. This increases the state capacity from $O(d)$ to $O(d_k \times d_v)$ without additional parameters (since the outer product is parameter-free), and the resulting formulation can be interpreted as a gated linear attention mechanism, enabling chunk-wise parallel training via the same algorithms used for GLA.
+
+\subsubsection{Delta Rule Linear Attention}
+\label{subsubsec:delta-linear}
+
+While gating addresses the forgetting problem, it does not solve the \emph{overwriting} problem: when a new key--value pair $(k_t, v_t)$ is written to the state, it does not remove the old value previously associated with key $k_t$. This leads to interference in associative memory tasks where the same key may be associated with different values at different time steps.
+
+\paragraph{DeltaNet.}
+Yang et al.~\cite{yang2024deltanet} drew inspiration from the delta rule in classical associative memory to propose a ``write-after-erase'' state update:
+\begin{equation}
+S_t = S_{t-1} - \beta_t k_t (k_t^\top S_{t-1}) + \beta_t k_t v_t^\top = (I - \beta_t k_t k_t^\top) S_{t-1} + \beta_t v_t k_t^\top,
+\label{eq:deltanet}
+\end{equation}
+where $\beta_t \in (0, 1)$ is a learned step size. The first term explicitly erases the old value associated with key $k_t$ by projecting it out of the state, and the second term writes the new value $v_t$. This ``erase-then-write'' mechanism enables precise associative recall: after writing $(k, v)$ to the state, querying with $k$ retrieves exactly $v$ (up to the approximation introduced by $\beta_t < 1$). A remarkable theoretical connection is that DeltaNet's update rule is mathematically equivalent to one step of online gradient descent on the linear regression loss $\|S k_t - v_t\|^2$, establishing a deep link between linear attention and test-time training (Section~\ref{subsec:ttm}).
+
+Parallelization of the delta rule is non-trivial because the erase operation $(I - \beta_t k_t k_t^\top)$ introduces a multiplicative dependence on the state. Yang et al.\ solve this through a compact \emph{Householder WY representation} that reformulates the sequential updates as structured matrix operations amenable to chunk-wise parallel computation, achieving training efficiency comparable to GLA.
+
+\subsubsection{Hardware-Efficient Training and Inference}
+\label{subsubsec:hw-linear}
+
+The practical viability of linear attention depends critically on hardware-efficient implementations that exploit the memory hierarchy of modern GPUs.
+
+\paragraph{Lightning Attention-2.}
+Qin et al.~\cite{qin2024lightning} proposed a block-wise decomposition of causal linear attention that separates the computation into \emph{intra-block} and \emph{inter-block} components:
+\begin{equation}
+O_b = \underbrace{\text{CausalAttn}(Q_b, K_b, V_b)}_{\text{intra-block}} + \underbrace{\phi(Q_b) \cdot S_{b-1}}_{\text{inter-block}}, \quad S_b = S_{b-1} + \phi(K_b)^\top V_b,
+\label{eq:lightning}
+\end{equation}
+where $b$ indexes blocks of size $C$. The intra-block computation uses standard causal attention (a small $C \times C$ matrix), while the inter-block computation propagates a compressed state $S_b \in \mathbb{R}^{D \times d_v}$ across blocks. This decomposition achieves constant memory consumption (independent of sequence length) and constant training speed per token, earning the characterization as a ``free lunch'' for unlimited sequence lengths. Lightning Attention-2 underpins the MiniMax-01 model~\cite{minimax2025}, which deploys it at 456B-parameter scale with 4M-token context.
+
+\paragraph{TransNormerLLM.}
+Qin et al.~\cite{qin2024transnormerllm} demonstrated that a carefully designed linear attention architecture can surpass softmax-based Transformers of comparable size on standard language modeling benchmarks. TransNormerLLM combines gated linear attention with linearized relative positional encoding with decay (LRPE-d), which introduces an exponential decay factor $\lambda^{i-j}$ into the linear attention kernel: $\alpha_{ij} = \phi(q_i)^\top \phi(k_j) \cdot \lambda^{i-j}$. This decay provides a soft recency bias without the hard cutoff of a sliding window. At 7B parameters, TransNormerLLM achieves lower perplexity than Llama on multiple benchmarks, providing the first evidence that linear attention can be competitive with softmax at production-relevant scales.
+
+\subsubsection{Comparison and Analysis}
+
+Table~\ref{tab:linear-attn-comparison} summarizes the key characteristics of linear attention methods along the dimensions of feature map, state size, training complexity, and recall capability.
+
+\begin{table}[t]
+\centering
+\caption{Comparison of linear attention methods. $N$: sequence length, $d$: model dimension, $D$: feature dimension, $d_s = d_k \times d_v$: state size.}
+\label{tab:linear-attn-comparison}
+\small
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Method} & \textbf{Year} & \textbf{Feature Map / Gate} & \textbf{State Size} & \textbf{Training} & \textbf{Recall} \\
+\midrule
+Linear Transformer & 2020 & $\text{elu}(x)+1$ & $D \times d_v$ & $O(NDd_v)$ & Low \\
+Performer          & 2020 & Random (FAVOR+) & $m \times d_v$ & $O(Nmd_v)$ & Low \\
+Linformer          & 2020 & Learned projection & $k \times d_v$ & $O(Nkd)$ & Medium \\
+Based              & 2024 & Taylor (2nd order) & $d^2 \times d_v$ & $O(Nd^2 d_v)$ & Medium \\
+GLA                & 2024 & Data-dependent gate & $d_k \times d_v$ & $O(Nd_k d_v)$ & Medium \\
+HGRN2              & 2024 & Hierarchical gate + outer product & $d_k \times d_v$ & $O(Nd_k d_v)$ & Medium \\
+DeltaNet           & 2024 & Delta rule (erase+write) & $d_k \times d_v$ & $O(Nd_k d_v)$ & High \\
+Lightning Attn-2   & 2024 & Block-wise decomposition & $D \times d_v$ & $O(ND d_v)$ & Low--Med \\
+TransNormerLLM     & 2024 & Gate + LRPE-d decay & $D \times d_v$ & $O(NDd_v)$ & Medium \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The evolution from simple kernel substitution (Linear Transformer, Performer) through gated variants (GLA, HGRN2) to delta-rule formulations (DeltaNet) represents a principled trajectory toward increasingly expressive linear-complexity token mixers. Each step addresses a specific limitation of its predecessor: gating solves the monotonic accumulation problem of vanilla linear attention, and the delta rule solves the interference problem of gated linear attention. The SSD framework~\cite{dao2024transformers} provides a unifying theoretical lens, proving that all these variants---along with SSMs (Section~\ref{subsec:ssm})---are instances of the same underlying computation viewed through different mathematical lenses.
+
+Despite this progress, linear attention methods face a fundamental expressivity ceiling: the fixed-size state $S \in \mathbb{R}^{d_k \times d_v}$ can store at most $O(d_k d_v)$ bits of information about the input history, regardless of the sequence length. This \emph{state bottleneck} manifests as degraded performance on tasks requiring precise retrieval from long contexts (e.g., needle-in-a-haystack, multi-hop reasoning). The dominant strategy for addressing this limitation is hybrid architectures (Section~\ref{subsec:hybrid}) that interleave a small number of full softmax attention layers (for precise recall) with linear attention layers (for efficient long-range processing). The independent convergence of multiple production models on a ${\sim}$7:1 linear-to-softmax ratio (Jamba, MiniMax-01) suggests a natural balance point, though whether this ratio is universal or task-dependent remains an open question.
+
+
+\subsection{RNN-Like Models and State Space Models (SSM)}
+\label{subsec:ssm}
+
+Recurrent and state-space formulations offer a fundamentally different approach to sequence modeling: instead of computing pairwise interactions among all tokens (as in attention), they maintain a fixed-size hidden state that is updated incrementally at each time step, achieving $O(N)$ training complexity and $O(1)$ per-step inference cost. The core trade-off is between the \emph{expressivity} of the state update rule and the \emph{capacity} of the fixed-size state: a richer update rule can extract more information from each input token, but the state can store at most $O(d_s^2)$ bits regardless of the sequence length, where $d_s$ is the state dimension. This section traces the evolution of SSM and RNN-like token mixers from the foundational S4 model (2021) through the Mamba family of selective SSMs (2024--2025), modern RNN variants (RWKV, RetNet, xLSTM), and long-convolution architectures (Hyena, MEGA), culminating in the Structured State Space Duality (SSD) framework that unifies these approaches with linear attention (Section~\ref{subsec:linear-attn}).
+
+\subsubsection{Structured State Space Models}
+\label{subsubsec:s4}
+
+\paragraph{S4: Structured State Spaces for Sequence Modeling.}
+Gu et al.~\cite{gu2022efficiently} introduced S4, which discretizes the continuous-time linear dynamical system:
+\begin{equation}
+\dot{x}(t) = A\, x(t) + B\, u(t), \quad y(t) = C\, x(t),
+\label{eq:ssm-continuous}
+\end{equation}
+where $A \in \mathbb{R}^{d_s \times d_s}$ is the state transition matrix, $B \in \mathbb{R}^{d_s \times 1}$ is the input matrix, $C \in \mathbb{R}^{1 \times d_s}$ is the output matrix, and $x(t) \in \mathbb{R}^{d_s}$ is the hidden state. Two innovations make this system practical for sequence modeling. First, the \emph{HiPPO} (High-order Polynomial Projection Operators) initialization sets $A$ to a specific structured matrix that ensures the hidden state $x(t)$ optimally approximates the input history $u(\tau)$ for $\tau \leq t$ in a Legendre polynomial basis. This initialization provides a theoretical guarantee of long-range memory that is absent from random initialization. Second, the \emph{DPLR} (Diagonal Plus Low-Rank) parameterization decomposes $A$ as $A = \Lambda + PQ^\top$ where $\Lambda$ is diagonal, enabling $O(N \log N)$ training via fast convolution in the frequency domain.
+
+After discretization with step size $\Delta$ (using the zero-order hold method), the continuous system becomes:
+\begin{equation}
+x_t = \bar{A}\, x_{t-1} + \bar{B}\, u_t, \quad y_t = C\, x_t,
+\label{eq:ssm-discrete}
+\end{equation}
+where $\bar{A} = \exp(\Delta A)$ and $\bar{B} = (\exp(\Delta A) - I) A^{-1} B$. This discrete recurrence supports three computation modes: (1) \emph{recurrent} mode ($O(d_s)$ per step) for inference, (2) \emph{convolutional} mode ($O(N \log N)$) for training via FFT, and (3) \emph{parallel scan} mode ($O(N d_s)$) for GPU-efficient training. S4 achieved breakthrough results on the Long Range Arena benchmark, demonstrating for the first time that a linear dynamical system with principled initialization can capture dependencies over sequences of thousands of tokens.
+
+A critical limitation of S4 is that its parameters $A$, $B$, $C$ are \emph{time-invariant}---they do not depend on the input $u_t$. This means that S4 processes all tokens identically, regardless of their content, and cannot perform content-based selection or filtering. This limitation motivated the development of selective SSMs.
+
+\subsubsection{Selective State Space Models: The Mamba Family}
+\label{subsubsec:mamba}
+
+\paragraph{Mamba.}
+Gu and Dao~\cite{gu2024mamba} proposed Mamba, which makes the SSM parameters \emph{input-dependent} (selective):
+\begin{equation}
+x_t = \bar{A}_t\, x_{t-1} + \bar{B}_t\, u_t, \quad y_t = C_t\, x_t,
+\label{eq:mamba}
+\end{equation}
+where $B_t = \text{Linear}_B(u_t)$, $C_t = \text{Linear}_C(u_t)$, and $\Delta_t = \text{softplus}(\text{Linear}_\Delta(u_t))$ are all functions of the input. The discretized parameters $\bar{A}_t = \exp(\Delta_t A)$ and $\bar{B}_t$ inherit the input dependence through $\Delta_t$. This selectivity mechanism allows the model to dynamically decide what to remember and what to forget at each time step: a large $\Delta_t$ causes $\bar{A}_t \approx 0$ (forgetting the state) and $\bar{B}_t \approx I$ (writing the input), while a small $\Delta_t$ causes $\bar{A}_t \approx I$ (preserving the state) and $\bar{B}_t \approx 0$ (ignoring the input).
+
+The input dependence of the parameters breaks the time-invariance that enabled S4's convolutional computation mode, requiring a different training algorithm. Mamba introduces a \emph{hardware-aware parallel scan} that exploits the GPU memory hierarchy: the state $x_t$ is maintained in fast SRAM during the scan, avoiding the costly HBM reads/writes that would otherwise dominate the computation. The Mamba block combines the selective SSM with a SiLU-gated linear layer (analogous to the SwiGLU FFN in Transformers), creating a unified token-mixing and channel-mixing module. At 3B parameters, Mamba matches or exceeds Transformer quality on language modeling while achieving 5$\times$ higher inference throughput for long sequences.
+
+\paragraph{Mamba-2 and the Structured State Space Duality (SSD).}
+Dao and Gu~\cite{dao2024transformers} established a fundamental theoretical connection between SSMs and attention. When the state transition matrix is restricted to a scalar times the identity ($A = a \cdot I$), the SSM recurrence becomes equivalent to a \emph{semi-separable matrix} multiplication, which in turn generalizes causal linear attention:
+\begin{equation}
+y_i = \sum_{j \leq i} \left(\prod_{l=j+1}^{i} a_l\right) (C_i^\top B_j)\, u_j = \sum_{j \leq i} M_{ij}\, u_j,
+\label{eq:ssd}
+\end{equation}
+where $M_{ij} = (\prod_{l=j+1}^{i} a_l)(C_i^\top B_j)$ is a semi-separable matrix. This \emph{Structured State Space Duality} (SSD) proves that SSMs, linear attention, and semi-separable matrices are three mathematically equivalent views of the same computation. The practical consequence is that Mamba-2 can be implemented using matrix multiplications (which map efficiently to GPU tensor cores) rather than sequential scans, achieving 2--8$\times$ speedup over Mamba-1 while maintaining identical expressivity. The SSD framework also introduces a multi-head SSM design analogous to multi-head attention, where each head maintains an independent state with shared $A$ parameters.
+
+\paragraph{Mamba-3.}
+Gu and Dao~\cite{gu2025mamba3} addressed two limitations of Mamba-2. First, the restriction to real-valued diagonal $A$ matrices means that Mamba-2 can only model exponential decay, not oscillatory dynamics. Mamba-3 restores \emph{complex-valued} SSM parameters (as in the original S4) through a conjugate-pair parameterization that enables efficient real-arithmetic implementation: each complex eigenvalue $a + bi$ is stored as a pair of real numbers, and the complex state update is computed using only real multiplications. Second, Mamba-3 introduces \emph{MIMO} (Multi-Input Multi-Output) SSMs where $B \in \mathbb{R}^{d_s \times D}$ and $C \in \mathbb{R}^{D \times d_s}$ (with $D$ being the number of channels), enabling cross-channel interaction within the SSM layer---a capability absent from the SISO (Single-Input Single-Output) formulation of Mamba-1/2. Third, Mamba-3 replaces the zero-order hold (ZOH) discretization with an \emph{exponential-trapezoidal} rule that provides a more accurate discretization for input-dependent parameters. These improvements establish a new Pareto frontier on the quality--efficiency trade-off, surpassing both Mamba-2 and Transformers of comparable size.
+
+\paragraph{Gated Delta Networks.}
+Yang et al.~\cite{yang2024gated} combined the delta rule (Section~\ref{subsubsec:delta-linear}) with the Mamba-2 SSD framework, yielding a state update that supports both global gating and key-specific memory operations:
+\begin{equation}
+S_t = \alpha_t \odot S_{t-1} - \beta_t\, k_t (k_t^\top S_{t-1}) + \beta_t\, k_t\, v_t^\top,
+\label{eq:gated-delta-ssm}
+\end{equation}
+where $\alpha_t$ is a data-dependent decay gate and $\beta_t$ is the delta-rule learning rate. The first term provides global exponential decay (as in Mamba), the second term erases the old value associated with key $k_t$, and the third term writes the new value. This combination substantially improves associative recall compared to either mechanism alone, and the Householder WY representation enables efficient parallel training. Gated Delta Networks achieve the strongest results among sub-quadratic token mixers on in-context learning benchmarks, approaching the performance of full softmax attention.
+
+\subsubsection{Modern RNN Variants}
+\label{subsubsec:modern-rnn}
+
+In parallel with the SSM line of research, several groups have revisited classical RNN architectures with modern design principles, demonstrating that well-designed recurrent models can be competitive with both Transformers and SSMs.
+
+\paragraph{RWKV.}
+Peng et al.~\cite{peng2023rwkv} introduced RWKV (Receptance Weighted Key Value), which implements channel-wise linear recurrence with learnable time-decay factors. The core computation is:
+\begin{equation}
+\text{wkv}_t = \frac{\sum_{j \leq t} e^{-(t-j)w + k_j} v_j}{\sum_{j \leq t} e^{-(t-j)w + k_j}},
+\label{eq:rwkv}
+\end{equation}
+where $w > 0$ is a channel-wise decay factor and $k_j$ is the key at position $j$. This can be computed recursively in $O(d)$ per step, and the exponential weighting provides a soft recency bias. RWKV scales to 14B parameters with quality competitive with similarly-sized Transformers, demonstrating the viability of pure recurrence at production scale. RWKV-5/6 (Eagle and Finch)~\cite{peng2024eagle} extend the state from vector-valued to \emph{matrix-valued} representations ($S_t \in \mathbb{R}^{d_k \times d_v}$), increasing the state capacity from $O(d)$ to $O(d_k d_v)$ and enabling richer associative storage. RWKV-7~\cite{peng2025rwkv7} introduces the \emph{generalized delta rule} for state updates---the same ``erase-then-write'' mechanism as DeltaNet (Eq.~\ref{eq:deltanet})---combined with vector-valued (per-dimension) gating and a data-dependent in-context learning rate $\alpha_t$. This convergence of RWKV-7 and DeltaNet/Gated Delta Networks on the same delta-rule update mechanism, arrived at independently from different research traditions, provides strong evidence for the optimality of this state update rule.
+
+\paragraph{RetNet.}
+Sun et al.~\cite{sun2023retentive} proposed the \emph{retention} mechanism, which combines exponential decay with multi-scale heads:
+\begin{equation}
+\text{Retention}(Q, K, V)_n = \sum_{m \leq n} \gamma^{n-m} (Q_n^\top K_m)\, V_m,
+\label{eq:retnet}
+\end{equation}
+where $\gamma \in (0, 1)$ is a per-head decay factor. RetNet supports three computation modes: parallel (matrix form for training), recurrent ($O(d^2)$ per step for inference), and chunk-wise (hybrid for long-sequence training). The multi-scale design assigns different decay rates to different heads, enabling simultaneous modeling of short-range and long-range dependencies. RetNet can be viewed as a special case of GLA (Eq.~\ref{eq:gla}) where the gate is a fixed scalar rather than a data-dependent matrix.
+
+\paragraph{xLSTM.}
+Beck et al.~\cite{beck2024xlstm} modernized the classical LSTM with two key innovations. \emph{sLSTM} (scalar LSTM) introduces \emph{exponential gating}: the input and forget gates use $\exp(\cdot)$ rather than $\sigma(\cdot)$, providing a much larger dynamic range that enables more precise memory control. Numerical stability is maintained through log-space computation. \emph{mLSTM} (matrix LSTM) replaces the scalar cell state with a \emph{matrix-valued memory} $C_t \in \mathbb{R}^{d \times d}$:
+\begin{equation}
+C_t = f_t \cdot C_{t-1} + i_t \cdot v_t\, k_t^\top, \quad h_t = \frac{C_t\, q_t}{\max(|n_t^\top q_t|, 1)},
+\label{eq:mlstm}
+\end{equation}
+where $f_t = \exp(\tilde{f}_t)$ and $i_t = \exp(\tilde{i}_t)$ are exponential gates, and $n_t = f_t n_{t-1} + i_t k_t$ is a normalizer. The matrix memory update $C_t = f_t C_{t-1} + i_t v_t k_t^\top$ is structurally identical to gated linear attention (Eq.~\ref{eq:gla}), with the exponential gates providing a richer parameterization than sigmoid gates. mLSTM is fully parallelizable via the same chunk-wise algorithms used for GLA, demonstrating that classical recurrent architectures remain competitive when equipped with modern design principles and training algorithms.
+
+\subsubsection{Long Convolution Architectures}
+\label{subsubsec:long-conv}
+
+A complementary approach to sub-quadratic sequence modeling replaces attention with long convolutions, which can be computed in $O(N \log N)$ via FFT.
+
+\paragraph{Hyena.}
+Poli et al.~\cite{poli2023hyena} proposed replacing attention with a hierarchy of long convolutions parameterized by implicit neural representations. Each Hyena layer applies a sequence of element-wise gating operations interleaved with long convolutions:
+\begin{equation}
+y = x_1 \odot (h_1 * (x_2 \odot (h_2 * (\cdots)))),
+\label{eq:hyena}
+\end{equation}
+where $h_i$ are implicitly parameterized convolution filters (generated by a small MLP that maps position indices to filter values) and $x_i$ are data-dependent projections of the input. The implicit parameterization allows the filter length to be decoupled from the number of parameters, enabling arbitrarily long convolutions with a fixed parameter budget. Hyena achieves sub-quadratic complexity ($O(N \log N)$ via FFT) while matching attention quality on sequences up to 8K tokens.
+
+\paragraph{MEGA.}
+Ma et al.~\cite{ma2023mega} combined an \emph{exponential moving average} (EMA) with gated attention in a single module. The EMA component provides efficient local smoothing with learnable multi-scale decay rates, while a single-head attention mechanism (with $O(N^2)$ cost but small constant factor due to the single head) captures global dependencies. The combination achieves strong results on both language modeling and long-range benchmarks, demonstrating that even a minimal attention component can substantially improve the quality of recurrence-based models.
+
+\subsubsection{Comparison and Analysis}
+
+Table~\ref{tab:ssm-comparison} provides a comprehensive comparison of SSM and RNN-like token mixers along the dimensions of state update mechanism, state capacity, computational complexity, and selectivity.
+
+\begin{table}[t]
+\centering
+\caption{Comparison of SSM and RNN-like token mixers. $N$: sequence length, $d_s$: state dimension, $d$: model dimension. ``Selective'' indicates whether the state update depends on the input content.}
+\label{tab:ssm-comparison}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Method} & \textbf{Year} & \textbf{State Update} & \textbf{State Size} & \textbf{Train} & \textbf{Infer/step} & \textbf{Selective} \\
+\midrule
+S4             & 2021 & Linear (HiPPO) & $d_s$ & $O(N \log N)$ & $O(d_s)$ & No \\
+Mamba          & 2024 & Selective SSM & $d_s$ & $O(Nd_s)$ & $O(d_s)$ & Yes \\
+Mamba-2 (SSD)  & 2024 & Scalar-$A$ SSM & $d_s$ & $O(Nd_s)$ & $O(d_s)$ & Yes \\
+Mamba-3        & 2025 & Complex MIMO SSM & $d_s$ & $O(Nd_s)$ & $O(d_s)$ & Yes \\
+Gated DeltaNet & 2024 & Gate + delta rule & $d_k {\times} d_v$ & $O(Nd_k d_v)$ & $O(d_k d_v)$ & Yes \\
+RWKV           & 2023 & Exp-decay recurrence & $d$ & $O(Nd)$ & $O(d)$ & Partial \\
+RWKV-5/6       & 2024 & Matrix-valued state & $d_k {\times} d_v$ & $O(Nd_k d_v)$ & $O(d_k d_v)$ & Partial \\
+RWKV-7         & 2025 & Generalized delta rule & $d_k {\times} d_v$ & $O(Nd_k d_v)$ & $O(d_k d_v)$ & Yes \\
+RetNet         & 2023 & Exp-decay retention & $d_k {\times} d_v$ & $O(Nd_k d_v)$ & $O(d_k d_v)$ & No \\
+xLSTM (mLSTM)  & 2024 & Exp-gated matrix memory & $d {\times} d$ & $O(Nd^2)$ & $O(d^2)$ & Yes \\
+Hyena          & 2023 & Long convolution & --- & $O(N \log N)$ & $O(N)$ & Partial \\
+MEGA           & 2023 & EMA + single-head attn & $d$ & $O(N^2/H{+}Nd)$ & $O(N{+}d)$ & Partial \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The SSD framework~\cite{dao2024transformers} provides a unifying theoretical lens for understanding the relationships among these methods. Under SSD, the key distinction is the \emph{state update rule}: vanilla linear attention and RetNet use additive updates ($S_t = \alpha S_{t-1} + k_t v_t^\top$), GLA and mLSTM use gated updates ($S_t = G_t \odot S_{t-1} + k_t v_t^\top$), and DeltaNet/RWKV-7/Gated Delta Networks use delta-rule updates ($S_t = S_{t-1} - \beta_t k_t(k_t^\top S_{t-1}) + \beta_t k_t v_t^\top$). This progression---from additive to gated to delta-rule---represents an increasingly expressive hierarchy of state update mechanisms, each addressing a specific limitation of its predecessor: gating solves the monotonic accumulation problem, and the delta rule solves the associative interference problem.
+
+The fundamental limitation shared by all SSM and RNN-like models is the \emph{state bottleneck}: the fixed-size state $S \in \mathbb{R}^{d_k \times d_v}$ can store at most $O(d_k d_v)$ bits of information, regardless of the sequence length. This bottleneck manifests as degraded performance on tasks requiring precise retrieval from long contexts---particularly in-context learning, needle-in-a-haystack, and multi-hop reasoning---where softmax attention's ability to access any token in the KV cache with $O(1)$ precision provides an insurmountable advantage. The dominant strategy for addressing this limitation is \emph{hybrid architectures} (Section~\ref{subsec:hybrid}) that interleave a small number of full softmax attention layers (for precise recall) with SSM or linear attention layers (for efficient long-range processing). The independent convergence of Jamba~\cite{lieber2024jamba_tr} and MiniMax-01~\cite{minimax2025} on a ${\sim}$7:1 SSM-to-attention ratio suggests a natural balance point, though the optimal ratio likely depends on the task distribution and model scale.
+
+Future directions include more powerful selectivity mechanisms (e.g., complex-valued dynamics in Mamba-3, MIMO interactions), the development of state update rules that can match softmax attention's recall capability without the quadratic cost, and the co-design of SSM architectures with hardware accelerators to close the gap between theoretical and realized throughput. The convergence of RWKV-7, DeltaNet, and Gated Delta Networks on the delta-rule update mechanism, arrived at independently from different research traditions, provides strong evidence that this update rule represents a fundamental optimum for linear-complexity sequence modeling.
+
+
+
+\subsection{Attention with Negative Weights}
+\label{subsec:neg-attn}
+
+Standard softmax attention produces strictly non-negative attention weights, which limits the model's ability to express ``do not attend to this token'' signals. Several recent works have explored attention mechanisms that allow negative weights.
+
+\paragraph{Diff Attention.}
+Ye et al.~\cite{ye2024differential} proposed Differential Attention, which computes attention as the difference of two softmax maps: $\text{DiffAttn}(Q, K, V) = (\text{softmax}(Q_1 K_1^\top / \sqrt{d}) - \lambda \cdot \text{softmax}(Q_2 K_2^\top / \sqrt{d})) V$, where $\lambda$ is a learnable scalar. The subtraction cancels out attention noise---the diffuse, uninformative attention mass that softmax distributes across irrelevant tokens---yielding a sparser, more focused effective attention pattern. Differential Attention improves in-context learning, long-context retrieval (needle-in-a-haystack), and hallucination reduction, while adding minimal overhead (two attention maps per head, but with halved head dimension each). The approach has been adopted in Microsoft's Phi-4-mini.
+
+\paragraph{CEMA.}
+Gated linear attention variants such as CEMA (Complex Exponential Moving Average) in Megalodon~\cite{ma2024megalodon} naturally produce signed (complex-valued) mixing weights through their exponential decay mechanism, providing an alternative route to negative attention without explicit subtraction.
+
+\subsection{Different Activation Functions (Softmax Alternatives)}
+\label{subsec:softmax-alt}
+
+The softmax function in standard attention serves two roles: it produces a valid probability distribution (non-negative, sum-to-one) and it sharpens the attention distribution through exponentiation. Several works have explored replacing softmax with alternative activation functions.
+
+\paragraph{ReLU and Squared ReLU Attention.}
+Hua et al.\ and others have explored replacing softmax with ReLU: $\text{Attn}(Q, K, V) = \text{ReLU}(QK^\top / \sqrt{d})\, V$. ReLU attention produces sparse attention patterns (many exact zeros) and avoids the normalization bottleneck of softmax, but sacrifices the probabilistic interpretation. Squared ReLU ($\phi(x) = (\text{ReLU}(x))^2$) provides a smoother alternative that has been adopted in some linear attention variants.
+
+\paragraph{Sigmoid Attention.}
+Recent work has explored sigmoid attention: $\text{Attn}(Q, K, V) = \sigma(QK^\top / \sqrt{d})\, V$, which applies sigmoid element-wise to the attention logits. Unlike softmax, sigmoid attention does not enforce competition among keys (the weights do not sum to one), allowing each key to be attended to independently. This removes the ``attention sink'' phenomenon where tokens are forced to attend somewhere even when no key is relevant. FlashSigmoid provides a hardware-efficient implementation.
+
+\subsection{Hybrid Architectures}
+\label{subsec:hybrid}
+
+A growing body of evidence suggests that no single token mixer dominates across all tasks: softmax attention excels at precise recall and in-context learning, while linear attention and SSMs provide superior throughput for long sequences. Hybrid architectures combine multiple token mixer types within a single model, typically interleaving softmax attention layers with linear attention or SSM layers.
+
+\paragraph{Jamba.}
+AI21's Jamba~\cite{lieber2024jamba_tr} interleaves Transformer and Mamba layers in a 1:7 ratio (one attention layer for every seven Mamba layers), combined with MoE for the FFN. At 52B total parameters (12B active), Jamba achieves quality competitive with Llama-2 70B while fitting in a single 80GB GPU thanks to the reduced KV-cache footprint of the Mamba layers.
+
+\paragraph{MiniMax-01.}
+MiniMax-01~\cite{minimax2025} scales the hybrid approach to 456B parameters with a 4M-token context window. It uses Lightning Attention (linear) for the majority of layers and softmax attention for a small fraction, achieving the longest context window among open-weight models while maintaining competitive quality on standard benchmarks.
+
+\paragraph{Zamba2.}
+Zyphra's Zamba2 uses a shared attention layer interleaved with Mamba blocks, reducing the parameter overhead of the attention component while maintaining its recall benefits. The shared attention layer acts as a global information bottleneck that all Mamba blocks can access.
+
+The convergence of multiple independent efforts on a ${\sim}$7:1 ratio of efficient-to-attention layers suggests a natural balance point, though the optimal ratio likely depends on the task distribution and model scale.
+
+\subsection{Hardware-Efficient Attention}
+\label{subsec:hw-attn}
+
+The practical throughput of attention mechanisms depends not only on their algorithmic complexity but on how well they map to GPU hardware. Hardware-efficient attention implementations exploit the GPU memory hierarchy to minimize data movement between HBM (high-bandwidth memory) and SRAM (on-chip cache).
+
+\paragraph{FlashAttention.}
+Dao et al.~\cite{dao2022flashattention} introduced FlashAttention, which computes exact softmax attention without materializing the $N \times N$ attention matrix in HBM. By tiling the computation into blocks that fit in SRAM and using online softmax (computing the softmax normalization incrementally), FlashAttention achieves 2--4$\times$ wall-clock speedup over standard attention while using $O(N)$ rather than $O(N^2)$ memory. FlashAttention-2 further optimizes the work partitioning across GPU thread blocks, and FlashAttention-3 exploits Hopper architecture features (TMA, WGMMA, FP8) for additional speedups.
+
+\paragraph{FlashLinearAttention.}
+Yang et al.~\cite{yang2024gla} extended the IO-aware approach to linear attention, developing chunk-wise algorithms that maintain the recurrent state in SRAM while processing each chunk as a dense matrix multiplication on tensor cores.
+
+\subsection{KV-Cache Compression}
+\label{subsec:kv-compress}
+
+During autoregressive inference, the KV cache grows linearly with sequence length, becoming the primary memory bottleneck for long-context generation. KV-cache compression methods reduce this footprint while preserving generation quality.
+
+Key approaches include: (1)~\emph{quantization} of cached keys and values to lower precision (e.g., FP8 or INT4); (2)~\emph{eviction} policies that remove low-importance tokens from the cache based on attention scores or recency; (3)~\emph{merging} of similar KV entries to reduce the effective cache size; and (4)~\emph{cross-layer sharing} of KV caches (as in CLA and YOCO) to amortize the memory cost across layers. These techniques are orthogonal to the token mixer design and can be combined with any attention variant.
+
+\subsection{Inference Optimization}
+\label{subsec:inference-opt}
+
+Beyond the token mixer itself, several system-level optimizations improve the end-to-end inference throughput of LLMs.
+
+\paragraph{Speculative Decoding.}
+Speculative decoding uses a small draft model to generate candidate tokens in parallel, which are then verified by the large target model in a single forward pass. This amortizes the latency of the target model across multiple tokens, achieving 2--3$\times$ speedup without any quality degradation (the output distribution is provably identical to the target model).
+
+\paragraph{Continuous Batching and PagedAttention.}
+vLLM's PagedAttention manages the KV cache as virtual memory pages, eliminating fragmentation and enabling efficient continuous batching of requests with different sequence lengths. This system-level optimization is orthogonal to the attention algorithm and provides 2--4$\times$ throughput improvement over naive batching.
+
+\subsection{Test-Time Memory}
+\label{subsec:ttm}
+
+Test-Time Training (TTT) layers~\cite{sun2024learning} and Titans~\cite{behrouz2024titans} represent a radical departure from both attention and recurrence: they replace the fixed-size hidden state with a \emph{learnable model} (typically a small neural network) that is updated via gradient descent at each time step during inference.
+
+\paragraph{TTT-Linear and TTT-MLP.}
+Sun et al.~\cite{sun2024learning} proposed TTT layers where the hidden state is the weight matrix of a linear model ($W_t$) or a small MLP. At each time step, the model performs one step of gradient descent on a self-supervised loss (e.g., reconstruction): $W_t = W_{t-1} - \eta \nabla_W \mathcal{L}(W_{t-1}; x_t)$. This update rule is equivalent to the delta rule (Eq.~\ref{eq:deltanet}) when the inner model is linear, establishing a deep connection between TTT and linear attention. The key advantage is that the ``state'' (the inner model's weights) can have arbitrary capacity, breaking the fixed-size state bottleneck of SSMs and linear attention.
+
+\paragraph{Titans.}
+Behrouz et al.~\cite{behrouz2024titans} extended TTT with a three-component architecture: a long-term memory module (TTT-based), a short-term memory module (sliding window attention), and a persistent memory module (learned constant parameters). The gated combination of these three components achieves state-of-the-art results among sub-quadratic methods on language modeling and long-context tasks.
+
+The TTT/Titans approach is conceptually elegant but computationally expensive: each time step requires a backward pass through the inner model, which is significantly more costly than the matrix-vector products of SSMs or linear attention. Whether the quality gains justify this cost at production scale remains an open question.
+
+\begin{table}[t]
+\centering
+\caption{Qualitative comparison of token mixer families along key dimensions. Scores range from 1 (lowest) to 5 (highest).}
+\label{tab:token-mixer-overview}
+\small
+\begin{tabular}{lccccc}
+\toprule
+\textbf{Token Mixer} & \textbf{Recall} & \textbf{Throughput} & \textbf{Long-Ctx} & \textbf{Complexity} & \textbf{Maturity} \\
+\midrule
+Full Softmax Attn    & 5 & 2 & 2 & Low       & Production \\
+Sparse Attention     & 4 & 4 & 4 & Medium    & Production \\
+Linear Attention     & 3 & 5 & 5 & Medium    & Emerging   \\
+SSM (Mamba family)   & 3 & 5 & 5 & Medium    & Emerging   \\
+Hybrid (Attn+SSM)    & 5 & 4 & 4 & High      & Production \\
+KV Compression       & 4 & 4 & 5 & Low       & Production \\
+TTT / Titans         & 4 & 4 & 4 & Very High & Research   \\
+\bottomrule
+\end{tabular}
+\end{table}

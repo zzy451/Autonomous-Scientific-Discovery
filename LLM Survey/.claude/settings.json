@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash([ -f \"/Users/mjm/LLM Survey/coverage_check_report.md\" ])",
+      "Bash([ -f \"/Users/mjm/LLM Survey/architecture_comparison_table.md\" ])",
+      "Read(//Users/mjm/LLM Survey/**)",
+      "Read(//^\\\\\\\\\\\\\\\\section\\\\{/{name=$0; start=NR} /^\\\\\\\\\\\\\\\\section\\\\{|^\\\\\\\\\\\\\\\\end\\\\{document\\\\}/**)",
+      "Bash(ls -la \"/Users/mjm/LLM Survey/\"*.tex \"/Users/mjm/LLM Survey/\"*.bib)",
+      "Bash(grep -n \"includegraphics\\\\|\\\\\\\\\\\\\\\\input\\\\|\\\\\\\\\\\\\\\\bibliography\\\\|Fig/\" \"/Users/mjm/LLM Survey/paper/\"section_*.tex)"
+    ],
+    "additionalDirectories": [
+      "/Users/mjm/LLM Survey"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+
+# Temporary recovery / staging folders
+.missing_originals/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# Python / tooling caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / package-manager caches
+node_modules/
+.npm/
+.pnpm-store/
+
+# Downloaded reference files
+Reference_pdf/**/*.pdf
+Reference_PDF/**/*.pdf
+**/Reference_pdf/**/*.pdf
+**/Reference_PDF/**/*.pdf
+
+# Large binary document artifacts
+*.pdf
+*.zip
+*.7z
+*.rar

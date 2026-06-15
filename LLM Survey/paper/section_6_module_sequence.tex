@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Section 6: Module Sequence
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \section moved to main.tex
+\label{sec:module_sequence}
+
+The module sequence of a Transformer block---the order and arrangement of normalization layers, attention modules, feed-forward networks, and residual connections---profoundly affects gradient flow, training stability, and representational capacity. While the original Transformer~\cite{vaswani2017attention} established a specific ordering (Post-Norm with serial Attention-then-FFN), subsequent work has systematically explored the design space along four axes: normalization placement, sub-layer parallelism, block heterogeneity, and normalization-free alternatives. We consolidate the 13 sub-branches identified in our analysis into eight subsections.
+
+%% 6.1 Post-Norm vs Pre-Norm
+\subsection{Post-Norm versus Pre-Norm: The Foundational Dichotomy}
+\label{subsec:pre_post_norm}
+
+The placement of normalization relative to the residual connection is the most consequential module-sequence decision. \textbf{Post-Norm}~\cite{vaswani2017attention} applies normalization after the residual addition: $y = \mathrm{LN}(x + F(x))$.
+\begin{equation}
+x_{l+1} = \mathrm{LN}\!\left(x_l + F_l(x_l)\right) \quad \text{(Post-Norm: normalization after residual addition)}
+\label{eq:postnorm}
+\end{equation}
+This design provides strong regularization and preserves representation diversity across layers, but gradients must pass through the normalization layer on the backward path, leading to instability at initialization and necessitating careful learning rate warmup.
+
+\textbf{Pre-Norm}~\cite{xiong2020layer} applies normalization before the sub-layer: $y = x + F(\mathrm{LN}(x))$. This creates a clean identity path for gradients through the shortcut, enabling stable training without warmup. Xiong et al.~\cite{xiong2020layer} proved via mean-field analysis that Pre-LN gradient norms remain approximately constant across layers at initialization.
+\begin{equation}
+x_{l+1} = x_l + F_l\!\left(\mathrm{LN}(x_l)\right) \quad \text{(Pre-Norm: clean gradient path via identity shortcut)}
+\label{eq:prenorm}
+\end{equation}
+Pre-Norm has become the de facto standard for virtually all modern LLMs, including the GPT, LLaMA, Mistral, and Qwen families.
+
+\textbf{ADMIN}~\cite{liu2020understanding} (Adaptive Model Initialization) offers a middle path: it profiles the ``amplification effect'' in Post-Norm residual branches during a preliminary pass and adaptively rescales initialization to dampen instability, stabilizing Post-Norm training without architectural modification. Liu et al.\ establish a unified framework based on the amplification factor to quantify gradient amplification and attenuation under both paradigms, showing that Post-Norm's instability stems from gradient variance that scales polynomially with depth.
+
+Despite extensive study, Post-Norm retains a small but consistent quality advantage over Pre-Norm on certain tasks (e.g., 0.5--1 BLEU on machine translation), and the theoretical mechanism behind this gap remains incompletely understood. Both analyses are largely conducted at initialization; characterizing gradient dynamics throughout the entire training trajectory is an open challenge.
+
+\subsection{The Curse of Depth in Pre-Norm}
+\label{subsec:curse_of_depth}
+
+Pre-Norm's stability comes at a price. Under Pre-Norm, activation variance accumulates as $\mathrm{Var}(x_{l+1}) = \mathrm{Var}(x_l) + \mathrm{Var}(F_l)$, growing as $\Theta(L)$. As the residual stream magnitude grows, the LayerNorm output $\mathrm{LN}(x_l)$ carries diminishing relative information, and the Jacobian of deep layers approaches the identity matrix~\cite{sun2025curse}. The result is a Curse of Depth: deep layers contribute negligibly to the final representation. Empirically, removing the last 30--40\% of layers in Pre-Norm Transformers produces minimal performance degradation~\cite{men2024shortgpt}---a finding confirmed across Llama, Mistral, DeepSeek, and Qwen model families. From an information-theoretic perspective, deep-layer representations approach mutual information saturation with respect to the input, adding progressively less new information.
+
+This discovery has profound implications: it questions the prevailing ``stack more layers'' scaling paradigm and directly motivates three lines of response---depth-scaling methods (Section~\ref{subsec:depth_scaling_module}), hybrid normalization schemes (Section~\ref{subsec:hybrid_norm}), and non-uniform layer designs (Section~\ref{subsec:hetero_blocks}) that repurpose deep layers for different computational tasks.
+
+%% 6.2 Depth Scaling
+\subsection{Depth Scaling and Normalization Coupling}
+\label{subsec:depth_scaling_module}
+
+Several methods address the Pre-Norm/Post-Norm trade-off through depth-aware scaling of residual contributions.
+
+\textbf{DeepNorm}~\cite{wang2024deepnet} augments Post-Norm with a depth-dependent residual scaling factor:
+\begin{equation}
+  x_{l+1} = \mathrm{LN}(\alpha \cdot x_l + F(x_l)), \quad \alpha = (2L)^{1/4}, \quad \beta = (8L)^{-1/4},
+  \label{eq:deepnorm_module}
+\end{equation}
+where $\beta$ controls the initialization scale of sub-layer weights. The theoretical guarantee, derived from update-bound analysis, is that per-layer updates remain bounded regardless of depth, enabling stable training of 1,000-layer Transformers. \textbf{MAGNETO (Sub-LN)}~\cite{wang2022magneto} places additional LayerNorm inside each sub-module and derives a matching initialization from moment-control theory, maintaining $O(1)$ second moments throughout forward propagation. This ``Foundation Transformer'' design was validated across language, vision, and speech modalities.
+
+\textbf{ReZero}~\cite{bachlechner2021rezero} and \textbf{Fixup}~\cite{zhang2019fixup} take the complementary approach of eliminating normalization entirely through initialization: ReZero initializes the residual scaling to zero (the network starts as a pure identity), while Fixup rescales initialization by $L^{-1/(2m-2)}$. \textbf{T-Fixup}~\cite{huang2020tfixup} adapts Fixup specifically for Transformers, enabling 200-layer models without normalization or warmup.
+
+These methods collectively demonstrate that normalization placement, initialization, and residual scaling form a tightly coupled triad. Their interaction determines the ``trainability frontier''---the maximum depth at which a given architectural configuration can be stably optimized.
+
+%% 6.3 Hybrid Norm
+\subsection{Hybrid and Unified Normalization Placement}
+\label{subsec:hybrid_norm}
+
+Recognizing that neither Pre-Norm nor Post-Norm is universally superior, several hybrid schemes have been proposed.
+
+\textbf{Sandwich LayerNorm}~\cite{ding2021cogview} adds an extra LN at the output of the residual branch: $y = x + \mathrm{LN}(F(\mathrm{LN}(x)))$.
+\begin{equation}
+x_{l+1} = x_l + \mathrm{LN}\!\left(F_l(\mathrm{LN}(x_l))\right) \quad \text{(Sandwich: double normalization)}
+\label{eq:sandwich_ln}
+\end{equation}
+Originally introduced in CogView for FP16 text-to-image generation stability, the outer LN suppresses the ``value explosion'' caused by cumulative residual growth. \textbf{NormFormer}~\cite{shleifer2022normformer} inserts additional normalization points after the attention output and within the FFN (after the first projection), fixing gradient magnitude mismatches between heads and layers at a cost of only 0.4\% extra compute. \textbf{Peri-LN}~\cite{kim2025periln}, adopted by Gemma~2~\cite{gemma2024improving} and OLMo~2, applies normalization at both the input and output of each sub-layer, constraining variance at both branch endpoints.
+
+\textbf{ResiDual}~\cite{xie2023residual} maintains two parallel residual paths---one Pre-Norm (for gradient stability) and one Post-Norm (for representation diversity)---merging them at the model output.
+\begin{equation}
+x_{l+1}^{\text{pre}} = x_l^{\text{pre}} + F_l(\mathrm{LN}(x_l^{\text{pre}})), \quad
+x_{l+1}^{\text{post}} = \mathrm{LN}(x_l^{\text{post}} + F_l(x_l^{\text{pre}}))
+\label{eq:residual}
+\end{equation}
+\textbf{Mix-LN}~\cite{chen2024mixln} directly targets the Curse of Depth by using Post-Norm for shallow layers (preserving deep-layer effectiveness) and Pre-Norm for deep layers (ensuring gradient stability), with a transition point at 25\% depth. \textbf{FuseNorm}~\cite{wang2026fusenorm} introduces learnable gating between Pre-Norm and Post-Norm streams. \textbf{SiameseNorm}~\cite{siamesenorm2026} and \textbf{HybridNorm}~\cite{hybridnorm2025} represent the latest efforts toward trainable, unified normalization frameworks.
+
+%% 6.4 Parallel Sub-layers
+\subsection{Parallel versus Serial Sub-layers}
+\label{subsec:parallel_sublayers}
+
+The standard Transformer executes Attention and FFN serially. Parallel sub-layer designs execute both simultaneously:
+\begin{equation}
+  y = x + \mathrm{Attn}(\mathrm{LN}(x)) + \mathrm{FFN}(\mathrm{LN}(x)),
+  \label{eq:parallel}
+\end{equation}
+reducing the critical path and eliminating one sequential dependency. GPT-J~\cite{wang2021gptj} first adopted this design, and PaLM~\cite{chowdhery2022palm} validated it at 540B parameters, demonstrating quality neutrality for models $>$8B and a $\sim$15\% training throughput improvement. ViT-22B~\cite{dehghani2023vit22b} extended this to vision. The mathematical justification is a first-order Taylor approximation: when residual branch magnitudes are small relative to the stream, the serial design $x + \mathrm{Attn}(x) + \mathrm{FFN}(x + \mathrm{Attn}(x)) \approx x + \mathrm{Attn}(x) + \mathrm{FFN}(x)$. Below 8B parameters, however, a measurable quality gap persists, and the threshold effect's theoretical explanation remains open.
+
+The \textbf{Sandwich Transformer}~\cite{press2020sandwich} explores a different axis of sub-layer reordering: concentrating Attention layers at the bottom and top of the network with FFN layers in the middle. This outperforms standard interleaving on language modeling at zero extra cost, suggesting that the conventional alternating pattern is not necessarily optimal.
+
+%% 6.5 Normalization-Free Alternatives
+\subsection{Normalization-Free Alternatives}
+\label{subsec:norm_free}
+
+If normalization placement is so contentious, can normalization be eliminated entirely? \textbf{DyT (Dynamic Tanh)}~\cite{zhu2025dyt} replaces LayerNorm with a simple $\tanh(\alpha x)$ nonlinearity, where $\alpha$ is a learnable scalar. The boundedness of $\tanh$ naturally constrains activation ranges without computing mean or variance statistics, offering a computationally simpler alternative. However, the saturating regions of $\tanh$ may cause gradient vanishing in extreme cases, and the sensitivity of $\alpha$ to initialization requires careful tuning.
+
+\textbf{nGPT}~\cite{loshchilov2024ngpt} takes a more radical geometric approach, constraining all representations to a hypersphere and reinterpreting each layer as a rotation on the unit sphere rather than an affine transformation in Euclidean space. Under this formulation, normalization becomes a geometric constraint inherent to the representation space rather than a computational operation applied to activations. The key theoretical insight is that vector norms carry no useful information---only angular (directional) information matters for downstream prediction.
+
+\textbf{GeoNorm}~\cite{geonorm2026} formalizes normalization through Riemannian geometry, using geodesic optimization on curved manifolds to unify Pre-Norm and Post-Norm. Geodesics---the shortest paths on the representation manifold---provide a principled replacement for Euclidean normalization that avoids the information loss associated with projecting onto a fixed-scale subspace.
+
+These normalization-free approaches, while theoretically elegant, await large-scale ($>$100B parameter) validation. If proven viable at scale, they would render the Pre-Norm versus Post-Norm debate moot and fundamentally simplify the module-sequence design space.
+
+\subsection{Industrial Normalization Practices}
+\label{subsec:industrial_norm}
+
+Large-scale industrial models have converged on pragmatic normalization strategies that blend theoretical insights with engineering constraints. Gemma~2~\cite{gemma2024improving} applies Pre- and Post-RMSNorm at every sub-layer (a Sandwich-like design), combined with logit soft-capping to bound attention scores. Llama~4~\cite{llama4_2025} and Qwen~3~\cite{yang2025qwen3} add dedicated RMSNorm after Query and Key projections (\textbf{QK-Norm}) to prevent attention logit explosion, particularly during long-sequence and large-batch training. \textbf{NormFormer}~\cite{shleifer2022normformer} inserts normalization after attention heads and within FFN intermediate layers. \textbf{Swin V2}~\cite{liu2022swinv2} proposes Res-Post-Norm for vision, placing normalization at the branch output with scaled cosine attention to stabilize 3B-scale Vision Transformers. OLMo~2 adopts a Reordered-Norm variant that moves RMSNorm from the sub-layer input to its output, an empirical finding that reduces loss spikes. These industrial practices confirm that ``simple Pre-Norm'' is often insufficient at production scale; additional normalization points are becoming standard.
+
+%% 6.6 Heterogeneous Block Design
+\subsection{Heterogeneous Block Design and Architecture Search}
+\label{subsec:hetero_blocks}
+
+Traditional Transformers use identical blocks at every layer. Non-uniform designs break this assumption, assigning different configurations to different layers based on their functional roles.
+
+\paragraph{Hand-designed heterogeneity.}
+Gemma~3~\cite{gemma2025gemma3} adopts a 5:1 local-to-global attention interleaving; MiniMax-01~\cite{minimax2025} uses 7:1 Lightning (linear) to Softmax attention; Llama~4~\cite{llama4_2025} alternates Dense/MoE layers and RoPE/NoPE layers; PanGu-Sigma places Dense layers at the bottom and Sparse (MoE) layers at the top. The theoretical justification is the hierarchical nature of information processing: shallow layers primarily capture local/syntactic patterns (favoring efficient local attention), while deep layers capture global/semantic relationships (requiring full attention or expert specialization).
+
+\paragraph{Automated search.}
+\textbf{Primer}~\cite{so2021primer} uses evolutionary NAS to discover architectural improvements, including Squared ReLU and Multi-DConv Head Attention, achieving 3--4$\times$ training efficiency gains. \textbf{Brainformers}~\cite{zhou2023brainformers} search over a richer space including heterogeneous FFN types, attention variants, and normalization positions, finding fully heterogeneous blocks that achieve 2$\times$ convergence speedup and 5$\times$ inference speedup over GLaM. While search costs remain prohibitive for routine use, these results demonstrate that human-designed blocks are far from optimal.
+
+%% 6.7 Module Redundancy and Simplification
+\subsection{Module Redundancy and Simplification}
+\label{subsec:module_redundancy}
+
+Systematic ablation studies reveal that standard Transformer blocks contain significant redundancy. He and Hofmann~\cite{he2023simplifying} show that skip connections, value/projection parameters, and normalization layers can be simultaneously removed---with proper signal-propagation initialization---reducing parameters by $\sim$15\% without degradation. Their signal-propagation analysis tracks the flow of signals and gradients through each component, identifying which ones are essential for maintaining representational capacity versus which merely provide training convenience.
+
+Attention-only architectures~\cite{attentiononly2023} prove that MLP layers can in principle be implemented by attention heads, since the Value projection in multi-head attention is itself a linear transformation capable of approximating arbitrary pointwise operations. This raises the provocative question of whether FFN modules are strictly necessary or merely a convenient architectural convention.
+
+Wang et al.~\cite{wang2024whatmatters} provide a complementary empirical perspective, finding that 50\% of attention layers in Llama-2-70B can be pruned with only 2.4\% performance drop and 48.4\% speedup, while MLP layers are substantially more critical---even modest MLP pruning causes significant quality degradation. The Shaped Transformer~\cite{noci2023shaped} provides theoretical grounding by analyzing residual Transformers in the infinite depth-and-width limit via an SDE framework, identifying conditions under which components become mathematically redundant.
+
+These findings collectively provide a ``subtraction'' roadmap for future architectures: rather than always adding components, designers can selectively remove or simplify modules guided by signal-propagation and redundancy analyses. This perspective complements the ``addition'' approaches of heterogeneous design.
+
+%% 6.8 Hybrid / ODE
+\subsection{Hybrid Interleaving and Continuous Dynamics}
+\label{subsec:hybrid_ode}
+
+\paragraph{Hybrid token-mixer interleaving.}
+As sub-quadratic token mixers (linear attention, SSMs) mature, the module-sequence design space expands to include cross-architecture interleaving. Jamba~\cite{lieber2024jamba} interleaves Transformer and Mamba layers at a 7:1 ratio, drastically reducing KV cache memory while maintaining the modeling capacity of full softmax attention through periodic global layers. MiniMax-01~\cite{minimax2025} mixes Lightning Attention and Softmax Attention at 7:1 to support 4M-token context, where the $O(n)$ linear attention layers handle the bulk of sequential processing and the $O(n^2)$ softmax layers provide periodic information consolidation. Nemotron-3 Nano combines Mamba-2 and Self-Attention for 1M-token context, leveraging SSM's constant-size recurrent state for efficient long-range modeling.
+
+The shared design principle across these hybrid architectures is that sub-quadratic layers accumulate local information efficiently, while periodic full-attention layers perform precise global integration. The optimal interleaving ratio remains an open question---the 7:1 ratio adopted independently by both Jamba and MiniMax-01 may reflect a deeper principle about the frequency at which global consolidation is needed, or it may be an artifact of current hardware constraints. Theoretical guidance for ratio selection, potentially based on information-theoretic arguments about how quickly local representations saturate, is an important direction for future work.
+
+\paragraph{ODE/SDE perspectives.}
+Viewing the Transformer as a discretized ODE $dx/dt = f(x,t)$ provides a continuous-dynamics perspective on module sequence. The \textbf{Macaron Net}~\cite{lu2019macaron} draws on multi-particle dynamical systems to propose an FFN-Attn-FFN ordering (with half-sized FFN layers before and after attention) analogous to Strang splitting in symplectic integrators. Strang splitting preserves phase-space volume---a property that translates to better gradient propagation in the discrete setting. The Macaron structure has been adopted by models including PaLI, validating the practical value of theory-guided module ordering.
+
+The \textbf{Shaped Transformer}~\cite{noci2023shaped} models Pre-Norm Transformers as SDEs in the infinite depth-and-width limit, where the drift and diffusion coefficients are determined by the normalization scheme and initialization. By analyzing the SDE's stationary distribution and convergence properties, the authors derive optimal scaling and initialization conditions that prevent both signal explosion and collapse. This framework provides the most complete theoretical treatment of how module sequence and initialization interact in the continuous limit.
+
+Higher-order ODE integrators suggest further module-sequence innovations: a Runge-Kutta-style Transformer would apply sub-layers in a multi-stage evaluation pattern, potentially achieving better approximation of the continuous dynamics with fewer discrete layers. While such designs remain largely theoretical, the ODE perspective provides a principled mathematical language for reasoning about module ordering that transcends empirical ablation.
+
+\subsection{Open Questions}
+
+The module-sequence design space remains rich with unresolved questions, organized around four axes:
+
+\paragraph{Normalization theory.} The Curse of Depth in Pre-Norm calls for either a unified theory of normalization placement---one that encompasses Pre-Norm, Post-Norm, Sandwich, Mix-LN, and ResiDual as points in a continuous design space---or a normalization-free paradigm (DyT, nGPT, GeoNorm) that scales to production models. The interaction between normalization position and other training decisions (learning rate schedule, optimizer choice, data ordering) is poorly understood.
+
+\paragraph{Parallel sub-layer scaling.} Parallel sub-layers sacrifice quality below $\sim$8B parameters for reasons that lack theoretical explanation. Whether this threshold is fundamental or an artifact of current training recipes is unknown. Extending parallelism beyond two sub-layers (e.g., three or more simultaneous branches) and combining parallelism with gating remain unexplored.
+
+\paragraph{Practical heterogeneous search.} Heterogeneous block designs (Brainformers) demonstrate clear advantages but require prohibitively expensive architecture search. Making this practical---through efficient proxy tasks, transferable search results across scales, or LLM-assisted architecture design---is a key engineering challenge.
+
+\paragraph{Normalization-free interplay.} The interaction between module sequence choices and normalization-free approaches is largely unexplored. If normalization is removed, the entire Pre/Post/Hybrid design space collapses, but new questions arise about activation range control, initialization sensitivity, and compatibility with mixed-precision training. Resolving these could fundamentally reshape the module-sequence design landscape.

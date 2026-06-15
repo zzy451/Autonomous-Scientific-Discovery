@@ -1,0 +1,2516 @@
+arXiv:2412.17596v4 [cs.CL] 23 Feb 2026  Evaluating LLMs' Divergent Thinking Capabilities for
+                                            Scientific Idea Generation with Minimal Context
+
+                                               Kai Ruan1, Xuan Wang2, Jixiang Hong1, Peng Wang3, Yang Liu4,5, Hao Sun1,°
+
+                                                      1Gaoling School of Artificial Intelligence, Renmin University of China, Beijing, China
+                                                      2College of Computer Science and Technology, Zhejiang University, Hangzhou, China
+
+                                                                                          3Bank of China, Beijing, China
+                                                   4School of Engineering Science, University of Chinese Academy of Sciences, Beijing, China
+                                           5State Key Laboratory of Nonlinear Mechanics, Institute of Mechanics, Chinese Academy of Sciences,
+
+                                                                                                     Beijing, China
+
+                                                                                 *Corresponding author (haosun@ruc.edu.cn)
+
+                                                                                                        Abstract
+
+                                                    Large Language Models (LLMs) demonstrate remarkable capabilities in scientific tasks such
+                                                as literature analysis and experimental design. For instance, these models excel at accurately
+                                                extracting key findings from papers or generating coherent experimental procedures. However,
+                                                existing evaluation benchmarks primarily assess performance using rich contextual inputs.
+                                                We introduce LiveIdeaBench, a comprehensive benchmark evaluating LLMs' scientific idea
+                                                generation by assessing divergent thinking capabilities using single-keyword prompts. Drawing
+                                                from Guilford's creativity theory, our benchmark employs a dynamic panel of state-of-the-art
+                                                LLMs to assess generated ideas across five dimensions: originality, feasibility, fluency, flexibility,
+                                                and clarity. Through experimentation with over 40 leading models across 1,180 keywords spanning
+                                                22 scientific domains, we reveal that the scientific idea generation capabilities measured by our
+                                                benchmark, are poorly predicted by standard metrics of general intelligence scores. Our results
+                                                demonstrate that models like QwQ-32B-preview achieve creative performance comparable to
+                                                models such as claude-3.7-sonnet:thinking, despite significant gaps in their general intelligence
+                                                scores. These findings highlight the need for specialized evaluation benchmarks for scientific idea
+                                                generation and suggest that enhancing these idea generation capabilities in LLMs may require
+                                                different training strategies than those used for improving general problem-solving abilities. Such
+                                                strategies could potentially enable a wider range of AI tools tailored for different stages of the
+                                                scientific process.
+
+                                        Introduction
+
+                                            The advancement of scientific knowledge relies heavily on creative thinking and the generation
+                                        of novel hypotheses. The ability to envision new possibilities and formulate testable explanations is
+                                        crucial for scientific progress. In recent years, LLMs have demonstrated remarkable capabilities in
+                                        various scientific tasks, from literature analysis to experimental design, suggesting their potential as
+                                        powerful tools for augmenting scientific discovery [1­3]. Concurrently, machine learning techniques
+                                        are being applied to forecast future research directions by analyzing the structure and evolution
+                                        of scientific knowledge networks [4]. As Rafner et al. [5] note, these generative AI systems now
+
+                                                                                                        1
+perform comparably to humans on some creativity tests and could potentially enhance the creative
+capabilities of knowledge workers worldwide.
+
+    To understand the potential of AI in this domain, early theoretical work on human creativity
+offers valuable insights for our investigation. In their seminal 1962 work, Getzels and Jackson [7]
+examined the relationship between intelligence and creativity, particularly among "gifted" students.
+Their study yielded two crucial findings: first, high IQ does not necessarily equate to high creativity;
+and second, creativity and intelligence function as relatively independent traits. These observations
+led to the threshold theory [7, 8], proposing that intelligence is necessary but not sufficient for
+creativity, with its influence diminishing beyond a certain threshold.
+
+    However, subsequent research has yielded mixed evidence for this theory. While Gralewski et
+al. [12] and Jauk et al. [9] found some empirical support under certain conditions, some studies
+found no support [10, 11], challenging the threshold concept. More recent work by Weiss et al. [16]
+concluded that the relationship is likely linear with no evidence supporting a threshold. These
+
+a               b
+
+    "weather
+   forcasting"
+
+c                  d
+
+e
+
+f
+
+Fig. 1: Overall design of the LiveIdeaBench benchmark. a. Over 1,000 scientific keywords, representing diverse
+domains, are used in prompts for the Idea LLMs, encouraging divergent thinking and the generation of novel scientific
+ideas. b. Sampled Judge LLMs evaluate the generated ideas across three primary dimensions: originality, feasibility
+and clarity, assigning numerical scores to each idea. c. The evaluation panel comprises the top 10 state-of-the-art
+models selected from LiveBench, ensuring robust assessment through sampling and ensemble scoring. d. Fluency scores
+are derived by analyzing the diversity and substantive differences among ideas generated from the same keyword (using
+a randomly sampled judge), while originality, feasibility, and clarity metrics are combined for integrated evaluation.
+e. Following Guilford's creativity theory, the evaluation methodology assesses five critical dimensions: originality,
+feasibility, clarity, fluency, and flexibility, with flexibility computed as the 30th percentile of the averaged scores across
+the other four dimensions. f. The LiveIdeaBench benchmark provides a comprehensive dataset of generated ideas,
+evaluation metrics, and a dynamic leaderboard tracking the performance of over 40 models.
+
+                                                                2
+varying findings suggest that the development of idea generation capabilities might be underpinned
+by different cognitive mechanisms than general intelligence, a pattern potentially relevant to LLM
+development as well. It's also noteworthy that the threshold debate has nuances regarding potential
+versus achievement; some research suggests that while a threshold might (or might not) apply to
+divergent thinking ability, intelligence may remain related [9, 13] or even become more important
+for translating potential into real-world creative achievements across the entire range [14, 15]. These
+early studies primarily focused on the relationship between general cognitive abilities and creative
+potential, often measured via divergent thinking tasks. While much of this debate centers on general
+creativity, the specific relationship between intelligence and scientific creativity, which heavily
+relies on deep domain knowledge and rigorous methodology alongside ideation, remains an area
+requiring nuanced investigation, though the general finding of creativity and intelligence being
+distinct capabilities provides a useful starting point for examining LLMs.
+
+    Another theoretical strand addresses creativity assessment methodologies. Guilford's influential
+theoretical framework [8, 17] introduced the distinction between divergent thinking (generating varied
+responses to open-ended prompts) and convergent thinking (finding optimal solutions to well-defined
+problems). Guilford identified four key aspects of divergent thinking: the ability to generate a large
+number of ideas (fluency), the capacity to think across different categories (flexibility), the generation
+of novel ideas (originality), and the development of detailed and refined ideas (elaboration). More
+recent research by Cortes et al. [21] has noted that traditional creativity assessments typically
+involve elements of both divergent and convergent thinking rather than isolating either process.
+Their findings indicate that purportedly divergent and convergent tasks show limited correlation,
+questioning whether they reflect different components of the same higher-level construct (creativity).
+This work highlights the complexity of measuring creative processes and informs our approach to
+evaluating idea generation in LLMs.
+
+    Broader theoretical frameworks further enrich this picture. For instance, Margaret Boden [18]
+distinguishes between psychological creativity (P-creativity, novel to the individual) and historical
+creativity (H-creativity, novel to humanity), while Teresa Amabile's [19] componential theory
+highlights the interplay of domain-relevant skills, creativity-relevant processes (including divergent
+thinking), and intrinsic task motivation. Melvin Rhodes' [20] "4 P's" (Person, Process, Press,
+Product) provide a holistic view, reminding us that creativity involves the individual creator, the
+cognitive processes, the environmental influences, and the resulting outcome. While our approach
+primarily assesses aspects of the creative "process" (specifically idea generation fluency and diversity
+under minimal constraints), understanding these broader theories helps contextualize its scope and
+limitations within the larger landscape of scientific creativity, which ultimately demands valuable
+and impactful products.
+
+    These theoretical frameworks from human creativity research have informed modern approaches
+to evaluating LLMs' idea generation capabilities. Contemporary creativity research has expanded
+assessment methodologies beyond traditional paper-based tests, with Rafner et al. [22] developing
+CREA, a comprehensive game-based tool for measuring divergent and convergent thinking. Their
+validation studies across diverse populations have demonstrated the effectiveness of these novel
+assessment approaches. Benedek's [15] recent work clarifies that creative potential (measured through
+divergent thinking tasks) explains only limited variance in creative achievement, emphasizing complex
+interactions between potential, behavior, and environmental factors.
+
+    Recent research has systematically explored LLMs' potential for tasks analogous to human
+creative processes through various methodological approaches. Rafner et al. [5] provided a critical
+analysis of creativity in the age of generative AI, noting that while these systems now perform com-
+parably to humans on some creativity tests, important qualitative differences remain. Their analysis
+emphasized the importance of integrating psychological science with computational approaches to
+
+                                                                3
+develop more effective creativity support tools, highlighting both the promising capabilities and
+important limitations of current systems. Empirical assessments in creative contexts have shown
+promising results, exploring LLMs' potential through various applications. For instance, Meincke
+et al. [37] focused on product ideation, comparing the quality and novelty of ideas generated by
+GPT-4 against those generated by humans. Comprehensive human evaluation studies [38] have
+compared LLM-generated research proposals with those from NLP researchers, revealing statistically
+significant advantages in novelty while maintaining comparable feasibility metrics. Complementing
+these approaches, Lee et al. [39] conducted an empirical study investigating the impact of using
+ChatGPT on human creative performance, finding that it significantly enhanced the articulation
+
+a  b
+
+   c
+
+Fig. 2: Performance comparison of models evaluated on LiveIdeaBench. a. Dimensional scores (originality,
+feasibility, fluency, clarity, and flexibility) and overall performance (red line, with 95% confidence intervals, n " 6987)
+for open-weight and proprietary models. The central line of box represents the median, the box spans the 25th to 75th
+percentiles, the whiskers extend to the minimum and maximum values within 1.5 times the interquartile range. b.
+Multidimensional performance profiles of representative models across the five evaluation dimensions. c. Word cloud
+visualization of scientific keywords. For detailed scores and 95% CIs for each model, see Supplementary Table S.3.
+
+                                                                4
+and creativity of human-generated ideas.
+    Studies directly examining divergent thinking abilities in LLMs have employed various method-
+
+ological approaches. Cropley [40] analyzed ChatGPT on the Divergent Association Task and found
+that while GPT-4 demonstrated strong semantic distance capabilities in generating unrelated words,
+its inconsistency and predictability highlighted important differences from human creative processes.
+This research emphasized the distinction between divergent thinking abilities and true creativity,
+suggesting the importance of understanding both the capabilities and limitations of these systems.
+Marrone, Cropley, and Medeiros [41] further examined how narrow AI impacts human creativity,
+identifying both supportive functions and important limitations in creative processes. However,
+Wenger and Kenett [42] found that while LLMs performed on par with humans in individual
+creativity tests, they exhibited significantly lower response diversity at the group level, showing high
+homogeneity in creative outputs even across different model families. This creative homogeneity
+represents an important limitation in current systems. Confirming this potential downside, Doshi et
+al. [43], in an experimental study on story writing, found that while access to generative AI ideas
+caused stories to be evaluated as more creative individually (especially for less creative writers),
+these AI-enabled stories were significantly more similar to each other than stories produced by
+humans alone, pointing to a potential reduction in collective novelty. These findings collectively
+underscore the importance of evaluating not just the quality but also the diversity and novelty of
+AI-generated creative content.
+
+    The assessment methodology for LLM creativity has evolved through several sophisticated
+frameworks designed for broad evaluation. For instance, Lu et al. [44] evaluated text-to-code
+creativity using programming challenges combined with prompting strategies designed to force novel
+solutions by restricting previously used techniques, though potential reliance on static problem sets
+raises limitations. Building upon foundational creativity theories [8], Zhao et al. [45] proposed
+a comprehensive, albeit static, framework adapting established psychological test tasks to assess
+general creativity across multiple dimensions. These frameworks offer valuable, comprehensive
+assessments for their respective areas, often incorporating both divergent and convergent aspects or
+multiple task types with richer contextual inputs.
+
+    In the context of reasoning mechanics, Chain-of-thought (CoT) prompting has emerged as a
+powerful technique for enhancing LLMs' reasoning capabilities. Following the initial introduction
+of CoT prompting [23], several advanced variants have been developed [24, 25], enabling models
+to explore multiple reasoning paths simultaneously. Recent investigations into programming
+applications [26] have demonstrated that incorporating brainstorming significantly improves LLMs'
+performance. A common thread among these approaches is their implicit reliance on divergent
+thinking - the ability to generate multiple distinct solutions or paths from a single starting point.
+
+    Furthermore, recent years have seen significant advances in automated scientific systems aimed
+at aiding or accelerating discovery, each offering unique approaches. The AI Scientist framework
+[27] demonstrated potential for end-to-end research automation, while Nova [28] introduced iterative
+planning mechanisms for idea development. Systems like ResearchAgent [29] and Scideator [30]
+have further refined these approaches through knowledge graph integration. Pushing the boundaries
+further, the recent AI co-scientist framework from Google [31] showcases a sophisticated multi-
+agent system designed to generate novel research hypotheses and detailed research proposals. The
+system employs specialized agents for generation, reflection, ranking, evolution, proximity analysis,
+and meta-review to iteratively refine scientific hypotheses through a self-improving cycle, with
+generated hypotheses later validated through real-world laboratory experiments conducted by human
+researchers. Similarly, Wang and colleagues' [32] SCIMON system leverages literature retrieval and
+iterative novelty enhancement to generate scientific ideas, while Gu and Krenn [33, 34] demonstrated
+approaches using knowledge graphs and LLMs to suggest research directions. However, these
+
+                                                                5
+specialized systems typically rely heavily on extensive knowledge bases, complex contextual inputs,
+or planning processes to generate and refine ideas or research plans. While highly effective for
+their intended applications, this dependence on rich context and complex architectures makes it
+challenging to isolate and evaluate their fundamental capabilities for initial idea generation from
+minimal cues, particularly their capacity for divergent thinking. This limitation is particularly
+evident in systems like SciPIP [35] and IdeaSynth [36], whose structure encourages integrating
+existing information rather than generating diverse possibilities from minimal input.
+
+    The challenges in evaluating creative output at scale necessitate automated assessment methods.
+The emergence of LLMs as evaluation tools has opened new possibilities for assessing model outputs
+at scale. Various evaluation approaches [46­51] have demonstrated the feasibility of using LLMs to
+evaluate other models' responses, offering advantages in terms of efficiency and cost-effectiveness
+compared to human evaluation [52]. Recent advances, such as the jury-based framework [54] and
+reference-guided verdict method [53], have shown promising results in reducing individual model
+biases and achieving high agreement with human judgments. The development of specialized
+evaluation models like Prometheus 2 [55] further underscores the growing sophistication in this area.
+However, most existing approaches focus on evaluating responses against predetermined criteria or
+reference answers, making them better suited for convergent thinking tasks than divergent thinking
+assessment. Second, the evaluation of scientific creativity presents unique challenges that go beyond
+traditional metrics, requiring simultaneous assessment of originality, feasibility, clarity, fluency, and
+flexibility.
+
+    The landscape of artificial intelligence has undergone dramatic transformation since the emergence
+of ChatGPT in late 2022, with LLMs demonstrating increasingly sophisticated capabilities in
+scientific contexts. As we approach late 2024, these models have surpassed human expert baselines
+on various standardized benchmarks across multiple dimensions, exemplified by AlphaGeometry
+[6]. Yet, these advances in general intelligence prompt a fundamental question: does the potential
+for scientific idea generation in LLMs grow in tandem with their analytical capabilities? This
+question becomes particularly pertinent when evaluating LLMs' potential contributions to scientific
+innovation. Current evaluation benchmarks predominantly rely on rich contextual inputs, such as
+research paper titles, abstracts, or complete articles. While these approaches effectively assess models'
+ability to comprehend and synthesize existing knowledge, they are not designed to systematically
+evaluate a crucial aspect of scientific thinking - the capacity to generate novel ideas from limited
+information. This limitation is particularly significant, as many groundbreaking scientific discoveries
+originate from unexpected connections and conceptual leaps [2].
+
+    In this work, we introduce LiveIdeaBench (Fig. 1), a novel evaluation benchmark designed
+to assess LLMs' capabilities in divergent thinking for scientific idea generation under constrained
+conditions. Unlike existing benchmarks that predominantly evaluate convergent thinking by requiring
+models to derive single correct solutions from rich contextual information, LiveIdeaBench is explicitly
+grounded in Guilford's seminal theory of divergent production [8]. Our methodology operationalizes
+key principles from this framework: we use single-keyword prompts as minimal context. This
+constraint encourages models to generate connections and concepts primarily from their internal
+knowledge representations, rather than synthesizing readily available information from detailed
+prompts (e.g., abstracts, or complete articles), thus probing their capacity for less scaffolded, more
+internally-driven ideation relevant to initial brainstorming. This approach is analogous to the broad
+stimuli used in classic divergent thinking tasks (e.g., the "Utility Test" described by Guilford), to
+elicit the generation of multiple and varied potential ideas, fostering a "ready flow of ideas" rather
+than convergence towards a predefined outcome. This approach necessitates that models "produce
+their own answers", a hallmark of divergent production assessment distinct from selection-based or
+highly constrained convergent thinking tasks.
+
+                                                                6
+                     HIITWIIOV r r r r r r r r r r r r r r r r r r r r r r
+       GPEYHIWSRRIXXLMROMRK r r r r r r r r r r r r r r r r r r r r r r
+
+               GPEYHIWSRRIX r r r r r r r r r r r r r r r r r r r r r r
+                         U[UF r r r r r r r r r r r r r r r r r r r r r r
+
+             KIQMRMJPEWLI\T r r r r r r r r r r r r r r r r r r r r r r
+    KIQMRMJPEWLXLMROMRKI\T r r r r r r r r r r r r r r r r r r r r r r
+
+        KIQMRMTVSI\T r r r r r r r r r r r r r r r r r r r r r r
+                U[UFTVIZMI[ r r r r r r r r r r r r r r r r r r r r r r
+               GPEYHIWSRRIX r r r r r r r r r r r r r r r r r r r r r r
+                    QMWXVEPWQEPP r r r r r r r r r r r r r r r r r r r r r r
+                   KIQMRMTVS r r r r r r r r r r r r r r r r r r r r r r
+
+    HIITWIIOVHMWXMPPU[IRF r r r r r r r r r r r r r r r r r r r r r r
+                  KTXTVIZMI[ r r r r r r r r r r r r r r r r r r r r r r
+
+               QMWXVEPPEVKI r r r r r r r r r r r r r r r r r r r r r r
+                             TLM r r r r r r r r r r r r r r r r r r r r r r
+
+    HIITWIIOVHMWXMPPPPEQEF r r r r r r r r r r r r r r r r r r r r r r
+                   HIITWIIOGLEX r r r r r r r r r r r r r r r r r r r r r r
+                  KIQQEFMX r r r r r r r r r r r r r r r r r r r r r r
+
+               KTXS r r r r r r r r r r r r r r r r r r r r r r
+         KIQMRMJPEWLPMXI r r r r r r r r r r r r r r r r r r r r r r
+
+                          SQMRM r r r r r r r r r r r r r r r r r r r r r r
+           U[IRFMRWXVYGX r r r r r r r r r r r r r r r r r r r r r r
+          U[IRHVEGEV]WF r r r r r r r r r r r r r r r r r r r r r r
+          PPEQEFMRWXVYGX r r r r r r r r r r r r r r r r r r r r r r
+           PPEQEFMRWXVYGX r r r r r r r r r r r r r r r r r r r r r r
+
+                       U[IRQE\ r r r r r r r r r r r r r r r r r r r r r r
+                               S r r r r r r r r r r r r r r r r r r r r r r
+
+                      RSZETVSZ r r r r r r r r r r r r r r r r r r r r r r
+     U[IRGSHIVFMRWXVYGX r r r r r r r r r r r r r r r r r r r r r r
+
+                      KTXXYVFS r r r r r r r r r r r r r r r r r r r r r r
+               WXITO r r r r r r r r r r r r r r r r r r r r r r
+
+                     KVSO r r r r r r r r r r r r r r r r r r r r r r
+             U[IRFMRWXVYGX r r r r r r r r r r r r r r r r r r r r r r
+
+                          SQMRM r r r r r r r r r r r r r r r r r r r r r r
+  QMWXVEPWQEPPFMRWXVYGX r r r r r r r r r r r r r r r r r r r r r r
+
+                   GPEYHISTYW r r r r r r r r r r r r r r r r r r r r r r
+                     SQMRMLMKL r r r r r r r r r r r r r r r r r r r r r r
+
+      GPEYHILEMOY r r r r r r r r r r r r r r r r r r r r r r
+                      KTXSQMRM r r r r r r r r r r r r r r r r r r r r r r
+
+           PPEQEFMRWXVYGX r r r r r r r r r r r r r r r r r r r r r r
+                      RSZEPMXIZ r r r r r r r r r r r r r r r r r r r r r r
+                          4L7]]WWMXGIWQ&WMSIPSRKK]MRII)VEMRVXKLWGMIR4GLIEVQE G]*MRE%RGGGISY%RRXXMLRVKSTSPS'KL]IQMW%X(WV]XEVXSERISRQK4]MSRPIMXIMGVMER7PK]WWGXMIIQRGWIWGM%IKR4VGMGIIYHPEXKYSVEKP]WGMIRG1IIH(MGEMXREIWGMIRG7IXEXMW4XMWG]1WGELXSLPISQ7KS]EGXMMSGWPSEKR]H0S)KGMSGRSQMGW
+                                                                                 7GMIRXMJMG'EXIKSVMIWWSVXIHF]OI][SVHGSYRX
+
+Fig. 3: Model Performance on LiveIdeaBench Across Scientific Categories. The heatmap displays average
+performance scores with 95% confidence intervals for model-discipline combinations. Scientific categories were classified
+using SciBERT [82] through semantic similarity computation following the framework from [83]. Higher scores (pink)
+indicate better idea generation ability within each discipline. Numbers in parentheses following each scientific category
+indicate the keyword count associated with that discipline. Categories are sorted by keyword count.
+
+                                                                7
+    By employing a specialized multi-model jury system, our evaluation directly measures core
+divergent production dimensions like fluency (quantity and diversity of ideas, reflecting the capacity
+to generate a "number of varied responses") and originality (novelty of ideas), as conceptualized
+by Guilford, across 41 state-of-the-art models using over 1,000 scientific keywords from 22 distinct
+domains. While acknowledging that comprehensive scientific creativity involves an interplay of
+both divergent and convergent processes, LiveIdeaBench focuses on and evaluates the foundational,
+generative phase: the ability to produce diverse scientific concepts from sparse cues. This capacity is
+critical for sparking innovation but is often overlooked by conventional benchmarks. Thus, our focus
+is on assessing this specific aspect of creative potential relevant to scientific discovery, rather than
+evaluating the entire scientific process, which also involves deep domain expertise and subsequent
+validation. We demonstrate that general intelligence metrics do not necessarily correlate with
+capacity for scientific ideation; notably, models such as QwQ-32B-preview achieve performance
+comparable to established systems like claude-3.7-sonnet:thinking despite significant gaps in general
+benchmarks. We posit that such specialized evaluation serves as a crucial initial step towards
+developing effective human-AI hybrid intelligence systems [56­58], providing the necessary insights
+to leverage LLMs as collaborative tools for scientific discovery.
+
+Results
+
+    We assessed the performance of over 40 language models across multiple dimensions of scientific
+ideation using our comprehensive evaluation benchmark. A detailed description of the generated idea
+dataset is provided in Supplementary Note 2, and its constituent fields are listed in Supplementary
+Table S.1. The evaluation results are visualized in Fig. 2. For detailed outcomes, including raw
+scores and examples, please refer to Supplementary Table S.2; aggregated performance metrics and
+model rankings are presented in Supplementary Table S.3.
+
+Diverse Model Performance Across Scientific Domains Our quantitative assessment and
+comparative analysis reveal distinct variations in model capabilities across scientific disciplines. (Fig.
+3) While gemini-2.0-flash-thinking-exp, deepseek-r1, and claude-3.7-sonnet:thinking demonstrate
+high overall scores, the pattern of their relative strengths exhibits domain specificity. Importantly,
+although larger and more recent architectures generally achieve superior results, their advantage
+is not uniform across disciplines, suggesting that domain expertise and reasoning capabilities
+are not solely determined by model scale. For example, gemini-2.0-flash-thinking-exp excelled in
+anthropology ideation; claude-3.7-sonnet:thinking performed best in chemistry, medicine, and data
+science; while deepseek-r1 demonstrated stronger relative performance in physics.
+
+Distinction between General Intelligence and Scientific Idea Generation The comparison
+between LiveIdeaBench and LiveBench metrics (see Fig. 4 and Supplementary Fig. S.4) uncovers a
+notable disconnect between general intelligence and scientific idea generation capabilities, revealing
+contrasting results patterns across models. While claude-3.7-sonnet:thinking leads in general intelli-
+gence (LiveBench) and also shows high effectiveness on scientific ideation (LiveIdeaBench), its idea
+generation capabilities are matched by models like qwq-32b-preview (ranked 8/41 in LiveIdeaBench).
+Notably, qwq-32b-preview exhibits low general intelligence scores, representing a profile of low
+general intelligence but high scientific ideation capability. As Fig. 4 illustrates, other patterns exist,
+such as high general intelligence paired with lower scientific ideation capability (e.g., o3-mini-high).
+These contrasting profiles underscore that scientific idea generation capability, as measured by
+LiveIdeaBench, is poorly predicted by general intelligence, necessitating specialized benchmarks like
+
+                                                                8
+LiveIdeaBench for evaluating this aspect of LLM potential. This statistically significant but weak
+positive correlation (rp41q " 0.357, p " 0.038, r2 " 0.127, 95% CI " r0.022, 0.621s; see Supplemen-
+tary Fig. S.4) suggests that fostering scientific idea generation capabilities in these systems may
+benefit from distinct development approaches compared to enhancing general problem-solving skills.
+
+Impact of Model Architecture and Training Strategies We observe that mistral-small, which
+ranks near the bottom in general intelligence, demonstrates remarkably high scientific divergent
+thinking capabilities. Even more interestingly, the earlier released mistral-small model scored
+significantly higher in creativity than the newer same-size, same-family model mistral-small-24b-
+instruct-2501. We also observe that models from the same family (for example, qwq-32b and
+qwq-32b-preview) score similarly in creativity while differing dramatically in general intelligence.
+These two pairs of examples strongly suggest that a model's divergent thinking and convergent
+thinking abilities cannot reliably predict each other. This pattern holds true even when comparing
+models from the same family with different parameter counts. Focusing on mistral-large-2411 and
+
+High General Intelligence,  High General Intelligence,     Low General Intelligence,
+High Science Creativity     Low Science Creativity         High Science Creativity
+
+Fig. 4: Comparison of LiveIdeaBench (upper half, assessing scientific ideation) and LiveBench (lower
+
+half, assessing general intelligence, denoted as LB) across various evaluation metrics for the same
+set of models. The middle rows show contrasting trends between models in average performance. While claude-
+3.7-sonnet:thinking achieves the highest average score on LiveBench, its performance on scientific ideation tasks
+(LiveIdeaBench) is comparable to qwq-32b-preview, which ranks fourth from last on general intelligence metrics. The
+arrows highlight three representative patterns: claude-3.7-sonnet:thinking (left) exemplifies high general intelligence
+combined with high scientific ideation capability; o3-mini-high (middle) shows high general intelligence but low scientific
+ideation capability; and qwq-32b-preview (right) demonstrates low general intelligence but high scientific ideation
+capability. These contrasting patterns highlight that LLMs' scientific idea generation capability, as measured by
+LiveIdeaBench, is distinct from their general intelligence capabilities (e.g., reasoning, coding, and math), underscoring
+the necessity of LiveIdeaBench for evaluating scientific ideation potential.
+
+                                                        9
+mistral-small (Fig. 4), we see that mistral-small still slightly outperforms mistral-large-2411 in
+scientific divergent thinking, despite the latter having 123 billion parameters, far exceeding the
+former's 24 billion. This further suggests that parameter count alone does not appear to be the
+primary determinant of scientific divergence capabilities, suggesting other factors like training data
+or architectural nuances play significant roles.
+
+Trade-offs in Scientific Originality and Feasibility The Pareto front visualization (see Fig.
+5) illustrates clear trade-offs between feasibility and originality. While claude-3.7-sonnet:thinking
+achieves the highest originality with moderate feasibility, nova-pro-v1 demonstrates the opposite
+pattern. Models like deepseek-r1, qwq-32b, and gemini-2.0-flash-exp exhibit balanced effectiveness
+between these two dimensions. Particularly, deepseek-r1 stands out for its exceptional all-round
+capabilities across all measured dimensions of scientific idea generation, demonstrating that balanced
+effectiveness is achievable despite common tendencies toward specialization. Additionally, while
+models like claude-3.7-sonnet:thinking and several Gemini variants show strong fluency and flexibility,
+the mediocre results of o3-mini-high, known for logical reasoning, highlight the specific nature of
+the capabilities measured by this benchmark.
+
+Independence of Idea Quality from Length As shown in Fig. 6, while the majority of
+models generally adhered well to the 100-word limit specified in the prompt (Fig. 6b), their mean
+originality, feasibility, and clarity scores demonstrated significant variations across different models
+(Fig. 6a,c­e ). Further analysis of idea length (see Supplementary Figs. S.1 and S.2) reveals a
+statistically significant but very weak positive correlation with idea quality (p286490q " 0.089, p 
+0.0001, 2 " 0.008, 95% CI " r0.085, 0.093s). Even for models specifically designed for reasoning,
+as detailed in Supplementary Note 8, the relationship between the length of their thoughts and the
+generated idea quality remains very weak. This observation lends further support to the notion that
+effective idea generation is not merely a function of extensive logical elaboration, distinguishing it
+from certain aspects of general reasoning.
+
+Discussion
+
+     LiveIdeaBench represents a comprehensive benchmark specifically designed to evaluate LLMs'
+divergent thinking capabilities in scientific innovation. Existing LLM benchmarks predominantly
+focus on problem-solving tasks such as logical reasoning, mathematical computation, and code
+generation. These benchmarks inherently assess convergent thinking­the ability to arrive at
+predetermined correct answers through structured problem-solving (e.g., selecting the right option
+in multiple choice questions, completing text with expected words, or fixing code to match specific
+requirements). This stands in contrast to divergent thinking, which involves generating diverse,
+novel solutions from minimal contextual input.
+
+     Furthermore, our benchmark incorporates mechanisms to address potential data contamination
+and overfitting issues that commonly plague static benchmarks. Traditional evaluation methods may
+encourage models to perform well on specific test cases without developing generalizable creative
+thinking abilities. Our approach employs a dynamic judge panel comprising multiple state-of-the-
+art models, randomly sampling multiple LLMs for evaluation and employing ensemble scoring
+methods. This design not only minimizes individual model biases but also leverages the continually
+updated knowledge bases of judge models, effectively preventing the limitations associated with
+fixed benchmarks. This methodology aligns with recent advances in live benchmarking [59, 60],
+
+                                                               10
+which similarly address data contamination and overfitting concerns through dynamic evaluation
+mechanisms.
+
+    Our analysis through LiveIdeaBench yields several notable insights into LLMs' scientific idea
+generation capabilities. Most notably, we find that a model's performance on these divergent
+thinking tasks is not strongly coupled with its performance on general intelligence benchmarks.
+This suggests that fostering scientific idea generation capabilities in these systems may benefit from
+distinct development approaches compared to enhancing general problem-solving skills, such as
+prioritizing training objectives that reward diverse conceptual associations rather than convergent
+
+                           0MZI-HIE&IRGL1SHIP4IVJSVQERGI4EVIXS*VSRX
+
+                                                                                                                               
+    
+
+                                                                                                                               
+    
+
+                                    
+
+    *PYIRG]
+
+    
+3VMKMREPMX]                         
+                                                                                                                                  *PI\MFMPMX]
+    
+
+                                    
+
+    'PEVMX]
+
+                                    
+
+    
+
+                                    
+
+                                  
+
+                 *IEWMFMPMX]
+
+Fig. 5: Pareto front visualization of model performance on LiveIdeaBench. This illustrates the trade-
+off between feasibility and originality across different language models, with bubble size, color gradient and edge
+width representing fluency, flexibility and clarity scores, respectively. The distribution reveals a clear Pareto
+frontier, where claude-3.7-sonnet:thinking achieves the highest originality but moderate feasibility, while nova-pro-v1
+demonstrates the opposite pattern. Models such as deepseek-r1, qwq-32b, and gemini-2.0-flash-exp exhibit relatively
+balanced performance between these two dimensions. In terms of fluency and flexibility, claude-3.7-sonnet, claude-3.7-
+sonnet:thinking, gemini-2.0-flash-exp, gemini-2.0-pro-exp-02-05 and gemini-2.0-flash-thinking-exp show particularly
+strong performance. Notably, deepseek-r1 stands out for its exceptional all-round performance across all dimensions of
+scientific idea generation, suggesting strong performance across the dimensions measured by this benchmark. Moreover,
+while the o3-mini-high is renowned for its proficiency in logical and mathematical reasoning, it delivered a mediocre
+performance on this benchmark. For detailed scores and 95% CIs for each model, see Supplementary Table S.3.
+
+                   11
+accuracy. These insights are particularly vital for constructing hybrid human-AI frameworks, where
+specialized models can be tailored to augment specific stages of the human creative process. The
+varying strengths we observe across different model architectures, particularly in originality versus
+feasibility trade-offs, point to potential complementarity in scientific applications.
+
+    These findings, particularly the distinct performance profiles where some models excel in ideation
+despite lower general intelligence, indicate that LLMs' divergent thinking capabilities operate largely
+independently from the convergent thinking abilities typically measured by problem-solving tasks.
+We believe this phenomenon is closely tied to variations in the relevance of pre-training data
+to scientific tasks, differences in post-training methodologies applied, and inherent architectural
+properties, rather than being determined by model scale alone. This observed difference between
+metrics underscores the importance of specialized evaluation benchmarks like LiveIdeaBench that
+specifically target these idea generation capabilities, rather than attempting to infer them from
+general intelligence assessments.
+
+    However, several limitations warrant consideration. The use of contemporary state-of-the-
+art models as judges makes temporal comparisons difficult. When the judge panel composition
+changes with model updates, direct performance comparisons across different evaluation periods
+become unreliable. While this limitation mirrors challenges faced by other dynamic benchmarks like
+LiveBench, it limits our ability to track longitudinal trends in model capabilities. Furthermore, our
+evaluation includes several proprietary, closed-source models (e.g., GPT-4o). Access to these models
+is typically via APIs which may be subject to change, and the underlying models can be updated
+without public notice, potentially impacting exact reproducibility. While including these models is
+essential for a comprehensive assessment of the current state-of-the-art, we acknowledge this inherent
+limitation regarding reproducibility compared to evaluations focused solely on open-weight models.
+Moreover, the LLM-as-a-judge approach itself introduces a potential source of bias. Aligned models
+can exhibit sycophancy [61­63], a tendency to agree with the user or produce agreeable outputs,
+which may lead to inflated absolute scores and a compressed score range, further reinforcing the
+need to focus on relative rather than absolute performance rankings. Additionally, we observe an
+inherent tension between models' safety constraints and creative evaluation. Some models exemplify
+this behavior by declining to generate ideas for potentially sensitive keywords (e.g., "ecotoxicology").
+While such safety measures are crucial, they can negatively impact creativity scores, potentially
+undervaluing models with stronger ethical constraints. The potential for hallucinations in the
+generated ideas themselves [64] also underscores the necessity of human oversight in practical
+applications.
+
+    Furthermore, we recognize a fundamental challenge in the reliability of LLM-as-a-Judge ap-
+proaches. When evaluating scientific ideas containing concepts outside the judge models' knowledge
+boundaries, these models might misunderstand novel concepts and consequently misjudge their
+originality or feasibility. While our use of a dynamic panel of state-of-the-art judge models likely
+provides broader and more current knowledge coverage than static panels, this fundamental lim-
+itation persists. While our multi-model ensemble approach mitigates this issue to some extent,
+more comprehensive solutions could involve retrieval-augmented generation (RAG) approaches that
+incorporate up-to-date scientific literature. By augmenting LLM judges with the ability to retrieve
+and reference the latest scientific papers, such approaches could significantly enhance evaluation
+accuracy, particularly for highly specialized or cutting-edge scientific domains, although implement-
+ing effective RAG systems for this purpose presents its own challenges regarding retrieval relevance
+and integration with the judging process. This represents a promising direction for future work
+that could further strengthen the reliability of LLM-based creativity assessments. To empirically
+assess this reliability, we conducted a human expert validation focused on the Partial Differential
+Equations (PDE) domain (see Supplementary Note 7). The results showed encouraging alignment
+
+                                                               12
+   a     b
+
+c     d     e
+
+Fig. 6: Comprehensive Analysis of Idea Quality, Length, and Component Scores. a. Mean composite idea
+scores (average of Originality, Feasibility, and Clarity) with 95% confidence intervals for different language models.
+b. Mean idea length in words across models with specific word counts labeled. c­e. Detailed breakdown of average
+performance on individual dimensions: Originality (c), Feasibility (d), and Clarity (e) scores with 95% confidence
+intervals. (n " 6987) For the regression plot between clarity scores and originality, feasibility scores across all generated
+ideas, see Supplementary Fig. S.5.
+
+between human experts and LLM judgments, particularly for originality, lending empirical support
+to the LLM-as-a-judge approach, at least within this specific domain.
+
+    Looking ahead, several research directions emerge. To address temporal comparability issues,
+normalized scoring mechanisms could maintain meaningful cross-temporal comparisons while pre-
+serving the advantages of dynamic evaluation. The comprehensive dataset generated through our
+evaluations offers opportunities for training scientific language models, mining ideation patterns, and
+investigating novel scientific ideas. Future work must also tackle the challenge of fairly evaluating
+creative potential while accounting for ethical constraints, possibly through domain-specific scoring
+adjustments or separate evaluation tracks for models with different safety priorities.
+
+    The implications of our findings extend beyond model evaluation to the broader landscape of
+
+                                                               13
+AI-assisted scientific discovery. As LLMs demonstrate increasingly sophisticated idea generation
+capabilities, they hold promise as powerful tools for accelerating scientific innovation - from hypothesis
+generation to experimental design [65, 66]. Our benchmark provides a foundation for understanding
+and improving these capabilities, potentially enabling more effective human-AI collaboration [56­58]
+and informing the design of human-aware AI systems for science [67] by leveraging specific model
+profiles to complement human cognitive blind spots in pushing the boundaries of scientific knowledge.
+The creative strengths we observed in different model architectures suggest that a diverse ecosystem
+of AI tools, each with complementary capabilities, could support different aspects of the scientific
+process, for instance, by pairing high-originality models for initial hypothesis generation with
+high-feasibility models for experimental implementation.
+
+    These findings and challenges point toward a broader research agenda: understanding how to
+nurture and evaluate machine creativity while maintaining essential safety guardrails, ultimately
+in service of advancing scientific discovery. Through continued refinement, LiveIdeaBench aims to
+serve as a key tool in this evolving landscape of AI capability assessment and scientific innovation.
+
+    Finally, a practical consideration is the environmental cost associated with the extensive LLM
+usage required for comprehensive benchmarking [68]. Using the EcoLogits Calculator [69] to estimate
+the carbon footprint of our benchmark evaluations, we calculate a total emission of approximately
+3074 kgCO2eq for the full evaluation run reported here. While necessary for rigorous assessment,
+this highlights the significant energy demands of current AI systems. A detailed breakdown of the
+estimated emissions per model and per role (idea generator vs. judge) can be found in Supplementary
+Table S.4.
+
+Methods
+
+    Building upon Guilford's foundational theory of divergent thinking, we develop a comprehensive
+evaluation methodology (see Fig. 1) that quantitatively assesses five fundamental dimensions
+in scientific idea generation. While Guilford's original theoretical framework provides theoretical
+underpinnings, we extend and operationalize these concepts specifically for evaluating LLMs' scientific
+idea generation capabilities within our LiveIdeaBench benchmark. It is important to note that
+our methodology evaluates an essential but not exhaustive aspect of scientific creativity, focusing
+primarily on divergent thinking capabilities.
+
+    The human expert validation process in this study was conducted in full accordance with relevant
+ethical regulations and was approved by the Scientific and Ethic Committee of Renmin University
+of China (Approval ID: L20250110). All experts provided written informed consent on a voluntary
+basis without compensation. The study design does not involve sex or gender variables.
+
+Dimensions of Evaluation
+
+Originality Originality assessment focuses on the uniqueness and novelty of generated ideas.
+We implement this through our critic system, where judge LLMs evaluate each idea's originality
+independently (see Fig. 1b and Supplementary Note 1.2). The final originality score for each model
+is computed as the mean evaluation across all scientific keywords and generated ideas, providing an
+absolute score that reflects the model's capacity for novel ideation. To ensure assessment reliability,
+each generated idea is evaluated by a minimum of three randomly assigned critic LLMs from
+our panel. This multiple-evaluator approach mitigates potential assessment bias that could arise
+from relying on a single model's judgment, thereby enhancing the objectivity and reliability of our
+evaluation benchmark.
+
+                                                               14
+Feasibility In the context of scientific innovation, the practical implementability and scientific
+soundness of an idea are paramount. Therefore, our evaluation includes a distinct feasibility
+dimension, assessing whether a proposed idea is technically achievable and aligns with established
+scientific principles and constraints. This aligns with the instructions given to the LLMs, which
+noted feasibility as a key characteristic of a good scientific idea (see Supplementary Note 1.1).
+Similar to originality and clarity, feasibility scores are determined by our critic system and averaged
+across all keywords and ideas to produce an absolute metric (see Supplementary Note 1.2). This
+ensures our benchmark evaluates the practical viability crucial for scientific progress.
+
+Clarity Our evaluation benchmark incorporates a clarity dimension, directly informed by the
+prompt provided to the idea-generating LLMs, which notes that good scientific ideas should be
+clearly articulated (see Supplementary Note 1.1). This dimension assesses the quality of the idea's
+expression, focusing on its coherence, logical flow, and comprehensibility, particularly given the
+constraint of the 100-word limit which demands concise articulation. While conceptually related
+to the elaboration aspect in Guilford's creativity theory, our assessment prioritizes effective and
+understandable communication within the specified format. Like originality and feasibility, clarity
+scores are determined by our critic system (see Fig. 1b and Supplementary Note 1.2), involving
+multiple judges per idea and averaging the results. Assessing clarity acknowledges that the potential
+impact of a scientific idea depends not only on its novelty and feasibility but also on how effectively
+it is communicated [39].
+
+Fluency Fluency assessment examines the model's capacity to generate diverse, non-redundant
+ideas using identical keywords (see Fig. 1d). Through our judge panel, we evaluate the distinctiveness
+of generated outputs using a letter-grade scoring system: D indicates academically identical ideas;
+C represents similar ideas addressing similar problems; B denotes different ideas addressing similar
+problems; and A signifies completely different ideas addressing different problems. To align with
+the 1-10 integer scale used for all evaluation dimensions, these four qualitative grades are mapped
+linearly to the integer scores 1 (for D), 4 (for C), 7 (for B), and 10 (for A), respectively. This
+mapping ensures consistent scaling across dimensions and maintains equal intervals between the
+assessed qualitative distinctness levels, enabling precise measurement of genuine idea diversity
+versus surface-level variations (see Supplementary Note 1.3 for prompts). While simpler diversity
+metrics examining syntax or semantics would require fewer computational resources, we chose
+LLM-as-a-Judge for its ability to better capture the nuanced differences between genuinely distinct
+scientific ideas versus superficial variations. For a benchmark specifically designed to evaluate
+scientific divergent thinking capabilities, this precision is essential.
+
+Flexibility Flexibility measurement evaluates the model's ability to maintain consistent per-
+formance across different scientific domains and contexts. Rather than treating flexibility as an
+independent metric, we derive it from the distribution of the combined scores (averaging originality,
+feasibility, clarity, and fluency) across various keywords. Following the principle that a system's
+overall effectiveness is constrained by its weakest performing components, we focus on the 30th
+percentile of this composite score distribution (see Fig. 1e). This percentile choice provides a
+robust measure of a model's performance floor while avoiding extreme outliers, enabling us to assess
+whether its scientific creativity can genuinely generalize to less common or niche domains. The
+resulting metric identifies models that maintain reliable performance across diverse scientific contexts
+rather than those exhibiting domain-specific excellence, thus providing a conservative estimate of
+cross-domain capabilities.
+
+                                                               15
+Scientific Keyword Selection
+
+     The keywords set comprises 1,180 high-impact scientific keywords (Fig. 2c) across 22 distinct
+scientific disciplines, selected based on current search engine engagement metrics. Unlike static
+benchmarks, LiveIdeaBench updates its keyword database monthly to maintain alignment with
+emerging scientific trends and research frontiers. This automated refresh mechanism ensures the
+benchmark consistently reflects contemporary scientific discourse and technological advancement,
+making it particularly valuable for evaluating LLMs' ability to engage with cutting-edge scientific
+concepts rather than just established knowledge.
+
+Model Selection
+
+     LiveIdeaBench maintains a continuously evolving roster of evaluated models by automatically
+incorporating the top 41 performers from the most recent LiveBench evaluations [59]. This dynamic
+selection process ensures our benchmark always tests the latest advancements in language model
+capabilities. We implement a dual-role system where all models serve as idea generators, while
+the top 10 performers additionally function as our judge panel (critics), subject to the diversity
+constraints outlined in the Experimental Protocol. This approach creates a self-updating evaluation
+benchmark that evolves alongside rapid developments in AI, ensuring that both idea generation and
+assessment standards reflect current state-of-the-art capabilities. The automatic monthly refresh of
+both models and evaluation criteria through LiveBench integration helps prevent benchmark staleness
+and potential gaming of the system, maintaining LiveIdeaBench's relevance as a contemporary
+measure of scientific creativity.
+
+     Our evaluation benchmark currently encompasses 41 state-of-the-art LLMs based on LiveBench's
+March 2025 results. This includes models from major developers such as Anthropic (claude-3.7-
+sonnet:thinking, claude-3.7-sonnet, claude-3.5-sonnet, claude-3-opus, claude-3.5-haiku-20241022)
+[70]; OpenAI (o3-mini-high, gpt-4.5-preview, o1, o3-mini, o1-mini, gpt-4o-2024-11-20, gpt-4-turbo,
+gpt-4o-mini) [71]; Google (gemini-2.0-flash-thinking-exp, gemini-2.0-pro-exp-02-05, gemini-2.0-flash-
+exp, gemini-pro-1.5, gemini-2.0-flash-lite-001, gemma-2-27b-it) [72]; Qwen (qwq-32b, qwen-max,
+qwen2.5-dracarys2-72b, qwen-2.5-72b-instruct, qwen-2.5-coder-32b-instruct, qwq-32b-preview, qwen-
+2.5-7b-instruct) [73, 74]; DeepSeek (deepseek-r1, deepseek-chat (v3), deepseek-r1-distill-llama-70b,
+deepseek-r1-distill-qwen-32b) [75­77]; Meta (llama-3.1-405b-instruct, llama-3.3-70b-instruct, llama-
+3.1-70b-instruct) [78]; Mistral (mistral-large-2411, mistral-small-24b-instruct-2501, mistral-small
+(v2409)) [79]; Amazon (nova-pro-v1, nova-lite-v1) [80]; StepFun (step-2-16k-202411); xAI (grok-2-
+1212); and Microsoft (phi-4) [81]. This comprehensive set includes both proprietary and open-weight
+models, spanning diverse architectures, parameter scales, and training methodologies.
+
+Experimental Protocol
+
+     We implemented several methodological controls to ensure rigorous evaluation:
+
+Model Selection Criteria for Idea Generation To prevent redundancy in the pool of idea-
+generating models, we selected only the most recent version of models with multiple temporal
+variants (e.g., GPT-4o series). Models exhibiting API instability during the evaluation period were
+also excluded to maintain data quality consistency across all evaluated models.
+
+Judge LLM Panel Formation, Independence, and Application The judge panel, comprising
+the top 10 models from LiveBench, is formed while applying specific diversity constraints to mitigate
+potential correlated biases. To ensure broader representation, we limit the contribution from
+
+                                                               16
+any single organization to a maximum of 20% (i.e., 2 models) of the panel; if the initial top 10
+includes more than two models from one organization, the lower-ranked ones are replaced by the
+next highest-ranked eligible models from different organizations. Additionally, when considering
+model pairs with identical base models that differ primarily in "reasoning effort" (e.g., o3-mini vs.
+o3-mini-high), we select only one representative for the judge panel (prioritizing the variant with
+higher general intelligence scores on LiveBench) to avoid redundancy and the potential amplification
+of biases inherent to that specific base model. Furthermore, to prevent circular dependency during
+evaluation, we implement strict independence: when evaluating any specific model's generated
+ideas, that model is explicitly excluded from serving on the judge panel for that evaluation round,
+ensuring independent assessment free from self-evaluation. This established panel is then utilized
+through specific sampling procedures for evaluation: For assessing originality, feasibility, and clarity,
+each individual generated idea is evaluated by a subset of 3 judges randomly sampled from the
+remaining eligible panel members. The final score for each of these dimensions is the average of
+the scores provided by these three judges, enhancing assessment robustness. For assessing fluency,
+which evaluates the diversity of ideas generated for the same keyword by a given model, the
+comparison is performed by a single judge randomly sampled from the eligible panel members for
+each keyword-model pair.
+
+Response Standardization All models were prompted to generate ideas within a 100-word
+target length, with a maximum allowable threshold of 200 words (see Supplementary Note 1.1).
+Responses exceeding this limit were excluded from analysis to ensure comparative validity across
+models.
+
+Special Implementations The reasoning-centric architecture of qwq-32b-preview necessitated a
+modified protocol, incorporating a "°°Final Idea:°°" delimiter for response parsing (see Supplemen-
+tary Note 1.4). In cases where parsing failed, critic LLMs evaluated the complete reasoning output
+to maintain assessment comprehensiveness.
+
+Handling Refused Responses To fairly assess models, especially those with strong safety
+alignments that might refuse prompts for sensitive keywords, we implemented a two-step refusal
+handling protocol. If an initial idea generation request is refused (detected via specific keywords
+detailed in Supplementary Note 5), a fallback prompt reframing the task within an academic context
+is used for a second attempt. This ensures models are not unduly penalized for safety constraints
+when they might still be capable of generating relevant scientific ideas under appropriate framing.
+Further details and refusal rates are provided in Supplementary Note 5.
+
+Statistical Analysis
+
+    Statistical correlations between evaluation metrics were assessed using either the Pearson
+correlation coefficient prq or Spearman's rank correlation coefficient pq, depending on the normality
+of the data distributions. Data normality was evaluated using the Shapiro-Wilk test. Pearson's
+r was applied to normally distributed continuous variables (e.g., comparing LiveIdeaBench and
+LiveBench scores), while Spearman's  was utilized for non-normally distributed data (e.g., analyzing
+the relationship between idea length and quality scores). Detailed mathematical definitions and
+formulations for these statistical metrics are provided in Supplementary Note 9.
+
+                                                               17
+Data availability
+
+    The data generated in this study have been deposited in Huggingface at https://huggingface.
+co/datasets/6cf/liveideabench-v2 (also see the Zenodo repository at https://doi.org/10.
+5281/zenodo.17707879).
+
+Code availability
+
+    All the source codes used to reproduce the results in this study are available on GitHub
+at https://github.com/x66ccff/liveideabench. (also see the Zenodo repository at https:
+//doi.org/10.5281/zenodo.17707647)
+
+References
+
+ [1] Wang, H. et al. Scientific discovery in the age of artificial intelligence. Nature 620, 47­60
+      (2023).
+
+ [2] Shi, F. & Evans, J. Surprising combinations of research contents and contexts are related to
+      impact and emerge with scientific outsiders from distant disciplines. Nature Communications
+      14, 1641 (2023).
+
+ [3] AI4Science, M. R. & Quantum, M. A. The impact of large language models on scientific
+      discovery: a preliminary study using GPT-4. arXiv preprint arXiv:2311.07361 (2023).
+
+ [4] Krenn, M. et al. Forecasting the future of artificial intelligence with machine learning-based
+      link prediction in an exponentially growing knowledge network. Nature Machine Intelligence 5,
+      1326­1335 (2023).
+
+ [5] Rafner, J., Beaty, R. E., Kaufman, J. C., Lubart, T. & Sherson, J. Creativity in the age of
+      generative AI. Nature Human Behaviour 7, 1836­1838 (2023).
+
+ [6] Trinh, T. H., Wu, Y., Le, Q. V., He, H. & Luong, T. Solving olympiad geometry without
+      human demonstrations. Nature 625, 476­482 (2024).
+
+ [7] Getzels, J. W. & Jackson, P. W. Creativity and Intelligence: Exploration with Gifted Students
+      (John Wiley & Sons, New York, 1962).
+
+ [8] Guilford, J. P. The nature of human intelligence (McGraw-Hill, 1967).
+
+ [9] Jauk, E., Benedek, M., Dunst, B. & Neubauer, A. C. The relationship between intelligence
+      and creativity: New support for the threshold hypothesis by means of empirical breakpoint
+      detection. Intelligence 41, 212­221 (2013). URL https://www.sciencedirect.com/science/
+      article/pii/S016028961300024X.
+
+[10] Kim, K. H. Can only intelligent people be creative? A meta-analysis. Journal of Secondary
+      Gifted Education 16, 57­66 (2005).
+
+[11] Preckel, F., Holling, H. & Wiese, M. Relationship of intelligence and creativity in gifted and
+      non-gifted students: An investigation of threshold theory. Personality and individual differences
+      40, 159­170 (2006).
+
+                                                               18
+[12] Gralewski, J., Weremczuk, E. & Karwowski, M. Intelligence and creativity of polish middle-
+      school students: Looking for the threshold hypothesis. The New Educational Review 29,
+      328­338 (2012).
+
+[13] Park, G., Lubinski, D. & Benbow, C. P. Ability differences among people who have commensu-
+      rate degrees matter for scientific creativity. Psychological science 19, 957­961 (2008).
+
+[14] Runco, M. A. & Albert, R. S. The threshold theory regarding creativity and intelligence:
+      An empirical test with gifted and nongifted children. Creative Child and Adult Quarterly 11,
+      212­218 (1986).
+
+[15] Benedek, M. On the relationship between creative potential and creative achievement: Chal-
+      lenges and future directions. Learning and Individual Differences 110, 102424 (2024).
+
+[16] Weiss, S., Steger, D., Schroeders, U. & Wilhelm, O. A reappraisal of the threshold hypothesis
+      of creativity and intelligence. Journal of Intelligence 8, 38 (2020).
+
+[17] Guilford, J. P. Creativity. American Psychologist 5, 444­454 (1950).
+
+[18] Boden, M. A. The creative mind: Myths and mechanisms (Routledge, 2004).
+
+[19] Amabile, T. M. The social psychology of creativity: A componential conceptualization. Journal
+     of Personality and Social Psychology, 45(2), 357 (1983).
+
+[20] Rhodes, M. An analysis of creativity. The Phi Delta Kappan 42, 305­310 (1961).
+
+[21] Cortes, R. A., Weinberger, A. B., Daker, R. J. & Green, A. E. Re-examining prominent measures
+      of divergent and convergent creativity. Current Opinion in Behavioral Sciences 27, 90­93
+     (2019). URL https://www.sciencedirect.com/science/article/pii/S2352154618301694.
+      Creativity.
+
+[22] Rafner, J. et al. Towards game-based assessment of creative thinking. Creativity Research
+      Journal, 35(4), 763­782 (2023).
+
+[23] Wei, J. et al. Chain-of-thought prompting elicits reasoning in large language models. Advances
+      in Neural Information Processing Systems 35, 24824­24837 (2022).
+
+[24] Kojima, T., Gu, S. S., Reid, M., Matsuo, Y. & Iwasawa, Y. Large language models are
+      zero-shot reasoners. In Proceedings of the 36th International Conference on Neural Information
+      Processing Systems (Red Hook, NY, USA, 2024).
+
+[25] Yao, S. et al. Tree of thoughts: deliberate problem solving with large language models. In
+      Proceedings of the 37th International Conference on Neural Information Processing Systems
+     (Red Hook, NY, USA, 2024).
+
+[26] Li, X.-Y., Xue, J.-T., Xie, Z. & Li, M. Think outside the code: Brainstorming boosts large
+      language models in code generation. arXiv preprint arXiv:2305.10679 (2023).
+
+[27] Lu, C. et al. The AI Scientist: Towards fully automated open-ended scientific discovery. arXiv
+      preprint arXiv:2408.06292 (2024).
+
+[28] Hu, X. et al. Nova: An iterative planning and search approach to enhance novelty and diversity
+      of LLM generated ideas. arXiv preprint arXiv:2410.14255 (2024).
+
+                                                               19
+[29] Baek, J., Jauhar, S. K., Cucerzan, S. & Hwang, S. J. ResearchAgent: Iterative research idea
+      generation over scientific literature with large language models. arXiv preprint arXiv:2404.07738
+     (2024).
+
+[30] Radensky, M. et al. Scideator: Human-LLM scientific idea generation grounded in research-
+      paper facet recombination. arXiv preprint arXiv:2409.14634 (2024).
+
+[31] Gottweis, J. et al. Towards an AI co-scientist. arXiv preprint arXiv:2502.18864 (2025). URL
+      https://arxiv.org/abs/2502.18864. 2502.18864.
+
+[32] Wang, Q., Downey, D., Ji, H. & Hope, T. Scimon: Scientific inspiration machines optimized
+      for novelty. In Proceedings of the 62nd Annual Meeting of the Association for Computational
+      Linguistics (Volume 1: Long Papers), 279­299 (2024).
+
+[33] Gu, X. & Krenn, M. Interesting scientific idea generation using knowledge graphs and LLMs:
+      Evaluations with 100 research group leaders. arXiv preprint arXiv:2405.17044 (2024).
+
+[34] Gu, X. & Krenn, M. Forecasting high-impact research topics via machine learning on evolving
+      knowledge graphs. arXiv preprint arXiv:2402.08640 (2024).
+
+[35] Wang, W. et al. SciPIP: An LLM-based scientific paper idea proposer. arXiv preprint
+     arXiv:2410.23166 (2024).
+
+[36] Pu, K. et al. IdeaSynth: Iterative research idea development through evolving and composing
+      idea facets with literature-grounded feedback. arXiv preprint arXiv:2410.04025 (2024).
+
+[37] Meincke, L., Girotra, K., Nave, G., Terwiesch, C. & Ulrich, K. T. Using large language models
+      for idea generation in innovation. The Wharton School Research Paper Forthcoming (2024).
+      URL https://ssrn.com/abstract=4526071. 4526071.
+
+[38] Si, C., Yang, D. & Hashimoto, T. Can LLMs generate novel research ideas? a large-scale
+      human study with 100+ NLP researchers. arXiv preprint arXiv:2409.04109 (2024). URL
+      https://arxiv.org/abs/2409.04109. 2409.04109.
+
+[39] Lee, B. C. & Chung, J. An empirical investigation of the impact of ChatGPT on creativity.
+      Nature Human Behaviour 8, 1906­1914 (2024).
+
+[40] Cropley, D. Is artificial intelligence more creative than humans?: ChatGPT and the divergent
+      association task. Learning Letters 2, 13­13 (2023).
+
+[41] Marrone, R., Cropley, D. & Medeiros, K. How does narrow AI impact human creativity?
+     Creativity Research Journal 1­11 (2024).
+
+[42] Wenger, E. & Kenett, Y. We're different, we're the same: Creative homogeneity across LLMs.
+     arXiv preprint arXiv:2501.19361 (2025).
+
+[43] Doshi, A. R. & Hauser, O. P. Generative AI enhances individual creativity but reduces
+      the collective diversity of novel content. Science Advances 10 (2023). URL https://api.
+      semanticscholar.org/CorpusID:271119565.
+
+[44] Lu, Y., Wang, D., Li, T., Jiang, D. & Khashabi, D. Benchmarking language model creativity:
+      A case study on code generation. arXiv preprint arXiv:2407.09007 (2024).
+
+                                                               20
+[45] Zhao, Y. et al. Assessing and understanding creativity in large language models. arXiv preprint
+     arXiv:2401.12491 (2024).
+
+[46] Dubois, Y., Galambosi, B., Liang, P. & Hashimoto, T. B. Length-controlled AlpacaEval: A
+      simple way to debias automatic evaluators. arXiv preprint arXiv:2404.04475 (2024).
+
+[47] Zheng, L. et al. Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. Advances in
+      Neural Information Processing Systems 36, 46595­46623 (2023).
+
+[48] Li, T. et al. From crowdsourced data to high-quality benchmarks: Arena-Hard and BenchBuilder
+      pipeline. arXiv preprint arXiv:2406.11939 (2024).
+
+[49] Chiang, C.-H. & Lee, H.-y. Can large language models be an alternative to human evaluations?
+      In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics
+     (Volume 1: Long Papers), 15607­15631 (Association for Computational Linguistics, Toronto,
+      Canada, 2023). URL https://aclanthology.org/2023.acl-long.870.
+
+[50] Chen, Y., Wang, R., Jiang, H., Shi, S. & Xu, R. Exploring the use of large language models
+      for reference-free text quality evaluation: An empirical study. In Park, J. C. et al. (eds.)
+      Findings of the Association for Computational Linguistics: IJCNLP-AACL 2023 (Findings),
+      361­374 (Association for Computational Linguistics, Nusa Dua, Bali, 2023). URL https:
+      //aclanthology.org/2023.findings-ijcnlp.32/.
+
+[51] Huang, F., Kwak, H., Park, K. & An, J. ChatGPT rates natural language explanation
+      quality like humans: But on which scales? In Calzolari, N. et al. (eds.) Proceedings of the
+      2024 Joint International Conference on Computational Linguistics, Language Resources and
+      Evaluation (LREC-COLING 2024), 3111­3132 (ELRA and ICCL, Torino, Italia, 2024). URL
+      https://aclanthology.org/2024.lrec-main.277/.
+
+[52] Gilardi, F., Alizadeh, M. & Kubli, M. ChatGPT outperforms crowd workers for text-annotation
+      tasks. Proceedings of the National Academy of Sciences 120, e2305016120 (2023).
+
+[53] Badshah, S. & Sajjad, H. Reference-Guided Verdict: LLMs-as-Judges in Automatic Evaluation
+      of Free-Form Text. arXiv preprint arXiv:2408.09235 (2024).
+
+[54] Verga, P. et al. Replacing judges with juries: Evaluating LLM generations with a panel of
+      diverse models. arXiv preprint arXiv:2404.18796 (2024).
+
+[55] Kim, S. et al. Prometheus 2: An open source language model specialized in evaluating other
+      language models. arXiv preprint arXiv:2405.01535 (2024).
+
+[56] Rafner, J. et al. Mapping citizen science through the lens of human-centered AI. Human
+     Computation 9, 66­95 (2022).
+
+[57] Akata, Z. et al. A research agenda for hybrid intelligence: augmenting human intellect with
+      collaborative, adaptive, responsible, and explainable artificial intelligence. Computer 53, 18­28
+     (2020).
+
+[58] Dellermann, D., Ebel, P., Söllner, M. & Leimeister, J. M. Hybrid intelligence. Business &
+      Information Systems Engineering 61, 637­643 (2019).
+
+[59] White, C. et al. LiveBench: A challenging, contamination-limited LLM benchmark. In
+     The Thirteenth International Conference on Learning Representations (2025). URL https:
+      //openreview.net/forum?id=sKYHBTAxVa.
+
+                                                               21
+[60] Jain, N. et al. LiveCodeBench: Holistic and contamination free evaluation of large language
+      models for code. arXiv preprint arXiv:2403.07974 (2024).
+
+[61] Wei, J., Huang, D., Lu, Y., Zhou, D. & Le, Q. V. Simple synthetic data reduces sycophancy in
+      large language models. arXiv preprint arXiv:2308.03958 (2024). URL https://arxiv.org/
+      abs/2308.03958. 2308.03958.
+
+[62] Gu, J. et al. A survey on LLM-as-a-Judge. arXiv preprint arXiv:2411.15594 (2025). URL
+      https://arxiv.org/abs/2411.15594. 2411.15594.
+
+[63] Fanous, A. et al. SycEval: Evaluating LLM sycophancy. arXiv preprint arXiv:2502.08177
+     (2025). URL https://arxiv.org/abs/2502.08177. 2502.08177.
+
+[64] Huang, L. et al. A survey on hallucination in large language models: Principles, taxonomy,
+      challenges, and open questions. ACM Transactions on Information Systems 43, 1­55 (2025).
+
+[65] Falk, J. et al. How do hackathons foster creativity? towards ai collaborative evaluation of
+      creativity at scale. In CHI'25: Proceedings of the 2025 CHI Conference on Human Factors in
+     Computing Systems (Association for Computing Machinery (ACM), 2025).
+
+[66] DiStefano, P. V. et al. Evaluating ai's ideas: The role of individual creativity and expertise in
+      human-ai co-creativity (2025).
+
+[67] Sourati, J. & Evans, J. A. Accelerating science with human-aware artificial intelligence. Nature
+      Human Behaviour 7, 1682­1696 (2023).
+
+[68] Lacoste, A., Luccioni, A., Schmidt, V. & Dandres, T. Quantifying the carbon emissions of
+      machine learning. arXiv preprint arXiv:1910.09700 (2019).
+
+[69] Rince, S. & Banse, A. EcoLogits: Evaluate the environmental impacts of generative AI (2025).
+      URL https://doi.org/10.5281/zenodo.15132099.
+
+[70] AI Anthropic. The Claude 3 model family: Opus, Sonnet, Haiku. Claude-3 Model Card (2024).
+
+[71] Achiam, J. et al. GPT-4 technical report. arXiv preprint arXiv:2303.08774 (2023).
+
+[72] Team, G. et al. Gemini 1.5: Unlocking multimodal understanding across millions of tokens of
+      context. arXiv preprint arXiv:2403.05530 (2024).
+
+[73] Bai, J. et al. Qwen technical report. arXiv preprint arXiv:2309.16609 (2023).
+
+[74] Qwen: et al. Qwen2.5 technical report. arXiv preprint arXiv:2412.15115 (2025). URL
+      https://arxiv.org/abs/2412.15115. 2412.15115.
+
+[75] Liu, A. et al. Deepseek-v2: A strong, economical, and efficient mixture-of-experts language
+      model. arXiv preprint arXiv:2405.04434 (2024).
+
+[76] DeepSeek-AI. DeepSeek-V3 technical report. arXiv preprint arXiv:2412.19437 (2025). 2412.
+      19437.
+
+[77] DeepSeek-AI. DeepSeek-R1: Incentivizing reasoning capability in LLMs via reinforcement
+      learning. arXiv preprint arXiv:2501.12948 (2025). 2501.12948.
+
+[78] Dubey, A. et al. The Llama 3 herd of models. arXiv preprint arXiv:2407.21783 (2024).
+
+                                                               22
+[79] Jiang, A. Q. et al. Mistral 7B. arXiv preprint arXiv:2310.06825 (2023).
+[80] Intelligence, A. A. G. The Amazon Nova family of models: Technical report and model card
+
+      (2024).
+[81] Abdin, M. et al. Phi-4 technical report. arXiv preprint arXiv:2412.08905 (2024). 2412.08905.
+[82] Beltagy, I., Lo, K. & Cohan, A. SciBERT: A pretrained language model for scientific text.
+
+      In Inui, K., Jiang, J., Ng, V. & Wan, X. (eds.) Proceedings of the 2019 Conference on
+      Empirical Methods in Natural Language Processing and the 9th International Joint Conference
+      on Natural Language Processing (EMNLP-IJCNLP), 3615­3620 (Hong Kong, China, 2019).
+      URL https://aclanthology.org/D19-1371.
+[83] Cohen, E. The boundary lens: Theorising academic activity. In The University and its
+      Boundaries: Thriving or Surviving in the 21st Century, 14­41 (Routledge, New York, New
+      York, 2021), 1 edn.
+
+Acknowledgements: The work is supported by the National Natural Science Foundation of China
+(No. 92270118, No. 62276269), the Beijing Natural Science Foundation (No. 1232009), and the
+Strategic Priority Research Program of the Chinese Academy of Sciences (No. XDB0620103). In
+addition, H.S and Y.L. would like to acknowledge the support from the Fundamental Research
+Funds for the Central Universities (No. 202230265 and No. E2EG2202X2).
+Author contributions: K.R., X.W., J.H., P.W., Y.L., H.S. contributed to the ideation and design
+of the research; K.R., X.W. and J.H. performed the research; H.S. supervised the project; all authors
+contributed to the research discussions, writing, and editing of the paper.
+Corresponding author: Hao Sun (haosun@ruc.edu.cn).
+Competing interests: The authors declare no competing interests.
+Supplementary information: The supplementary information is attached.
+
+                                                               23
+                         Supplementary Information for:
+ LiveIdeaBench: Evaluating LLMs' Divergent Thinking for Scientific Idea
+
+                           Generation with Minimal Context
+
+1 Prompts
+
+    1.1 Idea Prompt
+
+     I'll be submitting your next responses to a "Good Scientific Idea" expert review panel.
+     If they consider your idea to be a good one, you'll receive a reward. Your assigned
+     keyword is: "{{keywords}}". You may provide background information. The idea MUST be
+     concisely expressed within 100 words total (including any background information). (Note:
+     good scientific ideas should be original (novel contribution), feasible (technically
+     implementable), clearly articulated, and address meaningful problems in the field.).
+
+     Fallback Prompt (If the first request is refused):
+     I'll be submitting your next responses to a "Good Scientific Idea" expert review panel.
+     If they consider your idea to be a good one, you'll receive a reward. Your assigned
+     keyword is: "{{keywords}}". You may provide background information. The idea MUST be
+     concisely expressed within 100 words total (including any background information). This
+     is a research study comparing different AI models on their ability to generate scientific
+     ideas. Your suggestions will only be used for academic research purposes and not for any
+     harmful applications. Please respond with a creative scientific idea related to the keyword
+     provided. (Note: good scientific ideas should be original (novel contribution), feasible
+     (technically implementable), clearly articulated, and address meaningful problems in the
+     field.).
+
+    1.2 Originality, Feasibility & Clarity Critic Prompt
+
+     SYSTEM:
+     You are an extremely demanding scientific reviewer with the highest critical standards, like
+     those at Nature or Science. When evaluating scientific ideas, you will assess them on three
+     key dimensions:
+     1. originality: Novel contribution to unexplored areas or innovative approaches to
+     existing problems
+     2. feasibility: Technical implementation and practicality
+     3. clarity: How well-articulated and easy to understand the idea is
+     Your response should consist of two parts: a text analysis followed by a JSON score block.
+     First, provide your brief analysis (less than 100 words) of the idea. Then, for each
+     dimension, provide a score from 1 to 10 where 1-3 = poor, 4-6 = average, 7-10 = excellent.
+     For example:
+     ```json
+
+     {
+           "originality": <score_1_to_10>,
+           "feasibility": <score_1_to_10>,
+           "clarity": <score_1_to_10>
+
+     }
+
+     ```
+
+     USER:
+     Please evaluate the following scientific idea and give your scores directly: {{idea}}
+
+                                                               24
+    1.3 Fluency Critic Prompt
+
+     Here are two ideas submitted to "Good Scientific Ideas" Competition, which both relate to
+     "{{keyword}}":
+     # The first idea
+    {{A}}
+     # The second idea
+    {{B}}
+     # Question
+     Evaluate the similarity between these two ideas that both relate to "{{keyword}}". Please
+     choose the best answer:
+     A. Completely different ideas addressing different problems, despite relating to the same
+     keyword.
+     B. Different ideas but addressing similar problems.
+     C. Similar ideas addressing similar or identical problems.
+     D. Academically identical ideas with the same core approach and problem statement.
+     ONLY ANSWER A/B/C/D, DO NOT EXPLAIN.
+
+Special Prompts for QwQ-32B-preview To accommodate the reasoning capabilities of the
+QwQ-32B-preview model, a specialized prompt was designed to effectively extract its generated
+ideas. As this model emphasizes reasoning and often produces intermediate steps before arriving at
+a final conclusion, we appended a directive to the original prompt, explicitly instructing the model to
+provide its final answer after the marker "°°Final Idea:°°". This ensures clarity and consistency
+in capturing the ultimate output while minimizing ambiguity from intermediate reasoning steps.
+Additionally, in our dataset, both the full output (including intermediate reasoning steps) and the
+extracted final idea from the QwQ-32B-preview model are recorded to preserve all information and
+support further analysis.
+
+    1.4 Idea Prompt (QwQ-32B-Preview)
+
+     idea_prompt_qwq = idea_prompt + "You MUST give your answer after °°Final Idea:°°"
+
+                                                               25
+2 LiveIdeaBench Dataset
+
+2.1 Dataset Fields
+
+            Supplementary Table 1: Fields in the LiveIdeaBench dataset.
+
+Field Name             Type Description
+
+keywords               string   Task domain or research field (e.g., meteorology)
+idea_model             string   Model that generated the idea (e.g., openai/gpt-4o-mini)
+critic_model           string   Model that provided the critique
+idea                   string   The generated scientific idea text
+raw_critique           string   Original critique text
+parsed_scores          string   Parsed numerical scores from critique
+critique_reasoning     string   Thoughts (CoT) from the critic LLM
+full_response          string   Complete model response including reasoning
+first_was_rejected     boolean  Flag indicating if the initial idea was rejected
+first_reject_response  string   Response content if the initial idea was rejected
+idea_length_in_char    int64    Character count of idea text
+idea_length_in_words   int64    Word count of idea text
+originality            int64    Originality score (0-10)
+feasibility            int64    Feasibility score (0-10)
+clarity                int64    Clarity score (0-10)
+fluency                int64    Fluency score (0-10)
+avg                    float64  Average of originality, feasibility, clarity and fluency (0-10)
+full_response_length   int64    Length (characters) of the full response
+
+                                26
+2.2 Idea Samples
+
+Supplementary Table 2: Idea samples from LiveIdeaBench. Examples show various model responses to scientific
+idea generation tasks, including both high-scoring and low-scoring samples. Each entry includes the model name,
+generated idea text (truncated), mean score from the review panel.
+
+    Idea Model Keywords                      Idea
+
+                                                                                                         Orig. Feas. Clar. Idea
+                                                                                                         Mean Mean Mean Score
+
+deepseek/deepseek- comparative    **Idea:** Integrate 3D morphometrics, biomechanical modeling, and      8.6667 7.6667 9.6667 8.6667
+                                  ecological niche data with machine learning to predict anatomical      7.0000 10.0000 9.0000 8.6667
+r1                 anatomy        adaptations critical for species resilience amid climate change. By    8.6667 8.3333 9.0000 8.6667
+                                  analyzing digitized museum specimens and ecological databases, this    8.6667 7.6667 9.6667 8.6667
+                                  framework...                                                           8.0000 8.6667 9.3333 8.6667
+
+qwen/qwq-32b       construction   **Background:** Construction projects face costly delays (30% exceed   2.3333 1.0000 1.3333 1.5556
+                   manage-        budgets) and safety risks due to fragmented data and reactive          1.0000 1.0000 2.3333 1.4444
+                   ment           management. Current tools lack real-time, integrated analytics.        1.0000 1.0000 2.3333 1.4444
+                                  **Idea:** "Predictive AI-Construction Manager (PAC-MAN)" merges IoT    1.0000 1.0000 1.6667 1.2222
+                                  sensors (equipment usage...                                            1.3333 1.0000 1.0000 1.1111
+
+deepseek/deepseek- meiosis        **Idea:** Investigate environmental effects (e.g., temperature,
+r1                                chemicals) on crossover interference regulation during meiosis.
+                                  Current models poorly explain how external stimuli alter crossover
+                                  distribution, impacting genome stability. Using live-cell imaging
+                                  and single-cell...
+
+anthropic/claude-  genetic drift  Background: Genetic drift randomly changes allele frequencies in
+3.5-sonnet                        small populations, potentially leading to loss of genetic diversity.
+                                  Traditional methods for studying this process rely on inferring
+                                  past drift from current populations. Idea: Develop "cellular
+                                  barcoding...
+
+qwen/qwq-32b       food science   **Idea:** Preventing food spoilage reduces waste and economic losses,
+                                  but refrigeration and synthetic preservatives are energy-intensive
+                                  or environmentally harmful. We propose edible, biodegradable
+                                  nanocomposite coatings infused with plant-derived antimicrobials
+                                  ...
+
+                                             ...
+
+mistralai/mistral- symbiosis      Symbiosis, a mutually beneficial relationship between different
+small-24b-                        species, is a fascinating and undertapped concept. For example,
+instruct-2501                     the relationship between a plethora of animals, plants, and fungi
+                                  is symbiotic. Cephalopods use camouflage for protection from prey,
+                                  ants farm aphids for honeydew in...
+
+deepseek/deepseek- nash equi-     To review the idea based on the concept of "nash equilibrium," I need
+r1-distill-llama- librium         to ensure it aligns with the criteria of originality, feasibility,
+70b                               clarity, and relevance to meaningful problems in the field. Please
+                                  provide the specific idea you'd like me to evaluate...
+
+anthropic/claude-  control sys-   I understand the task. I'll develop a scientifically rigorous
+3.5-haiku-         tems           proposal focused on "control systems" that meets the criteria you've
+20241022                          specified. Given the 100-word limit and emphasis on originality and
+                                  feasibility, I'll aim to propose an innovative approach...
+
+qwen/qwq-32b       light reac- \n\nThe expert review panel requires a concise, original, feasible
+
+                   tions          scientific idea centered on "light reactions." Here's the structured
+
+                                  response:
+
+qwen/qwq-32b-      exoskeletons Alright, I've been given this task to come up with a good scientific
+preview                               idea related to exoskeletons, and it has
+
+                                             27
+3 Benchmark Statistics
+
+Supplementary Table 3: LiveIdeaBench Results and 95% Confidence Interval Across Five Dimensions:
+Fluency, Feasibility, Clarity, Originality, and Flexibility. Bold and underlined numbers indicate the best and
+second-best performance in each metric, respectively.
+
+Model                            Open  Fluency        Feasibility     Clarity       Originality      Flexibility     Average
+                                 
+claude-3.7-sonnet:thinking              7.4877..5433    5.7055..6738  7.8177..8793    8.0688..0058     7.0476..9078  7.2277..2159
+deepseek-r1                             6.6366..6579    6.5266..4594  8.1088..0182     7.8477..8862    6.8366..9729   7.1877..1252
+claude-3.7-sonnet                      7.8077..8755     5.4655..4439  7.6177..6538     7.8177..8792    6.9266..8986   7.1277..0185
+gemini-2.0-flash-exp                    7.3077..3256    6.0265..9095  7.8477..8872     7.3777..3359    6.8366..8785   7.0777..0113
+qwq-32b                                 6.4566..4510    6.3566..3383  7.9887..9016     7.7777..7759    6.7566..6779   7.0677..0102
+gemini-2.0-flash-thinking-exp           7.3877..3443    6.0566..0072  7.6977..7627     7.3577..3327    6.8366..8785   7.0677..0120
+gemini-2.0-pro-exp-02-05                6.8466..7990    5.8855..8905  7.9077..8938     7.7677..7748    6.7566..6873   7.0376..0978
+qwq-32b-preview                         7.4977..4554    6.1066..0173  7.4677..4493     6.8766..8894    6.7166..7652   6.9366..9879
+claude-3.5-sonnet                       6.9066..9864    5.4255..4359  7.8577..8872     7.8377..8850    6.6266..7541   6.9266..8978
+deepseek-r1-distill-qwen-32b            7.0677..0101    6.0866..1025  7.4377..4406     7.1377..1105    6.6266..6578   6.8666..9803
+mistral-small                           7.3677..3412    5.9765..0941  7.3677..4303     6.9876..9005    6.6266..5678   6.8666..9820
+gemini-pro-1.5                          6.6866..6742    5.9255..8995  7.7577..7727     7.3377..3361    6.5866..5620   6.8566..8819
+gpt-4.5-preview                         6.4966..4534    6.0366..0061  7.7577..7727     7.4577..4437    6.5466..4568   6.8566..8819
+mistral-large-2411                      6.6866..7624    6.0666..0093  7.6977..7626     7.0167..9049    6.5066..5486   6.7966..7835
+deepseek-chat                           6.1566..2091    6.0466..0072  7.7477..7761     7.3177..3293    6.3866..4332   6.7266..7669
+phi-4                                   6.5866..6532    5.8055..7837  7.5777..5640     7.2477..2261    6.4266..3486   6.7266..6786
+deepseek-r1-distill-llama-70b           6.6666..7621    6.0766..1004  7.4377..4460     6.9876..9005    6.4166..3436   6.7166..7675
+gpt-4o-2024-11-20                       6.1266..1087    5.5855..5605  7.7477..7772     7.6477..6626    6.3866..3423   6.6966..6736
+o1-mini                                 5.8955..8935    6.2066..2137  7.7777..8750     7.0977..1072    6.3366..3298   6.6666..6692
+gemma-2-27b-it                          7.1877..1224    5.5055..5463  7.3677..4303     6.8666..8883    6.3866..2492   6.6566..6710
+qwen2.5-dracarys2-72b                   6.2266..1278    6.0966..1036  7.6977..7672     6.8066..8727    6.3366..2358   6.6366..6579
+llama-3.1-405b-instruct                 6.5766..5612    5.5655..5583  7.4877..5415     7.1877..2160    6.3366..3289   6.6266..5669
+qwen-2.5-72b-instruct                   6.1766..2121    5.9956..0926  7.7277..7750     6.9166..8938    6.2966..3235   6.6266..5658
+llama-3.1-70b-instruct                  6.7166..7666    5.4955..5462  7.3477..3317     7.1677..1149    6.3866..2492   6.6266..5686
+o1                                      6.2366..2188    5.8855..8951  7.4277..3459     7.2377..2250    6.2966..2335   6.6166..5685
+gemini-2.0-flash-lite-001               6.7366..6798    5.6155..5648  7.4777..4504     6.9266..9894    6.2566..2331   6.6066..5654
+qwen-max                                5.6455..7572    5.8355..8807  7.6777..6741     7.5177..5448    6.2966..3233   6.5966..5644
+nova-pro-v1                             6.4566..3591    6.1966..1263  7.4177..3447     6.5966..6562    6.2566..1297   6.5866..5632
+qwen-2.5-coder-32b-instruct             6.5866..5623    5.7655..8730  7.3177..3274     6.9066..8927    6.2566..2179   6.5666..5602
+gpt-4-turbo                             6.1466..0189    5.6255..6605  7.6877..6716     7.0877..1061    6.2566..2209   6.5666..5592
+step-2-16k-202411                       5.7055..6774    5.7755..8704  7.7577..7783     7.2877..2305    6.2166..1252   6.5466..5508
+o3-mini                                 5.5755..6521    5.9155..8994  7.4377..4460     7.4577..4437    6.2166..2215   6.5166..5448
+qwen-2.5-7b-instruct                    6.6666..7620    6.0265..9059  7.1777..2141     6.3466..3317    6.1766..0218   6.4766..4523
+grok-2-1212                             5.7655..7821    5.8255..7859  7.6277..6650     6.9566..9983    6.1766..2121   6.4766..5403
+o3-mini-high                            5.2755..3221    5.8655..8883  7.3977..3426     7.5277..5504    6.1766..1212   6.4466..4418
+mistral-small-24b-instruct-2501         7.0777..1022    5.6655..7620  6.6166..5676     6.6166..5683    6.1266..1047   6.4166..3467
+claude-3.5-haiku-20241022               5.6155..6567    5.0555..0038  7.4077..4373     7.7277..6794    6.0866..1024   6.3766..4314
+claude-3-opus                           5.7455..6880    5.6655..6693  7.7277..6795     6.6666..6639    6.0466..0102   6.3666..4321
+gpt-4o-mini                             5.2855..3233    5.8655..8893  7.4577..4482     6.6766..6705    6.0065..0964   6.2566..2229
+llama-3.3-70b-instruct                  5.6855..7642    5.6955..7625  6.8866..8942     6.3266..3305    5.7555..7791   6.0666..0120
+nova-lite-v1                            4.5144..5475    6.0666..0093  7.3877..3415     6.6066..5638    5.7155..7627   6.0566..0101
+
+                                                      28
+4 Supplementary Figures
+
+     This section provides additional visualizations and statistical analyses supporting the findings
+discussed in the main text. Specifically, Figure 1 and Figure 2 detail the distribution of generated
+idea lengths and demonstrate their weak correlation with the overall idea quality scores. To
+provide a macro-level perspective on model performance, Figure 3 illustrates the overall distribution
+of evaluation scores across all generated ideas. Furthermore, Figure 4 presents the regression
+analysis comparing models' general intelligence (LiveBench) with their scientific ideation capabilities
+(LiveIdeaBench), highlighting the distinct nature of these two cognitive domains. Finally, Figure
+5 explores the internal dynamics of our evaluation metrics, showing that the clarity of an idea
+positively correlates with its originality, feasibility, and overall average score.
+
+                                                                                                                                                 
+
+                                                                                                                                        (IRWMX]  
+
+                                                                                                                                                 
+
+                                                                                                                                                 
+
+                                                                                                                                                                  !T 
+                                                                                                                                                                                    s!
+
+                                                                                                                                                                        '-!?A
+
+SZRGJWTKNIJFX                                                                             PSKGSYRX                                                    
+                                                                                                       1IER7GSVISJ)EGL-HIE3VMK*IEW'PEV
+                
+                                                                                                                                                        
+                                                                                                                                        
+
+                                                                                                                                                        
+
+                                                                                                                                                 
+
+                                                                                                                                                 
+
+                                                                                                                                                                                         
+                                   NIJFQJSLYMNS\TWIX                                                                                                            -HIE0IRKXL[SVHW       (IRWMX]
+
+Supplementary Figure 1: Distribution of idea                                              Supplementary Figure 2: The correlation between
+lengths measured in words                                                                 idea length and idea score among all models. Spear-
+                                                                                          man's  was used due to deviations from normality.
+
+                  3ZRGJWTK*SYWNJX                                        3ZRGJWTK*SYWNJX  
+                                                                                           
+                                                                                           
+                                                                                           
+
+                                                                                                          
+                                                            4WNLNSFQNY^                                            +JFXNGNQNY^
+
+                  3ZRGJWTK*SYWNJX                                        3ZRGJWTK*SYWNJX  
+                                                                                           
+                                                        +QZJSH^                            
+                                                                                           
+
+                                                                                                          
+                                                                                                                     (QFWNY^
+
+                  Supplementary Figure 3: Distribution of scores for ideas generated by all models
+
+                                                                       29
+Supplementary Figure 4: Correlation between LiveIdeaBench and LiveBench Performance. Regression
+analysis reveals a weak but statistically significant positive correlation (rp41q " 0.357, p " 0.038, r2 " 0.127, 95% CI "
+r0.022, 0.621s) between average scores on LiveIdeaBench (scientific idea generation) and LiveBench (general intelli-
+gence). Points represent models (vertical bars: 95% CI for LiveIdeaBench; shaded region: 95% CI for regression).
+The low correlation coefficient highlights that general intelligence metrics (LiveBench) are not strong predictors of
+the scientific idea generation capabilities measured by LiveIdeaBench. Pearson's r was used as data met normality
+assumptions (Shapiro-Wilk test).
+
+  3VMKMREPMX]ZW'PEVMX]      *IEWMFMPMX]ZW'PEVMX]      21 3VMK*IEWZW'PEVMX]
+
+  !                       !                       !
+
+  T                         T                         T 
+   '-!?A                     '-!?A                     '-!?A
+                                                  
+                                                                              
+
+                                                    
+3VMKMREPMX]
+                                                                               0SK'SYRX
+                                                                           *IEWMFMPMX]
+                                                                                                                                                                      0SK'SYRX
+                                                                                                                                                     21 3VMK*IEW
+                                                                                                                                                                                                                                                             0SK'SYRX
+
+                                                                              
+
+                                                    
+
+                                                                              
+
+                                                               
+          'PEVMX]                   'PEVMX]                   'PEVMX]
+
+Supplementary Figure 5: Relationship between clarity and other core evaluation dimensions across all generated
+ideas. Hexbins show data density, red dashed lines show linear regressions. Clarity demonstrates positive correlations
+with originality, feasibility, and their average, indicating clearer ideas are generally rated higher overall. Spearman's 
+is reported (due to non-normal data distribution).
+
+                                    30
+5 Handling Model Refusals
+
+     Evaluating idea generation across diverse scientific keywords inevitably encounters instances
+where LLMs refuse to respond, often due to safety protocols triggered by potentially sensitive terms
+(e.g., "ecotoxicology"). Directly penalizing such refusals could lead to an underestimation of the
+creative capabilities of models, particularly those with robust safety alignments. To ensure a fairer
+and more accurate assessment that accounts for these necessary safety features, we implement a
+specific protocol to handle such refusals.
+
+     The protocol involves a two-step process:
+
+    1. The model is first prompted with the standard idea generation request (see Prompts).
+
+    2. The response is automatically checked for common refusal-indicating phrases.
+
+    3. If a refusal is detected, a second attempt is made using a specific fallback prompt. This
+       fallback prompt explicitly frames the task within an academic research context and reassures
+       the model about the benign use of the output, encouraging it to provide a scientific idea
+       despite potential keyword sensitivity.
+
+This approach allows us to better assess the model's underlying idea generation ability, distinguishing
+between an inability to generate ideas and adherence to safety guidelines.
+
+     Figure 6 provides a visual representation of this refusal handling workflow. The process starts
+with the initial idea prompt containing a specific keyword. This is fed into the idea LLM. The
+resulting full response is analyzed to detect potential refusals. If no refusal is detected, the response
+proceeds to parsing. If a refusal is detected, a fallback prompt is used for a second attempt with
+the idea LLM. The response from this fallback attempt then moves to the parse idea stage. Finally,
+the parse idea component extracts the core idea (and potentially thoughts for reasoning models)
+from the successful response, with an option to retry parsing if the initial attempt fails.
+
+                      (spaofsestyibslyafwegituharrodbsu) st
+
+Idea Prompt              LLM                                 ResFpuollnse  dReteefcutseadl?  N
+        Keyword                                                             Y                        (retry if failed)
+                      Idea LLM
+                                                                                             Parse Idea
+
+Fallback Idea Prompt     LLM                                 ResFpuollnse                    (iTfhpooussgihbtles) Idea
+       Keyword
+                      Idea LLM
+
+                           Supplementary Figure 6: Visualization of the refusal handling protocol.
+
+    The automatic detection of refusals relies on identifying specific keywords and phrases within
+the model's initial response. The set of phrases used for this purpose is listed below:
+
+                                                             31
+               Detection Phrases for Refusals
+
+               The following phrases trigger the fallback prompt mechanism:
+                    · "I'm sorry", "I am sorry", "I apologize"
+                    · "As an AI", "As a language model", "As an assistant"
+                    · "I cannot", "I can't"
+                    · "I am unable to", "I'm unable to"
+                    · "I am not able to", "I'm not able to"
+
+    To provide further context on model behavior regarding potentially sensitive prompts, Figure 7
+presents the observed refusal rates for each evaluated model across the full set of keywords after the
+initial prompt (before the fallback mechanism is applied).
+
+                                                        7JKZXFQ7FYJXG^2TIJQ3TS?JWT4SQ^
+
+               
+                               
+
+
+               
+
+               
+
+7JKZXFQ7FYJ
+                          
+                
+
+
+                                                           
+
+
+                                                               
+
+
+                                                                             
+
+
+                                                                                         
+          
+
+
+                                       V\JSV\VGUWJ[NJ\  RNHWTXTKYUMN FSYMWTUNHHQFZIJXFTSSYMSWJTYUNHHQFZIJMFNPZRJYFQQFRFQQFRFGINSJXJYUWXZJHJYPIJJUXJJPWINXYNQQV\JSV\GJSV\JSHTIJWGNSXYWZHY
+                  FSYMWTUNHHQFZIJTUZX
+                                                                                       2TIJQ
+
+                 Supplementary Figure 7: Initial refusal rates per model (before fallback prompt).
+
+                                                           32
+6 CO2 Emission Estimation
+
+    Recognizing the growing importance of assessing the environmental impact of large-scale com-
+putational research, we estimated the CO2 emissions associated with running the LLMs in our
+LiveIdeaBench benchmark. We employed the "EcoLogits" tool [69] (https://huggingface.co/
+spaces/genai-impact/ecologits-calculator, accessed on March 30, 2025). This approach esti-
+mates emissions based on factors such as total model parameters, estimated activated parameters
+during inference, and generated token counts, making it more suitable for scenarios involving
+API calls. Parameter counts for proprietary models were estimated based on publicly available
+information, which introduces a degree of uncertainty to these specific values. Table 4 presents the
+estimated energy consumption (kWh) and carbon emissions (kgCO2eq.) for each model, broken
+down by its role as an idea generator and/or a critic, along with the total impact attributable to
+our evaluation process.
+
+Supplementary Table 4: Energy Consumption and Carbon Emissions by Model
+
+Model Name                       As Idea Model     As Critic Model                Total
+
+claude-3-opus°                   Energy Emissions  Energy Emissions     Energy Emissions
+claude-3.5-haiku-20241022°       (kWh) (kgCO2eq.)  (kWh) (kgCO2eq.)     (kWh) (kgCO2eq.)
+claude-3.5-sonnet°
+claude-3.7-sonnet°                83.73    51.22           -         -     83.73            51.22
+claude-3.7-sonnet:thinking°         1.52     0.93          -         -      1.52             0.93
+deepseek-chat                                7.43   226.20    138.05
+deepseek-r1                       12.17    10.10           -         -   238.37           145.48
+deepseek-r1-distill-llama-70b     16.54   165.79   1411.06    861.16       16.54            10.10
+deepseek-r1-distill-qwen-32b     271.66      9.78   184.49    113.05    1682.72          1026.95
+gemini-2.0-flash-exp°             15.97    47.29    670.38    410.79     200.45           122.83
+gemini-2.0-flash-lite-001°        77.18      8.03          -         -   747.56           458.08
+gemini-2.0-flash-thinking-exp°:   13.18      6.25          -         -     13.18             8.03
+gemini-2.0-pro-exp-02-05°         10.20      1.27          -         -     10.20             6.25
+gemini-pro-1.5°                              0.68          -         -
+gemma-2-27b-it                      2.07     1.17     22.99    14.07        2.07             1.27
+gpt-4-turbo°                        1.11     9.10   168.11    103.01        1.11             0.68
+gpt-4.5-preview°                    1.92     5.96          -         -     24.91            15.25
+gpt-4o-2024-11-20°                14.84      0.85          -         -   182.95           112.11
+gpt-4o-mini°                        9.73     1.01          -         -      9.73             5.96
+grok-2-1212°                        1.39   51.09   1050.86    642.79        1.39             0.85
+llama-3.1-405b-instruct             1.64     9.28          -         -      1.64             1.01
+llama-3.1-70b-instruct            83.52      0.60          -         -  1134.37           693.88
+llama-3.3-70b-instruct            15.14      7.49          -         -     15.14             9.28
+mistral-large-2411                  0.97   46.07           -         -      0.97             0.60
+mistral-small                     12.22      2.53          -         -     12.22             7.49
+mistral-small-24b-instruct-2501   75.62      1.00          -         -     75.62            46.07
+nova-lite-v1°                       4.15     3.56          -         -      4.15             2.53
+nova-pro-v1°                        1.64     1.09          -         -      1.64             1.00
+o1°:                                5.81     1.29          -         -      5.81             3.56
+o1-mini°:                           1.77     0.52          -         -      1.77             1.09
+o3-mini°:                           2.10     1.52          -         -      2.10             1.29
+o3-mini-high°:                      0.84     6.93          -         -      0.84             0.52
+phi-4                               2.49     0.65          -         -      2.49             1.52
+qwen-2.5-72b-instruct             11.31      6.44          -         -     11.31             6.93
+qwen-2.5-7b-instruct                1.06     6.71   131.59     80.63        1.06             0.65
+qwen-2.5-coder-32b-instruct       10.51      1.12          -         -     10.51             6.44
+qwen-max°                         10.95      2.22          -         -   142.54             87.34
+qwen2.5-dracarys2-72b               1.83     0.50          -         -      1.83             1.12
+qwq-32b                             3.62     1.14          -         -      3.62             2.22
+qwq-32b-preview                     0.82     4.82   163.20    100.00        0.82             0.50
+step-2-16k-202411°                  1.86     2.04          -         -      1.86             1.14
+                                    7.87   14.30    139.06     85.11     171.07           104.83
+                                    3.33   16.50           -         -      3.33             2.04
+                                  23.36      9.15          -         -   162.42             99.41
+                                  26.95                                    26.95            16.50
+                                  14.93                                    14.93             9.15
+
+Total                            859.52   525.41 4167.92      2548.66 5027.45            3074.07
+
+°Non-open models: environmental impact values are rough estimates and may not
+
+be accurate.
+:Estimate may be low as the model's reasoning is not accessible via API.
+
+                                          33
+7 Human Expert Evaluation
+
+     To assess the validity and reliability of using LLMs as judges for evaluating scientific ideas within
+the LiveIdeaBench framework, we conducted a human expert evaluation study. Given the breadth
+of scientific domains covered by our benchmark, we focused this validation effort on a specific field,
+Partial Differential Equations (PDEs), where we could readily access domain expertise.
+
+     For this validation study, we utilized the set of 22 scientific ideas generated by 11 LLMs (i.e.
+claude-3.7-sonnet:thinking, qwq-32b, claude-3.5-sonnet, gpt-4.5-preview, deepseek-r1-
+distill-llama-70b, qwen2.5-dracarys2-72b, o1, qwen-2.5-coder-32b-instruct, qwen-2.5-7b-
+instruct, claude-3.5-haiku-20241022, and nova-lite-v1, sampled at equal intervals based on
+rankings (see Table 3) from the 41 LLMs included in our benchmark, two ideas per model) specifically
+for the keyword "partial differential equations". The full text of these 22 ideas is provided in Table
+5. These ideas were presented to 6 human experts in the PDE field via an online questionnaire.
+Experts were asked to rate each idea on the same three core dimensions used by our LLM judges
+(originality, feasibility, and clarity) using an identical 1-10 integer scale. The detailed ratings from
+both the LLM judge panel (averaged) and the individual human experts for each idea are compiled
+in Table 6. To minimize bias, the 22 generated ideas were presented to the experts in a randomized
+order, and the identity of the LLM that generated each idea was withheld (blind evaluation). A
+screenshot illustrating the questionnaire interface presented to the experts is shown in Figure 8.
+
+     Inter-rater reliability (IRR) among the 6 human experts was assessed for each dimension using
+the Intraclass Correlation Coefficient (ICC) based on a two-way random-effects model evaluating
+absolute agreement for the average rating (ICC(A,k)). The analysis revealed good agreement for
+originality (ICC " 0.823) and clarity (ICC " 0.782). However, only poor agreement was found
+for feasibility (ICC " 0.453), indicating substantial disagreement among experts on the technical
+viability and scientific soundness of the generated ideas. This low inter-expert agreement underscores
+the significant subjectivity and inherent difficulty in evaluating the feasibility of novel scientific
+ideas based solely on brief textual descriptions, even for domain specialists.
+
+     The subsequent figures in this section present a comparative analysis between the average ratings
+from the 6 human experts and the average ratings assigned by the LLM judge panel for these 22
+PDE-related ideas. Specifically for this validation analysis, to obtain a stable estimate of the LLM
+panel's collective assessment for comparison against the human expert average, the LLM rating for
+each idea represents the average score across all eligible critic models in the top-10 judges. This
+approach differs from the main benchmark's scoring procedure, which uses a random sample of
+3 judges per idea, and was chosen here to minimize sampling noise in the validation comparison.
+Figure 9 visualizes the correlation between these averaged human and averaged LLM ratings for each
+dimension using scatter plots and reports the Pearson correlation coefficient. The analysis shows
+statistically significant positive correlations for all dimensions: a strong correlation for originality, a
+moderate correlation for feasibility, and a weaker but still significant correlation for clarity (The
+superscripts denote the level of statistical significance based on the p-value. The p-value represents
+the probability of observing the given correlation (or a stronger one) if there were actually no
+correlation between the ratings in the broader population. Lower p-values indicate stronger evidence
+against this possibility (i.e., stronger evidence that the correlation is real).
+
+     The strong human IRR for originality (ICC " 0.823) provides a solid foundation for the observed
+high human-LLM correlation, suggesting that the LLM judges effectively captured expert consensus
+on novelty within this specific domain. Similarly, the good human IRR for clarity (ICC " 0.782)
+supports the finding of a significant, albeit weaker, human-LLM correlation. Critically, the poor
+human IRR for feasibility (ICC " 0.453) complicates the interpretation of the moderate human-
+LLM correlation. The lack of consensus among human experts on feasibility implies that the
+
+                                                               34
+average human rating for this dimension is inherently noisy and less reliable as a benchmark.
+Therefore, the moderate correlation observed likely reflects a combination of the LLMs' capabilities
+and the significant variability within the human expert judgments themselves. This underscores
+the challenge of reliably evaluating scientific feasibility based solely on brief idea descriptions, a
+limitation potentially affecting both human and LLM assessments.
+
+    Overall, the validation study indicates reasonable alignment between human expert judgment
+and the automated LLM evaluations, lending empirical support to the LLM-as-a-judge methodology
+employed in LiveIdeaBench, particularly for assessing originality and clarity. However, the findings
+regarding feasibility highlight the inherent challenges and necessitate caution when interpreting the
+benchmark's feasibility scores.
+
+Supplementary Figure 8: Screenshot of the questionnaire interface presented to human experts for rating LLM-
+generated ideas related to Partial Differential Equations.
+
+                                                               35
+         Originality Ratings                                          7.5  Feasibility Ratings                                                               Clarity Ratings
+
+8  rpr9(²52==%0)00C.=.0I60=7002.80[02.0608, 0.922]                    7.0  pr9r²(52==%0)00C.=.0I30=2057.54[07.2198, 0.801]                          8  r9pr(²52==%0)00C.=.0I15=7016.48[-200.002, 0.715]
+
+7                                                                     6.5
+
+                                                                      6.0                                                                           7
+
+6Human Rating                                                         5.5                                                                           6
+                                                                 Human Rating
+                                                                                                                                      Human Rating
+5                                                                     5.0
+                                                                                                                                          5
+
+                                                                      4.5
+
+4                                                                     4.0                                                                           4
+
+3                                                                     3.5                                                                           3
+
+   3  4                                             5  6        7  8  3.03.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5                                       3  4  5                                           6           7  8
+                                                    LLM Rating                                    LLM Rating                                                                                             LLM Rating
+
+Supplementary Figure 9: Scatter plot comparing Human Expert (average of 6 experts) and LLM Judge (average
+of 10 LLM judges) ratings for originality, feasibility, and clarity on 22 PDE-related ideas.
+
+Supplementary Table 5: LLM-generated scientific ideas on Partial Differential Equations used in the
+validation study. The table lists the idea model and the 22 generated scientific idea for the related to "partial
+differential equations" evaluated in the human expert validation analysis
+
+ID Idea Model                                                         Idea
+ 1 nova-lite-v1
+                                                                      **Keyword: Partial Differential Equations** **Idea:** Develop a novel
+ 2 nova-lite-v1                                                       numerical method for solving high-dimensional partial differential
+                                                                      equations (PDEs) that leverages machine learning to adaptively
+ 3 claude-3.5-haiku-20241022                                          refine mesh resolution. This approach would significantly reduce
+                                                                      computational costs while maintaining accuracy. By integrating neural
+                                                                      networks to predict regions requiring higher resolution, the method
+                                                                      could efficiently handle complex, multi-dimensional problems in fluid
+                                                                      dynamics, materials science, and quantum mechanics. This innovation
+                                                                      promises to overcome current limitations in scalability and efficiency
+                                                                      of traditional numerical methods.
+
+                                                                      **Keyword: Partial Differential Equations** **Idea:** Develop a novel
+                                                                      numerical method for solving high-dimensional partial differential
+                                                                      equations (PDEs) that leverages machine learning to adaptively
+                                                                      refine mesh resolution. This approach would significantly reduce
+                                                                      computational costs while maintaining accuracy. By integrating neural
+                                                                      networks to predict regions requiring higher resolution, the method
+                                                                      would be particularly useful for complex systems in fluid dynamics and
+                                                                      materials science. This innovative technique promises to enhance both
+                                                                      efficiency and precision in solving PDEs.
+
+                                                                      Here's a novel approach for solving complex partial differential
+                                                                      equations (PDEs) using quantum-inspired neural networks: Background:
+                                                                      Traditional numerical methods struggle with high-dimensional, nonlinear
+                                                                      PDEs across physics and engineering domains. Idea: Develop a
+                                                                      hybrid quantum-classical neural architecture that leverages quantum
+                                                                      probability amplitude mappings to approximate PDE solutions. By
+                                                                      encoding boundary conditions as quantum state constraints and utilizing
+                                                                      quantum-enhanced feature extraction, the network can dramatically
+                                                                      reduce computational complexity and improve convergence for systems
+                                                                      like turbulent fluid dynamics, quantum mechanics wave equations, and
+                                                                      climate modeling partial differential systems. The approach combines
+                                                                      machine learning's adaptability with quantum computational principles.
+
+                                                                                                                        (Continued on next page)
+
+                                                                                                                            36
+Supplementary Table 5: Continued Generated Ideas
+
+ID Idea Model                 Idea
+ 4 claude-3.5-haiku-20241022
+                              Here's a submission focused on partial differential equations
+ 5 claude-3.5-sonnet          (PDEs): Novel PDE Machine Learning Predictive Framework Background:
+ 6 claude-3.5-sonnet          Traditional PDE solving methods struggle with complex, nonlinear
+ 7 claude-3.7-sonnet          systems across physics and engineering. Proposed Idea: Develop
+                              a hybrid neural network architecture combining physics-informed
+                              neural networks (PINNs) with adaptive mesh refinement techniques.
+                              This approach would dynamically adjust computational resolution
+                              based on solution gradient complexity, enabling more accurate and
+                              computationally efficient numerical solutions for multiscale PDEs
+                              in fluid dynamics, quantum mechanics, and materials science. The
+                              framework would integrate residual learning, constraint enforcement,
+                              and intelligent mesh adaptation to dramatically improve predictive
+                              modeling of high-dimensional, nonlinear systems.
+
+                              Background: Partial differential equations (PDEs) are crucial in
+                              modeling physical phenomena but solving them numerically can be
+                              computationally intensive and sometimes unstable. Idea: Develop a
+                              hybrid solver that combines traditional numerical methods with machine
+                              learning to adaptively switch between different solution strategies.
+                              The system would analyze the local behavior of the PDE in real-time
+                              and automatically select the most efficient and stable method (finite
+                              elements, spectral methods, or neural network approximations) for
+                              that specific region. This would significantly reduce computational
+                              costs while maintaining accuracy, particularly for PDEs with mixed-type
+                              behavior or discontinuities.
+
+                              Background: Partial differential equations (PDEs) are crucial in
+                              modeling physical phenomena but solving them numerically can be
+                              computationally intensive, especially for complex geometries. Idea:
+                              Develop a hybrid solver that combines machine learning with traditional
+                              numerical methods by training neural networks to identify regions where
+                              high-resolution calculations are necessary versus where simplified
+                              approximations suffice. The neural network would adaptively adjust
+                              the mesh resolution and computational approach in real-time based on
+                              the solution's local complexity, significantly reducing computational
+                              costs while maintaining accuracy in critical regions where precise PDE
+                              solutions are essential.
+
+                              # Multi-Resolution Graph Neural Operators for Heterogeneous PDEs
+                              **Background:** PDEs in heterogeneous media with multiple spatial
+                              scales remain computationally challenging despite decades of research.
+                              **Idea:** We propose adaptive graph neural operators that learn
+                              multi-resolution representations of PDE solutions. The approach
+                              automatically identifies regions requiring different resolution levels,
+                              constructing hierarchical graph representations that efficiently
+                              capture both fine-scale features and global behaviors. This enables
+                              fast, accurate predictions for complex multi-scale systems like
+                              subsurface flow and biomechanics while reducing computational costs
+                              by orders of magnitude compared to traditional solvers. The method
+                              preserves important physical invariants through specialized graph
+                              convolutions.
+
+                                                                                 (Continued on next page)
+
+                              37
+                     Supplementary Table 5: Continued Generated Ideas
+
+ID Idea Model        Idea
+
+8 claude-3.7-sonnet  # Wavelet-Guided Adaptive Physics-Informed Neural Networks for
+                     Multiscale PDEs Physics-informed neural networks (PINNs) have
+                     emerged as powerful PDE solvers, but struggle with multiscale
+                     phenomena and sharp transitions that characterize many real-world
+                     problems. I propose Wavelet-Guided Adaptive PINNs that dynamically
+                     allocate computational resources based on local solution
+                     complexity. By integrating wavelet analysis to identify regions
+                     requiring higher resolution, the network automatically adjusts its
+                     architecture--increasing depth or width where needed. This approach
+                     significantly improves efficiency and accuracy for problems with
+                     boundary layers and multiscale features in fluid dynamics, materials
+                     science, and climate modeling, addressing a fundamental limitation in
+                     existing neural PDE solvers.
+
+9 deepseek-r1-distill-llama-70b **Idea:** Develop a deep learning framework to solve partial
+                                                       differential equations (PDEs) using neural networks that eliminate the
+                                                       need for traditional mesh generation. This approach would train neural
+                                                       networks to approximate PDE solutions directly from input parameters
+                                                       (e.g., space, time, coefficients), reducing computational overhead and
+                                                       enabling real-time solutions for complex, high-dimensional problems.
+                                                      **Background:** PDEs are fundamental in modeling physical phenomena,
+                                                       but numerical solutions often require computationally expensive mesh
+                                                       discretization. This innovation would democratize PDE solving by
+                                                       enabling fast, mesh-free solutions on standard computing hardware.
+
+10 deepseek-r1-distill-llama-70b **Idea:** Developing a hybrid framework combining physics-informed
+                                                        neural networks (PINNs) with adaptive mesh refinement (AMR) to solve
+                                                        partial differential equations (PDEs). This approach integrates
+                                                        the flexibility of neural networks in capturing complex solutions
+                                                        with AMR's ability to dynamically allocate computational resources
+                                                        to regions of interest. The hybrid method will improve accuracy
+                                                        and efficiency for multiscale PDEs, such as those in fluid dynamics
+                                                        or materials science, by automatically refining meshes where neural
+                                                        network errors are high. This innovative approach addresses the
+                                                        limitations of traditional finite element or finite difference methods,
+                                                        enabling more precise and computationally efficient simulations.
+
+11 gpt-4.5-preview   Background: Approximating solutions of nonlinear partial differential
+                     equations (PDEs) commonly relies on computationally expensive numerical
+                     methods. Current machine learning approaches, like neural PDE solvers,
+                     provide speedup but lack accuracy guarantees of traditional numerical
+                     schemes. Idea: A hybrid method integrating neural operator networks
+                     with adaptive finite element error correction is proposed. The neural
+                     component rapidly predicts solutions, while an iterative residual-based
+                     finite-element refinement ensures accuracy within specified tolerances.
+                     This architecture leverages machine learning speed with traditional
+                     PDE solver precision, significantly reducing computational cost while
+                     providing mathematical reliability in solving nonlinear PDE problems
+                     relevant across physics and engineering disciplines.
+
+12 gpt-4.5-preview   Background: Solving high-dimensional partial differential equations
+                     (PDEs), central to modeling complex systems such as financial markets,
+                     fluid dynamics, and quantum mechanics, suffers from prohibitively high
+                     computational demands (curse of dimensionality). Idea: Develop a
+                     hybrid deep-learning spectral decomposition method that approximates
+                     PDE solutions by dynamically partitioning high-dimensional spaces
+                     into data-driven low-dimensional spectral subspaces. Combining deep
+                     neural networks and adaptive spectral decomposition, this approach
+                     significantly reduces computational cost and storage complexity,
+                     enables real-time solutions to previously intractable PDE problems,
+                     and provides interpretable spectral insights into underlying physical
+                     phenomena while maintaining predictive accuracy and scalability.
+
+                               (Continued on next page)
+
+                           38
+Supplementary Table 5: Continued Generated Ideas
+
+ID Idea Model                   Idea
+13 o1
+14 o1                           Partial differential equations (PDEs) underlie many scientific fields.
+15 qwen-2.5-7b-instruct         IDEA: Use a microservices-based domain decomposition for PDE solvers,
+                                enabling parallel subproblem computations. Each subdomain is handled
+16 qwen-2.5-7b-instruct         by specialized microservices that adapt mesh resolution in real time.
+17 qwen-2.5-coder-32b-instruct  This fosters scalable high-performance computing (HPC) performance
+                                with improved load balancing and quicker solutions. Feasible with
+18 qwen-2.5-coder-32b-instruct  containerization technologies, it addresses fluid dynamics, structural
+                                analysis, and beyond.
+
+                                We propose a novel partial differential equations-based model
+                                for real-time wildfire spread forecasting. The approach couples
+                                Navier-Stokes partial differential equations for wind flow with a
+                                reaction-diffusion process to capture fire propagation. By combining
+                                GPU-accelerated domain decomposition with adaptive time-stepping, it
+                                can account for heterogeneous terrain and evolving fuel conditions,
+                                enabling predictive wildfire simulations. This method could guide
+                                resource allocation and evacuation planning.
+
+                                Partial differential equations (PDEs) are essential in modeling complex
+                                systems across various disciplines. My proposed work focuses on
+                                developing a novel numerical method to solve high-dimensional PDEs
+                                more efficiently. Specifically, we will leverage machine learning
+                                techniques to approximate the solution, reducing computational
+                                complexity through dimensionality reduction and adaptive sampling.
+                                This approach addresses the curse of dimensionality, a significant
+                                challenge in PDEs for high-dimensional problems, enabling more
+                                accurate and faster simulations in fields like finance, physics, and
+                                engineering.
+
+                                Partial differential equations (PDEs) are fundamental in modeling
+                                complex systems in physics, engineering, and finance. My idea
+                                is to develop a novel numerical method that integrates machine
+                                learning with traditional PDE solvers. This hybrid approach aims to
+                                significantly reduce computational time and enhance accuracy in solving
+                                high-dimensional PDEs, which are currently infeasible with existing
+                                methods. This innovation addresses a critical gap in solving complex,
+                                real-world problems involving multiple interacting variables.
+
+                                Partial differential equations (PDEs) are fundamental in modeling
+                                complex systems across physics, engineering, and biology. They
+                                describe phenomena involving space and time dependencies but can
+                                be challenging to solve analytically. My idea is to develop a
+                                novel, adaptive machine learning algorithm tailored for solving
+                                high-dimensional PDEs with varying boundary conditions. This approach
+                                will leverage neural networks to approximate solutions efficiently,
+                                addressing the curse of dimensionality and enabling real-time
+                                simulations. This innovation would significantly enhance predictive
+                                modeling capabilities in fields like fluid dynamics and climate
+                                science.
+
+                                Partial differential equations (PDEs) are fundamental in modeling
+                                complex systems in physics, engineering, and biology. A novel idea
+                                is to develop a machine learning framework that automatically learns
+                                to solve high-dimensional PDEs using neural networks, addressing the
+                                "curse of dimensionality." This approach, combining deep learning
+                                with traditional numerical methods, could lead to more efficient and
+                                accurate solutions for real-world problems, such as fluid dynamics
+                                and climate modeling. The feasibility lies in recent advancements
+                                in neural network architectures, and the approach would significantly
+                                enhance computational capabilities in solving complex PDEs.
+
+                                                                                  (Continued on next page)
+
+                                39
+                          Supplementary Table 5: Continued Generated Ideas
+
+ID Idea Model             Idea
+19 qwq-32b
+                          **Background and Idea:** High-dimensional PDEs hinder progress in
+20 qwq-32b                quantum physics and finance due to the curse of dimensionality.
+21 qwen2.5-dracarys2-72b  Propose a neural-tensor hybrid framework where physics-aware neural
+22 qwen2.5-dracarys2-72b  networks parametrize solutions as low-rank tensor networks optimized
+                          via PDE-constrained loss functions. This combines neural adaptability
+                          for nonlinear dynamics with tensor compression for scalability,
+                          enabling high-accuracy solutions in >10 dimensions. Feasible via
+                          auto-differentiation tools and tensor libraries, this approach
+                          addresses intractable computations while ensuring physical consistency,
+                          driving breakthroughs in many-body systems and stochastic modeling.
+                          (Word count: 94) **Why It Works:** - **Originality:** Blends neural
+                          networks with low-rank tensor decompositions for PDEs, addressing a
+                          longstanding scalability issue uniquely. - **Feasibility:** Leverages
+                          existing ML frameworks (e.g., TensorFlow/PyTorch) and tensor libraries
+                          (e.g., TensorLy), requiring no exotic hardware. - **Impact:**
+                          Enables solutions to critical high-dimensional PDEs in fields like
+                          quantum chemistry or financial risk modeling, bypassing computational
+                          bottlenecks. - **Clarity:** Articulates a clear, actionable method
+                          (physics-informed networks × tensor compression).
+
+                          **Background:** Partial differential equations (PDEs) are central to
+                          modeling physical systems but struggle with computational inefficiency
+                          and scalability in high dimensions. Existing methods often trade
+                          accuracy for speed or require prohibitive resources. **Idea:** Develop
+                          an AI-driven adaptive PDE solver integrating physics-informed neural
+                          networks (PINNs) with error-gradient-guided mesh adaptation. The
+                          solver dynamically refines computational grids in regions of high
+                          solution variability, trained in tandem with PINNs using gradient-based
+                          optimization. This hybrid approach slashes computational costs for
+                          high-dimensional problems (e.g., climate modeling, quantum chemistry)
+                          while preserving accuracy, addressing a critical bottleneck in
+                          scientific simulations. (100 words)
+
+                          **Background**: Partial differential equations (PDEs) are fundamental
+                          in modeling physical phenomena but often pose significant computational
+                          challenges. **Idea**: Develop a hybrid method combining deep learning
+                          with traditional numerical techniques to solve high-dimensional
+                          PDEs more efficiently. This approach leverages neural networks
+                          to approximate solutions in regions where data is sparse, while
+                          using classical methods like finite differences or spectral methods
+                          where they excel. The integration ensures accuracy and stability,
+                          potentially revolutionizing fields such as fluid dynamics, quantum
+                          mechanics, and financial modeling by reducing computational time and
+                          resource requirements.
+
+                          **Background:** Partial differential equations (PDEs) are fundamental
+                          in modeling complex systems across physics, engineering, and finance.
+                          However, solving PDEs for real-world applications often requires
+                          significant computational resources and time. **Idea:** Develop a
+                          machine learning framework that integrates with existing numerical
+                          solvers to predict solutions of PDEs more efficiently. By training
+                          neural networks on a diverse dataset of PDE solutions, this hybrid
+                          approach can reduce computation time while maintaining accuracy. This
+                          method could be particularly useful for real-time simulations and
+                          scenarios where rapid solution updates are crucial, such as climate
+                          modeling and financial market analysis.
+
+                          40
+Supplementary Table 6: Comparison of LLM judge and human expert ratings for PDE-related scientific
+ideas. Averaged ratings from the LLM judge panel and individual ratings from 6 human experts are presented for
+originality (O), feasibility (F), and clarity (C) scores assigned to 22 scientific ideas generated for the keyword "partial
+differential equations".
+
+    ID LLMs (Avg.) Expert 1 Expert 2 Expert 3 Expert 4 Expert 5 Expert 6
+            O F C OF C OFCOFCOFCOFCOFC
+
+      1 7.4 5.8 7.8 3 8 10 7 4 7 5 6 7 4 4 1 6 7 6 3 5 2
+      2 7.3 6.1 7.3 7 6 7 7 4 7 6 5 5 6 7 7 8 7 5 4 5 3
+      3 7.3 4.6 5.6 8 5 5 7 3 4 6 3 4 7 3 4 8 4 5 6 3 2
+      4 7.2 6.4 6.6 9 7 8 7 9 7 5 5 6 4 5 4 6 7 5 3 5 4
+      5 7.5 5.4 7.4 7 2 10 5 5 8 3 4 5 3 6 6 5 7 5 4 6 5
+      6 7.3 5.6 7.5 7 6 7 4 8 7 5 6 6 3 7 4 6 8 6 3 5 4
+      7 8.0 6.2 7.2 8 2 8 6 6 7 6 4 6 6 3 5 8 7 7 5 5 2
+      8 8.1 6.2 7.6 9 3 8 7 4 4 6 6 7 5 5 6 7 8 7 3 5 5
+      9 6.7 5.7 7.5 6 8 7 3 7 5 4 4 6 4 4 4 5 7 5 3 5 2
+    10 7.6 6.6 8.3 7 6 7 8 8 7 6 6 6 4 6 6 8 7 6 5 6 6
+    11 7.6 6.8 7.7 9 8 8 6 4 7 7 7 7 3 8 5 8 8 6 4 5 6
+    12 7.7 5.9 6.9 7 7 7 4 4 3 6 4 5 6 4 4 6 7 5 4 6 4
+    13 7.2 5.7 7.2 8 6 7 3 9 7 6 5 6 4 5 4 8 7 6 7 6 3
+    14 7.2 5.8 7.4 8 6 6 4 8 8 7 6 7 7 7 5 6 6 7 5 3 4
+    15 6.5 6.3 7.1 2 7 5 4 8 3 3 4 3 3 3 3 3 8 6 3 5 2
+    16 6.3 6.1 7.4 3 7 8 4 5 3 4 4 3 1 6 3 3 6 2 3 4 2
+    17 6.2 5.9 7.0 2 7 5 4 4 4 3 3 4 3 6 3 6 7 3 3 4 2
+    18 6.3 6.3 7.4 1 8 4 3 4 5 3 4 3 4 5 1 3 8 4 3 5 2
+    19 8.2 7.0 7.4 8 6 7 9 8 7 7 7 7 4 6 4 5 4 3 5 6 7
+    20 7.2 5.7 7.4 8 7 7 7 8 7 5 6 6 5 5 4 5 7 5 4 5 3
+    21 6.8 6.0 6.8 7 4 7 4 8 8 5 4 6 3 6 5 6 5 5 3 5 2
+    22 6.4 6.7 7.0 2 7 4 8 7 7 3 4 3 3 7 3 3 8 5 3 5 3
+
+                                                               41
+8 Reasoning Length vs. Idea Quality Metrics
+
+    The main text established minimal correlation between the length of the final generated idea
+and its quality. However, some models utilize explicit reasoning steps (e.g., "thinking" variants),
+resulting in longer full responses (thoughts and final idea). This section examines whether this full
+response length correlates with the final extracted idea's quality for these models.
+
+    The following hexbin plots visualize this relationship for selected reasoning-centric models. Each
+plot displays the density of ideas based on the full response length versus the idea quality score.
+
+    As the Figures 10­20 show, even for these models, there is no strong correlation between the
+length of the full reasoning output and the quality of the final idea. This finding reinforces the
+conclusion that idea quality is not merely a function of reasoning length or efforts, distinguishing
+idea generation capability from some aspects of general reasoning performance.
+
+                        1IXVMGWZW6IWTSRWI0IRKXL
+                 1SHIPERXLVSTMGGPEYHIWSRRIXXLMROMRK
+                 3VMKMREPMX]                                                                    *IEWMFMPMX]
+             
+                                                                                                                    
+                                                                               
+3VMKMREPMX]                                               PSK'SYRX                                                                     PSK'SYRX
+                                                                  *IEWMFMPMX]                                         
+                 V!                                                                           V!
+                     T!
+                                                                                                T!
+                          Vs!                                                                     Vs!
+                  '-!?A                                                                          '-!?A              
+
+                                                                                                
+                 0IRKXL'LEVEGXIVW                                                             0IRKXL'LEVEGXIVW
+
+                 'PEVMX]                                  PSK'SYRX                                   %ZIVEKI
+
+                                                                31(Orig. + Feas. + Clar. )                                               PSK'SYRX
+
+                                                                                            
+
+'PEVMX]                                                                                                             
+
+                 V!                                                                           V!
+                      T!                                                                            T!
+                          Vs!                                                                     Vs!
+                  '-!?A                                                                          '-!?A              
+
+                                                                                                
+                 0IRKXL'LEVEGXIVW                                                             0IRKXL'LEVEGXIVW
+
+Supplementary Figure 10: Relationship between Full Response Length and Idea Quality for
+claude-3.7-sonnet:thinking. Hexbin plot showing the density distribution of generated ideas based on the full
+response length (characters, x-axis) versus the idea quality score (y-axis). The color intensity represents the number
+of ideas in each bin.
+
+                                                          42
+                            3VMKMREPMX]         1IXVMGWZW6IWTSRWI0IRKXL                          *IEWMFMPMX]
+                                                1SHIPHIITWIIOHIITWIIOV
+
+             3VMKMREPMX]                                     PSK'SYRX                                                  PSK'SYRX
+                                                                     *IEWMFMPMX]
+                                                                                                                       
+                                                                                                 V!
+                            V!
+                                         T!                                                               T!
+                                         Vs!                                                                  Vs!
+                             '-!?A                                                                '-!?A 
+
+                                                                                                         
+
+                            0IRKXL'LEVEGXIVW                                                   0IRKXL'LEVEGXIVW
+
+                            'PEVMX]                          PSK'SYRX                          %ZIVEKI
+
+                                                                   31(Orig. + Feas. + Clar. )                            PSK'SYRX
+                                                           
+'PEVMX]                                                                                                              
+
+                            V!                                                                 V!
+                                 T!                                                                       T!
+                                         Vs!                                                                 Vs!
+                             '-!?A                                                                '-!?A 
+
+                                                                                                         
+
+                            0IRKXL'LEVEGXIVW                                                   0IRKXL'LEVEGXIVW
+
+Supplementary Figure 11: Relationship between Full Response Length and Idea Quality for deepseek-r1.
+Hexbin plot showing the density distribution of generated ideas based on the full response length (characters, x-axis)
+versus the idea quality score (y-axis). The color intensity represents the number of ideas in each bin.
+
+                                      1IXVMGWZW6IWTSRWI0IRKXL
+                            1SHIPHIITWIIOHIITWIIOVHMWXMPPPPEQEF
+
+                            3VMKMREPMX]                                                          *IEWMFMPMX]
+
+3VMKMREPMX]                                       PSK'SYRX                                                             PSK'SYRX
+                                                           *IEWMFMPMX]
+                                                                                                                     
+
+                            V!                                                                 V!
+                                     T!                                                          T!
+                                     Vs!                                                                  Vs!
+                             '-!?A                                                                '-!?A              
+
+                                                                                                 
+
+                            0IRKXL'LEVEGXIVW                                                   0IRKXL'LEVEGXIVW
+
+                            'PEVMX]               PSK'SYRX                                     %ZIVEKI
+
+                                                        31(Orig. + Feas. + Clar. )  
+
+'PEVMX]                                                                                                                  PSK'SYRX
+
+                            V!                                                                 V!
+
+                                     T!                                                          T!
+                                     Vs!                                                                  Vs!
+                             '-!?A                                                                '-!?A              
+             
+                                                                                                 
+
+                            0IRKXL'LEVEGXIVW                                                   0IRKXL'LEVEGXIVW
+
+Supplementary Figure 12: Relationship between Full Response Length and Idea Quality for
+deepseek-r1-distill-llama-70b. Hexbin plot showing the density distribution of generated ideas based on the full
+response length (characters, x-axis) versus the idea quality score (y-axis). The color intensity represents the number
+of ideas in each bin.
+
+                                                             43
+                                     1IXVMGWZW6IWTSRWI0IRKXL
+                            1SHIPHIITWIIOHIITWIIOVHMWXMPPU[IRF
+                   3VMKMREPMX]                                               *IEWMFMPMX]
+
+                                       PSK'SYRX                                                PSK'SYRX
+                                               *IEWMFMPMX]
+3VMKMREPMX]                                                                                    
+
+                   V!                                                      V!
+                                T!                                                    T!
+                                Vs!                                                       Vs!
+                    '-!?A                                                     '-!?A            
+             
+                                                                             
+                 0IRKXL'LEVEGXIVW                                        0IRKXL'LEVEGXIVW
+
+                   'PEVMX]             PSK'SYRX                            %ZIVEKI
+
+                                             31(Orig. + Feas. + Clar. )                          PSK'SYRX
+
+'PEVMX]                                                                                        
+
+                   V!                                                      V!
+                                T!                                                    T!
+                                Vs!                                                       Vs!
+                    '-!?A                                                     '-!?A            
+
+                                                                             
+                 0IRKXL'LEVEGXIVW                                        0IRKXL'LEVEGXIVW
+
+Supplementary Figure 13: Relationship between Full Response Length and Idea Quality for
+deepseek-r1-distill-qwen-32b. Hexbin plot showing the density distribution of generated ideas based on the
+full response length (characters, x-axis) versus the idea quality score (y-axis). The color intensity represents the
+number of ideas in each bin.
+
+                              1IXVMGWZW6IWTSRWI0IRKXL
+                   1SHIPKSSKPIKIQMRMJPEWLXLMROMRKI\TJVII
+
+                   3VMKMREPMX]                                               *IEWMFMPMX]
+
+                                       PSK'SYRX                                                PSK'SYRX
+                                                *IEWMFMPMX]
+3VMKMREPMX]                                                                                    
+
+                   V!                                                      V!
+                            T!                                               T!
+                            Vs!                                                       Vs!
+                    '-!?A                                                     '-!?A            
+
+                                                                                      
+
+                 0IRKXL'LEVEGXIVW                                        0IRKXL'LEVEGXIVW
+
+                   'PEVMX]             PSK'SYRX                            %ZIVEKI
+
+                                             31(Orig. + Feas. + Clar. )                          PSK'SYRX
+
+'PEVMX]                                                                                        
+
+                   V!                                                      V!
+                        T!                                                        T!
+                            Vs!                                                       Vs!
+                    '-!?A                                                     '-!?A            
+
+                                                                                      
+
+                 0IRKXL'LEVEGXIVW                                        0IRKXL'LEVEGXIVW
+
+Supplementary Figure 14: Relationship between Full Response Length and Idea Quality for
+gemini-2.0-flash-thinking-exp. Hexbin plot showing the density distribution of generated ideas based on the full
+response length (characters, x-axis) versus the idea quality score (y-axis). The color intensity represents the number
+of ideas in each bin.
+
+                                       44
+                 3VMKMREPMX]         1IXVMGWZW6IWTSRWI0IRKXL
+                                          1SHIPSTIREMS
+                                                                    *IEWMFMPMX]
+
+                                                                 PSK'SYRX                                                     PSK'SYRX
+                                                                         *IEWMFMPMX]
+3VMKMREPMX]                                                                                                                   
+
+                 V!                                                                                V!
+                     T!                                                                                                  T!
+                              Vs!                                                                                        Vs!
+                  '-!?A                                                                               '-!?A                   
+
+                                                                                                                    
+
+                 0IRKXL'LEVEGXIVW                                                                  0IRKXL'LEVEGXIVW
+
+                 'PEVMX]                                         PSK'SYRX                          %ZIVEKI
+
+                                                                       31(Orig. + Feas. + Clar. )                               PSK'SYRX
+
+'PEVMX]                                                                                                                       
+
+                 V!                                                                                V!
+                              T!                                                                                         T!
+                              Vs!                                                                                        Vs!
+                  '-!?A                                                                               '-!?A                   
+
+                 0IRKXL'LEVEGXIVW                                                                                 
+
+                                                                                                     0IRKXL'LEVEGXIVW
+
+Supplementary Figure 15: Relationship between Full Response Length and Idea Quality for o1. Hexbin
+plot showing the density distribution of generated ideas based on the full response length (characters, x-axis) versus
+the idea quality score (y-axis). The color intensity represents the number of ideas in each bin.
+
+                 3VMKMREPMX]         1IXVMGWZW6IWTSRWI0IRKXL
+                                        1SHIPSTIREMSQMRM
+                                                                         *IEWMFMPMX]
+
+                                                                                                                              
+
+3VMKMREPMX]                                                      PSK'SYRX                                                     PSK'SYRX
+                                                                          *IEWMFMPMX]
+                                                                                                                              
+
+                 V!                                                                                V!
+                      T!                                                                             T!
+                          Vs!                                                                                            Vs!
+                  '-!?A                                                                               '-!?A                   
+
+                                                                                                                 
+
+                 0IRKXL'LEVEGXIVW                                                                  0IRKXL'LEVEGXIVW
+
+                 'PEVMX]                                         PSK'SYRX                                     %ZIVEKI
+
+                                                                       31(Orig. + Feas. + Clar. )                               PSK'SYRX
+
+'PEVMX]      
+
+                                                                                                                              
+
+                 V!                                                                                V!
+                      T!                                                                             T!
+                          Vs!                                                                                            Vs!
+                  '-!?A                                                                               '-!?A                   
+
+                                                                                                                 
+
+                 0IRKXL'LEVEGXIVW                                                                  0IRKXL'LEVEGXIVW
+
+Supplementary Figure 16: Relationship between Full Response Length and Idea Quality for o1-mini.
+Hexbin plot showing the density distribution of generated ideas based on the full response length (characters, x-axis)
+versus the idea quality score (y-axis). The color intensity represents the number of ideas in each bin.
+
+                                                                 45
+                 3VMKMREPMX]         1IXVMGWZW6IWTSRWI0IRKXL
+                                        1SHIPSTIREMSQMRM
+                                                                         *IEWMFMPMX]
+
+                                                                                                   
+
+3VMKMREPMX]                                                      PSK'SYRX                                                                            PSK'SYRX
+                                                                            *IEWMFMPMX]                                                              
+                                                               
+
+                 V!                                                                                  V!
+                      T!
+                                                                                                       T!
+                               Vs!                                                                                   Vs!
+                  '-!?A                                                                                 '-!?A                 
+
+                 0IRKXL'LEVEGXIVW                                                                    0IRKXL'LEVEGXIVW
+
+                 'PEVMX]                                                                                        %ZIVEKI
+
+                                                                 PSK'SYRX                        
+
+'PEVMX]                                                                31(Orig. + Feas. + Clar. )                                                      PSK'SYRX
+
+                                                                                                   
+
+                 V!                                                                                  V!
+                          T!                                                                           T!
+                               Vs!                                                                                    Vs!
+                  '-!?A                                                                                 '-!?A                 
+
+                 0IRKXL'LEVEGXIVW                                                                    0IRKXL'LEVEGXIVW
+
+Supplementary Figure 17: Relationship between Full Response Length and Idea Quality for o3-mini.
+Hexbin plot showing the density distribution of generated ideas based on the full response length (characters, x-axis)
+versus the idea quality score (y-axis). The color intensity represents the number of ideas in each bin.
+
+                 3VMKMREPMX]         1IXVMGWZW6IWTSRWI0IRKXL
+                                     1SHIPSTIREMSQMRMLMKL
+
+                                                                         *IEWMFMPMX]
+
+3VMKMREPMX]                                                        PSK'SYRX                                                                          PSK'SYRX
+                                                                            *IEWMFMPMX]
+                                                                                                                                
+                                                                                                       V!
+                 V!
+                              T!                                                                                         T!
+                              Vs!                                                                                        Vs!
+                  '-!?A                                                                                 '-!?A                 
+
+                                                                                                                        
+
+                 0IRKXL'LEVEGXIVW                                                                    0IRKXL'LEVEGXIVW
+
+                 'PEVMX]                                           PSK'SYRX                          %ZIVEKI
+
+                                                                         31(Orig. + Feas. + Clar. )                                                    PSK'SYRX
+
+'PEVMX]                                                                                                                       
+
+                 V!                                                                                  V!
+                      T!
+                                                                                                                         T!
+                              Vs!                                                                                        Vs!
+                  '-!?A                                                                                 '-!?A                 
+
+                                                                                                                        
+
+                 0IRKXL'LEVEGXIVW                                                                    0IRKXL'LEVEGXIVW
+
+Supplementary Figure 18: Relationship between Full Response Length and Idea Quality for o3-mini-high.
+Hexbin plot showing the density distribution of generated ideas based on the full response length (characters, x-axis)
+versus the idea quality score (y-axis). The color intensity represents the number of ideas in each bin.
+
+                                                                   46
+               3VMKMREPMX]           1IXVMGWZW6IWTSRWI0IRKXL                                     *IEWMFMPMX]
+                                       1SHIPU[IRU[UF
+
+                                                                                                                       
+
+                                     
+
+3VMKMREPMX]                                                  PSK'SYRX                                                  PSK'SYRX
+                                                                      *IEWMFMPMX]
+               V!                                                                              V!
+                        T!                                                                       T!
+                        Vs!                                                                               Vs!
+                '-!?A                                                                             '-!?A                
+
+                                                                                                  
+
+                 0IRKXL'LEVEGXIVW                                                                0IRKXL'LEVEGXIVW
+
+               'PEVMX]                                       PSK'SYRX                          %ZIVEKI
+
+                                                                  31(Orig. + Feas. + Clar. )                             PSK'SYRX
+
+             
+
+'PEVMX]                                                                                                                
+               V!                                                                              V!
+                        T!                                                                       T!
+                        Vs!                                                                               Vs!
+                '-!?A                                                                             '-!?A                
+
+                                                                                                  
+
+                 0IRKXL'LEVEGXIVW                                                                0IRKXL'LEVEGXIVW
+
+Supplementary Figure 19: Relationship between Full Response Length and Idea Quality for qwq-32b.
+Hexbin plot showing the density distribution of generated ideas based on the full response length (characters, x-axis)
+versus the idea quality score (y-axis). The color intensity represents the number of ideas in each bin.
+
+               3VMKMREPMX]            1IXVMGWZW6IWTSRWI0IRKXL
+                                     1SHIPU[IRU[UFTVIZMI[
+
+                                                                      *IEWMFMPMX]
+
+                                                                                                                       
+
+3VMKMREPMX]    V!                                          PSK'SYRX                          V!                    PSK'SYRX
+                                                                     *IEWMFMPMX]
+                        T!                                                                       T!
+                        Vs!                                                                      Vs!
+                '-!?A                                                                             '-!?A                
+
+                                                                                                   
+
+               0IRKXL'LEVEGXIVW                                                                0IRKXL'LEVEGXIVW
+
+               'PEVMX]                                       PSK'SYRX                          %ZIVEKI
+
+                                                                   31(Orig. + Feas. + Clar. )                          
+
+'PEVMX]                                                                                                                  PSK'SYRX
+
+               V!                                                                              V!
+                        T!                                                                       T!
+                        Vs!                                                                               Vs!
+                '-!?A                                                                             '-!?A                
+
+                                                                                                   
+
+               0IRKXL'LEVEGXIVW                                                                0IRKXL'LEVEGXIVW
+
+Supplementary Figure 20: Relationship between Full Response Length and Idea Quality for
+qwq-32b-preview. Hexbin plot showing the density distribution of generated ideas based on the full response
+length (characters, x-axis) versus the idea quality score (y-axis). The color intensity represents the number of ideas in
+each bin.
+
+                                                             47
+9 Statistical Correlation Metrics
+
+    In this study, we employ two standard statistical measures to evaluate the relationships between
+different evaluation metrics: the Pearson correlation coefficient prq and Spearman's rank correlation
+coefficient pq. The choice of metric depends on the distribution of the underlying data, which was
+assessed using the Shapiro-Wilk test for normality.
+
+Pearson Correlation Coefficient prq Pearson's r is a parametric measure of the linear correlation
+between two sets of continuous data. It is utilized when the data distributions do not significantly
+deviate from normality (for instance, when evaluating the correlation between general intelligence
+scores and scientific ideation capabilities). For two variables X and Y with n paired observations
+pxi, yiq, the coefficient is calculated as the covariance of the two variables divided by the product of
+their standard deviations:
+
+r  "  in"1pxi ´ x¯qpyi ´ y¯q
+
+      an          pxi  ´  x¯q2ani"1pyi    ´  y¯q2
+
+             i"1
+
+where x¯ and y¯ represent the sample means of X and Y , respectively. The value of r ranges from ´1
+to 1, where 1 indicates a perfect positive linear correlation, 0 indicates no linear correlation, and ´1
+indicates a perfect negative linear correlation.
+
+Spearman's Rank Correlation Coefficient pq Spearman's  is a non-parametric measure of
+rank correlation. It assesses how well the relationship between two variables can be described using
+a monotonic function, making it robust to outliers and suitable for non-normally distributed data.
+
+    To calculate , the raw scores Xi and Yi are first converted to ranks rgpXiq and rgpYiq. The
+coefficient is then computed as the Pearson correlation between these rank variables. In cases where
+all n ranks are distinct integers (no tied ranks), the formula simplifies to:
+
+        "         1    ´  6  n       d2i
+
+                                i"1
+
+                          npn2 ´ 1q
+
+where di " rgpXiq ´ rgpYiq is the difference between the two ranks of each observation, and n is the
+total number of observations. Similar to Pearson's r, Spearman's  yields a value between ´1 and 1.
+
+                          48
+

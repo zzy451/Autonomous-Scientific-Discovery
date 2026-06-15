@@ -1,0 +1,946 @@
+Article
+
+The Virtual Lab of AI agents designs new
+SARS-CoV-2 nanobodies
+
+https://doi.org/10.1038/s41586-025-09442-9  Kyle Swanson1, Wesley Wu2, Nash L. Bulaong2, John E. Pak2 ✉ & James Zou1,2,3 ✉
+Received: 26 November 2024
+Accepted: 22 July 2025                      Science frequently benefits from teams of interdisciplinary researchers1–3, but many
+Published online: 29 July 2025              scientists do not have easy access to experts from multiple fields4,5. Although large
+                                            language models (LLMs) have shown an impressive ability to aid researchers across
+    Check for updates                       diverse domains, their uses have been largely limited to answering specific scientific
+                                            questions rather than performing open-ended research6–11. Here we expand the
+                                            capabilities of LLMs for science by introducing the Virtual Lab, an artificial intelligence
+                                            (AI)–human research collaboration to perform sophisticated, interdisciplinary
+                                            science research. The Virtual Lab consists of an LLM Principal Investigator agent
+                                            guiding a team of LLM scientist agents through a series of research meetings, with a
+                                            human researcher providing high-level feedback. We applied the Virtual Lab to design
+                                            nanobody binders to recent variants of SARS-CoV-2. The Virtual Lab created a novel
+                                            computational nanobody design pipeline that incorporates the protein language
+                                            model ESM, the protein folding model AlphaFold-Multimer and the computational
+                                            biology software Rosetta and designed 92 new nanobodies. Experimental validation
+                                            reveals a range of functional nanobodies with promising binding profiles across
+                                            SARS-CoV-2 variants. In particular, two new nanobodies exhibit improved binding to
+                                            the recent JN.1 or KP.3 variants12,13 while maintaining strong binding to the ancestral
+                                            viral spike protein, suggesting that these are suitable candidates for further investigation.
+                                            This work demonstrates how the Virtual Lab can rapidly make an impactful, real-world
+                                            scientific discovery.
+
+Interdisciplinary scientific research is complex and requires increas-       some prior work has explored the application of LLMs to research,
+ingly large teams of researchers with expertise in diverse fields of         these studies have often focused on a single scientific domain and have
+science1–3. For example, the paper by Jumper et al.14 that introduced        explored a relatively narrow set of research questions. For example,
+AlphaFold 2 and later led to the 2024 Nobel Prize in Chemistry15 included    ChemCrow is a framework that gives GPT-4 access to chemistry tools
+34 researchers with expertise across computer science, machine learn-        and can thus solve components of a chemistry research problem, but
+ing, bioinformatics and structural biology. Building and coordinating        it cannot tackle an open-ended, interdisciplinary research problem20.
+large teams of researchers who speak different scientific languages and      Another framework called Coscientist includes GPT-4-powered mod-
+have different scientific priorities is challenging4,5. Furthermore, it can  ules such as a planner and a web searcher to handle several aspects of
+be more difficult for under-resourced groups without connections             research21. However, Coscientist is primarily applied to relatively stand-
+to many experts across fields to engage in complex, interdisciplinary        ard chemistry tasks such as chemical synthesis planning as opposed
+science, especially when dedicated interdisciplinary research funding        to high-level research design across disciplines. By contrast, the AI
+is lacking16.                                                                Scientist aims to use LLMs to perform the entire scientific process from
+                                                                             generating a hypothesis to writing code to drafting a paper, but the
+   One source of broad scientific knowledge and insights that research-      applications are limited to narrow subfields of machine learning with-
+ers are now turning to is LLMs such as ChatGPT17 and Claude18. These         out real-world experiments or validation22. Si et al.23 similarly explore
+LLMs have been trained on vast quantities of text data, including scien-     the use of LLMs for research idea generation and demonstrate prom-
+tific literature, and they are therefore able to aid researchers in several  ising results when comparing LLM research ideas to human research
+ways, such as by answering science questions, summarizing scientific         ideas, but the applications are limited to the field of natural language
+papers and writing scientific code19. Several studies have explored the      processing and do not include any implementation of the research
+scientific capabilities of LLMs by measuring their ability to answer         ideas.
+scientific questions, and LLMs have shown high accuracy and can even
+match or outperform human scientists at these tasks6–11.                        Here we introduce the Virtual Lab to overcome these shortcomings
+                                                                             via an AI–human research collaboration that performs interdiscipli-
+   However, answering individual science questions is very different         nary science to investigate broad, complex research questions. In
+from engaging in sophisticated research that involves multi-step rea-        the Virtual Lab, a human researcher guides a set of interdisciplinary
+soning across disparate scientific fields with many unknowns. Although
+
+1Department of Computer Science, Stanford University, Stanford, CA, USA. 2Chan Zuckerberg Biohub, San Francisco, CA, USA. 3Department of Biomedical Data Science, Stanford University,
+Stanford, CA, USA. ✉e-mail: john.pak@czbiohub.org; jamesz@stanford.edu
+
+716 | Nature | Vol 646 | 16 October 2025
+a                                                                                                                           Immunologist
+                                                                                                                            Title, Expertise, Goal, Role
+b
+            Agenda                                                                                                          Machine Learning Specialist
+                                                                                                                            Title, Expertise, Goal, Role
+
+                                      Principal Investigator                                                                Computational Biologist
+                                      Title, Expertise, Goal, Role                                                          Title, Expertise, Goal, Role
+
+                    Human researcher                                                          Scientiﬁc Critic
+                                                                                              Title, Expertise, Goal, Role
+
+                    Guide  ×N                                                                 Response  Response                    Critique              Summary
+                                     Response
+
+                                                                                                                                                                   Answer
+
+                                                                                              Synthesis + Questions
+
+c
+                                                                                          ×N
+
+                                      Agenda                                                  Response
+
+                                                                                                                            Answer
+
+                                                                                              Critique
+
+Fig. 1 | The Virtual Lab architecture. a, The workflow for designing agents in                          provides its response, followed by a critique by the Scientific Critic agent, with
+the Virtual Lab. Each agent is specified with four criteria: Title, Expertise, Goal                     the PI agent then synthesizing the discussion and asking follow-up questions.
+and Role. The human researcher in the Virtual Lab specifies these criteria to                           Finally, after the N rounds of discussion, the PI agent summarizes the discussion
+define the PI agent and the Scientific Critic agent. Then, given a short description                    and provides an answer regarding the meeting agenda. c, The workflow for an
+of the project by the human researcher, the PI agent automatically creates                              individual meeting. The human researcher writes an agenda for the meeting
+several scientist agents to work on the project by specifying their Title, Expertise,                   specifying the topic of discussion. Then, the scientist agent tasked with the
+Goal and Role, using its own prompt as an example. b, The workflow for a team                           individual meeting provides a response to the agenda, which is critiqued by the
+meeting in the Virtual Lab. The human researcher writes an agenda for the                               Scientific Critic. In each round, the scientist agent improves its answer based
+meeting, specifying the topic of discussion. The PI agent begins the meeting by                         on feedback from the Scientific Critic. Finally, after the N rounds, the scientist
+providing initial thoughts and agenda questions as a guide for the remaining                            agent provides its final, improved answer.
+agents. Then, over the course of N rounds of discussion, each scientist agent
+
+AI agents24,25, such as a biologist or computer scientist, through a set                                We experimentally validated 92 mutant nanobodies designed by the
+of research meetings that tackle the different phases of a research                                     Virtual Lab, finding that more than 90% of the nanobodies were
+project. The AI agents are run by an LLM that powers their scientific                                   expressed and soluble, and that two promising candidates showed
+reasoning abilities with instructions that guide each agent’s scien-                                    unique binding profiles to the recent JN.1 and KP.3 spike RBD vari-
+tific expertise and interaction with the other agents and the human                                     ants12,13. This outcome illustrates the capability of the Virtual Lab’s
+researcher. The Virtual Lab architecture is versatile and can poten-                                    AI–human collaboration to execute a complex, interdisciplinary science
+tially be applied to a wide variety of interdisciplinary science research                               research project that translates to a validated result in the real world.
+projects.
+                                                                                                        Virtual Lab architecture
+   To demonstrate the abilities of the Virtual Lab, we use it to tackle a
+high-impact, real-world, open-ended scientific problem: designing new                                   We created the Virtual Lab as a collaboration between a human
+nanobodies that exhibit binding to the latest variant of SARS-CoV-2.                                    researcher and a team of LLM agents to conduct sophisticated, inter-
+There are many ways in which scientists could attempt to design such                                    disciplinary research (Fig. 1). The human researcher provides high-level
+nanobodies, so the Virtual Lab must reason across multiple subfields                                    guidance for the LLM agents, whereas the LLM agents both decide on
+of biology and computer science to make a series of interrelated deci-                                  general research directions and design solutions to specific research
+sions about how to best design these nanobodies. Through a series of                                    problems. Each agent is implemented by providing the underlying LLM
+meetings, the Virtual Lab develops a novel computational nanobody                                       with a prompt defining the agent, which includes its title, expertise,
+design workflow that incorporates the protein language model ESM26,                                     goal and role in the research project (Methods). The human researcher
+the protein folding model AlphaFold-Multimer27 and the computational                                    defines two general agents, a Principal Investigator (PI) and a Scientific
+biology software Rosetta28 to mutate existing nanobodies that bind to                                   Critic, and the PI agent then automatically creates a set of scientific
+the receptor-binding domain (RBD) of the spike protein of the ancestral                                 agents (for example, an immunologist) depending on the scientific
+(Wuhan) strain of SARS-CoV-2 to create nanobodies that bind to the                                      topic of interest to the human researcher (Fig. 1a).
+latest variants of the virus, for which an effective binder is lacking13.
+
+                                                                                                                            Nature | Vol 646 | 16 October 2025 | 717
+Article
+
+   The Virtual Lab performs research via meetings of two forms: team          a Phase 1: Team selection
+meetings and individual meetings (Methods). In both cases, the human
+researcher provides an initial agenda to guide the discussion, and             Human              Principal Immunologist                 Machine     Computational  Scientiﬁc
+then the agents discuss how to address the agenda. In team meetings           researcher        Investigator                             Learning        Biologist    Critic
+(Fig. 1b), all of the agents discuss a broad research question and work                                                                  Specialist
+together to come up with an answer. In individual meetings (Fig. 1c), a
+single scientific agent is given a more specific task to accomplish, such     b Phase 2: Project speciﬁcation                                        Summary
+as writing code for a machine learning model, and the agent works                                                                                    Modify nanobodies Ty1,
+either alone or in conjunction with the Scientific Critic agent, which               Team meeting                                                    H11-D4, Nb21 and VHH-72
+provides critical feedback. Both forms of meetings can be run multiple                                                                               to improve binding to KP.3
+times in parallel followed by an aggregation meeting to generate more
+robust answers (Extended Data Fig. 1). Thus, through a series of team         c Phase 3: Tools selection                                             Summary
+and individual meetings, the Virtual Lab tackles a complex research                                                                                  ESM, AlphaFold-Multimer,
+project.                                                                             Team meeting                                                    and Rosetta to design
+                                                                                                                                                     improved nanobodies
+Virtual Lab for nanobody design
+                                                                              d Phase 4: Tools implementation
+Given the flexibility of the Virtual Lab architecture, it can be applied
+to a wide variety of interdisciplinary research projects by adapting the               ESM                          Individual meetings              Summary
+agents and the flow of team and individual meetings to the goals and                                                                                 Python script to compute
+constraints of the specific project. As a demonstration in the domain         QVQLVE…     DVQLVE…                                                    ESM LLRs for single point
+of biological research, we applied the Virtual Lab with GPT-4o29 pow-                  ESM LLR = 3.65                                                mutations
+ering the agents to design antibodies or nanobodies that can bind to
+the spike protein of the KP.3 variant of SARS-CoV-2, which was one of         AlphaFold-Multimer Individual meetings                                 Summary
+the latest emerging variants at the time of this work13 (Fig. 2). This is                                                                            Python script to extract
+an important and challenging problem because SARS-CoV-2 is rapidly            DVQLVE…                                                                AF ipLDDT
+evolving resistance to existing antibody and nanobody therapies, so                              AF ipLDDT = 76.52
+quickly developing new antibody or nanobody therapies that overcome                                                                                  Summary
+this resistance and bind to the latest variants is crucial to treating those           Rosetta                      Individual meetings              Python and XML scripts to
+who are infected30,31. The Virtual Lab tackles this problem by rapidly                                                                               RS dG
+creating a computational workflow to design antibodies or nanobodies
+for the KP.3 variant of SARS-CoV-2, which can then be experimentally                   RS dG = –37.91
+validated by human biologists. The Virtual Lab created the computa-
+tional antibody/nanobody design process in five phases:                       e Phase 5: Workﬂow design                                              Summary
+(1) Team selection. An individual meeting with the PI to define a set of                                                                             Tool usage, number of
+                                                                                     Individual meeting                                              nanobodies to design and
+    scientist agents to work on the project (Fig. 2a).                                                                                               weighted score formula
+(2) Project specification. A team meeting to specify the project direction
+                                                                              Fig. 2 | Virtual Lab for nanobody design. The workflow used to apply the Virtual
+    by deciding on key high-level details (Fig. 2b).                          Lab to nanobody design for the KP.3 variant of SARS-CoV-2. a, The workflow
+(3) Tools selection. A team meeting to brainstorm machine learning            begins with the human researcher defining the PI and Scientific Critic agents by
+                                                                              specifying their Title, Expertise, Goal and Role. Then, in an individual meeting,
+    and/or computational tools for nanobody design (Fig. 2c).                 the PI agent creates a team of three scientist agents for the project. b, A team
+(4) Tools implementation. A series of individual meetings to imple-           meeting discusses the project specification, and the agents make decisions
+                                                                              such as whether to design antibodies or nanobodies. c, In another team meeting,
+    ment three components of the nanobody design workflow: ESM,               the agents suggest a set of computational tools for nanobody design, including
+    AlphaFold-Multimer and Rosetta (Fig. 2d). First, an individual meet-      ESM, AlphaFold-Multimer and Rosetta. d, In a series of individual meetings, the
+    ing with the PI to decide which scientist agent implements each           Machine Learning Specialist and Computational Biologist, with helpful feedback
+    component. Then, for each component, an individual meeting with           from the Scientific Critic, write code and subsequently improve that code for
+    the selected scientist agent and the Scientific Critic to write the code  the ESM, AlphaFold-Multimer and Rosetta components of the nanobody design
+    for that component followed by one (ESM and AlphaFold-Multimer)           workflow. e, In an individual meeting, the PI agent decides the workflow for
+    or two (Rosetta) individual meetings with the same scientist agent        using the three computational tools to design and select mutated nanobody
+    (no Scientific Critic) to correct errors in the code.                     candidates.
+(5) Workflow design. An individual meeting with the PI to determine
+    the workflow for applying these computational tools (Fig. 2e).
+    These phases are discussed in more detail in the Methods.
+
+Computational nanobody design                                                 with the input nanobody sequence, with higher ESM-computed LLRs
+                                                                              (ESM LLRs) indicating better (that is, more stable) nanobodies (see
+The Virtual Lab built a computational nanobody design workflow that           Supplementary Note 1 for a discussion of the LLR formula created by the
+takes existing nanobodies that bind the Wuhan strain of SARS-CoV-2            Virtual Lab). Then, the top 20 mutant sequences by ESM LLR are com-
+and adapts them to bind to the recent KP.3 variant (Fig. 3a). Specifi-        bined with the KP.3 RBD and processed by AlphaFold-Multimer, which
+cally, the workflow starts with four nanobodies—Ty132, H11-D433, Nb2134       predicts the structure of the complex of the two proteins and computes
+and VHH-7235—and uses three tools, ESM, AlphaFold-Multimer and                the interface predicted local distance difference test (AF ipLDDT) as a
+Rosetta, to iteratively introduce point mutations into those nanobodies       measure of the confidence of the binding interface between the mutant
+to improve their binding to the RBD of the spike protein from the KP.3        nanobody and the spike RBD. Next, those 20 predicted nanobody–spike
+variant of SARS-CoV-2 (Methods).                                              complexes are fed into Rosetta, which relaxes their structures and
+                                                                              computes the binding energy (RS dG). The ESM LLR, AF ipLDDT and
+   In the workflow, first, ESM computes the log-likelihood ratio (LLR)
+of each single point mutation in the nanobody sequence compared
+
+718 | Nature | Vol 646 | 16 October 2025
+a                       ESM         DVQLVE…                               AlphaFold                                                 Rosetta
+                                 ESM LLR = 3.65                           -Multimer
+         QVQLVE…
+
+                                                                                                     DVQLVE…                                        DVQLVE…
+                                                                                                AF ipLDDT = 76.52                                RS dG = –37.91
+
+                                                                                                DVQLVE…
+                                                                                                WS = 50.36
+
+b                                Input sequence               c                                                            d                     Round 1
+                                 Round 1                                                                                                         Round 2
+     0.4                         Round 2                          –50.0                                                        0.5               Round 3
+     0.3                         Round 3                          –47.5                                                                          Round 4
+     0.2                         Round 4                          –45.0                                                        0.4
+     0.1Density                                                   –42.5
+                                                         RS dG    –40.0                                             Density    0.3
+        0                                                         –37.5
+              0                                                   –35.0   Wild type                                          0.2
+                                                                          Round 1
+e                                                                         Round 2                                            0.1
+                                                                          Round 3
+       8                                                                  Round 4
+       6
+       4                                                                                                                     0
+
+                  2  4        6  8                                        70         75  80     85                                  45.0 47.5 50.0 52.5 55.0 57.5 60.0 62.5
+
+                     ESM LLR                                                         AF ipLDDT                                               WS
+
+                                                              f                                                     g
+
+                                 Wild type                          –52                         Wild type
+                                 Round 1                            –50                         Round 1
+                                 Round 2                            –48                         Round 2
+                                 Round 3                                                        Round 3
+                                 Round 4                                                        Round 4
+
+Count                                                         RS dG  –46
+
+                                                                     –44
+
+         2                                                           –42
+
+         0                                                           –40
+                 0 2.5 5.0 7.5 10.0 12.5 15.0
+                                                                           70.0 72.5 75.0 77.5 80.0 82.5 85.0 87.5
+                               ESM LLR versus wild type                                                 AF ipLDDT
+
+Fig. 3 | Nb21 nanobody analysis. a, Each round of nanobody design begins                 at the end of each round of optimization. d, The distribution of WS values of
+with ESM computing LLRs of single point mutations to the input sequence. For             the top five proposed nanobodies at the end of each round of optimization.
+the top 20 mutant sequences by ESM LLR, AlphaFold-Multimer predicts the                  e–g, Analysis of the final set of 23 mutant nanobodies selected across all
+structure of the nanobody and SARS-CoV-2 spike protein and computes the AF               rounds of optimization. e, The distribution of ESM LLRWT values for the selected
+ipLDDT. Rosetta relaxes the complex and computes the RS dG. The top five                 nanobodies and the wild-type nanobody. f, The AF ipLDDT and RS dG values of
+mutant nanobodies are selected via a WS for the next round of optimization.              the selected nanobodies and the wild-type nanobody. g, The structure (predicted
+b–d, Evolution of mutant nanobody scores across four rounds of optimization.             by AlphaFold-Multimer followed by Rosetta relaxation) of the RBD of the KP.3
+b, The distribution of ESM LLR values for proposed Nb21 mutant nanobodies                spike protein (cyan) and the nanobody mutant Nb21 I77V-L59E-Q87A-R37Q
+across each round of optimization, with ESM LLR values computed relative to              (green). Side chains are shown for interface residues (residues within 4 Å of the
+the input nanobody sequence from the previous round. Shown are the ESM LLR               opposite chain). Mutant nanobody residues are in pink. Structure images were
+values of the top 20 proposed mutant nanobodies per input nanobody. c, The               generated in PyMol 3.1.3.
+AF ipLDDT and the RS dG of the top five proposed nanobodies, selected by WS,
+
+RS dG scores are combined into a weighted score (WS) using the formula                   of ESM LLR, AF ipLDDT and RS dG. Figure 3b–g show relevant metrics
+WS = 0.2 × (ESM LLR) + 0.5 × (AF ipLDDT) − 0.3 × (RS dG). The 20 mutant                  for Nb21, and similar results were obtained for Ty1 (Extended Data
+nanobodies are ranked by WS and the top five are selected. Those five                    Fig. 2), H11-D4 (Extended Data Fig. 3) and VHH-72 (Extended Data Fig. 4).
+are then fed back into the pipeline to introduce another round of point                  Extended Data Table 1 shows scores for the wild-type sequence and
+mutations. The process is repeated four times total to introduce up to                   some of the mutant sequences that were selected for experimental
+four mutations. Finally, 23 mutated nanobodies are selected for each                     validation.
+of the four starting nanobodies (92 total) using a modified weighted
+score, WSWT. This score is the same as the WS except that it uses a modi-                   In each round, the top sequences selected by ESM LLR had LLR values
+fied ESM LLRWT, which is the ratio between the proposed nanobody                         in the range 1–8, indicating that each subsequent round of mutation
+(with one to four mutations) and the wild-type nanobody (with zero                       improved the overall quality of the nanobody compared with the input
+mutations) rather than the input nanobody from the previous round                        sequence from the previous round (Fig. 3b). This is according to ESM’s
+(with one less mutation).                                                                internal understanding of nanobody likelihood, which does not take
+                                                                                         the antigen (spike protein) into account but does understand overall
+   The successive rounds of optimization improved the quality of the                     nanobody quality. The top mutant nanobody sequences selected by
+proposed mutant nanobody sequences according to the three metrics                        ESM LLR in each round generally had improved structural complexes
+
+                                                                                                                             Nature | Vol 646 | 16 October 2025 | 719
+Article
+
+         a 50                                           b                   H11-D4                                 Nb21                    Ty1                                  VHH-72
+
+              40                                            100             A14P/Y88V/                100       I77V/L59E/               V32F/G59D/       30                   Unmutated
+              30                                                            R27C/W53Y                           Q87A/R37Q                                                      R27V/E31D/
+              20                                              50            Unmutated                                                    N54S/F32S                             Q5V/A14P
+              10                                                                                                Unmutated                                                      E31S/R27L
+                 Count (n)                                      0           A14P/Y88V/R27C                                  100
+                0
+                                                                 Intensity                                                                                20
+
+                                                                            A14P/Y88V/                50                                        Unmutated
+                                                                            R27C/R52S                                              50
+
+                                                                                                                                                                           10
+
+                                                                                                                                                V32C/G59D/D59Y
+
+                                                                                                      0                            0                      0
+
+                                 <5 5–1010–2525–40 >40                      Wuhan                               Wuhan
+                                    Titre (mg l–1)                              JN.1                                JN.1
+                                                                                    KP3                                 KP3
+
+                                                                                        KP2.3                               KP2.3
+                                                                                            BA.2                                BA.2
+                                                                                                 BSA                                 BSA
+
+                                                                                                                                                        Wuhan
+                                                                                                                                                            JN.1
+                                                                                                                                                                 KP3
+
+                                                                                                                                                                     KP2.3
+                                                                                                                                                                         BA.2
+                                                                                                                                                                             BSA
+
+                                                                                                                                                                                                 Wuhan
+                                                                                                                                                                                                     JN.1
+                                                                                                                                                                                                         KP3
+
+                                                                                                                                                                                                             KP2.3
+                                                                                                                                                                                                                 BA.2
+                                                                                                                                                                                                                      BSA
+
+         c                       I77V/L59E/Q87A/R37Q                                 V32F/G59D/N54S/F32S                              d    I77V/L59E/                          V32F/G59D/
+                                        versus Nb21                                           versus Ty1                                                                       N54S/F32S
+               150                                                                                                                         Q87A/R37Q
+                                                                            150                                                                                                     (Ty1)
+                                                                                                                Mutated                    (Nb21)
+                                                                            100                                         Wuhan RBD                                                   S32
+                 Intensity  100                                                                                         JN.1 RBD                                                              S54
+                                                                             50                                         MERS RBD
+                            50                                                                                          BSA           Q37            V77                                D59
+                                                                               0
+                            0                                                     –3 –2 –1 0 1 2 3 4 5          Unmutated                  E59
+                                                                                     log10[nanobody (ng ml–1)]          Wuhan RBD
+                               –3 –2 –1 0 1 2 3 4 5                                                                     JN.1 RBD
+                                 log10[nanobody (ng ml–1)]                                                              MERS RBD
+                                                                                                                        BSA
+
+                                                                                                                                           A87
+
+Fig. 4 | Experimental validation of Virtual Lab nanobodies. a, Histogram of                                     dilution of 1:2. c, Comparison of ELISA binding of mutants and their unmutated
+expression levels across 96 nanobodies. Titre is expressed as milligrams of                                     sequences. Data shown are 2 biological replicates at a 12-point serial dilution of
+soluble, periplasmic nanobody per litre of culture. b, ELISA binding profiles                                   purified nanobody, fitted to a 4-parameter logistic curve. d, Location of mutant
+of nanobodies to a panel of antigens. For each SARS-CoV-2 RBD protein and                                       nanobody mutations. Models of Nb21(I77V/L59E/Q87A/R37Q) and Ty1(V32F/
+BSA, individual spots represent the ELISA binding intensity of each of the 24                                   G59D/N54S/F32S) generated by the Virtual Lab using Alphafold-Multimer, are
+nanobodies. Unmutated nanobodies (H11-D4, Nb21, Ty1 and VHH-72) are shown                                       shown in ribbon representation (blue), with the complementarity-determining
+in black and nanobodies exhibiting high non-specific binding are shown in                                       region loops shown in orange. Mutations introduced by the Virtual Lab are
+shades of red (light pink, pink and magenta). The Nb21 mutant (I77V/L59E/                                       shown in pink and in red circles. Structure images were generated using
+Q87A/R37Q) and the Ty1 mutant (V32F/G59D/N54S/F32S) that bind to JN.1 are                                       ChimeraX51.
+shown in green. Data are the mean of 2 measurements at a nanobody lysate
+
+with the KP.3 spike protein, based on improved AF ipLDDT, improved                                              proteins (Extended Data Fig. 5). We first overexpressed each nanobody
+RS dG or both (Fig. 3c). The WS values of the top five sequences at the                                         in Escherichia coli and isolated soluble protein from the periplasm. The
+end of each round improved (Fig. 3d), even when using the ESM LLR                                               designed nanobodies show excellent expression, with 38% (35 out of 92)
+instead of the ESM LLRWT that corrects for the effect of multiple muta-                                         of the designs having titres of more than 25 mg of soluble, periplasmic
+tions and not just the most recent mutation.                                                                    nanobody per litre of cell culture (Fig. 4a and Extended Data Fig. 6) and
+                                                                                                                only 6.5% (6 out of 92) of the designs having a titre of less than 5 mg l−1.
+   After correction, the ESM LLRWT for the final selected 23 sequences                                          Thus, the mutations proposed by the Virtual Lab are well tolerated and
+showed a large improvement over the wild-type sequence (Fig. 3e).                                               do not cause large-scale misfolding or aggregation of the nanobodies.
+These selected sequences also had improved AF ipLDDT and RS
+dG scores compared with the wild type (Fig. 3f). An example of the                                                 To determine whether the 92 mutant nanobodies—23 each for Ty1,
+AlphaFold-Multimer-predicted structure (with Rosetta relaxation) of                                             H11-D4, Nb21 and VHH-72—and the 4 wild-type nanobodies could bind
+a top-scoring mutant nanobody is shown in Fig. 3g. Notably, the final                                           to the SARS-CoV-2 KP.3 spike RBD, we generated a spike RBD array that
+set of 23 selected nanobody sequences includes sequences with dif-                                              included the KP.3 RBD protein, its closely related parental strain ( JN.1
+ferent numbers of mutations (that is, from different rounds) and with                                           RBD), a closely related variant (KP.2.3 RBD), an early Omicron vari-
+a different balance of ESM LLRWT, AF ipLDDT and RS dG values, show-                                             ant (BA.2 RBD) and the ancestral strain (Wuhan RBD), which all four
+ing a diversity of potential improvements to the wild-type nanobody.                                            wild-type nanobodies show specificity for.
+
+   Applying this workflow to each of the 4 starting nanobodies resulted                                            Using this RBD array, we first profiled the binding of all 96 nanobod-
+in 92 final selected sequences (23 per starting nanobody). All 92 mutant                                        ies by indirect enzyme-linked immunosorbent assay (ELISA) to each
+nanobodies had a positive ESM LLR, indicating that ESM preferred the                                            antigen at a nanobody lysate dilution of 1:2 (Fig. 4b). For the H11-D4
+mutant over the wild type. Among the 92 mutant nanobodies, 78 (85%)                                             and Nb21 series, binding to Wuhan RBD is overwhelmingly retained
+had an AF ipLDDT greater than their respective wild-type nanobody, and                                          in 96% of mutant nanobodies (44 out of 46). Three mutants in the
+32 (35%) had an AF ipLDDT ≥80, which is in line with the AF ipLDDT scores                                       H11-D4 series have high non-specific binding to bovine serum albumin
+of high-accuracy AlphaFold-Multimer antibody–antigen structural                                                 (BSA) and all of the RBDs (Fig. 4b), possibly owing to the Virtual Lab
+models36. Furthermore, 60 (65%) had an RS dG lower (better) than their                                          inadvertently introducing an R27C mutation, which may be leading
+respective wild-type nanobody, and 23 (25%) of the 92 mutants had an                                            to disulfide crosslinking. In contrast to the H11-D4 and Nb21 mutants,
+RS dG ≤ −50, which is in line with strong Rosetta binding energy values                                         the Ty1 mutants, overall, exhibit poor binding to Wuhan RBD (10 out
+of nanobodies or antibodies in complex with the SARS-CoV-2 RBD28,37.                                            of 23 mutants). If position 32 of Ty1, selected by the Virtual Lab as the
+                                                                                                                first residue to mutate for each mutant, is not well tolerated, this could
+Experimental validation of nanobodies                                                                           result in the observed poor binding to Wuhan RBD compared to the
+                                                                                                                H11-D4 and Nb21 mutants. More than half of the VHH-72 mutants (13
+To validate the nanobodies designed by the Virtual Lab, we conducted                                            out of 22) retain binding to Wuhan RBD at levels similar to that observed
+a set of experiments to measure their binding to a panel of spike RBD                                           for the unmutated VHH-72 nanobody. Thus, the Virtual Lab designs
+
+720 | Nature | Vol 646 | 16 October 2025
+are, overall, well tolerated with respect to preserving their original        representing just 1.3% of all the words written by the Virtual Lab (Fig. 5b).
+specificity to Wuhan RBD.                                                     By contrast, the LLM agents wrote 122,462 words (98.7% of all words).
+                                                                              The ESM, AlphaFold-Multimer and Rosetta scripts were all written from
+   Of the 92 Virtual Lab-designed nanobodies, two show promising              scratch by the agents, and some complementary data wrangling and
+binding profiles beyond that of Wuhan RBD. The first, derived from            job scheduling scripts were written by the human researcher to handle
+Nb21(I77V/L59E/Q87A/R37Q) (that is, Nb21 with the mutations I77V,             the specific conditions of our compute infrastructure. All scripts were
+L59E, Q87A and R37Q), shows binding to JN.1 RBD in ELISAs with no             run by the human researcher in accordance with the decisions made
+non-specific binding to the Middle East respiratory syndrome coro-            by the agents.
+navirus (MERS-CoV) RBD and BSA (Fig. 4b–d). Maximal binding of the
+purified mutant nanobody to JN.1 RBD is less than that to Wuhan RBD,             The Virtual Lab meetings reveal interesting dynamics among the
+with a weaker half-maximal effective concentration (EC50) (2.0 ng ml−1        agents that affect their scientific discussions. For example, different
+versus 0.2 ng ml−1) revealing that this new binding to JN.1 RBD may           agents write different amounts depending on the meeting context
+be moderate. The wild-type Nb21 has very low ELISA binding to JN.1            (Fig. 5b–e and Extended Data Fig. 7). In team meetings, the PI tends
+RBD (Fig. 4b), suggesting that the Virtual Lab mutant has improved            to write the most, which is reasonable given that the PI not only has
+upon this existing very weak binding. Of note, this mutant also shows         to synthesize the agent responses after each round of discussion to
+increased binding to KP.3 RBD (average intensity = 3.5) compared with         guide the next round but also has to initiate the meeting and write a
+the other Nb21 mutants (average intensity = 0.06 ± 0.09, n = 22) and          summary at the end. The Scientific Critic writes more than the scientist
+the unmutated sequence (average intensity = 0.1) (Fig. 4b). We further        agents, because the Scientific Critic must address the limitations of
+confirmed this KP.3 binding enrichment in separate ELISA experiments.         every agents’ response, whereas each scientist agent is only concerned
+The second, a Ty1 mutant nanobody (V32F/G59D/N54S/F32S) not only              with providing its own opinions. The use of parallel meetings (Methods)
+improved binding to Wuhan RBD, as measured by ELISA, but also gained          and the inclusion of the Scientific Critic were particularly notable,
+moderate binding to JN.1 RBD (Fig. 4b–d). By contrast, we see no evi-         because they tended to lead to answers with improved consistency
+dence for even low levels of unmutated Ty1 nanobody binding to JN.1           and quality (Supplementary Note 3).
+RBD (further details in the Supplementary Note 2).
+                                                                              Discussion
+   Across the mutant nanobodies, the preserved and improved binding
+affinities for the Wuhan RBD (and JN.1 RBD for Nb21) relative to their        The Virtual Lab achieved its goal of engaging in a sophisticated, inter-
+respective wild-type forms is likely to be due to the effect of the Virtual   disciplinary science research project, as demonstrated by its design
+Lab’s use of ESM log likelihoods, which are agnostic to the antigen           of nanobodies with experimentally validated, diverse binding profiles
+but select for evolutionarily favourable nanobody sequences with              across multiple strains of SARS-CoV-2. The human researcher and team
+improved fitness38. By contrast, the Ty1 mutant that gained binding           of LLM agents in the Virtual Lab worked together through a series of
+affinity for the JN.1 RBD, which is the close ancestor of KP.3 sharing 99.1%  meetings to rapidly build a complex nanobody design pipeline that
+identity in the RBD39 (220 out of 222 residues), and the Nb21 mutant that     incorporates state-of-the-art machine learning and computational
+gained binding affinity for the KP.3 RBD and improved binding affinity        biology tools. Building this pipeline required knowledge of multiple
+for the JN.1 RBD may demonstrate the effect of the AlphaFold-Multimer         areas of science from immunology to protein folding to machine learn-
+and Rosetta scoring, which explicitly aim to predict binding affinity of      ing and required making decisions that involved reasoning across
+the mutant antibody to the KP.3 RBD, and thus by extension the closely        many aspects of the project simultaneously. The Virtual Lab success-
+related JN.1 RBD. Through the use of these three tools, the Virtual Lab       fully built and ran this nanobody design pipeline, starting with a set
+designed a set of promising nanobody candidates with potential for            of four well-characterized nanobodies (Ty1, H11-D4, Nb21 and VHH-
+further development.                                                          72) with potency and diverse binding modes against early variants of
+                                                                              SARS-CoV-232–35 and developing them into 92 nanobody candidates for
+Analyses of Virtual Lab interactions                                          recent variants of SARS-CoV-2 that were experimentally validated by
+                                                                              human researchers. These 92 nanobodies—efficiently selected from
+The Virtual Lab proceeded rapidly through the phases of the nano-             the trillions of nanobody sequences with 1–4 mutations—include can-
+body design workflow, with each meeting (or a set of parallel meetings)       didates for further development, such as a Nb21 mutant that enhances
+only taking the agents about 5–10 min (approximately US$1–2 GPT-4o            binding to the JN.1 RBD and gains binding to the KP.3 RBD and a Ty1
+token cost), for a total of around 1–2 h (US$10–20 GPT-4o token cost)         mutant that gains binding to the JN.1 RBD. This outcome serves as an
+to complete all of the phases of meetings. Factoring in the time to tune      example of how human researchers can partner with LLM agents in
+the prompts for each phase to elicit the most productive and relevant         the Virtual Lab to rapidly achieve a promising scientific result that can
+discussions and to review and debug the code written by the agents,           streamline further experiments. Even if the ultimate scientific decisions
+the Virtual Lab completed its nanobody workflow design in just a few          of the Virtual Lab agents are similar to those in the scientific literature,
+days, compared with an estimated period of several weeks for a human          the ability of the agents to quickly adapt those methods to the scien-
+researcher working independently to design and build the same pipe-           tific question at hand shows how LLM agents can potentially empower
+line from scratch. It then took about a week to run the computational         human researchers to do complex, interdisciplinary science even when
+nanobody design pipeline (ESM, AlphaFold-Multimer and Rosetta),               they do not have access to an expert panel of human scientists.
+followed by around six weeks to synthesize the nanobodies and two
+weeks for binding experiments.                                                   Previous work applying AI to science has generally treated AI meth-
+                                                                              ods as tools used by human researchers, such as AlphaFold to predict
+   Within the Virtual Lab discussions, the individual identities of the       protein structures14 or LLMs to answer scientific questions6–11, with
+agents contributed to a comprehensive, interdisciplinary discus-              the human researcher making all the high-level research decisions and
+sion with each agent providing a perspective based on their specific          design choices. By contrast, in the Virtual Lab, human researchers work
+background (Fig. 5a; additional analysis in Supplementary Note 3).            alongside LLM agents to design and run a research project. The strength
+By contrast, a team of generic agents without distinct scientific back-       of the Virtual Lab comes from its multi-agent24,40–42 architecture, which
+grounds tends to argue more among themselves owing to a lack of               empowers an AI–human scientific collaboration through a series of
+clearly defined roles, more often leading to suboptimal answers (see          meetings between a human researcher and a team of interdisciplinary
+ablation experiments in Supplementary Note 4). The human researcher           LLM agents. The different backgrounds of the various scientist agents
+only needs to provide minimal text input, writing just 1,596 words            leads to discussions that approach complicated scientific questions
+(defined as space-separate tokens) across all phases of the workflow,
+
+                                                                              Nature | Vol 646 | 16 October 2025 | 721
+Article
+
+                              a
+                                                  Principal Investigator: I want to emphasize the signi cance of our objective: to develop effective
+                                                  antibodies or nanobodies that can target the newest variant of the SARS-CoV-2 spike protein, while
+                                                  also maintaining activity against other circulating minor variants and past variants.
+
+   Immunologist: I recommend modifying existing nanobodies. We have a wealth of data on several
+   broadly neutralizing nanobodies that have shown ef cacy against diverse SARS-CoV-2 variants. This
+   approach reduces the risk and time associated with de novo design, leveraging existing structural
+   and binding data for rapid development.
+
+   Machine Learning Specialist: I agree with the emphasis on nanobodies… Their smaller size also
+   means fewer degrees of freedom, which can simplify machine learning model complexity… For
+   modifying existing nanobodies, we can utilize deep learning models trained on structural and
+   sequence data to predict changes that enhance binding af nity and cross-reactivity.
+
+   Computational Biologist: The machine learning models proposed are excellent, and coupling them
+   with molecular docking and simulations can create a robust pipeline. For instance, once a machine
+   learning model suggests modi cations, simulations can be used to validate and re ne these predictions
+   by assessing the energetic favorability and structural compatibility with the spike protein.
+
+   Scienti c Critic: We must remain cautious of over-reliance on computational predictions without
+   thorough cross-validation. Machine learning models can suffer from bias, particularly if trained on
+   limited or non-representative datasets.
+
+b                                                                              c
+                      Words written                                                 Words written in project speci cation
+
+   Scienti c Critic                       Principal Investigator                                                               Principal Investigator
+
+                     5.8% 25.8% 22.0%     1.3%                                                                          36.4%  0.5%
+
+   Immunologist                           Human researcher                     Scienti c Critic 21.0%                          Human researcher
+
+                                                                                                 14.8%
+
+Machine Learning       17.4% 27.6%                                                        12.8%                                Computational Biologist
+
+                                          Computational Biologist              Immunologist 14.5%
+
+   Specialist                                                                                    Machine Learning Specialist
+
+d  Words written in ESM                                                        e Words written in work ow design
+
+Machine Learning       66.0%              0.9%                                 Principal                                       Human researcher
+           Specialist
+                                          Human researcher
+                                                                               Investigator 89.3% 10.7%
+
+                       33.1%
+
+                                          Scienti c Critic
+
+Fig. 5 | Virtual Lab discussion analysis. a, Excerpts from a Virtual Lab team  Virtual Lab (human researcher and each LLM agent) across all phases of the
+meeting discussing the nanobody project specification. Each LLM agent          nanobody design process. c, The number of words written by the Virtual Lab in
+addresses the agenda from its own perspective based on its Title, Expertise,   the project specification phase. d, The number of words written by the Virtual
+Goal and Role, leading to a comprehensive and interdisciplinary discussion of  Lab in ESM implementation. e, The number of words written by the Virtual Lab
+the agenda. b, The number of words (space-separated tokens) written by the     in the workflow design phase.
+
+from multiple angles, thereby contributing to comprehensive answers.           generation46,47 or finetuning48 (see Supplementary Note 5 for an explo-
+Furthermore, the PI agent helps guide the discussions, make key deci-          ration of finetuning agents). Additionally, future work could explore
+sions and summarize conversations for the human researcher, whereas            developing sandboxed environments to enable the agents to indepen-
+the Scientific Critic agent pushes the other agents to improve their           dently install computational or AI tools and then write, debug and run
+answers to maximize the quality of their science. The inclusion of             code that uses those tools for a particular application.
+the human researcher is also vital as it enables the human to provide
+high-level guidance where the agents lack relevant context, such as               Another challenge faced by the Virtual Lab—and another inherent
+choosing readily available computational tools and introducing con-            limitation of LLMs—is the need for prompt engineering to obtain useful
+straints in experimental validation. The team and individual meetings          answers from the LLM agents49. Without appropriate guidance, the LLM
+provide two distinct forums for discussion in the Virtual Lab, enabling        agents can give vague answers. This means that the human researcher
+high-level conversations about research directions in the team meet-           may have to iterate on a meeting agenda several times before the Vir-
+ings and low-level implementation of specific solutions in the individual      tual Lab provides a desirable response (Supplementary Note 4). Even
+meetings. Throughout these meetings, the extended conversations                so, the role of prompt engineering in the Virtual Lab may shrink as the
+between interdisciplinary agents extracts knowledge and reasoning              underlying LLMs are further improved.
+abilities from the underlying LLM in a similar way to chain-of-thought
+prompting43 but with the added benefit of different agent perspectives            The current generation of LLMs is also known to sometimes provide
+and a human-in-the-loop to guide the conversations.                            incorrect or misleading answers (often termed hallucinations50). In the
+                                                                               context of the Virtual Lab, this could mean that the agents might invent
+   Although the Virtual Lab architecture provides useful structure for         incorrect scientific facts or citations. These limitations could be partly
+scientific discussions between the human researcher and the LLM                mitigated through multi-agent interactions such as having the critic
+agents, it has several limitations that are inherent in the current gen-       question the veracity of information provided by the other agents or
+eration of LLMs. For example, because LLMs are only trained on data up         by providing the agents with access to resources (such as the text of
+to a certain date (the ‘knowledge cutoff’), the agents may not be aware        scientific papers) to verify their knowledge. It is still important for the
+of the most up-to-date scientific literature and code44 (for example,          human researcher working with the Virtual Lab to verify key facts and
+knowledge about AlphaFold 345 versus AlphaFold-Multimer27). However,           decisions on the basis of trusted scientific sources.
+these issues could be fixed by providing the agents with relevant infor-
+mation and documentation, for example through retrieval-augmented                 Although we applied the Virtual Lab to nanobody design here, the
+                                                                               Virtual Lab architecture of LLM agents and meetings is agnostic to spe-
+                                                                               cific research questions or scientific domains. The Virtual Lab can be
+
+722 | Nature | Vol 646 | 16 October 2025
+implemented with any set of scientist agents and any human researcher,                               23. Si, C., Yang, D. & Hashimoto, T. Can LLMs generate novel research ideas? A large-scale
+and the conversations in the meetings will naturally adapt based on the                                     human study with 100+ NLP researchers. in 13th Int. Conf. Learn. Represent. https://
+human researcher’s agenda and the backgrounds of the agents. Even the                                       openreview.net/pdf?id=M23dTGWCZy (ICLR, 2025).
+underlying LLM that powers the agents could be exchanged, meaning
+that the Virtual Lab can improve its scientific abilities as LLMs grow                               24. Wu, Q. et al. AutoGen: enabling next-gen LLM applications via multi-agent conversation.
+more capable. However, even as the Virtual Lab expands its capabili-                                        In 1st Conf. Lang. Model. https://openreview.net/forum?id=BAakY1hNKS (COLM, 2024).
+ties, human scientists will still be vital to guide the AI agents in their
+choice of scientific questions, methodologies and analyses to match                                  25. Gao, S. et al. Empowering biomedical discovery with AI agents. Cell 187, 6125–6151
+the scientific values and interests of the human researchers. Although                                      (2024).
+the experimental results here are limited to the domain of nanobody
+design, with future work, we envision the Virtual Lab as a powerful                                  26. Lin, Z. et al. Evolutionary-scale prediction of atomic-level protein structure with a language
+framework for human researchers to engage in interdisciplinary sci-                                         model. Science 379, 1123–1130 (2023).
+ence research with the help of LLMs.
+                                                                                                     27. Evans, R. et al. Protein complex prediction with AlphaFold-Multimer. Preprint at https://
+Online content                                                                                              doi.org/10.1101/2021.10.04.463034 (2021).
+
+Any methods, additional references, Nature Portfolio reporting summa-                                28. Boorla, V. S. et al. De novo design and Rosetta‐based assessment of high‐affinity antibody
+ries, source data, extended data, supplementary information, acknowl-                                       variable regions (Fv) against the SARS‐CoV ‐2 spike receptor binding domain (RBD).
+edgements, peer review information; details of author contributions                                         Proteins Struct. Funct. Bioinformatics 91, 196–208 (2023).
+and competing interests; and statements of data and code availability
+are available at https://doi.org/10.1038/s41586-025-09442-9.                                         29. OpenAI et al. GPT-4o System Card. Preprint at https://doi.org/10.48550/arXiv.2410.21276
+                                                                                                            (2024).
+1. Porter, A. L. & Rafols, I. Is science becoming more interdisciplinary? Measuring and
+       mapping six research fields over time. Scientometrics 81, 719–745 (2009).                     30. Cao, Y. et al. Omicron escapes the majority of existing SARS-CoV-2 neutralizing antibodies.
+                                                                                                            Nature 602, 657–663 (2022).
+2. Sijp, W. Paper authorship goes hyper. Nature Index www.nature.com/nature-index/news/
+       paper-authorship-goes-hyper (2018).                                                           31. Planas, D. et al. Considerable escape of SARS-CoV-2 Omicron to antibody neutralization.
+                                                                                                            Nature 602, 671–675 (2022).
+3. Castelvecchi, D. Physics paper sets record with more than 5,000 authors. Nature https://
+       doi.org/10.1038/nature.2015.17567 (2015).                                                     32. Hanke, L. et al. An alpaca nanobody neutralizes SARS-CoV-2 by blocking receptor
+                                                                                                            interaction. Nat. Commun. 11, 4420 (2020).
+4. Specht, A. & Crowston, K. Interdisciplinary collaboration from diverse science teams can
+       produce significant outcomes. PLoS ONE 17, e0278043 (2022).                                   33. Huo, J. et al. Neutralizing nanobodies bind SARS-CoV-2 spike RBD and block interaction
+                                                                                                            with ACE2. Nat. Struct. Mol. Biol. 27, 846–854 (2020).
+5. Cohen, J. J. et al. Tackling the challenge of interdisciplinary energy research: a research
+       toolkit. Energy Res. Soc. Sci. 74, 101966 (2021).                                             34. Xiang, Y. et al. Versatile and multivalent nanobodies efficiently neutralize SARS-CoV-2.
+                                                                                                            Science 370, 1479–1484 (2020).
+6. Kung, T. H. et al. Performance of ChatGPT on USMLE: potential for AI-assisted medical
+       education using large language models. PLOS Digit. Health 2, e0000198 (2023).                 35. Wrapp, D. et al. Structural basis for potent neutralization of betacoronaviruses by single-
+                                                                                                            domain camelid antibodies. Cell 181, 1004–1015.e15 (2020).
+7. Singhal, K. et al. Large language models encode clinical knowledge. Nature 620, 172–180
+       (2023).                                                                                       36. Yin, R. & Pierce, B. G. Evaluation of AlphaFold antibody–antigen modeling with implications
+                                                                                                            for improving predictive accuracy. Protein Sci. 33, e4865 (2024).
+8. Laurent, J. M. et al. LAB-Bench: measuring capabilities of language models for biology
+       research. Preprint at https://doi.org/10.48550/arXiv.2407.10362 (2024).                       37. Yang, J. et al. Computational design and modeling of nanobodies toward SARS‐CoV‐2
+                                                                                                            receptor binding domain. Chem. Biol. Drug Des. 98, 1–18 (2021).
+9. Guo, T. et al. What can large language models do in chemistry? A comprehensive
+       benchmark on eight tasks. Adv. Neural Inf. Process. Syst. 36, 59662–59688 (2023).             38. Hie, B. L. et al. Efficient evolution of human antibodies from general protein language
+                                                                                                            models. Nat. Biotechnol. 42, 275–283 (2024).
+10. Sun, L. et al. SciEval: a multi-level large language model evaluation benchmark for
+       scientific research. Proc. AAAI Conf. Artif. Intell. 38, 19053–19061 (2024).                  39. Planas, D. et al. Escape of SARS-CoV-2 variants KP.1.1, LB.1, and KP3.3 from approved
+                                                                                                            monoclonal antibodies. Pathog. Immun. 10, 1 (2024).
+11. Stribling, D. et al. The model student: GPT-4 performance on graduate biomedical science
+       exams. Sci. Rep. 14, 5670 (2024).                                                             40. Chan, C.-M. et al. ChatEval: towards better LLM-based evaluators through multi-agent
+                                                                                                            debate. In 12th Int. Conf. Learn. Represent. https://openreview.net/forum?id=FQepisCUWu
+12. Kaku, Y. et al. Virological characteristics of the SARS-CoV-2 JN.1 variant. Lancet Infect. Dis.         (ICLR, 2024).
+       24, e82 (2024).
+                                                                                                     41. Liu, Z., Zhang, Y., Li, P., Liu, Y. & Yang, D. A dynamic LLM-powered agent network for
+13. Kaku, Y. et al. Virological characteristics of the SARS-CoV-2 KP.3, LB.1, and KP.2.3 variants.          task-oriented agent collaboration. In 1st Conf. on Lang. Model. https://openreview.net/
+       Lancet Infect. Dis. 24, e482–e483 (2024).                                                            forum?id=XII0Wp1XA9 (COLM, 2024).
+
+14. Jumper, J. et al. Highly accurate protein structure prediction with AlphaFold. Nature 596,       42. Talebirad, Y. & Nadiri, A. Multi-agent collaboration: harnessing the power of intelligent
+       583–589 (2021).                                                                                      LLM agents. Preprint at https://doi.org/10.48550/arXiv.2306.03314 (2023).
+
+15. Callaway, E. Chemistry Nobel goes to developers of AlphaFold AI that predicts protein            43. Wei, J. et al. Chain-of-thought prompting elicits reasoning in large language models.
+       structures. Nature 634, 525–526 (2024).                                                              In Proc. 36th International Conference on Neural Information Processing Systems
+                                                                                                            24824–24837 (Curran Associates, 2024).
+16. Bromham, L., Dinnage, R. & Hua, X. Interdisciplinary research has consistently lower
+       funding success. Nature 534, 684–687 (2016).                                                  44. Cheng, J. et al. Dated data: tracing knowledge cutoffs in large language models. In 1st Conf.
+                                                                                                            Lang. Model. https://openreview.net/forum?id=wS7PxDjy6m (COLM, 2024).
+17. OpenAI et al. GPT-4 Technical Report. Preprint at https://doi.org/10.48550/arXiv.2303.08774
+       (2024).                                                                                       45. Abramson, J. et al. Accurate structure prediction of biomolecular interactions with
+                                                                                                            AlphaFold 3. Nature 630, 493–500 (2024).
+18. Anthropic. The Claude 3 Model Family: Opus, Sonnet, Haiku (Anthropic, 2024).
+19. Simon, E., Swanson, K. & Zou, J. Language models for biological research: a primer.              46. Lewis, P. et al. Retrieval-augmented generation for knowledge-intensive NLP tasks.
+                                                                                                            Adv. Neural Inf. Process. Syst. 33, 9459–9474 (2020).
+       Nat. Methods 21, 1422–1429 (2024).
+20. M. Bran, A. et al. Augmenting large language models with chemistry tools. Nat. Mach.             47. Gao, Y. et al. Retrieval-augmented generation for large language models: a survey.
+                                                                                                            Preprint at https://doi.org/10.48550/arXiv.2312.10997 (2024).
+       Intell. 6, 525–535 (2024).
+21. Boiko, D. A., MacKnight, R., Kline, B. & Gomes, G. Autonomous chemical research with             48. Ding, N. et al. Parameter-efficient fine-tuning of large-scale pre-trained language models.
+                                                                                                            Nat. Mach. Intell. 5, 220–235 (2023).
+       large language models. Nature 624, 570–578 (2023).
+22. Lu, C. et al. The AI scientist: towards fully automated open-ended scientific discovery.         49. White, J. et al. A prompt pattern catalog to enhance prompt engineering with ChatGPT.
+                                                                                                            In Proc. 30th Conference on Pattern Languages of Programs 1–31 (Hillside Group, 2023).
+       Preprint at https://doi.org/10.48550/arXiv.2408.06292 (2024).
+                                                                                                     50. Ji, Z. et al. Survey of hallucination in natural language generation. ACM Comput. Surv. 55,
+                                                                                                            1–38 (2023).
+
+                                                                                                     51. Meng, E. C. et al. UCSF ChimeraX: tools for structure building and analysis. Protein Sci.
+                                                                                                            32, e4792 (2023).
+
+                                                                                                     Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in
+                                                                                                     published maps and institutional affiliations.
+
+                                                                                                     Springer Nature or its licensor (e.g. a society or other partner) holds exclusive rights to this
+                                                                                                     article under a publishing agreement with the author(s) or other rightsholder(s); author self-
+                                                                                                     archiving of the accepted manuscript version of this article is solely governed by the terms of
+                                                                                                     such publishing agreement and applicable law.
+
+                                                                                                     © The Author(s), under exclusive licence to Springer Nature Limited 2025
+
+                                                                                                     Nature | Vol 646 | 16 October 2025 | 723
+Article                                                                        a recommendation regarding the agenda, and answers the agenda
+                                                                               questions (if any). The human researcher in the Virtual Lab can then
+Methods                                                                        read just this final response by the PI agent, thus benefiting from the
+                                                                               extensive discussions among the LLM agents while only needing to read
+Virtual Lab architecture                                                       the final short response to understand the decisions that were made.
+The following sections describe the architecture of the Virtual Lab in
+more detail. All prompts are provided in Supplementary Note 6.
+
+Agents. Each LLM agent in the Virtual Lab is defined with a prompt that        Individual meeting. In individual meetings, a single agent tackles a
+specifies four key criteria: (1) Title, the name of the agent; (2) Expertise,  specific task that falls within their area of expertise, optionally with
+the scientific expertise the agent has; (3) Goal, the ultimate goal of the     critical feedback provided by the Scientific Critic agent. To start an
+agent in the context of the research project; and (4) Role, the specific       individual meeting, the human researcher in the Virtual Lab selects the
+role that the agent will play in the research project.                         agent that will participate. An automatically constructed prompt intro-
+                                                                               duces the agenda, agenda questions (if any), and agenda rules (if any)
+   The agents of the Virtual Lab are led by an agent called the PI. The PI     and then immediately asks the agent for a response. If the individual
+agent has expertise in artificial intelligence for scientific research with a  meeting has zero rounds (N = 0), then the agent provides a response
+goal of maximizing the scientific impact of research and with the role of      and the meeting ends. If the individual meeting includes one or more
+guiding the research project. The PI agent then automatically creates a        rounds (N ≥ 1), then in each round, the agent provides a response and
+set of scientist agents that are appropriate for the research project based    then the Scientific Critic agent provides critical feedback to improve
+on a short description of the project written by the human researcher.         the agent’s response. After these rounds, the selected agent responds
+The PI defines these scientist agents by specifying each agent’s title,        one more time to provide the final, improved answer.
+expertise, goal, and role, using its own prompt as an example.
+                                                                               Parallel meetings. To improve the expected quality and comprehen-
+   In addition to the PI and scientist agents, we find it useful to create     siveness of answers for a given meeting, the same meeting (same agents,
+an explicit critic agent to catch errors and oversights from the other         same prompts) can be run multiple times in parallel to produce multiple
+agents and to give critical feedback on answers provided by the other          answers (due to the inherent randomness in responses generated by
+agents52. Therefore, a Scientific Critic agent can be added to any team        LLMs). Then, an individual meeting with the appropriate agent (that
+meeting or individual meeting to provide critical feedback to the other        is, the PI agent for team meetings or the relevant scientist agent for
+agents.                                                                        individual meetings) is run to merge the summaries of each of the paral-
+                                                                               lel meetings into a single answer that incorporates the best elements
+Meetings. Interactions in the Virtual Lab happen through meetings,             from each of the parallel meetings. To boost creativity while produc-
+which can be either team meetings with all the agents or individual            ing a consistently high-quality answer, each of the parallel meetings is
+meetings with a single agent (and optionally the critic agent). Both types     run with a higher ‘creative’ temperature of 0.8 while the single merge
+of meetings share the following set of inputs that structure the meeting.      meeting is run with a lower ‘consistent’ temperature of 0.2, where tem-
+1. Agenda: (required) a description of the scientific topic to be discussed    perature is the LLM parameter that controls the amount of randomness
+                                                                               or uncertainty in the generation53,54. Parallel meetings are similar in
+   during the meeting.                                                         nature to the method of majority voting from multiple LLM queries55,
+2. Agenda questions: (optional) a set of questions that the agents must        but the Virtual Lab’s parallel meetings use a more complex and flexible
+                                                                               merging of answers via a meeting with an LLM agent.
+   answer by the end of the meeting.
+3. Agenda rules: (optional) a set of rules that the agents must follow         Virtual Lab for nanobody design
+                                                                               We applied the Virtual Lab to nanobody design in five phases using
+   during the meeting.                                                         GPT-4o (gpt-4o-2024-08-06) as the underlying LLM powering the
+4. Summaries: (optional) agent-written summaries of previous meet-             agents.
+
+   ings to provide information about previous decisions.
+5. Contexts: (optional) additional information (for example, scientific
+
+   papers) for the agents to take into consideration.
+6. Rounds: (required) the number of rounds (typically N = 3) of discus-
+
+   sion among the agents.
+
+   The team and individual meetings differ in terms of the agents that         Team selection. First, the Virtual Lab used an individual meeting with
+participate in the meeting and the prompts that guide the flow of the          the PI agent (run five times in parallel followed by a merge meeting)
+meeting.                                                                       to create a set of scientist agents for the project. The meeting agenda
+                                                                               contained a background prompt about antibody/nanobody design for
+Team meeting. In team meetings, all the agents (PI agent, scientist            the spike protein of the recent KP.3 SARS-CoV-2 variant and a request
+agents and Scientific Critic agent) participate in a conversation to           for the PI agent to select a team of three scientist agents for the project
+address a broad research topic. First, the human researcher writes             using the same agent structure (Title, Expertise, Goal, Role) as the PI’s
+an agenda for the team meeting along with any applicable agenda                own definition. The PI decided to create an Immunologist, a Machine
+questions and agenda rules. The team meeting then begins with an               Learning Specialist and a Computational Biologist.
+automatically constructed prompt that introduces the agents, agenda,
+agenda questions (if any), and agenda rules (if any) and describes the         Project specification. Next, in a team meeting, the full team of agents
+flow of the meeting, which involves multiple rounds of discussion. The         (PI, Immunologist, Machine Learning Specialist, Computational Biolo-
+PI agent is prompted to start the discussion by providing their initial        gist and Scientific Critic) discussed some of the specifics of the project
+thoughts and any guiding questions that they want to ask the team.             beyond the general background prompt. This meeting’s agenda asked
+Then, each scientist agent and the Scientific Critic agent are prompted        the agents to consider design choices such as whether to pursue anti­
+one-by-one (in an order set by the human researcher) to provide their          bodies or nanobodies and whether to modify existing antibodies or
+thoughts on the ongoing discussion given everything that has been said         nanobodies or design new ones de novo. This team meeting was run
+by the other agents. At the end of a round of discussion, the PI agent         in five parallel iterations followed by an individual merge meeting with
+synthesizes the points raised by each agent, makes decisions based on          the PI agent and the Scientific Critic to produce the best answer. Below
+agent input, and asks follow-up questions to further the discussion.           are some of the PI’s final merged answers to the agenda questions.
+After N rounds of discussion (with N set by the human researcher),             1. Will you design standard antibodies or nanobodies?
+the PI agent summarizes the discussion for future meetings, provides
+                                                                                  Agent answer: Nanobodies
+   Agent justification: Nanobodies offer superior stability, tissue         to a nanobody sequence based on the ESM LLR of the mutant sequence
+penetration, and ease of production, making them ideal for targeting        compared to the input sequence. The agent wrote a 130-line Python
+conserved and cryptic epitopes on the SARS-CoV-2 spike protein. This        script with three functions: a main function to run the script, a function
+choice is consistently supported across all summaries, emphasizing          to parse command-line arguments (for example, the input nanobody
+their advantages in accessing unique epitopes and potential for broad-      sequence), and a function that uses a pre-trained ESM model to com-
+spectrum activity.                                                          pute LLRs for point mutations.
+2. Will you design antibodies/nanobodies de novo or will you modify         AlphaFold-Multimer usage. To use AlphaFold-Multimer, the Virtual
+                                                                            Lab asked the Computational Biologist agent to write a Python script
+   existing antibodies/nanobodies (choose only one)?                        that processes a predicted nanobody–spike complex structure from
+   Agent answer: Modify existing nanobodies                                 AlphaFold-Multimer and outputs the ipLDDT, which is a measure of
+   Agent justification: Modifying existing nanobodies allows us to lev-     the confidence of the binding interface between the nanobody and
+erage established data, providing a quicker and more reliable path to       the spike protein that has previously been shown to correlate with
+developing broad-spectrum candidates. This approach is supported            antibody–antigen binding affinity36. Computing the ipLDDT values
+by the availability of structural data and known efficacy, which can        across multiple proposed nanobodies requires reading a PDB file for
+accelerate the optimization process. This decision is consistently          each predicted nanobody–spike complex and writing as output a sin-
+recommended across all summaries, highlighting the efficiency and           gle CSV file with the ipLDDT from every complex. The Computational
+feasibility of building on known frameworks.                                Biologist wrote a 144-line Python script with five functions: a main
+3. If modifying existing antibodies/nanobodies, which precise anti­         function to run the whole script, a function to check whether a PDB file
+   bodies/nanobodies will you modify (please list 3–4)?                     contains a protein structure in the correct format, a function to identify
+   Agent answer: Ty1, H11-D4, Nb21, VHH-72                                  the residues in the interface between the two proteins, a function to
+   Agent justification: These candidates have demonstrated strong           calculate the ipLDDT, and a function to run the ipLDDT calculation on
+neutralizing capabilities against SARS-CoV-2 and have available struc-      every PDB file in a directory and save the results to a single CSV file.
+tural data, making them excellent candidates for modification. Ty1          Rosetta usage. The Computational Biologist was also responsible for
+and H11-D4, for example, have shown efficacy in neutralizing multiple       using Rosetta to calculate nanobody–spike binding energies as a metric
+variants, while Nb21 and VHH-72 offer unique binding properties that        for measuring the quality of each mutated nanobody. Given a PDB file
+can be optimized for broader cross-reactivity. Literature supports          with a predicted nanobody–spike structure from AlphaFold-Multimer,
+their efficacy, with studies indicating their ability to bind conserved     the Computational Biologist was asked to write a RosettaScripts XML
+epitopes and maintain stability under various conditions.                   file to load the PDB file, calculate the binding energy, and save the bind-
+                                                                            ing energy to a Rosetta score file. Additionally, the agent was asked to
+   Given these decisions, the following phases proceeded with nano-         write a Python script that loads all the score files in a directory and saves
+body design by modifying the four nanobodies suggested by the Virtual       a CSV file with the binding energy of every nanobody–spike complex.
+Lab (Ty1, H11-D4, Nb21 and VHH-72), which are specific to the ancestral
+Wuhan spike protein, to increase their affinity to the spike protein of        The Computational Biologist wrote a 30-line RosettaScripts XML file
+the KP.3 variant of SARS-CoV-2. Furthermore, the Virtual Lab suggested      that first relaxes the nanobody–spike structure and then computes the
+prioritizing “enhancing interactions with the RBD of the spike protein      binding energy (dG-separated in Rosetta terminology) of the interface
+by altering residues that contribute to binding affinity”, so the Virtual   using the REF15 scoring function. The Computational Biologist then
+Lab subsequently focused on developing nanobodies that bind to the          wrote a 71-line Python script with two functions: a main function to
+RBD of the KP.3 spike protein.                                              run the whole script and a function to extract the binding energy score
+                                                                            from a given Rosetta score file.
+Tools selection. After specifying the project direction, the Virtual Lab
+next needed to pick a set of computational tools to modify the selected     Workflow design. Finally, the Virtual Lab ran an individual meeting with
+nanobodies. To accomplish this, the Virtual Lab ran a team meeting          the PI agent to design a workflow that uses ESM, AlphaFold-Multimer
+asking the agents to list several machine learning and/or computa-          and Rosetta to design nanobodies. For each of the four starting nano­
+tional tools that could be used for nanobody design, with emphasis          body candidates, the PI agent decided to run ESM to evaluate all pos-
+on pre-trained models for simplicity. Similar to the project selection      sible point mutations and then to select the top 20 mutations by ESM
+meeting, this team meeting was run with five parallel iterations followed   LLR. Each of these 20 mutant sequences would then be evaluated by
+by a merge meeting with the PI and Scientific Critic. The agents decided    both AlphaFold-Multimer and Rosetta. These 20 sequences would
+to use ESM, AlphaFold-Multimer and Rosetta as the components of its         then be ranked and the top five would be selected using the following
+computational nanobody design workflow.                                     weighted score designed by the PI agent:
+
+Tools implementation. With the project well-specified and a set of                 WS = 0.2 × (ESM LLR) + 0.5 × (AF ipLDDT) − 0.3 × (RS dG)
+computational nanobody tools chosen, the Virtual Lab then worked
+on implementing these tools for nanobody design. For each tool, the         where WS is the weighted score, ESM LLR is the ESM LLR between
+Virtual Lab selected the most appropriate scientist agent via an indi-      the mutated sequence and the input sequence, AF ipLDDT is the
+vidual meeting with the PI. Then for each tool, the Virtual Lab ran an      AlphaFold-Multimer ipLDDT binding interface confidence, and RS
+individual meeting with the selected scientist agent and the Scientific     dG is the Rosetta dG-separated binding energy value. The PI correctly
+Critic (five parallel meetings followed by a merge meeting run by the       uses a negative weight for the Rosetta value because a more negative
+scientist agent) to implement the tool. These meetings included a set       binding energy is better. The top five sequences according to WS then
+of agenda rules that specify how code should be written—for example,        serve as the starting sequences for the next round of mutation, with
+with good documentation and without leaving functions undefined.            four rounds of mutation in total depending on time constraints and
+These initial implementations contained small errors that needed            improvements in the WS across rounds.
+correction, so the Virtual Lab then ran a single follow-up individual
+meeting (no parallelization or Scientific Critic) with the scientist agent  Nanobody design workflow
+to automatically fix all the errors that arose.                             The Virtual Lab ran the nanobody design computational workflow
+ESM usage. The Machine Learning Specialist agent was responsible for        to design improved nanobody candidates for the KP.3 variant of
+writing a Python script to identify the most promising point mutations      SARS-CoV-2. The workflow was run independently for each of the four
+                                                                            nanobodies suggested by the agents: Ty1, H11-D4, Nb21 and VHH-72.
+Article
+
+Below, we describe the workflow in terms of a single starting nanobody             Multiplexed ELISA measurements were performed as generally
+for simplicity.                                                                 described61. Array patterns were printed using a sciFLEXARRAYER
+                                                                                S12. Each RBD and BSA (negative control) spot was printed in dupli-
+   The Virtual Lab workflow began with round 0, which evaluated the             cate, using up to three 200–250 pl drops for each spot, at a source
+wild-type nanobody sequence without introducing any mutations. ESM              concentration of 50 μg ml−1. Unpurified lysates or purified nanobod-
+LLR was assigned to zero because the wild-type nanobody sequence                ies were diluted in PBS-T (5% skim milk in PBS + 0.05% Tween-20), and
+was unmodified. Then, the Virtual Lab ran AlphaFold-Multimer (via               RBD-bound nanobodies were recognized by anti-Alpaca IgG VHH
+LocalColabFold56 version 1.5.5) on the nanobody sequence and the                secondary antibodies ( Jackson ImmunoResearch, 128-065-230 (for
+sequence of the RBD of the KP.3 spike protein to produce a predicted            H11-D4, Nb21, and VHH-72 series) and 128-065-232 (for Ty1 series)) at
+structure of the complex. Next, the Virtual Lab computed the AF ipLDDT          1:10,000 dilution in PBS-T.
+as a measure of confidence in the binding interface of the complex.
+Then, the Virtual Lab ran Rosetta (version 3.14) to relax the complex           Reporting summary
+and compute the RS dG value as an estimate of the binding energy.               Further information on research design is available in the Nature Port-
+Finally, the Virtual Lab computed the WS of the wild-type nanobody.             folio Reporting Summary linked to this article.
+
+   In round 1, the Virtual Lab ran ESM to calculate the ESM LLR of every        Data availability
+possible single point mutation to the wild-type nanobody. The top 20
+mutated sequences by ESM LLR were retained. For each of these 20                The computational results of the nanobody design pipeline and the
+mutated sequences, AlphaFold-Multimer and Rosetta were applied in               experimental ELISA binding data are available on Zenodo at https://
+the same way as for the wild-type sequence. The Virtual Lab then com-           doi.org/10.5281/zenodo.15331308 (ref. 62).
+puted the WS for each of the 20 mutated sequences and selected the top
+5 sequences for the next round. In rounds 2–4, the Virtual Lab applied          Code availability
+the same procedure but now starting with 5 input sequences to the
+ESM LLR script, resulting in 100 top mutated sequences (20 proposed             Code for the Virtual Lab, full discussions by the agents and computa-
+mutant sequences for each of the 5 input sequences). These sequences            tional scores for the designed nanobodies are available on GitHub at
+were analysed by AlphaFold-Multimer and Rosetta, and the top 5 of               https://github.com/zou-group/virtual_lab and on Zenodo at https://
+these 100 sequences were selected at the end of each round by their WS.         doi.org/10.5281/zenodo.15320491 (ref. 63).
+
+   After running all four rounds of mutation, the Virtual Lab needed to         52. Yuksekgonul, M. et al. Optimizing generative AI by backpropagating language model
+select the best mutated nanobody sequences across all four rounds for                  feedback. Nature 639, 609–616 (2025).
+experimental validation. Doing so required using a slight variant of the
+WS. In each round, the WS used the ESM LLR calculated as a ratio between        53. Peeperkorn, M., Kouwenhoven, T., Brown, D. & Jordanous, A. Is temperature the creativity
+the proposed mutant sequence and the input sequence for that round                     parameter of large language models? In 15th Int. Conf. Comput. Creativity (Association
+(that is, an output sequence from the previous round), which differ by                 for Computational Creativity, 2024).
+a single mutation. However, in order to fairly select the best sequences
+across different rounds with different numbers of mutations, an alternate       54. Chen, H. & Ding, N. Probing the “creativity” of large language models: can models
+ESM LLR, the ESM LLRWT, was computed between each proposed mutant                      produce divergent semantic association? In Findings of the Association for Computational
+sequence (with one to four mutations) and the wild-type sequence. The                  Linguistics: EMNLP 2023 (eds Bouamor, H., Pino, J. & Bali, K.) 12881–12888 (Association for
+Virtual Lab then scored all mutant nanobody sequences using the WSWT,                  Computational Linguistics, 2023).
+which is the weighted score calculated using the ESM LLRWT in place of the
+ESM LLR. The top 23 mutant sequences were selected for experimental             55. Chen, L. et al. Are more LLM calls all you need? Towards the scaling properties of
+validation along with the wild-type sequence as a point of reference.                  compound AI systems. In 38th Annual Conference on Neural Information Processing
+                                                                                       Systems (NeurIPS, 2024).
+Nanobody experimental validation
+                                                                                56. Mirdita, M. et al. ColabFold: making protein folding accessible to all. Nat. Methods 19,
+Codon-optimized DNA sequences for the SARS-CoV-2 spike RBDs from                       679–682 (2022).
+JN.1, KP.3, KP.2.3 and BA.213,57, modified to include a N-terminal signal pep-
+tide (MFVFLVLLPLVSSQ), a C-terminal Gly-Ser linker and 6× His tag and a         57. Kumar, S., Karuppanan, K. & Subramaniam, G. Omicron (BA.1) and sub-variants (BA.1.1, BA.2,
+stop codon, were synthesized and cloned into pTwist-CMV-BetaGlobin                     and BA.3) of SARS-CoV-2 spike infectivity and pathogenicity: A comparative sequence
+(Twist Biosciences). For the MERS-CoV RBD, the codon-optimized DNA                     and structural-based computational assessment. J. Med. Virol. 94, 4780–4791 (2022).
+sequence for the RBD was modified to include an N-terminal signal pep-
+tide (MYRMQLLSCIALSLALVTNS), C-terminal Gly-Ser linker, 8× His tag,             58. Puccinelli, R. R. et al. Open-source milligram-scale, four channel, automated protein
+AviTag sequences and a stop codon. RBDs were transiently expressed                     purification system. PLoS ONE 19, e0297879 (2024).
+in Expi293 cells (Thermo Fisher Scientific, not authenticated or tested
+for mycoplasma contamination), and purified in parallel58 by Ni-NTA             59. Saez, N. J. & Vincentelli, R. in Structural Genomics: General Applications (ed. Chen, Y. W.)
+Excel affinity chromatography followed by desalting into PBS and                       33–53 (Humana Press, 2014).
+concentration. The purification of Wuhan SARS-CoV-2 RBD has been
+described previously58. Codon-optimized DNA sequences for nanobod-              60. Pardon, E. et al. A general protocol for the generation of Nanobodies for structural
+ies, modified to include an N-terminal pelB signal peptide (MKYLLP                     biology. Nat. Protoc. 9, 674–693 (2014).
+TAAAGLLLLAAQPAMA), a C-terminal 6× His tag and a stop codon, were
+synthesized and cloned into pET-29b(+) (Twist Biosciences). Nanobodies          61. Byrum, J. R. et al. MultiSero: an open-source multiplex-ELISA platform for measuring
+were expressed in 96-well and 24-well format in auto-induction media59,                antibody responses to infection. Pathogens 12, 671 (2023).
+and periplasmic fractions from 4 ml of cell culture pellets were released
+by mild lysis in 400 μl PBS, following methods as described60. Titres of        62. Swanson, K., Wu, W., Bulaong, N., Pak, J. & Zou, J. Virtual Lab Data. Zenodo https://doi.org/
+soluble nanobody were estimated from periplasmic fractions by SDS–                     10.5281/zenodo.15331309 (2025).
+PAGE densitometry analysis of nanobody bands using a BSA standard
+curve. Selected nanobodies were scaled up at 100 ml in shake flasks             63. Swanson, K. Virtual Lab Code. Zenodo https://doi.org/10.5281/zenodo.15320492 (2025).
+and purified from periplasmic fractions by Ni-NTA chromatography
+followed by desalting into PBS and concentration.                               Acknowledgements The authors thank E. Simon and J. Silberg for their discussions of this
+                                                                                work. K.S. acknowledges support from the Knight-Hennessy Scholarship and the Stanford
+                                                                                Bio-X Fellowship. J.Z. is supported by funding from the Chan Zuckerberg Biohub, San Francisco.
+
+                                                                                Author contributions K.S. built the Virtual Lab framework and applied the Virtual Lab to create
+                                                                                and run the computational nanobody design pipeline. W.W., N.L.B. and J.E.P. conducted the
+                                                                                nanobody validation experiments. J.E.P. and J.Z. supervised the work. All authors contributed
+                                                                                to the manuscript.
+
+                                                                                Competing interests The authors declare no competing interests.
+
+                                                                                Additional information
+                                                                                Supplementary information The online version contains supplementary material available at
+                                                                                https://doi.org/10.1038/s41586-025-09442-9.
+                                                                                Correspondence and requests for materials should be addressed to John E. Pak or
+                                                                                James Zou.
+                                                                                Peer review information Nature thanks Bryan Briney, Olivier Elemento, Eric Topol and the
+                                                                                other, anonymous, reviewer(s) for their contribution to the peer review of this work. Peer
+                                                                                reviewer reports are available.
+                                                                                Reprints and permissions information is available at http://www.nature.com/reprints.
+Extended Data Fig. 1 | Virtual Lab parallel meetings. The workflow for parallel    The answer from each parallel meeting is then provided to an agent in an
+meetings in the Virtual Lab. A set of meetings (team or individual) is run with    individual meeting (with a low LLM temperature for consistency), and this
+the same agenda and agents but with different randomness in the LLM underlying     agent is asked to merge the best components of the answers from each parallel
+the agents (with a high LLM temperature to encourage creativity across meetings).  meeting into a single optimal answer.
+Article
+
+Extended Data Fig. 2 | Ty1 nanobody analysis. a-c, Evolution of mutant            set of 23 mutant nanobodies selected across all rounds of optimization. d, The
+nanobody scores across four rounds of optimization. a, The distribution of        distribution of ESM LLRWT values (ESM LLR of the mutant sequence compared
+ESM LLR values for proposed Ty1 mutant nanobodies across each round of            to the wild-type sequence) for the selected nanobodies and the wild-type
+optimization, with ESM LLR values computed relative to the input nanobody         nanobody. e, The AF ipLDDT and RS dG values of the selected nanobodies and
+sequence from the previous round. Shown are the ESM LLR values of the top 20      the wild-type nanobody. f, The structure (predicted by AlphaFold-Multimer
+proposed mutant nanobodies per input nanobody. b, The AF ipLDDT and the           followed by Rosetta relaxation) of the receptor binding domain of the KP.3
+RS dG of the top five proposed nanobodies, selected by WS, at the end of each     spike protein (cyan) and the nanobody mutant Ty1 V32F-G59D-N54S-F32S
+round of optimization. c, The distribution of WS values of the top five proposed  (green). Side chains are shown for interface residues (within 4Å of the opposite
+nanobodies at the end of each round of optimization. d-f, Analysis of the final   chain). Mutant nanobody residues are in pink. (PyMol 3.1.3, Schrödinger, LLC.).
+Extended Data Fig. 3 | H11-D4 nanobody analysis. a-c, Evolution of mutant         set of 23 mutant nanobodies selected across all rounds of optimization. d, The
+nanobody scores across four rounds of optimization. a, The distribution of        distribution of ESM LLRWT values (ESM LLR of the mutant sequence compared
+ESM LLR values for proposed H11-D4 mutant nanobodies across each round of         to the wild-type sequence) for the selected nanobodies and the wild-type
+optimization, with ESM LLR values computed relative to the input nanobody         nanobody. e, The AF ipLDDT and RS dG values of the selected nanobodies and
+sequence from the previous round. Shown are the ESM LLR values of the top 20      the wild-type nanobody. f, The structure (predicted by AlphaFold-Multimer
+proposed mutant nanobodies per input nanobody. b, The AF ipLDDT and the           followed by Rosetta relaxation) of the receptor binding domain of the KP.3
+RS dG of the top five proposed nanobodies, selected by WS, at the end of each     spike protein (cyan) and the nanobody mutant H11-D4 A14P-Y88V-K74T-R27L
+round of optimization. c, The distribution of WS values of the top five proposed  (green). Side chains are shown for interface residues (within 4Å of the opposite
+nanobodies at the end of each round of optimization. d-f, Analysis of the final   chain). Mutant nanobody residues are in pink. (PyMol 3.1.3, Schrödinger, LLC.).
+Article
+
+Extended Data Fig. 4 | VHH-72 nanobody analysis. a-c, Evolution of mutant         set of 23 mutant nanobodies selected across all rounds of optimization. d, The
+nanobody scores across four rounds of optimization. a, The distribution of        distribution of ESM LLRWT values (ESM LLR of the mutant sequence compared
+ESM LLR values for proposed VHH-72 mutant nanobodies across each round of         to the wild-type sequence) for the selected nanobodies and the wild-type
+optimization, with ESM LLR values computed relative to the input nanobody         nanobody. e, The AF ipLDDT and RS dG values of the selected nanobodies and
+sequence from the previous round. Shown are the ESM LLR values of the top 20      the wild-type nanobody. f, The structure (predicted by AlphaFold-Multimer
+proposed mutant nanobodies per input nanobody. b, The AF ipLDDT and the           followed by Rosetta relaxation) of the receptor binding domain of the KP.3
+RS dG of the top five proposed nanobodies, selected by WS, at the end of each     spike protein (cyan) and the nanobody mutant VHH-72 R27Y-E31D-F37V-D89E
+round of optimization. c, The distribution of WS values of the top five proposed  (green). Side chains are shown for interface residues (within 4Å of the opposite
+nanobodies at the end of each round of optimization. d-f, Analysis of the final   chain). Mutant nanobody residues are in pink. (PyMol 3.1.3, Schrödinger, LLC.).
+Extended Data Fig. 5 | Workflow for nanobody experimental validation.
+The four categories of experiments (nanobody expression, SARS-CoV-2 spike
+RBD expression, antigen array printing, and multiplexed ELISA) are enclosed in
+boxes. The ribbons representation of a nanobody (blue) and the RBD (purple)
+were rendered with ChimeraX51 from PDB accession numbers 6XZN and 6M0J,
+respectively. Unique RBD and control proteins of the array are shown as colored
+spots with fiducial markers shown as black spots. Portions of this figure were
+created in BioRender. Bulaong, N. (2025) https://BioRender.com/6du2yu4.
+Article
+
+Extended Data Fig. 6 | Nanobody expression. Periplasmic extracts containing     unmutated parental nanobodies highlighted in yellow and the 92 Virtual Lab
+soluble nanobody were separated by reducing SDS-PAGE and stained with           designs unhighlighted. The expected molecular weight for the nanobodies
+Coomassie blue. An equal volume of periplasmic extract (8.3 uL) was loaded for  (~15 kDa) is enclosed in a red box. Uncropped images of samples analyzed once
+each sample. Identifiers for each nanobody (A1 to H12) are shown, with the 4    by SDS-PAGE are shown.
+Extended Data Fig. 7 | Virtual Lab additional discussion analysis. a, The      of words written by the Virtual Lab in Rosetta implementation. d, The number
+number of words (space-separated tokens) written by the Virtual Lab (human     of words written by the Virtual Lab in the team selection phase. e, The number
+researcher and each LLM agent) in the tools selection phase. b, The number of  of words written by the Virtual Lab in implementation agent selection.
+words written by the Virtual Lab in AlphaFold implementation. c, The number
+Article
+
+Extended Data Table 1 | Nanobody score analysis
+
+The scores of each wild-type nanobody and examples of the mutant nanobodies that were
+selected for experimental validation. ESM LLRWT: ESM log-likelihood ratio between the mutant
+nanobody sequence and the wild-type sequence. AF ipLDDT: AlphaFold-Multimer interface
+pLDDT for the nanobody-spike complex. RS dG: Rosetta dG-separated binding energy value.
+WSWT: Weighted score combining ESM LLRWT, AF ipLDDT, and RS dG.
+

@@ -1,0 +1,191 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Section 5: Residual Connection (Focus Area)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \section moved to main.tex
+\label{sec:residual_connection}
+
+The residual connection is the most fundamental yet most underappreciated design element of the Transformer. The standard formulation $x_{l+1} = x_l + F(x_l)$~\cite{he2016deep} provides a gradient highway that enables deep network training, but recent research reveals that this ``identity addition'' constitutes a significant information bottleneck. This section systematically examines improvements to the standard residual connection along three orthogonal dimensions: Width (expanding residual stream bandwidth), Depth (enabling cross-layer dense or dynamic connections), and Control (scaling, gating, and initialization of residual contributions). We frame our analysis through the residual stream abstraction~\cite{elhage2021mathematical}---viewing the residual connection as a $d$-dimensional information bus from which each sub-layer reads and to which it writes.
+
+%% ============================
+%% Foundation
+%% ============================
+\subsection{Foundation: From ResNet to the Residual Stream}
+\label{subsec:residual_foundation}
+
+\paragraph{ResNet and its descendants.}
+He et al.~\cite{he2016deep} introduced $y = F(\mathbf{x}, \{W_i\}) + \mathbf{x}$, solving the degradation problem in deep CNNs. The key insight is that learning a residual mapping $F(\mathbf{x}) = H(\mathbf{x}) - \mathbf{x}$ is easier than learning the target mapping $H(\mathbf{x})$ directly, especially when the optimal transformation is close to identity. Highway Networks~\cite{srivastava2015highway} preceded ResNet with parametric gating $y = T(\mathbf{x}) \cdot H(\mathbf{x}) + (1-T(\mathbf{x})) \cdot \mathbf{x}$; ResNet can be viewed as a Highway Network with gates fixed to 1. DenseNet~\cite{huang2017densely} extended skip connections to connect each layer to all preceding layers, directly inspiring DenseFormer~\cite{pagliardini2024denseformer} and MUDDFormer~\cite{xiao2025muddformer}. Stochastic Depth~\cite{huang2016deep} randomly drops entire residual blocks during training, teaching the network to function under partial layer absence---a principle later adopted as LayerDrop~\cite{fan2020reducing} for Transformers.
+
+\paragraph{The residual stream abstraction.}
+Elhage et al.~\cite{elhage2021mathematical} reconceptualized the residual connection as a persistent $d$-dimensional ``residual stream''---an information bus threaded through all layers. Each sub-layer (attention, FFN) reads from this stream and writes back to it. This abstraction, originating from mechanistic interpretability, provides a powerful lens for understanding and improving residual connections. Dynamical systems analyses~\cite{neuroscirs2025} reveal that activations in the residual stream exhibit strong inter-layer continuity and attractor-like dynamics, suggesting that the stream functions as an evolving trajectory in representation space. Causal analyses of multi-stream architectures~\cite{penghc2026} have identified functional specialization across streams---some primarily relay low-level features while others integrate high-level semantics.
+
+%% ============================
+%% Width
+%% ============================
+\subsection{Width: Multi-Stream Residual Connections}
+\label{subsec:residual_width}
+
+The standard residual connection maintains a single $d$-dimensional stream. The Width dimension asks: is one lane sufficient, or should the highway have multiple lanes?
+
+\subsubsection{Hyper-Connections and Manifold-Constrained Extensions}
+
+\textbf{Hyper-Connections (HC)}~\cite{zhu2024hyper} expand the single residual stream into $n$ parallel copies $\{x^1, x^2, \ldots, x^n\}$, governed by two families of learnable matrices: depth-connections (controlling skip weights across layers) and width-connections (enabling information exchange among the $n$ streams within a layer). The update at layer $l$ is:
+\begin{equation}
+\begin{bmatrix} x_l^1 \\ \vdots \\ x_l^n \end{bmatrix} = W_l^{\text{mix}} \begin{bmatrix} x_{l-1}^1 \\ \vdots \\ x_{l-1}^n \end{bmatrix} + \begin{bmatrix} 0 \\ \vdots \\ F_l(\text{select}(x_{l-1})) \end{bmatrix}, \quad W_l^{\text{mix}} \in \mathbb{R}^{n \times n}
+\label{eq:hc}
+\end{equation}
+HC first systematized the concept of ``residual stream width'' and demonstrated significant gains in both dense and MoE pre-training with negligible overhead. However, the spectral norm of the mixing matrices can exceed 1, causing exponential signal growth in deep networks and training instability at scale.
+
+\textbf{mHC (Manifold-Constrained HC)}~\cite{xie2025mhc}, developed by DeepSeek-AI, addresses this instability by projecting mixing matrices onto the Birkhoff polytope---the set of doubly stochastic matrices, which guarantees spectral norm $\leq 1$. The Birkhoff--von Neumann theorem ensures that this polytope is a well-defined convex body whose vertices are permutation matrices. Projection is achieved via Sinkhorn--Knopp iterative normalization. mHC was deployed as a core component of DeepSeek-V3.
+
+\textbf{go-mHC}~\cite{gomhc2026} replaces the iterative Sinkhorn--Knopp projection with a direct parameterization using generalized orthostochastic matrices, achieving $O(d^3)$ complexity (far below the factorial cost of exact Birkhoff parameterization) while providing a single hyperparameter $s$ that continuously interpolates between computational efficiency and full polytope expressiveness.
+
+Table~\ref{tab:residual_taxonomy} summarizes the HC evolution and places it in the broader taxonomy.
+
+\begin{table}[t]
+\centering
+\caption{Taxonomy of residual connection improvements along three dimensions.}
+\label{tab:residual_taxonomy}
+\small
+\begin{tabular}{llllc}
+\hline
+\textbf{Dimension} & \textbf{Objective} & \textbf{Representative Methods} & \textbf{Core Mechanism} & \textbf{Overhead} \\
+\hline
+\multirow{3}{*}{Width} & \multirow{3}{*}{Stream capacity} & HC / mHC / go-mHC & Multi-channel residual & $<1\%$ \\
+ & & RMT~\cite{mak2025residual} & Outer-product memory matrix & Low \\
+ & & Parallel Attn (GPT-J/PaLM) & Dual write sources & $\sim 0\%$ \\
+\hline
+\multirow{4}{*}{Depth} & \multirow{4}{*}{Cross-layer topology} & DenseFormer / MUDDFormer / DCA & Dense aggregation & $0.2$--$1\%$ \\
+ & & AttnRes~\cite{kimi2026attnres} & Depth-wise attention & $\sim 0\%$ \\
+ & & ResFormer~\cite{zhou2024value} & Value residual learning & $<0.1\%$ \\
+ & & MoD~\cite{raposo2024mixture} / ADEPT / DEER & Dynamic depth & Variable \\
+\hline
+\multirow{3}{*}{Control} & \multirow{3}{*}{Stream amplitude/direction} & ReZero / SkipInit / Fixup & Zero initialization & Negligible \\
+ & & DeepNorm~\cite{wang2024deepnet} / LNS & Depth scaling & Negligible \\
+ & & ORU~\cite{oh2025revisiting} & Orthogonal update & Low \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Residual Matrix Transformers}
+
+While HC expands width by replicating hidden-state vectors, the Residual Matrix Transformer (RMT)~\cite{mak2025residual} proposes a more fundamental change: replacing the residual vector $\mathbf{h} \in \mathbb{R}^d$ with a residual matrix $\mathbf{M} \in \mathbb{R}^{d_r \times d_r}$. Drawing on associative memory theory~\cite{kohonen1972correlation}, RMT uses outer-product operations for storage ($\mathbf{M} \leftarrow \mathbf{M} + \mathbf{k}\mathbf{v}^\top$) and matrix--vector multiplication for retrieval ($\mathbf{o} = \mathbf{M}\mathbf{q}$). The residual bandwidth $\propto d_r^2$ is decoupled from model width, and variance propagation is more stable than vector addition.
+
+\subsubsection{Parallel Sub-layer Structure}
+
+Parallel Attention~\cite{wang2021gptj,chowdhery2022palm} represents a different flavor of width expansion: rather than widening the stream itself, it increases the number of simultaneous writers. In the standard serial design, $x' = x + \mathrm{Attn}(\mathrm{LN}(x))$, then $x'' = x' + \mathrm{MLP}(\mathrm{LN}(x'))$; in the parallel design, $x' = x + \mathrm{Attn}(\mathrm{LN}(x)) + \mathrm{MLP}(\mathrm{LN}(x))$. For large models ($>$8B parameters), where residual branch contributions are small relative to the stream, the two formulations are nearly equivalent. The parallel design improves hardware utilization by eliminating a sequential dependency and has been adopted by PaLM~\cite{chowdhery2022palm} and Gemma.
+
+%% ============================
+%% Depth
+%% ============================
+\subsection{Depth: Cross-Layer Dense and Dynamic Connections}
+\label{subsec:residual_depth}
+
+Standard residual connections enforce a strictly sequential information flow: each layer receives input only from its immediate predecessor. The Depth dimension explores richer inter-layer topologies.
+
+\subsubsection{Cross-Layer Attention}
+
+\textbf{MRLA}~\cite{fang2023cross} (Multi-Head Recurrent Layer Attention) treats layer outputs as a sequence and applies attention across layers, allowing each layer to dynamically retrieve information from all predecessors. \textbf{RealFormer}~\cite{he2020realformer} introduces residual connections at the attention-score level: $A_l = \mathrm{softmax}(Q_l K_l^\top / \sqrt{d} + \mathrm{Prev}_{l-1})$, propagating attention patterns rather than hidden states. Cross-Layer Attention (CLA)~\cite{brandon2024reducing} extends KV sharing from the intra-layer dimension (MQA/GQA) to the inter-layer dimension, grouping adjacent layers to share KV activations for inference efficiency.
+
+\textbf{AttnRes}~\cite{kimi2026attnres}, deployed in Kimi (Moonshot AI), replaces the fixed additive residual with depth-wise softmax attention over previous layer outputs:
+\begin{equation}
+  x_{l+1} = \sum_{i=0}^{l} \alpha_i \cdot h_i, \quad
+  \alpha_i = \mathrm{softmax}\!\left(\frac{\mathbf{q}_l^\top \mathbf{k}_i}{\sqrt{d}}\right).
+  \label{eq:attnres}
+\end{equation}
+AttnRes diagnoses the PreNorm dilution problem: Pre-LN accumulates all layer outputs with unit weight, causing hidden-state magnitudes to grow uncontrollably and early-layer contributions to be diluted. \textbf{Block AttnRes} mitigates memory overhead by dividing $L$ layers into $N$ blocks, applying standard residuals within blocks and attention aggregation across blocks, reducing memory from $O(Ld)$ to $O(Nd)$. Block AttnRes was integrated into Kimi Linear (48B parameters, 3B active), yielding a 1.25$\times$ compute-equivalent performance improvement.
+
+\subsubsection{Dense Connections}
+
+\textbf{DenseFormer}~\cite{pagliardini2024denseformer} replaces per-layer additive residuals with Depth-Weighted Averaging (DWA): $x_{l+1} = \sum_{i=0}^{l} w_{l,i} \cdot h_i$, where $w_{l,i}$ are learnable scalar weights. This transports the DenseNet philosophy into Transformers.
+
+\textbf{MUDDFormer}~\cite{xiao2025muddformer} (Multiway Dynamic Dense) introduces two critical innovations. First, it decouples the block input into four independent streams for Q, K, V, and residual, recognizing that each requires different cross-layer information. Second, aggregation weights are dynamically generated from the current hidden state rather than being fixed scalars. Formally, each of the four streams is aggregated from all preceding layers:
+\begin{equation}
+Q_l = \phi_Q(h_0, \ldots, h_{l-1}), \; K_l = \phi_K(\cdot), \; V_l = \phi_V(\cdot), \; R_l = \phi_R(\cdot), \quad x_l = R_l + \mathrm{Attn}(Q_l, K_l, V_l)
+\label{eq:muddformer}
+\end{equation}
+MUDDPythia-2.8B matches Pythia-6.9B performance, a 1.8--2.4$\times$ compute efficiency improvement, with only 0.23\% additional parameters.
+
+\textbf{DeepCrossAttention (DCA)}~\cite{heddes2025deepcrossattention} further enriches the cross-layer aggregation by using three independent Generalized Residual Networks (GRNs) to generate Q, K, and V through depth-wise cross-attention. DCA achieves up to 3$\times$ training convergence speedup and reduces loss spikes, adding only $\sim$0.2\% parameters.
+
+The progression from DenseFormer to MUDDFormer to DCA reflects a clear trend: from static to dynamic weights, and from a unified residual stream to decoupled per-function streams.
+
+\subsubsection{Value Residual Learning}
+
+ResFormer~\cite{zhou2024value} addresses a fine-grained information loss within the attention mechanism itself. In deep Transformers, attention weights tend to concentrate on a few tokens (attention concentration), degrading output diversity. ResFormer adds a residual from the first layer's Value matrix: $U_n = \frac{1}{2} A_n (V_n + V_1)$, preserving ``raw'' information throughout the network. SVFormer extends this with learnable mixing weights.
+
+\subsubsection{Dynamic Depth and Adaptive Computation}
+
+Not all tokens require the same computational depth. \textbf{Universal Transformer}~\cite{dehghani2019universal} applies a single shared-weight block iteratively with adaptive halting, achieving theoretical Turing completeness. \textbf{LayerDrop}~\cite{fan2020reducing} randomly drops entire layers during training, enabling elastic inference at arbitrary depth without retraining. \textbf{Mixture-of-Depths (MoD)}~\cite{raposo2024mixture} learns a top-$k$ routing mechanism: selected tokens pass through the full Attn+FFN block, while unselected tokens traverse the identity residual connection directly. The crucial insight is that ``not computing'' is equivalent to ``taking the residual shortcut.''
+
+Recent advances in early exit extend this paradigm: \textbf{ADEPT}~\cite{adept2026} achieves token-level early exit with decoupled KV cache generation, yielding up to 25\% efficiency gains; \textbf{TIDE}~\cite{tide2026} attaches lightweight routers to pre-trained models without retraining; and \textbf{DEER}~\cite{deer2025} applies early exit at the reasoning-chain level, dynamically terminating chain-of-thought generation to combat overthinking. \textbf{FlexiDepth}~\cite{luo2025flexidepth} freezes original model parameters and trains only per-layer routers and adapters, achieving 25\% layer skipping on Llama-3-8B with maintained performance.
+
+\subsubsection{Layer Redundancy Analysis}
+
+\textbf{ShortGPT}~\cite{men2024shortgpt} introduces the Block Influence (BI) metric:
+\begin{equation}
+  \mathrm{BI}(l) = 1 - \cos(\mathbf{h}_l, \mathbf{h}_{l+1}),
+  \label{eq:block_influence}
+\end{equation}
+measuring how much each layer changes its input. Low BI indicates near-identity behavior---high redundancy. Directly pruning layers with the lowest BI in LLaMA-2-70B (80 layers) causes minimal degradation, confirming that many layers are effectively redundant.
+
+\textbf{The Curse of Depth}~\cite{sun2025curse} provides a theoretical explanation: under Pre-LN, activation variance grows as $\Theta(L)$, causing the Jacobian of deep layers to approach the identity matrix. Deep layers thus perform negligible computation despite consuming full resources. This phenomenon has been empirically confirmed in Llama, Mistral, DeepSeek, and Qwen. The proposed remedy, \textbf{LayerNorm Scaling (LNS)}, scales each layer's LN output by $1/\sqrt{l}$, suppressing exponential variance growth and recovering deep-layer effectiveness from 130M to 7B parameters.
+
+%% ============================
+%% Control
+%% ============================
+\subsection{Control: Gating, Scaling, and Initialization}
+\label{subsec:residual_control}
+
+The Control dimension addresses a precise question: is the fixed unit weight in $x + F(x)$ optimal?
+
+\subsubsection{Zero Initialization}
+
+The principle of identity bias at initialization---making each residual block behave as an identity mapping at the start of training---is foundational to deep network stability. \textbf{ReZero}~\cite{bachlechner2021rezero} introduces $x_{l+1} = x_l + \alpha_l \cdot F(x_l)$ with $\alpha_l$ initialized to 0, ensuring initial dynamical isometry. \textbf{SkipInit}~\cite{de2020batch} reveals that the true role of Batch Normalization is to shrink residual branch activations by $\sim 1/\sqrt{L}$ at initialization, an effect reproducible with a simple scalar initialized to zero. \textbf{Fixup}~\cite{zhang2019fixup} eliminates normalization entirely through carefully designed initialization ($L^{-1/(2m-2)}$ scaling). \textbf{T-Fixup}~\cite{huang2020tfixup} specializes this to Transformers, scaling V/output projections and FFN second-layer weights by $(9N)^{-1/4}$, enabling 200-layer Transformers without warmup or normalization. \textbf{Admin}~\cite{liu2020understanding} adaptively dampens the ``amplification effect'' in residual branches via two-phase initialization (profiling then rescaling).
+
+\subsubsection{Depth Scaling and Normalization Coupling}
+
+Training extremely deep Transformers (hundreds to thousands of layers) requires explicit depth-aware scaling of residual contributions. \textbf{DeepNorm}~\cite{wang2024deepnet} modifies the Post-LN residual as:
+\begin{equation}
+  x_{l+1} = \mathrm{LN}(\alpha \cdot x_l + F(x_l)),
+  \label{eq:deepnorm}
+\end{equation}
+where $\alpha = (2L)^{1/4}$ and sub-layer weights are initialized with $\beta = (8L)^{-1/4}$. By amplifying the residual path relative to the sub-layer output, DeepNorm maintains bounded updates per layer and successfully trains 1,000-layer Transformers.
+
+The choice between Pre-LN and Post-LN remains a central design tension. \textbf{Pre-LN}~\cite{xiong2020layer} provides a clean gradient highway (gradients flow through the shortcut without passing through LN), eliminating warmup requirements, but suffers from the Curse of Depth. \textbf{Post-LN} preserves representation diversity but exhibits gradient instability. \textbf{ResiDual}~\cite{xie2023residual} resolves this by maintaining two parallel residual paths---one Pre-LN (for stability) and one Post-LN (for expressivity). \textbf{Sandwich LayerNorm}~\cite{ding2021cogview} adds LN at both ends of the residual branch to suppress value explosion. \textbf{NormFormer}~\cite{shleifer2022normformer} inserts additional normalization points after attention and within FFN to fix gradient magnitude mismatches. \textbf{LayerNorm Scaling}~\cite{sun2025curse} scales the $l$-th layer's LN output by $1/\sqrt{l}$, offering a lightweight fix for Pre-LN's variance explosion.
+
+\subsubsection{Gating-Based Control}
+
+Gate mechanisms provide dynamic, content-dependent control over residual flow. \textbf{Highway Transformer}~\cite{chai2020highway} applies Highway-style gating: $x_{l+1} = g(x_l) \cdot x_l + (1-g(x_l)) \cdot F(x_l)$, where Self-Dependency Units generate gate signals. \textbf{GTrXL}~\cite{parisotto2020stabilizing} (Gated Transformer-XL) uses GRU-style gating with a bias term that initially favors pass-through, designed for the non-stationarity of reinforcement learning. \textbf{LAuReL}~\cite{menghani2024laurel} (Learned Augmented Residual Layer) generalizes $x + F(x)$ by adding learnable ``read'' and ``write'' interfaces to the residual stream, analogous to memory bus operations, with variants including Read-Write and Low-Rank transformations.
+
+\subsubsection{Orthogonal Residual Update}
+
+\textbf{ORU}~\cite{oh2025revisiting} (Orthogonal Residual Update) offers a geometric perspective on layer redundancy. The residual output $F_l(x_l)$ is decomposed into parallel and orthogonal components:
+\begin{equation}
+  F_l^{\parallel} = \frac{\langle F_l(x_l), x_l \rangle}{\|x_l\|^2}\,x_l, \quad
+  F_l^{\perp} = F_l(x_l) - F_l^{\parallel}, \quad
+  x_{l+1} = x_l + F_l^{\perp}(x_l).
+  \label{eq:oru}
+\end{equation}
+By discarding the parallel component---which merely amplifies existing features without introducing new information---ORU ensures that each layer contributes only novel representational directions. This is the geometric counterpart to ShortGPT's observation: high cosine similarity between layer inputs and outputs (low BI) corresponds to a dominant parallel component. ORU improves generalization on ResNetV2 and ViT.
+
+%% ============================
+%% Theory
+%% ============================
+\subsection{Theoretical Frontiers}
+\label{subsec:residual_theory}
+
+\paragraph{Residual stream duality.}
+A Transformer decoder evolves along two ordered dimensions: sequence position and layer depth. Recent theoretical work~\cite{residualduality2026} establishes a duality theorem: causal residual attention reading along the depth axis is operationally equivalent to sliding-window attention along the sequence axis. This ``two-axis view'' provides a unifying framework for DenseFormer, Hyper-Connections, and Cross-Layer Attention, revealing them as different implementations of the same underlying operator.
+
+\paragraph{Birkhoff polytope constraints.}
+The mHC/go-mHC line of work~\cite{xie2025mhc,gomhc2026} constrains residual mixing matrices to the Birkhoff polytope (doubly stochastic matrices), providing a principled bridge from unconstrained learning to manifold-constrained optimization with guaranteed signal boundedness.
+
+\paragraph{Skipless Transformers.}
+A foundational question is whether residual connections are necessary at all. Recent work~\cite{he2023deep} demonstrates that deep Transformers can be stably trained without skip connections through specialized initialization, challenging the assumption that residual connections are indispensable. Whether residual connections serve as convenient training aids or fundamental architectural components remains open.
+
+\paragraph{Causal shift.}
+The residual connection's identity mapping preserves the current token's representation, yet the next-token prediction objective requires information about the next token~\cite{causalshift2026}. This structural tension---the ``causal shift''---suggests that the identity shortcut may actively interfere with autoregressive prediction when consecutive tokens are semantically dissimilar.
+
+\subsection{Open Questions}
+
+Several fundamental questions remain unresolved. \textbf{Unified framework:} Can Width (mHC), Depth (MUDDFormer/AttnRes), and Control (DeepNorm) improvements be composed within a single theoretical framework, perhaps via the residual stream duality? \textbf{Optimal topology:} Given a fixed compute budget, is it better to invest in wider streams (HC) or denser connections (DCA/MUDDFormer)? \textbf{Necessity of residuals:} If Skipless Transformers are viable, why do residual connections remain so effective in practice? \textbf{Scale interactions:} Do residual improvements transfer consistently across model scales, or do scale thresholds exist beyond which certain techniques become necessary or irrelevant? \textbf{Hardware co-design:} Multi-stream residuals and cross-layer connections create non-trivial communication patterns on distributed systems that demand hardware-aware architecture design.

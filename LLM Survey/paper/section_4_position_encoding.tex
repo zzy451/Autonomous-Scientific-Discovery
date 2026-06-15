@@ -1,0 +1,169 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Section 4: Position Encoding
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \section moved to main.tex
+\label{sec:position_encoding}
+
+The self-attention mechanism of the Transformer is inherently permutation-invariant: given a set of input tokens, the output is unchanged by any reordering unless positional information is explicitly injected. Position encoding (PE) is the architectural component responsible for providing this sequential inductive bias. Since the sinusoidal encoding of Vaswani et al.~\cite{vaswani2017attention}, the design of PE has traversed a rich trajectory---from absolute to relative, from fixed to learnable, from data-agnostic to data-dependent, and from one-dimensional to multi-dimensional. We organize this section along ten methodological branches that trace this evolution.
+
+%% 4.1 NoPE
+\subsection{No Position Encoding (NoPE)}
+\label{subsec:nope}
+
+A provocative starting point for any discussion of PE is whether explicit positional encoding is necessary at all. In decoder-only architectures, the causal attention mask $M_{\text{causal}}$ already encodes a weak ordering: each token attends only to its predecessors, and the resulting lower-triangular structure provides implicit positional cues.
+
+Kazemnejad et al.~\cite{kazemnejad2023impact} systematically compared NoPE, sinusoidal PE, RoPE, and ALiBi on five synthetic arithmetic and reasoning tasks. NoPE achieved the best or near-best length generalization on four of the five tasks, demonstrating that causal attention can recover both absolute and relative position information. The Llama~4 architecture~\cite{llama4_2025} operationalizes this insight in its iRoPE design, interleaving NoPE layers (with global attention and no positional encoding) with RoPE layers at a 1:3 ratio. The NoPE layers are not constrained by training-time context length and, combined with inference-time temperature scaling, enable a 10M-token context window.
+
+DroPE~\cite{gelberg2026drope}, proposed by Sakana AI, takes this idea further: models are pre-trained with standard RoPE, after which the positional encoding is simply removed at inference time with only 100--1,000 steps of short-context recalibration fine-tuning. The underlying insight is that positional encoding serves as ``scaffolding'' during training and can be safely discarded once positional awareness has been absorbed into the model weights.
+
+%% 4.2 Absolute PE
+\subsection{Absolute Position Encoding}
+\label{subsec:ape}
+
+Absolute PE assigns a unique encoding vector to each position and adds it element-wise to the input embedding. The sinusoidal encoding of Vaswani et al.~\cite{vaswani2017attention} uses frequency-decomposed sine and cosine functions:
+\begin{equation}
+  \mathrm{PE}_{(\mathrm{pos},2i)} = \sin\!\bigl(\mathrm{pos}/10000^{2i/d}\bigr), \quad
+  \mathrm{PE}_{(\mathrm{pos},2i+1)} = \cos\!\bigl(\mathrm{pos}/10000^{2i/d}\bigr),
+  \label{eq:sinusoidal_pe}
+\end{equation}
+where each dimension corresponds to a sinusoid of a different wavelength ranging from $2\pi$ to $10000 \cdot 2\pi$. A key mathematical property is that, for a fixed offset $k$, $\mathrm{PE}_{\mathrm{pos}+k}$ can be expressed as a linear function of $\mathrm{PE}_{\mathrm{pos}}$, theoretically facilitating the learning of relative positions. Learned PE~\cite{gehring2017convolutional}, adopted by BERT and GPT-2, replaces fixed sinusoids with trainable embedding vectors but cannot generalize to unseen lengths.
+
+CAPE~\cite{likhomanenko2021cape} bridges absolute and relative PE via data augmentation: during training, positions are globally shifted ($\beta \sim \mathcal{U}(-\delta,\delta)$) and scaled ($\alpha \sim \mathcal{U}(1-\epsilon,1+\epsilon)$), yielding augmented encodings $\mathrm{PE}(\alpha p + \beta)$ that implicitly encode relative distance. Although absolute PE has largely been superseded by RoPE in LLMs, its multi-frequency design directly inspired the frequency basis $\theta_i = 10000^{-2i/d}$ of RoPE.
+
+%% 4.3 Attention Bias
+\subsection{Relative Position Encoding via Attention Bias}
+\label{subsec:attention_bias}
+
+Rather than modifying input representations, attention bias methods inject positional information directly into the attention logits. Shaw et al.~\cite{shaw2018self} introduced clipped relative position embeddings into the attention score computation. Transformer-XL~\cite{dai2019transformerxl} decomposed the attention score into four terms---content-content, content-position, global content bias, and global position bias---using fixed sinusoidal encodings processed through learnable projection matrices.
+
+T5 Relative Bias~\cite{raffel2020exploring} adopted a minimalist scalar-bias approach with logarithmic distance bucketing (32 buckets total), encoding the inductive bias that nearby positions require fine-grained distinction while distant positions can be grouped. DeBERTa~\cite{he2021deberta} introduced a disentangled attention mechanism separating content and position representations with dedicated projection matrices. ALiBi~\cite{press2021train} eliminated all learnable parameters by adding a head-specific linear bias $m \cdot [-(i-1),\ldots,-1,0]$ to the attention logits, where slopes follow the geometric series $m_h = 2^{-8h/H}$. While ALiBi achieves ``train short, test long'' generalization and was adopted by BLOOM and MPT, its fixed linear decay limits extrapolation to 2--4$\times$ training length.
+
+\begin{equation}
+A_{ij} = \frac{q_i^\top k_j}{\sqrt{d_k}} - m_h \cdot |i - j|, \quad m_h = 2^{-8h/H}, \; h = 1, \ldots, H
+\label{eq:alibi}
+\end{equation}
+ALiBi adds a head-specific linear bias to the attention logit, with slopes following a geometric series; the bias penalizes distance linearly, enabling ``train short, test long'' generalization without any learnable parameters.
+
+KERPLE~\cite{chi2022kerple} unified these methods under the framework of conditionally positive definite (CPD) kernels, showing that ALiBi is a special case (linear kernel) and proposing a logarithmic kernel variant with only two learnable parameters per head. FIRE~\cite{li2024fire} further generalized the framework by learning an MLP mapping from normalized relative distance to attention bias, subsuming T5 bias, ALiBi, and KERPLE. Randomized PE~\cite{ruoss2023randomized} provides an orthogonal meta-strategy: during training, $n$ ordered positions are sampled from $[0, L_{\max}-1]$ rather than using contiguous indices, making the method composable with any underlying PE scheme and improving length generalization by 12\% on average.
+
+%% 4.4 RoPE
+\subsection{Rotary Position Embedding (RoPE) and Variants}
+\label{subsec:rope}
+
+Rotary Position Embedding~\cite{su2024roformer} is the de facto standard PE for modern LLMs, adopted by LLaMA, Mistral, Gemma, Qwen, and DeepSeek, among others. RoPE applies a position-dependent rotation to each pair of adjacent dimensions of the Query and Key vectors:
+\begin{equation}
+  f(\mathbf{x}_m, m) = R_{\Theta,m}\,\mathbf{x}_m, \quad
+  \text{where } R_{\Theta,m} = \begin{pmatrix}
+    \cos m\theta_1 & -\sin m\theta_1 \\
+    \sin m\theta_1 & \cos m\theta_1 \\
+    & & \ddots \\
+    & & & \cos m\theta_{d/2} & -\sin m\theta_{d/2} \\
+    & & & \sin m\theta_{d/2} & \cos m\theta_{d/2}
+  \end{pmatrix},
+  \label{eq:rope}
+\end{equation}
+with frequency basis $\theta_i = 10000^{-2i/d}$. The inner product satisfies $\langle f(\mathbf{q},m), f(\mathbf{k},n)\rangle = \mathbf{q}^\top R_{\Theta,n-m}\,\mathbf{k}$, depending solely on the relative position $n-m$. RoPE introduces no additional parameters and naturally exhibits long-range decay. Its mathematical foundation rests on the direct product $\mathrm{SO}(2)^{d/2}$ acting on the $d$-dimensional vector space; the rotation preserves the vector norm ($\|R_\Theta \mathbf{x}\| = \|\mathbf{x}\|$), ensuring information-lossless encoding.
+
+The derivation of RoPE is not a heuristic design but a mathematical necessity. Su~\cite{su2024roformer} begins from an inner-product invariance constraint: find a positional encoding function $f(\mathbf{x}, m)$ such that $\langle f(\mathbf{q}, m),\, f(\mathbf{k}, n) \rangle = g(\mathbf{q}, \mathbf{k}, m{-}n)$, i.e., the inner product after encoding depends solely on the relative offset. In the two-dimensional case, treating real vectors as complex numbers and imposing the boundary condition $f(\mathbf{q}, 0) = \mathbf{q}$, the functional equation admits a unique family of solutions $f(\mathbf{q}, m) = \mathbf{q} \cdot e^{im\theta}$---a rotation. Extending to $d$ dimensions by pairing adjacent coordinates into $d/2$ independent two-dimensional subspaces, each with its own frequency $\theta_i$, yields the block-diagonal rotation matrix of Eq.~\eqref{eq:rope}. This derivation reveals that RoPE achieves relative positional encoding through an absolute encoding form: the rotation is applied to each token independently (absolute), yet the resulting inner product depends only on the position difference (relative), unifying the simplicity of absolute PE with the theoretical advantages of relative PE.
+
+Several variants extend or refine RoPE. \textbf{xPos}~\cite{sun2023length} augments the rotation with an exponential decay factor: $q_m = x_m \cdot \gamma^m \cdot e^{im\theta}$, $k_n = x_n \cdot \gamma^{-n} \cdot e^{in\theta}$, so that different frequency dimensions decay at different rates---high-frequency dimensions attend locally while low-frequency dimensions attend globally. \textbf{CoPE}~\cite{golovneva2024contextual} (Contextual Position Encoding) makes positions a function of input content through a learned gate $g_t = \sigma(\mathbf{w}^\top \mathbf{h}_t)$, enabling the model to ``skip'' irrelevant tokens when computing positional distances. \textbf{PoPE}~\cite{gopalakrishnan2025decoupling} resolves the what-where entanglement in RoPE by adopting polar coordinates: magnitude $r$ encodes content (what) while angle $\phi$ encodes position (where), achieving explicit content--position separation.
+
+%% 4.5 Context Extension
+\subsection{RoPE Context Window Extension}
+\label{subsec:rope_extension}
+
+Extending the effective context length of pre-trained RoPE-based LLMs beyond training length is a critical post-training capability. Table~\ref{tab:rope_extension} summarizes the major approaches.
+
+\begin{table}[t]
+\centering
+\caption{Comparison of RoPE context extension methods.}
+\label{tab:rope_extension}
+\small
+\begin{tabular}{lcccc}
+\hline
+\textbf{Method} & \textbf{Mechanism} & \textbf{Fine-tuning} & \textbf{Max Extension} & \textbf{Key Innovation} \\
+\hline
+PI~\cite{chen2023extending} & Uniform interpolation & $\sim$1K steps & 16$\times$ & Linear position downscaling \\
+NTK-aware & Base frequency adjust & None & 4--8$\times$ & High-freq preservation \\
+YaRN~\cite{peng2023yarn} & NTK-by-parts + temp. & 400 steps & 16$\times$ & Freq.\ partitioning + entropy fix \\
+CLEX~\cite{chen2024clex} & Neural ODE & Continuous & 4--8$\times$ & Continuous scaling via ODE \\
+LongRoPE~\cite{ding2024longrope} & Per-dim.\ search & Progressive & 512$\times$ (2M) & Evolutionary search \\
+LongRoPE2~\cite{longrope2_2025} & Needle-driven & $\sim$10B tokens & 32$\times$ & Near-lossless extension \\
+DroPE~\cite{gelberg2026drope} & Remove RoPE & 100--1K steps & Unlimited & Scaffolding removal \\
+\hline
+\end{tabular}
+\end{table}
+
+Position Interpolation (PI)~\cite{chen2023extending} linearly downscales position indices to fall within the pre-training range:
+\begin{equation}
+f'(x, m) = f\!\left(x, \frac{mL}{L'}\right) \quad \text{(linearly downscale positions from } L' \text{ to training length } L \text{)}
+\label{eq:pi}
+\end{equation}
+While effective, uniform scaling degrades high-frequency precision. NTK-aware scaling adjusts the base frequency $\theta'_i = (\text{base}\cdot\alpha)^{-2i/d}$, preserving high-frequency components; its dynamic variant automatically adapts to inference-time sequence length without fine-tuning, and was adopted by Llama~3 and Phi-3 as Adjusted Base Frequency (ABF).
+
+Su~\cite{su2024roformer} provides a unifying theoretical lens for these methods by observing that RoPE is essentially a $\beta$-base positional numeral system. Defining $\beta = b^{2/d}$ (where $b = 10{,}000$ is the default base), the rotation angle at the $i$-th subspace becomes $m\theta_i = m / \beta^i$, which corresponds to the $i$-th digit of position $m$ in base $\beta$. The maximum unambiguously representable position is $\beta^{d/2} = b$; exceeding this limit causes ``carry overflow''---high-frequency (low-order) dimensions wrap past $2\pi$, producing aliasing that is the root cause of extrapolation failure. Within this framework, the various extension strategies admit a clean interpretation: PI amounts to shrinking the scale (dividing all digit values uniformly), NTK-aware scaling corresponds to switching to a larger base (increasing $\beta$ so each digit covers a wider range), and YaRN's NTK-by-parts strategy selectively re-bases only a subset of digits while leaving the rest intact.
+
+YaRN~\cite{peng2023yarn} partitions RoPE frequency dimensions into three groups: high-frequency dimensions ($\lambda_i < L$) are left unscaled, low-frequency dimensions ($\lambda_i > \alpha L$) are fully interpolated, and intermediate dimensions are blended via a ramp function. The per-dimension base frequency is modified as:
+\begin{equation}
+\theta'_i = \begin{cases} \theta_i & \text{if } \lambda_i < 1 \text{ (high-freq: no scaling)} \\ \theta_i / s & \text{if } \lambda_i > 1 \text{ (low-freq: full scaling)} \\ (1-t)\theta_i/s + t\theta_i & \text{otherwise (interpolate)} \end{cases}, \quad t = \frac{\lambda_i - 1}{\text{ramp}}
+\label{eq:yarn}
+\end{equation}
+An attention temperature correction compensates for entropy increase in long contexts. YaRN achieves 10$\times$ faster convergence than PI, extending Llama~2 7B from 4K to 64K in just 400 steps.
+
+CLEX~\cite{chen2024clex} models the frequency scaling as an ordinary differential equation $d\theta(t)/dt = f_\phi(\theta(t), t)$, unifying PI, NTK-aware, and YaRN as special cases of discretized ODE solutions. LongRoPE~\cite{ding2024longrope} uses evolutionary search to find per-dimension scaling factors, progressively extending to 2M tokens. DroPE~\cite{gelberg2026drope} represents the most radical approach: removing RoPE entirely at inference time after short-context recalibration, based on the insight that high-frequency rotations produce near-random interference at long distances.
+
+Su~\cite{su2024roformer} identifies a fundamental duality underlying all context extension methods: local attention is inherently length-extrapolable---within a fixed window $w \leq L$, position differences never exceed the training range---but pure local attention cannot capture global dependencies. Length extrapolation therefore confronts an intrinsic tension between extrapolability and global information flow. This perspective clarifies why ALiBi generalizes well: its linear distance penalty causes attention weights to decay toward zero for distant tokens, making it effectively a soft local attention mechanism; any sufficiently rapid decay function would confer similar extrapolation properties. The duality also illuminates a second failure mode beyond positional out-of-distribution: attention entropy grows with sequence length as $H(T) \approx H(L) + \log(T/L)$, diluting the model's ability to focus on relevant tokens. This entropy-increase analysis provides the theoretical motivation for the temperature scaling introduced by YaRN~\cite{peng2023yarn} and the inference-time temperature adjustment employed by iRoPE~\cite{llama4_2025}.
+
+%% 4.6 Heterogeneous PE
+\subsection{Layer-Heterogeneous Position Encoding}
+\label{subsec:layer_hetero_pe}
+
+The conventional practice of applying identical PE configurations across all layers has been challenged by recent production models. Gemma~3~\cite{gemma2025gemma3} employs a dual-base-frequency design with a 5:1 local-to-global interleaving pattern: local attention layers (sliding window of 1,024 tokens) use the standard $\theta = 10{,}000$, while global attention layers use $\theta = 1{,}000{,}000$. The rationale is that high base frequency produces slow rotations suitable for long-range coverage, whereas low base frequency provides fine-grained local discrimination.
+
+Llama~4~\cite{llama4_2025} takes a more aggressive approach with iRoPE: three RoPE layers (chunked local attention) alternate with one NoPE layer (full global attention). The NoPE layers are unconstrained by rotational frequency limits and thus support arbitrary lengths. Combined with progressive training (8K$\to$32K$\to$128K$\to$256K) and inference-time temperature scaling, iRoPE achieves a 10M-token context window. These designs establish a new paradigm of per-layer PE customization, suggesting that different layers---which serve different roles (local syntax vs.\ global semantics)---should employ different positional encoding strategies.
+
+%% 4.7 Self-Modulation / Implicit PE
+\subsection{Self-Modulation and Implicit Position Encoding}
+\label{subsec:self_modulation}
+
+Self-modulation methods encode positional information implicitly by modifying the attention mechanism itself. The Forgetting Transformer (FoX)~\cite{lin2025forgetting} introduces a data-dependent forget gate $f_t = \sigma(\mathbf{w}_f^\top \mathbf{x}_t + b_f)$ into softmax attention. The cumulative log-forget factor $d_{ij} = \sum_{l=j+1}^{i} \log f_l$ acts as a learnable, content-adaptive attention bias:
+\begin{equation}
+  o_i = \frac{\sum_j \exp(\mathbf{q}_i^\top \mathbf{k}_j + d_{ij})\,\mathbf{v}_j}{\sum_j \exp(\mathbf{q}_i^\top \mathbf{k}_j + d_{ij})}.
+  \label{eq:fox}
+\end{equation}
+When $f_t$ is constant, FoX degenerates to ALiBi, making FoX a strict generalization. FoX requires no explicit PE, is compatible with FlashAttention, and outperforms RoPE-based Transformers at 32K context for 1B-parameter models.
+
+Stick-Breaking Attention~\cite{tan2024stick} replaces softmax with a stick-breaking process: each key computes a breakage proportion $\beta_j = \sigma(\mathbf{q}_i^\top \mathbf{k}_j / \sqrt{d})$, and attention weights follow $\alpha_j = \beta_j \prod_{l<j}(1-\beta_l)$. This naturally encodes a recency bias---recent tokens have ``first-mover'' advantage---and does not require any positional encoding.
+
+%% 4.8 Content-Aware PE
+\subsection{Content-Aware Position Encoding}
+\label{subsec:content_aware_pe}
+
+Standard PE is data-agnostic: the positional transformation depends only on position indices, not on token content. PaTH Attention~\cite{path2025} realizes content-aware positioning via accumulated Householder transformations. For each token $x_i$, a Householder reflection $H_i = I - 2\mathbf{v}_i\mathbf{v}_i^\top / \|\mathbf{v}_i\|^2$ (with $\mathbf{v}_i = W_v x_i$) is computed, and the cumulative product $P_i = H_1 H_2 \cdots H_i$ serves as a data-dependent orthogonal transformation applied to Q and K. The relative transformation $P_i^\top P_j = H_i^\top \cdots H_{j+1}^\top$ depends solely on the content of intermediate tokens, making RoPE a special case (when Householder vectors are fixed). Theoretically, PaTH can represent any element of $\mathrm{SO}(d)$, whereas RoPE is restricted to the maximal torus subgroup $\mathrm{SO}(2)^{d/2}$, providing strictly greater expressiveness.
+
+%% 4.9 Multimodal PE
+\subsection{Multimodal Position Encoding}
+\label{subsec:multimodal_pe}
+
+Multimodal models must encode text (1D), image (2D), and video (3D) positions within a unified framework. \textbf{M-RoPE}~\cite{qwen2vl2024}, introduced in Qwen2-VL, decomposes the $d$-dimensional RoPE frequency vector into three equal components---temporal ($d/3$), height ($d/3$), and width ($d/3$):
+\begin{equation}
+  R(t,h,w) = \mathrm{diag}\!\bigl(R_{\mathrm{time}}(t),\; R_{\mathrm{height}}(h),\; R_{\mathrm{width}}(w)\bigr).
+  \label{eq:mrope}
+\end{equation}
+For text tokens, all three components share the same sequential index, degenerating to standard 1D RoPE. For image tokens, temporal is fixed while height and width follow spatial indices; for video tokens, all three axes are active. M-RoPE supports arbitrary-resolution images with no performance loss on pure text.
+
+\textbf{2D Axial RoPE}~\cite{heo2024rope} applies RoPE in a split fashion---the first $d/2$ dimensions encode row positions and the remaining $d/2$ encode columns---enabling resolution extrapolation from 224$\times$224 to 384$\times$384+ in Vision Transformers. \textbf{3D-RPE}~\cite{yang20243drpe} extends rotations from $\mathrm{SO}(2)$ to $\mathrm{SO}(3)$ on the Bloch sphere using ZYZ Euler angle parameterization, achieving finer positional resolution and controllable long-range decay. \textbf{C$^2$RoPE}~\cite{c2rope2026} further introduces continuous spatial coordinates and spatial causality for 3D multimodal reasoning, enabling sub-pixel-level position encoding.
+
+%% 4.10 Theoretical Frontiers
+\subsection{Theoretical Frontiers}
+\label{subsec:pe_theory}
+
+Three complementary theoretical perspectives have recently enriched our understanding of PE. \textbf{LieRE}~\cite{bermeitinger2024liere} generalizes RoPE from $\mathrm{SO}(2)$ to arbitrary Lie groups via the matrix exponential $R_{\mathrm{LieRE}}(m) = \exp(m\cdot A)$, where $A$ is a learnable skew-symmetric matrix. The key finding is that RoPE's effectiveness stems from the norm-preserving property of orthogonal transformations, not from its specific block-diagonal structure. Practical variants (Block LieRE with 4$\times$4 blocks) match or outperform RoPE on vision and audio tasks.
+
+\textbf{Wavelet PE}~\cite{oka2025wavelet} reinterprets RoPE from a signal-processing perspective, observing that RoPE implicitly performs a restricted wavelet transform with Haar-like wavelets. Replacing these with Ricker wavelets (Mexican hat), which have superior time--frequency localization, yields improved perplexity on long contexts and more stable 4--8$\times$ extrapolation.
+
+\textbf{Spectral analysis of PE coupling}~\cite{cheng2025spectral} decomposes attention logits into content, position, and coupling terms. The analysis reveals that RoPE induces multiplicative content--position coupling, with low-frequency dimensions strongly coupled and high-frequency dimensions approximately decoupled. A spectral compression effect---RoPE suppresses low-frequency component energy in the frequency domain---explains both long-context degradation and the effectiveness of DroPE.
+
+\subsection{Summary and Open Questions}
+
+The evolution of position encoding follows six key trends: (1)~from data-agnostic to data-dependent (Sinusoidal$\to$RoPE$\to$CoPE/PaTH/FoX); (2)~from globally uniform to layer-heterogeneous (uniform PE$\to$Gemma~3 dual-frequency$\to$iRoPE); (3)~from explicit to implicit (Sinusoidal$\to$FoX/Stick-Breaking$\to$DroPE); (4)~from 1D to $n$D (1D RoPE$\to$M-RoPE$\to$C$^2$RoPE$\to$LieRE); (5)~from engineering to theory (LieRE, Wavelet PE, spectral analysis); and (6)~from training-fixed to inference-adaptive (PI/YaRN$\to$Dynamic NTK$\to$DroPE). Fundamental open questions remain: the information-theoretic capacity of PE in $d$-dimensional space, whether a ``universal'' PE optimal for all tasks exists, and whether context lengths beyond 10M tokens are ultimately limited by factors beyond PE (attention sparsity, hardware constraints).

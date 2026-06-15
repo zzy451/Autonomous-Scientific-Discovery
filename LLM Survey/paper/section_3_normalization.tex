@@ -1,0 +1,226 @@
+% Section 3: Normalization
+% Focus: Training stability, optimization landscape, and the evolving understanding of what normalization truly does.
+
+Normalization is arguably the most inconspicuous yet consequential component of the Transformer architecture.
+Unlike the attention mechanism, which defines the model's identity, or position encoding, which shapes its inductive biases, normalization operates as a silent guardian of training stability---its presence is rarely questioned, but its absence is immediately catastrophic.
+The choice of normalization type, placement, and scope directly determines the maximum trainable depth, hardware efficiency, and scaling behavior of large language models.
+From the introduction of Batch Normalization~\cite{ioffe2015batch} in 2015 to the recent emergence of normalization-free architectures such as Dynamic Tanh~\cite{zhu2025transformers} and Dynamic Erf~\cite{chen2025stronger}, the evolution of normalization reflects an ongoing quest to understand what training stability fundamentally requires.
+This section traces nine technical threads that collectively map this evolution: from foundational methods to efficient variants, from placement theory to attention-internal constraints, from conditional modulation to holistic architectures, and from automated search to the radical proposal that normalization layers may be dispensable altogether.
+
+%% 3.1 Foundation: BN -> LN -> IN -> GN
+\subsection{Foundation: From Batch Normalization to Layer Normalization}
+
+The foundational normalization methods established the principle that normalizing along a chosen set of dimensions stabilizes training by controlling the distribution of activations.
+Batch Normalization (BN)~\cite{ioffe2015batch} pioneered this paradigm by computing mean and variance across the batch dimension: given an activation $x_i$, BN computes $\hat{x}_i = (x_i - \mu_\mathcal{B}) / \sqrt{\sigma^2_\mathcal{B} + \epsilon}$ followed by a learnable affine transformation $y_i = \gamma \hat{x}_i + \beta$.
+This design enabled higher learning rates, reduced initialization sensitivity, and provided implicit regularization, fueling the success of deep convolutional networks.
+However, BN's reliance on batch-level statistics renders it fundamentally incompatible with Transformer-based language models, where variable sequence lengths cause batch statistics to fluctuate dramatically.
+
+Layer Normalization (LN)~\cite{ba2016layer} resolved this incompatibility by normalizing across the feature dimension $d$ within each individual sample, making the computation entirely independent of batch composition.
+Given a $d$-dimensional hidden vector $\mathbf{h}$, LN computes:
+\begin{equation}
+    \text{LN}(\mathbf{h}) = \gamma \odot \frac{\mathbf{h} - \mu}{\sqrt{\sigma^2 + \epsilon}} + \beta, \quad \mu = \frac{1}{d}\sum_{i=1}^{d} h_i, \quad \sigma^2 = \frac{1}{d}\sum_{i=1}^{d}(h_i - \mu)^2,
+\end{equation}
+where $\gamma, \beta \in \mathbb{R}^d$ are learnable scale and shift parameters.
+This formulation provides three decisive advantages for language modeling: (i)~complete independence from batch size, enabling single-sample inference identical to training; (ii)~no need for running statistics, eliminating the train--test discrepancy inherent in BN; and (iii)~compatibility with distributed training without cross-device synchronization.
+Instance Normalization~\cite{ulyanov2016instance}, which normalizes per-channel spatial statistics, found its niche in style transfer but has negligible relevance to NLP.
+Group Normalization (GN)~\cite{wu2018group} partitions channels into $G$ groups and normalizes within each group, providing a continuous interpolation between Instance Normalization ($G=C$) and Layer Normalization ($G=1$).
+GN has recently resurfaced in the Differential Transformer~\cite{ye2024differential}, where it normalizes per-head outputs after the differential attention subtraction---a role that leverages GN's group-wise independence.
+The migration from BN to LN established feature-dimension normalization as the default paradigm for sequence models, setting the baseline against which all subsequent innovations are measured.
+
+%% 3.2 Efficient Variants: RMSNorm, ScaleNorm, PowerNorm
+\subsection{Efficient Normalization Variants}
+
+Having established Layer Normalization as the standard, a natural question arises: which components of LN are truly necessary?
+RMSNorm~\cite{zhang2019root} provides a definitive partial answer by hypothesizing that the re-scaling invariance of LN, rather than its re-centering (mean subtraction), is the key property responsible for training stability.
+RMSNorm simplifies LN by eliminating the mean computation entirely:
+\begin{equation}
+    \text{RMSNorm}(\mathbf{a}) = \frac{\mathbf{a}}{\text{RMS}(\mathbf{a})} \odot \gamma, \quad \text{RMS}(\mathbf{a}) = \sqrt{\frac{1}{n}\sum_{i=1}^{n} a_i^2},
+\end{equation}
+where $\gamma \in \mathbb{R}^n$ is a learnable gain (no bias $\beta$).
+This eliminates one reduction operation and halves the number of learnable parameters from $2d$ to $d$, yielding measured speedups of 7--64\% depending on implementation.
+The hypothesis has been substantiated by subsequent geometric analysis~\cite{gupta2024reintroducing}, which reveals that LN's mean subtraction is equivalent to projecting out the component along the all-ones vector $\mathbf{1} = [1, \ldots, 1]^\top$---an irreversible operation that discards information.
+Crucially, LLMs trained with RMSNorm (such as LLaMA) naturally learn representations orthogonal to $\mathbf{1}$, rendering the explicit mean subtraction redundant.
+RMSNorm is now the de facto standard in virtually all frontier LLMs, including LLaMA~1/2/3, PaLM, Gemma, Qwen, Mistral, and DeepSeek.
+
+ScaleNorm~\cite{nguyen2019transformers} pursues even more extreme simplification: $\text{ScaleNorm}(\mathbf{x}) = g \cdot \mathbf{x} / \|\mathbf{x}\|_2$, using a single global scalar $g$ in place of per-element gains.
+This maps all vectors to a hypersphere of radius $g$, foreshadowing the hyperspherical geometry later developed by nGPT~\cite{loshchilov2024ngpt}.
+PowerNorm~\cite{shen2020powernorm} takes a different tack, diagnosing why BN fails in NLP---batch statistics fluctuate 3--5$\times$ more in text than in vision---and replacing per-batch variance with an exponential moving average of the quadratic mean.
+Despite its theoretical insights, PowerNorm's residual dependence on the batch dimension prevented mainstream adoption.
+The trajectory from LN to RMSNorm exemplifies a minimality principle: normalization should retain only the invariance properties that matter, discarding unnecessary computations.
+
+%% 3.3 Normalization Placement: Pre-Norm, Post-Norm, and Beyond
+\subsection{Normalization Placement: Pre-Norm, Post-Norm, and Beyond}
+
+Where normalization is placed relative to the sublayer is among the most consequential architectural decisions in Transformer design.
+The original Transformer~\cite{vaswani2017attention} adopted \textbf{Post-LN}, applying normalization after the residual addition: $\mathbf{x}_{l+1} = \text{LN}(\mathbf{x}_l + \text{Sublayer}(\mathbf{x}_l))$.
+Mean field theory analysis~\cite{xiong2020layer} revealed that Post-LN suffers from large gradient norms near the output layers at initialization, necessitating careful learning rate warm-up.
+\textbf{Pre-LN} reverses the order---$\mathbf{x}_{l+1} = \mathbf{x}_l + \text{Sublayer}(\text{LN}(\mathbf{x}_l))$---creating a ``gradient highway'' through which gradients flow unattenuated across arbitrary depth.
+Pre-LN eliminates the need for warm-up and has become the default in most modern LLMs, though some evidence suggests Post-LN achieves slightly better final performance when training is successful.
+
+Several proposals seek to combine the stability of Pre-LN with the performance of Post-LN.
+\textbf{Sandwich-LN}~\cite{ding2021cogview} applies normalization both before and after the sublayer, originally developed to suppress NaN losses during FP16 training of the 4B-parameter CogView model; Gemma~2~\cite{gemma2024improving} later adopted this pattern with Pre+Post RMSNorm.
+\textbf{DeepNorm}~\cite{wang2024deepnet} scales the residual connection by a constant $\alpha > 1$: $\mathbf{x}_{l+1} = \text{LN}(\alpha \cdot \mathbf{x}_l + f(\mathbf{x}_l))$, coupled with theoretically derived initialization scaling.
+\begin{equation}
+x_{l+1} = \mathrm{LN}\!\left(\alpha \cdot x_l + F_l(x_l)\right), \quad \alpha = (2L)^{1/4},\; \text{init: } W \sim \mathcal{N}(0, \beta^2), \; \beta = (8L)^{-1/4}
+\label{eq:deepnorm}
+\end{equation}
+This enabled training a 1,000-layer Transformer (2,500 sublayers), demonstrating that a 200-layer 3.2B model can outperform a 48-layer 12B model by 5 BLEU points---evidence that depth is an efficient scaling axis.
+\textbf{Sub-LN / MAGNETO}~\cite{wang2022magneto} pushes normalization inside sublayers at a finer granularity, inserting additional LN between projections within both attention and FFN blocks, achieving uniform improvements across language, vision, speech, and multimodal tasks.
+\textbf{Peri-LN}~\cite{kim2025periln} applies normalization at both ends of the sublayer while keeping the residual path direct: $\mathbf{x}_{l+1} = \mathbf{x}_l + \text{LN}_2(f(\text{LN}_1(\mathbf{x}_l)))$, achieving controlled linear variance growth $\text{Var}(\mathbf{x}_{l+1}) \approx \text{Var}(\mathbf{x}_l) + O(1)$.
+
+More recent work pushes beyond fixed placement entirely.
+\textbf{GeoNorm}~\cite{li2026geonorm} replaces traditional normalization with geodesic updates on a representation manifold, $\mathbf{h}_{l+1} = \text{Exp}_{\mathbf{h}_l}(\alpha_l \cdot \mathbf{v}_l)$, unifying Pre-LN and Post-LN as special cases of tangent-space transformations and manifold projections, and introducing a normalization schedule analogous to learning rate schedules.
+\textbf{SiameseNorm}~\cite{wang2025siamesenorm} adopts a dual-stream architecture maintaining both a Pre-Norm stream (for gradient stability) and a Post-Norm stream (for representation quality) with shared parameters, fusing their outputs at inference---though at the cost of nearly doubled computation.
+A unifying perspective comes from particle interaction theory~\cite{karagodin2025normalization}, which models token representations as interacting particles on a hypersphere: self-attention acts as an inter-particle force, while normalization acts as a velocity regulator, with different placements corresponding to different velocity--stability trade-offs.
+
+%% 3.4 Attention-Internal Normalization
+\subsection{Attention-Internal Normalization}
+
+While traditional normalization operates at the sublayer level, the attention mechanism's internal computations harbor their own sources of numerical instability---most critically, the unbounded growth of $QK^\top$ dot-product logits as model depth and hidden dimension increase.
+\textbf{QK-Norm}~\cite{henry2020query} addresses this by $\ell_2$-normalizing the query and key vectors before the dot product:
+\begin{equation}
+    \hat{Q} = Q / \|Q\|_2, \quad \hat{K} = K / \|K\|_2, \quad \text{Attn} = \text{softmax}\!\left(g \cdot \hat{Q}\hat{K}^\top\right) V,
+\end{equation}
+where $g$ is a per-head learnable scalar initialized to $\sqrt{d_k}$.
+By constraining logits to cosine similarities in $[-1, 1]$ and then rescaling by $g$, QK-Norm fundamentally eliminates logit explosion and prevents softmax saturation.
+This technique has been adopted by Gemma~2/3, Qwen~3, OLMo~2, and Chameleon, though it is notably incompatible with DeepSeek-V3's Multi-Latent Attention, which does not materialize full Q and K tensors.
+
+\textbf{Logit soft-capping}~\cite{gemma2024improving} provides a complementary output-side constraint: $\text{logits} \leftarrow c \cdot \tanh(\text{logits} / c)$, bounding logits within $(-c, +c)$.
+Gemma~2 employs attention logit capping at $c = 50$ and final logit capping at $c = 30$, creating a multi-layered defense.
+In the Differential Transformer~\cite{ye2024differential}, the subtraction of two softmax maps produces outputs whose values are no longer bounded by $[0, 1]$, necessitating GroupNorm~\cite{wu2018group} applied per attention head to restore controlled activation scales; the $(1 - \lambda_{\text{init}})$ rescaling factor further aligns gradient flow.
+Recent work on Lp-QKNorm~\cite{lopez2026enhanced} generalizes L2 normalization to arbitrary $L_p$ norms, demonstrating that different values of $p$ induce different attention space geometries, though validation remains limited to small-scale settings.
+Attention-internal normalization has transitioned from an optional enhancement to a necessary safeguard at scale, with Gemma~2's triple-layered protection (Pre+Post RMSNorm, QK-Norm, soft-capping) representing the current state of engineering practice.
+
+%% 3.5 Conditional and Adaptive Normalization
+\subsection{Conditional and Adaptive Normalization}
+
+Standard normalization treats the affine parameters $\gamma$ and $\beta$ as static, shared across all inputs.
+Conditional normalization makes these parameters functions of an external conditioning signal, transforming the normalization layer into a lightweight but powerful mechanism for signal injection.
+This idea traces back to FiLM (Feature-wise Linear Modulation)~\cite{perez2018film}, which modulates visual features with question embeddings in visual question answering via $\text{FiLM}(\mathbf{x}) = \gamma(\mathbf{c}) \odot \mathbf{x} + \beta(\mathbf{c})$.
+AdaNorm~\cite{xu2019understanding} explored input-dependent normalization strength within Transformers, adapting the degree of normalization based on the ``difficulty'' of the input, though it did not achieve widespread adoption.
+
+The decisive breakthrough came with \textbf{adaLN-Zero}~\cite{peebles2023scalable} in the Diffusion Transformer (DiT).
+Here, conditioning signals (timestep embedding and class embedding) are passed through a shared MLP to dynamically generate six parameter sets per block---scale $\gamma$, shift $\beta$, and gate $\alpha$ for both the attention and FFN sublayers:
+\begin{equation}
+    (\gamma_1, \beta_1, \alpha_1, \gamma_2, \beta_2, \alpha_2) = \text{MLP}\!\left(\text{embed}(t) + \text{embed}(c)\right),
+\end{equation}
+\begin{equation}
+    \text{output} = \mathbf{x} + \alpha \odot \text{Sublayer}\!\left(\gamma \odot \frac{\mathbf{x} - \mu}{\sigma} + \beta\right).
+\end{equation}
+The zero-initialization of the MLP's output layer ensures that each block initially acts as the identity function, providing training stability analogous to Fixup~\cite{zhang2019fixup}.
+adaLN-Zero achieved state-of-the-art FID of 2.27 on ImageNet 256$\times$256 and significantly outperformed both cross-attention and in-context conditioning.
+Its influence is pervasive: Stable Diffusion~3, Flux, and Sora all build upon the DiT architecture with adaLN conditioning.
+This success establishes normalization layers as the canonical interface for conditioning signal injection in generative models, a pattern that may extend to cross-modal fusion in multimodal architectures.
+
+%% 3.6 Holistic Normalization Architectures
+\subsection{Holistic Normalization Architectures}
+
+While the preceding methods treat normalization as a localized operation at specific positions, a more radical approach elevates normalization to a global architectural principle.
+\textbf{nGPT}~\cite{loshchilov2024ngpt} constrains all vectors in the network---embeddings, hidden states, query/key/value projections, MLP weights, and output weights---to lie on the unit hypersphere via $\ell_2$ normalization.
+Layer updates become spherical interpolations:
+\begin{equation}
+    \mathbf{h}_{l+1} = \text{Normalize}\!\left(\mathbf{h}_l + \alpha_l \cdot \left(f_l(\mathbf{h}_l) - \mathbf{h}_l\right)\right),
+\end{equation}
+where $\alpha_l$ is a learnable step size and the final normalization reprojects onto the sphere.
+Equivalently, constraining all vectors to the unit hypersphere and using spherical linear interpolation:
+\begin{equation}
+\hat{x}_l = \frac{x_l}{\|x_l\|_2}, \quad x_{l+1} = \mathrm{slerp}\!\left(\hat{x}_l,\, \hat{F}_l(\hat{x}_l),\, \alpha_l\right)
+\label{eq:ngpt}
+\end{equation}
+Because both Q and K are normalized, attention logits are naturally cosine similarities in $[-1, 1]$, eliminating the need for separate QK-Norm.
+Critically, nGPT contains no traditional LayerNorm or RMSNorm layers---normalization is an intrinsic property of the representation space rather than an extrinsic correction.
+The key geometric insight is that in unconstrained Euclidean space, a substantial fraction of optimizer updates merely change vector norms without altering directions, wasting computation.
+The hyperspherical constraint eliminates this redundant degree of freedom, and nGPT achieves 4--20$\times$ reduction in steps to reach equivalent loss, though large-scale validation beyond nanoGPT remains pending.
+
+\textbf{Gemma~2}~\cite{gemma2024improving} pursues the opposite philosophy---maximal redundancy for maximal robustness.
+It deploys normalization at multiple levels simultaneously: Pre+Post RMSNorm at the sublayer level, QK-Norm at the attention input level, and logit soft-capping at both the attention and final output levels.
+This multi-layered defense eliminates loss spikes across 2B, 9B, and 27B parameter scales.
+\textbf{UnitNorm}~\cite{zhao2024unitnorm}, developed independently for time-series Transformers, applies pure $\ell_2$ normalization $\mathbf{x}/\|\mathbf{x}\|_2$ with zero additional parameters, addressing token shift and attention sparsity problems specific to temporal data.
+Its convergence with nGPT's hyperspherical philosophy from entirely different problem domains suggests that projection onto the unit sphere may be a broadly effective inductive bias.
+nGPT and Gemma~2 thus represent two polar philosophies of normalization design---geometric minimalism versus engineering defense-in-depth---and future architectures may need to navigate between these extremes.
+
+%% 3.7 Automated Normalization-Activation Search
+\subsection{Automated Normalization-Activation Search}
+
+Normalization and activation functions are typically adjacent operations in Transformer blocks, and their functional roles---value range control and nonlinear transformation---exhibit significant overlap.
+\textbf{EvoNorm}~\cite{liu2020evolving} challenges the assumption that these should be separately designed by defining a search space of primitive operations (addition, multiplication, division, sigmoid, variance, mean) and using evolutionary search to discover unified normalization-activation layers.
+The search yielded two notable architectures: EvoNorm-B0 (batch-dependent), $\text{EvoNorm-B0}(\mathbf{x}) = \mathbf{x} \cdot \sigma(\mathbf{x} / v(\mathbf{x}))$, where sigmoid provides gating and variance provides normalization; and EvoNorm-S0 (batch-independent), which replaces variance with group standard deviation.
+Both surpass their hand-designed counterparts (BN+ReLU and GN+ReLU, respectively) on ImageNet and COCO, and the layers discovered on small proxy tasks transfer directly to larger benchmarks.
+
+The primary limitation of EvoNorm is its exclusive validation on convolutional architectures.
+Whether the search paradigm can discover superior alternatives to the RMSNorm+SwiGLU combination now standard in Transformer FFN blocks remains an open question.
+The search space would need to incorporate Transformer-specific primitives (e.g., attention logits, residual paths) and scale to architectures where evaluation cost is substantially higher.
+Nevertheless, EvoNorm demonstrates that the joint normalization-activation design space is far from fully explored, and that automated methods can discover non-obvious functional compositions that outperform human intuition.
+
+%% 3.8 Normalization-Free Architectures
+\subsection{Normalization-Free Architectures}
+
+If the essential functions of normalization can be achieved through other means---careful initialization, gradient clipping, or bounded activation functions---then normalization layers themselves may be unnecessary.
+This line of inquiry began with \textbf{Fixup}~\cite{zhang2019fixup}, which showed that zero-initializing the last layer of each residual branch (making each block initially an identity function) controls variance growth and enables BatchNorm-free training of deep ResNets.
+\textbf{T-Fixup}~\cite{huang2020tfixup} extended this to Transformers by scaling $W_V$ and $W_O$ by $(9N)^{-1/4}$ and initializing FFN output weights near zero, completely removing all LayerNorm layers and warm-up schedules while matching standard Transformer performance on machine translation.
+\textbf{NFNet}~\cite{brock2021high} decomposed BN's implicit functions into two explicit mechanisms: Scaled Weight Standardization for controlling forward-pass signal variance, and Adaptive Gradient Clipping (AGC)---$G \leftarrow \lambda \frac{\|W\|_F}{\|G\|_F} G$ when $\|G\|_F / \|W\|_F > \lambda$---for constraining backward-pass update magnitude.
+This achieved 86.5\% top-1 on ImageNet without any normalization.
+
+The most disruptive recent development is \textbf{Dynamic Tanh (DyT)}~\cite{zhu2025transformers}, which observed that the input--output mapping of trained LayerNorm layers empirically resembles an S-shaped curve and proposed a direct replacement:
+\begin{equation}
+    \mathrm{DyT}(x) = \gamma \odot \tanh(\alpha \, x) + \beta, \quad \alpha \in \mathbb{R}^d \text{ (learnable per-dimension)}
+    \label{eq:dyt}
+\end{equation}
+where $\alpha$ is a per-layer learnable scalar and $\gamma, \beta$ are per-channel parameters.
+As a purely element-wise operation with no reduction, DyT is maximally hardware-friendly and matches normalization performance across ViT, LLaMA, DiT, and wav2vec~2.0.
+\textbf{Dynamic Erf (Derf)}~\cite{chen2025stronger} refines this insight by analyzing the critical role of saturation speed: erf saturates more slowly than tanh (Gaussian decay $O(e^{-x^2})$ versus exponential decay $O(e^{-2|x|})$), preserving gradients at larger magnitudes---at $|x|=2$, the erf derivative is approximately 26$\times$ larger than tanh's.
+Derf uses $\text{Derf}(\mathbf{x}) = \text{erf}(\alpha \mathbf{x} + s)$ and consistently outperforms both DyT and standard normalization across all tested architectures.
+These results challenge a decade of normalization research by suggesting that the essential function of normalization may not be statistical standardization at all, but rather bounded nonlinear compression---a function that any sufficiently well-behaved sigmoidal mapping can provide.
+
+%% 3.9 Frontier Directions
+\subsection{Frontier Directions: Hardware Co-Design, Optimizer Coupling, and Outlier Dynamics}
+
+The most recent research reveals that normalization is not an isolated architectural component but is deeply entangled with hardware precision, optimizer design, and emergent activation dynamics.
+
+\paragraph{FP8 training and normalization.}
+The transition to FP8 arithmetic exposes a fundamental tension: normalization layers that stabilize training in full precision can become error amplifiers in low precision~\cite{zhang2025whylowprecision}.
+The mechanism involves a positive feedback loop: low-rank similarity structures emerge in attention, concentrating information in few dimensions; quantization errors in these critical dimensions are then amplified by RMSNorm's division (an underestimated RMS causes global over-scaling) and softmax's exponentiation, eventually triggering loss spikes.
+FOG~\cite{sun2025fog} addresses this architecturally by mandating QK-Norm (bounding attention logits within FP8's dynamic range) and inserting additional RMSNorm at strategic positions to control FFN intermediate activation scales, achieving all-FP8 GEMM computation with 40\% throughput improvement over BF16.
+The activation kurtosis serves as a practical monitoring metric: lower kurtosis indicates more FP8-friendly distributions.
+
+\paragraph{Optimizer--normalization coupling.}
+The Muon optimizer~\cite{jordan2025muon} reveals an unexpected duality: by orthogonalizing momentum updates via SVD decomposition ($\theta_t = \theta_{t-1} - \text{lr} \cdot UV^\top$), Muon implicitly maintains the spectral condition of weight matrices, controlling activation norms through the backward pass rather than the forward pass.
+This is dual to normalization layers, which control forward-pass activation scales.
+The combination of Muon (backward spectral control) with DyT/Derf (forward bounded compression) raises the intriguing possibility of completely eliminating traditional normalization from both passes---though this remains an open research direction.
+
+\paragraph{Outlier--normalization symbiosis.}
+Recent analysis~\cite{bondarenko2026outlier} reveals that the massive activations and attention sinks observed in trained Transformers are not pathological artifacts but functional features co-evolved with normalization.
+When a single activation $x_k \gg x_i$ dominates, RMSNorm effectively becomes $\hat{x}_i \approx x_i \cdot \sqrt{d} / |x_k| \cdot \gamma_i$---the outlier's magnitude controls the effective scale of all other dimensions.
+Removing normalization eliminates outliers but degrades performance; clipping outliers while retaining normalization is equally harmful.
+This symbiosis has practical implications for quantization, which must preserve outlier functionality rather than suppress it, and provides a new interpretation of DyT/Derf as alternative rescaling mechanisms that do not depend on outlier co-evolution.
+
+\paragraph{Module-level hybrid normalization.}
+\textbf{HybridNorm}~\cite{chen2025hybridnorm} abandons the assumption that a single normalization strategy should apply uniformly, instead assigning QKV-Norm to attention modules (controlling logit range and output scale) and Post-Norm to FFN modules (preserving gradient signal quality).
+This module-specific strategy proves effective for both dense Transformers and sparse Mixture-of-Experts architectures, where Post-Norm helps maintain consistent output scales across different experts.
+
+\vspace{0.5em}
+These frontier directions converge on a deeper insight: the essence of normalization may not reside in any specific network layer, but in maintaining certain invariants during training---spectral conditioning, norm boundedness, or value-range compression.
+These invariants can be enforced through normalization layers (the traditional approach), bounded activation functions (DyT/Derf), optimizer design (Muon), architectural constraints (nGPT), or combinations thereof.
+
+%% Comparison Table
+\begin{table}[t]
+\centering
+\caption{Comparison of normalization methods for Transformer-based models. ``Norm Dim.''\ indicates the dimension along which statistics are computed. ``Params'' denotes learnable parameters per normalized dimension $d$. ``Reduction Ops'' counts the number of statistical reduction operations (mean, variance, or RMS) per forward pass.}
+\label{tab:norm_comparison}
+\small
+\begin{tabular}{lccccl}
+\toprule
+\textbf{Method} & \textbf{Norm Dim.} & \textbf{Params} & \textbf{Reduction Ops} & \textbf{Year} & \textbf{Adoption} \\
+\midrule
+BatchNorm~\cite{ioffe2015batch} & Batch & $2d$ & 2 (mean, var) & 2015 & CNNs only \\
+LayerNorm~\cite{ba2016layer} & Feature & $2d$ & 2 (mean, var) & 2016 & BERT, GPT-2 \\
+RMSNorm~\cite{zhang2019root} & Feature & $d$ & 1 (RMS) & 2019 & LLaMA, Qwen, Mistral \\
+ScaleNorm~\cite{nguyen2019transformers} & Feature & 1 & 1 (L2 norm) & 2019 & Limited \\
+QK-Norm~\cite{henry2020query} & Per-head Q,K & 1/head & 1 (L2 norm) & 2020 & Gemma 2/3, Qwen 3 \\
+adaLN-Zero~\cite{peebles2023scalable} & Feature & $6d$/block & 2 (mean, var) & 2023 & DiT, SD3, Sora \\
+nGPT~\cite{loshchilov2024ngpt} & All vectors & $\alpha$/layer & 1 (L2 norm) & 2024 & Experimental \\
+DyT~\cite{zhu2025transformers} & Element-wise & $2d{+}1$ & 0 & 2025 & Experimental \\
+Derf~\cite{chen2025stronger} & Element-wise & 2 & 0 & 2025 & Experimental \\
+\bottomrule
+\end{tabular}
+\end{table}

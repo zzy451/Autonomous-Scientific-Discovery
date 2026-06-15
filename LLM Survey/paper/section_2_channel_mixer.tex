@@ -1,0 +1,277 @@
+% ==============================================================================
+% Section 2: Channel Mixer (Feed-Forward Networks)
+% Full LaTeX body — 8 subsections, no \section command
+% ==============================================================================
+
+\subsection{FFN Structure and Activation Functions}
+\label{subsec:ffn_activation}
+
+The feed-forward network (FFN) within each Transformer block serves as the channel mixer, applying an identical pointwise nonlinear transformation to every token representation independently.
+In the original Transformer architecture~\cite{vaswani2017attention}, the FFN is a two-layer perceptron with a single hidden expansion:
+\begin{equation}
+\label{eq:vanilla_ffn}
+\mathrm{FFN}(x) = W_2 \,\sigma\!\bigl(W_1 x + b_1\bigr) + b_2,
+\end{equation}
+where $W_1 \in \mathbb{R}^{d \times d_{\mathrm{ff}}}$, $W_2 \in \mathbb{R}^{d_{\mathrm{ff}} \times d}$, and $\sigma$ denotes a pointwise activation function.
+The hidden dimension $d_{\mathrm{ff}}$ is typically set to $4d$, so the FFN accounts for roughly two-thirds of each block's parameters.
+Because the activation function is the sole source of nonlinearity in this module, its choice fundamentally determines the expressiveness of the per-token feature transformation.
+
+The earliest Transformer models adopted \textbf{ReLU}~\cite{agarap2018deep}, $\mathrm{ReLU}(x)=\max(0,x)$, which is computationally efficient but suffers from the dying neuron problem: units whose pre-activations are consistently negative receive zero gradient and cease to learn.
+\textbf{GELU}~\cite{hendrycks2016gaussian} addresses this shortcoming by interpreting activation as a stochastic regularisation expectation, $\mathrm{GELU}(x)=x\,\Phi(x)$, where $\Phi$ is the standard Gaussian CDF.
+Its smoothness yields a more favourable optimisation landscape, and GELU became the default in GPT-2 and BERT.
+\textbf{Swish} (also called SiLU)~\cite{ramachandran2017searching}, discovered via automated activation search, generalises the sigmoid gate to $\mathrm{Swish}(x)=x\,\sigma(\beta x)$; with $\beta=1$ it coincides with SiLU.
+Unlike ReLU, Swish is non-monotonic and everywhere differentiable, properties that empirically benefit deep networks.
+
+A more recent line of work re-examines ReLU-family activations from a sparsity perspective.
+\textbf{ReLU$^2$}~\cite{zhang2024relu2} squares the ReLU output, $\mathrm{ReLU}^2(x)=\bigl(\max(0,x)\bigr)^2$, which amplifies the zero region and produces activation sparsity exceeding 90\%.
+This hard sparsity---where inactive neurons are exactly zero rather than merely small---enables hardware-level shortcuts that skip zero-valued multiplications, achieving inference speedups comparable to or better than dense SwiGLU networks with negligible quality loss.
+The tension between smooth activations that ease training and sparse activations that accelerate inference remains an active area of investigation; emerging approaches such as \textbf{PolyGLU} attempt to reconcile the two by conditioning the activation mode on the input state, breaking the static one-activation-fits-all paradigm.
+
+
+% ------------------------------------------------------------------------------
+\subsection{Gated Linear Units and the Three-Matrix FFN}
+\label{subsec:glu}
+
+The introduction of \textbf{Gated Linear Units} (GLU)~\cite{dauphin2017language} marked a structural turning point for the Transformer FFN, replacing the standard two-matrix architecture with a three-matrix design that incorporates multiplicative gating.
+In the original formulation, GLU computes
+\begin{equation}
+\label{eq:glu}
+\mathrm{GLU}(x) = \bigl(x W + b\bigr) \otimes \sigma\!\bigl(x V + c\bigr),
+\end{equation}
+where $\sigma$ is the sigmoid function, $\otimes$ denotes element-wise multiplication, and the right branch acts as a gate that controls the information flow of the left branch.
+This mechanism is conceptually analogous to the forget and input gates of LSTMs: one projection generates candidate features while a parallel projection determines which features are retained.
+
+Shazeer~\cite{shazeer2020glu} systematically evaluated GLU variants by substituting the sigmoid gate with different activation functions.
+\textbf{ReGLU} uses ReLU, \textbf{GeGLU} uses GELU, and \textbf{SwiGLU} uses Swish:
+\begin{equation}
+\label{eq:swiglu}
+\mathrm{SwiGLU}(x) = \mathrm{Swish}\!\bigl(x W_{\mathrm{gate}}\bigr) \otimes \bigl(x W_{\mathrm{up}}\bigr), \qquad
+\mathrm{FFN}_{\mathrm{SwiGLU}}(x) = \bigl(\mathrm{SwiGLU}(x)\bigr) W_{\mathrm{down}}.
+\end{equation}
+Across matched-parameter comparisons, SwiGLU consistently outperformed both the vanilla FFN and other GLU variants, establishing it as the de facto standard in modern LLMs including LLaMA~\cite{touvron2023llama}, PaLM, and Qwen.
+GeGLU, which replaces Swish with GELU in the gate branch, is adopted by models such as Gemma~\cite{gemma2024improving}:
+\begin{equation}
+\mathrm{GeGLU}(x) = \left(\mathrm{GELU}(x W_1) \odot x V\right) W_2
+\label{eq:geglu}
+\end{equation}
+
+Because the three-matrix structure introduces an additional projection ($W_{\mathrm{gate}}$, $W_{\mathrm{up}}$, $W_{\mathrm{down}}$ versus the original $W_1$, $W_2$), it increases the raw parameter count from $2 d \cdot d_{\mathrm{ff}}$ to $3 d \cdot d_{\mathrm{ff}}$.
+In practice, the hidden dimension is reduced to $d_{\mathrm{ff}} = \tfrac{2}{3} \times 4d \approx \tfrac{8}{3}d$ so that the total parameter budget remains unchanged.
+Even under this iso-parameter constraint, the GLU-based FFN consistently surpasses the wider two-matrix FFN, suggesting that the multiplicative interaction provides a qualitatively different---and superior---form of expressiveness.
+Theoretically, the gating branch supplies a data-dependent soft mask over the feature space, enabling the network to learn higher-order feature interactions that are difficult to express with additive activations alone.
+The gradient flow through the element-wise product also provides a more direct path reminiscent of residual connections, potentially easing optimisation in very deep models.
+
+The three-matrix GLU FFN has become so dominant that the two-matrix design is essentially absent from frontier models released after 2023.
+Looking ahead, the gating principle is beginning to diffuse into other modules---gated attention~\cite{qiu2025gated} applies a similar multiplicative control to attention weights---and the interplay between FFN gating and MoE routing (Section~\ref{subsec:moe_routing}) introduces a dual-gating dynamic whose theoretical implications remain largely unexplored.
+
+
+% ------------------------------------------------------------------------------
+\subsection{Mixture-of-Experts: Foundations and Routing Strategies}
+\label{subsec:moe_routing}
+
+The Mixture-of-Experts (MoE) paradigm replaces the single dense FFN with a collection of $N$ expert sub-networks, of which only a small subset is activated for each token, thereby decoupling model capacity from per-token computation cost~\cite{jacobs1991adaptive,cai2024survey}.
+A lightweight router (or gating network) $g$ maps each token representation $x$ to a distribution over experts; the output is the weighted sum of the selected experts' outputs:
+\begin{equation}
+\label{eq:moe}
+\mathrm{MoE}(x) = \sum_{i=1}^{N} g_i(x)\, E_i(x), \qquad
+g(x) = \mathrm{TopK}\!\bigl(\mathrm{softmax}(W_r x + \epsilon),\, k\bigr),
+\end{equation}
+where $E_i$ denotes the $i$-th expert FFN, $W_r$ is the router's weight matrix, and $\epsilon$ is optional noise injected during training to encourage exploration.
+
+\textbf{Top-$k$ routing}~\cite{shazeer2017outrageously} is the foundational strategy: each token selects the $k$ highest-scoring experts and discards the rest.
+The original formulation uses $k{=}2$ with an auxiliary load-balancing loss that penalises uneven expert utilisation.
+\textbf{Switch Transformer}~\cite{fedus2022switch} simplified this to $k{=}1$, halving communication overhead but increasing the risk of load imbalance and routing collapse---a failure mode in which a small subset of experts attracts the majority of tokens while others remain underutilised.
+To stabilise training, \textbf{ST-MoE}~\cite{zoph2022stmoe} introduced the router z-loss, which penalises large logit magnitudes in the router to prevent numerical instability.
+
+A conceptual inversion of the routing direction was proposed by \textbf{Expert Choice}~\cite{zhou2022mixture}: instead of tokens selecting experts, each expert selects a fixed number of tokens from the global pool.
+This guarantees perfect load balance by construction but introduces a new asymmetry---some tokens may be processed by many experts while others are selected by none, potentially causing information loss.
+\begin{equation}
+S = \mathrm{softmax}(X W_g)^\top \in \mathbb{R}^{E \times N}, \quad \mathcal{T}_e = \mathrm{top\text{-}}k\!\left(S_{e,:}\right) \quad \text{(each expert selects its top-}k\text{ tokens)}
+\label{eq:expert_choice}
+\end{equation}
+
+More recent work seeks to eliminate the auxiliary loss entirely.
+\textbf{Auxiliary-loss-free routing}~\cite{wang2024auxiliary}, adopted by DeepSeek-V3~\cite{liu2024deepseek}, introduces a learnable bias term in the router that dynamically steers tokens from overloaded experts to underutilised ones.
+By removing the auxiliary loss, this approach avoids gradient interference with the primary language-modelling objective and simplifies hyper-parameter tuning.
+\begin{equation}
+b_e \leftarrow b_e + \eta \cdot (\bar{f} - f_e), \quad g(x) = \mathrm{top\text{-}}k\!\left(\mathrm{softmax}(x W_g + b)\right) \quad \text{(bias-corrected routing)}
+\label{eq:auxfree}
+\end{equation}
+\textbf{Soft MoE}~\cite{puigcerver2024soft} takes a different path by eliminating discrete routing altogether: every expert processes a soft weighted combination of all tokens, making the entire module fully differentiable at the cost of losing the computational savings of sparsity.
+\textbf{Sigma-MoE}~\cite{hu2024sigma} replaces softmax with per-expert sigmoid scoring, decoupling expert weights from inter-expert competition and improving expert utilisation.
+\textbf{ReMoE}~\cite{wang2024remoe} substitutes ReLU for softmax in the router, naturally producing sparse routing weights without an explicit top-$k$ selection step.
+
+Table~\ref{tab:routing_comparison} summarises the key properties of these routing strategies.
+
+\begin{table}[t]
+\centering
+\caption{Comparison of MoE routing strategies. ``Discrete'' indicates hard token-to-expert assignment; ``Load Bal.'' denotes the mechanism used to encourage balanced utilisation; ``Diff.'' indicates full differentiability.}
+\label{tab:routing_comparison}
+\small
+\begin{tabular}{lccccl}
+\hline
+\textbf{Strategy} & \textbf{Direction} & \textbf{Discrete} & \textbf{Load Bal.} & \textbf{Diff.} & \textbf{Representative Model} \\
+\hline
+Top-$k$ + Aux Loss   & Token$\to$Expert & Yes & Aux loss       & No  & GShard~\cite{lepikhin2020gshard} \\
+Top-1 (Switch)        & Token$\to$Expert & Yes & Aux loss       & No  & Switch Transformer~\cite{fedus2022switch} \\
+Router z-loss         & Token$\to$Expert & Yes & z-loss         & No  & ST-MoE~\cite{zoph2022stmoe} \\
+Expert Choice         & Expert$\to$Token & Yes & By design      & No  & EC-MoE~\cite{zhou2022mixture} \\
+Aux-Loss-Free Bias    & Token$\to$Expert & Yes & Learned bias   & No  & DeepSeek-V3~\cite{liu2024deepseek} \\
+Soft MoE              & Soft (all-to-all) & No  & N/A           & Yes & Soft MoE~\cite{puigcerver2024soft} \\
+Sigma-MoE             & Token$\to$Expert & Yes & Sigmoid (ind.) & No  & Sigma-MoE~\cite{hu2024sigma} \\
+ReMoE                 & Token$\to$Expert & Yes & ReLU sparsity  & No  & ReMoE~\cite{wang2024remoe} \\
+\hline
+\end{tabular}
+\end{table}
+
+
+% ------------------------------------------------------------------------------
+\subsection{MoE Expert Design: Granularity, Sharing, and Heterogeneity}
+\label{subsec:moe_expert_design}
+
+Beyond routing, the design of the experts themselves---their size, number, and structural uniformity---is a critical architectural decision that governs the capacity--efficiency trade-off in MoE models.
+
+\paragraph{Coarse- versus fine-grained experts.}
+Early MoE language models employ a coarse-grained design with a small number of full-sized experts.
+Mixtral~\cite{jiang2024mixtral} uses 8 experts with top-2 routing, yielding 47B total parameters of which only 13B are active per token.
+This design is straightforward to implement and incurs modest communication overhead, but limits the combinatorial diversity of expert combinations.
+\textbf{Fine-grained experts}, pioneered by DeepSeekMoE~\cite{dai2024deepseekmoe}, decompose each expert into a smaller FFN and dramatically increase the expert count---DeepSeek-V2~\cite{deepseekv2_2024} uses 160 routed experts with top-6 activation, while DBRX~\cite{databricks2024dbrx} employs 16 experts with top-4 selection.
+The combinatorial advantage is substantial: selecting $k$ out of $N$ fine-grained experts yields $\binom{N}{k}$ possible expert combinations, providing far richer functional coverage than a coarse-grained alternative with the same active parameter count.
+Pushing this idea to the extreme, He et al.~\cite{he2024million} explore million-scale experts where each expert is reduced to a minimal parameter group, paired with product-key retrieval for efficient routing.
+
+\paragraph{Shared experts.}
+DeepSeekMoE introduced the concept of \textbf{shared experts}---one or two experts that are always activated regardless of routing decisions---to capture universal, input-agnostic features common across all tokens.
+The routed experts then specialise in domain- or task-specific patterns, mirroring a ``common-mode plus differential'' signal decomposition.
+This design was retained in DeepSeek-V2 and V3 and has been influential in the community.
+However, Qwen3~\cite{qwen2025qwen3} explicitly removes shared experts, arguing that under a global batch-level load-balancing strategy, routed experts can naturally learn general-purpose representations without a dedicated shared component.
+This architectural disagreement---shared versus no-shared---reflects an unresolved question about the optimal division of labour between general and specialised computation.
+
+\paragraph{Heterogeneous experts.}
+The standard assumption that all experts share the same architecture is challenged by \textbf{heterogeneous MoE} designs such as ERNIE~4.5~\cite{ernie45_2025}, which assigns different hidden dimensions or depths to different experts.
+This allows the model to allocate varying computational budgets to different input patterns, aligning with the intuition that not all tokens require the same complexity of processing.
+Heterogeneous designs raise new questions for routing: the router must implicitly learn a mapping between token difficulty and expert capacity, a correspondence that is non-trivial to supervise.
+Llama~4~\cite{meta2025llama4} also adopts an MoE architecture at scale, contributing to the growing diversity of expert design philosophies in production systems.
+
+
+% ------------------------------------------------------------------------------
+\subsection{MoE Engineering: Distributed Training and Inference}
+\label{subsec:moe_engineering}
+
+Translating the theoretical efficiency of MoE into practical speedups at scale requires addressing a constellation of systems-level challenges, from communication bottlenecks to numerical stability.
+
+\paragraph{Expert parallelism and communication.}
+\textbf{Expert Parallelism (EP)}~\cite{lepikhin2020gshard} distributes experts across GPUs so that each device holds a subset of the expert pool.
+During forward propagation, an All-to-All communication primitive dispatches each token to the GPU hosting its assigned expert and returns the result.
+The communication volume scales as $O(N \cdot d / P)$, where $N$ is the token count, $d$ is the hidden dimension, and $P$ is the number of devices; at large cluster sizes, this overhead can dominate computation.
+\textbf{DeepEP}~\cite{deepseek2025deepep} is a purpose-built EP communication library that decomposes the All-to-All into pipelined dispatch and combine stages overlapped with expert computation, exploits NVLink topology-aware routing to minimise cross-node traffic, and supports FP8 communication to halve bandwidth requirements.
+
+\paragraph{Load balancing in practice.}
+Beyond routing-level strategies (Section~\ref{subsec:moe_routing}), systems-level load balancing involves setting a capacity factor that caps the maximum number of tokens each expert can process.
+Tokens exceeding this capacity are either dropped---incurring information loss---or re-routed to alternative experts.
+Switch Transformer~\cite{fedus2022switch} demonstrated that capacity factors of 1.0--1.25 provide a good balance between load uniformity and token coverage.
+The auxiliary-loss-free bias approach of DeepSeek-V3 operates at the system level by dynamically adjusting per-expert biases based on running load statistics, achieving near-uniform utilisation without auxiliary gradients.
+
+\paragraph{Mixed-precision training.}
+DeepSeek-V3~\cite{liu2024deepseek} achieved a milestone by successfully training a large-scale MoE model with \textbf{FP8 mixed precision} for the expert FFN GEMMs while retaining BF16 for attention and routing computations.
+The key enabler is per-group scaling---computing scale factors at a fine granularity (e.g., per 128-element tile) rather than per-tensor---to accommodate the limited dynamic range of E4M3 (maximum representable value $\approx$240).
+This approach reduces communication bandwidth by approximately 40\% and accelerates expert computation, with negligible quality degradation.
+
+\paragraph{Training stability.}
+MoE training is notoriously prone to instability.
+ST-MoE~\cite{zoph2022stmoe} identified that unbounded router logits can trigger gradient explosions and introduced the router z-loss $\mathcal{L}_z = \frac{1}{B}\sum_{i=1}^{B}\bigl(\log \sum_{j=1}^{N} e^{z_{ij}}\bigr)^2$ to regularise logit magnitudes.
+Skywork-MoE~\cite{wei2024skywork} and OLMoE~\cite{muennighoff2024olmoe} further document best practices for learning-rate scheduling, expert initialisation, and gradient clipping that are critical for stable convergence.
+
+\paragraph{The inference double penalty.}
+While MoE reduces per-token FLOPs during training, inference presents a double penalty~\cite{moe_double_penalty_2026}: (i) all expert parameters must reside in memory even though only a fraction is used per token, resulting in extremely low parameter utilisation; and (ii) distributed inference incurs All-to-All latency proportional to expert count and cluster size.
+Consequently, the training efficiency advantage of MoE does not automatically translate to inference efficiency, and bridging this gap---through expert offloading, predictive caching, or specialised hardware---remains one of the most pressing open problems.
+
+
+% ------------------------------------------------------------------------------
+\subsection{Conditional Computation: Beyond Expert Selection}
+\label{subsec:conditional_computation}
+
+MoE addresses the question of which experts to activate, but conditional computation asks a more general question: for a given input, how much computation is necessary at all?
+This broader framework, first articulated by Bengio~\cite{bengio2013estimating}, posits that large neural networks contain far more capacity than any single input requires, and that learning to dynamically select the appropriate computational sub-graph can decouple model capacity from inference cost without sacrificing quality.
+
+\paragraph{Theoretical foundations.}
+Bengio's conditional computation framework rests on three premises: (i)~model capacity and computational cost can be decoupled through sparse activation; (ii)~the routing decision itself must be lightweight, lest the overhead of deciding what to compute negate the savings; and (iii)~the routing policy can be learned end-to-end, potentially via reinforcement learning or straight-through estimators.
+The framework generalises MoE---which conditions on expert identity---to conditioning on depth (which layers to execute), width (how many channels to activate), or precision (at what numerical resolution to compute).
+
+\paragraph{Mixture-of-Depths.}
+\textbf{Mixture-of-Depths (MoD)}~\cite{raposo2024mixture} operationalises depth-wise conditional computation by training a per-layer binary router that decides, for each token, whether to execute the full Transformer sub-block (attention plus FFN) or to skip it via the residual connection.
+A layer-level capacity budget (e.g., 50\% of tokens) constrains the router so that only the most ``informative'' tokens receive full computation.
+Empirically, MoD achieves comparable perplexity to the dense baseline while reducing total FLOPs by more than 50\%, validating the hypothesis that natural language tokens exhibit highly non-uniform computational demand---function words such as ``the'' and ``is'' can be processed cheaply, while semantically dense tokens (negations, rare entities) require deeper processing.
+
+\paragraph{Adaptive computation frameworks.}
+\textbf{Duo-LLM}~\cite{duollm2024} maintains two parallel FFN pathways per layer---a lightweight and a full-capacity module---and routes each token to the appropriate pathway based on a learned difficulty estimate.
+This design systematises the study of per-token compute allocation and can be viewed as a continuous relaxation of the binary skip/compute decision in MoD.
+The concept connects to Graves' Adaptive Computation Time (ACT), which allows Universal Transformers to iteratively refine token representations with a variable number of processing steps.
+
+\paragraph{Towards joint depth--width conditioning.}
+The combination of MoE (width-level sparsity) and MoD (depth-level sparsity) yields a doubly sparse architecture in which both the set of active experts and the set of active layers are input-dependent.
+Early explorations of this combination have appeared in the DeepSeek model family, and the theoretical implications---particularly regarding the interaction between depth-wise and width-wise routing decisions---represent a fertile direction for future work.
+The broader vision is a fully adaptive computational graph in which every dimension of the computation (depth, width, precision, even attention span) is conditioned on the input, enabling inference-time compute scaling that allocates resources proportionally to task difficulty.
+
+
+% ------------------------------------------------------------------------------
+\subsection{FFN Sparsity and Post-Training Compression}
+\label{subsec:ffn_sparsity}
+
+The observation that large fractions of FFN neurons are inactive for any given input has motivated a rich line of work on exploiting sparsity for inference acceleration, operating at granularities ranging from individual neurons to entire experts.
+
+\paragraph{Contextual sparsity.}
+\textbf{Deja Vu}~\cite{liu2023deja} demonstrated that for a given input token, 85--95\% of FFN parameters can be skipped without measurably affecting the output.
+Crucially, the set of active neurons varies across inputs---this is contextual sparsity rather than static pruning.
+Deja Vu trains a lightweight MLP predictor that, given the previous layer's activation, forecasts which neurons in the current layer will be active, and computes only those neurons.
+This approach yields approximately $2\times$ wall-clock speedup on commodity hardware.
+The accuracy of the sparsity predictor is the primary bottleneck: overly aggressive prediction causes quality degradation, while conservative prediction limits the achievable speedup.
+
+\paragraph{MoEfication.}
+\textbf{MoEfication}~\cite{zhang2022moefication} bridges the gap between dense and sparse architectures by converting a pre-trained dense FFN into a post-hoc MoE structure.
+The procedure clusters co-activated neurons into expert groups based on their activation correlation patterns, then trains a lightweight router to select the relevant cluster at inference time.
+This enables practitioners to benefit from MoE-style sparsity without the cost and complexity of training an MoE model from scratch, effectively making the dense--MoE boundary a deployment-time rather than design-time decision.
+
+\paragraph{Expert-level pruning.}
+In pre-trained MoE models, not all experts contribute equally.
+Expert pruning removes underutilised or redundant experts through several criteria: routing frequency (rarely selected experts are pruned), output magnitude (experts with small contributions are discarded), or inter-expert similarity (functionally overlapping experts are merged).
+Systematic pruning can reduce the expert count by 30--50\% with minimal quality loss, significantly alleviating the memory footprint problem that plagues MoE inference.
+
+\paragraph{Activation-function-driven sparsity.}
+As discussed in Section~\ref{subsec:ffn_activation}, \textbf{ReLU$^2$}~\cite{zhang2024relu2} produces hard zeros for over 90\% of activations, in contrast to the soft near-zero values generated by GELU or SiLU.
+Hard sparsity is directly exploitable by hardware: sparse matrix multiplication kernels can skip zero entries entirely, whereas soft sparsity requires thresholding heuristics that introduce approximation error.
+This observation has motivated the ``train dense, infer sparse'' paradigm---train with SwiGLU for optimal convergence, then fine-tune or distil into a ReLU$^2$ model for efficient deployment---which is gaining traction as a practical inference optimisation strategy.
+
+\paragraph{Interactions with other compression techniques.}
+Sparsity and quantisation are complementary: sparse neurons reduce the number of operations, while quantisation reduces the cost of each operation.
+Their joint optimisation---for instance, combining 4-bit weight quantisation with 90\% activation sparsity---has the potential for order-of-magnitude inference speedups, but the interaction effects (e.g., whether quantisation noise disproportionately affects the small set of active neurons) remain insufficiently characterised.
+
+
+% ------------------------------------------------------------------------------
+\subsection{FFN Alternatives: Beyond the MLP Paradigm}
+\label{subsec:ffn_alternatives}
+
+The multilayer perceptron---fixed activation functions composed with learnable linear projections---has served as the default channel mixer since the inception of neural networks.
+While GLU gating and MoE routing have introduced substantial innovations within this paradigm, a smaller but intellectually significant body of work questions whether the MLP is the only viable design for per-token feature transformation.
+
+\paragraph{Kolmogorov-Arnold Networks.}
+\textbf{KAN}~\cite{liu2024kan} draws on the Kolmogorov-Arnold representation theorem, which states that any multivariate continuous function on $[0,1]^n$ can be decomposed as
+\begin{equation}
+\label{eq:kan}
+f(x_1, \ldots, x_n) = \sum_{q=0}^{2n} \Phi_q\!\Biggl(\sum_{p=1}^{n} \phi_{q,p}(x_p)\Biggr),
+\end{equation}
+where $\Phi_q$ and $\phi_{q,p}$ are univariate functions.
+KAN operationalises this theorem by parameterising the univariate functions as learnable B-splines placed on the network's edges rather than its nodes, inverting the standard MLP design in which weights are learnable but activations are fixed.
+On low-dimensional scientific computing tasks, KAN exhibits superior approximation efficiency and interpretability compared to MLPs of equivalent size.
+However, scaling KAN to LLM-scale models faces formidable obstacles: B-spline evaluation is substantially more expensive than matrix multiplication, efficient GPU kernels for KAN are lacking, and whether KAN's advantages persist in high-dimensional, large-batch regimes is unproven.
+Emerging variants---FourierKAN, WaveletKAN, and piecewise-linear approximations---seek to reduce the computational gap while preserving the theoretical appeal.
+
+\paragraph{Adaptive-complexity channel mixing.}
+\textbf{Duo-LLM}~\cite{duollm2024} does not replace the MLP but augments it with a parallel lightweight pathway, routing each token to the appropriate complexity level.
+This design can be viewed as the channel-mixer analogue of Mixture-of-Depths: rather than skipping entire layers, it adjusts the capacity of the per-token transformation.
+The broader implication is that future channel mixers may not be monolithic modules with a single computational profile, but instead offer a continuum of processing intensities tailored to input complexity.
+
+\paragraph{Outlook.}
+KAN is more likely to find its niche as a complement to the MLP---deployed in specialised sub-modules requiring high-precision function approximation or interpretability---rather than as a wholesale replacement.
+Meanwhile, the convergence of MoE, MoD, and adaptive-complexity designs points toward a unified vision of the channel mixer as a dynamically reconfigurable transformation module.
+In this vision, the static notion of ``the FFN'' gives way to a per-token, per-layer decision over what function to apply, how much computation to invest, and which parameters to engage---effectively collapsing expert selection, depth selection, and width selection into a single conditional computation framework.
+Realising this vision will require co-design of routing algorithms, hardware accelerators, and training curricula that teach models to allocate computation efficiently from the earliest stages of pre-training.
