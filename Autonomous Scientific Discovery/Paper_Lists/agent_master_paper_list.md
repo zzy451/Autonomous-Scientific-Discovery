@@ -2,7 +2,7 @@
 
 > Last updated: 2026-06-15
 > Current batch: 110 records from the first seed-survey batch
-> Current status counts: 15 candidate; 61 to_read; 20 background_only; 11 excluded; 3 needs_review
+> Current status counts: 15 candidate; 62 to_read; 22 background_only; 11 excluded; 0 needs_review
 > Current note coverage: 10 populated note paths
 > Primary source trail: Shanghai AI Lab seed survey, `From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery` (arXiv:2508.14111v1)
 > Field schema: `paper_note_templates_and_prompts/ASD_annotation_schema.md`
@@ -12,20 +12,21 @@
 | Main class | Count |
 |---|---:|
 | 01 | 24 |
-| 02 | 4 |
+| 02 | 3 |
 | 03 | 24 |
 | 04 | 17 |
 | 06 | 15 |
 | 07 | 13 |
 | 09 | 4 |
+| 10 | 1 |
 
 | Inclusion status | Count |
 |---|---:|
 | candidate | 15 |
-| to_read | 61 |
-| background_only | 20 |
+| to_read | 62 |
+| background_only | 22 |
 | excluded | 11 |
-| needs_review | 3 |
+| needs_review | 0 |
 
 ## Master Candidate Table
 
@@ -87,7 +88,7 @@
 | ASD-0054 | The virtual lab: Ai agents design new sars-cov-2 nanobodies with experimental validation | Swanson et al. | 2024 | bioRxiv |  |  | yes | to_read |  | 07 | 07.04 |  | Drug discovery / biomedical agents | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 248] |
 | ASD-0055 | Biomaster: Multi-agent system for automated bioinformatics analysis workflow | Su et al. | 2025 | bioRxiv |  |  | yes | to_read |  | 06 | 06.03 |  | Biology / omics research agents | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 243] |
 | ASD-0056 | Delocalized, asynchronous, closed-loop discovery of organic laser emitters | Strieth-Kalthoff et al. | 2024 | Science | https://doi.org/10.1126/science.adk9227 |  | yes | to_read |  | 03 | 03.04 |  | Closed-loop molecular/materials discovery | yes | Planning Agent; Tool-using Agent; Hybrid Agent | experimental_design; experiment_execution; data_analysis; evidence_assessment_and_validation | robotic_experiment; wet_lab_experiment | experimental_discovery; experimental_optimization | medium_pending_full_text | core | Notes/03_Chemical_Sciences/StriethKalthoff_2024_Organic_Laser_Emitters.md | SourceTrail: ShanghaiAILabSeedSurvey[ref 241] |
-| ASD-0057 | Autochemschematic ai: A closed-loop, physics-aware agentic framework for auto-generating chemical process and instrumentation diagrams | Srinivas et al. | 2025 | arXiv | https://arxiv.org/abs/2505.24584 |  | uncertain | needs_review |  | 09 | 09.06 |  | Chemical process / engineering diagram agents | no |  |  |  |  |  | standard |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 240]; StrictReview: verify whether it is autonomous chemical-process Agent or diagram-generation tool. |
+| ASD-0057 | Autochemschematic ai: A closed-loop, physics-aware agentic framework for auto-generating chemical process and instrumentation diagrams | Srinivas et al. | 2025 | arXiv | https://arxiv.org/abs/2505.24584 |  | yes | to_read |  | 09 | 09.04 |  | Chemical process engineering diagram agents | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 240]; StrictReview: verify whether it is autonomous chemical-process Agent or diagram-generation tool.; NeedsReviewResolved: include as engineering/process-design Agent; full note should verify closed-loop planning and simulator feedback. |
 | ASD-0058 | Astroagents: A multi-agent ai for hypothesis generation from mass spectrometry data | Saeedi et al. | 2025 | arXiv | https://arxiv.org/abs/2503.23170 |  | yes | to_read |  | 02 | 02.01 |  | Astrobiology / space science agents | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 225]; StrictReview: moved from biology to 02 because scientific object is astrobiology/space-science hypothesis generation. |
 | ASD-0059 | Iterative hypothesis generation for scientific discovery with monte carlo nash equilibrium self-refining trees, 2025 | Rabby et al. | 2025 | Unknown | https://arxiv.org/abs/2503.19309 |  | uncertain | candidate |  | 06 | 06.03 |  | Biology / omics research agents | no |  |  |  |  |  | standard |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 217] |
 | ASD-0060 | Piflow: Principle-aware scientific discovery with multi-agent collaboration | Pu et al. | 2025 | arXiv | https://arxiv.org/abs/2505.15047 |  | yes | to_read |  | 01 | 01.04 |  | General scientific research-agent systems | no | Multi-Agent System | hypothesis_generation; evidence_assessment_and_validation; end_to_end_research_automation | benchmark | system_platform | low_metadata_only | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 208] |
@@ -96,7 +97,7 @@
 | ASD-0063 | Alphaevolve: A coding agent for scientific and algorithmic discovery | Novikov et al. | 2025 | arXiv | https://arxiv.org/abs/2506.13131 |  | yes | to_read |  | 01 | 01.02 |  | Formal/computational discovery agents | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 196] |
 | ASD-0064 | Phenograph: A multi-agent framework for phenotype-driven discovery in spatial transcriptomics data augmented with knowledge graphs | Niyakan and Qian | 2025 | bioRxiv |  |  | yes | to_read |  | 06 | 06.03 |  | Biology / omics research agents | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 195] |
 | ASD-0065 | Matpilot: an llm-enabled ai materials scientist under the framework of human-machine collaboration | Ni et al. | 2024 | arXiv | https://arxiv.org/abs/2411.08063 |  | yes | to_read |  | 04 | 04.04 |  | Materials discovery agents | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 194] |
-| ASD-0066 | Llmsat: A large language model-based goal-oriented agent for autonomous space exploration | Maranto | 2024 | arXiv | https://arxiv.org/abs/2405.01392 |  | uncertain | needs_review |  | 02 | 02.01 |  | Astronomy / space science agents | no |  |  |  |  |  | standard |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 182]; StrictReview: spacecraft autonomy is clear; confirm scientific observation/discovery workflow before core inclusion. |
+| ASD-0066 | Llmsat: A large language model-based goal-oriented agent for autonomous space exploration | Maranto | 2024 | arXiv | https://arxiv.org/abs/2405.01392 |  | no | background_only | Goal-oriented spacecraft autonomy/control Agent; no clear scientific discovery or research workflow role from metadata. | 10 | 10.02 |  | Spacecraft autonomy agents | no |  |  |  |  |  | background |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 182]; StrictReview: spacecraft autonomy is clear; confirm scientific observation/discovery workflow before core inclusion.; NeedsReviewResolved: keep as aerospace autonomy background, not core scientific Agent paper. |
 | ASD-0067 | Sciagent: Tool-augmented language models for scientific reasoning | Ma et al. | 2024 | arXiv | https://arxiv.org/abs/2402.11451 |  | no | background_only | Tool-augmented scientific reasoning benchmark/QA resource; no sustained scientific research workflow Agent. | 01 | 01.04 |  | General scientific research-agent systems | no |  |  |  |  |  | standard |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 178] |
 | ASD-0068 | An agentic framework for autonomous metamaterial modeling and inverse design | Lu et al. | 2025 | arXiv | https://arxiv.org/abs/2506.06935 |  | yes | to_read |  | 04 | 04.04 |  | Materials discovery agents | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 170] |
 | ASD-0069 | The ai scientist: Towards fully automated open-ended scientific discovery | Lu et al. | 2024 | arXiv | https://www.arxiv.org/abs/2408.06292v3 |  | yes | to_read |  | 01 | 01.04 |  | General scientific research-agent systems | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 169] |
@@ -117,7 +118,7 @@
 | ASD-0084 | Automating alloy design and discovery with physics-aware multimodal multiagent ai | Ghafarollahi and Buehler | 2025 | PNAS | https://doi.org/10.1073/pnas.2414074122 |  | yes | to_read |  | 04 | 04.02 |  | Alloy design multi-agent system | yes | Multi-Agent System; Hybrid Agent | hypothesis_generation; simulation_modeling; data_analysis; result_interpretation | simulation_validation; high_throughput_computation | design; prediction; system_platform | medium_pending_full_text | core | Notes/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.md | SourceTrail: ShanghaiAILabSeedSurvey[ref 71] |
 | ASD-0085 | Protagents: protein discovery via large language model multi-agent collaborations combining physics and machine learning | Ghafarollahi and Buehler | 2024 | Digital Discovery |  |  | yes | to_read |  | 06 | 06.03 |  | Protein design / discovery agents | no |  |  |  |  |  | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 68] |
 | ASD-0086 | Atomagents: Alloy design and discovery through physics-aware multi-modal multi-agent artificial intelligence | Ghafarollahi and Buehler | 2024 | arXiv | https://arxiv.org/abs/2407.10022 |  | yes | background_only | Duplicate/preprint version of the AtomAgents work; keep ASD-0084 PNAS record as canonical. | 04 | 04.02 |  | Alloy design multi-agent system | no |  |  |  |  |  | standard |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 67]; StrictReview: duplicate/preprint of ASD-0084; avoid double counting. |
-| ASD-0087 | Txagent: An ai agent for therapeutic reasoning across a universe of tools | Gao et al. | 2025 | arXiv | https://arxiv.org/abs/2503.10970 |  | uncertain | needs_review |  | 07 | 07.04 |  | Drug discovery / biomedical agents | no |  |  |  |  |  | standard |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 65]; StrictReview: strong therapeutic tool-use agent, but verify whether it is research discovery rather than clinical/therapeutic QA. |
+| ASD-0087 | Txagent: An ai agent for therapeutic reasoning across a universe of tools | Gao et al. | 2025 | arXiv | https://arxiv.org/abs/2503.10970 |  | uncertain | background_only | Therapeutic reasoning/tool-use Agent focused on clinical treatment decision support; research discovery role is not clear enough for core statistics. | 07 | 07.04 |  | Therapeutic reasoning agents | no |  |  |  |  |  | background |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 65]; StrictReview: strong therapeutic tool-use agent, but verify whether it is research discovery rather than clinical/therapeutic QA.; NeedsReviewResolved: keep as medical/therapeutic Agent background unless full text shows biomedical research discovery workflow. |
 | ASD-0088 | Empowering biomedical discovery with ai agents | Gao et al. | 2024 | Cell | https://doi.org/10.1016/j.cell.2024.09.022 |  | uncertain | background_only | High-value biomedical AI-agent framework/perspective; not counted as a core system paper unless full-text review identifies a concrete Agent system. | 07 | 07.04 |  | Biomedical discovery agents | no | Hybrid Agent; Tool-using Agent; Human-in-the-loop Agent | hypothesis_generation; experimental_design; data_analysis; evidence_assessment_and_validation | expert_evaluation | taxonomy; framework_reference | medium_pending_full_text | core | Notes/07_Medical_and_Health_Sciences/Gao_2024_Biomedical_Discovery_AI_Agents.md | SourceTrail: ShanghaiAILabSeedSurvey[ref 64] |
 | ASD-0089 | Researchcodeagent: An llm multi-agent system for automated codification of research methodologies | Gandhi et al. | 2025 | Unknown |  |  | yes | to_read |  | 01 | 01.04 |  | Research workflow coding agents | yes | LLM Agent; Multi-Agent System | tool_use_and_code_execution; knowledge_extraction_and_organization; end_to_end_research_automation | benchmark | system_platform | low_metadata_only | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 58] |
 | ASD-0090 | Agents for self-driving laboratories applied to quantum computing | Cao et al. | 2024 | arXiv | https://arxiv.org/abs/2412.07978 |  | yes | to_read |  | 02 | 02.03 |  | Self-driving laboratory for quantum computing | yes | Planning Agent; Robot / Embodied Agent; Hybrid Agent | experimental_design; experiment_execution; data_analysis; evidence_assessment_and_validation | simulation_validation; robotic_experiment | system_platform; experimental_optimization | low_metadata_only | core |  | SourceTrail: ShanghaiAILabSeedSurvey[ref 30] |
