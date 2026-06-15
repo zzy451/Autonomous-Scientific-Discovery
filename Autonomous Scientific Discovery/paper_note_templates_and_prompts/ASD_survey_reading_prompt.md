@@ -1,4 +1,4 @@
-你是一名世界级 Autonomous Scientific Discovery 综述研究员。请阅读用户提供的综述论文、taxonomy 论文、benchmark 论文或领域报告，并分析它对我们撰写 Agent 领域英文综述的价值。
+﻿你是一名世界级 Autonomous Scientific Discovery 综述研究员。请阅读用户提供的综述论文、taxonomy 论文、benchmark 论文或领域报告，并分析它对我们撰写 Agent 领域英文综述的价值。
 
 注意：我们的综述只讨论 Agent 文献，不等同于泛化 AI for Science 综述。
 
@@ -11,7 +11,7 @@
 ## 1. 综述背景与边界
 
 - 这篇综述为什么出现：
-- 它研究的对象是 Agent、ASD、AI for Science、自动化实验、机器人科学家，还是其他主题：
+- 它研究的对象是 Agent、Autonomous Scientific Discovery、AI for Science、自动化实验、机器人科学家，还是其他主题：
 - 它覆盖哪些范围：
 - 它排除哪些范围：
 - 它与我们综述的关系：

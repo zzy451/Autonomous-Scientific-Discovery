@@ -1,4 +1,4 @@
-# Ramos et al. 2025 - A Review of Large Language Models and Autonomous Agents in Chemistry
+﻿# Ramos et al. 2025 - A Review of Large Language Models and Autonomous Agents in Chemistry
 
 **论文信息**
 - 标题：A review of large language models and autonomous agents in chemistry
@@ -37,7 +37,7 @@
 ## 4. 需要警惕
 
 - 该文覆盖 LLMs in chemistry，范围比我们综述更宽。
-- 不能把其中所有普通 LLM/AI for Chemistry 论文都纳入 ASD。
+- 不能把其中所有普通 LLM/AI for Chemistry 论文都纳入本综述。
 - 只将满足 Agent 行动闭环的论文纳入核心统计。
 
 ## 5. 后续精读任务

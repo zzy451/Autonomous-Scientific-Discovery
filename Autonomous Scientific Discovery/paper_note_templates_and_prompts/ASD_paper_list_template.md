@@ -1,4 +1,4 @@
-﻿# ASD 文献清单模板
+﻿# Scientific Agent 文献清单模板
 
 > 最后更新：
 > 总计：

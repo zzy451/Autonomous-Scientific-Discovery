@@ -1,12 +1,12 @@
-# ASD Coverage Check: Needs-Review Resolution
+﻿# ASD Coverage Check: Needs-Review Resolution
 
 Date: 2026-06-15
 
 ## 1. Scope
 
-This report records the first rough-screen pass over records previously marked `needs_review` in `Paper_Lists/asd_master_paper_list.md`.
+This report records the first rough-screen pass over records previously marked `needs_review` in `Paper_Lists/agent_master_paper_list.md`.
 
-The pass is metadata/source-record based. It does not replace full-text reading. Its purpose is to remove obvious non-ASD entries, merge duplicates, and return plausible science-Agent records to the candidate pool.
+The pass is metadata/source-record based. It does not replace full-text reading. Its purpose is to remove obvious non-Agent entries, merge duplicates, and return plausible science-Agent records to the candidate pool.
 
 ## 2. Updated Status Counts
 
@@ -37,8 +37,8 @@ No populated note paths are missing.
 | ID | New status | Main class | Reason |
 |---|---|---|---|
 | `ASD-0053` | `candidate` | `01.04` | Autonomous hypothesis verification may be a general research-Agent workflow. |
-| `ASD-0060` | `candidate` | `01.04` | Multi-agent collaboration for scientific discovery; plausible general ASD system. |
-| `ASD-0072` | `candidate` | `01.04` | Open co-scientist / data-driven discovery benchmark or workflow; plausible ASD relevance. |
+| `ASD-0060` | `candidate` | `01.04` | Multi-agent collaboration for scientific discovery; plausible general scientific Agent system. |
+| `ASD-0072` | `candidate` | `01.04` | Open co-scientist / data-driven discovery benchmark or workflow; plausible scientific Agent relevance. |
 | `ASD-0083` | `candidate` | `01.04` | Multi-agent system explicitly for automating scientific discovery. |
 | `ASD-0089` | `candidate` | `01.04` | Multi-agent codification of research methodologies; plausible research-workflow Agent. |
 | `ASD-0090` | `candidate` | `02.03` | Self-driving laboratory applied to quantum computing; scientific object is quantum computing. |
@@ -62,7 +62,7 @@ No populated note paths are missing.
 | `ASD-0098` | Literature-review toolkit; autonomous Agent loop and concrete scientific discovery role are unclear. |
 | `ASD-0104` | General agentic-system evaluation and dataset paper; no clear scientific research object. |
 | `ASD-0105` | General tool-learning paper; not specific to scientific discovery or a scientific research object. |
-| `ASD-0106` | General LLM-agent tool-use instruction method; no clear scientific research object or ASD workflow. |
+| `ASD-0106` | General LLM-agent tool-use instruction method; no clear scientific research object or scientific Agent workflow. |
 
 ## 6. Remaining Risks
 

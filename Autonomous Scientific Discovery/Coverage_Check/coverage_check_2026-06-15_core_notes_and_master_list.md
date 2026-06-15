@@ -1,4 +1,4 @@
-# ASD Coverage Check: Core Notes and Master List
+﻿# ASD Coverage Check: Core Notes and Master List
 
 Date: 2026-06-15
 
@@ -8,7 +8,7 @@ This check covers the current master paper list and the first set of preliminary
 
 Files checked:
 
-- `Paper_Lists/asd_master_paper_list.md`
+- `Paper_Lists/agent_master_paper_list.md`
 - `Notes/`
 - `paper_note_templates_and_prompts/ASD_single_paper_note_template.md`
 

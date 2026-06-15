@@ -1,4 +1,4 @@
-# [作者] [年份] - [综述标题]
+﻿# [作者] [年份] - [综述标题]
 
 **论文信息**
 - 标题：
@@ -16,7 +16,7 @@
 ## 1. 综述背景与边界
 
 - 作者为什么写这篇综述：
-- 该综述关注的是 Agent、ASD、AI for Science 还是其他方向：
+- 该综述关注的是 Agent、Autonomous Scientific Discovery、AI for Science 还是其他方向：
 - 覆盖范围：
 - 明确排除范围：
 - 与我们综述的关系：
@@ -61,7 +61,7 @@
 
 - 作者提出的挑战：
 - 作者提出的 future directions：
-- 对 ASD / Agent 综述有价值的切入点：
+- 对 Autonomous Scientific Discovery / Agent 综述有价值的切入点：
 - 需要警惕的过度泛化：
 
 ## 6. 可用于我们论文的位置

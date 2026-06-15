@@ -1,4 +1,4 @@
-# ASD Literature Collection Report
+﻿# Scientific Agent Literature Collection Report
 
 Date: 2026-06-15
 
@@ -18,10 +18,10 @@ This batch is a candidate pool, not a final inclusion set. Papers still require 
 
 ## 2. Output Files
 
-- Master paper list: `Paper_Lists/asd_master_paper_list.md`
+- Master paper list: `Paper_Lists/agent_master_paper_list.md`
 - Raw extracted references: `Paper_Lists/seed_survey_refs_extracted.json`
 - Structured extracted references: `Paper_Lists/seed_survey_refs_structured.json`
-- Candidate JSON snapshot: `Paper_Lists/asd_candidates_seed_survey_110.json`
+- Candidate JSON snapshot: `Paper_Lists/agent_candidates_seed_survey_110.json`
 
 ## 3. Batch Summary
 
