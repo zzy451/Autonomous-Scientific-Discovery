@@ -6,6 +6,7 @@ desktop.ini
 
 # Temporary recovery / staging folders
 .missing_originals/
+.tmp_asd_pdfs/
 
 # LaTeX build artifacts
 *.aux
