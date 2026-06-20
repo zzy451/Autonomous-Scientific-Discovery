@@ -12,6 +12,13 @@
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
+## Relaxed Multi-Module Revision - 2026-06-20
+
+- Source checked: arXiv PDF `2506.07551` full text, parsed locally during Round 2 / P1-A.
+- Current relaxed classification: `scientific_object_modules=03;04`; `object_coverage_mode=multi_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Rationale: the chemistry object coverage remains supported by ChemToolBench chemistry QA / discovery tasks and chemistry tool use. Under the relaxed object-coverage rule, the paper also supports `04` because the full text reports a separate Materials Science split, uses materials tooling such as `pymatgen`, and evaluates single- and multiple-calling tasks on the Materials Science split.
+- Note update: earlier wording treated the materials split mainly as a secondary generalization check. It should now be read as sufficient benchmark-object evidence for an additional materials-science module, while the legacy filing path remains `03`.
+
 ## Evidence Log
 
 Evidence level: arXiv PDF full text.

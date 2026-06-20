@@ -60,6 +60,16 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p0E_2026-06
 | `ASD-0856` | closed | accepted `scientific_object_modules=06;07;11`; removed independent `01.04` only treatment |
 | `ASD-0869` | closed | accepted `scientific_object_modules=02;03;04;06`; removed independent `01.04` only treatment |
 
+## Round-2 P1-A Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1A_2026-06-20.md`.
+
+| ID | Status after P1-A | Action |
+|---|---|---|
+| `ASD-0003` | closed | accepted `scientific_object_modules=03;04`; Materials Science split / `pymatgen` / materials benchmark tasks support additional `04` coverage |
+| `ASD-0008` | closed | accepted `scientific_object_modules=07;03`; drug-discovery DMTA remains `07`, while synthesis / HPLC / molecular demonstration support additional `03` coverage |
+| `ASD-0014` | still open | source-limited; bioRxiv PDF was blocked and alternate PDF download was damaged, so `07` is not accepted without full-text task inventory |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.

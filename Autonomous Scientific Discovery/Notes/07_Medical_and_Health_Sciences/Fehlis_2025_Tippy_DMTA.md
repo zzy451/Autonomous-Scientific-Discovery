@@ -12,6 +12,13 @@
 - 阅读日期：2026-06-15
 - 笔记作者：Codex
 
+## Relaxed Multi-Module Revision - 2026-06-20
+
+- Source checked: arXiv PDF `2507.09023` full text, parsed locally during Round 2 / P1-A.
+- Current relaxed classification: `scientific_object_modules=07;03`; `object_coverage_mode=multi_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Rationale: `07` remains the filing module because Tippy is framed around drug discovery and the DMTA cycle. The same full-text evidence also supports `03`: the workflow includes molecule generation, synthetic chemistry / synthesis workflow scheduling, HPLC retention-time analysis, purity and yield reporting, and an Appendix COVID drug molecule demonstration derived from Ensitrelvir.
+- Note update: older single-module wording should be interpreted as legacy primary filing only. The chemistry operations are concrete object-level tasks under the relaxed rule, even though the overall research target remains drug discovery.
+
 ## Evidence Log
 
 证据级别：full-text（arXiv PDF 已读取并抽取文本）。
