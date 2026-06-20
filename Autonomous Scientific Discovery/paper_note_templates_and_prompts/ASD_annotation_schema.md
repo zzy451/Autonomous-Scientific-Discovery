@@ -33,7 +33,7 @@
 | `has_research_workflow_role` | `yes` / `no` / `uncertain` |
 | `inclusion_confidence` | `high` / `medium` / `low` |
 
-## 3. Main Domain Codes
+## 3. Scientific Object Module Codes
 
 | Code | 中文类名 | English Directory |
 |---|---|---|
@@ -49,12 +49,46 @@
 | `10` | 航空、航天、海洋与交通科学 | `10_Aerospace_Marine_and_Transportation_Sciences` |
 | `11` | 社会、行为、经济与知识系统科学 | `11_Social_Behavioral_Economic_and_Knowledge_System_Sciences` |
 
+说明：
+
+- `01` 到 `11` 表示按科学研究对象划分的正式模块集合。
+- 同一篇论文可进入一个或多个具体科学模块，只要论文确实对多个具体科学对象做了可识别的实验、验证、benchmark task、case study 或结果报告；不要求每个模块都构成论文的核心科学贡献。
+- 不再要求所有纳入文献只能归入一个主类；是否单模块或多模块，应由论文实际覆盖的科学对象决定。
+- 若论文提出通用 ASD / research-agent 方法，但没有做任何具体科学对象实验、验证、benchmark task、case study 或结果报告，则不要把它当作正式 `01` 主模块论文处理，而应放入下文的 `01.04` 专用存放区。
+
 特别规则：
 
-- 领域无关型科研智能系统归入 `01.04`。
 - 一般系统、复杂性与网络规律归入 `01.03`。
 - 科学系统与知识生产研究归入 `11.07`。
-- 只要论文有具体科学对象，就优先按具体科学对象归入对应领域。
+- 只要论文有面向具体科学对象的可识别实验、验证、benchmark task、case study 或结果报告，就优先按具体科学对象归入对应模块；如同时覆盖多个具体对象模块，可多选记录。
+
+### 3A. Special Bucket: `01.04`
+
+`01.04` 不再作为正式主类入口，而是单独摘出的专用存放区，仅用于以下文献：
+
+- 提出 ASD / general research-agent / general scientific workflow 方法；
+- 没有做任何具体科学对象实验、验证、benchmark task、case study 或结果报告；
+- 其验证主要停留在通用能力演示、流程框架、benchmark、抽象任务或领域无关评测。
+
+执行规则：
+
+- 只要论文出现了面向具体科学对象的可识别实验、验证、benchmark task、case study 或结果报告，就不要放入 `01.04`，而应按具体科学对象模块记录到 `01`-`11` 中的一个或多个模块。
+- `01.04` 可与方法标签并存，但不应替代具体科学对象模块记录。
+- `01.04` 适合作为综述中的“general ASD methods without concrete object experiments”存放区，而不是具体科学模块统计口径的一部分。
+
+### 3B. Suggested Classification Fields
+
+建议新增或统一使用以下字段，以承载 `general ASD methods without concrete object experiments` 和 `multi-module object coverage`：
+
+| 字段 | 建议值 | 用途 |
+|---|---|---|
+| `scientific_object_modules` | `01`-`11` 中一个或多个代码 | 记录论文实际覆盖的具体科学对象模块；允许多选 |
+| `object_coverage_mode` | `single_module` / `multi_module` / `general_method_without_concrete_object_experiments` | 快速标记是单模块、多模块，还是仅属于通用方法存放区 |
+| `has_concrete_object_experiments` | `yes` / `no` / `uncertain` | 判断是否存在具体科学对象实验、验证、benchmark task、case study 或结果报告 |
+| `general_method_bucket` | `none` / `01.04_general_asd_methods_without_concrete_object_experiments` | 单独标记是否进入 `01.04` 专用存放区 |
+| `module_assignment_evidence` | 自由文本或要点列表 | 简要记录每个模块归类所依赖的对象实验依据 |
+| `primary_module_for_filing` | `01`-`11` 中一个代码，或留空 | 仅用于笔记落盘、排序或表格展示时指定一个首要展示模块；不覆盖多模块事实 |
+| `multi_module_object_coverage_note` | 自由文本 | 说明同一论文为何跨多个具体科学模块 |
 
 ## 4. Agent Type Tags
 
@@ -132,7 +166,7 @@
 - `digital_twin`
 - `robotic_platform`
 
-注意：`digital_twin` 不决定主类。地球系统数字孪生归 `05`，工业系统数字孪生归 `09`，交通系统数字孪生归 `10`，医学数字孪生归 `07`。
+注意：`digital_twin` 不决定科学对象模块。地球系统数字孪生归 `05`，工业系统数字孪生归 `09`，交通系统数字孪生归 `10`，医学数字孪生归 `07`。
 
 ## 9. Scientific Contribution Type
 

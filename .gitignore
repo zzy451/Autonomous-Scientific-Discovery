@@ -31,6 +31,12 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 
+# Local one-off analysis scratch files
+parse_matrix.py
+quality_analysis.py
+tail_chunk.txt
+temp_slice_focus.txt
+
 # Node / package-manager caches
 node_modules/
 .npm/

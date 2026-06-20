@@ -2,6 +2,8 @@
 
 Date: 2026-06-15
 
+> Historical note: this report was produced under the older single-main-class / `01.04`-as-regular-classification wording. The current project policy has been updated to allow multi-module concrete-object classification and to treat `01.04` as a separate general-method bucket.
+
 ## 1. Scope
 
 This report records the second-pass strict review of records marked `candidate` in `Paper_Lists/agent_master_paper_list.md`.
