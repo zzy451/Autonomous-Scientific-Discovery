@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supplements the older `06.03` primary filing with object-coverage modules.
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 06
+first_hand_sources_checked: arXiv abstract
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `06` is supported by spatial transcriptomics and bioinformatics model-refinement tasks; `07` is supported by drug-target interaction and drug-response prediction tasks.
+multi_module_object_coverage_note: MARBLE remains primarily a bioinformatics / computational-biology paper, but the drug-target and drug-response tasks constitute medical / drug-discovery object coverage under the relaxed multi-module rule.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract L38-L41 | 论文明确提出 autonomous model refinement framework，包含 structured debate、autonomous execution、evaluation、memory updates | 高 |

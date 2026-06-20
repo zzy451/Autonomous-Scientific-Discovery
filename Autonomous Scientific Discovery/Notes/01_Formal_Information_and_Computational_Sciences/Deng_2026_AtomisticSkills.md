@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supersedes the older `01.04`-only wording in this note.
+
+```text
+scientific_object_modules: 03;04;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+first_hand_sources_checked: arXiv abstract
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `04` is supported by Li-ion solid-state electrolytes, MOFs for CO2 capture, XRD/materials tasks, and Fe-oxide OER catalyst materials; `03` is supported by atomistic chemistry / catalysis mechanism tasks; `07` is supported by drug-design virtual-screening campaigns.
+multi_module_object_coverage_note: AtomisticSkills is platform-like, but the abstract lists concrete atomistic campaigns across materials, chemistry/catalysis, and drug design. Under the current relaxed rule, concrete campaign evidence overrides the old `01.04`-only filing.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | 构建 agentic atomistic research 系统，并显式组织 research skills 与 tool use | 高 |

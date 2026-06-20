@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supersedes the older `01.04`-only wording in this note.
+
+```text
+scientific_object_modules: 01;06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 06
+first_hand_sources_checked: arXiv abstract
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `01` is supported by LM-training optimization / formal-computational research tasks; `06` is supported by biomedical imaging, protein engineering, single-cell omics, ProteinGym and BioML-Bench tasks; `07` is supported by drug-discovery task coverage.
+multi_module_object_coverage_note: Although the system is framed as a general long-running scientific-experimentation team, the abstract reports concrete computational, life-science, and medical/drug-discovery task coverage. Under the relaxed object-coverage rule, it should not remain only in the independent `01.04` bucket.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
