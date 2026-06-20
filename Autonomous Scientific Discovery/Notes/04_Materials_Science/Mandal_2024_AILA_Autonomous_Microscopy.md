@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是，AILA 自动化 AFM 实验的 LLM-driven agents | PDF p.1 Abstract；Results 2.1 | framework automating atomic force microscopy through LLM-driven agents；planner coordinates specialized agents | 高 |
-| 科学对象归类 | `04` 材料科学，AFM 材料表征与显微实验 | PDF title/abstract/introduction | atomic force microscopy；materials research；graphene, glass, HOPG | 高 |
+| 科学对象归类 | `04;09`，primary filing `04` | PDF title/abstract/introduction; Nature Communications version | atomic force microscopy；materials research；graphene, glass, HOPG；AFM instrument automation and real AFM operation workflow | 高 |
 | 方法流程 | LLM planner + AFM Handler Agent + analysis tools，动态路由和工具调用 | PDF Results 2.1/Fig.1 | LLM-powered planner；agent makes tool calls；NEED HELP / FINAL ANSWER routing | 高 |
 | 实验验证 | AFMBench 100 expert-curated tasks + 5 real-world AFM experiments | PDF Abstract；Results | complete scientific workflow from experimental design to results analysis；five real-world experiments | 高 |
-| 科学贡献 | 提供 AFM 自主实验 Agent 与系统性失败模式分析 | PDF Abstract/Results | multi-agent outperform single-agent；prompt fragility；instruction deviation safety concerns | 高 |
+| 科学贡献 | 提供 AFM 自主实验 Agent、材料表征结果与科学仪器自动化能力分析 | PDF Abstract/Results | multi-agent outperform single-agent；real AFM experiments；instrument-operation workflow; prompt fragility；instruction deviation safety concerns | 高 |
 
 ## 0. 摘要翻译
 
-论文提出 AILA（Artificially Intelligent Lab Assistant），一个通过 LLM-driven agents 自动化 atomic force microscopy 的框架，并提出 AFMBench，用 100 个专家设计任务测试 AI Agent 从实验设计到结果分析的完整能力。作者发现 SOTA 模型在基本任务和跨模块协调中仍会失败，领域 QA 能力并不等于 agentic 实验能力；多 Agent 架构优于单 Agent，但 prompt fragility 和安全对齐仍是问题。作者还演示了 AFM calibration、feature detection、mechanical property measurement、graphene layer counting 和 indenter detection 等真实实验。
+论文提出 AILA（Artificially Intelligent Lab Assistant），一个通过 LLM-driven agents 自动化 atomic force microscopy 的框架，并提出 AFMBench，用 100 个专家设计任务测试 AI Agent 从实验设计到结果分析的完整能力。作者发现 SOTA 模型在基本任务和跨模块协调中仍会失败，领域 QA 能力并不等于 agentic 实验能力；多 Agent 架构优于单 Agent，但 prompt fragility 和安全对齐仍是问题。作者还演示了 AFM calibration、feature detection、mechanical property measurement、graphene layer counting 和 indenter detection 等真实实验。旧 note 只记录 `04` 材料表征；2026-06-20 relaxed 口径下，AFM scientific-instrument operation 本身也有对象层实验与 benchmark evidence，因此应记录 `04;09`，primary filing 仍保留 `04`。
 
 ## 1. 是否纳入本综述
 
@@ -54,12 +54,17 @@
 
 ### 2.1 主科学领域
 
-- 一级类：`04` 材料科学。
+- scientific_object_modules：`04;09`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`04`
+- 一级类：`04` 材料科学；并记录 `09` 工程与工业技术科学。
 - 二级类：`04.01` 材料基础。
 - 三级类：`04.01.03` 材料表征。
 - 四级专题：Materials discovery agents / Autonomous microscopy agents。
 - 四级专题是否为新增：可作为材料 Agent 下的显微实验子专题。
-- 归类理由：科学对象是 AFM 材料表征中的材料样品、形貌和力学性质。
+- 归类理由：材料样品、形貌和力学性质支持 `04`；AFM instrument automation、instrument operation workflow 与科学仪器控制支持 `09`。
 - 归类置信度：高。
 
 ### 2.2 对象优先判定
@@ -71,9 +76,9 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：`09` 工程与工业技术科学；`01.04` 通用 Agent benchmark。
-- 最终判定：`04`。
-- 判定理由：仪器控制属于手段，最终研究对象和验证任务是材料表征。
-- 是否需要二次复核：否。
+- 最终判定：`04;09`，primary filing `04`。
+- 判定理由：材料表征结果是 `04`；但 AILA / AFMBench 也直接评测和执行 AFM scientific-instrument operation，不只是背景手段。按 relaxed 口径，科学仪器自动化对象支持同步记录 `09`。
+- 是否需要二次复核：否；后续 schema migration 应记录 `scientific_object_modules = 04;09`。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -207,8 +212,8 @@
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：材料科学 / 自驱实验室与机器人实验 Agent。
-- 可支撑哪个论点：真实实验 Agent 的核心瓶颈不只是领域知识，而是多工具协调、安全和错误恢复。
+- 可放入哪个章节：04 材料科学；同时作为 04 / 09 科学仪器自动化边界案例。
+- 可支撑哪个论点：真实实验 Agent 的核心瓶颈不只是领域知识，还包括科学仪器操作、多工具协调、安全和错误恢复；当仪器操作本身被系统性评测时可记录 `09`。
 - 可用于哪个表格或图：实验 Agent 能力矩阵；benchmark vs real experiment 对比。
 - 适合作为代表性案例吗：非常适合。
 - 推荐引用强度：核心引用。
@@ -219,7 +224,7 @@
 
 ### 9.1 一句话概括
 
-AFM 自主显微实验 Agent。
+AFM 自主显微实验与科学仪器操作 Agent。
 
 ### 9.2 速记版 pipeline
 
@@ -233,6 +238,11 @@ AFM 自主显微实验 Agent。
 
 ```text
 是否纳入：是
+scientific_object_modules：04;09
+object_coverage_mode：multi_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：04
 主类：04 材料科学
 二级类：04.01 材料基础
 三级类：04.01.03 材料表征
@@ -244,7 +254,7 @@ Agent 类型：LLM Agent；Planning Agent；Tool-using Agent；Multi-Agent Syste
 交叉属性：实验驱动；计算驱动；数据驱动；多模态；机器人平台
 科学贡献类型：系统平台；benchmark；实验执行
 证据强度：全文 PDF 高
-归类置信度：高
+归类置信度：高（2026-06-20 relaxed multi-module 复核；一手来源为 arXiv / Nature Communications full text 与 PMC / publisher evidence）
 纳入置信度：高
 推荐引用强度：核心引用
 ```

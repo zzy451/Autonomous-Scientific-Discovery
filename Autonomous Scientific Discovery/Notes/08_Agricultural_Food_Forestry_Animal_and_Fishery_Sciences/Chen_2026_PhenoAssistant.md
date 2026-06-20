@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `08` / `08.01` | 摘要 | 最稳定对象是“automated plant phenotyping agent system”，而不是单纯的模型方法或发表 venue。 | 高 |
+| 科学对象归类 | `06;08` | Nature Communications DOI / publisher abstract | 系统围绕 Arabidopsis、potato、winter wheat 等植物表型 / 图像任务；农业作物表型支持 `08`，植物生物学对象支持 `06` | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
 | 实验验证 | 植物表型提取、可视化与模型训练任务 | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 植物表型提取、可视化与模型训练任务 支撑其主张。 | 中高 |
-| 边界判断 | 08.01 内部样本；需警惕它是否只是单 agent 编排工具链 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| 边界判断 | `08 + 06`，primary filing `08` | DOI / publisher abstract | 旧 note 只写 `08`；relaxed 口径下，plant biology object evidence 同时支持 `06` | 高 |
 
 ## 0. 摘要翻译
 
-论文围绕“automated plant phenotyping agent system”提出题为《A conversational multi-agent AI system for automated plant phenotyping》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 植物表型提取、可视化与模型训练任务 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+论文围绕 automated plant phenotyping 提出题为《A conversational multi-agent AI system for automated plant phenotyping》的多 Agent 系统，核心是把表型提取、可视化、建模与解释组织成可迭代工作流，并以 Arabidopsis、potato、winter wheat 等植物图像 / 表型任务作为主要验证。旧 note 只保留 `08` 农业作物表型归类；2026-06-20 relaxed 口径下，植物本体、生长表型与图像分析同时构成生命科学对象证据，因此应记录 `06;08`，primary filing 仍保留 `08`。
 
 ## 1. 是否纳入本综述
 
@@ -54,26 +54,31 @@
 
 ### 2.1 主科学领域
 
-- 一级类：08
+- scientific_object_modules：`06;08`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`08`
+- 一级类：08；并记录 06
 - 二级类：08.01
 - 三级类：
 - 四级专题：Automated plant phenotyping agents
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“automated plant phenotyping agent system”，因此当前主类保持为 `08` / `08.01`。
-- 归类置信度：中高
+- 归类理由：农业 / 作物表型任务支持 `08`；Arabidopsis、plant phenotype、plant-image analysis 等植物生物学对象支持 `06`。系统平台属性不改变对象证据。
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：automated plant phenotyping agent system
+- 最终科学研究对象：plant phenotyping, plant images, crop / model-plant traits
 - 最终科学问题：论文试图通过 Agent 系统推进“automated plant phenotyping agent system”相关研究任务。
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：08.01 内部样本；需警惕它是否只是单 agent 编排工具链
-- 最终判定：保持 `08` / `08.01`
-- 判定理由：08.01 内部样本；需警惕它是否只是单 agent 编排工具链
-- 是否需要二次复核：需要。
+- 最终判定：`06;08`，primary filing `08`
+- 判定理由：potato / wheat 等农业对象支持 `08`，Arabidopsis 与植物表型生物学对象支持 `06`；按 relaxed 口径不再要求 `06` 是论文核心贡献才记录
+- 是否需要二次复核：否；后续 schema migration 应记录 `scientific_object_modules = 06;08`
 
 ## 3. Agent 系统与科研流程角色
 
@@ -167,8 +172,8 @@
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：主类 `08` / `08.01` 对应章节。
-- 可支撑哪个论点：Agent 已经能够围绕“automated plant phenotyping agent system”形成稳定的多步科研工作流。
+- 可放入哪个章节：08 农业科学；也可作为 06 / 08 边界案例。
+- 可支撑哪个论点：植物表型 Agent 同时具有作物生产 / 农业对象和植物生物学对象，multi-module 记录比单主类更准确。
 - 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
 - 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
 - 推荐引用强度：core
@@ -179,7 +184,7 @@
 
 ### 9.1 一句话概括
 
-围绕“automated plant phenotyping agent system”组织多步科研工作的 Agent 系统。
+围绕植物 / 作物表型图像与建模任务组织多步科研工作的多 Agent 系统。
 
 ### 9.2 速记版 pipeline
 
@@ -193,6 +198,11 @@
 
 ```text
 是否纳入：是
+scientific_object_modules：06;08
+object_coverage_mode：multi_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：08
 主类：08
 二级类：08.01
 三级类：
@@ -204,7 +214,7 @@ Agent 类型：Multi-Agent System; Hybrid Agent
 交叉属性：computation_driven
 科学贡献类型：system_platform; measurement_and_analysis
 证据强度：high_metadata_only
-归类置信度：中高
+归类置信度：高（2026-06-20 relaxed multi-module 复核；一手来源为 Nature Communications DOI / publisher abstract）
 纳入置信度：高
 推荐引用强度：core
 ```

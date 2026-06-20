@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `01` / `01.02` | 摘要 | 最稳定对象是 AI research 本身这一类具体 formal-computational research object，而不是领域无关的通用 scientific-agent substrate。 | 高 |
+| 科学对象归类 | `01;11` | Nature DOI / full text / abstract | 最稳定对象包括 AI / ML research experiments，也包括 automated reviewer / peer-review evaluation 这一 scientific knowledge production 对象 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
 | 实验验证 | AI research benchmark、reviewer-style evaluation 与 workshop-level paper generation | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 AI research benchmark、reviewer-style evaluation 与 workshop-level paper generation 支撑其主张。 | 中高 |
-| 边界判断 | `01.04 / 01.02` 邻近；当前更适合收紧到 `01.02` | 摘要 / 任务定义 | 论文自动化的是 AI research 本身，稳定对象已经不是领域无关 scientific-agent workflow，而是具体的计算研究对象。 | 中高 |
+| 边界判断 | `01.04 -> 01;11` | full text / abstract | 论文自动化的是 AI research 本身，同时包含 paper writing / peer review / reviewer-style evaluation；按 `11.07` 强规则，scientific knowledge production evidence 应同步记录 `11` | 高 |
 
 ## 0. 摘要翻译
 
-论文围绕“端到端 AI research automation system”提出题为《Towards end-to-end automation of AI research》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 AI research benchmark、reviewer-style evaluation 与 workshop-level paper generation 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+论文围绕“端到端 AI research automation system”提出题为《Towards end-to-end automation of AI research》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 AI research benchmark、reviewer-style evaluation 与 workshop-level paper generation 作为主要验证。旧 note 已经把它从 `01.04` 收紧到 `01.02`；2026-06-20 relaxed 口径下，还应记录 `11`，因为论文明确覆盖 automated peer review、paper writing 与科学知识生产流程评估。最终建议为 `01;11`，primary filing `01`。
 
 ## 1. 是否纳入本综述
 
@@ -54,13 +54,18 @@
 
 ### 2.1 主科学领域
 
-- 一级类：01
+- scientific_object_modules：`01;11`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`01`
+- 一级类：01；并记录 11
 - 二级类：01.02
 - 三级类：
 - 四级专题：End-to-end automated AI research agents
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是 AI research automation 本身，属于具体 formal-computational research object，因此二级类应收紧为 `01` / `01.02`，而不是继续停留在领域无关的 `01.04`。
-- 归类置信度：中高
+- 归类理由：AI / ML research automation 属于具体 formal-computational research object，支持 `01`；automated reviewer、paper writing、peer-review evaluation 和 scientific publication workflow 属于 scientific knowledge production，支持 `11.07`。
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
@@ -70,10 +75,10 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：`01.04` 通用 scientific-agent workflow
-- 最终判定：收紧为 `01` / `01.02`
-- 判定理由：虽然系统形态很像通用 research-agent workflow，但其最终研究对象已经稳定落在 AI research automation，而不是领域无关的科研基础设施。
-- 是否需要二次复核：原则上不需要。
+- 可能误归类到：`01.04` 通用 scientific-agent workflow；或只记录 `01`
+- 最终判定：`01;11`，primary filing `01`
+- 判定理由：系统形态像通用 research-agent workflow，但实验对象已经稳定落在 AI research automation；同时 automated peer review / reviewer-style evaluation 是 scientific knowledge production itself，按 `11.07` 强规则应记录 `11`
+- 是否需要二次复核：原则上不需要；后续 schema migration 应记录 `scientific_object_modules = 01;11`
 
 ## 3. Agent 系统与科研流程角色
 
@@ -167,8 +172,8 @@
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：主类 `01` / `01.02` 对应章节，并作为 `01.04 / 01.02` 收紧案例。
-- 可支撑哪个论点：Agent 已经能够围绕“端到端 AI research automation system”形成稳定的多步科研工作流。
+- 可放入哪个章节：01 形式、信息与计算科学；同时作为 01 / 11.07 科学知识生产边界案例。
+- 可支撑哪个论点：Agent 已经能够围绕 AI research automation 形成稳定的多步科研工作流；当系统同时自动化 peer review / paper evaluation 时，应记录科学知识生产模块 `11.07`。
 - 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
 - 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
 - 推荐引用强度：core
@@ -179,7 +184,7 @@
 
 ### 9.1 一句话概括
 
-围绕“端到端 AI research automation system”组织多步科研工作的 Agent 系统。
+围绕 AI research automation 与 automated peer review 组织多步科研工作的 Agent 系统。
 
 ### 9.2 速记版 pipeline
 
@@ -193,6 +198,11 @@
 
 ```text
 是否纳入：是
+scientific_object_modules：01;11
+object_coverage_mode：multi_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：01
 主类：01
 二级类：01.02
 三级类：
@@ -204,7 +214,7 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 交叉属性：computation_driven
 科学贡献类型：system_platform; end_to_end_automation
 证据强度：medium_metadata_with_abstract
-归类置信度：中高
+归类置信度：高（2026-06-20 relaxed multi-module 复核；一手来源为 Nature full text / DOI page）
 纳入置信度：高
 推荐引用强度：core
 ```

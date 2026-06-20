@@ -6,8 +6,8 @@
 - 年份：2022
 - 来源 / venue：Nature Chemistry
 - DOI / arXiv / URL：https://doi.org/10.1038/s41557-022-01016-w
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
-- 论文类型：研究论文 / general scientific workflow platform
+- PDF / 本地文件路径：本轮基于 Nature Chemistry DOI、University of Glasgow repository / accepted version 与 Zenodo project record；未保存本地 PDF
+- 论文类型：研究论文 / autonomous chemical synthesis platform
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official abstract | 系统可把 text-based literature syntheses 编译成 executable protocols，自动生成 reactors，并执行大量基础步骤 | 高 |
-| 科学对象归类 | `01.04` | official abstract | 平台演示跨 small molecules、oligopeptides、oligonucleotides，核心贡献是 universal synthesis platform，而非某一具体化学对象 | 高 |
+| 科学对象归类 | `03` | Nature Chemistry DOI / University of Glasgow accepted version / Zenodo record | 平台实际合成 small organic molecules、oligopeptides、oligonucleotides，并执行 24,936 个基础步骤，构成具体 chemical synthesis experiments | 高 |
 | 方法流程 | 文本到协议到执行平台 | official abstract | 输入是文献合成描述，输出是 reactors、executable protocols 和 pressure-fingerprint quality control | 高 |
 | 实验验证 | 多类分子实机演示 | official abstract | 在 329 小时内执行近 2.5 万个基础步骤，覆盖多类已知分子 | 高 |
-| 边界判断 | `03 -> 01.04` | official abstract | 虽然执行 chemical synthesis，但科学贡献稳定落在领域无关 research-agent workflow / platform 能力 | 高 |
+| 边界判断 | `01.04 -> 03` | DOI / accepted version / project record | 旧 note 以核心贡献是 universal platform 为由放入 `01.04`；relaxed 口径下，只要有具体化学对象合成实验，就应记录 `03`，不能继续作为无具体对象实验的 general-method bucket | 高 |
 
 ## 0. 摘要翻译
 
-本文提出一个便携式、通用的自治化学合成平台，可以将文献中的文本合成方案自动转化为反应器配置与可执行协议，并通过远程质量控制完成多步合成。平台在 329 小时内执行了近 2.5 万个基础步骤，演示对象覆盖 small molecules、oligopeptides 和 oligonucleotides。尽管实验对象来自化学，但论文更稳定的科学贡献是一个领域无关的科研自动化平台，因此更适合归入 `01.04`。
+本文提出一个便携式、通用的自治化学合成平台，可以将文献中的文本合成方案自动转化为反应器配置与可执行协议，并通过远程质量控制完成多步合成。平台在 329 小时内执行了近 2.5 万个基础步骤，演示对象覆盖 five small organic molecules、four oligopeptides 和 four oligonucleotides。旧笔记曾因其 platform / universal workflow 属性将其放入独立 `01.04`；但 2026-06-20 relaxed 口径要求按具体对象实验覆盖分类，因此该论文应记录为 `03` 化学科学，而不是无具体科学对象实验的 `01.04` 样本。
 
 ## 1. 是否纳入本综述
 
@@ -54,26 +54,31 @@
 
 ### 2.1 主科学领域
 
-- 一级类：01
-- 二级类：01.04
-- 三级类：general scientific workflow / universal synthesis platform
-- 四级专题：General scientific research-agent systems
+- scientific_object_modules：`03`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`03`
+- 一级类：03
+- 二级类：03.03
+- 三级类：autonomous chemical synthesis / multistep synthesis execution
+- 四级专题：Universal chemical synthesis platform
 - 四级专题是否为新增：否
-- 归类理由：平台能力跨多类化学对象，稳定贡献是领域无关的协议编译与执行基础设施
+- 归类理由：虽然系统具有通用平台属性，但实验验证已经明确落到 small organic molecules、oligopeptides、oligonucleotides 等具体化学对象的自动化合成；按 relaxed 口径应记录 `03`
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：portable universal synthesis workflow and execution platform
-- 最终科学问题：如何把文献中的文本合成方案自动编译为可执行科研流程
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：尽管演示在化学中完成，但平台的稳定对象不是某一具体化学问题，而是通用科研工作流能力
+- 最终科学研究对象：automated chemical synthesis of small organic molecules, oligopeptides and oligonucleotides
+- 最终科学问题：如何把文献中的文本合成方案自动编译为可执行化学合成流程，并在真实化学对象上完成多步合成
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：classification 依据不是平台名称或通用性，而是论文实际执行并报告了多类具体 chemical synthesis experiments
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：03
-- 最终判定：改到 01.04
-- 判定理由：small molecules、oligopeptides、oligonucleotides 的跨对象演示说明其核心贡献是通用平台，而不是具体化学发现对象
-- 是否需要二次复核：是，但当前官方摘要已经足够支持主类回调
+- 最终判定：`03`
+- 判定理由：small molecules、oligopeptides、oligonucleotides 的跨对象演示不是排除 `03` 的理由，反而是具体化学对象实验覆盖；`01.04` 仅用于没有任何具体对象实验的 general-method papers
+- 是否需要二次复核：否；后续 schema migration 应从 independent `01.04` bucket 移出并记录 `scientific_object_modules = 03`
 
 ## 3. Agent 系统与科研流程角色
 
@@ -183,7 +188,7 @@
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：不是稳定的新 chemistry discovery；更核心的是通用科研执行平台
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主贡献仍是平台，但实验证据为真实化学合成对象；在 relaxed 口径下足以支持 `03`
 - 科学贡献是否经过验证：有实机跨对象演示
 - 贡献强度判断：强
 - 科学贡献类型：system_platform; workflow_automation
@@ -191,9 +196,9 @@
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：不是解决具体化学问题的单一系统，而是把文献方案编译成可执行科研流程
+- 与普通 AI for Science 方法的区别：不是普通单点预测模型，而是把文献方案编译成可执行化学合成流程并完成真实实验
 - 与已有 Agent / 科研智能系统的区别：强调跨对象通用性与 portable execution platform
-- 与同一科学领域其他 Agent 文献的关系：更接近 `01.04` 通用 scientific workflow / platform 样本，而不是具体 `03` 化学发现案例
+- 与同一科学领域其他 Agent 文献的关系：应与 autonomous chemical synthesis / robotic chemistry platform 文献并列，同时可作为 `03` 与 `01.04` 边界案例
 - 主要创新点：文本到协议到装置的通用科研平台能力
 
 ## 7. 局限性与风险
@@ -207,9 +212,9 @@
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：01.04 科研智能系统与 Autonomous Scientific Discovery
-- 可支撑哪个论点：跨对象通用科研执行平台应优先归入 `01.04`
-- 可用于哪个表格或图：`01.04 / concrete domain` 边界案例表；通用科研平台表
+- 可放入哪个章节：03 化学科学；也可在 `01.04 / domain` 边界案例中讨论
+- 可支撑哪个论点：通用科研执行平台只要报告具体化学合成对象实验，就应按对象模块记录 `03`，而不是停留在 `01.04`
+- 可用于哪个表格或图：`03` autonomous synthesis 表；`01.04 / concrete domain` 边界案例表
 - 适合作为代表性案例吗：适合作为 `01.04` 代表
 - 推荐引用强度：core
 - 需要在正文中特别引用的页码 / 图 / 表：当前以官方摘要为主
@@ -219,7 +224,7 @@
 
 ### 9.1 一句话概括
 
-把文献合成方案编译成可执行科研平台的通用系统。
+把文献合成方案编译成可执行实验并完成多类化学对象合成的自治平台。
 
 ### 9.2 速记版 pipeline
 
@@ -233,9 +238,14 @@
 
 ```text
 是否纳入：to_read
-主类：01
-二级类：01.04
-三级类：general scientific workflow / universal synthesis platform
+scientific_object_modules：03
+object_coverage_mode：single_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：03
+主类：03
+二级类：03.03
+三级类：autonomous chemical synthesis / multistep synthesis execution
 四级专题：General scientific research-agent systems
 Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：literature_search_and_reading; knowledge_extraction_and_organization; experimental_design; tool_use_and_code_execution; experiment_execution; data_analysis; evidence_assessment_and_validation; end_to_end_research_automation
@@ -244,7 +254,7 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Human-i
 交叉属性：computation_driven; experiment_driven; high_throughput_screening; robotic_platform
 科学贡献类型：system_platform; workflow_automation
 证据强度：experimentally_validated
-归类置信度：高
+归类置信度：高（2026-06-20 relaxed multi-module 复核；一手来源为 Nature Chemistry DOI、University of Glasgow accepted version、Zenodo project record）
 纳入置信度：高
 推荐引用强度：core
 ```

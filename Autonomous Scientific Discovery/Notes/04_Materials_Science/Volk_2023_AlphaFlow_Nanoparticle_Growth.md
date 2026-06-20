@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official abstract | `AlphaFlow` 是 RL 引导的 self-driven fluidic lab，可执行 variable sequence、phase separation、washing 与 in-situ spectral monitoring | 高 |
-| 科学对象归类 | `04` 优先于 `03` | official abstract | 核心验证对象是 core-shell semiconductor nanoparticles 的 shell-growth route，最终贡献落在纳米材料对象 | 高 |
+| 科学对象归类 | `03;04` | Nature Communications full text / DOI page | 论文同时报告 multi-step synthetic route / reaction-sequence optimization 与 core-shell semiconductor nanoparticle shell-growth 材料对象 | 高 |
 | 方法流程 | 多步流体实验闭环 | official abstract | 系统整合 reinforcement learning 与 modular microdroplet reactor，围绕多步实验流程做自主发现与优化 | 高 |
 | 实验验证 | 闭环微流控材料合成 | official abstract | 找到优于 conventional sequences 的 novel multi-step reaction route | 高 |
-| 边界判断 | `03 -> 04` | official abstract | 虽题名突出 multi-step chemistry，但被最终搜索和优化的是 semiconductor nanoparticle materials object | 高 |
+| 边界判断 | `03 + 04`，primary filing `04` | Nature Communications full text / DOI page | 旧口径按核心对象优先只保留 `04`；relaxed 口径下，多步合成路线 / reaction sequence 证据支持同时记录 `03` | 高 |
 
 ## 0. 摘要翻译
 
-本文提出 `AlphaFlow`，一个由强化学习引导的自驱流体实验室，用于自主发现和优化多步化学流程。系统能够在微流控环境中执行顺序变化、分相、清洗和在线光谱监测，并通过闭环决策持续优化实验方案。作者将其应用于 core-shell 半导体纳米颗粒壳层生长路线，发现了优于传统序列的多步路线，说明其更稳定的科学对象应落在纳米材料与半导体材料发现上。
+本文提出 `AlphaFlow`，一个由强化学习引导的自驱流体实验室，用于自主发现和优化多步化学流程。系统能够在微流控环境中执行顺序变化、分相、清洗和在线光谱监测，并通过闭环决策持续优化实验方案。作者将其应用于 core-shell 半导体纳米颗粒壳层生长路线，发现了优于传统序列的多步路线。旧口径下本记录按最终材料对象只保留 `04`；2026-06-20 relaxed 口径下，multi-step synthetic route / reaction-sequence optimization 也构成具体化学对象实验覆盖，因此应记录 `03;04`，但 primary filing 仍保留 `04`。
 
 ## 1. 是否纳入本综述
 
@@ -54,12 +54,17 @@
 
 ### 2.1 主科学领域
 
-- 一级类：04
+- scientific_object_modules：`03;04`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`04`
+- 一级类：04；并记录 03
 - 二级类：04.04
 - 三级类：semiconductor nanoparticle shell-growth optimization
 - 四级专题：Nanoparticle-growth self-driving laboratories
 - 四级专题是否为新增：否
-- 归类理由：被最终发现和优化的是 core-shell semiconductor nanoparticle 材料生长路线，而不是一般反应学
+- 归类理由：被最终发现和优化的是 core-shell semiconductor nanoparticle 材料生长路线，因此 primary filing 为 `04`；同时，论文实际优化 multi-step chemistry / synthetic route / reaction sequence，按 relaxed 口径记录 `03`
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -70,10 +75,10 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：03
-- 最终判定：改到 04
-- 判定理由：尽管题名写 multi-step chemistry，但验证与科学贡献都稳定落在 semiconductor nanoparticle materials discovery
-- 是否需要二次复核：是，主要是二三级类的后续精细化
+- 可能误归类到：03-only 或 04-only
+- 最终判定：`03;04`，primary filing `04`
+- 判定理由：semiconductor nanoparticle shell-growth 是材料对象；multi-step synthetic route / cALD-like reaction-sequence optimization 是化学对象。二者均有实验结果，不能再用单主类口径压平
+- 是否需要二次复核：否；后续 schema migration 应记录 `scientific_object_modules = 03;04`
 
 ## 3. Agent 系统与科研流程角色
 
@@ -208,7 +213,7 @@
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：04 材料科学
-- 可支撑哪个论点：多步“chemistry”标题下的系统仍应按最终材料对象归类
+- 可支撑哪个论点：多步“chemistry”标题下的系统可按最终材料对象 primary filing，但若 reaction-sequence optimization 有对象层实验，也应同步记录 `03`
 - 可用于哪个表格或图：`03 / 04` 边界案例表；材料 SDL 对比表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：core
@@ -219,7 +224,7 @@
 
 ### 9.1 一句话概括
 
-AlphaFlow 用 RL 闭环发现更优纳米材料生长路线。
+AlphaFlow 用 RL 闭环优化多步合成路线，并发现更优纳米材料生长路线。
 
 ### 9.2 速记版 pipeline
 
@@ -233,6 +238,11 @@ AlphaFlow 用 RL 闭环发现更优纳米材料生长路线。
 
 ```text
 是否纳入：to_read
+scientific_object_modules：03;04
+object_coverage_mode：multi_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：04
 主类：04
 二级类：04.04
 三级类：semiconductor nanoparticle shell-growth optimization
@@ -244,7 +254,7 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 交叉属性：computation_driven; data_driven; experiment_driven; high_throughput_screening; robotic_platform
 科学贡献类型：experimental_discovery; experimental_optimization; system_platform
 证据强度：experimentally_validated
-归类置信度：高
+归类置信度：高（2026-06-20 relaxed multi-module 复核；一手来源为 Nature Communications full text / DOI page）
 纳入置信度：高
 推荐引用强度：core
 ```

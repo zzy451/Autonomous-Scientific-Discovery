@@ -7,8 +7,8 @@
 - 来源 / venue：Science China Information Sciences
 - DOI / arXiv / URL：https://doi.org/10.1007/s11432-024-4485-0 ; https://arxiv.org/abs/2412.09429
 - PDF / 本地文件路径：未落本地 PDF；本轮依据 Springer 官方页与 arXiv 摘要级一手来源
-- 论文类型：系统论文 / biomedical research workflow automation
-- 当前状态：已读 / confirmed core 复核后建议保留纳入，但主类改判为 `01.04`
+- 论文类型：系统论文 / biomedical dry-lab research workflow automation
+- 当前状态：已读 / confirmed core；2026-06-20 relaxed multi-module 复核后建议从独立 `01.04` 迁出，记录 `06;07`
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract; Springer metadata | BioResearcher 被定义为端到端自动化 biomedical research system | 高 |
-| 科学对象归类 | `01.04` | arXiv abstract | 主组件是 search, literature processing, experimental design, programming | 高 |
+| 科学对象归类 | `06;07` | arXiv / full-text Appendix C | end-to-end objectives include liposarcoma, thyroid cancer, HCC, viral respiratory infection, transcriptomics, scRNA-seq, gene-expression, pathways and prognosis tasks | 高 |
 | 方法流程 | 多步研究工作流 | arXiv abstract | 通过 task decomposition, hierarchical learning, reviewer agent, metrics 运行 | 高 |
 | 实验验证 | 任务级评测 | arXiv abstract | 以 8 个 unmet research objectives 和 protocol quality 为核心验证 | 中 |
-| 边界判断 | `01.04 > 07 > 06` | Springer / arXiv abstract | biomedical 是应用语境，不是统一科学对象本体 | 高 |
+| 边界判断 | `07 + 06 > 01.04` | arXiv full text / Appendix C | 在 relaxed 口径下，具体 biomedical dry-lab objectives 和组学 / 基因表达任务已构成对象层 benchmark / case evidence，不应继续留在无具体对象实验的 `01.04` bucket | 高 |
 
 ## 0. 摘要翻译
 
-论文提出 BioResearcher，目标是自动化 biomedical dry-lab research workflow。系统把复杂科研任务拆解为文献检索、文献处理、实验设计、编程与审阅等环节，并使用层级式 LLM Agent 组织整个流程。作者的主要验证不是某个单一疾病或生物对象的新发现，而是系统在多个 biomedical research objectives 上的协议生成质量和自动化执行能力。
+论文提出 BioResearcher，目标是自动化 biomedical dry-lab research workflow。系统把复杂科研任务拆解为文献检索、文献处理、实验设计、编程与审阅等环节，并使用层级式 LLM Agent 组织整个流程。旧笔记曾把它放入独立 `01.04`，理由是主贡献偏 workflow automation；但 2026-06-20 relaxed 口径要求按实际对象覆盖记录模块。全文附录中的 end-to-end objectives 明确围绕 liposarcoma、thyroid cancer、HCC、viral respiratory infection 等医学对象，并使用 transcriptomics、scRNA-seq、gene-expression、pathway / prognosis modeling 等生命科学对象和数据，因此应记录 `07` 与 `06`，而不是继续作为无具体对象实验的 `01.04` 样本。
 
 ## 1. 是否纳入本综述
 
@@ -54,26 +54,31 @@
 
 ### 2.1 主科学领域
 
-- 一级类：01
-- 二级类：01.04
-- 三级类：01.04.03
+- scientific_object_modules：`06;07`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`07`
+- 一级类：07；并记录 06
+- 二级类：07.04 / 06.03 边界
+- 三级类：biomedical dry-lab research automation with transcriptomics / gene-expression objectives
 - 四级专题：Biomedical research workflow automation agents
 - 四级专题是否为新增：否
-- 归类理由：论文的统一主对象是 biomedical research workflow automation，而不是疾病、患者、药物或某类生命对象本体
+- 归类理由：论文确实提出通用 biomedical workflow automation，但其评测和 case objectives 已经落到 liposarcoma / cancer / infection 等医学对象，以及 transcriptomics、scRNA-seq、gene-expression、pathway analysis 等生命科学对象；按 relaxed multi-module rule，应记录 `07;06`
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：通用 biomedical research-agent workflow / platform
-- 最终科学问题：如何把 biomedical dry-lab research 的关键步骤自动化为端到端 Agent pipeline
+- 最终科学研究对象：biomedical dry-lab research objectives；具体覆盖 disease / cancer research 与 omics / gene-expression analysis
+- 最终科学问题：如何把具体 biomedical dry-lab objectives 自动化为可检索文献 / 数据集、设计 protocol、生成并执行代码的 Agent pipeline
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：LLM 与多 Agent 只是实现手段；真正需要判定的是系统主要研究对象仍是 research workflow 本身
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：07, 06
-- 最终判定：01.04
-- 判定理由：07 与 06 只反映 biomedical / life-science 场景；论文没有稳定锚定单一疾病、靶点、蛋白、细胞或组学对象
-- 是否需要二次复核：需要，若后续补全文可进一步核对 8 个任务是否集中于某一医学对象
+- 可能误归类到：01.04
+- 最终判定：`07;06`
+- 判定理由：旧口径强调主贡献是否是 workflow platform；新口径强调是否存在具体对象实验 / benchmark task / case result。全文给出 8 个 end-to-end liposarcoma objectives，并在搜索与实验设计评测中覆盖 thyroid cancer、HCC、viral respiratory infection 等疾病及 transcriptomics / scRNA-seq / gene-expression 对象，足以离开独立 `01.04`
+- 是否需要二次复核：不需要维持 `01.04`；若后续做 row-level schema migration，应把本记录从 independent `01.04` bucket 移出并记录 `scientific_object_modules = 06;07`
 
 ## 3. Agent 系统与科研流程角色
 
@@ -173,7 +178,7 @@
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：8 个 biomedical unmet research objectives
+- 数据集 / 实验对象：8 个 end-to-end liposarcoma research objectives；另有 thyroid cancer、HCC、viral respiratory infection、pan-cancer / T cell exhaustion 等 search / experimental-design objectives
 - 任务设置：自动完成 biomedical research workflow
 - 对比基线：未在当前摘要证据中完全展开
 - 评价指标：protocol quality 与任务完成表现
@@ -183,7 +188,7 @@
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主贡献偏 workflow automation，不是具体 biomedical object discovery
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主贡献仍偏 workflow automation，但评测任务和 case objectives 已经覆盖具体 disease / omics 对象；在 relaxed 口径下这足以支持 `07;06` 多模块记录
 - 科学贡献是否经过验证：经过任务级评测
 - 贡献强度判断：中
 - 科学贡献类型：system_platform
@@ -207,8 +212,8 @@
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：01.04 通用科研 Agent / biomedical workflow boundary
-- 可支撑哪个论点：biomedical 场景论文不一定都应归 07，主对象仍可能是通用 research workflow
+- 可放入哪个章节：07 医学与健康科学；同时作为 06 / 07 / 01.04 边界案例
+- 可支撑哪个论点：通用 biomedical research-agent workflow 若包含具体 disease / omics objectives，应按对象证据记录具体模块，`01.04` 不能覆盖这些对象层实验
 - 可用于哪个表格或图：01.04 / 06 / 07 边界案例表
 - 适合作为代表性案例吗：适合做边界案例
 - 推荐引用强度：普通引用
@@ -219,7 +224,7 @@
 
 ### 9.1 一句话概括
 
-Biomedical 语境下的通用研究流程 Agent。
+面向具体 biomedical dry-lab objectives 的多 Agent 研究流程自动化系统。
 
 ### 9.2 速记版 pipeline
 
@@ -233,9 +238,14 @@ Biomedical 语境下的通用研究流程 Agent。
 
 ```text
 是否纳入：是
-主类：01
-二级类：01.04
-三级类：01.04.03
+scientific_object_modules：06;07
+object_coverage_mode：multi_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：07
+主类：07
+二级类：07.04 / 06.03
+三级类：biomedical dry-lab research automation; transcriptomics / gene-expression / disease-object objectives
 四级专题：Biomedical research workflow automation agents
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Agent System; Hybrid Agent
 科研流程角色：literature_search_and_reading; knowledge_extraction_and_organization; experimental_design; tool_use_and_code_execution; evidence_assessment_and_validation; end_to_end_research_automation
@@ -244,7 +254,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 交叉属性：computation_driven; data_driven
 科学贡献类型：system_platform
 证据强度：computationally_validated
-归类置信度：高
+归类置信度：高（2026-06-20 relaxed multi-module 复核；一手来源为 arXiv full text / Appendix C）
 纳入置信度：高
 推荐引用强度：普通引用
 ```
