@@ -14,6 +14,14 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed round-2 multi-module revision
+
+- Round decision: update the relaxed overlay from independent `01.04` to `scientific_object_modules=03;04;07`.
+- Source checked in this round: arXiv abstract page and PDF text for `2505.15047`.
+- Reason: under the current relaxed object-coverage rule, PiFlow's three benchmark domains are concrete object-level discovery tasks, not merely object-free workflow demos. Nanohelix optimization and superconductor critical-temperature optimization support `04`; ChEMBL molecule bio-activity / chemical-space optimization supports `03`; pChEMBL lead-compound / drug-discovery framing supports `07`.
+- Current filing note: legacy `Main class` / `Secondary class` remain unchanged until schema migration, but old `01.04`-only language is superseded for relaxed-counting purposes.
+- general_method_bucket: `none`; `primary_module_for_filing=04`; `object_coverage_mode=multi_module`.
+
 **证据级别**：full-text（arXiv PDF 已下载到临时目录并转文本核读；未保存到项目目录）
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |

@@ -14,6 +14,14 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed round-2 multi-module revision
+
+- Round decision: update the relaxed overlay from independent `01.04` to `scientific_object_modules=01;02;04`.
+- Source checked in this round: arXiv abstract page and PDF text for `2505.05428`.
+- Reason: although the paper is infrastructure-heavy, the full text reports concrete case studies and system evaluations rather than only an object-free workflow proposal. Middleware / microbenchmark / decentralized-learning evaluations support `01`; astronomy instrument-calibration and telescope optical-parameter agents support `02`; MOF / ligand / CO2 adsorption materials-discovery workflow supports `04`.
+- Current filing note: legacy `Main class` / `Secondary class` remain unchanged until schema migration, but old independent-`01.04` language is superseded for relaxed-counting purposes.
+- general_method_bucket: `none`; `primary_module_for_filing=01`; `object_coverage_mode=multi_module`.
+
 记录所有关键判断对应的原文位置，后续写综述时优先回到这里核对。
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
