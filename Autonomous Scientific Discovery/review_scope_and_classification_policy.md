@@ -198,15 +198,15 @@ Agent 类型标签：LLM Agent、Planning Agent、Tool-using Agent、Retrieval-a
 给一篇论文归类时，建议按以下顺序判断：
 
 1. 先判断是否属于 Agent 文献。若不具备 Agent 特征，原则上排除。
-2. 判断论文是否做了具体科学对象研究实验，以及这些实验对应哪些科学对象，例如分子、蛋白质、疾病、材料、气候、天体、作物、工程系统或科学共同体等。
-3. 如果论文做了一个具体科学对象实验，就归入对应对象模块；如果论文对多个具体科学对象分别做了可识别的实验、验证、benchmark task、case study 或结果报告，可以同时进入多个具体科学模块。
+2. 判断论文是否具有具体科学对象研究证据，以及这些实验、验证、benchmark task、case study 或结果报告对应哪些科学对象，例如分子、蛋白质、疾病、材料、气候、天体、作物、工程系统或科学共同体等。
+3. 如果论文做了一个具体科学对象实验、验证、benchmark task、case study 或结果报告，就归入对应对象模块；如果论文对多个具体科学对象分别做了可识别的实验、验证、benchmark task、case study 或结果报告，可以同时进入多个具体科学模块。
 4. 如果论文没有任何具体科学对象实验、验证、benchmark task、case study 或结果报告，但提出了 ASD 方法、通用科研 Agent、通用科研工作流、通用科学发现平台或通用 benchmark，则不放入正式对象主类，而进入独立的 `01.04` 存放区。
 5. 如果研究对象是科学系统本身、科学知识网络、科研共同体、科学政策、科研管理、科学史、科学哲学或科学方法论，归入 `11`，其中科学系统与知识生产研究归入 `11.07`。
 6. Agent 科研角色、自主能力、Agent 类型、验证方式、交叉属性作为副标签记录。
 
 社会科学与科学系统研究边界：如果研究对象是一般社会制度、公共政策、经济行为、教育系统、组织治理、人类行为或风险治理，归入 `11.01–11.06` 中相应类别；如果研究对象是科学系统本身、科研共同体、科学知识生产、学科演化、科研资助机制、科学政策对科研产出的影响，归入 `11.07`。
 
-补充硬规则：如果系统主要提供领域无关的科研能力、通用 research-agent workflow、通用科学发现平台或通用 benchmark，但没有任何具体科学对象实验、验证、benchmark task、case study 或结果报告，则进入独立 `01.04` 存放区，而不是 `01` 主类；如果系统直接研究、审查、组织、核验、优化或解释 scientific knowledge production itself，例如 scientific peer review、scientific claims attribution、science-of-science analytics、科研共同体与知识网络，则优先归入 `11.07`；如果论文虽然平台感很强，但已经对具体科学对象做了可识别实验、验证、case study 或结果报告，则应优先进入对应对象模块，不应因为平台外观退回 `01`。
+补充硬规则：如果系统主要提供领域无关的科研能力、通用 research-agent workflow、通用科学发现平台或通用 benchmark，但没有任何具体科学对象实验、验证、benchmark task、case study 或结果报告，则进入独立 `01.04` 存放区，而不是 `01` 主类；如果系统直接研究、审查、组织、核验、优化或解释 scientific knowledge production itself，例如 scientific peer review、scientific claims attribution、science-of-science analytics、科研共同体与知识网络，则优先归入 `11.07`；如果论文虽然平台感很强，但已经对具体科学对象做了可识别实验、验证、benchmark task、case study 或结果报告，则应优先进入对应对象模块，不应因为平台外观退回 `01`。
 
 ## 十一、交叉领域处理原则
 

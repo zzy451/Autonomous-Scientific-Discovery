@@ -1,5 +1,7 @@
 # Batch 2 / Wave B 多模块重分类审计报告
 
+> Transitional note 2026-06-20：本文件保留为早期多模块审计记录。当前重新开审时，以 `multi_module_reclassification_relaxed_round_plan_451_confirmed_2026-06-20.md` 为优先口径；不能用“主对象 / 核心贡献 / 只是 demo”排除模块，必须逐项检查具体科学对象实验、验证、benchmark task、case study 或结果报告。
+
 > 日期：2026-06-20  
 > 范围：`agent_master_paper_list.md` confirmed 记录序号 171-226。  
 > 对应计划：`Coverage_Check/multi_module_reclassification_flat_batch_plan_451_confirmed_2026-06-20.md`。  

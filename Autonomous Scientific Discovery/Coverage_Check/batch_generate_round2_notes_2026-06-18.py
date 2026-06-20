@@ -2,6 +2,14 @@ from __future__ import annotations
 
 from pathlib import Path
 
+# Deprecated for current classification work.
+# Historical note 2026-06-20: this helper encodes older boundary-review
+# language that can treat cross-domain demos as insufficient when the
+# primary object remains a general framework. Do not reuse it for the
+# relaxed multi-module reclassification round. Current review must follow
+# multi_module_reclassification_relaxed_round_plan_451_confirmed_2026-06-20.md:
+# any recognizable concrete-object experiment, validation, benchmark task,
+# case study, or reported result can support the corresponding 01-11 module.
 
 MASTER_PATH = Path("Autonomous Scientific Discovery/Paper_Lists/agent_master_paper_list.md")
 NOTES_ROOT = Path("Autonomous Scientific Discovery/Notes")

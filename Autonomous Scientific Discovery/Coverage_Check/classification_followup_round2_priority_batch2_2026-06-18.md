@@ -1,5 +1,7 @@
 # round 2 priority batch 2 跟进复核报告
 
+> Historical note 2026-06-20：本报告形成于当前“放松领域实验覆盖”口径完全固化之前。报告中关于 `cross-domain demo`、`主对象`、`核心贡献`、`暂保持 01.04` 的判断只作为历史背景；本轮 451 篇多模块复核必须以 `multi_module_reclassification_relaxed_round_plan_451_confirmed_2026-06-20.md` 为准，逐项检查具体科学对象实验、验证、benchmark task、case study 或结果报告。只要对象层证据可识别，即可记录对应 `01–11` 模块，不要求该模块构成论文核心贡献。
+
 生成日期：`2026-06-18`  
 复核范围：`ASD-0053`、`ASD-0062`、`ASD-0079`、`ASD-0115`  
 复核目标：对第二轮高风险 confirmed core 队列的第二批样本做更强证据复核，并区分“可以直接落地主列表收口”的 metadata / evidence-strength 问题与“仍需全文补证”的真实边界问题。

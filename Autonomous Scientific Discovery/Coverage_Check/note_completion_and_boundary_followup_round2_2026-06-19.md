@@ -1,5 +1,7 @@
 # 高风险缺 note 批次补齐后分类跟进报告
 
+> Historical note 2026-06-20：本报告形成于当前“放松领域实验覆盖”口径完全固化之前。报告中关于 `cross-domain demo`、`主对象`、`核心贡献`、`暂保持 01.04` 的判断只作为历史背景；本轮 451 篇多模块复核必须以 `multi_module_reclassification_relaxed_round_plan_451_confirmed_2026-06-20.md` 为准，逐项检查具体科学对象实验、验证、benchmark task、case study 或结果报告。只要对象层证据可识别，即可记录对应 `01–11` 模块，不要求该模块构成论文核心贡献。
+
 生成日期：`2026-06-19`  
 审计范围：`high_risk_missing_note_batch_49_manifest_2026-06-18.md` 中已落地 note 的 `51` 条记录，以及其中若干高压边界样本  
 审计模式：note 补齐后的小范围分类收口 / 边界解释固化

@@ -54,11 +54,14 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
 - 科学对象模块：
 - 覆盖模式：单模块 / 多模块 / 独立 `01.04` 存放区
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：
+- 独立 `01.04` 存放区：none / `01.04_general_asd_methods_without_concrete_object_experiments`
 - Primary module for filing：
+- Primary module for filing 说明：仅用于笔记落盘、排序和展示，不覆盖多模块事实。
 - 主展示模块一级类：
 - 主展示模块二级类：
 - 主展示模块三级类：
@@ -66,6 +69,7 @@
 - 其他覆盖模块及对应层级路径：
 - 四级专题是否为新增：
 - 是否进入独立 `01.04` 存放区：
+- 每个模块的对象实验证据：
 - 归类理由：
 - 归类置信度：高 / 中 / 低
 
@@ -81,6 +85,7 @@
 - 最终判定：
 - 判定理由：
 - 多模块覆盖说明：
+- 01.04 判定说明：
 - 是否需要二次复核：
 
 ## 3. Agent 系统与科研流程角色
@@ -241,6 +246,8 @@
 是否纳入：
 科学对象模块：
 覆盖模式：
+是否具有具体科学对象实验：
+general_method_bucket：
 Primary module for filing：
 是否进入 01.04 存放区：
 主展示模块一级类：
@@ -248,6 +255,8 @@ Primary module for filing：
 主展示模块三级类：
 主展示模块四级专题：
 其他覆盖模块及对应层级路径：
+module_assignment_evidence：
+multi_module_object_coverage_note：
 Agent 类型：
 科研流程角色：
 自主能力：
