@@ -1,5 +1,19 @@
 # Rothfarb et al. 2026 - Hierarchical Multi-agent Large Language Model Reasoning for Autonomous Heterogeneous Catalyst Discovery
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 03;04
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+first_hand_sources_checked: publisher abstract / PDF landing
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: 04 is supported by heterogeneous catalyst-material and surface/candidate discovery. 03 is supported by explicit CO adsorption, adsorption energetics, and surface-chemistry validation tasks.
+multi_module_object_coverage_note: Primary filing remains 04 because the discovered objects are catalyst materials/surfaces. Under the relaxed rule, the chemical adsorption/surface-chemistry tasks also support 03 coverage.
+```
+
 **论文信息**
 - 标题：Hierarchical Multi-agent Large Language Model Reasoning for Autonomous Heterogeneous Catalyst Discovery
 - 作者：Samuel Rothfarb; Megan C. Davis; Ivana Matanovic; Baikun Li; Edward F. Holby; Wilton J. M. Kort-Kamp

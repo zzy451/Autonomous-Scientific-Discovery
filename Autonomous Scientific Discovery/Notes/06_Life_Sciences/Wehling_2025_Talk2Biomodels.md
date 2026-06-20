@@ -1,5 +1,19 @@
 # Wehling et al. 2025 - Talk2Biomodels: AI agent-based open-source LLM initiative for kinetic biological models
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 06
+first_hand_sources_checked: publisher full text / DOI page
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: 06 is supported by kinetic biological models, BioModels integration, and systems-biology ODE model exploration. 07 is supported by explicit precision-medicine, Crohn's/IL-6, COVID epidemiology, and public-health/medical model use cases.
+multi_module_object_coverage_note: The old single-module note remains useful for primary filing, but the original-source evidence includes concrete biomedical and public-health model case studies, so 07 is added under the relaxed object-coverage rule.
+```
+
 **论文信息**
 - 标题：Talk2Biomodels: AI agent-based open-source LLM initiative for kinetic biological models
 - 作者：Lilija Wehling; Gurdeep Singh; Ahmad Wisnu Mulyadi; et al.

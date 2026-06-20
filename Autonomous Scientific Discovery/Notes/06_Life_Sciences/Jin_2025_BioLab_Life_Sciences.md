@@ -1,5 +1,19 @@
 # Jin et al. 2025 - BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 06
+first_hand_sources_checked: bioRxiv DOI landing / abstract-level first-hand page
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: 06 is supported by DNA/RNA/protein/cell life-science tasks and biological-foundation-model tool use. 07 is supported by macrophage-targeting antibody design, PD-1 / pembrolizumab optimization, IC50 assays, and therapeutic validation.
+multi_module_object_coverage_note: BioLab is still filed primarily under life sciences, but therapeutic antibody optimization and assay evidence are concrete biomedical object coverage, so 07 is added.
+```
+
 **论文信息**
 - 标题：BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models
 - 作者：Ruofan Jin; Yucheng Guo; Yuanhao Qu; Ming Yang; Chun Shang; Qirong Yang; Linlin Chao; Yi Zhou; Ruilai Xu; Ziyao Xu; Ruhong Zhou; Zaixi Zhang; Mengdi Wang; Xiaoming Zhang; Le Cong

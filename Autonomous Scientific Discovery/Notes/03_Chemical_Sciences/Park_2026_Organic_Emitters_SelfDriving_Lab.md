@@ -1,5 +1,19 @@
 # Park et al. 2026 - Discovery of tunable and soluble organic emitters for solid-state lasers with a self-driving laboratory
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 03;04
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 03
+first_hand_sources_checked: publisher full article / DOI page
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: 03 is supported by the fluorene-based organic emitter molecular search and synthesis space. 04 is supported by automated optical characterization plus solid-state ASE / photophysical material-performance validation for laser-emitter use.
+multi_module_object_coverage_note: The legacy note emphasized primary 03 filing because the directly searched family is molecular. Under the relaxed object-coverage rule, the reported solid-state optical/material-performance experiments are sufficient to add 04 without changing primary filing.
+```
+
 **论文信息**
 - 标题：Discovery of tunable and soluble organic emitters for solid-state lasers with a self-driving laboratory
 - 作者：Hyun Suk Park; et al.

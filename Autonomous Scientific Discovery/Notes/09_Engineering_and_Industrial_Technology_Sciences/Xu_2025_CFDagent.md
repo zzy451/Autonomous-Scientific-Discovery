@@ -1,5 +1,19 @@
 # Xu et al. 2025 - CFDagent: A Language-Guided, Zero-Shot Multi-Agent System for Complex Flow Simulation
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 02;09
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 09
+first_hand_sources_checked: DOI / arXiv PDF
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: 09 is supported by the automated CFD geometry, solver, and postprocessing workflow for engineering simulation. 02 is supported by concrete fluid-dynamics validation, including sphere drag, complex flow fields, and physics-based CFD outputs.
+multi_module_object_coverage_note: The legacy note kept 09 as primary because the paper is workflow-oriented engineering CFD automation. Under the relaxed rule, the reported fluid-dynamics validation objects justify adding 02 while keeping 09 as the filing module.
+```
+
 **论文信息**
 - 标题：CFDagent: A Language-Guided, Zero-Shot Multi-Agent System for Complex Flow Simulation
 - 作者：Zhaoyue Xu; Long Wang; Chunyu Wang; Yixin Chen; Qingyong Luo; Hua-Dong Yao; Shizhao Wang; Guowei He

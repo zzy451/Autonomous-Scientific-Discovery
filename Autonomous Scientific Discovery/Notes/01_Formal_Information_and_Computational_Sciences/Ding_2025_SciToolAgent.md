@@ -1,5 +1,19 @@
 # Keyan Ding et al. 2025 - SciToolAgent: a knowledge-graph-driven scientific agent for multitool integration
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 03;04;06
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 03
+first_hand_sources_checked: Nature publisher abstract/figures; DOI page
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: 06 is supported by biology/protein-engineering case coverage. 03 is supported by chemical reactivity and chemical synthesis case coverage. 04 is supported by materials/MOF screening case coverage.
+multi_module_object_coverage_note: The old note treated SciToolAgent as an independent 01.04 general scientific-agent system. Under the current policy, the Nature page's concrete biology, chemistry, and materials case studies disqualify pure 01.04 bucket treatment; legacy fields can stay unchanged until schema migration, but the relaxed object modules are 03;04;06.
+```
+
 **论文信息**
 - 标题：SciToolAgent: a knowledge-graph-driven scientific agent for multitool integration
 - 作者：Keyan Ding et al.

@@ -1,5 +1,19 @@
 # Song et al. 2026 - Autonomous heterogeneous catalyst discovery with a self-evolving multi-agent digital twin
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 03;04
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+first_hand_sources_checked: arXiv abstract / PDF
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: 04 is supported by catalyst candidates, catalyst surfaces, and material-family search. 03 is supported by pathway enumeration, transition-state location, kinetics, gas-solid/liquid-solid catalysis, and reaction validation.
+multi_module_object_coverage_note: The legacy primary filing remains 04 and `digital_twin` does not imply 09. The relaxed object-coverage rule adds 03 because the paper reports concrete reaction-pathway and kinetic chemistry validation in addition to catalyst-material discovery.
+```
+
 **论文信息**
 - 标题：Autonomous heterogeneous catalyst discovery with a self-evolving multi-agent digital twin
 - 作者：Zhilong Song; Zongmin Zhang; Lixue Cheng
