@@ -24,6 +24,21 @@ Evidence level: full-text (arXiv PDF full text).
 | 实验验证 | 计算验证与 human-in-the-loop 案例 | Sec. 2；Fig. 2-5 | 通过 CMC、docking score、CO2 adsorption 等 surrogate/physics model 评估 | 高 |
 | 科学贡献 | 材料逆向设计 Agent 平台 | 摘要；Results | 展示跨 surfactant、WDR5 ligand、MOF linker 的 rational inverse design | 中 |
 
+## 2026-06-20 relaxed multi-module classification update
+
+本更新覆盖下文旧的单模块归类表述。按当前 relaxed multi-module object-coverage rule，本论文不应只记录为 `04`。arXiv 一手来源显示 dZiner 的 case studies 分别覆盖 surfactant molecular design、WDR5 ligand / drug-candidate docking design、MOF organic linker / CO2 adsorption materials design。
+
+- first_hand_sources_checked: `arxiv_abs`; `arxiv_full_text`; `local_note`
+- scientific_object_modules: `03;04;07`
+- object_coverage_mode: `multi_module`
+- general_method_bucket: `none`
+- primary_module_for_filing: `04`
+- module_assignment_evidence: `03` 由 surfactant molecules、SMILES、CMC optimization 和 chemical-property design 支持；`04` 由 MOF organic linkers、node-topology pairs 与 CO2 adsorption materials performance 支持；`07` 由 WDR5 protein target、ligand / inhibitor / drug candidate docking optimization 和 disease-relevant target 支持。
+- multi_module_object_coverage_note: `04` 仍是主归档模块；`03` 和 `07` 是基于对象实验覆盖新增的正式模块，不只是交叉标签。
+- note_revision_required: `yes`
+- confidence: `high` for `03` and `04`; `medium_high` for `07`
+- full_text_required: `no`
+
 ## 0. 摘要翻译
 
 dZiner 是一个由 LLM 驱动的 chemist AI agent，用于材料和分子逆向设计。系统从目标性质和初始结构出发，检索/抽取基础文献中的设计原则，提出结构修改，并用合成可行性检查、surrogate model 或 physics-based model 评估候选。它支持 closed-loop 与 human-in-the-loop 反馈，并在表面活性剂、WDR5 ligand/drug candidate 和 MOF organic linkers 等任务上展示。

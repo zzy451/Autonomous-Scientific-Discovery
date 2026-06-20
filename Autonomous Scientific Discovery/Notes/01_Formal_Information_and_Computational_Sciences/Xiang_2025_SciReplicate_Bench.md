@@ -24,6 +24,21 @@ Evidence level: full-text (arXiv PDF full text; COLM 2025 publication status fro
 | 实验验证 | 100 tasks from 36 NLP papers | Abstract；Sec. 3 | benchmark 从 2024 NLP papers 构建，含 repository context 和 reference implementation | 高 |
 | 科学贡献 | 科研算法复现 benchmark 与双 Agent baseline | Abstract；Contributions | 揭示 LLM 能理解算法但代码实现仍困难 | 高 |
 
+## 2026-06-20 relaxed multi-module classification update
+
+本更新覆盖下文旧的 `01.04` 单模块表述。按当前 relaxed multi-module object-coverage rule，SciReplicate-Bench 不是“无具体对象实验的通用 benchmark”：它的 benchmark task 来自真实 NLP / algorithmic research papers，并直接评估 scientific reproducibility / algorithmic reproduction，因此应离开独立 `01.04` bucket，进入正式对象模块。
+
+- first_hand_sources_checked: `arxiv_abs`; `arxiv_pdf`; `local_note`
+- scientific_object_modules: `01;11`
+- object_coverage_mode: `multi_module`
+- general_method_bucket: `none`；可保留 `research-agent benchmark` 作为副标签
+- primary_module_for_filing: `11`
+- module_assignment_evidence: `01` 由 algorithmic reproduction、NLP research papers、reasoning graph、code generation / test execution 和 computational implementation tasks 支持；`11` / `11.07` 由 scientific reproducibility、paper-to-code reproduction、research-paper understanding 和 knowledge-production evaluation benchmark 支持。
+- multi_module_object_coverage_note: `11.07` 是主归档建议，因为论文核心问题是科研论文复现与科学知识生产质量评估；`01` 是被复现的算法 / 代码 / NLP computational objects 的附加对象模块。
+- note_revision_required: `yes`
+- confidence: `medium_high`
+- full_text_required: `no_for_initial_reclassification`; 若后续改主列表 schema，可再核对 benchmark task taxonomy。
+
 ## 0. 摘要翻译
 
 SciReplicate-Bench 评估 LLM 从近期 NLP 论文算法描述中生成复现代码的能力。benchmark 包含来自 36 篇 2024 年 NLP 论文的 100 个任务，要求模型理解论文中的算法描述、结合论文和代码库上下文，生成可运行实现。作者提出 Sci-Reproducer 双 Agent 框架，由 Paper Agent 理解算法、Coding Agent 实现代码，并引入 reasoning graph accuracy 与 test pass rate 等指标。

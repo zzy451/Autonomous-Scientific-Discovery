@@ -22,6 +22,21 @@
 | 科学贡献 | 强 | Nature 摘要 | 约 300 次实验内提升 emission directivity，并用 equation learner 揭示 structure-property relationships | 高 |
 | 边界判断 | 不转 `02` | 摘要 | 虽有物理规律 flavor，但被操控与优化的对象是具体 metasurface material system | 高 |
 
+## 2026-06-20 relaxed multi-module classification update
+
+本更新覆盖下文“保留 04 / 不转 02”的旧单模块表述。按当前 relaxed multi-module object-coverage rule，本论文应记录为 `04;02`，其中 `04` 仍为主归档模块。
+
+- first_hand_sources_checked: `publisher_page`; `nature_pdf`; `local_note`
+- scientific_object_modules: `04;02`
+- object_coverage_mode: `multi_module`
+- general_method_bucket: `none`
+- primary_module_for_filing: `04`
+- module_assignment_evidence: `04` 由 reconfigurable semiconductor / GaAs metasurfaces、InAs quantum dots、metasurface structure-property optimization 和 emission directivity materials performance 支持；`02` 由 spontaneous emission steering、far-field emission profile、Fourier optics、momentum matching、nanoscale light-matter interaction 和 governing-equation / operational-principle discovery 支持。
+- multi_module_object_coverage_note: `02` 不是因为论文“用了物理术语”而添加，而是因为原文实际对光学发射过程和物理机制做了实验与方程发现；`04` 仍是样品、平台和归档主线。
+- note_revision_required: `yes`
+- confidence: `high` for `04`; `medium_high` for `02`
+- full_text_required: `no`
+
 ## 0. 摘要翻译
 
 论文提出一个 self-driving lab 平台，用于研究超快纳米光子学中的可重构半导体超表面。系统使用 active learning agent 与实时闭环反馈，在大约 300 次实验内提升了 emission directivity，并结合 equation learner 揭示结构与性质之间的关系。虽然论文带有明显 physics-law discovery 气质，但其直接操控与优化的对象是 metasurface / nanophotonics material system，因此更稳地落在材料科学而不是一般物理规律发现。

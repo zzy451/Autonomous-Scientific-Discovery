@@ -24,6 +24,21 @@
 | 实验验证 | 自动 reviewer 在 OpenReview 数据上近人类表现；生成 ML 论文并用 reviewer 打分 | Sec. 4-6；Table 1-3；Fig. 2/4 | Reviewer F1/AUC 与人类基线接近；生成论文成本约 10-15 美元/篇 | 高 |
 | 科学贡献 | 提供通用自动科学发现闭环和风险讨论 | Contributions；Sec. 8-9 | 代表科研 Agent 从 idea 到 paper 的端到端系统，但科学发现质量仍依赖自动评审和人工复核 | 中 |
 
+## 2026-06-20 relaxed multi-module classification update
+
+本更新覆盖下文旧的 `01.04` 单模块表述。按当前 relaxed multi-module object-coverage rule，`01.04` 只用于没有任何具体科学对象实验、验证、benchmark task、case study 或结果报告的通用 ASD 方法文献。The AI Scientist 虽然是通用科研 Agent 系统，但原文实际在机器学习研究对象和科学同行评审对象上做了可识别实验 / benchmark，因此不应只放在独立 `01.04` bucket。
+
+- first_hand_sources_checked: `arxiv_abs`; `arxiv_pdf_v3`; `local_note`
+- scientific_object_modules: `01;11`
+- object_coverage_mode: `multi_module`
+- general_method_bucket: `none`；可保留 `ASD_general_method` 作为副标签
+- primary_module_for_filing: `01`
+- module_assignment_evidence: `01` 由 diffusion modeling、transformer language modeling、learning dynamics 等机器学习研究任务、代码实验和论文生成结果支持；`11` / `11.07` 由 automated reviewer、OpenReview / ICLR reviewer data、scientific peer-review evaluation 和 scientific knowledge-production quality assessment 支持。
+- multi_module_object_coverage_note: `01` 是正式计算 / 机器学习研究对象模块；`11.07` 是科学评审与知识生产系统对象模块；旧 `01.04` 只能作为通用 ASD 方法标签，不再作为唯一分类事实。
+- note_revision_required: `yes`
+- confidence: `medium_high` for `01`; `medium` for `11.07`
+- full_text_required: `no_for_initial_reclassification`; peer-review benchmark 细节可在后续全文精修中再核页码。
+
 ## 0. 摘要翻译
 
 论文提出 The AI Scientist，一个面向开放式科学发现的自动化框架。系统可以独立生成研究想法、写代码、执行计算实验、可视化结果、撰写完整论文，并通过模拟同行评审进行评价。作者在 diffusion modeling、transformer language modeling 与 learning dynamics 三个机器学习子领域进行演示，报告每篇论文成本约 10-15 美元，并设计自动 reviewer 来评价生成论文质量。

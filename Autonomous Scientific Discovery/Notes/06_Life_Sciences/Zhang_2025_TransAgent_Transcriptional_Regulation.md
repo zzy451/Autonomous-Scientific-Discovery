@@ -22,6 +22,21 @@
 | 实验验证 | 多案例分析 | bioRxiv abstract | 应用于食管鳞癌和 cardiomyocyte differentiation 等场景，识别调控回路与关键调控因子 | 高 |
 | 边界判断 | 不应转 `07` | bioRxiv abstract | 虽有医学场景，但主问题是 transcriptional regulation analysis，而非诊疗决策 | 高 |
 
+## 2026-06-20 relaxed multi-module classification update
+
+本更新覆盖下文“稳定对象是 transcriptional regulation analysis rather than class-07 clinical decision support”的旧单模块表述。该判断对 `primary_module_for_filing = 06` 仍然成立，但当前 relaxed multi-module rule 不要求 `07` 必须是临床决策主贡献；只要有疾病 / 病理对象 case study 和结果报告，就可以记录附加医学模块。
+
+- first_hand_sources_checked: `doi_page`; `bioRxiv_metadata`; `accessible_full_text_mirror`; `official_project_page`; `local_note`
+- scientific_object_modules: `06;07`
+- object_coverage_mode: `multi_module`
+- general_method_bucket: `none`
+- primary_module_for_filing: `06`
+- module_assignment_evidence: `06` 由 transcriptional regulation、multi-omics、epigenomics、gene expression profiles、enhancers / super-enhancers、gene regulatory networks 和 cardiomyocyte differentiation 支持；`07` 由 esophageal squamous cell carcinoma / ESCC super-enhancer regulatory circuit、oncogenic transcriptional regulators、cancer pathogenesis 和 potential therapeutic-target discovery 支持。
+- multi_module_object_coverage_note: `06` 是生命科学主线；`07` 是基于 ESCC 疾病调控回路 case study 的附加对象模块，不要求改写为临床决策支持论文。
+- note_revision_required: `yes`
+- confidence: `high` for `06`; `medium_high` for `07`
+- full_text_required: `no_for_classification`
+
 ## 0. 摘要翻译
 
 本文提出 `TransAgent`，一个面向转录调控分析的多组学感知 AI Agent。系统支持 planning、execution 和 automatic 三种模式，集成 30 多种工具与 20 多个数据源，可从原始数据处理一直扩展到高级分析与联合预测。作者将其应用于多组学调控研究场景，包括癌症调控回路与心肌细胞分化中的关键调控因子识别，展示了其在生命机制研究中的自动化能力。
