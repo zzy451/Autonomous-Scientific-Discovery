@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 05;10
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: CaltechAUTHORS / paper metadata; PDF
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `05` is supported by Mars rocks, outcrops, and geologic target selection; `10` is supported by autonomous rover science targeting, sequencing, and observation execution.
+multi_module_object_coverage_note: AEGIS remains filed under rover / mission-science autonomy, but the reported geological target selection is concrete planetary surface science evidence and should be counted as `05` under the relaxed rule.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF 摘要 | AEGIS 能在 no human in the loop 条件下选 target，并驱动 follow-up observations | 高 |

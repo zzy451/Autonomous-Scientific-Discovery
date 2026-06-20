@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 01
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 01
+first_hand_sources_checked: OpenReview; arXiv / PDF trail
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `01` is supported by Scientist-Bench / AI research domains, algorithm and model implementation tasks, and automated experimental evaluation inside formal-computational AI research.
+multi_module_object_coverage_note: This section supersedes the old independent `01.04` wording. AI-Researcher is general in workflow form, but its reported benchmark and experiments use concrete AI-research objects, so it should be treated as formal / computational science (`01.02`) rather than `01.04` general-method-only.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |

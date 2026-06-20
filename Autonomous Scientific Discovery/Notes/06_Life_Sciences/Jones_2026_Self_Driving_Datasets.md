@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 03;06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 06
+first_hand_sources_checked: arXiv abstract; project / GitHub trail
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `03` is supported by chemical-reaction extraction tasks; `06` is supported by gene-disease, protein localization, and biological knowledge-extraction tasks; `07` is supported by BBB permeability, oral bioavailability, LD50, and biomedical / pharmacological property tasks.
+multi_module_object_coverage_note: The old 06-only filing is too narrow under the relaxed rule. The paper builds self-driving biomedical datasets, but its reported extraction tasks span chemistry, life science, and medical / pharmacological objects.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract / HTML / GitHub | Starling 被明确描述为 multi-agent deep research system | 高 |

@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 05;10
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: Springer abstract
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `05` is supported by probabilistic identification and evaluation of scientifically valuable planetary surface features; `10` is supported by rover autonomous science, path planning, and mission execution.
+multi_module_object_coverage_note: The rover-autonomy contribution remains the filing anchor, but the planetary surface science features are concrete Earth/planetary-environment objects under the relaxed object-coverage rule.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Springer abstract | rover 自主识别科学目标、评估价值并规划路径 | 高 |

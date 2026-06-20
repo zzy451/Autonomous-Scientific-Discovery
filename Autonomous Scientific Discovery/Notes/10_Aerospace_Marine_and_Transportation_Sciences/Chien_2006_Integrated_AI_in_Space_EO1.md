@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 05;10
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: AAAI page; AAAI PDF
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `05` is supported by volcanic activity, flooding, cryosphere events, and Earth science event detection; `10` is supported by integrated spacecraft AI for event detection, model-based planning, procedural execution, and EO-1 mission operations.
+multi_module_object_coverage_note: The paper remains a spacecraft-autonomy record, but its Earth-science event detection and replanning evidence should be expanded to `05;10`.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF p.1 | 摘要直接写系统由 model-based planning and scheduling、procedural execution 与 event detection 组成 | 高 |

@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 05;10
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 05
+first_hand_sources_checked: publisher / institutional metadata; DOI page
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `05` is supported by global surveillance of Earth science phenomena including volcanoes, flooding, cryosphere, and atmospheric events; `10` is supported by autonomous Earth-observing sensorweb retasking and satellite mission-science operations.
+multi_module_object_coverage_note: This is the strongest `05/10` boundary case in the wave: EO-1 / sensorweb autonomy remains important, but the direct scientific object is Earth observation, so `05` is a reasonable primary filing under the relaxed overlay.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF p.1-p.3 | 系统包含 event detection、science agents、retasking、automated planning 与 EO-1 response execution 的完整多步闭环 | 高 |

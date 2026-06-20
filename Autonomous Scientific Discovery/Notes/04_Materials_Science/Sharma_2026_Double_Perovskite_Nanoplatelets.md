@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 03;04
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+first_hand_sources_checked: Nature Communications full article / publisher page
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `04` is supported by double perovskite nanoplatelet synthesis and optical / material-property characterization; `03` is supported by reaction inference and mechanistic chemical exploration in the autonomous microfluidic workflow.
+multi_module_object_coverage_note: Keep `04` as the filing module because the final object is nanoplatelet materials discovery, but the paper also explicitly studies reaction inference, so `03` should be counted under the relaxed object-coverage rule.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Nature abstract / results / reviewer evidence | `PoLARIS` 是 microfluidic self-driving laboratory，执行自治合成、优化和机理探查 | 高 |

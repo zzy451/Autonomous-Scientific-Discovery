@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 05;10
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: JPL PDF; JPL AEGIS project page
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `05` is supported by Mars geological / geochemical targets selected for SuperCam science; `10` is supported by Perseverance rover instrument autonomy and mission-science targeting.
+multi_module_object_coverage_note: Keep the note filed in `10`, but record `05` because the autonomous target-selection loop produces concrete planetary geology / geochemistry observations.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF abstract | autonomously select targets for science instruments, without Earth in the loop | 高 |

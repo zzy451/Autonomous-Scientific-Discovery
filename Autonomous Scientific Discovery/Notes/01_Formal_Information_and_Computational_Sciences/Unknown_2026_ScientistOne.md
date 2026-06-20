@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 01
+object_coverage_mode: single_module_now_with_extra_module_queue
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 01
+first_hand_sources_checked: arXiv abstract; project page
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `01` is supported by frontier AI / computational research tasks, language-modeling and AI-systems research, a 75-paper audit, and chain-of-evidence verification over concrete research tasks.
+multi_module_object_coverage_note: The old `01.04`-only wording is no longer valid because the abstract reports concrete AI-research tasks. Possible additional modules such as `07` for medical imaging or `09` for 3D perception remain full-text follow-up items and are not merged in this high-confidence pass.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |

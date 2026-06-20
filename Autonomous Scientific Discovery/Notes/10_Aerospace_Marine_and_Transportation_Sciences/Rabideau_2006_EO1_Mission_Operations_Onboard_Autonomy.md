@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 05;10
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: NTRS / DOI metadata; JPL PDF trail
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `05` is supported by land, ice, snow, water, hot areas, flooding, ice melt, lava flows, and other Earth-event science targets; `10` is supported by EO-1 onboard autonomy, mission replanning, retargeting, and execution control.
+multi_module_object_coverage_note: The note's old class-10 filing is still useful for mission-autonomy organization, but Earth-event science coverage justifies adding `05`.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF p.1 | EO-1 的 `Autonomous Sciencecraft Experiment (ASE)` 被定义为一组可自主收集、处理和下传科学数据的集成技术 | 高 |

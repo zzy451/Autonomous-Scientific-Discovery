@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 05;10
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: PubMed abstract; Science Robotics / DOI metadata
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `05` is supported by Mars geological materials and geochemical ChemCam observations; `10` is supported by autonomous rover instrument targeting and mission-science operations.
+multi_module_object_coverage_note: The old mission-autonomy filing is incomplete under the relaxed rule because the paper reports geological / geochemical science targeting and observations, not only rover control.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Canonical metadata | 首作者应规范为 Raymond Francis | Crossref + PubMed | Crossref 为 R. Francis，PubMed 邮箱为 raymond.francis@jpl.nasa.gov | 高 |

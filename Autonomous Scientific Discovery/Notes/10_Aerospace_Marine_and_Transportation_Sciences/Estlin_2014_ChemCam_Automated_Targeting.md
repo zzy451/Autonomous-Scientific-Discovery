@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 05;10
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: JPL PDF; JPL AEGIS project page
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `05` is supported by Mars rocks, soil, geological targets, and ChemCam geochemical surveying; `10` is supported by rover / ChemCam autonomous targeting and mission-science operations.
+multi_module_object_coverage_note: The old 10-only boundary treated geology as mission input; the relaxed rule counts the geological / geochemical targets themselves as `05` object coverage.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF abstract | onboard 图像分析、候选目标检测、follow-up targeting | 高 |

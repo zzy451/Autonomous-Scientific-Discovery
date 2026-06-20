@@ -14,6 +14,20 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 05;10
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: JPL PDF
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `05` is supported by rocks, soil, veins, concretions, and geologically relevant MSL / ChemCam targets; `10` is supported by autonomous rover science technology, targeting, and mission integration.
+multi_module_object_coverage_note: The relaxed rule treats the Mars geology objects as countable `05` coverage while preserving `10` as the filing module for rover mission-science autonomy.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF abstract | automated science data collection by a planetary rover | 高 |
