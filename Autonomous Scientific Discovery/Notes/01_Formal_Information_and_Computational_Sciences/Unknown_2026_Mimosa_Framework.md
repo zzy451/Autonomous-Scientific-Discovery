@@ -14,6 +14,13 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed round-2 P0-C revision
+
+- `first_hand_sources_checked`: arXiv PDF (`2603.28986`), especially the ScienceAgentBench setup and results sections.
+- Accepted relaxed classification: `scientific_object_modules=03;05;06;11`; `object_coverage_mode=multi_module`; `primary_module_for_filing=01`; `general_method_bucket=none`.
+- Evidence: the paper evaluates Mimosa on all 102 ScienceAgentBench tasks, described as data-driven discovery tasks from 44 peer-reviewed papers across bioinformatics (`06`), computational chemistry (`03`), geographic information science (`05`), and psychology / cognitive neuroscience (`11`). The benchmark outputs are programmatically checked against domain-specific success criteria, so they count as concrete benchmark-task evidence under the relaxed object-coverage rule.
+- Note correction: the earlier `01.04` note is stale. Mimosa remains a general ASR framework for filing/display purposes, but independent `01.04` only treatment is no longer supported once the benchmark task domains are verified from full text.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |

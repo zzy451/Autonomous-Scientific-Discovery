@@ -31,6 +31,16 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p0B_2026-06
 | `ASD-0060` | closed | accepted `scientific_object_modules=03;04;07`; removed independent `01.04` only treatment |
 | `ASD-0062` | closed | accepted `scientific_object_modules=01;02;04`; removed independent `01.04` only treatment |
 
+## Round-2 P0-C Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p0C_2026-06-20.md`.
+
+| ID | Status after P0-C | Action |
+|---|---|---|
+| `ASD-0553` | still open | source-limited; keep full-text-required boundary item before accepting `06` / `07` migration |
+| `ASD-0660` | closed | accepted `scientific_object_modules=03;04;06;07`; removed independent `01.04` only treatment |
+| `ASD-0662` | closed | accepted `scientific_object_modules=03;05;06;11`; removed independent `01.04` only treatment |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.

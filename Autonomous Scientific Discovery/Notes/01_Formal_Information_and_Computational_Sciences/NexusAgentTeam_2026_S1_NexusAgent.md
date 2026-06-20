@@ -14,6 +14,13 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed round-2 P0-C revision
+
+- `first_hand_sources_checked`: arXiv PDF (`2602.01550`), including abstract, evaluation sections, case study, and appendix examples.
+- Accepted relaxed classification: `scientific_object_modules=03;04;06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Evidence: Biomni-Eval / Biomni-Eval1 and the GWAS variant prioritization case provide concrete life-science / genetics evidence (`06`), with a rare-disease diagnosis example supporting biomedical / health coverage (`07`). ChemBench examples include molecular property and early virtual-screening / drug-development tasks (`03`, with biomedical pressure captured by `07`). MatSciBench materials-science categories and electrochemical-cell examples support `04`.
+- Note correction: the earlier `01.04` treatment was a legacy platform-first reading. Under the relaxed benchmark-object rule, the paper should not remain independent `01.04` only, even though the legacy filing row is not migrated yet.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |

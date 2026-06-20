@@ -14,6 +14,14 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed round-2 P0-C source-limited revision
+
+- `first_hand_sources_checked`: DOI / bioRxiv DOI landing path and metadata mirrors; bioRxiv full text/PDF was not accessible in this run (`403`/blocked).
+- `classification_evidence_source_level`: `source_limited`.
+- Current decision: keep this record in the independent `01.04` queue for now, not because the old single-module note is authoritative, but because full task inventory could not be verified from the original full text.
+- Relaxed-rule implication: the abstract-level evidence mentions bioinformatics automation, in-house data, BixBench, and research / clinical contexts, so `06` and possibly `07` remain plausible. Do not accept a high-confidence migration until the full paper or authoritative task inventory confirms concrete biology / biomedical object tasks and results.
+- `note_revision_required`: yes, if full text later confirms concrete object tasks; current block supersedes the older high-confidence `01.04` wording as a provisional, source-limited decision.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | DOI registration abstract | multi-agent AI framework + sub-agents + tools + Docker orchestration | 高 |
