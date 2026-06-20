@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supplements the older `07.04` primary filing with object-coverage modules.
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: Crossref DOI abstract / bioRxiv DOI metadata
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `07` is supported by therapeutic peptide discovery and intervention-oriented validation; `06` is supported by membrane biology, immune-cell functional assays, LRRC8C/SLC25A1 targets, and T-cell function evidence.
+multi_module_object_coverage_note: The medical endpoint remains primary for filing, but the wet-lab membrane/cell biology experiments are concrete life-science object evidence under the relaxed rule.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Crossref abstract | 明确有 `Observation-Thought-Action-Summary (OTAS)` reasoning loop | 高 |

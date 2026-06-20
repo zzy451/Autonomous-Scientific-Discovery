@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supplements the older `07.04` primary filing with object-coverage modules.
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: PMC abstract/full-text page; official project/GitHub trail
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `07` is supported by therapeutic target discovery, synthetic lethality, and immunotherapy-response tasks; `06` is supported by omics, pathway, biological-target, and cellular/molecular analysis tasks.
+multi_module_object_coverage_note: The therapeutic endpoint controls primary filing, but the omics/pathway/target analyses are concrete life-science object coverage and should be recorded as `06` as well.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | PMC abstract | 系统对 omics objective 执行透明多步分析并调用工具 | 高 |

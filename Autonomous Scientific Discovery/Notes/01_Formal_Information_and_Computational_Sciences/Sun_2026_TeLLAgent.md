@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supersedes the older single-module / `01.04` wording in this note.
+
+```text
+scientific_object_modules: 03;04
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+first_hand_sources_checked: RSC DOI / publisher abstract
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: TeLLAgent is a general dual-agent framework, but its concrete validation includes organic solar-cell material discovery; the object-level evidence supports `04` for photovoltaic/material validation and `03` for molecule/material candidate design and synthesis-related chemistry evidence.
+multi_module_object_coverage_note: Under the relaxed object-coverage rule, the paper should not remain only in the independent `01.04` bucket. The framework contribution is methodological, but the domain demo is a concrete scientific-object validation rather than an object-free benchmark.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | RSC publisher abstract | supervisor-executor dual-agent framework + self-correction loop | 高 |

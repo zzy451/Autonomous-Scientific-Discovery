@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supplements the existing `07` decision with explicit multi-module object coverage.
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: arXiv full text; Nature DOI/publisher page reported in Wave B review
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `07` is supported by dry AMD therapeutic discovery, ripasudil, and disease-oriented drug-repurposing validation; `06` is supported by RPE phagocytosis, RNA-seq, ABCA1, and cell/molecular mechanism assays.
+multi_module_object_coverage_note: Robin remains a medical/health paper for filing, but the RPE cell biology and mechanism experiments constitute separate life-science object coverage under the relaxed rule.
+```
+
 Evidence level: full-text (arXiv PDF full text).
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |

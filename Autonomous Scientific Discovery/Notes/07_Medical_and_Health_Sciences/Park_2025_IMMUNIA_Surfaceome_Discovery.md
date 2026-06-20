@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supplements the older `07.01` primary filing with object-coverage modules.
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: bioRxiv/Sciety abstract; LifeScience preprint page
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `07` is supported by precision immunotherapy biomarker discovery; `06` is supported by immunoregulatory surfaceome genes, tumor-immune crosstalk, and immune-biology candidate-gene reasoning.
+multi_module_object_coverage_note: The translational/immunotherapy endpoint remains primary, but the gene/surfaceome/immune-biology evidence supports `06` under the relaxed rule.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Crossref abstract | IMMUNIA 是 multi-LLM reasoning agent，整合 structured prompting、contextual scoring 和 consensus reasoning | 高 |

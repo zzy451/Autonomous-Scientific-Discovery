@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supplements the older `07.04` primary filing with object-coverage modules.
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: PMC full text
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `07` is supported by Alzheimer biomarkers, plasma-proteomics survival prediction, multiple-myeloma cohorts, and clinical/disease discovery cases; `06` is supported by single-cell transcriptomics, proteomics, and biological mechanism analyses.
+multi_module_object_coverage_note: OpenScientist is not a `01.04`-only general co-scientist under the relaxed rule. Its biomedical cases support `07`, and its omics/cellular analyses also support `06`.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Abstract; Fig. 1 | 具备文献检索、代码执行、知识状态维护、反馈迭代和多轮发现流程 | 高 |
@@ -248,4 +264,3 @@ Agent 类型：LLM Agent; Tool-using Agent; Retrieval-augmented Agent; Hybrid Ag
 纳入置信度：高
 推荐引用强度：核心引用
 ```
-

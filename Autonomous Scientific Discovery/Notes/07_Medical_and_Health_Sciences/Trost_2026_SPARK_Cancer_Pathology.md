@@ -14,6 +14,22 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed multi-module revision
+
+This section supplements the older `07.01` primary filing with object-coverage modules.
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: Nature Medicine abstract/full-text landing page
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: `07` is supported by cancer pathology, patient cohorts, prognostic/predictive biomarkers, and clinical pathology validation; `06` is supported by tumor biology, spatial biology, and tumor-progression / temporal-change biological concept analysis.
+multi_module_object_coverage_note: SPARK remains a medical cancer-pathology paper for filing, but its tumor/spatial-biology analyses support an additional `06` module under the relaxed rule.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Nature Medicine abstract | SPARK 使用 language 作为通用接口，自主生成 biologically driven concepts，并把生物学想法转成分析工具 | 高 |
