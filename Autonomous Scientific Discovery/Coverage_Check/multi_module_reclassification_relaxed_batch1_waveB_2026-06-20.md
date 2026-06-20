@@ -3,7 +3,7 @@
 > 日期：2026-06-20  
 > 范围：`agent_master_paper_list.md` confirmed 记录序号 58-113。  
 > 对应计划：`Coverage_Check/multi_module_reclassification_relaxed_round_plan_451_confirmed_2026-06-20.md`。  
-> 本文件是当前 relaxed 口径下的新一轮审计产物；旧的 `multi_module_reclassification_batch1_waveB_2026-06-20.md` 仅作为保守 / 过渡历史基线。
+> 本文件是当前 relaxed 口径下的新一轮审计产物；此前保守试跑结论不再作为本轮分类依据。
 
 ## 一、执行口径
 
@@ -137,9 +137,9 @@ Wave B 覆盖情况：
 
 说明：multi-module candidates 会使模块展开数大于 reviewed record count；`ASD-0111`, `ASD-0139`, `ASD-0146`, `ASD-0147` 等仍需原文复核，不宜在 schema migration 前直接写入正式模块。
 
-## 五、关键变化相对旧 Wave B
+## 五、关键变化相对前一轮保守试跑
 
-旧 `multi_module_reclassification_batch1_waveB_2026-06-20.md` 的保守结论为本切片未发现足够强的 multi-module assignment。当前 relaxed 口径下，该结论不再适合作为本轮分类依据。
+此前保守试跑在这一切片上没有稳定记录足够强的 multi-module assignment。当前 relaxed 口径下，该结论不再适合作为本轮分类依据。
 
 本轮新增的主要迁移压力如下：
 

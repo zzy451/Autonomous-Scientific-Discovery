@@ -3,7 +3,7 @@
 > 日期：2026-06-20  
 > 范围：`agent_master_paper_list.md` confirmed 记录序号 1-57。  
 > 对应计划：`Coverage_Check/multi_module_reclassification_relaxed_round_plan_451_confirmed_2026-06-20.md`。  
-> 本文件是当前 relaxed 口径下的新一轮审计产物；旧的 `multi_module_reclassification_batch1_waveA_2026-06-20.md` 仅作为保守 / 过渡历史基线。
+> 本文件是当前 relaxed 口径下的新一轮审计产物；此前保守试跑结论不再作为本轮分类依据。
 
 ## 一、执行口径
 
@@ -131,9 +131,9 @@ Wave A 覆盖情况：
 
 说明：`ASD-0006`, `ASD-0032`, `ASD-0062` 暂不纳入模块展开计数，因为证据不足以稳定判定；它们进入主控复核队列。
 
-## 五、关键变化相对旧 Wave A
+## 五、关键变化相对前一轮保守试跑
 
-旧 `multi_module_reclassification_batch1_waveA_2026-06-20.md` 的保守结论为 `add_module = 0`、`move_primary = 0`。在当前 relaxed 口径下，这个结论不再可作为本轮判断依据。
+此前保守试跑在这一切片上基本没有记录新增模块或离开 `01.04` 的迁移压力；在当前 relaxed 口径下，这个结论不再可作为本轮判断依据。
 
 本轮新增的主要迁移压力如下：
 
