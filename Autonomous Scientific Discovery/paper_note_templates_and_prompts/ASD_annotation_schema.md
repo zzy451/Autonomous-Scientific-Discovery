@@ -218,3 +218,19 @@ Bran_2024_Augmenting_Large_Language_Models_with_Chemistry_Tools.md
 ```
 
 如果一篇论文有多个版本，以最终引用版本的年份为准。
+
+## 13. Source Verification and Note Revision Fields
+
+用于本轮 relaxed multi-module reclassification 和后续 note 更新时记录证据来源，避免只依赖旧单模块笔记。
+
+| 字段 | 建议值 | 用途 |
+|---|---|---|
+| `first_hand_sources_checked` | `pdf` / `arxiv` / `doi_page` / `publisher_abstract` / `supplementary_material` / `official_project_page` / `official_benchmark_page` / `notes_only` / 自由文本组合 | 记录分类判断实际核对过哪些一手或权威来源；若只看了本地 note，必须写 `notes_only` 并降低置信度。 |
+| `note_revision_required` | `yes` / `no` / `uncertain` | 标记现有 note 是否仍保留旧单主类、旧 `01.04` 或与原文证据不一致的分类表述。 |
+| `classification_evidence_source_level` | `first_hand_full_text` / `first_hand_abstract_or_landing_page` / `project_or_benchmark_page` / `local_note_only` / `source_limited` | 标记分类证据强度和来源层级。 |
+
+执行规则：
+
+- `local_note_only` 或 `notes_only` 不能支撑高置信多模块新增；最多作为待全文复核线索。
+- 如果原文证据支持多个对象模块，而 note 仍写作单模块或单主类，应把 `note_revision_required` 标为 `yes`。
+- 若原文证据不足以确认模块，但 note 暗示可能跨模块，应记录为 `source_limited`，并在审计报告中进入 full-text follow-up queue。

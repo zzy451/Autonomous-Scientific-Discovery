@@ -79,6 +79,8 @@
 
 本项目当前允许同一篇文献进入多个具体科学模块，判定阈值采用“领域实验覆盖”口径：只要论文对某一科学领域中的具体对象做了可识别的实验、验证、benchmark task、case study 或结果报告，就可以把该论文归入对应科学模块。也就是说，多模块归入是实验与对象证据驱动的，而不是因为论文自称通用、跨学科或平台化；但不再要求每个模块都必须构成论文的主贡献。
 
+分类复核时应优先依据论文原文、PDF、正式出版页、arXiv / DOI 页面、publisher abstract、supplementary material、官方 benchmark / project page 等一手来源。已有 Notes、旧 Coverage_Check 报告和 legacy 主列表字段只能作为线索；如果它们仍使用旧的单主类或单模块表述，应以当前规则和原文证据为准，并在复核中同步修订 note 或列入 note revision queue。
+
 主分类不按以下因素决定：
 
 - 是否使用大语言模型
