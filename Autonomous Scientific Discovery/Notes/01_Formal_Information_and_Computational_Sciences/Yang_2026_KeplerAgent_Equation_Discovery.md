@@ -1,5 +1,19 @@
 # Yang et al. 2026 - Think like a Scientist: Physics-guided LLM Agent for Equation Discovery
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 02
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 02
+first_hand_sources_checked: arXiv abstract / PDF page
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: Physical equation benchmarks, symmetries, physics-guided tool configuration, and physical symbolic equations support 02.
+multi_module_object_coverage_note: The previous independent 01.04 treatment reflected the method's domain-transferable workflow. Under the relaxed benchmark-object rule, physical equation-discovery tasks are concrete physics object coverage, so this record should move out of 01.04-only treatment.
+```
+
 **论文信息**
 - 标题：Think like a Scientist: Physics-guided LLM Agent for Equation Discovery
 - 作者：Jianke Yang; Ohm Venkatachalam; Mohammad Kianezhad; Sharvaree Vadgama; Rose Yu

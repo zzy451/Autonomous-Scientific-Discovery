@@ -1,5 +1,19 @@
 # Unknown 2026 - Science Earth: Towards A Planet-Scale Operating System for AI-Native Scientific Discovery
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 01;06
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 01
+first_hand_sources_checked: arXiv abstract / HTML
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: 01 is supported by higher-order Kuramoto synchronization and Ott-Antonsen / complex-systems theory correction. 06 is supported by the 4.88M-cell pan-cancer single-cell atlas case and Treg subset wet-lab anchoring.
+multi_module_object_coverage_note: The old 01.04-only framing is stale. Science Earth is platform-like, but the first-hand record reports concrete complex-systems and single-cell biology runs, so it should be recorded as 01;06 rather than independent general-method bucket only.
+```
+
 **论文信息**
 - 标题：Science Earth: Towards A Planet-Scale Operating System for AI-Native Scientific Discovery
 - 作者：Unknown

@@ -1,5 +1,19 @@
 # Unknown 2025 - The Denario project: Deep knowledge AI agents for scientific discovery
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 02;03;04;06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 02
+first_hand_sources_checked: arXiv abstract / HTML
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: 02 is supported by asteroid belt, black-hole, and cosmology research examples. 03 is supported by peptide / chemistry examples. 04 is supported by graphene-water and materials examples. 06 is supported by malaria single-cell and protein-folding examples. 07 is supported by fertility-clinic and digital-health examples.
+multi_module_object_coverage_note: Denario is a general assistant in system design, but the arXiv HTML lists concrete end-to-end research examples across multiple scientific objects. Under the relaxed rule, these examples move the record out of independent 01.04-only treatment.
+```
+
 **论文信息**
 - 标题：The Denario project: Deep knowledge AI agents for scientific discovery
 - 作者：Unknown

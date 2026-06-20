@@ -1,5 +1,19 @@
 # Unknown 2025 - Accelerating Scientific Discovery with Autonomous Goal-evolving Agents
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 03;04;06;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: arXiv abstract / PDF page
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: 03 is supported by antibiotics, E. coli hit discovery, functional DNA, and chemical-process examples. 04 is supported by inorganic-materials design applications. 06 is supported by biological sequence / functional-DNA and organism-level validation signals. 07 is supported by PD-L1 nanobody and therapeutic discovery endpoints.
+multi_module_object_coverage_note: SAGA remains a general goal-evolving agent method in architecture, but reported concrete design applications and validation hits mean it should no longer be treated as independent 01.04-only under the relaxed object-coverage rule.
+```
+
 **论文信息**
 - 标题：Accelerating Scientific Discovery with Autonomous Goal-evolving Agents
 - 作者：Unknown

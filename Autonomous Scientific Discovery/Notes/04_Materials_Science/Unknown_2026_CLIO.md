@@ -1,5 +1,19 @@
 # Unknown 2026 - Closed-Loop Molecular Design with Calibrated Deference
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 03;04
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+first_hand_sources_checked: arXiv abstract / PDF
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: 03 is supported by organic redox-flow-battery negolyte molecular design, synthesis, characterization, and redesign after mechanistic analysis. 04 is supported by energy-material / battery-negolyte electrochemical performance validation.
+multi_module_object_coverage_note: Primary filing remains 04 because the application object is an energy-material battery molecule. Under the relaxed rule, the organic molecular-design and synthesis evidence is also sufficient for 03.
+```
+
 **论文信息**
 - 标题：Closed-Loop Molecular Design with Calibrated Deference
 - 作者：Unknown

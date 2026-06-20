@@ -1,5 +1,19 @@
 # Li et al. 2026 - Reinforcement Learning with LLM-Guided Action Spaces for Synthesizable Lead Optimization
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 03;07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: arXiv abstract / HTML
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: 03 is supported by reaction templates, reactive sites, feasible synthetic routes, and multi-step synthetic trajectories. 07 is supported by synthesizable lead optimization, drug-discovery optimization tasks, docking/TDC tasks, and therapeutic-property objectives.
+multi_module_object_coverage_note: The legacy filing was chemistry-first. Under the relaxed rule, lead optimization and drug-discovery benchmark evidence justify adding 07 and using 07 as primary filing for this paper, while retaining 03 for the chemistry/synthesis object coverage.
+```
+
 **论文信息**
 - 标题：Reinforcement Learning with LLM-Guided Action Spaces for Synthesizable Lead Optimization
 - 作者：Tao Li; Kaiyuan Hou; Tuan Vinh; Monika Raj; Zhichun Guo; Carl Yang

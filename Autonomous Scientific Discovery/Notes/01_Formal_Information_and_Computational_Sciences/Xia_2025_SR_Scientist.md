@@ -1,5 +1,19 @@
 # Xia et al. 2025 - SR-Scientist: Scientific Equation Discovery With Agentic AI
 
+## 2026-06-20 relaxed multi-module revision
+
+```text
+scientific_object_modules: 02;03;04;06
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 02
+first_hand_sources_checked: arXiv abstract; official dataset / benchmark page
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+module_assignment_evidence: The SR benchmark / dataset evidence covers physics, chemistry, materials, and biology equation-discovery tasks, supporting 02, 03, 04, and 06 respectively.
+multi_module_object_coverage_note: The old 01.04-only framing treated SR-Scientist as a general equation-discovery workflow. Under the relaxed rule, field-specific equation-discovery benchmark tasks are concrete object coverage, so independent 01.04-only treatment is no longer supported.
+```
+
 **论文信息**
 - 标题：SR-Scientist: Scientific Equation Discovery With Agentic AI
 - 作者：Shijie Xia; Yuhan Sun; Pengfei Liu
