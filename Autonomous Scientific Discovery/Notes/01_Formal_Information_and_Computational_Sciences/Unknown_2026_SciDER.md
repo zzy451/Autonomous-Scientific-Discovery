@@ -1,5 +1,16 @@
 # Unknown 2026 - SciDER: Scientific Data-centric End-to-end Researcher
 
+## 2026-06-20 relaxed round-2 P0-D revision
+
+- Prior note status: stale `01.04` wording based on abstract-level evidence and broad benchmark names.
+- First-hand source checked: arXiv PDF `2603.01421`, especially Sections II.B, IV, and the qualitative case-study pages.
+- Updated scientific_object_modules: `01;02;11`.
+- object_coverage_mode: `multi_module`.
+- general_method_bucket: `none`.
+- primary_module_for_filing: `01`.
+- Evidence: AI-Idea-Bench, MLE-Bench, AIRS-Bench, and ML research-execution evaluations support formal / computational science coverage (`01`). AstroVisBench is described and evaluated as an astronomy / astrophysics visualization and specialized API-use benchmark, supporting physics / astronomy coverage (`02`). The end-to-end case study generates a calibrated few-shot knowledge-tracing paper on ASSISTments 2009-2010, with reported educational-learning metrics and discussion, supporting social / behavioral / education-science coverage (`11`).
+- Boundary note: the paper also mentions skills spanning biology, ecology, chemistry, materials, physics, social sciences, computer science, and remote sensing, and uses DiscoveryBench / SciCode. These broad labels were not counted as additional modules in this round because the SciDER paper does not expose enough task-level object inventory or result evidence for high-confidence `03`, `04`, `05`, or `06` assignments.
+
 **论文信息**
 - 标题：SciDER: Scientific Data-centric End-to-end Researcher
 - 作者：Unknown

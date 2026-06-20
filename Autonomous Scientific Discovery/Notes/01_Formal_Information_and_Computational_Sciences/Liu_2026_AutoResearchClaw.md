@@ -1,5 +1,16 @@
 # Liu 2026 - AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration
 
+## 2026-06-20 relaxed round-2 P0-D revision
+
+- Prior note status: stale single-bucket `01.04` wording based mainly on abstract-level evidence.
+- First-hand source checked: arXiv PDF `2605.20025`, especially Sections 4.1-4.3 and Appendix D.
+- Updated scientific_object_modules: `01;02;06`.
+- object_coverage_mode: `multi_module`.
+- general_method_bucket: `none`.
+- primary_module_for_filing: `01`.
+- Evidence: ARC-Bench reports 25 ML research topics, supporting formal / computational science coverage (`01`). The scientific-domain extension reports 10 HEP-ph tasks using MadGraph / FeynRules / MadAnalysis and cross-section reproduction, supporting physics coverage (`02`). It also reports 7 systems-biology tasks using COBRApy and BiGG genome-scale models, including E. coli succinate knockout screens, M. tuberculosis essentiality, and drug-target prioritization, supporting life-science coverage (`06`). Statistics tasks remain within `01`.
+- Boundary note: Table 7 domain-support configuration alone was not treated as module evidence. Chemistry, theoretical physics, economics, mathematics, and neuroscience support claims were not added unless tied to evaluated task/result evidence in this paper.
+
 **论文信息**
 - 标题：AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration
 - 作者：Jiaqi Liu; Shi Qiu; Mairui Li; Bingzhou Li; Haonian Ji; Siwei Han; Xinyu Ye; Peng Xia; Zihan Dong; Meng Chen; Congyu Zhang; Letian Zhang; Guiming Chen; Haoqin Tu; Xinyu Yang; Lu Feng; Xujiang Zhao; Haifeng Chen; Jiawei Zhou; Xiao Wang; Weitong Zhang; Hongtu Zhu; Yun Li; Jieru Mei; Hongliang Fei; Jiaheng Zhang; Linjie Li; Linjun Zhang; Yuyin Zhou; Sheng Wang; Caiming Xiong; James Zou; Zeyu Zheng; Cihang Xie; Mingyu Ding; Huaxiu Yao

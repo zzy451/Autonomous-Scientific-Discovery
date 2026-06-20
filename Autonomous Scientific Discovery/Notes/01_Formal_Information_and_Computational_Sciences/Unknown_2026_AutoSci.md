@@ -1,5 +1,16 @@
 # Unknown 2026 - AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle
 
+## 2026-06-20 relaxed round-2 P0-D revision
+
+- Prior note status: stale `01.04` wording from abstract / metadata-level evidence.
+- First-hand source checked: arXiv PDF `2605.31468`, especially Sections 7.1-7.5 and Appendices C-D.
+- Updated scientific_object_modules: `01;06;07`.
+- object_coverage_mode: `multi_module`.
+- general_method_bucket: `none`.
+- primary_module_for_filing: `01`.
+- Evidence: the GPU-kernel case executes profiling-guided Claude Code optimization over TritonBench / PyTorch workloads on 4x NVIDIA A40, supporting formal / computational-systems coverage (`01`). The biomedical case executes PTM-aware degrader target nomination with DeepTernary v1.0.0, PROTAC-STAN, a 22-complex PROTAC test set, 15 POIs / 189 interface sites, phospho / alanine / Kme3 perturbations, and Boltz-2 cross-checks. This supports protein / PTM / structural-biology coverage (`06`) and drug-discovery / biomedical coverage (`07`).
+- Boundary note: no separate `03` assignment was accepted in this round because the paper does not primarily report chemical synthesis, reaction, catalyst, or small-molecule design results beyond the drug-discovery / PROTAC evaluation context.
+
 **论文信息**
 - 标题：AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle
 - 作者：Unknown
