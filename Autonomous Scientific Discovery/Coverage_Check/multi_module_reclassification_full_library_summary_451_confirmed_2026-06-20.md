@@ -1,3 +1,5 @@
+> Historical note 2026-06-20: 本文件对应第一轮 flat plan 的保守 / 过渡性汇总，仅可作为历史基线。本轮 451 篇 confirmed 文献的多模块分类以 `multi_module_reclassification_relaxed_round_plan_451_confirmed_2026-06-20.md` 为准；不得用本文中的 legacy single-primary、primary object 或 core-contribution 判断覆盖当前“可识别具体科学对象实验 / 验证 / benchmark task / case study / reported result 即可入对应模块”的规则。
+
 # 451 篇 confirmed 文献多模块重分类全库审计汇总
 
 > 日期：2026-06-20  

@@ -174,10 +174,10 @@ Agent 类型标签：LLM Agent、Planning Agent、Tool-using Agent、Retrieval-a
 - 发表 venue
 - 是否纳入本综述
 - 纳入或排除理由
-- 主科学领域模块
+- 科学对象模块（可多选）
 - 二级学科领域
 - 三级细分领域
-- 副科学领域或交叉领域
+- 副标签、交叉属性或 `primary_module_for_filing`（仅展示 / 归档）
 - 是否进入独立 `01.04` 存放区
 - 是否具有具体科学对象研究实验
 - 具体科学对象实验覆盖模块
@@ -214,7 +214,7 @@ Agent 类型标签：LLM Agent、Planning Agent、Tool-using Agent、Retrieval-a
 
 如果同一篇论文确实对多个具体科学对象分别做了可识别的实验、验证、benchmark task、case study 或结果报告，则允许它同时进入多个具体科学模块。这里的“多模块”不是技术标签多选，而是基于真实对象实验覆盖的并行归档；不要求每个模块都构成论文的核心科学贡献。
 
-主分类优先级建议如下：
+相邻边界的展示 / 归档优先级建议如下（仅用于章节展示、legacy filing 或 `primary_module_for_filing`，不限制基于对象证据的多模块记录）：
 
 - 如果研究目标是疾病理解、诊断、治疗或药物转化，优先归入医学与健康科学。
 - 如果研究目标是生命机制、基因、蛋白质、细胞、物种或生态系统，优先归入生命科学。
@@ -380,7 +380,7 @@ Agent 类型标签：LLM Agent、Planning Agent、Tool-using Agent、Retrieval-a
 - `Searcher-2`：负责 Nature、Science 及其 family journals 入口与引用链扩展
 - `Reviewer-1`：负责 Agent 纳入标准复审
 - `Reviewer-2`：负责 `01–11` 科学研究对象模块复审，并审查是否应进入独立 `01.04` 存放区
-- 主控代理：负责去重、最终纳入判断、最终主类判定、主列表编辑、数量重算与对外汇报
+- 主控代理：负责去重、最终纳入判断、最终科学对象模块 / `01.04` bucket 判定、主列表编辑、数量重算与对外汇报
 
 执行硬规则如下：
 
@@ -389,7 +389,7 @@ Agent 类型标签：LLM Agent、Planning Agent、Tool-using Agent、Retrieval-a
 3. 每个子 Agent 必须有清晰且不重叠的责任切片，按来源路径、领域、ID 区间或复审功能拆分。
 4. 每轮子 Agent 完成后应及时关闭，避免长期占用并发槽位。
 5. 只要创建子 Agent 失败，就必须先检查并关闭已完成、闲置或不再需要的子 Agent，然后才能重试，不能直接连续重试。
-6. 每条子 Agent 返回结果至少应包含：论文题名、年份、venue、URL 或 DOI、为何满足 Agent 条件、可能主类、来源路径。
+6. 每条子 Agent 返回结果至少应包含：论文题名、年份、venue、URL 或 DOI、为何满足 Agent 条件、可能科学对象模块 / `01.04` bucket、来源路径。
 7. 若系统并发槽位有限，优先保留两个搜索 Agent 和主控代理；只有当搜索产出足够大时，再追加复审 Agent。
 
 一句话原则：

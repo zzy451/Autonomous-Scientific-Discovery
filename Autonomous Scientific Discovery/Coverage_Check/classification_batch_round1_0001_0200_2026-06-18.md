@@ -1,3 +1,5 @@
+> Historical note 2026-06-20: 本文件是旧口径 / 过渡口径下的历史审计记录，仅可作为背景线索。本轮 451 篇 confirmed 文献的多模块分类以 `multi_module_reclassification_relaxed_round_plan_451_confirmed_2026-06-20.md` 为准；不得用本文中的 legacy single-primary、primary object 或 core-contribution 判断覆盖当前“可识别具体科学对象实验 / 验证 / benchmark task / case study / reported result 即可入对应模块”的规则。
+
 # 第 1 轮全库分类复核报告：`ASD-0001`–`ASD-0200`
 
 生成日期：`2026-06-18`  
@@ -99,4 +101,3 @@
   - biomedical / omics 边界是否应留 `06` 还是进 `07`
   - benchmark / assistant / framework 是否被过宽保留为 confirmed core
 - 当前没有足够证据支持重构一级分类，问题主要集中在边界解释与低覆盖类稀缺性判断。
-
