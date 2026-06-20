@@ -1,5 +1,16 @@
 # Unknown 2025 - AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise
 
+## 2026-06-20 relaxed round-2 P0-E revision
+
+- Prior note status: stale `01.04` wording from abstract / metadata-level evidence.
+- First-hand source checked: arXiv PDF `2507.00310`, especially Sections 4.1, 5, and appendix examples.
+- Updated scientific_object_modules: `06;07;11`.
+- object_coverage_mode: `multi_module`.
+- general_method_bucket: `none`.
+- primary_module_for_filing: `11`.
+- Evidence: the paper evaluates AutoDiscovery over 21 real-world data-driven-discovery datasets spanning biology, economics, finance, and behavioral science. DiscoveryBench freshwater-fish and BLADE biological / fish datasets support life-science coverage (`06`). SEA-AD is a human-brain cellular atlas across the Alzheimer's disease spectrum and includes donor cognitive status plus neuropathological assessments, supporting both `06` and biomedical / health coverage (`07`). Economics, finance, and behavioral-science datasets, including NLS, mortgage, affairs, caschools, reading, teaching-ratings, soccer, and related expert hypothesis evaluation, support social / behavioral / economic science coverage (`11`).
+- Boundary note: the hurricane and requirement-engineering datasets were not counted as high-confidence `05` or `01` module evidence in this round. The method's Bayesian-surprise / MCTS machinery was treated as Agent infrastructure rather than independent formal-science object coverage.
+
 **论文信息**
 - 标题：AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise
 - 作者：Unknown

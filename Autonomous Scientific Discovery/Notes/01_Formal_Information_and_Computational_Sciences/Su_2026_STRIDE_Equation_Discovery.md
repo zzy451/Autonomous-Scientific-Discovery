@@ -1,5 +1,16 @@
 # Su et al. 2026 - STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery
 
+## 2026-06-20 relaxed round-2 P0-E revision
+
+- Prior note status: stale `01.04` / framework-only wording from abstract and earlier batch review.
+- First-hand source checked: arXiv PDF `2605.17790`, especially Sections 4.1-4.4 and Appendix D.
+- Updated scientific_object_modules: `02;03;04;06`.
+- object_coverage_mode: `multi_module`.
+- general_method_bucket: `none`.
+- primary_module_for_filing: `02`.
+- Evidence: Appendix D states that the benchmark tasks cover physics, biology, chemistry, and materials science. The LLM-SR tasks include nonlinear oscillator systems, E. coli growth, and temperature-dependent stress-strain behavior. The LSR-Synth suites include CRK chemistry, BPG biology, PO physics, and MatSci material equations, with reported ID/OOD performance and case analysis across these domains.
+- Boundary note: no separate `01` module was added solely because the system is an equation-discovery framework; module assignment here is driven by the concrete benchmark scientific objects and ground-truth equations.
+
 **论文信息**
 - 标题：STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery
 - 作者：Jiarui Su; Songjun Tu; Bei Sun; Xiaojun Liang
