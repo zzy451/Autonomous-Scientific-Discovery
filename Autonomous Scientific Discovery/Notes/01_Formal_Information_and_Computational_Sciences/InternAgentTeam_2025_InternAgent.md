@@ -14,6 +14,14 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed round-2 multi-module revision
+
+- Round decision: update the relaxed overlay from independent `01.04` to `scientific_object_modules=01;03;06;09;10`.
+- Source checked in this round: arXiv abstract page and ar5iv HTML for `2505.16938`.
+- Reason: the paper reports 12 concrete task evaluations rather than only an object-free workflow demo. These include AI/CV/NLP/geometric-VLM tasks (`01`), reaction yield prediction and molecular dynamics (`03`), transcription perturbation and enhancer activity prediction (`06`), power-flow / transformer-temperature engineering data (`09`), and autonomous-driving point-cloud detection (`10`).
+- Current filing note: legacy `Main class` / `Secondary class` remain unchanged until schema migration, but the old note wording that treats this as `01.04` only is superseded for relaxed-counting purposes.
+- general_method_bucket: `none`; `primary_module_for_filing=01`; `object_coverage_mode=multi_module`.
+
 证据级别：full-text（arXiv PDF 已读取并抽取文本）。
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |

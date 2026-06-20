@@ -14,6 +14,14 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed round-2 multi-module revision
+
+- Round decision: update the relaxed overlay from independent `01.04` to `scientific_object_modules=01`.
+- Source checked in this round: arXiv abstract page for `2504.08066`.
+- Reason: under the current object-coverage rule, the paper is not only a general ASD workflow. It reports concrete formal/computational research activity: ML hypothesis generation, code experiment execution, data analysis, paper generation, and workshop peer review of AI-generated ML manuscripts.
+- Current filing note: legacy `Main class` / `Secondary class` remain unchanged until schema migration, but old `01.04`-only language is superseded for relaxed-counting purposes.
+- general_method_bucket: `none`; `primary_module_for_filing=01`; `object_coverage_mode=single_module`.
+
 证据级别：full-text（arXiv PDF 已读取并抽取文本）。
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |

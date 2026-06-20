@@ -14,6 +14,13 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed round-2 source-limited revision
+
+- Round decision: no master-list classification change in this round.
+- Source checked in this round: DOI / bioRxiv landing path for `10.1101/2025.03.06.641840`, but the direct bioRxiv page remained inaccessible through the available route; only source-limited abstract/metadata trails were available.
+- Reason: current evidence is still insufficient to decide whether DORA has concrete life-science / biomedical object experiments, should remain filed under `06`, should move to `07`, or should be treated as independent `01.04`.
+- Current action: keep in the Round 2 full-text boundary queue with `full_text_required=yes`; do not revise the relaxed overlay from note-only or third-party evidence.
+
 证据级别：abstract+metadata（全文仍不可访问；不能伪装成 full-text。当前所有关于 pipeline、验证和科学对象的判断均为低到中低证据）。
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |

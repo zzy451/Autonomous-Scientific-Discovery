@@ -15,6 +15,14 @@
 
 ## Evidence Log
 
+## 2026-06-20 relaxed round-2 multi-module revision
+
+- Round decision: update the relaxed overlay from independent `01.04` to `scientific_object_modules=01`.
+- Source checked in this round: arXiv abstract page for `2503.22708`.
+- Reason: the reported experiments are concrete formal/computational research objects: software artifacts, agent/virtual-environment tasks, code experiments, candidate tasks/agents/metrics/data, code review, and replication attempts. Under the relaxed rule, this is not an object-free general-method record.
+- Current filing note: legacy `Main class` / `Secondary class` remain unchanged until schema migration, but old `01.04`-only language is superseded for relaxed-counting purposes.
+- general_method_bucket: `none`; `primary_module_for_filing=01`; `object_coverage_mode=single_module`.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 纳入 | Abstract；Figure 1；Sec. 3；Appendix prompts | 系统覆盖 ideation、planning、experiment building/execution、reporting、meta-analysis，并调用代码沙箱与 LLM 生成/调试实验 | 高 |

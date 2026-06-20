@@ -10,6 +10,17 @@ Round 2 should check original papers, PDFs, arXiv / DOI / publisher pages, suppl
 
 Local Notes may locate evidence, but cannot by themselves justify a high-confidence module addition, `01.04` migration, or note rewrite.
 
+## Round-2 P0-A Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p0A_2026-06-20.md`.
+
+| ID | Status after P0-A | Action |
+|---|---|---|
+| `ASD-0004` | closed | accepted `scientific_object_modules=01;03;06;09;10`; removed independent `01.04` only treatment |
+| `ASD-0006` | still open | source-limited; keep full-text-required boundary item |
+| `ASD-0013` | closed | accepted `scientific_object_modules=01`; removed independent `01.04` only treatment |
+| `ASD-0032` | closed | accepted `scientific_object_modules=01`; removed independent `01.04` only treatment |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.
