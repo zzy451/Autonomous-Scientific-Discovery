@@ -1,5 +1,17 @@
 # Ke et al. 2025 - BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation
 
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `scientific_object_modules`: `07;06`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `07`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: arXiv abstract / version page `2508.01285`; ar5iv full text `2508.01285v2`; official GitHub `yujingke/BioDisco`; official PyPI `biodisco`
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `note_revision_required`: `no`
+
+This round closes the `07 / 06` boundary as `07;06`. `07` remains primary because BioDisco is explicitly framed as biomedical hypothesis generation and its strongest evaluation domains are cardiovascular medicine and NSCLC immunotherapy. At the same time, the full text also exposes independent life-science object coverage through genes, proteins, biological pathways, gene-gene / disease-gene / chemical-gene benchmark relations, vascular smooth muscle cells, macrophages, CD8+ T-cell exhaustion, and explicit biological-mechanism / interaction prompts. Under the current relaxed object-coverage rule, that is enough to add `06`.
+
 **论文信息**
 - 标题：BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation
 - 作者：Yujing Ke; Kevin George; Kathan Pandya; David Blumenthal; Maximilian Sprang; Gerrit Grossmann; Sebastian Vollmer; David Antony Selby
