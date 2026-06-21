@@ -46,9 +46,6 @@ This master list tracks Agent papers for the Autonomous Scientific Discovery rev
 | 10 | 23 |
 | 11 | 30 |
 
-### Audited Relaxed Multi-Module Distribution (Partial Overlay Through Batch 4 / Wave B + Round 2 / P0-G, P1-F, P1-G, P1-H, P1-I, P1-J, P1-K, P1-L, P1-M, P1-N, P1-O, P1-P, P1-Q, P1-R, P1-S, and P1-T)
-
-This overlay keeps the row table partly legacy-shaped, but expands high-confidence relaxed multi-module decisions accepted through Batch 2 / Wave A, Batch 2 / Wave B, Batch 3 / Wave A, Batch 3 / Wave B, Batch 4 / Wave A, Batch 4 / Wave B, Round 2 / P0-A, Round 2 / P0-B, Round 2 / P0-C, Round 2 / P0-D, Round 2 / P0-E, Round 2 / P0-F, Round 2 / P0-G, Round 2 / P1-A, Round 2 / P1-B, Round 2 / P1-C, Round 2 / P1-D, Round 2 / P1-E, Round 2 / P1-F, Round 2 / P1-G, Round 2 / P1-H, Round 2 / P1-I, Round 2 / P1-J, Round 2 / P1-K, Round 2 / P1-L, Round 2 / P1-M, Round 2 / P1-N, Round 2 / P1-O, Round 2 / P1-P, Round 2 / P1-Q, Round 2 / P1-R, Round 2 / P1-S, and Round 2 / P1-T. It should be read as the current audited module-assignment view, not as a completed row-level schema migration.
 
 | Scientific object module | Expanded assignment count |
 |---|---:|

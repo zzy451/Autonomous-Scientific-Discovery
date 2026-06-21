@@ -6,7 +6,7 @@
 
 ## 1. 可直接绕过的已收口记录
 
-以下 `89` 篇记录已经完成本轮可操作意义上的分类收口，可在下一轮人工复核中先跳过：
+以下 `89` 篇记录已经完成本轮可操作意义上的分类收口，可在下一轮复核中先跳过：
 
 ```text
 ASD-0003 ASD-0004 ASD-0006 ASD-0008 ASD-0013 ASD-0014 ASD-0032 ASD-0033 ASD-0035
@@ -21,23 +21,4 @@ ASD-0744 ASD-0745 ASD-0773 ASD-0782 ASD-0787 ASD-0790 ASD-0792 ASD-0811 ASD-0820
 ASD-0844 ASD-0845 ASD-0856 ASD-0866 ASD-0868 ASD-0869 ASD-0870 ASD-0871
 ```
 
-## 2. 暂时不要绕过的继续审记录
 
-以下 `34` 篇仍保留 open boundary / full-text / core-strength follow-up 压力，下一轮不建议跳过：
-
-```text
-ASD-0034 ASD-0037 ASD-0049 ASD-0070 ASD-0466 ASD-0478 ASD-0519 ASD-0541 ASD-0544
-ASD-0587 ASD-0596 ASD-0599 ASD-0659 ASD-0665 ASD-0668 ASD-0682 ASD-0700 ASD-0737
-ASD-0751 ASD-0752 ASD-0759 ASD-0761 ASD-0766 ASD-0768 ASD-0769 ASD-0775 ASD-0793
-ASD-0797 ASD-0803 ASD-0810 ASD-0817 ASD-0818 ASD-0838 ASD-0850
-```
-
-## 3. 使用说明
-
-- 本文件是“下一轮人工重开时的操作跳表”，不是新的分类结论源文件。
-- 真正的分类事实仍以：
-  - `Paper_Lists/agent_master_paper_list.md`
-  - `Coverage_Check/multi_module_reclassification_relaxed_round2_fulltext_boundary_queue_2026-06-20.md`
-  - 各 `round2_p*` 审计报告
-  为准。
-- `ASD-0737` 特别保留在继续审集合中。虽然它已经从 independent `01.04` 迁到 `01`，但当前仍挂着是否额外触发 `07/09` 的 follow-up 压力，因此不放入 skip list。
