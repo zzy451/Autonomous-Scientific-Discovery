@@ -6,20 +6,28 @@
 - 年份：2024
 - 来源 / venue：Nature
 - DOI / URL：https://doi.org/10.1038/s41586-024-08173-7
-- 当前状态：candidate；core priority；full-text evidence pending
+- PDF / 本地文件路径：未归档本地 PDF；已核对 Nature 官方 HTML 全文与 supplementary-information 页面
+- 当前状态：已读 / 已纳入；2026-06-21 全量复核已完成一手重判
+
+## 2026-06-21 full reaudit note
+
+- Source checked in this round: Nature official HTML full text, article metadata, and supplementary-information landing page for `10.1038/s41586-024-08173-7`.
+- Current decision: keep `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`.
+- Rationale: the concrete experimental object is exploratory synthetic chemistry with mobile robots integrating synthesis, LC-MS, benchtop NMR, and heuristic decision-making across structural diversification chemistry, supramolecular host-guest chemistry, and photochemical synthesis.
+- Local PDF status: the Nature PDF endpoint returned an HTML wrapper rather than a valid `%PDF-` file in this environment, so no local archived PDF is recorded yet.
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是，偏机器人/自治实验 | Nature / PubMed metadata | autonomous mobile robots for exploratory synthetic chemistry | 高 |
-| 科学对象归类 | `03` 化学科学 | Nature title and abstract metadata | synthetic chemistry is the scientific object | 高 |
-| 验证方式 | 机器人实验 | Nature metadata | modular robotic system for chemical synthesis | 高 |
+| Agent 纳入 | 是，偏机器人/自治实验 | Nature official HTML full text | mobile robots operate synthesis and characterization equipment and make screening / replication decisions | 高 |
+| 科学对象归类 | `03` 化学科学 | Nature official HTML full text；Abstract | structural diversification chemistry、supramolecular host-guest chemistry、photochemical synthesis are the concrete chemistry objects | 高 |
+| 验证方式 | 机器人实验 | Nature official HTML full text；Supplementary information page | modular workflow combines mobile robots, automated synthesis, LC-MS and benchtop NMR, with decision-maker processing orthogonal measurements | 高 |
 
 ## 1. 是否纳入本综述
 
 - 是否属于 Agent 文献：是。
-- Agent 行动闭环：移动机器人执行合成、分析和决策，具体反馈机制需全文确认。
+- Agent 行动闭环：移动机器人执行合成、分析和决策；官方 HTML 全文已明确 heuristic decision-maker 会根据正交表征结果选择推进反应并自动检查 screening hit 的可复现性。
 - 纳入置信度：高。
 
 ## 2. 科学领域归类

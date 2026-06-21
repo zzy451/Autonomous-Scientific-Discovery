@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2501.03916
-- PDF / 本地文件路径：arXiv PDF；本次临时读取全文 PDF 文本
+- PDF / 本地文件路径：Reference_PDF/01_Formal_Information_and_Computational_Sciences/Yuan_2025_Dolphin.pdf
 - 证据级别：full-text
 - 论文类型：系统论文
 - 当前状态：已读 / 已纳入
@@ -26,7 +26,7 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 纳入 | Abstract；Fig. 2；Sec. 3 | Dolphin 是 closed-loop auto-research framework，覆盖 idea generation、experimental verification、results feedback | 高 |
-| 科学对象归类 | `01.04` 通用科研智能系统 | Abstract；Sec. 4 | 验证在 ModelNet40、CIFAR-100、SST-2、MLE-bench 等通用 ML/AI 任务上，主贡献是自动科研框架 | 高 |
+| 科学对象归类 | `01` 形式、信息与计算科学 | Abstract；Sec. 4 | 验证覆盖 ModelNet40、CIFAR-100、SST-2、MLE-bench 等具体 ML/AI 研究任务，当前 relaxed authoritative fact 应记为 `scientific_object_modules=01` | 高 |
 | 方法流程 | paper ranking + idea refinement + code generation/debugging + feedback | Fig. 2-3；Sec. 3 | 基于相关论文和上轮实验反馈生成 idea，用 traceback-guided local code structure 调试，分析实验结果回馈下一轮 | 高 |
 | 实验验证 | 多 benchmark 代码实验 | Sec. 4；Tables 1-2, 7 | 在 3D classification、image classification、sentiment classification 和 MLE-bench 任务上自动生成并验证方法 | 高 |
 | 科学贡献 | 闭环自动科研系统 | Abstract；Further analyses | 强调实验结果反馈可减少无效 idea 并提升后续 idea 质量 | 高 |
@@ -64,7 +64,7 @@ Dolphin 是一个闭环 LLM 驱动自动科研框架。系统先根据 topic/tas
 ### 2.1 主科学领域
 
 - 一级类：`01` 形式、信息与计算科学
-- 二级类：`01.04` 科研智能系统与 Autonomous Scientific Discovery
+- 二级类：`01` 形式、信息与计算科学（AI/ML 自动科研任务）
 - 三级类：通用自动科研系统 / ML research automation
 - 四级专题：General scientific research-agent systems
 - 四级专题是否为新增：否
@@ -80,8 +80,8 @@ Dolphin 是一个闭环 LLM 驱动自动科研框架。系统先根据 topic/tas
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：AI algorithm / ML benchmark。
-- 最终判定：`01.04`。
-- 判定理由：项目政策中通用科研工作流和 benchmark 归 `01.04`。
+- 最终判定：`01`。
+- 判定理由：按当前 relaxed 口径，论文已经在具体 formal/computational research objects 上报告了可识别实验与结果，不能再作为独立 `01.04` 处理。
 - 是否需要二次复核：否。
 
 ## 3. Agent 系统与科研流程角色
@@ -243,7 +243,7 @@ Dolphin 是一个闭环 LLM 驱动自动科研框架。系统先根据 topic/tas
 ```text
 是否纳入：是
 主类：01 形式、信息与计算科学
-二级类：01.04 科研智能系统与 Autonomous Scientific Discovery
+二级类：01 形式、信息与计算科学（AI/ML 自动科研任务）
 三级类：通用自动科研系统 / ML research automation
 四级专题：General scientific research-agent systems
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented Agent; Hybrid Agent

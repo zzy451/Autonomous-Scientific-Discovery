@@ -6,7 +6,7 @@
 - 年份：2025 / arXiv v2 dated 2026-03-05
 - 来源 / venue：arXiv:2505.04997v2
 - DOI / arXiv / URL：https://arxiv.org/abs/2505.04997
-- PDF / 本地文件路径：临时全文 `./.tmp_asd_pdfs/ASD-0047.pdf`；项目未登记正式 PDF
+- PDF / 本地文件路径：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Yue_2025_Foam_Agent.pdf
 - 论文类型：系统论文 / benchmark
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-16

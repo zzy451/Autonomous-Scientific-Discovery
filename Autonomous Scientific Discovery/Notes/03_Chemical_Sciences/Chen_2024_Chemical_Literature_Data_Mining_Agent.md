@@ -6,7 +6,7 @@
 - 年份：2024；arXiv v2 2025
 - 来源 / venue：arXiv；ICCV 2025 VisionDocs workshop PDF 可检索
 - DOI / arXiv / URL：https://arxiv.org/abs/2402.12993
-- PDF / 本地文件路径：临时读取 arXiv PDF；未写入 `Reference_PDF`
+- PDF / 本地文件路径：Reference_PDF/03_Chemical_Sciences/Chen_2024_Chemical_Literature_Data_Mining_Agent.pdf
 - 论文类型：系统论文 / 化学文献数据挖掘多 Agent / benchmark
 - 当前状态：已读 / 已纳入 / 标题版本待复核
 - 阅读日期：2026-06-16

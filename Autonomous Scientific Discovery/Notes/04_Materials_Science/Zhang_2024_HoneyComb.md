@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：arXiv:2409.00135v1
 - DOI / arXiv / URL：https://arxiv.org/abs/2409.00135
-- PDF / 本地文件路径：临时全文 `./.tmp_asd_pdfs/ASD-0045.pdf`；项目未登记正式 PDF
+- PDF / 本地文件路径：Reference_PDF/04_Materials_Science/Zhang_2024_HoneyComb.pdf
 - 论文类型：系统论文 / benchmark
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-16

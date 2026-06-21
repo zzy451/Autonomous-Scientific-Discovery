@@ -6,7 +6,7 @@
 - 年份：2024 / arXiv v2 2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2401.06949
-- PDF / 本地文件路径：arXiv PDF；本次临时读取全文 PDF 文本
+- PDF / 本地文件路径：Reference_PDF/03_Chemical_Sciences/Darvish_2024_Organa.pdf
 - 证据级别：full-text
 - 论文类型：系统论文 / 机器人实验 Agent
 - 当前状态：已读 / 已纳入

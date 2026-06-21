@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2502.13959
-- PDF / 本地文件路径：arXiv PDF；本次临时读取全文 PDF 文本
+- PDF / 本地文件路径：Reference_PDF/07_Medical_and_Health_Sciences/Averly_2025_LIDDIA.pdf
 - 证据级别：full-text
 - 论文类型：系统论文
 - 当前状态：已读 / 已纳入
