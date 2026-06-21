@@ -1,4 +1,9 @@
 # Lai 2025 - PRiM
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/04_Materials_Science/Lai_2025_PRiM.pdf`
+- Current-turn source refresh: the official OpenReview workshop PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`; the arXiv version remains a secondary source trail.
+- Classification remains stable: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
 
 **论文信息**
 - 标题：PRiM: Principle-Inspired Material Discovery Through Multi-Agent Collaboration
@@ -13,6 +18,8 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-21 archive note**: official OpenReview PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 **证据级别：full-text**（已读取 arXiv PDF 全文抽取文本；Evidence Log 位置来自论文正文/图表/表格/摘要。）
 

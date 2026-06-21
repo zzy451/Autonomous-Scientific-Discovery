@@ -1,4 +1,9 @@
 # Kim 2025 - MT-MOL
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/03_Chemical_Sciences/Kim_2025_MT_MOL.pdf`
+- Current-turn source refresh: the official ACL Anthology archival PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`; this archival venue / DOI source supersedes the older arXiv-only metadata trail.
+- Classification remains stable: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
 
 **论文信息**
 - 标题：MT-MOL: Multi Agent System with Tool-based Reasoning for Molecular Optimization
@@ -13,6 +18,8 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-21 archive note**: official ACL Anthology PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 **证据级别：full-text**（已读取 arXiv PDF 全文抽取文本；Evidence Log 位置来自论文正文/图表/表格/摘要。）
 
