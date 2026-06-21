@@ -19,6 +19,7 @@
 |---|---|---|---|---|
 | Agent 纳入 | 纳入 | PMC Abstract；Methodology P8-P12；Fig. 1 | Orchestrator 管理 Task Log / Task Plan / Progress Log，调度 Omic Data Agent、Scientist Expert Agent、Google Search Agent、PubMed Paper Search Agent 等 | 高 |
 | 科学对象归类 | `06.03` single-cell / omics | Abstract；P5；P13-P16 | 面向 scRNA-seq、疾病相关细胞状态、DEG、通路富集、single-cell omics 数据挖掘 | 高 |
+| `07` 边界复核 | 不接受 `07` | PMC P2-P5；P13-P16；P33-P37 | precision medicine / treatment framing 主要停留在问题背景与愿景层；具体流程和结果仍是单细胞组学检索、DEG、通路/疾病关联分析和 biomedical QA，没有 patient-level 临床决策、治疗排序或治疗验证 | 高 |
 | 方法流程 | 多 Agent 编排 + scRNA-seq 数据分析 + 文献/知识检索 | P8-P16；Fig. 1-2 | 用户自然语言问题被拆解为多步计划，检索 omic 数据，做统计分析和 enrichment，再综合文献与专家知识输出回答 | 高 |
 | 实验验证 | BioASQ / BERTScore QA 评估 | Results P33-P36；Table 1 | 论文用 BERTScore 评价复杂 biomedical QA 输出；验证深度相对有限 | 中 |
 | 科学贡献 | scRNA-seq 驱动的 biomedical discovery assistant | Abstract；Discussion P37-P38 | 目标是让非计算专家围绕 disease mechanisms 和 precision therapies 做数据驱动研究 | 中 |
@@ -72,9 +73,9 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：`07` 医学与健康科学。
-- 最终判定：暂归 `06.03`。
-- 判定理由：主清单也提示 precision medicine framing，但全文方法重点是 omics/single-cell discovery；如果后续发现临床治疗决策验证更强，可复核是否转 `07.04`。
-- 是否需要二次复核：是，需复核完整 PDF 和任务实例是否更偏医学转化。
+- 最终判定：维持 `06.03`，不新增 `07`。
+- 判定理由：PMC 全文显示系统的可识别对象层证据集中在 disease-context single-cell omics、DEG、通路富集、疾病关联和文献综合；precision medicine / therapy 主要是目标叙述，而不是患者级诊疗、治疗排序、药物转化验证或临床结果评估。
+- 是否需要二次复核：当前 relaxed multi-module 边界已完成；若未来拿到正式 PDF，可补强页码与图表定位，但不会在现有证据下新增 `07`。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -245,7 +246,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 交叉属性：数据驱动; 知识图谱; 多组学; single-cell atlas
 科学贡献类型：系统平台; 假设生成; 数据分析
 证据强度：PMC HTML 全文，高；科学验证中等
-归类置信度：中到高
+归类置信度：高（`06/07` 边界已用 PMC 全文复核，维持单模块 `06`）
 纳入置信度：高
 推荐引用强度：普通引用
 ```
