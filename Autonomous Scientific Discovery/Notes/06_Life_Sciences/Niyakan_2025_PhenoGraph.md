@@ -1,4 +1,9 @@
 # Niyakan and Qian 2025 - PhenoGraph
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/06_Life_Sciences/Niyakan_2025_PhenoGraph.pdf`
+- Current-turn source refresh: the OpenReview full PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Classification remains stable: `scientific_object_modules=06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
 
 **论文信息**
 - 标题：PhenoGraph: A Multi-Agent Framework for Phenotype-driven Discovery in Spatial Transcriptomics Data Augmented with Knowledge Graphs
@@ -13,6 +18,8 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-21 archive note**: OpenReview full PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 ## 2026-06-21 relaxed round-2 boundary closure
 

@@ -1,4 +1,9 @@
 # Ni et al. 2024 - MatPilot
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/04_Materials_Science/Ni_2024_MatPilot.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Classification remains stable: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
 
 **论文信息**
 - 标题：MatPilot: an LLM-enabled AI Materials Scientist under the Framework of Human-Machine Collaboration
@@ -13,6 +18,8 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 **证据级别**：full-text（arXiv PDF 已下载到临时目录并转文本核读；未保存到项目目录）
 
