@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2506.06363
-- PDF / 本地文件路径：临时阅读 `ASD-0022.pdf` / `ASD-0022.txt`
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Pham_2025_ChemGraph.pdf`
 - 论文类型：计算化学 Agent 框架
 - 当前状态：已读，已纳入
 - 阅读日期：2026-06-15

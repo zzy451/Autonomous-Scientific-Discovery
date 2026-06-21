@@ -6,7 +6,7 @@
 - 年份：2025；arXiv v3 更新为 2026-04-17
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2505.21569
-- PDF / 本地文件路径：临时读取 arXiv PDF；未写入 `Reference_PDF`
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Li_2025_ChemHAS.pdf`
 - 论文类型：系统论文 / 化学工具放大 Agent / benchmark
 - 当前状态：已读 / 已纳入 / 标题版本待复核
 - 阅读日期：2026-06-16

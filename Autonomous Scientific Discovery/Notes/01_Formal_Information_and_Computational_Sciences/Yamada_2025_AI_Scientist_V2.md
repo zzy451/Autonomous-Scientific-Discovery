@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2504.08066
-- PDF / 本地文件路径：临时阅读 PDF：`%TEMP%/asd_note_sources/ASD-0013_Yamada_AIScientistV2_arxiv.pdf`
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Yamada_2025_AI_Scientist_V2.pdf`
 - 论文类型：系统论文 / automated scientific discovery agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15
@@ -27,7 +27,7 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 纳入；端到端自动科研 Agent | Abstract; Fig. 1; Sec. 3 | 系统生成假设、设计并执行实验、分析/可视化数据、撰写论文、自动 review/refine | 高 |
-| 科学对象归类 | 01.04 通用科研 Agent | 主清单；Abstract; contributions | 研究对象是自动科学发现系统与 agentic tree search，而非具体自然科学对象 | 高 |
+| 科学对象归类 | `01` 形式、信息与计算科学 | Abstract; Fig. 1-2; Sec. 3-4 | 具体对象是 machine learning research tasks、code experiments、AI-generated ML manuscripts 与 workshop review evidence，不再接受仅按独立 `01.04` 处理 | 高 |
 | 方法流程 | idea generation -> agentic tree search experiments -> VLM feedback -> manuscript/review | Fig. 1-2; Sec. 3 | Experiment manager agent 管理四阶段实验，节点生成代码、执行、可视化、debug、replicate/aggregate | 高 |
 | 实验验证 | ICLR workshop peer review + internal analysis | Sec. 4; extracted lines 367-406 | 三篇 AI 生成稿提交 ICBINB workshop，其中一篇平均 6.33/10，达到 workshop acceptance threshold | 高 |
 | 科学贡献 | workshop-level fully AI-generated paper milestone | Abstract; Sec. 4; Limitations | 证明端到端 AI 科研系统能产生接近 workshop 接收水平的机器学习论文 | 高 |
@@ -65,9 +65,9 @@
 ### 2.1 主科学领域
 
 - 一级类：01 形式、信息与计算科学。
-- 二级类：01.04 科研智能系统与 Autonomous Scientific Discovery。
-- 三级类：自动科研 Agent / 通用科学发现平台。
-- 四级专题：General scientific research-agent systems。
+- 二级类：01.02 计算机科学 / 人工智能与机器学习研究自动化。
+- 三级类：01.02.12 / 01.02.13 人工智能与机器学习研究。
+- 四级专题：AI/ML research automation agents。
 - 四级专题是否为新增：否。
 - 归类理由：主对象是自动科研系统本身和机器学习研究自动化能力。
 - 归类置信度：高。
@@ -76,13 +76,13 @@
 
 - 最终科学研究对象：自动科学发现系统、AI/ML 研究流程、科研论文生成。
 - 最终科学问题：Agent 能否自主产生足以通过 workshop peer review 的科学论文。
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：归 01.04 不是因为 LLM 技术，而是研究对象是通用科研智能系统。
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：归入 `01` 不是因为用了 LLM，而是因为论文实际实验对象是 AI/ML 代码实验、机器学习研究任务与可执行计算研究流程。
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：AI/机器学习具体方法方向；11.07 科学系统研究。
-- 最终判定：01.04。
-- 判定理由：论文不是研究科学共同体制度，而是构建自动科研计算系统。
+- 最终判定：`01`。
+- 判定理由：论文虽然系统感很强，但其验证对象并非“无对象通用方法”，而是具体的机器学习研究任务、代码实验和 AI 生成论文评审结果。
 - 是否需要二次复核：低。
 
 ## 3. Agent 系统与科研流程角色
@@ -244,9 +244,9 @@
 ```text
 是否纳入：是
 主类：01 形式、信息与计算科学
-二级类：01.04
-三级类：科研智能系统与 ASD
-四级专题：General scientific research-agent systems
+二级类：01.02 计算机科学 / 人工智能与机器学习研究自动化
+三级类：01.02.12 / 01.02.13
+四级专题：AI/ML research automation agents
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：文献检索与阅读; 科学问题提出; 假设生成; 实验设计; 工具调用与代码执行; 实验执行; 数据分析; 结果解释; 证据评估与验证; 论文写作; 端到端科研流程自动化
 自主能力：任务分解; 计划生成; 工具调用; 记忆与状态维护; 反馈迭代; 自主决策; 多 Agent 协作; 环境交互; 闭环实验

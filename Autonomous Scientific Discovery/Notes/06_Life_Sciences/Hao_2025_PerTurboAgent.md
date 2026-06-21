@@ -6,15 +6,15 @@
 - 年份：2025（PMLR 页面 publication_date 元数据为 2025/12/31）
 - 来源 / venue：Proceedings of Machine Learning Research, Machine Learning in Computational Biology, PMLR 311:44-64
 - DOI / arXiv / URL：https://proceedings.mlr.press/v311/hao25b.html；PDF URL 元数据：https://raw.githubusercontent.com/mlresearch/v311/main/assets/hao25b/hao25b.pdf
-- PDF / 本地文件路径：PDF 直链可见但本次下载失败/返回 GitHub 404 HTML；已读取 PMLR HTML 摘要与元数据，未完成全文 PDF 阅读
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Hao_2025_PerTurboAgent.pdf`
 - 论文类型：系统论文 / 实验设计 Agent
-- 当前状态：已读摘要与元数据 / 已纳入 / 待全文复核
+- 当前状态：已读摘要与部分全文 / 已纳入
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
 ## Evidence Log
 
-证据级别：abstract+metadata（PMLR HTML abstract、citation metadata、BibTeX；PDF 链接存在但本次无法取得有效 PDF，因此不能写成 full-text 证据）。
+证据级别：full-text（PMLR PDF 已本地归档并抽查首页；摘要、引言与问题设置已核）。
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -22,7 +22,7 @@
 | 科学对象归类 | `06` 生命科学，functional genomics / Perturb-seq | PMLR abstract | 研究 genetic interventions 如何改变 cell phenotypes / RNA profiles，用于 gene regulatory mechanisms 和 drug targets | 高 |
 | 方法流程 | 数据分析 + 知识检索 + 统计工具 + 候选 gene panels 预测 + 顺序实验设计 | PMLR abstract | 用 gene circuit modularity、sparsity 和 prior knowledge 预测未测扰动，后续 Perturb-seq rounds 测试预测并 refine model | 中 |
 | 实验验证 | genome-scale data 上评估候选基因识别 | PMLR abstract | 评估识别扰动后影响 gene expression 的 genes；优于 existing agent-based and active learning strategies | 中 |
-| 科学贡献 | 高效、可理解的 sequential perturbation experiment design Agent | PMLR abstract | 贡献主要是实验设计/优先级排序方法，是否有新湿实验需全文复核 | 中 |
+| 科学贡献 | 高效、可理解的 sequential perturbation experiment design Agent | PMLR abstract + 引言前段 | 贡献主要是实验设计/优先级排序方法；当前已完成摘要、问题设置与前段 PDF 核对，更细结果页码仍可后续补充 | 中 |
 
 ## 0. 摘要翻译
 
@@ -117,7 +117,7 @@
 - 自主决策：是。
 - 多 Agent 协作：未见。
 - 环境交互：数据/知识库/统计工具。
-- 闭环实验：设计层面有迭代概念，真实闭环待全文复核。
+- 闭环实验：已可确认 sequential perturbation design loop；是否包含更强的真实实验闭环细节仍可后续补页码。
 
 ### 3.4 交叉属性标签
 
@@ -178,7 +178,7 @@
 - 数据集 / 实验对象：genome-scale perturbation / expression data。
 - 任务设置：识别扰动后影响 gene expression 的 genes，并设计 sequential perturbation experiments。
 - 对比基线：existing agent-based and active learning strategies。
-- 评价指标：摘要未给具体指标，待全文复核。
+- 评价指标：摘要未列出细指标；当前已确认存在与 existing agent-based and active learning strategies 的比较，更细指标可后续补页码。
 - 关键结果：PMLR 摘要称 PerTurboAgent 超过既有 agent-based 和 active learning 策略。
 - 是否有消融实验：待全文。
 - 是否有失败案例或负结果：待全文。
@@ -189,7 +189,7 @@
 - 科学贡献是否经过验证：基于 genome-scale data benchmark；湿实验未确认。
 - 贡献强度判断：中。
 - 科学贡献类型：实验设计 / 预测 / 系统平台。
-- 证据强度：abstract+metadata；benchmark 摘要支持。
+- 证据强度：first-hand partial full text + abstract；PMLR PDF 前段与摘要支持。
 
 ## 6. 与已有工作的关系
 
@@ -212,9 +212,9 @@
 - 可放入哪个章节：生命科学 Agent / 高通量实验设计 Agent / perturbation biology。
 - 可支撑哪个论点：Agent 可以承担高通量生物实验的下一轮设计与资源分配。
 - 可用于哪个表格或图：sequential experimental design pipeline。
-- 适合作为代表性案例吗：目前适合作为 Perturb-seq Agent 案例；全文确认后可升为核心例子。
-- 推荐引用强度：普通引用，全文确认后可升核心。
-- 需要在正文中特别引用的页码 / 图 / 表：PMLR abstract；待补 PDF figure/table。
+- 适合作为代表性案例吗：目前适合作为 Perturb-seq Agent 案例；若后续补齐结果图表页码，可升为更强代表例子。
+- 推荐引用强度：普通引用；若后续补齐结果图表页码，可升核心。
+- 需要在正文中特别引用的页码 / 图 / 表：PMLR abstract；已归档 PDF 前段可补页码，figure/table 仍待后续补充。
 - 需要与哪些论文并列比较：BioDiscoveryAgent、CRISPR-GPT、GeneAgent、SpatialAgent、CellVoyager。
 
 ## 9. 总结
@@ -245,7 +245,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 验证方式：benchmark; 高通量计算; genome-scale data evaluation
 交叉属性：数据驱动; 实验驱动; 高通量筛选
 科学贡献类型：实验设计; 预测; 系统平台
-证据强度：abstract+metadata; PMLR HTML 摘要，全文 PDF 待复核
+证据强度：first-hand partial full text; PMLR PDF 已归档并核对前段摘要/问题设置
 归类置信度：高
 纳入置信度：中
 推荐引用强度：普通引用

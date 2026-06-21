@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2507.02925
-- PDF / 本地文件路径：临时阅读 `ASD-0024.pdf` / `ASD-0024.txt`
+- PDF / 本地文件路径：`Reference_PDF/07_Medical_and_Health_Sciences/Ock_2025_AgentD.pdf`
 - 论文类型：药物发现 Agent 系统论文
 - 当前状态：已读，已纳入
 - 阅读日期：2026-06-15
@@ -17,7 +17,7 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是，AgentD 用 LLM 协调药物发现任务模块和工具 | PDF p.1 Abstract；Agentic Workflow | modular framework powered by LLMs；combining LLM reasoning with domain-specific tools；agent autonomously constructs workflows | 高 |
-| 科学对象归类 | `07` 医学与健康科学，药物发现 | PDF title/abstract/introduction | drug discovery pipeline；therapeutic development；protein-ligand structure | 高 |
+| 科学对象归类 | `07;03`，primary filing `07` | PDF title/abstract/introduction；results/Fig.2-7 | `07` 来自 therapeutic development、binding affinity 与 protein-ligand structure；`03` 来自 seed molecule generation、property-aware molecular refinement 与 drug-/lead-likeness 分子对象任务 | 高 |
 | 方法流程 | 六类任务模块，覆盖检索、分子生成、性质评估、refinement、结构预测 | PDF Agentic Workflow；Table 1 | coordinates data retrieval, molecular generation, property evaluation, structure prediction | 高 |
 | 实验验证 | RAG QA、分子生成、property-aware refinement、3D complex generation | PDF results/Fig.2-7 | AgentD with RAG outperforms vanilla LM；44% molecules improved after first refinement；Boltz-2 complex example | 高 |
 | 科学贡献 | 模块化可扩展 drug discovery Agent 框架 | PDF Abstract/Conclusion | scalable foundation for AI-assisted therapeutic development | 高 |
@@ -70,9 +70,9 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：`03` 化学科学。
-- 最终判定：`07`。
-- 判定理由：任务围绕 therapeutic development、drug discovery、protein-ligand 和 lead-likeness。
+- 可能误归类到：仅 `07`；或被过度压回 `03` 化学科学。
+- 最终判定：`07;03`，primary filing `07`。
+- 判定理由：药物发现主目标稳定支持 `07`，但原文确有独立分子生成、分子性质与 molecular refinement 结果，按 relaxed multi-module rule 应同步记录 `03`。
 - 是否需要二次复核：否。
 
 ## 3. Agent 系统与科研流程角色
@@ -233,10 +233,15 @@
 
 ```text
 是否纳入：是
-主类：07 医学与健康科学
+主类：07 医学与健康科学；并记录 03 化学对象覆盖
 二级类：07.04 药学与生物医药
 三级类：07.04.01 药物发现
 四级专题：Drug discovery / biomedical agents
+科学对象模块：07;03
+覆盖模式：multi_module
+其他覆盖模块及对应层级路径：03 化学科学 / 分子生成与分子性质任务
+module_assignment_evidence：07 由 drug discovery、binding affinity、protein-ligand structure 支持；03 由 seed molecule generation、molecular refinement、drug-/lead-likeness 支持
+multi_module_object_coverage_note：primary filing 保持 07，但按 relaxed rule 同步记录 03
 Agent 类型：LLM Agent；Planning Agent；Tool-using Agent；Retrieval-augmented Agent；Hybrid Agent
 科研流程角色：文献检索与阅读；知识抽取与组织；实验设计；仿真建模；工具调用与代码执行；数据分析；结果解释；证据评估与验证
 自主能力：任务分解；计划生成；工具调用；反馈迭代；自主决策；计算闭环

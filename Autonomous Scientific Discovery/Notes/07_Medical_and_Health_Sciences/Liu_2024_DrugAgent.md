@@ -6,7 +6,7 @@
 - 年份：2024 / arXiv v2 2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2411.15692
-- PDF / 本地文件路径：临时读取 arXiv PDF；未写入 `Reference_PDF`
+- PDF / 本地文件路径：`Reference_PDF/07_Medical_and_Health_Sciences/Liu_2024_DrugAgent.pdf`
 - 论文类型：系统论文 / 药物发现 ML 编程 Agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-16

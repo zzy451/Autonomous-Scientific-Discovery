@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2503.22708
-- PDF / 本地文件路径：arXiv PDF；本次临时读取全文 PDF 文本
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Jansen_2025_CodeScientist.pdf`
 - 证据级别：full-text
 - 论文类型：系统论文
 - 当前状态：已读 / 已纳入
@@ -26,7 +26,7 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 纳入 | Abstract；Figure 1；Sec. 3；Appendix prompts | 系统覆盖 ideation、planning、experiment building/execution、reporting、meta-analysis，并调用代码沙箱与 LLM 生成/调试实验 | 高 |
-| 科学对象归类 | `01.04` 通用科研智能系统 | Abstract；Table 2；Sec. 4 | 研究对象是自动科研系统本身，在 agents and virtual environments 中做软件/代码实验，不是某一自然科学对象 | 高 |
+| 科学对象归类 | `01` 形式、信息与计算科学 | Abstract；Table 2；Sec. 4 | 研究对象是 software artifacts、agents、virtual environments、new tasks、metrics、data 与 code-review / replication outcomes，属于具体 formal/computational research objects | 高 |
 | 方法流程 | 遗传式文献/代码块组合搜索 + 实验自动构建执行 | Figure 1；Sec. 3.1-3.5 | 输入论文与 codeblocks，生成候选 idea，人工筛选与评论，规划实验，生成并运行代码，跨 5 次尝试做报告和 meta-analysis | 高 |
 | 实验验证 | 专家评审、代码审查、复现实验 | Abstract；Table 4；Sec. 4-5 | 约 2000 个候选 idea，经筛选运行 50 个 idea / 250 次实验，系统报告 19 个发现，其中 6 个经外部评审和内部检查达到最低 soundness 与 novelty | 高 |
 | 科学贡献 | 通用 ASD 系统与评估范式 | Abstract；Conclusion | 把 ASD 从 benchmark 优化扩展到任务、agent、metric、data、假设挑战等较多样发现，并强调代码级验证 | 高 |
@@ -64,9 +64,9 @@
 ### 2.1 主科学领域
 
 - 一级类：`01` 形式、信息与计算科学
-- 二级类：`01.04` 科研智能系统与 Autonomous Scientific Discovery
-- 三级类：通用科研 Agent / 自动科研系统
-- 四级专题：General scientific research-agent systems
+- 二级类：`01.02` 计算机科学 / 代码实验驱动研究自动化
+- 三级类：`01.02.04` 软件工程；`01.02.12` 人工智能
+- 四级专题：code-based scientific discovery agents
 - 四级专题是否为新增：否
 - 归类理由：系统验证对象是通用软件研究与 agent/virtual environment 领域的代码实验，主要贡献是 ASD 系统与评估流程，不是材料、化学、生命等具体科学对象。
 - 归类置信度：高。
@@ -80,8 +80,8 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：AI/软件工程 benchmark；具体 AI 研究领域。
-- 最终判定：`01.04`。
-- 判定理由：论文自述为 ASD system，实验领域只是示范域。
+- 最终判定：`01`。
+- 判定理由：论文虽然自述为 ASD system，但原文实验对象始终是可执行代码实验和计算/软件研究对象，不能继续仅按独立 `01.04` 处理。
 - 是否需要二次复核：低优先级复核，主要复核 6 个候选发现的科学性强度。
 
 ## 3. Agent 系统与科研流程角色
@@ -243,9 +243,9 @@
 ```text
 是否纳入：是
 主类：01 形式、信息与计算科学
-二级类：01.04 科研智能系统与 Autonomous Scientific Discovery
-三级类：通用科研 Agent / 自动科研系统
-四级专题：General scientific research-agent systems
+二级类：01.02 计算机科学 / 代码实验驱动研究自动化
+三级类：01.02.04 / 01.02.12
+四级专题：code-based scientific discovery agents
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：科学问题提出; 假设生成; 实验设计; 工具调用与代码执行; 数据分析; 证据评估与验证; 端到端科研流程自动化
 自主能力：任务分解; 计划生成; 工具调用; 反馈迭代; 自主决策; 环境交互; 闭环实验

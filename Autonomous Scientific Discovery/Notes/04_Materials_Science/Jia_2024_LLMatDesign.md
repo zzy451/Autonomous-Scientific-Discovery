@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2406.13163
-- PDF / 本地文件路径：临时阅读 `ASD-0031.pdf` / `ASD-0031.txt`
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Jia_2024_LLMatDesign.pdf`
 - 论文类型：材料发现 Agent 系统论文
 - 当前状态：已读，已纳入
 - 阅读日期：2026-06-15

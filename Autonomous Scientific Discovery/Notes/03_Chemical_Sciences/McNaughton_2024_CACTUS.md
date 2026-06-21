@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：ACS Omega；arXiv preprint
 - DOI / arXiv / URL：https://doi.org/10.1021/acsomega.4c08408；https://arxiv.org/abs/2405.00972
-- PDF / 本地文件路径：临时读取 arXiv PDF；未写入 `Reference_PDF`
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/McNaughton_2024_CACTUS.pdf`
 - 论文类型：系统论文 / 化学工具调用 Agent / benchmark
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-16

@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2405.17631
-- PDF / 本地文件路径：临时阅读 `ASD-0020.pdf` / `ASD-0020.txt`
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Roohani_2024_BioDiscoveryAgent.pdf`
 - 论文类型：生命科学闭环实验设计 Agent
 - 当前状态：已读，已纳入
 - 阅读日期：2026-06-15

@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2503.18102
-- PDF / 本地文件路径：临时阅读 `ASD-0019.pdf` / `ASD-0019.txt`
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Schmidgall_2025_AgentRxiv.pdf`
 - 论文类型：通用科研 Agent 协作平台 / 系统论文
 - 当前状态：已读，已纳入
 - 阅读日期：2026-06-15
@@ -17,7 +17,7 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是，面向自主研究协作的 Agent 平台 | PDF p.1 Abstract/Fig.1；p.2 Introduction | lets LLM agent laboratories upload and retrieve reports；agents autonomously provide research outputs | 高 |
-| 科学对象归类 | `01.04` 通用科研 Agent / 科研协作平台 | PDF p.1-3 | collaborative autonomous research；shared preprint server for agent laboratories | 高 |
+| 科学对象归类 | `01` 形式、信息与计算科学 | PDF p.1-3 | collaborative autonomous research；shared preprint server for agent laboratories；核心对象是 reasoning/prompting research、benchmark collaboration 与 computational research reports | 高 |
 | 方法流程 | 多个 Agent laboratory 通过共享 archive 迭代改进研究 | PDF Fig.1/Fig.3；method section | upload, retrieve, build upon prior reports | 高 |
 | 实验验证 | MATH-500、GPQA、MMLU-Pro、MedQA 等 benchmark | PDF Abstract；results | MATH-500 70.2% to 78.2%；平均跨 benchmark +3.3%；parallel labs 79.8% | 高 |
 | 科学贡献 | 让自主 Agent 研究具备累积性和协作性 | PDF contributions | agents build upon discoveries of other agents over time | 高 |
@@ -55,11 +55,11 @@ AgentRxiv 针对已有自主科研 Agent 彼此孤立、难以累积前序研究
 ### 2.1 主科学领域
 
 - 一级类：`01` 形式、信息与计算科学。
-- 二级类：`01.04` 科研智能系统与 Autonomous Scientific Discovery。
-- 三级类：`01.04.04` 多 Agent 科研协同系统 / `01.04.05` 通用科学发现平台。
-- 四级专题：General scientific research-agent systems。
+- 二级类：`01.02` 计算机科学 / 计算研究协作系统。
+- 三级类：`01.02.12` 人工智能；`01.02.13` 机器学习。
+- 四级专题：computational research collaboration agents。
 - 四级专题是否为新增：否。
-- 归类理由：研究对象是自主科研协作机制和 Agent 研究平台，而非具体自然科学对象。
+- 归类理由：论文验证对象不是无对象平台，而是可识别的 computational research outputs、reasoning/prompting techniques 与 benchmark-task collaboration。
 - 归类置信度：高。
 
 ### 2.2 对象优先判定
@@ -71,8 +71,8 @@ AgentRxiv 针对已有自主科研 Agent 彼此孤立、难以累积前序研究
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：`11.07` 科学系统与知识生产研究；`01.02` AI。
-- 最终判定：`01.04`。
-- 判定理由：论文不是社会科学式研究科研共同体，而是构建通用科研 Agent 平台。
+- 最终判定：`01`。
+- 判定理由：`MedQA` 等只作为迁移 benchmark，不足以单独支持 `07`；但整篇论文对计算研究对象的实验和结果已足以支持正式 `01` 模块。
 - 是否需要二次复核：否。
 
 ## 3. Agent 系统与科研流程角色
@@ -234,9 +234,9 @@ Agent 科研共同体原型。
 ```text
 是否纳入：是
 主类：01 形式、信息与计算科学
-二级类：01.04 科研智能系统与 Autonomous Scientific Discovery
-三级类：01.04.04 / 01.04.05
-四级专题：General scientific research-agent systems
+二级类：01.02 计算机科学 / 计算研究协作系统
+三级类：01.02.12 / 01.02.13
+四级专题：computational research collaboration agents
 Agent 类型：LLM Agent；Planning Agent；Tool-using Agent；Retrieval-augmented Agent；Multi-Agent System；Human-in-the-loop Agent；Hybrid Agent
 科研流程角色：文献检索与阅读；知识抽取与组织；假设生成；实验设计；工具调用与代码执行；数据分析；结果解释；证据评估与验证；论文写作
 自主能力：任务分解；计划生成；工具调用；记忆与状态维护；反馈迭代；自主决策；多 Agent 协作

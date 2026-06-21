@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2504.19912
-- PDF / 本地文件路径：临时阅读 `ASD-0017.pdf` / `ASD-0017.txt`
+- PDF / 本地文件路径：`Reference_PDF/07_Medical_and_Health_Sciences/Smbatyan_2025_DO_Challenge.pdf`
 - 论文类型：benchmark + 系统论文
 - 当前状态：已读，已纳入
 - 阅读日期：2026-06-15

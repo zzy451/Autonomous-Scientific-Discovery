@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2501.10385
-- PDF / 本地文件路径：临时阅读 `ASD-0026.pdf` / `ASD-0026.txt`
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Mandal_2024_AILA_Autonomous_Microscopy.pdf`
 - 论文类型：材料表征 / 自驱实验室 Agent 系统
 - 当前状态：已读，已纳入
 - 阅读日期：2026-06-15
@@ -24,7 +24,7 @@
 
 ## 0. 摘要翻译
 
-论文提出 AILA（Artificially Intelligent Lab Assistant），一个通过 LLM-driven agents 自动化 atomic force microscopy 的框架，并提出 AFMBench，用 100 个专家设计任务测试 AI Agent 从实验设计到结果分析的完整能力。作者发现 SOTA 模型在基本任务和跨模块协调中仍会失败，领域 QA 能力并不等于 agentic 实验能力；多 Agent 架构优于单 Agent，但 prompt fragility 和安全对齐仍是问题。作者还演示了 AFM calibration、feature detection、mechanical property measurement、graphene layer counting 和 indenter detection 等真实实验。旧 note 只记录 `04` 材料表征；2026-06-20 relaxed 口径下，AFM scientific-instrument operation 本身也有对象层实验与 benchmark evidence，因此应记录 `04;09`，primary filing 仍保留 `04`。
+论文提出 AILA（Artificially Intelligent Lab Assistant），一个通过 LLM-driven agents 自动化 atomic force microscopy 的框架，并提出 AFMBench，用 100 个专家设计任务测试 AI Agent 从实验设计到结果分析的完整能力。作者发现 SOTA 模型在基本任务和跨模块协调中仍会失败，领域 QA 能力并不等于 agentic 实验能力；多 Agent 架构优于单 Agent，但 prompt fragility 和安全对齐仍是问题。作者还演示了 AFM calibration、feature detection、mechanical property measurement、graphene layer counting 和 indenter detection 等真实实验。当前 authoritative 口径记录 `04;09`：材料样品与表征结果支持 `04`，AFM scientific-instrument operation 与 real-world AFM tasks 支持 `09`，primary filing 保持 `04`。
 
 ## 1. 是否纳入本综述
 
