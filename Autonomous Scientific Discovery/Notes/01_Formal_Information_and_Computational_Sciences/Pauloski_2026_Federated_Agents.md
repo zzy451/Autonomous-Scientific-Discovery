@@ -1,4 +1,10 @@
 # Pauloski et al. 2025 - Empowering Scientific Workflows with Federated Agents
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Pauloski_2025_Federated_Agents.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Authoritative override: the current relaxed rule treats this record as `scientific_object_modules=01;02;04`, `object_coverage_mode=multi_module`, `primary_module_for_filing=01`, `general_method_bucket=none`.
+- Any older `01.04`-only wording below should be treated as stale legacy text superseded by the current full-text multi-module judgment.
 
 **论文信息**
 - 标题：Empowering Scientific Workflows with Federated Agents
@@ -13,6 +19,8 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 ## 2026-06-20 relaxed round-2 multi-module revision
 

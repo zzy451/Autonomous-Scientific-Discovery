@@ -1,4 +1,9 @@
 # Polat 2025 - xChemAgents: Agentic AI for Explainable Quantum Chemistry
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/03_Chemical_Sciences/Polat_2025_xChemAgents.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Classification remains stable: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
 
 **论文信息**
 - 标题：xChemAgents: Agentic AI for Explainable Quantum Chemistry
@@ -13,6 +18,8 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
