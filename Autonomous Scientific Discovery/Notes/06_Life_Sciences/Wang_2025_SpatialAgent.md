@@ -12,6 +12,14 @@
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `first_hand_sources_checked`: Crossref DOI abstract for `10.1101/2025.04.03.646459`; official repository README at `https://github.com/Genentech/SpatialAgent`.
+- Accepted relaxed classification: `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Boundary decision: do not add `07`.
+- Why: the official abstract and repository-level task description anchor the paper in spatial biology, spatial transcriptomics, multimodal data analysis, and hypothesis generation on datasets from human brain, heart, and a mouse colon colitis model. These are concrete life-science / omics objects, but the accessible first-hand evidence does not report patient-level diagnosis, therapy ranking, treatment evaluation, or other independent medical / clinical-validation tasks strong enough to justify `07`.
+- Note implication: older wording that kept this record broadly "full-text pending for possible `07`" should now be read as resolved for the current relaxed pass. Full text would still be useful for richer page-level evidence extraction, but not for reopening the `06/07` boundary without new object-level medical evidence.
+
 ## Evidence Log
 
 证据级别：abstract+metadata + official repository（bioRxiv 全文未能访问；官方 GitHub 对架构和工具数量提供较强辅助证据，但不能替代论文全文页码）。

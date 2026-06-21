@@ -60,6 +60,14 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p0E_2026-06
 | `ASD-0856` | closed | accepted `scientific_object_modules=06;07;11`; removed independent `01.04` only treatment |
 | `ASD-0869` | closed | accepted `scientific_object_modules=02;03;04;06`; removed independent `01.04` only treatment |
 
+## Round-2 P0-F Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p0F_2026-06-21.md`.
+
+| ID | Status after P0-F | Action |
+|---|---|---|
+| `ASD-0553` | closed | kept in the independent `01.04` bucket because official DOI abstract evidence supports a bioinformatics automation platform / benchmark paper rather than concrete biology or biomedical object experiments |
+
 ## Round-2 P1-A Status Update
 
 Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1A_2026-06-20.md`.
@@ -95,6 +103,14 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1D_2026-06
 |---|---|---|
 | `ASD-0035` | closed | reviewed arXiv abstract `2409.05556` and canonical DOI landing; accepted `scientific_object_modules=04` only because the paper's concrete object remains biologically inspired materials rather than an independent life-science experiment |
 
+## Round-2 P1-E Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1E_2026-06-21.md`.
+
+| ID | Status after P1-E | Action |
+|---|---|---|
+| `ASD-0014` | closed | reviewed official DOI abstract `10.1101/2025.04.03.646459` and official repository; accepted `scientific_object_modules=06` only because the reported objects remain spatial-biology / omics tasks rather than independent medical / clinical-validation tasks |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.
@@ -108,7 +124,6 @@ These records have the highest risk of stale `01.04` treatment or premature migr
 | `ASD-0048` | legacy `01/01.04` | Do Dolphin ML / AI benchmarks constitute object-level formal-computational experiments? |
 | `ASD-0060` | possible `04;06` | Do PiFlow nanomaterials / biomolecules benchmarks constitute concrete object tasks? |
 | `ASD-0062` | uncertain `01.04` vs `04/02` | Are materials / astronomy case studies substrate demos or object-level results? |
-| `ASD-0553` | possible bioinformatics object boundary | ToolsGenie 2.0 needs full-text task inventory for `01.04` vs biology / bioinformatics object coverage. |
 | `ASD-0660` | possible `03;04;06` | S1-NexusAgent mentions BioMini-Eval, ChemBench, MatSciBench; task inventory must be checked. |
 | `ASD-0662` | keep `01.04` for now | Abstract lacks concrete object experiments; full text may alter bucket status. |
 | `ASD-0671` | keep `01.04` for now | Abstract lacks concrete object experiments; full text may alter bucket status. |
@@ -125,7 +140,6 @@ These records are likely to remain confirmed core, but may need module additions
 |---|---|---|
 | `ASD-0003` | `03/04` | Does the materials benchmark split support independent `04` object coverage? |
 | `ASD-0008` | `07/03` | Do synthesis / HPLC steps in DMTA constitute chemistry object results? |
-| `ASD-0014` | `06/07` | Does spatial biology include disease or clinical-translation evidence enough for `07`? |
 | `ASD-0033` | `06/07` | Does precision-medicine framing support `07` beyond single-cell / omics mechanism discovery? |
 | `ASD-0035` | `04` plus possible biology | Does SciAgents contain biological object cases beyond materials hypotheses? |
 | `ASD-0054` | `07/06` | Does nanobody / protein wet-lab validation justify adding `06`? |

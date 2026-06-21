@@ -12,6 +12,13 @@
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `first_hand_sources_checked`: Crossref DOI abstract for `10.64898/2026.01.06.697527`; official PromptBio platform landing page at `https://platform.promptbio.ai`.
+- Accepted relaxed classification: no concrete scientific-object migration landed; keep the record in the independent `01.04` bucket with `object_coverage_mode=general_method_without_concrete_object_experiments`; `primary_module_for_filing=01`; `general_method_bucket=01.04`.
+- Why: the official abstract frames ToolsGenie 2.0 as a multi-agent bioinformatics automation platform with ReAct-style orchestration, dual-layer extensibility, dynamic Docker environment management, and benchmark accuracy on an in-house dataset plus BixBench. It mentions broad research and clinical contexts, but the accessible first-hand evidence does not identify concrete gene, protein, cell, disease, or patient-object case studies with separate reported scientific results strong enough to support `06` or `07`.
+- Note implication: this note should no longer treat `06` / `07` migration as merely waiting on any source at all. Under the current evidence base, `01.04` is the stable relaxed-round decision; only later full text with explicit object-level biology or biomedical cases should reopen the boundary.
+
 ## Evidence Log
 
 ## 2026-06-20 relaxed round-2 P0-C source-limited revision
