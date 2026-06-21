@@ -255,7 +255,7 @@ These records are likely to remain confirmed core, but may need module additions
 | `ASD-0713` | `10/05/06` | Does Europa lander autonomy include planetary-environment or astrobiology object evidence? |
 | `ASD-0715` | `07/06` | Does BioDisco include biological mechanism coverage enough for `06`? |
 | `ASD-0737` | `01` plus possible `07/09` | Do medical imaging / 3D perception tasks justify extra modules beyond formal AI research? |
-| `ASD-0743` | `06/07` | Does the cancer case-study depth support `07`? |
+| `ASD-0743` | closed | reviewed Crossref DOI abstract plus official `STAT-agent` / `STAT-PaperRepro` assets; accepted `scientific_object_modules=06;07` because spatial-omics analysis remains the stable life-science object while the mixed-resolution breast-cancer cohort, reproduced colorectal-cancer study, and explicit tumor / immune / stroma / microenvironment benchmark tasks provide independent oncology-oriented medical-object coverage for `07` |
 | `ASD-0744` | `06/07` | Do datasets include explicit medical / health objects? |
 | `ASD-0769` | `07` secondary review | Is `07.04` secondary too weak or correct after full-text review? |
 | `ASD-0773` | `07/06` | Does transcriptomic / pathway / PCD evidence justify `06`? |

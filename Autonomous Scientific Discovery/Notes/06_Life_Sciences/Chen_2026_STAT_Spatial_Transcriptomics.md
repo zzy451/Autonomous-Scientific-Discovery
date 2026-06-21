@@ -1,5 +1,17 @@
 # Chen et al. 2026 - STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis
 
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `scientific_object_modules`: `06;07`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `06`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: Crossref DOI abstract `10.64898/2026.05.01.722244`; official `STAT-agent` README; official `STAT-PaperRepro` benchmark `queries.json`; official `STAT-PaperRepro` dataset note `DATA.md`; official `STAT-PaperRepro/colorectal_cancer/README.md`
+- `classification_evidence_source_level`: `project_or_benchmark_page`
+- `note_revision_required`: `no`
+
+This round closes the `06 / 07` boundary as `06;07`. `06` remains the primary filing module because the system is fundamentally a spatial transcriptomics / spatial omics analysis agent. `07` is now also supported under the relaxed object-coverage rule because the accessible first-hand evidence includes a mixed-resolution breast-cancer cohort, reproduction of a published colorectal-cancer study, and official benchmark / demo tasks on tumor-versus-immune communication, tumor-versus-stroma differential analysis, and tumor-microenvironment pathway analysis. These are recognizable oncology / pathology-oriented case studies rather than merely generic omics benchmarks.
+
 **论文信息**
 - 标题：STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis
 - 作者：Yuheng Chen; Shi Han; Zitong Chao; Yuyao Liu; Fan Zhang; Hao Chen; Jiguang Wang; Jiashun Xiao; Can Yang
