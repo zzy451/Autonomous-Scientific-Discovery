@@ -6,7 +6,7 @@
 - 年份：2020
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-020-15728-5
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：Reference_PDF/04_Materials_Science/Li_2020_MAOSIC_Chiral_Perovskite.pdf（已与本地归档同步；本轮直接核对 open-access publisher PDF）
 - 论文类型：研究论文 / cloud-lab materials discovery
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | 论文描述 intelligent cloud lab，将 automation、cloud servers 与 AI 结合，并支持 on-demand experimental design | 高 |
-| 科学对象归类 | `04.04` | official abstract | 直接对象是 optically active inorganic perovskite nanocrystals 与 chirality-related properties | 高 |
-| 方法流程 | 合成-表征-优化闭环 | official abstract | synthesis、characterization 与 parameter optimization 可 autonomously achieved | 高 |
-| 实验验证 | 真实材料合成与表征 | official abstract | 论文报告 chiral inorganic perovskite nanocrystals 的自主发现和后续机制分析 | 高 |
-| 边界判断 | 保持 `04` | official abstract | 云实验室和远程用户只是平台层叙述，稳定对象仍是钙钛矿纳米晶材料发现 | 高 |
+| Agent 纳入 | 是 | publisher PDF | 论文描述 intelligent cloud lab，将 automation、cloud servers 与 AI 结合，并支持 on-demand experimental design | 高 |
+| 科学对象归类 | `04.04` | publisher PDF | 直接对象是 optically active inorganic perovskite nanocrystals 与 chirality-related properties | 高 |
+| 方法流程 | 合成-表征-优化闭环 | publisher PDF | synthesis、characterization 与 parameter optimization 可 autonomously achieved | 高 |
+| 实验验证 | 真实材料合成与表征 | publisher PDF | 论文报告 chiral inorganic perovskite nanocrystals 的自主发现和后续机制分析 | 高 |
+| 边界判断 | 保持 `04` | publisher PDF | 云实验室和远程用户只是平台层叙述，稳定对象仍是钙钛矿纳米晶材料发现 | 高 |
 
 ## 0. 摘要翻译
 
@@ -73,7 +73,7 @@
 - 可能误归类到：01.04
 - 最终判定：保留 04.04
 - 判定理由：平台虽强调云实验室，但最终贡献和验证都落在具体钙钛矿纳米晶材料对象
-- 是否需要二次复核：是，主要是自主程度细节的全文补强
+- 是否需要二次复核：否；当前复核结论稳定维持 `04`
 
 ## 3. Agent 系统与科研流程角色
 
@@ -152,7 +152,7 @@
 
 - Agent 核心：`MAOSIC`
 - 工具 / API / 数据库：automation + cloud servers + AI
-- 记忆或状态模块：摘要未展开
+- 记忆或状态模块：publisher PDF 未突出单独记忆模块，系统重点在云实验室编排与闭环优化
 - 规划器：on-demand experimental design
 - 评估器 / verifier：characterization + mechanism analysis
 - 人类反馈或专家介入：支持 remote users 参与
@@ -175,11 +175,11 @@
 
 - 数据集 / 实验对象：optically active chiral inorganic perovskite nanocrystals
 - 任务设置：自主合成、表征与参数优化
-- 对比基线：摘要未展开
+- 对比基线：publisher PDF 已支持核心材料发现结论；当前笔记未单列完整 baseline 表
 - 评价指标：chirality / CD-related performance 与可控性
 - 关键结果：成功自主发现和优化目标纳米晶，并进行后续机制分析
-- 是否有消融实验：摘要未展开
-- 是否有失败案例或负结果：摘要未展开
+- 是否有消融实验：publisher PDF 未作为当前笔记重点摘录
+- 是否有失败案例或负结果：publisher PDF 未作为当前笔记重点摘录
 
 ### 5.3 科学贡献
 
@@ -198,8 +198,8 @@
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：remote-user 参与比例和 autonomy 边界仍待全文确认
-- 科学验证不足：摘要未展开跨任务泛化
+- Agent 自主性不足：存在 remote-user / cloud-lab 组织层接口，但不影响其作为稳定 `04` 材料发现记录
+- 科学验证不足：当前不构成主要问题；论文已给出真实材料合成、表征与机制分析
 - 泛化性不足：当前仍集中在一类 perovskite nanocrystal
 - 工具链依赖：依赖云实验室基础设施
 - 数据泄漏或 benchmark 偏差：非主要风险
@@ -212,7 +212,7 @@
 - 可用于哪个表格或图：材料 cloud-lab / SDL 对比表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：core
-- 需要在正文中特别引用的页码 / 图 / 表：当前以官方摘要为主
+- 需要在正文中特别引用的页码 / 图 / 表：优先回查 publisher PDF 中的闭环流程图、实验设计与 perovskite nanocrystal 结果部分
 - 需要与哪些论文并列比较：AlphaFlow、CAMEO、Ada、autonomous electrolyte discovery
 
 ## 9. 总结

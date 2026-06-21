@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：Nature Chemical Engineering
 - DOI / arXiv / URL：https://doi.org/10.1038/s44286-023-00002-4
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮仅核对 Crossref / Nature metadata 与官方摘要；Nature 客户端 challenge 导致全文未能在此环境打开，未归档本地 PDF
 - 论文类型：研究论文 / protein-engineering self-driving laboratory
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Crossref / official abstract | `SAMPLE` 由 intelligent agent 与 fully automated robotic system 构成闭环，可学习 sequence-function relationship、设计新蛋白并测试 | 高 |
-| 科学对象归类 | `06.03` | Crossref / official abstract | 直接对象是 protein fitness landscape、glycoside hydrolase thermostability 与 protein engineering | 高 |
-| 方法流程 | 设计-实验-反馈闭环 | Crossref / official abstract | agent 学习序列-功能关系，生成新蛋白设计并发送给自动化系统测试，再用反馈更新理解 | 高 |
-| 实验验证 | 机器人实验闭环 | Crossref / official abstract | 4 个 SAMPLE agents 都收敛到更耐热的 glycoside hydrolase enzymes | 高 |
-| 边界判断 | 不应转 `01.04` 或 `03` | Crossref / official abstract | 虽发在化工期刊且有 SDL 平台表述，但最终对象稳定落在蛋白工程与酶功能优化 | 高 |
+| Agent 纳入 | 是 | Crossref / Nature metadata / official abstract | `SAMPLE` 由 intelligent agent 与 fully automated robotic system 构成闭环，可学习 sequence-function relationship、设计新蛋白并测试 | 高 |
+| 科学对象归类 | `06.03` | Crossref / Nature metadata / official abstract | 直接对象是 protein fitness landscape、glycoside hydrolase thermostability 与 protein engineering | 高 |
+| 方法流程 | 设计-实验-反馈闭环 | Crossref / Nature metadata / official abstract | agent 学习序列-功能关系，生成新蛋白设计并发送给自动化系统测试，再用反馈更新理解 | 高 |
+| 实验验证 | 机器人实验闭环 | Crossref / Nature metadata / official abstract | 4 个 SAMPLE agents 都收敛到更耐热的 glycoside hydrolase enzymes | 高 |
+| 边界判断 | 不应转 `01.04` 或 `03` | Crossref / Nature metadata / official abstract | 虽发在化工期刊且有 SDL 平台表述，但最终对象稳定落在蛋白工程与酶功能优化 | 高 |
 
 ## 0. 摘要翻译
 
@@ -73,7 +73,7 @@
 - 可能误归类到：01.04；03
 - 最终判定：保留 06.03
 - 判定理由：系统虽然平台感强，但最终被设计和测试的是蛋白序列与酶功能，不是通用 SDL 基础设施或化学反应对象
-- 是否需要二次复核：否，当前摘要证据已较强
+- 是否需要二次复核：否；当前 `06` 判定稳定，但本 note 仍属 source-limited 记录
 
 ## 3. Agent 系统与科研流程角色
 
@@ -212,7 +212,7 @@
 - 可用于哪个表格或图：protein-engineering SDL 对比表
 - 适合作为代表性案例吗：非常适合
 - 推荐引用强度：core
-- 需要在正文中特别引用的页码 / 图 / 表：当前以官方摘要为主
+- 需要在正文中特别引用的页码 / 图 / 表：当前以 Crossref / Nature metadata 摘要为主
 - 需要与哪些论文并列比较：其他 protein design / life-science SDL records
 
 ## 9. 总结

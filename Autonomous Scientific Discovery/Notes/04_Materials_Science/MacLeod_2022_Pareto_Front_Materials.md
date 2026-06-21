@@ -6,7 +6,7 @@
 - 年份：2022
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-022-28580-6
-- PDF / 本地文件路径：暂无本地 PDF；本 note 基于 official abstract and metadata
+- PDF / 本地文件路径：Reference_PDF/04_Materials_Science/MacLeod_2022_Pareto_Front_Materials.pdf（本轮已确认 open-access publisher PDF）
 - 论文类型：研究论文 / self-driving materials lab
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Nature / Crossref 摘要 | `Ada` self-driving laboratory 自动定义 Pareto front | 高 |
-| 科学对象归类 | `04` 材料科学 | 摘要 | 研究对象是 palladium films 的 conductivity / processing-temperature tradeoff | 高 |
-| 方法流程 | 是 | 摘要 | autonomous planning/search over synthesis conditions | 高 |
-| 实验验证 | 强 | 摘要 | 发现新的 synthesis conditions，并报告在 plastic substrates 上的材料表现 | 高 |
-| 边界判断 | 不转 `03` | object evidence | 终点是 film material properties，而非单纯 reaction chemistry | 高 |
+| Agent 纳入 | 是 | Nature Communications PDF / full text | `Ada` self-driving laboratory 自动定义 Pareto front | 高 |
+| 科学对象归类 | `04` 材料科学 | Nature Communications PDF / full text | 研究对象是 palladium films 的 conductivity / processing-temperature tradeoff | 高 |
+| 方法流程 | 是 | Nature Communications PDF / full text | autonomous planning/search over synthesis conditions | 高 |
+| 实验验证 | 强 | Nature Communications PDF / full text | 发现新的 synthesis conditions，并报告在 plastic substrates 上的材料表现 | 高 |
+| 边界判断 | 不转 `03` | Nature Communications PDF / full text | 终点是 film material properties，而非单纯 reaction chemistry | 高 |
 
 ## 0. 摘要翻译
 
@@ -198,7 +198,7 @@
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：内部 planner 细节待全文
+- Agent 自主性不足：内部 planner 细节在当前 note 中仍未细摘
 - 科学验证不足：跨材料体系泛化待看
 - 泛化性不足：当前集中于薄膜材料家族
 - 工具链依赖：依赖实验平台和在线测量
@@ -212,7 +212,7 @@
 - 可用于哪个表格或图：materials SDL task spectrum
 - 适合作为代表性案例吗：是
 - 推荐引用强度：核心引用
-- 需要在正文中特别引用的页码 / 图 / 表：待全文
+- 需要在正文中特别引用的页码 / 图 / 表：如需引页可回看本地 PDF
 - 需要与哪些论文并列比较：`ASD-0410`、`ASD-0417`
 
 ## 9. 总结

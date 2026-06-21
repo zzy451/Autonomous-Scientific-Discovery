@@ -6,7 +6,7 @@
 - 年份：2020
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-020-19597-w
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：Reference_PDF/04_Materials_Science/Kusne_2020_CAMEO_Materials_Discovery.pdf（已与本地归档同步；本轮直接核对 open-access publisher PDF）
 - 论文类型：研究论文 / closed-loop materials discovery system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | `CAMEO` 是 active-learning-driven autonomous system，在真实 beamline 上进行实验选择、执行和反馈更新 | 高 |
-| 科学对象归类 | `04.04` | official abstract | 研究对象是 functional inorganic compounds / phase-change materials 的发现与优化 | 高 |
-| 方法流程 | 闭环 beamline 材料发现 | official abstract | 系统在 synchrotron beamline 上实时执行 phase mapping 与 property optimization | 高 |
-| 实验验证 | 真实实验平台 | official abstract | 部署在真实 beamline 环境中，而非纯仿真或纯 benchmark | 高 |
-| 边界判断 | 保持 `04` | official abstract | 论文核心是材料探索与优化，不是通用实验编排平台 | 高 |
+| Agent 纳入 | 是 | publisher PDF | `CAMEO` 是 active-learning-driven autonomous system，在真实 beamline 上进行实验选择、执行和反馈更新 | 高 |
+| 科学对象归类 | `04.04` | publisher PDF | 研究对象是 functional inorganic compounds / phase-change materials 的发现与优化 | 高 |
+| 方法流程 | 闭环 beamline 材料发现 | publisher PDF | 系统在 synchrotron beamline 上实时执行 phase mapping 与 property optimization | 高 |
+| 实验验证 | 真实实验平台 | publisher PDF | 部署在真实 beamline 环境中，而非纯仿真或纯 benchmark | 高 |
+| 边界判断 | 保持 `04` | publisher PDF | 论文核心是材料探索与优化，不是通用实验编排平台 | 高 |
 
 ## 0. 摘要翻译
 
@@ -73,7 +73,7 @@
 - 可能误归类到：01.04
 - 最终判定：保留 04.04
 - 判定理由：论文虽有平台与基础设施色彩，但验证与科学贡献都锚定在具体材料对象
-- 是否需要二次复核：是，主要是 autonomy 细节的全文补强
+- 是否需要二次复核：否；当前复核结论稳定维持 `04`
 
 ## 3. Agent 系统与科研流程角色
 
@@ -155,7 +155,7 @@
 - 记忆或状态模块：active-learning state
 - 规划器：Bayesian active learning
 - 评估器 / verifier：real-time phase mapping and property measurements
-- 人类反馈或专家介入：摘要未展开
+- 人类反馈或专家介入：publisher PDF 未将人类反馈写成系统主轴；核心是 active-learning 闭环与 beamline 执行
 - 实验平台或仿真环境：synchrotron beamline
 
 ## 5. 实验与验证
@@ -175,11 +175,11 @@
 
 - 数据集 / 实验对象：functional inorganic compounds / phase-change materials
 - 任务设置：real-time phase mapping 与 property optimization
-- 对比基线：摘要未展开
+- 对比基线：publisher PDF 已支持核心材料发现结论；当前笔记未单列完整 baseline 表
 - 评价指标：materials exploration efficiency 与优化结果
 - 关键结果：在真实 beamline 上完成闭环材料发现
-- 是否有消融实验：摘要未展开
-- 是否有失败案例或负结果：摘要未展开
+- 是否有消融实验：publisher PDF 未作为当前笔记重点摘录
+- 是否有失败案例或负结果：publisher PDF 未作为当前笔记重点摘录
 
 ### 5.3 科学贡献
 
@@ -198,8 +198,8 @@
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：全文仍需确认人工介入比例
-- 科学验证不足：摘要未展开更广材料族泛化
+- Agent 自主性不足：当前不构成主要分类风险；系统核心是已在真实 beamline 中运行的闭环材料发现
+- 科学验证不足：当前不构成主要问题；论文在真实实验设施中完成材料探索与优化
 - 泛化性不足：大型设施场景的迁移性待确认
 - 工具链依赖：高度依赖 beamline 设施
 - 数据泄漏或 benchmark 偏差：非主要风险
@@ -212,7 +212,7 @@
 - 可用于哪个表格或图：materials SDL / beamline systems 对比表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：core
-- 需要在正文中特别引用的页码 / 图 / 表：当前以官方摘要为主
+- 需要在正文中特别引用的页码 / 图 / 表：优先回查 publisher PDF 中的闭环流程图、beamline 执行与 phase-change materials 结果部分
 - 需要与哪些论文并列比较：AlphaFlow、MAOSIC、Otto/Clio/Ada 等
 
 ## 9. 总结

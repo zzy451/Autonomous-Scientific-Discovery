@@ -6,9 +6,9 @@
 - 年份：2019
 - 来源 / venue：Science
 - DOI / arXiv / URL：https://doi.org/10.1126/science.aax1566
-- PDF / 本地文件路径：暂无本地 PDF；本 note 基于官方摘要与元数据
+- PDF / 本地文件路径：本轮未归档本地 PDF；当前依据 Crossref / Science publisher abstract 一手来源，Science PDF 端点在本环境返回 `403`，因此此条目仍按 source-limited 记录
 - 论文类型：研究论文 / 经典机器人化学平台
-- 当前状态：to_read / confirmed core
+- 当前状态：to_read / confirmed core / source-limited
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -20,7 +20,7 @@
 | 方法流程 | 是 | 摘要 | 连续流合成平台可由 robotic arm 重构并执行合成 | 高 |
 | 科学对象归类 | `03` 化学科学 | 摘要 | 直接对象是 complex organic molecules / organic compound synthesis | 高 |
 | 实验验证 | 强 | 摘要 | 展示 15 个 drug or drug-like substances 的合成 | 高 |
-| 边界判断 | 不转 `09` | 对象证据 | 虽具机器人平台，但最终科学对象是 organic synthesis | 高 |
+| 来源强度 | source-limited 但足以稳定保留 `03` | Crossref / Science publisher abstract | 当前尚无本地 PDF，且 Science PDF 端点 `403`；现阶段证据限制来自全文可达性，不是主类边界不稳 | 高 |
 
 ## 0. 摘要翻译
 
@@ -73,7 +73,7 @@
 - 可能误归类到：09
 - 最终判定：保留 03
 - 判定理由：平台服务的是 organic synthesis，而非通用制造工程
-- 是否需要二次复核：否
+- 是否需要二次复核：需要补全文，但不是为了改主类
 
 ## 3. Agent 系统与科研流程角色
 

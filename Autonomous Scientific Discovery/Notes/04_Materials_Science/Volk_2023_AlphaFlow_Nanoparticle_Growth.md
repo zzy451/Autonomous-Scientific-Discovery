@@ -6,7 +6,7 @@
 - 年份：2023
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-023-37139-y
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：Reference_PDF/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.pdf（本轮已确认 open-access publisher PDF）
 - 论文类型：研究论文 / nanoparticle-growth self-driving laboratory
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,10 +16,10 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | `AlphaFlow` 是 RL 引导的 self-driven fluidic lab，可执行 variable sequence、phase separation、washing 与 in-situ spectral monitoring | 高 |
+| Agent 纳入 | 是 | Nature Communications PDF / full text | `AlphaFlow` 是 RL 引导的 self-driven fluidic lab，可执行 variable sequence、phase separation、washing 与 in-situ spectral monitoring | 高 |
 | 科学对象归类 | `03;04` | Nature Communications full text / DOI page | 论文同时报告 multi-step synthetic route / reaction-sequence optimization 与 core-shell semiconductor nanoparticle shell-growth 材料对象 | 高 |
-| 方法流程 | 多步流体实验闭环 | official abstract | 系统整合 reinforcement learning 与 modular microdroplet reactor，围绕多步实验流程做自主发现与优化 | 高 |
-| 实验验证 | 闭环微流控材料合成 | official abstract | 找到优于 conventional sequences 的 novel multi-step reaction route | 高 |
+| 方法流程 | 多步流体实验闭环 | Nature Communications PDF / full text | 系统整合 reinforcement learning 与 modular microdroplet reactor，围绕多步实验流程做自主发现与优化 | 高 |
+| 实验验证 | 闭环微流控材料合成 | Nature Communications PDF / full text | 找到优于 conventional sequences 的 novel multi-step reaction route | 高 |
 | 边界判断 | `03 + 04`，primary filing `04` | Nature Communications full text / DOI page | 旧口径按核心对象优先只保留 `04`；relaxed 口径下，多步合成路线 / reaction sequence 证据支持同时记录 `03` | 高 |
 
 ## 0. 摘要翻译
@@ -217,7 +217,7 @@
 - 可用于哪个表格或图：`03 / 04` 边界案例表；材料 SDL 对比表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：core
-- 需要在正文中特别引用的页码 / 图 / 表：当前以官方摘要为主
+- 需要在正文中特别引用的页码 / 图 / 表：如需引页可回看本地 PDF
 - 需要与哪些论文并列比较：ASD-0389、ASD-0410、ASD-0417、ASD-0503
 
 ## 9. 总结

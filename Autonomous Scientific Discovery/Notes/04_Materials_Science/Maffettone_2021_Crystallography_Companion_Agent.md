@@ -6,7 +6,7 @@
 - 年份：2021
 - 来源 / venue：Nature Computational Science
 - DOI / arXiv / URL：https://doi.org/10.1038/s43588-021-00059-2 ; https://arxiv.org/abs/2008.00283
-- PDF / 本地文件路径：本轮依据 DOI 页面与 arXiv 全文证据包
+- PDF / 本地文件路径：Reference_PDF/04_Materials_Science/Maffettone_2021_Crystallography_Companion_Agent.pdf（已与本地归档同步；本轮直接核对 arXiv 全文与 DOI 页面）
 - 论文类型：系统论文 / 材料表征分析代理
 - 当前状态：已读 / confirmed core 暂留，但有明显 core-strength 风险
 - 阅读日期：2026-06-19
@@ -19,7 +19,7 @@
 | Agent 纳入 | 是 | arXiv full text | companion agent 用于实时 XRD 判相与材料发现支持 | 高 |
 | 科学对象归类 | `04` | arXiv full text | 案例围绕 BaTiO3, ADTA, Ni-Co-Al 等材料体系 | 高 |
 | 方法流程 | 多步分析代理 | arXiv full text | 构建合成数据、训练模型、实时分析 XRD、输出相图 | 高 |
-| 实验验证 | 材料表征场景 | arXiv / DOI page | 高通量材料发现中的晶相识别与相图解析 | 高 |
+| 实验验证 | 材料表征场景 | arXiv full text / DOI landing page | 高通量材料发现中的晶相识别与相图解析 | 高 |
 | 边界判断 | `04` 稳，`01.04` 压力次之 | arXiv full text | 不是通用 workflow substrate，而是材料表征 companion layer | 高 |
 
 ## 0. 摘要翻译
@@ -73,7 +73,7 @@
 - 可能误归类到：01.04
 - 最终判定：04
 - 判定理由：它不是领域无关科学工作流平台，而是具体材料表征解释代理
-- 是否需要二次复核：暂不需要；若后续收紧 confirmed core，可只复核强度
+- 是否需要二次复核：否；当前复核结论稳定维持 `04`
 
 ## 3. Agent 系统与科研流程角色
 
@@ -178,7 +178,7 @@
 - 对比基线：论文未在当前证据包中完全展开
 - 评价指标：判相与解释表现
 - 关键结果：可支持高通量材料发现中的实时分析
-- 是否有消融实验：待补全文细节
+- 是否有消融实验：全文可回查；当前笔记未单独摘录
 - 是否有失败案例或负结果：未在当前摘要中突出
 
 ### 5.3 科学贡献
@@ -202,7 +202,7 @@
 - 科学验证不足：不是强闭环发现系统
 - 泛化性不足：强依赖特定表征与材料场景
 - 工具链依赖：依赖 XRD 分析栈
-- 数据泄漏或 benchmark 偏差：需全文细看
+- 数据泄漏或 benchmark 偏差：当前未见成为主要风险；如正文写作需要可回查全文细节
 - 成本、可复现性或安全风险：主要风险是 confirmed-core 强度偏弱
 
 ## 8. 对综述写作的价值

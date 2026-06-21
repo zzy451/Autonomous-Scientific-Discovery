@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：Nature Chemical Engineering
 - DOI / arXiv / URL：https://doi.org/10.1038/s44286-024-00033-5
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮核对 publisher preview 与 DOI metadata；全文在此环境不可得，未归档本地 PDF
 - 论文类型：研究论文 / catalysis self-driving laboratory
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | `Fast-Cat` 是 self-driving catalysis laboratory，可 autonomous experiment selection、autonomous ligand benchmarking 与 multi-objective evaluation | 高 |
-| 科学对象归类 | `03.03` | official abstract | 直接对象是 rhodium-catalyzed hydroformylation 与 phosphorus-based ligands | 高 |
-| 方法流程 | 自主参数空间导航 | official abstract | 系统用于高温高压气液反应的 autonomous parameter-space navigation 与 Pareto-front mapping | 高 |
-| 实验验证 | 真实流动反应平台 | official abstract | 在 syngas / 1-octene hydroformylation 中实现 ligand benchmarking | 高 |
-| 边界判断 | 保持 `03` | official abstract | 重点仍是催化反应与配体条件优化，不是材料性能发现 | 高 |
+| Agent 纳入 | 是 | publisher preview / DOI metadata | `Fast-Cat` 是 self-driving catalysis laboratory，可 autonomous experiment selection、autonomous ligand benchmarking 与 multi-objective evaluation | 高 |
+| 科学对象归类 | `03.03` | publisher preview / DOI metadata | 直接对象是 rhodium-catalyzed hydroformylation 与 phosphorus-based ligands | 高 |
+| 方法流程 | 自主参数空间导航 | publisher preview / DOI metadata | 系统用于高温高压气液反应的 autonomous parameter-space navigation 与 Pareto-front mapping | 高 |
+| 实验验证 | 真实流动反应平台 | publisher preview / DOI metadata | 在 syngas / 1-octene hydroformylation 中实现 ligand benchmarking | 高 |
+| 边界判断 | 保持 `03` | publisher preview / DOI metadata | 重点仍是催化反应与配体条件优化，不是材料性能发现 | 高 |
 
 ## 0. 摘要翻译
 
@@ -73,7 +73,7 @@
 - 可能误归类到：04
 - 最终判定：保留 03.03
 - 判定理由：核心是配体 benchmarking 与反应条件优化，而不是材料性能本体
-- 是否需要二次复核：否
+- 是否需要二次复核：否；当前 `03` 判定稳定，但本 note 仍属 source-limited 记录
 
 ## 3. Agent 系统与科研流程角色
 
@@ -212,7 +212,7 @@
 - 可用于哪个表格或图：化学 SDL 对比表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：core
-- 需要在正文中特别引用的页码 / 图 / 表：当前以官方摘要为主
+- 需要在正文中特别引用的页码 / 图 / 表：当前以 publisher preview / metadata 为主
 - 需要与哪些论文并列比较：Chemist-X、LLM-RDF、AlphaFlow
 
 ## 9. 总结

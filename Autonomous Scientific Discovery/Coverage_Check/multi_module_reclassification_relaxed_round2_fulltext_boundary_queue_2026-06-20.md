@@ -345,6 +345,29 @@ These records are less about module expansion and more about whether the confirm
 | `ASD-0389` | keep `04` | Stable materials classification is clear, but publisher full text remained access-limited in this environment. |
 | `ASD-0410` | keep `04` | Stable materials-discovery classification is clear, but publisher full text remained access-limited in this environment. |
 
+## CarryForward16 Status Update
+
+Report: `Coverage_Check/multi_module_note_pdf_full_reaudit_carryforward_unresolved16_2026-06-22.md`.
+
+| ID | Status after CarryForward16 | Action |
+|---|---|---|
+| `ASD-0052` | still open | SSRN official abstract confirms stable `09`, but DOI route was partially safety-blocked and SSRN PDF remained `403`; keep this source-limited engineering row conservative for now |
+| `ASD-0054` | still open | explicit `not accessed due to safety`; keep prior working `07;06` judgment conservative and visible, without unsafe re-access |
+| `ASD-0097` | still open | official Nature Methods preview increases `06;07` pressure, but keep the proposed medical-side expansion conservative until stronger first-hand support is landed |
+| `ASD-0112` | still open | official abstract / highlights increase `07;03` pressure, but keep the chemistry-side expansion conservative until stronger full-text support is landed |
+| `ASD-0139` | closed | reviewed arXiv full text and migrated out of the independent `01.04` bucket; accepted `scientific_object_modules=02` and archived local PDF |
+| `ASD-0141` | still open | DOI / Crossref abstract increases `06;07` pressure, but keep the proposed medical-side expansion conservative until stronger full-text support is landed |
+| `ASD-0145` | closed | reviewed official OpenReview / arXiv PDFs, archived local PDF, and kept the record in the independent `01.04` bucket rather than `11.07` |
+| `ASD-0158` | closed | stable `03` chemistry classification is accepted; no local PDF was archived because the Science PDF endpoint returned `403`, so the record closes as source-limited but classification-stable |
+| `ASD-0357` | closed | Crossref abstract plus official homepage metadata keep stable `07`; no local PDF was archived because the bioRxiv PDF endpoint returned `403`, so the record closes as source-limited but classification-stable |
+| `ASD-0370` | closed | Crossref / Nature metadata keep stable `06`; no local PDF was archived because Nature full text remained blocked in this environment, so the record closes as source-limited but classification-stable |
+| `ASD-0379` | closed | reviewed open-access publisher PDF, archived local PDF, and kept stable `scientific_object_modules=04` |
+| `ASD-0381` | closed | publisher preview / DOI metadata keep stable `03`; no local PDF was archived because full text remained unavailable in this environment, so the record closes as source-limited but classification-stable |
+| `ASD-0385` | closed | reviewed open-access publisher PDF, archived local PDF, and accepted the already-suspected `scientific_object_modules=03;04` multi-module landing |
+| `ASD-0388` | closed | reviewed arXiv full text, archived local PDF, and kept stable `scientific_object_modules=04`; residual risk is confirmed-core strength, not module identity |
+| `ASD-0389` | closed | reviewed open-access publisher PDF, archived local PDF, and kept stable `scientific_object_modules=04` |
+| `ASD-0410` | closed | reviewed open-access publisher PDF, archived local PDF, and kept stable `scientific_object_modules=04` |
+
 ## 5. Background-Only Watchlist
 
 These records should not enter confirmed overlay counts unless a future status review promotes them.

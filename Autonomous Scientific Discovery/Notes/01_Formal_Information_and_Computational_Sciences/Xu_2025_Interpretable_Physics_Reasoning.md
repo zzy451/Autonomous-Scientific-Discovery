@@ -6,25 +6,25 @@
 - 年份：2025
 - 来源 / venue：arXiv / ICML 2025 Workshop on MAS
 - DOI / arXiv / URL：https://arxiv.org/abs/2504.01911
-- PDF / 本地文件路径：本轮使用 arXiv 摘要页一手证据；未保存本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xu_2025_Interpretable_Physics_Reasoning.pdf`
 - 论文类型：系统论文
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv abstract | 明确提出 multi-agent LLM physicist framework，含 reasoning、interpretation、AI-scientist interaction 三模块 | 高 |
-| 方法流程 | 多个专门代理协作 | arXiv abstract | interpretation module 由 summarizers、model builders、visualization tools、testers 等专门代理组成 | 高 |
-| 科学对象归类 | `01.04` 更稳 | arXiv abstract | 论文核心是可解释 physics reasoning framework，而不是具体物理对象、方程或实验体系 | 高 |
-| 不保留 `02` | 是 | arXiv abstract | 摘要只说 physics research / problem-solving and discovery 的框架性改进，没有具体 physics object anchor | 中高 |
-| 验证方式 | case study | arXiv abstract | 仅写有一个 case study，证明 interpretability、validation 与 human-AI collaboration 改善 | 中 |
+| Agent 纳入 | 是 | Abstract；Section 3 | 明确提出 multi-agent LLM physicist framework，含 reasoning、interpretation、AI-scientist interaction 三模块，并由专门代理协作完成结构化解释与验证 | 高 |
+| 方法流程 | 多个专门代理协作 | Section 3.1-3.3；Figure 1 | interpretation module 由 summarizer、model builder、visualization builder、auxiliary tester 等组成，把 physics reasoning 转成可执行 science model | 高 |
+| 科学对象归类 | `02` | Section 4；Table 1-2；Appendix A-C | 全文不只停留在 general framework，而是对 SciBench 物理题与案例做具体解释、建模与校验，覆盖 mechanics、electrodynamics，以及来自 Statistical Thermodynamics / Classical Dynamics of Particles and Systems 的教材题 | 中高 |
+| 不再保留 `01.04` | 是 | Section 4；Appendix B-C | 当前可获得全文已经给出具体 physics benchmark / case coverage；这不再属于“无具体科学对象实验”的通用科研 Agent 存放区 | 中高 |
+| 验证方式 | benchmark + case study | Section 4；Table 1-2；Appendix A-C | 通过 SciBench 题目、mechanics potato-gun case、electrodynamic shell demo、application problem 与 tester consistency 检查验证解释模块 | 中高 |
 
 ## 0. 摘要翻译
 
-大语言模型正在物理学研究中承担越来越多的角色，例如符号操作、数值计算和科学推理。但其输出的可靠性、透明性与可解释性仍是关键难题。作者提出一个多代理 LLM physicist 框架，通过 reasoning module、interpretation module 和 AI-scientist interaction module 三部分来组织 AI 与人类科学家的协作。论文尤其强调 interpretation module，它由多个专门代理组成，包括总结器、模型构建器、可视化工具和测试器，用于把自由形式的 LLM 输出结构化为更透明、可验证、并与物理理论对齐的 science model。一个案例研究表明，这种方式可以提升可解释性和验证能力，并改进 physics problem-solving 与 discovery 中的人机协作。
+大语言模型正在物理学研究中承担越来越多的角色，例如符号操作、数值计算和科学推理，但其输出的可靠性、透明性与可解释性仍是关键难题。作者提出一个多代理 LLM physicist 框架，通过 reasoning module、interpretation module 和 AI-scientist interaction module 组织 AI 与人类科学家的协作。论文尤其强调 interpretation module：它由 summarizer、model builder、visualization builder 和 tester 等专门代理组成，用于把自由形式的 LLM 输出结构化为更透明、可验证、并与物理理论对齐的 science model。全文还给出 SciBench 题目与多个物理案例，展示该流程如何帮助人类识别推理漏洞、校验理论一致性，并改进 physics problem-solving 中的人机协作。
 
 ## 1. 是否纳入本综述
 
@@ -54,26 +54,26 @@
 
 ### 2.1 主科学领域
 
-- 一级类：01
-- 二级类：01.04
-- 三级类：interpretable scientific reasoning
-- 四级专题：General scientific research-agent systems
+- 一级类：02
+- 二级类：02.02
+- 三级类：physics problem solving and validation
+- 四级专题：Interpretable AI-assisted physics reasoning
 - 四级专题是否为新增：否
-- 归类理由：虽然外层场景是 physics reasoning，但论文主贡献是一个可解释 scientific reasoning framework，而不是具体物理研究对象
-- 归类置信度：中高
+- 归类理由：虽然论文有明显的平台与方法外观，但当前可访问全文已经给出具体物理 benchmark / case coverage，而不是停留在无对象实验的通用 scientific reasoning framework。note 当前仍位于 `01` 目录，仅是历史落盘位置；当前分类事实以 `02` 为准。
+- 归类置信度：中
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：AI-assisted scientific reasoning / interpretability workflow
-- 最终科学问题：如何让面向物理学的 LLM scientific reasoning 更透明、可验证
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：论文的核心并不落在具体 physics object，而落在通用科研推理与解释框架
+- 最终科学研究对象：物理问题求解、物理模型解释与物理规律一致性验证
+- 最终科学问题：如何让面向物理学的 LLM reasoning 在 mechanics、electrodynamics 和教材级 physics benchmark 中更透明、可验证
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：多代理解释框架是实现路径，但论文实际验证对象已经是具体 physics problems、physics models 与 physics consistency checks
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：02
-- 最终判定：转入 01.04
-- 判定理由：physics 只定义应用语境，不足以单独构成主科学对象；当前证据没有给出稳定的粒子、天体、材料或具体物理规律对象
-- 是否需要二次复核：是
+- 可能误归类到：01.04
+- 最终判定：保留在 `02`
+- 判定理由：旧的 `01.04` 说法依赖摘要级印象，已被全文证据推翻。论文不仅讨论“面向物理学的通用推理”，而且确实对 mechanics、electrodynamics、statistical thermodynamics、classical dynamics 等物理对象题目做了可识别的 benchmark / case 演示与验证。
+- 是否需要二次复核：否，当前主要风险已不是主类误判，而是代表性强度仍偏方法型
 
 ## 3. Agent 系统与科研流程角色
 
@@ -162,64 +162,64 @@
 
 ### 5.1 验证方式
 
-- benchmark：未明确
+- benchmark：是
 - 仿真验证：否
 - 高通量计算：否
 - 机器人实验：否
 - 湿实验：否
 - 临床数据：否
 - 真实场景部署：否
-- 专家评估：人机协作场景
+- 专家评估：是，人机协作解释与校验场景
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：一个 case study
-- 任务设置：physics problem-solving and discovery
+- 数据集 / 实验对象：SciBench 物理题子集；mechanics potato-gun case；electrodynamic shell demo；application problem
+- 任务设置：physics problem-solving、science-model construction、consistency testing、human-AI validation
 - 对比基线：摘要未展开
-- 评价指标：interpretability、systematic validation、human-AI collaboration
-- 关键结果：在个案中提升透明性与验证性
+- 评价指标：interpretability、systematic validation、numerical / theoretical consistency、human-AI collaboration
+- 关键结果：解释模块能够把原始 LLM reasoning 转成可执行 physics model，并通过 tester 与交互式检查帮助发现错误或确认一致性
 - 是否有消融实验：摘要未展开
 - 是否有失败案例或负结果：摘要未展开
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主要是框架贡献
-- 科学贡献是否经过验证：有个案验证
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主要是物理推理解释与验证框架贡献，不是新的物理发现
+- 科学贡献是否经过验证：是，但验证形态主要是 physics benchmark / case study
 - 贡献强度判断：中
 - 科学贡献类型：system_platform
-- 证据强度：simulation_supported
+- 证据强度：benchmark_only
 
 ## 6. 与已有工作的关系
 
 - 与普通 AI for Science 方法的区别：强调多代理解释与可验证结构，而非一次性回答
 - 与已有 Agent / 科研智能系统的区别：比一般通用 agent 更强调 scientific interpretability
-- 与同一科学领域其他 Agent 文献的关系：可作为 `02 / 01.04` 边界样本转入 `01.04`
+- 与同一科学领域其他 Agent 文献的关系：可作为“平台感很强但因具体物理 benchmark / case coverage 仍应归入 `02`”的边界样本
 - 主要创新点：interpretation module
 
 ## 7. 局限性与风险
 
 - Agent 自主性不足：仍高度依赖人机协作
-- 科学验证不足：只有 case study
+- 科学验证不足：虽然已有多个 benchmark / case，但仍偏教材题与方法验证，不是高强度物理发现型证据
 - 泛化性不足：物理场景之外的稳定性未知
 - 工具链依赖：依赖 specialized interpretation agents
-- 数据泄漏或 benchmark 偏差：待全文复核
+- 数据泄漏或 benchmark 偏差：仍需注意 SciBench 与教材题上的方法偏置
 - 成本、可复现性或安全风险：未展开
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：01.04
-- 可支撑哪个论点：physics framing 本身不足以让 general reasoning framework 稳定落入 `02`
-- 可用于哪个表格或图：`01.04 / 02` 边界表
+- 可放入哪个章节：02 物理学、天文学与宇宙科学
+- 可支撑哪个论点：只要对具体 physics benchmark / case 做了可识别验证，即使系统方法味道很强，也不能继续留在 `01.04`
+- 可用于哪个表格或图：`02 / 01.04` 边界表
 - 适合作为代表性案例吗：适合作为边界案例
 - 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：当前仅有 arXiv 摘要
+- 需要在正文中特别引用的页码 / 图 / 表：Figure 1；Section 4；Table 1-2；Appendix B-C
 - 需要与哪些论文并列比较：MAPS、Agent Laboratory、AI Cosmologist
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-把 physics reasoning 输出结构化为可解释 science model 的多代理框架。
+把物理题求解输出结构化为可解释、可校验 physics model 的多代理框架。
 
 ### 9.2 速记版 pipeline
 
@@ -233,18 +233,18 @@
 
 ```text
 是否纳入：to_read
-主类：01
-二级类：01.04
-三级类：interpretable scientific reasoning
-四级专题：General scientific research-agent systems
+主类：02
+二级类：02.02
+三级类：physics problem solving and validation
+四级专题：Interpretable AI-assisted physics reasoning
 Agent 类型：LLM Agent; Tool-using Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：knowledge_extraction_and_organization; hypothesis_generation; tool_use_and_code_execution; result_interpretation; evidence_assessment_and_validation
 自主能力：planning; tool_use; feedback_iteration; multi_agent_collaboration
-验证方式：case_study
+验证方式：benchmark; case_study; expert_evaluation
 交叉属性：computation_driven; multimodal
 科学贡献类型：system_platform
-证据强度：simulation_supported
-归类置信度：中高
+证据强度：benchmark_only
+归类置信度：中
 纳入置信度：高
 推荐引用强度：standard
 ```

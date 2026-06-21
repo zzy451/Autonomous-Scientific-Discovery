@@ -6,9 +6,9 @@
 - 年份：2025
 - 来源 / venue：bioRxiv
 - DOI / arXiv / URL：https://www.biorxiv.org/content/10.1101/2025.06.03.657658v1 ; https://gentel-lab.github.io/OriGene-Homepage/
-- PDF / 本地文件路径：本轮依据官方主页与 bioRxiv PDF 链接信息
+- PDF / 本地文件路径：本轮未归档本地 PDF；当前依据 Crossref abstract 与官方主页元数据 / case summary，一手 bioRxiv PDF 端点在本环境返回 `403`，因此此条目仍按 source-limited 记录
 - 论文类型：系统论文 / 疾病机制与治疗靶点发现
-- 当前状态：已读 / confirmed core 复核后继续保留 `07`
+- 当前状态：已读 / confirmed core；复核后继续保留 `07`；当前 source-limited
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -20,7 +20,7 @@
 | 科学对象归类 | `07` | Homepage abstract | therapeutic target discovery, disease mechanism inference | 高 |
 | 方法流程 | 多 Agent / 多证据整合 | Homepage description | 融合 disease ontologies, literature, networks, multi-omics | 高 |
 | 实验验证 | 疾病案例与下游验证 | Homepage case studies | HCC, CRC, organoid, tumor fragments, humanized mouse model | 高 |
-| 边界判断 | `07 > 06` | Homepage abstract / cases | biological evidence 是支撑层，最终对象是疾病导向靶点发现 | 高 |
+| 来源强度 | source-limited 但分类稳定 | Crossref abstract；official homepage metadata | 当前可确认一手来源是摘要级与官方主页级证据；bioRxiv PDF `403` 是主要限制，但不动摇 `07` 判断 | 高 |
 
 ## 0. 摘要翻译
 

@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：ICLR 2025
 - DOI / arXiv / URL：https://openreview.net/forum?id=bjcsVLoHYs；https://arxiv.org/abs/2411.00816
-- PDF / 本地文件路径：OpenReview / arXiv PDF
+- PDF / 本地文件路径：`Reference_PDF/01_04_General_Method_Bucket/Weng_2025_CycleResearcher.pdf`；本轮已核对 official OpenReview / arXiv PDF，无安全访问阻断
 - 论文类型：系统论文 / 通用科研 Agent
 - 当前状态：已读；主列表当前仍记为 `to_read`
 - 阅读日期：2026-06-18
