@@ -6,23 +6,48 @@
 - 年份：2024
 - 来源 / venue：Digital Discovery
 - DOI / arXiv / URL：https://doi.org/10.1039/D4DD00013G；https://arxiv.org/abs/2402.04268；https://pmc.ncbi.nlm.nih.gov/articles/PMC11235180/
-- PDF / 本地文件路径：arXiv PDF 下载损坏；改读 PMC HTML 全文
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.pdf`
 - 论文类型：系统论文 / 蛋白质设计多 Agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15
 - 笔记作者：Codex
 
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.pdf`
+- PDF-path override: this archived project PDF now supersedes the older damaged-download / temporary-access wording previously used in the note.
+- Current-turn source refresh: the writeback follows the reviewed source trail `https://arxiv.org/abs/2402.04268`, `https://doi.org/10.1039/D4DD00013G`, plus the PMC HTML full text already reflected in the note.
+- Current authoritative classification: `scientific_object_modules=04;06`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`; `classification_evidence_source_level=source_limited`.
+- Authoritative note: if older body text below still reads like a pure single-module `06` note, treat that as legacy wording superseded by the current `04;06` override.
+
 ## Evidence Log
 
-Evidence level: full-text (PMC HTML full text + Crossref/Semantic Scholar metadata; downloaded arXiv PDF was damaged and not used for extraction).
+**2026-06-21 archive note**: project archived PDF path recorded under `Reference_PDF/`; current reaudit retains protein-science coverage and adds explicit materials-style object coverage for targeted mechanical-property design, so the authoritative classification is now `04;06`.
+
+Evidence level: source-limited first-hand mix (project archived PDF path + arXiv / DOI / PMC HTML evidence aligned during the current reaudit writeback).
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是，多 Agent 蛋白质设计平台 | PMC Abstract；Introduction；Sec. 2 | 多个 AI agents 在动态环境中协作，负责知识检索、结构分析、物理模拟和结果分析 | 高 |
 | 科学对象归类 | `06` 生命科学，蛋白质设计 / 蛋白质结构与性质 | PMC Abstract；Sec. 2.2-2.3 | 任务包括 de novo protein design、蛋白结构分析、自然振动频率和机械性质 | 中-高 |
+| 当前权威分类 | `04;06` 多模块；primary filing `06` | 2026-06-21 reaudit writeback | 当前复核将蛋白质科学覆盖保留在 `06`，并把 targeted mechanical-property / protein-materials-style objectives 记为附加 `04` 对象覆盖 | 中 |
 | 方法流程 | LLM agents + physics simulators + generative protein models | PMC Sec. 1-2；Fig. 1-6 | Agent 调用 Chroma、OmegaFold、ForceGPT、物理模拟和 CSV 保存工具 | 高 |
 | 实验验证 | 计算实验与物理/ML 模型验证 | PMC Sec. 2.1-2.3；Tables 2-4 | 生成蛋白并计算结构、二级结构、自然频率、力学指标 | 高 |
 | 科学贡献 | 蛋白质发现/设计的多 Agent 原型 | PMC Abstract；Discussion | 自动化协同设计具有目标力学性质的 de novo proteins | 中 |
+
+## 2026-06-21 relaxed multi-module override
+
+This top block supersedes the older single-module `06` wording that remains in parts of the legacy body below.
+
+```text
+scientific_object_modules: 04;06
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 06
+classification_evidence_source_level: source_limited
+note_revision_required: yes
+```
 
 ## 0. 摘要翻译
 

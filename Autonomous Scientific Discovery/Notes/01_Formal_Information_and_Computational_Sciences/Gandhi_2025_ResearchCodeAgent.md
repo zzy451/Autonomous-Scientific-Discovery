@@ -1,12 +1,20 @@
 # Gandhi et al. 2025 - ResearchCodeAgent
 
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.pdf`
+- Current source refresh: local archived PDF; arXiv `https://arxiv.org/abs/2504.20117`
+- Current authoritative classification: `scientific_object_modules=01`; `general_method_bucket=none`; `primary_module_for_filing=01`; `source_limited=yes`
+- Override note: this paper should no longer be treated as a pure `01.04` general-method record. Under the current relaxed rule, its benchmarked computational / methodological codification tasks count as concrete formal-computational object coverage in `01`.
+- Authoritative note: if older body text below still reads like a pure `01.04` placement, treat that as legacy wording superseded by this `01` override.
+
 **论文信息**
 - 标题：ResearchCodeAgent: An LLM Multi-Agent System for Automated Codification of Research Methodologies
 - 作者：Gandhi et al.
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2504.20117
-- PDF / 本地文件路径：临时读取 `ASD-0089_ResearchCodeAgent.pdf`；未写入项目 Reference_PDF
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.pdf`
 - 论文类型：系统论文 / 科研方法编码 Agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15
@@ -15,6 +23,8 @@
 ## Evidence Log
 
 Evidence level: full-text (arXiv PDF full text).
+
+**2026-06-21 archive note**: archived project PDF confirmed at `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.pdf`; current relaxed-rule filing is `01`, not pure `01.04`, because the validated objects are concrete computational / research-method codification benchmark tasks.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

@@ -6,15 +6,41 @@
 - 年份：2025
 - 来源 / venue：Proceedings of the National Academy of Sciences
 - DOI / URL：https://doi.org/10.1073/pnas.2414074122
-- 当前状态：candidate；core priority；full-text evidence pending
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.pdf`
+- 当前状态：已读 / 已纳入；2026-06-21 source-limited writeback completed
+
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.pdf`
+- Current-turn source refresh: the project archive now contains a local PDF, and this writeback follows the reviewed source trail `https://doi.org/10.1073/pnas.2414074122` plus the accessible preprint lineage `https://arxiv.org/abs/2407.10022`.
+- Current authoritative classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`; `classification_evidence_source_level=source_limited`.
+- Current reaudit status: included; source-limited note writeback completed on `2026-06-21`.
 
 ## Evidence Log
+
+**2026-06-21 archive note**: local archived PDF path recorded under project `Reference_PDF/`; current reaudit keeps this paper in `04` because the reviewed evidence remains anchored in alloy / material-property discovery, while still marking the note as `source_limited`.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | PNAS / GitHub metadata | physics-aware multimodal multiagent AI | 高 |
 | 科学对象归类 | `04` 材料科学 | PNAS title | alloy design and discovery | 高 |
 | 方法机制 | 多模态 + 物理感知 + 多 Agent | PNAS title / project metadata | physics-aware multimodal multiagent AI | 高 |
+| 当前权威分类 | `04`；已落地但仍为 `source_limited` | 2026-06-21 reaudit writeback | 当前证据仍将论文稳定锚定在 alloy / material-property discovery，而不是通用 scientific-agent workflow 或更激进的多模块扩张 | 中 |
+| 归档与后续 | 本地 PDF 已归档；仍需后续更完整全文复核 | 2026-06-21 archive sync | canonical `Reference_PDF/` path 已补入 note，但本条写回仍保留 source-limited 标记，避免把当前证据强度写得过满 | 中 |
+
+## 2026-06-21 relaxed classification override
+
+This top block is the current authoritative override for filing and downstream classification. Older sparse wording below may still reflect an earlier pre-reaudit draft.
+
+```text
+scientific_object_modules: 04
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+classification_evidence_source_level: source_limited
+note_revision_required: yes
+```
 
 ## 1. 是否纳入本综述
 

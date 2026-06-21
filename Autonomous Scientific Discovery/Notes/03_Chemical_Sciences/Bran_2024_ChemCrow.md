@@ -1,14 +1,27 @@
 # Bran et al. 2024 - Augmenting Large Language Models with Chemistry Tools
 
+## 2026-06-21 archive sync
+
+- Canonical archived PDF: `Reference_PDF/03_Chemical_Sciences/Bran_2024_ChemCrow.pdf`
+- Source refresh used in current reaudit: DOI `https://doi.org/10.1038/s42256-024-00832-8`; preprint lineage `https://arxiv.org/abs/2304.05376`
+- Current authoritative classification override: `scientific_object_modules = 03;04;07`
+- `primary_module_for_filing = 03`
+- Source-limited caution: the `04` and especially `07` add-ons should be read as current relaxed-rule coverage updates from checked source material, not as a claim that every contribution is equally centered on materials or drug-discovery science.
+- Canonical PDF path for current project use: `Reference_PDF/03_Chemical_Sciences/Bran_2024_ChemCrow.pdf`
+- Current reaudit status: included; archived-PDF writeback completed on `2026-06-21`.
+- Authoritative note: older sparse body text below should not be read as a single-module-only conclusion. The current note-level classification fact is `03;04;07`.
+
 **论文信息**
 - 标题：Augmenting large language models with chemistry tools
 - 作者：Andres M. Bran, Sam Cox, Oliver Schilter, Carlo Baldassari, Andrew D. White, Philippe Schwaller
 - 年份：2024
 - 来源 / venue：Nature Machine Intelligence
 - DOI / URL：https://doi.org/10.1038/s42256-024-00832-8
-- 当前状态：candidate；core priority；full-text evidence pending
+- 当前状态：已读 / 已纳入；2026-06-21 archived-PDF writeback completed
 
 ## Evidence Log
+
+**2026-06-21 archive note**: Project-archived PDF is now available at `Reference_PDF/03_Chemical_Sciences/Bran_2024_ChemCrow.pdf`. Current reaudit treats this note as `03;04;07` under the relaxed object-coverage rule: chemistry remains the filing anchor, materials-design coverage is supported, and drug-discovery coverage is included with explicit source-limited caution.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

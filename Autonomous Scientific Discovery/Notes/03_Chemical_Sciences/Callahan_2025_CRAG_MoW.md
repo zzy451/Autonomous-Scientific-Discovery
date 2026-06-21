@@ -1,18 +1,29 @@
 # Callahan et al. 2025 - Agentic Mixture-of-Workflows for Multi-Modal Chemical Search
 
+## 2026-06-21 archive sync
+
+- Canonical archived PDF: `Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf`
+- Source refresh used in current reaudit: arXiv full text `https://arxiv.org/abs/2502.19629`
+- Current authoritative classification override: `scientific_object_modules = 03;04`
+- `primary_module_for_filing = 03`
+- Source-limited caution: current `04` add-on is supported by checked polymer/materials-related benchmark coverage, but this remains a source-limited relaxed multi-module update.
+- Authoritative note: treat any older single-module-only wording below as legacy draft text. The current note-level classification fact is `03;04`, with `03` retained for filing.
+
 **论文信息**
 - 标题：Agentic Mixture-of-Workflows for Multi-Modal Chemical Search
 - 作者：Callahan et al.
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2502.19629
-- PDF / 本地文件路径：临时读取 `ASD-0091_CRAG-MoW.pdf`；未写入项目 Reference_PDF
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf`
 - 论文类型：系统论文 / benchmark / 化学检索 Agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-21 archive note**: Project-archived PDF is now available at `Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf`. Current reaudit treats this note as a `03;04` paper under the relaxed object-coverage rule, with `03` retained as the filing module and `04` added cautiously because the checked evidence includes polymers/materials-related benchmark coverage.
 
 Evidence level: full-text (arXiv PDF full text).
 

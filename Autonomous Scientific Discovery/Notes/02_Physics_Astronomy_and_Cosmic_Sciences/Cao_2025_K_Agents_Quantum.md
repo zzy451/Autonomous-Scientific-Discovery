@@ -1,12 +1,20 @@
 # Cao et al. 2025 - Agents for Self-driving Laboratories Applied to Quantum Computing
 
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2025_K_Agents_Quantum.pdf`
+- Current source refresh: local archived PDF; arXiv `https://arxiv.org/abs/2412.07978`
+- Current authoritative classification: `scientific_object_modules=02`; `general_method_bucket=none`; `primary_module_for_filing=02`; `source_limited=yes` for this audit round, while the note itself remains based on full-text reading
+- Override note: stable `02` judgment retained. The concrete validated object is quantum-physics experimentation on a superconducting quantum processor, including entangled-state outcomes.
+- Archive-status note: use the canonical project PDF path above for downstream reference even if older body text below still mentions temporary local reading.
+
 **论文信息**
 - 标题：Agents for self-driving laboratories applied to quantum computing
 - 作者：Cao et al.
 - 年份：2025 arXiv v2；主清单记录 2024 初版
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2412.07978
-- PDF / 本地文件路径：临时读取 `ASD-0090_KAgents_Quantum.pdf`；未写入项目 Reference_PDF
+- PDF / 本地文件路径：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2025_K_Agents_Quantum.pdf`
 - 论文类型：系统论文 / self-driving laboratory / 量子计算实验 Agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15
@@ -15,6 +23,8 @@
 ## Evidence Log
 
 Evidence level: full-text (arXiv PDF full text).
+
+**2026-06-21 archive note**: archived project PDF confirmed at `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2025_K_Agents_Quantum.pdf`; current audit keeps the paper in `02` because the agents are validated on quantum-physics experimentation and entangled-state generation rather than a domain-general self-driving-lab benchmark.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
