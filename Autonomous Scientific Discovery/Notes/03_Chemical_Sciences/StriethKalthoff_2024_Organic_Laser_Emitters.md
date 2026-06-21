@@ -12,6 +12,9 @@
 
 ## 2026-06-21 relaxed round-2 boundary closure
 
+- `PDF path`: no local archived PDF is stored under `Reference_PDF/` yet. The existing first-hand evidence trail already relied on the official ChemRxiv full-text PDF, but a fresh direct re-download attempt on `2026-06-21` was access-blocked in the current environment.
+- `current-turn source refresh`: the PubMed final record for DOI `10.1126/science.adk9227` / PMID `38753786` was rechecked on `2026-06-21` and remains consistent with the accepted `03;04` multi-module closure.
+
 - `first_hand_sources_checked`: PubMed final paper record for DOI `10.1126/science.adk9227`; official ChemRxiv landing page and full-text PDF; official Zenodo dataset; official Acceleration Consortium project/news page; official GitHub repository `aspuru-guzik-group/acdc_laser`.
 - Accepted relaxed classification: accept `scientific_object_modules=03;04`; `object_coverage_mode=multi_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
 - Why: the paper's main search space remains a large pentamer molecular candidate space for organic emitters, which keeps `03` as the filing module. At the same time, the abstract, full text, and official dataset all report `21 new state-of-the-art materials`, thin-film ASE / stimulated-emission validation, and device-level organic solid-state laser performance, which is enough to add `04` under the relaxed object-coverage rule.

@@ -1,4 +1,9 @@
 # Saeedi et al. 2025 - AstroAgents
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Saeedi_2025_AstroAgents.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Classification remains stable: `scientific_object_modules=02`; `object_coverage_mode=single_module`; `primary_module_for_filing=02`; `general_method_bucket=none`.
 
 **论文信息**
 - 标题：AstroAgents: A Multi-Agent AI for Hypothesis Generation from Mass Spectrometry Data
@@ -13,6 +18,7 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 **证据级别**：full-text（arXiv PDF 已下载到临时目录并转文本核读；未保存到项目目录）
 
