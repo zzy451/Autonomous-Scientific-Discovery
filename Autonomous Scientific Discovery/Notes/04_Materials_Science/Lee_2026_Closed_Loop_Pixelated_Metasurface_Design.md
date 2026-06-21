@@ -14,6 +14,18 @@
 
 ## Evidence Log
 
+## Round-2 Relaxed Multi-Module Update (2026-06-21)
+
+- `scientific_object_modules`: `04`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `04`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: Crossref DOI record `10.1117/12.3091089`; DOI resolver / official SPIE landing URL
+- `classification_evidence_source_level`: `source_limited`
+- `note_revision_required`: `no`
+
+This note no longer treats the record as an unresolved `04 / 09` expansion candidate. The currently accessible first-hand evidence is source-limited, because the SPIE abstract/full text is still access-blocked in the current environment, but it is already sufficient for the narrow boundary decision: the stable object remains pixelated metasurface / engineered nanostructure design, so the paper stays in `04`, and no independent engineering-system or process object is strong enough to add `09`.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Crossref DOI record; SPIE snippet | 题名与摘要片段都显示这是 experiment-driven、machine-learning-guided closed-loop framework | 中 |
@@ -248,4 +260,3 @@ Agent 类型：Planning Agent; Hybrid Agent
 纳入置信度：中
 推荐引用强度：普通引用
 ```
-

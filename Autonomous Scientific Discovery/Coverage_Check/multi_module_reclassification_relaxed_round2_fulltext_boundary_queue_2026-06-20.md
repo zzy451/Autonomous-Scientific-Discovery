@@ -177,6 +177,15 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1M_2026-06
 |---|---|---|
 | `ASD-0651` | closed | reviewed arXiv full text; accepted `scientific_object_modules=05;11` because the paper remains heatwave/climate-risk primary but the discovered and validated chains also cover independent social/economic-system objects; `06` is not added |
 
+## Round-2 P1-N Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1N_2026-06-21.md`.
+
+| ID | Status after P1-N | Action |
+|---|---|---|
+| `ASD-0543` | still open | current first-hand evidence is source-limited but increases `06 / 07` pressure; keep in the full-text follow-up queue rather than forcing a landed rewrite |
+| `ASD-0547` | closed | reviewed DOI / Crossref / SPIE landing evidence; kept `scientific_object_modules=04` only because the stable object remains pixelated metasurface / engineered nanostructure design and current first-hand metadata does not justify adding `09` |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.

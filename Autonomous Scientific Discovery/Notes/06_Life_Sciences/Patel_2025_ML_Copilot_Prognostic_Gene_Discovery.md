@@ -14,6 +14,19 @@
 
 ## Evidence Log
 
+## Round-2 Source-Limited Boundary Update (2026-06-21)
+
+- `current_master_list_filing`: `06`
+- `boundary_under_review`: `06 / 07`
+- `provisional_relaxed_judgment`: `06;07`
+- `primary_module_if_landed_later`: `07`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: DOI redirect to SSRN landing `10.2139/ssrn.5343855` (blocked in current environment); Crossref DOI metadata / deposited reference list; official project docs; official PyPI page; official GitHub repo
+- `classification_evidence_source_level`: `source_limited`
+- `note_revision_required`: `yes`
+
+This round did not land a master-list rewrite for `ASD-0543`, but the strongest currently accessible first-hand evidence no longer supports a comfortable `06`-only reading. The title gives direct life-science object coverage through prognostic gene discovery, and it also introduces clear medical pressure through the prognosis framing; in addition, the DOI-deposited reference list clusters around oncology, clinical prognosis, healthcare ML, and related biomedical datasets. Because the SSRN abstract and full text were not accessible in the current audit environment, this remains a source-limited `06 / 07` boundary item rather than a closed high-confidence multi-module decision.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 暂定是 | title + Crossref metadata | 标题直接写明 `Copilot Agent` 与 `LLM-Guided Workflow` | 中 |
