@@ -1,4 +1,4 @@
-# Chen 2026 - Bridging electron microscopy and materials analysis with an autonomous agentic platform
+﻿# Chen 2026 - Bridging electron microscopy and materials analysis with an autonomous agentic platform
 
 **论文信息**
 - 标题：Bridging electron microscopy and materials analysis with an autonomous agentic platform
@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：Science Advances
 - DOI / arXiv / URL：https://doi.org/10.1126/sciadv.aed0583
-- PDF / 本地文件路径：本轮使用公开可读的 ResearchGate 文章页摘要证据；未保存本地 PDF
+- PDF / 本地文件路径：Reference_PDF/04_Materials_Science/Chen_2026_EMSeek.pdf（PMC official PDF 已归档）
 - 论文类型：系统论文
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | RG abstract | EMSeek 是 modular, provenance-tracked multiagent platform，由 LLM 自动 plan / invoke / execute tools | 高 |
-| 科学对象归类 | `04.01` | RG abstract | 论文核心是从 electron microscopy 到 materials insight，围绕材料结构、晶体重建与性质预测展开 | 高 |
-| 边界判断 | `04` 优先于 `09` | RG abstract | 核心不是显微设备控制，而是把 EM 图像转成材料结构与性质理解 | 高 |
-| 方法流程 | 五单元多步流程 | RG abstract + figure captions | segmentation、crystal reconstruction、property prediction、literature retrieval、physical consistency checks 形成完整 workflow | 高 |
-| 验证方式 | benchmark / case studies | RG abstract | 在 20 material systems、5 tasks 上测试；速度约快 50 倍；还有二维晶格与纳米颗粒案例 | 高 |
+| Agent 纳入 | 是 | PMC / Science Advances full text | EMSeek 是 modular, provenance-tracked multiagent platform，由 LLM 自动 plan / invoke / execute tools | 高 |
+| 科学对象归类 | `04.01` | PMC / Science Advances full text | 论文核心是从 electron microscopy 到 materials insight，围绕材料结构、晶体重建与性质预测展开 | 高 |
+| 边界判断 | `04` 优先于 `09` | PMC / Science Advances full text | 核心不是显微设备控制，而是把 EM 图像转成材料结构与性质理解 | 高 |
+| 方法流程 | 五单元多步流程 | PMC / Science Advances full text | segmentation、crystal reconstruction、property prediction、literature retrieval、physical consistency checks 形成完整 workflow | 高 |
+| 验证方式 | benchmark / case studies | PMC / Science Advances full text | 在 20 material systems、5 tasks 上测试；速度约快 50 倍；还有二维晶格与纳米颗粒案例 | 高 |
 
 ## 0. 摘要翻译
 
@@ -198,11 +198,11 @@
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：当前证据主要来自摘要页
+- Agent 自主性不足：当前已核对 PMC 全文，但多代理 planner 的错误恢复与调度细节仍值得在正文写作时按页码补录
 - 科学验证不足：缺少真实实验闭环
 - 泛化性不足：当前主要覆盖 EM-to-materials insight 任务
 - 工具链依赖：强依赖多个专用模型和数据库
-- 数据泄漏或 benchmark 偏差：待全文复核
+- 数据泄漏或 benchmark 偏差：当前全文已核对，剩余风险更多在多任务泛化与工具链复杂度
 - 成本、可复现性或安全风险：复杂工具栈较重
 
 ## 8. 对综述写作的价值
@@ -248,3 +248,4 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：core
 ```
+

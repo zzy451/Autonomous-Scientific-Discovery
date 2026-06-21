@@ -1,4 +1,4 @@
-# Liang et al. 2025 - Real-time experiment-theory closed-loop interaction for autonomous materials science
+﻿# Liang et al. 2025 - Real-time experiment-theory closed-loop interaction for autonomous materials science
 
 **论文信息**
 - 标题：Real-time experiment-theory closed-loop interaction for autonomous materials science
@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：Science Advances
 - DOI / arXiv / URL：https://doi.org/10.1126/sciadv.adu7426
-- PDF / 本地文件路径：暂无本地 PDF；本 note 基于摘要级证据
+- PDF / 本地文件路径：Reference_PDF/04_Materials_Science/Liang_2025_AMASE.pdf（arXiv PDF 已归档）
 - 论文类型：研究论文 / autonomous materials science system
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
@@ -16,10 +16,10 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要片段 | `AMASE` 执行 self-driving cyclical interaction of experiments and computational predictions | 高 |
-| 多步行动 | 是 | 摘要片段 | real-time、autonomous、continuous closed-loop | 高 |
-| 科学对象归类 | `04` 材料科学 | 摘要片段 | 任务是 temperature-composition phase diagram mapping | 高 |
-| 实验验证 | 强 | 摘要片段 | 在 Sn-Bi binary thin-film system 中验证并显著减少实验数 | 高 |
+| Agent 纳入 | 是 | arXiv PDF abstract | `AMASE` 执行 self-driving cyclical interaction of experiments and computational predictions | 高 |
+| 多步行动 | 是 | arXiv PDF abstract | real-time、autonomous、continuous closed-loop | 高 |
+| 科学对象归类 | `04` 材料科学 | arXiv PDF abstract | 任务是 temperature-composition phase diagram mapping | 高 |
+| 实验验证 | 强 | arXiv PDF abstract | 在 Sn-Bi binary thin-film system 中验证，并把所需实验数降低约 6 倍 | 高 |
 | 边界判断 | 不应转 `01.04` | 对象证据 | 虽有 experiment-theory platform 外观，但最终对象是具体材料 phase diagram exploration | 高 |
 
 ## 0. 摘要翻译
@@ -177,7 +177,7 @@
 - 任务设置：phase diagram mapping
 - 对比基线：摘要未细述
 - 评价指标：所需实验数与探索效率
-- 关键结果：只需较小部分 phase space 即达成明显实验节省
+- 关键结果：仅覆盖整个组成-温度相空间的一小部分即可准确确定 Sn-Bi 共晶相图，并实现约 6 倍实验数缩减
 - 是否有消融实验：摘要未细述
 - 是否有失败案例或负结果：摘要未细述
 
@@ -248,3 +248,4 @@ Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：core
 ```
+

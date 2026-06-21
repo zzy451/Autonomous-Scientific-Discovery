@@ -211,6 +211,34 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1T_2026-06
 |---|---|---|
 | `ASD-0773` | closed | reviewed arXiv abstract plus arXiv HTML/PDF and the official AIPOCH medical-research-skills repository; kept `scientific_object_modules=07` only because the stable object remains NSCLC immunotherapy-response biomarker research, while transcriptomics / pathway / programmed-cell-death content is explicitly framed as benchmark-task workflow scope built on broad bioinformatics modules rather than independently validated life-science result coverage |
 
+## Batch02 Partial13 Carry-Forward Status Update
+
+Report: `Coverage_Check/multi_module_note_pdf_full_reaudit_batch02_partial13_2026-06-22.md`.
+
+| ID | Status after partial13 | Action |
+|---|---|---|
+| `ASD-0097` | still open | Nature Methods row remains source-limited in this environment; keep stable `06` for now and do not land a `07` expansion without stronger first-hand evidence |
+| `ASD-0112` | still open | publisher-side access remains limited; keep stable `07` for now and do not land the proposed `03;07` expansion without stronger first-hand evidence |
+| `ASD-0139` | still open | physics-facing framing remains benchmark-heavy / framework-heavy; keep the independent `01.04` bucket until stronger first-hand object evidence supports migration |
+
+## Batch03 Partial1 Carry-Forward Status Update
+
+Report: `Coverage_Check/multi_module_note_pdf_full_reaudit_batch03_partial1_2026-06-22.md`.
+
+| ID | Status after batch03 partial1 | Action |
+|---|---|---|
+| `ASD-0141` | still open | access-limited first-hand evidence increases `06;07` pressure, but keep stable `06` in master until stronger full-text support is landed |
+| `ASD-0145` | still open | OpenReview evidence increases `01;11` pressure, but keep current independent `01.04` master state conservative until the cross-object boundary is adjudicated more firmly |
+| `ASD-0158` | still open | chemistry classification is stable, but direct Science full-text / PDF access remained limited in this environment, so hold writeback/master landing |
+| `ASD-0357` | still open | accessible homepage supports stable `07`, but no strong independent `06` expansion is accepted without bioRxiv full-text access |
+| `ASD-0370` | still open | stable `06` evidence is strong from abstract-level first-hand metadata, but publisher full text remained access-limited in this environment |
+| `ASD-0379` | still open | stable `04` evidence is strong from abstract-level first-hand metadata, but publisher full text remained access-limited in this environment |
+| `ASD-0381` | still open | stable `03` evidence is strong from publisher snippet / metadata, but publisher full text remained access-limited in this environment |
+| `ASD-0385` | still open | current record already pressures `03;04`, but source-limited publisher access kept this round conservative rather than landing a fresh writeback |
+| `ASD-0388` | still open | class `04` is stable, but confirmed-core strength remains weaker because the paper is a companion-style characterization agent rather than a strong closed-loop discovery record |
+| `ASD-0389` | still open | stable `04` evidence is strong from abstract-level metadata, but publisher full text remained access-limited in this environment |
+| `ASD-0410` | still open | stable `04` evidence is strong from abstract-level metadata, but publisher full text remained access-limited in this environment |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.
@@ -231,6 +259,8 @@ These records have the highest risk of stale `01.04` treatment or premature migr
 | `ASD-0845` | keep `01.04` for now | Abstract does not list stable concrete benchmark objects; check full benchmark inventory. |
 | `ASD-0856` | keep `01.04` for now | Dataset mapping across biology/economics/finance/behavioral science requires full text. |
 | `ASD-0869` | keep `01.04` for now | LSR-Synth / STRIDE benchmark evidence suggests `02;03;04;06`, but exact task inventory is not confirmed. |
+| `ASD-0139` | keep `01.04` for now | Does the paper provide concrete physics-object experiments or validated case studies strong enough to migrate out of the independent `01.04` bucket? |
+| `ASD-0145` | keep `01.04` for now | Do ML-research and peer-review evaluation objects justify landing `01;11`, or should this remain conservative until the science-system boundary is firmer? |
 
 ## 3. P1 Queue: Concrete-Module Boundary Cases
 
@@ -247,6 +277,9 @@ These records are likely to remain confirmed core, but may need module additions
 | `ASD-0056` | `03/04` | Do organic laser emitters have enough material-performance evidence for `04`? |
 | `ASD-0064` | `06/07` | Do cancer phenotype / clinical metadata tasks justify `07`? |
 | `ASD-0070` | possible cross-domain | Review 124 hypotheses for stable `04/06` object coverage beyond chemistry. |
+| `ASD-0097` | `06/07` | Does CellVoyager provide independent medical-object evidence, or does the current first-hand record still support only biology / omics object coverage? |
+| `ASD-0112` | `07/03` | Do drug-molecule chemical-space exploration and optimization results justify adding independent chemistry-object coverage beyond the stable drug-discovery filing anchor? |
+| `ASD-0141` | `06/07` | Do ESCC and cardiomyocyte-differentiation cases support landing independent `07`, or should the record remain conservative at stable `06` until stronger full-text access is available? |
 | `ASD-0276` | `06/07` | Does clinical multiomics / proteogenomics evidence justify adding `07`? |
 | `ASD-0290` | `03/04` | Are catalyst candidates chemical objects only, or also materials-performance objects? |
 | `ASD-0520` | closed | reviewed Crossref DOI abstract `10.1126/sciadv.adw0894`; accepted `scientific_object_modules=03;04` because the publisher-registered abstract explicitly supports both oxygen-evolution electrocatalysis (`03`) and low-Ir catalyst-material composition / performance discovery (`04`) |
@@ -276,6 +309,8 @@ These records are likely to remain confirmed core, but may need module additions
 | `ASD-0818` | `03/07` | Does mixed molecular optimization include enough target-facing drug-discovery evidence for `07`? |
 | `ASD-0838` | `03/04` | Does flow chemistry include material-family / surface coverage sufficient for `04`? |
 | `ASD-0850` | `01/10` | Does cooperative-driving scenario constitute transportation-science object evidence? |
+| `ASD-0357` | `07/06` | Does the blocked bioRxiv full text reveal independent life-science object validation strong enough to add `06`, or should the record remain stable at `07` only? |
+| `ASD-0385` | `03/04` | Current abstract-level evidence already pressures `03;04`; can fuller first-hand publisher access justify landing the already-suspected multi-module rewrite cleanly? |
 
 ## 4. P2 Queue: Core-Strength / Status Checks
 
@@ -294,6 +329,7 @@ These records are less about module expansion and more about whether the confirm
 | `ASD-0587` | keep `03` | Chemical synthesis evidence is sufficient, but full text can strengthen protocol / compound validation. |
 | `ASD-0596` | keep `06` | CFPS / protein-expression object is stable; autonomy details need full-text confirmation. |
 | `ASD-0599` | keep `06` | Enzyme-engineering object is stable; autonomy details and enzyme metrics need confirmation. |
+| `ASD-0158` | keep `03` | Chemistry-object classification is stable, but direct Science full text / PDF access should be strengthened before landing this round. |
 | `ASD-0682` | keep `04` | Solid-state case depth needs full text. |
 | `ASD-0700` | keep `11.07` | Confirmed-core strength appears weaker and needs status / full-text review. |
 | `ASD-0751` | keep `02` | Preliminary cosmology contribution; core-strength review. |
@@ -302,6 +338,12 @@ These records are less about module expansion and more about whether the confirm
 | `ASD-0761` | keep `02` | Optional `02` vs `01` watch for quantum-circuit architecture. |
 | `ASD-0766` | keep `11.07` | Classification stable, but note / metadata refresh can be done later. |
 | `ASD-0768` | keep `11.07` | Classification stable, but note / metadata refresh can be done later. |
+| `ASD-0370` | keep `06` | Stable protein-design classification is clear, but publisher full text remained access-limited in this environment. |
+| `ASD-0379` | keep `04` | Stable materials-property classification is clear, but publisher full text remained access-limited in this environment. |
+| `ASD-0381` | keep `03` | Stable catalysis classification is clear, but publisher full text remained access-limited in this environment. |
+| `ASD-0388` | keep `04` | Classification is stable, but confirmed-core strength remains weaker because the record is a companion-style characterization agent. |
+| `ASD-0389` | keep `04` | Stable materials classification is clear, but publisher full text remained access-limited in this environment. |
+| `ASD-0410` | keep `04` | Stable materials-discovery classification is clear, but publisher full text remained access-limited in this environment. |
 
 ## 5. Background-Only Watchlist
 

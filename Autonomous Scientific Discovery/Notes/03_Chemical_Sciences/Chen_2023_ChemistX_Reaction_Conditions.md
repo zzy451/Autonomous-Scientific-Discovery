@@ -1,4 +1,4 @@
-# Chen et al. 2023 - Chemist-X: Large Language Model-Empowered Agent for Reaction Condition Recommendation in Chemical Synthesis
+﻿# Chen et al. 2023 - Chemist-X: Large Language Model-Empowered Agent for Reaction Condition Recommendation in Chemical Synthesis
 
 **论文信息**
 - 标题：Chemist-X: Large Language Model-Empowered Agent for Reaction Condition Recommendation in Chemical Synthesis
@@ -6,7 +6,7 @@
 - 年份：2023
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2311.10776
-- PDF / 本地文件路径：本轮基于 arXiv 摘要与官方元数据；未保存本地 PDF
+- PDF / 本地文件路径：Reference_PDF/03_Chemical_Sciences/Chen_2023_ChemistX_Reaction_Conditions.pdf（arXiv PDF 已归档）
 - 论文类型：系统论文 / chemistry reaction-condition agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv abstract | `Chemist-X` 被定义为 comprehensive AI agent，结合 RAG、CAD 工具与 automated robotic system，支持 fully LLM-supervised end-to-end operation | 高 |
-| 科学对象归类 | `03.03` | arXiv abstract | 直接任务是 reaction condition optimization / recommendation in chemical synthesis | 高 |
-| 方法流程 | 检索 + 设计 + 机器人验证 | arXiv abstract | 系统先检索文献与分子数据库，再调用 CAD 工具设计，最后连接机器人湿实验验证 | 高 |
-| 实验验证 | 自动湿实验 | arXiv abstract | 系统与 physical world 交互，通过 automated robotic system 验证建议条件 | 高 |
-| 边界判断 | 不应转 `01.04` | arXiv abstract | 尽管系统是端到端平台，但最终科学对象始终是化学合成中的反应条件 | 高 |
+| Agent 纳入 | 是 | arXiv PDF abstract | `Chemist-X` 被定义为 comprehensive AI agent，结合 RAG、CAD 工具与 automated robotic system，支持 fully LLM-supervised end-to-end operation | 高 |
+| 科学对象归类 | `03.03` | arXiv PDF abstract | 直接任务是 reaction condition optimization / recommendation in chemical synthesis | 高 |
+| 方法流程 | 检索 + 设计 + 机器人验证 | arXiv PDF abstract | 系统先检索文献与分子数据库，再调用 CAD 工具设计，最后连接机器人湿实验验证 | 高 |
+| 实验验证 | 自动湿实验 | arXiv PDF abstract | 系统与 physical world 交互，通过 automated robotic system 验证建议条件 | 高 |
+| 边界判断 | 不应转 `01.04` | arXiv PDF abstract | 尽管系统是端到端平台，但最终科学对象始终是化学合成中的反应条件 | 高 |
 
 ## 0. 摘要翻译
 
@@ -212,7 +212,7 @@
 - 可用于哪个表格或图：化学 Agent 闭环工作流对比表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：当前以 arXiv 摘要为主
+- 需要在正文中特别引用的页码 / 图 / 表：当前重点是 arXiv PDF 摘要中关于 RAG、CAD 与 robotic validation 的描述
 - 需要与哪些论文并列比较：ChemReasoner、LLM-RDF、Fast-Cat、AlphaFlow
 
 ## 9. 总结
@@ -243,8 +243,9 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 验证方式：robotic_experiment; wet_lab_experiment
 交叉属性：computation_driven; data_driven; experiment_driven; robotic_platform
 科学贡献类型：design; experimental_discovery; system_platform
-证据强度：high_primary_abstract
+证据强度：experimentally_validated
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
 ```
+

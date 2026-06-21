@@ -1,210 +1,149 @@
-# Yang et al. 2024 - Large language models for automated open-domain scientific hypotheses discovery
+﻿# Yang et al. 2024 - Large language models for automated open-domain scientific hypotheses discovery
 
-**论文信息**
-- 标题：Large language models for automated open-domain scientific hypotheses discovery
-- 作者：Yang et al.
-- 年份：2024
-- 来源 / venue：ACL Findings
-- DOI / arXiv / URL：https://aclanthology.org/2024.findings-acl.804/
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
-- 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
-- 阅读日期：2026-06-18
-- 笔记作者：Codex
+**Paper Info**
+- paper_id: `ASD-0140`
+- Title: `Large language models for automated open-domain scientific hypotheses discovery`
+- Authors: `Yang et al.`
+- Year: `2024`
+- Venue: `Findings of ACL 2024`
+- URL: `https://aclanthology.org/2024.findings-acl.804/`
+- First-hand source checked: `ACL PDF`
+- PDF status: `publisher PDF checked; local archive path = Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yang_2024_Open_Domain_Hypotheses_Discovery.pdf`
+- Classification evidence source level: `first_hand_full_text`
+- source_limited: `no`
+- Current note status: `reaudit writeback refreshed on 2026-06-22`
+- Note location statement: this file is stored under module `11` for filing convenience only; note path is not classification authority.
 
 ## Evidence Log
 
-| 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
-|---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `11` / `11.07` | 摘要 | 最稳定对象是“面向 scientific hypothesis generation 的开放域知识生产系统”，而不是单纯的模型方法或发表 venue。 | 高 |
-| 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
-| 实验验证 | ACL benchmark 与专家评估 | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 ACL benchmark 与专家评估 支撑其主张。 | 中高 |
-| 边界判断 | 11.07 / 01.04 / 11.02 边界；当前更像科学假设生产环节研究 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| Judgment item | Conclusion | First-hand basis | Reaudit landing |
+|---|---|---|---|
+| Agent inclusion | yes | The ACL paper presents a multi-module workflow that retrieves observations from raw web corpora, proposes hypotheses, and uses feedback mechanisms to improve generation quality. | Keep as an included Agent paper. |
+| Scientific object | `11` | The abstract explicitly frames the task as `social science academic hypotheses discovery` rather than a generic research-agent benchmark. | Supported module is `11`. |
+| Validation | direct task validation | The paper reports both GPT-4-based and expert-based evaluation for validity, novelty, and usefulness of generated hypotheses. | This is object-level validation, not a pure methods-only showcase. |
+| Boundary | not `11.07`; not `01.04` | The system is not primarily studying science-of-science objects such as peer review, citation structure, or knowledge-production systems themselves. | Remove stale `11.07` wording. |
 
-## 0. 摘要翻译
+## 0. Abstract Overview
 
-论文围绕“面向 scientific hypothesis generation 的开放域知识生产系统”提出题为《Large language models for automated open-domain scientific hypotheses discovery》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 ACL benchmark 与专家评估 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+This paper studies automated hypothesis generation in an open-domain social-science setting. Instead of using tightly curated observation sentences or commonsense-only targets, it builds a setting in which the system must work from raw web-scale observations and generate hypotheses that are intended to be scientifically useful, potentially novel, and socially grounded. The paper therefore reads as a social-science hypothesis-discovery study implemented with an LLM-centered Agent workflow, rather than as a generic research-agent framework detached from a concrete scientific object.
 
-## 1. 是否纳入本综述
+## 1. Inclusion in This Review
 
-### 1.1 Agent 判定
+### 1.1 Agent decision
 
-- 是否属于 Agent 文献：是
-- 判断依据：系统围绕科研目标执行多步工作流，并具备规划、工具调用、反馈迭代或多 Agent 协作中的至少一项。
-- 判定置信度：高
-- 是否面向明确科研目标：是
-- 是否具有多步行动过程：是
-- 是否具备以下至少一项 Agent 能力：
-  - 计划生成：是
-  - 工具调用：是或部分是
-  - 反馈迭代：是
-  - 自主决策：是或部分是
-  - 多 Agent 协作：是或部分是
-- 在科研流程中承担的明确角色：hypothesis_generation; literature_search_and_reading; evidence_assessment_and_validation
+- Included as an Agent paper: `yes`
+- Scientific goal: explicit social-science hypothesis discovery
+- Multi-step action: yes
+- Agent capability evidence: retrieval, iterative generation, feedback-driven refinement, evaluation
+- Workflow role tags: `hypothesis_generation`; `literature_search_and_reading`; `evidence_assessment_and_validation`
+- Inclusion confidence: `high`
 
-### 1.2 排除风险检查
+### 1.2 Exclusion-risk check
 
-- 是否只是普通 AI for Science / ML / DL 模型：否
-- 是否只是单次问答、摘要或分类：否
-- 是否缺少行动闭环：否
-- 若排除，排除理由：不排除
+- Not merely a one-shot LLM generation paper
+- Not only a benchmark wrapper with no workflow
+- Not only a general `AI for Science` narrative
+- Not a pure science-of-science paper despite surface overlap with knowledge-generation language
 
-## 2. 科学领域归类
+## 2. Scientific-Domain Classification
 
-### 2.1 主科学领域
+### 2.1 Final adjudicated fields
 
-- 一级类：11
-- 二级类：11.07
-- 三级类：
-- 四级专题：Open-domain scientific hypothesis discovery
-- 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“面向 scientific hypothesis generation 的开放域知识生产系统”，因此当前主类保持为 `11` / `11.07`。
-- 归类置信度：中高
+- supported_modules: `11`
+- final_01_04_bucket: `none`
+- primary_module_for_filing: `11`
+- confidence: `high`
 
-### 2.2 对象优先判定
+### 2.2 Classification rationale
 
-- 最终科学研究对象：面向 scientific hypothesis generation 的开放域知识生产系统
-- 最终科学问题：论文试图通过 Agent 系统推进“面向 scientific hypothesis generation 的开放域知识生产系统”相关研究任务。
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
+The decisive object is social-science hypothesis generation. The paper introduces a dataset and workflow for discovering social-science academic hypotheses from raw evidence sources, so the note should stay in module `11`. The older `11.07` wording overstated the extent to which the paper studies scientific knowledge production itself. It is closer to social-science research support than to science-of-science analytics.
 
-### 2.3 容易混淆的边界
+### 2.3 Boundary note
 
-- 可能误归类到：11.07 / 01.04 / 11.02 边界；当前更像科学假设生产环节研究
-- 最终判定：保持 `11` / `11.07`
-- 判定理由：11.07 / 01.04 / 11.02 边界；当前更像科学假设生产环节研究
-- 是否需要二次复核：需要。
+- Why not `11.07`: the target is not citation networks, scientific institutions, peer review, or research-policy systems as objects of study.
+- Why not `01.04`: the paper is not object-free; it validates on a concrete social-science hypothesis-discovery task.
+- Why note location still matters less than classification: the note remains filed in the `11` folder, but the note path is only a filing convenience.
 
-## 3. Agent 系统与科研流程角色
+## 3. Agent System and Research Workflow Role
 
-### 3.1 Agent 类型标签
+### 3.1 Agent type tags
 
-- Agent 类型：LLM Agent; Tool-using Agent
+- `LLM Agent`
+- `Tool-using Agent`
 
-### 3.2 科研流程角色
+### 3.2 Research workflow roles
 
-- 主要角色：hypothesis_generation; literature_search_and_reading; evidence_assessment_and_validation
+- `hypothesis_generation`
+- `literature_search_and_reading`
+- `evidence_assessment_and_validation`
 
-### 3.3 自主能力
+### 3.3 Autonomy profile
 
-- 任务分解：是或部分是
-- 计划生成：是
-- 工具调用：是或部分是
-- 记忆与状态维护：中等
-- 反馈迭代：是
-- 自主决策：是或部分是
-- 多 Agent 协作：是或部分是
-- 环境交互：中等
-- 闭环实验：视论文具体验证而定
+- planning: present in workflow organization
+- tool use / retrieval: present
+- feedback iteration: present
+- autonomous decision making: partial to moderate
+- multi-agent collaboration: not the main emphasis, but modular staged workflow is explicit
 
-### 3.4 交叉属性标签
+## 4. Method and Workflow
 
-- 交叉属性：以计算驱动为主；若摘要明示实验或部署，再在正文中单独标注。
+### 4.1 Method motivation
 
-## 4. 方法设计
+The paper argues that previous hypothesis-discovery settings were too constrained: observations were preselected and the target hypotheses were often too close to commonsense knowledge. The proposed system instead uses raw evidence and aims at more realistic social-science hypothesis generation.
 
-### 4.1 方法动机
+### 4.2 Workflow sketch
 
-- 作者为什么提出该 Agent 系统：希望用 Agent 化流程提升 面向 scientific hypothesis generation 的开放域知识生产系统 的研究效率与质量。
-- 现有科研流程或方法的痛点：传统流程往往分散、手工密集，难以在多步任务中持续反馈迭代。
-- 核心假设或直觉：把检索、生成、分析、评估等环节编排成可循环的 Agent 工作流，能够提高研究推进能力。
+1. Gather observations from open-domain raw web corpora.
+2. Organize or filter candidate evidence relevant to the target topic.
+3. Generate social-science hypotheses from the evidence.
+4. Apply feedback mechanisms to improve validity, novelty, and usefulness.
+5. Rank or evaluate generated hypotheses for downstream researcher use.
 
-### 4.2 系统流程
+### 4.3 System emphasis
 
-1. 输入：研究问题、数据、文献或任务上下文。
-2. 任务分解 / 规划：Agent 进行子任务拆解与流程编排。
-3. 工具、数据库、模型或实验平台调用：按需要调用外部资源。
-4. 中间结果反馈：根据阶段性结果进行检验、批评或修正。
-5. 决策或迭代：保留有效候选并推动下一轮研究动作。
-6. 输出：形成更高质量的科研分析、假设、实验建议或知识生产结果。
+The key contribution is not a robotic experimental loop but an evidence-to-hypothesis workflow for a social-science object. The system is closer to an Agent-based social-science reasoning and discovery assistant than to a general-purpose ASD framework.
 
-### 4.3 系统组件
+## 5. Experiment and Validation
 
-- Agent 核心：多 Agent 或单 Agent 编排系统。
-- 工具 / API / 数据库：以论文摘要明示工具链为准。
-- 记忆或状态模块：若论文强调长期记忆、工作流状态或证据轨迹，则作为关键组件。
-- 规划器：存在或部分存在。
-- 评估器 / verifier：存在，用于评分、核验或审查。
-- 人类反馈或专家介入：部分论文存在。
-- 实验平台或仿真环境：按 ACL benchmark 与专家评估 使用。
+### 5.1 Validation form
 
-## 5. 实验与验证
+- automated evaluation: yes
+- expert evaluation: yes
+- benchmark-style tasking: yes
+- real physical experiment: no
 
-### 5.1 验证方式
+### 5.2 Task and evidence
 
-- 当前主要验证：ACL benchmark 与专家评估
+The paper validates whether the system can generate social-science hypotheses that are valid, useful, and novel relative to prior baselines. The reported evidence is tied to hypothesis quality in the social-science discovery setting rather than to a domain-agnostic research-agent capability score.
 
-### 5.2 数据、任务与指标
+### 5.3 Contribution strength
 
-- 数据集 / 实验对象：围绕“面向 scientific hypothesis generation 的开放域知识生产系统”的论文设定。
-- 任务设置：多步科研工作流中的检索、生成、分析、评估或写作任务。
-- 对比基线：以论文原文报告为准。
-- 关键结果：当前可得证据表明论文主要通过 ACL benchmark 与专家评估 支撑其核心主张。
-- 是否有消融实验：摘要级证据下不稳定，后续需全文补充。
-- 是否有失败案例或负结果：摘要级证据通常不足。
+- scientific contribution type: `hypothesis`; `system_platform`
+- evidence strength: first-hand full text with direct task validation
+- ASD relevance: strong enough for inclusion because the Agent is assigned a concrete scientific role in hypothesis generation
 
-### 5.3 科学贡献
+## 6. Limitations and Risks
 
-- 科学贡献类型：hypothesis; system_platform
-- 贡献强度判断：中等到较强，取决于论文是平台型还是有直接实验发现。
-- 证据强度：medium_metadata_with_abstract
+- The evidence is stronger for hypothesis-generation quality than for downstream real-world scientific impact.
+- The paper remains computationally evaluated rather than validated through long-cycle social-science research adoption.
+- Some wording in the paper can sound like knowledge-production or meta-science language, so the `11` vs `11.07` boundary needs to stay explicit in the note.
 
-## 6. 与已有工作的关系
+## 7. Review Value
 
-- 与普通 AI for Science 方法的区别：本论文强调多步 Agent 工作流，而不是单次预测模型。
-- 与已有 Agent / 科研智能系统的区别：它把研究流程中的多个环节明确组织进同一套 Agent 化闭环。
-- 与同一科学领域其他 Agent 文献的关系：可作为该类对象的代表样本，与同类 Agent 系统并列比较。
-- 主要创新点：将对象相关研究任务稳定映射为可迭代的 Agent 工作流。
+- Useful as a module-`11` example where the target object is social science rather than natural science.
+- Helpful for distinguishing social-science hypothesis discovery from `11.07` science-of-science work.
+- Useful in the review when discussing Agent support for literature-grounded hypothesis generation without a wet-lab loop.
 
-## 7. 局限性与风险
+## 8. Summary
 
-- Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
-- 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
-- 泛化性不足：11.07 / 01.04 / 11.02 边界；当前更像科学假设生产环节研究
-- 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
-- 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
-- 成本、可复现性或安全风险：多 Agent 长流程通常带来较高成本和复现负担。
+### 8.1 One-sentence summary
 
-## 8. 对综述写作的价值
+An LLM-centered Agent workflow for generating and evaluating social-science hypotheses from open-domain evidence, best classified under module `11` rather than `11.07`.
 
-- 可放入哪个章节：主类 `11` / `11.07` 对应章节。
-- 可支撑哪个论点：Agent 已经能够围绕“面向 scientific hypothesis generation 的开放域知识生产系统”形成稳定的多步科研工作流。
-- 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
-- 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
-- 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：后续全文笔记补齐。
-- 需要与哪些论文并列比较：可与同主类或相邻边界样本并列。
+### 8.2 Reaudit summary
 
-## 9. 总结
+- Kept the updated classification conclusion: `11`
+- Kept `final_01_04_bucket: none`
+- Kept `source_limited: no`
+- Preserved the note as a fuller structured project note instead of a short-form writeback summary
 
-### 9.1 一句话概括
-
-围绕“面向 scientific hypothesis generation 的开放域知识生产系统”组织多步科研工作的 Agent 系统。
-
-### 9.2 速记版 pipeline
-
-1. 接收研究问题或证据。
-2. 分解并编排多步科研任务。
-3. 调用工具 / 数据 / 检索资源。
-4. 基于反馈修正中间结果。
-5. 输出更高质量的研究结论或知识生产结果。
-
-### 9.3 标注字段汇总
-
-```text
-是否纳入：是
-主类：11
-二级类：11.07
-三级类：
-四级专题：Open-domain scientific hypothesis discovery
-Agent 类型：LLM Agent; Tool-using Agent
-科研流程角色：hypothesis_generation; literature_search_and_reading; evidence_assessment_and_validation
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
-验证方式：benchmark; expert_evaluation
-交叉属性：computation_driven
-科学贡献类型：hypothesis; system_platform
-证据强度：medium_metadata_with_abstract
-归类置信度：中高
-纳入置信度：高
-推荐引用强度：standard
-```

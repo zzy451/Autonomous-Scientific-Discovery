@@ -1,210 +1,150 @@
-# Hu et al. 2024 - Nova: An iterative planning and search approach to enhance novelty and diversity of LLM-generated ideas
+﻿# Hu et al. 2024 - Nova: An iterative planning and search approach to enhance novelty and diversity of LLM-generated ideas
 
-**论文信息**
-- 标题：Nova: An iterative planning and search approach to enhance novelty and diversity of LLM-generated ideas
-- 作者：Hu et al.
-- 年份：2024
-- 来源 / venue：arXiv
-- DOI / arXiv / URL：https://arxiv.org/abs/2410.14255
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
-- 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
-- 阅读日期：2026-06-18
-- 笔记作者：Codex
+**Paper Info**
+- paper_id: `ASD-0147`
+- Title: `Nova: An iterative planning and search approach to enhance novelty and diversity of LLM-generated ideas`
+- Authors: `Hu et al.`
+- Year: `2024`
+- Venue: `arXiv`
+- URL: `https://arxiv.org/abs/2410.14255`
+- PDF: `https://arxiv.org/pdf/2410.14255.pdf`
+- First-hand source checked: `arXiv PDF`
+- PDF status: `arXiv PDF checked; local archive path = Reference_PDF/01_Formal_Information_and_Computational_Sciences/Hu_2024_Nova.pdf`
+- Classification evidence source level: `first_hand_full_text`
+- source_limited: `no`
+- Current note status: `reaudit writeback refreshed on 2026-06-22`
+- Note location statement: this file is stored under module `01` for filing convenience only; note path is not classification authority.
 
 ## Evidence Log
 
-| 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
-|---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `01` / `01.04` | 摘要 | 最稳定对象是“planning-and-search 驱动的 scientific idea search agent”，而不是单纯的模型方法或发表 venue。 | 高 |
-| 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
-| 实验验证 | idea novelty/diversity 自动评测与人评 | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 idea novelty/diversity 自动评测与人评 支撑其主张。 | 中高 |
-| 边界判断 | 01.04 / 轻量 idea-agent 边界样本 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| Judgment item | Conclusion | First-hand basis | Reaudit landing |
+|---|---|---|---|
+| Agent inclusion | yes | The paper presents an iterative planning-and-search workflow that intentionally retrieves external knowledge and uses it to refine idea generation. | Keep as an included Agent paper. |
+| Scientific object | `01` | The PDF validates the system on research-idea generation over a concrete computational paper corpus and reports evaluation on `170 seed papers`. | Supported module is `01`, not `01.04`. |
+| Validation | direct corpus-based evaluation | The paper reports automated and human assessment, including novelty/diversity gains and Swiss Tournament ranking outcomes. | This is concrete computational research-object validation. |
+| Boundary | not `01.04` | The method is general enough in appearance to look like a broad idea-agent, but the experiments are anchored in a concrete computational research setting. | Retire stale `01.04` wording. |
 
-## 0. 摘要翻译
+## 0. Abstract Overview
 
-论文围绕“planning-and-search 驱动的 scientific idea search agent”提出题为《Nova: An iterative planning and search approach to enhance novelty and diversity of LLM-generated ideas》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 idea novelty/diversity 自动评测与人评 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+Nova is an LLM-based idea-generation system that tries to improve novelty and diversity through iterative planning and knowledge search. The core point for the reaudit is that the paper does not merely propose a generic ideation strategy; it validates that strategy on a concrete computational research-paper corpus and compares idea quality under explicit evaluation protocols. Under the current project rules, that moves the note from a conservative `01.04` position into module `01`.
 
-## 1. 是否纳入本综述
+## 1. Inclusion in This Review
 
-### 1.1 Agent 判定
+### 1.1 Agent decision
 
-- 是否属于 Agent 文献：是
-- 判断依据：系统围绕科研目标执行多步工作流，并具备规划、工具调用、反馈迭代或多 Agent 协作中的至少一项。
-- 判定置信度：高
-- 是否面向明确科研目标：是
-- 是否具有多步行动过程：是
-- 是否具备以下至少一项 Agent 能力：
-  - 计划生成：是
-  - 工具调用：是或部分是
-  - 反馈迭代：是
-  - 自主决策：是或部分是
-  - 多 Agent 协作：是或部分是
-- 在科研流程中承担的明确角色：hypothesis_generation; planning; search
+- Included as an Agent paper: `yes`
+- Scientific goal: automated generation of high-quality research ideas
+- Multi-step action: yes
+- Agent capability evidence: iterative planning, retrieval-guided search, refinement
+- Workflow role tags: `hypothesis_generation`; `planning`; `literature_search_and_reading`
+- Inclusion confidence: `high`
 
-### 1.2 排除风险检查
+### 1.2 Exclusion-risk check
 
-- 是否只是普通 AI for Science / ML / DL 模型：否
-- 是否只是单次问答、摘要或分类：否
-- 是否缺少行动闭环：否
-- 若排除，排除理由：不排除
+- Not a one-shot text-generation paper
+- Not only a prompt-engineering variant with no workflow
+- Not object-free under current policy because the evaluation corpus is concrete and computational
 
-## 2. 科学领域归类
+## 2. Scientific-Domain Classification
 
-### 2.1 主科学领域
+### 2.1 Final adjudicated fields
 
-- 一级类：01
-- 二级类：01.04
-- 三级类：
-- 四级专题：Scientific idea-search agents
-- 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“planning-and-search 驱动的 scientific idea search agent”，因此当前主类保持为 `01` / `01.04`。
-- 归类置信度：中高
+- supported_modules: `01`
+- final_01_04_bucket: `none`
+- primary_module_for_filing: `01`
+- confidence: `high`
 
-### 2.2 对象优先判定
+### 2.2 Classification rationale
 
-- 最终科学研究对象：planning-and-search 驱动的 scientific idea search agent
-- 最终科学问题：论文试图通过 Agent 系统推进“planning-and-search 驱动的 scientific idea search agent”相关研究任务。
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
+The older note used `01.04` because the paper looked like a general scientific-idea generation method. The updated conclusion keeps the method description but changes the classification authority: the experiments are run on a concrete computational research corpus, and the paper measures idea quality within that domain context. That is enough object-level coverage for module `01`.
 
-### 2.3 容易混淆的边界
+### 2.3 Boundary note
 
-- 可能误归类到：01.04 / 轻量 idea-agent 边界样本
-- 最终判定：保持 `01` / `01.04`
-- 判定理由：01.04 / 轻量 idea-agent 边界样本
-- 是否需要二次复核：需要；当前最主要问题是元数据漂移。
+- Why not `01.04`: the paper is not object-free under the project's current rule.
+- Why `01` fits: the work is validated as computational research ideation over a concrete paper set.
+- Why note location remains secondary: the note stays in the `01` folder, but the classification claim is justified by object evidence rather than by filing path.
 
-## 3. Agent 系统与科研流程角色
+## 3. Agent System and Research Workflow Role
 
-### 3.1 Agent 类型标签
+### 3.1 Agent type tags
 
-- Agent 类型：LLM Agent; Planning Agent
+- `LLM Agent`
+- `Planning Agent`
 
-### 3.2 科研流程角色
+### 3.2 Research workflow roles
 
-- 主要角色：hypothesis_generation; planning; search
+- `hypothesis_generation`
+- `planning`
+- `literature_search_and_reading`
 
-### 3.3 自主能力
+### 3.3 Autonomy profile
 
-- 任务分解：是或部分是
-- 计划生成：是
-- 工具调用：是或部分是
-- 记忆与状态维护：中等
-- 反馈迭代：是
-- 自主决策：是或部分是
-- 多 Agent 协作：是或部分是
-- 环境交互：中等
-- 闭环实验：视论文具体验证而定
+- planning: central
+- retrieval / external knowledge use: central
+- feedback iteration: central
+- autonomous decision making: moderate
+- multi-agent structure: not the main emphasis here
 
-### 3.4 交叉属性标签
+## 4. Method and Workflow
 
-- 交叉属性：以计算驱动为主；若摘要明示实验或部署，再在正文中单独标注。
+### 4.1 Method motivation
 
-## 4. 方法设计
+The paper starts from the observation that plain LLM idea generation often produces repetitive or shallow suggestions. Its answer is to add explicit planning and external-knowledge search so that the system can progressively enrich idea proposals and escape local novelty traps.
 
-### 4.1 方法动机
+### 4.2 Workflow sketch
 
-- 作者为什么提出该 Agent 系统：希望用 Agent 化流程提升 planning-and-search 驱动的 scientific idea search agent 的研究效率与质量。
-- 现有科研流程或方法的痛点：传统流程往往分散、手工密集，难以在多步任务中持续反馈迭代。
-- 核心假设或直觉：把检索、生成、分析、评估等环节编排成可循环的 Agent 工作流，能够提高研究推进能力。
+1. Start from seed research papers or a target research topic.
+2. Plan what external knowledge should be retrieved.
+3. Retrieve and integrate broader evidence.
+4. Generate candidate research ideas.
+5. Iterate the planning-and-search loop to improve novelty and diversity.
+6. Rank or compare generated ideas through automated and human evaluation.
 
-### 4.2 系统流程
+### 4.3 System emphasis
 
-1. 输入：研究问题、数据、文献或任务上下文。
-2. 任务分解 / 规划：Agent 进行子任务拆解与流程编排。
-3. 工具、数据库、模型或实验平台调用：按需要调用外部资源。
-4. 中间结果反馈：根据阶段性结果进行检验、批评或修正。
-5. 决策或迭代：保留有效候选并推动下一轮研究动作。
-6. 输出：形成更高质量的科研分析、假设、实验建议或知识生产结果。
+The important classification point is that this is not merely an abstract planning method. It is a planning-and-search Agent applied to a concrete computational research ideation setting.
 
-### 4.3 系统组件
+## 5. Experiment and Validation
 
-- Agent 核心：多 Agent 或单 Agent 编排系统。
-- 工具 / API / 数据库：以论文摘要明示工具链为准。
-- 记忆或状态模块：若论文强调长期记忆、工作流状态或证据轨迹，则作为关键组件。
-- 规划器：存在或部分存在。
-- 评估器 / verifier：存在，用于评分、核验或审查。
-- 人类反馈或专家介入：部分论文存在。
-- 实验平台或仿真环境：按 idea novelty/diversity 自动评测与人评 使用。
+### 5.1 Validation form
 
-## 5. 实验与验证
+- automated evaluation: yes
+- human evaluation: yes
+- comparative tournament-style evaluation: yes
+- physical experiment: no
 
-### 5.1 验证方式
+### 5.2 Task and evidence
 
-- 当前主要验证：idea novelty/diversity 自动评测与人评
+The paper evaluates the system over `170 seed papers` and reports improvement in novelty, diversity, and counts of top-rated ideas. The PDF states that Nova produces `3.4x` more unique novel ideas than the baseline and at least `2.5x` more top-rated ideas in Swiss Tournament evaluation.
 
-### 5.2 数据、任务与指标
+### 5.3 Contribution strength
 
-- 数据集 / 实验对象：围绕“planning-and-search 驱动的 scientific idea search agent”的论文设定。
-- 任务设置：多步科研工作流中的检索、生成、分析、评估或写作任务。
-- 对比基线：以论文原文报告为准。
-- 关键结果：当前可得证据表明论文主要通过 idea novelty/diversity 自动评测与人评 支撑其核心主张。
-- 是否有消融实验：摘要级证据下不稳定，后续需全文补充。
-- 是否有失败案例或负结果：摘要级证据通常不足。
+- scientific contribution type: `hypothesis`
+- evidence strength: first-hand full text with concrete corpus-based evaluation
+- ASD relevance: sufficient for inclusion because the Agent plays an explicit multi-step role in scientific ideation
 
-### 5.3 科学贡献
+## 6. Limitations and Risks
 
-- 科学贡献类型：hypothesis
-- 贡献强度判断：中等到较强，取决于论文是平台型还是有直接实验发现。
-- 证据强度：low_metadata_only
+- Validation is still computational and evaluation-centric rather than downstream laboratory or field impact.
+- The paper is easy to over-generalize into `01.04` if one focuses only on the method narrative.
+- The note should therefore preserve the explicit reason why a corpus-grounded computational ideation study still belongs in module `01`.
 
-## 6. 与已有工作的关系
+## 7. Review Value
 
-- 与普通 AI for Science 方法的区别：本论文强调多步 Agent 工作流，而不是单次预测模型。
-- 与已有 Agent / 科研智能系统的区别：它把研究流程中的多个环节明确组织进同一套 Agent 化闭环。
-- 与同一科学领域其他 Agent 文献的关系：可作为该类对象的代表样本，与同类 Agent 系统并列比较。
-- 主要创新点：将对象相关研究任务稳定映射为可迭代的 Agent 工作流。
+- Useful for the review section on computational-science ideation agents.
+- Useful as a boundary case between general research-agent methods and object-supported computational ideation work.
+- Helpful when discussing planning-and-search as a mechanism for improving Agent novelty rather than just model scale.
 
-## 7. 局限性与风险
+## 8. Summary
 
-- Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
-- 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
-- 泛化性不足：01.04 / 轻量 idea-agent 边界样本
-- 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
-- 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
-- 成本、可复现性或安全风险：多 Agent 长流程通常带来较高成本和复现负担。
+### 8.1 One-sentence summary
 
-## 8. 对综述写作的价值
+An iterative planning-and-search Agent for computational research idea generation that is better classified in module `01` than in the general-method bucket because of its concrete corpus-grounded validation.
 
-- 可放入哪个章节：主类 `01` / `01.04` 对应章节。
-- 可支撑哪个论点：Agent 已经能够围绕“planning-and-search 驱动的 scientific idea search agent”形成稳定的多步科研工作流。
-- 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
-- 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
-- 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：后续全文笔记补齐。
-- 需要与哪些论文并列比较：可与同主类或相邻边界样本并列。
+### 8.2 Reaudit summary
 
-## 9. 总结
+- Kept the updated classification conclusion: `01`
+- Kept `final_01_04_bucket: none`
+- Kept `source_limited: no`
+- Restored a fuller structured note while preserving the corrected evidence and boundary wording
 
-### 9.1 一句话概括
-
-围绕“planning-and-search 驱动的 scientific idea search agent”组织多步科研工作的 Agent 系统。
-
-### 9.2 速记版 pipeline
-
-1. 接收研究问题或证据。
-2. 分解并编排多步科研任务。
-3. 调用工具 / 数据 / 检索资源。
-4. 基于反馈修正中间结果。
-5. 输出更高质量的研究结论或知识生产结果。
-
-### 9.3 标注字段汇总
-
-```text
-是否纳入：是
-主类：01
-二级类：01.04
-三级类：
-四级专题：Scientific idea-search agents
-Agent 类型：LLM Agent; Planning Agent
-科研流程角色：hypothesis_generation; planning; search
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
-验证方式：benchmark; expert_evaluation
-交叉属性：computation_driven
-科学贡献类型：hypothesis
-证据强度：low_metadata_only
-归类置信度：中高
-纳入置信度：高
-推荐引用强度：standard
-```

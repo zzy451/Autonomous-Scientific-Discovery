@@ -1,4 +1,4 @@
-# Nouri 2026 - An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis
+﻿# Nouri 2026 - An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis
 
 **论文信息**
 - 标题：An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis
@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：npj Artificial Intelligence
 - DOI / arXiv / URL：https://doi.org/10.1038/s44387-025-00064-0
-- PDF / 本地文件路径：本轮使用 Nature 正式文章页一手证据；未保存本地 PDF
+- PDF / 本地文件路径：Reference_PDF/06_Life_Sciences/Nouri_2026_CellAtria_scRNAseq.pdf（publisher PDF 已归档）
 - 论文类型：系统论文
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Nature abstract | CellAtria 是 agentic AI framework，具备 chatbot interface、tool execution 与 orchestration | 高 |
-| 科学对象归类 | `06.03` | Nature abstract + intro | 论文围绕 scRNA-seq 数据复用、元数据提取、数据集检索与标准化下游分析 | 高 |
-| 边界判断 | `06` 优先于 `07` | Nature abstract + intro | 目标是 single-cell 数据摄取与分析，不是患者诊断、治疗或临床决策本身 | 高 |
+| 科学对象归类 | `06;07` | Nature article page + publisher PDF source line | 主对象仍是 scRNA-seq 数据复用、元数据提取、数据集检索与标准化下游分析；同时论文在肿瘤患者样本与癌症场景上展示医学覆盖 | 高 |
+| 边界判断 | `06` 为 primary filing，并接受 `07` relaxed coverage | Nature article page results summary | 单细胞组学流程与数据标准化支撑 `06`；223 份患者样本、9 种癌症类型与 6 类主要癌症场景支撑 `07` | 高 |
 | 方法流程 | AI agent + automated pipeline | Nature abstract | 两组件系统：CellAtria 负责对话式 orchestration，CellExpress 负责下游 scRNA-seq 处理 | 高 |
-| 验证方式 | workflow / analysis support | Nature abstract | 价值是 skill-agnostic、time-efficient access to standardized ingestion and analysis | 中 |
+| 验证方式 | workflow / analysis support + patient-centered cancer use cases | Nature article page results summary | 除了标准化摄取与分析外，论文还报告 223 份患者样本、9 种癌症类型，并展示对 6 类主要癌症场景的适用性 | 高 |
 
 ## 0. 摘要翻译
 
-公开可得的单细胞 RNA 测序数据正在快速增长，为生物医学研究创造了大量机会，但这些资源的重用往往受制于一系列准备步骤，包括从原始论文中提取元数据、从公共数据库中检索数据集，以及手工执行标准化的下游分析。这些步骤通常需要脚本能力，并依赖彼此割裂的工作流。为解决这一问题，作者设计了一个由 AI agent 和自动分析流水线组成的双组件系统。CellAtria 通过对话式界面实现从文档到分析的自动化；CellExpress 负责将原始计数矩阵转化为可分析的单细胞表达谱。整体目标是让缺少计算技能的研究者也能更快速、更标准化地完成单细胞数据的摄取与分析。
+公开可得的单细胞 RNA 测序数据正在快速增长，为生物医学研究创造了大量机会，但这些资源的重用往往受制于一系列准备步骤，包括从原始论文中提取元数据、从公共数据库中检索数据集，以及手工执行标准化的下游分析。这些步骤通常需要脚本能力，并依赖彼此割裂的工作流。为解决这一问题，作者设计了一个由 AI agent 和自动分析流水线组成的双组件系统。CellAtria 通过对话式界面实现从文档到分析的自动化；CellExpress 负责将原始计数矩阵转化为可分析的单细胞表达谱。整体目标是让缺少计算技能的研究者也能更快速、更标准化地完成单细胞数据的摄取与分析；同时，论文在肿瘤患者样本与多癌种单细胞场景中展示了该流程的医学与患者中心应用面。
 
 ## 1. 是否纳入本综述
 
@@ -54,26 +54,26 @@
 
 ### 2.1 主科学领域
 
-- 一级类：06
-- 二级类：06.03
-- 三级类：single-cell biology / scRNA-seq analysis
+- 一级类：06;07
+- 二级类：06.03（primary filing）
+- 三级类：single-cell biology / scRNA-seq analysis；cancer patient-centered single-cell use cases
 - 四级专题：Single-cell data-ingestion and analysis agents
 - 四级专题是否为新增：否
-- 归类理由：直接研究对象是单细胞组学数据与其标准化分析流程，核心贡献落在生命科学 / 组学数据侧
+- 归类理由：主对象仍是单细胞组学数据与其标准化分析流程，因此 `06` 作为 primary filing 保持稳定；但论文同时在肿瘤患者样本与多癌种单细胞场景中展示应用，足以接受 relaxed `07` 覆盖
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：公开单细胞 RNA-seq 数据、元数据、分析就绪的单细胞表达谱
-- 最终科学问题：如何自动摄取和标准化分析单细胞数据资源
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：虽然场景属于 biomedical research，但主对象不是临床诊疗，而是 omics data reuse
+- 最终科学研究对象：公开单细胞 RNA-seq 数据、元数据、分析就绪的单细胞表达谱，以及癌症患者来源的单细胞应用样本
+- 最终科学问题：如何自动摄取和标准化分析单细胞数据资源，并把该流程稳定迁移到肿瘤患者场景
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：LLM orchestration 是方法；模块判断来自 scRNA-seq 生物对象覆盖与患者 / 癌症场景覆盖
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：07
-- 最终判定：保留 06.03
-- 判定理由：论文强调的是数据摄取、文献元数据抽取和标准化下游分析，医学应用只是上层应用背景
-- 是否需要二次复核：是，但更像强度复核而非主类重写
+- 可能误归类到：仅 `06` 或仅 `07`
+- 最终判定：保留 `06` 为 primary filing，并接受 relaxed `07` 覆盖
+- 判定理由：scRNA-seq 生物数据流程稳定支撑 `06`；223 份患者样本、9 种癌症类型与 6 类主要癌症场景使 `07` 不应再被压掉
+- 是否需要二次复核：否，当前多模块边界已足够稳定
 
 ## 3. Agent 系统与科研流程角色
 
@@ -167,23 +167,23 @@
 - 高通量计算：否
 - 机器人实验：否
 - 湿实验：否
-- 临床数据：否
+- 临床数据：是（患者肿瘤样本场景）
 - 真实场景部署：未明确
 - 专家评估：未明确
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：公开 scRNA-seq 数据集
+- 数据集 / 实验对象：公开 scRNA-seq 数据集，以及 223 份患者样本、9 种癌症类型的肿瘤相关单细胞应用场景
 - 任务设置：metadata extraction、dataset retrieval、standardized downstream analysis
 - 对比基线：摘要未展开
 - 评价指标：摘要未展开
-- 关键结果：提供更 skill-agnostic、更 time-efficient 的 standardized ingestion and analysis
+- 关键结果：提供更 skill-agnostic、更 time-efficient 的 standardized ingestion and analysis，并展示对 6 类主要癌症场景的可迁移性
 - 是否有消融实验：摘要未展开
 - 是否有失败案例或负结果：摘要未展开
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主要是数据分析基础设施与生命科学数据复用支持
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主要是数据分析基础设施、生命科学数据复用支持，以及面向癌症患者样本的医学应用支撑
 - 科学贡献是否经过验证：有工作流层面的论文验证
 - 贡献强度判断：中
 - 科学贡献类型：system_platform; analysis
@@ -198,21 +198,21 @@
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：当前证据仍主要来自期刊摘要与导言
+- Agent 自主性不足：当前已核对 Nature 正式文章页与 publisher PDF 来源线索，但后续正文写作仍适合补充更细页码证据
 - 科学验证不足：尚不属于强闭环 discovery 论文
-- 泛化性不足：主要覆盖单细胞数据复用
+- 泛化性不足：当前强项仍是单细胞数据复用，医学覆盖主要集中在癌症患者相关场景
 - 工具链依赖：依赖公共仓库与分析管线
 - 数据泄漏或 benchmark 偏差：待全文复核
 - 成本、可复现性或安全风险：未展开
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：06 生命科学
-- 可支撑哪个论点：生命科学中的 Agent 不一定做湿实验，也可以承担高价值的数据摄取与标准化分析角色
+- 可放入哪个章节：06 生命科学为主，兼及 07 医学与健康科学交叉样本
+- 可支撑哪个论点：生命科学中的 Agent 不一定做湿实验，也可以通过患者样本与癌症场景把组学流程延伸到医学应用
 - 可用于哪个表格或图：组学 Agent 功能分层表
 - 适合作为代表性案例吗：适合作为 single-cell analysis 子类案例
 - 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：当前重点是 Nature 摘要与导言
+- 需要在正文中特别引用的页码 / 图 / 表：当前重点是 Nature 文章页结果摘要中的患者样本与癌症场景描述
 - 需要与哪些论文并列比较：OmniCellAgent、SpatialAgent、CellVoyager
 
 ## 9. 总结
@@ -233,14 +233,14 @@
 
 ```text
 是否纳入：to_read
-主类：06
-二级类：06.03
-三级类：single-cell biology / scRNA-seq analysis
+主类：06;07
+二级类：06.03（primary filing）
+三级类：single-cell biology / scRNA-seq analysis；cancer patient-centered single-cell use cases
 四级专题：Single-cell data-ingestion and analysis agents
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented Agent; Hybrid Agent
 科研流程角色：literature_search_and_reading; knowledge_extraction_and_organization; tool_use_and_code_execution; data_analysis; result_interpretation
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making
-验证方式：computational_validation
+验证方式：computational_validation; clinical_data
 交叉属性：computation_driven; data_driven
 科学贡献类型：system_platform; analysis
 证据强度：computationally_validated
@@ -248,3 +248,4 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：standard
 ```
+

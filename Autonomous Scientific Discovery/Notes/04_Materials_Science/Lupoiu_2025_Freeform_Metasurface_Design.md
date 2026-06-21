@@ -1,12 +1,12 @@
-# Lupoiu 2025 - A multi-agentic framework for real-time, autonomous freeform metasurface design
+﻿# Lupoiu 2025 - A multi-agentic framework for real-time, autonomous freeform metasurface design
 
 **论文信息**
 - 标题：A multi-agentic framework for real-time, autonomous freeform metasurface design
 - 作者：Robert Lupoiu et al.
 - 年份：2025
-- 来源 / venue：Science Advances / arXiv preprint
+- 来源 / venue：Science Advances
 - DOI / arXiv / URL：https://doi.org/10.1126/sciadv.adx8006 ; https://arxiv.org/abs/2503.20479
-- PDF / 本地文件路径：本轮使用作者公开 PDF 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：Reference_PDF/04_Materials_Science/Lupoiu_2025_Freeform_Metasurface_Design.pdf（PMC official PDF 已归档）
 - 论文类型：系统论文
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | PDF p.1-2 | MetaChat 明确是 multi-agentic design framework，具有 agent-to-agent、tool、human interaction 与自我反思 | 高 |
-| 科学对象归类 | `04.04` | PDF p.1-4 | 直接对象是 freeform dielectric metasurfaces 与其结构-功能设计 | 高 |
-| 边界判断 | `04` 优先于 `09` | PDF p.1-2 | 论文核心不是制造工艺或设备控制，而是 metasurface 结构设计与性能优化 | 高 |
-| 方法流程 | AIM + surrogate solver | PDF p.2-6 | Design Agent 与 Materials Expert Agent 调用优化器、Maxwell solver、数据库与 coding tools | 高 |
-| 验证方式 | benchmark + simulated design performance | PDF p.6-9 | 在 Stanford nanophotonics benchmark 与 metalens / deflector design tasks 上验证，并报告高分与显著加速 | 高 |
+| Agent 纳入 | 是 | Science Advances full text / PDF p.1-2 | MetaChat 明确是 multi-agentic design framework，具有 agent-to-agent、tool、human interaction 与自我反思 | 高 |
+| 科学对象归类 | `04.04` | Science Advances full text / PDF p.1-4 | 直接对象是 freeform dielectric metasurfaces 与其结构-功能设计 | 高 |
+| 边界判断 | `04` 优先于 `09` | Science Advances full text / PDF p.1-2 | 论文核心不是制造工艺或设备控制，而是 metasurface 结构设计与性能优化 | 高 |
+| 方法流程 | AIM + surrogate solver | Science Advances full text / PDF p.2-6 | Design Agent 与 Materials Expert Agent 调用优化器、Maxwell solver、数据库与 coding tools | 高 |
+| 验证方式 | benchmark + simulated design performance | Science Advances full text / PDF p.6-9 | 在 Stanford nanophotonics benchmark 与 metalens / deflector design tasks 上验证，并报告高分与显著加速 | 高 |
 
 ## 0. 摘要翻译
 
@@ -248,3 +248,4 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：core
 ```
+

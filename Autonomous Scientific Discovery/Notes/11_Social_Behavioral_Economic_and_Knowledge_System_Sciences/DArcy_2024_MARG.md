@@ -1,4 +1,4 @@
-# D'Arcy et al. 2024 - MARG: Multi-Agent Review Generation for Scientific Papers
+﻿# D'Arcy et al. 2024 - MARG: Multi-Agent Review Generation for Scientific Papers
 
 **论文信息**
 - 标题：MARG: Multi-Agent Review Generation for Scientific Papers
@@ -6,9 +6,9 @@
 - 年份：2024
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2401.04259
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/DArcy_2024_MARG.pdf（arXiv PDF 已归档）
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
+- 当前状态：已核对 arXiv PDF 一手证据；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
 - 笔记作者：Codex
 
@@ -16,15 +16,15 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `11` / `11.07` | 摘要 | 最稳定对象是“multi-agent scientific paper review generation”，而不是单纯的模型方法或发表 venue。 | 高 |
-| 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
-| 实验验证 | user study 与 review quality evaluation | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 user study 与 review quality evaluation 支撑其主张。 | 中高 |
-| 边界判断 | 稳定 11.07；主要风险是证据强度而不是主类方向 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| Agent 纳入 | 是 | arXiv PDF abstract + intro | 系统面向明确科研目标，并包含多步行动、反馈迭代与多 Agent 协作。 | 高 |
+| 科学对象归类 | `11` / `11.07` | arXiv PDF abstract | 最稳定对象是 scientific paper feedback / peer-review comments generation，而不是单纯的模型方法或发表 venue。 | 高 |
+| 方法流程 | 多步 Agent 工作流成立 | arXiv PDF abstract + method overview | 论文把 paper slicing、agent communication、aspect-specific comments 与汇总生成串成可迭代流程。 | 高 |
+| 实验验证 | user study 与 review quality evaluation | arXiv PDF abstract + results overview | MARG-S 在用户研究中把每篇论文的 “good” comments 提升到约 3.7 条，并显著减少 generic comments。 | 高 |
+| 边界判断 | 稳定 11.07；主要风险是验证外推而不是主类方向 | arXiv PDF abstract + task framing | 论文直接研究 scientific peer-review feedback 这一知识生产工作流，因此不应退回通用 `01.04` 方法桶。 | 高 |
 
 ## 0. 摘要翻译
 
-论文围绕“multi-agent scientific paper review generation”提出题为《MARG: Multi-Agent Review Generation for Scientific Papers》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 user study 与 review quality evaluation 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+论文围绕 scientific paper feedback / peer-review comments generation 提出题为《MARG: Multi-Agent Review Generation for Scientific Papers》的 Agent 系统。核心做法是让多个 LLM agents 分担论文不同部分，并围绕 experiments、clarity、impact 等评论维度进行内部讨论和协作生成。论文通过 user study 与 review quality evaluation 验证系统有效性，并显示专门化的 MARG-S 能显著提升评论的具体性与有用性。这使其稳定落在科学知识生产与同行评审工作流相关的 `11.07`。
 
 ## 1. 是否纳入本综述
 
@@ -59,20 +59,20 @@
 - 三级类：
 - 四级专题：Scientific peer-review agents
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“multi-agent scientific paper review generation”，因此当前主类保持为 `11` / `11.07`。
+- 归类理由：按对象优先规则，本文最稳定的研究对象是 scientific peer-review feedback / review comments generation，直接属于科学知识生产与同行评审工作流，因此当前主类保持为 `11` / `11.07`。
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：multi-agent scientific paper review generation
-- 最终科学问题：论文试图通过 Agent 系统推进“multi-agent scientific paper review generation”相关研究任务。
+- 最终科学研究对象：scientific paper feedback / peer-review comments generation
+- 最终科学问题：论文试图通过多 Agent 系统提升科学论文评审意见的具体性、帮助性与覆盖度。
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：稳定 11.07；主要风险是证据强度而不是主类方向
+- 可能误归类到：01.04 通用科研工作流方法
 - 最终判定：保持 `11` / `11.07`
-- 判定理由：稳定 11.07；主要风险是证据强度而不是主类方向
+- 判定理由：研究对象是 scientific peer review 这一知识生产活动本身，而不是无对象的通用 research-agent workflow
 - 是否需要二次复核：原则上不急。
 
 ## 3. Agent 系统与科研流程角色
@@ -139,7 +139,7 @@
 - 数据集 / 实验对象：围绕“multi-agent scientific paper review generation”的论文设定。
 - 任务设置：多步科研工作流中的检索、生成、分析、评估或写作任务。
 - 对比基线：以论文原文报告为准。
-- 关键结果：当前可得证据表明论文主要通过 user study 与 review quality evaluation 支撑其核心主张。
+- 关键结果：MARG-S 在用户研究中将每篇论文的 “good” comments 提升到约 3.7 条，并显著降低 generic comments 比例。
 - 是否有消融实验：摘要级证据下不稳定，后续需全文补充。
 - 是否有失败案例或负结果：摘要级证据通常不足。
 
@@ -147,7 +147,7 @@
 
 - 科学贡献类型：system_platform; peer_review_automation
 - 贡献强度判断：中等到较强，取决于论文是平台型还是有直接实验发现。
-- 证据强度：medium_metadata_with_abstract
+- 证据强度：expert_confirmed
 
 ## 6. 与已有工作的关系
 
@@ -159,8 +159,8 @@
 ## 7. 局限性与风险
 
 - Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
-- 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
-- 泛化性不足：稳定 11.07；主要风险是证据强度而不是主类方向
+- 科学验证不足：当前已核对 arXiv PDF，但验证仍主要集中在用户研究与评论质量评分，而非更长期的真实同行评审下游影响。
+- 泛化性不足：当前结果主要围绕 scientific paper feedback generation，跨学科与跨评审场景泛化仍需更多外部验证
 - 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
 - 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
 - 成本、可复现性或安全风险：多 Agent 长流程通常带来较高成本和复现负担。
@@ -172,7 +172,7 @@
 - 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
 - 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
 - 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：后续全文笔记补齐。
+- 需要在正文中特别引用的页码 / 图 / 表：当前重点是 arXiv PDF 摘要中关于多 Agent 分工、experiments / clarity / impact 专门化以及 user study 结果的描述。
 - 需要与哪些论文并列比较：可与同主类或相邻边界样本并列。
 
 ## 9. 总结
@@ -203,8 +203,9 @@ Agent 类型：LLM Agent; Multi-Agent System
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven
 科学贡献类型：system_platform; peer_review_automation
-证据强度：medium_metadata_with_abstract
+证据强度：expert_confirmed
 归类置信度：中高
 纳入置信度：高
 推荐引用强度：standard
 ```
+
