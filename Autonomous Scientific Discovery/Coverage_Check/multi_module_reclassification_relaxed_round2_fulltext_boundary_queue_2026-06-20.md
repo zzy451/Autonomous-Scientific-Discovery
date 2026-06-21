@@ -195,6 +195,14 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1O_2026-06
 | `ASD-0712` | closed | reviewed official JPL PDF; kept `scientific_object_modules=10` only because the paper's stable object is rover mission-science autonomy rather than an independent planetary-environment study |
 | `ASD-0713` | closed | reviewed full paper PDF hosted by JPL plus official project sources; kept `scientific_object_modules=10` only because the paper is a Europa mission-autonomy prototype rather than an independent Europa-environment or astrobiology object study |
 
+## Round-2 P1-P Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1P_2026-06-21.md`.
+
+| ID | Status after P1-P | Action |
+|---|---|---|
+| `ASD-0543` | closed | reviewed Crossref DOI metadata plus official author HNSCC datasets; accepted `scientific_object_modules=06;07` because prognostic-gene discovery remains a gene / life-science object while HNSCC patient survival outcomes, disease-specific / progression-free endpoints, and treatment-subtype candidate outputs provide independent medical-object evidence for `07` |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.
@@ -235,7 +243,7 @@ These records are likely to remain confirmed core, but may need module additions
 | `ASD-0290` | `03/04` | Are catalyst candidates chemical objects only, or also materials-performance objects? |
 | `ASD-0520` | closed | reviewed Crossref DOI abstract `10.1126/sciadv.adw0894`; accepted `scientific_object_modules=03;04` because the publisher-registered abstract explicitly supports both oxygen-evolution electrocatalysis (`03`) and low-Ir catalyst-material composition / performance discovery (`04`) |
 | `ASD-0539` | `04/03` | Does electrolyte-additive molecular inverse design justify adding `03` to materials discovery? |
-| `ASD-0543` | `06/07` | Does prognostic gene discovery support `07`, or remain biology / bioinformatics only? |
+| `ASD-0543` | closed | reviewed Crossref DOI metadata plus official author HNSCC datasets; accepted `scientific_object_modules=06;07` because prognostic-gene discovery remains a gene / life-science object while HNSCC patient survival outcomes, disease-specific / progression-free endpoints, and treatment-subtype candidate outputs provide independent medical-object evidence for `07` |
 | `ASD-0547` | `04/09` | Does pixelated metasurface design include device/fabrication-system engineering object evidence? |
 | `ASD-0609` | `03/09` | Does pH adjustment / process-control constitute engineering process coverage? |
 | `ASD-0651` | `05/06/11` | Do heatwave bio-ecological and socioeconomic cascading risks support multiple modules? |

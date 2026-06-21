@@ -27,6 +27,17 @@
 
 This round did not land a master-list rewrite for `ASD-0543`, but the strongest currently accessible first-hand evidence no longer supports a comfortable `06`-only reading. The title gives direct life-science object coverage through prognostic gene discovery, and it also introduces clear medical pressure through the prognosis framing; in addition, the DOI-deposited reference list clusters around oncology, clinical prognosis, healthcare ML, and related biomedical datasets. Because the SSRN abstract and full text were not accessible in the current audit environment, this remains a source-limited `06 / 07` boundary item rather than a closed high-confidence multi-module decision.
 
+## Round-2 Boundary Closure Update (2026-06-21)
+
+- `landed_relaxed_judgment`: `06;07`
+- `primary_module_for_filing`: `07`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: Crossref DOI metadata and deposited reference list `10.2139/ssrn.5343855`; official author Hugging Face datasets `Project-Lambda-TCGA-HNSCC` and `Case-Study-HNSCC-ML-Copilot-Agent`; official PyPI package; official GitHub repo; official docs
+- `classification_evidence_source_level`: `project_or_benchmark_page`
+- `note_revision_required`: `no`
+
+This note no longer treats the record as an unresolved source-limited `06 / 07` queue sample. Although the SSRN abstract and full text remain access-blocked in the current environment, the official author datasets now provide enough object-level evidence to land `06;07`. The life-science side remains clear because the workflow is framed as prognostic gene discovery and the official case-study files include survival-associated genes and selected gene features. Independent `07` coverage is also now supported because the same official datasets are explicitly built around HNSCC patient cohorts and survival endpoints, including `Overall Survival Status`, `Overall Survival (Months)`, `Disease-specific Survival status`, `Progression Free Status`, clinical staging, ICD-coded disease fields, and treatment-subtype candidate outputs. Under the current relaxed object-first rule, that is sufficient to record both gene-level life-science coverage and disease/prognosis-level medical coverage.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 暂定是 | title + Crossref metadata | 标题直接写明 `Copilot Agent` 与 `LLM-Guided Workflow` | 中 |
