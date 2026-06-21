@@ -5,118 +5,87 @@
 - 作者：Hu et al.
 - 年份：2025
 - 来源 / venue：Light: Science & Applications
-- DOI / arXiv / URL：https://doi.org/10.1038/s41377-024-01678-w
-- PDF / 本地文件路径：本轮基于官方期刊摘要页与期刊说明；未保存本地 PDF
-- 论文类型：研究论文 / embodied materials agent
-- 当前状态：to_read
-- 阅读日期：2026-06-19
-- 笔记作者：Codex
+- DOI / URL：https://doi.org/10.1038/s41377-024-01678-w
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Hu_2025_Electromagnetic_Metamaterial_Agent.pdf`
+- First-hand source checked：official Nature HTML；official Nature PDF
+- PDF version：publisher PDF
+- Source-limited：no
+- 当前状态：confirmed core；当前落地为 relaxed multi-module `04;09`，主归档模块为 `04`
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official journal abstract | 论文显式提出 `metaAgent`，包含规划、感知、编码与执行链条 | 高 |
-| 科学对象归类 | `04.04` | official journal abstract | 核心对象是 electromagnetic metamaterials / programmable metasurfaces | 高 |
-| 方法流程 | 多模块协同 | official journal abstract | 高层控制结合多代理讨论与环境反馈，执行长程任务 | 高 |
-| 实验验证 | 真实实验 | official journal abstract | 摘要强调 experimental prototype 与真实环境任务 | 高 |
-| 边界判断 | `04` 胜过 `09` | official journal abstract | 直接科学对象仍是超材料功能与设计，而非一般工程控制 | 高 |
-
-## 0. 摘要翻译
-
-本文提出一种电磁超材料 Agent，把高层自然语言规划、环境感知、编码与超表面控制结合起来。系统能够在不断变化的环境中组织多步任务，并以实验原型形式展示其能力。尽管它具备明显的具身/工程色彩，但论文稳定研究对象仍然是可编程超材料及其电磁功能。
+| PDF 归档与来源核对 | 已完成 | official Nature HTML；official Nature PDF | 当前使用 publisher PDF 作为规范归档版本 | 高 |
+| Agent 纳入 | 是 | 官方全文 | 论文显式提出具身 `metaAgent`，包含规划、感知、编码、执行与环境反馈链条 | 高 |
+| 材料科学覆盖 | `04` | 官方全文 | 核心对象是 electromagnetic metamaterials / programmable metasurfaces 的设计、控制与功能实现 | 高 |
+| 工程技术覆盖 | `09` | 官方全文 | 论文将该系统用于 embodied wireless sensing、communications 与 robot-coordination-like task execution，构成工程系统 add-on 证据 | 中高 |
+| `01.04` 存放区判断 | `none` | 官方全文 | 该文包含具体超材料对象与工程任务验证，不属于无对象实验的通用方法论文 | 高 |
 
 ## 1. 是否纳入本综述
 
-- 是否属于 Agent 文献：是
-- 判断依据：有明确科研目标、多步任务规划、工具调用、环境反馈与实验执行链条
-- 判定置信度：高
-- 在科研流程中承担的明确角色：design；simulation_modeling；data_analysis
-- 是否仍需进一步全文复核：对纳入和主类判断不是硬性必需
+- 是否属于 Agent 文献：是。
+- 判断依据：系统具备明确科研目标、多步任务规划、工具调用、环境交互与实验原型验证。
+- 纳入置信度：高。
 
 ## 2. 科学领域归类
 
-- 一级类：04
-- 二级类：04.04
-- 三级类：metamaterials / programmable metasurfaces
-- 四级专题：Electromagnetic metamaterial design agents
-- 最终科学研究对象：电磁超材料结构及其波操控功能
-- 最终科学问题：如何让 Agent 自主组织超材料相关感知、规划与执行任务
-- 容易混淆的边界：`09`
-- 最终判定：保留 `04.04`
-- 判定理由：系统虽然带有具身执行色彩，但对象优先规则下仍应归材料科学
+- scientific_object_modules：`04;09`
+- object_coverage_mode：`multi_module`
+- general_method_bucket：`none`
+- primary_module_for_filing：`04`
+- 归类理由：
+  - `04`：直接科学对象始终是电磁超材料 / 可编程超表面。
+  - `09`：具身无线感知、通信与机器人协同任务提供了明确工程技术 add-on 覆盖。
+- 边界说明：文件存放在材料科学目录仅是 filing convenience，不代表排斥 `09` 的对象级覆盖。
 
 ## 3. Agent 系统与科研流程角色
 
-- Agent 类型标签：LLM Agent；Tool-using Agent；Hybrid Agent
-- 科研流程角色：design；simulation_modeling；data_analysis
-- 自主能力：planning；tool_use；feedback_iteration；autonomous_decision_making；environment_interaction
-- 交叉属性标签：computation_driven；experiment_driven；multimodal
+- Agent 类型：LLM Agent；Tool-using Agent；Hybrid Agent；Embodied Agent。
+- 科研流程角色：design；simulation_modeling；experiment_execution；data_analysis。
+- 自主能力：planning；tool_use；feedback_iteration；autonomous_decision_making；environment_interaction。
 
 ## 4. 方法设计
 
-1. 接收超材料任务目标与环境信息。
-2. 高层控制模块进行规划与任务拆分。
-3. 多模块协同感知、编码并控制超表面。
-4. 根据环境反馈修正任务执行。
-5. 输出超材料功能实现结果。
+1. 接收超材料相关任务与环境状态。
+2. 高层控制模块规划任务并拆分执行步骤。
+3. 协同感知、编码并控制可编程超表面。
+4. 根据反馈动态调整任务执行。
+5. 在真实原型任务中完成功能实现。
 
 ## 5. 实验与验证
 
-- 验证方式：experimentally_validated
-- 数据、任务与指标：围绕超材料功能实现的真实环境任务
-- 关键结果：官方摘要支持其为实验原型并在真实环境下执行任务
-- 科学贡献类型：design；system_platform
-- 证据强度：experimentally_validated
+- 材料对象验证：超材料 / 超表面功能实现。
+- 工程对象验证：无线感知、通信与机器人协同相关任务。
+- 验证方式：experimentally_validated。
+- 证据强度：publisher full text；source_limited = no。
 
-## 6. 与已有工作的关系
+## 6. 对综述写作的价值
 
-- 与一般材料设计 agent 相比，这篇更强调具身执行与环境交互。
-- 与一般机器人系统不同，这里的核心对象不是通用机器人控制，而是超材料本体。
-- 可作为 `04` 类中“实验型 / embodied materials agent”代表样本。
+- 可作为材料 Agent 走向 embodied prototype 的代表案例。
+- 同时适合支撑“对象仍是材料，但任务已外溢到工程技术系统”的边界论点。
+- 推荐引用强度：standard。
 
-## 7. 局限性与风险
+## 7. 总结
 
-- 具体实验细节和任务规模仍可在全文中补强。
-- 主要剩余风险是 `04/09` 的边界表述，而不是一级类错误。
-- 不确定性更多在细粒度子类，而非是否纳入。
+### 7.1 一句话概括
 
-## 8. 对综述写作的价值
+具身 Agent 被用于电磁超材料对象，同时覆盖了无线感知、通信与机器人协同等工程任务。
 
-- 适合放入材料科学中“具身 Agent 与实验原型”小节。
-- 可支持“材料 Agent 正在从仿真设计走向真实环境交互”这一论点。
-- 推荐引用强度：standard
-
-## 9. 总结
-
-### 9.1 一句话概括
-
-具身 Agent 被用于电磁超材料的真实任务执行。
-
-### 9.2 速记版 pipeline
-
-1. 读取超材料任务
-2. 规划与分工
-3. 感知并控制超表面
-4. 根据反馈修正
-5. 完成 EM 功能任务
-
-### 9.3 标注字段汇总
+### 7.2 标注字段汇总
 
 ```text
-是否纳入：to_read
-主类：04
-二级类：04.04
-三级类：metamaterials / programmable metasurfaces
-四级专题：Electromagnetic metamaterial design agents
-Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
-科研流程角色：design; simulation_modeling; data_analysis
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction
+是否纳入：是
+scientific_object_modules：04;09
+object_coverage_mode：multi_module
+general_method_bucket：none
+primary_module_for_filing：04
+Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent; Embodied Agent
+科研流程角色：design; simulation_modeling; experiment_execution; data_analysis
 验证方式：experimentally_validated
-交叉属性：computation_driven; experiment_driven; multimodal
 科学贡献类型：design; system_platform
 证据强度：experimentally_validated
-归类置信度：高
+归类置信度：medium_high
 纳入置信度：高
 推荐引用强度：standard
 ```
