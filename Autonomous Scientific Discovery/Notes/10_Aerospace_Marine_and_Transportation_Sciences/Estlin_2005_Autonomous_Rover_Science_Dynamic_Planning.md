@@ -14,6 +14,18 @@
 
 ## Evidence Log
 
+## Round-2 Relaxed Multi-Module Update (2026-06-21)
+
+- `scientific_object_modules`: `10`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `10`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: official JPL PDF `estlin-ieeeaero2005-EnablingAutonomous.pdf`
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `note_revision_required`: `no`
+
+This note no longer treats the record as a live `10 / 05` boundary question. The official full text is strong enough to keep the paper in `10` only: its stable object is onboard rover mission-science planning and scheduling, including science alerts, target insertion, resource-aware replanning, and opportunistic science handling. The paper does mention Mars and science targets, but it does not report an independent planetary-environment, geology, or Earth-and-environment-style object study strong enough to add `05` under the current relaxed rule.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 官方 PDF 摘要与引言 | 接收 science and engineering goals，生成 plan，并在新机会或故障下 re-plan | 高 |

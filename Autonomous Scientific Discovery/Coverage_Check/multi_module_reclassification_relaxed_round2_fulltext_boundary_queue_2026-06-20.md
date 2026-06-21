@@ -186,6 +186,15 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1N_2026-06
 | `ASD-0543` | still open | current first-hand evidence is source-limited but increases `06 / 07` pressure; keep in the full-text follow-up queue rather than forcing a landed rewrite |
 | `ASD-0547` | closed | reviewed DOI / Crossref / SPIE landing evidence; kept `scientific_object_modules=04` only because the stable object remains pixelated metasurface / engineered nanostructure design and current first-hand metadata does not justify adding `09` |
 
+## Round-2 P1-O Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1O_2026-06-21.md`.
+
+| ID | Status after P1-O | Action |
+|---|---|---|
+| `ASD-0712` | closed | reviewed official JPL PDF; kept `scientific_object_modules=10` only because the paper's stable object is rover mission-science autonomy rather than an independent planetary-environment study |
+| `ASD-0713` | closed | reviewed full paper PDF hosted by JPL plus official project sources; kept `scientific_object_modules=10` only because the paper is a Europa mission-autonomy prototype rather than an independent Europa-environment or astrobiology object study |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.

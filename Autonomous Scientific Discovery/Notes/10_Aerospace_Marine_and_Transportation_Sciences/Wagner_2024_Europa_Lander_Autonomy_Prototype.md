@@ -14,6 +14,18 @@
 
 ## Evidence Log
 
+## Round-2 Relaxed Multi-Module Update (2026-06-21)
+
+- `scientific_object_modules`: `10`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `10`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: full paper PDF hosted by JPL `wagner-et-al-2023-jais-el.pdf`; official JPL Europa Lander project page; JPL mission-concept news page; canonical DOI `10.2514/1.I011294`
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `note_revision_required`: `yes`
+
+This note no longer treats the record as an unresolved `10 / 05 / 06` expansion candidate. Full-text and official JPL source review now support a stable `10`-only reading: the paper is a mission-autonomy prototype for Europa Lander science operations, not an independent Europa environment or astrobiology object study. Biosignature analysis, seismometer data, panoramas, Europan surface conditions, and plume/environment references function as mission-context goals or simulated/scenario inputs for autonomy evaluation, while the reported results remain planning, execution, replanning, prioritization, and hardware-backed mission-operations results.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Canonical metadata | 稳定 | DOI + BibBase | JAIS 2024, 21(1):37-57, DOI 10.2514/1.I011294 | 高 |
