@@ -85,7 +85,15 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1C_2026-06
 | ID | Status after P1-C | Action |
 |---|---|---|
 | `ASD-0033` | closed | reviewed PMC full text and accepted `scientific_object_modules=06` only; precision-medicine framing did not supply patient-level or therapeutic-validation evidence strong enough for `07` |
-| `ASD-0035` | still open | canonical DOI `10.1002/adma.202413523` resolves to Wiley, but landing-page evidence remained blocked by Cloudflare, so no biology module is accepted without first-hand abstract / full text |
+| `ASD-0035` | still open | canonical DOI `10.1002/adma.202413523` resolves to Wiley, but landing-page evidence remained blocked by Cloudflare, so no biology module was accepted yet |
+
+## Round-2 P1-D Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1D_2026-06-21.md`.
+
+| ID | Status after P1-D | Action |
+|---|---|---|
+| `ASD-0035` | closed | reviewed arXiv abstract `2409.05556` and canonical DOI landing; accepted `scientific_object_modules=04` only because the paper's concrete object remains biologically inspired materials rather than an independent life-science experiment |
 
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
