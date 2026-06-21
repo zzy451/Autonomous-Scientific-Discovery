@@ -10,7 +10,7 @@
 2. 修改对应 note 中仍残留的旧单模块 / 单主类口径，以及缺少原文证据支撑的分类表述。
 3. 将每篇文献可合法获取的 PDF 下载并归档到 `Reference_PDF/` 下的相应位置，作为后续复核和写作的本地证据资产。
 
-本轮复核从 `Autonomous Scientific Discovery/Notes/` 中已有 note 平铺展开。Note 只作为待复核论文索引和路径线索，不作为分类权威。
+本轮复核以 `Autonomous Scientific Discovery/Paper_Lists/agent_master_paper_list.md` 中当前 451 篇 confirmed core 文献为平铺主索引展开。`Notes/` 只作为定位对应论文、核对 note path 和后续修订的配套线索层，不作为分类权威。
 
 ## 2. 最高证据原则
 
@@ -42,24 +42,24 @@
 - `01.04` 只作为独立 general-method bucket，用于没有任何具体科学对象实验、验证、benchmark task、case study 或结果报告的 ASD / general research-agent 方法文献。
 - `primary_module_for_filing` 只用于 PDF / note 路径和 legacy 展示，不是唯一分类事实。
 
-## 4. 工作入口：按 Notes 平铺，不按优先级
+## 4. 工作入口：按 Master List 中的 451 篇平铺，不按优先级
 
 本轮不按风险优先级、不按领域优先级、不先做容易论文。
 
-主控代理先生成固定待复核索引：
+主控代理先从 `agent_master_paper_list.md` 中提取固定待复核索引：
 
 ```text
-Autonomous Scientific Discovery/Notes/**/*.md
+agent_master_paper_list.md 中 Inclusion status 为 `to_read` 或 `included` 的当前 451 篇 confirmed core records
 ```
 
 排序规则：
 
-1. 按 note 所在目录自然排序。
-2. 同一目录内按文件名自然排序。
-3. 与 `Paper_Lists/agent_master_paper_list.md` 对齐 paper ID、title、note path。
-4. 对无法对齐的 note 单独列入 `note_masterlist_alignment_issue`。
+1. 以 `agent_master_paper_list.md` 中这 451 篇记录的当前行顺序为唯一平铺顺序基准。
+2. 逐条读取每篇记录的 `paper ID`、title、status、legacy filing fields、note path、URL / DOI / remarks。
+3. 再根据该记录去定位对应 note、PDF 和一手来源。
+4. 对缺 note、note path 不一致、title 不一致或 ID 对不上的情况，单独列入 `note_masterlist_alignment_issue`。
 
-每篇 note 对应一篇待复核论文。复核时不能沿用 note 里的旧分类结论，只能用 note 帮助定位 title、DOI、URL、已有引用线索和本地上下文。
+每篇待复核论文都必须先在主列表中占有一个明确记录，再去定位它的 note。复核时不能沿用 note 里的旧分类结论，只能用 note 帮助定位 title、DOI、URL、已有引用线索和本地上下文。
 
 ## 5. PDF 下载与归档规则
 
@@ -123,7 +123,7 @@ PDF version:
 
 建议每批 30 篇，先做一个小规模试运行。
 
-- Batch 00：平铺索引前 10 篇，测试流程、PDF 归档、note 修改深度、master-list 更新方式。
+- Batch 00：主列表平铺索引前 10 篇，测试流程、PDF 归档、note 修改深度、master-list 更新方式。
 - Batch 01：001-030
 - Batch 02：031-060
 - Batch 03：061-090
@@ -141,7 +141,7 @@ PDF version:
 - Batch 15：421-450
 - Batch 16：451 及索引对齐遗漏项
 
-每批必须按平铺索引顺序推进，不得因为某些论文看起来更重要、更容易或更有争议而改变顺序。
+每批必须按主列表中的平铺索引顺序推进，不得因为某些论文看起来更重要、更容易或更有争议而改变顺序。
 
 ## 7. Agent 团队组织
 
@@ -357,13 +357,14 @@ reaudit ASD batch XX notes PDFs and multi-module classes
 
 第一步先执行 `Batch 00`：
 
-1. 生成 `Notes/**/*.md` 平铺索引。
-2. 取前 10 篇。
-3. 建立 PDF 目录。
-4. 对 10 篇执行完整流程。
-5. 检查 note 修改深度是否合适。
-6. 检查 master-list overlay 更新方式是否稳定。
-7. 检查 batch report 是否足够追溯。
+1. 从 `agent_master_paper_list.md` 生成当前 451 篇 confirmed core records 的平铺索引。
+2. 用该索引反查对应 note 和 note path。
+3. 取前 10 篇。
+4. 建立 PDF 目录。
+5. 对 10 篇执行完整流程。
+6. 检查 note 修改深度是否合适。
+7. 检查 master-list overlay 更新方式是否稳定。
+8. 检查 batch report 是否足够追溯。
 
 `Batch 00` 稳定后，再进入 `Batch 01-16`。
 
