@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv:2505.24584v3
 - DOI / arXiv / URL：https://arxiv.org/abs/2505.24584
-- PDF / 本地文件路径：临时读取 `arXiv:2505.24584v3` PDF，未保存至项目目录
+- PDF / 本地文件路径：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Srinivas_2025_AutoChemSchematic_AI.pdf
 - 论文类型：系统论文 / 工程设计 Agent
 - 当前状态：已读全文文本；已纳入
 - 阅读日期：2026-06-15
@@ -14,7 +14,7 @@
 
 ## Evidence Log
 
-**证据级别**：full-text（arXiv PDF 已下载到临时目录并转文本核读；未保存到项目目录）
+**证据级别**：full-text（official arXiv PDF 已归档到项目 `Reference_PDF/` 并核读）
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
