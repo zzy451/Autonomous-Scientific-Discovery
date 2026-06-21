@@ -12,7 +12,15 @@
 - 阅读日期：2026-06-15
 - 笔记作者：Codex
 
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/07_Medical_and_Health_Sciences/Inoue_2024_DrugAgent_DTI.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Classification remains stable: `scientific_object_modules=07`; `object_coverage_mode=single_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+
 ## Evidence Log
+
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 **证据级别：full-text**（已读取 arXiv PDF v4 全文抽取文本；Evidence Log 位置来自摘要、Methods、Experiment、Discussion。）
 

@@ -6,13 +6,21 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2505.13400
-- PDF / 本地文件路径：临时读取 `ASD-0083_Robin.pdf`；未写入项目 Reference_PDF
+- PDF / 本地文件路径：arXiv PDF；项目归档路径为 `Reference_PDF/07_Medical_and_Health_Sciences/Ghareeb_2025_Robin.pdf`
 - 论文类型：系统论文 / 医学与药物发现 Agent
 - 当前状态：已读 / 已纳入 / 分类待主清单复核
 - 阅读日期：2026-06-15
 - 笔记作者：Codex
 
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/07_Medical_and_Health_Sciences/Ghareeb_2025_Robin.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Current authoritative classification: `scientific_object_modules=06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+
 ## Evidence Log
+
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note; the multi-module `06;07` judgment remains supported.
 
 ## 2026-06-20 relaxed multi-module revision
 

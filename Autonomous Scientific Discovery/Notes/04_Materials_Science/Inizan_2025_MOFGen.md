@@ -12,7 +12,15 @@
 - 阅读日期：2026-06-15
 - 笔记作者：Codex
 
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/04_Materials_Science/Inizan_2025_MOFGen.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Classification remains stable: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+
 ## Evidence Log
+
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 **证据级别：full-text**（已读取 arXiv PDF 全文抽取文本；Evidence Log 位置来自摘要、Results、Fig. 1-4、Supplementary sections。）
 

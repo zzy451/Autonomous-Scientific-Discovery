@@ -6,13 +6,21 @@
 - 年份：2025 arXiv v2；正式发表版本见 Nature Biomedical Engineering 2025
 - 来源 / venue：arXiv；Nature Biomedical Engineering
 - DOI / arXiv / URL：https://arxiv.org/abs/2404.18021；https://www.nature.com/articles/s41551-025-01463-z
-- PDF / 本地文件路径：临时读取 `ASD-0081_CRISPR-GPT.pdf`；未写入项目 Reference_PDF
+- PDF / 本地文件路径：arXiv PDF；项目归档路径为 `Reference_PDF/06_Life_Sciences/Qu_2025_CRISPR_GPT.pdf`
 - 论文类型：系统论文 / 生物实验设计 Agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15
 - 笔记作者：Codex
 
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/06_Life_Sciences/Qu_2025_CRISPR_GPT.pdf`
+- Current-turn source refresh: the archived local PDF was rechecked against the arXiv full text and the published Nature Biomedical Engineering metadata on `2026-06-21`.
+- Classification remains stable: `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+
 ## Evidence Log
+
+**2026-06-21 archive note**: local archived PDF in project `Reference_PDF/` rechecked against the existing full-text note; published version metadata remains `https://doi.org/10.1038/s41551-025-01463-z`.
 
 Evidence level: full-text (arXiv PDF v2 full text + published DOI/page metadata).
 
