@@ -1,4 +1,9 @@
 # Pu et al. 2026 - PiFlow
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/04_Materials_Science/Pu_2025_PiFlow.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Classification remains stable under the relaxed rule: `scientific_object_modules=03;04;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
 
 **论文信息**
 - 标题：PiFlow: Principle-Aware Scientific Discovery with Multi-Agent Collaboration
@@ -13,6 +18,7 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 ## 2026-06-20 relaxed round-2 multi-module revision
 

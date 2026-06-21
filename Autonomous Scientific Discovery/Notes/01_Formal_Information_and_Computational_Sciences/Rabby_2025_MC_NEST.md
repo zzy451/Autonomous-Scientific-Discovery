@@ -1,4 +1,9 @@
 # Rabby 2025 - Iterative Hypothesis Generation for Scientific Discovery with Monte Carlo Nash Equilibrium Self-Refining Trees
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Rabby_2025_MC_NEST.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Classification remains stable: `general_method_bucket=01.04`; `object_coverage_mode=general_method_without_concrete_object_experiments`; `primary_module_for_filing=01`.
 
 **论文信息**
 - 标题：Iterative Hypothesis Generation for Scientific Discovery with Monte Carlo Nash Equilibrium Self-Refining Trees
@@ -13,6 +18,7 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
