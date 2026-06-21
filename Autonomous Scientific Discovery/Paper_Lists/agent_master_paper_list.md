@@ -46,9 +46,9 @@ This master list tracks Agent papers for the Autonomous Scientific Discovery rev
 | 10 | 23 |
 | 11 | 30 |
 
-### Audited Relaxed Multi-Module Distribution (Partial Overlay Through Batch 4 / Wave B + Round 2 / P1-A)
+### Audited Relaxed Multi-Module Distribution (Partial Overlay Through Batch 4 / Wave B + Round 2 / P1-B)
 
-This overlay keeps the legacy filing table unchanged, but expands high-confidence relaxed multi-module decisions accepted through Batch 2 / Wave A, Batch 2 / Wave B, Batch 3 / Wave A, Batch 3 / Wave B, Batch 4 / Wave A, Batch 4 / Wave B, Round 2 / P0-A, Round 2 / P0-B, Round 2 / P0-C, Round 2 / P0-D, Round 2 / P0-E, and Round 2 / P1-A. It should be read as the current audited module-assignment view, not as a completed row-level schema migration.
+This overlay keeps the legacy filing table unchanged, but expands high-confidence relaxed multi-module decisions accepted through Batch 2 / Wave A, Batch 2 / Wave B, Batch 3 / Wave A, Batch 3 / Wave B, Batch 4 / Wave A, Batch 4 / Wave B, Round 2 / P0-A, Round 2 / P0-B, Round 2 / P0-C, Round 2 / P0-D, Round 2 / P0-E, Round 2 / P1-A, and Round 2 / P1-B. It should be read as the current audited module-assignment view, not as a completed row-level schema migration.
 
 | Scientific object module | Expanded assignment count |
 |---|---:|
@@ -57,7 +57,7 @@ This overlay keeps the legacy filing table unchanged, but expands high-confidenc
 | 03 | 79 |
 | 04 | 108 |
 | 05 | 35 |
-| 06 | 73 |
+| 06 | 74 |
 | 07 | 68 |
 | 08 | 3 |
 | 09 | 36 |
@@ -67,7 +67,7 @@ This overlay keeps the legacy filing table unchanged, but expands high-confidenc
 | Relaxed-counting metric | Count |
 |---|---:|
 | Record-level confirmed included-and-classified count | 451 |
-| Expanded module assignment count | 552 |
+| Expanded module assignment count | 553 |
 | Independent `01.04` general-method bucket count, after accepted relaxed migrations | 19 |
 
 ### Inclusion Status Distribution
@@ -145,7 +145,7 @@ Legacy note: the column names below are retained for backward compatibility with
 | ASD-0051 | Geneagent: Self-verification language agent for gene set knowledge discovery using domain databases | Wang et al. | 2024 | arXiv | https://arxiv.org/abs/2405.16205 |  | yes | to_read |  | 06 | 06.03 |  | Biology / omics research agents | no |  |  |  |  |  | core | Notes/06_Life_Sciences/Wang_2024_GeneAgent.md | Source trail: Shanghai AI Lab seed survey[ref 277] |
 | ASD-0052 | Optimizing collaboration of large language model based agents for autonomous finite element analysis | Tian et al. | 2025 | SSRN | https://doi.org/10.2139/ssrn.5107557 |  | yes | to_read |  | 09 | 09.01 |  | Engineering/scientific workflow agents | no | LLM Agent; Multi-Agent System; Tool-using Agent | simulation_modeling; tool_use_and_code_execution; evidence_assessment_and_validation | simulation_validation | system_platform; engineering_analysis | high_primary_abstract | standard | Notes/09_Engineering_and_Industrial_Technology_Sciences/Tian_2025_Autonomous_Finite_Element_Analysis.md | Source trail: Shanghai AI Lab seed survey[ref 259]; promoted 2026-06-17 because the paper explicitly studies coordinated multi-Agent scientific/engineering analysis rather than a simple single-model predictor. Round2NoteLanded2026-06-19: formal note keeps `09.01`; the stable scientific object is autonomous finite-element engineering analysis rather than a domain-general research-agent platform. |
 | ASD-0053 | Towards autonomous hypothesis verification via language models with minimal guidance | Takagi et al. | 2023 | arXiv | https://arxiv.org/abs/2311.09706 |  | yes | to_read |  | 01 | 01.04 |  | General scientific research-agent systems | no | LLM Agent; Planning Agent | hypothesis_generation; evidence_assessment_and_validation | benchmark | hypothesis; benchmark | benchmark_only | standard | Notes/01_Formal_Information_and_Computational_Sciences/Takagi_2023_Autonomous_Hypothesis_Verification.md | Source trail: Shanghai AI Lab seed survey[ref 251]; Candidate resolved: upgraded to to_read; Round2Followup2026-06-18: full-text note supports keeping this record in the independent `01.04` bucket, but the paper is still an early toy-problem hypothesis-verification pipeline, so the main residual risk is confirmed-core strength rather than object-bucket direction. |
-| ASD-0054 | The virtual lab: Ai agents design new sars-cov-2 nanobodies with experimental validation | Swanson et al. | 2024 | bioRxiv |  |  | yes | to_read |  | 07 | 07.04 |  | Drug discovery / biomedical agents | no |  |  |  |  |  | core | Notes/07_Medical_and_Health_Sciences/Swanson_2025_Virtual_Lab_Nanobodies.md | Source trail: Shanghai AI Lab seed survey[ref 248] |
+| ASD-0054 | The virtual lab: Ai agents design new sars-cov-2 nanobodies with experimental validation | Swanson et al. | 2024 | bioRxiv |  |  | yes | to_read |  | 07 | 07.04 |  | Drug discovery / biomedical agents | no |  |  |  |  |  | core | Notes/07_Medical_and_Health_Sciences/Swanson_2025_Virtual_Lab_Nanobodies.md | Source trail: Shanghai AI Lab seed survey[ref 248]. RelaxedRound2P1B2026-06-20: scientific_object_modules=07;06; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; first_hand_sources_checked=Nature full-text PDF / extracted text for DOI `10.1038/s41586-025-09442-9`; evidence=SARS-CoV-2 therapeutic nanobody / binder design and variant-facing biomedical objective support `07`, while concrete protein / nanobody / spike-RBD objects, 92 mutant nanobody designs, ESM+AlphaFold-Multimer+Rosetta protein-design workflow, Escherichia coli expression, and ELISA-based wet-lab binding validation support additional `06` life-science coverage. |
 | ASD-0055 | Biomaster: Multi-agent system for automated bioinformatics analysis workflow | Su et al. | 2025 | bioRxiv |  |  | yes | to_read |  | 06 | 06.03 |  | Biology / omics research agents | no |  |  |  |  |  | core | Notes/06_Life_Sciences/Su_2025_BioMaster.md | Source trail: Shanghai AI Lab seed survey[ref 243] |
 | ASD-0056 | Delocalized, asynchronous, closed-loop discovery of organic laser emitters | Strieth-Kalthoff et al. | 2024 | Science | https://doi.org/10.1126/science.adk9227 |  | yes | to_read |  | 03 | 03.04 |  | Closed-loop molecular/materials discovery | yes | Planning Agent; Tool-using Agent; Hybrid Agent | experimental_design; experiment_execution; data_analysis; evidence_assessment_and_validation | robotic_experiment; wet_lab_experiment | experimental_discovery; experimental_optimization | medium_pending_full_text | core | Notes/03_Chemical_Sciences/StriethKalthoff_2024_Organic_Laser_Emitters.md | Source trail: Shanghai AI Lab seed survey[ref 241] |
 | ASD-0057 | Autochemschematic ai: A closed-loop, physics-aware agentic framework for auto-generating chemical process and instrumentation diagrams | Srinivas et al. | 2025 | arXiv | https://arxiv.org/abs/2505.24584 |  | yes | to_read |  | 09 | 09.04 |  | Chemical process engineering diagram agents | no |  |  |  |  |  | core | Notes/09_Engineering_and_Industrial_Technology_Sciences/Srinivas_2025_AutoChemSchematic_AI.md | Source trail: Shanghai AI Lab seed survey[ref 240]; Strict review: verify whether it is autonomous chemical-process Agent or diagram-generation tool.; NeedsReviewResolved: include as engineering/process-design Agent; full note should verify closed-loop planning and simulator feedback. |

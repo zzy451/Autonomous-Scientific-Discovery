@@ -12,6 +12,13 @@
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
+## Relaxed Multi-Module Revision - 2026-06-20
+
+- Source checked: Nature full-text PDF for DOI `10.1038/s41586-025-09442-9`, parsed locally during Round 2 / P1-B.
+- Current relaxed classification: `scientific_object_modules=07;06`; `object_coverage_mode=multi_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Rationale: `07` remains the filing module because the end objective is therapeutic nanobody discovery against recent SARS-CoV-2 variants. Under the relaxed object-coverage rule, the same full text also supports `06` because the paper directly studies protein / nanobody / spike-RBD objects, reports 92 mutant nanobody designs, and includes expression, solubility, and ELISA wet-lab binding validation on concrete biological molecules.
+- Note update: older single-module wording should now be read as legacy filing only. This paper is not just a biomedical platform case; it also contains direct life-science object evidence at the protein / nanobody level.
+
 ## Evidence Log
 
 证据级别：full-text PDF（Nature 正式版，页码 1-13；PDF 文本抽取显示为 Nature Article）。

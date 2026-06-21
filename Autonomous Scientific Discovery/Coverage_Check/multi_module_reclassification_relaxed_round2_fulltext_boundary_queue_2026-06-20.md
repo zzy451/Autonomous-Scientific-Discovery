@@ -70,6 +70,14 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1A_2026-06
 | `ASD-0008` | closed | accepted `scientific_object_modules=07;03`; drug-discovery DMTA remains `07`, while synthesis / HPLC / molecular demonstration support additional `03` coverage |
 | `ASD-0014` | still open | source-limited; bioRxiv PDF was blocked and alternate PDF download was damaged, so `07` is not accepted without full-text task inventory |
 
+## Round-2 P1-B Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1B_2026-06-20.md`.
+
+| ID | Status after P1-B | Action |
+|---|---|---|
+| `ASD-0054` | closed | accepted `scientific_object_modules=07;06`; therapeutic nanobody objective keeps `07`, while protein / nanobody / spike-RBD wet-lab validation supports additional `06` coverage |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.
