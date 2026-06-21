@@ -6,7 +6,7 @@
 - 年份：2023
 - 来源 / venue：arXiv:2311.09706v1
 - DOI / arXiv / URL：https://arxiv.org/abs/2311.09706
-- PDF / 本地文件路径：临时全文 `./.tmp_asd_pdfs/ASD-0053.pdf`；项目未登记正式 PDF
+- PDF / 本地文件路径：Reference_PDF/01_Formal_Information_and_Computational_Sciences/Takagi_2023_Autonomous_Hypothesis_Verification.pdf
 - 论文类型：研究论文 / 系统论文 / 初步实验
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-16

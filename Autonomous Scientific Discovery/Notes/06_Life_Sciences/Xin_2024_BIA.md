@@ -6,9 +6,9 @@
 - 年份：2024
 - 来源 / venue：bioRxiv posted content
 - DOI / arXiv / URL：https://doi.org/10.1101/2024.05.22.595240
-- PDF / 本地文件路径：bioRxiv PDF 访问受 Cloudflare 阻断；当前证据来自 Crossref 摘要元数据和 GitHub 代码树 `https://github.com/biagent-dev/bia`
+- PDF / 本地文件路径：bioRxiv official page / PDF remained inaccessible (`403`) in the current environment; current evidence comes from the Crossref DOI abstract and the official GitHub repository `https://github.com/biagent-dev/biagent`
 - 论文类型：系统论文 / 技术报告
-- 当前状态：已读 / 已纳入 / 待页码复核
+- 当前状态：已读 / 已纳入 / source-limited
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
