@@ -1,5 +1,17 @@
 # Zhang et al. 2026 - BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks
 
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `scientific_object_modules`: `06`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `06`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: Crossref DOI abstract `10.64898/2026.05.16.720484`; official bioRxiv API `details/biorxiv/10.64898/2026.05.16.720484/na/json`; official repos `zhangjy859/RAG_tools` and `zhangjy859/BioGAIP_peer_review`
+- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `note_revision_required`: `no`
+
+This round closes the `06 / 07` boundary as `06` only. The accessible first-hand evidence consistently anchors the paper in automated bioinformatics, large-scale biological data, and multi-omics workflow automation. Those sources do not currently expose independent medical / health-science case evidence such as disease-centered outcome analysis, patient-level cohorts, diagnosis, treatment ranking, prognosis, or therapeutic validation. Under the current relaxed object-coverage rule, that is enough to keep BioGAIP in `06` and reject `07` for now.
+
 **论文信息**
 - 标题：BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks
 - 作者：Jiayu Zhang; Pengfei Guo; Guanghui Jiang; Mengyu Zhou; Gang Wei; Ting Ni
