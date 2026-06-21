@@ -14,6 +14,13 @@
 
 ## Evidence Log
 
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `first_hand_sources_checked`: arXiv abstract; OpenReview full PDF; official GitHub repository `pnnl/chemreasoner`.
+- Accepted relaxed classification: keep `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Why: the validated objects remain heterogeneous catalysis, adsorption energies, and reaction-pathway barriers for chemistry discovery. The catalyst-surface / alloy / support language stays inside chemistry-side catalyst search and does not become an independent material-structure or material-performance benchmark strong enough to add `04`.
+- Note implication: this note should no longer treat `03 / 04` as an unresolved full-text boundary. The round-2 full-text review closes the record as `03` only.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | 论文把 catalyst discovery 形式化为 uncertain environment 中的 active search，agent 自动规划并利用量子化学反馈 | 高 |

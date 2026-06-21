@@ -14,6 +14,13 @@
 
 ## Evidence Log
 
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `first_hand_sources_checked`: arXiv abstract; arXiv full PDF `2506.07591`.
+- Accepted relaxed classification: accept `scientific_object_modules=06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Why: the paper's main workflow still targets multiomics molecular entities and biological-mechanism discovery, which keeps `06` as the filing module. At the same time, the full text is built on cancer clinical multiomics cohorts and repeatedly performs survival, prognosis, and other clinical-feature analyses with same-cancer CPTAC validation, which is enough to add `07` under the relaxed object-coverage rule.
+- Note implication: this note should no longer keep `07` as a weaker metadata-level possibility. The current first-hand full text is sufficient to close the `06/07` boundary as `06;07`.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | PROTEUS 是 fully automated system，从 raw data files 直接生成 data-driven hypotheses | 高 |

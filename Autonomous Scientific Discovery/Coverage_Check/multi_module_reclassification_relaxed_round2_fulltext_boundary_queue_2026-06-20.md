@@ -143,6 +143,22 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1H_2026-06
 |---|---|---|
 | `ASD-0064` | closed | reviewed OpenReview full text and Crossref abstract; accepted `scientific_object_modules=06;07` because the spatial-omics / TME workflow supports `06` and the breast-carcinoma plus PDAC survival / prognosis cases also provide independent medical-object evidence for `07` |
 
+## Round-2 P1-I Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1I_2026-06-21.md`.
+
+| ID | Status after P1-I | Action |
+|---|---|---|
+| `ASD-0290` | closed | reviewed OpenReview full text and official repository; kept `scientific_object_modules=03` only because the paper's validated objects remain heterogeneous catalysis, adsorption energies, and reaction-path barriers rather than independent materials-performance benchmarks strong enough for `04` |
+
+## Round-2 P1-J Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1J_2026-06-21.md`.
+
+| ID | Status after P1-J | Action |
+|---|---|---|
+| `ASD-0276` | closed | reviewed arXiv abstract and full PDF; accepted `scientific_object_modules=06;07` because the molecular multiomics / biological-mechanism workflow supports `06` and the cancer clinical multiomics cohorts, survival analyses, prognosis hypotheses, and same-cancer CPTAC validation also provide independent medical-object evidence for `07` |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.
