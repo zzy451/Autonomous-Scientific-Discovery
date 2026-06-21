@@ -14,6 +14,18 @@
 
 ## Evidence Log
 
+## Round-2 Relaxed Multi-Module Update (2026-06-21)
+
+- `scientific_object_modules`: `05;11`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `05`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: arXiv abstract; arXiv full-text HTML `2509.25112v1`
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `note_revision_required`: `no`
+
+This note no longer treats the record as a provisional `05`-only sample. The full text is strong enough to support `05;11`: compound heatwaves, climate-risk propagation, and historical heatwave-event validation keep `05` primary, while the discovered chains explicitly cover small-business disruption, hospital-service interruption, migration pressure, housing-market strain, educational achievement gaps, and intergenerational inequality, which add independent social/economic-system coverage for `11`. The currently accessible first-hand evidence does not show a separate life-science object study strong enough to add `06`.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | HeDA 从 8,111 篇论文构图并进行 automated scientific discovery，不是单轮 QA | 中高 |

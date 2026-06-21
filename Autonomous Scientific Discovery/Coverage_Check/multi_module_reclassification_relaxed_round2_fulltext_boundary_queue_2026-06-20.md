@@ -169,6 +169,14 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1L_2026-06
 | `ASD-0609` | closed | reviewed ChemRxiv full-text / publisher-abstract evidence; kept `scientific_object_modules=03` only because the validated objects remain buffered chemical systems rather than an independent engineering-process experiment |
 | `ASD-0664` | closed | reviewed arXiv full text and official repository; accepted `scientific_object_modules=03;04` because computational catalysis remains the primary chemistry object while BCC Fe surface energies, Pt-Ni-Cu alloy screening, EOS fitting, and FeN4/graphene construction also provide independent materials-side object evidence |
 
+## Round-2 P1-M Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1M_2026-06-21.md`.
+
+| ID | Status after P1-M | Action |
+|---|---|---|
+| `ASD-0651` | closed | reviewed arXiv full text; accepted `scientific_object_modules=05;11` because the paper remains heatwave/climate-risk primary but the discovered and validated chains also cover independent social/economic-system objects; `06` is not added |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.
