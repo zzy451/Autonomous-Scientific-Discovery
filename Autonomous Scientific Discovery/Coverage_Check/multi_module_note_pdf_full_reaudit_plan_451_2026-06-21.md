@@ -266,6 +266,51 @@ PDF version:
   - 可将 PDF 放入对应 `Reference_PDF/` 存放位置
   - 不得编辑 master list、note、progress 或 report
 
+每轮发包时必须把输入 / 输出边界写清楚：
+
+- 发给 `Evidence-Agent-A/B/C` 的任务包至少包含：
+  - 本轮 30 篇中的 paper_id 切片
+  - title
+  - note path
+  - 当前 master 中可见的 DOI / URL / remarks 线索
+  - 明确要求只读，不得改项目文件
+  - 明确要求按 evidence pack contract 返回
+
+- 发给 `Classification-Reviewer` 的任务包至少包含：
+  - 三个 evidence agents 合并后的 evidence packs
+  - 当前 relaxed multi-module 判定口径
+  - 明确要求不参考旧 note 结论作权威
+  - 明确要求输出可直接供主控裁决的 modules / `01.04` / boundary / confidence / safety 标记
+
+- 发给 `Writeback-Agent-1/2/3` 的任务包至少包含：
+  - 已由 `Main Controller` 批准落地的 paper_id 清单
+  - 每个 agent 独占的 note 文件列表
+  - 对应 paper 的最终裁决结果
+  - 需要更新的 note 段落位置
+  - PDF path / first-hand source / source-limited / safety 状态
+  - 明确禁止编辑 master、progress、report
+
+- 发给 `PDF-Archive-Agent` 的任务包至少包含：
+  - 已批准落地的 paper_id 清单
+  - 推荐 PDF 来源和优先级
+  - `primary_module_for_filing`
+  - 目标归档目录
+  - 明确禁止修改 note 和 master
+
+每轮收包时必须检查交付物是否完整：
+
+- `Evidence-Agent-A/B/C` 必须返回逐篇 evidence pack，并显式写出 `first_hand_sources_checked`、`recommended_pdf_url_or_status`、`suggested_modules`、`source_limited`、`safety_or_access_note`
+- `Classification-Reviewer` 必须返回逐篇最终建议，并显式写出 `supported_modules`、`final_01_04_bucket`、`confidence`、`source_limited`、`safety_access_status`
+- `Writeback-Agent-1/2/3` 必须返回本 agent 拥有的 note 文件、实际修改的 note 文件、未修改原因、是否已完成 archive-sync / classification wording update
+- `PDF-Archive-Agent` 必须返回成功归档路径、失败原因、是否属于 safety skip
+
+写回并行时的 ownership 纪律：
+
+- 一个 note 文件在同一轮只能属于一个 `Writeback-Agent`
+- 一个 PDF 文件在同一轮只能由一个 `PDF-Archive-Agent` 或 `Main Controller` 负责落地
+- `Main Controller` 在 note 写回全部返回前，不提前编辑对应 paper 的 master 条目
+- 如某篇文献因安全性原因被跳过，必须先在本轮报告和 progress 中占位，再决定是否延后 note / master 更新
+
 推进顺序改为：
 
 1. `Main Controller` 从 master list 提取下一个 30 篇 confirmed core 列表，按当前行顺序分成 3 个 10 篇的 contiguous slices
