@@ -1,4 +1,10 @@
 # Liu 2025 - MOOSE-Chem3
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/03_Chemical_Sciences/Liu_2025_MOOSE_Chem3.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Classification remains stable: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Current boundary note: the full text confirms a chemistry-led experiment-guided hypothesis-ranking task with some cross-domain benchmark composition, but not yet enough record-level evidence for a high-confidence multi-module rewrite.
 
 **论文信息**
 - 标题：MOOSE-Chem3: Toward Experiment-Guided Hypothesis Ranking via Simulated Experimental Feedback
@@ -13,6 +19,8 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 **证据级别：full-text**（已读取 arXiv PDF v3 全文抽取文本；Evidence Log 位置来自论文正文/图表/摘要。）
 

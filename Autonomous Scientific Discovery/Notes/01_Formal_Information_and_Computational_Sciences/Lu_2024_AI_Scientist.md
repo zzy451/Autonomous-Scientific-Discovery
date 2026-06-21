@@ -1,4 +1,10 @@
 # Lu 2024 - The AI Scientist
+## 2026-06-21 archive sync
+
+- Canonical PDF path: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Lu_2024_AI_Scientist.pdf`
+- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- Authoritative override: the current relaxed rule treats this record as `scientific_object_modules=01;11`, `object_coverage_mode=multi_module`, `primary_module_for_filing=01`, `general_method_bucket=none`.
+- Any older `01.04`-only wording below should be treated as stale legacy text superseded by the current PDF-backed multi-module judgment.
 
 **论文信息**
 - 标题：The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery
@@ -13,6 +19,8 @@
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note.
 
 **证据级别：full-text**（已读取 arXiv PDF v3 全文抽取文本；Evidence Log 位置来自论文正文/图表/表格/摘要。）
 
