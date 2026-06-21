@@ -8,11 +8,18 @@
 - DOI / arXiv / URL：https://doi.org/10.1101/2025.01.23.634608；SSRN abstract id: 5433777
 - PDF / 本地文件路径：bioRxiv PDF/HTML 本次仍被 Cloudflare challenge 阻断；SSRN PDF 需登录或访问失败；已使用可访问摘要/元数据线索，未完成全文 PDF 阅读
 - 论文类型：系统论文 / benchmark
-- 当前状态：已读摘要与元数据 / 已纳入 / 待全文复核
+- 当前状态：已读摘要与元数据 / 已纳入 / round-2 边界已关闭为 `06` only；全文仍待补充
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `first_hand_sources_checked`: Crossref DOI abstract for `10.1101/2025.01.23.634608`; official GitHub README at `https://github.com/ai4nucleome/BioMaster`.
+- Accepted relaxed classification: keep `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Why: the official abstract and repository both anchor BioMaster in omics / bioinformatics workflows, tool execution, error recovery, and output validation. The accessible first-hand evidence supports broad life-science object coverage within `06`, but it does not verify independent patient-level diagnosis, treatment, clinical outcome, or other medical-object tasks strong enough to add `07`.
+- Note implication: this note should no longer leave `07` as an unresolved default expansion target. Later full text may enrich task lists, but the current relaxed-round boundary question closes as `06` only.
 
 证据级别：abstract+metadata（bioRxiv/SSRN 摘要与元数据；未逐页阅读 PDF，所有方法和实验细节按中等或中低证据处理）。
 
@@ -73,9 +80,9 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：`01.04` 通用科研 Agent；`07` 医学与健康科学。
-- 最终判定：`06`。
-- 判定理由：摘要强调 omics modalities、bioinformatics tools 和 biological data；若全文显示主要是临床诊断/患者任务，再考虑 `07`。
-- 是否需要二次复核：需要，全文需核对 18 种 omics modalities 是否含大量医学主任务。
+- 最终判定：`06` only。
+- 判定理由：当前一手来源稳定支撑 biological / omics object coverage，但没有独立 clinical / patient / treatment / outcome 任务证据支撑 `07`。
+- 是否需要二次复核：否，就当前 `06 / 07` 边界而言已可关闭；后续仅在拿到全文后补 task inventory 和 page-level evidence。
 
 ## 3. Agent 系统与科研流程角色
 

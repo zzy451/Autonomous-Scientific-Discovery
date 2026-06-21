@@ -8,11 +8,18 @@
 - DOI / arXiv / URL：https://doi.org/10.1101/2025.03.06.641840
 - PDF / 本地文件路径：bioRxiv PDF/HTML 本次仍被 Cloudflare challenge 阻断；未获得可读全文；仅使用 DOI/metadata、可访问摘要线索和第三方摘要，不写入项目 PDF 库
 - 论文类型：系统论文 / 科研探索与报告生成 Agent
-- 当前状态：已读摘要与元数据 / 已纳入但高优先级待复核
+- 当前状态：已读摘要与元数据 / 已纳入 / round-2 边界已关闭为独立 `01.04`；全文仍待补充
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `first_hand_sources_checked`: Crossref DOI abstract for `10.1101/2025.03.06.641840`; official DORA platform `https://dora.insilico.com`; official Insilico blog `https://insilico.com/blog/science42-dora`; official GitHub repository `https://github.com/insilicomedicine/DORA`.
+- Accepted relaxed classification: move the record out of legacy `06` filing and keep it in the independent `01.04` bucket with `object_coverage_mode=general_method_without_concrete_object_experiments`; `primary_module_for_filing=01`; `general_method_bucket=01.04`.
+- Why: the accessible first-hand evidence consistently frames DORA as a multi-agent scientific exploration, drafting, and report-generation assistant built around templates, workflows, tool/repository access, and publication drafting. It does not verify concrete life-science or biomedical object experiments, benchmark tasks, case studies, or reported results strong enough to support `06` or `07`.
+- Note implication: this note should no longer keep the `06 / 07 / 01.04` boundary open by default. Later full text can still enrich task inventory, but the current first-hand evidence base is already sufficient to reject concrete `06` / `07` assignment and close the relaxed-round decision at independent `01.04`.
 
 ## 2026-06-20 relaxed round-2 source-limited revision
 
@@ -26,7 +33,7 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 暂纳入；多 Agent 虚拟研究团队 / report generation workflow | 题名、DOI 元数据、第三方摘要线索 | 标题明确为 multi-agent virtual research team，用于 scientific exploration discovery and automated report generation | 中低 |
-| 科学对象归类 | 主清单暂归 `06` 生命科学，但证据不足；更可能需在 `01.04` 通用科研 Agent 与 `07` 生物医学之间复核 | 主清单 ASD-0006；摘要线索 | 作者/传播语境与 biomedical/drug discovery research 相关，但题名本身更像通用科研系统 | 低 |
+| 科学对象归类 | 独立 `01.04` 通用科研 Agent / scientific workflow assistant | Crossref DOI abstract；official platform/blog/repo | 现有一手来源稳定支撑 scientific exploration、workflow orchestration、draft outline 和 automated report generation，但未核实任何 concrete biology / biomedical object experiments | 中高 |
 | 方法流程 | 模板/outline -> 多 Agent 分工 -> 文献/数据源检索 -> section/report generation -> 引用/文本后处理 | 第三方摘要线索 | DORA/Draft Outline Research Assistant 似乎支持研究论文、综述、报告等模板化产出 | 低 |
 | 实验验证 | 未能核实 | 摘要/元数据层面 | 未确认 benchmark、用户研究、案例、指标或专家评估 | 低 |
 | 科学贡献 | 科研探索和自动报告生成平台，而非已确认的新生物发现 | 题名与摘要线索 | 贡献可能是 multi-agent scientific report generation / biomedical research assistance | 低 |
@@ -63,26 +70,26 @@
 
 ### 2.1 主科学领域
 
-- 一级类：主清单暂为 `06` 生命科学；note 建议复核是否应改为 `01.04`。
-- 二级类：若保留 06，可暂标 `06.03` 生物医学/组学研究 Agent；若全文显示领域无关，应改 `01.04` 通用科研 Agent。
-- 三级类：scientific exploration / report generation for biomedical research，待全文确认。
-- 四级专题：Biology / omics research agents（暂按主清单）；或 General scientific research-agent systems（复核候选）。
+- 一级类：`01` 形式、信息与计算科学（作为独立 `01.04` bucket 的 filing path）。
+- 二级类：`01.04` 通用科研 Agent / scientific workflow automation。
+- 三级类：scientific exploration, drafting, and automated report generation assistant。
+- 四级专题：General scientific research-agent systems。
 - 四级专题是否为新增：否。
-- 归类理由：目前主清单将其放在生命科学，可能基于作者机构/应用场景；但题名和有限证据更像通用科研写作与报告系统。
-- 归类置信度：低。
+- 归类理由：当前可访问的一手来源都把贡献中心放在多 Agent 科研工作流、资料检索与论文/报告草稿生成上，而不是任何稳定的生命科学或医学对象结果。
+- 归类置信度：中高。
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：未能确认；可能是 biomedical/drug discovery research，也可能是领域无关的科学报告生成。
-- 最终科学问题：多 Agent 虚拟科研团队能否支持科学探索、发现和自动报告生成。
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：当前正是因为科学对象不清，不能稳定按 06 归类；若全文无具体生命科学对象，应按通用科研智能系统归 `01.04`。
+- 最终科学研究对象：通用 scientific exploration / drafting / report-generation workflow capability。
+- 最终科学问题：多 Agent 虚拟科研团队能否通过模板化 workflow、工具调用与资料检索辅助科学探索并自动生成研究文稿。
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：当前一手来源没有给出 concrete biology / biomedical object experiments，因此不能因为机构背景或 biomedical 语境就继续留在 `06` 或上推 `07`。
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：`01.04` 通用科研 Agent；`07` 医学与健康科学。
-- 最终判定：暂按主清单 `06`，但建议复核。
-- 判定理由：用户要求不改主清单；note 内保留分类不确定性。
-- 是否需要二次复核：是，最高优先级。
+- 可能误归类到：`06` 生命科学；`07` 医学与健康科学。
+- 最终判定：独立 `01.04`。
+- 判定理由：当前可访问的一手证据支持的是科研工作流 / 文稿生成 Agent，而不是 concrete life-science or biomedical object study。
+- 是否需要二次复核：否，就当前 `06 / 07 / 01.04` 边界而言已可关闭；后续全文若公开，可补 task inventory，但不是当前分类落地前提。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -242,10 +249,10 @@
 
 ```text
 是否纳入：暂纳入，需全文复核
-主类：06 生命科学（按主清单暂置）；建议复核是否改为 01.04
-二级类：06.03 暂置；或 01.04 通用科研 Agent
-三级类：生物医学科研报告/探索 Agent，待确认
-四级专题：Biology / omics research agents（暂置）或 General scientific research-agent systems
+主类：01（独立 `01.04` bucket 的 filing path）
+二级类：01.04 通用科研 Agent
+三级类：scientific exploration / drafting / automated report generation
+四级专题：General scientific research-agent systems
 Agent 类型：LLM Agent?; Planning Agent?; Tool-using Agent?; Retrieval-augmented Agent?; Multi-Agent System; Human-in-the-loop Agent?; Hybrid Agent?
 科研流程角色：文献检索与阅读?; 知识抽取与组织?; 假设生成?; 论文/报告写作; 端到端科研流程自动化?
 自主能力：任务分解?; 计划生成?; 工具调用?; 反馈迭代?; 多 Agent 协作
@@ -253,7 +260,7 @@ Agent 类型：LLM Agent?; Planning Agent?; Tool-using Agent?; Retrieval-augment
 交叉属性：计算驱动; RAG?; scientific writing automation
 科学贡献类型：系统平台; 报告生成; 假设生成?
 证据强度：abstract+metadata，低；全文仍不可访问
-归类置信度：低
+归类置信度：中高
 纳入置信度：中低
 推荐引用强度：暂不引用 / 待全文确认
 ```

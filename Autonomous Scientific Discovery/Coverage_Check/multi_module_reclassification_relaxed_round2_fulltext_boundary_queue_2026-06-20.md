@@ -68,6 +68,14 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p0F_2026-06
 |---|---|---|
 | `ASD-0553` | closed | kept in the independent `01.04` bucket because official DOI abstract evidence supports a bioinformatics automation platform / benchmark paper rather than concrete biology or biomedical object experiments |
 
+## Round-2 P0-G Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p0G_2026-06-21.md`.
+
+| ID | Status after P0-G | Action |
+|---|---|---|
+| `ASD-0006` | closed | moved from legacy `06` filing to the independent `01.04` bucket because Crossref abstract plus official platform/blog/repo evidence supports a general scientific exploration / drafting workflow paper rather than concrete life-science or biomedical object experiments |
+
 ## Round-2 P1-A Status Update
 
 Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1A_2026-06-20.md`.
@@ -110,6 +118,14 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1E_2026-06
 | ID | Status after P1-E | Action |
 |---|---|---|
 | `ASD-0014` | closed | reviewed official DOI abstract `10.1101/2025.04.03.646459` and official repository; accepted `scientific_object_modules=06` only because the reported objects remain spatial-biology / omics tasks rather than independent medical / clinical-validation tasks |
+
+## Round-2 P1-F Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1F_2026-06-21.md`.
+
+| ID | Status after P1-F | Action |
+|---|---|---|
+| `ASD-0055` | closed | reviewed Crossref DOI abstract `10.1101/2025.01.23.634608` and official repository; accepted `scientific_object_modules=06` only because the reported objects remain omics / bioinformatics tasks without independent patient-level or clinical-validation evidence strong enough for `07` |
 
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
