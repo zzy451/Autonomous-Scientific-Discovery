@@ -6,14 +6,21 @@
 - 年份：2024
 - 来源 / venue：Science
 - DOI / URL：https://doi.org/10.1126/science.adk9227
-- 当前状态：candidate；core priority；full-text evidence pending
+- 当前状态：to_read；round-2 边界已关闭为 `03;04`，`primary_module_for_filing=03`
 
 ## Evidence Log
+
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `first_hand_sources_checked`: PubMed final paper record for DOI `10.1126/science.adk9227`; official ChemRxiv landing page and full-text PDF; official Zenodo dataset; official Acceleration Consortium project/news page; official GitHub repository `aspuru-guzik-group/acdc_laser`.
+- Accepted relaxed classification: accept `scientific_object_modules=03;04`; `object_coverage_mode=multi_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Why: the paper's main search space remains a large pentamer molecular candidate space for organic emitters, which keeps `03` as the filing module. At the same time, the abstract, full text, and official dataset all report `21 new state-of-the-art materials`, thin-film ASE / stimulated-emission validation, and device-level organic solid-state laser performance, which is enough to add `04` under the relaxed object-coverage rule.
+- Note implication: this note should no longer keep `03/04` as an unresolved full-text boundary. The boundary can now be closed as `03;04`, while still keeping `03` as the filing module.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是，闭环发现系统 | Science / PubMed metadata | closed-loop discovery, asynchronous, delocalized | 高 |
-| 科学对象归类 | `03` 化学科学 | Science title | organic laser emitters are molecular/material chemical targets | 中 |
+| 科学对象归类 | `03;04`，以 `03` 为 filing module | PubMed record；ChemRxiv full text；Zenodo dataset | 分子候选空间与合成/筛选支持 `03`，而 `21 new state-of-the-art materials`、thin-film ASE / device validation 也支持 `04` | 高 |
 | 验证方式 | 闭环实验 | Science metadata | closed-loop discovery of organic laser emitters | 高 |
 
 ## 1. 是否纳入本综述
@@ -24,10 +31,10 @@
 
 ## 2. 科学领域归类
 
-- 一级类：`03` 化学科学
-- 二级类：`03.04` 分子设计与化学空间探索，或 `04.04` 光电材料，待全文判定。
+- 一级类：`03;04`
+- 二级类：`03.04` 分子设计与化学空间探索；附加 `04.04` 光电/功能材料对象覆盖。
 - 四级专题：closed-loop molecular/materials discovery
-- 边界：若全文强调器件/材料性能，可转入 `04`；当前按有机发光分子/化学发现暂归 `03`。
+- 边界：当前可按 relaxed rule 接受 `03;04`；但主搜索空间仍是分子候选与合成筛选，因此 `primary_module_for_filing=03`。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -59,5 +66,5 @@
 
 ## 7. 后续精读任务
 
-- 判断主类应为 `03` 还是 `04`。
+- 已关闭 `03/04` 边界：接受 `03;04`，但 filing 保持 `03`。
 - 补充算法、实验站点、候选数量、发现结果。

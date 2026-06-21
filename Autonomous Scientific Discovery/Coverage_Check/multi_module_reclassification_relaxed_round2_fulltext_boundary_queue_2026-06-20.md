@@ -127,6 +127,22 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1F_2026-06
 |---|---|---|
 | `ASD-0055` | closed | reviewed Crossref DOI abstract `10.1101/2025.01.23.634608` and official repository; accepted `scientific_object_modules=06` only because the reported objects remain omics / bioinformatics tasks without independent patient-level or clinical-validation evidence strong enough for `07` |
 
+## Round-2 P1-G Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1G_2026-06-21.md`.
+
+| ID | Status after P1-G | Action |
+|---|---|---|
+| `ASD-0056` | closed | reviewed ChemRxiv full text, dataset, and official project materials; accepted `scientific_object_modules=03;04` because the molecular search space supports `03` and the reported state-of-the-art materials, thin-film validation, and device-level laser performance also support `04` |
+
+## Round-2 P1-H Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1H_2026-06-21.md`.
+
+| ID | Status after P1-H | Action |
+|---|---|---|
+| `ASD-0064` | closed | reviewed OpenReview full text and Crossref abstract; accepted `scientific_object_modules=06;07` because the spatial-omics / TME workflow supports `06` and the breast-carcinoma plus PDAC survival / prognosis cases also provide independent medical-object evidence for `07` |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.
