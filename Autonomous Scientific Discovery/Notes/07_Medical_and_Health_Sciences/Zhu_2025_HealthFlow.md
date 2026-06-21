@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2508.02621
-- PDF / 本地文件路径：临时阅读 PDF：`%TEMP%/asd_note_sources/ASD-0002_Zhu_HealthFlow.pdf`
+- PDF / 本地文件路径：`Reference_PDF/07_Medical_and_Health_Sciences/Zhu_2025_HealthFlow.pdf`
 - 论文类型：系统论文 / benchmark
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15

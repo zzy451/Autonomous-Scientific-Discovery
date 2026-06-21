@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2506.05616
-- PDF / 本地文件路径：临时阅读 PDF：`%TEMP%/asd_note_sources/ASD-0001_Zhou_MAPPS.pdf`
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Zhou_2025_MAPPS.pdf`
 - 论文类型：系统论文 / materials discovery agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15

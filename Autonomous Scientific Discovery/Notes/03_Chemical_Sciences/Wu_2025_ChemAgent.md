@@ -1,14 +1,14 @@
 # Wu et al. 2025 - ChemAgent / CheMatAgent: Enhancing LLMs for Chemistry and Materials Science through Tree-Search Based Tool Learning
 
 **论文信息**
-- 标题：ChemAgent: Enhancing LLMs for Chemistry and Materials Science through Tree-Search Based Tool Learning；PDF v2 标题为 CheMatAgent: Enhancing LLMs for Chemistry and Materials Science through Tree-Search Based Tool Learning
+- 标题：CheMatAgent: Enhancing LLMs for Chemistry and Materials Science through Tree-Search Based Tool Learning；legacy/arXiv 早期记录中也可见 `ChemAgent` 写法
 - 作者：Mengsong Wu, YaFei Wang, Yidong Ming, Yuqi An, Yuwei Wan, Wenliang Chen, Binbin Lin, Yuqiang Li, Tong Xie, Dongzhan Zhou
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2506.07551
-- PDF / 本地文件路径：临时读取 arXiv PDF；未写入 `Reference_PDF`
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Wu_2025_ChemAgent.pdf`
 - 论文类型：系统论文 / benchmark / 化学工具调用 Agent
-- 当前状态：已读 / 已纳入 / 标题版本待复核
+- 当前状态：已读 / 已纳入 / relaxed multi-module 已复核
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 

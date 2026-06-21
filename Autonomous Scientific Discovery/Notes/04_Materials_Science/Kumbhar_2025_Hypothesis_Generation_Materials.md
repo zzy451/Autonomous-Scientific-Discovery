@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv；Findings of NAACL 2025 页面可检索
 - DOI / arXiv / URL：https://arxiv.org/abs/2501.13299；https://aclanthology.org/2025.findings-naacl.420/
-- PDF / 本地文件路径：临时读取 arXiv PDF；未写入 `Reference_PDF`
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Kumbhar_2025_Hypothesis_Generation_Materials.pdf`
 - 论文类型：系统论文 / benchmark / 材料假设生成 Agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-16

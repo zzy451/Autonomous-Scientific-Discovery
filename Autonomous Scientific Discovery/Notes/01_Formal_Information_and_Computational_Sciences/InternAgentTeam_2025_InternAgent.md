@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2505.16938
-- PDF / 本地文件路径：临时阅读 PDF：`%TEMP%/asd_note_sources/ASD-0004_NovelSeek.pdf`
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/InternAgentTeam_2025_InternAgent.pdf`
 - 论文类型：系统论文 / general scientific research-agent system
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15
@@ -27,7 +27,7 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 纳入；统一闭环多 Agent 科研框架 | Abstract; Sec. 1-2; Fig. 1-2 | 系统覆盖想法生成、方法构建、实验执行、结果反馈、人机交互和多 Agent 协作 | 高 |
-| 科学对象归类 | 01.04 通用科研 Agent | 主清单；Abstract; Fig. 1 | 论文强调 12 类科学研究任务和通用 ASR 框架，主要验证通用科研流程能力 | 中-高 |
+| 科学对象归类 | `01;03;06;09;10` 多模块 | Abstract; Fig. 1; task list / evaluation sections | 原文同时报告 AI/ML 研究任务、反应产率与分子动力学、转录扰动与 enhancer activity、power-flow/transformer、autonomous driving 等具体对象任务 | 高 |
 | 方法流程 | hypothesis 到 verification 的闭环 | Sec. 2; extracted lines 121-129, 245-252 | 从 proposal/idea 到 methodology、code implementation、多轮实验规划和执行 | 高 |
 | 实验验证 | 多个 AI/计算机视觉/自动驾驶等任务 + 人类研究 | Sec. 1; Sec. 3+ | 论文称在 12 个科学研究任务中验证，并邀请专家评估 idea novelty 与研究效率 | 中 |
 | 科学贡献 | 通用端到端科研 Agent 框架 | Contributions | 可作为通用科研 Agent 自动化从假设到实验验证的案例 | 高 |
@@ -62,28 +62,48 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：01 形式、信息与计算科学。
-- 二级类：01.04 科研智能系统与 Autonomous Scientific Discovery。
-- 三级类：通用科研 Agent 系统。
-- 四级专题：General scientific research-agent systems。
-- 四级专题是否为新增：否。
-- 归类理由：主清单归 01；论文对象是通用科研自动化系统而非某一自然科学对象。
-- 归类置信度：中-高。
+- 科学对象模块：`01;03;06;09;10`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`01`
+- Primary module for filing 说明：仅用于当前归档与展示，不覆盖多模块事实。
+- 主展示模块一级类：`01`
+- 主展示模块二级类：`01.02`
+- 主展示模块三级类：通用计算/AI 科研任务
+- 主展示模块四级专题：General scientific research-agent systems
+- 其他覆盖模块及对应层级路径：
+  - `03`：reaction yield prediction、small-molecule molecular dynamics
+  - `06`：transcription perturbation、enhancer activity
+  - `09`：power-flow、transformer temperature
+  - `10`：3D autonomous-driving point-cloud tasks
+- 四级专题是否为新增：否
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：
+  - `01`：AI/CV/NLP/geometric-VLM 研究任务与代码实验
+  - `03`：Suzuki-Miyaura reaction yield、MD17 分子动力学
+  - `06`：transcription perturbation、enhancer activity
+  - `09`：power-flow、transformer temperature
+  - `10`：autonomous-driving point-cloud detection
+- 归类理由：虽然系统是通用 closed-loop research-agent，但原文不是 object-free workflow demo，而是对多个具体科学对象任务给出了可识别 benchmark / result coverage。
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：科研流程与通用自动科研系统。
-- 最终科学问题：Agent 能否从研究想法到实验验证执行端到端科研。
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：不是因为 LLM 或多 Agent 归 01，而是因为研究对象本身是通用科研自动化能力。
+- 最终科学研究对象：跨多个具体科学对象的科研任务与研究执行过程。
+- 最终科学问题：Agent 能否在多个对象域中从研究想法推进到方法、代码、实验与验证。
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：主判断来自对象级任务覆盖，而不是因为它是 LLM / multi-agent / 闭环平台。
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：特定 AI/计算机视觉任务子领域；主清单标题还写作 NovelSeek。
-- 最终判定：01.04。
-- 判定理由：系统目标和贡献是通用 closed-loop ASR framework；验证任务多样且偏 AI 实验。
-- 是否需要二次复核：是。主清单元数据中 “NovelSeek” 与 arXiv PDF 实际 “InternAgent” 不一致，需要人工复核并决定是否改清单。
+- 可能误归类到：独立 `01.04` 通用科研 Agent 存放区。
+- 最终判定：`01;03;06;09;10` 多模块，`primary_module_for_filing=01`。
+- 判定理由：当前 relaxed 口径只要求存在可识别对象级 benchmark / case / result；本论文已明显超过 object-free workflow 的门槛。
+- 多模块覆盖说明：各模块并不都对应论文“核心科学贡献”，但都存在明确对象任务，因此应并列记录。
+- 01.04 判定说明：不进入独立 `01.04`，因为原文并非无对象实验的纯 general method。
+- 是否需要二次复核：需要的重点不再是 `01.04` 与否，而是后续 schema migration 时如何把多模块 overlay 写回主列表字段。
 
 ## 3. Agent 系统与科研流程角色
 

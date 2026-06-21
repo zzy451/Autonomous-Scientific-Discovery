@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：Digital Discovery
 - DOI / arXiv / URL：https://doi.org/10.1039/D4DD00252K；https://pubs.rsc.org/en/content/articlehtml/2024/dd/d4dd00252k
-- PDF / 本地文件路径：RSC 全文 HTML 临时转写：`%TEMP%/asd_note_sources/ASD-0009_Ansari_Materials_Datasets.txt`
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Ansari_2024_Eunomia_Materials_Datasets.pdf`；RSC HTML full text 已同步核对
 - 论文类型：研究论文 / materials information extraction agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15

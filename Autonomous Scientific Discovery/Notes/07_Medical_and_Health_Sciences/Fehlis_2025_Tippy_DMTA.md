@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2507.09023
-- PDF / 本地文件路径：临时阅读 PDF：`%TEMP%/asd_note_sources/ASD-0008_Fehlis_DMTA.pdf`
+- PDF / 本地文件路径：`Reference_PDF/07_Medical_and_Health_Sciences/Fehlis_2025_Tippy_DMTA.pdf`
 - 论文类型：系统论文 / laboratory automation
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15

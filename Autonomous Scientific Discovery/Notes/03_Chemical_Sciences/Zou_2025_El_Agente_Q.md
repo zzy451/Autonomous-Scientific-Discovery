@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2505.02484
-- PDF / 本地文件路径：临时阅读 PDF：`%TEMP%/asd_note_sources/ASD-0010_Zou_ElAgente.pdf`
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Zou_2025_El_Agente_Q.pdf`
 - 论文类型：系统论文 / computational chemistry agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15
