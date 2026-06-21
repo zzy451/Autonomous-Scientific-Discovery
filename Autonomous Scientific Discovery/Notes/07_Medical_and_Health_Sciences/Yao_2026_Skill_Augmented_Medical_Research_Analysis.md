@@ -1,5 +1,17 @@
 # Yao et al. 2026 - Skill-Augmented AI Agents for Medical Research Analysis: An Exploratory Multi-Model Human Evaluation in an NSCLC Transcriptomic Biomarker Task
 
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `scientific_object_modules`: `07`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `07`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: arXiv abstract `2606.11830`; arXiv HTML / PDF `2606.11830v1`; official AIPOCH medical-research-skills repository
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `note_revision_required`: `no`
+
+This round closes the `07 / 06` boundary as `07` only. The stable object remains NSCLC immunotherapy-response biomarker research, so `07` stays primary. Although the task prompt and skill inventory include transcriptomics, pathway enrichment, and programmed-cell-death terms such as ferroptosis, cuproptosis, and pyroptosis, the first-hand full text explicitly frames these as benchmark-task workflow scope built on broad bioinformatics modules rather than independently validated life-science result coverage. The paper also states that dedicated programmed-cell-death gene-set curation and the biological validity of proposed biomarkers were not independently verified, so additional `06` is not accepted under the current relaxed object-coverage rule.
+
 **论文信息**
 - 标题：Skill-Augmented AI Agents for Medical Research Analysis: An Exploratory Multi-Model Human Evaluation in an NSCLC Transcriptomic Biomarker Task
 - 作者：Qianyu Yao; Fei Sun; Bocheng Huang; Wei Chen; Jiarui Jiang; Shu Quan; Yifei Chen; Wenjie Xu; Bo Li; Liping Su; Ruoqiong Wu; Huhai Hong; Huimei Wang

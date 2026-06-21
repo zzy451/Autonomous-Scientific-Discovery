@@ -203,6 +203,14 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1P_2026-06
 |---|---|---|
 | `ASD-0543` | closed | reviewed Crossref DOI metadata plus official author HNSCC datasets; accepted `scientific_object_modules=06;07` because prognostic-gene discovery remains a gene / life-science object while HNSCC patient survival outcomes, disease-specific / progression-free endpoints, and treatment-subtype candidate outputs provide independent medical-object evidence for `07` |
 
+## Round-2 P1-T Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1T_2026-06-21.md`.
+
+| ID | Status after P1-T | Action |
+|---|---|---|
+| `ASD-0773` | closed | reviewed arXiv abstract plus arXiv HTML/PDF and the official AIPOCH medical-research-skills repository; kept `scientific_object_modules=07` only because the stable object remains NSCLC immunotherapy-response biomarker research, while transcriptomics / pathway / programmed-cell-death content is explicitly framed as benchmark-task workflow scope built on broad bioinformatics modules rather than independently validated life-science result coverage |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.
@@ -258,7 +266,7 @@ These records are likely to remain confirmed core, but may need module additions
 | `ASD-0743` | closed | reviewed Crossref DOI abstract plus official `STAT-agent` / `STAT-PaperRepro` assets; accepted `scientific_object_modules=06;07` because spatial-omics analysis remains the stable life-science object while the mixed-resolution breast-cancer cohort, reproduced colorectal-cancer study, and explicit tumor / immune / stroma / microenvironment benchmark tasks provide independent oncology-oriented medical-object coverage for `07` |
 | `ASD-0744` | closed | reviewed Crossref DOI abstract, official bioRxiv API record, and official BioGAIP-related repos; accepted `scientific_object_modules=06` only because accessible first-hand sources support automated bioinformatics / multi-omics / biological-dataset workflows but do not expose independent disease / patient / diagnosis / treatment / prognosis objects strong enough for `07` |
 | `ASD-0769` | `07` secondary review | Is `07.04` secondary too weak or correct after full-text review? |
-| `ASD-0773` | `07/06` | Does transcriptomic / pathway / PCD evidence justify `06`? |
+| `ASD-0773` | closed | reviewed arXiv abstract plus arXiv HTML/PDF and the official AIPOCH medical-research-skills repository; kept `scientific_object_modules=07` only because the stable object remains NSCLC immunotherapy-response biomarker research, while transcriptomics / pathway / programmed-cell-death content is explicitly framed as benchmark-task workflow scope built on broad bioinformatics modules rather than independently validated life-science result coverage |
 | `ASD-0775` | `09/03/04` | Do instrument demonstrations report concrete chemistry/material sample results? |
 | `ASD-0793` | `03/04` | Does material-family or surface coverage justify adding `04`? |
 | `ASD-0797` | `06/07` | Does disease / therapeutic validation go beyond Cell Painting phenomics? |
