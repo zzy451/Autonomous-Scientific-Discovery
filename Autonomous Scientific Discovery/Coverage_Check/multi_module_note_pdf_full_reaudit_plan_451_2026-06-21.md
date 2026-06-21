@@ -145,206 +145,165 @@ PDF version:
 
 ## 7. Agent 团队组织
 
-默认采用固定小团队。子 Agent 只读，主控代理负责最终判断和所有写入。每轮审核结束之后记得关闭本轮的子Agent，防止后续并发限制
+默认采用固定多 Agent 小团队。自 `2026-06-21` 起，本节即为 451 篇 confirmed-core full reaudit 的唯一执行口径，覆盖旧的“主控单线写回”为主的做法。核心目标不是把所有动作都塞给 `Main Controller`，而是把取证、独立裁决、note 写回、master/progress/report 单写者收口明确拆开。
 
-### 7.1 默认团队
+### 7.1 标准团队拓扑
 
 - `Main Controller`
-  - 建立批次索引。
-  - 分发任务。
-  - 统一口径。
-  - 复核和裁决子 Agent 证据。
-  - 下载或确认 PDF 归档。
-  - 修改 note。
-  - 修改 `agent_master_paper_list.md`。
-  - 重算统计。
-  - 写 batch report。
-  - 提交 git。
+  - 只保留最终裁决与单写者职责。
+  - 建立平铺批次索引。
+  - 按当前主列表行顺序分发任务。
+  - 统一 relaxed multi-module 判定口径。
+  - 复核 evidence packs 与 `Classification-Reviewer` 的独立裁决。
+  - 决定哪些记录本轮立即落地，哪些继续保守挂起。
+  - 唯一编辑 `agent_master_paper_list.md`。
+  - 唯一重算统计。
+  - 唯一更新 progress tracker。
+  - 唯一定稿 partial / batch report。
+  - 唯一提交 git。
 
 - `Evidence-Agent-A`
-  - 负责本批前 1/3 文献。
-  - 查找 PDF、DOI、arXiv、publisher page、official project page。
-  - 提取 Agent 纳入证据、科学对象、实验 / benchmark / case / result 证据。
-  - 建议 PDF 下载来源和版本。
+  - 负责本轮平铺批次前 1/3 的连续切片。
+  - 只读查找一手来源。
+  - 提取 Agent 纳入证据、科学对象、object-level experiment / benchmark / case / result 证据。
+  - 建议 PDF 最优归档来源与版本。
+  - 显式标记 `source_limited` 或安全 / 访问阻塞。
 
 - `Evidence-Agent-B`
-  - 负责本批中 1/3 文献。
+  - 负责本轮平铺批次中 1/3 的连续切片。
   - 职责同上。
 
 - `Evidence-Agent-C`
-  - 负责本批后 1/3 文献。
+  - 负责本轮平铺批次后 1/3 的连续切片。
   - 职责同上。
 
 - `Classification-Reviewer`
-  - 不依据旧 note 结论。
-  - 根据一手证据包独立判断 supported modules、`01.04` bucket、boundary type、confidence。
-  - 标记需要 note 改写的位置和 source-limited 风险。
-
-### 7.2 Note 修改时的弹性 Agent 规则
-
-具体修改 note 时，可根据工作量酌情开 Agent 协助，但必须遵守：
-
-- 子 Agent 可以只读原文、整理 evidence pack、草拟 note-ready 修改建议。
-- 子 Agent 不直接修改 `agent_master_paper_list.md`。
-- 默认由主控代理最终编辑 note，保证口径统一。
-- 如果一批中 note 修改量很大，可额外开 `Note-Draft-Agent-A/B`，每个 Agent 只负责不重叠的 note 草稿建议。
-- 若允许子 Agent 直接写文件，必须给出互不重叠的 note 文件清单，且主控代理复核后再合并。
-- 每轮结束后关闭已完成 Agent，避免占用并发槽位。
-
-### 7.3 并发不足时的降级方案
-
-如果并发槽位不足：
-
-1. 保留 `Main Controller`。
-2. 保留 `Evidence-Agent-A` 和 `Evidence-Agent-B`。
-3. 暂停 `Classification-Reviewer`，由主控代理执行最终复核。
-4. 如果仍不足，只开一个 evidence Agent，主控代理承担其余工作。
-
-### 7.4 2026-06-21 升级后的多 Agent 团队结构（覆盖 7.1-7.3 的写回执行口径）
-
-自 `2026-06-21` 起，在保留 `Evidence-Agent-A/B/C + Classification-Reviewer` 结构的基础上，写回阶段升级为可控并行模式，以减少 `Main Controller` 单线写回的瓶颈。
-
-新结构为：
-
-- `Main Controller`
-  - 保留唯一写入权威，主要负责：
-  - 建立批次索引
-  - 分发 `Evidence-Agent-A/B/C`
-  - 统一 relaxed multi-module 口径
-  - 复核 evidence pack 和 `Classification-Reviewer` 判定
-  - 决定哪些记录可以“立即落地”，哪些只能暂存为 source-limited / conservative queue
-  - 唯一编辑 `agent_master_paper_list.md`
-  - 唯一更新 progress tracker
-  - 唯一写 partial / batch report
-  - 唯一重算统计
-  - 唯一提交 git
-
-- `Evidence-Agent-A`
-  - 负责本批前 1/3 文献
-  - 只读执行一手证据搜索（PDF 或 HTML full text / arXiv / DOI / publisher page / official page / supplementary）
-  - 提取 Agent 纳入证据、科学对象、实验 / benchmark / case / result 证据
-  - 给出 PDF 可优先归档的来源建议
-  - 对安全性限制或访问阻塞给出明确标记
-
-- `Evidence-Agent-B`
-  - 负责本批中 1/3 文献
-  - 职责同上
-
-- `Evidence-Agent-C`
-  - 负责本批后 1/3 文献
-  - 职责同上
-
-- `Classification-Reviewer`
-  - 只读，且不依据旧 note 结论
-  - 仅根据 evidence pack 独立判断：
-  - `supported modules`
-  - `01.04` bucket 是否成立
-  - `boundary type`
-  - `confidence`
-  - `note_revision_required`
-  - `master_update_required`
-  - `source_limited`
-  - `safety_access_status`
+  - 只读，且不以旧 note 结论为权威。
+  - 只根据 evidence packs 独立裁决 `supported modules`、`01.04` bucket、`boundary type`、`confidence`。
+  - 标记 `note_revision_required`、`master_update_required`、`source_limited`、`safety_access_status`。
+  - 输出可直接供 `Main Controller` 决定是否落地的结果。
 
 - `Writeback-Agent-1`
-  - 只负责一组互不重叠的 `Notes/.../*.md`
-  - 根据主控代理已批准的判断，并行修改 note
-  - 不得编辑 `agent_master_paper_list.md`
-  - 不得编辑 progress tracker
-  - 不得编辑 batch report
+  - 只负责一组互不重叠的 note 文件。
+  - 只根据 `Main Controller` 已批准落地的最终裁决写回 note。
+  - 可同步刷新 evidence log、PDF path、first-hand source、classification wording、source-limited / safety wording。
 
 - `Writeback-Agent-2`
-  - 负责另一组互不重叠的 note 文件
-  - 限制同上
+  - 负责第二组互不重叠的 note 文件。
+  - 约束同上。
 
 - `Writeback-Agent-3`
-  - 负责第三组互不重叠的 note 文件
-  - 限制同上
+  - 负责第三组互不重叠的 note 文件。
+  - 约束同上。
 
 - `PDF-Archive-Agent`（可选）
-  - 只负责已批准落地的记录的 PDF 下载 / 归档 / 是否可访问确认
-  - 可将 PDF 放入对应 `Reference_PDF/` 存放位置
-  - 不得编辑 master list、note、progress 或 report
+  - 只负责已批准落地记录的 PDF 下载、归档与可访问性确认。
+  - 可写入 `Reference_PDF/` 对应路径。
+  - 不得编辑 master list、progress、report 或 note。
 
-每轮发包时必须把输入 / 输出边界写清楚：
+### 7.2 权限矩阵与 ownership 纪律
 
-- 发给 `Evidence-Agent-A/B/C` 的任务包至少包含：
-  - 本轮 30 篇中的 paper_id 切片
-  - title
-  - note path
-  - 当前 master 中可见的 DOI / URL / remarks 线索
-  - 明确要求只读，不得改项目文件
-  - 明确要求按 evidence pack contract 返回
+单写者文件：
 
-- 发给 `Classification-Reviewer` 的任务包至少包含：
-  - 三个 evidence agents 合并后的 evidence packs
-  - 当前 relaxed multi-module 判定口径
-  - 明确要求不参考旧 note 结论作权威
-  - 明确要求输出可直接供主控裁决的 modules / `01.04` / boundary / confidence / safety 标记
+- `Autonomous Scientific Discovery/Paper_Lists/agent_master_paper_list.md`
+- `Autonomous Scientific Discovery/Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `Autonomous Scientific Discovery/Coverage_Check/` 下的 partial / batch report
 
-- 发给 `Writeback-Agent-1/2/3` 的任务包至少包含：
-  - 已由 `Main Controller` 批准落地的 paper_id 清单
-  - 每个 agent 独占的 note 文件列表
-  - 对应 paper 的最终裁决结果
-  - 需要更新的 note 段落位置
-  - PDF path / first-hand source / source-limited / safety 状态
-  - 明确禁止编辑 master、progress、report
+允许并行写入的文件：
 
-- 发给 `PDF-Archive-Agent` 的任务包至少包含：
-  - 已批准落地的 paper_id 清单
-  - 推荐 PDF 来源和优先级
-  - `primary_module_for_filing`
-  - 目标归档目录
-  - 明确禁止修改 note 和 master
+- `Autonomous Scientific Discovery/Notes/` 下的 note 文件，但同一轮必须严格分配给互不重叠的 `Writeback-Agent-1/2/3`
 
-每轮收包时必须检查交付物是否完整：
+允许并行落地的空间：
 
-- `Evidence-Agent-A/B/C` 必须返回逐篇 evidence pack，并显式写出 `first_hand_sources_checked`、`recommended_pdf_url_or_status`、`suggested_modules`、`source_limited`、`safety_or_access_note`
-- `Classification-Reviewer` 必须返回逐篇最终建议，并显式写出 `supported_modules`、`final_01_04_bucket`、`confidence`、`source_limited`、`safety_access_status`
-- `Writeback-Agent-1/2/3` 必须返回本 agent 拥有的 note 文件、实际修改的 note 文件、未修改原因、是否已完成 archive-sync / classification wording update
-- `PDF-Archive-Agent` 必须返回成功归档路径、失败原因、是否属于 safety skip
+- `Autonomous Scientific Discovery/Reference_PDF/`，但同一篇 paper 的 canonical PDF 在同一轮只能由一个执行者负责落地
 
-写回并行时的 ownership 纪律：
+硬性纪律：
 
-- 一个 note 文件在同一轮只能属于一个 `Writeback-Agent`
-- 一个 PDF 文件在同一轮只能由一个 `PDF-Archive-Agent` 或 `Main Controller` 负责落地
-- `Main Controller` 在 note 写回全部返回前，不提前编辑对应 paper 的 master 条目
-- 如某篇文献因安全性原因被跳过，必须先在本轮报告和 progress 中占位，再决定是否延后 note / master 更新
+- `Main Controller` 不再承担默认 note 写回主力，只承担最终收口。
+- `Evidence-Agent-A/B/C` 与 `Classification-Reviewer` 默认只读，不得修改项目文件。
+- `Writeback-Agent-1/2/3` 不得编辑 `agent_master_paper_list.md`、progress tracker、partial / batch report、git 历史。
+- 一个 note 文件在同一轮只能属于一个 `Writeback-Agent`。
+- 一个 paper 的 master 条目只有在其 note 写回返回并经 `Main Controller` 复核后，才允许落地 master 更新。
+- 如某篇文献因安全性原因不得继续访问，必须显式标记为 `not accessed due to safety`，不得被隐去或伪装成普通 `source_limited`。
 
-推进顺序改为：
+### 7.3 发包与回包契约
 
-1. `Main Controller` 从 master list 提取下一个 30 篇 confirmed core 列表，按当前行顺序分成 3 个 10 篇的 contiguous slices
-2. `Evidence-Agent-A/B/C` 并行只读取证，产出该 30 篇的 evidence packs
-3. `Classification-Reviewer` 在不看旧 note 结论的前提下，只看 evidence packs 独立裁决 modules / `01.04` / boundary / confidence
-4. `Main Controller` 按“证据强度 + 分类清晰度 + 写回风险”选择本轮可立即落地的 records
-5. 如需要 PDF 归档，由 `PDF-Archive-Agent` 或 `Main Controller` 先完成 PDF 地址落地
-6. `Writeback-Agent-1/2/3` 按不重叠的 note 文件列表并行修改 note
-7. `Main Controller` 统一检查 note diffs，再唯一编辑 `agent_master_paper_list.md`、progress、report，完成 git commit
-8. 每轮结束后，关闭本轮的 `Evidence-Agent-A/B/C`、`Classification-Reviewer`、`Writeback-Agent-1/2/3` 和 `PDF-Archive-Agent`
+每个子 Agent 必须收到显式 launch packet，不能依赖隐含上下文。
 
-权限和写入纪律必须明确：
+发给 `Evidence-Agent-A/B/C` 的任务包至少包含：
 
-- `agent_master_paper_list.md` 永远只能由 `Main Controller` 编辑
-- progress tracker 只能由 `Main Controller` 编辑
-- batch / partial report 只能由 `Main Controller` 编辑
-- `Writeback-Agent-1/2/3` 只能写自己拥有的 note 文件，且文件清单必须互不重叠
-- `Evidence-Agent-A/B/C` 和 `Classification-Reviewer` 默认只读
-- 如某篇文献因安全性而禁止访问，必须明确标记为 `not accessed due to safety`，不得向其他 Agent 隐藏
+- 本轮平铺批次中的连续 paper slice
+- `paper_id`
+- `title`
+- `note_path`
+- 当前 master 中可见的 DOI / URL / remarks 线索
+- “旧 note 只作线索，不是分类权威”的提醒
+- “只读，不改项目文件”的明确约束
+- evidence output contract
+
+发给 `Classification-Reviewer` 的任务包至少包含：
+
+- 合并后的 evidence packs
+- 当前 relaxed multi-module scientific-object coverage rule
+- “不得以旧 note 结论为权威”的明确约束
+- 需返回可直接支持落地裁决的字段要求
+
+发给 `Writeback-Agent-1/2/3` 的任务包至少包含：
+
+- 已由 `Main Controller` 批准落地的 paper 清单
+- 每个 agent 独占的 note 文件清单
+- 每篇 paper 的最终裁决字段
+- 需要刷新的 note 段落或 section 提示
+- PDF path / first-hand source / source-limited / safety 状态
+- “不得编辑 master / progress / report”的明确约束
+
+发给 `PDF-Archive-Agent` 的任务包至少包含：
+
+- 已批准落地的 paper 清单
+- 推荐 PDF 来源与优先级
+- `primary_module_for_filing`
+- 目标 `Reference_PDF/` 路径
+- “不得编辑 note / master / progress / report”的明确约束
+
+每轮回包时必须检查：
+
+- `Evidence-Agent-A/B/C` 是否逐篇返回 `first_hand_sources_checked`、`recommended_pdf_url_or_status`、`suggested_modules`、`source_limited`、`safety_or_access_note`
+- `Classification-Reviewer` 是否逐篇返回 `supported_modules`、`final_01_04_bucket`、`confidence`、`source_limited`、`safety_access_status`
+- `Writeback-Agent-1/2/3` 是否返回 owned files、changed files、untouched files、blockers，以及是否完成 archive-sync / classification wording update
+- `PDF-Archive-Agent` 是否返回成功归档路径、失败原因、是否属于 safety skip
+
+### 7.4 标准轮次流程与降级规则
+
+标准轮次流程：
+
+1. `Main Controller` 从 `agent_master_paper_list.md` 提取下一批 confirmed core 平铺记录，严格保持当前行顺序。
+2. 将本轮批次切成三个连续 slices，发给 `Evidence-Agent-A/B/C` 并行取证。
+3. 合并 evidence packs，仅把证据包发给 `Classification-Reviewer` 独立裁决。
+4. `Main Controller` 根据证据强度、分类清晰度、写回风险，决定哪些 paper 本轮落地，哪些继续保守挂起。
+5. 如本轮 PDF 获取量较大或归档步骤明显拖慢主流程，启动 `PDF-Archive-Agent`；否则由 `Main Controller` 或写回前的单独步骤完成 PDF 落地确认。
+6. 把已批准落地的 note 文件拆分给 `Writeback-Agent-1/2/3` 并行写回。
+7. `Main Controller` 统一检查 note diffs，再唯一更新 master、progress、report、统计与 git。
+8. 本轮结束后关闭本轮全部子 Agent，避免并发槽位被历史 round 长期占用。
+
+落地判定建议：
+
+- 满足一手证据较强、模块判断清晰、note 写回边界明确时，本轮直接落地。
+- 只有 abstract / snippet 级证据、模块扩展仍明显依赖推断、或 source-limited 风险过高时，本轮保守挂起，不强行更新 master。
 
 降级规则：
 
-- 并发充足时：使用完整结构
-- 并发稍紧时：先保留 `Evidence-Agent-A/B/C + Classification-Reviewer + Main Controller`
-- 如再降级，可暂时不开 `PDF-Archive-Agent`
-- 最后才回退到主控代理单独写 note，但不应回退到“主控代理吞掉所有证据、分类和写回全链路”的旧模式
+- 并发充足时，使用完整结构：`Evidence-Agent-A/B/C + Classification-Reviewer + Writeback-Agent-1/2/3 + Main Controller`，并按需启用 `PDF-Archive-Agent`。
+- 并发稍紧时，优先保留 `Evidence-Agent-A/B/C + Classification-Reviewer + Main Controller`，减少写回并发数，但不取消角色分离。
+- 如再降级，可暂时不开 `PDF-Archive-Agent`，由主控或写回前步骤补做 PDF 归档确认。
+- 最后才回退到 `Main Controller` 单独写 note；即使降级，也不应回退到“主控吞掉取证、裁决、写回、master 全链路”的旧模式。
 
-推荐启用 skill：
+推荐同步维护的 orchestration skill：
 
 ```text
 C:\Users\20683\.codex\skills\asd-reaudit-multi-agent-orchestration\SKILL.md
 ```
 
-该 skill 用于固化“451 confirmed-core full reaudit 的 multi-agent orchestration 口径”，保证后续 Codex 接手时也按同一个团队协作结构推进。
+该 skill 应与本节保持同口径；若后续团队拓扑、写回 ownership 或发包回包契约继续演化，必须同步更新计划文件第 7 节与该 skill，避免两套规范漂移。
 
 ## 8. 每篇文献的 evidence pack 格式
 

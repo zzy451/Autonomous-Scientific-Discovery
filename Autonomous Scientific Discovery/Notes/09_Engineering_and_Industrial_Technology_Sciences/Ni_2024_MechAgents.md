@@ -1,122 +1,170 @@
-# Ni and Buehler 2024 - MechAgents: Large language model multi-agent collaborations can solve mechanics problems, generate new data, and integrate knowledge
+# Ni and Buehler 2024 - MechAgents
+
+## 2026-06-22 archive sync
+
+- Canonical PDF path: `Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Ni_2024_MechAgents.pdf`
+- First-hand source checked this round: ScienceDirect abstract/preview + DOI landing page + arXiv preprint/PDF fallback
+- PDF version: archived arXiv preprint PDF
+- Access note: publisher-side ScienceDirect full-text/PDF access returned `403` in this environment, so the archived arXiv preprint remains the canonical readable full-text fallback
+- Source-limited: no
+- Final adjudication: `scientific_object_modules=09`; `object_coverage_mode=single_module`; `primary_module_for_filing=09`; `general_method_bucket=none`; `confidence=high`
 
 **论文信息**
 - 标题：MechAgents: Large language model multi-agent collaborations can solve mechanics problems, generate new data, and integrate knowledge
-- 作者：Ni and Buehler
+- 作者：Bo Ni, Markus J. Buehler
 - 年份：2024
 - 来源 / venue：Extreme Mechanics Letters
-- DOI / arXiv / URL：https://doi.org/10.1016/j.eml.2024.102131
-- PDF / 本地文件路径：本轮基于期刊摘要页与 arXiv 摘要；未保存本地 PDF
+- DOI / arXiv / URL：https://doi.org/10.1016/j.eml.2024.102131；https://www.sciencedirect.com/science/article/pii/S2352431624000117；https://arxiv.org/abs/2311.08166
+- PDF / 本地文件路径：`Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Ni_2024_MechAgents.pdf`
+- First-hand source checked：ScienceDirect abstract/preview；DOI landing page；arXiv preprint / PDF fallback
+- PDF version：archived arXiv preprint PDF
+- Source-limited：no
 - 论文类型：研究论文 / mechanics multi-agent system
-- 当前状态：to_read
-- 阅读日期：2026-06-19
+- 当前状态：confirmed core；当前落地为 `09`
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | journal / arXiv abstract | 显式 multi-agent framework，包含检索、编码、执行和批判修正 | 高 |
-| 科学对象归类 | `09.01` | journal / arXiv abstract | 任务锚定在 mechanics、elasticity 与 FEM 问题 | 高 |
-| 方法流程 | 多代理代码协作 | journal / arXiv abstract | 代理分工处理 formulation、coding、executing、criticizing | 高 |
-| 实验验证 | 计算验证 | journal / arXiv abstract | 以多个力学问题和计算实验为主 | 高 |
-| 边界判断 | 不应归 `01.04` | journal / arXiv abstract | 论文对象不是通用科研代理，而是具体力学问题求解 | 高 |
+| PDF 归档与来源核对 | 已完成 | ScienceDirect abstract/preview；DOI landing page；项目本地 PDF | 出版方全文入口本轮 `403`，但 arXiv 预印本 PDF 已归档并可支撑稳定全文级对象判断 | 高 |
+| Agent 纳入 | 是 | ScienceDirect abstract；arXiv abstract | 论文显式构造 multiple dynamically interacting LLM agents，并强调 planning、formulating、coding、executing、criticizing 的分工 | 高 |
+| 工程技术对象覆盖 | `09` | ScienceDirect abstract；arXiv abstract / methods | 具体任务锚定在 elasticity problems、finite element methods、engineering problems | 高 |
+| 方法流程 | 多 Agent 代码与仿真协作 | ScienceDirect abstract；arXiv abstract | 两代理与多代理团队分别执行 formulation、coding、execution、self- / mutual-correction | 高 |
+| 实验验证 | 计算仿真验证 | ScienceDirect abstract；arXiv preprint | 多个 mechanics / elasticity / FEM computational experiments 用于展示自动求解与新数据生成 | 高 |
+| `01.04` 存放区判断 | `none` | ScienceDirect abstract；arXiv abstract | 论文不是无对象实验的通用科研代理，而是面向具体工程力学问题求解 | 高 |
 
 ## 0. 摘要翻译
 
-MechAgents 通过多个 LLM 代理的协作来求解力学问题，包括弹性问题、有限元相关任务以及知识整合。系统强调多角色分工、自纠和互纠，并以计算实验验证其效果。虽然方法上带有明显的通用代理协作特征，但其直接服务对象仍是工程力学问题，因此保留在 `09`。
+MechAgents 通过多个大语言模型代理的协作自动求解力学问题。论文以弹性力学与有限元问题为主要对象，展示双代理与多代理团队如何分工完成知识检索、公式构建、代码编写、程序执行、结果批判和自纠 / 互纠。作者强调，这种多代理协作结合了语言模型的通用推理能力与 physics-based modeling 的可靠性，从而为工程问题自动化求解开辟了新路线。
 
 ## 1. 是否纳入本综述
 
-- 是否属于 Agent 文献：是
-- 判断依据：有明确科研目标、多步代码执行流程、多代理协作和反馈纠错
-- 判定置信度：高
-- 在科研流程中承担的明确角色：simulation_modeling；data_generation；result_interpretation
-- 是否仍需进一步全文复核：对主类判断不是强制
+### 1.1 Agent 判定
+
+- 是否属于 Agent 文献：是。
+- 判断依据：具备明确科研目标、多步代码与仿真执行流程、多代理协作、反馈纠错和任务分工。
+- 纳入置信度：高。
+- 是否面向明确科研目标：是，面向 mechanics / FEM 工程问题求解与分析。
+- 是否具有多步行动过程：是。
+- 是否具备以下至少一项 Agent 能力：
+  - 计划生成：是。
+  - 工具调用：是，代码执行与仿真求解。
+  - 反馈迭代：是，自纠与互纠。
+  - 自主决策：中高。
+  - 多 Agent 协作：是。
+- 在科研流程中承担的明确角色：simulation modeling、code execution、result validation、data generation。
+
+### 1.2 排除风险检查
+
+- 是否只是普通 AI for Science / ML / DL 模型：否。
+- 是否只是单次问答、摘要或分类：否。
+- 是否缺少行动闭环：否。
+- 若排除，排除理由：不适用。
 
 ## 2. 科学领域归类
 
-- 一级类：09
-- 二级类：09.01
-- 三级类：mechanics / elasticity engineering analysis
-- 四级专题：Mechanics research agents
-- 最终科学研究对象：经典力学与工程仿真问题
-- 最终科学问题：如何通过多代理协作自动求解和扩展力学分析任务
-- 容易混淆的边界：`01.04`
-- 最终判定：保留 `09.01`
-- 判定理由：任务与结果都锚定在具体力学/FEM 对象
+### 2.1 科学对象模块归类
+
+- scientific_object_modules：`09`
+- object_coverage_mode：`single_module`
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- general_method_bucket：`none`
+- primary_module_for_filing：`09`
+- 主展示模块一级类：`09` 工程与工业技术科学
+- 主展示模块二级类：`09.01` 工程基础 / 工程力学
+- 主展示模块三级类：mechanics / elasticity / FEM engineering analysis
+- 每个模块的对象实验证据：elasticity problems、finite element methods、boundary conditions、domain geometries、hyper-elastic constitutive laws 与 engineering problem solving
+- 归类理由：论文直接研究和验证的是工程力学与有限元对象，而不是一般 scientific-agent workflow。
+- 归类置信度：高。
+
+### 2.2 对象优先判定
+
+- 最终科学研究对象：经典力学、弹性问题、有限元工程分析任务。
+- 最终科学问题：如何通过多代理协作自动理解、构建、执行并验证 mechanics / FEM 求解流程。
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：多代理只是方法实现；分类应由被求解和验证的工程对象决定。
+
+### 2.3 容易混淆的边界
+
+- 可能误归类到：`01` 或独立 `01.04`。
+- 最终判定：保留 `09`。
+- 判定理由：从任务设定到结果验证都锚定在具体 engineering mechanics / FEM 对象，而不是领域无关的科研工作流。
+- 多模块覆盖说明：当前没有需要新增的其他对象模块。
+- `01.04` 判定说明：不成立；该文有明确工程对象与仿真验证。
+- 是否需要二次复核：否。
 
 ## 3. Agent 系统与科研流程角色
 
-- Agent 类型标签：Multi-Agent System；LLM Agent
-- 科研流程角色：simulation_modeling；data_generation；result_interpretation
+- Agent 类型：LLM Agent；Multi-Agent System；Tool-using Agent；Hybrid Agent
+- 科研流程角色：simulation_modeling；tool_use_and_code_execution；data_analysis；evidence_assessment_and_validation
 - 自主能力：task_decomposition；planning；tool_use；feedback_iteration；multi_agent_collaboration
-- 交叉属性标签：computation_driven；simulation_driven
 
 ## 4. 方法设计
 
-1. 输入力学问题。
-2. 多代理拆分公式推导、编码、执行和批判任务。
-3. 调用计算环境完成求解。
-4. 自纠或互纠后继续迭代。
-5. 输出力学结果与新数据。
+1. 输入 mechanics / elasticity 问题描述。
+2. 多代理分解 formulation、coding、execution、critique 等子任务。
+3. 调用代码与仿真环境完成 FEM 求解。
+4. 通过自纠和互纠修正公式、代码与结果。
+5. 输出工程力学分析结果及新生成数据。
 
 ## 5. 实验与验证
 
 - 验证方式：benchmark；simulation_validation
-- 数据、任务与指标：多个 mechanics / elasticity / FEM 计算任务
-- 关键结果：系统能解决多类力学问题并生成新的分析数据
-- 科学贡献类型：analysis；data_generation
-- 证据强度：high_primary_abstract
+- 数据、任务与指标：多个 elasticity / FEM 计算任务与工程问题
+- 关键结果：系统可自动写码、执行、自纠，并在更复杂任务中通过更细分的多代理分工提升求解能力
+- 科学贡献类型：analysis；data_generation；system_platform
+- 证据强度：first_hand_full_text_via_arxiv_fallback
 
 ## 6. 与已有工作的关系
 
-- 与一般 code agent 相比，MechAgents 更强调多代理劳动分工。
-- 与 FEM workflow 论文一起构成工程力学分析子群。
-- 相比 `01.04` 泛化平台，它的科学对象更具体。
+- 与一般 code agent 的区别：强调多代理在工程力学任务上的分工、自纠和互纠。
+- 与通用科研平台的区别：具体任务始终绑定 mechanics / FEM 工程对象。
+- 与同域工程 Agent 的关系：可作为后续 FEM / CFD / structural-analysis 类工程 Agent 的早期代表样本。
 
 ## 7. 局限性与风险
 
-- 当前多为计算任务验证。
-- 风险主要是 core-strength，而不是主类错误。
-- 若后续全文显示更强通用 benchmark 取向，可再补边界说明。
+- 主要验证仍是计算仿真任务，缺少真实工业部署。
+- 当前风险主要是科学强度和可扩展性，而不是归类方向。
+- 出版方全文访问受限，但 arXiv 预印本已足以支持当前 `09` 对象判断，因此不标记为 source-limited。
 
 ## 8. 对综述写作的价值
 
-- 适合放入工程力学 Agent 小节。
-- 可支撑“多代理开始承担 mechanics problem solving”这一论点。
-- 推荐引用强度：standard
+- 可放入哪个章节：工程力学 / FEM agents。
+- 可支撑哪个论点：多代理协作已能承担明确 engineering analysis 对象，而不只是通用科研协调外壳。
+- 推荐引用强度：standard。
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-多代理协作被用于工程力学问题求解。
+MechAgents 是一个面向 mechanics / FEM 工程对象的稳定 `09` 多代理求解框架。
 
 ### 9.2 速记版 pipeline
 
-1. 接入力学问题
-2. 代理分工推导和编码
-3. 执行求解
-4. 互相纠错
-5. 输出分析结果
+1. 接收力学问题。
+2. 多代理分工推导与编码。
+3. 执行 FEM 求解。
+4. 自纠 / 互纠修正结果。
+5. 输出工程分析与新数据。
 
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
-主类：09
-二级类：09.01
-三级类：mechanics / elasticity engineering analysis
-四级专题：Mechanics research agents
-Agent 类型：Multi-Agent System; LLM Agent
-科研流程角色：simulation_modeling; data_generation; result_interpretation
-自主能力：task_decomposition; planning; tool_use; feedback_iteration; multi_agent_collaboration
+是否纳入：是
+scientific_object_modules：09
+object_coverage_mode：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+primary_module_for_filing：09
+是否进入 01.04 存放区：否
+module_assignment_evidence：elasticity problems; FEM; engineering problem solving
+Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
+科研流程角色：simulation_modeling; tool_use_and_code_execution; data_analysis; evidence_assessment_and_validation
 验证方式：benchmark; simulation_validation
-交叉属性：computation_driven; simulation_driven
-科学贡献类型：analysis; data_generation
-证据强度：high_primary_abstract
-归类置信度：高
-纳入置信度：高
+科学贡献类型：analysis; data_generation; system_platform
+证据强度：first_hand_full_text_via_arxiv_fallback
+归类置信度：high
+纳入置信度：high
 推荐引用强度：standard
 ```
