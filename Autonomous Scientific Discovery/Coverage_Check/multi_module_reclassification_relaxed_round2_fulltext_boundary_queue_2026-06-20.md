@@ -159,6 +159,16 @@ Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1J_2026-06
 |---|---|---|
 | `ASD-0276` | closed | reviewed arXiv abstract and full PDF; accepted `scientific_object_modules=06;07` because the molecular multiomics / biological-mechanism workflow supports `06` and the cancer clinical multiomics cohorts, survival analyses, prognosis hypotheses, and same-cancer CPTAC validation also provide independent medical-object evidence for `07` |
 
+## Round-2 P1-L Status Update
+
+Report: `Coverage_Check/multi_module_reclassification_relaxed_round2_p1L_2026-06-21.md`.
+
+| ID | Status after P1-L | Action |
+|---|---|---|
+| `ASD-0539` | closed | reviewed the official JMI HTML page for DOI `10.20517/jmi.2025.69`; accepted `scientific_object_modules=03;04` because battery-electrolyte-additive inverse design adds independent chemistry-side object evidence alongside the materials-discovery framing |
+| `ASD-0609` | closed | reviewed ChemRxiv full-text / publisher-abstract evidence; kept `scientific_object_modules=03` only because the validated objects remain buffered chemical systems rather than an independent engineering-process experiment |
+| `ASD-0664` | closed | reviewed arXiv full text and official repository; accepted `scientific_object_modules=03;04` because computational catalysis remains the primary chemistry object while BCC Fe surface energies, Pt-Ni-Cu alloy screening, EOS fitting, and FeN4/graphene construction also provide independent materials-side object evidence |
+
 ## 2. P0 Queue: `01.04` / General-Agent Boundary
 
 These records have the highest risk of stale `01.04` treatment or premature migration out of `01.04`.

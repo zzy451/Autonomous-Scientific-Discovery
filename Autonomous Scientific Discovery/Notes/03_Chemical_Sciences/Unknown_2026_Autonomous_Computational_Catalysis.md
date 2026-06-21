@@ -14,6 +14,18 @@
 
 ## Evidence Log
 
+## Round-2 Relaxed Multi-Module Update (2026-06-21)
+
+- `scientific_object_modules`: `03;04`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `03`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: arXiv abstract; arXiv full-text HTML `2601.13508v1`; official CatMaster repository
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `note_revision_required`: `no`
+
+This note no longer keeps the paper in a vague `03 / 04 / 01.04` pending state. The full text is explicit enough to reject `01.04` and to accept `03;04`: computational heterogeneous catalysis, CO adsorption, HER descriptor screening, and CO@FeN4/graphene remain stable chemistry-side evidence for `03`, while BCC Fe surface energies, Pt-Ni-Cu alloy screening, Materials Project retrieval, BCC Fe EOS fitting, and FeN4/graphene structural construction add independent materials-side object evidence for `04`.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | abstract / HTML | 系统把高层科研意图转成 atomistic simulation、mechanistic analysis、critique 与 design decisions | 中高 |

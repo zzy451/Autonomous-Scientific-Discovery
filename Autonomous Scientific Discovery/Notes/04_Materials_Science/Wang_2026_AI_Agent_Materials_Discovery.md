@@ -14,6 +14,18 @@
 
 ## Evidence Log
 
+## Round-2 Relaxed Multi-Module Update (2026-06-21)
+
+- `scientific_object_modules`: `03;04`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `04`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: official JMI HTML page for DOI `10.20517/jmi.2025.69`
+- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `note_revision_required`: `no`
+
+This note no longer treats the electrolyte-additive case as too weak for chemistry-side object coverage. Under the current relaxed rule, the official JMI page is explicit enough to support `03;04`: the periodic monolayer transition metal dichalcogenide workflow remains stable `04` materials evidence, while the inverse design of battery electrolyte additives based on molecular-weight and frontier-orbital targets adds independent molecular / chemistry-side object evidence for `03`.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official HTML abstract | 可解释自然语言、组装 task-specific workflows、执行 simulation tools | 高 |

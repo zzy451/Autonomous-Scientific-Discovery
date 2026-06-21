@@ -14,6 +14,18 @@
 
 ## Evidence Log
 
+## Round-2 Boundary Closure Update (2026-06-21)
+
+- `scientific_object_modules`: `03`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `03`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: ChemRxiv full-text PDF; ScienceDirect publisher page / abstract
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `note_revision_required`: `no`
+
+This note is now closed for the `03 / 09` top-level boundary. The validated objects remain buffered chemical systems such as acetate, citrate, KH2PO4, and ammonium compositions under closed-loop pH adjustment. The paper uses industrial and process-control language as application motivation, but the reported experiments do not become an independent engineering-system or process-engineering object study, so `09` is not added.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 期刊摘要 | active-ML-driven closed-loop optimization 用于自动 pH 调节 | 中高 |
