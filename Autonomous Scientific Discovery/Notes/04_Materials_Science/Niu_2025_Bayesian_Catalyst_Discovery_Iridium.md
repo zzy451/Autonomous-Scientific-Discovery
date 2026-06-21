@@ -14,6 +14,13 @@
 
 ## Evidence Log
 
+## 2026-06-21 relaxed round-2 boundary closure
+
+- `first_hand_sources_checked`: Crossref DOI abstract `10.1126/sciadv.adw0894`.
+- Accepted relaxed classification: accept `scientific_object_modules=03;04`; `object_coverage_mode=multi_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Why: the accessible publisher-registered abstract does not only describe generic materials optimization. It explicitly targets oxygen evolution reaction electrocatalysis, integrates DFT calculations with Bayesian learning, optimizes surface compositions and oxygen vacancies, and validates the result through synthesis plus overpotential / Ir-mass-specific-activity gains. This supports independent chemistry-side electrochemical catalysis coverage (`03`) in addition to catalyst-material composition / performance coverage (`04`).
+- Note implication: this note should no longer present `03` as only a tentative future follow-up. Under the relaxed object-coverage rule, the current first-hand publisher abstract is already sufficient to close the `03/04` boundary as `03;04`, while keeping `04` as `primary_module_for_filing`.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 暂保留 | PMC snippet | theory + experiment + Bayesian learning-assisted strategy | 中 |

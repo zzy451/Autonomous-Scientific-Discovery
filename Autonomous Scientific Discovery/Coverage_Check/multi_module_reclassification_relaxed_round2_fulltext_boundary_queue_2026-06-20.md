@@ -197,7 +197,7 @@ These records are likely to remain confirmed core, but may need module additions
 | `ASD-0070` | possible cross-domain | Review 124 hypotheses for stable `04/06` object coverage beyond chemistry. |
 | `ASD-0276` | `06/07` | Does clinical multiomics / proteogenomics evidence justify adding `07`? |
 | `ASD-0290` | `03/04` | Are catalyst candidates chemical objects only, or also materials-performance objects? |
-| `ASD-0520` | `03/04` | Does low-Ir OER electrocatalyst evidence support both electrochemical reaction and catalyst-material performance modules? |
+| `ASD-0520` | closed | reviewed Crossref DOI abstract `10.1126/sciadv.adw0894`; accepted `scientific_object_modules=03;04` because the publisher-registered abstract explicitly supports both oxygen-evolution electrocatalysis (`03`) and low-Ir catalyst-material composition / performance discovery (`04`) |
 | `ASD-0539` | `04/03` | Does electrolyte-additive molecular inverse design justify adding `03` to materials discovery? |
 | `ASD-0543` | `06/07` | Does prognostic gene discovery support `07`, or remain biology / bioinformatics only? |
 | `ASD-0547` | `04/09` | Does pixelated metasurface design include device/fabrication-system engineering object evidence? |
