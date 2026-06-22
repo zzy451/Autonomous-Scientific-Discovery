@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.00058
-- PDF / 本地文件路径：当前笔记基于 arXiv PDF / HTML
+- PDF / 本地文件路径：当前笔记沿用既有 arXiv PDF / HTML 线索；本轮仅核对 arXiv 摘要，未确认本地归档 PDF
 - 论文类型：系统论文 / reproducibility assessment agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19

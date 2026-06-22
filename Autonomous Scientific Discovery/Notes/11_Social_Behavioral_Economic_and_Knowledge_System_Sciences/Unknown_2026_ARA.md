@@ -2,11 +2,11 @@
 
 **论文信息**
 - 标题：ARA: Agentic Reproducibility Assessment For Scalable Support Of Scientific Peer-Review
-- 作者：Unknown
+- 作者：Kevin Riehl; Andres L. Marin; Nikofors Zacharof; Fan Wu; Patrick Langer; Robert Jakob; Anastasios Kouvelas; Georgios Fontaras; Michail A. Makridis
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.02651
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：未配置本地 PDF；本轮仅核对 arXiv 摘要级证据（https://arxiv.org/abs/2605.02651），当前结论仍属 source-limited。
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：已读摘要级证据；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
@@ -20,7 +20,7 @@
 | 科学对象归类 | `11` / `11.07` | 摘要 | 最稳定对象是“scientific reproducibility assessment for scalable peer review support”，而不是单纯的模型方法或发表 venue。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
 | 实验验证 | ReScience C corpus 与 reproducibility benchmarks | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 ReScience C corpus 与 reproducibility benchmarks 支撑其主张。 | 中高 |
-| 边界判断 | 稳定 11.07；主要修正点是 canonical metadata | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| 边界判断 | 稳定 `11.07`；当前主要风险是摘要级 source limitation | 摘要 / 任务定义 | 当前风险主要是摘要级证据与未归档本地 PDF，而不足以推翻 `11.07` 主方向。 | 中高 |
 
 ## 0. 摘要翻译
 
@@ -70,9 +70,9 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：稳定 11.07；主要修正点是 canonical metadata
+- 可能误归类到：`01.04`
 - 最终判定：保持 `11` / `11.07`
-- 判定理由：稳定 11.07；主要修正点是 canonical metadata
+- 判定理由：论文对象是面向 scientific peer-review support 的 reproducibility assessment，而不是通用科研流程 Agent
 - 是否需要二次复核：建议轻量复核。
 
 ## 3. Agent 系统与科研流程角色
@@ -160,7 +160,7 @@
 
 - Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
 - 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
-- 泛化性不足：稳定 11.07；主要修正点是 canonical metadata
+- 泛化性不足：当前以摘要级证据为主；跨学科泛化与真实 peer-review deployment 仍待后续全文核查
 - 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
 - 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
 - 成本、可复现性或安全风险：多 Agent 长流程通常带来较高成本和复现负担。

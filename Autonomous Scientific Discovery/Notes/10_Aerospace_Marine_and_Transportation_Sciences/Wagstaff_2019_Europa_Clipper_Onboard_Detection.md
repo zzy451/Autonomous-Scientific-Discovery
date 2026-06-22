@@ -6,7 +6,7 @@
 - 年份：2019
 - 来源 / venue：KDD '19
 - DOI / arXiv / URL：https://doi.org/10.1145/3292500.3330656
-- PDF / 本地文件路径：当前笔记基于 KDD 官方信息与论文 PDF
+- PDF / 本地文件路径：当前笔记基于 KDD 页面与可访问 PDF（https://wkiri.com/research/papers/wagstaff-onboard-europa-19.pdf）；未见本地归档 PDF
 - 论文类型：研究论文 / mission-science autonomy component
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -31,10 +31,10 @@ multi_module_object_coverage_note: The old 10-only wording is retained as filing
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | KDD abstract / PDF | onboard detection、priority adjustment、future targeting support 构成明确 mission-science action loop | 高 |
-| 科学对象归类 | `10.02` | KDD abstract / PDF sec.2 | 主对象是 Europa mission onboard science prioritization，而不是 Europa plume/geology 本体 | 高 |
+| 科学对象归类 | `05;10` | KDD abstract / PDF sec.2 | 论文同时覆盖 Europa 热异常、成分异常、冰羽等行星科学目标，以及 spacecraft mission-science prioritization / downlink autonomy | 高 |
 | 方法流程 | 多步闭环 | PDF sec.2.2 | 检测 thermal / compositional / plume events，评估价值，调整 downlink priority，并为后续 targeting 提供依据 | 高 |
 | 实验验证 | mission-oriented evaluation | KDD abstract / PDF | 在 onboard computing constraints 下验证三类科学兴趣事件检测流程 | 中高 |
-| 边界判断 | 不转 `02` / `05` | object-first reading | 虽然研究对象来自 planetary science，但论文真正对象是 spacecraft mission-science autonomy component | 高 |
+| 边界判断 | `10` 为 filing-primary，并补记 `05` | object-first reading | 航天器 onboard detection and prioritization 仍是 filing 主线，但 Europa planetary-environment science targets 已构成独立 `05` 对象覆盖 | 高 |
 
 ## 0. 摘要翻译
 
@@ -73,14 +73,14 @@ multi_module_object_coverage_note: The old 10-only wording is retained as filing
 - 三级类：planetary mission onboard science-event detection
 - 四级专题：Europa mission-science prioritization agents
 - 四级专题是否为新增：否
-- 归类理由：最终对象是 spacecraft mission-science prioritization
+- 归类理由：`10` 侧是 spacecraft mission-science prioritization，`05` 侧是 Europa thermal / compositional / plume science targets；本记录继续以 `10` 为 filing-primary
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：Europa Clipper onboard mission-science autonomy
-- 最终科学问题：航天器如何自主识别高价值科学事件并调整观测/下传策略
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：异常检测算法只是实现手段，主对象是 mission-science operations
+- 最终科学研究对象：Europa 科学事件的 onboard detection / prioritization 与相应 mission-science autonomy
+- 最终科学问题：航天器如何自主识别 Europa 高价值科学事件，并据此调整观测/下传策略
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：异常检测算法只是实现手段；对象证据同时落在 Europa 行星科学事件与 mission-science operations 上
 
 ### 2.3 容易混淆的边界
 
@@ -161,4 +161,4 @@ multi_module_object_coverage_note: The old 10-only wording is retained as filing
 
 ## 9. 总结
 
-该文稳定属于 `10.02`。尽管场景来自 Europa planetary science，论文真正研究的是 spacecraft onboard detection and prioritization for mission-science autonomy。
+该文以 `10` 为 filing-primary，但在当前 relaxed multi-module 口径下应明确记录为 `05;10`：它既研究 spacecraft onboard detection and prioritization for mission-science autonomy，也直接围绕 Europa planetary-science events 展开检测与排序。

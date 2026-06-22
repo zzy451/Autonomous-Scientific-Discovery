@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2509.17255
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML 全文
+- PDF / 本地文件路径：当前轮仅核对 arXiv 摘要；未见本地归档 PDF
 - 论文类型：系统论文 / 真实设施上的 physics-experiment Agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,15 +16,15 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv HTML 摘要 | 系统把自然语言实验需求转成多阶段执行计划，并完成检索、脚本生成、机器交互与分析 | 高 |
-| 科学对象归类 | `02.02` | arXiv HTML 摘要与结论 | 直接对象是 synchrotron / particle-accelerator 上的 machine physics experiments | 高 |
-| 方法流程 | 多步闭环 | Figure 1 与系统描述 | structured task -> planner -> archive retrieval -> PV resolution -> script execution -> analysis | 高 |
-| 工具与环境交互 | 明确存在 | 系统描述 | 调用 archive、控制通道与脚本执行环境，并受安全约束 | 高 |
-| 实验验证 | 真实部署 | 结果与结论 | 在 production synchrotron light source 上验证，可显著减少实验准备时间 | 高 |
+| Agent 纳入 | 是 | arXiv 摘要 | 系统把自然语言实验需求转成结构化执行计划，并串联检索、脚本生成、受控机器交互与分析 | 高 |
+| 科学对象归类 | `02.02` | arXiv 摘要 | 直接对象是 production synchrotron light source 上的 machine physics experiments，而不是通用科研平台 | 高 |
+| 方法流程 | 多步闭环 | arXiv 摘要 | natural-language prompt -> structured execution plan -> archive retrieval / channel resolution / script generation / machine interaction / analysis | 高 |
+| 工具与环境交互 | 明确存在 | arXiv 摘要 | 系统结合 archive data retrieval、control-system channel resolution 与 controlled machine interaction，并受安全约束 | 高 |
+| 实验验证 | 真实部署 | arXiv 摘要 | 在 Advanced Light Source 粒子加速器的 representative machine physics task 上验证，准备时间相对人工脚本下降两个数量级 | 高 |
 
 ## 0. 摘要翻译
 
-论文提出一个部署在 Advanced Light Source 粒子加速器上的 agentic AI 系统，可将自然语言实验请求转化为结构化多阶段物理实验计划。系统会自动检索历史数据、解析控制通道、生成分析脚本、执行受控机器交互并解释结果，同时遵守操作安全约束。作者将其定位为面向真实大科学装置的 physics-experiment automation，而不是通用科研平台。
+根据 arXiv 摘要，论文提出一个部署在 Advanced Light Source 粒子加速器上的 agentic AI 系统，可将自然语言实验请求转化为结构化多阶段物理实验计划。系统会自动完成 archive data retrieval、control-system channel resolution、script generation、controlled machine interaction 和 analysis，同时严格遵守操作安全约束。当前轮仅核对摘要级一手来源，因此本笔记将其稳定记录为面向真实大科学装置的 physics-experiment automation，而不扩展到摘要之外的实现细节。
 
 ## 1. 是否纳入本综述
 
@@ -142,20 +142,20 @@
 ### 4.2 系统流程
 
 1. 输入：自然语言实验请求
-2. 任务分解 / 规划：生成 structured task 与依赖关系
-3. 工具、数据库、模型或实验平台调用：archive retrieval、PV resolution、script execution、machine interaction
-4. 中间结果反馈：分析脚本输出与安全约束检查
-5. 决策或迭代：根据结果修正执行步骤
-6. 输出：完成的物理实验任务与分析结果
+2. 任务分解 / 规划：把用户请求转成 structured execution plan
+3. 工具、数据库、模型或实验平台调用：archive data retrieval、control-system channel resolution、automated script generation、controlled machine interaction
+4. 中间结果反馈：基于分析结果与安全约束检查决定是否继续执行
+5. 决策或迭代：按任务进展选择后续能力与执行步骤
+6. 输出：可审计的 machine physics experiment 执行与分析结果
 
 ### 4.3 系统组件
 
 - Agent 核心：LM-based planner / executor
 - 工具 / API / 数据库：archive、control system、analysis scripts
-- 记忆或状态模块：任务状态与执行依赖
+- 记忆或状态模块：摘要提到结构化执行计划与动态能力选择，但未展开更细状态机制
 - 规划器：有
-- 评估器 / verifier：安全约束与执行可行性检查
-- 人类反馈或专家介入：有，但不是实时逐步闭环
+- 评估器 / verifier：摘要明确强调 operator-standard safety constraints
+- 人类反馈或专家介入：当前摘要未明确
 - 实验平台或仿真环境：Advanced Light Source 生产环境
 
 ## 5. 实验与验证
@@ -173,11 +173,11 @@
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：生产级 synchrotron / particle-accelerator tasks
+- 数据集 / 实验对象：production synchrotron light source 上的 representative machine physics task
 - 任务设置：从自然语言请求到多阶段 physics experiment 执行
-- 对比基线：专家手工准备与脚本工作流
-- 评价指标：任务成功执行、时间缩减、安全约束满足
-- 关键结果：准备时间相较专家手工脚本下降显著，同时保持安全标准
+- 对比基线：system expert 的 manual scripting workflow
+- 评价指标：任务能否完成、准备时间缩减、安全约束是否满足
+- 关键结果：摘要报告准备时间相对人工脚本下降两个数量级，同时严格满足 operator-standard safety constraints
 - 是否有消融实验：当前摘要证据未明确
 - 是否有失败案例或负结果：当前摘要证据未明确
 
@@ -187,7 +187,7 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
 - 科学贡献类型：系统平台 / physics experiment automation
-- 证据强度：真实部署
+- 证据强度：摘要级真实部署证据
 
 ## 6. 与已有工作的关系
 
@@ -212,21 +212,21 @@
 - 可用于哪个表格或图：按领域统计的真实部署型 Agent 案例表
 - 适合作为代表性案例吗：是
 - 推荐引用强度：核心引用
-- 需要在正文中特别引用的页码 / 图 / 表：Figure 1 与系统流程图
+- 需要在正文中特别引用的页码 / 图 / 表：当前轮仅核对摘要；若正文需展开实现细节，应待 PDF / 全文复核后补页码
 - 需要与哪些论文并列比较：ASD-0707；ASD-0120；mission-science autonomy papers
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-面向粒子加速器物理实验的真实部署型 Agent 系统。
+面向粒子加速器物理实验的摘要级真实部署型 Agent 系统。
 
 ### 9.2 速记版 pipeline
 
 1. 接收自然语言实验需求
-2. 生成可审计执行计划
+2. 生成结构化执行计划
 3. 检索 archive 并解析控制通道
-4. 生成脚本并执行机器交互
+4. 生成脚本并执行受控机器交互
 5. 分析结果并完成物理实验任务
 
 ### 9.3 标注字段汇总

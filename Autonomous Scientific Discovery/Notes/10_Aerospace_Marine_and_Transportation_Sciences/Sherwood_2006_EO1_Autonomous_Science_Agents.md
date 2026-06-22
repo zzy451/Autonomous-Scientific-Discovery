@@ -6,7 +6,7 @@
 - 年份：2006
 - 来源 / venue：IEEE Aerospace Conference
 - DOI / arXiv / URL：https://ai.jpl.nasa.gov/public/papers/sherwood-ieeeaero06-beyond.pdf
-- PDF / 本地文件路径：当前笔记基于官方 PDF
+- PDF / 本地文件路径：当前笔记基于官方 PDF（https://ai.jpl.nasa.gov/public/papers/sherwood-ieeeaero06-beyond.pdf）；未见本地归档 PDF
 - 论文类型：系统论文 / EO-1 mission-science autonomy
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -31,10 +31,10 @@ multi_module_object_coverage_note: Under the relaxed rule, Earth-science event d
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF abstract | 明确写为 autonomous science agent，含 onboard analysis、planning、robust execution | 高 |
-| 科学对象归类 | `10.02` | abstract +正文概述 | 主对象是 EO-1 mission-science operation / sensor-web retasking | 高 |
+| 科学对象归类 | `05;10` | abstract +正文概述 | 论文同时覆盖 EO-1 mission-science operation / sensor-web retasking，以及 volcanoes、floods、ice、clouds、crust deformation 等 Earth-science events | 高 |
 | 方法流程 | 多步闭环 | abstract | science event detection -> replanning -> retasking -> execution | 高 |
 | 实验验证 | 真实平台 | official PDF | 依托 EO-1 与 sensor-web 实际任务环境 | 高 |
-| 边界判断 | 不转 `05` | object-first reading | 火山、洪水等只是触发场景，不是论文最终对象 | 高 |
+| 边界判断 | `10` 为 filing-primary，并补记 `05` | object-first reading | EO-1 / sensor-web autonomy 仍是 filing 主线，但 Earth-science event detection and follow-up 已构成独立 `05` 对象覆盖 | 高 |
 
 ## 0. 摘要翻译
 
@@ -73,13 +73,13 @@ multi_module_object_coverage_note: Under the relaxed rule, Earth-science event d
 - 三级类：EO-1 onboard mission-science autonomy
 - 四级专题：EO-1 autonomous mission-science agents
 - 四级专题是否为新增：否
-- 归类理由：对象稳定指向 spacecraft mission autonomy
+- 归类理由：对象既指向 spacecraft mission autonomy，也指向被检测与跟踪的 Earth-science events；本记录继续以 `10` 为 filing-primary
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：EO-1 spacecraft autonomous mission-science operations
-- 最终科学问题：卫星如何在轨检测科学事件并自主重规划观测
+- 最终科学研究对象：EO-1 spacecraft autonomous mission-science operations，以及由此触发的 Earth-science event detection / follow-up
+- 最终科学问题：卫星如何在轨检测 Earth-science events 并自主重规划观测
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：planning 和 robust execution 只是实现方式，主对象是任务科学自主性
 
 ### 2.3 容易混淆的边界
@@ -156,8 +156,8 @@ multi_module_object_coverage_note: Under the relaxed rule, Earth-science event d
 ## 8. 对综述写作的价值
 
 - 是 `10.02` 经典 anchor paper。
-- 能支撑 `05 / 10` 边界中“自然过程只是观测触发，论文对象仍是 mission-science autonomy”的判断。
+- 能支撑 `05 / 10` 边界中“mission-science autonomy 与 Earth-science event object coverage 可并行记录”的判断。
 
 ## 9. 总结
 
-这是一篇稳定的 `10.02` 记录：EO-1 自主科学代理的核心对象是航天 mission-science autonomy，而非 Earth process science。
+这是一篇以 `10` 为 filing-primary 的稳定 `05;10` 记录：EO-1 自主科学代理的主线是航天 mission-science autonomy，但全文也明确围绕 Earth-science events 展开检测、重规划与后续观测。

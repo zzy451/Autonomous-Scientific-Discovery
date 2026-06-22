@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2507.21035
-- PDF / 本地文件路径：当前笔记基于 arXiv 摘要页与 GitHub 仓库
+- PDF / 本地文件路径：当前笔记基于 arXiv 摘要 / 全文线索与 GitHub 仓库；本轮未确认本地归档 PDF
 - 论文类型：系统论文 / transcriptomics discovery agents
 - 当前状态：to_read
 - 阅读日期：2026-06-19

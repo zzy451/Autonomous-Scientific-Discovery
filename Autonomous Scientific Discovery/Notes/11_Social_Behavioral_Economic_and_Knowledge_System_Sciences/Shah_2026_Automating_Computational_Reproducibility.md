@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv / The Web Conference 2026 workshop
 - DOI / arXiv / URL：https://arxiv.org/abs/2602.08561
-- PDF / 本地文件路径：当前笔记基于 arXiv 摘要与 workshop 接收信息；未保存本地 PDF
+- PDF / 本地文件路径：当前笔记基于 arXiv 摘要与 workshop 接收信息；未保存本地 PDF，本轮未新增本地归档
 - 论文类型：系统论文 / scientific reproducibility Agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19

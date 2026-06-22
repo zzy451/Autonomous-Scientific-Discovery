@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.29727
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与 reviewer 一手 PDF 证据整理
+- PDF / 本地文件路径：本轮笔记基于 arXiv abstract 整理；未确认本地归档 PDF
 - 论文类型：系统论文 / therapeutic biologics design agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -20,7 +20,7 @@
 | 科学对象归类 | `07.04` | arXiv abstract L36-L40 | 直接目标是 drug design、therapeutic specifications、lab-ready sequences | 高 |
 | 方法流程 | 端到端 biologics design | arXiv abstract L36-L40 | 覆盖 literature review、target analysis、epitope identification、candidate design、computational validation | 高 |
 | 科学验证 | 有湿实验 | arXiv abstract L38-L40 | 九个 targets 上，六个得到 lab-confirmed nanobody binders，成功率 67% | 高 |
-| 边界判断 | 不转 `06` | arXiv abstract；reviewer PDF evidence | 虽是 biomolecules / antibodies，但最终对象是 therapeutic drug design，而非一般生命机制研究 | 高 |
+| 边界判断 | 不转 `06` | arXiv abstract L36-L40 | 虽是 biomolecules / antibodies，但最终对象是 therapeutic drug design，而非一般生命机制研究 | 高 |
 
 ## 0. 摘要翻译
 
@@ -204,7 +204,7 @@
 - 工具链依赖：高
 - 数据泄漏或 benchmark 偏差：待全文核查
 - 成本、可复现性或安全风险：实验验证成本高
-- 是否仍需进一步全文复核：否；主类与纳入判断已足够稳
+- 是否仍需进一步全文复核：建议后续补核全文；本轮仅核对 arXiv abstract，未确认本地归档 PDF，但主类与纳入判断已较稳
 
 ## 8. 对综述写作的价值
 

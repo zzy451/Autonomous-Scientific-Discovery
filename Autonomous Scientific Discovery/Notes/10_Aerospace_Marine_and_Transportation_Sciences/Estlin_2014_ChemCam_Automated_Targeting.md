@@ -6,7 +6,7 @@
 - 年份：2014
 - 来源 / venue：i-SAIRAS 2014
 - DOI / arXiv / URL：https://ai.jpl.nasa.gov/public/documents/papers/estlin-isairas2014-automated.pdf
-- PDF / 本地文件路径：当前笔记基于官方 PDF
+- PDF / 本地文件路径：当前笔记基于官方 PDF（https://ai.jpl.nasa.gov/public/documents/papers/estlin-isairas2014-automated.pdf）；未见本地归档 PDF
 - 论文类型：系统论文 / rover instrument-targeting autonomy
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -31,10 +31,10 @@ multi_module_object_coverage_note: The old 10-only boundary treated geology as m
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF abstract | onboard 图像分析、候选目标检测、follow-up targeting | 高 |
-| 科学对象归类 | `10.02` | abstract | 主对象是 rover autonomous targeting，不是 rocks/soil 本体 | 高 |
+| 科学对象归类 | `05;10` | abstract / official PDF | 论文同时覆盖 Mars rocks、soil、geologic / geochemical targets，以及 rover autonomous targeting / ChemCam mission-science workflow | 高 |
 | 方法流程 | 多步闭环 | abstract | image analysis -> candidate detection -> target selection -> ChemCam follow-up | 高 |
 | 实验验证 | 任务级场景 | official PDF | 面向 MSL Curiosity ChemCam mission workflow | 高 |
-| 边界判断 | 不转 `05` | object-first reading | 地质测量只是 instrument use case，论文本体是 targeting autonomy | 高 |
+| 边界判断 | `10` 为 filing-primary，并补记 `05` | object-first reading | rover / ChemCam targeting autonomy 仍是 filing 主线，但 geological / geochemical targets 已构成独立 `05` 对象覆盖 | 高 |
 
 ## 0. 摘要翻译
 
@@ -73,14 +73,14 @@ multi_module_object_coverage_note: The old 10-only boundary treated geology as m
 - 三级类：rover autonomous instrument targeting
 - 四级专题：rover ChemCam autonomous targeting agents
 - 四级专题是否为新增：否
-- 归类理由：稳定对象是 rover mission-science autonomy
+- 归类理由：稳定对象既包括 rover mission-science autonomy，也包括被识别和测量的 Mars geological / geochemical targets；本记录继续以 `10` 为 filing-primary
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：MSL rover mission-science targeting loop
+- 最终科学研究对象：MSL rover mission-science targeting loop，以及由 ChemCam 跟进的 Mars geological / geochemical targets
 - 最终科学问题：漫游车如何机载识别科学目标并自动触发 ChemCam follow-up
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：图像算法只是手段，主对象是任务闭环中的 autonomous targeting
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：图像算法只是手段；对象证据同时落在任务闭环中的 autonomous targeting 与 Mars geological / geochemical targets 上
 
 ### 2.3 容易混淆的边界
 

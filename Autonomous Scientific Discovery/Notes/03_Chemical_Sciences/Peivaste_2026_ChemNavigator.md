@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2601.17084
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与 reviewer 一手证据整理
+- PDF / 本地文件路径：本轮仅核对 arXiv abstract；未确认本地归档 PDF，当前结论仍属 source-limited
 - 论文类型：系统论文 / chemical discovery agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -20,7 +20,7 @@
 | 科学对象归类 | `03.04` | arXiv abstract L38-L42 | 直接对象是 organic photocatalyst candidates 与结构-性质规则 | 高 |
 | 方法流程 | 科学方法镜像式循环 | arXiv abstract L39-L40 | 包含 hypothesis formulation、experiment design、calculation execution、statistical validation | 高 |
 | 科学贡献 | 真正产生化学规则 | arXiv abstract L40-L42 | 在 200 molecules 上发现并验证 6 条 design rules | 高 |
-| 边界判断 | 不转 `04` | arXiv abstract；reviewer evidence | 虽面向光催化用途，但被直接搜索与解释的对象仍是有机分子与其电子结构规则 | 高 |
+| 边界判断 | 不转 `04` | arXiv abstract L38-L42 | 虽面向光催化用途，但被直接搜索与解释的对象仍是有机分子与其电子结构规则 | 高 |
 
 ## 0. 摘要翻译
 
@@ -204,7 +204,7 @@
 - 工具链依赖：依赖 DFTB 与统计分析模块
 - 数据泄漏或 benchmark 偏差：待全文核查
 - 成本、可复现性或安全风险：化学空间选择与统计设计会影响复现
-- 是否仍需进一步全文复核：可补读全文，但主类与纳入判断已较稳
+- 是否仍需进一步全文复核：是；本轮仅核对 arXiv abstract，未确认本地归档 PDF，当前结论仍属 source-limited
 
 ## 8. 对综述写作的价值
 

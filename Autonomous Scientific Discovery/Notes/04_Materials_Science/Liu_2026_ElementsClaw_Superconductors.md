@@ -2,11 +2,11 @@
 
 **论文信息**
 - 标题：Agentic Fusion of Large Atomic and Language Models to Accelerate Superconductor Discovery
-- 作者：Zekun Liu; Xu Han; Yifei Sun; Jiayan Luo; Xiaofei Wang; Zhijie Wang; Jingfeng Yang; Yanjie Wang; Qian Wang; Yunqing Shen; Han Sun; Risheng Xu; Xiaoyan Yang; Yichi Zhang; Di Wu; Tong Wu; Jianguo Liu; Xiangdong Xu; Yadong Li; Tong-Yi Zhang; Yu Li
+- 作者：Mingze Li; Yu Rong; Songyou Li; Lihong Wang; Jiacheng Cen; Liming Wu; Anyi Li; Zongzhao Li; Qiuliang Liu; Rui Jiao; Tian Bian; Pengju Wang; Hao Sun; Jianfeng Zhang; Ji-Rong Wen; Deli Zhao; Shifeng Jin; Tingyang Xu; Wenbing Huang
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.23758
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与 reviewer 一手证据整理
+- PDF / 本地文件路径：本轮笔记基于 arXiv abstract 整理；未确认本地归档 PDF
 - 论文类型：系统论文 / superconductor discovery agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -17,10 +17,10 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract L37-L41 | agentic framework 协调 large atomic models 与 language-model reasoning，执行多步 target selection | 高 |
-| 科学对象归类 | `04.04` | arXiv abstract L37-L41；reviewer evidence | 直接对象是 superconducting materials / compounds discovery，而不是通用科研平台或一般物理定律 | 高 |
-| 方法流程 | screening 到 synthesis 的材料闭环 | arXiv abstract；reviewer evidence | 先 literature-aware identification，再高通量筛选、排序、实验提名与合成验证 | 高 |
+| 科学对象归类 | `04.04` | arXiv abstract L37-L40 | 直接对象是 superconducting materials / compounds discovery，而不是通用科研平台或一般物理定律 | 高 |
+| 方法流程 | screening 到 synthesis 的材料闭环 | arXiv abstract L37-L40 | 先 literature-aware identification，再高通量筛选、排序、实验提名与合成验证 | 高 |
 | 科学验证 | 强实验支撑 | arXiv abstract L40-L41 | 在 240 万稳定晶体中筛选后，实验合成并验证 4 个 novel superconductors | 高 |
-| 边界判断 | 不转 `02` 或 `01.04` | reviewer evidence | 虽讨论超导和物理性质，但被发现和筛选的对象是具体超导材料化合物 | 高 |
+| 边界判断 | 不转 `02` 或 `01.04` | arXiv abstract L38-L40 | 虽讨论超导和物理性质，但被发现和筛选的对象是具体超导材料化合物 | 高 |
 
 ## 0. 摘要翻译
 
@@ -204,7 +204,7 @@
 - 工具链依赖：高
 - 数据泄漏或 benchmark 偏差：待全文核查
 - 成本、可复现性或安全风险：实验验证成本高
-- 是否仍需进一步全文复核：否；主类与纳入判断已足够稳
+- 是否仍需进一步全文复核：建议后续补核全文；本轮仅核对 arXiv abstract，未确认本地归档 PDF，但主类与纳入判断已较稳
 
 ## 8. 对综述写作的价值
 

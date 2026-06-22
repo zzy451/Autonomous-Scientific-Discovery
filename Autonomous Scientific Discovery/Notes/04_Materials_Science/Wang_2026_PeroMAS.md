@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2602.13312
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与 reviewer 一手证据整理
+- PDF / 本地文件路径：本轮笔记基于 arXiv abstract 整理；未确认本地归档 PDF
 - 论文类型：系统论文 / materials discovery agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -20,7 +20,7 @@
 | 科学对象归类 | `04.04` | arXiv abstract L38-L41 | 直接对象是 perovskite solar-cell materials，而非通用工作流本体 | 高 |
 | 方法流程 | 端到端材料发现 | arXiv abstract L38-L40 | 从 literature retrieval、data extraction 到 property prediction、mechanism analysis 构成闭环 | 高 |
 | 实验验证 | 有真实合成验证 | arXiv abstract L40-L41 | 论文明确说通过 real synthesis experiments 验证有效性 | 高 |
-| 边界判断 | 不回到 `01.04` | arXiv abstract；reviewer evidence | 工具虽平台化，但研究目标稳定锁定在 perovskite material discovery | 高 |
+| 边界判断 | 不回到 `01.04` | arXiv abstract L38-L41 | 工具虽平台化，但研究目标稳定锁定在 perovskite material discovery | 高 |
 
 ## 0. 摘要翻译
 
@@ -204,7 +204,7 @@
 - 工具链依赖：强依赖 perovskite-specific MCP ecosystem
 - 数据泄漏或 benchmark 偏差：专家基准需全文核实设计细节
 - 成本、可复现性或安全风险：材料实验复现成本较高
-- 是否仍需进一步全文复核：建议补读全文，但主类和纳入判断已经较稳
+- 是否仍需进一步全文复核：建议后续补核全文；本轮仅核对 arXiv abstract，未确认本地归档 PDF，但主类和纳入判断已经较稳
 
 ## 8. 对综述写作的价值
 

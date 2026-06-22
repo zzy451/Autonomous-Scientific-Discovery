@@ -6,7 +6,7 @@
 - 年份：2007
 - 来源 / venue：Journal of Field Robotics
 - DOI / arXiv / URL：https://doi.org/10.1002/rob.20192
-- PDF / 本地文件路径：当前笔记基于 JPL official PDF
+- PDF / 本地文件路径：当前笔记基于 JPL official PDF URL（https://ai.jpl.nasa.gov/public/documents/papers/castano-jfr07-oasis.pdf）；未见本地归档 PDF
 - 论文类型：研究论文 / rover mission-science autonomy
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | JPL PDF 摘要 | rover 能识别并响应 serendipitous science opportunities，并决定是否追加观测 | 高 |
-| 科学对象归类 | `10.02` | 引言与系统结构 | 对象是 onboard rover mission-science autonomy，而非火星自然过程本体 | 高 |
-| 方法流程 | 多步闭环 | 系统结构与流程 | 图像采集 -> target detection -> feature extraction -> prioritization -> planning/scheduling -> follow-up | 高 |
-| 自主决策 | 明确存在 | scientist target signatures 与 novelty detection 描述 | 系统根据科学目标自主优先排序并调整 command sequence | 高 |
-| 实验验证 | 真实任务导向 | onboard testing 与 FIDO/MER 描述 | 模块在真实 mission 场景与飞行软件渗透中测试 | 高 |
+| 科学对象归类 | `05;10` | JPL PDF 摘要、引言、系统描述 | 论文同时覆盖行星科学目标对象（rocks、clouds、dust devils）与 rover mission-science autonomy | 高 |
+| 方法流程 | 多步闭环 | JPL PDF 系统结构与流程 | 图像采集 -> target detection -> feature extraction -> prioritization -> planning/scheduling -> follow-up | 高 |
+| 自主决策 | 明确存在 | JPL PDF 中 scientist target signatures 与 novelty detection 描述 | 系统根据科学目标自主优先排序并调整 command sequence | 高 |
+| 实验验证 | 真实任务导向 | JPL PDF 的 onboard testing、FIDO、MER infusion 描述 | 模块在真实 mission 场景与飞行软件渗透中测试，并服务实际 mission-science return | 高 |
 
 ## 0. 摘要翻译
 
-OASIS 是一个面向行星 rover 的 onboard autonomous science system。它能够在漫游过程中自动分析图像、识别岩石、云和尘卷风等潜在高价值科学目标，并结合 planning and scheduling 动态调整后续观测与任务序列，从而提高 mission science return。论文核心不是研究火星地学本体，而是研究航天任务中的自主科学操作。
+OASIS 是一个面向行星 rover 的 onboard autonomous science system。它能够在漫游过程中自动分析图像、识别岩石、云和尘卷风等潜在高价值行星科学目标，并结合 planning and scheduling 动态调整后续观测与任务序列，从而提高 mission science return。按当前 relaxed multi-module 口径，这篇论文既覆盖 `10` 侧的 rover mission-science autonomy，也覆盖 `05` 侧的行星表面与大气环境科学目标。
 
 ## 1. 是否纳入本综述
 
@@ -52,27 +52,38 @@ OASIS 是一个面向行星 rover 的 onboard autonomous science system。它能
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：10
-- 二级类：10.02
-- 三级类：rover mission-science autonomy
-- 四级专题：opportunistic rover-science agents
+- 科学对象模块：`05`; `10`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：10
+- Primary module for filing 说明：主文件仍放在 `10`，因为论文的系统主线是 rover mission-science autonomy；这不覆盖 `05` 的对象事实。
+- 主展示模块一级类：10
+- 主展示模块二级类：10.02
+- 主展示模块三级类：rover mission-science autonomy
+- 主展示模块四级专题：opportunistic rover-science agents
+- 其他覆盖模块及对应层级路径：`05` -> 行星表面 / 大气环境科学目标（rocks、clouds、dust devils）
 - 四级专题是否为新增：否
-- 归类理由：稳定对象是 rover 上的自主科学操作系统，而不是行星环境或地质过程本身
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：`10` 来自 onboard planning/scheduling、follow-up targeting、mission infusion；`05` 来自对 rocks、clouds、dust devils 等行星科学目标的识别与追加观测。
+- 归类理由：全文既验证 rover 如何自主执行 mission-science 工作流，也明确围绕具体行星科学目标开展检测、排序与后续观测。
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：onboard autonomous rover science workflow
-- 最终科学问题：如何让 rover 在任务中自主识别并跟进高价值科学机会
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：图像分析与 geology 只是目标来源，核心对象是 mission-science autonomy
+- 最终科学研究对象：rover 任务中的机会型行星科学目标识别与后续观测执行
+- 最终科学问题：如何让 rover 在任务中自主识别并跟进行星科学高价值目标，同时把这些机会转化为 mission-science actions
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：规划器、视觉模块和发表 venue 都只是手段；实际对象证据同时落在行星科学目标与航天 mission-science autonomy 上
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：05
-- 最终判定：保持 10.02
-- 判定理由：论文不是研究火星 geology/environment 规律，而是研究 rover 如何自主执行科学任务
+- 可能误归类到：仅 `05`；仅 `10`
+- 最终判定：保留 `10` 为 primary filing，同时补记 `05`
+- 判定理由：如果只看 autonomy 主线会漏掉论文反复使用的 rocks、clouds、dust devils 等行星科学目标；如果只看行星目标又会漏掉论文关于 onboard planning/scheduling 与 mission-science autonomy 的核心系统贡献。
+- 多模块覆盖说明：`10` 负责承载 rover mission-science autonomy，`05` 负责承载被识别和追踪的行星表面 / 大气环境科学目标。
+- 01.04 判定说明：不适用；本文有明确具体对象与任务验证。
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -173,17 +184,17 @@ OASIS 是一个面向行星 rover 的 onboard autonomous science system。它能
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：rocks、clouds、dust devils 等 mission science targets
+- 数据集 / 实验对象：rocks、clouds、dust devils 等行星科学目标，以及 FIDO / MER 任务场景中的 rover onboard science workflow
 - 任务设置：识别目标、排序、规划、追加观测
 - 对比基线：人工主导 mission operations
 - 评价指标：目标识别与 follow-up 成功、science return、mission infusion
-- 关键结果：在真实 mission 场景中实现 opportunistic science loop
+- 关键结果：在真实 mission 场景中实现 opportunistic science loop，把行星科学目标检测与后续观测决策连成 onboard 闭环
 - 是否有消融实验：当前笔记未细化
 - 是否有失败案例或负结果：记录了模块特定局限
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主要是任务自主科学操作能力提升
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主要贡献是 mission-science autonomy 能力提升，而不是直接提出新的行星科学规律
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中强
 - 科学贡献类型：系统平台 / mission-science planning
@@ -191,7 +202,7 @@ OASIS 是一个面向行星 rover 的 onboard autonomous science system。它能
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：不是单次 geology image model，而是 mission-science autonomy loop
+- 与普通 AI for Science 方法的区别：不是单次 geology / atmospheric image model，而是把具体行星科学目标检测接入 mission-science autonomy loop
 - 与已有 Agent / 科研智能系统的区别：较早实现 onboard opportunistic science
 - 与同一科学领域其他 Agent 文献的关系：是 OASIS / AEGIS / ChemCam 系列的重要前驱
 - 主要创新点：把 science opportunity detection 与 planning/scheduling 连成闭环
@@ -207,7 +218,7 @@ OASIS 是一个面向行星 rover 的 onboard autonomous science system。它能
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：10 航天科学中的 rover mission-science autonomy
+- 可放入哪个章节：主放 `10` 航天科学中的 rover mission-science autonomy，并在 `05` 行星环境 / 表面科学目标案例中交叉引用
 - 可支撑哪个论点：mission-science agents 早在 LLM 时代之前已形成清晰谱系
 - 可用于哪个表格或图：10 类历史锚点时间线
 - 适合作为代表性案例吗：是
@@ -219,7 +230,7 @@ OASIS 是一个面向行星 rover 的 onboard autonomous science system。它能
 
 ### 9.1 一句话概括
 
-典型的 rover mission-science autonomy Agent。
+同时覆盖 rover mission-science autonomy 与行星科学目标识别的机会型 Agent。
 
 ### 9.2 速记版 pipeline
 
@@ -233,10 +244,19 @@ OASIS 是一个面向行星 rover 的 onboard autonomous science system。它能
 
 ```text
 是否纳入：to_read
-主类：10
-二级类：10.02
-三级类：rover mission-science autonomy
-四级专题：opportunistic rover-science agents
+科学对象模块：05;10
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：10
+是否进入 01.04 存放区：否
+主展示模块一级类：10
+主展示模块二级类：10.02
+主展示模块三级类：rover mission-science autonomy
+主展示模块四级专题：opportunistic rover-science agents
+其他覆盖模块及对应层级路径：05 -> 行星表面 / 大气环境科学目标
+module_assignment_evidence：05 来自 rocks、clouds、dust devils 等对象目标；10 来自 onboard planning/scheduling、follow-up targeting、mission infusion
+multi_module_object_coverage_note：全文既验证 rover mission-science autonomy，也围绕具体行星科学目标进行识别和后续观测
 Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid Agent
 科研流程角色：data_analysis; experiment_execution; workflow_orchestration; feedback_iteration
 自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction
