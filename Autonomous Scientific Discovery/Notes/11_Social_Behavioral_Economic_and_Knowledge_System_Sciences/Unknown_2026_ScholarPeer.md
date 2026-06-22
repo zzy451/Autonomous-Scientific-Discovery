@@ -1,5 +1,12 @@
 # Unknown 2026 - ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review
 
+## 2026-06-22 source refresh
+
+- First-hand source checked: arXiv abstract page; ar5iv HTML full text
+- PDF status: no local archive yet
+- Classification refresh: keep this paper anchored in `11.07` scientific peer review / submission auditing / literature verification, not a generic research-agent bucket.
+- Validation refresh: current first-hand sources describe historian, scout, and Q&A style agent roles plus large-scale benchmark and side-by-side evaluation on roughly 1,800 ICLR 2020-2025 submissions.
+
 **论文信息**
 - 标题：ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review
 - 作者：Unknown
@@ -8,7 +15,7 @@
 - DOI / arXiv / URL：https://arxiv.org/abs/2601.22638
 - PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
+- 当前状态：已核对 arXiv 摘要页与 ar5iv HTML 全文；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
 - 笔记作者：Codex
 
@@ -17,14 +24,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `11` / `11.07` | 摘要 | 最稳定对象是“context-aware automated peer review framework”，而不是单纯的模型方法或发表 venue。 | 高 |
+| 科学对象归类 | `11` / `11.07` | arXiv abstract; ar5iv HTML full text | 最稳定对象是 scientific peer review / submission auditing / literature verification，而不是单纯的模型方法或发表 venue。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
-| 实验验证 | large-scale benchmark 与 side-by-side evaluation | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 large-scale benchmark 与 side-by-side evaluation 支撑其主张。 | 中高 |
+| 实验验证 | ~1,800 篇 ICLR 2020-2025 submissions 上的 large-scale benchmark 与 side-by-side evaluation | arXiv abstract; ar5iv HTML full text | 当前可得证据显示论文主要通过 ~1,800 篇 ICLR 2020-2025 submissions 上的 large-scale benchmark 与 side-by-side evaluation 支撑其主张。 | 中高 |
 | 边界判断 | 稳定 11.07；虽有 retrieval，但对象是审稿与审计 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
 
 ## 0. 摘要翻译
 
-论文围绕“context-aware automated peer review framework”提出题为《ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 large-scale benchmark 与 side-by-side evaluation 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+论文围绕 scientific peer review / submission auditing / literature verification 提出题为《ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review》的 Agent 系统，核心是把 historian、scout 与 Q&A 等角色组织成可迭代工作流，并以约 1,800 篇 ICLR 2020-2025 submissions 上的 large-scale benchmark 与 side-by-side evaluation 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
 
 ## 1. 是否纳入本综述
 
@@ -59,13 +66,13 @@
 - 三级类：
 - 四级专题：Context-aware scientific peer-review agents
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“context-aware automated peer review framework”，因此当前主类保持为 `11` / `11.07`。
+- 归类理由：按对象优先规则，本文最稳定的研究对象是 scientific peer review / submission auditing / literature verification，因此当前主类保持为 `11` / `11.07`。
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：context-aware automated peer review framework
-- 最终科学问题：论文试图通过 Agent 系统推进“context-aware automated peer review framework”相关研究任务。
+- 最终科学研究对象：scientific peer review / submission auditing / literature verification
+- 最终科学问题：论文试图通过 Agent 系统推进面向科研投稿与审稿流程的自动化审查、证据核验与评审生成任务。
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
 
 ### 2.3 容易混淆的边界
@@ -105,7 +112,7 @@
 
 ### 4.1 方法动机
 
-- 作者为什么提出该 Agent 系统：希望用 Agent 化流程提升 context-aware automated peer review framework 的研究效率与质量。
+- 作者为什么提出该 Agent 系统：希望用 Agent 化流程提升 scientific peer review / submission auditing / literature verification 的效率、一致性与可审计性。
 - 现有科研流程或方法的痛点：传统流程往往分散、手工密集，难以在多步任务中持续反馈迭代。
 - 核心假设或直觉：把检索、生成、分析、评估等环节编排成可循环的 Agent 工作流，能够提高研究推进能力。
 
@@ -126,28 +133,28 @@
 - 规划器：存在或部分存在。
 - 评估器 / verifier：存在，用于评分、核验或审查。
 - 人类反馈或专家介入：部分论文存在。
-- 实验平台或仿真环境：按 large-scale benchmark 与 side-by-side evaluation 使用。
+- 实验平台或仿真环境：按 ~1,800 篇 ICLR 2020-2025 submissions 上的 large-scale benchmark 与 side-by-side evaluation 使用。
 
 ## 5. 实验与验证
 
 ### 5.1 验证方式
 
-- 当前主要验证：large-scale benchmark 与 side-by-side evaluation
+- 当前主要验证：~1,800 篇 ICLR 2020-2025 submissions 上的 large-scale benchmark 与 side-by-side evaluation
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：围绕“context-aware automated peer review framework”的论文设定。
+- 数据集 / 实验对象：ICLR 2020-2025 submissions 语境下的科研投稿、审稿与文献核验任务。
 - 任务设置：多步科研工作流中的检索、生成、分析、评估或写作任务。
 - 对比基线：以论文原文报告为准。
-- 关键结果：当前可得证据表明论文主要通过 large-scale benchmark 与 side-by-side evaluation 支撑其核心主张。
-- 是否有消融实验：摘要级证据下不稳定，后续需全文补充。
-- 是否有失败案例或负结果：摘要级证据通常不足。
+- 关键结果：当前可得证据表明论文主要通过 ~1,800 篇 ICLR 2020-2025 submissions 上的 large-scale benchmark 与 side-by-side evaluation 支撑其核心主张。
+- 是否有消融实验：当前一手全文来源可支撑对象归类，但细粒度消融仍需以后续正式 PDF 为准。
+- 是否有失败案例或负结果：现有来源更适合支持对象与流程判断，对负结果披露仍不充分。
 
 ### 5.3 科学贡献
 
-- 科学贡献类型：system_platform; peer_review_automation
+- 科学贡献类型：system_platform; scientific_peer_review_automation
 - 贡献强度判断：中等到较强，取决于论文是平台型还是有直接实验发现。
-- 证据强度：medium_metadata_with_abstract
+- 证据强度：first_hand_full_text_via_arxiv_fallback
 
 ## 6. 与已有工作的关系
 
@@ -159,7 +166,7 @@
 ## 7. 局限性与风险
 
 - Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
-- 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
+- 科学验证不足：当前验证主要是 benchmark 与 side-by-side evaluation，对真实期刊流程外推仍需谨慎。
 - 泛化性不足：稳定 11.07；虽有 retrieval，但对象是审稿与审计
 - 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
 - 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
@@ -168,7 +175,7 @@
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：主类 `11` / `11.07` 对应章节。
-- 可支撑哪个论点：Agent 已经能够围绕“context-aware automated peer review framework”形成稳定的多步科研工作流。
+- 可支撑哪个论点：Agent 已经能够围绕 scientific peer review / submission auditing / literature verification 形成稳定的多步科研工作流。
 - 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
 - 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
 - 推荐引用强度：standard
@@ -179,7 +186,7 @@
 
 ### 9.1 一句话概括
 
-围绕“context-aware automated peer review framework”组织多步科研工作的 Agent 系统。
+围绕 scientific peer review / submission auditing / literature verification 组织多步科研工作的 Agent 系统。
 
 ### 9.2 速记版 pipeline
 
@@ -202,8 +209,8 @@ Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
 自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven
-科学贡献类型：system_platform; peer_review_automation
-证据强度：medium_metadata_with_abstract
+科学贡献类型：system_platform; scientific_peer_review_automation
+证据强度：first_hand_full_text_via_arxiv_fallback
 归类置信度：中高
 纳入置信度：高
 推荐引用强度：standard

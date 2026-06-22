@@ -6,9 +6,9 @@
 - 年份：2022
 - 来源 / venue：Chemical Engineering Journal
 - DOI / arXiv / URL：https://doi.org/10.1016/j.cej.2022.139099
-- PDF / 本地文件路径：当前笔记基于期刊摘要、相关 thesis 摘要与 reviewer 一手证据；未获取期刊全文
+- PDF / 本地文件路径：当前笔记基于 ChemRxiv full-text PDF 与 ScienceDirect publisher page / abstract 的一手证据；未归档本地 PDF
 - 论文类型：研究论文 / 机器人化学工作流
-- 当前状态：to_read
+- 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -28,15 +28,15 @@ This note is now closed for the `03 / 09` top-level boundary. The validated obje
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 期刊摘要 | active-ML-driven closed-loop optimization 用于自动 pH 调节 | 中高 |
-| 科学对象归类 | `03` 顶层稳定 | 期刊摘要；thesis 摘要 | 对象是多缓冲、多质子化学体系中的 pH 调节 | 中高 |
-| 方法流程 | 明确多步迭代 | thesis p.30-p.31（reviewer 提要） | 训练模型、预测滴定、选择加酸/加碱、检查是否达标、追加数据再训练 | 中高 |
-| 工具调用 | 强 | 期刊摘要 | 液体处理机器人承担实验执行 | 中高 |
-| 实验验证 | 有机器人演示 | 期刊摘要 | 在不同 buffered systems 上完成自动 pH 调节 | 中高 |
+| Agent 纳入 | 是 | ScienceDirect publisher abstract；ChemRxiv full text | active-ML-driven closed-loop optimization 围绕目标 pH 执行多轮实验决策与机器人操作 | 高 |
+| 科学对象归类 | `03.03` | ChemRxiv full text；publisher abstract | 对象是 acetate、citrate、KH2PO4、ammonium 等缓冲化学体系中的 pH 调节，而不是工程装置本体 | 高 |
+| 方法流程 | 明确多步迭代 | ChemRxiv full text workflow / model sections | 训练模型、预测滴定、选择加酸/加碱、检查是否达标、追加数据再训练 | 高 |
+| 工具调用 | 强 | ChemRxiv full text；publisher abstract | 液体处理机器人和 pH 测量环节共同承担闭环实验执行 | 高 |
+| 实验验证 | 有机器人演示 | ChemRxiv full text；publisher abstract | 在多类 buffered chemical systems 上完成自动 pH 调节并比较模型/迁移学习效果 | 高 |
 
 ## 0. 摘要翻译
 
-论文提出一个由主动机器学习驱动的自动 pH 调节流程，用于复杂多缓冲、多质子体系。系统比较多类模型，根据历史实验数据预测滴定行为，并决定下一步加入酸或碱的量，最后在机器人液体处理平台上完成实验执行。作者展示了 transfer learning 与闭环实验结合后，能够更高效地完成复杂化学样品的 pH 调节。
+论文提出一个由主动机器学习驱动的自动 pH 调节流程，用于复杂多缓冲、多质子化学体系。系统比较多类模型，根据历史实验数据预测滴定行为，并决定下一步加入酸或碱的量，最后在机器人液体处理平台上完成实验执行。作者在 acetate、citrate、KH2PO4 和 ammonium 等 buffered systems 上展示了 transfer learning 与闭环实验结合后，能够更高效地完成复杂化学样品的 pH 调节。
 
 ## 1. 是否纳入本综述
 
@@ -44,7 +44,7 @@ This note is now closed for the `03 / 09` top-level boundary. The validated obje
 
 - 是否属于 Agent 文献：是
 - 判断依据：围绕明确科研目标执行闭环实验，具备工具调用、反馈迭代和实验执行角色
-- 判定置信度：中高
+- 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
@@ -72,7 +72,7 @@ This note is now closed for the `03 / 09` top-level boundary. The validated obje
 - 四级专题：机器人化学工作流中的主动学习调节
 - 四级专题是否为新增：否
 - 归类理由：论文直接处理复杂化学样品的 pH 调节问题
-- 归类置信度：中高
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
@@ -83,9 +83,9 @@ This note is now closed for the `03 / 09` top-level boundary. The validated obje
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：09
-- 最终判定：顶层保留 03
-- 判定理由：虽然发表在 Chemical Engineering Journal，且有工业流程应用语境，但研究对象不是工程装置本体
-- 是否需要二次复核：是
+- 最终判定：保留 `03.03`
+- 判定理由：虽然发表在 Chemical Engineering Journal，且有工业流程应用语境，但闭环实验直接作用于 buffered chemical systems 的 pH 调节轨迹，不构成独立的工程装置或过程系统对象研究，因此不加入 `09`
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -190,7 +190,7 @@ This note is now closed for the `03 / 09` top-level boundary. The validated obje
 - 对比基线：ANN / RF / Linear / GP 等模型比较
 - 评价指标：达到目标 pH 的效率与误差
 - 关键结果：GP 表现最佳，transfer learning 有帮助，机器人成功完成调节
-- 是否有消融实验：摘要级证据不足
+- 是否有消融实验：全文已确认存在模型比较与 transfer-learning 效果对照，但当前正式笔记未进一步展开细节
 - 是否有失败案例或负结果：当前证据未充分展开
 
 ### 5.3 科学贡献
@@ -211,7 +211,7 @@ This note is now closed for the `03 / 09` top-level boundary. The validated obje
 ## 7. 局限性与风险
 
 - Agent 自主性不足：高层目标仍需人工定义
-- 科学验证不足：未拿到期刊全文，细节证据仍偏摘要级
+- 科学验证不足：现有一手证据已足以稳定顶层归类，但论文贡献更偏具体化学流程优化而非更广泛的新化学发现
 - 泛化性不足：主要展示 pH 调节任务
 - 工具链依赖：依赖机器人与测量装置
 - 数据泄漏或 benchmark 偏差：暂无强证据
@@ -224,7 +224,7 @@ This note is now closed for the `03 / 09` top-level boundary. The validated obje
 - 可用于哪个表格或图：化学自动化 Agent 任务类型对比
 - 适合作为代表性案例吗：可作为中等代表性案例
 - 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：后续需补全文确认
+- 需要在正文中特别引用的页码 / 图 / 表：建议回引闭环 workflow、模型比较与 buffered-system 验证结果图
 - 需要与哪些论文并列比较：Bedard 2018、Steiner 2019、RoboChem 系列
 
 ## 9. 总结
@@ -254,8 +254,8 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 验证方式：robotic_experiment; wet_lab_experiment
 交叉属性：computation_driven; data_driven; experiment_driven; robotic_platform
 科学贡献类型：system_platform
-证据强度：medium_pending_full_text
-归类置信度：中高
-纳入置信度：中高
+证据强度：experimentally_validated
+归类置信度：高
+纳入置信度：高
 推荐引用强度：standard
 ```
