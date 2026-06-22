@@ -6,21 +6,22 @@
 - 年份：2022
 - 来源 / venue：Polymer Chemistry
 - DOI / arXiv / URL：https://doi.org/10.1039/d2py00040g
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮核对 RSC HTML 全文与 supplementary information；本地 PDF 暂未归档
 - 论文类型：研究论文 / closed-loop polymer synthesis system
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | 论文明确是 user-free multi-objective optimization，平台包含 flow reactor、online NMR、inline GPC，并由 TSEMO 自主探索 | 高 |
-| 科学对象归类 | `04` 优先于 `03` | official abstract | 优化目标是 targeted polymer properties、RAFT polymerization formulations 与 polymer dispersity / conversion，稳定对象更像 polymer materials | 高 |
-| 方法流程 | 闭环聚合物合成优化 | official abstract | 系统把实验执行、在线表征与多目标优化连成 user-free 流程 | 高 |
-| 实验验证 | 真实流动聚合实验 | official abstract | 在 tBuAm、BuA、MMA 的 RAFT polymerisation 上验证 | 高 |
-| 边界判断 | `03 -> 04` | official abstract | 虽表现为 polymer synthesis，但终点是 polymer material property space，而不是一般反应机理或条件学 | 高 |
+| 一手来源与归档状态 | 已核对 RSC HTML 全文与 supplementary information；本轮未归档本地 PDF | RSC HTML full text + supplementary information | 一手全文与补充材料足以支持本轮归类；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | RSC HTML full text | 论文明确是 user-free multi-objective optimization，平台包含 flow reactor、online NMR、inline GPC，并由 TSEMO 自主探索 | 高 |
+| 科学对象归类 | `04` 优先于 `03` | RSC HTML full text + supplementary information | 优化目标是 targeted polymer properties、RAFT polymerization formulations 与 polymer dispersity / conversion，稳定对象更像 polymer materials | 高 |
+| 方法流程 | 闭环聚合物合成优化 | RSC HTML full text | 系统把实验执行、在线表征与多目标优化连成 user-free 流程 | 高 |
+| 实验验证 | 真实流动聚合实验 | RSC HTML full text + supplementary information | 在 tBuAm、BuA、MMA 的 RAFT polymerisation 上验证闭环配方优化 | 高 |
+| 边界判断 | `03 -> 04` | RSC HTML full text + supplementary information | 虽表现为 polymer synthesis，但终点是 polymer material property space，而不是一般反应机理或条件学 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,9 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`04`
+- general_method_bucket：none
+- primary_module_for_filing：`04`
 - 一级类：04
 - 二级类：04.03
 - 三级类：polymer material property optimization
@@ -71,9 +75,9 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：03
-- 最终判定：改到 04
+- 最终判定：保持 `04`
 - 判定理由：虽然是 polymer synthesis，但被直接权衡和优化的是材料性质，而不是反应学本体
-- 是否需要二次复核：是，主要是二三级类细化
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 

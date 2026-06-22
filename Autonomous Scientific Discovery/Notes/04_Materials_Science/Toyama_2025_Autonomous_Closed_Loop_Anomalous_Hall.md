@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：npj Computational Materials
 - DOI / arXiv / URL：https://doi.org/10.1038/s41524-025-01828-7
-- PDF / 本地文件路径：本轮基于 publisher abstract 与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮未新增本地 PDF；已核对 npj Computational Materials article page，当前 note 不补写不存在的本地归档路径
 - 论文类型：研究论文 / closed-loop materials optimization
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -17,10 +17,10 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | publisher abstract | autonomous high-throughput combinatorial experimentation | 高 |
-| 科学对象归类 | `04.04` | publisher abstract | composition-spread alloy thin films 与 anomalous Hall resistivity | 高 |
-| 方法流程 | Bayesian optimization 闭环 | publisher abstract | 选择 promising films 并决定 graded elements | 高 |
-| 实验验证 | 真实组合薄膜实验 | publisher abstract | 闭环探索实际材料体系 | 高 |
-| 边界判断 | 不应移到 `09` | object-first reading | 研究对象是功能薄膜材料性能，而非设备工程 | 高 |
+| 科学对象归类 | `04` | npj Computational Materials article page | composition-spread alloy thin films 与 anomalous Hall resistivity 直接支撑材料对象 `04` | 高 |
+| 方法流程 | Bayesian optimization 闭环 | npj Computational Materials article page | 选择 promising films 并决定 graded elements，形成材料优化闭环 | 高 |
+| 实验验证 | 真实组合薄膜实验 | npj Computational Materials article page | 闭环探索实际材料体系，而不是纯方法演示 | 高 |
+| 边界判断 | 保持 `04` | npj Computational Materials article page | 研究对象是功能薄膜材料性能，而非设备工程本体 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +54,11 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`04`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`04`
 - 一级类：04
 - 二级类：04.04
 - 三级类：电子 / 功能薄膜材料
@@ -190,6 +195,13 @@
 
 ```text
 是否纳入：to_read
+scientific_object_modules：04
+object_coverage_mode：single_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：04
+first_hand_sources_checked：npj Computational Materials article page
+classification_evidence_source_level：first_hand_abstract_or_landing_page
 主类：04
 二级类：04.04
 三级类：电子 / 功能薄膜材料

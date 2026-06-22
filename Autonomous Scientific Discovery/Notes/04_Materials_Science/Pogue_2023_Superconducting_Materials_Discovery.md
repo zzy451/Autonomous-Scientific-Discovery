@@ -6,21 +6,22 @@
 - 年份：2023
 - 来源 / venue：npj Computational Materials
 - DOI / arXiv / URL：https://doi.org/10.1038/s41524-023-01131-3
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮核对 npj Computational Materials HTML 全文；本地 PDF 暂未归档
 - 论文类型：研究论文 / superconducting materials closed-loop system
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | 论文明确有 four closed-loop cycles，将 prediction、experimental validation 与 feedback to model 连成闭环 | 高 |
-| 科学对象归类 | `04.04` | official abstract | 研究对象是 superconducting compounds discovery | 高 |
-| 方法流程 | 预测-实验-反馈循环 | official abstract | intentional discovery of superconducting compounds，四轮循环不断修正模型 | 高 |
-| 实验验证 | 实验闭环 | official abstract | 报告了 Zr-In-Ni system 中新超导体发现，并重发现训练集外多个超导体 | 高 |
-| 边界判断 | 保持 `04` | official abstract | 论文虽有 computational materials 表述，但稳定对象是超导材料发现，不是通用平台 | 高 |
+| 一手来源与归档状态 | 已核对 npj Computational Materials HTML 全文；本轮未归档本地 PDF | npj HTML full text | 一手全文足以支持本轮归类；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | npj HTML full text | 论文明确有 four closed-loop cycles，将 prediction、experimental validation 与 feedback to model 连成闭环 | 高 |
+| 科学对象归类 | `04.04` | npj HTML full text | 研究对象是 superconducting compounds discovery | 高 |
+| 方法流程 | 预测-实验-反馈循环 | npj HTML full text | intentional discovery of superconducting compounds，四轮循环不断修正模型 | 高 |
+| 实验验证 | 实验闭环 | npj HTML full text | 报告了 Zr-In-Ni system 中新超导体发现，并重发现训练集外多个超导体 | 高 |
+| 边界判断 | 保持 `04` | npj HTML full text | 论文虽有 computational materials 表述，但稳定对象是超导材料发现，不是通用平台 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,9 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`04`
+- general_method_bucket：none
+- primary_module_for_filing：`04`
 - 一级类：04
 - 二级类：04.04
 - 三级类：superconducting materials discovery
@@ -73,7 +77,7 @@
 - 可能误归类到：01.04
 - 最终判定：保留 04.04
 - 判定理由：论文全部验证与发现都落在超导材料对象
-- 是否需要二次复核：是，主要是 autonomy 细节的全文补强
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 

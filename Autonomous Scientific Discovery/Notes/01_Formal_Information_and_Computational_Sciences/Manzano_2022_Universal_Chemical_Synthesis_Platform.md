@@ -6,21 +6,23 @@
 - 年份：2022
 - 来源 / venue：Nature Chemistry
 - DOI / arXiv / URL：https://doi.org/10.1038/s41557-022-01016-w
-- PDF / 本地文件路径：本轮基于 Nature Chemistry DOI、University of Glasgow repository / accepted version 与 Zenodo project record；未保存本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Manzano_2022_Universal_Chemical_Synthesis_Platform.pdf`（并核对 Nature Chemistry DOI、University of Glasgow accepted version 与 Zenodo project record）
+- 归档说明：当前 note 仍位于 `01_Formal_Information_and_Computational_Sciences/` 仅为历史落盘位置；本轮分类 authority 以具体化学对象实验为准，归入 `03`
 - 论文类型：研究论文 / autonomous chemical synthesis platform
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | 系统可把 text-based literature syntheses 编译成 executable protocols，自动生成 reactors，并执行大量基础步骤 | 高 |
-| 科学对象归类 | `03` | Nature Chemistry DOI / University of Glasgow accepted version / Zenodo record | 平台实际合成 small organic molecules、oligopeptides、oligonucleotides，并执行 24,936 个基础步骤，构成具体 chemical synthesis experiments | 高 |
-| 方法流程 | 文本到协议到执行平台 | official abstract | 输入是文献合成描述，输出是 reactors、executable protocols 和 pressure-fingerprint quality control | 高 |
-| 实验验证 | 多类分子实机演示 | official abstract | 在 329 小时内执行近 2.5 万个基础步骤，覆盖多类已知分子 | 高 |
-| 边界判断 | `01.04 -> 03` | DOI / accepted version / project record | 旧 note 以核心贡献是 universal platform 为由放入 `01.04`；relaxed 口径下，只要有具体化学对象合成实验，就应记录 `03`，不能继续作为无具体对象实验的 general-method bucket | 高 |
+| 一手来源与归档状态 | 已核对本地归档 PDF，并对照 Nature Chemistry DOI、University of Glasgow accepted version 与 Zenodo project record | local archived PDF + DOI page + accepted version + Zenodo record | 本轮以本地 PDF 为主完成复核；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | local archived PDF | 系统可把 text-based literature syntheses 编译成 executable protocols，自动生成 reactors，并执行大量基础步骤 | 高 |
+| 科学对象归类 | `03` | local archived PDF + DOI page + accepted version + Zenodo record | 平台实际合成 small organic molecules、oligopeptides、oligonucleotides，并执行 24,936 个基础步骤，构成具体 chemical synthesis experiments | 高 |
+| 方法流程 | 文本到协议到执行平台 | local archived PDF | 输入是文献合成描述，输出是 reactors、executable protocols 和 pressure-fingerprint quality control | 高 |
+| 实验验证 | 多类分子实机演示 | local archived PDF | 在 329 小时内执行近 2.5 万个基础步骤，覆盖多类已知分子 | 高 |
+| 边界判断 | 不得继续以 `01.04` 为 authority | local archived PDF + DOI page + accepted version + Zenodo record | 旧 note 曾因 universal platform 外观而落入 `01.04`；但只要论文报告具体 chemical synthesis experiments，就必须按对象归入 `03`，不能再把 `01.04` 当作主分类权威 | 高 |
 
 ## 0. 摘要翻译
 
@@ -75,10 +77,10 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：03
+- 可能误归类到：01.04
 - 最终判定：`03`
-- 判定理由：small molecules、oligopeptides、oligonucleotides 的跨对象演示不是排除 `03` 的理由，反而是具体化学对象实验覆盖；`01.04` 仅用于没有任何具体对象实验的 general-method papers
-- 是否需要二次复核：否；后续 schema migration 应从 independent `01.04` bucket 移出并记录 `scientific_object_modules = 03`
+- 判定理由：small molecules、oligopeptides、oligonucleotides 的跨对象演示不是排除 `03` 的理由，反而是具体化学对象实验覆盖；`01.04` 仅用于没有任何具体对象实验的 general-method papers。当前 note 留在 `01` 目录只是历史落盘便利，不构成分类 authority
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -198,7 +200,7 @@
 
 - 与普通 AI for Science 方法的区别：不是普通单点预测模型，而是把文献方案编译成可执行化学合成流程并完成真实实验
 - 与已有 Agent / 科研智能系统的区别：强调跨对象通用性与 portable execution platform
-- 与同一科学领域其他 Agent 文献的关系：应与 autonomous chemical synthesis / robotic chemistry platform 文献并列，同时可作为 `03` 与 `01.04` 边界案例
+- 与同一科学领域其他 Agent 文献的关系：应与 autonomous chemical synthesis / robotic chemistry platform 文献并列，同时可作为“通用平台外观但仍按具体化学对象归入 `03`”的边界案例
 - 主要创新点：文本到协议到装置的通用科研平台能力
 
 ## 7. 局限性与风险
@@ -214,8 +216,8 @@
 
 - 可放入哪个章节：03 化学科学；也可在 `01.04 / domain` 边界案例中讨论
 - 可支撑哪个论点：通用科研执行平台只要报告具体化学合成对象实验，就应按对象模块记录 `03`，而不是停留在 `01.04`
-- 可用于哪个表格或图：`03` autonomous synthesis 表；`01.04 / concrete domain` 边界案例表
-- 适合作为代表性案例吗：适合作为 `01.04` 代表
+- 可用于哪个表格或图：`03` autonomous synthesis 表；“通用平台外观但落地具体化学对象”的边界案例表
+- 适合作为代表性案例吗：适合作为“通用平台外观但按对象归入 `03`”的代表
 - 推荐引用强度：core
 - 需要在正文中特别引用的页码 / 图 / 表：当前以官方摘要为主
 - 需要与哪些论文并列比较：InternAgent、Universal SDL、ChemOS 等通用工作流 / 基础设施记录
@@ -246,7 +248,7 @@ primary_module_for_filing：03
 主类：03
 二级类：03.03
 三级类：autonomous chemical synthesis / multistep synthesis execution
-四级专题：General scientific research-agent systems
+四级专题：Universal chemical synthesis platform
 Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：literature_search_and_reading; knowledge_extraction_and_organization; experimental_design; tool_use_and_code_execution; experiment_execution; data_analysis; evidence_assessment_and_validation; end_to_end_research_automation
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction; closed_loop_experimentation

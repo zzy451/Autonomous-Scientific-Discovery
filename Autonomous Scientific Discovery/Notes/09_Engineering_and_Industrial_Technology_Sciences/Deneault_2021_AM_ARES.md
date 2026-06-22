@@ -6,21 +6,22 @@
 - 年份：2021
 - 来源 / venue：MRS Bulletin
 - DOI / arXiv / URL：https://doi.org/10.1557/s43577-021-00051-1
-- PDF / 本地文件路径：基于 Springer 开放全文页面证据整理
+- PDF / 本地文件路径：本轮核对 Springer HTML 全文；本地 PDF 暂未归档
 - 论文类型：系统论文 / research robot proof-of-concept
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Springer Abstract | AM ARES 自主调参并闭环迭代 | 高 |
-| 多步行动 | 是 | Fig.1 / 正文流程 | PRINT -> IMAGE -> ANALYZE -> PLAN -> next cycle | 高 |
-| 科学对象归类 | `09` | 正文对象描述 | 直接优化对象是 3D 打印工艺参数与打印结果 | 高 |
-| 不是 `04` 主类 | 是 | 正文结果段 | 当前验证聚焦制造过程与几何特征，而非材料结构/相/性能本体 | 高 |
-| 验证方式 | 真实设备闭环 | 正文结果段 | 少于 100 次实验内完成闭环收敛 | 高 |
+| 一手来源与归档状态 | 已核对 Springer HTML 全文；本轮未归档本地 PDF | Springer HTML full text | 一手全文足以支持本轮归类；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | Springer HTML full text | AM ARES 自主调参并闭环迭代 | 高 |
+| 多步行动 | 是 | Springer HTML full text | PRINT -> IMAGE -> ANALYZE -> PLAN -> next cycle | 高 |
+| 科学对象归类 | `09` | Springer HTML full text | 直接优化对象是 3D 打印工艺参数与打印结果 | 高 |
+| 不是 `04` 主类 | 是 | Springer HTML full text | 当前验证聚焦制造过程与几何特征，而非材料结构/相/性能本体 | 高 |
+| 验证方式 | 真实设备闭环 | Springer HTML full text | 少于 100 次实验内完成闭环收敛 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,9 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`09`
+- general_method_bucket：none
+- primary_module_for_filing：`09`
 - 一级类：09
 - 二级类：09.02
 - 三级类：

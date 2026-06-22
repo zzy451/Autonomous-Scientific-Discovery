@@ -6,9 +6,9 @@
 - 年份：2026
 - 来源 / venue：npj Computational Materials
 - DOI / arXiv / URL：https://doi.org/10.1038/s41524-026-02005-0
-- PDF / 本地文件路径：本轮依据 Nature 官方页全文证据包
+- PDF / 本地文件路径：本轮未新增本地 PDF；已核对 npj Computational Materials article page 与 publisher PDF，当前 note 不补写不存在的本地归档路径
 - 论文类型：系统论文 / scientific instrument operation
-- 当前状态：已读 / confirmed core 继续纳入，但主类改判为 `09`
+- 当前状态：已读 / confirmed core 继续纳入；按 relaxed 口径记录 `04;09`，primary filing 保持 `09`
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Nature page | multi-agent framework operates complex scientific instrumentation | 高 |
-| 科学对象归类 | `09` | Nature abstract/body | advanced scientific user facilities, instrument operation, EPICS control | 高 |
+| 科学对象归类 | `04;09` | npj Computational Materials article / PDF | scientific instruments、user facilities 与 EPICS control 支持 `09`；X-ray nanoprobe beamline 与 autonomous robotic station 中的材料实验 / 表征对象同时支持 `04` | 高 |
 | 方法流程 | 多 Agent 操作体系 | Nature page | admin agent, code writer/reviewer, memory, restricted action space | 高 |
 | 实验验证 | 真实仪器设施 | Nature page | X-ray nanoprobe beamline + autonomous robotic station | 高 |
-| 边界判断 | `09 > 04 > 01.04` | Nature page | 材料设计只是应用之一，统一主对象是仪器与设施操作 | 高 |
+| 边界判断 | `04;09`，primary filing `09` | npj Computational Materials article / PDF | 文章统一主线是 scientific instruments / user facilities operation，因此 filing 维持 `09`；但验证场景中的材料实验与表征对象足以独立支持 `04` | 高 |
 
 ## 0. 摘要翻译
 
-论文提出一个 human-in-the-loop multi-agent framework，用于操作 advanced scientific instruments。作者在两个不同科学用户设施中验证该系统，包括 X-ray nanoprobe beamline 和 autonomous robotic station。虽然其中一个场景与材料设计相关，但整篇文章真正统一的主对象是仪器、设施、控制接口与操作流程，因此主类应改为 `09`。
+论文提出一个 human-in-the-loop multi-agent framework，用于操作 advanced scientific instruments。作者在两个不同科学用户设施中验证该系统，包括 X-ray nanoprobe beamline 和 autonomous robotic station。按 relaxed multi-module 口径，这篇论文既覆盖仪器、设施、控制接口与操作流程这一工程对象 `09`，也在材料实验与表征场景中形成可识别的材料对象证据 `04`；note 放在 `09` 目录下仅表示 primary filing convenience，而不是单模块分类权威。
 
 ## 1. 是否纳入本综述
 
@@ -54,7 +54,12 @@
 
 ### 2.1 主科学领域
 
-- 一级类：09
+- scientific_object_modules：`04;09`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`09`
+- 一级类：09；并记录 04
 - 二级类：09.03
 - 三级类：09.03.08
 - 四级专题：AI agents for operating scientific instruments and user facilities
@@ -64,16 +69,16 @@
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：advanced scientific instruments / user facilities
+- 最终科学研究对象：advanced scientific instruments / user facilities；以及在这些设施中被操作和表征的材料实验对象
 - 最终科学问题：如何让 AI agents 在真实复杂仪器与用户设施上安全、可复现地执行操作
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：materials design 只是一个验证场景，不能覆盖掉仪器操作这一统一主对象
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：04, 01.04
-- 最终判定：09
-- 判定理由：文章不是材料对象发现论文，也不是纯领域无关科学工作流平台，而是很具体的仪器/设施操作工程论文
-- 是否需要二次复核：若细化二级类可再看，但顶层 09 已足够稳
+- 可能误归类到：仅 `09`、仅 `04`、或 `01.04`
+- 最终判定：`04;09`，primary filing `09`
+- 判定理由：仪器与设施操作对象支撑 `09`；X-ray nanoprobe beamline 与 autonomous robotic station 中的材料实验、表征与材料设计场景支撑 `04`；当前 note 所在目录只是 filing convenience
+- 是否需要二次复核：否，当前 multi-module 判定已足够稳
 
 ## 3. Agent 系统与科研流程角色
 
@@ -233,6 +238,13 @@
 
 ```text
 是否纳入：是
+scientific_object_modules：04;09
+object_coverage_mode：multi_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：09
+first_hand_sources_checked：npj Computational Materials article page; publisher PDF
+classification_evidence_source_level：first_hand_full_text
 主类：09
 二级类：09.03
 三级类：09.03.08

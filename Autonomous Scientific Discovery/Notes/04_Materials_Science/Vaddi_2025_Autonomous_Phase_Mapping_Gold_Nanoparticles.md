@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：npj Computational Materials
 - DOI / arXiv / URL：https://doi.org/10.1038/s41524-025-01822-z
-- PDF / 本地文件路径：本轮基于 publisher abstract 与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮未新增本地 PDF；已核对 npj Computational Materials article page 与 publisher PDF，当前 note 不补写不存在的本地归档路径
 - 论文类型：研究论文 / self-driving nanomaterials discovery
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -17,10 +17,10 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | publisher abstract | self-driving labs, closed-loop workflow, active learning | 高 |
-| 科学对象归类 | `04.03` | publisher abstract | 金纳米颗粒相图、结构与材料反推 | 高 |
-| 方法流程 | 自动合成 + 表征 + 决策 | publisher abstract | on-demand synthesis and characterization | 高 |
-| 实验验证 | 高通量闭环实验 | publisher abstract | active learning 配合实验采样 | 高 |
-| 边界判断 | 不应移到 `03` | object-first reading | 直接对象是纳米颗粒结构相图，不是反应机理 | 高 |
+| 科学对象归类 | `04` | npj Computational Materials article / PDF | 金纳米颗粒相图、结构映射与目标材料反推都直接锚定材料对象，支持 `04` | 高 |
+| 方法流程 | 自动合成 + 表征 + 决策 | npj Computational Materials article / PDF | on-demand synthesis and characterization 进入主动学习闭环 | 高 |
+| 实验验证 | 高通量闭环实验 | npj Computational Materials article / PDF | active learning 配合真实实验采样与相图更新 | 高 |
+| 边界判断 | 保持 `04` | npj Computational Materials article / PDF | 直接对象是纳米颗粒结构相图与材料反推，不是单纯化学反应机理 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +54,11 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`04`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`04`
 - 一级类：04
 - 二级类：04.03
 - 三级类：纳米材料 / 相图映射
@@ -190,6 +195,13 @@
 
 ```text
 是否纳入：to_read
+scientific_object_modules：04
+object_coverage_mode：single_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：04
+first_hand_sources_checked：npj Computational Materials article page; publisher PDF
+classification_evidence_source_level：first_hand_full_text
 主类：04
 二级类：04.03
 三级类：纳米材料 / 相图映射

@@ -6,7 +6,7 @@
 - 年份：2023
 - 来源 / venue：Science
 - DOI / arXiv / URL：https://doi.org/10.1126/science.adi1407
-- PDF / 本地文件路径：本轮基于官方摘要页与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮未新增本地 PDF；已核对 Science DOI 官方页面与 official preprint page，当前 note 不补写不存在的本地归档路径
 - 论文类型：研究论文 / closed-loop molecular discovery
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -17,7 +17,7 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official abstract / reviewer evidence | 平台自动完成 design-make-test-analyze cycles，并跨轮回训模型 | 高 |
-| 科学对象归类 | `03.04` | official abstract / reviewer evidence | 研究对象是 dye-like molecules 的多属性分子发现 | 高 |
+| 科学对象归类 | `03` | Science DOI landing page / official preprint page | 闭环直接设计、合成、测量和回训的是 dye-like molecules，多属性分子发现支持化学 `03` | 高 |
 | 方法流程 | 预测-合成-测量-回训 | official abstract / reviewer evidence | 从 predictions 到 measurements 再回到模型形成闭环 | 高 |
 | 实验验证 | 真实实验 | official abstract / reviewer evidence | 自动实现数百个未报道分子，并发现高性能分子 | 高 |
 | 边界判断 | 保持 `03` | official abstract / reviewer evidence | 直接设计和验证的是分子属性而非材料器件层 | 高 |
@@ -36,6 +36,11 @@
 
 ## 2. 科学领域归类
 
+- scientific_object_modules：`03`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`03`
 - 一级类：03
 - 二级类：03.04
 - 三级类：multiproperty molecular discovery
@@ -105,6 +110,13 @@
 
 ```text
 是否纳入：to_read
+scientific_object_modules：03
+object_coverage_mode：single_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：03
+first_hand_sources_checked：Science DOI landing page; official preprint page
+classification_evidence_source_level：first_hand_abstract_or_landing_page
 主类：03
 二级类：03.04
 三级类：multiproperty molecular discovery

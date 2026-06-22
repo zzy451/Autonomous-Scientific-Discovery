@@ -6,21 +6,22 @@
 - 年份：2021
 - 来源 / venue：Communications Chemistry
 - DOI / arXiv / URL：https://doi.org/10.1038/s42004-021-00550-x
-- PDF / 本地文件路径：本轮基于 publisher abstract 与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮核对 DOI 页面与 ChemRxiv 全文 PDF；本地 PDF 暂未归档
 - 论文类型：研究论文 / closed-loop reaction optimization system
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | publisher abstract | human-intervention-free closed-loop system | 高 |
-| 科学对象归类 | `03.03` | publisher abstract | 直接优化 stereoselective Suzuki-Miyaura coupling 条件 | 高 |
-| 方法流程 | ML + 机器人 + 在线分析闭环 | publisher abstract / introduction summary | 条件提议、执行、分析、回流更新完整串联 | 高 |
-| 实验验证 | 真实自动化实验 | publisher abstract | 机器人平台和 HPLC-UV 在线分析参与闭环 | 高 |
-| 边界判断 | 不应移到 `01.04` | object-first reading | 科学对象是具体反应与工艺参数，不是通用平台 | 高 |
+| 一手来源与归档状态 | 已核对 DOI 页面与 ChemRxiv 全文 PDF；本轮未归档本地 PDF | DOI page + ChemRxiv full PDF | 一手页面与全文预印本足以支持本轮归类；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | DOI page + ChemRxiv full PDF | human-intervention-free closed-loop system | 高 |
+| 科学对象归类 | `03.03` | DOI page + ChemRxiv full PDF | 直接优化 stereoselective Suzuki-Miyaura coupling 条件 | 高 |
+| 方法流程 | ML + 机器人 + 在线分析闭环 | ChemRxiv full PDF | 条件提议、执行、分析、回流更新完整串联 | 高 |
+| 实验验证 | 真实自动化实验 | ChemRxiv full PDF | 机器人平台和 HPLC-UV 在线分析参与闭环 | 高 |
+| 边界判断 | 不应移到 `01.04` | DOI page + ChemRxiv full PDF | 科学对象是具体反应与工艺参数，不是通用平台 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,9 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`03`
+- general_method_bucket：none
+- primary_module_for_filing：`03`
 - 一级类：03
 - 二级类：03.03
 - 三级类：反应设计 / 工艺优化
@@ -71,7 +75,7 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04
-- 最终判定：保持 03.03
+- 最终判定：保持 `03`
 - 判定理由：论文并非通用科研平台评测，而是具体反应优化研究
 - 是否需要二次复核：否
 

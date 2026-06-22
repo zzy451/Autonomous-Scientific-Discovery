@@ -6,21 +6,22 @@
 - 年份：2020
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-020-2442-2
-- PDF / 本地文件路径：本轮基于 Nature 摘要页与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Burger_2020_Mobile_Robotic_Chemist.pdf`
 - 论文类型：研究论文 / robotic self-driving lab
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract / reviewer evidence | 移动机器人自动执行实验、分析结果并选择下一轮实验 | 高 |
-| 科学对象归类 | `04.04` | official abstract / reviewer evidence | 直接优化对象是 photocatalyst mixtures 与产氢性能 | 高 |
-| 方法流程 | 机器人闭环实验 | official abstract / reviewer evidence | 系统开展数百次实验并用 Bayesian search 决定后续实验 | 高 |
-| 实验验证 | 真实实验 | official abstract / reviewer evidence | 进行了 688 次实验并找到显著更优的 photocatalyst mixtures | 高 |
-| 边界判断 | `04` 胜过 `03` | reviewer evidence | 被直接优化的是光催化材料组合与性能，而不是分子反应路线 | 高 |
+| 一手来源与归档状态 | 已核对本地归档 PDF；本轮归档路径为 `Reference_PDF/04_Materials_Science/Burger_2020_Mobile_Robotic_Chemist.pdf` | local archived PDF | 本轮以本地 PDF 完成复核；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | local archived PDF | 移动机器人自动执行实验、分析结果并选择下一轮实验 | 高 |
+| 科学对象归类 | `04.04` | local archived PDF | 直接优化对象是 photocatalyst mixtures 与产氢性能 | 高 |
+| 方法流程 | 机器人闭环实验 | local archived PDF | 系统开展数百次实验并用 Bayesian search 决定后续实验 | 高 |
+| 实验验证 | 真实实验 | local archived PDF | 进行了 688 次实验并找到显著更优的 photocatalyst mixtures | 高 |
+| 边界判断 | `04` 胜过 `03` | local archived PDF | 被直接优化的是光催化材料组合与性能，而不是分子反应路线 | 高 |
 
 ## 0. 摘要翻译
 
@@ -32,10 +33,13 @@
 - 判断依据：具备明确科研目标、多步实验执行、工具调用、反馈迭代与自主实验决策
 - 判定置信度：高
 - 在科研流程中承担的明确角色：experimental_design；experiment_execution；feedback_iteration
-- 是否仍需进一步全文复核：需要，用于继续压实 `03/04` 二级边界
+- 是否仍需进一步全文复核：否，本轮已核对本地 PDF 并完成 `03/04` 边界收口
 
 ## 2. 科学领域归类
 
+- scientific_object_modules：`04`
+- general_method_bucket：none
+- primary_module_for_filing：`04`
 - 一级类：04
 - 二级类：04.04
 - 三级类：photocatalyst / materials optimization
@@ -43,7 +47,7 @@
 - 最终科学研究对象：photocatalyst mixtures 与产氢性能
 - 最终科学问题：如何用机器人闭环实验高效找到更优光催化材料组合
 - 容易混淆的边界：`03`
-- 最终判定：从 `03.03` 调整到 `04.04`
+- 最终判定：保持 `04.04`
 - 判定理由：被直接搜索和评估的是材料配方与材料性能，而非反应路线本体
 
 ## 3. Agent 系统与科研流程角色

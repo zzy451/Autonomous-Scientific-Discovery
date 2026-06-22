@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-023-06924-6
-- PDF / 本地文件路径：基于 Nature 开放全文证据整理
+- PDF / 本地文件路径：本轮未新增本地 PDF；已核对 Nature article page 与 publisher PDF，当前 note 不补写不存在的本地归档路径
 - 论文类型：系统论文 / mathematical discovery
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Nature Main | LLM 生成程序，evaluator 打分，程序库回灌，形成闭环 | 高 |
-| 多步行动 | 是 | Nature Main | prompt 组装、生成、评估、存储、再采样迭代 | 高 |
-| 科学对象归类 | `01.01` | Nature Abstract / Main | 头号发现落在 extremal combinatorics 的 cap set problem | 高 |
-| 不是 `01.04` | 是 | Nature Abstract / Main | 已对具体数学对象产出新可验证知识 | 高 |
-| 数学贡献 | 强 | Nature Main | 改进 cap set lower bound；给出更优构造 | 高 |
+| Agent 纳入 | 是 | Nature article / PDF | LLM 生成程序，evaluator 打分，程序库回灌，形成闭环 | 高 |
+| 多步行动 | 是 | Nature article / PDF | prompt 组装、生成、评估、存储、再采样迭代 | 高 |
+| 科学对象归类 | `01` | Nature article / PDF | 头号发现落在 extremal combinatorics 的 cap set problem，属于具体数学对象研究 | 高 |
+| 不是 `01.04` | 是 | Nature article / PDF | 已对具体数学对象产出新可验证知识，因此不再适用 general-method bucket | 高 |
+| 数学贡献 | 强 | Nature article / PDF | 改进 cap set lower bound；给出更优构造 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +54,11 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`01`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`01`
 - 一级类：01
 - 二级类：01.01
 - 三级类：extremal combinatorics
@@ -191,6 +196,13 @@
 
 ```text
 是否纳入：to_read
+scientific_object_modules：01
+object_coverage_mode：single_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：01
+first_hand_sources_checked：Nature article page; publisher PDF
+classification_evidence_source_level：first_hand_full_text
 主类：01
 二级类：01.01
 三级类：extremal combinatorics

@@ -6,9 +6,9 @@
 - 年份：2026
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-026-71090-y
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：本轮未新增本地 PDF；已核对 Nature Communications article page，当前 note 不补写不存在的本地归档路径。
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
+- 当前状态：已核对一手 article page 证据；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
 - 笔记作者：Codex
 
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `06;08` | Nature Communications DOI / publisher abstract | 系统围绕 Arabidopsis、potato、winter wheat 等植物表型 / 图像任务；农业作物表型支持 `08`，植物生物学对象支持 `06` | 高 |
-| 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
-| 实验验证 | 植物表型提取、可视化与模型训练任务 | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 植物表型提取、可视化与模型训练任务 支撑其主张。 | 中高 |
-| 边界判断 | `08 + 06`，primary filing `08` | DOI / publisher abstract | 旧 note 只写 `08`；relaxed 口径下，plant biology object evidence 同时支持 `06` | 高 |
+| Agent 纳入 | 是 | Nature Communications article page | 系统面向明确科研目标，并包含多步行动、反馈迭代与多 Agent 协作。 | 高 |
+| 科学对象归类 | `06;08` | Nature Communications article page | Arabidopsis 植物表型与图像分析支撑 `06`；potato、winter wheat 等作物表型任务支撑 `08`；按 relaxed 口径保留 multi-module | 高 |
+| 方法流程 | 多步 Agent 工作流成立 | Nature Communications article page | 论文把表型提取、可视化、分析、评估等环节串成可迭代工作流。 | 高 |
+| 实验验证 | 植物表型提取、可视化与模型训练任务 | Nature Communications article page | 一手文章页已显示 Arabidopsis、potato、winter wheat 等对象级任务，而不是纯抽象平台演示。 | 高 |
+| 边界判断 | `06;08`，primary filing `08` | Nature Communications article page | 旧 note 的 agriculture-only 口径偏窄；植物本体与作物对象分别支持 `06` 与 `08`，文件仍放在 `08` 仅为 filing convenience | 高 |
 
 ## 0. 摘要翻译
 
@@ -203,6 +203,8 @@ object_coverage_mode：multi_module
 has_concrete_object_experiments：yes
 general_method_bucket：none
 primary_module_for_filing：08
+first_hand_sources_checked：Nature Communications article page
+classification_evidence_source_level：first_hand_abstract_or_landing_page
 主类：08
 二级类：08.01
 三级类：

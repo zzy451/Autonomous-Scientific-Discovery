@@ -6,21 +6,22 @@
 - 年份：2020
 - 来源 / venue：Scientific Reports
 - DOI / arXiv / URL：https://doi.org/10.1038/s41598-020-64397-3
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮核对 Scientific Reports HTML / PMC 全文；本地 PDF 暂未归档
 - 论文类型：研究论文 / CNT growth closed-loop system
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | 论文直接写 autonomous closed-loop experimentation 结合 Bayesian optimization | 高 |
-| 科学对象归类 | `04.03` | official abstract | 直接对象是 single-walled carbon nanotube synthesis / growth rate，属于纳米材料优化 | 高 |
-| 方法流程 | 闭环材料生长优化 | official abstract | 用最少实验寻找最优 CNT growth conditions | 高 |
-| 实验验证 | 真实 CNT 合成优化 | official abstract | growth rate 相比 seed experiments 最高提升到 8 倍 | 高 |
-| 边界判断 | 保持 `04` | official abstract | 重点是 CNT material growth optimization，而非通用平台理论 | 高 |
+| 一手来源与归档状态 | 已核对 Scientific Reports HTML / PMC 全文；本轮未归档本地 PDF | Scientific Reports HTML / PMC full text | 一手全文足以支持本轮归类；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | Scientific Reports HTML / PMC full text | 论文直接写 autonomous closed-loop experimentation 结合 Bayesian optimization | 高 |
+| 科学对象归类 | `04.03` | Scientific Reports HTML / PMC full text | 直接对象是 single-walled carbon nanotube synthesis / growth rate，属于纳米材料优化 | 高 |
+| 方法流程 | 闭环材料生长优化 | Scientific Reports HTML / PMC full text | 用最少实验寻找最优 CNT growth conditions | 高 |
+| 实验验证 | 真实 CNT 合成优化 | Scientific Reports HTML / PMC full text | growth rate 相比 seed experiments 最高提升到 8 倍 | 高 |
+| 边界判断 | 保持 `04` | Scientific Reports HTML / PMC full text | 重点是 CNT material growth optimization，而非通用平台理论 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,9 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`04`
+- general_method_bucket：none
+- primary_module_for_filing：`04`
 - 一级类：04
 - 二级类：04.03
 - 三级类：carbon nanotube growth optimization
@@ -73,7 +77,7 @@
 - 可能误归类到：03
 - 最终判定：保留 04.03
 - 判定理由：论文将 CNT synthesis 视为高维材料研究问题，最终结果也是材料生长性能提升
-- 是否需要二次复核：是，主要是自动化硬件细节的全文补强
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 

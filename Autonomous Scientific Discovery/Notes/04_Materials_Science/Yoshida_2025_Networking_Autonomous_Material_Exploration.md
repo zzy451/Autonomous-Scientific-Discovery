@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：npj Computational Materials
 - DOI / arXiv / URL：https://doi.org/10.1038/s41524-025-01851-8
-- PDF / 本地文件路径：本轮依据 Nature 官方页证据包
+- PDF / 本地文件路径：本轮未新增本地 PDF；已核对 npj Computational Materials article page 与 publisher PDF，当前 note 不补写不存在的本地归档路径
 - 论文类型：系统论文 / networked materials exploration framework
 - 当前状态：已读 / confirmed core 暂留 `04`，但 framework-heavy
 - 阅读日期：2026-06-19
@@ -17,10 +17,10 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Nature page | autonomous material exploration systems through transfer learning | 高 |
-| 科学对象归类 | `04` | Nature page | 节点始终是材料探索系统，目标是 material discovery efficiency | 高 |
+| 科学对象归类 | `04` | npj Computational Materials article / PDF | 被连接、迁移和评估的节点始终是 autonomous material exploration systems，目标稳定指向材料发现效率 | 高 |
 | 方法流程 | networked framework | Nature page | 多套 autonomous systems 共享知识并迁移学习 | 高 |
 | 实验验证 | 多系统验证 | Nature page | 三套具体 autonomous material exploration systems | 高 |
-| 边界判断 | `04` 保留但 01.04 压力中等 | Nature page | 框架感强，但不脱离材料对象 | 高 |
+| 边界判断 | 保持 `04` | npj Computational Materials article / PDF | 框架感较强，但 network 中的节点和优化终点仍是材料探索对象，而不是脱离对象的 general method | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +54,11 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`04`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`04`
 - 一级类：04
 - 二级类：04.04
 - 三级类：04.04.01
@@ -233,6 +238,13 @@
 
 ```text
 是否纳入：是
+scientific_object_modules：04
+object_coverage_mode：single_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：04
+first_hand_sources_checked：npj Computational Materials article page; publisher PDF
+classification_evidence_source_level：first_hand_full_text
 主类：04
 二级类：04.04
 三级类：04.04.01

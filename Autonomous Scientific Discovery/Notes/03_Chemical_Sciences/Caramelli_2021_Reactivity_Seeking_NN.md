@@ -6,21 +6,22 @@
 - 年份：2021
 - 来源 / venue：ACS Central Science
 - DOI / arXiv / URL：https://doi.org/10.1021/acscentsci.1c00435
-- PDF / 本地文件路径：本轮基于官方摘要 / 官方可访问 PDF 摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Caramelli_2021_Reactivity_Seeking_NN.pdf`
 - 论文类型：研究论文 / autonomous chemistry discovery platform
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract / official PDF abstract | robotic chemical discovery system 可用 online analytics + reactivity-seeking neural network autonomously explore chemical space | 高 |
-| 科学对象归类 | `03.03` | official abstract / official PDF abstract | 目标是 new reactions、new molecules、new reactivity modes | 高 |
-| 方法流程 | 反应性优先闭环探索 | official abstract / official PDF abstract | 系统在 unknown chemical spaces 中自主探索并优先搜索高反应性组合 | 高 |
-| 实验验证 | 真实机器人化学发现 | official abstract / official PDF abstract | 在 15 inputs / 1018 reactions 预算内完成发现，报告新的 photochemical reaction 和 TosMIC 新反应性模式 | 高 |
-| 边界判断 | 保持 `03` | official abstract / official PDF abstract | 核心是化学反应与新分子发现，不是通用化学平台能力本身 | 高 |
+| 一手来源与归档状态 | 已核对本地归档 PDF；本轮归档路径为 `Reference_PDF/03_Chemical_Sciences/Caramelli_2021_Reactivity_Seeking_NN.pdf` | local archived PDF | 本轮以本地 PDF 完成复核；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | local archived PDF | robotic chemical discovery system 可用 online analytics + reactivity-seeking neural network autonomously explore chemical space | 高 |
+| 科学对象归类 | `03.03` | local archived PDF | 目标是 new reactions、new molecules、new reactivity modes | 高 |
+| 方法流程 | 反应性优先闭环探索 | local archived PDF | 系统在 unknown chemical spaces 中自主探索并优先搜索高反应性组合 | 高 |
+| 实验验证 | 真实机器人化学发现 | local archived PDF | 在 15 inputs / 1018 reactions 预算内完成发现，报告新的 photochemical reaction 和 TosMIC 新反应性模式 | 高 |
+| 边界判断 | 保持 `03` | local archived PDF | 核心是化学反应与新分子发现，不是通用化学平台能力本身 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,9 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`03`
+- general_method_bucket：none
+- primary_module_for_filing：`03`
 - 一级类：03
 - 二级类：03.03
 - 三级类：autonomous reaction discovery

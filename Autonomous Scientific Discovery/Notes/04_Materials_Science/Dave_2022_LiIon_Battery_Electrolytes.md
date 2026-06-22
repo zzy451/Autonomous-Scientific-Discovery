@@ -6,21 +6,22 @@
 - 年份：2022
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-022-32938-1
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮核对 Nature Communications HTML 全文；本地 PDF 暂未归档
 - 论文类型：研究论文 / battery-electrolyte self-driving laboratory
 - 当前状态：to_read
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | `Clio` 与 Bayesian planner `Dragonfly` 耦合，在 42 次实验、2 个工作日内完成自主优化 | 高 |
-| 科学对象归类 | `04.04` | official abstract | 直接对象是 non-aqueous Li-ion battery electrolytes 与 fast-charging performance | 高 |
-| 方法流程 | 机器人实验 + Bayesian planning | official abstract | 机器人平台执行实验，规划器根据反馈选择下一配方 | 高 |
-| 实验验证 | 真实电解液实验 + pouch cell 验证 | official abstract | 识别出 6 种 fast-charging electrolyte solutions，并做 pouch-cell 验证 | 高 |
-| 边界判断 | 不应转 `03` | official abstract | 尽管对象是化学配方，但稳定科学对象是 battery electrolyte material performance | 高 |
+| 一手来源与归档状态 | 已核对 Nature Communications HTML 全文；本轮未归档本地 PDF | Nature Communications HTML full text | 一手全文足以支持本轮归类；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | Nature Communications HTML full text | `Clio` 与 Bayesian planner `Dragonfly` 耦合，在 42 次实验、2 个工作日内完成自主优化 | 高 |
+| 科学对象归类 | `04.04` | Nature Communications HTML full text | 直接对象是 non-aqueous Li-ion battery electrolytes 与 fast-charging performance | 高 |
+| 方法流程 | 机器人实验 + Bayesian planning | Nature Communications HTML full text | 机器人平台执行实验，规划器根据反馈选择下一配方 | 高 |
+| 实验验证 | 真实电解液实验 + pouch cell 验证 | Nature Communications HTML full text | 识别出 6 种 fast-charging electrolyte solutions，并做 pouch-cell 验证 | 高 |
+| 边界判断 | 不应转 `03` | Nature Communications HTML full text | 尽管对象是化学配方，但稳定科学对象是 battery electrolyte material performance | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,9 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`04`
+- general_method_bucket：none
+- primary_module_for_filing：`04`
 - 一级类：04
 - 二级类：04.04
 - 三级类：battery electrolyte optimization

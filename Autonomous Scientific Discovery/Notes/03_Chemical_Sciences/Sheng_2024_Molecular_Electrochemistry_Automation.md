@@ -6,21 +6,22 @@
 - 年份：2024
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-024-47210-x
-- PDF / 本地文件路径：暂无本地 PDF；本 note 基于官方摘要与元数据
+- PDF / 本地文件路径：本轮核对 DOI 页面与 eScholarship 全文 PDF；本地 PDF 暂未归档
 - 论文类型：研究论文 / autonomous electrochemistry workflow
 - 当前状态：to_read / confirmed core
-- 阅读日期：2026-06-19
+- 阅读日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Nature 摘要 | 系统是 adaptive, closed-loop workflow with online decision-making | 高 |
-| 科学对象归类 | `03` 化学科学 | Nature 摘要 | 研究对象是 molecular electrochemistry mechanism | 高 |
-| 方法流程 | 是 | Nature 摘要 | 系统自动寻找 parameter combinations 并 investigate mechanism | 高 |
-| 实验验证 | 强 | Nature 摘要 | proof-of-concept 针对 cobalt tetraphenylporphyrin 与 organohalide electrophiles | 高 |
-| 边界判断 | 不转 `04` | 对象证据 | 问题核心是分子电化学机理，不是器件材料优化 | 高 |
+| 一手来源与归档状态 | 已核对 DOI 页面与 eScholarship 全文 PDF；本轮未归档本地 PDF | DOI page + eScholarship full PDF | 一手页面与全文预印本足以支持本轮归类；`source_limited = no` | 高 |
+| Agent 纳入 | 是 | DOI page + eScholarship full PDF | 系统是 adaptive, closed-loop workflow with online decision-making | 高 |
+| 科学对象归类 | `03` 化学科学 | DOI page + eScholarship full PDF | 研究对象是 molecular electrochemistry mechanism | 高 |
+| 方法流程 | 是 | eScholarship full PDF | 系统自动寻找 parameter combinations 并 investigate mechanism | 高 |
+| 实验验证 | 强 | eScholarship full PDF | proof-of-concept 针对 cobalt tetraphenylporphyrin 与 organohalide electrophiles | 高 |
+| 边界判断 | 不转 `04` | DOI page + eScholarship full PDF | 问题核心是分子电化学机理，不是器件材料优化 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,9 @@
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`03`
+- general_method_bucket：none
+- primary_module_for_filing：`03`
 - 一级类：03
 - 二级类：03.03
 - 三级类：molecular electrochemistry mechanism discovery

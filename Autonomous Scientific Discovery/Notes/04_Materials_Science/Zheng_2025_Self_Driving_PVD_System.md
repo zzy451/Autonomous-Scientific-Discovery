@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：npj Computational Materials
 - DOI / arXiv / URL：https://doi.org/10.1038/s41524-025-01805-0
-- PDF / 本地文件路径：本轮基于 publisher abstract 与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮未新增本地 PDF；已核对 npj Computational Materials article page 与 publisher PDF，当前 note 不补写不存在的本地归档路径
 - 论文类型：研究论文 / self-driving laboratory
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -17,14 +17,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | publisher abstract | autonomous PVD system, active learning, on-the-fly decisions | 高 |
-| 科学对象归类 | `04.04` | publisher abstract | silver thin films 的性质与参数关系 | 高 |
-| 方法流程 | 原位表征闭环 | publisher abstract | calibration layer + in-situ spectroscopy + Bayesian ML | 高 |
-| 实验验证 | 真实沉积实验 | publisher abstract | complete self-driving laboratory framework | 高 |
-| 边界判断 | 暂不移到 `09` | object-first reading | 标题虽像设备论文，但贡献锚定薄膜材料理解 | 高 |
+| 科学对象归类 | `04;09` | npj Computational Materials article / PDF | silver thin films 的目标光学性质与参数-性质关系支撑 `04`；self-driving PVD hardware、in-situ spectroscopy 与 sample-specific on-the-fly decisions 同时支撑 `09` | 高 |
+| 方法流程 | 原位表征闭环 | npj Computational Materials article / PDF | calibration layer + in-situ spectroscopy + Bayesian ML 构成材料优化与工程控制耦合闭环 | 高 |
+| 实验验证 | 真实沉积实验 | npj Computational Materials article / PDF | complete self-driving laboratory framework 在真实 PVD 场景中完成样品级在线决策 | 高 |
+| 边界判断 | `04;09`，primary filing `04` | npj Computational Materials article / PDF | 旧 note 只保留 `04` 偏窄；材料薄膜对象支撑 `04`，PVD 系统与控制对象同时支撑 `09`，文件仍放在 `04` 仅为 filing convenience | 高 |
 
 ## 0. 摘要翻译
 
-本文提出一个自驱物理气相沉积系统，结合自动硬件、原位光谱与贝叶斯机器学习，在银薄膜沉积中进行样品级在线决策，以达到用户指定的光学性质并学习参数-性质关系。
+本文提出一个自驱物理气相沉积系统，结合自动硬件、原位光谱与贝叶斯机器学习，在银薄膜沉积中进行样品级在线决策，以达到用户指定的光学性质并学习参数-性质关系。按 relaxed multi-module 口径，这篇论文既覆盖银薄膜材料这一 `04` 对象，也覆盖 sample-specific PVD system、在线控制与仪器流程这一 `09` 对象；note 存放在 `04` 目录下仅表示 primary filing convenience。
 
 ## 1. 是否纳入本综述
 
@@ -54,7 +54,12 @@
 
 ### 2.1 主科学领域
 
-- 一级类：04
+- scientific_object_modules：`04;09`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`04`
+- 一级类：04；并记录 09
 - 二级类：04.04
 - 三级类：薄膜材料 / 光学性质优化
 - 四级专题：Self-driving physical vapor deposition for thin films
@@ -64,16 +69,16 @@
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：silver thin films
+- 最终科学研究对象：silver thin films；以及为样品级在线决策而构建的 self-driving physical vapor deposition system
 - 最终科学问题：如何在沉积过程中自治地获得目标薄膜性质并理解参数作用
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：PVD 设备和 Bayesian ML 都是手段，主对象仍是材料薄膜
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：09
-- 最终判定：保持 04.04
-- 判定理由：虽然平台色彩很强，但其科学贡献不止设备自动化，而是材料性质导向探索
-- 是否需要二次复核：是，后续可补 `04 / 09` 边界细节
+- 可能误归类到：仅 `04` 或仅 `09`
+- 最终判定：`04;09`，primary filing `04`
+- 判定理由：薄膜材料目标、参数-性质关系与材料探索结果支撑 `04`；PVD 系统、原位表征与样品级在线控制支撑 `09`；当前文件路径仅用于 filing convenience
+- 是否需要二次复核：否，当前 multi-module 判定已可落地
 
 ## 3. Agent 系统与科研流程角色
 
@@ -192,6 +197,13 @@
 
 ```text
 是否纳入：to_read
+scientific_object_modules：04;09
+object_coverage_mode：multi_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：04
+first_hand_sources_checked：npj Computational Materials article page; publisher PDF
+classification_evidence_source_level：first_hand_full_text
 主类：04
 二级类：04.04
 三级类：薄膜材料 / 光学性质优化
