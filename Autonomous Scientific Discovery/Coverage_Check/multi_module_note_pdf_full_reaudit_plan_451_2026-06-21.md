@@ -187,6 +187,8 @@ PDF version:
   - 只负责一组互不重叠的 note 文件。
   - 只根据 `Main Controller` 已批准落地的最终裁决写回 note。
   - 可同步刷新 evidence log、PDF path、first-hand source、classification wording、source-limited / safety wording。
+  - 不重新发明分类结论，不得擅自扩写新模块或撤销已裁决模块。
+  - 优先修复旧单模块 / 旧 `01.04` / 旧主类口径，并把 note 存放目录与分类事实显式剥离。
 
 - `Writeback-Agent-2`
   - 负责第二组互不重叠的 note 文件。
@@ -225,6 +227,13 @@ PDF version:
 - 一个 note 文件在同一轮只能属于一个 `Writeback-Agent`。
 - 一个 paper 的 master 条目只有在其 note 写回返回并经 `Main Controller` 复核后，才允许落地 master 更新。
 - 如某篇文献因安全性原因不得继续访问，必须显式标记为 `not accessed due to safety`，不得被隐去或伪装成普通 `source_limited`。
+
+推荐 ownership 切分方式：
+
+- 先按本轮预计落地的 note 数量决定是否启用 1 / 2 / 3 个 `Writeback-Agent`。
+- 再按 note 文件边界切分，不按字段或 section 切分，避免同一文件双写。
+- 优先把同一 scientific-object module 下的相邻 note 连续分配给同一写回 agent，以减少上下文切换。
+- 若某篇 note 预计需要大改、模板修复或证据重写，应单独占用一个 ownership 槽，不与其他复杂 note 混装。
 
 ### 7.3 发包与回包契约
 
@@ -284,6 +293,20 @@ PDF version:
 6. 把已批准落地的 note 文件拆分给 `Writeback-Agent-1/2/3` 并行写回。
 7. `Main Controller` 统一检查 note diffs，再唯一更新 master、progress、report、统计与 git。
 8. 本轮结束后关闭本轮全部子 Agent，避免并发槽位被历史 round 长期占用。
+
+写回并发启用建议：
+
+- 本轮仅有 `1-3` 篇落地 note 时，默认只启用 `Writeback-Agent-1`。
+- 本轮有 `4-8` 篇落地 note 时，默认启用 `Writeback-Agent-1/2`。
+- 本轮有 `9` 篇及以上落地 note 时，默认启用 `Writeback-Agent-1/2/3`。
+- 若某一轮 note 改写极浅、只是 PDF path / evidence log 小修，可减少写回 agent 数以降低协调噪声。
+
+`Main Controller` 收口前置检查：
+
+- 每篇拟落地 paper 都必须同时具备 evidence pack、classification row、owned note diff。
+- 如启用了 `PDF-Archive-Agent`，需先确认 PDF 归档结果与 note 中 `PDF path` / `First-hand source checked` 表述一致。
+- 任一写回 agent 返回 blocker 时，该 paper 不进入本轮 master 落地集合。
+- `Main Controller` 应先冻结本轮 landed subset，再统一改 master / progress / report，避免边写回边改主表。
 
 落地判定建议：
 
