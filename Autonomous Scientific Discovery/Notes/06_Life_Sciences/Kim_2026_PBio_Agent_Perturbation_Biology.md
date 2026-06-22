@@ -6,22 +6,27 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2602.07408
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / arXiv API 元数据；尚未完成全文核对
+- paper_id：ASD-0770
+- 科学对象模块（本轮裁定）：`06`
+- Primary module for filing：`06`
+- PDF / 本地文件路径：当前笔记基于 arXiv 摘要页与既有摘录；本轮按 source-limited 写回，不补写本地 archive 路径
 - 论文类型：系统论文 / perturbation-biology agent
-- 当前状态：to_read
-- 阅读日期：2026-06-20
+- 当前状态：landed note 已写回；主列表字段仍由主控统一维护
+- 阅读日期：2026-06-23
+- 本轮写回口径：`modules=06`；`primary=06`；`confidence=high`；`source_limited=yes`；`safety_access_status=none`
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 一手来源核对 | 已核对 arXiv 摘要页与现有摘录 | arXiv abs page + current note | 题名、作者、LINCSQA / PerturbQA、PBio-Agent 摘要级信息已复核。 | 高 |
+| PDF / archive 状态 | source-limited；无本地 archive 路径 | current note | 本轮不补写本地 PDF/归档路径。 | 高 |
 | Agent 纳入 | 是 | Title; Abstract | paper explicitly proposes PBio-Agent, a multi-agent framework with iterative knowledge refinement | 高 |
-| 科学对象归类 | `06.03` | Abstract | 对象是 gene regulation responses、biological causalities、chemical perturbations、bulk-cell environments | 高 |
-| 多步行动流程 | 明确存在 | Abstract | difficulty-aware task sequencing + iterative knowledge refinement + synthesis agent + judges | 高 |
-| 工具与知识资源 | 明确存在 | Abstract | specialized agents enriched with biological knowledge graphs | 高 |
-| 验证方式 | benchmark / computational | Abstract | outperforms baselines on LINCSQA and PerturbQA without additional training | 中高 |
-| 边界判断 | 不应移入 `07` 或 `01.04` | Abstract | 虽提到 drug discovery motivation，但对象是 perturbation biology，不是 patient / clinical endpoint，也不是通用科研平台 | 高 |
+| 科学对象归类 | `06`，主展示落在 `06.03` | Abstract | 对象是 gene regulation responses、biological causalities、chemical perturbations、bulk-cell environments | 高 |
+| 任务 / 对象覆盖 | perturbation biology、gene regulation、LINCSQA、PerturbQA | Abstract | 对象稳定指向生命科学中的 perturbation biology，而非临床对象或通用科研平台。 | 高 |
+| 验证总结 | LINCSQA + PerturbQA | Abstract | 摘要显示其在两个 perturbation-biology benchmark 上优于现有 baseline。 | 中高 |
+| 边界判断 | 不进 `07` 或 `01.04` | Abstract | 虽提到 drug discovery motivation，但对象是 perturbation biology，不是 patient / clinical endpoint，也不是通用科研平台 | 高 |
 
 ## 0. 摘要翻译
 
@@ -55,11 +60,17 @@
 
 ### 2.1 主科学领域
 
-- 一级类：06
-- 二级类：06.03
-- 三级类：perturbation biology / gene regulation prediction
-- 四级专题：Multi-agent perturbation-biology reasoning systems
-- 四级专题是否为新增：否
+- 科学对象模块：`06`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`06`
+- 主展示模块一级类：06
+- 主展示模块二级类：06.03 组学 / 蛋白质 / 扰动生物学相关
+- 主展示模块三级类：perturbation biology / gene regulation prediction
+- 主展示模块四级专题：Multi-agent perturbation-biology reasoning systems
+- 其他覆盖模块及对应层级路径：无
+- 每个模块的对象实验证据：gene regulation responses、biological causalities、chemical perturbations、bulk-cell environments、LINCSQA、PerturbQA
 - 归类理由：对象是 biological perturbation、gene regulation responses 与生物因果结构，而不是临床终点或通用 workflow
 - 归类置信度：高
 
@@ -74,7 +85,9 @@
 - 可能误归类到：07；01.04
 - 最终判定：保持 06.03
 - 判定理由：尽管有 drug discovery motivation，但对象仍是生命科学层面的 perturbation biology，而非患者级医学对象
-- 是否需要二次复核：需要，主要是 confirmed-core 强度而非主类方向
+- 多模块覆盖说明：无；冻结 landed 结果仅为 `06`
+- 01.04 判定说明：不进入 `01.04`，因为论文已对具体生命科学对象与 perturbation-biology tasks 做出明确验证
+- 是否需要二次复核：需要，但主要是 confirmed-core 强度与全文细节，而非主类方向
 
 ## 3. Agent 系统与科研流程角色
 
@@ -188,7 +201,8 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
 - 科学贡献类型：prediction / explanation / system_platform
-- 证据强度：计算验证
+- 证据强度：source-limited；现有摘录指向 LINCSQA / PerturbQA benchmark 支撑
+- 本轮验证总结：已足以确认其为 `06` 扰动生物学对象导向 Agent 论文；残余不确定性在全文细节和核心强度，不在 `06/07/01.04` 边界
 
 ## 6. 与已有工作的关系
 
@@ -220,7 +234,7 @@
 
 ### 9.1 一句话概括
 
-面向生物扰动预测的多 Agent 推理框架。
+面向 perturbation biology 与基因调控响应的 `06` 多 Agent 推理框架。
 
 ### 9.2 速记版 pipeline
 
@@ -234,17 +248,29 @@
 
 ```text
 是否纳入：是
-主类：06
-二级类：06.03
-三级类：perturbation biology / gene regulation prediction
-四级专题：Multi-agent perturbation-biology reasoning systems
+科学对象模块：06
+覆盖模式：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：06
+是否进入 01.04 存放区：否
+主展示模块一级类：06
+主展示模块二级类：06.03
+主展示模块三级类：perturbation biology / gene regulation prediction
+主展示模块四级专题：Multi-agent perturbation-biology reasoning systems
+其他覆盖模块及对应层级路径：无
+module_assignment_evidence：gene regulation responses; biological causalities; chemical perturbations; LINCSQA; PerturbQA
+multi_module_object_coverage_note：单模块；冻结 landed 结果为 06
+first_hand_sources_checked：arXiv abs page
+classification_evidence_source_level：source_limited
+PDF/archive_status：no_local_archive_path
 Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 科研流程角色：knowledge_extraction_and_organization; hypothesis_generation; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
 验证方式：benchmark
 交叉属性：computation_driven; data_driven; knowledge_graph
 科学贡献类型：prediction; explanation; system_platform
-证据强度：computationally_validated
+证据强度：source_limited
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

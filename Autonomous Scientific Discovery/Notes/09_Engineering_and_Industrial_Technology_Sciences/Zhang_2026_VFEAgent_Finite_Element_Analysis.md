@@ -1,249 +1,164 @@
 # Zhang et al. 2026 - VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis
 
+## 2026-06-23 landed writeback refresh
+
+- `paper_id`: `ASD-0747`
+- Accepted relaxed classification: `scientific_object_modules=09`; `object_coverage_mode=single_module`; `primary_module_for_filing=09`; `general_method_bucket=none`
+- `classification_confidence`: `high`
+- `source_limited`: `no`
+- `safety_access_status`: `none`
+- First-hand source checked this round: arXiv abstract page `https://arxiv.org/abs/2605.28978`
+- PDF / archive status: no local archived PDF was confirmed in this workspace; recommended official PDF URL is `https://arxiv.org/pdf/2605.28978`
+- Writeback implication: keep the note anchored in concrete finite-element-analysis engineering objects, not `01.04`
+
 **论文信息**
 - 标题：VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis
 - 作者：Jiachen Zhang; Junyi Lao; Chenghao Liu; Siyuan Liu; Shixin Wu; Linsen Zhang; Boyu Wang; Songfang Huang
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.28978
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML 全文与 reviewer 一手证据；本地未保存 PDF
-- 论文类型：研究论文 / end-to-end FEA multi-agent system
+- PDF / 本地文件路径：未确认本地归档 PDF；本次写回基于 arXiv abstract page
+- 论文类型：研究论文 / engineering FEA multi-agent system
 - 当前状态：to_read
-- 阅读日期：2026-06-20
+- 阅读日期：2026-06-23
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv HTML abstract + methodology | 论文明确把 `VFEAgent` 定义为 end-to-end multi-agent system | 高 |
-| 科学对象归类 | `09.01` | abstract / introduction | 直接对象是 FEA modeling and simulation for engineering mechanics / structural simulation | 高 |
-| 方法流程 | multimodal perception -> verification-first synthesis -> self-debugging | arXiv HTML abstract / Sec.3 | 系统从图纸和问题描述出发，经历多步感知、代码生成、执行和修正 | 高 |
-| 边界判断 | 不应改到 `01.04` | object-first rule | 即使是通用-looking framework，最终对象和评测都在工程 FEA 任务上 | 高 |
-| 验证方式 | expert-curated benchmark with physical validity metrics | arXiv HTML abstract / Sec.4 | 评测关注 physically valid simulations and engineering mechanics scenarios | 高 |
+| Agent 纳入 | 是 | arXiv abstract | 论文明确提出 `VFEAgent`，并将其描述为 end-to-end multi-agent system | 高 |
+| 科学对象归类 | `09` | arXiv abstract | 系统直接自动化的是 finite element analysis modeling and simulation，而不是通用科研流程 | 高 |
+| 关键对象证据 | 工程 FEA 对象稳定 | arXiv abstract | 输入是 images and problem descriptions，输出是可执行且 physically valid 的 FEA simulations | 高 |
+| 方法流程 | 多模态感知 + verification-first code synthesis + self-debugging | arXiv abstract | 摘要明确写到 vision-language multi-agent pipeline、verification-first code synthesis、fallback mechanisms | 高 |
+| 实验验证 | 面向 engineering mechanics scenarios 的系统评估 | arXiv abstract | 评估覆盖 various engineering mechanics scenarios，并比较 reliability / correctness | 高 |
+| 01.04 边界 | 不进入 `01.04` | 对象优先规则 + arXiv abstract | 尽管系统外观像通用框架，但实验对象和结果都固定在 FEA 工程任务上 | 高 |
+| PDF / archive 状态 | 未确认本地归档 | workspace 检索 + arXiv abs | 当前工作区未检出本地 PDF；可回溯官方 arXiv PDF 链接 | 高 |
 
 ## 0. 摘要翻译
 
-`VFEAgent` 是一个面向有限元分析的多模态多 Agent 系统。它可以直接从工程图纸和问题描述出发，先通过视觉-语言多 Agent 感知把原始输入转成结构化 FEA 语义，再通过 verification-first 的代码合成、执行和自调试环节生成可运行的有限元模拟。尽管论文的系统设计很完整，甚至带有通用 framework 色彩，但它的任务、输入、输出和评测都紧扣 finite element analysis，因此主类应保持在 `09.01`。
+有限元分析是现代工程设计的基础，但其工作流复杂且高度依赖领域专家。为解决现有 LLM+FEA 方法在多模态输入处理和复杂任务执行上的不足，本文提出 `VFEAgent`，一个端到端多智能体系统，可直接从输入图像和问题描述自动完成 FEA 建模与仿真。其方法由两个核心部分组成：一是使用 ReAct 驱动推理的多模态视觉-语言多智能体流水线，用于从异构输入中提取结构化 FEA 规格；二是 verification-first 的代码合成框架，并加入自调试与 fallback 机制，以保证脚本可执行性与物理有效性。作者在多种工程力学场景上进行了系统评估，结果显示该系统在生成完整且物理有效的仿真方面具有较高成功率，并在可靠性与正确性上优于 LLM baseline。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：存在多 Agent orchestration、ReAct 感知、代码生成、执行、debugging 和闭环修正
+- 判断依据：存在多步任务分解、视觉与文本联合解析、代码生成与执行、自调试、回退与修正机制
 - 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
-- 是否具备以下至少一项 Agent 能力：
-  - 计划生成：是
-  - 工具调用：是
-  - 反馈迭代：是
-  - 自主决策：是
-  - 多 Agent 协作：是
-- 在科研流程中承担的明确角色：图纸解释、FEA 语义抽取、脚本生成、仿真执行、结果验证
+- Agent 能力：计划生成、工具调用、反馈迭代、自主决策、多 Agent 协作均有明确体现
+- 在科研流程中承担的明确角色：FEA 语义提取、脚本生成、仿真执行、结果校验
 
 ### 1.2 排除风险检查
 
 - 是否只是普通 AI for Science / ML / DL 模型：否
 - 是否只是单次问答、摘要或分类：否
 - 是否缺少行动闭环：否
-- 若排除，排除理由：不排除
+- 当前排除结论：不排除
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：09
-- 二级类：09.01
-- 三级类：finite element analysis / engineering simulation
-- 四级专题：Autonomous finite-element-analysis agents
-- 四级专题是否为新增：否
-- 归类理由：论文从输入到评测都稳定锚定在 FEA 和 engineering mechanics 场景
+- 科学对象模块：`09`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：`none`
+- Primary module for filing：`09`
+- Primary module for filing 说明：仅用于落盘与展示，不覆盖对象模块事实
+- 主展示模块一级类：`09` 工程与工业技术科学
+- 主展示模块二级类：`09.01` 工程基础
+- 主展示模块三级类：finite-element analysis / engineering simulation
+- 其他覆盖模块及对应层级路径：无
+- 每个模块的对象实验证据：工程图像、问题描述、工程力学场景、完整有限元仿真输出均指向工程 FEA 对象
+- 归类理由：论文自动化的是工程有限元建模与仿真流程，评价指标也是物理有效性、可靠性和正确性，不是无对象的科研 Agent 平台
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：finite-element analysis tasks on engineering structures and mechanics scenarios
-- 最终科学问题：如何让 Agent 更自主地完成从工程图纸到可执行 FEA 的完整流程
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：multi-agent orchestration 只是手段，稳定对象仍是工程 FEA workflow
+- 最终科学研究对象：工程结构与工程力学场景中的有限元分析任务
+- 最终科学问题：如何从工程图像和问题描述自动生成可执行且物理有效的 FEA 仿真
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：多 Agent 和多模态只是实现方式，稳定对象仍是工程 FEA
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.04
-- 最终判定：保持 09.01
-- 判定理由：如果系统脱离工程图纸、Abaqus、物理有效性等域内要素仍能成立，才更像通用平台；但本文并非如此
-- 是否需要二次复核：需要，以加强 core-strength 判断
+- 可能误归类到：`01.04`
+- 最终判定：保持 `09`
+- 判定理由：该文不是只展示通用科研能力，而是在具体工程对象上完成从输入解析到仿真输出的完整 FEA 流程
+- 01.04 判定说明：已有具体工程对象实验与结果，故 `general_method_bucket=none`
+- 是否需要二次复核：当前分类无需二次复核；若后续要评估核心强度，可补读 PDF
 
 ## 3. Agent 系统与科研流程角色
 
-### 3.1 Agent 类型标签
-
-- LLM Agent：是
-- Planning Agent：是
-- Tool-using Agent：是
-- Retrieval-augmented Agent：否
-- Multi-Agent System：是
-- Robot / Embodied Agent：否
-- Human-in-the-loop Agent：部分是
-- Hybrid Agent：是
-- 其他：multimodal FEA perception-synthesis system
-
-### 3.2 科研流程角色
-
-- 文献检索与阅读：否
-- 知识抽取与组织：是
-- 科学问题提出：否
-- 假设生成：否
-- 实验设计：是
-- 仿真建模：是
-- 工具调用与代码执行：是
-- 实验执行：否
-- 数据分析：是
-- 结果解释：是
-- 证据评估与验证：是
-- 论文写作：否
-- 端到端科研流程自动化：是
-
-### 3.3 自主能力
-
-- 任务分解：是
-- 计划生成：是
-- 工具调用：是
-- 记忆与状态维护：是
-- 反馈迭代：是
-- 自主决策：是
-- 多 Agent 协作：是
-- 环境交互：否
-- 闭环实验：否，主要是仿真执行闭环
-
-### 3.4 交叉属性标签
-
-- 计算驱动：是
-- 数据驱动：是
-- 实验驱动：否
-- 仿真驱动：是
-- 多模态：是
-- 多尺度建模：否
-- 高通量筛选：否
-- 知识图谱：否
-- 数字孪生：否
-- 机器人平台：否
-- 其他：visual blueprint reasoning
+- Agent 类型：LLM Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
+- 科研流程角色：simulation_modeling; tool_use_and_code_execution; data_analysis; evidence_assessment_and_validation; end_to_end_research_automation
+- 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
+- 交叉属性：computation_driven; simulation_driven; multimodal
 
 ## 4. 方法设计
 
 ### 4.1 方法动机
 
-- 作者为什么提出该 Agent 系统：自动化复杂的 FEA 建模和仿真流程
-- 现有科研流程或方法的痛点：原始工程图纸解释、参数配置、代码生成和物理有效性检查都高度依赖人工
-- 核心假设或直觉：若把视觉感知、代码合成和验证调试串成闭环，Agent 可以端到端完成 FEA
+- 作者希望降低工程 FEA 工作流对人工语义解析、脚本编写和调试的依赖
+- 痛点在于：多模态输入复杂、代码易错、物理有效性检查繁琐
 
 ### 4.2 系统流程
 
-1. 输入：工程图纸与问题描述
-2. 任务分解 / 规划：多 Agent ReAct 系统提取 solver-agnostic 中间表示
-3. 工具、数据库、模型或实验平台调用：生成 Abaqus 脚本并执行仿真
-4. 中间结果反馈：通过 static verification、自调试和 fallback 机制修正错误
-5. 决策或迭代：继续修复语法或物理逻辑偏差
-6. 输出：validated finite element simulation results
-
-### 4.3 系统组件
-
-- Agent 核心：VFEAgent
-- 工具 / API / 数据库：VLMs, LangChain orchestration, Abaqus scripting environment
-- 记忆或状态模块：dynamic belief state and debugging memory
-- 规划器：Orchestrator + ReAct-driven perception stage
-- 评估器 / verifier：validation agent, preflight checks, physical validity checks
-- 人类反馈或专家介入：当前公开证据中仍有工程师语义背景
-- 实验平台或仿真环境：Abaqus-based FEA environment
+1. 输入工程图像与问题描述。
+2. 多模态 Agent 提取结构化 FEA 规格。
+3. 代码合成模块生成仿真脚本。
+4. 系统执行脚本并进行 verification-first 校验。
+5. 通过 self-debugging 和 fallback 机制修正错误。
+6. 输出完整且物理有效的有限元仿真结果。
 
 ## 5. 实验与验证
 
-### 5.1 验证方式
-
-- benchmark：是
-- 仿真验证：是
-- 高通量计算：否
-- 机器人实验：否
-- 湿实验：否
-- 临床数据：否
-- 真实场景部署：否
-- 专家评估：是
-
-### 5.2 数据、任务与指标
-
-- 数据集 / 实验对象：expert-curated, vision-augmented engineering mechanics benchmark
-- 任务设置：从 raw engineering drawings 到 executable FEA workflow
-- 对比基线：other LLM-based baseline methods
-- 评价指标：physical validity, reliability, correctness, execution robustness
-- 关键结果：在 generating complete and physically valid simulations 上优于 baseline methods
-- 是否有消融实验：有 failure taxonomy and qualitative analysis
-- 是否有失败案例或负结果：有，论文系统性分析了 lifecycle blindness、API hallucination 和 unsafe state manipulation
-
-### 5.3 科学贡献
-
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：更偏向 engineering workflow autonomy
-- 科学贡献是否经过验证：是
-- 贡献强度判断：中高
-- 科学贡献类型：system_platform; engineering_analysis
-- 证据强度：high_primary_abstract
+- 验证方式：benchmark; simulation_validation
+- 数据 / 对象：various engineering mechanics scenarios
+- 任务设置：从图像和文本描述自动生成完整 FEA workflow
+- 关键指标：reliability; correctness; physical validity
+- 关键结果：系统在生成完整且物理有效的仿真方面取得较高成功率，并优于 LLM baseline
+- 证据强度判断：当前分类判断由一手 abstract 支撑，足以稳定 `09`；若要细化失败类型和消融结果，仍可补读 PDF
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：不是单步 FEA code assistant，而是完整 end-to-end FEA system
-- 与已有 Agent / 科研智能系统的区别：强调 raw blueprint interpretation 与 verification-driven synthesis
-- 与同一科学领域其他 Agent 文献的关系：可与 Tian_2025_Autonomous_Finite_Element_Analysis, TopOptAgents, structural analysis agents 对照
-- 主要创新点：把多模态图纸解析和 FEA 执行闭环结合到一个 system 中
+- 与通用科研 Agent 不同：它不以领域无关工作流为主要对象，而是直接面向工程 FEA
+- 与其他工程 Agent 的关系：可与 topology optimization、structural analysis、text-to-FEA 一组文献并列讨论
+- 主要创新点：把多模态输入解析、代码生成、执行校验和自调试整合为单一工程分析闭环
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：当前证据虽然比摘要更强，但仍主要依赖 arXiv HTML 和 reviewer evidence
-- 科学验证不足：更偏 workflow 自动化，不是工程规律发现
-- 泛化性不足：对更多非标准 3D industrial scenarios 的泛化仍需观察
-- 工具链依赖：高度依赖 Abaqus 和视觉解析质量
-- 数据泄漏或 benchmark 偏差：需要全文继续细查
-- 成本、可复现性或安全风险：双环境架构和商业软件依赖增加复现门槛
+- 当前未确认本地归档 PDF，后续复核仍建议优先补档
+- 科学贡献更偏工程分析自动化，而非新的工程规律发现
+- 泛化范围与失败模式细节仍需更强全文证据支持
+- 当前主要风险是 core-strength 细化，不是对象分类风险
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：09 工程与工业技术科学中的 FEA agents
-- 可支撑哪个论点：看起来像通用 framework 的工程 Agent，只要对象、输入和评测都固定在 FEA，就不应回退到 `01.04`
-- 可用于哪个表格或图：`09.01 / 01.04` 边界案例表
-- 适合作为代表性案例吗：是
-- 推荐引用强度：核心引用
-- 需要在正文中特别引用的页码 / 图 / 表：abstract, Fig.1, Fig.2, failure taxonomy
-- 需要与哪些论文并列比较：Park_2026_TopOptAgents; Tian_2025_Autonomous_Finite_Element_Analysis; Liu_2025_Structural_Analysis_Agent
+- 可放入章节：`09` 工程与工业技术科学中的 FEA / engineering-analysis agents
+- 可支撑论点：外观像通用 framework 的系统，只要对象实验稳定落在工程 FEA，就不应回收到 `01.04`
+- 推荐引用强度：standard 到 core 之间，取决于后续全文复核和归档情况
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-多模态多 Agent 系统把工程图纸自动转成可执行有限元模拟。
+多模态多 Agent 把工程输入自动转成可执行有限元仿真。
 
-### 9.2 速记版 pipeline
-
-1. 读图纸和问题描述
-2. 抽取 FEA 语义
-3. 生成并执行 Abaqus 脚本
-4. 验证并自调试输出结果
-
-### 9.3 标注字段汇总
+### 9.2 标注字段汇总
 
 ```text
-是否纳入：to_read
-主类：09
-二级类：09.01
-三级类：finite element analysis / engineering simulation
-四级专题：Autonomous finite-element-analysis agents
-Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
-科研流程角色：tool_use_and_code_execution; simulation_modeling; workflow_orchestration; evidence_assessment_and_validation
-自主能力：task_decomposition; planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
-验证方式：benchmark; computational_validation
-交叉属性：computation_driven; data_driven; simulation_driven; multimodal
-科学贡献类型：system_platform; engineering_analysis
-证据强度：high_primary_abstract
-归类置信度：高
-纳入置信度：高
-推荐引用强度：核心引用
+paper_id: ASD-0747
+scientific_object_modules: 09
+object_coverage_mode: single_module
+primary_module_for_filing: 09
+general_method_bucket: none
+classification_confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: arXiv abstract page
+pdf_archive_status: no local archived PDF confirmed
+recommended_pdf_url: https://arxiv.org/pdf/2605.28978
 ```

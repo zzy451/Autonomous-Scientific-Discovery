@@ -1,26 +1,32 @@
-# Unknown 2026 - When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews
+# Kumar et al. 2026 - When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews
 
 **论文信息**
 - 标题：When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews
-- 作者：Unknown
+- 作者：Sandeep Kumar; Yash Kamdar; Abid Hossain; Bharti Kumari; Tanik Saikh; Asif Ekbal
 - 年份：2026
 - 来源 / venue：ACL 2026 / arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.10171
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- paper_id：ASD-0768
+- 科学对象模块（本轮裁定）：`11`
+- Primary module for filing：`11`
+- PDF / 本地文件路径：未配置本地 PDF；本轮按 source-limited 写回，仅核对 arXiv 摘要页与现有 note 内容，不补写本地 archive 路径。
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
-- 阅读日期：2026-06-18
+- 当前状态：landed note 已写回；主列表字段仍由主控统一维护
+- 阅读日期：2026-06-23
+- 本轮写回口径：`modules=11`；`primary=11`；`confidence=high`；`source_limited=yes`；`safety_access_status=none`
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `11` / `11.07` | 摘要 | 最稳定对象是“contradiction analysis in scientific peer reviews”，而不是单纯的模型方法或发表 venue。 | 高 |
-| 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
-| 实验验证 | RevCI dataset、IMPACT multi-agent framework 与 deployment-oriented distillation | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 RevCI dataset、IMPACT multi-agent framework 与 deployment-oriented distillation 支撑其主张。 | 中高 |
-| 边界判断 | 11.07 内部 NLP-task 化样本；对象仍是 scientific review disagreement 本身 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| 一手来源核对 | 已核对 arXiv 摘要页 | arXiv abs page | 已刷新作者元数据，并核对 RevCI、IMPACT、TIDE 与 contradiction-intensity 相关摘要信息。 | 高 |
+| PDF / archive 状态 | source-limited；无本地 archive 路径 | 当前 note + arXiv abs page | 本轮未同步本地 PDF 归档，也不补写不存在的 archive 路径。 | 高 |
+| Agent 纳入 | 是 | 标题 + 摘要 | 该工作用多步 agent 流程完成 contradiction evidence extraction、deliberation、adjudication 与 intensity scoring。 | 高 |
+| 科学对象归类 | `11`，按知识生产子域记作 `11.07` | 摘要 | 研究对象是 scientific peer review disagreement 与 contradiction analysis，而不是通用 research-agent substrate。 | 高 |
+| 任务 / 对象覆盖 | contradiction evidence spans、graded disagreement intensity、scientific review adjudication | 摘要 | 任务全部围绕 scientific knowledge production 中的同行评审分歧解析展开。 | 高 |
+| 验证总结 | RevCI + IMPACT + TIDE | 摘要 | 结果主张建立在 peer-review contradiction evidence identification 与 intensity agreement 上。 | 中高 |
+| 边界判断 | 不进 `01.04`；稳定落在 `11.07` 口径 | 摘要 + 项目规则 | 虽含 structured multi-agent framework 与 deployment distillation，但对象始终是 scientific review disagreement 本身。 | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,13 +60,20 @@
 
 ### 2.1 主科学领域
 
-- 一级类：11
-- 二级类：11.07
-- 三级类：
-- 四级专题：Contradiction-analysis agents for scientific peer reviews
-- 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“contradiction analysis in scientific peer reviews”，因此当前主类保持为 `11` / `11.07`。
-- 归类置信度：中高
+- 科学对象模块：`11`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是；但对象是 scientific peer review disagreement / scientific knowledge production，而非自然科学对象
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`11`
+- Primary module for filing 说明：仅用于当前 note 落盘与展示，不覆盖对象优先的分类事实
+- 主展示模块一级类：11
+- 主展示模块二级类：11.07 科学系统与知识生产研究
+- 主展示模块三级类：scientific peer review contradiction analysis
+- 主展示模块四级专题：Contradiction-analysis agents for scientific peer reviews
+- 其他覆盖模块及对应层级路径：无
+- 每个模块的对象实验证据：RevCI、IMPACT、TIDE 与 contradiction-intensity evaluation 都直接围绕 scientific peer reviews 展开
+- 归类理由：按对象优先规则，本文研究的是 scientific peer review 中的冲突证据提取、分歧强度判定与审稿解释，因此应稳定记入 `11`，并按当前项目口径落在 `11.07`
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
@@ -70,10 +83,12 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：11.07 内部 NLP-task 化样本；对象仍是 scientific review disagreement 本身
-- 最终判定：保持 `11` / `11.07`
-- 判定理由：11.07 内部 NLP-task 化样本；对象仍是 scientific review disagreement 本身
-- 是否需要二次复核：建议轻量复核。
+- 可能误归类到：`01.04`
+- 最终判定：保持 `11`；按知识生产子域写作时使用 `11.07` 口径
+- 判定理由：本文虽然提供 structured multi-agent framework、small-model distillation 与 benchmark 叙事，但 benchmark 与输出都在分析 scientific peer review disagreement，本质上是知识生产系统研究，不是无对象通用科研 Agent
+- 多模块覆盖说明：无；当前冻结模块仅为 `11`
+- 01.04 判定说明：不进入 `01.04`，因为本文直接研究和解释 scientific knowledge production itself
+- 是否需要二次复核：否；本轮主要风险是全文未归档带来的 source-limited 风险，而非分类漂移
 
 ## 3. Agent 系统与科研流程角色
 
@@ -146,8 +161,9 @@
 ### 5.3 科学贡献
 
 - 科学贡献类型：system_platform; peer_review_automation
-- 贡献强度判断：中等到较强，取决于论文是平台型还是有直接实验发现。
-- 证据强度：medium_high_primary_abstract
+- 贡献强度判断：中等；核心价值在于把 reviewer contradiction analysis 组织成 evidence-level、多步 adjudication Agent 流程，而不是产生新的自然科学对象发现。
+- 证据强度：source-limited，但摘要页已能支撑高置信度的 `11` / `11.07` 归类
+- 本轮验证总结：当前足以确认其对象是 scientific peer review contradiction analysis；不足之处主要是尚未归档本地 PDF、暂缺更细粒度实验页码摘录
 
 ## 6. 与已有工作的关系
 
@@ -179,7 +195,7 @@
 
 ### 9.1 一句话概括
 
-围绕“contradiction analysis in scientific peer reviews”组织多步科研工作的 Agent 系统。
+面向 scientific peer review disagreement 解析的 `11.07` 多 Agent 系统。
 
 ### 9.2 速记版 pipeline
 
@@ -193,18 +209,30 @@
 
 ```text
 是否纳入：是
-主类：11
-二级类：11.07
-三级类：
-四级专题：Contradiction-analysis agents for scientific peer reviews
+科学对象模块：11
+覆盖模式：single_module
+是否具有具体科学对象实验：是，但对象是 scientific peer review disagreement / scientific knowledge production
+general_method_bucket：none
+Primary module for filing：11
+是否进入 01.04 存放区：否
+主展示模块一级类：11
+主展示模块二级类：11.07
+主展示模块三级类：scientific peer review contradiction analysis
+主展示模块四级专题：Contradiction-analysis agents for scientific peer reviews
+其他覆盖模块及对应层级路径：无
+module_assignment_evidence：RevCI、IMPACT、TIDE、contradiction-intensity evaluation
+multi_module_object_coverage_note：单模块；冻结 landed 结果为 11
+first_hand_sources_checked：arXiv abs page
+classification_evidence_source_level：source_limited
+PDF/archive_status：no_local_archive_path
 Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 科研流程角色：evidence_assessment_and_validation; result_interpretation; workflow_orchestration; feedback_iteration
 自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven
 科学贡献类型：system_platform; peer_review_automation
-证据强度：medium_high_primary_abstract
-归类置信度：中高
+证据强度：source_limited
+归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
 ```

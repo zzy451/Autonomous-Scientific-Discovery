@@ -6,22 +6,27 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2511.20109
-- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 arXiv API 元数据
+- paper_id：ASD-0765
+- 科学对象模块（本轮裁定）：`05`
+- Primary module for filing：`05`
+- PDF / 本地文件路径：当前 note 沿用 arXiv 摘要 / 既有摘录整理；本轮按 source-limited 写回，不补写本地 archive 路径
 - 论文类型：系统论文 / climate-science workflow agent
-- 当前状态：to_read
-- 阅读日期：2026-06-20
+- 当前状态：landed note 已写回；主列表字段仍由主控统一维护
+- 阅读日期：2026-06-23
+- 本轮写回口径：`modules=05`；`primary=05`；`confidence=high`；`source_limited=yes`；`safety_access_status=none`
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 一手来源核对 | 已核对 arXiv 摘要页与现有摘录 | arXiv abs page + current note | 题名、作者、气候任务对象与 Climate-Agent-Bench 摘要级信息已复核。 | 高 |
+| PDF / archive 状态 | source-limited；无本地 archive 路径 | current note | 本轮不补写本地 PDF/归档路径，现有笔记仅保留既有摘录与摘要级核对。 | 高 |
 | Agent 纳入 | 是 | Abstract | autonomous multi-agent framework for climate data science workflows | 高 |
-| 科学对象归类 | `05.02` | Abstract; Introduction | 任务覆盖 atmospheric rivers、drought、extreme precipitation、heat waves、SST、tropical cyclones | 高 |
-| 多步行动流程 | 明确存在 | Sec. 3 | Orchestrate-Agent、Plan-Agent、Data-Agents、Coding-Agent 共同完成流程 | 高 |
-| 工具调用与环境交互 | 明确存在 | Sec. 3.2 | 动态 introspect climate APIs 并生成 download scripts，执行分析代码与自纠错 | 高 |
-| 验证方式 | benchmark + report evaluation | Sec. 5.2 | Climate-Agent-Bench-85 上 100% task completion，report quality 8.32 | 高 |
-| 边界判断 | 不应移入 `01.04` | Contributions; Sec. 3 | benchmark、数据源与任务域都稳定绑定 climate science | 高 |
+| 科学对象归类 | `05`，主展示落在 `05.02` | Abstract; Introduction | 任务覆盖 atmospheric rivers、drought、extreme precipitation、heat waves、SST、tropical cyclones | 高 |
+| 任务 / 对象覆盖 | 六类气候对象与 climate data science workflows | Abstract; Introduction | 对象稳定指向气候系统与气候数据分析，而非通用 research-agent substrate。 | 高 |
+| 验证总结 | Climate-Agent-Bench-85 + report evaluation | Sec. 5.2 | 摘录显示 task completion 与 report quality 为主要验证维度。 | 中高 |
+| 边界判断 | 不进 `01.04` | Contributions; Sec. 3 | benchmark、数据源与任务域都稳定绑定 climate science | 高 |
 
 ## 0. 摘要翻译
 
@@ -55,12 +60,18 @@
 
 ### 2.1 主科学领域
 
-- 一级类：05
-- 二级类：05.02
-- 三级类：气候科学数据分析工作流
-- 四级专题：Autonomous climate-data-science workflow agents
-- 四级专题是否为新增：否
-- 归类理由：任务、案例、数据和 benchmark 都围绕 climate science，而非通用 research-agent platform
+- 科学对象模块：`05`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`05`
+- 主展示模块一级类：05
+- 主展示模块二级类：05.02 气候科学
+- 主展示模块三级类：气候科学数据分析工作流
+- 主展示模块四级专题：Autonomous climate-data-science workflow agents
+- 其他覆盖模块及对应层级路径：无
+- 每个模块的对象实验证据：atmospheric rivers、drought、extreme precipitation、heat waves、SST、tropical cyclones 六类气候对象任务
+- 归类理由：任务、案例、数据与 benchmark 都围绕 climate science，而非通用 research-agent platform
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -74,7 +85,9 @@
 - 可能误归类到：01.04
 - 最终判定：保持 05.02
 - 判定理由：六类气候任务、气候 API 和 ERA5 / ECMWF / CDS 环境把对象牢固锁在地球与环境科学
-- 是否需要二次复核：否
+- 多模块覆盖说明：无；冻结 landed 结果仅为 `05`
+- 01.04 判定说明：不进入 `01.04`，因为论文已经对具体气候对象与气候数据工作流做了可识别任务验证
+- 是否需要二次复核：否；当前主要风险来自 source-limited，而非类目漂移
 
 ## 3. Agent 系统与科研流程角色
 
@@ -188,7 +201,8 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
 - 科学贡献类型：analysis / system_platform / benchmark
-- 证据强度：计算验证 + 专家评估
+- 证据强度：source-limited；现有摘录指向 benchmark / report evaluation 支撑
+- 本轮验证总结：已足以确认其是 `05` 气候对象导向 Agent 论文；仍缺本地 archive 同步与更细粒度全文摘录
 
 ## 6. 与已有工作的关系
 
@@ -220,7 +234,7 @@
 
 ### 9.1 一句话概括
 
-端到端气候数据分析多 Agent 工作流。
+面向具体气候对象任务的 `05` 多 Agent 数据科学工作流。
 
 ### 9.2 速记版 pipeline
 
@@ -234,17 +248,29 @@
 
 ```text
 是否纳入：是
-主类：05
-二级类：05.02
-三级类：气候科学数据分析工作流
-四级专题：Autonomous climate-data-science workflow agents
+科学对象模块：05
+覆盖模式：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：05
+是否进入 01.04 存放区：否
+主展示模块一级类：05
+主展示模块二级类：05.02
+主展示模块三级类：气候科学数据分析工作流
+主展示模块四级专题：Autonomous climate-data-science workflow agents
+其他覆盖模块及对应层级路径：无
+module_assignment_evidence：atmospheric rivers; drought; extreme precipitation; heat waves; SST; tropical cyclones
+multi_module_object_coverage_note：单模块；冻结 landed 结果为 05
+first_hand_sources_checked：arXiv abs page
+classification_evidence_source_level：source_limited
+PDF/archive_status：no_local_archive_path
 Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 科研流程角色：tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation; paper_writing; end_to_end_research_automation
 自主能力：task_decomposition; planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; environment_interaction
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven; data_driven
 科学贡献类型：analysis; system_platform; benchmark
-证据强度：expert_confirmed
+证据强度：source_limited
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

@@ -6,20 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.29828
-- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 reviewer evidence pack
+- paper_id：ASD-0775
+- 科学对象模块（本轮裁定）：`09`
+- Primary module for filing：`09`
+- PDF / 本地文件路径：当前 note 保留既有 PDF / reviewer evidence pack 摘录；但本轮仍按 source-limited 写回，不补写本地 archive 路径
 - 论文类型：系统论文 / autonomous scientific instrumentation agent
-- 当前状态：to_read
-- 阅读日期：2026-06-20
+- 当前状态：landed note 已写回；主列表字段仍由主控统一维护
+- 阅读日期：2026-06-23
+- 本轮写回口径：`modules=09`；`primary=09`；`confidence=high`；`source_limited=yes`；`safety_access_status=none`
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 一手来源核对 | 已核对现有 PDF 摘录与 note 内容 | current note | 既有摘录已覆盖 GUI-native instrumentation、表征流程与真实部署场景。 | 高 |
+| PDF / archive 状态 | source-limited；无本地 archive 路径 | current note | 本轮不补写本地 PDF/归档路径。 | 高 |
 | Agent 纳入 | 是 | PDF p1 abstract | autonomous scientific instrumentation and scientific data analysis 明确构成多步 agent workflow | 高 |
 | 多步行动 | 是 | PDF p8-p9 Sec. 3.3 | Type-1 GUI operational skills + Type-2 analytical script skills 串联仪器操作与数据分析 | 高 |
 | 环境交互 | 是 | PDF p2 intro; p6 Sec. 3.1 | 核心就是操作 heterogeneous instruments、vendor-specific GUIs 与工作站环境 | 高 |
-| 科学对象归类 | `09.01` 稳定 | PDF p1; p2; p14 | 对象是 scientific instrumentation / characterization workflow，而不是通用科研平台 | 高 |
+| 科学对象归类 | `09`，主展示落在 `09.01` | PDF p1; p2; p14 | 对象是 scientific instrumentation / characterization workflow，而不是通用科研平台 | 高 |
 | `09 / 01.04` 边界 | 不转 `01.04` | PDF p14 Sec. 6 | 作者强调 GUI-native autonomous scientific characterization，不是领域无关 substrate | 高 |
 | 验证方式 | real workflow demonstration | PDF p8-p14 | 覆盖多类精密仪器和表征场景，强于纯 benchmark | 中高 |
 | 主要风险 | core-strength risk | PDF p14 | 量化对照与跨实验室复现仍可补强，但不是大类风险 | 中高 |
@@ -56,11 +62,17 @@
 
 ### 2.1 主科学领域
 
-- 一级类：09
-- 二级类：09.01
-- 三级类：Autonomous scientific instrumentation and data-analysis agents
-- 四级专题：GUI-native scientific characterization agents
-- 四级专题是否为新增：否
+- 科学对象模块：`09`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`09`
+- 主展示模块一级类：09
+- 主展示模块二级类：09.01 工程基础 / 仪器与测试技术相关
+- 主展示模块三级类：Autonomous scientific instrumentation and data-analysis agents
+- 主展示模块四级专题：GUI-native scientific characterization agents
+- 其他覆盖模块及对应层级路径：无
+- 每个模块的对象实验证据：FTIR、XRD、Raman、AFM、GPC、NMR、TGA、MS 等异构表征仪器与端到端 characterization workflows
 - 归类理由：最终对象是具体 scientific instruments、characterization workflow 与 instrument-centered engineering problems
 - 归类置信度：高
 
@@ -75,7 +87,9 @@
 - 可能误归类到：01.04；04；03
 - 最终判定：保持 09.01
 - 判定理由：虽然案例含材料和化学表征，但论文核心对象不是材料/化学本体，而是仪器控制与工程化 characterization workflow
-- 是否需要二次复核：否
+- 多模块覆盖说明：无；冻结 landed 结果仅为 `09`
+- 01.04 判定说明：不进入 `01.04`，因为论文已对具体工程对象即 scientific instrumentation / characterization workflow 做出真实场景演示
+- 是否需要二次复核：否；当前主要风险是核心强度与 source-limited，而非 `09/04/03/01.04` 边界
 
 ## 3. Agent 系统与科研流程角色
 
@@ -189,7 +203,8 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中高
 - 科学贡献类型：系统平台 / 工程设计
-- 证据强度：真实部署
+- 证据强度：source-limited；现有摘录已指向真实仪器工作流演示与专家评估
+- 本轮验证总结：已足以确认其为 `09` 仪器与表征工程对象导向 Agent 论文；残余风险在量化对照与归档完整性，不在 `09/04/03/01.04` 边界
 
 ## 6. 与已有工作的关系
 
@@ -221,7 +236,7 @@
 
 ### 9.1 一句话概括
 
-面向真实科学仪器与表征流程的 GUI-native agent 系统。
+面向 scientific instrumentation 与 characterization workflow 的 `09` GUI-native agent 系统。
 
 ### 9.2 速记版 pipeline
 
@@ -234,17 +249,29 @@
 
 ```text
 是否纳入：是
-主类：09
-二级类：09.01
-三级类：Autonomous scientific instrumentation and data-analysis agents
-四级专题：GUI-native scientific characterization agents
+科学对象模块：09
+覆盖模式：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：09
+是否进入 01.04 存放区：否
+主展示模块一级类：09
+主展示模块二级类：09.01
+主展示模块三级类：Autonomous scientific instrumentation and data-analysis agents
+主展示模块四级专题：GUI-native scientific characterization agents
+其他覆盖模块及对应层级路径：无
+module_assignment_evidence：FTIR; XRD; Raman; AFM; GPC; NMR; TGA; MS; end-to-end characterization workflows
+multi_module_object_coverage_note：单模块；冻结 landed 结果为 09
+first_hand_sources_checked：existing PDF-derived note excerpts
+classification_evidence_source_level：source_limited
+PDF/archive_status：no_local_archive_path
 Agent 类型：LLM Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid Agent
 科研流程角色：experiment_execution; tool_use_and_code_execution; data_analysis; result_interpretation; end_to_end_research_automation
 自主能力：tool_use; feedback_iteration; autonomous_decision_making; environment_interaction
 验证方式：real_world_deployment; expert_evaluation
 交叉属性：computation_driven; data_driven; experiment_driven; multimodal
 科学贡献类型：system_platform; engineering_design
-证据强度：real_world_deployment
+证据强度：source_limited
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

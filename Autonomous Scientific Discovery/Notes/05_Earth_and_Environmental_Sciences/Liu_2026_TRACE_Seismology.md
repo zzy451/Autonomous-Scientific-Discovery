@@ -6,20 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.21152
-- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 reviewer evidence pack
+- paper_id：ASD-0772
+- 科学对象模块（本轮裁定）：`05`
+- Primary module for filing：`05`
+- PDF / 本地文件路径：当前 note 保留既有 PDF / reviewer evidence pack 摘录；但本轮仍按 source-limited 写回，不补写本地 archive 路径
 - 论文类型：研究论文 / seismology multi-agent reasoning system
-- 当前状态：to_read
-- 阅读日期：2026-06-20
+- 当前状态：landed note 已写回；主列表字段仍由主控统一维护
+- 阅读日期：2026-06-23
+- 本轮写回口径：`modules=05`；`primary=05`；`confidence=high`；`source_limited=yes`；`safety_access_status=none`
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 一手来源核对 | 已核对现有 PDF 摘录与 note 内容 | current note | 既有摘录已覆盖 benchmark、真实案例与对象边界，本轮不新增 archive 路径。 | 高 |
+| PDF / archive 状态 | source-limited；无本地 archive 路径 | current note | 本轮不补写本地 PDF/归档路径。 | 高 |
 | Agent 纳入 | 是 | PDF p2 abstract | 问题被定义为从地球物理观测中推断 earthquake sequences 的 physical mechanisms | 高 |
 | 多 Agent 架构 | 是 | PDF p12 Fig. 1 | 包含 Planning、Workflow、Coding、Result Checking、Analysis & Summary 等 agents | 高 |
 | 多步闭环 | 是 | PDF p3 Sec. 2.1 | 分为 Hypothesis Planning、Empirical Execution and Diagnostics、Interpretive Synthesis 三阶段，并有 backtracking | 高 |
-| 科学对象归类 | `05.01` 稳定 | PDF p2-p3; p17 Sec. 4.1 | 场景和输出都绑定 seismology / volcanic crisis mechanistic inference | 高 |
+| 科学对象归类 | `05`，主展示落在 `05.01` | PDF p2-p3; p17 Sec. 4.1 | 场景和输出都绑定 seismology / volcanic crisis mechanistic inference | 高 |
 | `05 / 01.04` 边界 | 不转 `01.04` | PDF p3; p7-p8 | 虽有 generalizable infrastructure 叙事，但案例、约束和输出始终是 Earth-system interpretation | 高 |
 | 验证方式 | benchmark + real-world cases | PDF p16 Fig. 5; p21-p22 Sec. 4.2 | 有 3-level benchmark、human/LLM comparison，以及 Ridgecrest / Santorini-Kolumbo 案例 | 高 |
 | 主要风险 | core-strength risk | PDF p21-p22 | 真实深案例仍少，广泛可推广性待增强 | 中高 |
@@ -56,11 +62,17 @@
 
 ### 2.1 主科学领域
 
-- 一级类：05
-- 二级类：05.01
-- 三级类：Seismology reasoning agents
-- 四级专题：Autonomous seismological mechanistic-inference agents
-- 四级专题是否为新增：否
+- 科学对象模块：`05`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`05`
+- 主展示模块一级类：05
+- 主展示模块二级类：05.01 地球物理 / 地震学
+- 主展示模块三级类：Seismology reasoning agents
+- 主展示模块四级专题：Autonomous seismological mechanistic-inference agents
+- 其他覆盖模块及对应层级路径：无
+- 每个模块的对象实验证据：earthquake sequences、geophysical observations、Ridgecrest、Santorini-Kolumbo
 - 归类理由：最终对象是 earthquake sequences、volcanic crisis 和地球物理机制解释，而不是通用科研工作流
 - 归类置信度：高
 
@@ -75,7 +87,9 @@
 - 可能误归类到：01.04
 - 最终判定：保持 05.01
 - 判定理由：无论是数据、案例还是约束，都深度绑定 seismology；并非领域无关 scientific-agent substrate
-- 是否需要二次复核：否
+- 多模块覆盖说明：无；冻结 landed 结果仅为 `05`
+- 01.04 判定说明：不进入 `01.04`，因为论文已对具体地震学 / 地球物理对象做出 benchmark 与 case-study 级验证
+- 是否需要二次复核：否；当前主要风险是核心强度与 source-limited，而非分类漂移
 
 ## 3. Agent 系统与科研流程角色
 
@@ -189,7 +203,8 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中高
 - 科学贡献类型：系统平台 / 解释
-- 证据强度：专家评估
+- 证据强度：source-limited；现有摘录已指向 benchmark、human/LLM comparison 与真实案例
+- 本轮验证总结：已足以确认其为 `05` 地震学对象导向 Agent 论文；残余风险是深案例数量与全文归档缺失，不是 `05/01.04` 边界
 
 ## 6. 与已有工作的关系
 
@@ -221,7 +236,7 @@
 
 ### 9.1 一句话概括
 
-面向地震机制推理的 Earth-object-first 多 Agent 系统。
+面向地球物理观测与地震机制解释的 `05` 多 Agent 系统。
 
 ### 9.2 速记版 pipeline
 
@@ -234,17 +249,29 @@
 
 ```text
 是否纳入：是
-主类：05
-二级类：05.01
-三级类：Seismology reasoning agents
-四级专题：Autonomous seismological mechanistic-inference agents
+科学对象模块：05
+覆盖模式：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：05
+是否进入 01.04 存放区：否
+主展示模块一级类：05
+主展示模块二级类：05.01
+主展示模块三级类：Seismology reasoning agents
+主展示模块四级专题：Autonomous seismological mechanistic-inference agents
+其他覆盖模块及对应层级路径：无
+module_assignment_evidence：earthquake sequences; geophysical observations; Ridgecrest; Santorini-Kolumbo
+multi_module_object_coverage_note：单模块；冻结 landed 结果为 05
+first_hand_sources_checked：existing PDF-derived note excerpts
+classification_evidence_source_level：source_limited
+PDF/archive_status：no_local_archive_path
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：scientific_question_formulation; hypothesis_generation; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; environment_interaction
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven; data_driven
 科学贡献类型：system_platform; explanation
-证据强度：expert_confirmed
+证据强度：source_limited
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
