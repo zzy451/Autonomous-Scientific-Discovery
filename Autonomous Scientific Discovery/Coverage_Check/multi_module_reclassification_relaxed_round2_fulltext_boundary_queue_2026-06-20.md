@@ -380,6 +380,16 @@ Report: `Coverage_Check/multi_module_note_pdf_full_reaudit_carryforward_unresolv
 | `ASD-0112` | still open | official abstract / metadata keep strong `03;07` pressure, but full-text validation details remain inaccessible, so the chemistry-side expansion stays conservative for now |
 | `ASD-0141` | closed | checked Crossref DOI abstract + official repo materials, attempted official bioRxiv landing/PDF, and accepted source-limited `scientific_object_modules=06;07` with `06` primary and `07` as an ESCC case-driven adjunct module |
 
+## CarryForward06 Status Update
+
+Report: `Coverage_Check/multi_module_note_pdf_full_reaudit_carryforward_unresolved3_2026-06-22.md`.
+
+| ID | Status after CarryForward06 | Action |
+|---|---|---|
+| `ASD-0054` | still open | explicit `not accessed due to safety`; keep safety carry-forward visible and do not backfill fresh classification claims from legacy evidence |
+| `ASD-0097` | closed | checked Nature Methods DOI landing / preview, official repo, and preprint DOI/PDF route; accepted source-limited `scientific_object_modules=06;07` with `06` primary and `07` as a human-biomedical case-study adjunct module |
+| `ASD-0112` | closed | checked DOI landing, Elsevier XML coredata, and HKUST abstract page; accepted source-limited `scientific_object_modules=03;07` with `03` primary and `07` as a COVID-target-linked drug-discovery adjunct module |
+
 ## 5. Background-Only Watchlist
 
 These records should not enter confirmed overlay counts unless a future status review promotes them.
