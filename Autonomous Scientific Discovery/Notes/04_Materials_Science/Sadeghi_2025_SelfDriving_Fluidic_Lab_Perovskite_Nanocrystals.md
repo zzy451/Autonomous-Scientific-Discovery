@@ -6,21 +6,22 @@
 - 年份：2025
 - 来源 / venue：Digital Discovery
 - DOI / arXiv / URL：https://doi.org/10.1039/D5DD00062A
-- PDF / 本地文件路径：官方全文 https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00062a
+- PDF / 本地文件路径：官方全文 https://pubs.rsc.org/en/content/articlehtml/2025/dd/d5dd00062a ; publisher PDF route https://pubs.rsc.org/en/content/articlepdf/2025/dd/d5dd00062a
 - 论文类型：research paper / self-driving lab
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+- 2026-06-22 复核同步：本轮按 RSC HTML 全文与 publisher PDF route 复核；维持 `scientific_object_modules=04`、`primary_module_for_filing=04`，并明确本论文不进入 `01.04`。
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Introduction; system description | 自驱动流体实验室 + ENN-based BO 实时选点，具备闭环实验与反馈更新 | 高 |
-| 科学对象归类 | `04.03` | Abstract; Introduction | 对象是 Cu-based lead-free perovskite nanocrystals 与 PLQY 优化 | 高 |
-| 方法流程 | 自动实验闭环 | Methods; Results | 建模-选点-自动实验-表征-更新模型循环明确 | 高 |
-| 实验验证 | 强 | Results; Conclusions | 76 次流动实验内找到高性能 `Cs3Cu2I5` NC，`post-purification PLQY ~61%` | 高 |
-| 边界判断 | `04` 胜过 `03`/`09` | 全文整体 | 被搜索和评估的是纳米晶材料性能，不是一般反应路线或工程装置本体 | 高 |
+| Agent 纳入 | 是 | Abstract; Introduction; Conclusions | SDFL 由 modular microfluidic reactor、real-time in situ characterization 与 ML-guided decision-making 组成，并以 ENN-enabled BO 做闭环实验决策 | 高 |
+| 科学对象归类 | `04` | Abstract; Introduction; Conclusions | 直接研究对象是 Cu-based lead-free perovskite nanocrystals，尤其是 `Cs3Cu2I5` NC 的光学性能与材料形成规律 | 高 |
+| 方法流程 | 自动实验闭环 | Abstract; Conclusions | workflow 明确为 droplet-based flow chemistry -> in situ data generation -> ENN-driven BO -> digital twin refinement -> 下一轮合成条件选择 | 高 |
+| 实验验证 | 强 | Abstract; Conclusions | 论文明确写到在 76 次 flow experiments 内找到高性能 `Cs3Cu2I5` NC，并将 `post-purification PLQY` 提升到约 `61%` | 高 |
+| 边界判断 | `04` 胜过 `03`/`09`，且不进 `01.04` | 全文整体 | 论文虽然涉及前驱体化学与流体硬件，但被搜索、优化和解释的核心对象始终是 perovskite nanocrystal 材料性能，不是通用方法存放区论文 | 高 |
 
 ## 0. 摘要翻译
 
@@ -55,11 +56,17 @@
 ### 2.1 主科学领域
 
 - 一级类：04
+- 科学对象模块：04
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：04
 - 二级类：04.03
 - 三级类：
 - 四级专题：Self-driving fluidic nanocrystal synthesis systems
 - 四级专题是否为新增：否
 - 归类理由：最终优化对象是 lead-free perovskite nanocrystal 材料组成与光学性能
+- 是否进入独立 `01.04` 存放区：否
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -73,6 +80,8 @@
 - 可能误归类到：03 或 09
 - 最终判定：保持 04.03
 - 判定理由：论文关注纳米晶材料性能而非一般化学反应或工程设备优化
+- 多模块覆盖说明：无；本轮 adjudication 仅支持 `04`
+- 01.04 判定说明：不属于 `01.04`；论文有明确的 `Cs3Cu2I5` 纳米晶对象、闭环合成实验和材料性能结果，不是无具体对象实验的通用 ASD 方法
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色

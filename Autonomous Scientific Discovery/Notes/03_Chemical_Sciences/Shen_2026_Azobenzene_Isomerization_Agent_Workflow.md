@@ -6,21 +6,22 @@
 - 年份：2026
 - 来源 / venue：Chemical Science
 - DOI / arXiv / URL：https://doi.org/10.1039/D5SC08794E ; ChemRxiv companion https://doi.org/10.26434/chemrxiv-2025-4kh1r
-- PDF / 本地文件路径：官方 HTML https://pubs.rsc.org/en/content/articlehtml/2026/sc/d5sc08794e
+- PDF / 本地文件路径：官方 HTML https://pubs.rsc.org/en/content/articlehtml/2026/sc/d5sc08794e ; publisher PDF route https://pubs.rsc.org/en/content/articlepdf/2026/sc/d5sc08794e
 - 论文类型：research paper
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+- 2026-06-22 复核同步：本轮按 RSC HTML 全文与 publisher PDF route 复核；维持 `scientific_object_modules=03`、`primary_module_for_filing=03`，并明确本论文不进入 `01.04`。
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Abstract | 明确是 `LLM agent-driven workflow`，串联 literature planning、仿真、实验和 ML | 高 |
-| 科学对象归类 | `03.02` | Abstract; Conclusions | 直接研究桥连偶氮苯分子的异构化机理与结构-光谱关系 | 高 |
-| 方法流程 | 明确闭环 | workflow; knowledge extraction section | literature reader -> AIMD / DFT -> robotic IR/Raman -> ATT-CNN 解释 | 高 |
-| 实验验证 | 强 | Abstract; results | `r = 0.99`, `MAE = 5°`，并有自动化 IR/Raman 实验 | 高 |
-| 边界判断 | `03` 胜过 `06/07` | Introduction; Conclusions | 应用语境涉及 photopharmacology，但正文核心仍是分子机理与光谱解释 | 高 |
+| Agent 纳入 | 是 | Abstract; Fig. 1; Results and discussion | 论文明确给出 `LLM agent-driven workflow`，并由 Literature Reader、Experiment Designer、Computation Performer、Robot Operator 四个专门 agent 协调文献、计算与机器人实验流程 | 高 |
+| 科学对象归类 | `03` | Abstract; Introduction; Conclusions | 直接研究对象是 bridged azobenzenes、其 `Z↔E` 异构化机理与结构-光谱关系，属于稳定的化学分子/机理对象 | 高 |
+| 方法流程 | 明确闭环 | Fig. 1; knowledge extraction section; experimental validation section | workflow 将 literature-guided planning、AIMD、DFT、robotic IR/Raman 与 ATT-CNN 串联，形成 prediction-to-experiment 的化学机制研究闭环 | 高 |
+| 实验验证 | 强 | Abstract; Results and discussion; Conclusions | 生成 11 个 bridged azobenzene derivatives 的 4400 组 structure-spectrum pairs；ATT-CNN 达到 `r = 0.99`、`MAE = 5°`，并进一步用 time-resolved IR/Raman 实验验证 | 高 |
+| 边界判断 | `03`，且不进 `01.04` | Introduction; Conclusions | photopharmacology 等仅是应用语境；正文有明确桥连偶氮苯对象、计算谱学和机器人实验验证，因此属于对象明确的化学研究，不是无具体对象实验的通用 ASD 方法 | 高 |
 
 ## 0. 摘要翻译
 
@@ -55,11 +56,17 @@
 ### 2.1 主科学领域
 
 - 一级类：03
+- 科学对象模块：03
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：03
 - 二级类：03.02
 - 三级类：
 - 四级专题：LLM agent workflows for molecular isomerization mechanisms
 - 四级专题是否为新增：否
 - 归类理由：直接研究分子异构化机理、结构-光谱关系和化学解释
+- 是否进入独立 `01.04` 存放区：否
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -73,6 +80,8 @@
 - 可能误归类到：06 或 07
 - 最终判定：保持 03.02
 - 判定理由：应用背景中的材料/药理语境不足以改变正文核心研究对象
+- 多模块覆盖说明：无；本轮 adjudication 仅支持 `03`
+- 01.04 判定说明：不属于 `01.04`；论文虽然强调 LLM agent workflow，但其证据主体是桥连偶氮苯异构化机理、IR/Raman 光谱和实验验证，不是无具体对象实验的通用方法论文
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -248,4 +257,3 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
-

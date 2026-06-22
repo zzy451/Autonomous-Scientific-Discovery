@@ -6,21 +6,22 @@
 - 年份：2025
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-025-63209-4
-- PDF / 本地文件路径：未保存本地 PDF；本笔记基于 Nature Communications 正式页面与 reviewer 一手证据
+- PDF / 本地文件路径：Nature Communications 全文页 https://www.nature.com/articles/s41467-025-63209-4 ; publisher PDF route https://www.nature.com/articles/s41467-025-63209-4.pdf
 - 论文类型：research paper / multi-robot self-driving laboratory
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+- 2026-06-22 复核同步：本轮按 Nature Communications 全文页与 publisher PDF route 复核；维持 `scientific_object_modules=04`、`primary_module_for_filing=04`，并明确本论文不进入 `01.04`。
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Nature abstract / results | Rainbow 被定义为 multi-robot self-driving laboratory，整合自动合成、实时表征与 ML 决策 | 高 |
-| 科学对象归类 | `04.04` | Nature abstract / introduction | 直接对象是 metal halide perovskite nanocrystals 的光学性能与结构-性质关系 | 高 |
-| 方法流程 | 多机器人闭环实验 | Nature abstract; Fig. 3-related text | 系统以 surrogate model + EHVI 选择下一轮实验并持续闭环优化 | 高 |
-| 实验验证 | 强 | Results / conclusion | 一日内找到 Pareto-optimal 条件，并做 scale-up、TEM/EDS/XRD 佐证 | 高 |
-| 边界判断 | `04` 胜过 `03` | abstract / introduction | 虽然探索配体与前驱体条件，但最终优化的是纳米晶材料性能而不是一般反应路线 | 高 |
+| Agent 纳入 | 是 | Abstract; Fig. 3-related text; Discussion | Rainbow 明确被定义为 `multi-robot self-driving laboratory`，整合 automated synthesis、real-time characterization 与 ML-driven decision-making | 高 |
+| 科学对象归类 | `04` | Abstract; Introduction; Discussion | 直接研究对象是 metal halide perovskite nanocrystals 的光学性能、结构-性质-配方关系与可放大材料配方 | 高 |
+| 方法流程 | 多机器人闭环实验 | Fig. 3-related text; experimental campaigns section | 系统以 surrogate model、classifier 与 EHVI/NEHVI 选择下一轮实验，持续映射目标 `E_P` 下的 Pareto-Front | 高 |
+| 实验验证 | 强 | Results; scale-up section; Discussion | 论文明确写到一日内找到 best-performing MHP NCs，并进行了 30-fold scale-up、24 条件复现实验，以及 TEM/EDS/XRD 结构佐证 | 高 |
+| 边界判断 | `04` 胜过 `03`/`09`，且不进 `01.04` | Introduction; Discussion | 虽然搜索空间含配体、前驱体和机器人平台，但最终优化和解释的是纳米晶材料对象及其性能，不是通用 scientific-agent 方法 | 高 |
 
 ## 0. 摘要翻译
 
@@ -55,11 +56,17 @@
 ### 2.1 主科学领域
 
 - 一级类：04
+- 科学对象模块：04
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：04
 - 二级类：04.04
 - 三级类：
 - 四级专题：Autonomous multi-robot perovskite nanocrystal synthesis
 - 四级专题是否为新增：否
 - 归类理由：直接科研对象是 perovskite nanocrystal 材料及其光学性能目标
+- 是否进入独立 `01.04` 存放区：否
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -70,9 +77,11 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：03；09
+- 可能误归类到：03；09；01.04
 - 最终判定：保留 04.04
 - 判定理由：探索配体和前驱体条件并不改变最终对象仍是纳米晶材料性能；硬件平台也不是最终研究对象
+- 多模块覆盖说明：无；本轮 adjudication 仅支持 `04`
+- 01.04 判定说明：不属于 `01.04`；论文有明确的 MHP nanocrystal 对象、闭环实验 Pareto-front 结果、scale-up 与 TEM/EDS/XRD 佐证，因此不是无具体对象实验的通用方法论文
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -248,4 +257,3 @@ Agent 类型：Planning Agent; Tool-using Agent; Multi-Agent System; Robot / Emb
 纳入置信度：高
 推荐引用强度：核心引用
 ```
-

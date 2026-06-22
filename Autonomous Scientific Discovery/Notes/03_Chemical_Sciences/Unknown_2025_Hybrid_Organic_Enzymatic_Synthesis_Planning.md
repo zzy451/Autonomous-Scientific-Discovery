@@ -6,21 +6,22 @@
 - 年份：2025
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-025-65898-3
-- PDF / 本地文件路径：未保存本地 PDF；本笔记基于 Nature Communications 正式页面与 reviewer 一手证据
+- PDF / 本地文件路径：Nature Communications 正式页面 https://www.nature.com/articles/s41467-025-65898-3；官方 PDF https://www.nature.com/articles/s41467-025-65898-3.pdf
 - 论文类型：research paper / chemistry planning agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+- 2026-06-22 re-audit sync：已按本轮 adjudication 复核 Nature Communications 正式全文 / 官方 PDF；当前结论为 `supported_modules=03`、`primary_module_for_filing=03`、`final_01_04_bucket=no`，且 `source_limited=no` / `safety=no_safety_skip`，无需进一步全文复核。
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | abstract / method description | Llama3.1 驱动的 synthesis planning agent 结合多工具 API 执行路线规划 | 高 |
-| 科学对象归类 | `03.03` | abstract / case studies | 对象是具体分子、天然产物与其混合有机-酶催化合成路径 | 高 |
-| 方法流程 | 多工具路线规划与策略切换 | platform description | 先评估反应可行性，再判断酶反应，再做酶推荐与路径扩展 | 高 |
-| 实验验证 | 以计算与案例验证为主 | benchmark / case studies | 主要是路径求解、AUC、Top-k 和天然产物案例，不是湿实验闭环 | 高 |
-| 边界判断 | 不应退回 `01.04` | object framing | 虽然平台/API 味道强，但最终被研究和验证的是具体合成对象 | 高 |
+| Agent 纳入 | 是 | Nature Communications 正式全文 / 官方 PDF：Abstract；system overview | Llama3.1 驱动的 synthesis planning agent 协调多模块路线规划、酶反应识别和酶推荐，而不是单次模型预测 | 高 |
+| 科学对象归类 | `03.03`，且本轮仅支持模块 `03` | Nature Communications 正式全文 / 官方 PDF：Abstract；Results；case studies | 被规划、比较和展示的是具体分子、天然产物及其 hybrid organic-enzymatic synthesis routes，稳定属于化学合成对象 | 高 |
+| 方法流程 | 多工具路线规划与策略切换 | Nature Communications 正式全文 / 官方 PDF：platform / workflow description；Results | 系统先判断纯有机路线是否可行，再识别潜在酶步骤并给出酶推荐，随后扩展和筛选 hybrid routes | 高 |
+| 实验验证 | 以计算 benchmark 与案例验证为主 | Nature Communications 正式全文 / 官方 PDF：benchmark sections；case studies | 核心验证包括 path recovery、AUC、Top-k 与复杂分子 / 天然产物案例，说明其主要是可执行路线规划能力评测，而非湿实验闭环 | 高 |
+| 边界判断 | 不属于 `01.04`，应保留在 `03` | Nature Communications 正式全文 / 官方 PDF 全文对象 framing | 虽然平台感与 API 协调很强，但一手全文中的任务、结果和案例都围绕具体化学合成路径展开，因此 `01.04` 不是正确 bucket | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,11 @@
 
 ### 2.1 主科学领域
 
+- 科学对象模块：03
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：03
 - 一级类：03
 - 二级类：03.03
 - 三级类：
@@ -73,6 +79,8 @@
 - 可能误归类到：01.04
 - 最终判定：保留 03.03
 - 判定理由：即使平台味道强，验证对象仍是 concrete chemistry routes
+- 多模块覆盖说明：本轮 adjudication 未支持额外模块；现有证据稳定支持单模块 `03`
+- 01.04 判定说明：不是独立 `01.04` 存放区论文，因为全文包含明确的分子 / 天然产物合成规划 benchmark 与案例结果
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -233,6 +241,12 @@
 
 ```text
 是否纳入：to_read
+科学对象模块：03
+覆盖模式：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：03
+是否进入 01.04 存放区：否
 主类：03
 二级类：03.03
 三级类：
@@ -243,9 +257,8 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven; data_driven
 科学贡献类型：design; system_platform
-证据强度：high_primary_abstract
+证据强度：computationally_validated
 归类置信度：高
 纳入置信度：高
 推荐引用强度：普通引用
 ```
-

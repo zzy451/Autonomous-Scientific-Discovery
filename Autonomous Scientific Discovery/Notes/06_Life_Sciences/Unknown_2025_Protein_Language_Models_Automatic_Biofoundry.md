@@ -6,21 +6,22 @@
 - 年份：2025
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-025-56751-8
-- PDF / 本地文件路径：本轮依据 Nature publisher page 与 reviewer 一手证据整理
+- PDF / 本地文件路径：Nature Communications 正式页面 https://www.nature.com/articles/s41467-025-56751-8；官方 PDF https://www.nature.com/articles/s41467-025-56751-8.pdf
 - 论文类型：研究论文 / protein evolution closed-loop platform
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+- 2026-06-22 re-audit sync：已按本轮 adjudication 复核 Nature Communications 正式全文 / 官方 PDF；当前结论为 `supported_modules=06`、`primary_module_for_filing=06`、`final_01_04_bucket=no`，且 `source_limited=no` / `safety=no_safety_skip`，无需进一步全文复核。
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | publisher abstract | PLMeAE 被定义为 protein language model-enabled automatic evolution platform | 高 |
-| 科学对象归类 | `06.03` | abstract; results | 直接对象是 protein engineering / protein evolution，而不是通用科研平台 | 高 |
-| 方法流程 | 设计-构建-测试-学习闭环 | abstract; Introduction; Results | PLM 设计候选，biofoundry 自动构建和测试，再把数据回流给 fitness predictor | 高 |
-| 实验验证 | 强 | Fig. 5; conclusion | 四轮进化、384 个变体自动构建测试，最佳酶活提升到 2.4-fold | 高 |
-| 边界判断 | 不转 `01.04` 或 `09` | object-first review | 平台很强，但实验、验证和贡献都落在具体蛋白对象上 | 高 |
+| Agent 纳入 | 是 | Nature Communications 正式全文 / 官方 PDF：Abstract；workflow overview | PLMeAE 不是单个模型，而是 protein language model、fitness predictor 和自动化 biofoundry 组成的 automatic evolution platform | 高 |
+| 科学对象归类 | `06.03`，且本轮仅支持模块 `06` | Nature Communications 正式全文 / 官方 PDF：Abstract；Results；protein evolution task | 直接研究和优化的是 protein variants、enzyme activity 与 protein fitness landscape，因此稳定属于生命科学对象 | 高 |
+| 方法流程 | 设计-构建-测试-学习闭环 | Nature Communications 正式全文 / 官方 PDF：Introduction；Results；workflow figure | 系统用 PLM 设计候选，再由 biofoundry 自动构建与测试，并把实验结果回流到 fitness predictor 进行下一轮推荐 | 高 |
+| 实验验证 | 强 | Nature Communications 正式全文 / 官方 PDF：Fig. 5；Results；Conclusion | 四轮自动进化共测试 384 个变体，在约 10 天内把最佳酶活提升到 2.4-fold | 高 |
+| 边界判断 | 不属于 `01.04` 或 `09`，应保留在 `06` | Nature Communications 正式全文 / 官方 PDF 全文对象 framing | 平台和自动化基础设施很强，但实验对象、验证与科学贡献都落在具体蛋白工程任务上，因此 `01.04` 不是正确 bucket，也不应按工程平台归 `09` | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,11 @@
 
 ### 2.1 主科学领域
 
+- 科学对象模块：06
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：06
 - 一级类：06
 - 二级类：06.03
 - 三级类：protein engineering / protein evolution
@@ -73,6 +79,8 @@
 - 可能误归类到：01.04、09
 - 最终判定：保留 06.03
 - 判定理由：虽然系统方法论和自动化色彩很强，但实验、验证和贡献都落在具体蛋白对象上
+- 多模块覆盖说明：本轮 adjudication 仅支持 `06`；biofoundry 平台属性作为副标签记录，不扩展为额外对象模块
+- 01.04 判定说明：不是独立 `01.04` 存放区论文，因为全文存在明确蛋白工程对象、真实自动化实验闭环和结果报告
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -199,7 +207,7 @@
 ## 7. 局限性与风险
 
 - Agent 自主性不足：更高层科研目标仍由人设定
-- 科学验证不足：当前主要依据 publisher page 与 reviewer evidence 整理
+- 科学验证不足：当前验证已来自 Nature Communications 正式全文 / 官方 PDF，但核心案例仍主要集中在单一蛋白工程任务
 - 泛化性不足：核心案例仍集中在一个蛋白工程任务
 - 工具链依赖：依赖 PLM、predictor 和 biofoundry 的联合运行
 - 数据泄漏或 benchmark 偏差：非主风险
@@ -233,6 +241,12 @@
 
 ```text
 是否纳入：是
+科学对象模块：06
+覆盖模式：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：06
+是否进入 01.04 存放区：否
 主类：06
 二级类：06.03
 三级类：protein engineering / protein evolution

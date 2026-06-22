@@ -6,21 +6,22 @@
 - 年份：2025
 - 来源 / venue：Nature Methods
 - DOI / arXiv / URL：https://doi.org/10.1038/s41592-025-02748-6
-- PDF / 本地文件路径：PMC 全文 https://pmc.ncbi.nlm.nih.gov/articles/PMC12328209/
+- PDF / 本地文件路径：Nature Methods 正式页面 https://www.nature.com/articles/s41592-025-02748-6；官方 PDF https://www.nature.com/articles/s41592-025-02748-6.pdf；本地预印本归档 `Reference_PDF/06_Life_Sciences/Wang_2024_GeneAgent.pdf`
 - 论文类型：research paper
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+- 2026-06-22 re-audit sync：已按本轮 adjudication 复核 Nature Methods 正式全文 / 官方 PDF 与本地预印本；当前结论为 `supported_modules=06`、`primary_module_for_filing=06`、`final_01_04_bucket=no`，且 `source_limited=no` / `safety=no_safety_skip`，无需进一步全文复核。
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Abstract; Fig. 1 | four-stage generation / self-verification / modification / summarization workflow | 高 |
-| 科学对象归类 | `06.03` | Abstract; cases | 对象是 gene-set function annotation 与 biological mechanism explanation | 高 |
-| 方法流程 | 明确闭环 | Main; Fig. 1a-b | 调用 biological databases 与 APIs，对输出做自验证与修正 | 高 |
-| 实验验证 | 强 | benchmark + novel gene sets | 1,106 gene sets 系统评测，`15,903 claims` 中 `99.6%` 成功验证 | 高 |
-| 边界判断 | `06` 胜过 `01.04` | 全文整体 | 系统不是通用科研 Agent，而是面向 gene functions / GO / pathway knowledge 的生命科学分析系统 | 高 |
+| Agent 纳入 | 是 | Nature Methods 正式全文 / 官方 PDF：Abstract；Fig. 1 | 明确给出 generation -> self-verification -> modification -> summarization 四阶段流程，并在流程中自主调用领域数据库与验证步骤 | 高 |
+| 科学对象归类 | `06.03`，且本轮仅支持模块 `06` | Nature Methods 正式全文 / 官方 PDF：Abstract；gene-set analysis task framing；case studies | 论文稳定围绕 gene sets、GO / pathway knowledge 和 biological mechanism explanation 展开，属于生命科学知识分析对象，而非通用科研方法 | 高 |
+| 方法流程 | 明确闭环 | Nature Methods 正式全文 / 官方 PDF：Fig. 1；Methods / Results 中的 self-verification 描述 | 系统会先生成命名与解释，再检索和核验 claims，随后修正与汇总输出 | 高 |
+| 实验验证 | 强 | Nature Methods 正式全文 / 官方 PDF：Results；benchmark evaluation；novel gene-set cases | 在 1,106 个 gene sets 上系统评测，并对 `15,903` 个 claims 做核验，其中 `99.6%` 被验证通过；另给出 melanoma 新 gene sets 案例 | 高 |
+| 边界判断 | 不属于 `01.04`，应保留在 `06` | Nature Methods 正式全文 / 官方 PDF 全文对象 framing；本地预印本交叉核对 | 虽然系统外观像通用语言代理，但实验对象、数据库调用和结果解释都稳定锚定 gene-set biology，因此 `01.04` 不是正确 bucket | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,11 @@
 
 ### 2.1 主科学领域
 
+- 科学对象模块：06
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：06
 - 一级类：06
 - 二级类：06.03
 - 三级类：
@@ -73,6 +79,8 @@
 - 可能误归类到：01.04
 - 最终判定：保持 06.03
 - 判定理由：对象是 gene functions / pathway knowledge，而不是领域无关 research-agent workflow
+- 多模块覆盖说明：本轮 adjudication 仅支持 `06`，笔记落在生命科学目录仅作为 filing convenience，与对象归类一致
+- 01.04 判定说明：不是独立 `01.04` 存放区论文，因为全文包含明确的 gene-set biological-function 任务、benchmark 和案例结果
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -233,6 +241,12 @@
 
 ```text
 是否纳入：是
+科学对象模块：06
+覆盖模式：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：06
+是否进入 01.04 存放区：否
 主类：06
 二级类：06.03
 三级类：
@@ -248,4 +262,3 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：普通引用
 ```
-

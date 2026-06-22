@@ -6,21 +6,22 @@
 - 年份：2020
 - 来源 / venue：APL Materials
 - DOI / arXiv / URL：https://doi.org/10.1063/5.0020370
-- PDF / 本地文件路径：本轮依据 AIP official PDF 与 reviewer 一手证据整理
+- PDF / 本地文件路径：AIP 官方 PDF https://pubs.aip.org/aip/apm/article-pdf/doi/10.1063/5.0020370/14565416/111110_1_online.pdf
 - 论文类型：研究论文 / 闭环材料优化系统
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+- 2026-06-22 re-audit sync：已按本轮 adjudication 复核 AIP 官方 PDF；当前结论为 `supported_modules=04`、`primary_module_for_filing=04`、`final_01_04_bucket=no`，且 `source_limited=no` / `safety=no_safety_skip`，无需进一步全文复核。
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | abstract; Fig. 1; Fig. 2 | CASH 框架明确是条件决定-合成-评价-再决策的闭环 | 高 |
-| 科学对象归类 | `04.04` | abstract; results | 直接对象是 `Nb-doped TiO2 thin films` 的材料制备与电阻最小化 | 高 |
-| 方法流程 | Bayesian optimization + automatic synthesis + evaluation + robot transfer | system outline | 系统整合自动沉积、自动评价和机械臂转运 | 高 |
-| 实验验证 | 强 | Fig. 3; p.4 | 两套条件下分别在第 14 与第 18 次实验收敛到全局最小电阻 | 高 |
-| 边界判断 | 留在 `04` | object-first review | 对象是薄膜材料性质优化，不是纯工程设备也不是通用 workflow 框架 | 高 |
+| Agent 纳入 | 是 | AIP 官方 PDF：Abstract；Fig. 1；Fig. 2 | CASH 框架明确形成“条件选择 -> 沉积 -> 评价 -> 再决策”的闭环材料实验流程 | 高 |
+| 科学对象归类 | `04.04`，且本轮仅支持模块 `04` | AIP 官方 PDF：Abstract；Results | 直接被优化和验证的是 `Nb-doped TiO2 thin films` 的材料制备条件与电阻性质，因此属于材料对象而非通用平台 | 高 |
+| 方法流程 | Bayesian optimization + automatic synthesis + evaluation + robot transfer | AIP 官方 PDF：system outline；Fig. 1；Fig. 2 | 系统整合 Bayesian optimization、自动沉积、自动物性评价和机械臂转运，形成真实实验闭环 | 高 |
+| 实验验证 | 强 | AIP 官方 PDF：Fig. 3；Results | 两套靶材条件下分别在第 14 与第 18 次实验收敛到全局最小电阻，并伴随吞吐提升 | 高 |
+| 边界判断 | 不属于 `01.04`，应保留在 `04` | AIP 官方 PDF 全文对象 framing | 论文虽然包含工程设备与自动化平台成分，但实验对象、优化目标和结果报告都锚定薄膜材料性质，因此 `01.04` 不是正确 bucket | 高 |
 
 ## 0. 摘要翻译
 
@@ -54,6 +55,11 @@
 
 ### 2.1 主科学领域
 
+- 科学对象模块：04
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：04
 - 一级类：04
 - 二级类：04.04
 - 三级类：无机薄膜材料性质优化
@@ -73,6 +79,8 @@
 - 可能误归类到：09、01.04
 - 最终判定：保留 04.04
 - 判定理由：系统虽有工程与平台成分，但直接对象是薄膜材料性质优化
+- 多模块覆盖说明：本轮 adjudication 仅支持 `04`；设备与自动化属性作为副标签记录，不扩展为额外对象模块
+- 01.04 判定说明：不是独立 `01.04` 存放区论文，因为官方 PDF 中存在明确材料对象、真实实验闭环和结果报告
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -233,6 +241,12 @@
 
 ```text
 是否纳入：是
+科学对象模块：04
+覆盖模式：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：04
+是否进入 01.04 存放区：否
 主类：04
 二级类：04.04
 三级类：无机薄膜材料性质优化

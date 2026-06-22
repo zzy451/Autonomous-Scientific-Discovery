@@ -6,21 +6,22 @@
 - 年份：2019
 - 来源 / venue：MRS Communications
 - DOI / arXiv / URL：https://doi.org/10.1557/mrc.2019.50
-- PDF / 本地文件路径：当前未保存本地 PDF；本轮基于 CaltechAUTHORS metadata page 摘要
+- PDF / 本地文件路径：author PDF https://www.cs.cornell.edu/gomes/pdf/2019_gomes_mrs_crystal.pdf ; CaltechAUTHORS metadata page 交叉核对
 - 论文类型：研究论文 / multi-agent materials-data interpretation system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+- 2026-06-22 复核同步：本轮按 author PDF 与 CaltechAUTHORS metadata 复核；维持 `scientific_object_modules=04`、`primary_module_for_filing=04`，并明确本论文不进入 `01.04`。
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | CaltechAUTHORS abstract + author contribution | 明确是 multi-agent AI system，且文中存在 phase matching bot、phase analysis bot、diagram rendering bot 等角色化组件 | 高 |
-| 科学对象归类 | `04.01` | CaltechAUTHORS abstract | 直接对象是 crystal-structure phase mapping 与材料相图解释 | 高 |
-| 方法流程 | 多源知识 + 推理与学习 | CaltechAUTHORS abstract | 自动生成 physically meaningful phase diagrams，融合 multiple data-knowledge sources、reasoning 和 learning algorithms | 高 |
-| 实验验证 | 有具体材料案例 | CaltechAUTHORS abstract | 在 Pd-Rh-Ta phase diagram 上优于先前方法，并推动 mixed-intermetallic methanol oxidation electrocatalyst discovery | 高 |
-| 边界判断 | 保持 `04`，不转 `01.04` | CaltechAUTHORS abstract | 虽然系统很平台化，但任务和产出都稳定锚定在 materials crystal-structure mapping | 高 |
+| Agent 纳入 | 是 | Author PDF abstract; pp. 2-4; author-contribution section | CRYSTAL 明确是 `multi-agent AI system`；正文给出 Phase Matching bot、Phase Dimension Analysis bot、Clustering bot、Analysis & Reporting bot 等分工化组件 | 高 |
+| 科学对象归类 | `04` | Author PDF abstract; Pd-Rh-Ta experiments / phase mapping sections | 直接研究对象是 materials crystal structures、phase diagrams 与 phase mapping，不是通用 scientific workflow 抽象任务 | 高 |
+| 方法流程 | 多源知识 + 推理与学习 | Author PDF abstract; pp. 2-5 | 系统整合 data-knowledge sources、learning/reasoning algorithms、problem decomposition、parallel runs、phase matching 与 clustering，自动生成 physically meaningful phase diagrams | 高 |
+| 实验验证 | 有具体材料案例 | Author PDF abstract; Fig. 4; pp. 5-6 | 对 Pd-Rh-Ta 系统共生成 2500 phase maps、筛出 1639 valid solutions 和 20 representative phase diagrams，并据此支撑 mixed-intermetallic methanol oxidation electrocatalyst discovery | 高 |
+| 边界判断 | 保持 `04`，且不进 `01.04` | Author PDF abstract; pp. 5-6 | 虽然 CRYSTAL 的平台与 bot 设计很强，但输入、输出与验证都锚定在晶体结构相图和材料发现任务，因此不是无具体对象实验的通用 ASD 方法 | 高 |
 
 ## 0. 摘要翻译
 
@@ -55,11 +56,17 @@
 ### 2.1 主科学领域
 
 - 一级类：04
+- 科学对象模块：04
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：04
 - 二级类：04.01
 - 三级类：crystal-structure phase mapping
 - 四级专题：multi-agent phase-diagram generation
 - 四级专题是否为新增：否
 - 归类理由：直接研究对象是材料晶体结构和相图映射，不是通用 scientific workflow
+- 是否进入独立 `01.04` 存放区：否
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -73,7 +80,9 @@
 - 可能误归类到：01.04
 - 最终判定：保持 04.01
 - 判定理由：尽管系统方法论较强，但输入、输出和验证都锚定在相图与晶体结构材料任务
-- 是否需要二次复核：是，后续可补 PDF 精看 bot interaction 细节
+- 多模块覆盖说明：无；本轮 adjudication 仅支持 `04`
+- 01.04 判定说明：不属于 `01.04`；author PDF 已显示其核心证据来自 Pd-Rh-Ta phase mapping 与 electrocatalyst discovery，而非无对象实验的通用 research-agent 方法
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
