@@ -6,9 +6,9 @@
 - 年份：2025
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-025-61209-y
-- PDF / 本地文件路径：本轮基于 publisher abstract 与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮未归档本地 PDF；已直接核对 Nature publisher HTML full text（DOI: 10.1038/s41467-025-61209-y）
 - 论文类型：研究论文 / autonomous enzyme-engineering platform
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -16,10 +16,10 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | publisher abstract | integrates ML and LLMs with biofoundry automation | 高 |
-| 科学对象归类 | `06.03` | publisher abstract | enzyme / protein engineering 而非临床任务 | 高 |
-| 方法流程 | 设计-实验-评估闭环 | publisher abstract | 输入蛋白序列和 fitness，输出迭代优化变体 | 高 |
-| 实验验证 | 真实湿实验 | publisher abstract | proof-of-concept 覆盖两个酶并完成多轮筛选 | 高 |
+| Agent 纳入 | 是 | publisher HTML full text（Nature DOI: 10.1038/s41467-025-61209-y） | integrates ML and LLMs with biofoundry automation | 高 |
+| 科学对象归类 | `06.03` | publisher HTML full text（Nature DOI: 10.1038/s41467-025-61209-y） | enzyme / protein engineering 而非临床任务 | 高 |
+| 方法流程 | 设计-实验-评估闭环 | publisher HTML full text（Nature DOI: 10.1038/s41467-025-61209-y） | 输入蛋白序列和 fitness，输出迭代优化变体 | 高 |
+| 实验验证 | 真实湿实验 | publisher HTML full text（Nature DOI: 10.1038/s41467-025-61209-y） | proof-of-concept 覆盖两个酶并完成多轮筛选 | 高 |
 | 边界判断 | 不应移到 `07` | object-first reading | 研究对象是酶工程，不是疾病或患者 | 高 |
 
 ## 0. 摘要翻译
@@ -161,7 +161,7 @@
 
 ## 7. 局限性与风险
 
-- 当前总结主要基于 publisher abstract
+- 本轮已直接核对 Nature publisher HTML full text；未归档本地 PDF
 - 平台较通用，但对象仍稳固落在酶工程而非医学
 - 是否仍需进一步全文复核：否，主类稳定；细节可后补
 
@@ -189,7 +189,7 @@ AI 与 biofoundry 闭环自治优化酶变体。
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 主类：06
 二级类：06.03
 三级类：蛋白 / 酶工程

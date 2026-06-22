@@ -6,9 +6,9 @@
 - 年份：2025
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-025-56788-9
-- PDF / 本地文件路径：本轮基于 publisher abstract 与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮未归档本地 PDF；已直接核对 Nature publisher HTML full text（DOI: 10.1038/s41467-025-56788-9）
 - 论文类型：研究论文 / self-driving nanomaterials lab
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -16,10 +16,10 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | publisher abstract | self-driving lab, closed-loop nanoparticle synthesis | 高 |
-| 科学对象归类 | `04.03` | publisher abstract | plasmonic nanoparticles 的结构与光学性质 | 高 |
-| 方法流程 | 微流控 + 光谱 + ML 闭环 | publisher abstract | microfluidic reactor, in-flow spectroscopy, ML-based exploration | 高 |
-| 实验验证 | 真实闭环纳米颗粒实验 | publisher abstract | 无需人工干预探索大化学空间 | 高 |
+| Agent 纳入 | 是 | publisher HTML full text（Nature DOI: 10.1038/s41467-025-56788-9） | self-driving lab, closed-loop nanoparticle synthesis | 高 |
+| 科学对象归类 | `04.03` | publisher HTML full text（Nature DOI: 10.1038/s41467-025-56788-9） | plasmonic nanoparticles 的结构与光学性质 | 高 |
+| 方法流程 | 微流控 + 光谱 + ML 闭环 | publisher HTML full text（Nature DOI: 10.1038/s41467-025-56788-9） | microfluidic reactor, in-flow spectroscopy, ML-based exploration | 高 |
+| 实验验证 | 真实闭环纳米颗粒实验 | publisher HTML full text（Nature DOI: 10.1038/s41467-025-56788-9） | 无需人工干预探索大化学空间 | 高 |
 | 边界判断 | 不应移到 `03` | object-first reading | 直接优化的是纳米颗粒结构-性质目标 | 高 |
 
 ## 0. 摘要翻译
@@ -162,7 +162,7 @@
 
 ## 7. 局限性与风险
 
-- 当前总结主要基于 publisher abstract
+- 本轮已直接核对 Nature publisher HTML full text；未归档本地 PDF
 - 需要后续全文补清模型如何平衡结构目标与光学目标
 - 是否仍需进一步全文复核：否，主类稳定；细节可后补
 
@@ -190,7 +190,7 @@
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 主类：04
 二级类：04.03
 三级类：纳米材料 / 光学功能材料

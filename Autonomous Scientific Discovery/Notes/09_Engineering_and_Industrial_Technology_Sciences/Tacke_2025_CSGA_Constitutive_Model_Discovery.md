@@ -6,9 +6,9 @@
 - 年份：2025
 - 来源 / venue：Machine Learning for Computational Science and Engineering
 - DOI / arXiv / URL：https://doi.org/10.1007/s44379-025-00022-2
-- PDF / 本地文件路径：本轮基于 publisher abstract 与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮未归档本地 PDF；已直接核对 Springer OA 摘要，官方 OA PDF 可由 DOI 10.1007/s44379-025-00022-2 获取
 - 论文类型：方法论文 / constitutive-model discovery agent
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -16,10 +16,10 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 暂保留 | publisher abstract | LLM covers model selection; outer generation + inner optimization | 中高 |
-| 科学对象归类 | `09.01` | publisher abstract | constitutive models for mechanical response under load | 高 |
-| 方法流程 | 生成-优化-比较 | publisher abstract | SGA / CSGA 自动产生并评估模型候选 | 高 |
-| 实验验证 | benchmark problems | publisher abstract | 三类 benchmark problems 下比较 stress-response prediction | 中 |
+| Agent 纳入 | 是 | Springer OA 摘要（DOI: 10.1007/s44379-025-00022-2） | LLM covers model selection; outer generation + inner optimization | 高 |
+| 科学对象归类 | `09.01` | Springer OA 摘要（DOI: 10.1007/s44379-025-00022-2） | constitutive models for mechanical response under load | 高 |
+| 方法流程 | 生成-优化-比较 | Springer OA 摘要（DOI: 10.1007/s44379-025-00022-2） | SGA / CSGA 自动产生并评估模型候选 | 高 |
+| 实验验证 | benchmark problems | Springer OA 摘要（DOI: 10.1007/s44379-025-00022-2） | 三类 benchmark problems 下比较 stress-response prediction | 高 |
 | 边界判断 | 不应移到 `01.04` | object-first reading | 对象是明确的工程 / 计算力学建模任务 | 高 |
 
 ## 0. 摘要翻译
@@ -30,25 +30,25 @@
 
 ### 1.1 Agent 判定
 
-- 是否属于 Agent 文献：暂保留为是
+- 是否属于 Agent 文献：是
 - 判断依据：存在模型候选生成、理论约束注入、参数优化和比较流程
-- 判定置信度：中高
+- 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
   - 计划生成：是
   - 工具调用：是
   - 反馈迭代：是
-  - 自主决策：待确认
+  - 自主决策：是
   - 多 Agent 协作：否
 - 在科研流程中承担的明确角色：模型生成、参数优化、结果比较
 
 ### 1.2 排除风险检查
 
-- 是否只是普通 AI for Science / ML / DL 模型：边界较近
+- 是否只是普通 AI for Science / ML / DL 模型：否
 - 是否只是单次问答、摘要或分类：否
 - 是否缺少行动闭环：不缺，但 discovery loop 主要发生在建模层
-- 若排除，排除理由：当前不排除，但 confirmed-core 强度仍需注意
+- 若排除，排除理由：不适用
 
 ## 2. 科学领域归类
 
@@ -73,7 +73,7 @@
 - 可能误归类到：01.04 / 04
 - 最终判定：保持 09.01
 - 判定理由：它既不是通用科研平台，也不是具体材料家族发现，而是工程力学模型发现
-- 是否需要二次复核：是
+- 是否需要二次复核：否，主类稳定
 
 ## 3. Agent 系统与科研流程角色
 
@@ -156,15 +156,15 @@
 
 ## 7. 局限性与风险
 
-- 当前验证更像建模 benchmark，不是实体实验闭环
-- confirmed-core 风险高于主类风险
-- 是否仍需进一步全文复核：是
+- 当前验证属于工程建模 benchmark 与 simulation validation，而非实体实验闭环
+- 本轮已直接核对 Springer OA 摘要；官方 OA PDF 可获取但尚未归档到本地
+- 是否仍需进一步全文复核：否，主类稳定；后续如补本地归档可再补细节
 
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：09 工程与工业技术科学
 - 可支撑哪个论点：Agent 已进入工程建模与理论发现任务
-- 适合作为代表性案例吗：可作为边界样本
+- 适合作为代表性案例吗：适合作为工程建模 Agent 案例
 - 推荐引用强度：standard
 
 ## 9. 总结
@@ -184,7 +184,7 @@ LLM 生成与优化结合自动发现力学本构模型。
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 主类：09
 二级类：09.01
 三级类：constitutive modeling / computational mechanics
@@ -197,6 +197,6 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 科学贡献类型：knowledge_discovery; model_discovery
 证据强度：simulation_supported
 归类置信度：高
-纳入置信度：中高
+纳入置信度：高
 推荐引用强度：standard
 ```
