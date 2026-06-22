@@ -6,7 +6,7 @@
 - 年份：2005
 - 来源 / venue：IEEE Intelligent Systems
 - DOI / arXiv / URL：https://doi.org/10.1109/MIS.2005.40
-- PDF / 本地文件路径：当前笔记基于 JPL official PDF 与 sensorweb project page
+- PDF / 本地文件路径：本轮复核已核对官方 JPL PDF full text、NASA NTRS record 与 DOI 页面；未见本地归档 PDF
 - 论文类型：研究论文 / sensorweb mission autonomy
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,7 +14,7 @@
 
 ## Evidence Log
 
-## 2026-06-20 relaxed multi-module revision
+## 2026-06-22 final adjudication refresh
 
 ```text
 scientific_object_modules: 05;10
@@ -22,18 +22,19 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 05
-first_hand_sources_checked: publisher / institutional metadata; DOI page
-classification_evidence_source_level: first_hand_abstract_or_landing_page
-module_assignment_evidence: `05` is supported by global surveillance of Earth science phenomena including volcanoes, flooding, cryosphere, and atmospheric events; `10` is supported by autonomous Earth-observing sensorweb retasking and satellite mission-science operations.
-multi_module_object_coverage_note: This is the strongest `05/10` boundary case in the wave: EO-1 / sensorweb autonomy remains important, but the direct scientific object is Earth observation, so `05` is a reasonable primary filing under the relaxed overlay.
+first_hand_sources_checked: official JPL PDF full text; NASA NTRS record; DOI page
+classification_evidence_source_level: first_hand_full_text
+note_revision_required: no
+module_assignment_evidence: `05` is supported by MODIS-triggered EO-1 observations of volcanoes, floods, cryosphere, and related Earth-observation phenomena; `10` is supported by autonomous Earth-observing sensorweb retasking, planning, and satellite mission-science operations.
+multi_module_object_coverage_note: Authoritative classification is `05;10` with `primary_module_for_filing=05`. This note remains under the `10` folder only because the file path is already assigned; that location is a filing convenience, not the classification fact.
 ```
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF p.1-p.3 | 系统包含 event detection、science agents、retasking、automated planning 与 EO-1 response execution 的完整多步闭环 | 高 |
-| 科学对象归类 | `10.02` | official PDF p.1-p.3 | 论文主要研究跨平台 Earth-observing sensorweb operations 与 mission response architecture，不是 Earth process explanation | 高 |
+| 科学对象归类 | `05;10`（primary=`05`） | official PDF p.1-p.3 + NTRS record | MODIS/EO-1 针对 volcano、flood、cryosphere 等 Earth-observation phenomena 的具体观测支持 `05`，sensorweb retasking 与 satellite mission autonomy 支持 `10` | 高 |
 | 方法流程 | 多步闭环明确 | official PDF p.2 | 低分辨率资产采集 -> 自动事件检测 -> observation request -> automated planning -> EO-1 follow-up acquisition | 高 |
-| 边界判断 | `10.02 / 05` 高压样本，但保留 `10.02` | official PDF p.2 | 文中明确对比说他人工作更偏 Earth data processing，而本文“focuses on operations” | 高 |
+| 边界判断 | 保持 `05;10` 多模块，主展示/落盘为 `05` | official PDF p.2 + NTRS record | 论文确实强调 operations，但被自主 retask 的直接科学对象是 Earth-observation phenomena，因此不能只保留 `10` | 高 |
 | 工具链 | 规划与重定向能力明确 | official PDF p.3 | science agents、SEM、ASPEN、EO-1 onboard software 协同完成 observation-response mission loop | 高 |
 | 实验验证 | 真实任务流程验证 | sensorweb project page | 多传感器触发高分辨率资产 retasking 的系统级流程已经被项目明确展示 | 高 |
 
@@ -67,28 +68,39 @@ multi_module_object_coverage_note: This is the strongest `05/10` boundary case i
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：10
-- 二级类：10.02
-- 三级类：Earth-observing sensorweb autonomy
-- 四级专题：Cross-platform observation-response mission agents
-- 四级专题是否为新增：否
-- 归类理由：最终对象是 Earth-observing sensorweb 的 mission retasking 与 autonomous operations，而不是某个具体地球过程本体
-- 归类置信度：中高
+- 科学对象模块：`05;10`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`05`
+- Primary module for filing 说明：authoritative primary filing 应为 `05`；当前文件仍位于 `10` 目录，只是本轮 writeback 沿用既有路径的 filing convenience，不代表唯一分类事实。
+- 主展示模块一级类：05
+- 主展示模块二级类：05.04
+- 主展示模块三级类：Earth observation / remote sensing event response
+- 主展示模块四级专题：MODIS-triggered EO-1 observation-response sensorweb
+- 其他覆盖模块及对应层级路径：`10` -> 10.02 Earth-observing sensorweb autonomy / satellite mission retasking
+- 四级专题是否为新增：是
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：`05` 来自 volcano、flood、cryosphere 等 Earth-observation phenomena 的具体监测与 follow-up；`10` 来自 sensorweb retasking、planning、EO-1 response execution 与 satellite mission autonomy
+- 归类理由：adjudicated 口径要求把 Earth-observation phenomena 记为 `05` 主模块，同时保留 autonomous sensorweb / satellite retasking 的 `10` 并行覆盖
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：跨平台 Earth-observing sensorweb 的任务触发、自动重规划与 EO-1 响应执行能力
-- 最终科学问题：如何让多源观测资产形成对 transient scientific events 的自动响应 mission system
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：use cases 来自火山、洪水和冰冻圈，但这些只是 sensorweb 响应对象，不是论文最终要研究的科学对象
+- 最终科学研究对象：Earth-observation phenomena 的自动监测与 follow-up 观测，以及支撑这些观测的跨平台 sensorweb retasking 能力
+- 最终科学问题：如何让多源观测资产围绕 volcano、flood、cryosphere 等瞬态 Earth-science events 形成自动响应 mission system
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：retasking architecture 只是实现方式；归类应同时记录其服务的 Earth-science objects (`05`) 与并行的航天任务自治 (`10`)
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：05
-- 最终判定：保持 10.02
-- 判定理由：正文直接说明工作重心是 operations；retasking、planning 与 autonomous response architecture 比 Earth-science mechanism 更核心
-- 是否需要二次复核：是
+- 可能误归类到：仅 `10` 或仅 `05`
+- 最终判定：记录为 `05;10`，primary=`05`
+- 判定理由：如果只看 operations framing 会漏掉 MODIS-triggered EO-1 对 Earth-science objects 的直接覆盖；如果只看 Earth observation 又会漏掉 sensorweb / satellite retasking autonomy。两条证据链并行成立。
+- 多模块覆盖说明：`05` 记录具体地球与环境对象覆盖；`10` 记录 Earth-observing sensorweb mission autonomy 覆盖
+- 01.04 判定说明：不适用；论文具有明确对象观测与真实 mission-level autonomous response
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -208,7 +220,7 @@ multi_module_object_coverage_note: This is the strongest `05/10` boundary case i
 
 - 与普通 AI for Science 方法的区别：不是地球数据处理模型，而是 mission retasking 与 response system
 - 与已有 Agent / 科研智能系统的区别：强调多源监测到高分辨率 follow-up 的跨平台 operations 闭环
-- 与同一科学领域其他 Agent 文献的关系：与 ASD-0719、ASD-0721 共同构成 EO-1 / sensorweb 历史锚点，同时是 `10.02 / 05` 的典型边界样本
+- 与同一科学领域其他 Agent 文献的关系：与 ASD-0719、ASD-0721 共同构成 EO-1 / sensorweb 历史锚点，同时是 `05 / 10` 的典型多模块边界样本
 - 主要创新点：把多源传感器、事件识别和自动 mission planning 联成一个 observation-response sensorweb
 
 ## 7. 局限性与风险
@@ -222,9 +234,9 @@ multi_module_object_coverage_note: This is the strongest `05/10` boundary case i
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：10 航天科学中的 observation-response mission autonomy
-- 可支撑哪个论点：Earth-observation case 不能只按自然过程表面关键词归类，必须看最终对象是否是 mission autonomy
-- 可用于哪个表格或图：`10.02 / 05` 边界案例对照表
+- 可放入哪个章节：05 地球与环境科学中的 Earth-observation / remote-sensing autonomy，并在 05/10 边界表中并列出现
+- 可支撑哪个论点：Earth-observation case 不能只按 autonomy 架构归入 `10`；只要官方 PDF 直接覆盖 volcano、flood、cryosphere 等对象，就应并行记录 `05`
+- 可用于哪个表格或图：`05 / 10` 多模块边界案例对照表
 - 适合作为代表性案例吗：是，但更适合作为边界样本
 - 推荐引用强度：普通引用
 - 需要在正文中特别引用的页码 / 图 / 表：p.2 的五步 sensorweb flow 与 related-work operations 边界说明
@@ -234,7 +246,7 @@ multi_module_object_coverage_note: This is the strongest `05/10` boundary case i
 
 ### 9.1 一句话概括
 
-跨平台 Earth-observing sensorweb autonomy 的边界代表样本。
+Earth-observing sensorweb 同时覆盖地球环境对象与航天任务 retasking。
 
 ### 9.2 速记版 pipeline
 
@@ -248,10 +260,19 @@ multi_module_object_coverage_note: This is the strongest `05/10` boundary case i
 
 ```text
 是否纳入：to_read
-主类：10
-二级类：10.02
-三级类：Earth-observing sensorweb autonomy
-四级专题：Cross-platform observation-response mission agents
+科学对象模块：05;10
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：05
+是否进入 01.04 存放区：否
+主展示模块一级类：05
+主展示模块二级类：05.04
+主展示模块三级类：Earth observation / remote sensing event response
+主展示模块四级专题：MODIS-triggered EO-1 observation-response sensorweb
+其他覆盖模块及对应层级路径：10 -> 10.02 Earth-observing sensorweb autonomy / satellite mission retasking
+module_assignment_evidence：05 来自 volcano、flood、cryosphere 等 Earth-observation phenomena 的具体监测与 follow-up；10 来自 sensorweb retasking、planning 与 EO-1 response execution
+multi_module_object_coverage_note：当前 note 位于 10 目录仅因既有路径约束；authoritative classification 是 05;10，primary=05
 Agent 类型：Planning Agent; Tool-using Agent; Multi-Agent System; Robot / Embodied Agent; Hybrid Agent
 科研流程角色：data_analysis; workflow_orchestration; feedback_iteration; autonomous_decision_making
 自主能力：planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; environment_interaction
@@ -259,7 +280,7 @@ Agent 类型：Planning Agent; Tool-using Agent; Multi-Agent System; Robot / Emb
 交叉属性：computation_driven; data_driven; multimodal; robotic_platform
 科学贡献类型：system_platform; mission_science_planning
 证据强度：high_primary_pdf
-归类置信度：中高
+归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
 ```

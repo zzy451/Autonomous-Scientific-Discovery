@@ -6,7 +6,7 @@
 - 年份：2005
 - 来源 / venue：IEEE Aerospace Conference
 - DOI / arXiv / URL：https://ai.jpl.nasa.gov/public/documents/papers/estlin-ieeeaero2005-EnablingAutonomous.pdf
-- PDF / 本地文件路径：当前笔记基于 JPL official PDF
+- PDF / 本地文件路径：本轮复核已核对官方 JPL PDF（https://ai.jpl.nasa.gov/public/documents/papers/estlin-ieeeaero2005-EnablingAutonomous.pdf）；未见本地归档 PDF
 - 论文类型：研究论文 / dynamic-planning rover science
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,7 +14,7 @@
 
 ## Evidence Log
 
-## Round-2 Relaxed Multi-Module Update (2026-06-21)
+## 2026-06-22 final adjudication refresh
 
 - `scientific_object_modules`: `10`
 - `object_coverage_mode`: `single_module`
@@ -23,13 +23,15 @@
 - `first_hand_sources_checked`: official JPL PDF `estlin-ieeeaero2005-EnablingAutonomous.pdf`
 - `classification_evidence_source_level`: `first_hand_full_text`
 - `note_revision_required`: `no`
+- `module_assignment_evidence`: `10` is supported by onboard rover mission-science planning, scheduling, science alerts, target insertion, and resource-aware replanning; rock alerts are trigger signals only and do not independently validate `05`.
+- `multi_module_object_coverage_note`: Keep this record `10` only. The paper mentions Mars science targets, but those mentions support opportunistic replanning inside rover autonomy rather than a standalone planetary-geology object study.
 
-This note no longer treats the record as a live `10 / 05` boundary question. The official full text is strong enough to keep the paper in `10` only: its stable object is onboard rover mission-science planning and scheduling, including science alerts, target insertion, resource-aware replanning, and opportunistic science handling. The paper does mention Mars and science targets, but it does not report an independent planetary-environment, geology, or Earth-and-environment-style object study strong enough to add `05` under the current relaxed rule.
+This note no longer treats the record as a live `10 / 05` boundary question. The official full text is strong enough to keep the paper in `10` only: its stable object is onboard rover mission-science planning and scheduling, including science alerts, target insertion, resource-aware replanning, and opportunistic science handling. The paper does mention Mars and science targets, but those rock alerts function as triggers inside the autonomy loop rather than independent `05` object validation.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 官方 PDF 摘要与引言 | 接收 science and engineering goals，生成 plan，并在新机会或故障下 re-plan | 高 |
-| 科学对象归类 | `10.02` | CLEaR/OASIS 描述 | 对象是 rover mission-science autonomy，而不是火星 geology 本体 | 高 |
+| 科学对象归类 | `10` / `10.02` | CLEaR/OASIS 描述 + science alerts sections | 对象是 rover mission-science autonomy；rock / science alerts 是重规划触发信号，不构成独立 `05` 对象验证 | 高 |
 | 方法流程 | 多步闭环 | 功能列表 | initial plan creation、execution、monitoring、dynamic modification、optimization、science alerts | 高 |
 | 反馈驱动自主决策 | 明确存在 | science alerts 描述 | onboard data analysis 触发新目标后系统可重规划并追加科学动作 | 高 |
 | 实验验证 | 仿真 + rover hardware | 测试部分 | 在模拟与真实 rover hardware 上处理机会科学事件并完成自主运行 | 高 |
@@ -64,27 +66,38 @@ This note no longer treats the record as a live `10 / 05` boundary question. The
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：10
-- 二级类：10.02
-- 三级类：dynamic-planning rover science
-- 四级专题：dynamic-planning rover science agents
+- 科学对象模块：`10`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是，但集中于 rover mission-science autonomy
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`10`
+- Primary module for filing 说明：与 authoritative classification 一致；本 note 位于 `10` 目录不是边界妥协，而是 final adjudication 的正式落点。
+- 主展示模块一级类：10
+- 主展示模块二级类：10.02
+- 主展示模块三级类：dynamic-planning rover science
+- 主展示模块四级专题：dynamic-planning rover science agents
+- 其他覆盖模块及对应层级路径：无
 - 四级专题是否为新增：否
-- 归类理由：论文的稳定对象是航天任务中的 onboard science planning and scheduling
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：`10` 来自 onboard planning、scheduling、science alerts handling、target insertion 与 opportunistic science replanning
+- 归类理由：official JPL PDF 直接支持 rover mission-science planning/scheduling autonomy；rock alerts 只是 autonomy loop 的输入触发，不是独立 `05` 对象研究
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：rover onboard mission-science planning workflow
 - 最终科学问题：如何在火星车上基于 science alerts 动态重规划科学任务
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：planning / scheduling 是手段，最终对象仍是 mission-science autonomy
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：planning / scheduling 是手段，但 object-first 读法仍显示本文稳定对象是 mission-science autonomy，而不是被 alerts 指向的行星地质对象
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：05
-- 最终判定：保持 10.02
-- 判定理由：论文不是研究火星 geology，而是 rover 如何自主做科学决策
+- 最终判定：保持 `10` only（展示层级为 `10.02`）
+- 判定理由：论文不是研究火星 geology，而是 rover 如何自主做科学决策；rock / science alerts 仅触发 target insertion 与 replanning，不构成独立 `05` 覆盖
+- 多模块覆盖说明：不记录并行 `05`
+- 01.04 判定说明：不适用；论文具有明确航天任务对象与完整自主流程
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -220,7 +233,7 @@ This note no longer treats the record as a live `10 / 05` boundary question. The
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：10 航天科学中的 rover planning agents
-- 可支撑哪个论点：mission-science autonomy 的关键能力之一是动态重规划
+- 可支撑哪个论点：mission-science autonomy 的关键能力之一是动态重规划，而且这类 rock alerts 触发并不自动等于 `05` 多模块
 - 可用于哪个表格或图：rover autonomy 历史谱系图
 - 适合作为代表性案例吗：是
 - 推荐引用强度：核心引用
@@ -245,10 +258,19 @@ This note no longer treats the record as a live `10 / 05` boundary question. The
 
 ```text
 是否纳入：to_read
-主类：10
-二级类：10.02
-三级类：dynamic-planning rover science
-四级专题：dynamic-planning rover science agents
+科学对象模块：10
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：10
+是否进入 01.04 存放区：否
+主展示模块一级类：10
+主展示模块二级类：10.02
+主展示模块三级类：dynamic-planning rover science
+主展示模块四级专题：dynamic-planning rover science agents
+其他覆盖模块及对应层级路径：无
+module_assignment_evidence：10 来自 onboard planning、scheduling、science alerts handling、target insertion 与 opportunistic science replanning；不加 05，因为 rock alerts 只是触发信号
+multi_module_object_coverage_note：保持 10-only；不记录并行 05
 Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid Agent
 科研流程角色：data_analysis; workflow_orchestration; feedback_iteration; autonomous_decision_making
 自主能力：task_decomposition; planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; environment_interaction

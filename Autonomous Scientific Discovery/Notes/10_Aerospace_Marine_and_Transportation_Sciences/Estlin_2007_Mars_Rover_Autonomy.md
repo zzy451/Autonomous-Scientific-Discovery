@@ -6,7 +6,7 @@
 - 年份：2007
 - 来源 / venue：IEEE ICRA 2007
 - DOI / arXiv / URL：https://doi.org/10.1109/ROBOT.2007.364236
-- PDF / 本地文件路径：当前笔记基于 IEEE 会议页摘要与主列表已有一手元数据；本地未保存 PDF
+- PDF / 本地文件路径：本轮复核已核对官方 JPL PDF full text 与 DOI 页面；未见本地归档 PDF
 - 论文类型：研究论文 / rover mission-science autonomy
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,13 +14,28 @@
 
 ## Evidence Log
 
+## 2026-06-22 final adjudication refresh
+
+```text
+scientific_object_modules: 10
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: official JPL PDF full text; DOI page
+classification_evidence_source_level: first_hand_full_text
+note_revision_required: no
+module_assignment_evidence: `10` is supported by Mars rover planning, scheduling, execution, opportunistic science after onboard target detection, and mission-science autonomy. The paper does not provide standalone planetary-geology object validation strong enough to add `05`.
+multi_module_object_coverage_note: Keep this record `10` only. Opportunistic science after onboard target detection remains part of rover mission autonomy rather than independent `05` coverage.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | title / IEEE abstract / master-list evidence | 论文围绕 AI planning, scheduling, execution 提升 rover autonomy，存在明确多步任务闭环 | 高 |
-| 科学对象归类 | `10.02` | title / object-first rule / prior rover lineage | 研究对象是 rover mission-science autonomy，而不是火星地表自然过程本体 | 高 |
-| 方法流程 | target discovery -> planning -> dynamic replanning -> execution | abstract / master-list remarks | 系统在 onboard 目标发现后执行机会科学与动态重规划 | 高 |
-| 实验验证 | mission-oriented deployment evidence | IEEE metadata / master-list evidence | 属于 mission science operation 方向的高相关验证 | 中高 |
-| 边界判断 | 不应改到 `05` | project boundary rule | 只要核心是 rover / spacecraft science autonomy，就应保持在 10，而非按观测对象转入 Earth or natural-process classes | 高 |
+| Agent 纳入 | 是 | official JPL PDF abstract / system description | 论文围绕 AI planning, scheduling, execution 提升 rover autonomy，存在明确多步任务闭环 | 高 |
+| 科学对象归类 | `10` / `10.02` | official JPL PDF + object-first rule | 研究对象是 rover mission-science autonomy，而不是火星地表自然过程本体 | 高 |
+| 方法流程 | target discovery -> planning -> dynamic replanning -> execution | official JPL PDF | 系统在 onboard 目标发现后执行机会科学与动态重规划 | 高 |
+| 实验验证 | mission-oriented autonomy validation | official JPL PDF | 属于 mission science operation 方向的高相关验证 | 高 |
+| 边界判断 | 保持 `10` only | official JPL PDF + project boundary rule | 机会科学与 onboard target discovery 仍服务于 rover mission autonomy，不构成独立 `05` 覆盖 | 高 |
 
 ## 0. 摘要翻译
 
@@ -52,28 +67,39 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：10
-- 二级类：10.02
-- 三级类：rover mission-science autonomy
-- 四级专题：AI planning and execution for rover science autonomy
+- 科学对象模块：`10`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是，但集中于 rover mission-science autonomy
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`10`
+- Primary module for filing 说明：与 authoritative classification 一致；本 note 位于 `10` 目录不是折中，而是 final adjudication 的正式落点。
+- 主展示模块一级类：10
+- 主展示模块二级类：10.02
+- 主展示模块三级类：rover mission-science autonomy
+- 主展示模块四级专题：AI planning and execution for rover science autonomy
+- 其他覆盖模块及对应层级路径：无
 - 四级专题是否为新增：否
-- 归类理由：稳定对象是 rover scientific operations and autonomy，而不是 planetary natural process study
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：`10` 来自 rover planning、scheduling、execution、opportunistic science 与 onboard target-triggered dynamic replanning
+- 归类理由：official JPL PDF 直接支持 rover mission-science autonomy；没有独立 planetary-geology object validation 强到足以并行记录 `05`
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：onboard rover mission-science workflow
 - 最终科学问题：如何让 rover 在远程受限任务环境中更自主地完成科学操作
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：AI planning 和执行框架只是手段，核心对象是 mission-science autonomy
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：AI planning 和执行框架只是手段，核心对象仍是 mission-science autonomy，而不是被机会科学触发的单独行星地质对象
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：05
-- 最终判定：保持 10.02
-- 判定理由：若研究焦点是环境过程、地表变化或气候过程，应考虑 05；但本文焦点是 rover 如何自主开展科学任务
-- 是否需要二次复核：可进一步读全文补细节，但边界判断已较稳
+- 最终判定：保持 `10` only（展示层级为 `10.02`）
+- 判定理由：若研究焦点是环境过程、地表变化或气候过程，应考虑 `05`；但本文焦点是 rover 如何自主开展科学任务，机会科学 target detection 只是 autonomy loop 的一部分
+- 多模块覆盖说明：不记录并行 `05`
+- 01.04 判定说明：不适用；论文具有明确航天任务对象与 mission-science autonomy validation
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -187,19 +213,19 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
 - 科学贡献类型：system_platform; mission_science_planning
-- 证据强度：high_primary_abstract
+- 证据强度：high_primary_pdf
 
 ## 6. 与已有工作的关系
 
 - 与普通 AI for Science 方法的区别：不是单一图像识别模型，而是完整的 mission-science autonomy loop
 - 与已有 Agent / 科研智能系统的区别：属于较早期但清晰的 rover science autonomy 代表
-- 与同一科学领域其他 Agent 文献的关系：可与 OASIS、AEGIS、ChemCam rover 系列工作形成时间谱系
+- 与同一科学领域其他 Agent 文献的关系：可与 OASIS、AEGIS、ChemCam rover 系列工作形成时间谱系，并作为 `10` only 的稳态边界样本
 - 主要创新点：将 onboard target discovery 与 planning/scheduling/execution 紧密耦合
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：具体模块自治边界需要全文补充
-- 科学验证不足：当前笔记主要依赖会议摘要和主表证据
+- Agent 自主性不足：具体模块自治边界仍可在后续摘录中补更多细节
+- 科学验证不足：官方 JPL PDF 已支持稳定归类，但更细的定量任务指标仍可继续补充
 - 泛化性不足：多半依赖特定 rover task setting
 - 工具链依赖：高度依赖 mission-specific planning stack
 - 数据泄漏或 benchmark 偏差：不是主要风险
@@ -208,8 +234,8 @@
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：10 航空航天与运输科学中的 rover mission autonomy
-- 可支撑哪个论点：搭载在火星 rover 上的科学自治系统应优先看 mission autonomy 对象，而不是按观测环境误归到 Earth/environment 类
-- 可用于哪个表格或图：`10.02 / 05` 边界案例表；rover autonomy timeline
+- 可支撑哪个论点：搭载在火星 rover 上的科学自治系统应优先看 mission autonomy 对象；opportunistic science after onboard target detection 也不自动等于 `05` 多模块
+- 可用于哪个表格或图：`10` only 稳态边界案例表；rover autonomy timeline
 - 适合作为代表性案例吗：是
 - 推荐引用强度：核心引用
 - 需要在正文中特别引用的页码 / 图 / 表：后续读全文再补
@@ -232,17 +258,26 @@ AI 规划与执行框架提升火星 rover 的机会科学自主性。
 
 ```text
 是否纳入：to_read
-主类：10
-二级类：10.02
-三级类：rover mission-science autonomy
-四级专题：AI planning and execution for rover science autonomy
+科学对象模块：10
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：10
+是否进入 01.04 存放区：否
+主展示模块一级类：10
+主展示模块二级类：10.02
+主展示模块三级类：rover mission-science autonomy
+主展示模块四级专题：AI planning and execution for rover science autonomy
+其他覆盖模块及对应层级路径：无
+module_assignment_evidence：10 来自 rover planning、scheduling、execution、opportunistic science 与 onboard target-triggered dynamic replanning；不加 05，因为缺少独立 planetary-geology object validation
+multi_module_object_coverage_note：保持 10-only；机会科学 target detection 不构成并行 05 覆盖
 Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid Agent
 科研流程角色：experiment_execution; tool_use_and_code_execution; data_analysis; evidence_assessment_and_validation; workflow_orchestration
 自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction
 验证方式：robotic_experiment; real_world_deployment; mission_operation
 交叉属性：computation_driven; data_driven; experiment_driven; robotic_platform
 科学贡献类型：system_platform; mission_science_planning
-证据强度：high_primary_abstract
+证据强度：high_primary_pdf
 归类置信度：高
 纳入置信度：高
 推荐引用强度：核心引用
