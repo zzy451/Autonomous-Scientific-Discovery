@@ -12,19 +12,21 @@
 - 阅读日期：2026-06-15
 - 笔记作者：Codex
 
-## 2026-06-21 archive sync
+## 2026-06-22 Batch16 full-reaudit check
 
 - Canonical PDF path: `Reference_PDF/07_Medical_and_Health_Sciences/Ghareeb_2025_Robin.pdf`
-- Current-turn source refresh: the official arXiv PDF was archived to the project `Reference_PDF/` directory on `2026-06-21`.
+- First-hand source status: archived local arXiv full text rechecked; the Batch02 partial-10 closeout and current master-row remarks remain aligned with this note.
 - Current authoritative classification: `scientific_object_modules=06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Filing note: this note remains in `Notes/07_Medical_and_Health_Sciences/` only because `07` is the adjudicated `primary_module_for_filing`; note location is a filing convenience, not classification authority.
+- Legacy-wording caveat: any older single-module `07` phrasing below should be read as superseded by the adjudicated `06;07` row above.
 
 ## Evidence Log
 
-**2026-06-21 archive note**: official arXiv PDF archived to project `Reference_PDF/` and rechecked against the existing full-text note; the multi-module `06;07` judgment remains supported.
+**2026-06-22 Batch16 check**: archived local arXiv PDF rechecked against the landed Batch02 partial-10 outcome and current master-row remarks; the adjudicated multi-module `06;07` judgment remains supported, with `07` retained only as the filing module.
 
 ## 2026-06-20 relaxed multi-module revision
 
-This section supplements the existing `07` decision with explicit multi-module object coverage.
+This section records the landed multi-module adjudication and should be treated as the authoritative override for any older single-module shorthand elsewhere in the note.
 
 ```text
 scientific_object_modules: 06;07
@@ -32,13 +34,13 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 07
-first_hand_sources_checked: arXiv full text; Nature DOI/publisher page reported in Wave B review
+first_hand_sources_checked: archived arXiv PDF full text; prior Nature DOI/publisher-page trail noted in project records
 classification_evidence_source_level: first_hand_full_text
 module_assignment_evidence: `07` is supported by dry AMD therapeutic discovery, ripasudil, and disease-oriented drug-repurposing validation; `06` is supported by RPE phagocytosis, RNA-seq, ABCA1, and cell/molecular mechanism assays.
-multi_module_object_coverage_note: Robin remains a medical/health paper for filing, but the RPE cell biology and mechanism experiments constitute separate life-science object coverage under the relaxed rule.
+multi_module_object_coverage_note: Robin remains filed under `07`, but that filing location is only a convenience; the RPE cell biology and mechanism experiments independently support `06`, so the authoritative classification is `06;07`.
 ```
 
-Evidence level: full-text (arXiv PDF full text).
+Evidence level: first-hand full text via archived arXiv PDF.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

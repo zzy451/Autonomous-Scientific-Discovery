@@ -14,9 +14,16 @@
 
 ## Evidence Log
 
+## 2026-06-22 Batch16 full-reaudit check
+
+- Final adjudication: `supported_modules=06;07`; `final_01_04_bucket=none`; `primary_module_for_filing=07`; `confidence=medium-high`; `source_limited=no`; `safety_access_status=no_safety_skip`.
+- First-hand source checked for this refresh: PMC full text `https://pmc.ncbi.nlm.nih.gov/articles/PMC13015679/`.
+- Current evidence wording: biomedical case studies anchor `07`, while omics/cellular/proteomics analyses independently support `06`.
+- Note-location reminder: this note remains filed under `Notes/07_Medical_and_Health_Sciences/` for filing convenience because `07` is the adjudicated primary filing; the note path is not independent classification authority.
+
 ## 2026-06-20 relaxed multi-module revision
 
-This section supplements the older `07.04` primary filing with object-coverage modules.
+This section preserves the earlier full-text evidence trail and is now aligned to the final landed adjudication rather than the older single-filing read.
 
 ```text
 scientific_object_modules: 06;07
@@ -24,10 +31,11 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 07
-first_hand_sources_checked: PMC full text
+first_hand_sources_checked: PMC full text `https://pmc.ncbi.nlm.nih.gov/articles/PMC13015679/`
 classification_evidence_source_level: first_hand_full_text
 module_assignment_evidence: `07` is supported by Alzheimer biomarkers, plasma-proteomics survival prediction, multiple-myeloma cohorts, and clinical/disease discovery cases; `06` is supported by single-cell transcriptomics, proteomics, and biological mechanism analyses.
-multi_module_object_coverage_note: OpenScientist is not a `01.04`-only general co-scientist under the relaxed rule. Its biomedical cases support `07`, and its omics/cellular analyses also support `06`.
+multi_module_object_coverage_note: OpenScientist is not a `01.04`-only general co-scientist under the relaxed rule. Its landed note wording should retain exactly `06;07`, with `07` only as the primary filing module.
+authoritative_note_refresh_status: the `2026-06-22 Batch16 full-reaudit check` block above is the controlling adjudication for note writeback.
 ```
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |

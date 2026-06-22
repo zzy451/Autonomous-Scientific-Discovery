@@ -12,7 +12,16 @@
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## 2026-06-22 Batch16 full-reaudit check
+
+- First-hand source status: PMC full text confirmed at `https://pmc.ncbi.nlm.nih.gov/articles/PMC12682125/`; this remains the authoritative source for the current note refresh.
+- Current authoritative classification: `scientific_object_modules=07`; `object_coverage_mode=single_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Archive note: no separate project-local PDF path was confirmed in this writeback packet, so the note cites the PMC full-text source directly.
+- Filing note: this note remains in `Notes/07_Medical_and_Health_Sciences/` because `07` is the adjudicated filing module; note location is a filing convenience, not classification authority.
+
 ## Evidence Log
+
+**2026-06-22 Batch16 check**: PMC full text re-confirmed as the first-hand source; the note keeps the landed `07` medical/health classification and explicitly avoids any `01.04` framing.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -248,4 +257,3 @@ Agent 类型：LLM Agent; Multi-Agent System; Retrieval-augmented Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
-

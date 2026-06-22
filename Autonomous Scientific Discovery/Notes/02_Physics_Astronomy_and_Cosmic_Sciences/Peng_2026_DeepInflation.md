@@ -6,21 +6,27 @@
 - 年份：2026
 - 来源 / venue：Research in Astronomy and Astrophysics
 - DOI / arXiv / URL：https://doi.org/10.1088/1674-4527/ae6ad8 ; https://arxiv.org/abs/2601.14288
-- PDF / 本地文件路径：使用 arXiv 预印本与 DOI 元数据
+- PDF / 本地文件路径：当前无本地归档；一手来源使用 arXiv 预印本与 DOI 元数据
 - 论文类型：research paper
-- 当前状态：to_read
+- 当前状态：已读，已纳入
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## 2026-06-22 Batch16 full-reaudit check
+
+- 一手来源复核：当前按主控裁决使用 arXiv 预印本 `https://arxiv.org/abs/2601.14288` 与 DOI 元数据 `https://doi.org/10.1088/1674-4527/ae6ad8`；本轮未确认本地归档 PDF。
+- 裁决同步：维持 `supported_modules=02`、`final_01_04_bucket=none`、`primary_module_for_filing=02`、`confidence=medium-high`、`source_limited=no`、`safety_access_status=no_safety_skip`。
+- 位置说明：本 note 存放在 `02_Physics_Astronomy_and_Cosmic_Sciences/` 目录仅为 filing convenience，不是分类 authority；旧的 `02.01` 写法仅可作为宇宙学主题提示，不应读成额外 supported module。
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Abstract; Section 2 | 主代理 + SR 子代理 + RAG + 工具调用，具备多步行动和委派结构 | 高 |
-| 科学对象归类 | `02.01` | Abstract; example section | 研究对象是 inflationary cosmology、inflationary potentials 与 CMB observables | 高 |
+| 科学对象归类 | `02`，primary filing `02` | Abstract; example section; DOI metadata | 研究对象是 inflationary cosmology、inflationary potentials 与 CMB observables | 中高 |
 | 方法流程 | 明确 | Section 2.1-2.2; Fig. 1 | 主代理解析任务，SR 搜索势函数，RAG 检索理论背景，分析工具做验证 | 高 |
 | 实验验证 | 计算 / 仿真验证 | Section 3 | 用 ACT DR6 约束搜索满足 `n_s`、`r` 的单场慢滚模型 | 高 |
-| 边界判断 | `02` 胜过 `01.04` | 全文整体 | 知识库、物理核、损失和示例任务都强绑定宇宙学对象 | 高 |
+| 边界判断 | `02` 胜过 `01.04`；不展开为 `02.01` module | 全文整体；DOI metadata | 知识库、物理核、损失和示例任务都强绑定宇宙学对象 | 中高 |
 
 ## 0. 摘要翻译
 
@@ -54,9 +60,14 @@ DeepInflation 是一个面向暴胀宇宙学研究与模型发现的 AI Agent。
 
 ### 2.1 主科学领域
 
-- 一级类：02
-- 二级类：02.01
-- 三级类：
+- scientific_object_modules：`02`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`02`
+- 一级类：`02` 物理学、天文学与宇宙科学
+- 二级学科提示：`02.01` 宇宙学（仅作主题说明，不作为额外 supported module）
+- 三级类：无
 - 四级专题：AI agents for inflation-model discovery
 - 四级专题是否为新增：否
 - 归类理由：直接研究 inflationary cosmology 与 inflation model discovery
@@ -71,8 +82,8 @@ DeepInflation 是一个面向暴胀宇宙学研究与模型发现的 AI Agent。
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04
-- 最终判定：保持 02.01
-- 判定理由：这不是领域无关科研 Agent，而是具体宇宙学模型发现系统
+- 最终判定：`supported_modules=02`；`final_01_04_bucket=none`；`primary_module_for_filing=02`
+- 判定理由：这不是领域无关科研 Agent，而是具体宇宙学模型发现系统；旧 note 的 `02.01` 仅保留为宇宙学主题提示，不应覆盖当前最终支持模块只有 `02` 的裁决
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -233,9 +244,14 @@ DeepInflation 是一个面向暴胀宇宙学研究与模型发现的 AI Agent。
 
 ```text
 是否纳入：是
+scientific_object_modules：02
+object_coverage_mode：single_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：02
 主类：02
-二级类：02.01
-三级类：
+二级学科提示：02.01（topic label only）
+三级类：无
 四级专题：AI agents for inflation-model discovery
 Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Retrieval-augmented Agent; Hybrid Agent
 科研流程角色：knowledge_extraction_and_organization; hypothesis_generation; simulation_modeling; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation
@@ -248,4 +264,3 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Retrieval-augmen
 纳入置信度：高
 推荐引用强度：普通引用
 ```
-

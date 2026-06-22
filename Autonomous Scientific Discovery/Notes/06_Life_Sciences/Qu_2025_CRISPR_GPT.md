@@ -12,6 +12,12 @@
 - 阅读日期：2026-06-15
 - 笔记作者：Codex
 
+## 2026-06-22 Batch16 full-reaudit check
+
+- Final adjudication confirmed unchanged: `supported_modules=06`; `final_01_04_bucket=none`; `primary_module_for_filing=06`; `confidence=high`; `source_limited=no`; `safety_access_status=no_safety_skip`.
+- First-hand source status for this refresh: confirmed local full text at `Reference_PDF/06_Life_Sciences/Qu_2025_CRISPR_GPT.pdf`; published article metadata remains `https://doi.org/10.1038/s41551-025-01463-z`.
+- Note-location reminder: this note sits under `Notes/06_Life_Sciences/` for filing convenience and matches the adjudicated primary filing, but note location is not independent classification authority.
+
 ## 2026-06-21 archive sync
 
 - Canonical PDF path: `Reference_PDF/06_Life_Sciences/Qu_2025_CRISPR_GPT.pdf`
