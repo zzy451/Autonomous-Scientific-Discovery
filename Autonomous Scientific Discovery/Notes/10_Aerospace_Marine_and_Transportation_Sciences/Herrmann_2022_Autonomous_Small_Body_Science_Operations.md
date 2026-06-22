@@ -1,15 +1,17 @@
-# Herrmann and Schaub 2022 - Autonomous Small Body Science Operations Using Reinforcement Learning
+# Herrmann and Schaub 2024 - Autonomous Small Body Science Operations Using Reinforcement Learning
 
 **论文信息**
 - 标题：Autonomous Small Body Science Operations Using Reinforcement Learning
 - 作者：Adam Herrmann; Hanspeter Schaub
-- 年份：2022
+- 年份：2024（按本轮核对的 JAIS 正式刊行版本表述；文件名保留 legacy 2022）
 - 来源 / venue：Journal of Aerospace Information Systems
 - DOI / arXiv / URL：https://doi.org/10.2514/1.I011376
-- PDF / 本地文件路径：当前笔记基于 JAIS 正式版 PDF
-- 论文类型：研究论文 / autonomous mission-science planning
+- PDF / 本地文件路径：当前笔记基于已核对的 2024 JAIS 正式版 full paper
+- 版本说明：本笔记按 2024 JAIS 正式刊行版本表述；文件名保留 legacy 2022 仅为历史延续
+- 论文类型：研究论文 / autonomous small-body mission-science planning and scheduling
 - 当前状态：to_read
 - 阅读日期：2026-06-19
+- 本轮复核：2026-06-22 已对照已核对全文复查；保留 `10.02`，并收紧为 small-body mission-science planning/scheduling，不按 GNC 或小天体科学本体归类
 - 笔记作者：Codex
 
 ## Evidence Log
@@ -17,14 +19,14 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | JAIS PDF p.1 abstract | 航天器要自主完成 maneuvering、mapping、imaging、downlink、navigation update | 高 |
-| 科学对象归类 | `10.02` | JAIS PDF p.1-p.2 | 作者明确说研究焦点是 planning and scheduling，而不是 GNC 或小天体科学结论本体 | 高 |
+| 科学对象归类 | `10.02` | JAIS PDF p.1-p.2 | 作者明确说研究焦点是 small-body mission-science planning and scheduling，而不是 GNC 控制问题或小天体科学结论本体 | 高 |
 | 方法流程 | 多步自主决策 | JAIS PDF p.2-p.6 | 任务被写成 science operations phase 的 MDP，动作含 mapping、imaging、charge、downlink 等 | 高 |
 | 反馈迭代 | 是 | JAIS PDF p.6-p.18 | 策略会根据资源、观测、DSN outage 与导航不确定性调整下一步行动 | 高 |
 | 实验验证 | 高保真仿真 | JAIS PDF p.14-p.18 | 在噪声、DSN outage 和导航不确定性场景下仍能保持 mission-science 目标 | 高 |
 
 ## 0. 摘要翻译
 
-论文研究在小天体近距离探测任务中，是否能用强化学习训练一个自主决策 Agent，在资源受限条件下完成 mapping、imaging、data downlink 和 navigation update。作者把 science operations phase 表述为 MDP，在高保真航天动力学仿真中验证策略对噪声、DSN outage 和导航不确定性的鲁棒性。结果显示，RL 策略能以较少人工干预完成稳定的 mission-science operations。
+论文研究在小天体近距离探测任务中，是否能用强化学习训练一个自主决策 Agent，在资源受限条件下完成 mapping、imaging、data downlink 和 navigation update 的任务级规划与调度。作者把 science operations phase 表述为 MDP，在高保真航天动力学仿真中验证策略对噪声、DSN outage 和导航不确定性的鲁棒性。结果显示，RL 策略能以较少人工干预完成稳定的 mission-science planning and scheduling。
 
 ## 1. 是否纳入本综述
 
@@ -56,23 +58,23 @@
 
 - 一级类：10
 - 二级类：10.02
-- 三级类：小天体任务中的自主科学操作规划
-- 四级专题：small-body mission-science RL autonomy
+- 三级类：小天体任务中的自主科学操作规划与调度
+- 四级专题：small-body mission-science planning and scheduling RL autonomy
 - 四级专题是否为新增：否
-- 归类理由：论文研究对象是 spacecraft science operations phase，而不是小天体物理性质本身
+- 归类理由：论文研究对象是 spacecraft science operations 的规划与调度层，而不是小天体物理性质本身，也不是底层 GNC
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：small-body mission-science operations
-- 最终科学问题：如何让探测器在小天体任务阶段自主安排 mapping、imaging、downlink 与 navigation updates
+- 最终科学研究对象：small-body mission-science planning and scheduling
+- 最终科学问题：如何让探测器在小天体任务阶段自主安排 mapping、imaging、downlink 与 navigation updates 的任务级规划与调度
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：强化学习只是策略求解手段，稳定对象是 mission-science autonomy
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：02、01.04
 - 最终判定：保留 10.02
-- 判定理由：论文并不在生成新的天体科学结论，也不是领域无关 workflow，而是围绕 asteroid mission operations 做 planning and scheduling
+- 判定理由：论文并不在生成新的天体科学结论，也不是领域无关 workflow，而是围绕 asteroid mission operations 做 mission-science planning and scheduling
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -192,7 +194,7 @@
 ## 6. 与已有工作的关系
 
 - 与普通 AI for Science 方法的区别：系统直接承担 spacecraft mission phase 决策，而不是离线分析科学数据
-- 与已有 Agent / 科研智能系统的区别：在小天体 mission-science planning 中引入 RL sequential autonomy
+- 与已有 Agent / 科研智能系统的区别：在小天体 mission-science planning and scheduling 中引入 RL sequential autonomy
 - 与同一科学领域其他 Agent 文献的关系：可接在 EO-1 ASE 之后，构成 `10` 类从规则式自治到 RL 自治的谱系
 - 主要创新点：把 science operations phase 明确建模为资源受限的 sequential decision problem
 
@@ -209,7 +211,7 @@
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：航天 mission-science autonomy 的 RL 路线
-- 可支撑哪个论点：`10` 类不只是 rover/spacecraft 平台控制，还包括明确的 mission-science planning autonomy
+- 可支撑哪个论点：`10` 类不只是 rover/spacecraft 平台控制，还包括明确的 mission-science planning and scheduling autonomy
 - 可用于哪个表格或图：航天 Agent 方法路线图
 - 适合作为代表性案例吗：是
 - 推荐引用强度：普通引用
@@ -220,7 +222,7 @@
 
 ### 9.1 一句话概括
 
-用 RL 自主规划小天体探测任务科学操作。
+用 RL 自主规划和调度小天体探测任务中的科学操作。
 
 ### 9.2 速记版 pipeline
 
@@ -235,8 +237,8 @@
 是否纳入：是
 主类：10
 二级类：10.02
-三级类：小天体任务中的自主科学操作规划
-四级专题：small-body mission-science RL autonomy
+三级类：小天体任务中的自主科学操作规划与调度
+四级专题：small-body mission-science planning and scheduling RL autonomy
 Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
 科研流程角色：experimental_design; simulation_modeling; tool_use_and_code_execution; experiment_execution; data_analysis; evidence_assessment_and_validation
 自主能力：task_decomposition; planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; environment_interaction

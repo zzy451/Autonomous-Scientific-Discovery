@@ -4,12 +4,13 @@
 - 标题：The Autonomous Sciencecraft Experiment Onboard the EO-1 Spacecraft
 - 作者：Daniel Tran; Steve Chien; Rob Sherwood; Rebecca Castano; Ashley Davies; Randal Crites; Richard Castaño
 - 年份：2004
-- 来源 / venue：AAAI 2004
+- 来源 / venue：AAAI 2004（official proceedings full paper）
 - DOI / arXiv / URL：https://cdn.aaai.org/AAAI/2004/AAAI04-168.pdf
-- PDF / 本地文件路径：当前笔记基于 AAAI 正文 PDF 与 JPL 官方长文
+- PDF / 本地文件路径：当前笔记本轮以 AAAI 2004 official proceedings full paper 为主证据；JPL 官方长文仅作背景补充
 - 论文类型：研究论文 / flight mission autonomy system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
+- 本轮复核：Batch19 / 2026-06-22，按 AAAI 2004 full paper 复核，维持 `10.02` mission-science autonomy；不扩到 `05` 或 `01.04`
 - 笔记作者：Codex
 
 ## Evidence Log
@@ -18,13 +19,14 @@
 |---|---|---|---|---|
 | Agent 纳入 | 是 | AAAI PDF p.1 abstract | ASE 在 EO-1 上执行 autonomous science analysis and mission planning，不是单次预测系统 | 高 |
 | 科学对象归类 | `10.02` | AAAI PDF p.1-p.2 | 论文核心是 spacecraft onboard autonomy、mission planning、retargeting 与 execution | 高 |
+| 来源口径 | AAAI 2004 正文为主证据 | AAAI PDF p.1-p.2 | 本条已按 AAAI 2004 full paper 复核；JPL 长文只补系统背景，不改变 `10.02` mission-science autonomy 主判断 | 高 |
 | 方法流程 | 明确多步闭环 | AAAI PDF p.1-p.2 | science analysis、CASPER planning/scheduling、SCL robust execution 组成完整行动链 | 高 |
 | 反馈迭代 | 是 | AAAI PDF p.2 | 星上检测 volcano / flood / cloud 事件后会插入新观测、删除低价值数据并重规划 | 高 |
 | 实验验证 | 真实部署 | AAAI PDF p.1；JPL AAMAS paper p.1-p.2 | 系统已在 EO-1 飞行，能自主修改观测计划以捕捉动态 science events | 高 |
 
 ## 0. 摘要翻译
 
-论文介绍部署在 EO-1 航天器上的 Autonomous Sciencecraft Experiment。系统把星上科学事件检测、CASPER 任务规划与重规划、SCL 鲁棒执行连接成闭环，使 EO-1 能在有限通信条件下自主识别科学事件、重定向观测并优化存储与下传。作者用实际在轨任务说明，该系统能提高短时地球观测科学事件的捕获能力。
+论文介绍部署在 EO-1 航天器上的 Autonomous Sciencecraft Experiment。系统把星上科学事件检测、CASPER 任务规划与重规划、SCL 鲁棒执行连接成闭环，使 EO-1 能在有限通信条件下自主识别科学事件、重定向观测并优化存储与下传。作者用实际在轨任务说明，该系统能提高短时地球观测科学事件的捕获能力。按 AAAI 2004 正文看，这是一条 mission-science autonomy 记录，而不是单篇 Earth-process 应用论文。
 
 ## 1. 是否纳入本综述
 
@@ -59,7 +61,7 @@
 - 三级类：航天任务科学操作与自主观测规划
 - 四级专题：Earth-observation mission-science autonomy
 - 四级专题是否为新增：否
-- 归类理由：论文真正研究和验证的是 EO-1 上的 spacecraft mission-science autonomy，而不是某一项地球环境科学结论本身
+- 归类理由：论文真正研究和验证的是 EO-1 上的 spacecraft mission-science autonomy，而不是某一项地球环境科学结论本身；本条已按 AAAI 2004 正文全文复核，属于 full-paper-checked 的 mission-science autonomy 记录
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -72,7 +74,7 @@
 
 - 可能误归类到：05、01.04
 - 最终判定：保留 10.02
-- 判定理由：虽然系统会检测 volcano、flood、cloud 等地球环境事件，但论文核心不是研究这些自然过程，而是研究航天器如何自主响应和执行 mission-science tasks
+- 判定理由：虽然系统会检测 volcano、flood、cloud 等地球环境事件，但论文核心不是研究这些自然过程，而是研究航天器如何自主响应和执行 mission-science tasks；因此本条不是 Earth-process paper，也不是无具体任务验证的 `01.04` 通用方法文
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -204,7 +206,7 @@
 - 工具链依赖：依赖星上特定软件栈
 - 数据泄漏或 benchmark 偏差：不适用
 - 成本、可复现性或安全风险：真实航天系统复现实验门槛高
-- 是否仍需进一步全文复核：否，当前证据已足够支持纳入与主类判断
+- 是否仍需进一步全文复核：否，AAAI 2004 full paper 已完成复核；JPL 长文仅补充技术背景，不影响 `10.02` 主类判断
 
 ## 8. 对综述写作的价值
 

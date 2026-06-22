@@ -10,9 +10,12 @@
 - 论文类型：研究论文 / EO satellite autonomy preprint
 - 当前状态：to_read
 - 阅读日期：2026-06-19
+- 阅读与复核补记：2026-06-22 按官方预印本 PDF 再核；维持 `10.02`，对象收紧为 EO satellite mission autonomy / scheduling，不扩展到 Earth-process science、`05` 或 `01.04`
 - 笔记作者：Codex
 
 ## Evidence Log
+
+**2026-06-22 preprint recheck**：官方预印本 PDF 复核后，稳定对象仍是卫星 mission autonomy / onboard tasking，而不是 Earth-process science；主要剩余风险仍是 `core-strength risk`，不是 `10.02` class risk。
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -24,7 +27,7 @@
 
 ## 0. 摘要翻译
 
-论文提出一个面向 agile Earth-observing satellite scheduling 的强化学习自主决策框架。系统不预先算完整计划，而是在高保真卫星仿真中学习根据事件持续时间选择 target，并在 power-constrained 条件下自主管理成像与充电。结果显示，该策略能在动态环境中以较低在线计算成本做闭环任务选择，但论文 framing 同时覆盖 scientific、commercial、disaster 与 reconnaissance uses，因此确认性强度低于更纯粹的 mission-science 论文。
+论文提出一个面向 agile Earth-observing satellite scheduling 的强化学习自主决策框架，核心对象是 EO satellite mission autonomy / onboard tasking，而不是 Earth-process science 本体。系统不预先算完整计划，而是在高保真卫星仿真中学习根据事件持续时间选择 target，并在 power-constrained 条件下自主管理成像与充电。结果显示，该策略能在动态环境中以较低在线计算成本做闭环任务选择，但论文 framing 同时覆盖 scientific、commercial、disaster 与 reconnaissance uses，因此确认性强度低于更纯粹的 mission-science 论文。
 
 ## 1. 是否纳入本综述
 
@@ -59,20 +62,20 @@
 - 三级类：Earth-observing satellite 自主任务规划
 - 四级专题：event-driven EO satellite autonomy
 - 四级专题是否为新增：否
-- 归类理由：研究对象是 EO satellite autonomy / scheduling，而不是具体 Earth-science natural process
+- 归类理由：研究对象是 under spacecraft constraints 的 EO satellite mission autonomy / scheduling，而不是具体 Earth-science natural process
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：agile Earth-observing satellite mission autonomy
-- 最终科学问题：如何让 EO satellite 在动态 target requests 与资源约束下闭环做任务选择
+- 最终科学问题：如何让 EO satellite 在动态 target requests、资源约束与 flight-mode 切换条件下闭环做 onboard tasking
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：强化学习只是求解方法，稳定对象是 mission autonomy problem
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：05、01.04
 - 最终判定：保留 10.02
-- 判定理由：论文不研究气候、灾害或地表过程本体，而研究 EO satellite 如何在动态任务需求下自主决策
+- 判定理由：论文不研究气候、灾害或地表过程本体，Earth observation 在这里是任务场景而非最终科学对象；真正被优化的是 EO satellite 如何在动态任务需求下自主决策
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -200,11 +203,11 @@
 
 - Agent 自主性不足：任务值由人工预设，科学对象本身较抽象
 - 科学验证不足：仅有仿真，无真实飞行部署
-- 泛化性不足：场景同时覆盖 scientific、commercial、disaster、recon uses，core-strength 不如更纯 mission-science 样本
+- 泛化性不足：场景同时覆盖 scientific、commercial、disaster、recon uses，因此主要剩余风险是 core-strength 不如更纯 mission-science 样本，而不是 `10.02` 归类本身不稳
 - 工具链依赖：依赖高保真 AEOSSP 仿真与 benchmark 设定
 - 数据泄漏或 benchmark 偏差：pseudo-optimal baseline 与 target generation 方式会影响结论
 - 成本、可复现性或安全风险：真实部署仍需大量工程验证
-- 是否仍需进一步全文复核：否，但正式写综述时应明确 `core-strength risk > class risk`
+- 是否仍需进一步全文复核：否；2026-06-22 已按官方预印本 PDF 复核，但正式写综述时仍应明确 `core-strength risk > class risk`
 
 ## 8. 对综述写作的价值
 
