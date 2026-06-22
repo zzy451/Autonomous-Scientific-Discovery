@@ -12,6 +12,15 @@
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## 2026-06-23 evidence-log / safety-visible boundary closeout
+
+- `first_hand_sources_checked`: DOI resolver `https://doi.org/10.64898/2026.01.06.697527`; the DOI route redirected to a non-safe `http` bioRxiv landing and was not followed; official PromptBio publications page `https://promptbio.ai/publications.html`; official PromptBio use-cases page `https://promptbio.ai/use-cases.html`.
+- `safety_access_status`: `safety_skip_non_safe_http_doi_redirect`.
+- `pdf_status`: no local PDF.
+- Final closeout for this round: keep the record in the independent `01.04` bucket with `object_coverage_mode=general_method_without_concrete_object_experiments`; `primary_module_for_filing=01`; `general_method_bucket=01.04`.
+- Boundary-closeout reason: the safe official PromptBio pages support a bioinformatics automation substrate / platform reading, but they do not verify paper-specific gene, protein, cell, disease, or patient-result coverage strong enough to land `06` or `07`.
+- Safety-visible note: do not drift back toward `06/07` merely because the broader PromptBio ecosystem shows life-science use cases. This round closes the boundary conservatively in independent `01.04` as a source-limited, safety-skip-visible hold, not as an ordinary open `06/07` migration queue.
+
 ## 2026-06-21 relaxed round-2 boundary closure
 
 - `first_hand_sources_checked`: Crossref DOI abstract for `10.64898/2026.01.06.697527`; official PromptBio platform landing page at `https://platform.promptbio.ai`.
@@ -25,9 +34,9 @@
 
 - `first_hand_sources_checked`: DOI / bioRxiv DOI landing path and metadata mirrors; bioRxiv full text/PDF was not accessible in this run (`403`/blocked).
 - `classification_evidence_source_level`: `source_limited`.
-- Current decision: keep this record in the independent `01.04` queue for now, not because the old single-module note is authoritative, but because full task inventory could not be verified from the original full text.
-- Relaxed-rule implication: the abstract-level evidence mentions bioinformatics automation, in-house data, BixBench, and research / clinical contexts, so `06` and possibly `07` remain plausible. Do not accept a high-confidence migration until the full paper or authoritative task inventory confirms concrete biology / biomedical object tasks and results.
-- `note_revision_required`: yes, if full text later confirms concrete object tasks; current block supersedes the older high-confidence `01.04` wording as a provisional, source-limited decision.
+- Current decision: keep this record in the independent `01.04` queue on a conservative, source-limited basis; later note blocks supersede this early provisional hold.
+- Relaxed-rule implication: the abstract-level evidence mentions bioinformatics automation, in-house data, BixBench, and research / clinical contexts, so `06` and `07` should stay visible only as unverified possibilities. Do not migrate from independent `01.04` unless later full text or another safe first-hand source confirms concrete biology / biomedical object tasks and results.
+- `note_revision_required`: no for this round's closeout wording refresh; classification stays `01.04` unless stronger safe first-hand object evidence appears later.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
