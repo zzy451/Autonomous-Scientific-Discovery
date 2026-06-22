@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：bioRxiv preprint
 - DOI / arXiv / URL：https://doi.org/10.1101/2025.04.27.650826
-- PDF / 本地文件路径：本轮基于 bioRxiv 摘要与官方元数据；未保存本地 PDF
+- PDF / 本地文件路径：未归档本地 PDF；官方 bioRxiv landing page / PDF 本轮尝试仍被 Cloudflare 阻断，approved bioRxiv PDF attempt 返回 `HTTP 403 Forbidden`
 - 论文类型：系统论文 / multi-omics regulation-analysis agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,26 +16,30 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | bioRxiv abstract | 论文明确将其定义为面向 transcriptional regulation analysis 的 agent software，并提供 planning / execution / automatic 三种模式 | 高 |
-| 科学对象归类 | `06.03` | bioRxiv abstract | 直接研究 transcriptional regulation、multi-omics joint analysis、key regulators 等生命科学对象 | 高 |
-| 方法流程 | 多工具多数据源自动分析 | bioRxiv abstract | 集成 30+ tools 与 20+ data sources，覆盖 raw data processing 到 advanced analysis | 高 |
-| 实验验证 | 多案例分析 | bioRxiv abstract | 应用于食管鳞癌和 cardiomyocyte differentiation 等场景，识别调控回路与关键调控因子 | 高 |
-| 边界判断 | 不应转 `07` | bioRxiv abstract | 虽有医学场景，但主问题是 transcriptional regulation analysis，而非诊疗决策 | 高 |
+| Agent 纳入 | 是 | Crossref DOI abstract；official repo materials；bioRxiv landing attempt | 论文明确将其定义为面向 transcriptional regulation analysis 的 agent software，并提供 planning / execution / automatic 三种模式 | 高 |
+| 科学对象归类 | `06;07`（`primary_module_for_filing = 06`） | Crossref DOI abstract；official repo materials | `06` 由 transcriptional regulation、multi-omics joint analysis、key regulators 等生命科学对象稳定支持；`07` 由 ESCC 疾病案例与病理相关调控回路支持 | 高 |
+| 方法流程 | 多工具多数据源自动分析 | Crossref DOI abstract；official repo materials | 集成 30+ tools 与 20+ data sources，覆盖 raw data processing 到 advanced analysis | 高 |
+| 实验验证 | 多案例分析 | Crossref DOI abstract；official repo materials | 应用于食管鳞癌和 cardiomyocyte differentiation 等场景，识别调控回路与关键调控因子 | 高 |
+| 来源 / 归档状态 | `source_limited` | bioRxiv landing attempt；bioRxiv PDF attempt | 官方 bioRxiv HTML / PDF 本轮尝试仍被 Cloudflare 阻断，未归档本地 PDF；当前 closeout 依据为 Crossref DOI abstract + official repo materials | 高 |
+| 边界判断 | 接受 `06/07` 边界；`07` 为 source-limited adjunct module | Crossref DOI abstract；official repo materials；bioRxiv landing/PDF attempt | 论文主线仍是 transcriptional regulation analysis，因此 `06` 保持 primary filing；但 ESCC disease-case evidence 足以接受 `07` 作为附加医学对象模块，而不是被否决的边界假说 | 中高 |
 
 ## 2026-06-20 relaxed multi-module classification update
 
-本更新覆盖下文“稳定对象是 transcriptional regulation analysis rather than class-07 clinical decision support”的旧单模块表述。该判断对 `primary_module_for_filing = 06` 仍然成立，但当前 relaxed multi-module rule 不要求 `07` 必须是临床决策主贡献；只要有疾病 / 病理对象 case study 和结果报告，就可以记录附加医学模块。
+本节保留 2026-06-20 relaxed multi-module update 的位置，但 wording 已按当前 closeout 刷新。`06` 仍然是 `primary_module_for_filing`，不过 `07` 不再是“应被拒绝的边界假说”；在当前 relaxed multi-module rule 下，只要有疾病 / 病理对象 case study 和结果报告，就可以接受附加医学模块。对本文而言，ESCC disease-case evidence 足以支持一个 source-limited 的 `07` adjunct module，而无需把论文改写成临床决策支持工作。
 
-- first_hand_sources_checked: `doi_page`; `bioRxiv_metadata`; `accessible_full_text_mirror`; `official_project_page`; `local_note`
+- first_hand_sources_checked: `crossref_doi_abstract`; `official_repo_materials`; `bioRxiv_landing_page_attempt`; `bioRxiv_pdf_attempt_403`
 - scientific_object_modules: `06;07`
 - object_coverage_mode: `multi_module`
 - general_method_bucket: `none`
 - primary_module_for_filing: `06`
 - module_assignment_evidence: `06` 由 transcriptional regulation、multi-omics、epigenomics、gene expression profiles、enhancers / super-enhancers、gene regulatory networks 和 cardiomyocyte differentiation 支持；`07` 由 esophageal squamous cell carcinoma / ESCC super-enhancer regulatory circuit、oncogenic transcriptional regulators、cancer pathogenesis 和 potential therapeutic-target discovery 支持。
-- multi_module_object_coverage_note: `06` 是生命科学主线；`07` 是基于 ESCC 疾病调控回路 case study 的附加对象模块，不要求改写为临床决策支持论文。
+- multi_module_object_coverage_note: `06` 是生命科学主线；`07` 是基于 ESCC 疾病调控回路 case study 的 accepted source-limited adjunct module，不再按“被拒绝的边界假说”处理，也不要求改写为临床决策支持论文。
 - note_revision_required: `yes`
-- confidence: `high` for `06`; `medium_high` for `07`
+- confidence: `medium_high` overall; `06` strong, `07` accepted as source-limited adjunct evidence
 - full_text_required: `no_for_classification`
+- source_limited: `yes`
+- safety_access_status: `source-limited: bioRxiv HTML/PDF blocked by Cloudflare`
+- pdf_archive_status: `no_local_pdf_archived`
 
 ## 0. 摘要翻译
 
@@ -70,25 +74,29 @@
 ### 2.1 主科学领域
 
 - 一级类：06
+- scientific_object_modules: `06;07`
+- object_coverage_mode: `multi_module`
+- primary_module_for_filing: `06`
+- general_method_bucket: `none`
 - 二级类：06.03
 - 三级类：transcriptional regulation / multi-omics analysis
 - 四级专题：Multi-omics / transcriptional regulation agents
 - 四级专题是否为新增：否
 - 归类理由：主对象是生命机制与调控网络分析，而不是患者级医疗决策
-- 归类置信度：高
+- 归类置信度：中高（`06` 强；`07` 为 accepted source-limited adjunct module）
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：transcriptional regulation、multi-omics relationships、key regulators
+- 最终科学研究对象：transcriptional regulation、multi-omics relationships、key regulators；以及由 ESCC case study 支撑的 disease / pathogenesis object coverage
 - 最终科学问题：如何让 Agent 自动化从原始数据到调控网络分析的生命科学研究流程
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：AI Agent 是方法外壳，真正被研究的是生命调控机制
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：07
-- 最终判定：保留 06.03
-- 判定理由：癌症案例不改变主对象；论文核心仍是 transcriptional regulation analysis 与关键调控因子发现
-- 是否需要二次复核：是，主要是全文层面的边界与验证细节补强
+- 相邻边界模块：`06/07`
+- 最终判定：`scientific_object_modules = 06;07`，其中 `primary_module_for_filing = 06`
+- 判定理由：癌症案例不改变主对象，所以 `06` 继续作为主归档模块；但 ESCC super-enhancer circuitry、oncogenic regulators、cancer pathogenesis 与潜在 therapeutic-target discovery 已构成可识别的疾病对象 case evidence，因此 `07` 作为 accepted source-limited adjunct module 予以保留
+- 是否需要二次复核：否，就当前分类落地而言已足够；后续仅可继续补全文获取与验证细节
 
 ## 3. Agent 系统与科研流程角色
 
@@ -217,24 +225,25 @@
 - 科学验证不足：摘要未展开外部 wet-lab 支撑
 - 泛化性不足：当前案例仍有限
 - 工具链依赖：依赖大量外部分析工具与数据源
+- 来源受限：官方 bioRxiv HTML / PDF 持续被 Cloudflare 阻断，当前 closeout 主要依赖 Crossref DOI abstract 与 official repo materials
 - 数据泄漏或 benchmark 偏差：摘要未展开
 - 成本、可复现性或安全风险：复杂工具链的维护成本较高
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：06 生命科学
+- 可放入哪个章节：06 生命科学；并可在 07 医学与健康科学的交叉案例中简要提及
 - 可支撑哪个论点：Agent 已可自动化承担复杂多组学调控分析
 - 可用于哪个表格或图：omics regulation-analysis Agent 对比表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：当前以摘要为主
+- 需要在正文中特别引用的页码 / 图 / 表：当前以 Crossref DOI 摘要与 official repo materials 为主；无本地 PDF
 - 需要与哪些论文并列比较：CellAgent、PrimeGen、PROTEUS 等
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-多组学 Agent 自动化转录调控分析。
+多组学 Agent 自动化转录调控分析，并以 ESCC 疾病案例支持附加 `07` 模块。
 
 ### 9.2 速记版 pipeline
 
@@ -257,9 +266,16 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 自主能力：task_decomposition; planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; environment_interaction
 验证方式：benchmark; clinical_data
 交叉属性：computation_driven; data_driven; multiscale_modeling
+scientific_object_modules：06;07
+object_coverage_mode：multi_module
+primary_module_for_filing：06
+general_method_bucket：none
+source_limited：yes
+safety_access_status：source-limited: bioRxiv HTML/PDF blocked by Cloudflare
+pdf_archive_status：no_local_pdf_archived
 科学贡献类型：analysis; hypothesis; system_platform
 证据强度：high_primary_abstract
-归类置信度：高
+归类置信度：medium_high
 纳入置信度：高
 推荐引用强度：standard
 ```

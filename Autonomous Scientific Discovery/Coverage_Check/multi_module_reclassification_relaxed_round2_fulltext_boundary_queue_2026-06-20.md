@@ -368,6 +368,18 @@ Report: `Coverage_Check/multi_module_note_pdf_full_reaudit_carryforward_unresolv
 | `ASD-0389` | closed | reviewed open-access publisher PDF, archived local PDF, and kept stable `scientific_object_modules=04` |
 | `ASD-0410` | closed | reviewed open-access publisher PDF, archived local PDF, and kept stable `scientific_object_modules=04` |
 
+## CarryForward05 Status Update
+
+Report: `Coverage_Check/multi_module_note_pdf_full_reaudit_carryforward_unresolved5_2026-06-22.md`.
+
+| ID | Status after CarryForward05 | Action |
+|---|---|---|
+| `ASD-0052` | closed | checked SSRN abstract + DOI redirect / metadata + arXiv abstract, archived approved arXiv fallback PDF, and accepted stable `scientific_object_modules=09`; record closes as source-limited but classification-stable |
+| `ASD-0054` | still open | explicit `not accessed due to safety`; keep prior working `07;06` judgment conservative and visible, without unsafe re-access |
+| `ASD-0097` | still open | official Nature Methods abstract/project evidence keeps strong `06;07` pressure, but disease-side expansion remains conservative until stronger first-hand full-text support is landed |
+| `ASD-0112` | still open | official abstract / metadata keep strong `03;07` pressure, but full-text validation details remain inaccessible, so the chemistry-side expansion stays conservative for now |
+| `ASD-0141` | closed | checked Crossref DOI abstract + official repo materials, attempted official bioRxiv landing/PDF, and accepted source-limited `scientific_object_modules=06;07` with `06` primary and `07` as an ESCC case-driven adjunct module |
+
 ## 5. Background-Only Watchlist
 
 These records should not enter confirmed overlay counts unless a future status review promotes them.
