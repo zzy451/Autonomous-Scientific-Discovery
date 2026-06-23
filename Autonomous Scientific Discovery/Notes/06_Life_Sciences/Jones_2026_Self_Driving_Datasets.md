@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.07022
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / API / HTML 与官方 GitHub
+- PDF / 本地文件路径：当前写回以 arXiv abstract (`2605.07022`) 作为一手来源；本地未归档 PDF
 - 论文类型：系统论文 / biomedical dataset-construction agents
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -22,7 +22,7 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 06
-first_hand_sources_checked: arXiv abstract; project / GitHub trail
+first_hand_sources_checked: arXiv abstract `2605.07022`
 classification_evidence_source_level: first_hand_abstract_or_landing_page
 module_assignment_evidence: `03` is supported by chemical-reaction extraction tasks; `06` is supported by gene-disease, protein localization, and biological knowledge-extraction tasks; `07` is supported by BBB permeability, oral bioavailability, LD50, and biomedical / pharmacological property tasks.
 multi_module_object_coverage_note: The old 06-only filing is too narrow under the relaxed rule. The paper builds self-driving biomedical datasets, but its reported extraction tasks span chemistry, life science, and medical / pharmacological objects.
@@ -34,8 +34,8 @@ multi_module_object_coverage_note: The old 06-only filing is too narrow under th
 | 明确科研目标 | 是 | arXiv abstract | 目标是把 PubMed 自主转成更大、更细致、更准确的 biomedical structured datasets | 高 |
 | 多步行动 | 是 | arXiv abstract / HTML §1, §3 | 系统自动设计 retrieval filters、归纳 extraction schema、输出结构化 records 与 supporting passages | 高 |
 | 科研流程角色 | 是 | arXiv abstract / GitHub README | 承担 literature search、knowledge extraction、evidence organization、dataset construction | 高 |
-| 科学对象归类 | 暂保 `06.03` | arXiv abstract | 六个任务都落在 BBB、oral bioavailability、LD50、gene-disease、protein localization、chemical reactions 等 biomedical objects | 高 |
-| 边界判断 | `06.03 / 01.04` 有压力，但先不回收 | arXiv abstract / HTML §4, §8 | 虽有平台外观，但语料、任务、输出与 therapeutic design 叙事都仍然锚定 biomedical corpus | 中高 |
+| 科学对象归类 | 支持 `03;06;07`，primary `06` | arXiv abstract | chemical reactions 支撑 `03`；gene-disease 与 protein localization 支撑 `06`；BBB、oral bioavailability 与 LD50 支撑 `07` | 高 |
+| 边界判断 | 不是 `01.04`，也不能只写成 `06` | arXiv abstract | 虽有平台外观，但任务集合已经跨 chemistry、life science 与 medical / pharmacological objects，需按 relaxed multi-module rule 显式记为 `03;06;07` | 中高 |
 | 主要剩余风险 | core-strength risk | arXiv abstract / GitHub | 更像高质量 dataset-building / literature-mining agent，而非更强的 hypothesis-to-experiment discovery loop | 中高 |
 
 ## 0. 摘要翻译
@@ -70,25 +70,25 @@ multi_module_object_coverage_note: The old 06-only filing is too narrow under th
 
 ### 2.1 主科学领域
 
-- 一级类：06
+- 一级类：06（primary module for filing）
 - 二级类：06.03
 - 三级类：生物医学知识抽取 / 生物信息数据构建
 - 四级专题：Multi-agent biomedical knowledge-extraction systems
 - 四级专题是否为新增：否
-- 归类理由：虽然系统外观接近 research workflow substrate，但它当前处理的语料、任务和输出都锚定在生命科学 / 生物医学对象上
+- 归类理由：当前可识别任务同时覆盖 chemical-reaction extraction（`03`）、gene / protein biological knowledge extraction（`06`）以及 BBB permeability、oral bioavailability、LD50 等 pharmacological property extraction（`07`）；笔记落在 `06` 目录仅是 filing convenience，不覆盖 `03;06;07` 的多模块事实
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：大规模 biomedical literature 中的基因、蛋白、药代属性、反应等知识对象
+- 最终科学研究对象：大规模 biomedical literature 中的 chemical reactions、gene / protein biological knowledge 以及 pharmacological property records
 - 最终科学问题：如何从生物医学文献中自动构建高质量结构化知识数据集
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：multi-agent 架构只是手段，具体输出对象仍然属于生命科学 / 生物医学知识构建
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04
-- 最终判定：暂保持 06.03
-- 判定理由：尽管系统形态偏平台化，但六项任务及“AI-driven therapeutic design”叙事都没有脱离 biomedical object
+- 最终判定：支持 `03;06;07`，primary `06`
+- 判定理由：尽管系统形态偏平台化，但六项任务已经分别给出 chemistry、life science 与 medical / pharmacological object coverage，不能回收到 `01.04`，也不应继续只保留旧的 `06` 单模块表述
 - 是否需要二次复核：是
 
 ## 3. Agent 系统与科研流程角色
@@ -264,3 +264,15 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：standard
 ```
+## 2026-06-24 writeback adjudication
+
+- `scientific_object_modules`: `03;06;07`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `06`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: arXiv abstract `2605.07022`
+- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `source_limited`: `no`
+- `note_revision_required`: `yes`
+
+This writeback makes the multi-module evidence explicit. The paper should not be described as `06`-only or as an independent `01.04`-style general-method note, because the reported tasks cover chemical-reaction extraction (`03`), biological knowledge extraction (`06`), and pharmacological / biomedical property extraction (`07`).

@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2409.12832
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 ar5iv HTML 一手证据整理；当前 note 未记录本地归档 PDF 路径。
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：已读摘要级证据；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
@@ -14,17 +14,33 @@
 
 ## Evidence Log
 
+## 2026-06-24 adjudicated writeback
+
+```text
+scientific_object_modules: 08
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 08
+first_hand_sources_checked: arXiv PDF; ar5iv HTML
+classification_evidence_source_level: first_hand_full_text
+source_limited: no
+module_assignment_evidence: the benchmark and agent workflow are explicitly framed around flavor science, food items, and flavor-molecule profiles for food-science hypothesis generation, so the stable concrete object is food / flavor science.
+multi_module_object_coverage_note: flavor molecules create a chemistry-adjacent boundary note, but the current evidence still lands only `08` rather than `03`.
+note_location_rule: 本 note 落在 `08` 文件夹仅为归档便利，不是分类权威；当前权威对象模块判断是 `08`。
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
 | 科学对象归类 | `08` / `08.05` | 摘要 | 最稳定对象是“flavor science / food science hypothesis generation agents”，而不是单纯的模型方法或发表 venue。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
 | 实验验证 | FoodPuzzle benchmark 与 grounded retrieval-based hypothesis generation | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 FoodPuzzle benchmark 与 grounded retrieval-based hypothesis generation 支撑其主张。 | 中高 |
-| 边界判断 | 08.05 内部稀缺样本；不可因稀缺性而放宽标准 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| 边界判断 | `08` 主体稳定；化学只作为边界说明 | arXiv PDF；ar5iv HTML | flavor molecules 带来与 `03` 的相邻边界，但论文的任务、数据与主张仍围绕 flavor science / food science 展开。 | 中高 |
 
 ## 0. 摘要翻译
 
-论文围绕“flavor science / food science hypothesis generation agents”提出题为《FoodPuzzle: Developing Large Language Model Agents as Flavor Scientists》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 FoodPuzzle benchmark 与 grounded retrieval-based hypothesis generation 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+论文围绕“flavor science / food science hypothesis generation agents”提出题为《FoodPuzzle: Developing Large Language Model Agents as Flavor Scientists》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 FoodPuzzle benchmark 与 grounded retrieval-based hypothesis generation 作为主要验证。当前证据支持其明确归入 `08`，因为最终科学对象是 food / flavor science；其中 flavor molecules 只构成与化学科学相邻的边界说明，不足以单独落到 `03`。
 
 ## 1. 是否纳入本综述
 
@@ -54,6 +70,10 @@
 
 ### 2.1 主科学领域
 
+- 科学对象模块：08
+- 覆盖模式：单模块
+- 独立 `01.04` 存放区：none
+- Primary module for filing：08（仅用于文件落盘，不覆盖 `08` 模块事实）
 - 一级类：08
 - 二级类：08.05
 - 三级类：
@@ -70,9 +90,9 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：08.05 内部稀缺样本；不可因稀缺性而放宽标准
+- 可能误归类到：03
 - 最终判定：保持 `08` / `08.05`
-- 判定理由：08.05 内部稀缺样本；不可因稀缺性而放宽标准
+- 判定理由：论文虽然使用 flavor molecules 等化学相邻对象，但具体任务是 flavor profile sourcing / understanding 与 food-science hypothesis generation，因此主类仍应落在 `08`。
 - 是否需要二次复核：需要。
 
 ## 3. Agent 系统与科研流程角色

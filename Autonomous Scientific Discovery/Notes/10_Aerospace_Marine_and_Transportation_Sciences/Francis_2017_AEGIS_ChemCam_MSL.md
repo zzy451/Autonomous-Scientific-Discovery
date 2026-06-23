@@ -6,7 +6,7 @@
 - 年份：2017
 - 来源 / venue：Science Robotics
 - DOI / arXiv / URL：https://doi.org/10.1126/scirobotics.aan4582
-- PDF / 本地文件路径：当前笔记基于 DOI 元数据与 PubMed 官方摘要
+- PDF / 本地文件路径：当前笔记基于 LANL accepted-manuscript PDF 一手证据整理；当前 note 未记录本地归档 PDF 路径。
 - 论文类型：部署论文 / mission-science targeting Agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -22,23 +22,25 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 10
-first_hand_sources_checked: PubMed abstract; Science Robotics / DOI metadata
-classification_evidence_source_level: first_hand_abstract_or_landing_page
+first_hand_sources_checked: LANL accepted-manuscript PDF
+classification_evidence_source_level: first_hand_full_text
+source_limited: no
 module_assignment_evidence: `05` is supported by Mars geological materials and geochemical ChemCam observations; `10` is supported by autonomous rover instrument targeting and mission-science operations.
 multi_module_object_coverage_note: The old mission-autonomy filing is incomplete under the relaxed rule because the paper reports geological / geochemical science targeting and observations, not only rover control.
+note_location_rule: 本 note 落在 `10` 文件夹仅为归档便利，不是分类权威；当前权威对象模块判断是 `05;10`，其中 `10` 仅是 primary_module_for_filing。
 ```
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Canonical metadata | 首作者应规范为 Raymond Francis | Crossref + PubMed | Crossref 为 R. Francis，PubMed 邮箱为 raymond.francis@jpl.nasa.gov | 高 |
 | Agent 纳入 | 是 | PubMed 摘要 | autonomous target selection + autonomous pointing refinement + instrument observation | 高 |
-| 科学对象归类 | `10.02` | 摘要 | 对象是 Curiosity ChemCam mission-science operation，而非 geology 本体 | 高 |
+| 科学对象归类 | `05;10`（`10` 为 primary） | LANL accepted-manuscript PDF | 对象既包括 Curiosity ChemCam mission-science operation，也包括对 Mars geological / geochemical targets 的具体科学覆盖。 | 高 |
 | 多步行动 | 明确存在 | 摘要 | 图像识别 -> 目标选择 / 修正 -> ChemCam observation -> mission workflow adoption | 高 |
 | 实验验证 | 真实部署 | 摘要 | 已自 2016 年起 routine use on Curiosity，并报告高命中表现 | 高 |
 
 ## 0. 摘要翻译
 
-论文介绍 AEGIS 如何在 Curiosity 火星车上为 ChemCam 仪器执行自主目标选择与指向修正。系统可以在没有地球端即时介入的情况下，从导航图像中自动识别符合科学家要求的地质目标，并立即触发 ChemCam 观测；也可以对人工指定目标进行小角度修正，提升小目标首发命中率。其核心对象是火星车 mission science autonomy。
+论文介绍 AEGIS 如何在 Curiosity 火星车上为 ChemCam 仪器执行自主目标选择与指向修正。系统可以在没有地球端即时介入的情况下，从导航图像中自动识别符合科学家要求的地质目标，并立即触发 ChemCam 观测；也可以对人工指定目标进行小角度修正，提升小目标首发命中率。当前应把它明确写成 `05;10` 多模块记录：`10` 是火星车 mission-science autonomy 的主展示模块，`05` 则来自对 Mars geological / geochemical targets 的具体科学覆盖。
 
 ## 1. 是否纳入本综述
 
@@ -68,26 +70,30 @@ multi_module_object_coverage_note: The old mission-autonomy filing is incomplete
 
 ### 2.1 主科学领域
 
+- 科学对象模块：05;10
+- 覆盖模式：多模块
+- 独立 `01.04` 存放区：none
+- Primary module for filing：10（仅用于文件落盘，不覆盖 `05;10` 模块事实）
 - 一级类：10
 - 二级类：10.02
 - 三级类：ChemCam mission-science targeting
 - 四级专题：rover instrument-targeting mission-science agents
 - 四级专题是否为新增：否
-- 归类理由：稳定对象是火星车上的 mission-science autonomy 与仪器调度，而不是地学过程研究本身
+- 归类理由：主展示对象是火星车上的 mission-science autonomy 与仪器调度，但论文同时报告了对 Mars geological / geochemical targets 的具体科学观测，因此应明确记为 `05;10`，以 `10` 为 primary。
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：Curiosity ChemCam autonomous science workflow
-- 最终科学问题：如何在火星车上自主选择并修正高价值科学观测目标
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：图像分析只是手段，最终对象是航天任务中的自主科学操作
+- 最终科学问题：如何在火星车上自主选择并修正高价值科学观测目标，并将其落实到 Mars geological / geochemical target observations
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：图像分析只是手段；对象层证据同时覆盖航天任务中的自主科学操作与 Mars geological / geochemical targets
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：05
-- 最终判定：保持 10.02
-- 判定理由：核心不是行星 geology，而是火星车 mission science targeting
-- 是否需要二次复核：需要全文补页码，但主类方向稳定
+- 可能误归类到：仅记 `10`
+- 最终判定：`05;10`，以 `10` 为 primary
+- 判定理由：核心主轴确实是火星车 mission science targeting，但论文报告的 autonomous target selection 与 ChemCam observations 直接落在 Mars geological / geochemical objects 上，因此不能再写成纯 `10` 单模块。
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 

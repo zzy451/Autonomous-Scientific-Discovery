@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.27303
-- PDF / 本地文件路径：当前笔记基于 arXiv 摘要页、GitHub README 与主列表元数据；本地未保存 PDF
+- PDF / 本地文件路径：当前写回以 arXiv abstract (`2603.27303`) 作为一手来源；本地未归档 PDF
 - 论文类型：研究论文 / protein-engineering multi-agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -16,9 +16,9 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv abstract / GitHub README / reviewer evidence | 论文与仓库都把 `VenusFactory2` 定义为 self-evolving AI agents for protein discovery | 高 |
-| 科学对象归类 | `06.03` | arXiv abstract / repo examples | 直接对象是 protein discovery, directed evolution, protein engineering tasks | 高 |
-| 方法流程 | natural-language demand -> dynamic workflow synthesis -> protein optimization | abstract / README | 系统会根据蛋白研究需求动态组织 workflows，而不是单次回答 | 高 |
+| Agent 纳入 | 是 | arXiv abstract | 论文将 `VenusFactory2` 界定为面向 protein discovery and directed evolution 的 self-evolving AI agents | 高 |
+| 科学对象归类 | `06.03` | arXiv abstract | 直接对象是 protein discovery、directed evolution 与 protein-engineering tasks，而不是领域无关 research-agent benchmark | 高 |
+| 方法流程 | natural-language demand -> dynamic workflow synthesis -> protein optimization | arXiv abstract | 系统会根据蛋白研究需求动态组织 workflows，而不是单次回答 | 高 |
 | 边界判断 | 不应改到 `01.04` | object-first rule | 尽管平台感很强，但资源、任务和示例都稳定锚定在 protein engineering | 高 |
 | 验证方式 | computational / workflow validation | abstract / repo | 当前主要是 protein-engineering workflow 级验证，后续需全文加强 case-depth 判断 | 中高 |
 
@@ -247,3 +247,15 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：标准引用
 ```
+## 2026-06-24 writeback adjudication
+
+- `scientific_object_modules`: `06`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `06`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: arXiv abstract `2603.27303`
+- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `source_limited`: `no`
+- `note_revision_required`: `no`
+
+This writeback keeps the protein-engineering and directed-evolution object framing explicit. The current first-hand basis is the arXiv abstract; no local PDF is archived, but the frozen adjudication does not treat this note as source-limited.

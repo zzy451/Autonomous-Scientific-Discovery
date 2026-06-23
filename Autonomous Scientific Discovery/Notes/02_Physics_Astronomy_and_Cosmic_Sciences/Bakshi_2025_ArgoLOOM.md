@@ -6,13 +6,29 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2510.02426
-- PDF / 本地文件路径：当前笔记基于 arXiv 摘要页
+- PDF / 本地文件路径：当前笔记基于 arXiv abstract 一手证据整理；当前 note 未记录本地归档 PDF 路径。
 - 论文类型：系统论文 / fundamental physics analysis agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## 2026-06-24 adjudicated writeback
+
+```text
+scientific_object_modules: 02
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 02
+first_hand_sources_checked: arXiv abstract
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+source_limited: no
+module_assignment_evidence: the paper is explicitly framed around fundamental physics objects spanning collider physics, nuclear science, and cosmology, so the stable object module is `02` rather than `01.04`.
+multi_module_object_coverage_note: none
+note_location_rule: 本 note 落在 `02` 文件夹仅为归档便利，不是分类权威；当前权威对象模块判断是 `02`。
+```
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -54,6 +70,10 @@
 
 ### 2.1 主科学领域
 
+- 科学对象模块：02
+- 覆盖模式：单模块
+- 独立 `01.04` 存放区：none
+- Primary module for filing：02（仅用于文件落盘，不覆盖 `02` 模块事实）
 - 一级类：02
 - 二级类：02.02
 - 三级类：fundamental physics computational analysis
@@ -64,7 +84,7 @@
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：基础物理中的跨子领域分析与发现流程
+- 最终科学研究对象：基础物理对象上的跨子领域分析与发现流程，具体覆盖 collider physics、nuclear science 与 cosmology
 - 最终科学问题：如何用 Agent 系统统一 fundamental physics computational discovery pipelines
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：agentic framework 只是手段，稳定对象仍是 fundamental physics
 

@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2602.17886
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与 reviewer 一手证据整理
+- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 arXiv abstract 一手证据整理；当前 note 未记录本地归档 PDF 路径。
 - 论文类型：系统论文 / solid-state simulation agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,17 +14,33 @@
 
 ## Evidence Log
 
+## 2026-06-24 adjudicated writeback
+
+```text
+scientific_object_modules: 04
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+first_hand_sources_checked: arXiv PDF; arXiv abstract
+classification_evidence_source_level: first_hand_full_text
+source_limited: no
+module_assignment_evidence: paper directly targets solid-state simulations and solid-state materials workflows, so the concrete scientific object remains materials-science coverage rather than a domain-general agent platform.
+multi_module_object_coverage_note: none
+note_location_rule: 本 note 落在 `04` 文件夹仅为归档便利，不是分类权威；当前权威对象模块判断是 `04`。
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | 以层级化 multi-agent framework 组织固态量化模拟与结构生成流程 | 高 |
-| 科学对象归类 | `04.04` | arXiv abstract；reviewer evidence | 直接面向 solid-state simulations 与材料体系，而不是通用科研工作流 | 中高 |
+| 科学对象归类 | `04` | arXiv PDF；arXiv abstract | 直接面向 solid-state simulations 与固态材料对象，属于具体材料科学覆盖，而不是 `01.04` 通用科研 Agent 存放区。 | 高 |
 | 方法流程 | 多步模拟编排 | arXiv abstract | 系统把自然语言目标转成结构生成、工作流执行、后处理等 end-to-end pipeline | 高 |
-| 边界判断 | `04 / 01.04` 压力存在，但仍保留 `04` | reviewer evidence | 主工作场景稳定落在固态材料模拟，不足以回到纯平台类 | 中高 |
-| 风险判断 | 主要是 core-strength 与 case 权重 | reviewer evidence | 当前更需要全文确认是否只是 solid-state assistant，还是足够强的 discovery workflow | 中高 |
+| 边界判断 | 平台外观不改变 `04` concrete-object 归类 | arXiv PDF；arXiv abstract | 即便系统采用层级化 Agent 编排，只要任务与结果围绕 solid-state materials simulation，就应按材料科学对象记录。 | 高 |
+| 风险判断 | 主要剩余风险在贡献强度，不在模块方向 | arXiv PDF；arXiv abstract | 当前需要继续关注 discovery 深度与案例代表性，但 `04` 的对象模块方向已经稳定。 | 中高 |
 
 ## 0. 摘要翻译
 
-论文提出 El Agente Sólido，一个层级化多 Agent 框架，用于把自然语言研究目标转换成端到端的固态模拟流程。系统覆盖结构生成、第一性原理或相关固态计算、工作流执行和后处理，试图让 solid-state quantum chemistry / solid-state simulations 更自动化。当前证据支持它仍应归入材料科学，而不是 `01.04`，因为其稳定对象是固态材料模拟与材料问题。
+论文提出 El Agente Sólido，一个层级化多 Agent 框架，用于把自然语言研究目标转换成端到端的固态模拟流程。系统覆盖结构生成、第一性原理或相关固态计算、工作流执行和后处理，试图让 solid-state quantum chemistry / solid-state simulations 更自动化。当前证据支持它应明确归入材料科学 `04`，因为其具体科学对象就是固态材料模拟与材料问题，而不是无具体对象实验的通用科研 Agent。
 
 ## 1. 是否纳入本综述
 
@@ -54,6 +70,10 @@
 
 ### 2.1 主科学领域
 
+- 科学对象模块：04
+- 覆盖模式：单模块
+- 独立 `01.04` 存放区：none
+- Primary module for filing：04（仅用于文件落盘，不覆盖 `04` 模块事实）
 - 一级类：04
 - 二级类：04.04
 - 三级类：
@@ -72,8 +92,8 @@
 
 - 可能误归类到：01.04
 - 最终判定：保留 04.04
-- 判定理由：若系统主要展示对象始终是 solid-state materials simulation，就不应仅因平台感强而回收到通用类
-- 是否需要二次复核：是，建议全文核查 case depth
+- 判定理由：若系统主要围绕 solid-state materials simulation 的具体任务、结构生成与结果分析展开，就应按材料对象归入 `04`，而不是因为平台感较强退回 `01.04`。
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -210,7 +230,7 @@
 
 - 可放入哪个章节：04.04 计算材料 / solid-state simulation agents
 - 可支撑哪个论点：平台感很强的系统，只要稳定对象是固态材料，仍应优先留在 `04`
-- 可用于哪个表格或图：`04 / 01.04` 边界样本表
+- 可用于哪个表格或图：`04` 模块中 platform-looking materials agents 对照表
 - 适合作为代表性案例吗：适合作为边界案例
 - 推荐引用强度：core
 - 需要在正文中特别引用的页码 / 图 / 表：待全文补页码

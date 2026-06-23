@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：NeurIPS 2025 Datasets and Benchmarks / OpenReview
 - DOI / arXiv / URL：https://openreview.net/forum?id=4TdmQaGzxk
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：未配置本地 PDF；当前写回以 arXiv abstract 作为一手来源，并参考现有 OpenReview / metadata trail 做定位说明。
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：已读摘要级证据；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
@@ -22,7 +22,7 @@ object_coverage_mode: single_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 01
-first_hand_sources_checked: OpenReview; arXiv / PDF trail
+first_hand_sources_checked: arXiv abstract
 classification_evidence_source_level: first_hand_abstract_or_landing_page
 module_assignment_evidence: `01` is supported by Scientist-Bench / AI research domains, algorithm and model implementation tasks, and automated experimental evaluation inside formal-computational AI research.
 multi_module_object_coverage_note: This section supersedes the old independent `01.04` wording. AI-Researcher is general in workflow form, but its reported benchmark and experiments use concrete AI-research objects, so it should be treated as formal / computational science (`01.02`) rather than `01.04` general-method-only.
@@ -31,10 +31,10 @@ multi_module_object_coverage_note: This section supersedes the old independent `
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `01` / `01.04` | 摘要 | 最稳定对象是“autonomous scientific innovation system”，而不是单纯的模型方法或发表 venue。 | 高 |
+| 科学对象归类 | `01` | 摘要 | 具体对象是 AI / computational research tasks、algorithm / model implementation 与自动化实验评估，而不是独立 `01.04` 通用方法存放区。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
 | 实验验证 | Scientist-Bench 与 reviewer-style quality evaluation | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 Scientist-Bench 与 reviewer-style quality evaluation 支撑其主张。 | 中高 |
-| 边界判断 | 01.04 / 11.07 邻近；评审组件服务于 research-agent 能力，而非研究 peer review 本体 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| 边界判断 | 不进入 `01.04` 或 `11.07` | 摘要 / 任务定义 | 评审与 benchmark 组件服务于 AI research workflow 能力评估，而非研究 peer review 本体或无具体对象实验的通用方法存放区。 | 中高 |
 
 ## 0. 摘要翻译
 
@@ -69,24 +69,24 @@ multi_module_object_coverage_note: This section supersedes the old independent `
 ### 2.1 主科学领域
 
 - 一级类：01
-- 二级类：01.04
+- 二级类：01.02
 - 三级类：
 - 四级专题：Autonomous scientific-innovation research agents
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“autonomous scientific innovation system”，因此当前主类保持为 `01` / `01.04`。
+- 归类理由：按对象优先规则，本文的稳定对象不是独立 `01.04` 通用 research-agent 存放区，而是具体 AI / computational research tasks，包括 Scientist-Bench、算法与模型实现、自动化代码实验和 reviewer-style 质量评估，因此保留在 `01` 更准确。
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：autonomous scientific innovation system
+- 最终科学研究对象：AI / computational research tasks、算法与模型实现流程、自动化实验与评估对象
 - 最终科学问题：论文试图通过 Agent 系统推进“autonomous scientific innovation system”相关研究任务。
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.04 / 11.07 邻近；评审组件服务于 research-agent 能力，而非研究 peer review 本体
-- 最终判定：保持 `01` / `01.04`
-- 判定理由：01.04 / 11.07 邻近；评审组件服务于 research-agent 能力，而非研究 peer review 本体
+- 可能误归类到：`01.04` 或 `11.07`；但两者都弱于当前 `01` 对象锚定
+- 最终判定：保持 `01`，并按 AI / computational research-task coverage 记为 `01.02`
+- 判定理由：现有一手摘要级证据已经把系统验证锚定在具体 AI 研究任务与计算实验上；评审组件只是 workflow verifier，不足以把论文推入 `11.07`，而具体对象实验又排除了独立 `01.04`
 - 是否需要二次复核：可选。
 
 ## 3. Agent 系统与科研流程角色
@@ -174,14 +174,14 @@ multi_module_object_coverage_note: This section supersedes the old independent `
 
 - Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
 - 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
-- 泛化性不足：01.04 / 11.07 邻近；评审组件服务于 research-agent 能力，而非研究 peer review 本体
+- 泛化性不足：平台叙事仍较强，但当前可见实验对象始终是 AI / computational research tasks，而不是独立 `01.04` 或 `11.07` 对象
 - 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
 - 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
 - 成本、可复现性或安全风险：多 Agent 长流程通常带来较高成本和复现负担。
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：主类 `01` / `01.04` 对应章节。
+- 可放入哪个章节：`01` 形式、信息与计算科学中的 AI / computational research agents 章节。
 - 可支撑哪个论点：Agent 已经能够围绕“autonomous scientific innovation system”形成稳定的多步科研工作流。
 - 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
 - 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
@@ -208,7 +208,7 @@ multi_module_object_coverage_note: This section supersedes the old independent `
 ```text
 是否纳入：是
 主类：01
-二级类：01.04
+二级类：01.02
 三级类：
 四级专题：Autonomous scientific-innovation research agents
 Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
@@ -222,3 +222,15 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+## 2026-06-24 writeback adjudication
+
+- `scientific_object_modules`: `01`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `01`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: arXiv abstract
+- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `source_limited`: `no`
+- `note_revision_required`: `yes`
+
+This writeback removes the stale independent `01.04` wording. AI-Researcher is workflow-general in form, but the reported tasks and evaluation remain anchored in concrete AI / computational research objects, so the stable classification should stay inside formal and computational science (`01`).

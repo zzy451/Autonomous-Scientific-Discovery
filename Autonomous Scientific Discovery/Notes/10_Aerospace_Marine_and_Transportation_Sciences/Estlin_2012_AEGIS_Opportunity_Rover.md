@@ -6,7 +6,7 @@
 - 年份：2012
 - 来源 / venue：ACM Transactions on Intelligent Systems and Technology
 - DOI / arXiv / URL：https://doi.org/10.1145/2168752.2168764
-- PDF / 本地文件路径：当前笔记基于 JPL official PDF
+- PDF / 本地文件路径：当前笔记基于 CaltechAUTHORS 摘要与在线附带 PDF 一手证据整理；当前 note 未记录本地归档 PDF 路径。
 - 论文类型：研究论文 / rover autonomous science targeting
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -22,23 +22,25 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 10
-first_hand_sources_checked: CaltechAUTHORS / paper metadata; PDF
-classification_evidence_source_level: first_hand_full_text
+first_hand_sources_checked: CaltechAUTHORS abstract; attached PDF located online
+classification_evidence_source_level: source_limited
+source_limited: yes
 module_assignment_evidence: `05` is supported by Mars rocks, outcrops, and geologic target selection; `10` is supported by autonomous rover science targeting, sequencing, and observation execution.
 multi_module_object_coverage_note: AEGIS remains filed under rover / mission-science autonomy, but the reported geological target selection is concrete planetary surface science evidence and should be counted as `05` under the relaxed rule.
+note_location_rule: 本 note 落在 `10` 文件夹仅为归档便利，不是分类权威；当前权威对象模块判断是 `05;10`，其中 `10` 仅是 primary_module_for_filing。
 ```
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | official PDF 摘要 | AEGIS 能在 no human in the loop 条件下选 target，并驱动 follow-up observations | 高 |
-| 科学对象归类 | `10.02` | 引言与系统目标 | 对象是 MER Opportunity 的 mission-science targeting，而非纯地质识别 | 高 |
+| 科学对象归类 | `05;10`（`10` 为 primary） | CaltechAUTHORS 摘要；在线附带 PDF | 对象既包括 MER Opportunity 的 rover mission-science autonomy，也包括对 Mars rocks、outcrops 与地表地质目标的具体科学覆盖。 | 高 |
 | 方法流程 | 多步闭环 | 七步流程描述 | navcam image -> target detection -> feature extraction -> ranking -> pointing -> follow-up | 高 |
 | 工具调用 | 明确存在 | VTT / pointing sequence 描述 | 选中目标后调用 tracking 与 instrument repointing | 高 |
 | 实验验证 | 真实任务 | onboard Mars runs | 系统上传到 Opportunity 并在 Mars 上多次成功执行 | 高 |
 
 ## 0. 摘要翻译
 
-AEGIS 是部署在 MER Opportunity rover 上的自动科学目标选择系统。它会在 rover 上分析导航相机图像，基于科学家指定的目标签名自动选择高价值目标，并驱动窄视场科学仪器完成后续观测。论文重点不是火星地质对象本身，而是 rover mission-science autonomy 的真实任务部署与效果。
+AEGIS 是部署在 MER Opportunity rover 上的自动科学目标选择系统。它会在 rover 上分析导航相机图像，基于科学家指定的目标签名自动选择高价值目标，并驱动窄视场科学仪器完成后续观测。当前应将其写成 `05;10` 多模块记录：`10` 是 rover mission-science autonomy 的主展示模块，`05` 则来自对 Mars rocks、outcrops 与行星表面地质目标的具体科学覆盖。
 
 ## 1. 是否纳入本综述
 
@@ -68,25 +70,29 @@ AEGIS 是部署在 MER Opportunity rover 上的自动科学目标选择系统。
 
 ### 2.1 主科学领域
 
+- 科学对象模块：05;10
+- 覆盖模式：多模块
+- 独立 `01.04` 存放区：none
+- Primary module for filing：10（仅用于文件落盘，不覆盖 `05;10` 模块事实）
 - 一级类：10
 - 二级类：10.02
 - 三级类：rover science targeting
 - 四级专题：MER Opportunity mission-science agents
 - 四级专题是否为新增：否
-- 归类理由：稳定对象是航天任务中的自主目标选择与仪器调度，而不是行星 geology 本体
+- 归类理由：主展示对象是航天任务中的自主目标选择与仪器调度，但论文同时报告了面向 Mars surface geology 的具体目标筛选与科学观测，因此应明确记为 `05;10`，以 `10` 为 primary。
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：MER Opportunity rover onboard science targeting workflow
-- 最终科学问题：如何让 rover 自主获取高价值 mission science targets
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：rocks / terrain 只是 target family，核心对象是 mission-science operation
+- 最终科学问题：如何让 rover 自主获取高价值 mission-science targets，并在行星表面地质目标上执行具体科学观测
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：Agent 架构只是手段；对象层证据同时覆盖 rover mission-science operation 与 Mars surface geology target selection
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：05
-- 最终判定：保持 10.02
-- 判定理由：论文不是研究火星地质过程，而是研究 rover onboard autonomy
+- 可能误归类到：仅记 `10`
+- 最终判定：`05;10`，以 `10` 为 primary
+- 判定理由：论文主轴确实是 rover onboard autonomy，但其 target selection 与 follow-up observation 直接落在 Mars rocks、outcrops 与地表地质对象上，因此不能再写成纯 `10` 单模块。
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色

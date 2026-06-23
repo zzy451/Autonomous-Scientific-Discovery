@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：bioRxiv
 - DOI / arXiv / URL：https://doi.org/10.1101/2025.04.01.646731
-- PDF / 本地文件路径：当前笔记基于 bioRxiv / PubMed 页面、GitHub README 与 reviewer 一手证据；本地未保存 PDF
+- PDF / 本地文件路径：当前写回以 Crossref DOI abstract (`10.1101/2025.04.01.646731`) 与 official bioRxiv API 作为一手来源；本地未归档 PDF，全文状态记为 source-limited
 - 论文类型：研究论文 / spatial transcriptomics analysis agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -16,11 +16,11 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | bioRxiv title / GitHub README / reviewer evidence | STAgent 被定义为 spatial transcriptomics AI agent，用于实际空间转录组分析 | 高 |
-| 科学对象归类 | `06.03` | title / README / reviewer evidence | 直接对象是 hPSC-pancreas maturation in vivo 与 spatial transcriptomics biological analysis | 高 |
-| 方法流程 | preprocessing -> analysis -> visualization -> report generation | GitHub README / reviewer evidence | 系统围绕 `.h5ad` 数据集组织多步分析，而非单次问答 | 高 |
+| Agent 纳入 | 是 | Crossref abstract / bioRxiv API | STAgent 被定义为 spatial transcriptomics AI agent，用于实际空间转录组分析 | 高 |
+| 科学对象归类 | `06.03` | Crossref abstract / bioRxiv API | 直接对象是 hPSC-pancreas maturation in vivo 与 spatial transcriptomics biological analysis | 高 |
+| 方法流程 | preprocessing -> analysis -> visualization -> report generation | Crossref abstract / bioRxiv API | 系统围绕 `.h5ad` 数据集组织多步分析，而非单次问答 | 高 |
 | 边界判断 | 不应改到 `01.04` | object-first rule | 平台外观很强，但数据类型、任务和 biological reasoning 都紧扣空间转录组对象 | 高 |
-| 验证方式 | biological case-driven computational workflow | bioRxiv / README | 当前已有一手证据足以支撑 top-level class 稳定 | 高 |
+| 验证方式 | biological case-driven computational workflow | Crossref abstract / bioRxiv API | 当前已有 source-limited 一手证据足以支撑 top-level class 稳定，但仍需全文跟进 | 高 |
 
 ## 0. 摘要翻译
 
@@ -247,3 +247,15 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+## 2026-06-24 writeback adjudication
+
+- `scientific_object_modules`: `06`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `06`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: Crossref DOI abstract `10.1101/2025.04.01.646731`; official bioRxiv API
+- `classification_evidence_source_level`: `source_limited`
+- `source_limited`: `yes`
+- `note_revision_required`: `no`
+
+This writeback records a clean source-limited first-hand state. No local PDF or full-text archive is currently available in the workspace, but this is a source-availability issue rather than any safety restriction.

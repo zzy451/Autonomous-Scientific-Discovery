@@ -6,7 +6,7 @@
 - 年份：2020
 - 来源 / venue：Advanced Materials
 - DOI / arXiv / URL：https://doi.org/10.1002/adma.202001626
-- PDF / 本地文件路径：当前笔记基于 NSF PAR 摘要页与主列表元数据；本地未保存 PDF
+- PDF / 本地文件路径：当前写回以 Crossref DOI abstract (`10.1002/adma.202001626`) 与 publisher PDF link 为一手来源；本地未归档 PDF，全文状态记为 source-limited
 - 论文类型：研究论文 / autonomous quantum-dot synthesis system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,9 +16,9 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | NSF PAR abstract lines 105-107 | integration of ML-based experiment selection and autonomous flow chemistry | 高 |
-| 科学对象归类 | `04.03` | abstract lines 106-107 | 直接对象是 inorganic perovskite quantum dots 的 synthesis composition 与 optoelectronic properties | 高 |
-| 方法流程 | experiment selection -> flow synthesis -> measurement -> update | abstract lines 106-109 / 227-230 | 系统自主选择实验并调谐 quantum yield、composition polydispersity、target bandgaps | 高 |
+| Agent 纳入 | 是 | Crossref abstract / publisher PDF link | integration of ML-based experiment selection and autonomous flow chemistry | 高 |
+| 科学对象归类 | `04.03` | Crossref abstract | 直接对象是 inorganic perovskite quantum dots 的 synthesis composition 与 optoelectronic properties | 高 |
+| 方法流程 | experiment selection -> flow synthesis -> measurement -> update | Crossref abstract | 系统自主选择实验并调谐 quantum yield、composition polydispersity、target bandgaps | 高 |
 | 边界判断 | 不应改到 `03` | object-first rule | 虽然呈现为 synthesis bot，但稳定对象是 QD materials 和其性能目标 | 高 |
 | 实验验证 | 11 tailored compositions within 30h | abstract lines 107-109 | 在真实流动化学平台上得到 11 个定制 QD compositions，并可迁移先验知识 | 高 |
 
@@ -247,3 +247,15 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+## 2026-06-24 writeback adjudication
+
+- `scientific_object_modules`: `04`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `04`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: Crossref DOI abstract `10.1002/adma.202001626`; publisher PDF link
+- `classification_evidence_source_level`: `source_limited`
+- `source_limited`: `yes`
+- `note_revision_required`: `no`
+
+This writeback keeps the quantum-dot materials-property framing explicit. The current first-hand access is source-limited to the Crossref abstract and publisher PDF link, so the note should not overstate full-text coverage.

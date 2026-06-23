@@ -6,13 +6,29 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2504.19338
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML 全文
+- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 ar5iv HTML 一手证据整理；当前 note 未记录本地归档 PDF 路径。
 - 论文类型：系统论文 / CFD workflow Agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## 2026-06-24 adjudicated writeback
+
+```text
+scientific_object_modules: 09
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 09
+first_hand_sources_checked: arXiv PDF; ar5iv HTML
+classification_evidence_source_level: first_hand_full_text
+source_limited: no
+module_assignment_evidence: the paper validates a multi-agent workflow directly on CFD / OpenFOAM simulation tasks and engineering case studies, so the concrete scientific object is engineering simulation rather than a general-purpose ASD platform.
+multi_module_object_coverage_note: none
+note_location_rule: 本 note 落在 `09` 文件夹仅为归档便利，不是分类权威；当前权威对象模块判断是 `09`。
+```
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -54,6 +70,10 @@
 
 ### 2.1 主科学领域
 
+- 科学对象模块：09
+- 覆盖模式：单模块
+- 独立 `01.04` 存放区：none
+- Primary module for filing：09（仅用于文件落盘，不覆盖 `09` 模块事实）
 - 一级类：09
 - 二级类：09.01
 - 三级类：CFD / engineering simulation workflows
@@ -72,7 +92,7 @@
 
 - 可能误归类到：01.04；02.02
 - 最终判定：保持 09.01
-- 判定理由：虽然流体力学具有物理背景，但论文的流程、案例与贡献表达都更偏工程仿真自动化
+- 判定理由：虽然 CFD 带有物理背景，但论文的任务、案例与验证都锚定在工程仿真工作流与 OpenFOAM 自动化，不应被回收到 `01.04` 通用平台表述。
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色

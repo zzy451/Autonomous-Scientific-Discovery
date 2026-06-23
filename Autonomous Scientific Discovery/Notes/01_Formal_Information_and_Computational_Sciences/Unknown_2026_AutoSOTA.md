@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.05550
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：未配置本地 PDF；当前写回以 arXiv abstract (`2604.05550`) 作为一手来源。
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：已读摘要级证据；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
@@ -17,10 +17,10 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `01` / `01.04` | 摘要 | 最稳定对象是“automated AI-model discovery and research system”，而不是单纯的模型方法或发表 venue。 | 高 |
+| 科学对象归类 | `01` | 摘要 | 最稳定对象是具体 AI-model discovery、paper grounding、复现、优化与 computational research tasks，而不是独立 `01.04` 通用方法存放区。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
 | 实验验证 | paper grounding、复现、优化与 SOTA model discovery tasks | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 paper grounding、复现、优化与 SOTA model discovery tasks 支撑其主张。 | 中高 |
-| 边界判断 | 01.02 / 01.04 边界高压样本；一级类 01 稳定，但二级类值得后续精修 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| 边界判断 | 不进入 `01.04` | 摘要 / 任务定义 | 虽然系统平台感较强，但当前验证始终围绕 AI-model discovery 与计算研究任务，因此应保持在 `01` 而不是回收为独立 general-method bucket。 | 中高 |
 
 ## 0. 摘要翻译
 
@@ -55,24 +55,24 @@
 ### 2.1 主科学领域
 
 - 一级类：01
-- 二级类：01.04
+- 二级类：01.02
 - 三级类：
 - 四级专题：AI-model discovery research agents
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“automated AI-model discovery and research system”，因此当前主类保持为 `01` / `01.04`。
+- 归类理由：按对象优先规则，本文的稳定对象是 AI-model discovery 与相关 computational research tasks，本轮不再保留独立 `01.04` 表述；更合适的落点是 `01` 下的 AI / computational research-object coverage。
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：automated AI-model discovery and research system
+- 最终科学研究对象：AI-model discovery、paper grounding、复现、优化与相关 computational research tasks
 - 最终科学问题：论文试图通过 Agent 系统推进“automated AI-model discovery and research system”相关研究任务。
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.02 / 01.04 边界高压样本；一级类 01 稳定，但二级类值得后续精修
-- 最终判定：保持 `01` / `01.04`
-- 判定理由：01.02 / 01.04 边界高压样本；一级类 01 稳定，但二级类值得后续精修
+- 可能误归类到：旧口径的 `01.04`；但当前摘要级证据更支持具体 AI / computational research object
+- 最终判定：保持 `01`，并按 AI-model discovery coverage 记为 `01.02`
+- 判定理由：验证任务已经明确落在 AI-model discovery、paper grounding、复现与优化等具体计算研究对象上，因此不再适合保留独立 `01.04` general-method wording
 - 是否需要二次复核：需要。
 
 ## 3. Agent 系统与科研流程角色
@@ -160,14 +160,14 @@
 
 - Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
 - 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
-- 泛化性不足：01.02 / 01.04 边界高压样本；一级类 01 稳定，但二级类值得后续精修
+- 泛化性不足：平台叙事仍较强，但当前可见对象始终是 AI-model discovery 与计算研究任务，而非无具体对象实验的独立 `01.04`
 - 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
 - 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
 - 成本、可复现性或安全风险：多 Agent 长流程通常带来较高成本和复现负担。
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：主类 `01` / `01.04` 对应章节。
+- 可放入哪个章节：`01` 形式、信息与计算科学中的 AI-model discovery agents 章节。
 - 可支撑哪个论点：Agent 已经能够围绕“automated AI-model discovery and research system”形成稳定的多步科研工作流。
 - 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
 - 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
@@ -194,7 +194,7 @@
 ```text
 是否纳入：是
 主类：01
-二级类：01.04
+二级类：01.02
 三级类：
 四级专题：AI-model discovery research agents
 Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
@@ -208,3 +208,15 @@ Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+## 2026-06-24 writeback adjudication
+
+- `scientific_object_modules`: `01`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `01`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: arXiv abstract `2604.05550`
+- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `source_limited`: `no`
+- `note_revision_required`: `yes`
+
+This writeback keeps the AI model discovery framing explicit and removes stale independent `01.04` wording. AutoSOTA is validated on concrete AI-model discovery and computational research tasks, so it should stay inside formal and computational science (`01`) rather than the standalone general-method bucket.

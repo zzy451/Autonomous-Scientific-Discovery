@@ -8,9 +8,11 @@
 - `general_method_bucket`: `none`
 - `first_hand_sources_checked`: Crossref DOI abstract `10.64898/2026.05.16.720484`; official bioRxiv API `details/biorxiv/10.64898/2026.05.16.720484/na/json`; official repos `zhangjy859/RAG_tools` and `zhangjy859/BioGAIP_peer_review`
 - `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `source_limited`: `yes`
 - `note_revision_required`: `no`
 
 This round closes the `06 / 07` boundary as `06` only. The accessible first-hand evidence consistently anchors the paper in automated bioinformatics, large-scale biological data, and multi-omics workflow automation. Those sources do not currently expose independent medical / health-science case evidence such as disease-centered outcome analysis, patient-level cohorts, diagnosis, treatment ranking, prognosis, or therapeutic validation. Under the current relaxed object-coverage rule, that is enough to keep BioGAIP in `06` and reject `07` for now.
+The current access state is source-limited first-hand abstract/API coverage rather than any safety restriction.
 
 **论文信息**
 - 标题：BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks
@@ -18,7 +20,7 @@ This round closes the `06 / 07` boundary as `06` only. The accessible first-hand
 - 年份：2026
 - 来源 / venue：bioRxiv / openRxiv preprint
 - DOI / arXiv / URL：https://doi.org/10.64898/2026.05.16.720484
-- PDF / 本地文件路径：当前笔记基于 Crossref DOI metadata deposited abstract
+- PDF / 本地文件路径：当前写回以 Crossref DOI abstract (`10.64898/2026.05.16.720484`) 与 official bioRxiv API 作为一手来源；本地未归档 PDF，全文状态记为 source-limited
 - 论文类型：预印本 / automated bioinformatics multi-agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -32,8 +34,8 @@ This round closes the `06 / 07` boundary as `06` only. The accessible first-hand
 | Agent 纳入 | 是 | Crossref abstract | LLM-powered agent，含 autonomous agents、agent-based client-server architecture | 高 |
 | 明确科研目标 | 是 | Crossref abstract | 目标是降低高通量 biological data 分析门槛，提高 bioinformatics workflow 可及性 | 高 |
 | 多步行动 | 是 | Crossref abstract | 系统做 dynamic information retrieval、automatic environment configuration、self-directed design of analysis pipelines | 高 |
-| 科学对象归类 | 暂保 `06.03` | Crossref abstract | 验证对象是 biological / multi-omics datasets，输出是 established biological insights | 中高 |
-| 边界判断 | 不立刻回收 `01.04` | Crossref abstract | 虽平台色彩很强，但对象仍然是生物数据分析，而非领域无关 benchmark | 中高 |
+| 科学对象归类 | 保持 `06.03` | Crossref abstract / bioRxiv API | 验证对象是 biological / multi-omics datasets，输出是 established biological insights | 中高 |
+| 边界判断 | 保持 `06`，不进入 `01.04` 或 `07` | Crossref abstract / bioRxiv API | 虽平台色彩很强，但对象仍然是生物数据分析，而非领域无关 benchmark 或独立医疗结果验证 | 中高 |
 | 主要剩余风险 | core-strength risk | 证据获取情况 | 目前主要基于 deposited abstract，尚难确认 novel discovery 强度 | 中 |
 
 ## 0. 摘要翻译

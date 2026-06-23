@@ -1,12 +1,12 @@
-# Unknown 2026 - APRES: An Agentic Paper Revision and Evaluation System
+# Zhao et al. 2026 - APRES: An Agentic Paper Revision and Evaluation System
 
 **论文信息**
 - 标题：APRES: An Agentic Paper Revision and Evaluation System
-- 作者：Unknown
+- 作者：Bingchen Zhao; Jenny Zhang; Chenxi Whitehouse; Minqi Jiang; Michael Shvartsman; Abhishek Charnalia; Despoina Magka; Tatiana Shavrina; Derek Dunfield; Oisin Mac Aodha; Yoram Bachrach
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.03142
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：当前笔记基于 arXiv PDF 一手证据整理；当前 note 未记录本地归档 PDF 路径。
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：已读摘要级证据；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
@@ -14,17 +14,34 @@
 
 ## Evidence Log
 
+## 2026-06-24 adjudicated writeback
+
+```text
+scientific_object_modules: 11
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 11
+first_hand_sources_checked: arXiv PDF
+classification_evidence_source_level: first_hand_full_text
+source_limited: no
+module_assignment_evidence: the paper studies peer review, manuscript revision, citation-prediction rubric discovery, and expert preference as knowledge-production objects, so it belongs in `11.07` rather than `01.04`.
+multi_module_object_coverage_note: none
+note_location_rule: 本 note 落在 `11` 文件夹仅为归档便利，不是分类权威；当前权威对象模块判断是 `11`。
+metadata_confirmation: author list confirmed from arXiv record `2603.03142v1`.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `11` / `11.07` | 摘要 | 最稳定对象是“agentic paper revision and evaluation system”，而不是单纯的模型方法或发表 venue。 | 高 |
+| 科学对象归类 | `11` / `11.07` | arXiv PDF | 最稳定对象是 scientific knowledge production 中的 paper revision、evaluation、peer-review feedback 与 citation-impact assessment，而不是单纯的模型方法或发表 venue。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
 | 实验验证 | citation-prediction rubric discovery 与 expert preference | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 citation-prediction rubric discovery 与 expert preference 支撑其主张。 | 中高 |
-| 边界判断 | 11.07 / 01.04 边界；当前 manuscript improvement 更属于知识生产本体 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| 边界判断 | 明确留在 `11.07`，不回收到 `01.04` | arXiv PDF | 论文直接研究 scientific knowledge production / peer review / manuscript revision 对产出质量的影响，因此应按知识生产对象归类。 | 高 |
 
 ## 0. 摘要翻译
 
-论文围绕“agentic paper revision and evaluation system”提出题为《APRES: An Agentic Paper Revision and Evaluation System》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 citation-prediction rubric discovery 与 expert preference 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+论文围绕“agentic paper revision and evaluation system”提出题为《APRES: An Agentic Paper Revision and Evaluation System》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 citation-prediction rubric discovery 与 expert preference 作为主要验证。当前应将其明确写成 `11.07` 知识生产研究样本，因为论文研究的是 manuscript revision、peer-review feedback 与 scientific communication quality 这些 scientific knowledge production 对象，而不是无具体对象实验的通用科研平台。
 
 ## 1. 是否纳入本综述
 
@@ -54,26 +71,30 @@
 
 ### 2.1 主科学领域
 
+- 科学对象模块：11
+- 覆盖模式：单模块
+- 独立 `01.04` 存放区：none
+- Primary module for filing：11（仅用于文件落盘，不覆盖 `11` 模块事实）
 - 一级类：11
 - 二级类：11.07
 - 三级类：
 - 四级专题：Agentic paper-revision and evaluation systems
 - 四级专题是否为新增：否
 - 归类理由：按对象优先规则，本文最稳定的研究对象是“agentic paper revision and evaluation system”，因此当前主类保持为 `11` / `11.07`。
-- 归类置信度：中高
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：agentic paper revision and evaluation system
-- 最终科学问题：论文试图通过 Agent 系统推进“agentic paper revision and evaluation system”相关研究任务。
+- 最终科学研究对象：scientific knowledge production 中的 paper revision、evaluation、peer-review feedback 与 manuscript-quality improvement
+- 最终科学问题：论文试图通过 Agent 系统改进科学论文修订与评估流程，并量化其对知识传播与潜在影响力的作用。
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：11.07 / 01.04 边界；当前 manuscript improvement 更属于知识生产本体
+- 可能误归类到：01.04
 - 最终判定：保持 `11` / `11.07`
-- 判定理由：11.07 / 01.04 边界；当前 manuscript improvement 更属于知识生产本体
-- 是否需要二次复核：建议轻量复核。
+- 判定理由：paper revision、evaluation rubric、future citation prediction 与 expert preference 都直接指向 scientific knowledge production itself，因此应按 `11.07` 落盘，不应回收到 `01.04`。
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -204,7 +225,7 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 交叉属性：computation_driven
 科学贡献类型：system_platform; peer_review_automation
 证据强度：medium_primary_abstract
-归类置信度：中高
+归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
 ```

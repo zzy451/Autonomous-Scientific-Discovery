@@ -6,7 +6,7 @@
 - 年份：2018
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-018-0307-8
-- PDF / 本地文件路径：当前笔记基于 Nature 摘要镜像页、RePEc metadata 与主列表元数据；本地未保存 PDF
+- PDF / 本地文件路径：当前写回以 Nature article page 与 Crossref DOI record (`10.1038/s41586-018-0307-8`) 作为一手来源；本地未归档 PDF
 - 论文类型：研究论文 / organic-reactivity discovery robot
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,9 +16,9 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | RePEc abstract lines 75-76 | synthesis robot can perform reactions and analysis, predict reactivity, navigate reaction space, and follow up discoveries | 高 |
-| 科学对象归类 | `03.03` | title / abstract | 对象是 chemical reaction space 与 new reactivity discovery，而不是 materials property space | 高 |
-| 方法流程 | experiments -> real-time analysis -> ML decision -> follow-up | RePEc abstract lines 75-76 | 系统实时用 NMR / IR 反馈驱动决策并探索反应空间 | 高 |
+| Agent 纳入 | 是 | Nature article page / Crossref | synthesis robot can perform reactions and analysis, predict reactivity, navigate reaction space, and follow up discoveries | 高 |
+| 科学对象归类 | `03.03` | title / Nature abstract / Crossref | 对象是 chemical reaction space 与 new reactivity discovery，而不是 materials property space | 高 |
+| 方法流程 | experiments -> real-time analysis -> ML decision -> follow-up | Nature article page / Crossref | 系统实时用 NMR / IR 反馈驱动决策并探索反应空间 | 高 |
 | 边界判断 | 不应改到 `04` | object-first rule | 重点是 reaction combinations 与 new reactions 的发现，不是材料性能优化 | 高 |
 | 实验验证 | discovered four reactions | RePEc abstract line 76 | 由机器学习预测后，化学家跟进发现四个反应 | 高 |
 
@@ -247,3 +247,15 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+## 2026-06-24 writeback adjudication
+
+- `scientific_object_modules`: `03`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `03`
+- `general_method_bucket`: `none`
+- `first_hand_sources_checked`: Nature article page; Crossref DOI record `10.1038/s41586-018-0307-8`
+- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `source_limited`: `no`
+- `note_revision_required`: `no`
+
+This writeback keeps the reaction-discovery framing explicit: the robot is used to explore organic reaction space and discover new reactivity, not to optimize a materials-property endpoint.
