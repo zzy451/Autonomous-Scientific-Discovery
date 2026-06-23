@@ -1,5 +1,21 @@
 # Younis et al. 2025 - LLM-Agent Powered Automated Literature Review and Hypothesis Generation for Cancer Biomarker Discovery
 
+## 2026-06-23 Batch16 partial-8 closeout
+
+This round closes the record conservatively as `07` under source-limited, safety-visible handling.
+
+```text
+scientific_object_modules: 07
+object_coverage_mode: single_module
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: DOI redirect `10.1109/ICOSST69113.2025.11315415` -> IEEE Xplore landing; title-level metadata
+classification_evidence_source_level: source_limited
+source_limited_reason: official abstract / full text was not safely accessed in this round because the publisher landing returned a WAF challenge
+safety_access_status: explicit safety-skip at the IEEE Xplore boundary; do not treat the paper as full-text checked
+module_assignment_evidence: the stable concrete object remains cancer biomarker discovery, so keep `07`; this round does not reopen `01.04` or add `06`
+```
+
 **论文信息**
 - 标题：LLM-Agent Powered Automated Literature Review and Hypothesis Generation for Cancer Biomarker Discovery
 - 作者：Younis et al.

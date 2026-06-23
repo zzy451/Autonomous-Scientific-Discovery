@@ -1,5 +1,21 @@
 # Lee and Kim 2026 - Closed-loop experimental AI for pixelated metasurface design
 
+## 2026-06-23 Batch16 partial-8 closeout
+
+This round formally closes the record as source-limited `04` only.
+
+```text
+scientific_object_modules: 04
+object_coverage_mode: single_module
+general_method_bucket: none
+primary_module_for_filing: 04
+first_hand_sources_checked: DOI resolver `10.1117/12.3091089`; title-level metadata; prior safe SPIE landing-level boundary
+classification_evidence_source_level: source_limited
+source_limited_reason: no local PDF was found and the downstream SPIE page is not safely accessible in this environment
+safety_access_status: explicit safety-skip beyond the DOI / landing boundary
+module_assignment_evidence: the stable object remains pixelated metasurface / engineered nanostructure design, so keep `04` only and do not add `09`
+```
+
 **论文信息**
 - 标题：Closed-loop experimental AI for pixelated metasurface design
 - 作者：Jeong-Min Lee; Sun-Kyung Kim
