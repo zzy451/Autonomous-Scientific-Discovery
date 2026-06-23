@@ -7,6 +7,7 @@
 - 来源 / venue：bioRxiv
 - DOI / arXiv / URL：https://doi.org/10.64898/2026.02.01.703093
 - PDF / 本地文件路径：本轮依据 ScienceCast 摘要与索引页整理
+- 来源状态：source_limited=yes（当前仅核到 ScienceCast 摘要与索引页；冻结归类稳定为 `06`，但不能表述成已完成全文核对）
 - 论文类型：预印本 / AI-native autonomous biofoundry
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
@@ -17,10 +18,11 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | ScienceCast abstract | 平台直接被描述为 `AI-native autonomous biofoundry` 与 `Agent-Native control system` | 中高 |
-| 科学对象归类 | `06.03` | ScienceCast abstract | 主对象是 enzyme engineering / polymerase variant optimization | 高 |
+| 科学对象归类 | 冻结为 `06`（落盘仍写作 `06.03`） | ScienceCast abstract | 主对象是 enzyme engineering / polymerase variant optimization | 高 |
 | 方法流程 | 自然语言到 DBTL 硬件执行 | ScienceCast abstract | LLM + MCP 连接自然语言科研意图与异构实验硬件 | 中高 |
 | 反馈迭代 | 三轮自治实验 | ScienceCast abstract | 结合 phylogenetic mining、ESM-2 与 supervised active learning 完成三轮自主优化 | 中高 |
 | 实验验证 | 有真实收益 | ScienceCast abstract | hit rate 超过 66%，并找到可把测序错误率降低 37% 的变体 | 中高 |
+| 来源状态 | source_limited=yes | ScienceCast abstract / index page | 当前仍是摘要与页面级证据；足以维持冻结 `06`，但不应过度声称已核全文 | 中高 |
 
 ## 0. 摘要翻译
 
@@ -55,7 +57,9 @@
 ### 2.1 主科学领域
 
 - 一级类：06
+- 冻结归类结论：06（生命科学）
 - 二级类：06.03
+- source_limited：yes
 - 三级类：酶工程 / 蛋白工程自驱实验
 - 四级专题：AI-native enzyme-engineering biofoundries
 - 四级专题是否为新增：否
@@ -71,7 +75,7 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04、07
-- 最终判定：保留 06.03
+- 最终判定：冻结为 06（生命科学；落盘仍写作 06.03）
 - 判定理由：它不是通用 scientific workflow platform，也不是疾病/患者/药物转化论文
 - 是否需要二次复核：是，但重点是证据完备度，而非主类不稳
 
@@ -204,6 +208,7 @@
 - 工具链依赖：强依赖 biofoundry、MCP 和多模型/多硬件集成
 - 数据泄漏或 benchmark 偏差：非主风险
 - 成本、可复现性或安全风险：系统复杂、复制门槛高
+- 是否仍需后续全文复核：是；当前仅核到 ScienceCast 摘要与索引页，因此保留 source_limited=yes，但冻结 `06` 结论不变
 
 ## 8. 对综述写作的价值
 

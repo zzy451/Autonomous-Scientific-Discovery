@@ -6,21 +6,29 @@
 - 年份：2019
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-019-13189-z
-- PDF / 本地文件路径：PMC 全文 https://pmc.ncbi.nlm.nih.gov/articles/PMC6853954/
+- PDF / 本地文件路径：PMC HTML 全文已核对 https://pmc.ncbi.nlm.nih.gov/articles/PMC6853954/；当前未保存本地 PDF
 - 论文类型：research paper
-- 当前状态：to_read
+- 当前状态：included
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## 2026-06-23 writeback sync
+
+- Final adjudication landed: `scientific_object_modules=06`; `final_01_04_bucket=none`; `primary_module_for_filing=06`.
+- Current source refresh: PMC HTML full text checked; 本 note 不额外声明本地 PDF 归档。
+- First-hand sources checked: PMC HTML full text + DOI landing page
+- Classification evidence source level: `first_hand_full_text`
+- `source_limited`: `no`
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Abstract; Introduction | robotic platform + ML algorithm 自动完成 DBTL 循环 | 高 |
-| 科学对象归类 | `06.03` | Abstract; lycopene optimization section | 对象是 biosystems design / lycopene biosynthetic pathway optimization | 高 |
-| 方法流程 | 明确闭环 | Introduction; optimization section | 设计-构建-测试-学习循环中，算法选点，iBioFAB 自动执行 | 高 |
-| 实验验证 | 强 | Abstract; optimization results | 评估不足 1% 变体却优于 random screening 77% | 高 |
-| 边界判断 | `06` 胜过 `09`/`01.04` | 全文整体 | 机器人平台只是手段，具体对象是生物通路和 biosystems design | 高 |
+| Agent 纳入 | 是 | PMC full text | robotic platform + ML algorithm 自动完成 DBTL 循环 | 高 |
+| 科学对象归类 | `06` | PMC full text | 对象是 biosystems design / lycopene biosynthetic pathway optimization，按生命系统设计落在 `06` | 高 |
+| 方法流程 | 明确闭环 | PMC full text | 设计-构建-测试-学习循环中，算法选点，iBioFAB 自动执行 | 高 |
+| 实验验证 | 强 | PMC full text | 评估不足 1% 变体却优于 random screening 77% | 高 |
+| 边界判断 | 保持 `06`，不入 `01.04` | PMC full text | 机器人平台只是手段，具体对象是生物通路和 biosystems design | 高 |
 
 ## 0. 摘要翻译
 
@@ -33,6 +41,7 @@
 - 是否属于 Agent 文献：是
 - 判断依据：有明确科研目标、自动设计-构建-测试-学习循环、算法选点、机器人执行与反馈更新
 - 判定置信度：高
+- 本轮 landed 结论：纳入本综述。
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
@@ -61,6 +70,7 @@
 - 四级专题是否为新增：否
 - 归类理由：验证和科学贡献都落在具体 biosystem / lycopene pathway
 - 归类置信度：高
+- 本轮 landed 模块：`06`
 
 ### 2.2 对象优先判定
 
@@ -70,9 +80,9 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：09 或 01.04
-- 最终判定：保持 06.03
-- 判定理由：对象优先规则下，biosystem / pathway 优先于平台外观
+- 可能误归类到：09
+- 最终判定：保持 `06`
+- 判定理由：对象优先规则下，biosystem / pathway 优先于平台外观，本轮不保留 `01.04` 备选。
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色

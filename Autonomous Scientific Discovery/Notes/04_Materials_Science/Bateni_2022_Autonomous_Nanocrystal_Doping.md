@@ -6,21 +6,29 @@
 - 年份：2022
 - 来源 / venue：Advanced Intelligent Systems
 - DOI / arXiv / URL：https://doi.org/10.1002/aisy.202200017
-- PDF / 本地文件路径：当前未保存本地 PDF；本轮基于 official abstract
+- PDF / 本地文件路径：当前未保存本地 PDF；本轮仍以 publisher abstract / DOI 页面为主，未额外声称全文已核对
 - 论文类型：研究论文 / self-driving materials-experimentation system
-- 当前状态：to_read
+- 当前状态：included
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## 2026-06-23 writeback sync
+
+- Final adjudication landed: `scientific_object_modules=04`; `final_01_04_bucket=none`; `primary_module_for_filing=04`.
+- Current source refresh: 本轮仍是 abstract / landing-page 级核对；未声明本地 PDF 或全文逐页复核。
+- First-hand sources checked: publisher abstract page + DOI landing page
+- Classification evidence source level: `first_hand_abstract_or_landing_page`
+- `source_limited`: `yes`
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | self-driving fluidic micro-processor 自主导航复杂 synthesis/processing parameter space，并执行 closed-loop campaigns | 高 |
-| 科学对象归类 | `04.03` | official abstract | 直接对象是 lead halide perovskite nanocrystals 的 halide exchange 和 cation doping | 高 |
-| 方法流程 | 多步自治实验 | official abstract | 系统进行 sequential reactions、surrogate-model building 与五轮 closed-loop synthesis campaigns | 高 |
-| 实验验证 | 有真实实验闭环 | official abstract | 论文展示 time/material/labor-efficient search，并在目标 doping levels 上完成闭环 campaign | 高 |
-| 边界判断 | 保持 `04`，不转 `03` | official abstract | 尽管涉及 multistage chemistries，但最终被优化的是 nanocrystal doping 和材料性能，不是反应路线本体 | 高 |
+| Agent 纳入 | 是 | publisher abstract page | self-driving fluidic micro-processor 自主导航复杂 synthesis/processing parameter space，并执行 closed-loop campaigns | 高 |
+| 科学对象归类 | `04` | publisher abstract page | 直接对象是 lead halide perovskite nanocrystals 的 halide exchange 和 cation doping，按材料对象落在 `04` | 高 |
+| 方法流程 | 多步自治实验 | publisher abstract page | 系统进行 sequential reactions、surrogate-model building 与五轮 closed-loop synthesis campaigns | 高 |
+| 实验验证 | 有真实实验闭环 | publisher abstract page | 论文展示 time/material/labor-efficient search，并在目标 doping levels 上完成闭环 campaign | 高 |
+| 边界判断 | 保持 `04`，不入 `01.04` | publisher abstract page | 尽管涉及 multistage chemistries，但这里是 concrete nanocrystal materials case，而非通用方法桶 | 高 |
 
 ## 0. 摘要翻译
 
@@ -33,6 +41,7 @@
 - 是否属于 Agent 文献：是
 - 判断依据：具备自主实验规划、参数空间导航、代理模型构建和闭环优化
 - 判定置信度：高
+- 本轮 landed 结论：纳入本综述。
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
@@ -61,6 +70,7 @@
 - 四级专题是否为新增：否
 - 归类理由：直接优化对象是 perovskite nanocrystal doping 水平与相关材料处理过程
 - 归类置信度：高
+- 本轮 landed 模块：`04`
 
 ### 2.2 对象优先判定
 
@@ -70,10 +80,10 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：03.03 / 01.04
-- 最终判定：保持 04.03
-- 判定理由：虽然经历 sequential chemistries，但直接输出是 nanocrystal doping materials outcome，而不是一般合成路线平台
-- 是否需要二次复核：是，建议补全文查看性能指标与人类干预比例
+- 可能误归类到：03
+- 最终判定：保持 `04`
+- 判定理由：虽然经历 sequential chemistries，但直接输出是 nanocrystal doping materials outcome，不保留 `01.04` 备选。
+- 是否需要二次复核：是，若后续获取全文可补性能指标与人类干预比例，但不影响本轮 `04` 落地
 
 ## 3. Agent 系统与科研流程角色
 
@@ -232,7 +242,7 @@
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：included
 主类：04
 二级类：04.03
 三级类：nanocrystal doping and synthesis optimization

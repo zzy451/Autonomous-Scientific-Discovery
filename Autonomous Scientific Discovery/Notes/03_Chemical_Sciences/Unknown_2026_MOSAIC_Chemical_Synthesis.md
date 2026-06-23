@@ -7,6 +7,7 @@
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-026-10131-4
 - PDF / 本地文件路径：未保存本地 PDF；本笔记基于 Nature 正式页面与 reviewer 一手证据
+- 来源状态：source_limited=yes（当前未取得稳定全文 PDF；冻结归类已确定落在 `03`，但细节仍需后续全文补足）
 - 论文类型：research paper / collective-intelligence chemistry system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -17,9 +18,10 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Nature abstract / figures | MOSAIC 基于 Llama-3.1 和大量 specialist chemical experts 生成可执行合成协议 | 高 |
-| 科学对象归类 | 暂保留 `03.03` | abstract / validation summary | 核心验证是 chemical synthesis、new compounds 和 reaction methods | 中 |
+| 科学对象归类 | 冻结为 `03`（落盘仍写作 `03.03`） | abstract / validation summary | 核心验证是 chemical synthesis、new compounds 和 reaction methods，因此按对象优先落在化学科学 | 中 |
 | 方法流程 | 专家路由 + 协议生成 | abstract / framework figure | 系统从反应知识中调用专家并输出 executable experimental protocols | 中 |
 | 实验验证 | 强，但当前本地证据仍以摘要层为主 | abstract / validation summary | 报告 71% success rate 与 35+ new compounds | 中 |
+| 来源状态 | source_limited=yes | Nature page / reviewer evidence | 当前证据足以支持冻结 `03` 结论，但尚未取得稳定全文 PDF，因此保留全文补核需求 | 高 |
 | 边界判断 | `03 / 01.04` 压力高 | abstract last sentence | 作者主动把方法上升到一般化 discovery strategy，因此仍需后续全文复核 | 中 |
 
 ## 0. 摘要翻译
@@ -55,11 +57,13 @@
 ### 2.1 主科学领域
 
 - 一级类：03
+- 冻结归类结论：03（化学科学）
 - 二级类：03.03
+- source_limited：yes
 - 三级类：
 - 四级专题：Collective-intelligence chemical synthesis systems
 - 四级专题是否为新增：否
-- 归类理由：当前可见的核心验证仍集中在 chemical synthesis protocol 与新化合物实现
+- 归类理由：尽管平台与 general discovery 叙事很强，但当前可见核心验证仍集中在 chemical synthesis protocol 与新化合物实现，因此按对象优先落在 `03`
 - 归类置信度：中
 
 ### 2.2 对象优先判定
@@ -71,8 +75,8 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04
-- 最终判定：暂保留 03.03
-- 判定理由：作者虽声称可推广到更广泛 discovery 场景，但当前强验证仍是化学合成
+- 最终判定：冻结为 03（化学科学；落盘仍写作 03.03）
+- 判定理由：作者虽声称可推广到更广泛 discovery 场景，但当前强验证仍是化学合成；本项目据此在 `03 / 01.04` 压力下仍保持 chemistry-object landing
 - 是否需要二次复核：是
 
 ## 3. Agent 系统与科研流程角色
@@ -204,6 +208,7 @@
 - 工具链依赖：强
 - 数据泄漏或 benchmark 偏差：需要继续关注
 - 成本、可复现性或安全风险：实验实现成本高
+- 是否仍需后续全文复核：是；当前问题主要是 source completeness，而不是冻结 `03` 结论本身不稳
 
 ## 8. 对综述写作的价值
 
@@ -248,4 +253,3 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：中高
 推荐引用强度：普通引用
 ```
-

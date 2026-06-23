@@ -6,21 +6,28 @@
 - 年份：2025
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-024-55287-7
-- PDF / 本地文件路径：未保存本地 PDF；本笔记基于 Nature Communications 正式页面与 reviewer 一手证据
+- PDF / 本地文件路径：未保存本地 PDF；本笔记沿用 Nature Communications 正式页面与 reviewer 一手证据，不额外声称本轮完成本地 PDF 复核
 - 论文类型：research paper / classical active-learning experimental design platform
-- 当前状态：to_read
+- 当前状态：included
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## 2026-06-23 writeback sync
+
+- Final adjudication landed: `scientific_object_modules=07`; `final_01_04_bucket=none`; `primary_module_for_filing=07`.
+- Current source refresh: 本轮沿用 Nature Communications 正式页面与 reviewer 一手证据；未在本 note 中额外声明本地 PDF 或 HTML 全文逐页复核。
+- First-hand sources checked: Nature Communications article page + reviewer first-hand evidence
+- Classification evidence source level: `first_hand_article_page_plus_reviewer_packet`
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是，但 agenticity 偏 classical | Nature abstract / results | BATCHIE 动态分批设计实验并基于上一轮结果选择下一轮药筛 | 高 |
-| 科学对象归类 | `07.04` | Nature abstract / introduction | 论文围绕组合药筛、癌症细胞系和 Ewing sarcoma follow-up validation | 高 |
-| 方法流程 | 贝叶斯主动学习闭环 | Results / Fig. 2-related text | 初始 batch -> 模型更新 -> 选下一批 plate -> 再实验 | 高 |
-| 实验验证 | 强 | abstract / results | 只探索约 4% 的组合空间就定位高价值组合，并做前瞻性验证 | 高 |
-| 边界判断 | 不应退回 `01.04` | abstract / introduction | 这是 concrete biomedical object paper；剩余风险在 core-strength 而非对象分类 | 高 |
+| Agent 纳入 | 是，但 agenticity 偏 classical | Nature article page + reviewer evidence | BATCHIE 动态分批设计实验并基于上一轮结果选择下一轮药筛 | 高 |
+| 科学对象归类 | `07` | Nature article page + reviewer evidence | 论文围绕组合药筛、癌症细胞系和 Ewing sarcoma follow-up validation，按 biomedical screening object 落在 `07` | 高 |
+| 方法流程 | 贝叶斯主动学习闭环 | Nature article page + reviewer evidence | 初始 batch -> 模型更新 -> 选下一批 plate -> 再实验 | 高 |
+| 实验验证 | 强 | Nature article page + reviewer evidence | 只探索约 4% 的组合空间就定位高价值组合，并做前瞻性验证 | 高 |
+| 边界判断 | 保持 `07`，不入 `01.04` | Nature article page + reviewer evidence | 这是 concrete biomedical object paper；本轮不保留 `01.04` 备选 | 高 |
 
 ## 0. 摘要翻译
 
@@ -33,6 +40,7 @@
 - 是否属于 Agent 文献：是
 - 判断依据：具备明确科研目标、多轮实验设计、模型更新、反馈驱动的下一轮决策
 - 判定置信度：高
+- 本轮 landed 结论：纳入本综述。
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
@@ -61,6 +69,7 @@
 - 四级专题是否为新增：否
 - 归类理由：直接对象是组合药物筛选、癌症药物组合发现与验证
 - 归类置信度：高
+- 本轮 landed 模块：`07`
 
 ### 2.2 对象优先判定
 
@@ -70,9 +79,9 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.04
-- 最终判定：保留 07.04
-- 判定理由：论文并非通用科研平台，而是具体 biomedical screening workflow
+- 可能误归类到：无
+- 最终判定：保持 `07`
+- 判定理由：论文并非通用科研平台，而是具体 biomedical screening workflow，本轮不保留 `01.04` 备选。
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -232,7 +241,7 @@
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：included
 主类：07
 二级类：07.04
 三级类：
@@ -248,4 +257,3 @@ Agent 类型：Planning Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：核心引用
 ```
-

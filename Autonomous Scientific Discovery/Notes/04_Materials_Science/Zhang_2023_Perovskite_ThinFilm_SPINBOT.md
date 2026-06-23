@@ -6,11 +6,17 @@
 - 年份：2023
 - 来源 / venue：Advanced Energy Materials
 - DOI / arXiv / URL：https://doi.org/10.1002/aenm.202302594
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮仍以官方摘要 / article page 与 reviewer 一手证据为主；`source_limited=yes`；未保存本地 PDF
 - 论文类型：研究论文 / perovskite thin-film self-driving platform
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## Frozen Adjudication Writeback - 2026-06-23
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: `source_limited=yes`. This round remains abstract / page-level only, so the note should not overclaim full-text confirmation.
+- Landed subset note: keep the stable materials-object reading and do not drift to `09`.
 
 ## Evidence Log
 
@@ -22,6 +28,8 @@
 | 实验验证 | 真实材料与器件结果 | official abstract / official team summary | 最优 film / device 达到 21.6% PCE，并给出长期稳定性 | 高 |
 | 边界判断 | 不应转 `09` | official abstract / official team summary | 虽用太阳能电池器件做验证，但直接优化对象仍是 perovskite film material/process space | 高 |
 
+| Frozen adjudication | `04`; `source_limited=yes` | Batch23Partial1 frozen adjudication | 落地结论保持单模块材料科学；本轮仍未补到可稳定引用的全文访问，因此保留 source-limited wording | 高 |
+
 ## 0. 摘要翻译
 
 本文提出 `SPINBOT`，一个由机器学习引导的机器人平台，用于优化钙钛矿薄膜参数空间。系统可在无人监督下处理大量基底，并通过 Bayesian optimization 持续探索制膜条件，改善薄膜质量、可重复性和器件表现。作者报告了 21.6% 的器件效率以及良好的长期稳定性，说明其稳定对象应落在光电薄膜材料优化，而不是一般工程器件设计。
@@ -29,6 +37,8 @@
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
+
+- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=yes`，本轮仍按摘要 / page-level 证据写回。
 
 - 是否属于 Agent 文献：是
 - 判断依据：具备无人监督、多步机器人实验执行与反馈驱动搜索
@@ -53,6 +63,13 @@
 ## 2. 科学领域归类
 
 ### 2.1 主科学领域
+
+- scientific_object_modules：`04`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`04`
+- source_limited：yes
 
 - 一级类：04
 - 二级类：04.04
@@ -198,6 +215,8 @@
 
 ## 7. 局限性与风险
 
+- source-limited：是；本轮仍主要基于摘要 / article-page 级证据，不能把当前笔记表述成已完成全文复核。
+
 - Agent 自主性不足：摘要未展开异常恢复细节
 - 科学验证不足：不同钙钛矿家族泛化待确认
 - 泛化性不足：主要针对特定薄膜工艺
@@ -216,6 +235,8 @@
 - 需要与哪些论文并列比较：ASD-0503、ASD-0410、ASD-0417
 
 ## 9. 总结
+
+- Frozen adjudication summary：该 note 已按落地结论固定为 `04`，并继续保留材料对象主读法与 `source_limited=yes`。
 
 ### 9.1 一句话概括
 

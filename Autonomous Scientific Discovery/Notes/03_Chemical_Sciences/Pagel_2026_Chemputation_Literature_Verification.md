@@ -7,6 +7,7 @@
 - 来源 / venue：Communications Chemistry
 - DOI / arXiv / URL：https://doi.org/10.1038/s42004-026-01993-w
 - PDF / 本地文件路径：本轮依据 publisher PDF 整理
+- 来源状态：source_limited=no（本轮依据 publisher PDF 整理；冻结归类稳定为 `03`，不按 `11.07` 科学知识生产研究口径处理）
 - 论文类型：研究论文 / LLM-augmented chemputation system
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
@@ -17,9 +18,10 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | PDF p.1 abstract; Fig. 1 | ACRA 是 LLM-based chemical research agent workflow，用于自动核验和执行合成文献程序 | 高 |
-| 科学对象归类 | `03.03` | PDF p.1, p.8 Fig. 7 | 直接对象是具体合成步骤、XDL 程序化与真实化学执行，不是 science-of-science 分析 | 高 |
+| 科学对象归类 | 冻结为 `03`（落盘仍写作 `03.03`） | PDF p.1, p.8 Fig. 7 | 直接对象是具体合成步骤、XDL 程序化与真实化学执行，不是 science-of-science 分析 | 高 |
 | 方法流程 | 文献抽取-翻译-校验-执行闭环 | Fig. 1; p.2-p.3 | literature -> XDL translation -> discrepancy check -> simulation -> robotic execution -> code refinement | 高 |
 | 实验验证 | 强 | p.1; p.3; p.8 | 六个真实合成在两个机器人平台执行，150 个程序的大样本 XDL 翻译成功率也被报告 | 高 |
+| 来源状态 | source_limited=no | publisher PDF | 当前已核到 publisher PDF，足以稳定支持冻结 `03` 结论；本轮不把它写成 `11.07` 科学知识生产研究 | 高 |
 | 边界判断 | 不转 `11.07` | abstract; results | 这里处理文献是为了执行和验证化学合成，不是研究科研共同体、peer review 或知识生产机制 | 高 |
 
 ## 0. 摘要翻译
@@ -55,7 +57,9 @@
 ### 2.1 主科学领域
 
 - 一级类：03
+- 冻结归类结论：03（化学科学）
 - 二级类：03.03
+- source_limited：no
 - 三级类：合成文献执行与化学程序验证
 - 四级专题：Chemputation-augmented literature-execution systems
 - 四级专题是否为新增：否
@@ -71,7 +75,7 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：11.07
-- 最终判定：保留 03.03
+- 最终判定：冻结为 03（化学科学；落盘仍写作 03.03）
 - 判定理由：它处理 scientific literature 是为了执行与复现实验，不是研究同行评议、科学知识网络或科研制度本身
 - 是否需要二次复核：否
 
@@ -204,6 +208,7 @@
 - 工具链依赖：高度依赖 XDL 与机器人化学平台
 - 数据泄漏或 benchmark 偏差：不是主要问题
 - 成本、可复现性或安全风险：程序到真实湿实验执行存在安全与硬件门槛
+- 是否仍需后续全文复核：否；当前 publisher PDF 已足以稳定支持冻结 `03` 结论
 
 ## 8. 对综述写作的价值
 

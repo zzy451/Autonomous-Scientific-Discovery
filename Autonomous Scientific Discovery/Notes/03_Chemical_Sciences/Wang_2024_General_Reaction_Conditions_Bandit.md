@@ -6,11 +6,17 @@
 - 年份：2024
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-024-07021-y
-- PDF / 本地文件路径：本轮基于官方摘要页与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮仍基于官方摘要 / article page 与 reviewer 一手证据；`source_limited=yes`；未保存本地 PDF
 - 论文类型：研究论文 / reaction-optimization agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## Frozen Adjudication Writeback - 2026-06-23
+
+- Final classification: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Source status: `source_limited=yes`. This round remains abstract / page-level only.
+- Landed subset note: keep the chemistry-object reading focused on reaction-condition optimization.
 
 ## Evidence Log
 
@@ -22,11 +28,15 @@
 | 实验验证 | 真实实验 | official abstract / reviewer evidence | 在三类真实反应上验证并高效找到 general conditions | 高 |
 | 边界判断 | 不应归 `01.04` | official abstract / reviewer evidence | 产出是反应条件知识而不是通用 benchmark | 高 |
 
+| Frozen adjudication | `03`; `source_limited=yes` | Batch23Partial1 frozen adjudication | 落地结论保持反应条件优化的化学单模块读法；当前仍不应写成已完成全文确认 | 高 |
+
 ## 0. 摘要翻译
 
 本文利用 bandit optimization 和实验反馈来寻找更具普适性的反应条件。相比传统经验或大规模枚举搜索，系统在较小实验预算下就能识别出泛化性更强的条件组合。论文的科学对象是具体反应条件发现，因此稳定属于化学科学。
 
 ## 1. 是否纳入本综述
+
+- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=yes`，但 `03` 反应条件优化归类稳定。
 
 - 是否属于 Agent 文献：是
 - 判断依据：明确科研目标、多步条件选择、实验反馈和自主采样决策
@@ -35,6 +45,13 @@
 - 是否仍需进一步全文复核：不影响一级类判断
 
 ## 2. 科学领域归类
+
+- scientific_object_modules：`03`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`03`
+- source_limited：yes
 
 - 一级类：03
 - 二级类：03.03
@@ -77,6 +94,8 @@
 
 ## 7. 局限性与风险
 
+- source-limited：是；本轮仍主要是摘要 / page-level 证据，所以保持化学单模块结论，但不额外扩写全文级细节。
+
 - 更细的反应家族范围仍可在全文中补足。
 - 主风险不在主类，而在后续如何放入化学子主题比较。
 - 纳入与对象归类当前都很稳。
@@ -88,6 +107,8 @@
 - 推荐引用强度：core
 
 ## 9. 总结
+
+- Frozen adjudication summary：该 note 已固定为 `03` 单模块、反应条件优化导向，并保留 `source_limited=yes`。
 
 ### 9.1 一句话概括
 

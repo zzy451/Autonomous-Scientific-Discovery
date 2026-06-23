@@ -6,11 +6,17 @@
 - 年份：2025
 - 来源 / venue：Research Square preprint / arXiv companion
 - DOI / arXiv / URL：https://doi.org/10.21203/rs.3.rs-7489358/v1 ; https://arxiv.org/abs/2505.13940
-- PDF / 本地文件路径：以 arXiv 和 Research Square 摘要为主
+- PDF / 本地文件路径：本轮仍以 arXiv / Research Square 摘要与页面证据为主；`source_limited=yes`
 - 论文类型：preprint / system paper
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## Frozen Adjudication Writeback - 2026-06-23
+
+- Final classification: `scientific_object_modules=07`; `object_coverage_mode=single_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Source status: `source_limited=yes`. This round remains abstract / page-level only.
+- Landed subset note: keep the drug-discovery-specific framing and do not drift to general-method wording.
 
 ## Evidence Log
 
@@ -20,7 +26,9 @@
 | 科学对象归类 | `07.04` | Introduction; task descriptions | 8 个核心任务都属于 drug discovery 流程 | 高 |
 | 方法流程 | 多轮工具规划 | Fig. 2; framework section | PMP + Fe-Fo + AI model zoo 支持多阶段、多工具任务 | 高 |
 | 实验验证 | 以计算验证为主 | Results; case studies | 主要是 benchmark 与 DRP/MPP 案例研究 | 高 |
-| 边界判断 | `07` 胜过 `01.04` | 全文整体 | 任务库、案例与参数对象都显式绑定药物发现 | 高 |
+| 边界判断 | `07` 胜过 `01.04` | abstract / page-level evidence | 任务库、案例与参数对象都显式绑定药物发现 | 高 |
+
+| Frozen adjudication | `07`; `source_limited=yes` | Batch23Partial1 frozen adjudication | 落地结论保持药物发现单模块；当前仍不应改写成通用 research-agent note | 高 |
 
 ## 0. 摘要翻译
 
@@ -29,6 +37,8 @@
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
+
+- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=yes`，但药物发现专向对象读法稳定。
 
 - 是否属于 Agent 文献：是
 - 判断依据：有多步任务规划、工具调度、反馈纠错和跨阶段药物任务执行
@@ -53,6 +63,13 @@
 ## 2. 科学领域归类
 
 ### 2.1 主科学领域
+
+- scientific_object_modules：`07`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`07`
+- source_limited：yes
 
 - 一级类：07
 - 二级类：07.04
@@ -198,6 +215,8 @@
 
 ## 7. 局限性与风险
 
+- source-limited：是；本轮仍主要依赖摘要 / page-level 证据，因此保留药物发现专向结论，但不夸大全文掌握程度。
+
 - Agent 自主性不足：仍主要是任务执行层面的 agent
 - 科学验证不足：缺湿实验闭环
 - 泛化性不足：虽然声称可扩展，但当前主要落在 drug discovery
@@ -216,6 +235,8 @@
 - 需要与哪些论文并列比较：其他药物发现专用 agent
 
 ## 9. 总结
+
+- Frozen adjudication summary：该 note 已固定为 `07` 单模块药物发现案例，并继续避免滑回通用方法表述。
 
 ### 9.1 一句话概括
 
@@ -248,4 +269,3 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：普通引用
 ```
-

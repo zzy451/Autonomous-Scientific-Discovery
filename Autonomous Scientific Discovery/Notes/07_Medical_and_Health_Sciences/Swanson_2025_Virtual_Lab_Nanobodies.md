@@ -6,22 +6,22 @@
 - 年份：2025 Nature 正式版；2024 bioRxiv 预印本
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-025-09442-9；bioRxiv DOI：https://doi.org/10.1101/2024.11.11.623004
-- PDF / 本地文件路径：已读取 Nature PDF 全文文本（临时工作目录，不写入项目 PDF 库）
+- PDF / 本地文件路径：本轮已恢复安全官方 Nature full-text HTML 访问；`source_limited=no`；未在项目 PDF 库另存本地 PDF
 - 论文类型：研究论文 / 系统论文 / 生物医药发现 Agent
 - 当前状态：已读全文 / 已纳入
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
-## Relaxed Multi-Module Revision - 2026-06-20
+## Frozen Adjudication Writeback - 2026-06-23
 
-- Source checked: Nature full-text PDF for DOI `10.1038/s41586-025-09442-9`, parsed locally during Round 2 / P1-B.
-- Current relaxed classification: `scientific_object_modules=07;06`; `object_coverage_mode=multi_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
-- Rationale: `07` remains the filing module because the end objective is therapeutic nanobody discovery against recent SARS-CoV-2 variants. Under the relaxed object-coverage rule, the same full text also supports `06` because the paper directly studies protein / nanobody / spike-RBD objects, reports 92 mutant nanobody designs, and includes expression, solubility, and ELISA wet-lab binding validation on concrete biological molecules.
-- Note update: older single-module wording should now be read as legacy filing only. This paper is not just a biomedical platform case; it also contains direct life-science object evidence at the protein / nanobody level.
+- Source checked: safe official Nature full-text HTML for DOI `10.1038/s41586-025-09442-9`, recovered this round during Batch23Partial1 writeback.
+- Final classification: `scientific_object_modules=07;06`; `object_coverage_mode=multi_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Source status: `source_limited=no`. Prior safety-only carry-forward is retired and should no longer be treated as active note status.
+- Note update: keep `07` primary for biomedical / therapeutic nanobody discovery while making the additional `06` protein / nanobody life-science coverage explicit.
 
 ## Evidence Log
 
-证据级别：full-text PDF（Nature 正式版，页码 1-13；PDF 文本抽取显示为 Nature Article）。
+证据级别：safe official Nature full-text HTML（Batch23Partial1 本轮恢复访问）。
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -31,6 +31,8 @@
 | 实验验证 | 有湿实验验证 | Abstract；Results；Fig. 3-5 | 92 个设计进入实验验证；超过 90% 表达且可溶；两个候选对 JN.1 或 KP.3 有改进结合，同时保持 ancestral spike binding | 高 |
 | 科学贡献 | 产出实验验证的 SARS-CoV-2 nanobody candidates，并展示 AI-human 多 Agent 开放式科研流程 | Abstract；Discussion | 从多 Agent 科研组织走到真实蛋白候选物验证，是强 ASD 案例 | 高 |
 
+| Frozen adjudication | `07;06`; `source_limited=no` | Batch23Partial1 frozen adjudication | 安全官方 Nature full-text HTML 已恢复；保留 `07` 医学主归档，同时明确 `06` 蛋白 / nanobody 生命科学覆盖 | 高 |
+
 ## 0. 摘要翻译
 
 论文提出 Virtual Lab，一种 AI-human research collaboration。系统由一个 LLM Principal Investigator agent 组织多个 LLM scientist agents，通过研究会议解决开放式、跨学科科研问题，并由 human researcher 提供高层反馈。作者将该系统用于设计针对 SARS-CoV-2 近期变体的 nanobody binders。Virtual Lab 自主提出并实现计算设计流程，整合 ESM、AlphaFold-Multimer 和 Rosetta，设计了 92 个新的 nanobodies。湿实验验证显示，一批候选物具有功能性结合谱，其中两个新 nanobodies 对 JN.1 或 KP.3 等近期变体的结合更好，同时保持对 ancestral spike protein 的强结合。
@@ -38,6 +40,8 @@
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
+
+- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=no`，不再沿用旧 safety-only / source-hold 口径。
 
 - 是否属于 Agent 文献：是。
 - 判断依据：论文明确构建 PI agent、Scientific Critic、多个 scientist agents 和 human researcher 组成的科研团队；PI agent 能自动创建科学家 Agent；团队会议和个人会议用于提出方向、分解任务、实现工具、设计流程和筛选候选物。
@@ -62,6 +66,13 @@
 ## 2. 科学领域归类
 
 ### 2.1 主科学领域
+
+- scientific_object_modules：`07;06`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`07`
+- source_limited：no（本轮已恢复安全官方 Nature full-text HTML）
 
 - 一级类：`07` 医学与健康科学。
 - 二级类：`07.04` 药物发现、药剂学与治疗转化。
@@ -207,6 +218,8 @@
 
 ## 7. 局限性与风险
 
+- source / safety status：本轮已恢复安全官方 Nature full-text HTML；旧 safety-only carry-forward 已退役，但临床转化相关局限仍应保留。
+
 - Agent 自主性不足：human researcher 高层反馈很重要，不能称为完全自主科学家。
 - 科学验证不足：有 binding validation，但无体内疗效、安全性、药代、临床验证。
 - 泛化性不足：主要展示 SARS-CoV-2 nanobody 案例，跨疾病/靶点泛化待验证。
@@ -225,6 +238,8 @@
 - 需要与哪些论文并列比较：Gao_2024_Biomedical_Discovery_AI_Agents、BioMaster、CellVoyager、Coscientist、ChemCrow。
 
 ## 9. 总结
+
+- Frozen adjudication summary：该 note 现以 `07;06` 为最终模块结论，`07` 为主归档，且 `source_limited=no`。
 
 ### 9.1 一句话概括
 
@@ -252,7 +267,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 验证方式：湿实验; 计算验证; 人类反馈
 交叉属性：计算驱动; 数据驱动; 实验驱动; 仿真驱动; protein design
 科学贡献类型：设计; 实验发现; 系统平台
-证据强度：full-text PDF; 实验验证
+证据强度：official full-text HTML; 实验验证
 归类置信度：高
 纳入置信度：高
 推荐引用强度：核心引用

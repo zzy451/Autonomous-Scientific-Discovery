@@ -7,6 +7,7 @@
 - 来源 / venue：Chemical Communications
 - DOI / arXiv / URL：https://doi.org/10.1039/D0CC00064G
 - PDF / 本地文件路径：本轮依据 author version PDF 与 reviewer 一手证据整理
+- 来源状态：source_limited=yes（更深的自动续读在本轮已因安全原因停止；当前仅依据已安全核到的作者版 PDF、摘要与图示维持冻结 `04` 结论）
 - 论文类型：研究论文 / 纳米材料连续合成平台
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
@@ -20,6 +21,7 @@
 | 科学对象归类 | `04.03` | abstract; Fig. 3, Fig. 4 | 直接优化对象是 `CsPbBr3 quantum dots` 的材料质量与一致性 | 高 |
 | 方法流程 | 在线监测-优化-恢复闭环 | Scheme 1; Fig. 1; Fig. 3 | PL/UV-vis 在线监测结合 Nelder-Mead black-box optimization 反馈调参 | 高 |
 | 实验验证 | 强 | Fig. 3; Fig. 4 | 系统在约 20 分钟内收敛，扰动后 3 次迭代恢复，并以 XRD/TEM/光谱验证产物稳定 | 高 |
+| 来源状态 | source_limited=yes | author version PDF / abstract / figures | 更深 unsafe continuation 已停止，因此本笔记只保留已安全核到的材料对象证据；这不改变冻结 `04` 归类 | 高 |
 | 边界判断 | `04` 胜过 `09` | object-first review | 虽有 reactor engineering 强色彩，但直接优化目标是量子点材料表现而非装置设计本身 | 高 |
 
 ## 0. 摘要翻译
@@ -55,7 +57,9 @@
 ### 2.1 主科学领域
 
 - 一级类：04
+- 冻结归类结论：04（材料科学）
 - 二级类：04.03
+- source_limited：yes
 - 三级类：量子点纳米材料连续合成与优化
 - 四级专题：Self-optimizing nanoparticle-synthesis reactors
 - 四级专题是否为新增：否
@@ -204,6 +208,7 @@
 - 工具链依赖：依赖并行反应器与在线检测链路
 - 数据泄漏或 benchmark 偏差：非主风险
 - 成本、可复现性或安全风险：工程集成成本较高
+- 是否仍需后续全文复核：是；更深 unsafe continuation 已停止，当前保留 source-limited 标记，但冻结 `04` 结论不变
 
 ## 8. 对综述写作的价值
 

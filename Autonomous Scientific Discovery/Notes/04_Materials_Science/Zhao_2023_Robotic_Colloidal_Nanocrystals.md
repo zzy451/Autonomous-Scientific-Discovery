@@ -7,6 +7,7 @@
 - 来源 / venue：Nature Synthesis
 - DOI / arXiv / URL：https://doi.org/10.1038/s44160-023-00250-5
 - PDF / 本地文件路径：本轮依据 publisher abstract 与 reviewer 一手证据整理
+- 来源状态：source_limited=no（现有一手证据已足以稳定支持 `04` 材料对象归类）
 - 论文类型：研究论文 / 材料自驱实验平台
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
@@ -20,6 +21,7 @@
 | 科学对象归类 | `04.03` | publisher abstract | 直接对象是 gold nanocrystals 与 double-perovskite nanocrystals 的形貌与性质 | 高 |
 | 方法流程 | 文献到合成到设计的闭环 | Results / Fig. 1 | 数据挖掘、自动合成、表征、数据库累积与 morphology-oriented inverse design 串联 | 高 |
 | 实验验证 | 强 | Fig. 4, Fig. 5, Discussion | 自动合成并原位表征 2300+ gold NC samples 与 1000+ perovskite NC samples | 高 |
+| 来源状态 | source_limited=no | publisher abstract / reviewer evidence | 当前证据已清楚表明系统直接搜索和评估的是 nanocrystal morphology 与 materials properties，足以稳定落在 `04` | 高 |
 | 边界判断 | 留在 `04` | object-first review | 被直接搜索和评价的是纳米晶材料形貌与性质，不是通用科研平台 | 高 |
 
 ## 0. 摘要翻译
@@ -55,7 +57,9 @@
 ### 2.1 主科学领域
 
 - 一级类：04
+- 冻结归类结论：04（材料科学）
 - 二级类：04.03
+- source_limited：no
 - 三级类：纳米晶材料合成与形貌优化
 - 四级专题：Robotic colloidal-nanocrystal synthesis platforms
 - 四级专题是否为新增：否
@@ -204,6 +208,7 @@
 - 工具链依赖：高度依赖机器人合成与表征平台
 - 数据泄漏或 benchmark 偏差：非主风险
 - 成本、可复现性或安全风险：设备与表征链复制成本高
+- 是否仍需后续全文复核：否；当前一手证据已足以稳定支持冻结 `04` 结论
 
 ## 8. 对综述写作的价值
 

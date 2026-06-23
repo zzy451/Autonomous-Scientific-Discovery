@@ -6,21 +6,30 @@
 - 年份：2026
 - 来源 / venue：The Open Journal of Astrophysics
 - DOI / arXiv / URL：https://doi.org/10.33232/001c.161879
-- PDF / 本地文件路径：当前未保存本地 PDF；本轮基于 official abstract
+- PDF / 本地文件路径：当前未保存本地 PDF；本轮已核对官方 DOI 页面与 arXiv PDF 全文
 - 论文类型：研究论文 / astronomy data-analysis agent
-- 当前状态：to_read
+- 当前状态：included
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## 2026-06-23 writeback sync
+
+- Final adjudication landed: `scientific_object_modules=02`; `final_01_04_bucket=none`; `primary_module_for_filing=02`.
+- Current source refresh: official DOI landing page plus arXiv PDF full text checked; this note仍不声明本地 PDF 归档路径。
+- First-hand sources checked: official journal DOI page + arXiv PDF full text (`https://arxiv.org/pdf/2512.01270`)
+- Classification evidence source level: `first_hand_full_text`
+- `source_limited`: `no`
+- Safety/access status: `safe_https_journal_page_and_arXiv_pdf_checked`
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | official abstract | Egent 将 classical multi-Voigt fitting、LLM visual inspection 与 iterative refinement 接成自治流程 | 高 |
-| 科学对象归类 | `02.01` | official abstract | 直接对象是 astrophysical spectra 中的 equivalent width measurement | 高 |
-| 方法流程 | 多步工具调用与 refinement | official abstract | LLM 通过 function calls 调整 wavelength windows、blend components、continuum treatment 并标记问题案例 | 高 |
-| 实验验证 | 与人类专家对比 | official abstract | 在 84 个 Magellan/MIKE spectra、18,615 条谱线上与专家手工测量对比 | 高 |
-| 边界判断 | 保持 `02`，不转 `01.04` | official abstract | 虽然系统通用性较强，但科学对象稳定锚定在天体光谱测量任务 | 高 |
+| Agent 纳入 | 是 | official DOI page + arXiv PDF | Egent 将 classical multi-Voigt fitting、LLM visual inspection 与 iterative refinement 接成自治流程 | 高 |
+| 科学对象归类 | `02` | official DOI page + arXiv PDF | 直接对象是 astrophysical spectra 中的 equivalent width measurement，按 astronomy measurement task 落在 `02` | 高 |
+| 方法流程 | 多步工具调用与 refinement | arXiv PDF | LLM 通过 function calls 调整 wavelength windows、blend components、continuum treatment 并标记问题案例 | 高 |
+| 实验验证 | 与人类专家对比 | arXiv PDF | 在 84 个 Magellan/MIKE spectra、18,615 条谱线上与专家手工测量对比 | 高 |
+| 边界判断 | 保持 `02`，不转 `01.04` | official DOI page + arXiv PDF | 本轮按 concrete astrophysical measurement task 清晰落在 astronomy module，而非通用方法桶 | 高 |
 
 ## 0. 摘要翻译
 
@@ -33,6 +42,7 @@
 - 是否属于 Agent 文献：是
 - 判断依据：具备拟合、检查、函数调用、迭代 refinement 与问题标记等多步自治分析流程
 - 判定置信度：高
+- 本轮 landed 结论：纳入本综述，且不进入 `01.04`。
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
@@ -61,6 +71,7 @@
 - 四级专题是否为新增：否
 - 归类理由：系统直接服务于 astrophysical spectra 中等效宽度测量这一具体天文学任务
 - 归类置信度：高
+- 本轮 landed 模块：`02`
 
 ### 2.2 对象优先判定
 
@@ -70,10 +81,10 @@
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.04
-- 最终判定：保持 02.01
-- 判定理由：不是一般 scientific workflow agent，而是直接研究光谱测量这一 concrete astronomy object
-- 是否需要二次复核：是，建议后续补 PDF 细看观测数据背景
+- 可能误归类到：无
+- 最终判定：保持 `02`
+- 判定理由：不是一般 scientific workflow agent，而是直接研究光谱测量这一 concrete astronomy object；本轮不保留 `01.04` 备选。
+- 是否需要二次复核：否，本轮落地口径已冻结
 
 ## 3. Agent 系统与科研流程角色
 
@@ -232,7 +243,7 @@ Egent 自主完成天体光谱等效宽度测量与质控。
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：included
 主类：02
 二级类：02.01
 三级类：astronomical spectroscopy measurement

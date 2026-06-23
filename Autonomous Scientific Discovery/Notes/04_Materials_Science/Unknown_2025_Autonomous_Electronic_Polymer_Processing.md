@@ -6,21 +6,28 @@
 - 年份：2025
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-024-55655-3
-- PDF / 本地文件路径：未保存本地 PDF；本笔记基于 Nature Communications 正式页面与 reviewer 一手证据
+- PDF / 本地文件路径：未保存本地 PDF；本笔记沿用 Nature Communications 正式页面与 reviewer 一手证据，不额外声称本轮完成本地 PDF 复核
 - 论文类型：research paper / autonomous materials processing platform
-- 当前状态：to_read
+- 当前状态：included
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## 2026-06-23 writeback sync
+
+- Final adjudication landed: `scientific_object_modules=04`; `final_01_04_bucket=none`; `primary_module_for_filing=04`.
+- Current source refresh: 本轮沿用 Nature Communications 正式页面与 reviewer 一手证据；未在本 note 中额外声明本地 PDF 或 HTML 全文逐页复核。
+- First-hand sources checked: Nature Communications article page + reviewer first-hand evidence
+- Classification evidence source level: `first_hand_article_page_plus_reviewer_packet`
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Nature abstract | AI-driven automated material laboratory autonomously explores processing pathways | 高 |
-| 科学对象归类 | `04.04` | abstract / introduction | 直接对象是 electronic polymer thin films 的 conductivity、defects、morphology | 高 |
-| 方法流程 | Bayesian optimization 闭环 | abstract / methods summary | importance-guided Bayesian optimization 搜索 7 维 processing space | 高 |
-| 实验验证 | 强 | abstract / results | 产出可 scale-up 的透明导电薄膜配方并实现高 conductivity | 高 |
-| 边界判断 | `04` 胜过 `09` | introduction / subjects | 工程与制造只是手段，最终对象仍是电子聚合物材料 | 高 |
+| Agent 纳入 | 是 | Nature article page + reviewer evidence | AI-driven automated material laboratory autonomously explores processing pathways | 高 |
+| 科学对象归类 | `04` | Nature article page + reviewer evidence | 直接对象是 electronic polymer thin films 的 conductivity、defects、morphology，按材料对象落在 `04` | 高 |
+| 方法流程 | Bayesian optimization 闭环 | Nature article page + reviewer evidence | importance-guided Bayesian optimization 搜索 7 维 processing space | 高 |
+| 实验验证 | 强 | Nature article page + reviewer evidence | 产出可 scale-up 的透明导电薄膜配方并实现高 conductivity | 高 |
+| 边界判断 | 保持 `04` | Nature article page + reviewer evidence | 工程与制造只是手段，最终对象仍是电子聚合物材料 | 高 |
 
 ## 0. 摘要翻译
 
@@ -33,6 +40,7 @@
 - 是否属于 Agent 文献：是
 - 判断依据：存在明确材料优化目标、多步实验链路、反馈驱动的下一轮选点
 - 判定置信度：高
+- 本轮 landed 结论：纳入本综述。
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
@@ -61,6 +69,7 @@
 - 四级专题是否为新增：否
 - 归类理由：目标对象是电子聚合物薄膜的结构-加工-性能关系
 - 归类置信度：高
+- 本轮 landed 模块：`04`
 
 ### 2.2 对象优先判定
 
@@ -71,7 +80,7 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：09
-- 最终判定：保留 04.04
+- 最终判定：保持 `04`
 - 判定理由：设备与工艺很重，但最终对象不是一般工程系统，而是电子聚合物材料
 - 是否需要二次复核：否
 
@@ -232,7 +241,7 @@
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：included
 主类：04
 二级类：04.04
 三级类：
@@ -248,4 +257,3 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
-

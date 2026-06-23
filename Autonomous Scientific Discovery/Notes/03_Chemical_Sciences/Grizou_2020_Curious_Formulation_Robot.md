@@ -6,21 +6,29 @@
 - 年份：2020
 - 来源 / venue：Science Advances
 - DOI / arXiv / URL：https://doi.org/10.1126/sciadv.aay4237
-- PDF / 本地文件路径：PMC 全文 https://pmc.ncbi.nlm.nih.gov/articles/PMC6994213/
+- PDF / 本地文件路径：PMC HTML 全文已核对 https://pmc.ncbi.nlm.nih.gov/articles/PMC6994213/；当前未保存本地 PDF
 - 论文类型：research paper
-- 当前状态：to_read
+- 当前状态：included
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## 2026-06-23 writeback sync
+
+- Final adjudication landed: `scientific_object_modules=03`; `final_01_04_bucket=none`; `primary_module_for_filing=03`.
+- Current source refresh: PMC HTML full text checked; 本 note 不额外声明本地 PDF 归档。
+- First-hand sources checked: PMC HTML full text + DOI landing page
+- Classification evidence source level: `first_hand_full_text`
+- `source_limited`: `no`
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Abstract; Introduction | chemical robotic assistant + curiosity algorithm，具备多步实验闭环 | 高 |
-| 科学对象归类 | `03.04` | Introduction; temperature analysis | 对象是 oil-in-water protocell droplet formulations 及其化学行为 | 高 |
-| 方法流程 | 明确闭环 | Fig. 1 context | 每轮设临时目标、选下一组参数、执行实验并更新模型 | 高 |
-| 实验验证 | 强 | CA comparison; phase diagram | 1000 次实验中探索到 73% 行为空间，并有相图与 NMR 解释 | 高 |
-| 边界判断 | `03` 胜过 `04` | 全文整体 | 研究重点是化学配方空间与液滴行为，不是材料器件性能 | 高 |
+| Agent 纳入 | 是 | PMC full text | chemical robotic assistant + curiosity algorithm，具备多步实验闭环 | 高 |
+| 科学对象归类 | `03` | PMC full text | 对象是 oil-in-water protocell droplet formulations 及其化学行为，按化学配方与行为探索落在 `03` | 高 |
+| 方法流程 | 明确闭环 | PMC full text, Fig. 1 context | 每轮设临时目标、选下一组参数、执行实验并更新模型 | 高 |
+| 实验验证 | 强 | PMC full text | 1000 次实验中探索到 73% 行为空间，并有相图与 NMR 解释 | 高 |
+| 边界判断 | 保持 `03` | PMC full text | 研究重点是化学配方空间与液滴行为，不是材料器件性能 | 高 |
 
 ## 0. 摘要翻译
 
@@ -33,6 +41,7 @@
 - 是否属于 Agent 文献：是
 - 判断依据：有明确科研目标、多步选点与实验执行、反馈更新和自动探索
 - 判定置信度：高
+- 本轮 landed 结论：纳入本综述。
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
@@ -61,6 +70,7 @@
 - 四级专题是否为新增：否
 - 归类理由：研究核心是化学配方空间探索和液滴化学行为发现
 - 归类置信度：高
+- 本轮 landed 模块：`03`
 
 ### 2.2 对象优先判定
 
@@ -71,7 +81,7 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：04
-- 最终判定：保持 03.04
+- 最终判定：保持 `03`
 - 判定理由：目标不是材料结构/器件性能，而是配方-行为化学空间探索
 - 是否需要二次复核：否
 
@@ -248,4 +258,3 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
-

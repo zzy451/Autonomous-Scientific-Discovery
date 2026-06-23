@@ -6,11 +6,17 @@
 - 年份：2026
 - 来源 / venue：Nature Medicine
 - DOI / arXiv / URL：https://doi.org/10.1038/s41591-026-04357-y
-- PDF / 本地文件路径：当前未保存本地 PDF；本轮基于 Nature Medicine official abstract
+- PDF / 本地文件路径：当前未保存本地 PDF；本轮仍基于 Nature Medicine official abstract / landing page；`source_limited=yes`
 - 论文类型：研究论文 / agentic biomedical discovery framework
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## Frozen Adjudication Writeback - 2026-06-23
+
+- Final classification: `scientific_object_modules=07;06`; `object_coverage_mode=multi_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Source status: `source_limited=yes`. This round remains abstract / landing-page only.
+- Landed subset note: keep `07` primary for cancer pathology / patient biomarker validation while making the additional `06` tumor-biology / spatial-biology coverage explicit.
 
 ## Evidence Log
 
@@ -19,13 +25,13 @@
 This section supplements the older `07.01` primary filing with object-coverage modules.
 
 ```text
-scientific_object_modules: 06;07
+scientific_object_modules: 07;06
 object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 07
-first_hand_sources_checked: Nature Medicine abstract/full-text landing page
-classification_evidence_source_level: first_hand_abstract_or_landing_page
+first_hand_sources_checked: Nature Medicine abstract / article landing page
+classification_evidence_source_level: source_limited
 module_assignment_evidence: `07` is supported by cancer pathology, patient cohorts, prognostic/predictive biomarkers, and clinical pathology validation; `06` is supported by tumor biology, spatial biology, and tumor-progression / temporal-change biological concept analysis.
 multi_module_object_coverage_note: SPARK remains a medical cancer-pathology paper for filing, but its tumor/spatial-biology analyses support an additional `06` module under the relaxed rule.
 ```
@@ -37,6 +43,7 @@ multi_module_object_coverage_note: SPARK remains a medical cancer-pathology pape
 | 方法流程 | 多步 agentic workflow | Nature Medicine abstract | 从 biological ideas 到 analytical tools，再到 pathology data 分析、概念生成与人机交互 | 高 |
 | 实验验证 | 多队列真实数据验证 | Nature Medicine abstract | 覆盖 18 个患者队列、5 种癌症、5400+ patients 与 spatial biology dataset | 高 |
 | 边界判断 | 保持 `07`，不降到 `06` 或 `01.04` | Nature Medicine abstract | 虽然有通用框架色彩，但验证与输出都锚定在 cancer pathology 与临床相关 biomarkers | 高 |
+| Frozen adjudication | `07;06`; `source_limited=yes` | Batch23Partial1 frozen adjudication | 保持 `07` 主归档，同时显式写出 `06` 肿瘤生物学 / spatial biology 覆盖；本轮仍是 landing-page 级证据 | 高 |
 
 ## 0. 摘要翻译
 
@@ -45,6 +52,8 @@ multi_module_object_coverage_note: SPARK remains a medical cancer-pathology pape
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
+
+- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=yes`，但 `07;06` 的对象层写法已固定。
 
 - 是否属于 Agent 文献：是
 - 判断依据：系统具备自主概念生成、工具化、数据分析、结果解释与人机交互的多步研究流程
@@ -69,6 +78,13 @@ multi_module_object_coverage_note: SPARK remains a medical cancer-pathology pape
 ## 2. 科学领域归类
 
 ### 2.1 主科学领域
+
+- scientific_object_modules：`07;06`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`07`
+- source_limited：yes
 
 - 一级类：07
 - 二级类：07.01
@@ -214,6 +230,8 @@ multi_module_object_coverage_note: SPARK remains a medical cancer-pathology pape
 
 ## 7. 局限性与风险
 
+- source-limited：是；本轮仍主要依据 Nature Medicine abstract / landing page，因此保留 `07;06` 结论，但不夸大全文级把握。
+
 - Agent 自主性不足：人机交互模块意味着部分流程仍可能依赖人工把关
 - 科学验证不足：临床效用仍需 prospective validation
 - 泛化性不足：当前主要聚焦癌症病理
@@ -232,6 +250,8 @@ multi_module_object_coverage_note: SPARK remains a medical cancer-pathology pape
 - 需要与哪些论文并列比较：Medea、TCM-Agent、PromptBio、cancer biomarker discovery agents
 
 ## 9. 总结
+
+- Frozen adjudication summary：该 note 现以 `07;06` 为最终模块结论，`07` 为主归档，并继续保留 `source_limited=yes`。
 
 ### 9.1 一句话概括
 

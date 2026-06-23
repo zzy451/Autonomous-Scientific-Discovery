@@ -6,11 +6,17 @@
 - 年份：2024
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-024-07892-1
-- PDF / 本地文件路径：本轮基于官方摘要页与 reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：本轮仍基于官方摘要 / article page 与 reviewer 一手证据；`source_limited=yes`；未保存本地 PDF
 - 论文类型：研究论文 / closed-loop chemistry discovery
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## Frozen Adjudication Writeback - 2026-06-23
+
+- Final classification: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Source status: `source_limited=yes`. This round remains abstract / page-level only.
+- Landed subset note: keep the chemistry-object reading and do not reopen multi-module expansion in the note wording.
 
 ## Evidence Log
 
@@ -22,11 +28,15 @@
 | 实验验证 | 真实实验 | official abstract / reviewer evidence | 基于自动合成与表征，仅探索少量空间就得到可转移规律 | 高 |
 | 边界判断 | 保持 `03` | official abstract / reviewer evidence | 被直接设计和解释的是分子而不是器件材料层 | 高 |
 
+| Frozen adjudication | `03`; `source_limited=yes` | Batch23Partial1 frozen adjudication | 落地结论保持化学单模块；当前仍不应把 note 写成已完成全文级多模块复核 | 高 |
+
 ## 0. 摘要翻译
 
 本文把闭环实验、特征选择与监督学习结合起来，在优化过程中提炼可转移的化学知识。虽然应用背景与 organic electronics 接近，但其直接研究对象是 donor-acceptor molecules 与分子光稳定性，因此更适合保留在化学科学。
 
 ## 1. 是否纳入本综述
+
+- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=yes`，但 Agent 纳入与 `03` 主归类均稳定。
 
 - 是否属于 Agent 文献：是
 - 判断依据：明确科研目标、实验闭环、工具调用、反馈迭代与结果解释
@@ -35,6 +45,13 @@
 - 是否仍需进一步全文复核：需要，用于继续细化 `03.03 / 03.04` 内部位置
 
 ## 2. 科学领域归类
+
+- scientific_object_modules：`03`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`03`
+- source_limited：yes
 
 - 一级类：03
 - 二级类：03.03
@@ -77,6 +94,8 @@
 
 ## 7. 局限性与风险
 
+- source-limited：是；本轮仍未将笔记提升为可稳定引用的全文复核状态，因此保留化学单模块但不夸大全文掌握程度。
+
 - 二级类在 `03.03 / 03.04` 之间仍可继续精细化。
 - 主风险是化学内部子类细化，而不是一级类错误。
 - confirmed-core 强度较强。
@@ -88,6 +107,8 @@
 - 推荐引用强度：core
 
 ## 9. 总结
+
+- Frozen adjudication summary：该 note 已固定为 `03` 单模块化学对象案例，并保留 `source_limited=yes`。
 
 ### 9.1 一句话概括
 

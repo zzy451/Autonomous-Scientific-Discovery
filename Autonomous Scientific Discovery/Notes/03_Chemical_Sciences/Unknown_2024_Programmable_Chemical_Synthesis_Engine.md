@@ -7,6 +7,7 @@
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-024-45444-3
 - PDF / 本地文件路径：未保存本地 PDF；本笔记基于 Nature Communications 正式页面与 reviewer 一手证据
+- 来源状态：source_limited=no（现有一手证据已足以稳定支持 `03`；当前不要求再把归类退回 `01.04` 或 `09`）
 - 论文类型：research paper / programmable closed-loop synthesis system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -20,6 +21,7 @@
 | 科学对象归类 | `03.03` | abstract / case studies | 直接对象是具体化学反应、反应空间与新分子发现 | 高 |
 | 方法流程 | 传感器 + χDL + 在线分析闭环 | abstract / method summary | execution-monitoring-analysis-optimization 一体化 | 高 |
 | 实验验证 | 强 | abstract / results | 在多个具体反应中做 25-50 轮优化，并发现未报道反应 | 高 |
+| 来源状态 | source_limited=no | Nature Communications page / reviewer evidence | 当前一手证据已稳定表明其核心是 closed-loop reaction optimization 与 new molecules，因此无需把主类回退到平台类 | 高 |
 | 边界判断 | 不退回 `01.04` | case studies | 虽然平台通用性强，但成功标准始终是 concrete chemistry outcomes | 高 |
 
 ## 0. 摘要翻译
@@ -55,11 +57,13 @@
 ### 2.1 主科学领域
 
 - 一级类：03
+- 冻结归类结论：03（化学科学）
 - 二级类：03.03
+- source_limited：no
 - 三级类：
 - 四级专题：Programmable chemical synthesis engines
 - 四级专题是否为新增：否
-- 归类理由：核心验证对象是具体反应、反应条件优化与新分子发现
+- 归类理由：核心验证对象是具体反应、反应条件优化与新分子发现；闭环优化和新分子产出共同把它稳定锚定在 `03`
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -204,6 +208,7 @@
 - 工具链依赖：强
 - 数据泄漏或 benchmark 偏差：较低
 - 成本、可复现性或安全风险：系统复杂度和硬件成本高
+- 是否仍需后续全文复核：否；当前一手证据已足以稳定支持冻结 `03` 结论
 
 ## 8. 对综述写作的价值
 

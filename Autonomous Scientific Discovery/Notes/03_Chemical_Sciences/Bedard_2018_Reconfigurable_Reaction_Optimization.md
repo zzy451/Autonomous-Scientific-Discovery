@@ -7,6 +7,7 @@
 - 来源 / venue：Science
 - DOI / arXiv / URL：https://doi.org/10.1126/science.aat0650
 - PDF / 本地文件路径：本轮依据 Science 官方元数据与稳定摘要级材料整理
+- 来源状态：source_limited=yes（本轮仍以 Science 官方元数据与稳定摘要级材料为主；冻结归类稳定为 `03`，但不要写成已核过全文的通用平台文）
 - 论文类型：研究论文 / 自动化反应优化平台
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
@@ -17,9 +18,10 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Abstract; workflow description | 系统自动执行实验、读取在线分析、反馈更新下一轮条件 | 高 |
-| 科学对象归类 | `03.03` | Abstract; reaction list | 直接对象是 diverse chemical reactions 的条件优化，不是通用科研平台 benchmark | 高 |
+| 科学对象归类 | 冻结为 `03`（落盘仍写作 `03.03`） | Abstract; reaction list | 直接对象是 diverse chemical reactions 的条件优化，不是通用科研平台 benchmark | 高 |
 | 方法流程 | plug-and-play continuous-flow optimization | Abstract | 软件控制试剂与单元操作，并用 inline analytics 驱动反馈优化 | 高 |
 | 实验验证 | 强 | Abstract; example reactions | 覆盖 cross-coupling、olefination、reductive amination、SNAr、photoredox 及 multistep sequence | 高 |
+| 来源状态 | source_limited=yes | Science metadata / stable abstract-level materials | 当前仍是摘要级一手材料，但足以稳定支持冻结 `03`，不应过度声称已核全文 | 高 |
 | 边界判断 | 不转 `01.04` | object-first review | 平台可重构，但科学对象始终是具体化学反应优化 | 高 |
 
 ## 0. 摘要翻译
@@ -55,7 +57,9 @@
 ### 2.1 主科学领域
 
 - 一级类：03
+- 冻结归类结论：03（化学科学）
 - 二级类：03.03
+- source_limited：yes
 - 三级类：自动化反应条件优化
 - 四级专题：Reconfigurable autonomous-reaction-optimization systems
 - 四级专题是否为新增：否
@@ -71,7 +75,7 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04、09
-- 最终判定：保留 03.03
+- 最终判定：冻结为 03（化学科学；落盘仍写作 03.03）
 - 判定理由：虽然平台具有广泛可适配性，但其科学验证一直围绕具体化学反应对象展开
 - 是否需要二次复核：否
 
@@ -204,6 +208,7 @@
 - 工具链依赖：强依赖连续流硬件与在线分析
 - 数据泄漏或 benchmark 偏差：不是主风险
 - 成本、可复现性或安全风险：平台部署门槛较高
+- 是否仍需后续全文复核：是；当前仍以 Science 官方元数据与稳定摘要级材料为主，因此保留 source_limited=yes，但冻结 `03` 结论不变
 
 ## 8. 对综述写作的价值
 

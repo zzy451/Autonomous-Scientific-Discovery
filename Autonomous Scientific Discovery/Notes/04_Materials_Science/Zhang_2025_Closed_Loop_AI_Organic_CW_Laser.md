@@ -6,11 +6,17 @@
 - 年份：2025
 - 来源 / venue：Research Square Preprint
 - DOI / arXiv / URL：https://doi.org/10.21203/rs.3.rs-6802885/v1
-- PDF / 本地文件路径：当前未保存本地 PDF；本轮基于 publisher metadata 与 Crossref 返回摘要
+- PDF / 本地文件路径：当前未保存本地 PDF；本轮仍主要基于 publisher metadata / Crossref 摘要与页面证据；`source_limited=yes`
 - 论文类型：研究论文 / closed-loop materials-discovery workflow
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## Frozen Adjudication Writeback - 2026-06-23
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: `source_limited=yes`. This round remains metadata / abstract / page-level only.
+- Landed subset note: keep the concrete optical-material / gain-media discovery framing.
 
 ## Evidence Log
 
@@ -22,6 +28,8 @@
 | 实验验证 | 有真实实验 | Crossref abstract | 实验验证显示获得连续波有机薄膜激光发射，阈值极低且可持续数小时 | 高 |
 | 边界判断 | 保持 `04`，不转 `09` | Crossref abstract | 虽然结果表现为激光器件，但系统直接搜索和优化的是 gain media 分子/材料对象，而不是通用器件工程流程 | 高 |
 
+| Frozen adjudication | `04`; `source_limited=yes` | Batch23Partial1 frozen adjudication | 落地结论保持光学材料 / gain-media 单模块读法；当前仍不把 note 写成已完成全文复核 | 高 |
+
 ## 0. 摘要翻译
 
 这篇论文关注有机连续波激光器所需高性能增益介质的设计问题。作者指出，持续激发条件下的热效应与光学损耗使得传统试错式设计效率很低。为此，论文提出一个闭环 AI 工作流，把理论建模、深度学习和生成式人工智能结合起来：先用几何感知生成模型进行自主分子设计，再用理论框架量化候选增益介质性能，并通过 AI 增强筛选，在 801,801 个分子结构的大空间中快速找到适用于光泵和电泵的优选候选。最终实验验证表明，所发现的材料具有优异增益性质，并首次在有机薄膜 DFB resonator 中实现连续波激光发射，阈值仅 0.202 mW/cm²，且可稳定持续数小时。整体上，这是一条面向有机光电材料发现的 AI 驱动闭环研究路线。
@@ -29,6 +37,8 @@
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
+
+- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=yes`，但对象层材料归类稳定。
 
 - 是否属于 Agent 文献：是
 - 判断依据：面向明确科研目标，具有自主候选生成、性能评估、筛选、实验验证与闭环迭代
@@ -53,6 +63,13 @@
 ## 2. 科学领域归类
 
 ### 2.1 主科学领域
+
+- scientific_object_modules：`04`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`04`
+- source_limited：yes
 
 - 一级类：04
 - 二级类：04.04
@@ -198,6 +215,8 @@
 
 ## 7. 局限性与风险
 
+- source-limited：是；本轮仍主要是 Crossref / publisher page 级证据，因此保留材料单模块但不夸大全文细节把握。
+
 - Agent 自主性不足：多大程度有人类介入尚需全文核对
 - 科学验证不足：摘要未说明泛化到其他材料家族的程度
 - 泛化性不足：当前看主要针对 organic laser gain media
@@ -216,6 +235,8 @@
 - 需要与哪些论文并列比较：CAMEO、MAOSIC、battery electrolyte、perovskite SDL
 
 ## 9. 总结
+
+- Frozen adjudication summary：该 note 已固定为 `04` 单模块，并保持具体 optical-material / gain-media discovery framing。
 
 ### 9.1 一句话概括
 
