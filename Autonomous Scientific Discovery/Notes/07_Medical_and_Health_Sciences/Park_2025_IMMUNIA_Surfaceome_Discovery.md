@@ -14,6 +14,14 @@
 
 ## Evidence Log
 
+## 2026-06-23 safety-supported full-reaudit sync
+
+- Final adjudication for this round: `supported_modules=06;07`; `final_01_04_bucket=none`; `primary_module_for_filing=07`; `confidence=medium`; `source_limited=yes`; `safety_access_status=safety_supported_non_safe_http_doi_redirect`.
+- `first_hand_sources_checked`: safe Sciety article page with abstract for DOI `10.1101/2025.11.02.686138`; direct DOI recheck confirmed redirect to non-safe `http` bioRxiv and was not followed further.
+- Current evidence wording: the safe abstract directly supports both the `07` precision-immunotherapy biomarker-discovery layer and the `06` immune-biology / surfaceome-gene layer; no unsafe full-article access was pursued.
+- Safety-supported note: this is not a no-safety full-text landing. The current closeout depends on the safe abstract plus explicit refusal to continue through the non-safe DOI redirect.
+- Note-path reminder: this note remains under `Notes/07_Medical_and_Health_Sciences/` because `07` is the adjudicated primary filing module; the note path is not independent classification authority.
+
 ## 2026-06-20 relaxed multi-module revision
 
 This section supplements the older `07.01` primary filing with object-coverage modules.
