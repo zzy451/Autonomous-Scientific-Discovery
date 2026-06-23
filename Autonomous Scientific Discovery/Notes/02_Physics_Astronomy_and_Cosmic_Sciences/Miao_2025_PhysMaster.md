@@ -23,6 +23,18 @@
 | 边界判断 | 不转 `01.04` | workflow / task taxonomy | 虽有 LANDAU / platform 外观，但对象、知识库和案例都被明确 physics-oriented 化 | 中高 |
 | 主要剩余风险 | class-risk 低到中，需继续核长文 | PDF | 主张跨度较大，正式 note 仍应补核 case analyses | 中高 |
 
+### 2026-06-24 confirmed-core full reaudit writeback
+
+- final_agent_inclusion: yes
+- supported_modules: `02`
+- final_01_04_bucket: none
+- primary_module_for_filing: `02`
+- confidence: high
+- source_limited: no
+- safety_access_status: accessed_no_safety_issue
+- final_reason: The direct objects are theoretical/computational physics research tasks, not a domain-agnostic workflow.
+- refresh_focus: stabilize as `02` only.
+
 ## 0. 摘要翻译
 
 本文提出 PhysMaster，一个面向理论与计算物理研究的自主 AI physicist。系统结合理论推理、数值计算、文献检索、知识库构建、MCTS 式长程探索和层级式多 Agent 协作，试图把 AI 从物理研究中的辅助工具推进到能够执行假设检验、自动化探索乃至自主发现的研究代理。作者声称系统在 high-energy theory、condensed matter theory、astrophysics 和 quantum information 等任务上表现出 acceleration、automation 和 autonomous discovery 能力。
@@ -75,6 +87,13 @@
 - 最终判定：保持 02.02
 - 判定理由：论文反复强调 physics-oriented knowledge base、physicist mindset、physics cases
 - 是否需要二次复核：是
+
+### 2.4 2026-06-24 裁决对齐
+
+- 最终支持模块：`02`
+- filing 目录仅作归档便利，本轮分类以主控冻结裁决为准。
+- 边界结论：不转 `01.04`。平台化外观不改变其直接科学对象仍是 theoretical/computational physics research tasks。
+- 本轮写回重点：stabilize as `02` only。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -248,4 +267,18 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 归类置信度：中高
 纳入置信度：高
 推荐引用强度：standard
+```
+
+### 9.4 Reaudit Writeback Block
+
+```text
+final_agent_inclusion: yes
+supported_modules: 02
+final_01_04_bucket: none
+primary_module_for_filing: 02
+confidence: high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+final_reason: The direct objects are theoretical/computational physics research tasks, not a domain-agnostic workflow.
+refresh_focus: stabilize as 02 only
 ```

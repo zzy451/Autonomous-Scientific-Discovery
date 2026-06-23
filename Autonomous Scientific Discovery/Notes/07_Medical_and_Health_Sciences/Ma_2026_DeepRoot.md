@@ -14,10 +14,31 @@
 
 ## Evidence Log
 
+## 2026-06-24 confirmed-core full-reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0677`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 07
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+confidence: medium-high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+first_hand_sources_checked: OpenReview abstract + arXiv / reviewer full-text evidence pack
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: held-out compound-disease treatment-pair recovery and therapeutic-lead reasoning remain medicine-facing output objects.
+multi_module_object_coverage_note: historical medical text and KG are methods / sources, not separate `11` or generic text-mining authority.
+final_reason: Historical text and KG are methods; the output object is therapeutic reasoning and drug-discovery leads.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | OpenReview abstract L22-L25 | 论文明确提出 multi-agent LLM system，并联合构建和使用 verified KG | 高 |
-| 科学对象归类 | `07.04` | OpenReview abstract L22-L25；reviewer PDF evidence | 最终目标是把历史医药文本转成 verifiable drug-discovery leads | 高 |
+| 科学对象归类 | `07` | OpenReview abstract L22-L25；reviewer full-text evidence pack | 最终输出对象是 therapeutic reasoning 与 verifiable drug-discovery leads，而不是知识生产研究或一般文本挖掘 | 高 |
 | 方法流程 | KG-grounded therapeutic reasoning | OpenReview abstract L22-L25 | grounding 与 reasoning 被分离再组合，服务于 therapeutic reasoning | 高 |
 | 科学验证 | lead recovery + reasoning audit | OpenReview abstract L23-L25 | 在 held-out compound-disease treatment pairs 上 R@20=47.6%，且 hallucination 率显著低于 tool-using baselines | 高 |
 | 边界判断 | 不转 `11.07` 或 `06` | OpenReview abstract；reviewer PDF evidence | 历史文本与 KG 只是入口，最终对象是 therapeutic leads 与 treatment recovery | 高 |
@@ -54,13 +75,15 @@
 
 ### 2.1 主科学领域
 
-- 一级类：07
-- 二级类：07.04
-- 三级类：
-- 四级专题：Therapeutic reasoning and lead-discovery agents
-- 四级专题是否为新增：否
-- 归类理由：尽管入口是历史医学文本和 KG，但论文最终要输出的是可核验 drug-discovery leads
-- 归类置信度：高
+- 科学对象模块：07
+- 覆盖模式：single_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：yes
+- 独立 `01.04` 存放区：none
+- Primary module for filing：07
+- Filing 说明：note 位于 `07_Medical_and_Health_Sciences` 目录与本轮裁决一致，但目录位置不是分类权威；权威事实是 supported module `07`。
+- 当前二级类措辞：therapeutic reasoning / lead-discovery wording 可作描述性二级标签保留，但本轮权威结论是顶层 `07`，不是 `11` 或 generic text-mining。
+- 归类理由：尽管入口是历史医学文本和 KG，但论文最终要输出的是可核验治疗线索与 drug-discovery leads。
+- 归类置信度：中高
 
 ### 2.2 对象优先判定
 
@@ -71,8 +94,8 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：11.07；06
-- 最终判定：保留 07.04
-- 判定理由：系统不研究 scientific knowledge production itself，也不是一般生物文本挖掘；它直接面向 therapeutic reasoning 和 leads
+- 最终判定：支持模块为 `07`
+- 判定理由：系统不研究 scientific knowledge production itself，也不是 generic historical-text mining。KG 与历史医药文本只是方法入口，最终对象仍是治疗推理、lead recovery 与药物发现线索，所以不扩到 `11`，也不改写成纯 `06`。
 - 是否需要二次复核：否，主类方向较稳
 
 ## 3. Agent 系统与科研流程角色
@@ -234,10 +257,15 @@
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.04
-三级类：
-四级专题：Therapeutic reasoning and lead-discovery agents
+科学对象模块：07
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：否
+secondary_bucket_wording：therapeutic reasoning / lead-discovery wording is descriptive only; authoritative module decision remains top-level `07`
+module_assignment_evidence：held-out compound-disease treatment-pair recovery and therapeutic-lead reasoning remain medicine-facing output objects
+multi_module_object_coverage_note：historical medical text and KG are methods / inputs, not separate `11` coverage
 Agent 类型：LLM Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Agent System; Hybrid Agent
 科研流程角色：literature_search_and_reading; hypothesis_generation; evidence_assessment_and_validation; feedback_iteration
 自主能力：task_decomposition; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
@@ -245,7 +273,10 @@ Agent 类型：LLM Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Age
 交叉属性：computation_driven; data_driven; knowledge_graph
 科学贡献类型：system_platform; drug_discovery
 证据强度：medium_high_primary_abstract
-归类置信度：高
+first_hand_sources_checked：OpenReview abstract; arXiv / reviewer full-text evidence pack
+source_limited：no
+safety_access_status：accessed_no_safety_issue
+归类置信度：中高
 纳入置信度：高
 推荐引用强度：core
 ```

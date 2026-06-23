@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.15456
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / arXiv API 元数据；尚未完成全文核对
+- PDF / 本地文件路径：当前笔记已按 frozen writeback packet 同步为 non-source-limited 状态；source basis 采用 arXiv abstract + reviewer evidence pack
 - 论文类型：系统论文 / medical-research agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -14,10 +14,31 @@
 
 ## Evidence Log
 
+## 2026-06-24 confirmed-core full-reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0769`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 07
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+confidence: high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+first_hand_sources_checked: arXiv abstract + reviewer evidence pack
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: medical research questions, DeepER-MedQA, and real clinical-case support keep the stable object at top-level medicine.
+multi_module_object_coverage_note: finer `07.03 / 07.04` wording remains descriptive only; this round closes the note at top-level `07`.
+final_reason: Medicine is the stable top-level object; only finer sub-bucket wording remains interpretive.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Abstract | frames deep medical research as an explicit workflow of planning, agentic collaboration, and evidence synthesis | 高 |
-| 科学对象归类 | `07` 顶层稳定 | Title; Abstract | 对象是 medicine-centered research、medical questions、clinical cases，而非通用科研平台 | 高 |
+| 科学对象归类 | `07` 顶层稳定 | Title; Abstract; reviewer evidence pack | 对象是 medicine-centered research、medical questions、clinical cases，而非通用科研平台 | 高 |
 | 多步行动流程 | 明确存在 | Abstract | three modules: research planning, agentic collaboration, evidence synthesis | 高 |
 | 证据与评估 | expert-level medical scenarios | Abstract | DeepER-MedQA contains 100 expert-level questions from authentic medical research scenarios | 高 |
 | 真实场景支持 | 有临床案例 | Abstract | demonstrates practical utility through eight real-world clinical cases, with clinician assessment | 高 |
@@ -55,13 +76,15 @@
 
 ### 2.1 主科学领域
 
-- 一级类：07
-- 二级类：07.04
-- 三级类：evidence-based medical research agents
-- 四级专题：Deep medical research and evidence-synthesis agents
-- 四级专题是否为新增：否
-- 归类理由：对象是医学研究问题、医学证据综合与临床案例支持，顶层稳定落在医学与健康科学
-- 归类置信度：中高
+- 科学对象模块：07
+- 覆盖模式：single_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：yes
+- 独立 `01.04` 存放区：none
+- Primary module for filing：07
+- Filing 说明：note 位于 `07_Medical_and_Health_Sciences` 目录与本轮裁决一致，但权威事实是 top-level `07`，不是更细二级位点。
+- 当前二级类措辞：`07.03 / 07.04` 只保留为保守描述性 wording；本轮不把它们写成权威 closed decision。
+- 归类理由：对象是医学研究问题、医学证据综合与临床案例支持，顶层稳定落在医学与健康科学。
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
@@ -72,9 +95,9 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04；07.03
-- 最终判定：顶层保持 07，当前暂保留 07.04
-- 判定理由：医学对象已很明确，但二级位点仍有 evidence-based medicine / health research 支持型边界压力
-- 是否需要二次复核：需要，主要是二级位点和平台性强度
+- 最终判定：支持模块为 `07`；二级位点维持保守描述，不在本轮硬化
+- 判定理由：医学对象已经足够明确，通用 deep-research 外观不足以把论文推回 `01.04`；同时本轮只冻结 top-level `07`，更细 `07.03 / 07.04` 词语仍属解释层而非权威分类层。
+- 是否需要二次复核：就支持模块而言否；仅 finer sub-bucket wording 若后续需要可再细化
 
 ## 3. Agent 系统与科研流程角色
 
@@ -234,10 +257,15 @@
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.04
-三级类：evidence-based medical research agents
-四级专题：Deep medical research and evidence-synthesis agents
+科学对象模块：07
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：否
+secondary_bucket_wording：finer `07.03 / 07.04` wording remains descriptive only; this round closes the note at top-level `07`
+module_assignment_evidence：medical research questions, DeepER-MedQA, and real clinical-case support keep the stable object at top-level medicine
+multi_module_object_coverage_note：no accepted `01.04` fallback; medicine remains the stable top-level object
 Agent 类型：LLM Agent; Multi-Agent System; Retrieval-augmented Agent; Hybrid Agent
 科研流程角色：literature_search_and_reading; knowledge_extraction_and_organization; result_interpretation; evidence_assessment_and_validation; workflow_orchestration
 自主能力：task_decomposition; planning; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
@@ -245,7 +273,10 @@ Agent 类型：LLM Agent; Multi-Agent System; Retrieval-augmented Agent; Hybrid 
 交叉属性：computation_driven; data_driven
 科学贡献类型：explanation; system_platform; evidence_assessment
 证据强度：expert_confirmed
-归类置信度：中高
+first_hand_sources_checked：arXiv abstract; reviewer evidence pack
+source_limited：no
+safety_access_status：accessed_no_safety_issue
+归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
 ```

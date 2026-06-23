@@ -24,6 +24,18 @@
 | 实验验证 | benchmark + computational validation | Table 1; Sec. 6-7 | 在五个 ADMET tasks 上，success、validity、relative improvement 等指标优于 baselines | 高 |
 | 主要风险 | core-strength risk | Conclusion | 当前证据集中在 benchmark 与计算验证，尚无湿实验或药效学下游验证 | 中高 |
 
+### 2026-06-24 confirmed-core full reaudit writeback
+
+- final_agent_inclusion: yes
+- supported_modules: `07`
+- final_01_04_bucket: none
+- primary_module_for_filing: `07`
+- confidence: medium-high
+- source_limited: no
+- safety_access_status: accessed_no_safety_issue
+- final_reason: The object is medicinal lead optimization toward viable drug candidates, so 07 remains stronger than generic chemistry framing.
+- refresh_focus: stabilize `07` and reject drift to `03`.
+
 ## 0. 摘要翻译
 
 该文提出 TRACE，把 molecular lead optimization 视作一个 agentic sequential tool-planning 问题。系统围绕给定先导分子，在结构相似性约束下迭代调用工具、评估性质并根据失败轨迹进行自我修正，以改善 ADMET 相关性质并把 early hits 推进成更可行的 drug candidates。论文在多个 lead optimization 任务上验证了这一框架的有效性。
@@ -76,6 +88,13 @@
 - 最终判定：保持 `07 / 07.04`
 - 判定理由：虽然直接操作分子，但文本持续把任务表述为 lead optimization 与 viable drug candidate refinement；它也不是无对象的通用 scientific-agent benchmark
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 裁决对齐
+
+- 最终支持模块：`07`
+- primary module for filing：`07`
+- 边界结论：不转 `03`。虽然直接操作对象包含 molecules，但任务目标始终是 medicinal lead optimization toward viable drug candidates。
+- 本轮写回重点：stabilize `07` and reject `03` drift。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -251,4 +270,18 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
+```
+
+### 9.4 Reaudit Writeback Block
+
+```text
+final_agent_inclusion: yes
+supported_modules: 07
+final_01_04_bucket: none
+primary_module_for_filing: 07
+confidence: medium-high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+final_reason: The object is medicinal lead optimization toward viable drug candidates, so 07 remains stronger than generic chemistry framing.
+refresh_focus: stabilize 07 and reject 03 drift
 ```

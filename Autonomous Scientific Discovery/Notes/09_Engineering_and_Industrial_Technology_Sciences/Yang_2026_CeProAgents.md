@@ -24,6 +24,18 @@
 | 实验验证 | benchmark + simulation validation | Summary; Fig. S3 | benchmark 按 chemical engineering competencies 组织，并覆盖 separation、synthesis、combined process types | 高 |
 | `09 / 01.04` 边界 | 保持 `09` | Sec. 2; p.12 | 架构虽然平台感很强，但从一开始就是为 chemical process lifecycle 定制，不是无对象通用 scientific-agent 平台 | 高 |
 
+### 2026-06-24 confirmed-core full reaudit writeback
+
+- final_agent_inclusion: yes
+- supported_modules: `09`
+- final_01_04_bucket: none
+- primary_module_for_filing: `09`
+- confidence: high
+- source_limited: no
+- safety_access_status: accessed_no_safety_issue
+- final_reason: The concrete objects are chemical-process development workflows and parameters rather than molecular chemistry objects.
+- refresh_focus: stabilize `09` and reject drift to `03`.
+
 ## 0. 摘要翻译
 
 该文提出 CeProAgents，一个面向 chemical process development 的层级多 Agent 系统，覆盖知识检索、流程概念设计、PFD 补全与参数优化三个层面。系统通过不同 agent cohort 的协作，把 technical documents、PFD 图像和参数文件转化为更完整的流程设计和更优的过程参数，并结合外部工程仿真器完成化工过程优化。
@@ -76,6 +88,13 @@
 - 最终判定：保持 `09 / 09.04`
 - 判定理由：这里的 “chemical” 指 chemical engineering process，而不是分子/反应本体；平台叙事虽强，但全过程都是为过程工程定制
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 裁决对齐
+
+- 最终支持模块：`09`
+- primary module for filing：`09`
+- 边界结论：不转 `03`。标题中的 chemical 指向 chemical-process development，而不是分子或反应本体对象。
+- 本轮写回重点：stabilize `09` and reject `03` drift。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -251,4 +270,18 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
+```
+
+### 9.4 Reaudit Writeback Block
+
+```text
+final_agent_inclusion: yes
+supported_modules: 09
+final_01_04_bucket: none
+primary_module_for_filing: 09
+confidence: high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+final_reason: The concrete objects are chemical-process development workflows and parameters rather than molecular chemistry objects.
+refresh_focus: stabilize 09 and reject 03 drift
 ```

@@ -14,12 +14,33 @@
 
 ## Evidence Log
 
+## 2026-06-24 confirmed-core full-reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0771`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 07
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+confidence: high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+first_hand_sources_checked: arXiv PDF + reviewer evidence pack
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: ClinGen-governed gene-disease validity curation and rare-disease clinical reasoning keep the stable object in medicine.
+multi_module_object_coverage_note: `07.02` clinical-reasoning wording may remain as a cautious descriptor, but the frozen supported-module decision for this round is top-level `07`.
+final_reason: The paper is anchored in clinically governed reasoning and ClinGen curation rather than a generic MAS benchmark.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | PDF p1 abstract | 任务直接定义为 clinical decision-making 与 gene-disease validity curation | 高 |
 | 多步工作流 | 是 | PDF p3-p4 Sec. 4 | hierarchical MAS 中 supervisor 调度 6 个 evidence-category sub-agents，读取 full text 并汇总证据 | 高 |
 | Agent 能力 | 是 | PDF p4-p5 Sec. 4.2 | process reward + outcome reward 联合训练 supervisor 路由与 reasoning path | 高 |
-| 科学对象归类 | `07.02` 暂稳 | PDF p1-p2 | 场景深度绑定 clinical genetics、rare disease diagnosis 与 ClinGen SOP | 高 |
+| 科学对象归类 | `07` 顶层稳定 | PDF p1-p2；reviewer evidence pack | 场景深度绑定 clinical genetics、rare disease diagnosis 与 ClinGen SOP，医学对象稳定高于通用 MAS 外观 | 高 |
 | `07.02 / 07.03 / 01.04` 边界 | 不转 `01.04` | PDF p1-p2; p8-p9 | 最终对象是临床标准下的证据判定与诊断支持，不是通用科研平台 | 高 |
 | 验证方式 | benchmark + expert-grounded curation | PDF p6 Table 3; p7 Sec. 5.2 | hybrid reward 提升 Agent Call Accuracy、Evidence F1 与 outcome accuracy | 高 |
 | 主要风险 | secondary-class / core-strength risk | PDF p8-p9 | 更像可靠 clinical reasoning / curation framework，而非强发现性医学结果 | 中高 |
@@ -56,13 +77,15 @@
 
 ### 2.1 主科学领域
 
-- 一级类：07
-- 二级类：07.02
-- 三级类：Process-supervised multi-agent clinical-reasoning systems
-- 四级专题：Gene-disease validity curation agents
-- 四级专题是否为新增：否
-- 归类理由：最终对象是临床遗传学中的 gene-disease validity 证据判定，并直接服务 rare disease diagnosis
-- 归类置信度：中高
+- 科学对象模块：07
+- 覆盖模式：single_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：yes
+- 独立 `01.04` 存放区：none
+- Primary module for filing：07
+- Filing 说明：note 位于 `07_Medical_and_Health_Sciences` 目录与本轮裁决一致，但本轮权威事实是 top-level `07`，不是更细位点的强冻结。
+- 当前二级类措辞：`07.02` clinical-reasoning wording 可保留为谨慎描述，但不应盖过顶层 `07` 的冻结结论。
+- 归类理由：最终对象是临床遗传学中的 gene-disease validity 证据判定，并直接服务 rare-disease clinical reasoning。
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
@@ -73,9 +96,9 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：07.03；01.04
-- 最终判定：保持 07.02
-- 判定理由：虽然有 medical curation / informatics 气质，但场景核心仍是 rare disease diagnosis 下的 clinical reasoning；不属于一般 evidence-synthesis workflow，更不是通用科研平台
-- 是否需要二次复核：若后续要更细锁死 `07.02 / 07.03` 可补 appendix，但当前已足够稳定
+- 最终判定：支持模块为 `07`
+- 判定理由：虽然有 medical curation / informatics 气质，但场景核心仍是临床治理下的 rare-disease reasoning 与 ClinGen 证据判定；因此不退回 `01.04`，也不把更细 `07.02 / 07.03` 分歧升级为本轮主结论。
+- 是否需要二次复核：就支持模块而言否；若后续必须细锁 `07.02 / 07.03`，再作为二级措辞问题处理
 
 ## 3. Agent 系统与科研流程角色
 
@@ -234,10 +257,15 @@
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.02
-三级类：Process-supervised multi-agent clinical-reasoning systems
-四级专题：Gene-disease validity curation agents
+科学对象模块：07
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：否
+secondary_bucket_wording：`07.02` clinical-reasoning wording may remain descriptive, but the frozen supported-module decision is top-level `07`
+module_assignment_evidence：ClinGen-governed gene-disease validity curation and rare-disease clinical reasoning keep the stable object in medicine
+multi_module_object_coverage_note：no accepted `01.04` fallback; secondary `07.02 / 07.03` wording remains cautious only
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：literature_search_and_reading; knowledge_extraction_and_organization; tool_use_and_code_execution; result_interpretation; evidence_assessment_and_validation
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; environment_interaction
@@ -245,7 +273,10 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 交叉属性：computation_driven; data_driven
 科学贡献类型：system_platform; evidence_assessment
 证据强度：expert_confirmed
-归类置信度：中高
+first_hand_sources_checked：arXiv PDF; reviewer evidence pack
+source_limited：no
+safety_access_status：accessed_no_safety_issue
+归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
 ```

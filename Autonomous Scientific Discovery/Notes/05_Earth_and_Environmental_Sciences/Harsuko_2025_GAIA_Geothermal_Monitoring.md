@@ -24,6 +24,18 @@
 | 研究对象锚定 | 地球物理 / 地热监测 | Sec. 3.2 | 自动化流程直接面向 seismic events、fracture parameters、reservoir behavior 等地球科学对象 | 高 |
 | 主要风险 | core-strength risk | Appendix A; Discussion | 更偏 prototype / workflow demonstration，confirmed-core 强度仍低于成熟实地部署型工作 | 中高 |
 
+### 2026-06-24 confirmed-core full reaudit writeback
+
+- final_agent_inclusion: yes
+- supported_modules: `05`
+- final_01_04_bucket: none
+- primary_module_for_filing: `05`
+- confidence: high
+- source_limited: no
+- safety_access_status: accessed_no_safety_issue
+- final_reason: Digital-twin tooling serves stable geothermal/geophysical objects, so 05 is the right top-level module.
+- refresh_focus: stabilize as `05` and reject drift to `09`.
+
 ## 0. 摘要翻译
 
 该文提出 GAIA，一个面向地下结构发现和地热监测的 Agentic AI 框架。系统把 LLM Agent、检索增强、地热数字孪生以及地球物理分析工具结合起来，用于地热场开发、地下断裂反演、地震事件处理、储层监测和预测分析。论文既展示了多步研究工作流，也给出了一定的 benchmark 与简化实验结果。
@@ -76,6 +88,13 @@
 - 最终判定：保持 `05 / 05.01`
 - 判定理由：这里的 digital twin 属于地球系统数字孪生，不是工业系统对象；论文的直接产出也是地下结构与地热监测结果，而非工程装置优化
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 裁决对齐
+
+- 最终支持模块：`05`
+- primary module for filing：`05`
+- 边界结论：不转 `09`。digital twin 在这里服务的是 geothermal/subsurface geophysical objects，而不是工业工程装置对象。
+- 本轮写回重点：stabilize as `05` only。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -251,4 +270,18 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
+```
+
+### 9.4 Reaudit Writeback Block
+
+```text
+final_agent_inclusion: yes
+supported_modules: 05
+final_01_04_bucket: none
+primary_module_for_filing: 05
+confidence: high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+final_reason: Digital-twin tooling serves stable geothermal/geophysical objects, so 05 is the right top-level module.
+refresh_focus: stabilize as 05 and reject 09 drift
 ```

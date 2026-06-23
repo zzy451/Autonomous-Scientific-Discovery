@@ -14,10 +14,31 @@
 
 ## Evidence Log
 
+## 2026-06-24 confirmed-core full-reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0675`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 07
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+confidence: high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+first_hand_sources_checked: arXiv abstract + reviewer full-text evidence pack
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: drug-molecule evaluation, screening, optimization, and MolBench end-to-end drug-discovery tasks all stay anchored in therapeutic-molecule discovery.
+multi_module_object_coverage_note: molecule language and chemistry-tool workflow do not expand this note into `03`; the stable object remains drug discovery under `07`.
+final_reason: The scientific object is drug-discovery workflow over therapeutic molecules, so `07` is stable.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract L37-L39 | 论文明确是 autonomous agent，并以三层 skill architecture 组织长程工作流 | 高 |
-| 科学对象归类 | `07.04` | arXiv abstract L37-L39 | 直接对象是 computational drug discovery 中的 molecule evaluation、screening、optimization | 高 |
+| 科学对象归类 | `07` | arXiv abstract L37-L39；reviewer full-text evidence pack | 直接对象是 therapeutic molecules 上的 drug discovery workflow，而不是一般化学对象优化 | 高 |
 | 方法流程 | 层级化 workflow 编排 | arXiv abstract L37-L39 | tool-level、workflow-level、discipline-level 三层技能显式支持 sequential tool calls | 高 |
 | 验证方式 | MolBench + computational workflows | arXiv abstract L39-L39；reviewer PDF evidence | benchmark 覆盖 8 到 50+ sequential tool calls，主要是 computational drug discovery | 中高 |
 | 边界判断 | 不转 `03` 或 `01.04` | arXiv abstract；reviewer PDF evidence | 虽有分子和工具平台外观，但任务与 benchmark 都稳定锚定在 drug discovery | 高 |
@@ -54,12 +75,14 @@
 
 ### 2.1 主科学领域
 
-- 一级类：07
-- 二级类：07.04
-- 三级类：
-- 四级专题：Hierarchical drug-molecule discovery agents
-- 四级专题是否为新增：否
-- 归类理由：虽然论文直接处理分子与计算化学工具，但最终科学对象和验证场景都属于 early-stage drug discovery
+- 科学对象模块：07
+- 覆盖模式：single_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：yes
+- 独立 `01.04` 存放区：none
+- Primary module for filing：07
+- Filing 说明：note 位于 `07_Medical_and_Health_Sciences` 目录与本轮裁决一致，但权威事实是 supported module `07`，不是分子/工具外观。
+- 当前二级类措辞：`07.04` 可作为 drug-discovery descriptive wording 保留，但不应再让 `03` 漂移成为并列分类事实。
+- 归类理由：虽然论文直接处理分子与计算化学工具，但最终科学对象、benchmark 和 workflow 验证场景都稳定落在 therapeutic-molecule drug discovery。
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -71,8 +94,8 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：03；01.04
-- 最终判定：保留 07.04
-- 判定理由：分子与计算化学只是药物发现对象的技术层外观，不足以把论文转成一般化学或通用科研系统
+- 最终判定：支持模块为 `07`
+- 判定理由：分子与计算化学只是药物发现 workflow 的技术层外观，不足以把论文转成 `03`；同时 MolBench 与长程技能编排都围绕 therapeutic-molecule discovery，不属于 `01.04` 通用科研系统。
 - 是否需要二次复核：否，主类方向较稳
 
 ## 3. Agent 系统与科研流程角色
@@ -234,10 +257,15 @@
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.04
-三级类：
-四级专题：Hierarchical drug-molecule discovery agents
+科学对象模块：07
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：否
+secondary_bucket_wording：`07.04` may remain as descriptive drug-discovery wording, but the authoritative module decision is top-level `07`
+module_assignment_evidence：drug-molecule evaluation, screening, optimization, and MolBench workflows remain therapeutic-molecule discovery tasks
+multi_module_object_coverage_note：no accepted `03` expansion; molecule/tool language does not override the medical drug-discovery object
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 科研流程角色：workflow_orchestration; tool_use_and_code_execution; evidence_assessment_and_validation; feedback_iteration
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making
@@ -245,6 +273,9 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 交叉属性：computation_driven; data_driven; simulation_driven
 科学贡献类型：system_platform; drug_discovery
 证据强度：medium_high_primary_abstract
+first_hand_sources_checked：arXiv abstract; reviewer full-text evidence pack
+source_limited：no
+safety_access_status：accessed_no_safety_issue
 归类置信度：高
 纳入置信度：高
 推荐引用强度：core

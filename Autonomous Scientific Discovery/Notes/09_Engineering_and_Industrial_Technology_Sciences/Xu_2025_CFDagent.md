@@ -38,6 +38,18 @@ multi_module_object_coverage_note: The legacy note kept 09 as primary because th
 | 验证方式 | simulation / computational validation | p5 Table 2; p6 Table 3 | sphere drag coefficient 对 literature 对齐，并扩展到多种复杂几何 | 高 |
 | 主要风险 | core-strength risk | p8 Conclusion | 更像工程仿真 workflow assistant，而不是强 discovery engine | 中高 |
 
+### 2026-06-24 confirmed-core full reaudit writeback
+
+- final_agent_inclusion: yes
+- supported_modules: `02;09`
+- final_01_04_bucket: none
+- primary_module_for_filing: `09`
+- confidence: high
+- source_limited: no
+- safety_access_status: accessed_no_safety_issue
+- final_reason: Concrete fluid objects support 02, while end-to-end CFD workflow automation justifies 09 as filing primary.
+- refresh_focus: retain the landed `02;09` closeout, keep `09` primary, and remove conservative-hold drift.
+
 ## 0. 摘要翻译
 
 论文提出 CFDagent，一个从自然语言出发即可自动完成 CFD 仿真的多智能体系统，包含预处理、求解和后处理三类 agent，可从文本或图像生成几何并运行浸没边界求解器，再输出分析图和可视化结果。作者把它定位为 fully language-guided、zero-shot、end-to-end complex flow simulation framework。整体来看，这篇论文的主对象是具体的 CFD / engineering simulation workflow，而不是基础流体物理定律发现或通用科研 agent。
@@ -90,6 +102,13 @@ multi_module_object_coverage_note: The legacy note kept 09 as primary because th
 - 最终判定：保持 09.01
 - 判定理由：虽然内容涉及流体力学，但论文的流程、案例和 utility 都更偏工程仿真自动化；也不是领域无关型科研 agent
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 裁决对齐
+
+- 最终支持模块：`02;09`
+- primary module for filing：`09`
+- 边界结论：不转 `01.04`。concrete fluid-dynamics validation objects 支持 `02`，但 end-to-end CFD automation 仍使 `09` 成为主归档模块。
+- 本轮写回重点：保留 landed `02;09`，并移除残余 conservative-hold 语气。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -262,4 +281,18 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
+```
+
+### 9.4 Reaudit Writeback Block
+
+```text
+final_agent_inclusion: yes
+supported_modules: 02;09
+final_01_04_bucket: none
+primary_module_for_filing: 09
+confidence: high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+final_reason: Concrete fluid objects support 02, while end-to-end CFD workflow automation justifies 09 as filing primary.
+refresh_focus: retain 02;09 with 09 primary and remove conservative-hold drift
 ```

@@ -24,6 +24,18 @@
 | `06 / 07` 边界 | 保持 `06` | Sec. 3.5; p.9 | 案例围绕 Taxol、Sorbinil、BGT226 的形态反应与生物机制解释，主对象仍是细胞表型而非临床治疗 | 高 |
 | 实验验证 | benchmark + expert-style review | Results; Conclusion | 贡献在于可解释 phenomics analysis workflow，未直接给出 therapeutic downstream 或湿实验闭环验证 | 中高 |
 
+### 2026-06-24 confirmed-core full reaudit writeback
+
+- final_agent_inclusion: yes
+- supported_modules: `06`
+- final_01_04_bucket: none
+- primary_module_for_filing: `06`
+- confidence: high
+- source_limited: no
+- safety_access_status: accessed_no_safety_issue
+- final_reason: The core object is cell-level phenotypic profiling under chemical perturbation, so 06 dominates.
+- refresh_focus: stabilize as `06` only and reject drift to `07`.
+
 ## 0. 摘要翻译
 
 该文提出 CP-Agent，一个面向 Cell Painting 的 agentic multimodal system，把显微图像与实验上下文联合建模，用于解释化学扰动下的细胞形态学变化，并生成面向后续实验设计和假设修正的结构化报告。系统通过上下文检索、单细胞特征抽取、统计整合和机制解释等模块，尝试把表型分析做成更可解释的 Agent 工作流。
@@ -76,6 +88,13 @@
 - 最终判定：保持 `06`
 - 判定理由：虽然论文 repeatedly 提到 drug discovery，但其直接建模、解释和报告的对象是 cell morphology 与 MoA 相关生物学，而不是疾病、患者、治疗或 lead optimization
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 裁决对齐
+
+- 最终支持模块：`06`
+- filing 目录仅作归档便利，本轮分类以主控冻结裁决为准。
+- 边界结论：不转 `07`。论文虽然反复提及 drug discovery，但直接对象始终是 cell morphology、phenotypic profiling 与 mechanism-related biology。
+- 本轮写回重点：stabilize as `06` only。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -251,4 +270,18 @@ Agent 类型：LLM Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Age
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
+```
+
+### 9.4 Reaudit Writeback Block
+
+```text
+final_agent_inclusion: yes
+supported_modules: 06
+final_01_04_bucket: none
+primary_module_for_filing: 06
+confidence: high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+final_reason: The core object is cell-level phenotypic profiling under chemical perturbation, so 06 dominates.
+refresh_focus: stabilize as 06 only and reject drift to 07
 ```

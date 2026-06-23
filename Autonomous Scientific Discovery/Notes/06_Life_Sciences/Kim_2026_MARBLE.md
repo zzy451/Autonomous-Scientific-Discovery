@@ -14,26 +14,31 @@
 
 ## Evidence Log
 
-## 2026-06-20 relaxed multi-module revision
+## 2026-06-24 confirmed-core full-reaudit writeback
 
-This section supplements the older `06.03` primary filing with object-coverage modules.
+This writeback aligns the note to the frozen adjudication for `ASD-0669`.
 
 ```text
+final_agent_inclusion: yes
 scientific_object_modules: 06;07
 object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 06
-first_hand_sources_checked: arXiv abstract
-classification_evidence_source_level: first_hand_abstract_or_landing_page
+confidence: medium-high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+first_hand_sources_checked: arXiv abstract + reviewer full-text evidence pack
+classification_evidence_source_level: first_hand_full_text
 module_assignment_evidence: `06` is supported by spatial transcriptomics and bioinformatics model-refinement tasks; `07` is supported by drug-target interaction and drug-response prediction tasks.
-multi_module_object_coverage_note: MARBLE remains primarily a bioinformatics / computational-biology paper, but the drug-target and drug-response tasks constitute medical / drug-discovery object coverage under the relaxed multi-module rule.
+multi_module_object_coverage_note: note directory `06` is filing convenience only; MARBLE remains primarily a bioinformatics / computational-biology paper, while the drug-target and drug-response tasks add genuine `07` medical / drug-discovery object coverage under the relaxed multi-module rule.
+final_reason: Spatial-transcriptomics anchors `06`, while DTI and drug-response tasks add genuine `07` coverage under the relaxed rule.
 ```
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract L38-L41 | 论文明确提出 autonomous model refinement framework，包含 structured debate、autonomous execution、evaluation、memory updates | 高 |
-| 科学对象归类 | `06.03` | arXiv abstract L38-L40；reviewer PDF evidence | 研究对象是 bioinformatics models 的迭代 refinement，不是通用科研平台 | 高 |
+| 科学对象归类 | `06;07` | arXiv abstract L38-L40；reviewer full-text evidence pack | 研究对象以 bioinformatics / spatial-transcriptomics tasks 锚定 `06`，并以 DTI / drug-response tasks 提供 `07` object coverage | 高 |
 | 方法流程 | 多 Agent 模型迭代闭环 | arXiv abstract L39-L41 | 系统把文献感知、架构推理、执行、评估和记忆更新组织成稳定迭代流程 | 高 |
 | 边界判断 | 不转 `07.04` 或 `01.04` | reviewer PDF evidence | 虽含 DTI / drug response 任务，但整体对象仍是 bioinformatics/computational biology 模型演化 | 中高 |
 | 科学验证 | 持续性能提升 | arXiv abstract L40-L41 | 在 spatial transcriptomics segmentation、drug-target interaction、drug response prediction 上持续改进且 regression rates 低 | 中高 |
@@ -70,12 +75,14 @@ multi_module_object_coverage_note: MARBLE remains primarily a bioinformatics / c
 
 ### 2.1 主科学领域
 
-- 一级类：06
-- 二级类：06.03
-- 三级类：
-- 四级专题：Autonomous bioinformatics multi-agent systems
-- 四级专题是否为新增：否
-- 归类理由：论文稳定对象是 bioinformatics / computational biology 模型与任务，不是药物转化本身，也不是领域无关科研平台
+- 科学对象模块：06；07
+- 覆盖模式：multi_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：yes
+- 独立 `01.04` 存放区：none
+- Primary module for filing：06
+- Filing 说明：note 位于 `06_Life_Sciences` 目录仅为归档便利，不覆盖最终 `06;07` 支持模块事实。
+- 当前二级类措辞：`06.03` 可保留为 primary filing shorthand，但不再代表本轮唯一分类结论。
+- 归类理由：空间转录组与 bioinformatics model-refinement tasks 稳定锚定 `06`，而 DTI 与 drug-response prediction tasks 提供了真实的 `07` 医学 / 药物发现对象覆盖。
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
@@ -87,8 +94,8 @@ multi_module_object_coverage_note: MARBLE remains primarily a bioinformatics / c
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：07.04；01.04
-- 最终判定：保留 06.03
-- 判定理由：尽管包含 DTI 和 drug response 任务，但全文主旨是 bioinformatics model evolution，而不是药物发现 campaign 或通用科研系统
+- 最终判定：支持模块为 `06;07`，其中 `06` 为 primary module for filing
+- 判定理由：本轮不再把 MARBLE 压回单一 `06.03`。空间转录组任务保证 `06` 稳定成立，而 DTI 与 drug-response tasks 不是附带噪声，已构成可识别的 `07` 对象覆盖；同时论文也不是没有具体对象实验的 `01.04` 通用科研系统。
 - 是否需要二次复核：否，主类方向已较稳
 
 ## 3. Agent 系统与科研流程角色
@@ -250,10 +257,15 @@ multi_module_object_coverage_note: MARBLE remains primarily a bioinformatics / c
 
 ```text
 是否纳入：是
-主类：06
-二级类：06.03
-三级类：
-四级专题：Autonomous bioinformatics multi-agent systems
+科学对象模块：06;07
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：06
+是否进入 01.04 存放区：否
+secondary_bucket_wording：`06.03` 仅保留为 primary filing shorthand，不覆盖本轮 `06;07` 结论
+module_assignment_evidence：`06` by spatial transcriptomics / bioinformatics refinement; `07` by DTI / drug-response prediction
+multi_module_object_coverage_note：directory `06` is filing convenience only; final supported modules remain `06;07`
 Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 科研流程角色：literature_search_and_reading; tool_use_and_code_execution; feedback_iteration; autonomous_decision_making; evidence_assessment_and_validation
 自主能力：task_decomposition; planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
@@ -261,6 +273,9 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 交叉属性：computation_driven; data_driven; simulation_driven
 科学贡献类型：system_platform; bioinformatics_discovery
 证据强度：medium_high_primary_abstract
+first_hand_sources_checked：arXiv abstract; reviewer full-text evidence pack
+source_limited：no
+safety_access_status：accessed_no_safety_issue
 归类置信度：中高
 纳入置信度：高
 推荐引用强度：core

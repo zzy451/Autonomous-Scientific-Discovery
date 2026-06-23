@@ -1,16 +1,25 @@
 # Yao et al. 2026 - Skill-Augmented AI Agents for Medical Research Analysis: An Exploratory Multi-Model Human Evaluation in an NSCLC Transcriptomic Biomarker Task
 
-## 2026-06-21 relaxed round-2 boundary closure
+## 2026-06-24 confirmed-core full-reaudit writeback
 
-- `scientific_object_modules`: `07`
-- `object_coverage_mode`: `single_module`
-- `primary_module_for_filing`: `07`
-- `general_method_bucket`: `none`
-- `first_hand_sources_checked`: arXiv abstract `2606.11830`; arXiv HTML / PDF `2606.11830v1`; official AIPOCH medical-research-skills repository
-- `classification_evidence_source_level`: `first_hand_full_text`
-- `note_revision_required`: `no`
+This writeback aligns the note to the frozen adjudication for `ASD-0773`.
 
-This round closes the `07 / 06` boundary as `07` only. The stable object remains NSCLC immunotherapy-response biomarker research, so `07` stays primary. Although the task prompt and skill inventory include transcriptomics, pathway enrichment, and programmed-cell-death terms such as ferroptosis, cuproptosis, and pyroptosis, the first-hand full text explicitly frames these as benchmark-task workflow scope built on broad bioinformatics modules rather than independently validated life-science result coverage. The paper also states that dedicated programmed-cell-death gene-set curation and the biological validity of proposed biomarkers were not independently verified, so additional `06` is not accepted under the current relaxed object-coverage rule.
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 07
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+confidence: medium-high
+source_limited: no
+safety_access_status: accessed_no_safety_issue
+first_hand_sources_checked: arXiv abstract `2606.11830`; arXiv HTML / PDF `2606.11830v1`; official AIPOCH medical-research-skills repository
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: the stable object remains NSCLC immunotherapy-response biomarker research under `07`; transcriptomics / pathway / programmed-cell-death content is benchmark-task workflow scope rather than independently validated `06` result coverage.
+multi_module_object_coverage_note: additional `06` is explicitly rejected in this round because dedicated programmed-cell-death gene-set curation and the biological validity of proposed biomarkers were not independently verified.
+final_reason: The task is disease-facing biomarker analysis, but current evidence does not justify expanding from `07` into `06`.
+```
 
 **论文信息**
 - 标题：Skill-Augmented AI Agents for Medical Research Analysis: An Exploratory Multi-Model Human Evaluation in an NSCLC Transcriptomic Biomarker Task
@@ -31,7 +40,7 @@ This round closes the `07 / 06` boundary as `07` only. The stable object remains
 | Agent 纳入 | 是 | PDF p2 abstract / intro | 任务不是单轮问答，而是让 AI agent 在 NSCLC biomarker 研究任务里执行多步分析 | 高 |
 | 多步行动 | 是 | PDF p3 Sec. 2.4 | 覆盖数据集选择、差异分析、通路富集、建模、验证与机制解释 | 高 |
 | 工具或技能调用 | 是 | PDF p3 Sec. 2.4 | skill-augmented agent 可自主调用 medical research skill package | 高 |
-| 科学对象归类 | `07.02` 稳定 | PDF p2-p3 | 最终对象是 NSCLC immunotherapy response transcriptomic biomarker，而不是一般组学机制 | 高 |
+| 科学对象归类 | `07` 顶层稳定 | PDF p2-p3 | 最终对象是 NSCLC immunotherapy response biomarker medical-research task，而不是可独立立起的 `06` 生命科学结果覆盖 | 高 |
 | `07 / 06` 边界 | 不转 `06` | PDF p3 Sec. 2.4 | 虽有 transcriptomics 与 PCD 机制，但终点仍是 disease-facing translational oncology | 中高 |
 | 验证方式 | expert evaluation | PDF p4 Sec. 2.7 | 四位 biomedical reviewers 和专家评分评价 workflow quality | 高 |
 | 主要风险 | core-strength risk | PDF p10 Sec. 4.4 | 作者强调更像 AI-assisted medical research analysis，而非已验证的临床 biomarker discovery | 中高 |
@@ -68,12 +77,14 @@ This round closes the `07 / 06` boundary as `07` only. The stable object remains
 
 ### 2.1 主科学领域
 
-- 一级类：07
-- 二级类：07.02
-- 三级类：Medical-research analysis agents
-- 四级专题：NSCLC transcriptomic biomarker analysis agents
-- 四级专题是否为新增：否
-- 归类理由：最终对象是 NSCLC 免疫治疗响应 biomarker 研究，而不是一般 transcriptomics 方法论或通用 scientific-agent workflow
+- 科学对象模块：07
+- 覆盖模式：single_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：yes
+- 独立 `01.04` 存放区：none
+- Primary module for filing：07
+- Filing 说明：note 位于 `07_Medical_and_Health_Sciences` 目录与本轮裁决一致，但目录不是分类权威；权威事实是 top-level `07`。
+- 当前二级类措辞：疾病导向 biomarker analysis wording 可保留为描述，但本轮不接受把 transcriptomics / programmed-cell-death workflow scope 扩写成 `06`。
+- 归类理由：最终对象是 NSCLC 免疫治疗响应 biomarker 研究，而不是一般 transcriptomics 方法论、独立生命科学结果覆盖或通用 scientific-agent workflow。
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
@@ -85,9 +96,9 @@ This round closes the `07 / 06` boundary as `07` only. The stable object remains
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：06；01.04
-- 最终判定：保持 07.02
-- 判定理由：虽然任务使用 transcriptomics 与细胞死亡相关机制，但研究终点是 NSCLC 临床转化相关 biomarker；同时系统并非领域无关科研平台
-- 是否需要二次复核：否，当前顶层和二级类已基本稳定
+- 最终判定：支持模块为 `07`
+- 判定理由：虽然任务使用 transcriptomics、pathway enrichment 和 programmed-cell-death 术语，但这些内容在原文中只构成 benchmark-task workflow scope；由于 dedicated gene-set curation 与 proposed biomarkers 的 biological validity 都未被独立验证，本轮明确拒绝 `06` 扩展，同时也不把系统退回 `01.04`。
+- 是否需要二次复核：否，当前顶层 `07` 已冻结，`06` 扩展被显式否决
 
 ## 3. Agent 系统与科研流程角色
 
@@ -246,10 +257,15 @@ This round closes the `07 / 06` boundary as `07` only. The stable object remains
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.02
-三级类：Medical-research analysis agents
-四级专题：NSCLC transcriptomic biomarker analysis agents
+科学对象模块：07
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：否
+secondary_bucket_wording：disease-facing biomarker analysis wording may remain descriptive, but no accepted `06` expansion is allowed
+module_assignment_evidence：stable NSCLC immunotherapy-response biomarker object under `07`; transcriptomics / programmed-cell-death content remains workflow scope only
+multi_module_object_coverage_note：current evidence does not justify expanding from `07` into `06`
 Agent 类型：LLM Agent; Tool-using Agent; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：knowledge_extraction_and_organization; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation
 自主能力：tool_use; autonomous_decision_making
@@ -257,6 +273,9 @@ Agent 类型：LLM Agent; Tool-using Agent; Human-in-the-loop Agent; Hybrid Agen
 交叉属性：computation_driven; data_driven
 科学贡献类型：system_platform; explanation; evidence_assessment
 证据强度：expert_confirmed
+first_hand_sources_checked：arXiv abstract `2606.11830`; arXiv HTML / PDF `2606.11830v1`; official AIPOCH medical-research-skills repository
+source_limited：no
+safety_access_status：accessed_no_safety_issue
 归类置信度：中高
 纳入置信度：高
 推荐引用强度：standard
