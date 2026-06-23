@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.12813
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / arXiv abstract 与 reviewer evidence pack
+- PDF / 本地文件路径：已核对 arXiv HTML 全文
 - 论文类型：研究论文 / flowsheet-simulation multi-agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -204,7 +204,7 @@
 - 科学验证不足：验证仍集中在仿真案例
 - 泛化性不足：不同工业场景迁移能力未充分证明
 - 工具链依赖：强依赖 Chemasim 与上下文文件
-- 数据泄漏或 benchmark 偏差：需进一步全文核查
+- 数据泄漏或 benchmark 偏差：当前未见明确数据泄漏讨论，主要风险仍是跨案例泛化与复杂热力学场景覆盖有限
 - 成本、可复现性或安全风险：工业过程安全与工程约束仍需专家监管
 
 ## 8. 对综述写作的价值

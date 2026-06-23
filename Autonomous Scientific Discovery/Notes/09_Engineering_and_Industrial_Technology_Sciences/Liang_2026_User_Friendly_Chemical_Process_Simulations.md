@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv / Digital Chemical Engineering
 - DOI / arXiv / URL：https://arxiv.org/abs/2601.11650
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / arXiv abstract 与 reviewer evidence pack
+- PDF / 本地文件路径：已核对 arXiv HTML 全文
 - 论文类型：研究论文 / process-simulation LLM agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -204,7 +204,7 @@
 - 科学验证不足：主要还是仿真环境中的工作流演示
 - 泛化性不足：跨过程、跨软件和复杂工业场景迁移待验证
 - 工具链依赖：强依赖 APS 与 MCP 接口
-- 数据泄漏或 benchmark 偏差：需全文继续核
+- 数据泄漏或 benchmark 偏差：当前未见明确数据泄漏讨论，主要风险仍是跨流程、跨软件与复杂工业约束下的泛化不足
 - 成本、可复现性或安全风险：工业过程操作的错误代价高
 
 ## 8. 对综述写作的价值

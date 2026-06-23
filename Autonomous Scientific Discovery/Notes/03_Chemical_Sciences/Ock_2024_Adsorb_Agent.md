@@ -6,34 +6,33 @@
 - 年份：2024
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2410.16658
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / arXiv abstract 与 reviewer evidence pack
+- PDF / 本地文件路径：当前未在项目中记录本地归档 PDF；本笔记依据 arXiv 摘要页、arXiv PDF 与 arXiv HTML 全文的一手证据整理。
 - 论文类型：研究论文 / adsorption-configuration search agent
-- 当前状态：to_read
-- 阅读日期：2026-06-20
+- 当前状态：主表当前为 `to_read`；本 note 已完成一手来源写回
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv HTML abstract; Sec. 2.1 | Solution Planner / Critic / Binding Indexer 构成多步 agentic workflow | 高 |
-| 多步行动 | 是 | arXiv HTML Fig. 1 | 从数据库取 adsorbate/surface structure，放置 adsorbate，再调用 relaxation / energy tools | 高 |
-| 工具调用与反馈 | 是 | arXiv HTML Sec. 3.1-3.2 | 通过 energy outcome 比较与 configuration evaluation 持续缩小 search space | 高 |
-| 科学对象归类 | `03.03` | arXiv HTML abstract; conclusion | 直接对象是 adsorption configurations / adsorption energies 这一 surface-chemistry descriptor | 高 |
-| `03 / 04` 边界 | 保持 `03` | arXiv HTML Sec. 3.2 | 虽发生在 catalyst surfaces 上，但研究目标不是 broader material composition/performance discovery | 高 |
-| 验证方式 | computational validation | arXiv HTML Table 1; Fig. 3 | 在 20 个 systems 上报告 SR 83.7%、LEDR 35.0% | 高 |
-| 主要风险 | boundary risk + metadata risk | arXiv HTML conclusion | 更像 catalyst discovery pipeline 的子任务 agent，而非 end-to-end discovery system；作者列表曾与主名单不一致 | 中高 |
+| Agent 纳入 | 是 | abstract; Sec. 2.1 | Solution Planner、Critic、Binding Indexer 构成多步 agentic workflow。 | 高 |
+| 多步行动过程 | 是 | Fig. 1 | 从数据库取 adsorbate / surface structure，放置 adsorbate，再调用 relaxation 和 energy tools。 | 高 |
+| 工具调用与反馈 | 是 | Secs. 3.1-3.2 | 用 energy outcome comparison 和 configuration evaluation 持续缩小 search space。 | 高 |
+| 科学对象归类 | `03` | abstract; conclusion | 直接研究对象是 adsorption configurations / adsorption energies 这一 surface-chemistry descriptor。 | 高 |
+| 边界排除 | 不扩到 `04` | Sec. 3.2 | 虽然任务发生在 catalyst surfaces 上，但目标不是 broader material composition / performance discovery。 | 高 |
+| 实验与结果 | 计算验证 | Table 1; Fig. 3 | 在 20 个 systems 上报告 SR 83.7%、LEDR 35.0%。 | 高 |
 
 ## 0. 摘要翻译
 
-论文提出 Adsorb-Agent，用 LLM reasoning 在给定 adsorbate-catalyst system 上自动缩小 adsorption configuration search space，并寻找接近全局最低吸附能的稳定构型。系统由 Solution Planner、Critic 和 Binding Indexer 三个模块组成，在 placement、relaxation 和 energy evaluation 的循环中逐步提高搜索效率。尽管任务发生在 catalyst surfaces 上，它直接研究的是 adsorption configuration / adsorption energy 这一 surface-chemistry object，因此主类保留在 `03` 更稳。
+论文提出 Adsorb-Agent，用 LLM reasoning 在给定 adsorbate-catalyst system 上自动缩小 adsorption configuration search space，并寻找接近全局最低吸附能的稳定构型。系统由 Solution Planner、Critic 和 Binding Indexer 三个模块组成，在 placement、relaxation 和 energy evaluation 的循环中逐步提升搜索效率。尽管任务发生在 catalyst surfaces 上，但其直接研究对象是 adsorption configuration / adsorption energy 这一 surface-chemistry object，因此按冻结裁决保持 `03`。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：具有明确科研目标、多步 planner-critic-indexer 流程、工具调用、反馈评估和自主配置搜索
+- 判断依据：有明确科研目标、planner-critic-indexer 流程、工具调用、反馈评估和自主搜索配置能力。
 - 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
@@ -43,7 +42,7 @@
   - 反馈迭代：是
   - 自主决策：是
   - 多 Agent 协作：部分是
-- 在科研流程中承担的明确角色：仿真建模、工具调用与代码执行、反馈评估
+- 在科研流程中承担的明确角色：simulation modeling、tool use、evidence assessment
 
 ### 1.2 排除风险检查
 
@@ -54,27 +53,37 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：03
-- 二级类：03.03
-- 三级类：Adsorption-configuration discovery agents
-- 四级专题：Catalytic surface-chemistry configuration search
-- 四级专题是否为新增：否
-- 归类理由：直接被搜索和优化的是 adsorption configurations / adsorption energies，而不是 broader material candidate pool
+- 科学对象模块：`03`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`03`
+- Primary module for filing 说明：当前 note 位于 `03` 目录，仅作归档便利，不覆盖分类事实。
+- 主展示模块一级类：`03` 化学科学
+- 主展示模块二级类：`03.03` 合成、反应与催化
+- 主展示模块三级类：adsorption-configuration discovery
+- 主展示模块四级专题：catalytic surface-chemistry configuration search
+- 其他覆盖模块及对应层级路径：无
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：直接被搜索和优化的是 stable adsorbate-catalyst configurations 与 adsorption energies
+- 归类理由：论文关注的是 surface-chemistry descriptor search，而不是 broader material candidate discovery
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：stable adsorbate-catalyst surface configurations and adsorption energies
 - 最终科学问题：如何更高效地在催化表面上定位低能吸附构型
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：LLM agent 只是方法，真正研究的是 surface-chemistry descriptor search
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：LLM agent 是方法，真正被研究的是 adsorption descriptor search
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：04
-- 最终判定：保持 03.03
-- 判定理由：论文不以 discover new material compositions 为中心，而是以 adsorption configuration / energy search 为中心
+- 可能误归类到：`04`
+- 最终判定：保持 `03`
+- 判定理由：论文不是以 discover new material compositions 为中心，而是以 adsorption configuration / energy search 为中心
+- 多模块覆盖说明：当前没有独立材料对象模块证据
+- 01.04 判定说明：不属于通用方法存放区，因为它对具体 surface-chemistry object 给出直接 benchmark 结果
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -117,7 +126,7 @@
 - 自主决策：是
 - 多 Agent 协作：部分是
 - 环境交互：是
-- 闭环实验：否
+- 闭环实验：否，主要是计算闭环
 
 ### 3.4 交叉属性标签
 
@@ -145,15 +154,15 @@
 
 1. 输入：adsorbate SMILES、catalyst chemical symbol、surface orientation
 2. 任务分解 / 规划：Planner 生成 plausible binding pattern
-3. 工具、数据库、模型或实验平台调用：调用 placement / relaxation / adsorption-energy evaluation tools
-4. 中间结果反馈：Critic 与 Binding Indexer 修正构型与结合位点
+3. 工具、数据库、模型或实验平台调用：调用 placement、relaxation 和 adsorption-energy evaluation tools
+4. 中间结果反馈：Critic 和 Binding Indexer 修正构型与结合位点
 5. 决策或迭代：继续缩小 configuration search space
 6. 输出：稳定 adsorption configuration 与对应 adsorption energy
 
 ### 4.3 系统组件
 
-- Agent 核心：Solution Planner; Critic; Binding Indexer
-- 工具 / API / 数据库：database retrieval; placement; relaxation; energy calculation tools
+- Agent 核心：Solution Planner；Critic；Binding Indexer
+- 工具 / API / 数据库：database retrieval；placement；relaxation；energy calculation tools
 - 记忆或状态模块：search traces
 - 规划器：Solution Planner
 - 评估器 / verifier：energy outcome comparison
@@ -175,11 +184,11 @@
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：20 systems covering NRR / HER / ORR and OC20-Dense-style complex systems
+- 数据集 / 实验对象：20 systems covering NRR / HER / ORR and complex surface systems
 - 任务设置：adsorption-configuration search
 - 对比基线：algorithmic approaches / exhaustive-style methods
-- 评价指标：SR；LEDR；initial configuration reduction
-- 关键结果：overall SR 83.7%，LEDR 35.0%，复杂体系上优势更明显
+- 评价指标：SR、LEDR、initial configuration reduction
+- 关键结果：overall SR 83.7%，LEDR 35.0%，在复杂系统上优势更明显
 - 是否有消融实验：部分有
 - 是否有失败案例或负结果：仍只是 catalyst-discovery subtask
 
@@ -188,34 +197,35 @@
 - 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：更偏 surface-chemistry configuration search
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
-- 科学贡献类型：预测 / 系统平台
-- 证据强度：计算验证
+- 科学贡献类型：prediction / system_platform
+- 证据强度：computationally_validated
+- 是否仍需进一步全文复核：否
 
 ## 6. 与已有工作的关系
 
 - 与普通 AI for Science 方法的区别：不是单纯 energy predictor，而是 targeted adsorption search agent
-- 与已有 Agent / 科研智能系统的区别：强调 LLM chemical prior 对 surface-chemistry placement 的辅助
+- 与已有 Agent / 科研智能系统的区别：强调 LLM chemical prior 对 surface placement 的辅助
 - 与同一科学领域其他 Agent 文献的关系：可与更 materials-first 的 0790 / 0792 对照，形成 `03 / 04` 边界样本
 - 主要创新点：用 planner-critic-indexer workflow 替代更粗暴的 adsorption configuration enumeration
 
 ## 7. 局限性与风险
 
 - Agent 自主性不足：只是 end-to-end catalyst discovery pipeline 的一个子任务
-- 科学验证不足：无实验验证
+- 科学验证不足：无湿实验验证
 - 泛化性不足：边界在于 catalyst surface vs material candidate
 - 工具链依赖：强依赖结构放置与 relaxation tools
-- 数据泄漏或 benchmark 偏差：需后续继续核
+- 数据泄漏或 benchmark 偏差：需要继续检查
 - 成本、可复现性或安全风险：复杂体系计算成本仍高
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：03 化学科学中的 computational catalysis / surface-chemistry agents
-- 可支撑哪个论点：并非所有 catalyst-related agent 都该进 `04`；如果直接对象是 adsorption descriptors，可保留在 `03`
-- 可用于哪个表格或图：`03 / 04` 边界表；surface-chemistry subtask agent 表
+- 可放入哪个章节：`03` 化学科学中的 computational catalysis / surface-chemistry agents
+- 可支撑哪个论点：并非所有 catalyst-related agents 都应进 `04`；若直接对象是 adsorption descriptors，可稳定留在 `03`
+- 可用于哪个表格或图：`03 / 04` 边界对照表；surface-chemistry subtask agent 表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：arXiv HTML Fig. 1；Table 1；Fig. 3
-- 需要与哪些论文并列比较：Rothfarb_2026_Heterogeneous_Catalyst_Discovery; Song_2026_CatDT_Heterogeneous_Catalyst_Discovery
+- 需要在正文中特别引用的页码 / 图 / 表：Fig. 1；Table 1；Fig. 3
+- 需要与哪些论文并列比较：Rothfarb_2026_Heterogeneous_Catalyst_Discovery；Song_2026_CatDT_Heterogeneous_Catalyst_Discovery
 
 ## 9. 总结
 
@@ -225,22 +235,31 @@
 
 ### 9.2 速记版 pipeline
 
-1. 读入 adsorbate 和 surface
-2. 提出 binding pattern
-3. 调工具松弛并算吸附能
+1. 读入 adsorbate 和 surface  
+2. 提出 binding pattern  
+3. 调工具松弛并算吸附能  
 4. 迭代找到更稳构型
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：03
-二级类：03.03
-三级类：Adsorption-configuration discovery agents
-四级专题：Catalytic surface-chemistry configuration search
+科学对象模块：03
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：03
+是否进入 01.04 存放区：否
+主展示模块一级类：03
+主展示模块二级类：03.03
+主展示模块三级类：adsorption-configuration discovery
+主展示模块四级专题：catalytic surface-chemistry configuration search
+其他覆盖模块及对应层级路径：无
+module_assignment_evidence：stable adsorption configurations 与 adsorption energies 是直接搜索对象
+multi_module_object_coverage_note：无
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
-科研流程角色：hypothesis_generation; simulation_modeling; tool_use_and_code_execution; result_interpretation; evidence_assessment_and_validation; end_to_end_research_automation
-自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction
+科研流程角色：simulation_modeling; tool_use_and_code_execution; result_interpretation; evidence_assessment_and_validation
+自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making
 验证方式：benchmark; simulation_validation; high_throughput_computation
 交叉属性：computation_driven; data_driven; simulation_driven
 科学贡献类型：prediction; system_platform

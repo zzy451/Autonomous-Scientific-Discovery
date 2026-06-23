@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.26845
-- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 reviewer evidence pack
+- PDF / 本地文件路径：已核对 arXiv PDF 全文
 - 论文类型：系统论文 / geospatial analysis LLM agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -34,7 +34,7 @@
 
 - 是否属于 Agent 文献：是
 - 判断依据：面向明确地理空间分析目标，具有多步行动过程、工具调用、代码执行、反馈修正和明确科研流程角色
-- 判定置信度：高
+- 判定置信度：中高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
@@ -62,7 +62,7 @@
 - 四级专题：Realistic multi-step geospatial-analysis agents
 - 四级专题是否为新增：否
 - 归类理由：任务、数据模态、工具栈和评测都稳定锚定在 geospatial analysis / GIS scientific inquiry 上
-- 归类置信度：高
+- 归类置信度：中高
 
 ### 2.2 对象优先判定
 
@@ -245,7 +245,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 交叉属性：computation_driven; data_driven; multimodal
 科学贡献类型：system_platform; benchmark; explanation
 证据强度：computationally_validated
-归类置信度：高
+归类置信度：中高
 纳入置信度：高
 推荐引用强度：standard
 ```

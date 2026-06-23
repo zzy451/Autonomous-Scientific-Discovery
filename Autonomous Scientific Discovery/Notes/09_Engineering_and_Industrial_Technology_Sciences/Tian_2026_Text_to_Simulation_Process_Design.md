@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2601.06776
-- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 reviewer evidence pack
+- PDF / 本地文件路径：已核对 arXiv PDF 全文
 - 论文类型：研究论文 / process-engineering multi-agent workflow
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -204,7 +204,7 @@
 - 科学验证不足：尚未证明真实工业流程中的鲁棒性
 - 泛化性不足：数据集与软件环境有限
 - 工具链依赖：强依赖专门 simulation software
-- 数据泄漏或 benchmark 偏差：需后续全文细查
+- 数据泄漏或 benchmark 偏差：当前未见明确数据泄漏讨论，主要风险仍是 simulation benchmark 规模与真实工业场景外推不足
 - 成本、可复现性或安全风险：真实工艺放大与安全约束未充分体现
 
 ## 8. 对综述写作的价值

@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.10584
-- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 arXiv API 元数据
+- PDF / 本地文件路径：已核对 arXiv PDF 全文，并参考 arXiv 页面元数据
 - 论文类型：系统论文 / multi-messenger astronomy agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -203,7 +203,7 @@
 - 科学验证不足：当前规则仍以基础时空判据为主
 - 泛化性不足：更复杂光谱 / 图像证据仍待增强
 - 工具链依赖：高度依赖 catalog 与 skymap 工具
-- 数据泄漏或 benchmark 偏差：需全文补核
+- 数据泄漏或 benchmark 偏差：当前未见明确数据泄漏讨论，主要风险在于 catalog 评测范围与更复杂事件场景的泛化仍待扩展
 - 成本、可复现性或安全风险：core-strength 风险高于类边界风险
 
 ## 8. 对综述写作的价值

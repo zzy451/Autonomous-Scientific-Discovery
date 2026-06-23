@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2601.02814
-- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 reviewer evidence pack
+- PDF / 本地文件路径：已核对 arXiv PDF 全文
 - 论文类型：研究论文 / medical evidence-screening agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20

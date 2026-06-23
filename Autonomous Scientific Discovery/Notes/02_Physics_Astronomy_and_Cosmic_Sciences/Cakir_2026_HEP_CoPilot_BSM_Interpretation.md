@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.02491
-- PDF / 本地文件路径：当前笔记基于 arXiv PDF 与 arXiv API 元数据
+- PDF / 本地文件路径：已核对 arXiv PDF 全文，并参考 arXiv 页面元数据
 - 论文类型：系统论文 / particle-physics interpretation agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -203,7 +203,7 @@
 - 科学验证不足：案例规模有限
 - 泛化性不足：当前主要围绕 CMS analyses
 - 工具链依赖：强依赖 HEPData 和本地数据重建
-- 数据泄漏或 benchmark 偏差：需后续全文补核
+- 数据泄漏或 benchmark 偏差：当前未见明确数据泄漏讨论，主要风险仍是案例规模有限与跨搜索泛化证据不足
 - 成本、可复现性或安全风险：核心风险是 core-strength，而非主类方向
 
 ## 8. 对综述写作的价值
