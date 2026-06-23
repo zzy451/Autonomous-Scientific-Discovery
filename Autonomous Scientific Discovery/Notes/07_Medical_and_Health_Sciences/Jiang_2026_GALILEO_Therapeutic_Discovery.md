@@ -1,5 +1,21 @@
 # Jiang et al. 2026 - GALILEO: Embodied AI scientist for autonomous therapeutic discovery in dynamic membrane systems
 
+## 2026-06-23 Batch16 partial-9 closeout
+
+This round closes the record as source-limited `06;07` with `07` primary.
+
+```text
+scientific_object_modules: 06;07
+object_coverage_mode: multi_module
+general_method_bucket: none
+primary_module_for_filing: 07
+first_hand_sources_checked: local PDF search; Crossref DOI abstract metadata; DOI resolver header; official https bioRxiv DOI landing; HighWire https DOI endpoint
+classification_evidence_source_level: first_hand_abstract_or_landing_page
+source_limited_reason: no local PDF was found; the DOI resolver redirected through an unsafe http bioRxiv hop that was not followed; official https bioRxiv landing returned 403; HighWire https endpoint also returned 403
+safety_access_status: blocked unsafe/403 access trail is visible, but safe Crossref abstract metadata remained available, so this is source-limited rather than full safety-skip
+module_assignment_evidence: therapeutic peptide discovery, anti-tumor immune activation, and validation outcomes support `07`; membrane-system biology, LRRC8C / SLC25A1 target evidence, citrate-export metabolism, and CD8+ T-cell functional evidence support `06`
+```
+
 **论文信息**
 - 标题：GALILEO: Embodied AI scientist for autonomous therapeutic discovery in dynamic membrane systems
 - 作者：Jiang et al.
