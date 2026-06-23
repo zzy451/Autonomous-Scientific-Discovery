@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2606.17076
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / HTML
+- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2606.17076`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check
 - 论文类型：预印本 / climate-science agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,10 +14,19 @@
 
 ## Evidence Log
 
+## Reaudit Update (2026-06-23)
+
+- `scientific_object_modules`: `05`
+- `primary_module_for_filing`: `05`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
+- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2606.17076`
+- `final_note_classification`: stable `05` landing; note filing path is convenience only, not classification authority.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv abstract | 系统从单个自然语言 prompt 触发检索文献、下载数据、执行代码和 reviewer 审核 | 高 |
-| 科学对象归类 | `05.02` | arXiv abstract / HTML | 对象明确锚定 CMIP6、ESGF、teleconnections、regional extremes 等 climate-science tasks | 高 |
+| Agent 纳入 | 是 | arXiv abstract / PDF text spot-check | 系统从单个自然语言 prompt 触发检索文献、下载数据、执行代码和 reviewer 审核 | 高 |
+| 科学对象归类 | `05.02` | arXiv abstract / PDF text spot-check | 对象明确锚定 CMIP6、ESGF、teleconnections、regional extremes 等 climate-science tasks | 高 |
 | 方法流程 | 明确多步闭环 | HTML | tool-augmented worker 执行 live climate workflows，reviewer models 做 methodology audit | 高 |
 | 证据基础 | 一手气候文献与数据 | HTML | 系统语料来自 6,581 篇 CMIP6 开放论文，索引为 101,828 个 chunks | 高 |
 | 验证与风险 | 有用例也有 failure modes | abstract / HTML | 论文公开 sycophantic regression、stub code、revise verdict 等失败模式，说明不是只报正结果 | 高 |

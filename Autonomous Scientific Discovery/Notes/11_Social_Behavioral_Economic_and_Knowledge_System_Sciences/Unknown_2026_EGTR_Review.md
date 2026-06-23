@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2606.06025
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2606.06025`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：已读摘要级证据；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
@@ -14,10 +14,19 @@
 
 ## Evidence Log
 
+## Reaudit Update (2026-06-23)
+
+- `scientific_object_modules`: `11.07`
+- `primary_module_for_filing`: `11.07`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
+- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2606.06025`
+- `final_note_classification`: stable `11.07` landing; note filing path is convenience only, not classification authority.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `11` / `11.07` | 摘要 | 最稳定对象是“evidence-grounded scientific peer-review generation system”，而不是单纯的模型方法或发表 venue。 | 高 |
+| 科学对象归类 | `11.07` | arXiv abstract / PDF text spot-check | 最稳定对象是“evidence-grounded scientific peer-review generation system”，而不是单纯的模型方法或发表 venue。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
 | 实验验证 | automatic metrics、LLM judge 与 human evaluation | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 automatic metrics、LLM judge 与 human evaluation 支撑其主张。 | 中高 |
 | 边界判断 | 稳定 11.07；对象是 peer review generation pipeline | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
@@ -59,7 +68,7 @@
 - 三级类：
 - 四级专题：Evidence-grounded scientific peer-review agents
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“evidence-grounded scientific peer-review generation system”，因此当前主类保持为 `11` / `11.07`。
+- 归类理由：按对象优先规则，本文最稳定的研究对象是“evidence-grounded scientific peer-review generation system”，因此最终落点保持为 `11.07`。
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
@@ -71,7 +80,7 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：稳定 11.07；对象是 peer review generation pipeline
-- 最终判定：保持 `11` / `11.07`
+- 最终判定：保持 `11.07`
 - 判定理由：稳定 11.07；对象是 peer review generation pipeline
 - 是否需要二次复核：原则上不急。
 

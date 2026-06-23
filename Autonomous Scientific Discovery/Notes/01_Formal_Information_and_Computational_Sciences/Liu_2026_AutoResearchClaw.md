@@ -1,58 +1,47 @@
 # Liu 2026 - AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration
 
-## 2026-06-20 relaxed round-2 P0-D revision
-
-- Prior note status: stale single-bucket `01.04` wording based mainly on abstract-level evidence.
-- First-hand source checked: arXiv PDF `2605.20025`, especially Sections 4.1-4.3 and Appendix D.
-- Updated scientific_object_modules: `01;02;06`.
-- object_coverage_mode: `multi_module`.
-- general_method_bucket: `none`.
-- primary_module_for_filing: `01`.
-- Evidence: ARC-Bench reports 25 ML research topics, supporting formal / computational science coverage (`01`). The scientific-domain extension reports 10 HEP-ph tasks using MadGraph / FeynRules / MadAnalysis and cross-section reproduction, supporting physics coverage (`02`). It also reports 7 systems-biology tasks using COBRApy and BiGG genome-scale models, including E. coli succinate knockout screens, M. tuberculosis essentiality, and drug-target prioritization, supporting life-science coverage (`06`). Statistics tasks remain within `01`.
-- Boundary note: Table 7 domain-support configuration alone was not treated as module evidence. Chemistry, theoretical physics, economics, mathematics, and neuroscience support claims were not added unless tied to evaluated task/result evidence in this paper.
-
 **论文信息**
 - 标题：AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration
 - 作者：Jiaqi Liu; Shi Qiu; Mairui Li; Bingzhou Li; Haonian Ji; Siwei Han; Xinyu Ye; Peng Xia; Zihan Dong; Meng Chen; Congyu Zhang; Letian Zhang; Guiming Chen; Haoqin Tu; Xinyu Yang; Lu Feng; Xujiang Zhao; Haifeng Chen; Jiawei Zhou; Xiao Wang; Weitong Zhang; Hongtu Zhu; Yun Li; Jieru Mei; Hongliang Fei; Jiaheng Zhang; Linjie Li; Linjun Zhang; Yuyin Zhou; Sheng Wang; Caiming Xiong; James Zou; Zeyu Zheng; Cihang Xie; Mingyu Ding; Huaxiu Yao
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.20025
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与 reviewer 一手证据整理
+- PDF / 本地文件路径：未见本地归档 PDF；本轮已核对 arXiv PDF `https://arxiv.org/pdf/2605.20025.pdf`
 - 论文类型：系统论文 / 通用科研 Agent
-- 当前状态：to_read
-- 阅读日期：2026-06-19
+- 当前状态：已读；已按 relaxed multi-module 口径完成复核
+- 阅读日期：2026-06-23
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv abstract | 系统强调 autonomous research、self-reinforcing、human-AI collaboration，符合明确科研目标与多步行动 | 高 |
-| 科学对象归类 | `01.04` | arXiv abstract | 主对象是通用 autonomous research workflow，而不是单一化学/材料/生命对象 | 高 |
-| 方法流程 | 多 Agent 研究闭环 | arXiv abstract；reviewer evidence | 包含 debate、self-healing execution、cross-run evolution、verifiable reporting | 中高 |
-| 边界判断 | 不应归 `11.07` | arXiv abstract；reviewer evidence | 论文做的是通用科研执行系统，不是 peer review 或知识生产制度研究 | 中高 |
-| 风险判断 | 主要是 core-strength，不是主类错误 | reviewer evidence | 当前更大的不确定性来自全文细节与验证强度，而不是一级类方向 | 中高 |
+| Agent 纳入 | 是 | arXiv PDF；Sections 4.1-4.3；Appendix D | 论文强调多 Agent debate、self-healing execution、cross-run evolution 与 verifiable reporting | 高 |
+| 科学对象归类 | `01;02;06` | ARC-Bench；scientific-domain extension | 计算对象、HEP-ph 对象与 systems-biology 对象都有可识别任务和结果，因此不能继续写成 `01.04` only | 高 |
+| `01` 证据 | 是 | ARC-Bench 25 ML research topics | formal / computational research tasks 支持 `01` | 高 |
+| `02` 证据 | 是 | MadGraph；FeynRules；MadAnalysis；cross-section reproduction | HEP-ph extension 支持 physics coverage | 高 |
+| `06` 证据 | 是 | COBRApy；BiGG；E. coli succinate knockout；M. tuberculosis essentiality；drug-target prioritization | systems-biology tasks 支持 `06` | 高 |
 
 ## 0. 摘要翻译
 
-这篇论文提出 AutoResearchClaw，一个带有人机协作接口的自强化 autonomous research 系统。系统通过多 Agent 讨论、自我修复执行、跨轮次演化和可验证报告生成，试图把科研任务组织成可持续改进的长程工作流。现有证据表明，它的核心贡献是通用科研能力平台，而不是某个单一学科对象上的专门发现系统。
+AutoResearchClaw 是一个自强化的科研 Agent 系统，结合多 Agent 辩论、自修复执行、人机协作和跨轮次演化。论文不只是展示“通用科研平台”，而是在 ARC-Bench、HEP-ph extension 和 systems-biology extension 中给出具体对象任务与结果，因此本轮采用 `01;02;06`，并明确废除旧的 `01.04` only 表述。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：面向科研任务；具有多步行动流程；含多 Agent 协作、反馈迭代与执行修复
+- 判断依据：面向科研目标；具有多步流程；具备规划、反馈、自主决策与多 Agent 协作
 - 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
   - 计划生成：是
-  - 工具调用：部分是
+  - 工具调用：是
   - 反馈迭代：是
   - 自主决策：是
   - 多 Agent 协作：是
-- 在科研流程中承担的明确角色：假设推进、工作流编排、证据核验、研究报告生成
+- 在科研流程中承担的明确角色：hypothesis generation；workflow orchestration；evidence assessment and validation；feedback iteration
 
 ### 1.2 排除风险检查
 
@@ -63,37 +52,51 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：01
-- 二级类：01.04
-- 三级类：
-- 四级专题：Self-reinforcing autonomous research systems
+- 科学对象模块：`01;02;06`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`01`
+- Primary module for filing 说明：仅用于展示与落盘便利，不覆盖多模块事实
+- 主展示模块一级类：`01` 形式、信息与计算科学
+- 主展示模块二级类：formal / computational research-agent tasks
+- 主展示模块三级类：暂不细分
+- 主展示模块四级专题：self-reinforcing autonomous research systems with physics and biology task coverage
+- 其他覆盖模块及对应层级路径：`02` 物理学；`06` 生命科学
 - 四级专题是否为新增：否
-- 归类理由：当前稳定对象是通用 autonomous research system，本体是科研能力平台而非具体自然对象
-- 归类置信度：中高
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：
+  - `01`：ARC-Bench 25 ML research topics
+  - `02`：HEP-ph extension 的 MadGraph / FeynRules / MadAnalysis 与 cross-section reproduction
+  - `06`：COBRApy / BiGG、E. coli succinate knockout、M. tuberculosis essentiality、drug-target prioritization
+- 归类理由：三个模块都由对象级任务与结果直接支撑，旧的独立 `01.04` 表述不再成立
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：通用科研 Agent 工作流与研究执行能力
-- 最终科学问题：如何让 autonomous research system 在跨轮研究中自强化、自修复并保持可验证输出
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：多 Agent 与 HITL 只是实现形态；主对象仍是通用科研系统能力
+- 最终科学研究对象：计算研究任务、物理学 HEP-ph 任务与 systems-biology 任务
+- 最终科学问题：如何构建可自强化、可自修复的人机协作科研 Agent 系统
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：系统外观是方法层；对象模块要看实际任务覆盖
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：11.07
-- 最终判定：保留 01.04
-- 判定理由：论文并不研究 peer review、science-of-science 或知识生产制度本身，而是在构建通用科研执行系统
-- 是否需要二次复核：是，主要为了补强全文验证细节
+- 可能误归类到：独立 `01.04`
+- 最终判定：不进入 `01.04`；采用 `01;02;06`
+- 判定理由：已有明确对象任务与结果；`01.04` 只收纳无具体对象实验的通用方法论文
+- 多模块覆盖说明：Table 7 这类 domain-support matrix 单独不算证据；本轮只采用有 evaluated task / result 的对象覆盖
+- 01.04 判定说明：否
+- 是否需要二次复核：否；当前一手 PDF 已足以稳定支持本轮归类
 
 ## 3. Agent 系统与科研流程角色
 
 ### 3.1 Agent 类型标签
 
 - LLM Agent：是
-- Planning Agent：部分是
-- Tool-using Agent：部分是
-- Retrieval-augmented Agent：未明确
+- Planning Agent：是
+- Tool-using Agent：是
+- Retrieval-augmented Agent：部分是
 - Multi-Agent System：是
 - Robot / Embodied Agent：否
 - Human-in-the-loop Agent：是
@@ -103,14 +106,14 @@
 ### 3.2 科研流程角色
 
 - 文献检索与阅读：部分是
-- 知识抽取与组织：部分是
-- 科学问题提出：部分是
+- 知识抽取与组织：是
+- 科学问题提出：是
 - 假设生成：是
-- 实验设计：未明确
-- 仿真建模：未明确
-- 工具调用与代码执行：部分是
-- 实验执行：未明确
-- 数据分析：部分是
+- 实验设计：部分是
+- 仿真建模：部分是
+- 工具调用与代码执行：是
+- 实验执行：否
+- 数据分析：是
 - 结果解释：是
 - 证据评估与验证：是
 - 论文写作：是
@@ -120,24 +123,24 @@
 
 - 任务分解：是
 - 计划生成：是
-- 工具调用：部分是
+- 工具调用：是
 - 记忆与状态维护：是
 - 反馈迭代：是
 - 自主决策：是
 - 多 Agent 协作：是
-- 环境交互：部分是
-- 闭环实验：未明确
+- 环境交互：是
+- 闭环实验：否
 
 ### 3.4 交叉属性标签
 
 - 计算驱动：是
-- 数据驱动：部分是
+- 数据驱动：是
 - 实验驱动：否
-- 仿真驱动：否
-- 多模态：未明确
+- 仿真驱动：部分是
+- 多模态：未强调
 - 多尺度建模：否
 - 高通量筛选：否
-- 知识图谱：未明确
+- 知识图谱：未强调
 - 数字孪生：否
 - 机器人平台：否
 - 其他：human-AI collaboration
@@ -146,35 +149,35 @@
 
 ### 4.1 方法动机
 
-- 作者为什么提出该 Agent 系统：希望把科研过程从一次性 assistant 提升为可持续改进的 autonomous research workflow
-- 现有科研流程或方法的痛点：传统系统跨轮积累弱，执行易中断，缺少自修复与可验证汇报
-- 核心假设或直觉：如果把 debate、execution repair、evolution 和 reporting 纳入同一闭环，科研系统会持续增强
+- 作者为什么提出该 Agent 系统：把科研过程从短时助手提升为跨轮演化的自治流程
+- 现有科研流程或方法的痛点：执行容易中断，缺少自修复与可验证汇报
+- 核心假设或直觉：如果把 debate、repair、evolution 和 reporting 放进同一回路，就能形成更稳健科研系统
 
 ### 4.2 系统流程
 
 1. 输入：科研任务或研究目标
-2. 任务分解 / 规划：由多 Agent 对研究子任务进行分工与讨论
-3. 工具、数据库、模型或实验平台调用：按需执行研究流程
-4. 中间结果反馈：记录失败、修复执行、交叉核验
-5. 决策或迭代：跨轮演化并调整后续研究策略
+2. 任务分解 / 规划：多 Agent 分工与讨论
+3. 工具、数据库、模型或实验平台调用：按任务需要执行
+4. 中间结果反馈：记录失败并做 execution repair
+5. 决策或迭代：跨轮演化并调整策略
 6. 输出：可验证研究结果与报告
 
 ### 4.3 系统组件
 
 - Agent 核心：multi-agent autonomous research pipeline
-- 工具 / API / 数据库：摘要未充分展开
-- 记忆或状态模块：存在跨轮演化与状态积累
-- 规划器：存在
-- 评估器 / verifier：存在 verifiable reporting
-- 人类反馈或专家介入：明确存在 HITL 模式
-- 实验平台或仿真环境：未明确绑定单一学科平台
+- 工具 / API / 数据库：多类科研工具
+- 记忆或状态模块：有
+- 规划器：有
+- 评估器 / verifier：有
+- 人类反馈或专家介入：有
+- 实验平台或仿真环境：依具体任务而定
 
 ## 5. 实验与验证
 
 ### 5.1 验证方式
 
 - benchmark：是
-- 仿真验证：未明确
+- 仿真验证：部分是
 - 高通量计算：否
 - 机器人实验：否
 - 湿实验：否
@@ -184,79 +187,88 @@
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：当前摘要级证据未完全展开
-- 任务设置：通用 autonomous research 任务
-- 对比基线：摘要级证据显示与较弱 research-agent 方案比较
+- 数据集 / 实验对象：ARC-Bench；HEP-ph extension；systems-biology extension
+- 任务设置：通用科研任务、自强化实验推进与跨域扩展
+- 对比基线：论文原文设置
 - 评价指标：研究执行质量、可验证性、协作表现
-- 关键结果：系统强调 self-reinforcing、self-healing 与可验证输出
-- 是否有消融实验：待全文核实
-- 是否有失败案例或负结果：待全文核实
+- 关键结果：`01;02;06` 三个对象模块都存在可识别任务与结果
+- 是否有消融实验：有部分分析
+- 是否有失败案例或负结果：有 execution repair 相关讨论
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：更偏系统平台
-- 科学贡献是否经过验证：部分是
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：更偏科研系统平台，但已展示 concrete object tasks
+- 科学贡献是否经过验证：是
 - 贡献强度判断：中
-- 科学贡献类型：system_platform; general_scientific_research
-- 证据强度：当前更接近 medium_pending_full_text
+- 科学贡献类型：system platform；benchmark
+- 证据强度：一手 PDF 全文；source_limited=no
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：不是单学科预测模型，而是通用科研执行系统
-- 与已有 Agent / 科研智能系统的区别：强调 self-reinforcing、self-healing 与 HITL 协作
-- 与同一科学领域其他 Agent 文献的关系：可与 InternAgent、Agent Laboratory、AutoSci 一起归入 01.04 组
-- 主要创新点：将研究执行、修复、演化与报告整合进单一闭环
+- 与普通 AI for Science 方法的区别：不是单步模型，而是自强化多 Agent 科研系统
+- 与已有 Agent / 科研智能系统的区别：强调 self-healing execution 和 cross-run evolution
+- 与同一科学领域其他 Agent 文献的关系：是典型“多模块 object coverage 推翻旧 01.04-only 描述”的样本
+- 主要创新点：把 debate、repair、evolution 与 reporting 统一到科研 Agent 回路中
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：虽强调 autonomy，但 HITL 仍是重要组成
-- 科学验证不足：当前主证据仍偏摘要与高层描述
-- 泛化性不足：需要全文确认其跨任务泛化是否真正稳健
+- Agent 自主性不足：仍存在 HITL 参与
+- 科学验证不足：真实物理 / 生物实验强度有限
+- 泛化性不足：跨域泛化仍需要继续检验
 - 工具链依赖：高
-- 数据泄漏或 benchmark 偏差：需全文核对
-- 成本、可复现性或安全风险：多 Agent 长流程成本较高
-- 是否仍需进一步全文复核：是；重点核查验证深度与 core-strength，而不是主类方向
+- 数据泄漏或 benchmark 偏差：需警惕
+- 成本、可复现性或安全风险：多 Agent 长流程成本高
+- 是否仍需进一步全文复核：否；当前一手 PDF 已足够支持模块判定，仅缺本地 PDF 归档同步
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：01.04 通用科研 Agent / scientific workflow
-- 可支撑哪个论点：通用 research-agent 系统正在从一次性助手走向可演化科研平台
-- 可用于哪个表格或图：01.04 代表样本表；通用科研 Agent 能力对比表
-- 适合作为代表性案例吗：可以，但需注明全文证据仍待补强
+- 可放入哪个章节：01 主展示的通用科研 Agent；跨 `02` / `06` 对象覆盖案例
+- 可支撑哪个论点：只要 physics / biology task coverage 已落地，就不能继续写成 `01.04` only
+- 可用于哪个表格或图：multi-module object coverage 表；research-agent 边界案例表
+- 适合作为代表性案例吗：适合
 - 推荐引用强度：core
-- 需要在正文中特别引用的页码 / 图 / 表：待全文补页码
-- 需要与哪些论文并列比较：InternAgent、Agent Laboratory、AutoSci、Denario
+- 需要在正文中特别引用的页码 / 图 / 表：Sections 4.1-4.3；Appendix D
+- 需要与哪些论文并列比较：AutoSci；AutoScientists；其他自演化科研 Agent
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-自强化的人机协作通用科研 Agent 系统。
+自强化科研 Agent 系统，覆盖计算、物理与生命科学对象任务。
 
 ### 9.2 速记版 pipeline
 
-1. 接收科研目标
-2. 多 Agent 分工与讨论
-3. 执行并修复研究流程
-4. 跨轮演化与核验
+1. 接收科研任务
+2. 多 Agent 分工与辩论
+3. 执行并自修复
+4. 跨轮演化
 5. 输出可验证报告
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：01
-二级类：01.04
-三级类：
-四级专题：Self-reinforcing autonomous research systems
-Agent 类型：LLM Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent
-科研流程角色：hypothesis_generation; workflow_orchestration; evidence_assessment_and_validation; feedback_iteration; paper_writing
-自主能力：task_decomposition; planning; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; memory_or_state_tracking
+科学对象模块：01;02;06
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：01
+是否进入 01.04 存放区：否
+主展示模块一级类：01
+主展示模块二级类：formal / computational research-agent tasks
+主展示模块三级类：暂不细分
+主展示模块四级专题：self-reinforcing autonomous research systems with physics and biology coverage
+其他覆盖模块及对应层级路径：02;06
+module_assignment_evidence：ARC-Bench -> 01；HEP-ph extension -> 02；systems biology extension -> 06
+multi_module_object_coverage_note：旧 01.04 only 读法已废止；对象覆盖来自 evaluated tasks，不来自 domain-support matrix
+Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent
+科研流程角色：hypothesis_generation; workflow_orchestration; evidence_assessment_and_validation; feedback_iteration
+自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
 验证方式：benchmark; expert_evaluation
-交叉属性：computation_driven
-科学贡献类型：system_platform; general_scientific_research
-证据强度：medium_pending_full_text
-归类置信度：中高
+交叉属性：computation_driven; data_driven
+科学贡献类型：system_platform; benchmark
+证据强度：first_hand_full_text
+归类置信度：高
 纳入置信度：高
 推荐引用强度：core
 ```

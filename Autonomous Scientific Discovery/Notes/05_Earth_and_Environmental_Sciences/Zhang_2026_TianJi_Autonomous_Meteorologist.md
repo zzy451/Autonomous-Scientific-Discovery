@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.27738
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / HTML
+- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2603.27738`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check
 - 论文类型：预印本 / autonomous atmospheric-science agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,10 +14,19 @@
 
 ## Evidence Log
 
+## Reaudit Update (2026-06-23)
+
+- `scientific_object_modules`: `05`
+- `primary_module_for_filing`: `05`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
+- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2603.27738`
+- `final_note_classification`: stable `05` landing; note filing path is convenience only, not classification authority.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | abstract / HTML | 系统会自主做文献调研、假设生成、WRF 调用与假设验证 | 高 |
-| 科学对象归类 | `05.02` | 标题；abstract | 稳定对象是 atmospheric science 中的 physical mechanism discovery | 高 |
+| Agent 纳入 | 是 | arXiv abstract / PDF text spot-check | 系统会自主做文献调研、假设生成、WRF 调用与假设验证 | 高 |
+| 科学对象归类 | `05.02` | 标题；arXiv abstract / PDF text spot-check | 稳定对象是 atmospheric science 中的 physical mechanism discovery | 高 |
 | 方法流程 | 两层 agent workflow | HTML | cognitive planning layer + engineering execution layer | 高 |
 | 工具调用 | 强 | HTML | 以 WRF 为核心的 meteorology-specific verification engine | 高 |
 | 实验验证 | benchmark + simulation | HTML | 在大气动力学场景中实现 zero human intervention，并能自修复错误 | 高 |

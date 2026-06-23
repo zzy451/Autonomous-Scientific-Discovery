@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv / ICLR 2026 FM4Science workshop poster
 - DOI / arXiv / URL：https://arxiv.org/abs/2509.25112
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / HTML 与 OpenReview 页面
+- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2509.25112`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check
 - 论文类型：预印本 / climate-risk scientific synthesis agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,22 +14,24 @@
 
 ## Evidence Log
 
-## Round-2 Relaxed Multi-Module Update (2026-06-21)
+## Round-3 Adjudicated Multi-Module Update (2026-06-23)
 
-- `scientific_object_modules`: `05;11`
+- `scientific_object_modules`: `05;11.02`
 - `object_coverage_mode`: `multi_module`
 - `primary_module_for_filing`: `05`
 - `general_method_bucket`: `none`
-- `first_hand_sources_checked`: arXiv abstract; arXiv full-text HTML `2509.25112v1`
+- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
+- `source_limited`: `no`
+- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2509.25112`
 - `classification_evidence_source_level`: `first_hand_full_text`
 - `note_revision_required`: `no`
 
-This note no longer treats the record as a provisional `05`-only sample. The full text is strong enough to support `05;11`: compound heatwaves, climate-risk propagation, and historical heatwave-event validation keep `05` primary, while the discovered chains explicitly cover small-business disruption, hospital-service interruption, migration pressure, housing-market strain, educational achievement gaps, and intergenerational inequality, which add independent social/economic-system coverage for `11`. The currently accessible first-hand evidence does not show a separate life-science object study strong enough to add `06`.
+This note now lands as stable `05;11.02` rather than a provisional `05`-only sample. Compound heatwaves, climate-risk propagation, and historical heatwave-event validation keep `05` primary, while the discovered chains explicitly cover small-business disruption, hospital-service interruption, migration pressure, housing-market strain, educational achievement gaps, and intergenerational inequality, which add independent social / population-system coverage for `11.02`. The current first-hand evidence does not justify a separate `06` landing.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | HeDA 从 8,111 篇论文构图并进行 automated scientific discovery，不是单轮 QA | 中高 |
-| 科学对象归类 | 暂保留 `05.02` | abstract / HTML | 对象是 compound heatwaves、cascading climate risks 与 bio-ecological mediation | 中高 |
+| 科学对象归类 | `05;11.02`（primary=`05`） | arXiv abstract / PDF text spot-check | 对象一端是 compound heatwaves、cascading climate risks 与 bio-ecological mediation，另一端还显式覆盖 migration、housing、education、small-business 与 hospital-service 等社会 / population-system effects | 中高 |
 | 方法流程 | 多 Agent 综合推理 | HTML | hierarchical multi-agent workflow 将 climatology、ecology、economics 证据整合成 risk topology | 中高 |
 | 证据基础 | 大规模知识图 | HTML | 图谱包含 70,297 nodes 与 120,168 relationships，支持多跳风险传播推理 | 中高 |
 | 验证与边界 | 有 QA 与案例，但边界压力高 | HTML / OpenReview | complex QA accuracy 70.0%，并用 2022 长江流域 compound drought + heatwave 事件做经验对应 | 中高 |
@@ -66,8 +68,8 @@ This note no longer treats the record as a provisional `05`-only sample. The ful
 
 ### 2.1 主科学领域
 
-- 一级类：05
-- 二级类：05.02
+- 一级类：05（primary；additional supported module: 11.02）
+- 二级类：05.02（primary）；11.02（additional supported module）
 - 三级类：复合热浪与级联气候风险机制
 - 四级专题：heatwave-risk scientific synthesis agents
 - 四级专题是否为新增：否
@@ -82,10 +84,10 @@ This note no longer treats the record as a provisional `05`-only sample. The ful
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.04、11
-- 最终判定：暂保留 05.02
-- 判定理由：虽然论文跨越生态、经济与社会损失，但核心解释链仍从热浪这一气候灾害出发；社会经济损失更像风险传播末端而非主对象
-- 是否需要二次复核：是
+- 可能误归类到：01.04、06、11.07
+- 最终判定：`05;11.02`（primary=`05`）
+- 判定理由：虽然论文以热浪级联风险为 primary object，但正文与案例已显式覆盖 migration、housing、education、small-business 与 hospital-service 等社会 / population-system outcomes，因此可稳定补入 `11.02`，而不是停留在泛 `11` 或单一 `05`
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -199,7 +201,7 @@ This note no longer treats the record as a provisional `05`-only sample. The ful
 - 科学贡献是否经过验证：部分是
 - 贡献强度判断：中
 - 科学贡献类型：scientific_discovery / system_platform
-- 证据强度：仍需进一步全文复核
+- 证据强度：first_hand_abstract_plus_pdf_spot_check
 
 ## 6. 与已有工作的关系
 
@@ -216,14 +218,14 @@ This note no longer treats the record as a provisional `05`-only sample. The ful
 - 工具链依赖：依赖知识图谱构建与 LLM 推理质量
 - 数据泄漏或 benchmark 偏差：QA 与图谱构造方式可能影响结论
 - 成本、可复现性或安全风险：知识图重建与跨学科验证门槛较高
-- 是否仍需进一步全文复核：是，重点用于稳固 `05 / 11 / 01.04` 三向边界与 confirmed-core 强度表述
+- 是否仍需进一步全文复核：否；当前 arXiv abstract + PDF text spot-check 已足以支撑 landed `05;11.02` wording
 
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：气候风险与 Earth-system scientific synthesis agents
-- 可支撑哪个论点：复杂社会-生态耦合样本中，仍应先按最终自然灾害对象判断主类
+- 可支撑哪个论点：复杂社会-生态耦合样本中，可保持 `05` 为 primary，同时把已显式落到社会 / population-system对象的结果记为 `11.02`
 - 可用于哪个表格或图：高边界压力样本清单
-- 适合作为代表性案例吗：谨慎适合
+- 适合作为代表性案例吗：是
 - 推荐引用强度：普通引用
 - 需要在正文中特别引用的页码 / 图 / 表：知识图规模、QA 结果和长江流域案例说明
 - 需要与哪些论文并列比较：ASD-0649、ASD-0633、ASD-0644
@@ -245,8 +247,9 @@ This note no longer treats the record as a provisional `05`-only sample. The ful
 
 ```text
 是否纳入：是
-主类：05
-二级类：05.02
+主类：05（primary）
+二级类：05.02（primary）；11.02
+scientific_object_modules：05;11.02
 三级类：复合热浪与级联气候风险机制
 四级专题：heatwave-risk scientific synthesis agents
 Agent 类型：LLM Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Agent System; Hybrid Agent
@@ -255,7 +258,7 @@ Agent 类型：LLM Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Age
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven; data_driven; multiscale_modeling; knowledge_graph
 科学贡献类型：scientific_discovery; system_platform
-证据强度：medium_pending_full_text
+证据强度：first_hand_abstract_plus_pdf_spot_check
 归类置信度：中
 纳入置信度：中高
 推荐引用强度：普通引用

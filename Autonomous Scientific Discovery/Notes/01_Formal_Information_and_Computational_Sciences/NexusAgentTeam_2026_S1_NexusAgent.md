@@ -6,49 +6,42 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2602.01550
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
-- 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
-- 阅读日期：2026-06-18
+- PDF / 本地文件路径：未见本地归档 PDF；本轮已核对 arXiv PDF `2602.01550`
+- 论文类型：系统论文 / 通用科研 Agent
+- 当前状态：已读；已按 relaxed multi-module 口径完成复核
+- 阅读日期：2026-06-23
 - 笔记作者：Codex
 
 ## Evidence Log
 
-## 2026-06-20 relaxed round-2 P0-C revision
-
-- `first_hand_sources_checked`: arXiv PDF (`2602.01550`), including abstract, evaluation sections, case study, and appendix examples.
-- Accepted relaxed classification: `scientific_object_modules=03;04;06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
-- Evidence: Biomni-Eval / Biomni-Eval1 and the GWAS variant prioritization case provide concrete life-science / genetics evidence (`06`), with a rare-disease diagnosis example supporting biomedical / health coverage (`07`). ChemBench examples include molecular property and early virtual-screening / drug-development tasks (`03`, with biomedical pressure captured by `07`). MatSciBench materials-science categories and electrochemical-cell examples support `04`.
-- Note correction: the earlier `01.04` treatment was a legacy platform-first reading. Under the relaxed benchmark-object rule, the paper should not remain independent `01.04` only, even though the legacy filing row is not migrated yet.
-
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `01` / `01.04` | 摘要 | 最稳定对象是“self-evolving multidisciplinary scientific research framework”，而不是单纯的模型方法或发表 venue。 | 高 |
-| 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
-| 实验验证 | BioMini-Eval、ChemBench 与 MatSciBench | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 BioMini-Eval、ChemBench 与 MatSciBench 支撑其主张。 | 中高 |
-| 边界判断 | 01.04 / 多学科 benchmark 误读风险；当前主对象仍是框架本身 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| Agent 纳入 | 是 | arXiv PDF abstract；system overview | 论文明确面向多学科 scientific research，包含规划、工具调用、批评反馈与技能沉淀 | 高 |
+| 科学对象归类 | `03;04;06;07` | evaluation；case study；appendix examples | 生命科学、医学、化学、材料四类对象都有可识别 benchmark / case / result 覆盖，因此不是独立 `01.04` | 高 |
+| 生命/医学证据 | `06;07` | Biomni-Eval / Biomni-Eval1；GWAS；rare-disease example | GWAS 变体优先级与 rare-disease 诊断例子支持 `06` 与 `07` | 高 |
+| 化学/材料证据 | `03;04` | ChemBench；MatSciBench；electrochemical-cell examples | 分子性质/早期虚拟筛选支持 `03`；材料科学类别与电化学电池例子支持 `04` | 高 |
+| 边界裁决 | 不进入 `01.04` | evaluation coverage | 虽然系统平台感强，但已有具体科学对象 benchmark 与案例；当前文件位于 `01` 目录仅是落盘便利，不是权威分类事实 | 高 |
 
 ## 0. 摘要翻译
 
-论文围绕“self-evolving multidisciplinary scientific research framework”提出题为《S1-NexusAgent: a Self-Evolving Agent Framework for Multidisciplinary Scientific Research》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 BioMini-Eval、ChemBench 与 MatSciBench 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+本文提出 S1-NexusAgent，一个可自演化的科研 Agent 框架。系统通过规划、执行、批评与技能沉淀，把多步科研任务组织成可持续改进的工作流。关键点不是“通用框架”这个外观本身，而是论文已经在生命科学、医学、化学和材料任务上给出了可识别的 benchmark 与案例结果，因此应按对象覆盖进入多个正式科学对象模块，而不是继续停留在独立 `01.04` 存放区。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：系统围绕科研目标执行多步工作流，并具备规划、工具调用、反馈迭代或多 Agent 协作中的至少一项。
+- 判断依据：面向明确科研目标；具有多步行动过程；具备规划、工具调用、反馈迭代与一定自主决策能力
 - 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
   - 计划生成：是
-  - 工具调用：是或部分是
+  - 工具调用：是
   - 反馈迭代：是
-  - 自主决策：是或部分是
-  - 多 Agent 协作：是或部分是
-- 在科研流程中承担的明确角色：workflow_orchestration; tool_use_and_code_execution; feedback_iteration; autonomous_decision_making
+  - 自主决策：是
+  - 多 Agent 协作：是
+- 在科研流程中承担的明确角色：workflow orchestration；tool use and code execution；feedback iteration；autonomous decision making
 
 ### 1.2 排除风险检查
 
@@ -59,159 +52,224 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：01
-- 二级类：01.04
-- 三级类：
-- 四级专题：Multidisciplinary scientific agents with strong bio benchmark evidence
+- 科学对象模块：`03;04;06;07`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`06`
+- Primary module for filing 说明：仅用于展示与后续归档便利；当前 note 仍位于 `01` 文件夹不构成分类 authority
+- 主展示模块一级类：`06` 生命科学
+- 主展示模块二级类：多任务 benchmark / case-study 驱动的跨模块覆盖
+- 主展示模块三级类：暂不细分
+- 主展示模块四级专题：multidisciplinary scientific-research agents with concrete life / medical / chemistry / materials coverage
+- 其他覆盖模块及对应层级路径：`03` 化学科学；`04` 材料科学；`07` 医学与健康科学
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“self-evolving multidisciplinary scientific research framework”，因此当前主类保持为 `01` / `01.04`。
-- 归类置信度：中高
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：
+  - `06`：Biomni-Eval / Biomni-Eval1 与 GWAS 任务
+  - `07`：rare-disease diagnosis example
+  - `03`：ChemBench 中分子性质与早期虚拟筛选任务
+  - `04`：MatSciBench 与 electrochemical-cell examples
+- 归类理由：对象级 benchmark / case evidence 已足够支持四模块并行记录，不能再按平台外观回收至 `01.04`
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：self-evolving multidisciplinary scientific research framework
-- 最终科学问题：论文试图通过 Agent 系统推进“self-evolving multidisciplinary scientific research framework”相关研究任务。
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
+- 最终科学研究对象：论文实际覆盖的生命、医学、化学、材料科研任务
+- 最终科学问题：如何用可自演化 Agent 框架推进多学科科研任务
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按实际对象覆盖归类；平台通用性只是副标签
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.04 / 多学科 benchmark 误读风险；当前主对象仍是框架本身
-- 最终判定：保持 `01` / `01.04`
-- 判定理由：01.04 / 多学科 benchmark 误读风险；当前主对象仍是框架本身
-- 是否需要二次复核：不必作为当前判断前置条件。
+- 可能误归类到：独立 `01.04`
+- 最终判定：不进入 `01.04`；采用 `03;04;06;07`
+- 判定理由：已有 concrete object benchmarks / case studies；`01.04` 只适用于无具体对象实验的通用方法文献
+- 多模块覆盖说明：四个模块都由可识别任务或案例支撑，不要求每个模块都是论文主贡献
+- 01.04 判定说明：否
+- 是否需要二次复核：否；当前一手 PDF 证据已足够稳定
 
 ## 3. Agent 系统与科研流程角色
 
 ### 3.1 Agent 类型标签
 
-- Agent 类型：LLM Agent; Tool-using Agent; Planning Agent; Hybrid Agent
+- LLM Agent：是
+- Planning Agent：是
+- Tool-using Agent：是
+- Retrieval-augmented Agent：部分是
+- Multi-Agent System：是
+- Robot / Embodied Agent：否
+- Human-in-the-loop Agent：未强调
+- Hybrid Agent：是
+- 其他：self-evolving scientific-research framework
 
 ### 3.2 科研流程角色
 
-- 主要角色：workflow_orchestration; tool_use_and_code_execution; feedback_iteration; autonomous_decision_making
+- 文献检索与阅读：部分是
+- 知识抽取与组织：是
+- 科学问题提出：部分是
+- 假设生成：是
+- 实验设计：部分是
+- 仿真建模：部分是
+- 工具调用与代码执行：是
+- 实验执行：否
+- 数据分析：是
+- 结果解释：是
+- 证据评估与验证：是
+- 论文写作：部分是
+- 端到端科研流程自动化：是
 
 ### 3.3 自主能力
 
-- 任务分解：是或部分是
+- 任务分解：是
 - 计划生成：是
-- 工具调用：是或部分是
-- 记忆与状态维护：中等
+- 工具调用：是
+- 记忆与状态维护：是
 - 反馈迭代：是
-- 自主决策：是或部分是
-- 多 Agent 协作：是或部分是
-- 环境交互：中等
-- 闭环实验：视论文具体验证而定
+- 自主决策：是
+- 多 Agent 协作：是
+- 环境交互：是
+- 闭环实验：否
 
 ### 3.4 交叉属性标签
 
-- 交叉属性：以计算驱动为主；若摘要明示实验或部署，再在正文中单独标注。
+- 计算驱动：是
+- 数据驱动：是
+- 实验驱动：否
+- 仿真驱动：部分是
+- 多模态：未强调
+- 多尺度建模：否
+- 高通量筛选：否
+- 知识图谱：未强调
+- 数字孪生：否
+- 机器人平台：否
+- 其他：benchmark-driven multidisciplinary research automation
 
 ## 4. 方法设计
 
 ### 4.1 方法动机
 
-- 作者为什么提出该 Agent 系统：希望用 Agent 化流程提升 self-evolving multidisciplinary scientific research framework 的研究效率与质量。
-- 现有科研流程或方法的痛点：传统流程往往分散、手工密集，难以在多步任务中持续反馈迭代。
-- 核心假设或直觉：把检索、生成、分析、评估等环节编排成可循环的 Agent 工作流，能够提高研究推进能力。
+- 作者为什么提出该 Agent 系统：把多学科科研任务组织成可演化、可复用的长期工作流
+- 现有科研流程或方法的痛点：传统流程难以持续积累技能与反馈修正
+- 核心假设或直觉：将规划、执行、批评与技能沉淀显式整合，可提高科研任务推进能力
 
 ### 4.2 系统流程
 
-1. 输入：研究问题、数据、文献或任务上下文。
-2. 任务分解 / 规划：Agent 进行子任务拆解与流程编排。
-3. 工具、数据库、模型或实验平台调用：按需要调用外部资源。
-4. 中间结果反馈：根据阶段性结果进行检验、批评或修正。
-5. 决策或迭代：保留有效候选并推动下一轮研究动作。
-6. 输出：形成更高质量的科研分析、假设、实验建议或知识生产结果。
+1. 输入：科研目标、任务描述与可用工具
+2. 任务分解 / 规划：拆解多步科研子任务
+3. 工具、数据库、模型或实验平台调用：按任务需要调用外部资源
+4. 中间结果反馈：批评与评估模块回流结果
+5. 决策或迭代：保留有效轨迹并沉淀技能
+6. 输出：更高质量的科研分析、候选结论或研究建议
 
 ### 4.3 系统组件
 
-- Agent 核心：多 Agent 或单 Agent 编排系统。
-- 工具 / API / 数据库：以论文摘要明示工具链为准。
-- 记忆或状态模块：若论文强调长期记忆、工作流状态或证据轨迹，则作为关键组件。
-- 规划器：存在或部分存在。
-- 评估器 / verifier：存在，用于评分、核验或审查。
-- 人类反馈或专家介入：部分论文存在。
-- 实验平台或仿真环境：按 BioMini-Eval、ChemBench 与 MatSciBench 使用。
+- Agent 核心：self-evolving research framework
+- 工具 / API / 数据库：多类科研工具
+- 记忆或状态模块：有
+- 规划器：有
+- 评估器 / verifier：有
+- 人类反馈或专家介入：可能有，但不是本轮分类关键
+- 实验平台或仿真环境：以 benchmark / case-study 环境为主
 
 ## 5. 实验与验证
 
 ### 5.1 验证方式
 
-- 当前主要验证：BioMini-Eval、ChemBench 与 MatSciBench
+- benchmark：是
+- 仿真验证：部分是
+- 高通量计算：否
+- 机器人实验：否
+- 湿实验：否
+- 临床数据：否
+- 真实场景部署：否
+- 专家评估：未强调
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：围绕“self-evolving multidisciplinary scientific research framework”的论文设定。
-- 任务设置：多步科研工作流中的检索、生成、分析、评估或写作任务。
-- 对比基线：以论文原文报告为准。
-- 关键结果：当前可得证据表明论文主要通过 BioMini-Eval、ChemBench 与 MatSciBench 支撑其核心主张。
-- 是否有消融实验：摘要级证据下不稳定，后续需全文补充。
-- 是否有失败案例或负结果：摘要级证据通常不足。
+- 数据集 / 实验对象：Biomni-Eval / Biomni-Eval1；GWAS；rare-disease；ChemBench；MatSciBench；electrochemical-cell examples
+- 任务设置：多学科科研任务执行与推理
+- 对比基线：论文原文 benchmark 设置
+- 评价指标：任务完成表现与系统能力
+- 关键结果：跨生命、医学、化学、材料任务都有可识别对象覆盖
+- 是否有消融实验：有评估部分，但本轮分类不依赖消融细节
+- 是否有失败案例或负结果：非本轮分类关键
 
 ### 5.3 科学贡献
 
-- 科学贡献类型：system_platform; scientific_research_automation
-- 贡献强度判断：中等到较强，取决于论文是平台型还是有直接实验发现。
-- 证据强度：medium_metadata_with_abstract
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：更偏系统平台与跨对象科研自动化
+- 科学贡献是否经过验证：是
+- 贡献强度判断：中
+- 科学贡献类型：system platform；benchmark
+- 证据强度：计算 / benchmark 支持；本轮分类证据强度为一手 PDF 全文
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：本论文强调多步 Agent 工作流，而不是单次预测模型。
-- 与已有 Agent / 科研智能系统的区别：它把研究流程中的多个环节明确组织进同一套 Agent 化闭环。
-- 与同一科学领域其他 Agent 文献的关系：可作为该类对象的代表样本，与同类 Agent 系统并列比较。
-- 主要创新点：将对象相关研究任务稳定映射为可迭代的 Agent 工作流。
+- 与普通 AI for Science 方法的区别：不是单步预测模型，而是多步科研 Agent 工作流
+- 与已有 Agent / 科研智能系统的区别：强调 self-evolving skill accumulation
+- 与同一科学领域其他 Agent 文献的关系：属于平台感强但已有 concrete object coverage 的典型 relaxed-rule 样本
+- 主要创新点：把多学科科研任务与技能沉淀机制整合到同一 Agent 框架
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
-- 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
-- 泛化性不足：01.04 / 多学科 benchmark 误读风险；当前主对象仍是框架本身
-- 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
-- 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
-- 成本、可复现性或安全风险：多 Agent 长流程通常带来较高成本和复现负担。
+- Agent 自主性不足：部分流程仍可能依赖人类设定任务
+- 科学验证不足：以 benchmark / case-study 为主
+- 泛化性不足：跨学科强并不自动等于真实科研闭环强
+- 工具链依赖：高
+- 数据泄漏或 benchmark 偏差：需警惕
+- 成本、可复现性或安全风险：长链条 Agent 成本较高
+- 是否仍需进一步全文复核：否；本轮一手 PDF 已足以支持当前模块判定，仅缺本地 PDF 归档同步
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：主类 `01` / `01.04` 对应章节。
-- 可支撑哪个论点：Agent 已经能够围绕“self-evolving multidisciplinary scientific research framework”形成稳定的多步科研工作流。
-- 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
-- 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
+- 可放入哪个章节：多模块科研 Agent；平台感强但不回收 `01.04` 的边界案例
+- 可支撑哪个论点：只要有 concrete object coverage，通用平台也应进入相应对象模块
+- 可用于哪个表格或图：multi-module object coverage 表；`01.04` 边界案例表
+- 适合作为代表性案例吗：适合
 - 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：后续全文笔记补齐。
-- 需要与哪些论文并列比较：可与同主类或相邻边界样本并列。
+- 需要在正文中特别引用的页码 / 图 / 表：evaluation 与 appendix examples
+- 需要与哪些论文并列比较：同类跨对象 scientific-agent systems
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-围绕“self-evolving multidisciplinary scientific research framework”组织多步科研工作的 Agent 系统。
+可自演化科研 Agent 框架，且已在生命、医学、化学、材料对象上给出具体覆盖。
 
 ### 9.2 速记版 pipeline
 
-1. 接收研究问题或证据。
-2. 分解并编排多步科研任务。
-3. 调用工具 / 数据 / 检索资源。
-4. 基于反馈修正中间结果。
-5. 输出更高质量的研究结论或知识生产结果。
+1. 接收科研目标
+2. 规划多步任务
+3. 调用工具执行
+4. 批评反馈并沉淀技能
+5. 输出研究结果或候选方案
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：01
-二级类：01.04
-三级类：
-四级专题：Multidisciplinary scientific agents with strong bio benchmark evidence
-Agent 类型：LLM Agent; Tool-using Agent; Planning Agent; Hybrid Agent
+科学对象模块：03;04;06;07
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：06
+是否进入 01.04 存放区：否
+主展示模块一级类：06
+主展示模块二级类：跨对象 benchmark / case coverage
+主展示模块三级类：暂不细分
+主展示模块四级专题：multidisciplinary scientific-research agents with concrete object coverage
+其他覆盖模块及对应层级路径：03;04;07
+module_assignment_evidence：GWAS / rare-disease -> 06/07；ChemBench -> 03；MatSciBench/electrochemical-cell -> 04
+multi_module_object_coverage_note：当前 note 路径仅是落盘便利；权威分类为 03;04;06;07
+Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
 科研流程角色：workflow_orchestration; tool_use_and_code_execution; feedback_iteration; autonomous_decision_making
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
+自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
 验证方式：benchmark
-交叉属性：computation_driven
-科学贡献类型：system_platform; scientific_research_automation
-证据强度：medium_metadata_with_abstract
-归类置信度：中高
+交叉属性：computation_driven; data_driven
+科学贡献类型：system_platform; benchmark
+证据强度：first_hand_full_text
+归类置信度：高
 纳入置信度：高
 推荐引用强度：standard
 ```

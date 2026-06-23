@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.22148
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / HTML 与官方 GitHub
+- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2603.22148`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check
 - 论文类型：预印本 / Earth observation agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,10 +14,20 @@
 
 ## Evidence Log
 
+## Reaudit Update (2026-06-23)
+
+- `scientific_object_modules`: `05;08;11.02`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `05`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
+- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2603.22148`
+- `final_note_classification`: primary `05`, with additional supported modules `08` and `11.02`; note filing path is convenience only, not classification authority.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | 系统具备 adaptive workflow planning 与 tool creation，不是单轮 EO 问答 | 高 |
-| 科学对象归类 | `05.04` | abstract / HTML | 论文对象明确是 open-environment Earth observation | 高 |
+| 科学对象归类 | `05;08;11.02` | arXiv abstract / PDF text spot-check | 论文以 open-environment Earth observation 为 primary object，同时 benchmark / use-case objects 还显式覆盖 agriculture 与 socio-economic / population-system tasks | 高 |
 | 方法流程 | 多 Agent 闭环 | HTML | Data Summary、Planning、Workflow、Coding、Checking 五类 agents 协同完成任务 | 高 |
 | 工具与对象绑定 | 很强 | HTML / GitHub | GEE、gdal、rasterio、geopandas、PySAL 与多源遥感数据深度绑定 EO 分析 | 高 |
 | 实验验证 | benchmark + cross-benchmark | abstract / HTML | OpenEarth-Bench 有 596 个真实案例，并在 Earth-Bench 上与大量专用工具系统对比 | 高 |
@@ -54,8 +64,8 @@
 
 ### 2.1 主科学领域
 
-- 一级类：05
-- 二级类：05.04
+- 一级类：05（primary；additional supported modules: 08, 11.02）
+- 二级类：05.04（primary Earth observation）；08；11.02
 - 三级类：Earth observation 与地理空间分析
 - 四级专题：open-environment EO tool-creation agents
 - 四级专题是否为新增：否
@@ -64,14 +74,14 @@
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：open-environment Earth observation workflows
+- 最终科学研究对象：open-environment Earth observation workflows, with explicit agricultural-object and socio-economic / population-system coverage
 - 最终科学问题：如何在复杂 EO 场景下让 Agent 自主完成多源数据探索、分析和结果校验
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：tool creation 只是方法创新，稳定对象仍是 EO scientific workflows
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04
-- 最终判定：保留 05.04
+- 最终判定：`05;08;11.02`（primary=`05`）
 - 判定理由：OpenEarth-Bench、Earth-Bench、EO tools 与任务定义都不是领域无关平台证据
 - 是否需要二次复核：否
 
@@ -193,7 +203,7 @@
 
 - 与普通 AI for Science 方法的区别：关键不是普通 EO 多模态问答，而是能主动创建工具的 workflow agent
 - 与已有 Agent / 科研智能系统的区别：强调从 tool calling 走向 tool creation
-- 与同一科学领域其他 Agent 文献的关系：可与 Earth-Agent、CMIP-Forge、EarthLink 一起构成 `05` 类平台感较强但对象明确的样本
+- 与同一科学领域其他 Agent 文献的关系：可与 Earth-Agent、CMIP-Forge、EarthLink 一起构成以 `05` 为 primary、同时允许 `08` 与 `11.02` object coverage 的平台感较强样本
 - 主要创新点：在 EO 场景中把 workflow planning、tool creation 和 geoscientific checking 统一起来
 
 ## 7. 局限性与风险
@@ -209,7 +219,7 @@
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：Earth observation agent systems
-- 可支撑哪个论点：即使系统看起来像通用平台，只要对象和验证深度绑定 EO，主类仍应是 `05`
+- 可支撑哪个论点：即使系统看起来像通用平台，只要 primary object 与验证深度绑定 EO，primary 仍应是 `05`，同时可显式记录 `08` 与 `11.02` 的对象覆盖
 - 可用于哪个表格或图：`05 / 01.04` 边界压测表
 - 适合作为代表性案例吗：是
 - 推荐引用强度：核心引用
@@ -233,8 +243,9 @@
 
 ```text
 是否纳入：是
-主类：05
-二级类：05.04
+主类：05（primary）
+二级类：05.04（primary）；08；11.02
+scientific_object_modules：05;08;11.02
 三级类：Earth observation 与地理空间分析
 四级专题：open-environment EO tool-creation agents
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent

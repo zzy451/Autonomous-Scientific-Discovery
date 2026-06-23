@@ -1,58 +1,47 @@
 # Unknown 2026 - AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle
 
-## 2026-06-20 relaxed round-2 P0-D revision
-
-- Prior note status: stale `01.04` wording from abstract / metadata-level evidence.
-- First-hand source checked: arXiv PDF `2605.31468`, especially Sections 7.1-7.5 and Appendices C-D.
-- Updated scientific_object_modules: `01;06;07`.
-- object_coverage_mode: `multi_module`.
-- general_method_bucket: `none`.
-- primary_module_for_filing: `01`.
-- Evidence: the GPU-kernel case executes profiling-guided Claude Code optimization over TritonBench / PyTorch workloads on 4x NVIDIA A40, supporting formal / computational-systems coverage (`01`). The biomedical case executes PTM-aware degrader target nomination with DeepTernary v1.0.0, PROTAC-STAN, a 22-complex PROTAC test set, 15 POIs / 189 interface sites, phospho / alanine / Kme3 perturbations, and Boltz-2 cross-checks. This supports protein / PTM / structural-biology coverage (`06`) and drug-discovery / biomedical coverage (`07`).
-- Boundary note: no separate `03` assignment was accepted in this round because the paper does not primarily report chemical synthesis, reaction, catalyst, or small-molecule design results beyond the drug-discovery / PROTAC evaluation context.
-
 **论文信息**
 - 标题：AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle
 - 作者：Unknown
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.31468
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
-- 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
-- 阅读日期：2026-06-18
+- PDF / 本地文件路径：未见本地归档 PDF；本轮核对 arXiv HTML full text v1，并确认可用 PDF `https://arxiv.org/pdf/2605.31468.pdf`
+- 论文类型：系统论文 / scientific-research agent
+- 当前状态：已读；已按 relaxed multi-module 口径完成复核
+- 阅读日期：2026-06-23
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `01` / `01.04` | 摘要 | 最稳定对象是“memory-centric full-lifecycle scientific research system”，而不是单纯的模型方法或发表 venue。 | 高 |
-| 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
-| 实验验证 | full-lifecycle system description 与 case studies | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 full-lifecycle system description 与 case studies 支撑其主张。 | 中高 |
-| 边界判断 | 01.04 / infrastructure 风险；问题主要是证据强度不足 | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| Agent 纳入 | 是 | arXiv HTML full text v1；Sections 7.1-7.5；Appendices C-D | 系统强调 memory-centric、多阶段科研流程与多 Agent 操作 | 高 |
+| 科学对象归类 | `01;06;07` | GPU-kernel case；biomedical PROTAC case | 计算系统任务与生物 / 医学任务都出现具体 case，因此不能再写成 `01.04` only | 高 |
+| `01` 证据 | 是 | TritonBench / PyTorch / profiling-guided GPU-kernel optimization | 计算系统对象覆盖支持 `01` | 高 |
+| `06` 证据 | 是 | PTM-aware degrader target nomination；15 POIs / 189 interface sites；PTM perturbations | 蛋白、PTM、结构生物学对象支持 `06` | 高 |
+| `07` 证据 | 是 | PROTAC-STAN；DeepTernary；22-complex test set；drug-discovery framing | 药物发现与生物医学目标支持 `07` | 高 |
 
 ## 0. 摘要翻译
 
-论文围绕“memory-centric full-lifecycle scientific research system”提出题为《AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 full-lifecycle system description 与 case studies 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+AutoSci 试图用 memory-centric 的 Agent 系统覆盖完整科研生命周期。它既包含 GPU kernel optimization 这类形式 / 计算对象任务，也包含 PTM-aware degrader target nomination、PROTAC 评价等生命与医学对象任务，因此本轮采用 `01;06;07`。这里不再保留旧的 `01.04` only 叙述，也不额外扩到 `03`。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：系统围绕科研目标执行多步工作流，并具备规划、工具调用、反馈迭代或多 Agent 协作中的至少一项。
+- 判断依据：面向明确科研目标；具有多步流程；具备规划、工具调用、记忆维护、反馈迭代与多 Agent 协作
 - 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
   - 计划生成：是
-  - 工具调用：是或部分是
+  - 工具调用：是
   - 反馈迭代：是
-  - 自主决策：是或部分是
-  - 多 Agent 协作：是或部分是
-- 在科研流程中承担的明确角色：workflow_orchestration; feedback_iteration; evidence_assessment_and_validation; scientific_discourse
+  - 自主决策：是
+  - 多 Agent 协作：是
+- 在科研流程中承担的明确角色：workflow orchestration；feedback iteration；evidence assessment and validation；scientific discourse
 
 ### 1.2 排除风险检查
 
@@ -63,159 +52,223 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：01
-- 二级类：01.04
-- 三级类：
-- 四级专题：Memory-centric scientific-research agents
+- 科学对象模块：`01;06;07`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`01`
+- Primary module for filing 说明：这里只是 filing convenience；真正的权威事实是 `01;06;07`
+- 主展示模块一级类：`01` 形式、信息与计算科学
+- 主展示模块二级类：computational-systems research tasks
+- 主展示模块三级类：GPU kernel optimization
+- 主展示模块四级专题：memory-centric scientific-research agents with computational and biomedical coverage
+- 其他覆盖模块及对应层级路径：`06` 生命科学；`07` 医学与健康科学
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“memory-centric full-lifecycle scientific research system”，因此当前主类保持为 `01` / `01.04`。
-- 归类置信度：中高
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：
+  - `01`：TritonBench / PyTorch / Claude Code profiling-guided GPU-kernel optimization
+  - `06`：protein / PTM / interface-site biology tasks
+  - `07`：degrader target nomination、PROTAC-related drug-discovery evaluation
+- 归类理由：三类对象都由论文中的具体 case study 和结果覆盖支撑
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：memory-centric full-lifecycle scientific research system
-- 最终科学问题：论文试图通过 Agent 系统推进“memory-centric full-lifecycle scientific research system”相关研究任务。
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
+- 最终科学研究对象：计算系统任务、蛋白 / PTM 生物对象与药物发现对象
+- 最终科学问题：如何用 memory-centric Agent 覆盖完整科研生命周期
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：full-lifecycle / memory-centric 是方法外观；主分类仍由已报告对象决定
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.04 / infrastructure 风险；问题主要是证据强度不足
-- 最终判定：保持 `01` / `01.04`
-- 判定理由：01.04 / infrastructure 风险；问题主要是证据强度不足
-- 是否需要二次复核：建议需要。
+- 可能误归类到：独立 `01.04`；`03`
+- 最终判定：`01;06;07`
+- 判定理由：有 concrete computational 和 biomedical object coverage；同时本轮未接受独立 `03`，因为没有稳定的 chemical synthesis / reaction / catalyst / small-molecule design 主体结果
+- 多模块覆盖说明：`06` 与 `07` 都来自 PROTAC / PTM / interface-site case，不是泛化性口号
+- 01.04 判定说明：否
+- 是否需要二次复核：否；当前 HTML full text v1 已足够支撑本轮结论
 
 ## 3. Agent 系统与科研流程角色
 
 ### 3.1 Agent 类型标签
 
-- Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
+- LLM Agent：是
+- Planning Agent：是
+- Tool-using Agent：是
+- Retrieval-augmented Agent：部分是
+- Multi-Agent System：是
+- Robot / Embodied Agent：否
+- Human-in-the-loop Agent：未强调
+- Hybrid Agent：是
+- 其他：memory-centric research system
 
 ### 3.2 科研流程角色
 
-- 主要角色：workflow_orchestration; feedback_iteration; evidence_assessment_and_validation; scientific_discourse
+- 文献检索与阅读：部分是
+- 知识抽取与组织：是
+- 科学问题提出：部分是
+- 假设生成：是
+- 实验设计：部分是
+- 仿真建模：部分是
+- 工具调用与代码执行：是
+- 实验执行：否
+- 数据分析：是
+- 结果解释：是
+- 证据评估与验证：是
+- 论文写作：部分是
+- 端到端科研流程自动化：是
 
 ### 3.3 自主能力
 
-- 任务分解：是或部分是
+- 任务分解：是
 - 计划生成：是
-- 工具调用：是或部分是
-- 记忆与状态维护：中等
+- 工具调用：是
+- 记忆与状态维护：是
 - 反馈迭代：是
-- 自主决策：是或部分是
-- 多 Agent 协作：是或部分是
-- 环境交互：中等
-- 闭环实验：视论文具体验证而定
+- 自主决策：是
+- 多 Agent 协作：是
+- 环境交互：是
+- 闭环实验：否
 
 ### 3.4 交叉属性标签
 
-- 交叉属性：以计算驱动为主；若摘要明示实验或部署，再在正文中单独标注。
+- 计算驱动：是
+- 数据驱动：是
+- 实验驱动：否
+- 仿真驱动：部分是
+- 多模态：未强调
+- 多尺度建模：否
+- 高通量筛选：否
+- 知识图谱：未强调
+- 数字孪生：否
+- 机器人平台：否
+- 其他：memory-centric lifecycle automation
 
 ## 4. 方法设计
 
 ### 4.1 方法动机
 
-- 作者为什么提出该 Agent 系统：希望用 Agent 化流程提升 memory-centric full-lifecycle scientific research system 的研究效率与质量。
-- 现有科研流程或方法的痛点：传统流程往往分散、手工密集，难以在多步任务中持续反馈迭代。
-- 核心假设或直觉：把检索、生成、分析、评估等环节编排成可循环的 Agent 工作流，能够提高研究推进能力。
+- 作者为什么提出该 Agent 系统：希望用长期记忆支撑完整科研生命周期
+- 现有科研流程或方法的痛点：传统流程分散且难以持续记忆、反馈与追踪证据
+- 核心假设或直觉：如果把记忆、评估和多阶段操作统一起来，科研 Agent 的持续推进能力会更强
 
 ### 4.2 系统流程
 
-1. 输入：研究问题、数据、文献或任务上下文。
-2. 任务分解 / 规划：Agent 进行子任务拆解与流程编排。
-3. 工具、数据库、模型或实验平台调用：按需要调用外部资源。
-4. 中间结果反馈：根据阶段性结果进行检验、批评或修正。
-5. 决策或迭代：保留有效候选并推动下一轮研究动作。
-6. 输出：形成更高质量的科研分析、假设、实验建议或知识生产结果。
+1. 输入：研究问题、数据或实验上下文
+2. 任务分解 / 规划：拆解多阶段科研任务
+3. 工具、数据库、模型或实验平台调用：按任务需要调用外部资源
+4. 中间结果反馈：记忆模块记录证据与状态
+5. 决策或迭代：根据反馈继续优化后续阶段
+6. 输出：研究结论、候选方案或可验证报告
 
 ### 4.3 系统组件
 
-- Agent 核心：多 Agent 或单 Agent 编排系统。
-- 工具 / API / 数据库：以论文摘要明示工具链为准。
-- 记忆或状态模块：若论文强调长期记忆、工作流状态或证据轨迹，则作为关键组件。
-- 规划器：存在或部分存在。
-- 评估器 / verifier：存在，用于评分、核验或审查。
-- 人类反馈或专家介入：部分论文存在。
-- 实验平台或仿真环境：按 full-lifecycle system description 与 case studies 使用。
+- Agent 核心：memory-centric multi-agent research system
+- 工具 / API / 数据库：代码执行与生物医学模型工具
+- 记忆或状态模块：有
+- 规划器：有
+- 评估器 / verifier：有
+- 人类反馈或专家介入：非本轮分类关键
+- 实验平台或仿真环境：由计算与 biomedical case 共同支撑
 
 ## 5. 实验与验证
 
 ### 5.1 验证方式
 
-- 当前主要验证：full-lifecycle system description 与 case studies
+- benchmark：是
+- 仿真验证：部分是
+- 高通量计算：否
+- 机器人实验：否
+- 湿实验：否
+- 临床数据：否
+- 真实场景部署：否
+- 专家评估：未强调
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：围绕“memory-centric full-lifecycle scientific research system”的论文设定。
-- 任务设置：多步科研工作流中的检索、生成、分析、评估或写作任务。
-- 对比基线：以论文原文报告为准。
-- 关键结果：当前可得证据表明论文主要通过 full-lifecycle system description 与 case studies 支撑其核心主张。
-- 是否有消融实验：摘要级证据下不稳定，后续需全文补充。
-- 是否有失败案例或负结果：摘要级证据通常不足。
+- 数据集 / 实验对象：TritonBench；PyTorch workloads；DeepTernary；PROTAC-STAN；22-complex PROTAC set；15 POIs / 189 sites；PTM perturbation cases
+- 任务设置：full scientific research lifecycle
+- 对比基线：论文原文设置
+- 评价指标：任务完成质量、候选判断与系统表现
+- 关键结果：`01;06;07` 三模块都有具体 case coverage
+- 是否有消融实验：有部分分析
+- 是否有失败案例或负结果：非本轮分类关键
 
 ### 5.3 科学贡献
 
-- 科学贡献类型：system_platform; general_scientific_research
-- 贡献强度判断：中等到较强，取决于论文是平台型还是有直接实验发现。
-- 证据强度：medium_metadata_with_abstract
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：更偏系统平台，但案例覆盖明确
+- 科学贡献是否经过验证：是
+- 贡献强度判断：中
+- 科学贡献类型：system platform；benchmark
+- 证据强度：一手 HTML full text；source_limited=no
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：本论文强调多步 Agent 工作流，而不是单次预测模型。
-- 与已有 Agent / 科研智能系统的区别：它把研究流程中的多个环节明确组织进同一套 Agent 化闭环。
-- 与同一科学领域其他 Agent 文献的关系：可作为该类对象的代表样本，与同类 Agent 系统并列比较。
-- 主要创新点：将对象相关研究任务稳定映射为可迭代的 Agent 工作流。
+- 与普通 AI for Science 方法的区别：不是单步助手，而是带长期记忆的科研 Agent 生命周期系统
+- 与已有 Agent / 科研智能系统的区别：突出 memory-centric evidence tracking
+- 与同一科学领域其他 Agent 文献的关系：是“旧 01.04 only note 需要被 relaxed-rule 多模块覆盖取代”的典型案例
+- 主要创新点：把长期记忆与完整科研流程整合进多 Agent 体系
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
-- 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
-- 泛化性不足：01.04 / infrastructure 风险；问题主要是证据强度不足
-- 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
-- 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
-- 成本、可复现性或安全风险：多 Agent 长流程通常带来较高成本和复现负担。
+- Agent 自主性不足：真实闭环实验能力仍有限
+- 科学验证不足：主要是 benchmark / case-study 级别
+- 泛化性不足：跨任务泛化仍需继续观察
+- 工具链依赖：高
+- 数据泄漏或 benchmark 偏差：需警惕
+- 成本、可复现性或安全风险：长程多 Agent 成本较高
+- 是否仍需进一步全文复核：否；当前 HTML full text v1 已足够支撑本轮归类，后续只需归档同步
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：主类 `01` / `01.04` 对应章节。
-- 可支撑哪个论点：Agent 已经能够围绕“memory-centric full-lifecycle scientific research system”形成稳定的多步科研工作流。
-- 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
-- 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
+- 可放入哪个章节：01 主展示的科研 Agent；跨 `06` / `07` biomedical coverage 样本
+- 可支撑哪个论点：平台感强并不妨碍对象模块落地；只要已有 concrete case，就不应继续写 `01.04`
+- 可用于哪个表格或图：multi-module object coverage 表；memory-centric agents 表
+- 适合作为代表性案例吗：适合
 - 推荐引用强度：core
-- 需要在正文中特别引用的页码 / 图 / 表：后续全文笔记补齐。
-- 需要与哪些论文并列比较：可与同主类或相邻边界样本并列。
+- 需要在正文中特别引用的页码 / 图 / 表：Sections 7.1-7.5；Appendices C-D
+- 需要与哪些论文并列比较：AutoScientists；AutoResearchClaw；其他 lifecycle scientific agents
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-围绕“memory-centric full-lifecycle scientific research system”组织多步科研工作的 Agent 系统。
+带长期记忆的科研 Agent 系统，覆盖计算、生命与医学对象任务。
 
 ### 9.2 速记版 pipeline
 
-1. 接收研究问题或证据。
-2. 分解并编排多步科研任务。
-3. 调用工具 / 数据 / 检索资源。
-4. 基于反馈修正中间结果。
-5. 输出更高质量的研究结论或知识生产结果。
+1. 接收研究问题
+2. 规划多阶段任务
+3. 调用工具执行
+4. 用记忆追踪证据并迭代
+5. 输出研究结果
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：01
-二级类：01.04
-三级类：
-四级专题：Memory-centric scientific-research agents
-Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
+科学对象模块：01;06;07
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：01
+是否进入 01.04 存放区：否
+主展示模块一级类：01
+主展示模块二级类：computational-systems research tasks
+主展示模块三级类：GPU kernel optimization
+主展示模块四级专题：memory-centric scientific-research agents with computational and biomedical coverage
+其他覆盖模块及对应层级路径：06;07
+module_assignment_evidence：GPU kernel case -> 01；PTM/protein cases -> 06；PROTAC/drug-discovery cases -> 07
+multi_module_object_coverage_note：不再保留 01.04 only wording，也不额外扩到 03
+Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
 科研流程角色：workflow_orchestration; feedback_iteration; evidence_assessment_and_validation; scientific_discourse
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
+自主能力：task_decomposition; planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
 验证方式：benchmark; case_study
-交叉属性：computation_driven
-科学贡献类型：system_platform; general_scientific_research
-证据强度：medium_metadata_with_abstract
-归类置信度：中高
+交叉属性：computation_driven; data_driven
+科学贡献类型：system_platform; benchmark
+证据强度：first_hand_full_text
+归类置信度：高
 纳入置信度：高
 推荐引用强度：core
 ```

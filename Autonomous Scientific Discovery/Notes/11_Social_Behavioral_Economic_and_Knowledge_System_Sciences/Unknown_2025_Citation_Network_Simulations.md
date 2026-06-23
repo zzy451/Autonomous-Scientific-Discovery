@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2511.03758
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / reviewer 一手全文证据；主表作者字段仍待后续补齐
+- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2511.03758`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check；主表作者字段仍待后续补齐
 - 论文类型：预印本 / citation-network simulation agents
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,10 +14,19 @@
 
 ## Evidence Log
 
+## Reaudit Update (2026-06-23)
+
+- `scientific_object_modules`: `11.07`
+- `primary_module_for_filing`: `11.07`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
+- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2511.03758`
+- `final_note_classification`: stable `11.07` landing; note filing path is convenience only, not classification authority.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要；正文 | 提出 CiteAgent 以 author/paper agents 模拟 citation-network formation | 高 |
-| 科学对象归类 | `11.07` | 摘要；正文 | 对象是 citation networks、reference behavior、academic environment | 高 |
+| 科学对象归类 | `11.07` | arXiv abstract / PDF text spot-check | 对象是 citation networks、reference behavior、academic environment | 高 |
 | 方法流程 | 多步 agent simulation | framework section | 包含 Initialization / Socialization / Creation 等阶段 | 高 |
 | 验证内容 | science-of-science patterns | results | 验证 power-law、citational distortion、shrinking diameter | 高 |
 | 边界风险 | 标题误导 | 摘要 / 正文 | 虽写 social science research，但正文反复指向 science-of-science object | 高 |

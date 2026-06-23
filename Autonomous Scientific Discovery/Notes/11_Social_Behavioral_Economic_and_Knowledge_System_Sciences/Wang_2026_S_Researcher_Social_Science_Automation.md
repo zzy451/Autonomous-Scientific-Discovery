@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.01520
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / reviewer 一手全文证据
+- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2604.01520`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check
 - 论文类型：预印本 / social-science research automation platform
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,10 +14,19 @@
 
 ## Evidence Log
 
+## Reaudit Update (2026-06-23)
+
+- `scientific_object_modules`: `11.02`
+- `primary_module_for_filing`: `11.02`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
+- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2604.01520`
+- `final_note_classification`: stable `11.02` landing; note filing path is convenience only, not classification authority.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 正文 | S-Researcher 负责 experiment design、behavior simulation、analysis、report generation | 高 |
-| 科学对象归类 | `11.02` | 摘要；case studies | 研究对象是 cultural dynamics、teacher attention、public goods cooperation 等社会行为对象 | 高 |
+| 科学对象归类 | `11.02` | arXiv abstract / PDF text spot-check | 研究对象是 cultural dynamics、teacher attention、public goods cooperation 等社会行为对象 | 高 |
 | 方法流程 | 多 Agent full loop | 正文 | detailer / planner / analysis / reviewer / report agents + simulation engine | 高 |
 | 验证方式 | expert + human experiments | results | 有 `N=120` 人类实验、`r=0.915` 对照与专家评估 | 高 |
 | 边界风险 | research automation 外观 | 摘要 / 正文 | 虽是 research automation platform，但对象不是 knowledge production itself，而是 social-science phenomena | 高 |
