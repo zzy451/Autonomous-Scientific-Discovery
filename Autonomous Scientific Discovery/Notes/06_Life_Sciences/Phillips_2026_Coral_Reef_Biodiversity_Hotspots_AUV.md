@@ -1,47 +1,59 @@
-# Phillips et al. 2026 - Autonomous seeking and mapping coral reef biodiversity hotspots with a multimodal AUV
+# McCammon et al. 2026 - Autonomous seeking and mapping coral reef biodiversity hotspots with a multimodal AUV
+
+## 2026-06-24 confirmed-core full reaudit revision
+
+```text
+paper_id: ASD-0724
+final_agent_inclusion: yes
+supported_modules: 06
+primary_module_for_filing: 06
+source_limited: yes
+safety_access_status: doi-access-block-403-crossref-abstract-only
+first_hand_sources_checked: Crossref DOI metadata / abstract for 10.1126/scirobotics.adx9939
+pdf_archive_status: no local PDF archived; official Science landing/PDF returned 403 in this environment
+metadata_note: legacy note lead "Brennan C. Phillips et al." is stale; official DOI metadata identifies the record under Seth McCammon et al.; note filepath remains unchanged for continuity only
+adjudication_note: official DOI abstract directly supports biodiversity-hotspot seeking, mapping, and self-validation; keep 06, not 05 or 01.04
+```
 
 **论文信息**
 - 标题：Autonomous seeking and mapping coral reef biodiversity hotspots with a multimodal AUV
-- 作者：Brennan C. Phillips; Daniel Wagner; Brennan T. Klein; et al.
+- 作者：Seth McCammon; Levi Cai; Daniel Yang; John Walsh; John D. Cast; T. Aran Mooney; Yogesh Girdhar
 - 年份：2026
 - 来源 / venue：Science Robotics
-- DOI / arXiv / URL：https://doi.org/10.1126/scirobotics.adx9939
-- PDF / 本地文件路径：当前笔记基于 Science Robotics 论文页摘要级信息与主列表已有一手元数据；本地未保存 PDF
+- DOI / URL：https://doi.org/10.1126/scirobotics.adx9939
+- PDF / 本地文件路径：本地未归档 PDF；Science landing/PDF 在本轮环境下为 `403`，因此当前笔记只能基于 Crossref 一手摘要级元数据
+- first-hand source checked：Crossref DOI metadata / abstract
 - 论文类型：研究论文 / embodied biodiversity-mapping agent
-- 当前状态：to_read
-- 阅读日期：2026-06-19
+- 当前状态：confirmed-core full reaudit landed；`source_limited = yes`
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | title / publisher-page abstract / master-list evidence | 系统自主寻找、定位并绘制 coral reef biodiversity hotspots，存在明确环境交互与自适应决策 | 高 |
-| 科学对象归类 | `06.02` | title / abstract / boundary audit summary | 研究对象是 marine biodiversity hotspots，而不是海洋环境物理过程或通用水下平台 | 高 |
-| 方法流程 | multimodal AUV 闭环 | abstract / master-list remarks | AUV 通过多模态感知、自主搜索、局部化和制图完成野外调查任务 | 高 |
-| 实验验证 | 真实场景 field deployment | Science-family metadata / master-list evidence | 属于真实海洋环境中的部署式验证，而非纯模拟 | 高 |
-| 边界判断 | 不应改到 `05` | object-first rule | 即使平台在海洋环境中运行，最终科学对象仍是 biodiversity discovery，不是 Earth-system natural process | 高 |
+| metadata correction | 旧 lead 已修正为 `Seth McCammon et al.` | Crossref author metadata | note 文件名保留旧 lead 仅为路径连续性，paper-info 以 DOI metadata 为准 | 高 |
+| first-hand source checked | Crossref abstract only | Crossref DOI metadata | 当前一手证据来自 DOI abstract / metadata，而非正文 | 高 |
+| access / source status | `source_limited = yes` | Crossref; controller adjudication | Science landing/PDF 在本环境返回 `403`，无本地 PDF | 高 |
+| Agent 纳入 | `yes` | Crossref abstract | 系统自主寻访并绘制 coral reef biodiversity hotspots，存在明确环境交互和任务闭环 | 中高 |
+| 科学对象归类 | `06` | Crossref abstract | 研究对象是 biodiversity hotspots，而不是海洋物理过程或通用 AUV 平台 | 中高 |
+| 关键科学动作 | hotspot seeking + mapping + self-validation | Crossref abstract | 使用 passive acoustics 与 visual sensing 定位热点，并用共定位多模态数据自验证热点显著性 | 中高 |
+| 边界判断 | 不应改到 `05` 或 `01.04` | object-first adjudication | 平台位于海洋环境中不改变其生命科学对象归属 | 中高 |
 
 ## 0. 摘要翻译
 
-这篇论文提出一个搭载多模态感知能力的自主水下航行器系统，用于自主寻找、定位并绘制珊瑚礁生物多样性热点。论文的关键不是 AUV 平台本身，而是让系统在真实海洋环境中围绕“生物多样性热点”这一生命科学对象完成搜索、判断与映射任务。因此它更适合归入生命科学中的 biodiversity discovery，而不是地球环境过程类。
+Crossref 摘要显示，这篇论文针对 coral reef biodiversity hotspots 的发现与制图提出了一个 multimodal AUV 框架。它在真实加勒比海珊瑚礁案例中结合被动声学和视觉感知，自主寻找生物热点，并利用共定位多模态数据对热点显著性进行自验证。就本轮裁决而言，这已经足以稳住其生命科学对象覆盖，因此保留在 06，而不是 05 或 01.04。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：系统面向明确科研目标，具有环境交互、自主搜索、多步决策、反馈更新和真实部署
-- 判定置信度：高
+- 判断依据：面向明确科研目标，具有环境交互、自主搜索、定位、制图与自验证
+- 判定置信度：中高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
-- 是否具备以下至少一项 Agent 能力：
-  - 计划生成：是
-  - 工具调用：是
-  - 反馈迭代：是
-  - 自主决策：是
-  - 多 Agent 协作：未明确
-- 在科研流程中承担的明确角色：野外观测执行、热点发现、空间映射、数据分析
+- 在科研流程中承担的明确角色：野外观测执行、热点发现、空间映射、自验证
 
 ### 1.2 排除风险检查
 
@@ -57,23 +69,23 @@
 - 一级类：06
 - 二级类：06.02
 - 三级类：marine biodiversity discovery
-- 四级专题：Autonomous marine-biodiversity hotspot mapping agents
-- 四级专题是否为新增：否
-- 归类理由：系统的最终科研对象是 coral reef biodiversity hotspots，与生命多样性调查直接绑定
-- 归类置信度：高
+- 四级专题：autonomous marine-biodiversity hotspot mapping
+- primary_module_for_filing：06
+- 归类理由：最终科学对象是 coral reef biodiversity hotspots
+- 归类置信度：中高（abstract-level first-hand only）
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：coral reef biodiversity hotspots
-- 最终科学问题：如何在复杂海洋环境中自主发现并绘制生物多样性热点
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：AUV 和多模态感知只是手段，不改变其生物多样性对象
+- 最终科学问题：如何在复杂海洋环境中自主寻找、定位并绘制生物多样性热点
+- 为什么不是 05：海洋环境是运行场景，不是最终科学对象
+- 为什么不是 01.04：存在明确生命科学对象、实地任务和对象级验证叙述
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：05
-- 最终判定：保持 06.02
-- 判定理由：如果论文核心是自然环境过程、海洋动力或气候过程，应偏向 05；但这里核心是 biodiversity hotspots 的发现与映射
-- 是否需要二次复核：可后续补全文，但当前主类稳定
+- 可能误归类到：05；01.04
+- 最终判定：保持 06
+- 判定理由：object-first rule 以 biodiversity discovery 为核心
 
 ## 3. Agent 系统与科研流程角色
 
@@ -82,168 +94,97 @@
 - LLM Agent：否
 - Planning Agent：是
 - Tool-using Agent：是
-- Retrieval-augmented Agent：否
-- Multi-Agent System：未明确
 - Robot / Embodied Agent：是
-- Human-in-the-loop Agent：未强调
 - Hybrid Agent：是
 - 其他：multimodal AUV science agent
 
 ### 3.2 科研流程角色
 
-- 文献检索与阅读：否
-- 知识抽取与组织：否
-- 科学问题提出：否
-- 假设生成：否
 - 实验设计：部分是
-- 仿真建模：否
 - 工具调用与代码执行：是
 - 实验执行：是
 - 数据分析：是
-- 结果解释：部分是
 - 证据评估与验证：是
-- 论文写作：否
 - 端到端科研流程自动化：部分是
-
-### 3.3 自主能力
-
-- 任务分解：部分是
-- 计划生成：是
-- 工具调用：是
-- 记忆与状态维护：部分是
-- 反馈迭代：是
-- 自主决策：是
-- 多 Agent 协作：未明确
-- 环境交互：是
-- 闭环实验：是
-
-### 3.4 交叉属性标签
-
-- 计算驱动：是
-- 数据驱动：是
-- 实验驱动：是
-- 仿真驱动：否
-- 多模态：是
-- 多尺度建模：否
-- 高通量筛选：否
-- 知识图谱：否
-- 数字孪生：否
-- 机器人平台：是
-- 其他：field-deployed marine sensing
 
 ## 4. 方法设计
 
 ### 4.1 方法动机
 
-- 作者为什么提出该 Agent 系统：提升海洋野外调查中热点发现与制图的自主性和效率
-- 现有科研流程或方法的痛点：人工水下调查成本高、覆盖不足、响应慢
-- 核心假设或直觉：如果 AUV 能自主结合多模态感知和决策，就能更有效定位生物多样性热点
+- 作者为什么提出该系统：扩展对 coral reef biodiversity 的高分辨率自主调查能力
+- 现有流程痛点：人工海洋野外调查成本高、覆盖不足、响应慢
+- 核心方法：用多模态 AUV 将搜索、定位、制图与自验证合到同一闭环
 
 ### 4.2 系统流程
 
-1. 输入：海洋环境中的多模态传感信号
-2. 任务分解 / 规划：自主决定搜索、接近和制图路径
-3. 工具、数据库、模型或实验平台调用：AUV 传感器与 onboard 决策模块
-4. 中间结果反馈：根据观测更新热点定位与航行策略
-5. 决策或迭代：继续搜索或精细制图
-6. 输出：coral reef biodiversity hotspot map
-
-### 4.3 系统组件
-
-- Agent 核心：multimodal autonomous AUV
-- 工具 / API / 数据库：水下多模态传感与导航模块
-- 记忆或状态模块：任务状态与空间定位信息
-- 规划器：自主搜索与路径决策
-- 评估器 / verifier：热点检测与地图更新
-- 人类反馈或专家介入：摘要未突出
-- 实验平台或仿真环境：真实海洋 field deployment
+1. 输入海洋环境中的多模态信号
+2. 自主决定搜索与接近策略
+3. 结合被动声学和视觉感知定位热点
+4. 用共定位多模态数据自验证热点显著性
+5. 输出 biodiversity hotspot map
 
 ## 5. 实验与验证
 
 ### 5.1 验证方式
 
-- benchmark：否
-- 仿真验证：否
-- 高通量计算：否
 - 机器人实验：是
-- 湿实验：否
-- 临床数据：否
 - 真实场景部署：是
-- 专家评估：部分是
+- field deployment：是
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：coral reef environment and biodiversity hotspots
-- 任务设置：autonomous seeking, localization, and mapping
-- 对比基线：摘要未充分展开
-- 评价指标：热点发现质量、空间定位与映射能力
-- 关键结果：在真实海洋环境中完成热点搜索与制图
-- 是否有消融实验：摘要未展开
-- 是否有失败案例或负结果：摘要未展开
+- 实验对象：healthy Caribbean reef 中的 coral reef biodiversity hotspot
+- 任务设置：autonomous seeking, localization, mapping, self-validation
+- 关键结果：AUV 定位到围绕 large `Dendrogyra` pillar coral 的 biological hotspot，并用共定位多模态数据自验证其 prominence
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：更偏向 biodiversity discovery workflow capability
-- 科学贡献是否经过验证：是，且是 field deployment 级别验证
-- 贡献强度判断：中高
 - 科学贡献类型：system_platform; biodiversity_discovery
-- 证据强度：real_world_deployment
+- 贡献强度判断：中高
+- 证据强度：crossref_abstract_only_real_world_case
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：不是离线生态预测模型，而是具身自主观测系统
-- 与已有 Agent / 科研智能系统的区别：把海洋野外调查中的搜索、决策和制图合成闭环
-- 与同一科学领域其他 Agent 文献的关系：是 `06 / 05` 海洋边界里很关键的生命科学样本
-- 主要创新点：在真实水下环境中自主发现并映射 biodiversity hotspots
+- 与普通离线生态建模的区别：这里是具身自主野外观测系统
+- 与海洋过程研究的区别：核心不是海洋物理过程，而是 biodiversity hotspot discovery
+- 与边界案例的关系：是稳住 `06 / 05` 边界的重要对象优先样本
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：更细粒度的决策模块仍需全文确认
-- 科学验证不足：当前笔记主要基于摘要级证据
-- 泛化性不足：对不同海域和生态区的可迁移性需进一步核对
-- 工具链依赖：高度依赖 AUV 传感与导航系统
-- 数据泄漏或 benchmark 偏差：不是主要风险
-- 成本、可复现性或安全风险：海上部署成本和复现实验门槛较高
+- source-limited：当前只有 Crossref 摘要级一手证据
+- access 限制：Science landing/PDF 在本环境 `403`，无本地 PDF
+- 细节不可见：更细粒度决策模块、评价指标与失败案例仍待全文
+- 泛化性风险：不同海域与生态区的可迁移性仍需全文核对
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：06 生命科学，biodiversity discovery / ecological field agents
-- 可支撑哪个论点：海洋平台承载的 Agent 并不自动进入 05 或 10，关键仍看最终科学对象
-- 可用于哪个表格或图：`06.02 / 05` 边界案例表
-- 适合作为代表性案例吗：是
-- 推荐引用强度：核心引用
-- 需要在正文中特别引用的页码 / 图 / 表：后续补全文再加
-- 需要与哪些论文并列比较：marine ecology / field autonomy 相邻样本
+- 可放入哪个章节：06 生命科学 / biodiversity discovery / ecological field agents
+- 可支撑哪个论点：海洋平台承载的 Agent 不会自动进入 05；关键仍看最终科学对象
+- 适合作为代表性案例吗：是，但要保留 `source_limited = yes`
+- 推荐引用强度：核心引用，但正文最好注明基于 DOI abstract-level first-hand evidence
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-多模态 AUV 自主寻找并绘制珊瑚礁生物多样性热点。
+这是一篇以 coral reef biodiversity hotspots 为对象的 multimodal AUV 自主寻访与制图论文，基于 DOI 摘要已经足以支持纳入 06，但当前仍是 `source_limited = yes`。
 
-### 9.2 速记版 pipeline
-
-1. 水下多模态感知
-2. 自主搜索热点
-3. 接近并定位目标区域
-4. 更新并输出热点地图
-
-### 9.3 标注字段汇总
+### 9.2 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：yes
 主类：06
 二级类：06.02
 三级类：marine biodiversity discovery
-四级专题：Autonomous marine-biodiversity hotspot mapping agents
-Agent 类型：Robot / Embodied Agent; Planning Agent; Hybrid Agent
+primary_module_for_filing：06
+source_limited：yes
+safety_access_status：doi-access-block-403-crossref-abstract-only
+first_hand_sources_checked：Crossref DOI metadata / abstract only
+Agent 类型：Robot / Embodied Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 科研流程角色：experiment_execution; data_analysis; evidence_assessment_and_validation
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction; closed_loop_experimentation
 验证方式：robotic_experiment; real_world_deployment; field_deployment
-交叉属性：computation_driven; data_driven; experiment_driven; multimodal; robotic_platform
 科学贡献类型：system_platform; biodiversity_discovery
-证据强度：real_world_deployment
-归类置信度：高
-纳入置信度：高
-推荐引用强度：核心引用
+证据强度：crossref_abstract_only_real_world_case
+纳入置信度：medium_high_source_limited
+推荐引用强度：core_with_source_limit_note
 ```

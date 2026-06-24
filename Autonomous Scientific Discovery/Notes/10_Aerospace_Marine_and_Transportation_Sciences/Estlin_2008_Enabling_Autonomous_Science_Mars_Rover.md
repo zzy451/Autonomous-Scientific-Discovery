@@ -2,25 +2,44 @@
 
 **论文信息**
 - 标题：Enabling Autonomous Science for a Mars Rover
-- 作者：Tara Estlin; Steve Chien; David Thompson; Rebecca Castano; Robert C. Anderson; Michael Burl; Daniel Gaines
+- 作者：Tara Estlin; Rebecca Castano; Daniel Gaines; Benjamin Bornstein; Michele Judd; Robert C. Anderson
 - 年份：2008
-- 来源 / venue：SpaceOps 2008 Conference
-- DOI / arXiv / URL：https://doi.org/10.2514/6.2008-3241
-- PDF / 本地文件路径：当前无官方 proceedings PDF；本 note 基于 DOI metadata、可访问全文镜像与 batch13 reviewer evidence packs
+- 来源 / venue：SpaceOps Conference
+- DOI / arXiv / URL：https://doi.org/10.2514/6.2008-3241；https://www.researchgate.net/publication/228958257_Enabling_Autonomous_Science_for_a_Mars_Rover；https://science.jpl.nasa.gov/projects/OASIS/
+- PDF / 本地文件路径：无本地 PDF。2026-06-24 本轮 mirror PDF 下载尝试因 TLS 证书过期而停止，记为 `not accessed due to safety`；未新增本地 PDF，当前分类依据为公开 full-text / abstract 证据与官方 JPL OASIS 页面。
 - 论文类型：研究论文 / Mars rover mission-science autonomy
-- 当前状态：to_read
-- 阅读日期：2026-06-20
+- 当前状态：included
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
 
 ## Evidence Log
 
+## 2026-06-24 confirmed-core closeout
+
+```text
+scientific_object_modules: 10
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 10
+first_hand_sources_checked: public ResearchGate full-text page `https://www.researchgate.net/publication/228958257_Enabling_Autonomous_Science_for_a_Mars_Rover`; official JPL OASIS page `https://science.jpl.nasa.gov/projects/OASIS/`; publisher DOI landing page `https://doi.org/10.2514/6.2008-3241`
+classification_evidence_source_level: first_hand_full_text + official_project_page
+pdf_status: no local PDF added
+pdf_path: none
+source_limited: no for classification
+safety_access_status: mirror PDF archive attempt this round was `not accessed due to safety` because the mirror TLS certificate had expired; this safety skip applies only to the archive attempt and does not change the landed module decision
+module_assignment_evidence: OASIS onboard science-data analysis, prioritization, opportunity detection, planning/scheduling, and adaptive follow-up support a strong `10` landing; the `05`-looking geology targets are validation context rather than a separate object module here.
+metadata_correction: author line updated from the public full-text conference page to `Tara Estlin; Rebecca Castano; Daniel Gaines; Benjamin Bornstein; Michele Judd; Robert C. Anderson`
+closeout: Keep the note filed under module 10 for convenience only. Do not fabricate a local PDF path, and keep the safety skip visible.
+```
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | accessible full text abstract；reviewer pack | OASIS 评估 rover geologic data，识别新 science opportunities，并以 planning/scheduling 响应 | 高 |
-| 科学对象归类 | `10 / 10.02` | reviewer pack | 核心对象是 Mars rover mission-science autonomy，不是地质规律解释 | 高 |
-| 方法流程 | 多步闭环清晰 | accessible text；reviewer pack | 数据评估、目标识别、资源检查、命令更新和 follow-up measurements | 高 |
-| 边界判断 | 不移到 `05` | reviewer pack | rocks / dust devils / clouds 是目标类型，不是论文最终研究对象 | 高 |
-| 实验验证 | 原型车测试 / field demo | accessible text；reviewer pack | 属于真实任务链路导向验证，而非纯 benchmark | 中高 |
+| Agent 纳入 | 是 | ResearchGate public full-text page；JPL OASIS page | OASIS 评估 rover geologic data、优先级排序、识别新 science opportunities，并由 planning/scheduling 驱动 follow-up actions | 高 |
+| 科学对象归类 | `10`，primary `10` | ResearchGate public full-text page；JPL OASIS page | 稳定对象是 Mars rover mission-science autonomy；地质目标与云/尘卷风等只是验证场景，不构成独立 `05` 落地 | 高 |
+| 方法流程 | 多步闭环清晰 | ResearchGate public full-text page；JPL OASIS page | onboard analysis -> prioritization -> opportunity detection -> planning/scheduling -> adaptive follow-up | 高 |
+| 边界判断 | 保持单模块 `10` | closeout adjudication + public sources | `05` 相关信号属于验证上下文，不足以在本轮扩成第二模块 | 高 |
+| PDF / 安全状态 | 无本地 PDF；安全跳过仅限镜像下载尝试 | round closeout | mirror PDF 下载尝试因过期 TLS 证书停止并标记 `not accessed due to safety`；分类不依赖该镜像 | 高 |
 
 ## 0. 摘要翻译
 
@@ -52,27 +71,37 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：10
-- 二级类：10.02
-- 三级类：
-- 四级专题：Mars rover mission-science autonomy systems
-- 四级专题是否为新增：否
-- 归类理由：论文真正研究的是 Mars rover autonomy for mission-science operations
+- 科学对象模块：`10`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：10
+- Primary module for filing 说明：笔记位于 `10_...` 目录仅为归档便利，不覆盖分类事实。
+- 主展示模块一级类：10
+- 主展示模块二级类：10.02
+- 主展示模块三级类：
+- 主展示模块四级专题：Mars rover mission-science autonomy systems
+- 其他覆盖模块及对应层级路径：无
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：`10` 来自 OASIS 对 rover onboard science analysis、prioritization、planning/scheduling 与 adaptive follow-up 的集成验证。
+- 归类理由：本轮公开 full-text / official project evidence 足以把记录稳定落在 `10`；`05` 相关岩石、尘卷风、云等只是被系统处理的科学目标类型和验证上下文，不在本轮形成第二对象模块。
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：Mars rover onboard mission-science autonomy
-- 最终科学问题：如何在 rover 上实现 mission retasking / science opportunity response
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：地质数据只是被处理的数据对象，主科学对象是 rover mission autonomy
+- 最终科学问题：如何在 rover 上实现 onboard science-data analysis、mission retasking 与 science opportunity response
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：地质数据只是系统处理对象的一部分，稳定的主科学对象仍是 rover mission-science autonomy
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：05
-- 最终判定：保持 10.02
-- 判定理由：若论文主要研究行星表面过程本身才应偏 `05`；本文主轴是 autonomy loop
+- 最终判定：保持单模块 `10`
+- 判定理由：若论文直接研究行星表面环境过程本身，才会向 `05` 转移；本篇核心贡献是 OASIS autonomous science loop。`05` 信号在这里属于验证上下文，不是本轮 adjudicated landing module。
+- 多模块覆盖说明：本轮最终裁决不扩展到 `05`；分类事实保持 `10`。
+- 01.04 判定说明：不是 `01.04`，因为存在明确具体任务对象与系统验证。
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -187,7 +216,7 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
 - 科学贡献类型：system_platform; mission_science_planning
-- 证据强度：high_primary_abstract
+- 证据强度：public full-text page + official project page; no local PDF archived
 
 ## 6. 与已有工作的关系
 
@@ -198,53 +227,17 @@
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：依赖 science-team criteria
-- 科学验证不足：官方全文在本环境中不可直接抓取
-- 泛化性不足：依赖 specific rover operations context
-- 工具链依赖：强
-- 数据泄漏或 benchmark 偏差：当前证据不足
-- 成本、可复现性或安全风险：需更稳定获取 proceedings PDF
+- Agent 自主性仍依赖 science-team criteria。
+- 本轮分类结论不再 source-limited，但本地 PDF 仍未归档成功。
+- 2026-06-24 的 mirror PDF 下载尝试因过期 TLS 证书停止，需明确记为 `not accessed due to safety`；该安全跳过仅对应这次归档尝试，不影响当前 `10` 分类落地。
+- 泛化性仍依赖 specific rover operations context。
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：10 航天 mission-science autonomy
-- 可支撑哪个论点：在航天平台上做科学并不自动归 `05`
-- 可用于哪个表格或图：`10 / 05` 边界样本表
-- 适合作为代表性案例吗：是
-- 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：待补正式 PDF
-- 需要与哪些论文并列比较：0852、0853、0858
+- 可放入 10 航天 mission-science autonomy 章节。
+- 可支撑“公开 full-text / official project evidence 足以稳定 10 落地，但不能伪造本地 PDF 归档”的 closeout 规范。
+- 可与 0852、0853 一起构成 OASIS / rover autonomous science 谱系样本。
 
 ## 9. 总结
 
-### 9.1 一句话概括
-
-以 OASIS 为核心的 Mars rover onboard mission-science autonomy 论文。
-
-### 9.2 速记版 pipeline
-
-1. 分析 rover 数据
-2. 识别新科学机会
-3. 检查资源与任务状态
-4. 修改命令序列
-5. 完成追加观测
-
-### 9.3 标注字段汇总
-
-```text
-是否纳入：是
-主类：10
-二级类：10.02
-三级类：
-四级专题：Mars rover mission-science autonomy systems
-Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid Agent
-科研流程角色：data_analysis; experiment_execution; workflow_orchestration; feedback_iteration
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction
-验证方式：robotic_experiment; real_world_deployment
-交叉属性：data_driven; experiment_driven; robotic_platform
-科学贡献类型：system_platform; mission_science_planning
-证据强度：high_primary_abstract
-归类置信度：高
-纳入置信度：高
-推荐引用强度：standard
-```
+这篇论文本轮稳定落在 `10`，不扩展到 `05`。分类依据是公开 ResearchGate full-text 页面、官方 JPL OASIS 页面和 DOI landing page；本轮 mirror PDF 下载尝试因安全原因停止，未新增本地 PDF，这一点需要在 note 中保持可见。

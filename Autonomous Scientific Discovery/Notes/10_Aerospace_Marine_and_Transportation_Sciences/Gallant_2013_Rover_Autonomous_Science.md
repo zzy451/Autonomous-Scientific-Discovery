@@ -6,15 +6,15 @@
 - 年份：2013
 - 来源 / venue：Journal of Intelligent & Robotic Systems
 - DOI / arXiv / URL：https://doi.org/10.1007/s10846-013-9818-6
-- PDF / 本地文件路径：当前笔记基于 Springer 官方摘要
+- PDF / 本地文件路径：`Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.pdf`（本轮已归档本地 Springer PDF）
 - 论文类型：研究论文 / rover mission-science autonomy
-- 当前状态：to_read
-- 阅读日期：2026-06-19
+- 当前状态：included
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
 
 ## Evidence Log
 
-## 2026-06-20 relaxed multi-module revision
+## 2026-06-24 confirmed-core closeout
 
 ```text
 scientific_object_modules: 05;10
@@ -22,19 +22,24 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 10
-first_hand_sources_checked: Springer abstract
-classification_evidence_source_level: first_hand_abstract_or_landing_page
-module_assignment_evidence: `05` is supported by probabilistic identification and evaluation of scientifically valuable planetary surface features; `10` is supported by rover autonomous science, path planning, and mission execution.
-multi_module_object_coverage_note: The rover-autonomy contribution remains the filing anchor, but the planetary surface science features are concrete Earth/planetary-environment objects under the relaxed object-coverage rule.
+first_hand_sources_checked: local archived Springer PDF `Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.pdf` (controller spot-check pp.1-3 this round); publisher DOI landing page `https://doi.org/10.1007/s10846-013-9818-6`
+classification_evidence_source_level: first_hand_full_text
+pdf_status: archived successfully this round
+pdf_path: Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.pdf
+source_limited: no
+safety_access_status: none
+module_assignment_evidence: `05` is supported by concrete planetary-surface / environmental feature identification and science-value evaluation; `10` is supported by rover autonomous science architecture, target selection, and path planning.
+multi_module_object_coverage_note: Keep primary_module_for_filing=10 for filing convenience, but the classification fact is `05;10`. The note directory is not classification authority.
+closeout: This round retires the earlier abstract-only conservative wording. The record is no longer source-limited after local PDF archive and full-text spot-check.
 ```
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Springer abstract | rover 自主识别科学目标、评估价值并规划路径 | 高 |
-| 科学对象归类 | `10.02` | Springer abstract | 研究对象是 rover-based autonomous science，而非某个具体行星过程 | 高 |
-| 方法流程 | 多步闭环 | Springer abstract | Bayesian identification -> evaluation -> path planning | 高 |
-| 实验验证 | 有实验室和仿真 | Springer abstract | 实验室验证识别与评分算法，仿真比较 solo/scout configurations | 中高 |
-| 边界判断 | 不转 `05`/`02` | object-first reading | 面向行星表面科学目标，但论文主轴是任务自主性 | 高 |
+| Agent 纳入 | 是 | local archived Springer PDF pp.1-3；DOI page | 论文给出自主特征识别、科学价值评估与路径规划链条，不是单步分析工具 | 高 |
+| 科学对象归类 | `05;10`，primary `10` | local archived Springer PDF pp.1-3 | 行星表面科学特征提供 `05` 对象证据，rover autonomous science architecture 与 path planning 提供 `10` 对象证据 | 高 |
+| 方法流程 | 多步闭环 | local archived Springer PDF pp.1-3 | feature identification -> science-value evaluation -> path planning -> rover action | 高 |
+| 实验验证 | 实验室验证 + 仿真 | local archived Springer PDF pp.1-3 | 文中明确有实验室与仿真验证，不再只是摘要级推断 | 高 |
+| 边界判断 | 保留 `05;10`，primary `10` | closeout adjudication + local PDF | 主展示仍放 `10` 目录，但目录位置仅是 filing convenience，不覆盖多模块事实 | 高 |
 
 ## 0. 摘要翻译
 
@@ -55,7 +60,7 @@ multi_module_object_coverage_note: The rover-autonomy contribution remains the f
   - 反馈迭代：部分是
   - 自主决策：是
   - 多 Agent 协作：否
-- 在科研流程中承担的明确角色：目标识别、科学价值评估、路径规划
+- 在科研流程中承担的明确角色：目标识别、科学价值评估、路径规划与自主执行支持
 
 ### 1.2 排除风险检查
 
@@ -66,27 +71,37 @@ multi_module_object_coverage_note: The rover-autonomy contribution remains the f
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：10
-- 二级类：10.02
-- 三级类：rover autonomous science target selection
-- 四级专题：rover science-target identification agents
-- 四级专题是否为新增：否
-- 归类理由：稳定对象是 planetary rover mission-science autonomy
+- 科学对象模块：`05;10`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：10
+- Primary module for filing 说明：仅用于笔记落盘、排序和展示；笔记位于 `10_...` 目录不覆盖 `05;10` 的分类事实。
+- 主展示模块一级类：10
+- 主展示模块二级类：10.02
+- 主展示模块三级类：rover autonomous science target selection
+- 主展示模块四级专题：rover science-target identification agents
+- 其他覆盖模块及对应层级路径：05（行星表面 / 环境特征识别与科学价值评估）
+- 是否进入独立 `01.04` 存放区：否
+- 每个模块的对象实验证据：`05` 来自行星表面科学特征识别与价值评估；`10` 来自 rover autonomous science、路径规划与任务执行架构。
+- 归类理由：本轮本地 PDF closeout 支持 relaxed object-coverage rule 下的 `05;10`；其中 `10` 仍是 filing anchor，`05` 是已被原文对象证据支持的次级模块。
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：rover-based autonomous science workflow
-- 最终科学问题：漫游车如何自主识别、评估并前往高科学价值目标
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：Bayesian identification 只是手段，主对象仍是 mission-science autonomy
+- 最终科学问题：漫游车如何自主识别、评估并前往高科学价值目标，同时把对象级行星表面特征转化为 mission-science decision loop
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：Bayesian identification 只是手段；分类取决于被研究和被验证的科学对象与任务对象，而非方法标签
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：05、02
-- 最终判定：保留 10.02
-- 判定理由：科学特征来自行星表面，但论文不研究地质本体，而研究车载自主任务闭环
+- 可能误归类到：仅 `10`；或因行星环境语境误读为仅 `05` / `02`
+- 最终判定：`05;10`，primary `10`
+- 判定理由：本轮 local PDF 与 closeout adjudication 说明，论文既覆盖行星表面科学特征这一 `05` 对象层证据，也覆盖 rover mission-science autonomy 这一 `10` 对象层证据；不应再保留旧的“仅摘要级保守挂起”表述。
+- 多模块覆盖说明：`05` 是对象层科学特征覆盖，`10` 是任务与载体层 mission-science autonomy 覆盖；两者可并存。
+- 01.04 判定说明：不是 `01.04`，因为存在明确具体对象实验与结果。
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -136,28 +151,32 @@ multi_module_object_coverage_note: The rover-autonomy contribution remains the f
 - 从图像输入中识别候选科学特征。
 - 对候选目标进行概率化科学价值评估。
 - 通过路径规划把科学目标选择转化为漫游车行动。
+- 将对象识别、价值判断和行动选择整合成 rover autonomous science architecture。
 
 ## 5. 实验与验证
 
 - 验证方式：laboratory validation + simulation
 - 关键结果：识别、评价与路径规划可组合成 rover autonomous science loop
-- 证据强度：abstract-backed but class direction strong
+- 证据强度：first-hand full text checked via local archived Springer PDF
 
 ## 6. 与已有工作的关系
 
 - 与 OASIS、AEGIS 属于同一 rover mission-science autonomy 谱系。
 - 相比单纯地质分析系统，更强调车载自主决策与任务执行。
+- 本轮 closeout 后，这篇论文可与同谱系记录一起作为 `05 / 10` 边界样本，而不应再只按单模块旧口径表述。
 
 ## 7. 局限性与风险
 
-- 当前笔记主要依据摘要，细节尚未补足。
-- 主要剩余工作是谱系定位与定量结果补充，不是主类重判。
+- Agent 自主性仍受预设科学价值标准与任务约束影响。
+- 本轮已完成本地 PDF 归档与 closeout，当前不再是 source-limited 记录。
+- 当前主要风险不是主类方向不稳，而是后续引用时不要把 note 所在目录误读为单模块分类权威。
 
 ## 8. 对综述写作的价值
 
 - 可作为早期 rover autonomous science 代表样本。
-- 能支撑 `05 / 10` 边界讨论中的“对象是任务自主而非自然过程本体”。
+- 能支撑 `05 / 10` 边界讨论中的“对象级环境特征覆盖可以与 mission-science autonomy 并存”。
+- 适合放入本轮 multi-module reaudit 的正面 closeout 例子。
 
 ## 9. 总结
 
-这篇论文稳定属于 `10.02`，核心贡献在 rover mission-science autonomy，而不在行星地质对象本身。
+本轮基于已归档的本地 Springer PDF，这篇论文应稳定记录为 `05;10`，其中 `10` 为 primary_module_for_filing，`05` 为原文支持的次级对象模块。笔记位于 `10` 目录仅是归档便利，不是分类权威；旧的摘要级保守挂起措辞已移除。
