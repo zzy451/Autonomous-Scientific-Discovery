@@ -1,221 +1,174 @@
 # Unknown 2026 - SciDER: Scientific Data-centric End-to-end Researcher
 
-## 2026-06-20 relaxed round-2 P0-D revision
-
-- Prior note status: stale `01.04` wording based on abstract-level evidence and broad benchmark names.
-- First-hand source checked: arXiv PDF `2603.01421`, especially Sections II.B, IV, and the qualitative case-study pages.
-- Updated scientific_object_modules: `01;02;11`.
-- object_coverage_mode: `multi_module`.
-- general_method_bucket: `none`.
-- primary_module_for_filing: `01`.
-- Evidence: AI-Idea-Bench, MLE-Bench, AIRS-Bench, and ML research-execution evaluations support formal / computational science coverage (`01`). AstroVisBench is described and evaluated as an astronomy / astrophysics visualization and specialized API-use benchmark, supporting physics / astronomy coverage (`02`). The end-to-end case study generates a calibrated few-shot knowledge-tracing paper on ASSISTments 2009-2010, with reported educational-learning metrics and discussion, supporting social / behavioral / education-science coverage (`11`).
-- Boundary note: the paper also mentions skills spanning biology, ecology, chemistry, materials, physics, social sciences, computer science, and remote sensing, and uses DiscoveryBench / SciCode. These broad labels were not counted as additional modules in this round because the SciDER paper does not expose enough task-level object inventory or result evidence for high-confidence `03`, `04`, `05`, or `06` assignments.
-
 **论文信息**
 - 标题：SciDER: Scientific Data-centric End-to-end Researcher
-- 作者：Unknown
+- 作者：Ke Lin et al.
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.01421
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
-- 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
-- 阅读日期：2026-06-18
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_SciDER.pdf`
+- 论文类型：系统论文 / multi-agent scientific research system
+- 当前状态：to_read（note 已按 Batch29Partial1 writeback 更新）
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
+
+## 2026-06-24 Batch29Partial1 writeback / full reaudit
+
+- final supported_modules：`01;02;11`
+- primary_module_for_filing：`01`
+- object_coverage_mode：`multi_module`
+- final_01_04_bucket：`none`
+- source_limited：`no`
+- safety_access_status：`accessed_no_safety_issue`
+- evidence source level：`first_hand_full_text; official_arxiv_pdf_archived_locally_and_checked`
+- first-hand source checked：`official arXiv PDF checked locally: Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_SciDER.pdf`；original source `https://arxiv.org/pdf/2603.01421v3.pdf`
+- note_revision_required：`yes`
+- adjudication confidence：`medium`
+- final_reason：AI/ML/code research benchmarks support `01`, AstroVisBench supports `02`, and the ASSISTments knowledge-tracing end-to-end case study supports `11`.
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `01` / `01.04` | 摘要 | 最稳定对象是“data-centric end-to-end scientific researcher”，而不是单纯的模型方法或发表 venue。 | 高 |
-| 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
-| 实验验证 | 6 benchmarks 与 multimodal data/code execution | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 6 benchmarks 与 multimodal data/code execution 支撑其主张。 | 中高 |
-| 边界判断 | 稳定 01.04；更偏 research automation system 而非单纯 data tool | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
+| Agent 纳入 | 是 | Abstract；Sec. III | SciDER 由四个 specialized sub-agents 组成，目标是自动化整个 research lifecycle。 | 高 |
+| `01` 模块证据 | 支持 | Sec. II；benchmark 描述 | AI-Idea-Bench、DiscoveryBench、MLE-Bench、SciCode、AIRS-Bench 覆盖 ML engineering、scientific coding 与 computational research workflow。 | 高 |
+| `02` 模块证据 | 支持 | Sec. II | AstroVisBench 用于评估 multimodal reasoning、tool use、长尾 astronomy visualization API integration 与 iterative visualization refinement。 | 中高 |
+| `11` 模块证据 | 支持 | case study section | 端到端案例围绕 ASSISTments 数据集上的 calibrated few-shot knowledge tracing in cold-start educational settings。 | 中高 |
+| 边界判断 | 不进 `01.04`；不扩展到更多模块 | object-first reading | 已有具体 benchmark / case objects 支撑 `01;02;11`，但对 03/04/05/06 的 broad claims 仍缺少足够任务级结果证据。 | 中 |
 
 ## 0. 摘要翻译
 
-论文围绕“data-centric end-to-end scientific researcher”提出题为《SciDER: Scientific Data-centric End-to-end Researcher》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 6 benchmarks 与 multimodal data/code execution 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。
+SciDER 提出一个 data-centric 的 end-to-end scientific researcher，多 Agent 系统通过 ideation、analysis、experimentation、writing 等子模块自动化整个科研生命周期。论文用多类 benchmark 评估它在 scientific coding、ML engineering、end-to-end autonomy 和 multimodal tool use 上的能力，并展示一个基于 ASSISTments 的知识追踪端到端研究案例。按照本轮冻结裁决，这篇论文不应再被写成独立 `01.04` 通用方法，而应明确写回 `01;02;11`。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：系统围绕科研目标执行多步工作流，并具备规划、工具调用、反馈迭代或多 Agent 协作中的至少一项。
+- 判断依据：面向明确科研目标，具备多 Agent 分工、多步流程、工具调用、反馈迭代和端到端研究执行
 - 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
-- 是否具备以下至少一项 Agent 能力：
-  - 计划生成：是
-  - 工具调用：是或部分是
-  - 反馈迭代：是
-  - 自主决策：是或部分是
-  - 多 Agent 协作：是或部分是
-- 在科研流程中承担的明确角色：data_analysis; hypothesis_generation; tool_use_and_code_execution; workflow_orchestration; feedback_iteration
+- 计划生成：是
+- 工具调用：是
+- 反馈迭代：是
+- 自主决策：是
+- 多 Agent 协作：是
+- 在科研流程中承担的明确角色：idea generation、数据分析、scientific coding、tool use、研究写作与工作流编排
 
 ### 1.2 排除风险检查
 
 - 是否只是普通 AI for Science / ML / DL 模型：否
 - 是否只是单次问答、摘要或分类：否
 - 是否缺少行动闭环：否
-- 若排除，排除理由：不排除
+- 若排除，排除理由：不适用
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：01
-- 二级类：01.04
-- 三级类：
-- 四级专题：Data-centric end-to-end scientific-research agents
-- 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“data-centric end-to-end scientific researcher”，因此当前主类保持为 `01` / `01.04`。
-- 归类置信度：中高
+- 科学对象模块：`01;02;11`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：`none`
+- Primary module for filing：`01`
+- 主展示模块一级类：`01` 形式、信息与计算科学
+- 主展示模块二级类：`01.02` AI / scientific coding / computational research workflow
+- 其他覆盖模块及对应层级路径：
+  - `02`：AstroVisBench astronomy visualization 与 long-tail API integration
+  - `11`：ASSISTments knowledge-tracing educational case study
+- 每个模块的对象实验证据：
+  - `01`：AI-Idea-Bench、DiscoveryBench、MLE-Bench、SciCode、AIRS-Bench
+  - `02`：AstroVisBench 的 astronomy / astrophysics visualization and tool-use tasks
+  - `11`：ASSISTments 冷启动教育场景下的 calibrated few-shot knowledge tracing
+- 归类理由：论文已经报告了多个可识别对象任务与案例，不再是 object-free general research-agent demo
+- 归类置信度：中
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：data-centric end-to-end scientific researcher
-- 最终科学问题：论文试图通过 Agent 系统推进“data-centric end-to-end scientific researcher”相关研究任务。
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目规则要求按最终研究对象而不是模型实现细节归类。
+- 最终科学研究对象：computational research benchmarks、astronomy visualization tasks，以及 educational knowledge-tracing case study
+- 最终科学问题：多 Agent 系统能否把科研流程自动化到跨 benchmark 与真实案例层面
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：分类依据是具体 benchmark / case objects，而不是“end-to-end researcher”这一平台外观
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：稳定 01.04；更偏 research automation system 而非单纯 data tool
-- 最终判定：保持 `01` / `01.04`
-- 判定理由：稳定 01.04；更偏 research automation system 而非单纯 data tool
-- 是否需要二次复核：不需要。
+- 可能误归类到：独立 `01.04`，或因 broad domain claims 误扩展到 `03;04;05;06`
+- 最终判定：写回 `01;02;11`，不新增其他模块
+- 判定理由：现有一手证据足以支撑这三类对象，但对 chemistry、materials、earth、life 等模块仍缺乏同等强度的任务级结果证据
+- 多模块覆盖说明：`01` 来自 AI/ML/scientific coding benchmark 对象，`02` 来自 AstroVisBench，`11` 来自 ASSISTments knowledge-tracing case
+- 01.04 判定说明：`general_method_bucket=none`
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
-### 3.1 Agent 类型标签
-
-- Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
-
-### 3.2 科研流程角色
-
-- 主要角色：data_analysis; hypothesis_generation; tool_use_and_code_execution; workflow_orchestration; feedback_iteration
-
-### 3.3 自主能力
-
-- 任务分解：是或部分是
-- 计划生成：是
-- 工具调用：是或部分是
-- 记忆与状态维护：中等
-- 反馈迭代：是
-- 自主决策：是或部分是
-- 多 Agent 协作：是或部分是
-- 环境交互：中等
-- 闭环实验：视论文具体验证而定
-
-### 3.4 交叉属性标签
-
-- 交叉属性：以计算驱动为主；若摘要明示实验或部署，再在正文中单独标注。
+- Agent 类型：LLM Agent；Tool-using Agent；Multi-Agent System；Hybrid Agent
+- 科研流程角色：scientific_question_formulation；hypothesis_generation；tool_use_and_code_execution；data_analysis；paper_writing；workflow_orchestration；evidence_assessment_and_validation
+- 自主能力：task_decomposition；planning；tool_use；feedback_iteration；autonomous_decision_making；multi_agent_collaboration
 
 ## 4. 方法设计
 
-### 4.1 方法动机
-
-- 作者为什么提出该 Agent 系统：希望用 Agent 化流程提升 data-centric end-to-end scientific researcher 的研究效率与质量。
-- 现有科研流程或方法的痛点：传统流程往往分散、手工密集，难以在多步任务中持续反馈迭代。
-- 核心假设或直觉：把检索、生成、分析、评估等环节编排成可循环的 Agent 工作流，能够提高研究推进能力。
-
-### 4.2 系统流程
-
-1. 输入：研究问题、数据、文献或任务上下文。
-2. 任务分解 / 规划：Agent 进行子任务拆解与流程编排。
-3. 工具、数据库、模型或实验平台调用：按需要调用外部资源。
-4. 中间结果反馈：根据阶段性结果进行检验、批评或修正。
-5. 决策或迭代：保留有效候选并推动下一轮研究动作。
-6. 输出：形成更高质量的科研分析、假设、实验建议或知识生产结果。
-
-### 4.3 系统组件
-
-- Agent 核心：多 Agent 或单 Agent 编排系统。
-- 工具 / API / 数据库：以论文摘要明示工具链为准。
-- 记忆或状态模块：若论文强调长期记忆、工作流状态或证据轨迹，则作为关键组件。
-- 规划器：存在或部分存在。
-- 评估器 / verifier：存在，用于评分、核验或审查。
-- 人类反馈或专家介入：部分论文存在。
-- 实验平台或仿真环境：按 6 benchmarks 与 multimodal data/code execution 使用。
+- 方法动机：现有 scientific agents 在 raw domain-specific data、自适应性与 multimodal scalability 上存在明显限制
+- 系统流程：四个 specialized sub-agents 共同处理 ideation、analysis、experimentation、writing，并通过 data-centric 设计自动化 research lifecycle
+- 核心组件：dynamic multimodal skill system、specialized sub-agents、benchmark-driven evaluation、end-to-end case-study execution
 
 ## 5. 实验与验证
 
-### 5.1 验证方式
-
-- 当前主要验证：6 benchmarks 与 multimodal data/code execution
-
-### 5.2 数据、任务与指标
-
-- 数据集 / 实验对象：围绕“data-centric end-to-end scientific researcher”的论文设定。
-- 任务设置：多步科研工作流中的检索、生成、分析、评估或写作任务。
-- 对比基线：以论文原文报告为准。
-- 关键结果：当前可得证据表明论文主要通过 6 benchmarks 与 multimodal data/code execution 支撑其核心主张。
-- 是否有消融实验：摘要级证据下不稳定，后续需全文补充。
-- 是否有失败案例或负结果：摘要级证据通常不足。
-
-### 5.3 科学贡献
-
-- 科学贡献类型：system_platform; general_scientific_research
-- 贡献强度判断：中等到较强，取决于论文是平台型还是有直接实验发现。
-- 证据强度：high_primary_abstract
+- 验证方式：benchmark；computational_validation；case_study
+- 数据与任务：AI-Idea-Bench、DiscoveryBench、MLE-Bench、SciCode、AIRS-Bench、AstroVisBench，以及 ASSISTments knowledge-tracing 案例
+- 关键结果：系统在 scientific coding、ML engineering、end-to-end autonomy 和 astronomy visualization tool use 上都有直接评估，并完成一个教育知识追踪端到端案例
+- 证据强度：computationally_validated
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：本论文强调多步 Agent 工作流，而不是单次预测模型。
-- 与已有 Agent / 科研智能系统的区别：它把研究流程中的多个环节明确组织进同一套 Agent 化闭环。
-- 与同一科学领域其他 Agent 文献的关系：可作为该类对象的代表样本，与同类 Agent 系统并列比较。
-- 主要创新点：将对象相关研究任务稳定映射为可迭代的 Agent 工作流。
+- 与普通 AI for Science 方法的区别：不是单一模型，而是围绕 research lifecycle 的多 Agent 自动化系统
+- 与已有 Agent / 科研智能系统的区别：强调 data-centric、multimodal、benchmark-wide end-to-end coverage
+- 与同领域其他 Agent 文献的关系：可与 `InternAgent`、`AI Scientist`、`Agent Laboratory` 等 general research-agent papers 对照，但本轮显式落地为多模块而非 `01.04`
+- 主要创新点：把 benchmark coverage 与真实 case study 结合起来，避免停留在完全无对象的 workflow demo
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：部分论文仍依赖人工设定问题、工具或实验执行。
-- 科学验证不足：不少记录当前仍以摘要级和 benchmark 级证据为主。
-- 泛化性不足：稳定 01.04；更偏 research automation system 而非单纯 data tool
-- 工具链依赖：强依赖外部工具、检索、执行环境或评价器。
-- 数据泄漏或 benchmark 偏差：若以公开 benchmark 为主，则需警惕该风险。
-- 成本、可复现性或安全风险：多 Agent 长流程通常带来较高成本和复现负担。
+- broad domain generalization 叙事很强，但并非所有提到的学科都具备同等强度的对象级结果
+- 多模块中 `02` 与 `11` 的证据强度弱于 `01`，因此本轮置信度保持 `medium`
+- 旧 note 把它写成 `01.04`；本次写回已移除该表述
+- 若未来要扩到 `03/04/05/06`，需要更明确的任务清单和结果页证据
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：主类 `01` / `01.04` 对应章节。
-- 可支撑哪个论点：Agent 已经能够围绕“data-centric end-to-end scientific researcher”形成稳定的多步科研工作流。
-- 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
-- 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
+- 可放入章节：`01` 主章节中的 general research-agent systems，同时在跨模块表中标注 `02;11`
+- 可支撑论点：通用科研 Agent 只要出现可识别对象 benchmark / case，就不应继续停留在独立 `01.04`
 - 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：后续全文笔记补齐。
-- 需要与哪些论文并列比较：可与同主类或相邻边界样本并列。
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-围绕“data-centric end-to-end scientific researcher”组织多步科研工作的 Agent 系统。
+一个应从旧 `01.04` 写回为 `01;02;11` 的 data-centric scientific researcher 多 Agent 系统。
 
 ### 9.2 速记版 pipeline
 
-1. 接收研究问题或证据。
-2. 分解并编排多步科研任务。
-3. 调用工具 / 数据 / 检索资源。
-4. 基于反馈修正中间结果。
-5. 输出更高质量的研究结论或知识生产结果。
+1. 接收研究任务与原始数据
+2. 由多 Agent 拆解并规划研究流程
+3. 执行 coding、analysis、tool use 与 writing
+4. 在 benchmarks 和案例中持续反馈迭代
+5. 输出端到端研究结果
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：01
-二级类：01.04
-三级类：
-四级专题：Data-centric end-to-end scientific-research agents
-Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
-科研流程角色：data_analysis; hypothesis_generation; tool_use_and_code_execution; workflow_orchestration; feedback_iteration
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
-验证方式：benchmark; computational_validation
-交叉属性：computation_driven
-科学贡献类型：system_platform; general_scientific_research
-证据强度：high_primary_abstract
-归类置信度：中高
-纳入置信度：高
-推荐引用强度：standard
+科学对象模块：01;02;11
+覆盖模式：multi_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：01
+是否进入 01.04 存放区：否
+主展示模块一级类：01
+主展示模块二级类：01.02
+其他覆盖模块及对应层级路径：02 astronomy visualization benchmark coverage; 11 ASSISTments knowledge-tracing case
+module_assignment_evidence：01 来自 AI-Idea-Bench / DiscoveryBench / MLE-Bench / SciCode / AIRS-Bench；02 来自 AstroVisBench；11 来自 ASSISTments knowledge-tracing 案例
+multi_module_object_coverage_note：移除旧 `01.04` 单桶写法，但也不扩展到证据不足的 03/04/05/06
+evidence source level：first_hand_full_text; official_arxiv_pdf_archived_locally_and_checked
+first_hand_source_checked：official arXiv PDF checked locally: Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_SciDER.pdf
+source_limited：no
+confidence：medium
 ```

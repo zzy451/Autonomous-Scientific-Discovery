@@ -6,34 +6,56 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.27297
-- PDF / 本地文件路径：当前无本地 PDF；本 note 基于 arXiv 摘要页与 batch13 reviewer evidence packs
-- 论文类型：研究论文 / equation-discovery multi-agent system
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Na_2026_Machine_Collective_Intelligence.pdf`（official arXiv PDF archived locally and checked）
+- 论文类型：研究论文 / symbolic-equation-discovery multi-agent system
 - 当前状态：to_read
-- 阅读日期：2026-06-20
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
+
+## Frozen Adjudication Writeback - 2026-06-24
+
+This writeback aligns the note to the frozen Batch29Partial1 adjudication for `ASD-0857`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 02;03;04;06;09
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 02
+confidence: medium-high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF https://arxiv.org/pdf/2604.27297.pdf; local archive `Autonomous Scientific Discovery/Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Na_2026_Machine_Collective_Intelligence.pdf`
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: oscillators support `02`; methane-conversion reactor-yield tasks support `03`; metallic-material stress tasks support `04`; E. coli and Hodgkin-Huxley tasks support `06`; lithium-ion battery capacity tasks support `09`.
+multi_module_object_coverage_note: note location under `01_Formal_Information_and_Computational_Sciences` is historical only; the authoritative classification fact is frozen multi-module coverage `02;03;04;06;09`, with `02` as the primary filing module.
+final_reason: the paper is no longer treated as only `01.03` / equation-discovery infrastructure because the benchmark suite contains concrete object-level tasks across physics, chemistry, materials, life science, and engineering.
+```
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv abstract；reviewer pack | orchestrates multiple reasoning agents 进行 generation、evaluation、critique 和 consolidation | 高 |
-| 科学对象归类 | `01 / 01.03` | abstract；reviewer pack | 核心问题是 deriving governing equations from empirical observations | 高 |
-| 方法流程 | 多 Agent 多步推理链 | abstract；reviewer pack | symbolism + metaheuristics + collective reasoning loop | 高 |
-| 边界判断 | 不移到 `01.04` | reviewer pack | 直接对象是方程 / 系统规律发现，而不是通用 research workflow orchestration | 高 |
-| 实验验证 | benchmark / OOD validation | reviewer pack | 强调 equation recovery、可解释参数压缩与 OOD extrapolation | 中高 |
+| Frozen adjudication | `02;03;04;06;09`; `primary=02` | Batch29Partial1 frozen packet + arXiv PDF | 本轮移除旧 `01.03` 单模块写法，改为对象覆盖驱动的多模块记录 | 高 |
+| Agent 纳入 | 是 | arXiv PDF abstract / framework overview | multiple reasoning agents generate, critique, evaluate, and consolidate symbolic equations | 高 |
+| 科学对象归类 | `02;03;04;06;09` | arXiv PDF tasks / benchmark descriptions | 任务覆盖 oscillators、methane-conversion reactor yield、metallic-material stress、battery capacity、E. coli、Hodgkin-Huxley | 高 |
+| 方法流程 | collective symbolic-discovery loop | arXiv PDF method | 候选方程生成、评估、批评、整合构成可迭代多 Agent 发现链条 | 高 |
+| 实验验证 | benchmark + computational validation | arXiv PDF experiments | 通过多类方程恢复与泛化测试评估 explainable scientific discovery capability | 高 |
+| 边界判断 | 不再只记 `01.03` 或 `01.04` | arXiv PDF + frozen packet | 方法是通用的，但 benchmark object coverage 已明确落到多个具体科学对象模块 | 中高 |
 
 ## 0. 摘要翻译
 
-论文提出 Machine Collective Intelligence，通过多推理 Agent 协同生成、评估、批判与整合符号假设，从经验数据中自动发现 governing equations。系统结合 symbolism 与 metaheuristics，试图在 deterministic、stochastic 以及未知科学系统上恢复底层规律。虽然论文提出的是一种可复用 scientific-discovery method，但其最终对象稳定落在 scientific-law / equation discovery。
+Machine Collective Intelligence 提出一个面向 explainable scientific discovery 的多智能体符号方程发现框架。系统让多个 reasoning agents 分别生成、批评、评估并整合候选 governing equations，以提升可解释性与发现稳定性。旧 note 曾把它写成 `01.03` 的 equation-discovery / complexity 样本，但当前冻结口径更看重具体 benchmark object coverage：论文任务明确覆盖物理振荡器、甲烷转化反应器产率、金属材料应力、锂离子电池容量、E. coli 和 Hodgkin-Huxley 等对象，因此需要记录 `02;03;04;06;09`。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：满足明确科研目标、多步行动、多 Agent 协作与反馈迭代
+- 判断依据：系统具备多 Agent 协作、工具化候选搜索、反馈迭代和多轮决策
 - 判定置信度：高
-- 是否面向明确科研目标：是
+- 是否面向明确科研目标：是，面向可解释 scientific discovery / equation discovery
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
   - 计划生成：部分是
@@ -41,39 +63,45 @@
   - 反馈迭代：是
   - 自主决策：部分是
   - 多 Agent 协作：是
-- 在科研流程中承担的明确角色：假设生成、方程评估、批判整合、规律发现
+- 在科研流程中承担的明确角色：假设生成、候选方程评估、批评整合、规律发现
 
 ### 1.2 排除风险检查
 
 - 是否只是普通 AI for Science / ML / DL 模型：否
 - 是否只是单次问答、摘要或分类：否
 - 是否缺少行动闭环：否
-- 若排除，排除理由：不排除
+- 若排除，排除理由：不适用
 
 ## 2. 科学领域归类
 
 ### 2.1 主科学领域
 
-- 一级类：01
-- 二级类：01.03
-- 三级类：
-- 四级专题：Collective machine intelligence for equation discovery
+- scientific_object_modules：`02;03;04;06;09`
+- object_coverage_mode：`multi_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`02`
+- source_limited：no
+- 一级类：02；并记录 `03;04;06;09`
+- 二级类：02.02（物理系统 / governing-equation discovery 为主展示），并显式记录其余模块
+- 三级类：symbolic equation discovery across multi-domain scientific systems
+- 四级专题：Collective machine-intelligence equation-discovery systems
 - 四级专题是否为新增：否
-- 归类理由：主对象是 governing-equation discovery / symbolic scientific-law induction
-- 归类置信度：高
+- 归类理由：虽然系统形式上是通用 equation-discovery framework，但实验任务已覆盖多个具体科学对象模块
+- 归类置信度：中高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：unknown scientific systems 的 governing equations
-- 最终科学问题：如何从观测中恢复可解释科学规律与方程
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：multi-agent scientific-discovery method 是实现形式，规律发现对象才是主类依据
+- 最终科学研究对象：physical oscillators; methane-conversion reactor yield; metallic-material stress; lithium-ion battery capacity; E. coli; Hodgkin-Huxley dynamics
+- 最终科学问题：如何从多类经验系统中恢复可解释 governing equations
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：多 Agent symbolic discovery 是实现形式，模块归类依据是 benchmark 对象本体
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.04
-- 最终判定：保持 01.03
-- 判定理由：这不是通用科研 orchestration 平台，而是系统规律与方程发现对象驱动的工作
-- 是否需要二次复核：否
+- 可能误归类到：01.03；01.04
+- 最终判定：`02;03;04;06;09`
+- 判定理由：`01.03` 或 `01.04` 只能描述方法外观；当前 relaxed rule 下，具体 benchmark object coverage 优先
+- 是否需要二次复核：不需要重回旧单模块写法；若后续只讨论细粒度二级类，可再补充
 
 ## 3. Agent 系统与科研流程角色
 
@@ -87,7 +115,7 @@
 - Robot / Embodied Agent：否
 - Human-in-the-loop Agent：否
 - Hybrid Agent：是
-- 其他：collective reasoning for symbolic discovery
+- 其他：collective symbolic-reasoning agents
 
 ### 3.2 科研流程角色
 
@@ -135,28 +163,28 @@
 
 ### 4.1 方法动机
 
-- 作者为什么提出该 Agent 系统：提高方程发现的可解释性与跨系统恢复能力
-- 现有科研流程或方法的痛点：单一模型难兼顾可解释性和搜索效率
-- 核心假设或直觉：让多个 reasoning agents 协同生成、批判和整合符号表达，可更稳地恢复科学规律
+- 作者为什么提出该 Agent 系统：提升符号方程发现的可解释性、鲁棒性和跨系统泛化能力
+- 现有科研流程或方法的痛点：单一模型往往难以同时兼顾搜索效率与可解释表达
+- 核心假设或直觉：让多个 reasoning agents 分工生成、批评和整合候选方程，可以得到更稳健的 governing-equation recovery
 
 ### 4.2 系统流程
 
-1. 输入：经验观测数据
-2. 任务分解 / 规划：生成候选符号方程
-3. 工具、数据库、模型或实验平台调用：symbolism 与 metaheuristics 工具
-4. 中间结果反馈：对候选做 evaluation、critique 与 consolidation
-5. 决策或迭代：保留高质量方程继续搜索
+1. 输入：观测数据与待解释系统
+2. 任务分解 / 规划：生成不同候选符号表达
+3. 工具、数据库、模型或实验平台调用：符号搜索、评估与压缩工具
+4. 中间结果反馈：代理之间对候选方程进行批评、筛选与整合
+5. 决策或迭代：保留高质量表达并继续搜索
 6. 输出：可解释 governing equations
 
 ### 4.3 系统组件
 
 - Agent 核心：multiple reasoning agents
-- 工具 / API / 数据库：symbolic search；metaheuristics
-- 记忆或状态模块：候选方程池
-- 规划器：部分有
-- 评估器 / verifier：equation evaluation and critique
-- 人类反馈或专家介入：无直接强调
-- 实验平台或仿真环境：benchmark scientific systems
+- 工具 / API / 数据库：symbolic search and equation-evaluation tools
+- 记忆或状态模块：候选方程池与阶段性优胜表达
+- 规划器：存在候选扩展与选择逻辑
+- 评估器 / verifier：equation recovery / error / generalization checks
+- 人类反馈或专家介入：无核心依赖
+- 实验平台或仿真环境：multi-domain benchmark scientific systems
 
 ## 5. 实验与验证
 
@@ -173,79 +201,84 @@
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：deterministic、stochastic 和 unknown scientific systems
-- 任务设置：recover governing equations
-- 对比基线：existing equation-discovery baselines
-- 评价指标：equation recovery、OOD extrapolation、interpretability
-- 关键结果：论文声称能恢复 underlying governing equations
-- 是否有消融实验：当前证据不足
-- 是否有失败案例或负结果：当前证据不足
+- 数据集 / 实验对象：oscillators；methane-conversion reactor yield；metallic-material stress；lithium-ion battery capacity；E. coli；Hodgkin-Huxley
+- 任务设置：从观测数据恢复 governing equations 或关键动态关系
+- 对比基线：equation-discovery baselines
+- 评价指标：equation recovery、误差、泛化与解释性
+- 关键结果：多个具体科学对象任务共同支撑 `02;03;04;06;09`
+- 是否有消融实验：论文有方法比较，但不影响本轮顶层模块判断
+- 是否有失败案例或负结果：仍以 benchmark-heavy 证据为主
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：重点是 scientific-law discovery capability
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：重点是可解释规律发现能力，而非单一新对象发现
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
-- 科学贡献类型：knowledge_discovery; complex_system_modeling
-- 证据强度：high_primary_abstract
+- 科学贡献类型：knowledge_discovery; explainable_modeling
+- 证据强度：computational_validation
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：不是通用科研平台，而是符号规律发现系统
-- 与已有 Agent / 科研智能系统的区别：强调 collective reasoning 用于 equation discovery
-- 与同一科学领域其他 Agent 文献的关系：可与 STRIDE、SR-Scientist、Think like a Scientist 并列
-- 主要创新点：把 generation、evaluation、critique、consolidation 组织成 collective machine intelligence
+- 与普通 AI for Science 方法的区别：强调 collective symbolic reasoning，而非单模型方程拟合
+- 与已有 Agent / 科研智能系统的区别：把 generation、critique、evaluation、consolidation 拆给多个 agent
+- 与同一科学领域其他 Agent 文献的关系：是从旧 `01.03` 迁移到多模块记录的典型方程发现样本
+- 主要创新点：用 machine collective intelligence 组织 explainable equation discovery
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：仍偏 benchmark-heavy
-- 科学验证不足：跨具体学科对象但未落到单一自然领域应用
-- 泛化性不足：真实复杂系统中的鲁棒性仍需更强证据
-- 工具链依赖：强
-- 数据泄漏或 benchmark 偏差：方程发现 benchmark 常见风险存在
-- 成本、可复现性或安全风险：符号搜索成本可能较高
+- Agent 自主性不足：仍高度依赖 benchmark task design 与符号搜索空间
+- 科学验证不足：缺乏真实部署或实验闭环
+- 泛化性不足：跨 benchmark 泛化并不自动等于跨现实科研环境泛化
+- 工具链依赖：依赖 symbolic search 与评估器
+- 数据泄漏或 benchmark 偏差：equation-discovery benchmark 仍可能高估表现
+- 是否仍需进一步全文复核：不需要为主模块重判；可在后续细化各二级类时再补充
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：01.03 系统、信息与复杂性科学
-- 可支撑哪个论点：方程发现 / 系统规律发现应优先归 `01.03` 而不是 `01.04`
-- 可用于哪个表格或图：`01.03 / 01.04` 边界样本表
-- 适合作为代表性案例吗：可以
-- 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：后续补全文
-- 需要与哪些论文并列比较：0868、0869、0870
+- 可放入哪个章节：02 物理学、天文学与宇宙科学；并作为 `02;03;04;06;09` 多模块样本
+- 可支撑哪个论点：方程发现型 Agent 不能只按“通用 scientific-discovery framework”处理，只要 benchmark 覆盖具体对象，就应按对象模块展开记录
+- 可用于哪个表格或图：多模块 benchmark-object 覆盖表；方程发现 Agent 边界表
+- 适合作为代表性案例吗：适合做多模块边界案例
+- 推荐引用强度：standard
+- 需要在正文中特别引用的页码 / 图 / 表：benchmark task summary tables；method overview
+- 需要与哪些论文并列比较：其他 symbolic equation-discovery agents
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-面向 governing equations 发现的多 Agent 集体智能系统。
+以多 Agent 符号推理恢复多类科学系统 governing equations 的发现框架。
 
 ### 9.2 速记版 pipeline
 
-1. 输入观测数据
+1. 输入系统观测数据
 2. 生成候选方程
-3. 多 agent 评估与批判
-4. 整合高质量表达
+3. 多代理评估与批评
+4. 整合更优表达
 5. 输出可解释规律
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：01
-二级类：01.03
-三级类：
-四级专题：Collective machine intelligence for equation discovery
-Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
-科研流程角色：hypothesis_generation; evidence_assessment_and_validation; workflow_orchestration; feedback_iteration
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
-验证方式：benchmark; computational_validation
+scientific_object_modules：02;03;04;06;09
+object_coverage_mode：multi_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：02
+source_limited：no
+一级类：02；并记录 03；04；06；09
+二级类：02.02
+三级类：symbolic equation discovery across multi-domain scientific systems
+四级专题：Collective machine-intelligence equation-discovery systems
+Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
+科研流程角色：hypothesis_generation; simulation_modeling; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation; workflow_orchestration
+自主能力：tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
+验证方式：benchmark; simulation_validation
 交叉属性：computation_driven; data_driven; simulation_driven
-科学贡献类型：knowledge_discovery; complex_system_modeling
-证据强度：high_primary_abstract
-归类置信度：高
+科学贡献类型：knowledge_discovery; explainable_modeling
+证据强度：computational_validation
+归类置信度：中高
 纳入置信度：高
 推荐引用强度：standard
 ```
-

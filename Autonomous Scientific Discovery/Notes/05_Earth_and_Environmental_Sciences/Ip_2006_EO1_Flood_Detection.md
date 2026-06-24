@@ -6,34 +6,56 @@
 - 年份：2006
 - 来源 / venue：Remote Sensing of Environment
 - DOI / arXiv / URL：https://doi.org/10.1016/j.rse.2005.12.018
-- PDF / 本地文件路径：当前无本地 PDF；本 note 基于 publisher abstract、Crossref metadata 与 batch14 reviewer evidence
-- 论文类型：研究论文 / autonomous Earth-observation science agent
+- PDF / 本地文件路径：无本地 PDF；ScienceDirect 文章页 `https://www.sciencedirect.com/science/article/pii/S0034425706000228` 为当前一手来源；`source_limited=yes`
+- 论文类型：研究论文 / autonomous flood-monitoring Earth-observation agent
 - 当前状态：to_read
-- 阅读日期：2026-06-20
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
+
+## Frozen Adjudication Writeback - 2026-06-24
+
+This writeback aligns the note to the frozen Batch29Partial1 adjudication for `ASD-0861`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 05
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 05
+confidence: high
+source_limited: yes
+safety_access_status: no_safety_issue_full_text_not_retrieved
+first_hand_sources_checked: ScienceDirect article page https://www.sciencedirect.com/science/article/pii/S0034425706000228
+classification_evidence_source_level: source_limited
+module_assignment_evidence: the paper performs onboard flood-change classification and triggers additional EO-1 scene acquisition for continued Earth-observation monitoring.
+multi_module_object_coverage_note: the spacecraft is only the observing platform; the directly studied object is flood monitoring as an Earth-system process, so this remains a single-module `05` record.
+final_reason: autonomous flood-change detection with triggered follow-up acquisition is direct Earth-and-environment evidence.
+```
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | title; abstract | 系统在 EO-1 上执行 flood detection, monitoring, and triggered follow-up acquisition | 高 |
-| 科学对象归类 | `05 / 05.04` | title; abstract | 最终对象是洪水这一 Earth-system process，而不是航天器自治本体 | 高 |
-| 方法流程 | 检测-判定-追加观测 | abstract | onboard classification of flood-induced changes + triggered additional scene acquisition | 高 |
-| 边界判断 | 不转 `10` | object-first rule + abstract | EO-1 只是承载平台，论文主对象是 flood monitoring | 高 |
-| 实验验证 | 真实 EO-1 案例 | abstract | 验证涉及 Diamantina River、Brahmaputra、Yukon 等洪水案例 | 高 |
+| Frozen adjudication | `05`; `source_limited=yes` | Batch29Partial1 frozen packet + ScienceDirect page | 本轮保持单模块 `05` | 高 |
+| Agent 纳入 | 是 | 标题；文章页摘要 | 系统在 EO-1 上执行 flood detection、monitoring 和 triggered follow-up acquisition | 高 |
+| 科学对象归类 | `05 / 05.04` | 摘要 | 直接对象是 flood monitoring，而不是 spacecraft autonomy 本身 | 高 |
+| 方法流程 | change classification -> trigger -> follow-up scene acquisition | 摘要 / page-level evidence | 机载分类发现 flood-induced changes 后，自主触发额外观测 | 高 |
+| 实验验证 | real EO-1 flood cases | 摘要 | 一手来源支持真实 flood-monitoring application，而非纯模拟 | 中高 |
+| 边界判断 | 保持 `05`，不转 `10` | 对象优先规则 + article page | 虽由航天平台执行，但科学对象仍是 Earth-system flood process | 高 |
 
 ## 0. 摘要翻译
 
-本文介绍 EO-1 上的 Autonomous Sciencecraft Experiment 如何利用机载高光谱数据自动识别洪水相关变化，并在检测到事件后自主触发追加观测，用于近实时洪水监测。论文关注的是面向真实 Earth-observation science 的事件发现与持续跟踪，而不是单纯的航天任务工程。
+本文介绍 EO-1 上的 Autonomous Sciencecraft Experiment 如何利用机载数据自主识别洪水相关变化，并在检测到事件后触发 additional scene acquisition，以便开展更及时的 flood monitoring。论文关注的是地球环境过程中的洪水检测与跟踪，而不是航天器自治本身，因此在当前冻结口径下稳定归入 `05`。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：系统面向明确科研目标，具有多步行动、机载分析、反馈触发与自主追加观测
+- 判断依据：系统具备明确科研目标、机载事件识别、自主触发后续观测与多步行动链
 - 判定置信度：高
-- 是否面向明确科研目标：是
+- 是否面向明确科研目标：是，面向 flood detection and monitoring
 - 是否具有多步行动过程：是
 - 是否具备以下至少一项 Agent 能力：
   - 计划生成：是
@@ -41,39 +63,45 @@
   - 反馈迭代：是
   - 自主决策：是
   - 多 Agent 协作：否
-- 在科研流程中承担的明确角色：事件发现、数据分析、重规划、追加观测
+- 在科研流程中承担的明确角色：事件发现、数据分析、任务重规划、追踪观测
 
 ### 1.2 排除风险检查
 
 - 是否只是普通 AI for Science / ML / DL 模型：否
 - 是否只是单次问答、摘要或分类：否
 - 是否缺少行动闭环：否
-- 若排除，排除理由：不排除
+- 若排除，排除理由：不适用
 
 ## 2. 科学领域归类
 
 ### 2.1 主科学领域
 
+- scientific_object_modules：`05`
+- object_coverage_mode：`single_module`
+- has_concrete_object_experiments：yes
+- general_method_bucket：none
+- primary_module_for_filing：`05`
+- source_limited：yes
 - 一级类：05
 - 二级类：05.04
-- 三级类：
+- 三级类：flood monitoring / remote sensing change detection
 - 四级专题：Autonomous flood-monitoring science agents
 - 四级专题是否为新增：否
-- 归类理由：最终科学对象是洪水过程与遥感监测，而非航天工程自治系统本身
+- 归类理由：论文的最终对象是 flood event monitoring 这一 Earth-system process
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：洪水事件及其 Earth-observation monitoring
-- 最终科学问题：如何在机载自治条件下实现近实时洪水识别与持续观测
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：平台在太空，但对象在地球环境过程
+- 最终科学研究对象：flood events; flood-induced remote-sensing changes; responsive monitoring
+- 最终科学问题：如何在机载条件下实现近实时洪水识别与持续跟踪
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：EO-1 是执行平台，分类依据是 flood-monitoring scientific object
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：10
-- 最终判定：保持 05.04
-- 判定理由：航天器只是执行平台，论文真正解决的是洪水遥感识别与动态跟踪
-- 是否需要二次复核：否
+- 最终判定：保持 `05 / 05.04`
+- 判定理由：平台在轨运行不改变对象优先原则；论文真正解决的是洪水遥感识别与动态跟踪
+- 是否需要二次复核：不需要为主模块重判；后续可仅补全文细节
 
 ## 3. Agent 系统与科研流程角色
 
@@ -135,27 +163,27 @@
 
 ### 4.1 方法动机
 
-- 作者为什么提出该 Agent 系统：提高对洪水事件的快速识别和响应能力
-- 现有科研流程或方法的痛点：人工分析和人工重规划响应较慢
-- 核心假设或直觉：把 onboard analysis 与 triggered follow-up observation 连接成自治闭环
+- 作者为什么提出该 Agent 系统：提高洪水事件识别与响应的及时性
+- 现有科研流程或方法的痛点：人工监测和后续 acquisition 响应偏慢
+- 核心假设或直觉：把 onboard flood-change classification 与 triggered follow-up acquisition 接成闭环，可提升 Earth-observation monitoring value
 
 ### 4.2 系统流程
 
-1. 输入：EO-1 onboard hyperspectral data
-2. 任务分解 / 规划：识别洪水相关变化
-3. 工具、数据库、模型或实验平台调用：ASE onboard analysis
-4. 中间结果反馈：发现事件并评估其重要性
-5. 决策或迭代：自主触发 additional scene acquisition
-6. 输出：更高价值的洪水监测数据
+1. 输入：EO-1 onboard remote-sensing data
+2. 任务分解 / 规划：识别 flood-induced changes
+3. 工具、数据库、模型或实验平台调用：ASE onboard analysis pipeline
+4. 中间结果反馈：评估发现的 flood event
+5. 决策或迭代：触发后续 additional scene acquisition
+6. 输出：更及时的 flood monitoring result
 
 ### 4.3 系统组件
 
 - Agent 核心：ASE
-- 工具 / API / 数据库：Hyperion onboard analysis pipeline
-- 记忆或状态模块：event state / monitoring state
-- 规划器：机载重规划逻辑
-- 评估器 / verifier：flood-event detection and selection
-- 人类反馈或专家介入：存在地面通知，但非主闭环核心
+- 工具 / API / 数据库：onboard change-detection / flood-classification pipeline
+- 记忆或状态模块：event monitoring state
+- 规划器：存在 triggered acquisition logic
+- 评估器 / verifier：flood-event detection / significance assessment
+- 人类反馈或专家介入：地面监测与解释
 - 实验平台或仿真环境：EO-1 in-orbit platform
 
 ## 5. 实验与验证
@@ -173,76 +201,82 @@
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：真实 EO-1 flood cases
-- 任务设置：洪水变化检测与追加观测
-- 对比基线：人工监测与人工任务更新
-- 评价指标：事件检测、响应速度、科学回报
-- 关键结果：系统能够在真实案例上触发机载后续观测
-- 是否有消融实验：当前证据不足
-- 是否有失败案例或负结果：当前证据不足
+- 数据集 / 实验对象：real flood-monitoring cases
+- 任务设置：flood change detection and follow-up scene acquisition
+- 对比基线：人工监测与人工重规划流程
+- 评价指标：事件检测有效性与响应价值
+- 关键结果：可见一手来源支持其在 EO-1 上开展真实 flood-monitoring application
+- 是否有消融实验：当前不可见
+- 是否有失败案例或负结果：当前不可见
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：重点是 Earth-observation science monitoring capability
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主要贡献是 autonomous flood-monitoring capability
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
 - 科学贡献类型：system_platform; earth_observation_science
-- 证据强度：真实部署
+- 证据强度：source_limited
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：不是离线分类模型，而是 onboard analysis + triggered follow-up loop
-- 与已有 Agent / 科研智能系统的区别：是 EO-1 Earth-science autonomy 的经典 application sample
-- 与同一科学领域其他 Agent 文献的关系：可与 EO-1 volcanism / cryosphere papers 并列比较
-- 主要创新点：把机载遥感识别与自主追加观测连成 Earth-science 闭环
+- 与普通 AI for Science 方法的区别：不是离线变化分类器，而是 onboard event detection + triggered follow-up loop
+- 与已有 Agent / 科研智能系统的区别：强调真实 EO-1 flood-monitoring autonomy
+- 与同一科学领域其他 Agent 文献的关系：与 EO-1 volcanism / cryosphere papers 构成 Earth-observation application cluster
+- 主要创新点：把 flood change identification 与 additional acquisition 链接为 Earth-science 闭环
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：任务仍服务于特定 mission platform
-- 科学验证不足：当前主要是摘要级与 metadata 级一手证据
-- 泛化性不足：任务聚焦 flood monitoring
-- 工具链依赖：强
-- 数据泄漏或 benchmark 偏差：不适用
-- 成本、可复现性或安全风险：需要 mission platform 支撑
+- source_limited：是；当前环境只有 ScienceDirect page-level evidence
+- Agent 自主性不足：依赖特定 mission platform 与 task setup
+- 科学验证不足：完整实验细节和误差分析仍待全文
+- 泛化性不足：主要针对 flood monitoring object
+- 工具链依赖：依赖 EO-1 / ASE onboard pipeline
+- 是否仍需进一步全文复核：需要，但不是为了推翻当前 `05` 主模块
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：05 Earth and Environmental Sciences / Earth observation agents
-- 可支撑哪个论点：搭载于航天平台但对象是地球自然过程时，应优先归 05
-- 可用于哪个表格或图：`05 / 10` 边界对照表
-- 适合作为代表性案例吗：是
-- 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：后续若拿到全文再补
-- 需要与哪些论文并列比较：ASD-0858; ASD-0859; ASD-0860
+- 可放入哪个章节：05 地球与环境科学 / flood-monitoring agents
+- 可支撑哪个论点：在航天平台上执行并不改变 Earth-system flood object-first classification
+- 可用于哪个表格或图：`05 / 10` 边界表；EO-1 autonomous monitoring cases
+- 适合作为代表性案例吗：适合
+- 推荐引用强度：standard
+- 需要在正文中特别引用的页码 / 图 / 表：待全文可得后补充
+- 需要与哪些论文并列比较：EO-1 volcanism / cryosphere applications
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-EO-1 上的自治洪水监测 Earth-science agent。
+在 EO-1 上自主识别洪水变化并触发追踪观测的 Earth-science Agent。
 
 ### 9.2 速记版 pipeline
 
-1. 分析机载高光谱数据
+1. 读取机载数据
 2. 识别洪水变化
-3. 触发后续观测
-4. 向地面回传更高价值数据
+3. 触发后续 acquisition
+4. 输出更及时的 flood monitoring
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：05
+scientific_object_modules：05
+object_coverage_mode：single_module
+has_concrete_object_experiments：yes
+general_method_bucket：none
+primary_module_for_filing：05
+source_limited：yes
+一级类：05
 二级类：05.04
-三级类：
+三级类：flood monitoring / remote sensing change detection
 四级专题：Autonomous flood-monitoring science agents
 Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
-科研流程角色：data_analysis; workflow_orchestration; feedback_iteration; autonomous_decision_making
+科研流程角色：tool_use_and_code_execution; experiment_execution; data_analysis; evidence_assessment_and_validation; workflow_orchestration
 自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction
 验证方式：real_world_deployment
-交叉属性：data_driven; experiment_driven
+交叉属性：computation_driven; data_driven; experiment_driven
 科学贡献类型：system_platform; earth_observation_science
-证据强度：real_world_deployment
+证据强度：source_limited
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

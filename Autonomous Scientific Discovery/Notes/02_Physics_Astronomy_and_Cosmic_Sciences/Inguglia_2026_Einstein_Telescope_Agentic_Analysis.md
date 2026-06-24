@@ -6,245 +6,160 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.28916
-- PDF / 本地文件路径：当前无本地 PDF；本 note 基于 arXiv 摘要页与 batch12 reviewer evidence pack
+- PDF / 本地文件路径：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Inguglia_2026_Einstein_Telescope_Agentic_Analysis.pdf`
 - 论文类型：研究论文 / gravitational-wave data-analysis agent
-- 当前状态：to_read
-- 阅读日期：2026-06-20
+- 当前状态：to_read（note 已按 Batch29Partial1 writeback 更新）
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
+
+## 2026-06-24 Batch29Partial1 writeback / full reaudit
+
+- final supported_modules：`02`
+- primary_module_for_filing：`02`
+- object_coverage_mode：`single_module`
+- final_01_04_bucket：`none`
+- source_limited：`no`
+- safety_access_status：`accessed_no_safety_issue`
+- evidence source level：`first_hand_full_text; official_arxiv_pdf_archived_locally_and_checked`
+- first-hand source checked：`official arXiv PDF checked locally: Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Inguglia_2026_Einstein_Telescope_Agentic_Analysis.pdf`；original source `https://arxiv.org/pdf/2605.28916.pdf`
+- note_revision_required：`yes`
+- adjudication confidence：`high`
+- final_reason：Autonomous Einstein Telescope gravitational-wave analysis, template-bank generation, and BBH recovery are concrete class-02 physics / astronomy objects.
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv abstract；Reader-C evidence pack | 两个 agentic systems 在共享计算环境中自主执行完整分析流程 | 高 |
-| 科学对象归类 | `02 / 02.01` | arXiv abstract；PDF section 2.1；Reader-C evidence pack | 直接对象是 Einstein Telescope 模拟数据上的 gravitational-wave analysis | 高 |
-| 方法流程 | 多步工作流明确 | Reader-C evidence pack | 包括 PSD estimation、template bank、matched filtering、结果生成和 manuscript drafting | 高 |
-| 边界判断 | 不移到 01.04 | Reader-C evidence pack | 比较框架只是叙事形式，核心仍是引力波分析任务 | 高 |
-| 实验验证 | computational validation | Reader-C evidence pack | 基于 simulated data、两轮实验与任务结果比较 | 中高 |
+| Agent 纳入 | 是 | Abstract | 两个 agentic AI systems 在共享计算环境中无人工干预执行完整引力波分析流程。 | 高 |
+| `02` 模块证据 | 支持 | Abstract | 流程直接包含 Einstein Telescope 模拟噪声、template bank generation、100 个 BBH 注入的 matched-filter recovery。 | 高 |
+| 方法流程 | 多步闭环明确 | Abstract；方法概览 | 从 PSD estimation 到模板库生成、结果产出、LLM-assisted manuscript drafting 构成完整 scientific workflow。 | 高 |
+| 验证方式 | 计算验证 | Abstract | 两轮实验在 detection efficiency 和 template bank size 上得到可比结果，同时比较两套 agent 的行为与成本差异。 | 高 |
+| 边界判断 | 不转 `01` 或 `01.04` | object-first reading | 虽然论文比较两种 agentic coding systems，但最终对象始终是引力波数据分析任务本身。 | 高 |
 
 ## 0. 摘要翻译
 
-论文比较两个 agentic AI 系统在共享计算环境中、无人工干预地执行爱因斯坦望远镜模拟数据分析流程。系统完成噪声 PSD 估计、模板库生成、matched filtering、结果整理与论文撰写，并比较两套 agent 在任务理解和执行上的差异。虽然论文具有对比研究外观，但其最终科学对象非常具体，就是引力波 / Einstein Telescope 数据分析工作流。
+论文比较 Claude Code 与 Codex 两套 agentic AI 系统在共享计算环境中自主执行 Einstein Telescope 模拟数据引力波分析流程的表现。任务包括从原始模拟噪声估计功率谱密度、基于 IMRPhenomD 生成几何模板库、对 100 个 BBH 注入信号做 matched-filter recovery、自动生成结果，并用 LLM 辅助撰写 Physical Review D 风格稿件。虽然文章采用 head-to-head comparison 叙事，但核心科学对象并不是通用 coding agent，而是具体的引力波数据分析工作流。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：具备明确科研目标、多步执行、工具调用、自我修正与工作流角色
+- 判断依据：面向明确科研目标，具有多步行动、工具调用、结果反馈和自主执行链条
 - 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
-- 是否具备以下至少一项 Agent 能力：
-  - 计划生成：部分是
-  - 工具调用：是
-  - 反馈迭代：是
-  - 自主决策：部分是
-  - 多 Agent 协作：否
-- 在科研流程中承担的明确角色：数据分析、代码执行、工作流编排、论文撰写
+- 计划生成：部分是
+- 工具调用：是
+- 反馈迭代：是
+- 自主决策：部分是
+- 多 Agent 协作：否
+- 在科研流程中承担的明确角色：数据分析、代码执行、工作流编排、结果整理、文稿生成
 
 ### 1.2 排除风险检查
 
 - 是否只是普通 AI for Science / ML / DL 模型：否
 - 是否只是单次问答、摘要或分类：否
 - 是否缺少行动闭环：否
-- 若排除，排除理由：不排除
+- 若排除，排除理由：不适用
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：02
-- 二级类：02.01
-- 三级类：
-- 四级专题：Agentic gravitational-wave data-analysis workflows
-- 四级专题是否为新增：否
-- 归类理由：任务直接落在 Einstein Telescope / gravitational-wave analysis 上，属于天文学与天体物理对象
+- 科学对象模块：`02`
+- 覆盖模式：单模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：`none`
+- Primary module for filing：`02`
+- 主展示模块一级类：`02` 物理学、天文学与宇宙科学
+- 主展示模块二级类：`02.01` 引力波 / 天体物理数据分析
+- 每个模块的对象实验证据：`02` 来自 Einstein Telescope simulated noise、template bank generation、BBH signal injection recovery 与 detection-efficiency comparison
+- 归类理由：论文讨论的是具体引力波分析任务，而不是领域无关科研 Agent 方法
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：Einstein Telescope simulated data 与引力波分析流程
-- 最终科学问题：AI Agent 能否在具体引力波分析任务上完成端到端数据工作流
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：比较 agent 行为不是主类依据
+- 最终科学研究对象：Einstein Telescope 模拟数据上的引力波分析流程
+- 最终科学问题：Agent 能否在具体引力波分析任务上自主完成端到端数据处理与结果生成
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：被比较的 agent 只是实现手段，最终对象是 astrophysical gravitational-wave analysis
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.04
-- 最终判定：保持 02.01
-- 判定理由：对象不是通用 research-agent substrate，而是非常具体的 astrophysical data-analysis workflow
+- 可能误归类到：`01` 或独立 `01.04`
+- 最终判定：保持 `02`
+- 判定理由：模板库、BBH recovery、Einstein Telescope 模拟数据与 matched-filter pipeline 都是稳定的 class-02 物理 / 天文学对象
+- 多模块覆盖说明：冻结 adjudication 仅保留 `02`
+- 01.04 判定说明：不是无具体对象实验的通用 scientific-agent paper
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
-### 3.1 Agent 类型标签
-
-- LLM Agent：是
-- Planning Agent：部分是
-- Tool-using Agent：是
-- Retrieval-augmented Agent：否
-- Multi-Agent System：否
-- Robot / Embodied Agent：否
-- Human-in-the-loop Agent：否
-- Hybrid Agent：是
-- 其他：agentic workflow comparison
-
-### 3.2 科研流程角色
-
-- 文献检索与阅读：否
-- 知识抽取与组织：否
-- 科学问题提出：否
-- 假设生成：否
-- 实验设计：否
-- 仿真建模：否
-- 工具调用与代码执行：是
-- 实验执行：否
-- 数据分析：是
-- 结果解释：部分是
-- 证据评估与验证：是
-- 论文写作：是
-- 端到端科研流程自动化：是
-
-### 3.3 自主能力
-
-- 任务分解：部分是
-- 计划生成：部分是
-- 工具调用：是
-- 记忆与状态维护：部分是
-- 反馈迭代：是
-- 自主决策：部分是
-- 多 Agent 协作：否
-- 环境交互：是
-- 闭环实验：否
-
-### 3.4 交叉属性标签
-
-- 计算驱动：是
-- 数据驱动：是
-- 实验驱动：否
-- 仿真驱动：是
-- 多模态：否
-- 多尺度建模：否
-- 高通量筛选：否
-- 知识图谱：否
-- 数字孪生：否
-- 机器人平台：否
-- 其他：scientific computing workflow
+- Agent 类型：LLM Agent；Tool-using Agent；Hybrid Agent
+- 科研流程角色：tool_use_and_code_execution；data_analysis；evidence_assessment_and_validation；workflow_orchestration；paper_writing
+- 自主能力：task_decomposition；planning；tool_use；feedback_iteration；autonomous_decision_making；environment_interaction
 
 ## 4. 方法设计
 
-### 4.1 方法动机
-
-- 作者为什么提出该 Agent 系统：比较 agentic AI 在具体引力波分析任务上的实际行为差异
-- 现有科研流程或方法的痛点：Agent 在科学计算环境中的可靠性与解释偏差尚不清楚
-- 核心假设或直觉：真实科学工作流比较比通用 benchmark 更能揭示能力与风险
-
-### 4.2 系统流程
-
-1. 输入：ET simulated data analysis goal
-2. 任务分解 / 规划：拆分为数据准备、PSD、模板与 matched filtering 等步骤
-3. 工具、数据库、模型或实验平台调用：共享计算环境中的科学分析工具
-4. 中间结果反馈：根据中间输出修正流程和参数
-5. 决策或迭代：继续执行直到形成结果和报告
-6. 输出：分析结果、比较结论与论文草稿
-
-### 4.3 系统组件
-
-- Agent 核心：two agentic AI systems under comparison
-- 工具 / API / 数据库：scientific computing environment for gravitational-wave analysis
-- 记忆或状态模块：有工作流状态
-- 规划器：部分有
-- 评估器 / verifier：结果一致性检查
-- 人类反馈或专家介入：实验设置阶段有
-- 实验平台或仿真环境：simulated ET data environment
+- 方法动机：在真实 scientific computing workflow 上比较 agentic AI 的执行能力与偏差，而不是只看通用 benchmark
+- 系统流程：接收 Einstein Telescope 分析目标，完成 PSD estimation、template bank generation、matched filtering、结果汇总和文稿生成
+- 核心组件：共享计算基础设施、引力波分析工具链、模板波形、结果生成与 LLM-assisted writing 环节
 
 ## 5. 实验与验证
 
-### 5.1 验证方式
-
-- benchmark：否
-- 仿真验证：是
-- 高通量计算：否
-- 机器人实验：否
-- 湿实验：否
-- 临床数据：否
-- 真实场景部署：否
-- 专家评估：部分是
-
-### 5.2 数据、任务与指标
-
-- 数据集 / 实验对象：Einstein Telescope simulated data with BBH injections
-- 任务设置：matched-filter recovery pipeline
-- 对比基线：两个 agentic systems head-to-head
-- 评价指标：任务完成度、结果质量、行为差异
-- 关键结果：两套 agent 均可执行端到端流程，但行为差异会造成科学后果
-- 是否有消融实验：否
-- 是否有失败案例或负结果：有，第二轮任务中出现科学分歧
-
-### 5.3 科学贡献
-
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：重点是具体科学工作流中的 agent 行为评估
-- 科学贡献是否经过验证：是
-- 贡献强度判断：中
-- 科学贡献类型：system_platform; astronomy_research
-- 证据强度：high_primary_abstract
+- 验证方式：simulation_validation；computational_validation
+- 数据与任务：Einstein Telescope simulated noise 与 100 个 BBH signal injections
+- 关键结果：两套 agent 在 detection efficiency 和 template bank size 上收敛到可比结果，但行为模式、规范偏离与计算成本差异明显
+- 证据强度：computationally_validated
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：是真实科学工作流执行，不是静态 benchmark
-- 与已有 Agent / 科研智能系统的区别：强调 head-to-head 行为比较与科学后果
-- 与同一科学领域其他 Agent 文献的关系：可与 Dr.Sai、DarkAgents、HEPTAPOD 并列
-- 主要创新点：把 agent 行为差异放到具体引力波分析场景中检验
+- 与普通 AI for Science 方法的区别：不是静态预测模型，而是完整执行引力波分析工作流的 Agent
+- 与同领域其他 Agent 文献的关系：可与 `Dr.Sai`、`DarkAgents`、`HEPTAPOD` 一起构成 physics-agent cluster
+- 主要创新点：把 agent 行为差异放入具体引力波分析流水线中检验，而非停留在抽象 coding task
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：当前场景仍是模拟数据
-- 科学验证不足：不是新天文发现，而是 workflow comparison study
-- 泛化性不足：结论未必外推到所有 astrophysics workflows
-- 工具链依赖：强
-- 数据泄漏或 benchmark 偏差：模拟数据设定可能影响结论
-- 成本、可复现性或安全风险：依赖具体计算环境与指令设定
+- 主要验证对象是 workflow execution，不等价于新的天体物理发现
+- 当前实验基于模拟数据，不是真实观测台数据
+- 结果仍依赖具体计算环境、提示规范和 agent 行为稳定性
+- 旧 note 曾带有抽象 comparison framing；本次写回改为与冻结裁决一致的 `02` 单模块表述
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：02 物理学、天文学与宇宙科学
-- 可支撑哪个论点：比较型 scientific agent 也可能具有稳定领域对象，不该因为方法比较外观转去 01.04
-- 可用于哪个表格或图：physics agent workflow comparison table
-- 适合作为代表性案例吗：可以
-- 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：全文到手后补
-- 需要与哪些论文并列比较：Dr.Sai、DarkAgents、HEPTAPOD
+- 可放入章节：`02` 物理 / 天文学 Agent
+- 可支撑论点：比较型 agent paper 只要对象稳定落在具体物理分析任务上，就不应被推回 `01.04`
+- 推荐引用强度：standard
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-面向 ET 引力波数据分析的 agentic workflow 对比研究。
+面向 Einstein Telescope 引力波分析的 agentic workflow 对比研究。
 
 ### 9.2 速记版 pipeline
 
-1. 读取 ET 模拟数据任务
-2. 生成分析步骤
-3. 执行 PSD 与 matched filtering
-4. 汇总并修正结果
-5. 生成分析结论与文稿
+1. 读取 ET 模拟噪声与任务规范
+2. 估计 PSD 并生成模板库
+3. 执行 BBH matched-filter recovery
+4. 汇总结果并比较 agent 行为
+5. 生成分析报告与文稿
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：02
-二级类：02.01
-三级类：
-四级专题：Agentic gravitational-wave data-analysis workflows
-Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
-科研流程角色：data_analysis; tool_use_and_code_execution; workflow_orchestration; feedback_iteration; manuscript_drafting
-自主能力：planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; environment_interaction
-验证方式：simulation_validation; computational_validation
-交叉属性：computation_driven; data_driven; simulation_driven
-科学贡献类型：system_platform; astronomy_research
-证据强度：high_primary_abstract
-归类置信度：高
-纳入置信度：高
-推荐引用强度：standard
+科学对象模块：02
+覆盖模式：single_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：02
+是否进入 01.04 存放区：否
+主展示模块一级类：02
+主展示模块二级类：02.01
+module_assignment_evidence：Einstein Telescope simulated noise、template bank generation、100 个 BBH signal injections 的 matched-filter recovery
+evidence source level：first_hand_full_text; official_arxiv_pdf_archived_locally_and_checked
+first_hand_source_checked：official arXiv PDF checked locally: Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Inguglia_2026_Einstein_Telescope_Agentic_Analysis.pdf
+source_limited：no
+confidence：high
 ```

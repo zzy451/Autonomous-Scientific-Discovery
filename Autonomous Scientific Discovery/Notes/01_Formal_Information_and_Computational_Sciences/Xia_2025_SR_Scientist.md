@@ -1,61 +1,51 @@
-# Xia et al. 2025 - SR-Scientist: Scientific Equation Discovery With Agentic AI
-
-## 2026-06-20 relaxed multi-module revision
-
-```text
-scientific_object_modules: 02;03;04;06
-object_coverage_mode: multi_module
-has_concrete_object_experiments: yes
-general_method_bucket: none
-primary_module_for_filing: 02
-first_hand_sources_checked: arXiv abstract; official dataset / benchmark page
-classification_evidence_source_level: first_hand_abstract_or_landing_page
-module_assignment_evidence: The SR benchmark / dataset evidence covers physics, chemistry, materials, and biology equation-discovery tasks, supporting 02, 03, 04, and 06 respectively.
-multi_module_object_coverage_note: The old 01.04-only framing treated SR-Scientist as a general equation-discovery workflow. Under the relaxed rule, field-specific equation-discovery benchmark tasks are concrete object coverage, so independent 01.04-only treatment is no longer supported.
-```
+# Xia et al. 2025 - SR-SCIENTIST: Scientific Equation Discovery With Agentic AI
 
 **论文信息**
-- 标题：SR-Scientist: Scientific Equation Discovery With Agentic AI
+- 标题：SR-SCIENTIST: Scientific Equation Discovery With Agentic AI
 - 作者：Shijie Xia; Yuhan Sun; Pengfei Liu
 - 年份：2025
 - 来源 / venue：ICLR 2026 Poster / arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2510.11661
-- PDF / 本地文件路径：当前无本地 PDF；本 note 基于 arXiv abstract page、OpenReview metadata 与 batch14 reviewer evidence
-- 论文类型：研究论文 / equation-discovery agent framework
+- PDF / 本地文件路径：Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xia_2025_SR_Scientist.pdf
+- 论文类型：研究论文 / equation discovery agent
 - 当前状态：to_read
-- 阅读日期：2026-06-20
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
+- 一手来源核对：arXiv PDF/HTML `https://arxiv.org/abs/2510.11661`
+- 复核结论：`supported_modules=02;03;04;06`; `general_method_bucket=none`; `primary_module_for_filing=02`; `confidence=medium-high`; `source_limited=no`
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv abstract; OpenReview TL;DR | autonomous AI scientist writes code, evaluates equations, and optimizes over a long horizon | 高 |
-| 科学对象归类 | `01 / 01.04` | abstract; reviewer pack | 主要贡献是跨领域 equation-discovery agent framework 与 RL-based capability enhancement | 高 |
-| 方法流程 | long-horizon tool-driven loop | abstract | analyze data -> implement equation as code -> submit for evaluation -> optimize from feedback | 高 |
-| 边界判断 | 从 `01.03` 转 `01.04` | object-first review | 多学科 benchmark + framework framing 显示是通用 scientific capability system | 中高 |
-| 实验验证 | benchmark / robustness / symbolic accuracy | abstract | datasets covering four science disciplines; robustness to noise; OOD generalization | 高 |
+| Agent 纳入 | 是 | Abstract | autonomous AI scientist 能写代码、分析数据、提交评估并根据反馈长程优化方程 | 高 |
+| 科学对象归类 | `02;03;04;06` | Abstract | datasets covering four science disciplines: chemistry, biology, physics, material science | 高 |
+| `02` 证据 | 物理对象成立 | Abstract | four-discipline datasets 中明确包含 physics | 中高 |
+| `03` 证据 | 化学对象成立 | Abstract | four-discipline datasets 中明确包含 chemistry | 中高 |
+| `04` 证据 | 材料对象成立 | Abstract | four-discipline datasets 中明确包含 material science | 中高 |
+| `06` 证据 | 生命对象成立 | Abstract | four-discipline datasets 中明确包含 biology | 中高 |
+| 结果表现 | 多项指标提升 | Abstract | 比基线高 6% 到 35%，并展示 noise robustness、OOD generalization、symbolic accuracy | 高 |
+| 边界判断 | 不进入 `01.04` | Abstract; 本轮裁定 | 虽然论文是长程 equation-discovery framework，但当前 relaxed rule 将四学科 benchmark 对象视为具体覆盖 | 中高 |
 
 ## 0. 摘要翻译
 
-作者认为，当前许多 scientific equation discovery methods 只把 LLM 当作 equation proposer。SR-Scientist 则把它提升为 autonomous AI scientist：它会写代码分析数据、把方程实现成代码、提交评估，并基于实验反馈继续优化方程。作者还开发了 end-to-end reinforcement learning framework 来进一步增强这种 agent capability。实验覆盖 chemistry、biology、physics、material science 四个学科数据。
+论文认为，现有 LLM scientific equation discovery 方法通常只把 LLM 当作 equation proposer，嵌在固定的人类流水线中，缺乏通过环境交互自主生成和修正假设的能力。作者提出 SR-SCIENTIST，把 LLM 提升为 autonomous AI scientist：系统能写代码分析数据、把方程实现成代码、提交评估，并根据实验反馈继续优化方程。作者还构建了一个 end-to-end reinforcement learning framework 来增强 agent 能力。实验覆盖 chemistry、biology、physics、material science 四个学科，显示系统在精度、泛化、噪声鲁棒性和 symbolic accuracy 上都优于基线。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：有明确科研目标、长程多步行动、code-interpreter tools、反馈迭代和自主优化
+- 判断依据：具有明确科研目标、长程多步行动、代码工具调用、反馈驱动优化和较高自主性
 - 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
-- 是否具备以下至少一项 Agent 能力：
-  - 计划生成：是
-  - 工具调用：是
-  - 反馈迭代：是
-  - 自主决策：是
-  - 多 Agent 协作：否
-- 在科研流程中承担的明确角色：数据分析、代码执行、方程评估、结果优化
+- 计划生成：是
+- 工具调用：是
+- 反馈迭代：是
+- 自主决策：是
+- 多 Agent 协作：否
+- 在科研流程中承担的明确角色：数据分析、代码执行、方程评估、方程优化
 
 ### 1.2 排除风险检查
 
@@ -66,28 +56,42 @@ multi_module_object_coverage_note: The old 01.04-only framing treated SR-Scienti
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：01
-- 二级类：01.04
-- 三级类：
-- 四级专题：Agentic scientific equation-discovery systems
-- 四级专题是否为新增：否
-- 归类理由：论文稳定对象是跨领域 equation-discovery agent framework，而非具体科学规律对象本体
+- 科学对象模块：`02;03;04;06`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`02`
+- Primary module for filing 说明：当前按裁定以 `02` 归档展示，但多模块事实以对象证据为准
+- 主展示模块一级类：`02`
+- 主展示模块二级类：physics equation discovery
+- 其他覆盖模块及对应层级路径：
+  - `03`：chemistry equation discovery tasks
+  - `04`：material science equation discovery tasks
+  - `06`：biology equation discovery tasks
+- 每个模块的对象实验证据：
+  - `02`：physics datasets
+  - `03`：chemistry datasets
+  - `04`：material science datasets
+  - `06`：biology datasets
+- 归类理由：四学科 benchmark 数据集是明确的对象级验证，不再支持旧 `01.04` 语言
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
 
-- 最终科学研究对象：cross-domain scientific equation-discovery workflow
-- 最终科学问题：如何构建长程、tool-driven 的 scientific equation-discovery agent
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：不是因为用了 RL 或 LLM 就归 01.04，而是因为论文贡献稳定落在通用科研能力平台
+- 最终科学研究对象：物理、化学、材料、生命科学中的方程发现任务
+- 最终科学问题：如何让 autonomous AI scientist 通过长程工具交互恢复科学方程
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：RL 与 code interpreter 是方法实现，模块判定看四学科数据对象
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：01.03
-- 最终判定：转入 01.04
-- 判定理由：方程发现只是任务外观，论文真正研究的是通用 autonomous equation-discovery agent capability
-- 是否需要二次复核：可选
+- 可能误归类到：`01.04`
+- 最终判定：保持 `02;03;04;06`
+- 判定理由：旧笔记强调框架感，但当前裁定把四学科 benchmark 任务视为具体对象覆盖
+- 多模块覆盖说明：本轮冻结裁定不再增删模块
+- 01.04 判定说明：不适用
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -101,7 +105,6 @@ multi_module_object_coverage_note: The old 01.04-only framing treated SR-Scienti
 - Robot / Embodied Agent：否
 - Human-in-the-loop Agent：否
 - Hybrid Agent：是
-- 其他：RL-enhanced autonomous AI scientist
 
 ### 3.2 科研流程角色
 
@@ -138,39 +141,36 @@ multi_module_object_coverage_note: The old 01.04-only framing treated SR-Scienti
 - 实验驱动：否
 - 仿真驱动：是
 - 多模态：否
-- 多尺度建模：否
 - 高通量筛选：否
-- 知识图谱：否
-- 数字孪生：否
 - 机器人平台：否
-- 其他：reinforcement-learning enhanced agent
+- 其他：reinforcement-learning enhanced scientific agent
 
 ## 4. 方法设计
 
 ### 4.1 方法动机
 
-- 作者为什么提出该 Agent 系统：现有 methods 把 LLM 限制在 equation proposer 角色
-- 现有科研流程或方法的痛点：缺少长程、tool-driven autonomous optimization
-- 核心假设或直觉：如果 agent 能写代码、评估结果并利用反馈持续优化，方程发现能力会增强
+- 作者为什么提出该 Agent 系统：摆脱“LLM 只是 equation proposer”的被动角色
+- 现有科研流程或方法的痛点：缺少长程、tool-driven、自主优化能力
+- 核心假设或直觉：让 agent 自己写代码、分析数据、读取反馈并持续优化方程，能更像科学家工作
 
 ### 4.2 系统流程
 
-1. 输入：待发现规律的数据
-2. 任务分解 / 规划：决定分析、实现与评估步骤
-3. 工具、数据库、模型或实验平台调用：code interpreter tools for data analysis and equation evaluation
-4. 中间结果反馈：从 evaluation 得到 signal
-5. 决策或迭代：基于反馈继续优化 equation
-6. 输出：优化后的 equation discovery result
+1. 输入：待恢复规律的数据
+2. 任务分解 / 规划：agent 决定先做哪些数据分析和方程尝试
+3. 工具、数据库、模型或实验平台调用：code interpreter tools 用于分析数据和评估方程
+4. 中间结果反馈：根据 evaluation results 读取误差和表现信号
+5. 决策或迭代：继续修改方程并长期优化
+6. 输出：更优的 equation discovery result
 
 ### 4.3 系统组件
 
-- Agent 核心：SR-Scientist
+- Agent 核心：SR-SCIENTIST
 - 工具 / API / 数据库：code interpreter; equation evaluation tools
-- 记忆或状态模块：iteration history
+- 记忆或状态模块：experience buffer
 - 规划器：long-horizon optimization policy
 - 评估器 / verifier：equation evaluation loop
 - 人类反馈或专家介入：minimal human-defined pipelines
-- 实验平台或仿真环境：datasets across four science disciplines
+- 实验平台或仿真环境：four-discipline scientific datasets
 
 ## 5. 实验与验证
 
@@ -187,78 +187,82 @@ multi_module_object_coverage_note: The old 01.04-only framing treated SR-Scienti
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：chemistry; biology; physics; material science datasets
+- 数据集 / 实验对象：chemistry、biology、physics、material science datasets
 - 任务设置：scientific equation discovery
-- 对比基线：baseline methods / equation proposers
-- 评价指标：performance margin; noise robustness; OOD generalization; symbolic accuracy
-- 关键结果：对 baseline 有 6%-35% 的绝对提升
-- 是否有消融实验：当前摘要级证据不足
-- 是否有失败案例或负结果：当前摘要级证据不足
+- 对比基线：baseline SR methods / equation proposers
+- 评价指标：performance margin、noise robustness、OOD generalization、symbolic accuracy
+- 关键结果：比基线高 6% 到 35%，并在 RL 后进一步提升
+- 是否有消融实验：摘要提到 data analysis、experience buffer、long-horizon optimization 的重要性
+- 是否有失败案例或负结果：首两页未细述
 
 ### 5.3 科学贡献
 
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：重点是 workflow capability 提升
+- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：重点是跨学科方程恢复能力提升
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
-- 科学贡献类型：system_platform; general_scientific_research
-- 证据强度：benchmark / computational_validation
+- 科学贡献类型：system_platform; multi_domain_equation_discovery
+- 证据强度：computational_validation
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：不是 equation proposer，而是可执行分析与评估的 autonomous AI scientist
-- 与已有 Agent / 科研智能系统的区别：还加入 RL framework 增强 agent capability
-- 与同一科学领域其他 Agent 文献的关系：可与 KeplerAgent、STRIDE 形成 equation-discovery agent family
-- 主要创新点：toolized long-horizon equation-discovery loop + RL enhancement
+- 与普通 AI for Science 方法的区别：不是静态生成器，而是能自主写代码与多轮优化的 scientific agent
+- 与已有 Agent / 科研智能系统的区别：引入 end-to-end RL 以增强 equation-discovery 行为
+- 与同一科学领域其他 Agent 文献的关系：与 KeplerAgent、STRIDE 同属 equation-discovery agent family
+- 主要创新点：long-horizon tool use + RL-enhanced optimization
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：仍主要在 benchmark 上验证
-- 科学验证不足：无真实新规律发现或外部实验确认
-- 泛化性不足：跨四学科 benchmark 不等于真实部署
+- Agent 自主性不足：主要仍是 benchmark 环境中的 autonomy
+- 科学验证不足：没有真实实验型新定律发现
+- 泛化性不足：四学科 benchmark 覆盖不等于真实世界全域科研
 - 工具链依赖：强
-- 数据泄漏或 benchmark 偏差：需全文再看 LSR-Synth 与 RL 训练细节
-- 成本、可复现性或安全风险：训练与 tool-execution cost 可能较高
+- 数据泄漏或 benchmark 偏差：需检查训练与评估隔离
+- 成本、可复现性或安全风险：RL 训练和长程执行成本可能较高
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：01.04 General scientific research-agent systems
-- 可支撑哪个论点：跨学科 equation-discovery agent framework 更稳地应进入 01.04
-- 可用于哪个表格或图：`01.03 / 01.04` 边界对照表
+- 可放入哪个章节：02 Physics 作为 filing，同时在 03 / 04 / 06 多模块表中出现
+- 可支撑哪个论点：方程发现 agent 一旦在多学科数据对象上验证，就应从旧 `01.04` 描述转为对象覆盖描述
+- 可用于哪个表格或图：equation-discovery agents across science domains
 - 适合作为代表性案例吗：是
-- 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：后续全文再补
-- 需要与哪些论文并列比较：ASD-0868; ASD-0869; ASD-0857
+- 推荐引用强度：standard
+- 需要在正文中特别引用的页码 / 图 / 表：Abstract；Fig. 1
+- 需要与哪些论文并列比较：KeplerAgent、STRIDE
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-具备代码执行与反馈优化的方程发现 Agent。
+会写代码并长程优化方程的 autonomous equation-discovery agent。
 
 ### 9.2 速记版 pipeline
 
 1. 读入数据
-2. 写代码分析并实现方程
+2. 写代码分析并实现候选方程
 3. 提交评估
 4. 读取反馈
-5. 继续优化方程
+5. 长程优化方程
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：01
-二级类：01.04
-三级类：
-四级专题：Agentic scientific equation-discovery systems
+科学对象模块：02;03;04;06
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：02
+是否进入 01.04 存放区：否
+module_assignment_evidence：datasets covering chemistry, biology, physics, and material science
+multi_module_object_coverage_note：四学科对象覆盖来自明确数据集与评测任务，而非单纯通用性声明
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
-科研流程角色：hypothesis_generation; tool_use_and_code_execution; evidence_assessment_and_validation; feedback_iteration
-自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making
+科研流程角色：hypothesis_generation; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation
+自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction
 验证方式：benchmark; computational_validation
 交叉属性：computation_driven; data_driven; simulation_driven
-科学贡献类型：system_platform; general_scientific_research
-证据强度：benchmark
-归类置信度：中高
-纳入置信度：高
+科学贡献类型：system_platform; multi_domain_equation_discovery
+证据强度：medium_high
+归类置信度：medium_high
+纳入置信度：high
 推荐引用强度：standard
 ```
