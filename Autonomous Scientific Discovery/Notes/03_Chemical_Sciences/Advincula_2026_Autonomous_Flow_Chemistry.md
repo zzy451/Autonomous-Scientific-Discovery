@@ -12,7 +12,30 @@
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Conservative-Hold Refresh
+
+- Final adjudication: `yes_but_conservative_hold`
+- Supported modules: `03;04`
+- `final_01_04_bucket`: `none`
+- `primary_module_for_filing`: `03`
+- Boundary type: `03 primary with source-limited secondary 04 support; low 03-vs-09 risk`
+- Confidence: `medium`
+- `source_limited`: `yes`
+- Safety / access status: `no_safety_skip`; Crossref points to official ChemRxiv `v1` full-text / PDF routes, but those routes were blocked by Cloudflare in this environment, and the DOI path without `/v1` returned `404`.
+- PDF / archive status: no legal local PDF is archived for this note at the moment.
+- Inclusion wording refresh: the available first-hand substitute evidence still supports an autonomous continuous-flow chemistry discovery reading, so the paper should stay included conservatively rather than being treated as a general-method-only record.
+- Classification wording refresh: chemistry is the primary filing because the system autonomously designs and executes continuous-flow synthesis / reaction pathways; ORNL-reported polymer / materials-side results make `04` visible as secondary support under the relaxed multi-module rule, but that `04` support remains source-limited.
+- Risk wording refresh: do not land aggressively while official full-text access remains blocked; keep the record open conservatively.
+
 ## Evidence Log
+
+### 2026-06-24 Evidence Refresh
+
+- First-hand source summary checked this round: Crossref-linked official ChemRxiv routes, existing ORNL project / news materials already reflected in the note, and prior reviewer evidence.
+- Official access status as of `2026-06-24`: no legal local PDF archived; official ChemRxiv `v1` full / PDF routes blocked by Cloudflare in this environment; DOI without `/v1` returned `404`.
+- Primary module remains `03` because the directly optimized object is continuous-flow chemistry / synthesis / reaction discovery rather than an engineering device record.
+- Secondary `04` support should remain visible but clearly source-limited because the accessible evidence mentions polymer / materials-side results without a stable official full-text route in this environment.
+- Keep this note as a conservative hold with `confidence=medium` and `source_limited=yes`.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -249,3 +272,18 @@ Agent 类型：Hybrid Agent; Tool-using Agent; Planning Agent
 推荐引用强度：standard
 ```
 
+### 2026-06-24 Annotation Refresh
+
+```text
+final_agent_inclusion: yes_but_conservative_hold
+supported_modules: 03;04
+final_01_04_bucket: none
+primary_module_for_filing: 03
+boundary_type: 03 primary with source-limited secondary 04 support; low 03-vs-09 risk
+confidence: medium
+source_limited: yes
+safety_access_status: no_safety_skip; official ChemRxiv full/PDF routes Cloudflare-blocked in this environment
+master_update_required: no
+source_status: no legal local PDF archived; Crossref points to official ChemRxiv full/PDF URLs for v1, but those routes were blocked by Cloudflare in this environment; DOI without /v1 returned 404
+final_reason: chemistry is the primary filing because the system autonomously designs and executes continuous-flow synthesis pathways, while ORNL-reported results on copolymers/materials provide secondary 04 support under the relaxed multi-module rule; however, full-text access remained blocked and the record is still too source-limited to land aggressively.
+```

@@ -12,7 +12,30 @@
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## 2026-06-24 Conservative-Hold Refresh
+
+- Final adjudication: `yes_but_conservative_hold`
+- Supported modules: `05`
+- `final_01_04_bucket`: `none`
+- `primary_module_for_filing`: `05`
+- Boundary type: `05 vs 01.04 with withdrawal/source-instability risk`
+- Confidence: `medium`
+- `source_limited`: `yes`
+- Safety / access status: `no_safety_skip`; the withdrawn arXiv landing page is accessible, but the official `/pdf` route is unavailable and no legal local PDF is archived from official routes as of `2026-06-24`.
+- Source status refresh: the cited repo is broken / `404`, and the only public repo state currently visible is a placeholder rather than a usable paper-supporting release.
+- Inclusion wording refresh: the system still looks like an Agent-oriented climate-science workflow rather than a single-turn model paper, but the record should remain conservative because the official first-hand package is unstable.
+- Classification wording refresh: concrete climate-science task coverage still supports `05` rather than `01.04`; do not collapse this into a general-method bucket just because the paper also presents a platform / benchmark surface.
+- Risk wording refresh: withdrawn status, missing stable official full-text routes, and missing cited repo support make this too source-limited for a direct landing.
+
 ## Evidence Log
+
+### 2026-06-24 Evidence Refresh
+
+- First-hand source summary checked this round: withdrawn arXiv landing page plus the accessible abstract / landing-page metadata.
+- Official source status as of `2026-06-24`: no legal local PDF available from official routes; arXiv `/pdf` unavailable.
+- Repo status as of `2026-06-24`: cited repo broken / `404`; public repo only placeholder.
+- Classification remains anchored in climate-science tasks and environment coverage, so the supported module stays `05` rather than `01.04`.
+- Keep this note as a conservative hold with `confidence=medium` and `source_limited=yes`.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -247,4 +270,20 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 归类置信度：高
 纳入置信度：中高
 推荐引用强度：standard
+```
+
+### 2026-06-24 Annotation Refresh
+
+```text
+final_agent_inclusion: yes_but_conservative_hold
+supported_modules: 05
+final_01_04_bucket: none
+primary_module_for_filing: 05
+boundary_type: 05 vs 01.04 with withdrawal/source-instability risk
+confidence: medium
+source_limited: yes
+safety_access_status: no_safety_skip; withdrawn arXiv landing page accessible but official PDF unavailable/404
+master_update_required: no
+source_status: no legal local PDF available from official routes as of 2026-06-24; arXiv /pdf unavailable; cited repo broken/404; public repo only placeholder
+final_reason: concrete climate-science task coverage still supports 05 rather than 01.04, but withdrawn status, missing official PDF/html/src, and missing cited repo make this too unstable and source-limited for a direct landing.
 ```

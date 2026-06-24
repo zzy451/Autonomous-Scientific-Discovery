@@ -12,7 +12,30 @@
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## 2026-06-24 Conservative-Hold Refresh
+
+- Final adjudication: `yes_but_conservative_hold`
+- Supported modules: `04`
+- `final_01_04_bucket`: `none`
+- `primary_module_for_filing`: `04`
+- Boundary type: `agent-strength / automation-vs-agent core-strength boundary`
+- Confidence: `medium`
+- `source_limited`: `yes`
+- Safety / access status: `no_safety_skip`; official ACS main-article HTML/PDF remained access-gated, while the official ACS collection abstract and the official supplementary PDF were checked.
+- PDF / archive status: the confirmed local supporting file is `Reference_PDF/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity_Supplementary.pdf`; this is supplementary support only, not the main article PDF.
+- Inclusion wording refresh: concrete automated CVD experimentation plus in situ Raman support continued ASD inclusion, but the accessible first-hand record still leaves Agent strength somewhat borderline.
+- Classification wording refresh: keep this note filed stably in materials science around CNT wall-selective growth conditions and automated experimentation; do not treat it as `01.04`, and do not overstate a chemistry-side landing from the current source base.
+- Risk wording refresh: keep the record open conservatively rather than forcing a high-confidence landing from abstract plus supplementary-only access.
+
 ## Evidence Log
+
+### 2026-06-24 Evidence Refresh
+
+- First-hand source summary checked this round: official ACS collection abstract; official ACS supplementary PDF; official ACS main article remained access-gated.
+- Archive status clarified: the only confirmed local supporting file is the supplementary PDF at `Reference_PDF/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity_Supplementary.pdf`.
+- Materials-science object evidence remains stable at `04` because the directly studied object is CNT wall-selective growth conditions rather than a general method record.
+- The main unresolved issue is Agent-strength / autonomy-loop strength, not the materials-object classification.
+- Keep this note as a conservative hold with `confidence=medium` and `source_limited=yes`.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -247,4 +270,21 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Human-i
 归类置信度：高
 纳入置信度：中
 推荐引用强度：standard
+```
+
+### 2026-06-24 Annotation Refresh
+
+```text
+final_agent_inclusion: yes_but_conservative_hold
+supported_modules: 04
+final_01_04_bucket: none
+primary_module_for_filing: 04
+boundary_type: agent-strength / automation-vs-agent core-strength boundary
+confidence: medium
+source_limited: yes
+safety_access_status: no_safety_skip; official main article access-gated; supplementary checked
+master_update_required: no
+first_hand_source_summary: official ACS collection abstract checked; official ACS supplementary PDF checked; official ACS main article HTML/PDF remained gated
+confirmed_local_supporting_pdf: Reference_PDF/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity_Supplementary.pdf
+final_reason: Concrete object evidence supports a stable materials-science filing around CNT wall-selective growth conditions and automated CVD experimentation, but accessible first-hand evidence still leaves Agent strength somewhat borderline, so do not force-close as a high-confidence landing.
 ```
