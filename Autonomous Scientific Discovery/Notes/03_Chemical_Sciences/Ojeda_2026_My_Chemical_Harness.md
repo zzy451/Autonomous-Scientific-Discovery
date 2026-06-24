@@ -6,16 +6,40 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2606.11256
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / PDF 与 batch9 reviewer evidence packs
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/03_Chemical_Sciences/Ojeda_2026_My_Chemical_Harness.pdf`（official arXiv PDF archived locally and checked；本 note 亦核对 arXiv HTML full text）
 - 论文类型：研究论文 / chemistry molecular-design agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0810`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 03
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 03
+confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/03_Chemical_Sciences/Ojeda_2026_My_Chemical_Harness.pdf` and checked; arXiv HTML full text also checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: executable synthetic pathways, molecules, reaction templates, and building-block search remain direct chemistry-native objects under the frozen top-level class-03 adjudication.
+multi_module_object_coverage_note: note location under `03_Chemical_Sciences` is filing convenience only; the authoritative classification fact is the frozen single-module `03` adjudication.
+final_reason: the optimized objects are molecules and synthetic routes rather than translational-medicine outputs or a general scientific-agent platform.
+```
+
+- 2026-06-24 full reaudit source status: official arXiv PDF is now archived locally at `Autonomous Scientific Discovery/Reference_PDF/03_Chemical_Sciences/Ojeda_2026_My_Chemical_Harness.pdf` and was checked alongside the arXiv HTML full text.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `03` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF / HTML recheck | synthesis-aware molecular design remains a concrete chemistry object; note path is filing convenience only | high |
 | Agent 纳入 | 是 | abstract; method | LLM 充当搜索策略控制器，配合本地化学代码执行、验证、打分与反思更新 | 高 |
 | 科学对象归类 | `03 / 03.04` | abstract; intro | 搜索对象是可执行 synthetic pathways、molecules、reaction templates 与 building blocks | 高 |
 | 方法流程 | route-native evolutionary design loop | method section | individual 是 synthetic pathway，LLM 做 query planning、policy setting 和反思修订 | 高 |
@@ -75,6 +99,15 @@
 - 最终判定：保持 `03 / 03.04`
 - 判定理由：即使引言提到 drug discovery，直接优化对象仍是分子和反应路线，而不是临床或治疗对象
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `03`
+- primary_module_for_filing: `03`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- boundary closeout: this round keeps the note out of `07` and `01.04`; drug-discovery framing in the motivation does not override the direct chemistry object.
+- filing reminder: the current `03` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -229,6 +262,17 @@
 3. 化学工具执行并打分
 4. 根据结果反思修正
 5. 输出更优分子与路线
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 03
+primary_module_for_filing: 03
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/03_Chemical_Sciences/Ojeda_2026_My_Chemical_Harness.pdf` and checked; arXiv HTML full text also checked
+summary_classification_note: keep this record as a concrete class-03 chemistry / synthetic-pathway-design agent, not a class-07 medicine paper or a `01.04` general-method paper.
+```
 
 ### 9.3 标注字段汇总
 

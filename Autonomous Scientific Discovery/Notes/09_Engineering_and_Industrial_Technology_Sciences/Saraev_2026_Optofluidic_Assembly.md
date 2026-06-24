@@ -6,16 +6,40 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.27643
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / PDF 与 batch9 reviewer evidence packs
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Saraev_2026_Optofluidic_Assembly.pdf`（official arXiv PDF archived locally and checked；本 note 亦核对 arXiv HTML full text）
 - 论文类型：研究论文 / agentic experimental control system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0806`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 09
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 09
+confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Saraev_2026_Optofluidic_Assembly.pdf` and checked; arXiv HTML full text also checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: language-to-objective synthesis is validated on optofluidic assembly and experimental control tasks, so the stable object remains engineering/advanced-manufacturing work in class 09.
+multi_module_object_coverage_note: note location under `09_Engineering_and_Industrial_Technology_Sciences` is filing convenience only; the authoritative classification fact is the frozen single-module `09` adjudication.
+final_reason: the paper closes on experimental optofluidic assembly control rather than a general scientific-agent workflow.
+```
+
+- 2026-06-24 full reaudit source status: official arXiv PDF is now archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Saraev_2026_Optofluidic_Assembly.pdf` and was checked alongside the arXiv HTML full text.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `09` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF / HTML recheck | optofluidic assembly and experimental control remain concrete engineering objects; note path is filing convenience only | high |
 | Agent 纳入 | 是 | abstract; system loop | 系统明确为 agentic pipeline，包含 perceive -> compose -> propose -> act -> report & learn | 高 |
 | 科学对象归类 | `09 / 09.03` | abstract; p.2 | 研究对象是 optofluidic microscale assembly 与光驱动先进制造，不是通用科研平台 | 高 |
 | 方法流程 | 自然语言到可微目标函数闭环 | p.3 | LLM 合成 objective function，SLSQP 与实验执行栈完成逆优化与动作执行 | 高 |
@@ -75,6 +99,15 @@
 - 最终判定：保持 `09 / 09.03`
 - 判定理由：一级类稳定落在工程；二级类上虽有先进制造/机械设计压力，但当前 paper 更锚定 optofluidic control 与 experimental assembly
 - 是否需要二次复核：可选，仅在后续统一细化 `09` 二级类时复核
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `09`
+- primary_module_for_filing: `09`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- boundary closeout: this round keeps the note out of `01.04`; experimental optofluidic assembly remains the direct object even if the system is described as an agentic platform.
+- filing reminder: the current `09` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -229,6 +262,17 @@
 3. 用求解器求动作
 4. 在实验平台执行
 5. 根据反馈继续修正
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 09
+primary_module_for_filing: 09
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Saraev_2026_Optofluidic_Assembly.pdf` and checked; arXiv HTML full text also checked
+summary_classification_note: keep this record as a concrete class-09 experimental-control / optofluidic-assembly agent, not a `01.04` general-method paper.
+```
 
 ### 9.3 标注字段汇总
 

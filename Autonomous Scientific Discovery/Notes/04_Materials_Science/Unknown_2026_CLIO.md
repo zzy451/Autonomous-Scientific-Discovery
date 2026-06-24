@@ -8,8 +8,8 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 04
-first_hand_sources_checked: arXiv abstract / PDF
-classification_evidence_source_level: first_hand_full_text
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/04_Materials_Science/Unknown_2026_CLIO.pdf` and checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
 module_assignment_evidence: 03 is supported by organic redox-flow-battery negolyte molecular design, synthesis, characterization, and redesign after mechanistic analysis. 04 is supported by energy-material / battery-negolyte electrochemical performance validation.
 multi_module_object_coverage_note: Primary filing remains 04 because the application object is an energy-material battery molecule. Under the relaxed rule, the organic molecular-design and synthesis evidence is also sufficient for 03.
 ```
@@ -20,16 +20,40 @@ multi_module_object_coverage_note: Primary filing remains 04 because the applica
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2606.02618
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/04_Materials_Science/Unknown_2026_CLIO.pdf`（official arXiv PDF archived locally and checked）
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
+- 当前状态：已按本地归档 arXiv PDF 完成 first-hand source sync；主列表当前保持 `to_read`
 - 阅读日期：2026-06-18
 - 笔记作者：Codex
+
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0811` and retires stale single-module wording.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 03;04
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/04_Materials_Science/Unknown_2026_CLIO.pdf` and checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: 03 is supported by organic negolyte molecular design, synthesis, characterization, and redesign after mechanistic analysis. 04 is supported by redox-flow-battery material-performance validation and energy-material filing pressure.
+multi_module_object_coverage_note: the earlier single-module-04 wording in this note and related stale metadata is now outdated; the authoritative frozen adjudication is dual-module `03;04` with filing kept at `04`.
+final_reason: CLIO simultaneously studies chemistry-native molecular design and materials-side battery-performance validation.
+```
+
+- 2026-06-24 source correction: this round uses the locally archived official arXiv PDF at `Autonomous Scientific Discovery/Reference_PDF/04_Materials_Science/Unknown_2026_CLIO.pdf` as the checked first-hand full-text source, and the older abstract/metadata-only wording in this note is stale.
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `03;04` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF full-text recheck | stale single-module `04` wording is retired; the authoritative closeout is dual-module `03;04` with filing kept at `04` | high |
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
 | 科学对象归类 | `04` / `04.04` | 摘要 | 最稳定对象是“aqueous organic redox-flow-battery negolyte design agent”，而不是单纯的模型方法或发表 venue。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
@@ -88,6 +112,16 @@ multi_module_object_coverage_note: Primary filing remains 04 because the applica
 - 最终判定：保持 `04` / `04.04`
 - 判定理由：03 / 04 高压边界；当前更偏 energy-materials / battery-negolyte object
 - 是否需要二次复核：需要。
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `03;04`
+- primary_module_for_filing: `04`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- stale wording retired: older single-module `04` wording in this note and stale metadata should no longer be treated as authoritative.
+- boundary closeout: `03` is kept for molecular design / synthesis evidence, while `04` remains the filing primary because the application object is battery-material performance.
+- filing reminder: the current `04` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -202,6 +236,17 @@ multi_module_object_coverage_note: Primary filing remains 04 because the applica
 3. 调用工具 / 数据 / 检索资源。
 4. 基于反馈修正中间结果。
 5. 输出更高质量的研究结论或知识生产结果。
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 03;04
+primary_module_for_filing: 04
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/04_Materials_Science/Unknown_2026_CLIO.pdf` and checked
+summary_classification_note: authoritative closeout is dual-module `03;04`; older single-module `04` wording is stale and has been retired.
+```
 
 ### 9.3 标注字段汇总
 

@@ -6,16 +6,40 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.06747
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / PDF 与 batch9 reviewer evidence packs
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Du_2026_TurboAgent.pdf`（official arXiv PDF archived locally and checked；本 note 亦核对 arXiv HTML full text）
 - 论文类型：研究论文 / 多 Agent 工程设计系统
 - 当前状态：to_read
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0805`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 09
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 09
+confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Du_2026_TurboAgent.pdf` and checked; arXiv HTML full text also checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: compressor-blade geometry generation, aerodynamic optimization, and physics-based validation keep the paper anchored to engineering design rather than a general method bucket.
+multi_module_object_coverage_note: note location under `09_Engineering_and_Industrial_Technology_Sciences` is filing convenience only; the authoritative classification fact is the frozen single-module `09` adjudication.
+final_reason: the concrete object is turbomachinery aerodynamic design, so the record stays in top-level engineering.
+```
+
+- 2026-06-24 full reaudit source status: official arXiv PDF is now archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Du_2026_TurboAgent.pdf` and was checked alongside the arXiv HTML full text.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `09` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF / HTML recheck | turbomachinery aerodynamic design remains a concrete engineering object; note path is filing convenience only | high |
 | Agent 纳入 | 是 | abstract; framework overview | 论文给出 autonomous multi-agent workflow，覆盖需求分析、几何生成、预测、优化和物理验证 | 高 |
 | 科学对象归类 | `09 / 09.02` | abstract; design-variable section | 直接优化 turbomachinery / compressor blade aerodynamic design，不是通用科学平台 | 高 |
 | 方法流程 | 端到端闭环工程设计 | p.5; p.9 | 从 requirement interpretation 到 geometry generation、performance prediction、optimization 和 CFD/FEA validation | 高 |
@@ -75,6 +99,15 @@
 - 最终判定：保持 `09 / 09.02`
 - 判定理由：任务、参数化对象、仿真器和评价指标均是 turbomachinery-specific
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `09`
+- primary_module_for_filing: `09`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- boundary closeout: this round keeps the note out of `01.04`; turbomachinery aerodynamic design remains the direct research object.
+- filing reminder: the current `09` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -229,6 +262,17 @@
 3. 生成并预测叶片设计
 4. 做 CFD / FEA 验证
 5. 迭代优化输出结果
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 09
+primary_module_for_filing: 09
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Du_2026_TurboAgent.pdf` and checked; arXiv HTML full text also checked
+summary_classification_note: keep this record as a concrete class-09 turbomachinery-design agent, not a `01.04` general-method paper.
+```
 
 ### 9.3 标注字段汇总
 

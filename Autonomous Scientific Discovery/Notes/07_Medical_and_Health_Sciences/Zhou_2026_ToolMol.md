@@ -6,32 +6,44 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.12784
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract + arXiv PDF
-- 论文类型：研究论文 / de novo drug discovery agent
-- 当前状态：to_read
-- 阅读日期：2026-06-20
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Zhou_2026_ToolMol.pdf`（official arXiv PDF archived locally and checked）
+- 论文类型：研究论文 / drug-discovery agent
+- 当前状态：to_read（note 已按冻结 adjudication 更新）
+- 阅读日期：2026-06-24
 - 笔记作者：Codex
+
+## 2026-06-24 Batch28Partial1 / full reaudit
+
+- final supported_modules：`03;07`
+- primary_module_for_filing：`07`
+- object_coverage_mode：`multi_module`
+- source_limited：`no`
+- safety_access_status：`none`
+- evidence source level：`first_hand_full_text; official_arxiv_pdf_archived_locally_and_checked`
+- first-hand source checked：`official arXiv PDF archived locally and checked: Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Zhou_2026_ToolMol.pdf`
+- note_revision_required：`yes`
+- adjudication confidence：`high`
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | abstract; methods | 多目标 GA + tool-calling LLM operator + RDKit tools 构成多步迭代 | 高 |
-| 科学对象归类 | `07 / 07.04` | title; intro | 问题被定义为 small-molecule drug discovery | 高 |
-| 方法流程 | 候选编辑与反馈优化 | methods | 多轮种群更新与 oracle 反馈 | 高 |
-| 实验验证 | 计算验证较强 | experiments | c-MET、BRD4、ACAA1，且补做 ABFE | 高 |
-| 边界判断 | 不转 `03` |全文主线 | 优化对象是蛋白靶点药物候选，不是一般化学对象 | 高 |
+| Agent 纳入 | 是 | abstract; methods overview | ToolMol 将 LLM operator、遗传搜索和 RDKit 工具调用串成多步候选优化闭环。 | 高 |
+| `03` 模块证据 | 支持 | methods; molecular editing setup | 系统直接操作小分子表示、执行确定性分子编辑，并优化分子层面的性质与结构候选。 | 高 |
+| `07` 模块证据 | 支持 | title; task definition; experiments | 任务被定义为面向蛋白靶点的小分子药物发现，评价围绕 binding affinity、drug-likeness 与可开发性展开。 | 高 |
+| 验证方式 | 计算验证 | experiments | 在多个蛋白靶点上做 de novo drug discovery，并用 ABFE 等评估候选质量。 | 高 |
+| 边界判断 | 保留 `03;07`，filing=`07` | full-paper object reading | 分子编辑对象支撑 `03`，药物发现与靶点导向目标支撑 `07`；归档主模块仍以医学/健康导向的 drug discovery 为先。 | 高 |
 
 ## 0. 摘要翻译
 
-论文提出 ToolMol，将多目标遗传算法与具工具调用能力的 LLM operator 结合，用 RDKit 支持的确定性分子编辑替代直接生成 SMILES。系统围绕蛋白靶点进行 de novo 药物设计，优化 binding affinity、QED、SA，并用 ABFE 进一步验证候选质量。
+论文提出 ToolMol，将 evolutionary search 与具备工具调用能力的 LLM operator 结合，用 RDKit 支持的确定性分子编辑替代纯生成式 SMILES 采样，面向多目标小分子药物发现开展候选优化。系统围绕蛋白靶点同时优化 binding affinity、QED、合成可行性等指标，并用更强的计算评估进一步筛选候选。
 
 ## 1. 是否纳入本综述
 
 ### 1.1 Agent 判定
 
 - 是否属于 Agent 文献：是
-- 判断依据：明确药物发现目标、多步候选迭代、工具调用、反馈优化
+- 判断依据：面向明确药物发现目标，具有多步候选生成与筛选流程，并显式调用分子编辑工具与反馈评估器。
 - 判定置信度：高
 - 是否面向明确科研目标：是
 - 是否具有多步行动过程：是
@@ -40,7 +52,7 @@
 - 反馈迭代：是
 - 自主决策：是
 - 多 Agent 协作：否
-- 在科研流程中承担的明确角色：候选设计、修改、打分与筛选
+- 在科研流程中承担的明确角色：候选分子设计、修改、打分、筛选与迭代优化
 
 ### 1.2 排除风险检查
 
@@ -51,27 +63,36 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：07
-- 二级类：07.04
-- 三级类：
-- 四级专题：Multi-objective de novo drug discovery agents
-- 四级专题是否为新增：否
-- 归类理由：对象稳定落在蛋白靶点药物候选设计与优化
+- 科学对象模块：`03;07`
+- 覆盖模式：多模块
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`07`
+- Primary module for filing 说明：仅用于笔记归档与展示，不覆盖 `03;07` 的多模块事实。
+- 主展示模块一级类：`07` 医学与健康科学
+- 主展示模块二级类：`07.04` 药学与生物医药
+- 其他覆盖模块及对应层级路径：`03` 化学科学（分子设计 / 分子优化对象层）
+- 每个模块的对象实验证据：
+  - `03`：直接对小分子候选进行结构编辑、性质优化与分子级搜索。
+  - `07`：目标函数与实验任务围绕靶点导向 drug discovery 展开，属于医学/健康导向药物发现。
+- 归类理由：该工作同时覆盖化学对象层的分子设计与医学/健康导向的药物发现任务，冻结裁决保留双模块。
 - 归类置信度：高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：面向蛋白靶点的小分子药物候选
-- 最终科学问题：如何在多目标约束下更高效地优化药物候选
-- 为什么不按 Agent 技术、模型方法或发表 venue 归类：GA、LLM 与 RDKit 是手段，不改变药物发现对象
+- 最终科学问题：如何在多目标约束下自主优化可药化的小分子候选
+- 为什么不按 Agent 技术、模型方法或发表 venue 归类：GA、LLM 和 RDKit 是方法手段，不是分类对象
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：03.04
-- 最终判定：保持 07.04
-- 判定理由：不是反应、合成路线或催化对象，而是靶点驱动的药物候选优化
+- 可能误归类到：仅 `07`，或仅 `03`
+- 最终判定：保留 `03;07`，其中 filing=`07`
+- 判定理由：不能因为归档落在 `07` 就缩回单模块；分子对象层证据足以支撑 `03`，药物发现与靶点导向目标又明确支撑 `07`
+- 多模块覆盖说明：`03` 反映分子设计对象层，`07` 反映药物发现与健康转化导向
+- 01.04 判定说明：有具体分子与药物发现实验，不属于通用方法 bucket
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -86,165 +107,78 @@
 - Robot / Embodied Agent：否
 - Human-in-the-loop Agent：否
 - Hybrid Agent：是
-- 其他：Evolutionary agentic framework
+- 其他：evolutionary agentic optimization framework
 
 ### 3.2 科研流程角色
 
-- 文献检索与阅读：否
-- 知识抽取与组织：否
-- 科学问题提出：否
 - 假设生成：是
-- 实验设计：否
-- 仿真建模：是
 - 工具调用与代码执行：是
-- 实验执行：否
 - 数据分析：是
-- 结果解释：部分是
 - 证据评估与验证：是
-- 论文写作：否
 - 端到端科研流程自动化：部分是
-
-### 3.3 自主能力
-
-- 任务分解：部分是
-- 计划生成：是
-- 工具调用：是
-- 记忆与状态维护：部分是
-- 反馈迭代：是
-- 自主决策：是
-- 多 Agent 协作：否
-- 环境交互：是
-- 闭环实验：否
-
-### 3.4 交叉属性标签
-
-- 计算驱动：是
-- 数据驱动：是
-- 实验驱动：否
-- 仿真驱动：是
-- 多模态：否
-- 多尺度建模：否
-- 高通量筛选：否
-- 知识图谱：否
-- 数字孪生：否
-- 机器人平台：否
-- 其他：ABFE-supported candidate ranking
 
 ## 4. 方法设计
 
-### 4.1 方法动机
-
-- 作者为什么提出该 Agent 系统：改进 de novo drug design 的分子编辑质量与可解释性
-- 现有科研流程或方法的痛点：直接生成 SMILES 容易不稳定且难与确定性编辑工具结合
-- 核心假设或直觉：把进化搜索与工具调用式编辑结合可提高多目标优化效果
-
-### 4.2 系统流程
-
-1. 输入：蛋白靶点与初始候选
-2. 任务分解 / 规划：构造种群并分配多目标优化任务
-3. 工具、数据库、模型或实验平台调用：RDKit 七个编辑工具
-4. 中间结果反馈：affinity、QED、SA 等 oracle 输出
-5. 决策或迭代：LLM operator 决定下一轮编辑
-6. 输出：更优药物候选
-
-### 4.3 系统组件
-
-- Agent 核心：tool-calling LLM operator
-- 工具 / API / 数据库：RDKit molecular editing tools
-- 记忆或状态模块：population state
-- 规划器：multi-objective GA loop
-- 评估器 / verifier：predicted binding affinity + ABFE
-- 人类反馈或专家介入：否
-- 实验平台或仿真环境：c-MET、BRD4、ACAA1
+- 作者为什么提出该 Agent 系统：提高 de novo drug discovery 中候选编辑与多目标优化的稳定性和可解释性
+- 系统流程：初始化候选种群，调用 RDKit 编辑工具生成变体，用多目标 oracle 打分，再由 LLM operator 决定后续编辑与保留策略
+- 核心组件：LLM operator、evolutionary search loop、RDKit 编辑工具、binding/QED/SA/ABFE 评估器
 
 ## 5. 实验与验证
 
-### 5.1 验证方式
-
-- benchmark：是
-- 仿真验证：是
-- 高通量计算：否
-- 机器人实验：否
-- 湿实验：否
-- 临床数据：否
-- 真实场景部署：否
-- 专家评估：否
-
-### 5.2 数据、任务与指标
-
-- 数据集 / 实验对象：c-MET、BRD4、ACAA1 三个靶点
-- 任务设置：small-molecule drug discovery
-- 对比基线：相关分子设计 / 优化基线
-- 评价指标：binding affinity、QED、SA、ABFE
-- 关键结果：在多个靶点上 affinity 提升，并补做 ABFE 支撑
-- 是否有消融实验：有
-- 是否有失败案例或负结果：未突出
-
-### 5.3 科学贡献
-
-- 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：主要是候选优化流程创新
-- 科学贡献是否经过验证：是
-- 贡献强度判断：中
-- 科学贡献类型：设计 / 预测 / 系统平台
-- 证据强度：计算验证
+- 验证方式：benchmark；计算验证
+- 数据集 / 实验对象：多个蛋白靶点相关药物发现任务
+- 关键结果：在目标靶点候选优化上取得较强表现，并用更高成本评估进一步检查候选质量
+- 科学贡献类型：design；prediction；system_platform
+- 证据强度：computationally_validated
 
 ## 6. 与已有工作的关系
 
-- 与普通 AI for Science 方法的区别：显式工具调用和进化循环，不是单步生成
-- 与已有 Agent / 科研智能系统的区别：对象稳定锚定药物发现
-- 与同一科学领域其他 Agent 文献的关系：可与 FRAGMENTA、ReACT-Drug 并列
-- 主要创新点：evolutionary search + LLM operator + deterministic edits
+- 与普通 AI for Science 方法的区别：不是一次性分子生成器，而是带工具调用和反馈迭代的 agentic 优化系统
+- 与同领域其他 Agent 文献的关系：可与其他药物发现 / 分子优化 agent 并列，用来说明 `03/07` 边界下的多模块归类
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：仍主要停留在 in silico 优化
-- 科学验证不足：缺少湿实验
-- 泛化性不足：当前主要针对有限靶点
-- 工具链依赖：强
-- 数据泄漏或 benchmark 偏差：需要关注
-- 成本、可复现性或安全风险：分子评估成本较高
+- 主要仍是 in silico 评估，缺少湿实验或临床层验证
+- 多模块边界虽稳定，但若只看归档目录容易被误读成单 `07`
+- 本地 PDF 已归档并核对：`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Zhou_2026_ToolMol.pdf`（official arXiv PDF archived locally and checked）
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：07 医学与健康科学 / 药物发现 Agent
-- 可支撑哪个论点：药物发现对象比化学方法外观更应主导分类
-- 可用于哪个表格或图：drug discovery agent 对比表；03/07 边界表
-- 适合作为代表性案例吗：适合
-- 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：method overview、ABFE result
-- 需要与哪些论文并列比较：FRAGMENTA、ReACT-Drug、PROBE
+- 可放入章节：`07` 药物发现 Agent；并在 `03/07` 边界讨论中作为双模块案例
+- 可支撑论点：药物发现类 Agent 往往同时覆盖化学对象层与医学转化目标层，不应因 filing 方便而抹去 `03`
+- 推荐引用强度：standard
 
 ## 9. 总结
 
 ### 9.1 一句话概括
 
-用进化搜索和工具调用优化药物候选的 Agent。
+面向多目标药物发现的分子编辑型 Agent 优化框架。
 
 ### 9.2 速记版 pipeline
 
-1. 初始化候选种群
-2. 调用 RDKit 工具改分子
+1. 初始化小分子候选
+2. 调用 RDKit 做结构编辑
 3. 用多目标 oracle 打分
-4. 迭代更新种群
+4. 迭代保留与改写候选
 5. 输出更优药物候选
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.04
-三级类：
-四级专题：Multi-objective de novo drug discovery agents
-Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
-科研流程角色：hypothesis_generation; simulation_modeling; tool_use_and_code_execution; data_analysis; evidence_assessment_and_validation
-自主能力：planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction
-验证方式：benchmark; simulation_validation
-交叉属性：computation_driven; data_driven; simulation_driven
-科学贡献类型：design; prediction; system_platform
-证据强度：computationally_validated
-归类置信度：高
-纳入置信度：高
-推荐引用强度：standard
+科学对象模块：03;07
+覆盖模式：multi_module
+是否具有具体科学对象实验：是
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：否
+主展示模块一级类：07
+主展示模块二级类：07.04
+其他覆盖模块及对应层级路径：03 化学科学（分子设计 / 分子优化对象层）
+module_assignment_evidence：03 来自分子编辑与分子级优化；07 来自靶点导向 drug discovery 任务与评估
+multi_module_object_coverage_note：冻结 adjudication 明确保留 03;07 双模块，不能缩回单 07
+evidence source level：first_hand_full_text; official_arxiv_pdf_archived_locally_and_checked
+first_hand_source_checked：official arXiv PDF archived locally and checked: Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Zhou_2026_ToolMol.pdf
+source_limited：no
+confidence：high
 ```
-

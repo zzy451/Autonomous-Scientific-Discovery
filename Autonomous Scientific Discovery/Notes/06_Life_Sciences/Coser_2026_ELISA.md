@@ -6,16 +6,40 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.11872
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract + arXiv HTML v2
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/06_Life_Sciences/Coser_2026_ELISA.pdf`（official arXiv PDF archived locally and checked；本 note 亦核对 arXiv HTML full text）
 - 论文类型：研究论文 / single-cell genomics discovery agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0813`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 06
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 06
+confidence: medium
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/06_Life_Sciences/Coser_2026_ELISA.pdf` and checked; arXiv HTML full text also checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: single-cell genomics, gene markers, pathway analysis, ligand-receptor interactions, and biology-grounded discovery remain direct life-science objects.
+multi_module_object_coverage_note: note location under `06_Life_Sciences` is filing convenience only; the authoritative classification fact is the frozen single-module `06` adjudication, with no expansion to `07` and no fallback to `01.04`.
+final_reason: the stable object is single-cell biology / genomics rather than clinical medicine or a general scientific-agent benchmark.
+```
+
+- 2026-06-24 full reaudit source status: official arXiv PDF is now archived locally at `Autonomous Scientific Discovery/Reference_PDF/06_Life_Sciences/Coser_2026_ELISA.pdf` and was checked alongside the arXiv HTML full text.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `06` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF / HTML recheck | keep the record in life sciences only; do not expand to `07` and do not retreat to `01.04` | medium |
 | Agent 纳入 | 是，但 agent 强度中等 | arXiv HTML v2 lines 115-119, 181-191 | 论文明确写成 interactive single-cell agent，包含 query classification、retrieval、analysis、LLM interpretation | 中高 |
 | 科学对象归类 | `06 / 06.03` | arXiv HTML v2 lines 179-180, 330-331 | 直接对象是 scRNA-seq、gene markers、pathways、ligand-receptor interactions 和 biological hypotheses | 高 |
 | 方法流程 | 四模块路由式多步分析 | arXiv HTML v2 lines 185-186, 496-518 | 自动区分 gene / ontology / mixed queries，并路由到不同分析模块 | 高 |
@@ -75,6 +99,15 @@ ELISA 是一个面向单细胞基因组学发现的可解释混合式生成 AI A
 - 最终判定：保持 `06 / 06.03`
 - 判定理由：主对象是细胞图谱与生物机制探索，疾病数据只是验证语境，不构成临床对象优先
 - 是否需要二次复核：可选，主要用于进一步确认 agent 强度而非顶层主类
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `06`
+- primary_module_for_filing: `06`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- boundary closeout: this round keeps the note out of `07` and `01.04`; disease-flavored datasets do not override the direct life-science object.
+- filing reminder: the current `06` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -229,6 +262,17 @@ ELISA 是一个面向单细胞基因组学发现的可解释混合式生成 AI A
 3. 调用单细胞分析模块
 4. 汇总数据证据
 5. 输出生物解释与候选假设
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 06
+primary_module_for_filing: 06
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/06_Life_Sciences/Coser_2026_ELISA.pdf` and checked; arXiv HTML full text also checked
+summary_classification_note: keep this record as a concrete class-06 single-cell-genomics agent; do not expand it to `07` and do not retreat it to `01.04`.
+```
 
 ### 9.3 标注字段汇总
 

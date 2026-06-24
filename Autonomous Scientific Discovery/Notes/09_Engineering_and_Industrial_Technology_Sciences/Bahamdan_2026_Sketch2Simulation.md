@@ -6,16 +6,40 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.24629
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / PDF 与 batch9 reviewer evidence packs
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Bahamdan_2026_Sketch2Simulation.pdf`（official arXiv PDF archived locally and checked；本 note 亦核对 arXiv HTML full text）
 - 论文类型：研究论文 / 多 Agent 过程工程系统
 - 当前状态：to_read
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0804`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 09
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 09
+confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Bahamdan_2026_Sketch2Simulation.pdf` and checked; arXiv HTML full text also checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: executable Aspen HYSYS flowsheet generation, unit-operation structure, and process-simulation validation all stay on the process-engineering side of class 09.
+multi_module_object_coverage_note: note location under `09_Engineering_and_Industrial_Technology_Sciences` is filing convenience only; the authoritative classification fact is the frozen single-module `09` adjudication.
+final_reason: Sketch-to-simulation conversion is evaluated as a concrete process-engineering object rather than a general research-agent platform.
+```
+
+- 2026-06-24 full reaudit source status: official arXiv PDF is now archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Bahamdan_2026_Sketch2Simulation.pdf` and was checked alongside the arXiv HTML full text.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `09` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF / HTML recheck | executable Aspen HYSYS flowsheet generation remains a concrete process-engineering object; note path is filing convenience only | high |
 | Agent 纳入 | 是 | arXiv abstract; system overview | 论文明确提出 end-to-end multi-agent system，把流程图转成可执行 Aspen HYSYS flowsheet | 高 |
 | 科学对象归类 | `09 / 09.04` | p.1 abstract; p.8-p.10 | 直接处理 process flow diagram、unit operations、material streams 与 HYSYS executable model | 高 |
 | 方法流程 | 多层解析-合成-验证闭环 | p.8-p.10 | 前层做 diagram parsing 与 IR，后层做 HYSYS synthesis，再做 description / execution validation | 高 |
@@ -75,6 +99,15 @@
 - 最终判定：保持 `09 / 09.04`
 - 判定理由：贡献、案例、验证环境和输出全部围绕 process systems engineering，不是领域无关 scientific-agent platform
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `09`
+- primary_module_for_filing: `09`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- boundary closeout: this round keeps the note out of `01.04`; the executable flowsheet object remains concrete engineering/process-systems work.
+- filing reminder: the current `09` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -229,6 +262,17 @@
 3. 调用 HYSYS 建模
 4. 检查并修复执行错误
 5. 输出可执行流程模拟
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 09
+primary_module_for_filing: 09
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Bahamdan_2026_Sketch2Simulation.pdf` and checked; arXiv HTML full text also checked
+summary_classification_note: keep this record as a concrete class-09 process-engineering agent, not a `01.04` general-method paper.
+```
 
 ### 9.3 标注字段汇总
 

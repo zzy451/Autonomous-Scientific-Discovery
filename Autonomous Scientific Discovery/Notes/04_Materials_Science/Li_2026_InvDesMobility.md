@@ -6,16 +6,40 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2606.16133
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / PDF 与 batch9 reviewer evidence packs
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/04_Materials_Science/Li_2026_InvDesMobility.pdf`（official arXiv PDF archived locally and checked；本 note 亦核对 arXiv HTML full text）
 - 论文类型：研究论文 / 闭环材料发现系统
 - 当前状态：to_read
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0808`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 04
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 04
+confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/04_Materials_Science/Li_2026_InvDesMobility.pdf` and checked; arXiv HTML full text also checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: 2D semiconductor structures, carrier-mobility targets, DFT validation, and reliability-gated materials-discovery feedback all remain on the materials side of the `04 / 09 / 01.04` boundary.
+multi_module_object_coverage_note: note location under `04_Materials_Science` is filing convenience only; the authoritative classification fact is the frozen single-module `04` adjudication.
+final_reason: the concrete discovery object is 2D materials and mobility performance rather than engineering control or a domain-general method.
+```
+
+- 2026-06-24 full reaudit source status: official arXiv PDF is now archived locally at `Autonomous Scientific Discovery/Reference_PDF/04_Materials_Science/Li_2026_InvDesMobility.pdf` and was checked alongside the arXiv HTML full text.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `04` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF / HTML recheck | carrier-mobility discovery remains a concrete materials-science object; note path is filing convenience only | high |
 | Agent 纳入 | 是 | abstract; Note 3/4 | 存在 planner / critic / orchestrator / execution / validation / recovery agents，并接自动化 DFT 流程 | 高 |
 | 科学对象归类 | `04 / 04.04` | abstract; results | 最终对象是二维半导体材料及 carrier-mobility channels，不是通用平台或一般工程流程 | 高 |
 | 方法流程 | reliability-gated feedback loop | main text; supplementary | 只让 QC-passed structures 和 retained mobility channels 回流训练与采集排序 | 高 |
@@ -75,6 +99,15 @@
 - 最终判定：保持 `04 / 04.04`
 - 判定理由：无论 workflow 看起来多“平台化”，数据、候选、验证和最终 claims 都指向 materials discovery
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `04`
+- primary_module_for_filing: `04`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- boundary closeout: this round keeps the note out of both `09` and `01.04`; the validated object remains materials discovery around mobility.
+- filing reminder: the current `04` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -229,6 +262,17 @@
 3. 门控筛掉不可靠反馈
 4. 用可靠结果再训练/排序
 5. 继续下一轮搜索
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 04
+primary_module_for_filing: 04
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/04_Materials_Science/Li_2026_InvDesMobility.pdf` and checked; arXiv HTML full text also checked
+summary_classification_note: keep this record as a concrete class-04 materials-discovery agent, not a `09` engineering-system paper or a `01.04` general-method paper.
+```
 
 ### 9.3 标注字段汇总
 

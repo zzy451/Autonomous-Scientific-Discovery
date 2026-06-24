@@ -1,12 +1,30 @@
 # Baker et al. 2026 - Contextual Invertible World Models: A Neuro-Symbolic Agentic Framework for Colorectal Cancer Drug Response
 
+## 2026-06-24 Batch28Partial1 full reaudit revision
+
+```text
+paper_id: ASD-0822
+supported_modules: 06;07
+primary_module_for_filing: 07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+source_limited: no
+safety_access_status: none
+first_hand_source_checked: official arXiv PDF archived locally and checked (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Baker_2026_CIWM_CRC_Drug_Response.pdf`)
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+note_revision_required: yes
+archive_status_note: Official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Baker_2026_CIWM_CRC_Drug_Response.pdf`.
+module_assignment_evidence: Module 06 is supported by transcriptomic and mechanistic pathway reasoning over colorectal-cancer biology. Module 07 is supported by explicit colorectal-cancer drug-response and precision-oncology interpretation tasks. Primary filing in 07 is an archival convenience, not the sole classification fact.
+```
+
 **论文信息**
 - 标题：Contextual Invertible World Models: A Neuro-Symbolic Agentic Framework for Colorectal Cancer Drug Response
 - 作者：Christopher Baker; Tianyu Ren; Karen Rafferty; Hui Wang
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.02274
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract + arXiv PDF
+- PDF / 本地文件路径：official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Baker_2026_CIWM_CRC_Drug_Response.pdf`
 - 论文类型：研究论文 / precision-oncology agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -17,10 +35,11 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | abstract; methods | neuro-symbolic agentic framework，含 specialized agents 与 simulator | 高 |
-| 科学对象归类 | `07 / 07.04` | title; abstract; results | 核心对象是 colorectal cancer drug response 与 precision oncology | 高 |
+| 科学对象归类 | supported_modules=`06;07`; primary_module_for_filing=`07` | title; abstract; results | transcriptomic / mechanistic cancer-biology object coverage 支持 `06`，而 colorectal-cancer drug response / precision oncology 支持 `07` | 高 |
+| 2026-06-24 full reaudit | source_limited=`no`; evidence source level=`first_hand_full_text_with_local_archived_arxiv_pdf` | official local arXiv PDF (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Baker_2026_CIWM_CRC_Drug_Response.pdf`) | 当前冻结结果是 `06;07`；`07` 仅用于归档便利，不覆盖 `06` 的并行模块事实；本地 official arXiv PDF 已同步核对 | 高 |
 | 方法流程 | 多步机制推理 | methods | world model + inverse queries + in silico CRISPR + mechanistic interpretation | 高 |
 | 实验验证 | 小样本计算验证 | results | GDSC + TCGA-COAD proxy cohort，无湿实验 | 中高 |
-| 边界判断 | 不转 `06` |全文主线 | transcriptomics 只是机制层，最终问题是癌症药物反应 | 高 |
+| 边界判断 | 不能缩回纯 `07`，也不应退回纯 `06` |全文主线 | transcriptomics / mechanistic pathway reasoning 稳定支持 `06`，而 colorectal-cancer drug response 与 precision-oncology interpretation 稳定支持 `07`；冻结 adjudication 保留 `06;07` | 高 |
 
 ## 0. 摘要翻译
 
@@ -51,15 +70,18 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：07
-- 二级类：07.04
-- 三级类：
-- 四级专题：Agentic pharmacogenomics for colorectal-cancer drug response
-- 四级专题是否为新增：否
-- 归类理由：对象是 CRC 对 5-FU 的药物反应与 precision oncology 决策支持
-- 归类置信度：中高
+- 科学对象模块：`06;07`
+- 覆盖模式：multi_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`07`
+- Primary module for filing 说明：`07` 只用于 note / archive filing convenience，不覆盖 `06` 这一并行支持模块事实
+- 主题路径备注：可归档在 `07.04` precision-oncology / drug-response 子话题下，但必须同时保留 `06` 的 transcriptomic / mechanism object coverage
+- 每个模块的对象实验证据：`06` 由 transcriptomics-driven mechanism reasoning、pathway interpretation 与 CRC biology object coverage 支持；`07` 由 colorectal-cancer drug response、precision-oncology stratification 与 therapy-relevant interpretation 支持
+- 归类理由：论文同时覆盖 life-science mechanism object 与 medical drug-response / precision-oncology object，对应冻结 adjudication `06;07`
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
@@ -70,9 +92,11 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：06，07.02
-- 最终判定：保持 07.04
-- 判定理由：虽然大量使用组学与机制层解释，但最终问题稳定落在癌症治疗响应；07.02 有轻微压力，但当前药物反应对象使 07.04 更自洽
-- 是否需要二次复核：可选
+- 最终判定：supported_modules=`06;07`; primary_module_for_filing=`07`
+- 判定理由：虽然最终临床解释把 filing 拉向 `07`，但 transcriptomic / mechanistic object coverage 仍稳定支持 `06`；冻结结果不是纯 `07`
+- Multi-module 覆盖说明：`06` 来自癌症生物学 / transcriptomic mechanism object，`07` 来自 colorectal-cancer drug response / precision-oncology interpretation；primary filing 仅是归档便利
+- 01.04 判定说明：已有具体生物学与医学对象实验 / 结果，因此不进入独立 `01.04` 存放区
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -232,10 +256,18 @@
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.04
-三级类：
-四级专题：Agentic pharmacogenomics for colorectal-cancer drug response
+科学对象模块：06;07
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：no
+其他覆盖模块及对应层级路径：06 = transcriptomic / mechanistic CRC biology; 07 = colorectal-cancer drug response / precision oncology
+module_assignment_evidence：06 is supported by transcriptomic and mechanistic pathway reasoning over colorectal-cancer biology. 07 is supported by explicit colorectal-cancer drug-response and precision-oncology interpretation tasks.
+multi_module_object_coverage_note：Primary filing in 07 is for archive convenience only and does not erase the co-supported life-science module 06.
+classification_evidence_source_level：first_hand_full_text_with_local_archived_arxiv_pdf
+source_limited：no
+safety_access_status：none
 Agent 类型：LLM Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
 科研流程角色：hypothesis_generation; simulation_modeling; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation
 自主能力：tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; environment_interaction
@@ -247,4 +279,3 @@ Agent 类型：LLM Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
-

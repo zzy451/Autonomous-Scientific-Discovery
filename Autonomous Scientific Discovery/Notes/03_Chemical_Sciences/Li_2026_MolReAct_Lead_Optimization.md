@@ -1,6 +1,6 @@
 # Li et al. 2026 - Reinforcement Learning with LLM-Guided Action Spaces for Synthesizable Lead Optimization
 
-## 2026-06-20 relaxed multi-module revision
+## 2026-06-24 Batch28Partial1 full reaudit revision
 
 ```text
 scientific_object_modules: 03;07
@@ -8,10 +8,14 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 07
-first_hand_sources_checked: arXiv abstract / HTML
-classification_evidence_source_level: first_hand_abstract_or_landing_page
-module_assignment_evidence: 03 is supported by reaction templates, reactive sites, feasible synthetic routes, and multi-step synthetic trajectories. 07 is supported by synthesizable lead optimization, drug-discovery optimization tasks, docking/TDC tasks, and therapeutic-property objectives.
-multi_module_object_coverage_note: The legacy filing was chemistry-first. Under the relaxed rule, lead optimization and drug-discovery benchmark evidence justify adding 07 and using 07 as primary filing for this paper, while retaining 03 for the chemistry/synthesis object coverage.
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally and checked (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Li_2026_MolReAct_Lead_Optimization.pdf`)
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+note_revision_required: yes
+archive_status_note: Official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Li_2026_MolReAct_Lead_Optimization.pdf`.
+module_assignment_evidence: 03 is supported by reaction templates, reactive sites, feasible synthetic routes, and multi-step synthetic trajectories. 07 is supported by synthesizable lead optimization, docking/TDC drug-discovery tasks, and therapeutic-property objectives.
+multi_module_object_coverage_note: The frozen 2026-06-24 result is `03;07` with primary filing in `07`. That filing choice is for archive convenience only and does not erase the chemistry-side module fact.
 ```
 
 **论文信息**
@@ -20,7 +24,7 @@ multi_module_object_coverage_note: The legacy filing was chemistry-first. Under 
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.07669
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract + arXiv HTML
+- PDF / 本地文件路径：official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Li_2026_MolReAct_Lead_Optimization.pdf`
 - 论文类型：研究论文 / synthesizable lead-optimization agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -31,11 +35,12 @@ multi_module_object_coverage_note: The legacy filing was chemistry-first. Under 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | abstract; HTML | 是 tool-augmented LLM agent + RL，执行 synthesis-constrained multi-step optimization | 高 |
-| 科学对象归类 | `03 / 03.04` 暂留，但 `03 / 07` 压力显著 | abstract; introduction; tasks | 标题与摘要都强调 lead optimization in drug discovery，但方法和优化对象又高度 chemistry-object-first | 中 |
+| 科学对象归类 | supported_modules=`03;07`; primary_module_for_filing=`07` | abstract; introduction; tasks | chemistry-side synthesis trajectories 支持 `03`，而 lead optimization / drug-discovery tasks 同时支持 `07` | 高 |
+| 2026-06-24 full reaudit | source_limited=`no`; evidence source level=`first_hand_full_text_with_local_archived_arxiv_pdf` | official local arXiv PDF (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Li_2026_MolReAct_Lead_Optimization.pdf`) | 当前冻结结果是 `03;07` 且 filing=`07`；该 filing 仅用于归档便利，不覆盖 `03` 的并行模块事实；本地 official arXiv PDF 已同步核对 | 高 |
 | 方法流程 | synthesis-constrained MDP | main method | 调用化学工具识别 reactive sites / functional groups，提出模板化转化并做轨迹选择 | 高 |
 | 实验验证 | 13 TDC tasks + 1 docking task | experiments | 涉及 DRD2、GSK3_beta、JNK3 等任务，但仍主要是计算 benchmark | 中高 |
-| 边界判断 | 当前不强改主类 | merged reviewer evidence | Reader-C 倾向移入 `07`，Boundary-Reviewer 倾向保留 `03`，说明现阶段证据仍存在实质性分歧 | 中 |
-| 核心风险 | class risk 高 | merged evidence | 真正的不确定性是它应按 therapeutic lead optimization 还是 chemistry-object-first synthesis search 来收口 | 中 |
+| 边界判断 | 不再保持旧的纯 `03 / 03.04` 保守写法 | merged reviewer evidence | 冻结 adjudication 已收敛为 `03;07`，并以 `07` 作为 primary filing；这不是撤销 `03`，而是承认并行多模块事实 | 高 |
+| 核心风险 | core-strength risk 高于 class risk | merged evidence | 冻结后类目已确定为 `03;07`；当前残余风险主要是 benchmark-to-real-drug-development 的外推强度，而不是模块是否成立 | 中高 |
 
 ## 0. 摘要翻译
 
@@ -67,15 +72,18 @@ multi_module_object_coverage_note: The legacy filing was chemistry-first. Under 
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：03
-- 二级类：03.04
-- 三级类：
-- 四级专题：Synthesizable lead-optimization agents
-- 四级专题是否为新增：否
-- 归类理由：当前主控判断先保持 `03`，因为方法和直接优化对象仍高度锚定反应模板、reactive sites、functional groups 与 synthesis-constrained chemical trajectories；但这是一条显著 `03 / 07` 边界样本
-- 归类置信度：中
+- 科学对象模块：`03;07`
+- 覆盖模式：multi_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`07`
+- Primary module for filing 说明：`07` 只用于 note / archive filing convenience，不覆盖 `03` 这一并行支持模块事实
+- 主题路径备注：当前 note 仍位于 `03` 文件夹中，但冻结 adjudication 的 primary filing 已是 `07`；真正的分类事实是并行模块 `03;07`
+- 每个模块的对象实验证据：`03` 由 reaction templates、reactive sites、functional groups 与 synthesis-constrained multi-step chemical trajectories 支持；`07` 由 synthesizable lead optimization、TDC / docking drug-discovery tasks 与 therapeutic-property objectives 支持
+- 归类理由：论文同时覆盖 chemistry-side synthesis-aware optimization 与 medical-side lead-optimization / drug-discovery object coverage，对应冻结 adjudication `03;07`
+- 归类置信度：高
 
 ### 2.2 对象优先判定
 
@@ -86,9 +94,11 @@ multi_module_object_coverage_note: The legacy filing was chemistry-first. Under 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：07；01.04
-- 最终判定：当前暂时保持 `03 / 03.04`
-- 判定理由：虽然标题和摘要明确位于 drug discovery lead optimization，但 merged reviewer evidence 对 `03` 还是 `07` 存在实质性分歧，现阶段先稳定主列表并记录边界压力，不强行改类
-- 是否需要二次复核：是，适合在后续 `03 / 07` 专项边界轮中复核
+- 最终判定：supported_modules=`03;07`; primary_module_for_filing=`07`
+- 判定理由：冻结 adjudication 已明确承认 chemistry-side synthesis object 与 medical-side lead-optimization object 的并行覆盖，不再保留旧的纯 `03 / 03.04` 保守写法
+- Multi-module 覆盖说明：`03` 来自反应模板 / 合成轨迹 / chemistry-object optimization，`07` 来自 lead optimization / therapeutic task coverage；primary filing 仅是归档便利
+- 01.04 判定说明：已有具体科学对象实验与 benchmark 结果，因此不进入独立 `01.04` 存放区
+- 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
 
@@ -208,7 +218,7 @@ multi_module_object_coverage_note: The legacy filing was chemistry-first. Under 
 
 - 与普通 AI for Science 方法的区别：不是一般分子优化，而是带可合成约束和反应模板动作空间的轨迹优化
 - 与已有 Agent / 科研智能系统的区别：把 lead optimization 明确约束到化学可执行轨迹上
-- 与同一科学领域其他 Agent 文献的关系：是 batch10 中最强的 `03 / 07` 边界压力样本
+- 与同一科学领域其他 Agent 文献的关系：是 batch10 中最强的 `03 / 07` 冻结多模块样本之一
 - 主要创新点：用 LLM 引导动作空间，再用 RL 在可合成轨迹上做 lead refinement
 
 ## 7. 局限性与风险
@@ -222,8 +232,8 @@ multi_module_object_coverage_note: The legacy filing was chemistry-first. Under 
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：03 化学科学 / synthesis-aware molecular optimization agents
-- 可支撑哪个论点：`03 / 07` 边界不能只看标题中的 drug discovery 语境，还要看直接优化对象
+- 可放入哪个章节：03/07 交叉案例；或按归档便利放入 07 药物发现 Agent 小节并交叉引用 chemistry-side lead optimization
+- 可支撑哪个论点：`03 / 07` 边界不能只看标题中的 drug discovery 语境，也不能只看化学动作空间；冻结结果允许二者并行成立
 - 可用于哪个表格或图：`03 / 07 / 01.04` 边界表；lead optimization agents 表
 - 适合作为代表性案例吗：适合做边界样本
 - 推荐引用强度：普通引用
@@ -248,10 +258,18 @@ multi_module_object_coverage_note: The legacy filing was chemistry-first. Under 
 
 ```text
 是否纳入：是
-主类：03
-二级类：03.04
-三级类：
-四级专题：Synthesizable lead-optimization agents
+科学对象模块：03;07
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：no
+其他覆盖模块及对应层级路径：03 = synthesis-aware chemistry optimization; 07 = lead optimization / drug discovery
+module_assignment_evidence：03 is supported by reaction templates, reactive sites, feasible synthetic routes, and multi-step synthetic trajectories. 07 is supported by synthesizable lead optimization, docking/TDC drug-discovery tasks, and therapeutic-property objectives.
+multi_module_object_coverage_note：The frozen 2026-06-24 result is `03;07` with primary filing in `07`. That filing choice is for archive convenience only and does not erase the chemistry-side module fact.
+classification_evidence_source_level：first_hand_full_text_with_local_archived_arxiv_pdf
+source_limited：no
+safety_access_status：none
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 科研流程角色：hypothesis_generation; tool_use_and_code_execution; data_analysis; evidence_assessment_and_validation; workflow_orchestration
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; environment_interaction

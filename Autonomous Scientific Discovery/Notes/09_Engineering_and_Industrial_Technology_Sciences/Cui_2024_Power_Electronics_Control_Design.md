@@ -6,16 +6,40 @@
 - 年份：2024
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2406.12628
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / PDF 与 batch9 reviewer evidence packs
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Cui_2024_Power_Electronics_Control_Design.pdf`（official arXiv PDF archived locally and checked；本 note 亦核对 arXiv HTML full text）
 - 论文类型：研究论文 / power-electronics engineering agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0807`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 09
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 09
+confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Cui_2024_Power_Electronics_Control_Design.pdf` and checked; arXiv HTML full text also checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: objective-oriented controller design, Modelica/PSO/OpenAI Gym tooling, and converter-case validation all remain concrete power-electronics engineering objects.
+multi_module_object_coverage_note: note location under `09_Engineering_and_Industrial_Technology_Sciences` is filing convenience only; the authoritative classification fact is the frozen single-module `09` adjudication.
+final_reason: the workflow is evaluated on power-electronics controller design rather than a general scientific-agent benchmark.
+```
+
+- 2026-06-24 full reaudit source status: official arXiv PDF is now archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Cui_2024_Power_Electronics_Control_Design.pdf` and was checked alongside the arXiv HTML full text.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `09` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF / HTML recheck | power-electronics controller design remains a concrete engineering object; note path is filing convenience only | high |
 | Agent 纳入 | 是 | abstract; Sec. III | multi-agent framework 覆盖 task translation、manager、objective/model/control/parameter/verification agents | 高 |
 | 科学对象归类 | `09 / 09.03` | abstract; Sec. V | 直接围绕 power electronics controller design，不是通用科学工作流平台 | 高 |
 | 工具调用 | 明确存在 | Sec. IV | 使用 Modelica、控制算法工具、PSO 优化与 OpenAI Gym 仿真 | 高 |
@@ -75,6 +99,15 @@
 - 最终判定：保持 `09 / 09.03`
 - 判定理由：任务、案例、工具链和评价指标均指向 power-electronics domain
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `09`
+- primary_module_for_filing: `09`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- boundary closeout: this round keeps the note out of `01.04`; the concrete object remains power-electronics controller design.
+- filing reminder: the current `09` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -229,6 +262,17 @@
 3. 调用算法与优化器
 4. 运行仿真验证
 5. 回传并调整参数
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 09
+primary_module_for_filing: 09
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Cui_2024_Power_Electronics_Control_Design.pdf` and checked; arXiv HTML full text also checked
+summary_classification_note: keep this record as a concrete class-09 power-electronics-control agent, not a `01.04` general-method paper.
+```
 
 ### 9.3 标注字段汇总
 

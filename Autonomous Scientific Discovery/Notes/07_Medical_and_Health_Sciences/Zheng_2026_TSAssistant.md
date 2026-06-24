@@ -1,12 +1,30 @@
 # Zheng et al. 2026 - TSAssistant: A Human-in-the-Loop Agentic Framework for Automated Target Safety Assessment
 
+## 2026-06-24 Batch28Partial1 full reaudit revision
+
+```text
+paper_id: ASD-0816
+supported_modules: 07
+primary_module_for_filing: 07
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+source_limited: no
+safety_access_status: none
+first_hand_source_checked: official arXiv PDF archived locally and checked (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Zheng_2026_TSAssistant.pdf`)
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+note_revision_required: yes
+archive_status_note: Official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Zheng_2026_TSAssistant.pdf`.
+module_assignment_evidence: Therapeutic-target safety assessment benchmarks and biomedical evidence-synthesis tasks support module 07.
+```
+
 **论文信息**
 - 标题：TSAssistant: A Human-in-the-Loop Agentic Framework for Automated Target Safety Assessment
 - 作者：Xiaochen Zheng; Zhiwen Jiang; David Tokar; Yexiang Cheng; Alvaro Serra; Melanie Guerard; Klas Hatje; Tatyana Doktorova
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.23938
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract + arXiv HTML v3
+- PDF / 本地文件路径：official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Zheng_2026_TSAssistant.pdf`
 - 论文类型：研究论文 / target-safety assessment multi-agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -17,7 +35,8 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | abstract; arXiv HTML v3 | 有 Research / Synthesis subagents、memory、programmatic enforcement、HITL refinement | 高 |
-| 科学对象归类 | `07 / 07.04` | abstract; evaluation | 研究对象是 therapeutic-target safety liabilities 与 preclinical safety assessment | 高 |
+| 科学对象归类 | supported_modules=`07`; primary_module_for_filing=`07` | abstract; evaluation | therapeutic-target safety liabilities 与 preclinical safety assessment 直接支持模块 07 | 高 |
+| 2026-06-24 full reaudit | source_limited=`no`; evidence source level=`first_hand_full_text_with_local_archived_arxiv_pdf` | official local arXiv PDF (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Zheng_2026_TSAssistant.pdf`) | 当前写回已与 official arXiv PDF 本地归档路径同步并核对 | 高 |
 | 方法流程 | 结构化证据整合工作流 | main text | 以预定义 report schema 组织多域 biomedical evidence synthesis | 高 |
 | 实验验证 | 35 drug targets + 22-target ortholog benchmark | arXiv HTML v3 | claim-level self-consistency、grounding、HITL refinement 都围绕 target safety task 展开 | 高 |
 | 边界判断 | 不应移入 `11.07` 或 `01.04` | abstract + discussion | 它不是研究 scientific knowledge production itself，而是用科学证据评估 biomedical targets | 高 |
@@ -53,13 +72,16 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：07
-- 二级类：07.04
-- 三级类：
-- 四级专题：Automated target-safety-assessment agents
-- 四级专题是否为新增：否
+- 科学对象模块：`07`
+- 覆盖模式：single_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`07`
+- Primary module for filing 说明：此处 filing 与模块事实一致，但 filing 字段仍只是归档便利字段
+- 主题路径备注：可放在 `07.04` target-safety / biopharma 子话题下讨论，但这不是新增 scientific-object module
+- 每个模块的对象实验证据：`07` 由 therapeutic-target safety assessment、35 drug targets benchmark 与 biomedical evidence-synthesis task 支持
 - 归类理由：最终研究对象是药物发现早期的 target safety / preclinical safety assessment
 - 归类置信度：高
 
@@ -72,8 +94,10 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：11.07；01.04
-- 最终判定：保持 `07 / 07.04`
-- 判定理由：系统不是研究 scientific knowledge production itself，而是用证据服务于 target safety
+- 最终判定：supported_modules=`07`; primary_module_for_filing=`07`
+- 判定理由：系统不是研究 scientific knowledge production itself，而是用证据服务于 target safety；冻结 adjudication 只支持模块 `07`
+- Multi-module 覆盖说明：不适用；当前冻结结果不是多模块
+- 01.04 判定说明：已有具体 biomedical target-safety 对象实验与结果，因此不进入独立 `01.04` 存放区
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -234,10 +258,18 @@
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.04
-三级类：
-四级专题：Automated target-safety-assessment agents
+科学对象模块：07
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：no
+其他覆盖模块及对应层级路径：none
+module_assignment_evidence：Therapeutic-target safety assessment benchmarks and biomedical evidence-synthesis tasks support module 07.
+multi_module_object_coverage_note：Single-module medical filing matches the frozen classification fact for ASD-0816.
+classification_evidence_source_level：first_hand_full_text_with_local_archived_arxiv_pdf
+source_limited：no
+safety_access_status：none
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：literature_search_and_reading; knowledge_extraction_and_organization; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation; paper_writing; workflow_orchestration
 自主能力：task_decomposition; planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; environment_interaction

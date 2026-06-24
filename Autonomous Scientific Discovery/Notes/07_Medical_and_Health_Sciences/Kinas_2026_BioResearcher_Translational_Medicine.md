@@ -6,16 +6,41 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.05985
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / PDF 与 batch9 reviewer evidence packs
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kinas_2026_BioResearcher_Translational_Medicine.pdf`（official arXiv PDF archived locally and checked；本 note 亦核对 arXiv HTML full text）
 - 论文类型：研究论文 / translational-medicine multi-agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0812`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 07
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 07
+confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kinas_2026_BioResearcher_Translational_Medicine.pdf` and checked; arXiv HTML full text also checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: translational-medicine workflows, clinical biomarker reasoning, and scenario-guided medical evidence synthesis keep the stable object in top-level medicine.
+multi_module_object_coverage_note: note location under `07_Medical_and_Health_Sciences` is filing convenience only; the authoritative classification fact is the frozen single-module `07` adjudication.
+final_reason: the direct object is translational medicine rather than life-mechanism-first biology or a general research-agent platform.
+```
+
+- 2026-06-24 full reaudit source status: official arXiv PDF is now archived locally at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kinas_2026_BioResearcher_Translational_Medicine.pdf` and was checked alongside the arXiv HTML full text.
+- 2026-06-24 archive caution: the canonical local archive for this paper is `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kinas_2026_BioResearcher_Translational_Medicine.pdf`; the unrelated local file `Reference_PDF/07_Medical_and_Health_Sciences/Luo_2025_BioResearcher.pdf` was not used for this note and must not be treated as this paper's archive.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `07` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF / HTML recheck | translational-medicine workflows remain concrete medical objects; the canonical local archive above was used, while the unrelated local `BioResearcher` PDF was not | high |
 | Agent 纳入 | 是 | abstract; architecture | scenario-guided multi-agent system，30+ tools，sandboxed code，claim-level reconciliation | 高 |
 | 科学对象归类 | `07 / 07.04` | intro; benchmark design | 目标是 translational medicine、clinical development 与 biomarker reasoning，不是通用平台 | 高 |
 | 方法流程 | playbook-guided orchestration | architecture | master orchestrator 选择 scenario playbook，拆解任务并委派 specialized subagents | 高 |
@@ -75,6 +100,16 @@
 - 最终判定：保持 `07 / 07.04`
 - 判定理由：虽然使用多组学和生命科学分析，但 benchmark、case study 和输出都面向 translational / clinical objectives
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `07`
+- primary_module_for_filing: `07`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- boundary closeout: this round keeps the note out of `06` and `01.04`; translational-medicine and clinical-biomarker reasoning remain the direct objects.
+- archive caution: classification is based on the current paper's first-hand arXiv full text, not on the unrelated local PDF `Luo_2025_BioResearcher.pdf`.
+- filing reminder: the current `07` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -229,6 +264,17 @@
 3. 子代理调用多种生医工具
 4. 汇总并对齐 claims
 5. 输出可追溯转化报告
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 07
+primary_module_for_filing: 07
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kinas_2026_BioResearcher_Translational_Medicine.pdf` and checked; arXiv HTML full text also checked
+summary_classification_note: keep this record as a concrete class-07 translational-medicine agent; use the canonical local archive `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kinas_2026_BioResearcher_Translational_Medicine.pdf`, not the unrelated `Luo_2025_BioResearcher.pdf`.
+```
 
 ### 9.3 标注字段汇总
 

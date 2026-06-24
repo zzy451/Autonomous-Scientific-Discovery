@@ -1,12 +1,30 @@
 # Kim et al. 2026 - CoDaS: AI Co-Data-Scientist for Biomarker Discovery via Wearable Sensors
 
+## 2026-06-24 Batch28Partial1 full reaudit revision
+
+```text
+paper_id: ASD-0815
+supported_modules: 07
+primary_module_for_filing: 07
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+source_limited: no
+safety_access_status: none
+first_hand_source_checked: official arXiv PDF archived locally and checked (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kim_2026_CoDaS.pdf`)
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+note_revision_required: yes
+archive_status_note: The canonical title is `CoDaS: AI Co-Data-Scientist for Biomarker Discovery via Wearable Sensors`. Official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kim_2026_CoDaS.pdf`.
+module_assignment_evidence: Wearable-sensor biomarker-discovery experiments on mental-health and metabolic-health cohorts support module 07.
+```
+
 **论文信息**
 - 标题：CoDaS: AI Co-Data-Scientist for Biomarker Discovery via Wearable Sensors
 - 作者：Yubin Kim; Salman Rahman; Samuel Schmidgall; Chunjong Park; A. Ali Heydari; Ahmed A. Metwally; Hong Yu; Xin Liu; Xuhai Xu; Yuzhe Yang; Maxwell A. Xu; Zhihan Zhang; Cynthia Breazeal; Tim Althoff; Petar Sirkovic; Ivor Rendulic; Annalisa Pawlosky; Nicolas Stroppa; Juraj Gottweis; Elahe Vedadi; Alan Karthikesalingam; Pushmeet Kohli; Vivek Natarajan; Mark Malhotra; Shwetak Patel; Hae Won Park; Hamid Palangi; Daniel McDuff
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.14615
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract + arXiv HTML v1
+- PDF / 本地文件路径：official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kim_2026_CoDaS.pdf`
 - 论文类型：研究论文 / wearable biomarker-discovery multi-agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -17,7 +35,8 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract + HTML | 多 Agent 六阶段流程覆盖数据画像、假设生成、统计/ML 分析、对抗验证和报告综合 | 高 |
-| 科学对象归类 | `07 / 07.03` | abstract; main experiments | 输出是 wearable-sensor-derived digital biomarkers for depression and metabolic-health endpoints | 高 |
+| 科学对象归类 | supported_modules=`07`; primary_module_for_filing=`07` | abstract; main experiments | wearable-sensor-derived digital biomarkers for depression and metabolic-health endpoints 直接支持模块 07 | 高 |
+| 2026-06-24 full reaudit | source_limited=`no`; evidence source level=`first_hand_full_text_with_local_archived_arxiv_pdf` | official local arXiv PDF (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Kim_2026_CoDaS.pdf`) | 当前写回已与 official arXiv PDF 本地归档路径同步并核对；标题仍统一为正式题名 `CoDaS: AI Co-Data-Scientist for Biomarker Discovery via Wearable Sensors` | 高 |
 | 方法流程 | iterative six-phase loop | main text | 有 hypothesis generation、adversarial validation、mechanistic reasoning、report synthesis 和人工监督 | 高 |
 | 实验验证 | 3 个健康 cohort、9,279 observations | main text | 发现 mental-health 与 metabolic-health 候选 biomarkers，并做 11 项内部稳健性检查 | 高 |
 | 边界判断 | 不应移入 `07.04` 或 `01.04` | abstract + experiments | 重点不是药物/靶点/治疗，而是数字健康 biomarker discovery | 高 |
@@ -53,13 +72,16 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：07
-- 二级类：07.03
-- 三级类：
-- 四级专题：Wearable-sensor biomarker-discovery agents
-- 四级专题是否为新增：否
+- 科学对象模块：`07`
+- 覆盖模式：single_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`07`
+- Primary module for filing 说明：此处 filing 与模块事实一致，但 filing 字段仍只是归档便利字段
+- 主题路径备注：可放在 `07.03` digital health / biomarker 子话题下讨论，但这不是新增 scientific-object module
+- 每个模块的对象实验证据：`07` 由 wearable physiological signals、mental-health cohorts 与 metabolic-health cohorts 上的 biomarker-discovery experiments 支持
 - 归类理由：最终对象是健康科学中的数字生物标志物，而不是药物发现或通用科研平台
 - 归类置信度：高
 
@@ -72,8 +94,10 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：07.04；01.04
-- 最终判定：保持 `07 / 07.03`
-- 判定理由：论文不围绕药物、靶点或治疗设计，而是围绕数字健康 biomarker discovery
+- 最终判定：supported_modules=`07`; primary_module_for_filing=`07`
+- 判定理由：论文不围绕药物、靶点或治疗设计，而是围绕数字健康 biomarker discovery；冻结 adjudication 只支持模块 `07`
+- Multi-module 覆盖说明：不适用；当前冻结结果不是多模块
+- 01.04 判定说明：已有具体健康对象实验与 cohort 结果，因此不进入独立 `01.04` 存放区
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -234,10 +258,18 @@
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.03
-三级类：
-四级专题：Wearable-sensor biomarker-discovery agents
+科学对象模块：07
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：no
+其他覆盖模块及对应层级路径：none
+module_assignment_evidence：Wearable-sensor biomarker-discovery experiments on mental-health and metabolic-health cohorts support module 07.
+multi_module_object_coverage_note：Single-module medical filing matches the frozen classification fact for ASD-0815.
+classification_evidence_source_level：first_hand_full_text_with_local_archived_arxiv_pdf
+source_limited：no
+safety_access_status：none
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：hypothesis_generation; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation; paper_writing; workflow_orchestration
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; environment_interaction

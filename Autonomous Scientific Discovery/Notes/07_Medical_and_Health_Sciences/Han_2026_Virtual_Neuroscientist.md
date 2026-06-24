@@ -1,12 +1,30 @@
 # Han et al. 2026 - Towards a Virtual Neuroscientist: Autonomous Neuroimaging Analysis via Multi-Agent Collaboration
 
+## 2026-06-24 Batch28Partial1 full reaudit revision
+
+```text
+paper_id: ASD-0814
+supported_modules: 07
+primary_module_for_filing: 07
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+source_limited: no
+safety_access_status: none
+first_hand_source_checked: official arXiv PDF archived locally and checked (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Han_2026_Virtual_Neuroscientist.pdf`)
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+note_revision_required: yes
+archive_status_note: Official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Han_2026_Virtual_Neuroscientist.pdf`.
+module_assignment_evidence: Clinically actionable neuroimaging biomarker and diagnosis-prediction workflows on ADHD-200 and ADNI support module 07.
+```
+
 **论文信息**
 - 标题：Towards a Virtual Neuroscientist: Autonomous Neuroimaging Analysis via Multi-Agent Collaboration
 - 作者：Keqi Han; Songlin Zhao; Yao Su; Xiang Li; Yixuan Yuan; Lifang He; Carl Yang
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.09366
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract + arXiv HTML v3
+- PDF / 本地文件路径：official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Han_2026_Virtual_Neuroscientist.pdf`
 - 论文类型：研究论文 / neuroimaging multi-agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -17,7 +35,8 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv HTML v3 lines 101-107, 123-125 | 有 centralized planning、decentralized specialists、code-centric execution 和闭环 QC | 高 |
-| 科学对象归类 | `07 / 07.01` | arXiv HTML v3 lines 89-92, 173-174 | 目标是 clinically actionable biomarkers 与 diagnosis prediction，不是一般 neuroscience-only discovery | 高 |
+| 科学对象归类 | supported_modules=`07`; primary_module_for_filing=`07` | arXiv HTML v3 lines 89-92, 173-174 | 临床可操作 neuroimaging biomarkers 与 diagnosis prediction 直接支持医学/健康科学模块 07 | 高 |
+| 2026-06-24 full reaudit | source_limited=`no`; evidence source level=`first_hand_full_text_with_local_archived_arxiv_pdf` | official local arXiv PDF (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Han_2026_Virtual_Neuroscientist.pdf`) | 当前写回已与 official arXiv PDF 本地归档路径同步并核对 | 高 |
 | 方法流程 | 层级多 Agent 闭环 | arXiv HTML v3 lines 154-161 | QC judgment 会反馈给 Supervisor 做后续规划 | 高 |
 | 医学对象 | ADHD-200 / ADNI 诊断预测与 biomarker workflow | arXiv HTML v3 lines 173-174, 275 | 任务锚定 MRI / fMRI 下的临床相关神经影像分析 | 高 |
 | 实验验证 | computational benchmark with refinement | arXiv HTML v3 lines 178-205 | 有 held-out AUC/F1/ACC、多轮 refinement 和动态 pipeline 选择 | 高 |
@@ -53,14 +72,17 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：07
-- 二级类：07.01
-- 三级类：
-- 四级专题：Autonomous neuroimaging biomarker-discovery agents
-- 四级专题是否为新增：否
-- 归类理由：最终对象是 clinically actionable biomarkers 与 diagnosis workflow，属于医学/健康科学对象
+- 科学对象模块：`07`
+- 覆盖模式：single_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`07`
+- Primary module for filing 说明：此处 filing 与模块事实一致，但 filing 字段仍只是归档便利字段
+- 主题路径备注：可放在 `07.01` neuroimaging / biomarker 子话题下讨论，但这不是新增 scientific-object module
+- 每个模块的对象实验证据：`07` 由 ADHD-200 / ADNI 上的 clinically actionable neuroimaging biomarker 与 diagnosis-prediction workflows 支持
+- 归类理由：最终对象是临床相关神经影像生物标志物与诊断预测，属于医学与健康科学模块 `07`
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -72,8 +94,10 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：06；01.04
-- 最终判定：保持 `07 / 07.01`
-- 判定理由：虽然有 neuroscience 语境，但核心任务是临床可操作生物标志物与诊断预测
+- 最终判定：supported_modules=`07`; primary_module_for_filing=`07`
+- 判定理由：虽然有 neuroscience 语境，但核心任务是临床可操作生物标志物与诊断预测，冻结 adjudication 只支持模块 `07`
+- Multi-module 覆盖说明：不适用；当前冻结结果不是多模块
+- 01.04 判定说明：已有明确医学对象实验与结果报告，因此不进入独立 `01.04` 存放区
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -234,10 +258,18 @@
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.01
-三级类：
-四级专题：Autonomous neuroimaging biomarker-discovery agents
+科学对象模块：07
+覆盖模式：single_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：no
+其他覆盖模块及对应层级路径：none
+module_assignment_evidence：Clinical neuroimaging biomarker and diagnosis-prediction workflows on ADHD-200 and ADNI support module 07.
+multi_module_object_coverage_note：Single-module medical filing matches the frozen classification fact for ASD-0814.
+classification_evidence_source_level：first_hand_full_text_with_local_archived_arxiv_pdf
+source_limited：no
+safety_access_status：none
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
 科研流程角色：tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation; workflow_orchestration
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; environment_interaction

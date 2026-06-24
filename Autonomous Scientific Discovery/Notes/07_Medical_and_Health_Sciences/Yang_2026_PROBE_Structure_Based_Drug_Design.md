@@ -1,12 +1,30 @@
 # Yang et al. 2026 - Probe Before You Edit: Probing-Guided Molecular Optimization for LLM Agents in Structure-Based Drug Design
 
+## 2026-06-24 Batch28Partial1 full reaudit revision
+
+```text
+paper_id: ASD-0817
+supported_modules: 03;07
+primary_module_for_filing: 07
+object_coverage_mode: multi_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+source_limited: no
+safety_access_status: none
+first_hand_source_checked: official arXiv PDF archived locally and checked (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Yang_2026_PROBE_Structure_Based_Drug_Design.pdf`)
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+note_revision_required: yes
+archive_status_note: Official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Yang_2026_PROBE_Structure_Based_Drug_Design.pdf`.
+module_assignment_evidence: Module 03 is supported by pocket-aware molecular optimization and ligand-edit chemistry. Module 07 is supported by explicit structure-based drug-design and target-pocket medicinal objectives. Primary filing in 07 is an archival convenience, not the sole classification fact.
+```
+
 **论文信息**
 - 标题：Probe Before You Edit: Probing-Guided Molecular Optimization for LLM Agents in Structure-Based Drug Design
 - 作者：Zaifei Yang; Weiyu Chen; Yaqing Wang; James Kwok
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2606.00555
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract + arXiv HTML
+- PDF / 本地文件路径：official arXiv PDF archived locally and checked at `Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Yang_2026_PROBE_Structure_Based_Drug_Design.pdf`
 - 论文类型：研究论文 / structure-based drug-design agent
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -17,11 +35,12 @@
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | abstract; main method | 有 affinity agent、druggability agent、co-optimization agent 的迭代闭环 | 高 |
-| 科学对象归类 | `07 / 07.04` | title; abstract | 任务明示为 structure-based drug design，目标围绕 target pocket、binding affinity、druggability | 高 |
+| 科学对象归类 | supported_modules=`03;07`; primary_module_for_filing=`07` | title; abstract | target-pocket ligand optimization 同时覆盖 chemistry-side molecular optimization 与 structure-based drug-design medical objectives | 高 |
+| 2026-06-24 full reaudit | source_limited=`no`; evidence source level=`first_hand_full_text_with_local_archived_arxiv_pdf` | official local arXiv PDF (`Autonomous Scientific Discovery/Reference_PDF/07_Medical_and_Health_Sciences/Yang_2026_PROBE_Structure_Based_Drug_Design.pdf`) | 当前冻结结果是 `03;07`；`07` 仅用于归档便利，不覆盖 `03` 的已支持模块事实；本地 official arXiv PDF 已同步核对 | 高 |
 | 方法流程 | probe then edit 的多步优化 | method summary | 先做 pocket-specific site probing，再诱导 EditManual 做定向编辑 | 高 |
 | 工具与环境 | 口袋感知分子优化 | abstract + HTML | 围绕 pocket-ligand response 组织局部探测与编辑建议 | 高 |
 | 实验验证 | CrossDocked2020 benchmark | experiments | 主要是 benchmark / computational evidence，未见湿实验 | 高 |
-| 边界判断 | 不应移入 `03` 或 `01.04` | title + abstract | 对象是药物发现中的 target-pocket ligand design，而不是一般分子优化或通用平台 | 高 |
+| 边界判断 | 不是纯 `07`，也不是 `01.04` | title + abstract | 冻结 adjudication 保留 `03;07`：`07` 来自 structure-based drug design / target-pocket medicinal目标，`03` 来自分子优化与 ligand-edit chemistry 对象覆盖 | 高 |
 
 ## 0. 摘要翻译
 
@@ -53,14 +72,17 @@
 
 ## 2. 科学领域归类
 
-### 2.1 主科学领域
+### 2.1 科学对象模块归类
 
-- 一级类：07
-- 二级类：07.04
-- 三级类：
-- 四级专题：Structure-based drug-design optimization agents
-- 四级专题是否为新增：否
-- 归类理由：最终对象是 target-pocket ligand design、binding affinity 与 druggability 优化，属于药物发现对象
+- 科学对象模块：`03;07`
+- 覆盖模式：multi_module
+- 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
+- 独立 `01.04` 存放区：none
+- Primary module for filing：`07`
+- Primary module for filing 说明：`07` 只用于 note / archive filing convenience，不覆盖 `03` 这一并行支持模块事实
+- 主题路径备注：可归档在 `07.04` structure-based drug-design 子话题下，但同时保留 `03` 的 chemistry / molecular-optimization 对象覆盖
+- 每个模块的对象实验证据：`03` 由 pocket-aware molecular optimization、ligand editing 与 co-optimization chemistry object 支持；`07` 由 structure-based drug design、target-pocket medicinal objective、binding affinity / druggability task framing 支持
+- 归类理由：论文同时覆盖 chemistry-side molecule editing / optimization 与 medical-side structure-based drug design，对应冻结 adjudication `03;07`
 - 归类置信度：高
 
 ### 2.2 对象优先判定
@@ -72,8 +94,10 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：03；01.04
-- 最终判定：保持 `07 / 07.04`
-- 判定理由：对象不是一般化学分子优化，而是特定 protein-pocket-driven drug design
+- 最终判定：supported_modules=`03;07`; primary_module_for_filing=`07`
+- 判定理由：对象既不是纯通用 chemistry optimization，也不是纯单模块 medical filing；冻结 adjudication 明确保留 chemistry-side `03` 与 drug-design-side `07`
+- Multi-module 覆盖说明：`07` 来自 structure-based drug-design / target-pocket medicinal framing，`03` 来自 pocket-aware molecular optimization 与 ligand-edit chemistry；primary filing 仅是归档便利
+- 01.04 判定说明：已有具体科学对象实验与 benchmark 结果，因此不进入独立 `01.04` 存放区
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -209,7 +233,7 @@
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：07 医学与健康科学 / structure-based drug-design agents
-- 可支撑哪个论点：当优化对象是具体药物设计靶点和口袋时，应优先归医学药物侧而不是一般化学优化
+- 可支撑哪个论点：structure-based drug-design Agent 可以同时保留 `03` 与 `07`；primary_module_for_filing=`07` 只是归档便利，不是否定 chemistry-side object coverage
 - 可用于哪个表格或图：`07 / 03 / 01.04` 边界表；drug-design agents 表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：普通引用
@@ -234,10 +258,18 @@
 
 ```text
 是否纳入：是
-主类：07
-二级类：07.04
-三级类：
-四级专题：Structure-based drug-design optimization agents
+科学对象模块：03;07
+覆盖模式：multi_module
+是否具有具体科学对象实验：yes
+general_method_bucket：none
+Primary module for filing：07
+是否进入 01.04 存放区：no
+其他覆盖模块及对应层级路径：03 = chemistry / molecular optimization; 07 = structure-based drug design
+module_assignment_evidence：03 is supported by pocket-aware molecular optimization and ligand-edit chemistry. 07 is supported by explicit structure-based drug-design and target-pocket medicinal objectives.
+multi_module_object_coverage_note：Primary filing in 07 is for archive convenience only and does not erase the co-supported chemistry module 03.
+classification_evidence_source_level：first_hand_full_text_with_local_archived_arxiv_pdf
+source_limited：no
+safety_access_status：none
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
 科研流程角色：hypothesis_generation; simulation_modeling; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation; workflow_orchestration
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration; environment_interaction

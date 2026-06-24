@@ -6,16 +6,40 @@
 - 年份：2026
 - 来源 / venue：arXiv / OpenReview submission
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.29560
-- PDF / 本地文件路径：当前笔记基于 arXiv HTML / PDF、OpenReview 页面与 batch9 reviewer evidence packs
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Chen_2026_Battery_Sim_Agent.pdf`（official arXiv PDF archived locally and checked；本 note 亦核对 arXiv HTML full text 与 OpenReview submission page）
 - 论文类型：研究论文 / battery engineering agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
 - 笔记作者：Codex
 
+## 2026-06-24 Batch28Partial1 / full reaudit writeback
+
+This writeback aligns the note to the frozen adjudication for `ASD-0809`.
+
+```text
+final_agent_inclusion: yes
+scientific_object_modules: 09
+object_coverage_mode: single_module
+has_concrete_object_experiments: yes
+general_method_bucket: none
+primary_module_for_filing: 09
+confidence: high
+source_limited: no
+safety_access_status: none
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Chen_2026_Battery_Sim_Agent.pdf` and checked; arXiv HTML full text and OpenReview submission page also checked
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+module_assignment_evidence: battery digital twins, DFN parameter estimation, degradation fitting, and simulator-in-the-loop reasoning keep the direct object on the engineering/energy-system side rather than the materials-discovery side.
+multi_module_object_coverage_note: note location under `09_Engineering_and_Industrial_Technology_Sciences` is filing convenience only; the authoritative classification fact is the frozen single-module `09` adjudication.
+final_reason: the paper calibrates battery-system models and digital-twin parameters rather than discovering battery materials.
+```
+
+- 2026-06-24 full reaudit source status: official arXiv PDF is now archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Chen_2026_Battery_Sim_Agent.pdf` and was checked alongside the arXiv HTML full text and OpenReview submission page.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
+| 2026-06-24 full reaudit | frozen `09` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF / HTML and OpenReview recheck | battery digital-twin parameter estimation remains a concrete engineering object; note path is filing convenience only | high |
 | Agent 纳入 | 是 | abstract; method overview | LLM agent 与 battery simulator 闭环交互，把参数反演做成 reasoning workflow | 高 |
 | 科学对象归类 | `09 / 09.06` | abstract; experiments | 研究对象是 battery digital twin / DFN parameter estimation，不是电池材料发现 | 高 |
 | 方法流程 | 多轮 simulator-in-the-loop 推理 | Fig.1; Sec.3 | agent 读取多模态误差反馈，结合 memory 提出结构化参数更新 | 高 |
@@ -75,6 +99,15 @@
 - 最终判定：保持 `09 / 09.06`
 - 判定理由：paper 不搜索电池材料组成或性质，而是校准 cell-level battery models
 - 是否需要二次复核：否
+
+### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
+
+- supported_modules: `09`
+- primary_module_for_filing: `09`
+- source_limited: `no`
+- evidence source level: `first_hand_full_text_with_local_archived_arxiv_pdf`
+- boundary closeout: this round keeps the note out of `04` and `01.04`; the stable object is battery-system parameter estimation and digital-twin calibration.
+- filing reminder: the current `09` note directory is for filing convenience and does not itself act as classification authority.
 
 ## 3. Agent 系统与科研流程角色
 
@@ -229,6 +262,17 @@
 3. 生成参数更新
 4. 重新运行电池仿真
 5. 迭代直到拟合改善
+
+### 9.4 Reaudit Writeback Block
+
+```text
+scientific_object_modules: 09
+primary_module_for_filing: 09
+source_limited: no
+classification_evidence_source_level: first_hand_full_text_with_local_archived_arxiv_pdf
+first_hand_sources_checked: official arXiv PDF archived locally at `Autonomous Scientific Discovery/Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Chen_2026_Battery_Sim_Agent.pdf` and checked; arXiv HTML full text and OpenReview submission page also checked
+summary_classification_note: keep this record as a concrete class-09 battery-engineering / digital-twin agent, not a class-04 materials paper or a `01.04` general-method paper.
+```
 
 ### 9.3 标注字段汇总
 
