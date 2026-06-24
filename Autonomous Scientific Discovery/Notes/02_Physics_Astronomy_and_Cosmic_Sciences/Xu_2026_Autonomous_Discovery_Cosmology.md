@@ -1,5 +1,20 @@
 # Xu and Borrett 2026 - Beyond AI as Assistants: Toward Autonomous Discovery in Cosmology
 
+## 2026-06-24 Batch30Partial2 writeback closure
+
+- `paper_id`: `ASD-0751`
+- `final_inclusion`: `yes`
+- `scientific_object_modules`: `02`
+- `object_coverage_mode`: `single_module`
+- `primary_module_for_filing`: `02`
+- `general_method_bucket`: `none`
+- `source_limited`: `no`
+- `safety_access_status`: `no_safety_skip__access_ok`
+- `first_hand_sources_checked`: local archived arXiv PDF
+- `pdf_path`: `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xu_2026_Autonomous_Discovery_Cosmology.pdf`
+
+This closure confirms that the residual risk is confirmed-core strength, not class direction: the stable scientific object remains cosmology (`02`), supported by concrete weak-lensing and ACT DR6 demonstrations.
+
 **论文信息**
 - 标题：Beyond AI as Assistants: Toward Autonomous Discovery in Cosmology
 - 作者：Licong Xu; Thomas Borrett

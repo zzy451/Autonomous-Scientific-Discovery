@@ -1,5 +1,20 @@
 # Wang 2026 - Rhizome OS-1: Rhizome's Semi-Autonomous Operating System for Small Molecule Drug Discovery
 
+## 2026-06-24 Batch30Partial2 writeback closure
+
+- `paper_id`: `ASD-0679`
+- `final_inclusion`: `yes`
+- `scientific_object_modules`: `03;07`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `07`
+- `general_method_bucket`: `none`
+- `source_limited`: `no`
+- `safety_access_status`: `no_safety_skip__access_ok`
+- `first_hand_sources_checked`: local archived arXiv PDF; arXiv HTML full text
+- `pdf_path`: `Reference_PDF/07_Medical_and_Health_Sciences/Wang_2026_Rhizome_OS_1.pdf`
+
+This closure supersedes the earlier single-`07` wording. `07` remains primary because the campaigns are therapeutic small-molecule discovery, and direct small-molecule / scaffold generation evidence also supports `03` under the relaxed multi-module rule.
+
 **论文信息**
 - 标题：Rhizome OS-1: Rhizome's Semi-Autonomous Operating System for Small Molecule Drug Discovery
 - 作者：Yiwen Wang; Gregory Sinenka; Xhuliano Brace

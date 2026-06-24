@@ -1,5 +1,20 @@
 # Keyan Ding et al. 2025 - SciToolAgent: a knowledge-graph-driven scientific agent for multitool integration
 
+## 2026-06-24 Batch30Partial2 writeback closure
+
+- `paper_id`: `ASD-0787`
+- `final_inclusion`: `yes`
+- `scientific_object_modules`: `03;04;06`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `03`
+- `general_method_bucket`: `none`
+- `source_limited`: `no`
+- `safety_access_status`: `no_safety_skip__access_ok`
+- `first_hand_sources_checked`: local archived publisher PDF
+- `pdf_path`: `Reference_PDF/03_Chemical_Sciences/Ding_2025_SciToolAgent.pdf`
+
+This closure keeps the relaxed multi-module result and upgrades the source state from abstract-level to local full PDF: pure `01.04` treatment is retired, and the concrete chemistry, materials, and biology case studies remain the controlling evidence.
+
 ## 2026-06-20 relaxed multi-module revision
 
 ```text
