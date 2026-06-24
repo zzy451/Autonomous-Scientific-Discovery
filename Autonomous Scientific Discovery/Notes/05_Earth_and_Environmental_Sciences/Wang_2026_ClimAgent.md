@@ -5,41 +5,42 @@
 - 作者：Hao Wang; Jindong Han; Wei Fan; Hao Liu
 - 年份：2026
 - 来源 / venue：arXiv
-- DOI / arXiv / URL：https://arxiv.org/abs/2604.16922
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract / HTML；主版本在 arXiv 上已标记 withdrawn
+- DOI / arXiv / URL：https://arxiv.org/abs/2604.16922 ; HTML full text: https://arxiv.org/html/2604.16922v2
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/05_Earth_and_Environmental_Sciences/Wang_2026_ClimAgent.pdf`；已归档并核对 versioned official arXiv PDF v2（`https://arxiv.org/pdf/2604.16922v2`）与 official arXiv HTML full text；non-versioned `https://arxiv.org/pdf/2604.16922` 返回 `404`，不是成功归档来源；v3 landing 仍为 withdrawn
 - 论文类型：预印本 / climate-science agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
-## 2026-06-24 Conservative-Hold Refresh
+## 2026-06-24 Direct-Landing Refresh
 
-- Final adjudication: `yes_but_conservative_hold`
+- Final adjudication: `yes_direct_landing`
 - Supported modules: `05`
 - `final_01_04_bucket`: `none`
 - `primary_module_for_filing`: `05`
-- Boundary type: `05 vs 01.04 with withdrawal/source-instability risk`
-- Confidence: `medium`
-- `source_limited`: `yes`
-- Safety / access status: `no_safety_skip`; the withdrawn arXiv landing page is accessible, but the official `/pdf` route is unavailable and no legal local PDF is archived from official routes as of `2026-06-24`.
-- Source status refresh: the cited repo is broken / `404`, and the only public repo state currently visible is a placeholder rather than a usable paper-supporting release.
-- Inclusion wording refresh: the system still looks like an Agent-oriented climate-science workflow rather than a single-turn model paper, but the record should remain conservative because the official first-hand package is unstable.
-- Classification wording refresh: concrete climate-science task coverage still supports `05` rather than `01.04`; do not collapse this into a general-method bucket just because the paper also presents a platform / benchmark surface.
-- Risk wording refresh: withdrawn status, missing stable official full-text routes, and missing cited repo support make this too source-limited for a direct landing.
+- Boundary type: `withdrawn-record / versioned-v2 lineage pressure, not 05-direction instability`
+- Confidence: `high`
+- `source_limited`: `no`
+- Safety / access status: `no_safety_skip`; official arXiv HTML full text at `https://arxiv.org/html/2604.16922v2` and versioned official arXiv PDF v2 at `https://arxiv.org/pdf/2604.16922v2` were available and checked, while the v3 landing remains withdrawn as of `2026-06-24`.
+- Source status refresh: official HTML full text and the archived versioned official PDF v2 now form the decisive first-hand source package; the successful archive source was `https://arxiv.org/pdf/2604.16922v2`, while non-versioned `https://arxiv.org/pdf/2604.16922` returned `404`.
+- Repo status refresh: the cited repo remains broken / `404`, and the visible public repo state is still a placeholder rather than a substantive paper-supporting release.
+- Inclusion wording refresh: this now crosses the direct-landing threshold because the official arXiv HTML full text plus the archived versioned official PDF v2 provide strong first-hand support for an Agent-oriented climate-science workflow rather than a single-turn model paper.
+- Classification wording refresh: concrete climate-science task, environment, tool, and benchmark coverage support `05` directly rather than `01.04`; the platform / benchmark surface does not override the Earth-science object landing.
+- Risk wording refresh: withdrawn v3 lineage and broken cited repo still add reproducibility pressure, but they do not overturn the `05` landing because both the official HTML full text and the archived versioned official PDF v2 are available.
 
 ## Evidence Log
 
 ### 2026-06-24 Evidence Refresh
 
-- First-hand source summary checked this round: withdrawn arXiv landing page plus the accessible abstract / landing-page metadata.
-- Official source status as of `2026-06-24`: no legal local PDF available from official routes; arXiv `/pdf` unavailable.
-- Repo status as of `2026-06-24`: cited repo broken / `404`; public repo only placeholder.
-- Classification remains anchored in climate-science tasks and environment coverage, so the supported module stays `05` rather than `01.04`.
-- Keep this note as a conservative hold with `confidence=medium` and `source_limited=yes`.
+- First-hand source summary checked this round: withdrawn arXiv landing page, official arXiv HTML full text at `https://arxiv.org/html/2604.16922v2`, versioned official arXiv PDF v2 at `https://arxiv.org/pdf/2604.16922v2`, and accessible arXiv abstract / landing-page metadata.
+- Official source status as of `2026-06-24`: official HTML full text is available; versioned official arXiv PDF v2 is available and archived locally at `Autonomous Scientific Discovery/Reference_PDF/05_Earth_and_Environmental_Sciences/Wang_2026_ClimAgent.pdf`; non-versioned `https://arxiv.org/pdf/2604.16922` returned `404`; v3 landing remains withdrawn.
+- Repo status as of `2026-06-24`: cited repo broken / `404`; public repo only placeholder and not a substantive release.
+- Classification remains anchored in concrete climate-science tasks and environment coverage, so the supported module stays `05` rather than `01.04`.
+- This note now lands directly with `confidence=high` and `source_limited=no`, while preserving explicit withdrawn-v3 lineage and repo-breakage risk wording.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是，暂定 | arXiv abstract / HTML | 系统不是单轮问答，而是面向开放式 climate science analysis 的端到端 agent workflow | 高 |
+| Agent 纳入 | 是，直接落地 | arXiv abstract / HTML / PDF v2 | 系统不是单轮问答，而是面向开放式 climate science analysis 的端到端 agent workflow | 高 |
 | 科学对象归类 | `05.02` | 标题；HTML | 任务、工具、数据库和 benchmark 都锚定 climate science | 高 |
 | 方法流程 | 明确多步 | HTML | 系统会做任务分解、工具选择、代码执行、分析与报告生成 | 高 |
 | 工具 / 环境约束 | 强 climate specialization | HTML | Climate Environment 覆盖 `25` 个子领域、`150` 个工具、`30` 个数据库 | 高 |
@@ -243,7 +244,7 @@
 
 ### 9.1 一句话概括
 
-气候科学专用 Agent 工作流，但证据强度受 withdrawn 明显拖累。
+气候科学专用 Agent 工作流；现已凭 official arXiv HTML full text 与 archived official PDF v2 达到 direct landing，但仍需显式保留 withdrawn v3 与版本谱系风险。
 
 ### 9.2 速记版 pipeline
 
@@ -255,7 +256,7 @@
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：是，暂定
+是否纳入：是，直接落地
 主类：05
 二级类：05.02
 三级类：气候科学分析与开放问题研究
@@ -266,24 +267,24 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven; data_driven; simulation_driven
 科学贡献类型：system_platform
-证据强度：medium_pending_full_text
+证据强度：first_hand_pdf_and_html_full_text
 归类置信度：高
-纳入置信度：中高
+纳入置信度：高
 推荐引用强度：standard
 ```
 
 ### 2026-06-24 Annotation Refresh
 
 ```text
-final_agent_inclusion: yes_but_conservative_hold
+final_agent_inclusion: yes_direct_landing
 supported_modules: 05
 final_01_04_bucket: none
 primary_module_for_filing: 05
-boundary_type: 05 vs 01.04 with withdrawal/source-instability risk
-confidence: medium
-source_limited: yes
-safety_access_status: no_safety_skip; withdrawn arXiv landing page accessible but official PDF unavailable/404
-master_update_required: no
-source_status: no legal local PDF available from official routes as of 2026-06-24; arXiv /pdf unavailable; cited repo broken/404; public repo only placeholder
-final_reason: concrete climate-science task coverage still supports 05 rather than 01.04, but withdrawn status, missing official PDF/html/src, and missing cited repo make this too unstable and source-limited for a direct landing.
+boundary_type: withdrawn-record / versioned-v2 lineage pressure, not 05-direction instability
+confidence: high
+source_limited: no
+safety_access_status: no_safety_skip; official arXiv HTML full text and versioned official arXiv PDF v2 were available and checked, while the v3 landing remains withdrawn as of 2026-06-24
+master_update_required: yes
+source_status: archived local PDF at Autonomous Scientific Discovery/Reference_PDF/05_Earth_and_Environmental_Sciences/Wang_2026_ClimAgent.pdf; successful official archive source was https://arxiv.org/pdf/2604.16922v2; official HTML full text checked at https://arxiv.org/html/2604.16922v2; non-versioned https://arxiv.org/pdf/2604.16922 returned 404; withdrawn v3 landing still exists; cited repo broken/404; public repo only placeholder and not substantive
+final_reason: This crosses the direct-landing threshold because official arXiv HTML full text and the archived official v2 PDF provide strong first-hand source support for clear concrete climate/Earth-science task evidence in 05; the withdrawn v3 lineage and repo breakage add reproducibility pressure but do not overturn the classification landing.
 ```
