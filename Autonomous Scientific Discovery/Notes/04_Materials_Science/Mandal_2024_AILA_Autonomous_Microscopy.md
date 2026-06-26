@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2501.10385
-- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Mandal_2024_AILA_Autonomous_Microscopy.pdf`
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Mandal_2025_AILA_Autonomous_Microscopy.pdf`
 - 论文类型：材料表征 / 自驱实验室 Agent 系统
 - 当前状态：已读，已纳入
 - 阅读日期：2026-06-15
@@ -24,7 +24,7 @@
 
 ## 2026-06-22 Batch16 full-reaudit check
 
-- 一手来源复核：已重新确认本地归档 PDF `Reference_PDF/04_Materials_Science/Mandal_2024_AILA_Autonomous_Microscopy.pdf`，当前 note 的证据锚点仍以该 archived PDF 为准。
+- 一手来源复核：已重新确认本地归档 PDF `Reference_PDF/04_Materials_Science/Mandal_2025_AILA_Autonomous_Microscopy.pdf`，当前 note 的证据锚点仍以该 archived PDF 为准。
 - 归档/分类同步：本轮不改动已裁决模块；维持 `supported_modules=04;09`、`final_01_04_bucket=none`、`primary_module_for_filing=04`、`confidence=high`、`source_limited=no`、`safety_access_status=no_safety_skip`。
 - 位置说明：本 note 存放在 `04_Materials_Science/` 目录仅为 filing convenience，不是分类 authority；`09` 的保留依据来自 AFM scientific-instrument operation 的对象级证据，而不是目录位置。
 

@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2606.01316
-- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_Science_Earth.pdf`
+- PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/01_Formal_Information_and_Computational_Sciences/Zhao_2026_Science_Earth.pdf`
 - 第一手来源核对：已核对本地 PDF 全文（22 页，2026-06-24）
 - classification_evidence_source_level：`first_hand_full_text`
 - 论文类型：系统论文 / Agent 论文

@@ -6,7 +6,7 @@
 - 年份：2025 arXiv v2；正式发表版本见 Nature Biomedical Engineering 2025
 - 来源 / venue：arXiv；Nature Biomedical Engineering
 - DOI / arXiv / URL：https://arxiv.org/abs/2404.18021；https://www.nature.com/articles/s41551-025-01463-z
-- PDF / 本地文件路径：arXiv PDF；项目归档路径为 `Reference_PDF/06_Life_Sciences/Qu_2025_CRISPR_GPT.pdf`
+- PDF / 本地文件路径：arXiv PDF；项目归档路径为 `Reference_PDF/06_Life_Sciences/Huang_2024_CRISPR_GPT.pdf`
 - 论文类型：系统论文 / 生物实验设计 Agent
 - 当前状态：已读 / 已纳入
 - 阅读日期：2026-06-15
@@ -15,12 +15,12 @@
 ## 2026-06-22 Batch16 full-reaudit check
 
 - Final adjudication confirmed unchanged: `supported_modules=06`; `final_01_04_bucket=none`; `primary_module_for_filing=06`; `confidence=high`; `source_limited=no`; `safety_access_status=no_safety_skip`.
-- First-hand source status for this refresh: confirmed local full text at `Reference_PDF/06_Life_Sciences/Qu_2025_CRISPR_GPT.pdf`; published article metadata remains `https://doi.org/10.1038/s41551-025-01463-z`.
+- First-hand source status for this refresh: confirmed local full text at `Reference_PDF/06_Life_Sciences/Huang_2024_CRISPR_GPT.pdf`; published article metadata remains `https://doi.org/10.1038/s41551-025-01463-z`.
 - Note-location reminder: this note sits under `Notes/06_Life_Sciences/` for filing convenience and matches the adjudicated primary filing, but note location is not independent classification authority.
 
 ## 2026-06-21 archive sync
 
-- Canonical PDF path: `Reference_PDF/06_Life_Sciences/Qu_2025_CRISPR_GPT.pdf`
+- Canonical PDF path: `Reference_PDF/06_Life_Sciences/Huang_2024_CRISPR_GPT.pdf`
 - Current-turn source refresh: the archived local PDF was rechecked against the arXiv full text and the published Nature Biomedical Engineering metadata on `2026-06-21`.
 - Classification remains stable: `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
 

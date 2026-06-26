@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2505.13400
-- PDF / 本地文件路径：arXiv PDF；项目归档路径为 `Reference_PDF/07_Medical_and_Health_Sciences/Ghareeb_2025_Robin.pdf`
+- PDF / 本地文件路径：arXiv PDF；项目归档路径为 `Reference_PDF/07_Medical_and_Health_Sciences/Ghareeb_2026_Robin.pdf`
 - 论文类型：系统论文 / 医学与药物发现 Agent
 - 当前状态：已读 / 已纳入 / 分类待主清单复核
 - 阅读日期：2026-06-15
@@ -14,7 +14,7 @@
 
 ## 2026-06-22 Batch16 full-reaudit check
 
-- Canonical PDF path: `Reference_PDF/07_Medical_and_Health_Sciences/Ghareeb_2025_Robin.pdf`
+- Canonical PDF path: `Reference_PDF/07_Medical_and_Health_Sciences/Ghareeb_2026_Robin.pdf`
 - First-hand source status: archived local arXiv full text rechecked; the Batch02 partial-10 closeout and current master-row remarks remain aligned with this note.
 - Current authoritative classification: `scientific_object_modules=06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
 - Filing note: this note remains in `Notes/07_Medical_and_Health_Sciences/` only because `07` is the adjudicated `primary_module_for_filing`; note location is a filing convenience, not classification authority.
