@@ -1,0 +1,30 @@
+{
+  "code_to_label": {
+    "01": "Formal, Information and Computational Sciences",
+    "01.04": "General ASD Methods without Concrete Object Experiments",
+    "02": "Physics, Astronomy and Cosmic Sciences",
+    "03": "Chemical Sciences",
+    "04": "Materials Science",
+    "05": "Earth and Environmental Sciences",
+    "06": "Life Sciences",
+    "07": "Medical and Health Sciences",
+    "08": "Agricultural, Food, Forestry, Animal and Fishery Sciences",
+    "09": "Engineering and Industrial Technology Sciences",
+    "10": "Aerospace, Marine and Transportation Sciences",
+    "11": "Social, Behavioral, Economic and Knowledge System Sciences"
+  },
+  "label_to_code": {
+    "Formal, Information and Computational Sciences": "01",
+    "General ASD Methods without Concrete Object Experiments": "01.04",
+    "Physics, Astronomy and Cosmic Sciences": "02",
+    "Chemical Sciences": "03",
+    "Materials Science": "04",
+    "Earth and Environmental Sciences": "05",
+    "Life Sciences": "06",
+    "Medical and Health Sciences": "07",
+    "Agricultural, Food, Forestry, Animal and Fishery Sciences": "08",
+    "Engineering and Industrial Technology Sciences": "09",
+    "Aerospace, Marine and Transportation Sciences": "10",
+    "Social, Behavioral, Economic and Knowledge System Sciences": "11"
+  }
+}

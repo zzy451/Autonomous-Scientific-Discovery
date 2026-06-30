@@ -1,0 +1,262 @@
+[
+  {
+    "paper_id": "ASD-0005",
+    "title": "A Multiagent-Driven Robotic AI Chemist Enabling Autonomous Chemical Research On Demand",
+    "doi": "10.1021/jacs.4c17738",
+    "url": "https://doi.org/10.1021/jacs.4c17738",
+    "pdf_status": "publisher_pdf_gated",
+    "evidence_status": "first_hand_abstract_plus_official_supporting_info",
+    "source_limited": "yes",
+    "access_note": "Source trail: Shanghai AI Lab seed survey[ref 237]; Batch00Reaudit2026-06-21: publisher landing page and official ACS supporting-information page checked; current evidence supports `scientific_object_modules=03;04`, `object_coverage_mode=multi_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; functional-material discovery/optimization supports `04`, photocatalytic organic reactions support `03`; main PDF endpoint remained access-gated in this environment, so keep `source_limited` / full-text follow-up open."
+  },
+  {
+    "paper_id": "ASD-0097",
+    "title": "Cellvoyager: Ai compbio agent generates new insights by autonomously analyzing biological data",
+    "doi": "10.1038/s41592-026-03029-6",
+    "url": "https://doi.org/10.1038/s41592-026-03029-6",
+    "pdf_status": "publisher_access_limited",
+    "evidence_status": "first_hand_preview_repo_and_preprint_doi",
+    "source_limited": "yes",
+    "access_note": "Source trail: Shanghai AI Lab seed survey[ref 5]; metadata upgraded 2026-06-17: confirmed journal upgrade from bioRxiv to Nature Methods 23(4):749-759; preprint lineage DOI https://doi.org/10.1101/2025.06.03.657517. CarryForward06Closeout2026-06-22: checked Nature Methods DOI landing / preview and data-availability evidence, official GitHub README, official demo landing, and the bioRxiv DOI / PDF route, which remained `403` in the current environment; accepted `scientific_object_modules=06;07`, `object_coverage_mode=multi_module`, `primary_module_for_filing=06`, `general_method_bucket=none`; `06` remains the stable single-cell / computational-biology core, while `07` is accepted as a source-limited adjunct module from COVID-19 and other human-biomedical case-study coverage; no local PDF archived."
+  },
+  {
+    "paper_id": "ASD-0112",
+    "title": "CSSTep: Step-by-step exploration of the chemical space of drug molecules via multi-agent and multi-stage reinforcement learning",
+    "doi": "10.1016/j.ces.2025.122048",
+    "url": "https://doi.org/10.1016/j.ces.2025.122048",
+    "pdf_status": "publisher_access_limited",
+    "evidence_status": "first_hand_abstract_metadata_and_xml",
+    "source_limited": "yes",
+    "access_note": "Source trail: Shanghai AI Lab seed survey[ref 34]; ExpansionBatch2026-06-16; classification may move to 07 if therapeutic validation dominates. NoteLanded2026-06-18: formal ASD note added. CarryForward06Closeout2026-06-22: checked the official DOI landing, Elsevier Linkinghub / ScienceDirect record, official Elsevier XML coredata, and the HKUST publication-portal abstract page; accepted `scientific_object_modules=03;07`, `object_coverage_mode=multi_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; `03` is the stable core because the accessible first-hand evidence directly studies drug molecules and chemical-space optimization, while `07` is accepted as a source-limited adjunct module from two COVID-19-related target-linked drug-design validation cases; no local PDF archived."
+  },
+  {
+    "paper_id": "ASD-0158",
+    "title": "A robotic platform for flow synthesis of organic compounds informed by AI planning",
+    "doi": "10.1126/science.aax1566",
+    "url": "https://doi.org/10.1126/science.aax1566",
+    "pdf_status": "publisher_pdf_access_limited",
+    "evidence_status": "first_hand_abstract_and_metadata",
+    "source_limited": "yes",
+    "access_note": "HighImpactTrail: Science search; ExpansionBatch2026-06-16; older foundational high-impact case. CarryForward16Closeout2026-06-22: rechecked Crossref / Science publisher abstract; kept stable `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local PDF was archived because the Science PDF endpoint returned `403`, so this row remains explicitly source-limited but classification-stable."
+  },
+  {
+    "paper_id": "ASD-0381",
+    "title": "Autonomous reaction Pareto-front mapping with a self-driving catalysis laboratory",
+    "doi": "10.1038/s44286-024-00033-5",
+    "url": "https://doi.org/10.1038/s44286-024-00033-5",
+    "pdf_status": "publisher_pdf_access_limited",
+    "evidence_status": "first_hand_preview_and_metadata",
+    "source_limited": "yes",
+    "access_note": "HighImpactTrail: OpenAlex query `self-driving laboratory autonomous discovery`; High-impact/citation-expansion pass 2026-06-16. CarryForward16Closeout2026-06-22: rechecked publisher preview / DOI metadata and kept stable `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local PDF was archived because full text remained unavailable in this environment, so this row remains explicitly source-limited but classification-stable."
+  },
+  {
+    "paper_id": "ASD-0508",
+    "title": "Autonomous, multiproperty-driven molecular discovery: From predictions to measurements and back",
+    "doi": "10.1126/science.adi1407",
+    "url": "https://doi.org/10.1126/science.adi1407",
+    "pdf_status": "publisher_full_text_checked",
+    "evidence_status": "first_hand_full_text",
+    "source_limited": "no",
+    "access_note": "Source trail: High-impact follow-up queue 2026-06-16; Science molecular-discovery closed loop. Round2NoteLanded2026-06-19: formal note keeps `03.04`; the stable scientific object is multiproperty molecular discovery rather than a materials-device optimization object. Batch15Partial1Reaudit2026-06-22: note refreshed from first-hand source review; keep `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`."
+  },
+  {
+    "paper_id": "ASD-0536",
+    "title": "TCM-Agent: Advancing Network Pharmacology and Herbal Medicine Discovery with LLM-Based Multi-Agent Systems",
+    "doi": "10.1016/j.jpha.2026.101581",
+    "url": "https://doi.org/10.1016/j.jpha.2026.101581",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "first_hand_abstract_review_packet",
+    "source_limited": "yes",
+    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly indicates multi-agent discovery workflow for pharmacology and herbal medicine. NoteLanded2026-06-19: official abstract keeps stable `07.04`, while the main residual risk is core-strength rather than class assignment. Batch16Partial4Reaudit2026-06-23: official JPA publisher abstract and ScienceDirect landing snippet rechecked; keep `scientific_object_modules=07`, `object_coverage_mode=single_module`, `primary_module_for_filing=07`, and `general_method_bucket=none`; note / master / progress are now synchronized with explicit `source_limited=yes` because full text / local PDF were not retrieved in this run."
+  },
+  {
+    "paper_id": "ASD-0544",
+    "title": "LLM-Agent Powered Automated Literature Review and Hypothesis Generation for Cancer Biomarker Discovery",
+    "doi": "10.1109/ICOSST69113.2025.11315415",
+    "url": "https://doi.org/10.1109/ICOSST69113.2025.11315415",
+    "pdf_status": "safety_skip",
+    "evidence_status": "publisher_landing_waf_safety_skip_closeout",
+    "source_limited": "yes",
+    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly combines literature review and hypothesis generation for biomarker discovery. NoteLanded2026-06-19: recovered abstract evidence supports stable `07.01` because the concrete object is cancer biomarker discovery rather than a domain-general review tool. Batch16Partial8Reaudit2026-06-23: DOI redirect to IEEE Xplore was rechecked and the official landing returned a WAF challenge, so this round lands the record conservatively at `scientific_object_modules=07` with explicit safety-visible / source-limited wording; the title still provides a concrete cancer biomarker-discovery object, so there is no basis to reopen `01.04` or add `06`."
+  },
+  {
+    "paper_id": "ASD-0547",
+    "title": "Closed-loop experimental AI for pixelated metasurface design",
+    "doi": "10.1117/12.3091089",
+    "url": "https://doi.org/10.1117/12.3091089",
+    "pdf_status": "safety_skip",
+    "evidence_status": "doi_metadata_safety_skip_closeout",
+    "source_limited": "yes",
+    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly indicates closed-loop experimental AI for metasurface design. Round2Note2026-06-19: weak-evidence note added; keep `04.04` for now because the visible object is pixelated metasurface design, but this remains a mandatory `04 / 09` and evidence-strength follow-up sample. RelaxedRound2P1N2026-06-21: scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=Crossref DOI record `10.1117/12.3091089` + DOI resolver / official SPIE landing; evidence=the stable object is pixelated metasurface / engineered nanostructure design, and the currently accessible first-hand metadata does not show an independent engineering-system or process object strong enough to add `09`. Batch16Partial8Reaudit2026-06-23: DOI/title-level metadata and the prior SPIE landing boundary were rechecked; no local PDF was found and the downstream SPIE page remained not safely accessible in this environment, so this closeout keeps `scientific_object_modules=04` only and does not add `09`."
+  },
+  {
+    "paper_id": "ASD-0565",
+    "title": "Agentic AI for autonomous discovery of radiation-tolerant CoCrFeMnNi high entropy alloys",
+    "doi": "10.1016/j.scriptamat.2026.117286",
+    "url": "https://doi.org/10.1016/j.scriptamat.2026.117286",
+    "pdf_status": "abstract_only_checked",
+    "evidence_status": "first_hand_abstract_review_packet",
+    "source_limited": "no",
+    "access_note": "Source trail: materials-agent thematic expansion 2026-06-17; title explicitly states autonomous discovery of a concrete alloy class. NoteLanded2026-06-19: keep `04.04`. Batch24Partial1Reaudit2026-06-23: ScienceDirect abstract and DOI landing page rechecked; note synced and landed `scientific_object_modules=04`, `object_coverage_mode=single_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; this row no longer stays in the old Crossref-only conservative-hold state."
+  },
+  {
+    "paper_id": "ASD-0569",
+    "title": "Autonomous Nanocrystal Doping by Self-Driving Fluidic Micro-Processors",
+    "doi": "10.1002/aisy.202200017",
+    "url": "https://doi.org/10.1002/aisy.202200017",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "source_limited_review_packet",
+    "source_limited": "yes",
+    "access_note": "Source trail: Nature/SDL citation expansion 2026-06-17; title explicitly indicates a self-driving fluidic platform for nanocrystal doping under a concrete materials object. NoteLanded2026-06-19: keep `04.03`; official abstract supports a concrete nanocrystal-doping materials object despite the multistage chemistry framing. Batch23Partial1Reaudit2026-06-23: source-limited page-level evidence rechecked; note synced and landed `scientific_object_modules=04`, `object_coverage_mode=single_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; keep the materials-object reading."
+  },
+  {
+    "paper_id": "ASD-0572",
+    "title": "Autonomous discovery of functional random heteropolymer blends through evolutionary formulation optimization",
+    "doi": "10.1016/j.matt.2025.102336",
+    "url": "https://doi.org/10.1016/j.matt.2025.102336",
+    "pdf_status": "abstract_only_checked",
+    "evidence_status": "first_hand_abstract_review_packet",
+    "source_limited": "no",
+    "access_note": "Source trail: high-impact / citation expansion 2026-06-17; metadata upgraded 2026-06-17 from Matter full-text / PubMed records. Round2Note2026-06-19: canonical title / DOI / authors normalized from Crossref. Batch24Partial1Reaudit2026-06-23: PubMed abstract, ScienceDirect highlights/progress summary, and ChemRxiv stable preprint page rechecked; note synced and landed `scientific_object_modules=04;06`, `object_coverage_mode=multi_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; polymer-blend formulation and materials-performance optimization remain the primary object, while protein-stabilization validation adds independent life-science coverage."
+  },
+  {
+    "paper_id": "ASD-0592",
+    "title": "Autonomous materials synthesis by machine learning and robotics",
+    "doi": "10.1063/5.0020370",
+    "url": "https://doi.org/10.1063/5.0020370",
+    "pdf_status": "publisher_pdf_checked_no_local_archive",
+    "evidence_status": "first_hand_full_text",
+    "source_limited": "no",
+    "access_note": "Source trail: materials citation expansion 2026-06-17; title and source explicitly indicate autonomous materials synthesis by machine learning and robotics. NoteLanded2026-06-19: keep `04.04`; stable object is thin-film materials property optimization rather than generic workflow infrastructure. Batch17Partial1 2026-06-22: AIP official PDF rechecked; note synced; keep `scientific_object_modules=04`, `primary_module_for_filing=04`, `general_method_bucket=none`."
+  },
+  {
+    "paper_id": "ASD-0617",
+    "title": "An industrial automated laboratory for programmable protein evolution",
+    "doi": "10.1038/s44286-025-00303-w",
+    "url": "https://doi.org/10.1038/s44286-025-00303-w",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "source_limited_review_packet",
+    "source_limited": "yes",
+    "access_note": "Source trail: Nature-family protein-evolution branch 2026-06-17; forward/citation expansion from `Self-driving laboratories to autonomously navigate the protein fitness landscape`; industrial automated laboratory for programmable protein evolution under a concrete protein-engineering object. NoteLanded2026-06-19: keep `06.03`; the stable object is programmable protein evolution, while the main remaining risk is evidence completeness rather than top-level classification. Batch23Partial1Reaudit2026-06-23: source-limited publisher page/abstract evidence rechecked; note synced and landed `scientific_object_modules=06`, `object_coverage_mode=single_module`, `primary_module_for_filing=06`, `general_method_bucket=none`; keep the programmable protein-evolution reading."
+  },
+  {
+    "paper_id": "ASD-0603",
+    "title": "Reconfigurable system for automated optimization of diverse chemical reactions",
+    "doi": "10.1126/science.aat0650",
+    "url": "https://doi.org/10.1126/science.aat0650",
+    "pdf_status": "abstract_only_checked",
+    "evidence_status": "first_hand_abstract_review_packet",
+    "source_limited": "yes",
+    "access_note": "Source trail: Science chemistry-automation anchor 2026-06-17; Science article presents a reconfigurable automated system for optimizing diverse chemical reactions through iterative experimental control. NoteLanded2026-06-19: keep `03.03`; despite broad platform language, the stable scientific object remains concrete reaction optimization across multiple chemistry families. Batch23Partial1Reaudit2026-06-23: source-limited Science metadata/abstract evidence rechecked; note synced and landed `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; keep the chemistry-object reading."
+  },
+  {
+    "paper_id": "ASD-0609",
+    "title": "Automated pH Adjustment Driven by Robotic Workflows and Active Machine Learning",
+    "doi": "10.1016/j.cej.2022.139099",
+    "url": "https://doi.org/10.1016/j.cej.2022.139099",
+    "pdf_status": "preprint_pdf_checked_no_local_archive",
+    "evidence_status": "first_hand_full_text",
+    "source_limited": "no",
+    "access_note": "Source trail: Lapkin chemistry-automation branch 2026-06-17; robotic workflows plus active machine learning for closed-loop pH adjustment optimization in chemical systems. Round2NoteLanded2026-06-19: formal note keeps top-level `03`; the main remaining risk is evidence completeness and second-level refinement, not a `03 / 09` top-level move. RelaxedRound2P1L2026-06-21: scientific_object_modules=03; object_coverage_mode=single_module; primary_module_for_filing=03; general_method_bucket=none; first_hand_sources_checked=ChemRxiv full-text PDF + ScienceDirect publisher page/abstract; evidence=the closed-loop robotic workflow is validated on buffered chemical systems including acetate, citrate, KH2PO4, and ammonium compositions, while industrial/process-control language remains application motivation rather than an independent engineering-system experiment, so `09` is not added. Batch18Reaudit2026-06-22: note wording refreshed against first-hand ChemRxiv full text plus publisher metadata; `03.03` remains stable and the earlier `03 / 09` pressure is closed conservatively in favor of concrete chemical-system optimization."
+  },
+  {
+    "paper_id": "ASD-0631",
+    "title": "Autonomous Discovery of Polymer Electrolyte Formulations with Warm-Start Batch Bayesian Optimization",
+    "doi": "10.1021/acs.chemmater.5c01209",
+    "url": "https://doi.org/10.1021/acs.chemmater.5c01209",
+    "pdf_status": "preprint_pdf_checked_no_local_archive",
+    "evidence_status": "first_hand_preprint_pdf_review_packet",
+    "source_limited": "no",
+    "access_note": "Source trail: battery/electrolyte sibling expansion from ASD-0608 and ASD-0621 2026-06-17; Chemistry of Materials paper presents a closed-loop warm-start Bayesian optimization pipeline on an autonomous polymer-electrolyte platform for solid-state battery materials. NoteLanded2026-06-19: keep `04.04`; current class is stable, while the main remaining risk is full-text validation of autonomy and experiment-detail strength."
+  },
+  {
+    "paper_id": "ASD-0724",
+    "title": "Autonomous seeking and mapping coral reef biodiversity hotspots with a multimodal AUV",
+    "doi": "10.1126/scirobotics.adx9939",
+    "url": "https://doi.org/10.1126/scirobotics.adx9939",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "first_hand_abstract_and_doi_metadata",
+    "source_limited": "yes",
+    "access_note": "Source trail: Science-family marine-observation sibling expansion 2026-06-19; the system autonomously searches for, localizes, and maps coral-reef biodiversity hotspots through multimodal environmental interaction and adaptive decision-making, so the scientific object is marine biodiversity rather than generic underwater robotics. Round4Audit2026-06-18: secondary class tightened from invalid 06.04 to 06.02 because the object is marine biodiversity rather than a missing biotechnology subtype. Formal note added 2026-06-19; retained in 06.02 rather than 05 because the final object is biodiversity hotspots, not ocean-process science. Batch30Partial3Reaudit2026-06-24: official DOI metadata abstract plus author metadata support a landed `06` closeout with `source_limited=yes`; corrected legacy author lead from `Brennan C. Phillips et al.` to `Seth McCammon et al.` and keep the biodiversity-object reading rather than `05` or `01.04`."
+  },
+  {
+    "paper_id": "ASD-0727",
+    "title": "GeoAgentic-RAG: A Multi-Agent framework for autonomous geospatial reasoning and visual insight generation with LLM",
+    "doi": "10.1016/j.jag.2026.105195",
+    "url": "https://doi.org/10.1016/j.jag.2026.105195",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "source_limited_review_packet",
+    "source_limited": "yes",
+    "access_note": "Source trail: OpenEarth-Agent / Earth-Agent geospatial sibling expansion 2026-06-19; NoteLanded2026-06-20: formal ASD note added from DOI / abstract evidence. MetadataCorrection2026-06-20: authors corrected from incomplete metadata. Class kept at `05.04`; the main risk remains limited `05 / 01.04` framing pressure rather than a real top-level mismatch. Batch25Partial1Reaudit2026-06-23: closed; official abstract evidence keeps this in module 05; note/master closed as source_limited rather than 01.04."
+  },
+  {
+    "paper_id": "ASD-0735",
+    "title": "Artificial Chemist: An Autonomous Quantum Dot Synthesis Bot",
+    "doi": "10.1002/adma.202001626",
+    "url": "https://doi.org/10.1002/adma.202001626",
+    "pdf_status": "abstract_only_checked",
+    "evidence_status": "source_limited_review_packet",
+    "source_limited": "yes",
+    "access_note": "Source trail: materials / nanocrystal / self-driving-lab sibling expansion 2026-06-19; this autonomous quantum-dot synthesis bot iteratively plans, executes, measures, and updates synthesis conditions for a concrete materials object, so it belongs cleanly to class 04 rather than generic laboratory automation. Formal note added 2026-06-19; corrected canonical authors and retained 04.03 rather than 03 because the optimized object is quantum-dot material properties. Batch25Partial1Reaudit2026-06-23: closed; current first-hand evidence keeps this in module 04 for quantum-dot material-property optimization; note/master closed as source_limited."
+  },
+  {
+    "paper_id": "ASD-0854",
+    "title": "Enabling Autonomous Science for a Mars Rover",
+    "doi": "10.2514/6.2008-3241",
+    "url": "https://doi.org/10.2514/6.2008-3241",
+    "pdf_status": "safety_skip",
+    "evidence_status": "first_hand_public_full_text_and_official_project_page",
+    "source_limited": "no",
+    "access_note": "Source trail: mission-science rover lineage expansion 2026-06-18; the paper describes mission-science autonomy that integrates onboard analysis, planning, and adaptive scientific follow-up for a Mars rover, making it a class-10 core Agent paper. NoteLanded2026-06-20: formal note added; batch13 review keeps `10 / 10.02` because the scientific object remains Mars-rover mission-science autonomy rather than an Earth-observation or generic workflow object. Batch30Partial3Reaudit2026-06-24: public full-text conference page plus official JPL OASIS page support a landed `10` closeout; corrected the author line to `Tara Estlin; Rebecca Castano; Daniel Gaines; Benjamin Bornstein; Michele Judd; Robert C. Anderson`. A mirror PDF archive attempt was `not accessed due to safety` because the mirror TLS certificate had expired, so no local PDF path was added and the safety skip remains visible."
+  },
+  {
+    "paper_id": "ASD-0855",
+    "title": "Automating Scientific Evaluation: A Multi-Agent Framework for Transparent and Trustworthy Peer Review",
+    "doi": "10.1016/j.ifacol.2025.12.440",
+    "url": "https://doi.org/10.1016/j.ifacol.2025.12.440",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "first_hand_abstract_and_official_pages",
+    "source_limited": "yes",
+    "access_note": "Source trail: Nature/Science knowledge-production sibling expansion 2026-06-18; the IFAC paper presents a multi-agent framework explicitly for transparent and trustworthy scientific evaluation, so the object is scientific peer review itself and it belongs in `11.07`. NoteLanded2026-06-18: formal ASD note added. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=11; primary_module_for_filing=11; general_method_bucket=none; source_limited=yes."
+  },
+  {
+    "paper_id": "ASD-0858",
+    "title": "Incorporating AEGIS autonomous science into Mars Science Laboratory rover mission operations",
+    "doi": "10.2514/6.2018-2576",
+    "url": "https://doi.org/10.2514/6.2018-2576",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "official_record_checked_no_download",
+    "source_limited": "yes",
+    "access_note": "Source trail: Science Robotics 2017 AEGIS -> mission-ops sibling expansion 2026-06-18; this paper integrates AEGIS autonomous science into Mars Science Laboratory mission operations under real mission constraints, making it a clean class-10 mission-science Agent record rather than a generic autonomy paper. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `10 / 10.02` because the core object is rover mission operations and autonomous science execution rather than an Earth-environment monitoring target. Batch29Partial1Reaudit2026-06-24: closed; first-hand NASA NTRS record only; no downloadable PDF supports scientific_object_modules=10; primary_module_for_filing=10; general_method_bucket=none; source_limited=yes."
+  },
+  {
+    "paper_id": "ASD-0859",
+    "title": "Monitoring active volcanism with the Autonomous Sciencecraft Experiment on EO-1",
+    "doi": "10.1016/j.rse.2005.08.007",
+    "url": "https://doi.org/10.1016/j.rse.2005.08.007",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "first_hand_abstract_and_official_pages",
+    "source_limited": "yes",
+    "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; the ASE pipeline detects volcanic activity onboard, replans observations, and acquires responsive Earth-observation science data, so the scientific object is volcanic Earth-system monitoring and it fits class `05` rather than `10`. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `05 / 05.04` because the final scientific object is active-volcanism monitoring rather than spacecraft autonomy as an end in itself. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes."
+  },
+  {
+    "paper_id": "ASD-0860",
+    "title": "Autonomous detection of cryospheric change with hyperion on-board Earth Observing-1",
+    "doi": "10.1016/j.rse.2005.11.014",
+    "url": "https://doi.org/10.1016/j.rse.2005.11.014",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "first_hand_abstract_and_official_pages",
+    "source_limited": "yes",
+    "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; the paper centers onboard detection and follow-up of cryospheric change using Hyperion on EO-1, so the primary object is Earth-system / cryosphere science rather than spacecraft engineering. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `05 / 05.04` because the scientific object remains cryospheric Earth-system change rather than mission-autonomy infrastructure. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes."
+  },
+  {
+    "paper_id": "ASD-0861",
+    "title": "Flood detection and monitoring with the Autonomous Sciencecraft Experiment onboard EO-1",
+    "doi": "10.1016/j.rse.2005.12.018",
+    "url": "https://doi.org/10.1016/j.rse.2005.12.018",
+    "pdf_status": "source_limited_no_local_pdf",
+    "evidence_status": "first_hand_abstract_and_official_pages",
+    "source_limited": "yes",
+    "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; this ASE application performs onboard flood detection, monitoring, and responsive observation for Earth-system science, so it is best classified in `05` despite being mission-borne. NoteLanded2026-06-20: formal ASD note added; batch14 review keeps `05 / 05.04` because the final scientific object remains flood monitoring and Earth-observation science rather than spacecraft autonomy as an end in itself. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes."
+  }
+]
