@@ -15,6 +15,7 @@ Do not edit the generated JSON files by hand unless the regeneration workflow is
 - `papers.csv`: spreadsheet-friendly flat export of the same paper records.
 - `paper_modules.csv`: exploded module-assignment table for one-to-many analysis.
 - `papers.sqlite`: queryable analysis database with normalized tables.
+- `field_dictionary.md`: authoritative field definitions for the structured exports and analysis database.
 - `taxonomy_index.json`: scientific module and `01.04` code/label mappings.
 - `pdf_manifest.json`: local archived PDF inventory with hashes.
 - `missing_pdf_manifest.json`: active confirmed-core papers that currently have no local readable PDF but remain DOI/indexable.
