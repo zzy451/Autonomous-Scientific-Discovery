@@ -53,3 +53,8 @@ Reference_PDF/**/*.pdf
 *.zip
 *.7z
 *.rar
+
+# Allow the ASD local evidence library to be versioned explicitly.
+!Autonomous Scientific Discovery/Reference_PDF/
+!Autonomous Scientific Discovery/Reference_PDF/**/
+!Autonomous Scientific Discovery/Reference_PDF/**/*.pdf
