@@ -163,7 +163,7 @@
     "paper_id": "ASD-0021",
     "title": "A review of large language models and autonomous agents in chemistry",
     "note_path": "Notes/03_Chemical_Sciences/Ramos_2025_LLMs_Autonomous_Agents_Chemistry.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -202,8 +202,8 @@
   {
     "paper_id": "ASD-0026",
     "title": "Autonomous microscopy experiments through large language model agents",
-    "note_path": "",
-    "note_exists": false,
+    "note_path": "Notes/04_Materials_Science/Mandal_2024_AILA_Autonomous_Microscopy.md",
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "excluded"
   },
@@ -642,8 +642,8 @@
   {
     "paper_id": "ASD-0081",
     "title": "Crispr-gpt: An llm agent for automated design of gene-editing experiments",
-    "note_path": "",
-    "note_exists": false,
+    "note_path": "Notes/06_Life_Sciences/Qu_2025_CRISPR_GPT.md",
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "excluded"
   },
@@ -658,8 +658,8 @@
   {
     "paper_id": "ASD-0083",
     "title": "Robin: A multi-agent system for automating scientific discovery",
-    "note_path": "",
-    "note_exists": false,
+    "note_path": "Notes/07_Medical_and_Health_Sciences/Ghareeb_2025_Robin.md",
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "excluded"
   },
@@ -699,7 +699,7 @@
     "paper_id": "ASD-0088",
     "title": "Empowering biomedical discovery with ai agents",
     "note_path": "Notes/07_Medical_and_Health_Sciences/Gao_2024_Biomedical_Discovery_AI_Agents.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -1139,7 +1139,7 @@
     "paper_id": "ASD-0143",
     "title": "MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Zhang_2025_MAPS_Collaborative_Reasoning.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -2971,7 +2971,7 @@
     "paper_id": "ASD-0372",
     "title": "Data-Centric Architecture for Self-Driving Laboratories with Autonomous Discovery of New Nanomaterials",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Butakova_2022_Data_Centric_SDL_Nanomaterials.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -3003,7 +3003,7 @@
     "paper_id": "ASD-0376",
     "title": "Self-Driving Laboratory for Polymer Electronics",
     "note_path": "Notes/04_Materials_Science/Vriza_2023_SDL_Polymer_Electronics.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -3051,7 +3051,7 @@
     "paper_id": "ASD-0382",
     "title": "Toward autonomous design and synthesis of novel inorganic materials",
     "note_path": "Notes/04_Materials_Science/Szymanski_2021_Toward_Autonomous_Design_Inorganic_Materials.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -3059,7 +3059,7 @@
     "paper_id": "ASD-0383",
     "title": "Universal self-driving laboratory for accelerated discovery of materials and molecules",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Epps_2021_Universal_Self_Driving_Laboratory.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -3211,7 +3211,7 @@
     "paper_id": "ASD-0402",
     "title": "Self-Driving Laboratories for Development of New Functional Materials and Optimizing Known Reactions",
     "note_path": "Notes/04_Materials_Science/Soldatov_2021_SDL_Functional_Materials_Review.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -3307,7 +3307,7 @@
     "paper_id": "ASD-0414",
     "title": "Accelerating materials discovery using artificial intelligence, high performance computing and robotics",
     "note_path": "Notes/04_Materials_Science/PyzerKnapp_2022_Accelerating_Materials_Discovery.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -3739,7 +3739,7 @@
     "paper_id": "ASD-0468",
     "title": "Closed-loop optimization of nanoparticle synthesis enabled by robotics and machine learning",
     "note_path": "Notes/04_Materials_Science/Park_2023_Nanoparticle_Synthesis_Perspective.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -3747,7 +3747,7 @@
     "paper_id": "ASD-0469",
     "title": "Achieving Reproducibility and Closed-Loop Automation in Biological Experimentation with an IoT-Enabled Lab of the Future",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Miles_2018_IoT_Enabled_Lab_of_the_Future.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4363,7 +4363,7 @@
     "paper_id": "ASD-0546",
     "title": "Accelerating earth science discovery via multi-agent LLM systems",
     "note_path": "Notes/05_Earth_and_Environmental_Sciences/Pantiukhin_2025_Earth_Science_Discovery_MultiAgent_LLMs.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4395,7 +4395,7 @@
     "paper_id": "ASD-0550",
     "title": "Catalyst discovery through AI agent collaboration",
     "note_path": "Notes/03_Chemical_Sciences/Jiang_2026_Catalyst_Discovery_AI_Agent_Collaboration.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4403,7 +4403,7 @@
     "paper_id": "ASD-0551",
     "title": "PANGAEA GPT: A Coordinated Multi-Agent Architecture for Earth System Data Discovery and Analysis",
     "note_path": "Notes/05_Earth_and_Environmental_Sciences/Pantiukhin_2025_PANGAEA_GPT_Conference_Abstract.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4435,7 +4435,7 @@
     "paper_id": "ASD-0555",
     "title": "Autonomous Agentic AI Systems for Pharmaceutical Drug Discovery: A Multi-Agent Framework for Molecular Design and Optimization",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Kodela_2025_Autonomous_Agentic_AI_Drug_Discovery.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4483,7 +4483,7 @@
     "paper_id": "ASD-0561",
     "title": "Toward Full Autonomous Laboratory Instrumentation Control with Large Language Models",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Xie_2025_Autonomous_Lab_Instrumentation_Control.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4491,7 +4491,7 @@
     "paper_id": "ASD-0562",
     "title": "Toward a composable, modular laboratory ecosystem for autonomous materials research and development",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Joress_2026_Modular_Lab_Ecosystem.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4499,7 +4499,7 @@
     "paper_id": "ASD-0563",
     "title": "Accelerating multimetallic catalyst discovery with robotics and agentic AI",
     "note_path": "Notes/04_Materials_Science/Peng_2025_Multimetallic_Catalyst_Discovery_Commentary.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4523,7 +4523,7 @@
     "paper_id": "ASD-0566",
     "title": "Autonomous Laboratory Planning Agent for Solid-State Form Selection and Polymorph Screening",
     "note_path": "Notes/07_Medical_and_Health_Sciences/AlMahdi_2026_Solid_State_Form_Planning_Agent.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4659,7 +4659,7 @@
     "paper_id": "ASD-0583",
     "title": "Autonomous catalysis research with human-AI-robot collaboration",
     "note_path": "Notes/03_Chemical_Sciences/Orouji_2025_Autonomous_Catalysis_Collaboration.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4699,7 +4699,7 @@
     "paper_id": "ASD-0588",
     "title": "Autonomous platforms for data-driven organic synthesis",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Gao_2022_Autonomous_Platforms_Organic_Synthesis.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4771,7 +4771,7 @@
     "paper_id": "ASD-0595",
     "title": "In vitro continuous protein evolution empowered by machine learning and automation",
     "note_path": "Notes/06_Life_Sciences/Unknown_2023_InVitro_Continuous_Protein_Evolution_Perspective.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -4827,7 +4827,7 @@
     "paper_id": "ASD-0602",
     "title": "An all-in-one multipurpose robotic platform for the self-optimization, intensification and scale-up of photocatalysis in flow",
     "note_path": "Notes/03_Chemical_Sciences/Slattery_2023_RoboChem_Photocatalysis_Preprint.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -5595,7 +5595,7 @@
     "paper_id": "ASD-0700",
     "title": "Reimagining Peer Review Process Through Multi-Agent Mechanism Design",
     "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_Peer_Review_Mechanism_Design.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },
@@ -5835,7 +5835,7 @@
     "paper_id": "ASD-0730",
     "title": "Traxia: A Framework for Verifiable, Agent-Native Scientific Publishing",
     "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Dogah_2026_Traxia.md",
-    "note_exists": false,
+    "note_exists": true,
     "active_confirmed_core": false,
     "inclusion_status": "background_only"
   },

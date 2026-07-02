@@ -63,7 +63,7 @@
     "sha256": "b0dd40e2293f08909dae741431aafe2b4d556de7225701cab75a51b721943762",
     "primary_module_for_filing": "01",
     "scientific_object_modules": [],
-    "pdf_status": "official_pdf_403",
+    "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_and_official_pages",
     "active_confirmed_core": true
   },
@@ -125,8 +125,10 @@
     "title": "Large language models for chemistry robotics",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Yoshikawa_2023_Chemistry_Robotics_LLMs.pdf",
     "sha256": "98d3f4e096aa8b9742fee95e4f95a93977a772281f79542dc2d1e05d240939eb",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; direct Springer PDF endpoint still returned HTML challenge in this environment, but chemistry-object classification is stable from first-hand full text.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_html_full_text",
     "active_confirmed_core": true
@@ -153,7 +155,7 @@
     "scientific_object_modules": [
       "06"
     ],
-    "pdf_status": "pdf_unavailable_403",
+    "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_and_official_repo",
     "active_confirmed_core": true
   },
@@ -162,8 +164,10 @@
     "title": "An autonomous laboratory for the accelerated synthesis of novel materials",
     "pdf_path": "Reference_PDF/04_Materials_Science/Szymanski_2023_A_Lab.pdf",
     "sha256": "82a868e3f797d6b47d768e0297077d54d207fdecc7c5d77731b64f31ff29499f",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; keep canonical PDF title `An autonomous laboratory for the accelerated synthesis of novel materials`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -173,8 +177,10 @@
     "title": "Can ai agents design and implement drug discovery pipelines?",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Smbatyan_2025_DO_Challenge.pdf",
     "sha256": "a1930d0dd262de37cd39f4d709fdd3360c24aa6e610c037e73705be78526c660",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -184,8 +190,10 @@
     "title": "Agent laboratory: Using llm agents as research assistants",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Schmidgall_2025_Agent_Laboratory.pdf",
     "sha256": "28de4e931db9004d056e240a2ac7a1460305dafc3b781fe1fb0fbd0c2596cc70",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; independent `01.04`-only note wording removed because the paper reports concrete ML research workflow objects and code-experiment evidence.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -195,8 +203,10 @@
     "title": "Agentrxiv: Towards collaborative autonomous research",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Schmidgall_2025_AgentRxiv.pdf",
     "sha256": "762045781a10140f714e0f23388014286a50cce79f385d6b4a1475162cce9669",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; `MedQA` remains transfer benchmark evidence rather than independent `07`, so this record stays in formal/computational `01` rather than independent `01.04`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -206,8 +216,10 @@
     "title": "Biodiscoveryagent: An ai agent for designing genetic perturbation experiments",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Roohani_2024_BioDiscoveryAgent.pdf",
     "sha256": "dd94d80ec75c9bb84ec3989c910a313ef1a7aec57c772d3dd35ecadd250132a7",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -217,8 +229,10 @@
     "title": "Chemgraph: An agentic framework for computational chemistry workflows",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Pham_2025_ChemGraph.pdf",
     "sha256": "3731365eaf15fac6fbd7b672b5f1a858cd0306b0937636d825d6e418a4c6b1c9",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; current full-text evidence does not justify an additional independent `04` module.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -228,9 +242,10 @@
     "title": "Large language model agent for modular task execution in drug discovery",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Ock_2025_AgentD.pdf",
     "sha256": "f2d58b6734d650f3b30634ee9c4820eddf1bac43fc93ccfffd10c54cbaeda921",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; therapeutic pipeline, binding-affinity and protein-ligand tasks support `07`, while seed-molecule generation, property-aware molecular refinement, and drug-/lead-likeness molecule tasks independently support `03`.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "07"
+      "07",
+      "03"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -241,8 +256,10 @@
     "title": "Cactus: Chemistry agent connecting tool usage to science",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/McNaughton_2024_CACTUS.pdf",
     "sha256": "e57d65b8378f38eebcc4d8731a2db323b2bb99183479cf950f016a87562529de",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -254,7 +271,8 @@
     "sha256": "ebac1770ee00ec309deb36c60f75fe8b70c8be8b331e0bce92eb7e693b9765d6",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "04"
+      "04",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -265,8 +283,10 @@
     "title": "Drugagent: Automating ai-aided drug discovery programming through llm multi-agent collaboration",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Liu_2024_DrugAgent.pdf",
     "sha256": "c94e72ace67e1f5e520a1d0a7fa45ded2f3600315bdea2f213a05c118ec3716a",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -276,8 +296,10 @@
     "title": "Chemhas: Hierarchical agent stacking for enhancing chemistry tools",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Li_2025_ChemHAS.pdf",
     "sha256": "105f26fd7835059f5b9c7a226de1d8935f93fd6fca5c7fcadad52d21674158e6",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -287,9 +309,10 @@
     "title": "Rag-enhanced collaborative llm agents for drug discovery",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Lee_2025_CLADD.pdf",
     "sha256": "69c5776a2064f596f47541ce03e6b0705074ac61e8f54740b1084a9195d8b84e",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; drug-target and biological-activity tasks support `07`, while molecular captioning and MoleculeNet/MLSMR molecule-object tasks support `03`.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -300,8 +323,10 @@
     "title": "Llmatdesign: Autonomous materials discovery with large language models",
     "pdf_path": "Reference_PDF/04_Materials_Science/Jia_2024_LLMatDesign.pdf",
     "sha256": "7c59d9ba6f5a44b9654ce64c2c81715821a916819de40964ace53cf15728fbe6",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -337,8 +362,10 @@
     "title": "Perturboagent: A self-planning agent for boosting sequential perturb-seq experiments",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Hao_2025_PerTurboAgent.pdf",
     "sha256": "6734409ef08f40399715b31d5bf9977a9c78d86fe19cdec92c3160773dee27cf",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; current first-hand evidence supports functional-genomics / perturbation-biology `06` and does not justify adding `07`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pdf_checked",
     "active_confirmed_core": true
@@ -361,8 +388,10 @@
     "title": "Organa: A robotic assistant for automated chemistry experimentation and characterization",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Darvish_2024_Organa.pdf",
     "sha256": "ad20624cddfee3802a50776cbe2a63006f59f7c216444fb76459445aa69e6331",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -372,8 +401,10 @@
     "title": "Autonomous mobile robots for exploratory synthetic chemistry",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Dai_2024_Autonomous_Mobile_Robots.pdf",
     "sha256": "02fff0f58b1d3d0b7644b969557e8c58ccf58e86caf8c575930390b83820bfcc",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; structural diversification chemistry, supramolecular host-guest chemistry, and photochemical synthesis are concrete chemistry-object experiments. Direct PDF endpoint returned an HTML wrapper in this environment, so no local archived PDF is recorded yet.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_html_full_text",
     "active_confirmed_core": true
@@ -383,8 +414,10 @@
     "title": "An autonomous large language model agent for chemical literature data mining",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Chen_2024_Chemical_Literature_Data_Mining_Agent.pdf",
     "sha256": "356272c560c7a888eb61594f008e89c8692cce14aa0cbe9a171b6a47e2890d86",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -394,7 +427,7 @@
     "title": "Researchagent: Iterative research idea generation over scientific literature with large language models, 2025",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Baek_2025_ResearchAgent.pdf",
     "sha256": "0a81f4c9dd07bdeab432173659de0e859c4f36aeedbfa03aaec147f51bab9bd3",
-    "primary_module_for_filing": "01`, `general_method_bucket=01.04`; first-hand PDF still supports literature-grounded idea generation without concrete scientific-object experiments, validations, or benchmark-object coverage sufficient for a formal `01-11` module.",
+    "primary_module_for_filing": "01",
     "scientific_object_modules": [],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -405,8 +438,10 @@
     "title": "Liddia: Language-based intelligent drug discovery agent",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Averly_2025_LIDDIA.pdf",
     "sha256": "0c5bfa3013293072b93526fb638adc1a3ec3e60f9fe4169d3998890a2b173861",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -416,8 +451,10 @@
     "title": "Bridging literature and the universe via a multi-agent large language model system",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Zhang_2025_SimAgents.pdf",
     "sha256": "ea34a38e890131d9bddd2f78b7515ee5ef87cd1d610bb57973d3417527276e00",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -427,8 +464,10 @@
     "title": "Honeycomb: A flexible llm-based agent system for materials science",
     "pdf_path": "Reference_PDF/04_Materials_Science/Zhang_2024_HoneyComb.pdf",
     "sha256": "5ce3411c80076b37dcc49ea185d3aed3db6d2fad2bd35c9381a65e36916704c3",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; current first-hand evidence supports materials-domain benchmark-object coverage rather than a fallback to independent `01.04`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -438,8 +477,10 @@
     "title": "Topomas: Large language model driven topological materials multiagent system",
     "pdf_path": "Reference_PDF/04_Materials_Science/Zhang_2025_TopoMAS.pdf",
     "sha256": "3b9f4a0d97dbb22df66dddee2a833537812030d94e5f682a0f62b87192fdb1e5",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -449,8 +490,10 @@
     "title": "Foam-agent: Towards automated intelligent cfd workflows",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Yue_2025_Foam_Agent.pdf",
     "sha256": "ba58becffd6cf468484a1ef0504b53504e1ed69296e560d2f03f0871cdf4420f",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -473,9 +516,11 @@
     "title": "Bioinformatics agent (bia): Unleashing the power of large language models to reshape bioinformatics workflow",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Xin_2024_BIA.pdf",
     "sha256": "251ef33a3a0165b960fa4f53f0769bbc4c61c8ffaa5cce82b0351b43261dc12c",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; first-hand evidence currently rests on Crossref DOI abstract `10.1101/2024.05.22.595240` plus the official GitHub repository linked there, so this record is treated as source-limited but stable rather than moved to `01.04` or `07`.",
-    "scientific_object_modules": [],
-    "pdf_status": "official_page_403_no_pdf",
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
+    "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_and_official_repo",
     "active_confirmed_core": true
   },
@@ -484,8 +529,10 @@
     "title": "Geneagent: Self-verification language agent for gene set knowledge discovery using domain databases",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Wang_2024_GeneAgent.pdf",
     "sha256": "ca05b33189a6c7b4216df0e3615807ce44c528df7c56c3c5e6594bd276c41468",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; full-text evidence still supports gene-set / functional-genomics knowledge discovery rather than `07` clinical-object coverage.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -495,8 +542,10 @@
     "title": "Optimizing collaboration of large language model based agents for autonomous finite element analysis",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2025_Autonomous_Finite_Element_Analysis.pdf",
     "sha256": "8578d275903aea1499de5b990ded84cc2389e321fa090433831f15d60459596a",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`; keep `source_limited=yes` because official SSRN full text remained blocked in this environment even though the fallback PDF is now locally archived.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_plus_archived_arxiv_fallback",
     "active_confirmed_core": true
@@ -506,7 +555,7 @@
     "title": "Towards autonomous hypothesis verification via language models with minimal guidance",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Takagi_2023_Autonomous_Hypothesis_Verification.pdf",
     "sha256": "b9d4e04d964fa1e69fd08f46a077e0d04537acd4c80d61bc8e6dc4cf123b9946",
-    "primary_module_for_filing": "01`, `general_method_bucket=01.04`; the toy ML problem remains only a carrier for evaluating general hypothesis-verification workflow rather than concrete scientific-object evidence for a formal `01-11` module.",
+    "primary_module_for_filing": "01",
     "scientific_object_modules": [],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -535,7 +584,7 @@
     "scientific_object_modules": [
       "06"
     ],
-    "pdf_status": "official_page_403_no_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_and_repo_metadata",
     "active_confirmed_core": true
   },
@@ -549,7 +598,7 @@
       "03",
       "04"
     ],
-    "pdf_status": "official_pdf_access_blocked",
+    "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
@@ -558,8 +607,10 @@
     "title": "Autochemschematic ai: A closed-loop, physics-aware agentic framework for auto-generating chemical process and instrumentation diagrams",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Srinivas_2025_AutoChemSchematic_AI.pdf",
     "sha256": "9be97cc1b56324fb91e0bf40fc27af2503b38fc9a40eac45bba688ccd6805b3f",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`; full-text evidence confirms process-flow / PFD/PID generation, DWSIM simulator-in-the-loop validation, and chemical-manufacturing scale-up framing as engineering/process-design object coverage rather than `03` chemistry-object discovery.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -569,8 +620,10 @@
     "title": "Astroagents: A multi-agent ai for hypothesis generation from mass spectrometry data",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Saeedi_2025_AstroAgents.pdf",
     "sha256": "488672d699d5a56811e7e95b06bf3f5a6b8308b1fb5ff4080c9c0cb3d2e08943",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`; full-text evidence remains anchored on astrobiology / planetary-sample mass-spectrometry hypothesis generation rather than a `06` biology-object study.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -580,7 +633,7 @@
     "title": "Iterative hypothesis generation for scientific discovery with monte carlo nash equilibrium self-refining trees, 2025",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Rabby_2025_MC_NEST.pdf",
     "sha256": "c5763884ab0c18c401bf2bc10bd17f5668aaba6f364c52eee5a6d4afc1d374d5",
-    "primary_module_for_filing": "01`, `general_method_bucket=01.04`; cross-domain biomedicine / social-science / computer-science datasets remain evaluation carriers for a general hypothesis-generation framework rather than concrete object-level evidence for formal `01-11` modules.",
+    "primary_module_for_filing": "01",
     "scientific_object_modules": [],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -606,8 +659,10 @@
     "title": "xchemagents: Agentic ai for explainable quantum chemistry",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Polat_2025_xChemAgents.pdf",
     "sha256": "c11f28aee78c1c02a810476c48765bea8d5d9a91775c688a261a43eda68fbbdc",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; the stable object is explainable quantum-chemistry / molecular-property prediction rather than a materials or general-method record.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -632,8 +687,10 @@
     "title": "Alphaevolve: A coding agent for scientific and algorithmic discovery",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Novikov_2025_AlphaEvolve.pdf",
     "sha256": "f092c8cbd65da89951ee6496374da9a54963f9035758c25ac6e4625f506df9ad",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; full-text evidence remains centered on algorithmic / mathematical discovery and coding-agent optimization within formal-computational science.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -657,8 +714,10 @@
     "title": "Matpilot: an llm-enabled ai materials scientist under the framework of human-machine collaboration",
     "pdf_path": "Reference_PDF/04_Materials_Science/Ni_2024_MatPilot.pdf",
     "sha256": "fde82409978ad76cd0a25720041c07580c6fcbfdc59b3c34711358d37b59c169",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; the stable object remains materials-science discovery / experimental workflow rather than a domain-general co-scientist framework.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -668,8 +727,10 @@
     "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
     "pdf_path": "Reference_PDF/04_Materials_Science/Lu_2025_Agentic_Metamaterial_Modeling.pdf",
     "sha256": "b7bce2bb6b59c02831082ed2d6effa80f6079793eab10981c65865b318944fa1",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; first-hand full text remains centered on photonic metamaterials / metasurfaces and autonomous inverse design within materials science.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -679,9 +740,10 @@
     "title": "The ai scientist: Towards fully automated open-ended scientific discovery",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Lu_2024_AI_Scientist.pdf",
     "sha256": "e911f90b0114d5e3fc23a0000177ea670fa9ed79d5f9a664efa2980fdb350507",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; first-hand PDF evidence shows diffusion modeling / transformer language modeling / learning dynamics research workflows for `01`, while automated reviewer evaluation on ICLR 2022 OpenReview peer-review data supports additional `11` scientific-knowledge-production coverage. Legacy `01.04`-only filing is stale.",
+    "primary_module_for_filing": "01",
     "scientific_object_modules": [
-      "01"
+      "01",
+      "11"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -692,8 +754,10 @@
     "title": "Moose-chem3: Toward experiment-guided hypothesis ranking via simulated experimental feedback",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Liu_2025_MOOSE_Chem3.pdf",
     "sha256": "37f09b4eaa39ba431ca47396b95fa2f637cf425a03586c3abf1e26c90a438969",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; first-hand full text confirms a chemistry-led experiment-guided hypothesis-ranking task with 124 literature-backed hypotheses and simulated experimental feedback, while the broader materials / biology benchmark composition is not yet strong enough for a high-confidence multi-module rewrite.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -703,8 +767,10 @@
     "title": "Toward a team of ai-made scientists for scientific discovery from gene expression data",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Liu_2024_TAIS_Gene_Expression.pdf",
     "sha256": "c93cff995c8add51a28cf8a5193aae8bc4c6b983199ca9ae60a4562e5ac14553",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; first-hand full text remains centered on gene-expression / disease-associated gene discovery workflows rather than patient-level clinical or therapeutic validation.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -714,8 +780,10 @@
     "title": "Prim: Principle-inspired material discovery through multi-agent collaboration",
     "pdf_path": "Reference_PDF/04_Materials_Science/Lai_2025_PRiM.pdf",
     "sha256": "8087181dd0ad54ceb672cd143883dec558b9ada7cd78c6afd1f68f92b1aeeb83",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; first-hand full text remains a nanohelix materials virtual-lab discovery paper rather than a domain-general `01.04` method record.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -725,8 +793,10 @@
     "title": "Mt-mol: Multi agent system with tool-based reasoning for molecular optimization",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Kim_2025_MT_MOL.pdf",
     "sha256": "f8c9b559b86297ccf9b3a096363be3d2c150847c97b620d44bd8b9df6acdab96",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; first-hand full text confirms a chemistry-led molecular-optimization workflow, and the note source trail was synced to the archival venue rather than the older arXiv-only reference.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -736,8 +806,10 @@
     "title": "Stella: Self-evolving llm agent for biomedical research",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Jin_2025_STELLA.pdf",
     "sha256": "1d2168bc433e2069dcff8cc630382a6c455496a9fd5b65df6b1f4eb7db1dd209",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; benchmark-heavy validation is still anchored in biomedical research tasks and tumor chemoresistance / re-sensitization examples, so no move back to `01.04` or over-broad `06` rewrite is supported.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -747,8 +819,10 @@
     "title": "DrugAgent: Multi-Agent Large Language Model-Based Reasoning for Drug-Target Interaction Prediction",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Inoue_2024_DrugAgent_DTI.pdf",
     "sha256": "858c0635d203d3327392a9e007e2120d8fe86409c5ff68a2b94bb8613b12fb09",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; full-text DTI evidence supports a stable biomedical / drug-discovery record.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -758,8 +832,10 @@
     "title": "System of agentic ai for the discovery of metal-organic frameworks",
     "pdf_path": "Reference_PDF/04_Materials_Science/Inizan_2025_MOFGen.pdf",
     "sha256": "c4763f3b0a3bedb2b2665558b5dcbce662168a288e7f7e2c70a5c7ea92510be5",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; full text remains a stable MOF materials-discovery paper rather than a chemistry-primary reclassification.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -784,6 +860,7 @@
     "sha256": "336d4e3f9065f42918cec8053e020d12c8d8c8031eb4c180764a349d1efa1794",
     "primary_module_for_filing": "07",
     "scientific_object_modules": [
+      "06",
       "07"
     ],
     "pdf_status": "archived_pdf",
@@ -795,8 +872,10 @@
     "title": "Automating alloy design and discovery with physics-aware multimodal multiagent ai",
     "pdf_path": "Reference_PDF/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.pdf",
     "sha256": "0e132c8effcacb6a257ab0f83362372134f4cd0f8dbebe01e30799fd84665b43",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; alloy / material-property discovery remains a stable `04` object record, but this landing stays `source_limited` in the current round.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pdf_checked_source_limited",
     "active_confirmed_core": true
@@ -806,9 +885,10 @@
     "title": "Protagents: protein discovery via large language model multi-agent collaborations combining physics and machine learning",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.pdf",
     "sha256": "2c1da086d14fa90e0c80ae44f90a7de0a2c5ae842c5b7bb606cc738a149e9a98",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; protein-design / protein-science object coverage keeps `06` as the filing anchor, and targeted mechanical-property / protein-materials-style objectives add relaxed `04` coverage; keep the current-round `source_limited` marker.",
+    "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "04"
+      "04",
+      "06"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pdf_checked_source_limited",
@@ -819,8 +899,10 @@
     "title": "Researchcodeagent: An llm multi-agent system for automated codification of research methodologies",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.pdf",
     "sha256": "f87237e390f9c68311284a62e3f59d839c18a5b55daac2ba643ce5d5b0de1bc5",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; benchmarked research-method codification and computational reproduction tasks provide concrete formal-computational object coverage, so independent `01.04` only treatment is no longer supported; keep `source_limited` caution for this audit landing.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pdf_checked_source_limited",
     "active_confirmed_core": true
@@ -830,8 +912,10 @@
     "title": "Agents for self-driving laboratories applied to quantum computing",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2024_K_Agents_Quantum.pdf",
     "sha256": "7f5351972ec81ab60c07995bf81cd2faed0130b7177e9502a0cb1427437706e3",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`; superconducting quantum-processor experimentation and entangled-state generation keep this as a concrete `02` record; landed conservatively as `source_limited` in the current audit round even though the note remains anchored in full-text reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pdf_checked_source_limited",
     "active_confirmed_core": true
@@ -841,9 +925,10 @@
     "title": "Agentic mixture-of-workflows for multi-modal chemical search",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf",
     "sha256": "62b1bb197e76648306cbd59605e97b6dddd9f9a65cfab5862c91216cc5496d2a",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; chemical-search tasks remain the filing anchor, while polymers / materials-related benchmark coverage supports an added relaxed `04` object module; keep `source_limited` caution in this round.",
+    "primary_module_for_filing": "03",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pdf_checked_source_limited",
@@ -854,10 +939,11 @@
     "title": "Augmenting large language models with chemistry tools",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Bran_2024_ChemCrow.pdf",
     "sha256": "28be4990cf5fc5fa50b379684a9d4c31c3a0ad36aeab1759d324ee428b29de16",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; chemistry remains the filing anchor, materials-design coverage is accepted, and drug-discovery-related coverage is added conservatively under the relaxed object-coverage rule; keep `source_limited` caution in this round.",
+    "primary_module_for_filing": "03",
     "scientific_object_modules": [
       "03",
-      "04"
+      "04",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pdf_checked_source_limited",
@@ -868,8 +954,10 @@
     "title": "Autonomous chemical research with large language models",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Boiko_2023_Coscientist.pdf",
     "sha256": "09cfaa1ccf4c951eebc347bab909e1e495d6701be38d3808c38016dff35dbd4e",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; autonomous chemistry-object experimentation, tool use, and robotic wet-lab validation keep this as a stable `03` record.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -879,8 +967,10 @@
     "title": "Multicrossmodal automated agent for integrating diverse materials science data",
     "pdf_path": "Reference_PDF/04_Materials_Science/Bazgir_2025_MultiCrossModal.pdf",
     "sha256": "764dafb685b642499736a0f2b980b6689ca69faee03303f5cd0066ab362a6af9",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; the full paper remains a materials-data integration and materials-object reasoning record rather than a general workflow paper.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -890,10 +980,11 @@
     "title": "dziner: Rational inverse design of materials with ai agents",
     "pdf_path": "Reference_PDF/04_Materials_Science/Ansari_2024_dZiner.pdf",
     "sha256": "053f76b4026d553a5275b7d4b01297b210373a09d059c3d41cdc52a9e8e942a6",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; surfactant inverse-design coverage adds `03`, WDR5 ligand optimization adds `07`, and MOF-linker / CO2-adsorption cases keep `04` as the filing anchor.",
+    "primary_module_for_filing": "04",
     "scientific_object_modules": [
       "03",
-      "04"
+      "04",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -904,8 +995,10 @@
     "title": "Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Xiang_2025_SciReplicate_Bench.pdf",
     "sha256": "911a0499c07411f3790a54dd56bd6475aa569f70a0fcfe804c2f78b5f0bb03fc",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; algorithmic reproduction, code generation, and test-execution tasks are concrete formal/computational research objects, so prior `11` / independent `01.04` drift is no longer supported.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -915,7 +1008,7 @@
     "title": "SciMaster: Towards general-purpose scientific AI agents, Part I. X-Master as foundation: Can we lead on Humanity's Last Exam?",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Chai_2025_SciMaster.pdf",
     "sha256": "9bfc193d6a51901f003cf32a9b37b7daf5ae823348f85505b9ad617c8e16f32f",
-    "primary_module_for_filing": "01`, and `general_method_bucket=01.04`; current benchmark-heavy general scientific-agent evidence does not expose concrete object-level experiments strong enough for a formal `01-11` module.",
+    "primary_module_for_filing": "01",
     "scientific_object_modules": [],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -926,9 +1019,10 @@
     "title": "PharmAgents: Building a virtual pharma with large language model agents",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Gao_2025_PharmAgents.pdf",
     "sha256": "77b929add69e3b1489c175896fec2634bae63ce90423c512ed3edda6984b3e63",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; drug-discovery and preclinical-evaluation workflow keep `07` primary, while lead discovery / optimization plus toxicity and synthesizability evaluation add independent chemistry-side `03` coverage.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "07"
+      "07",
+      "03"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -939,8 +1033,10 @@
     "title": "Sparks: Multi-agent artificial intelligence model discovers protein design principles",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Ghafarollahi_2025_Sparks_Protein_Design.pdf",
     "sha256": "d404fa40513e0a2d5491f4d128682c4f624e08fce53ef450a6d046f873bff0fd",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; protein-design principle discovery remains a stable life-science object record rather than a general-method paper.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -950,9 +1046,10 @@
     "title": "Towards an AI co-scientist",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Gottweis_2025_Co_Scientist.pdf",
     "sha256": "80730ea110ad450411aa8352a785e996cfcda06afd6e1c60277cb64a65cb676a",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; AML drug-repurposing and related biomedical validation keep `07` stable, while liver-fibrosis target discovery and AMR-mechanism coverage add independent `06` object support, so this record no longer belongs in an unresolved `07 / 01.04` holding state.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -963,9 +1060,10 @@
     "title": "Electromagnetic metamaterial agent",
     "pdf_path": "Reference_PDF/04_Materials_Science/Hu_2025_Electromagnetic_Metamaterial_Agent.pdf",
     "sha256": "d8e6d922d645f7dfd62d1ee287a5630321577dd749fb161e55e529c0e87306f1",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; metamaterial design remains primary, while engineering-side electromagnetic device / performance optimization and simulation workflow coverage add relaxed `09`.",
+    "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "04"
+      "04",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -976,9 +1074,10 @@
     "title": "OSDA agent: Leveraging large language models for de novo design of organic structure directing agents",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Hu_2025_OSDA_Agent.pdf",
     "sha256": "e235122e212af903df3d0d50d43cdd53d69bce5199f4f5ff6f4ee3f417e76ef8",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; OSDA molecular-design coverage keeps `03` primary, while the porous / inorganic materials design targets justify relaxed `04` add-on coverage.",
+    "primary_module_for_filing": "03",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -989,9 +1088,10 @@
     "title": "Biomni: A general-purpose biomedical AI agent",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Huang_2025_Biomni.pdf",
     "sha256": "1c1ca1c891c7eb285f806b180e9bfd38a73d2e455a4fdfe8be299a92662a67f9",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; biomedical task coverage keeps `07` as the filing anchor, while genomics / cell-biology and broader life-science tool-using validations add independent `06`.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1002,8 +1102,10 @@
     "title": "ChatMOF: An autonomous AI system for predicting and generating metal-organic frameworks",
     "pdf_path": "Reference_PDF/04_Materials_Science/Kang_2023_ChatMOF.pdf",
     "sha256": "4c9d99706a22536c2e59117e24dd70a2fad4f5bd610a1bf78dde117f2d9a48fe",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; autonomous MOF prediction and generation remain a stable porous-materials object record rather than a chemistry-route-planning paper.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1013,8 +1115,10 @@
     "title": "AI agents for ground-based gamma astronomy",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Kostunin_2025_Gamma_Astronomy_Agents.pdf",
     "sha256": "783252f944c86f1bdbb23739c0db5d7448e8bd86ff2c1de92017b14b6c6cf350",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1024,8 +1128,10 @@
     "title": "Multi-agent system for cosmological parameter analysis",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Laverick_2024_Cosmological_Parameter_Analysis.pdf",
     "sha256": "103df48158de8241336f438cc2e98ac850c99119624fc3ad8fac19262abe0aba",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1035,8 +1141,10 @@
     "title": "A large language model-empowered agent for reliable and robust structural analysis",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Liu_2025_Structural_Analysis_Agent.pdf",
     "sha256": "4b1d2b8bac87ff64eb7db241e1fb3b051131a13073ada34f680e48d6a2eb8e1f",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1046,8 +1154,10 @@
     "title": "Physics-informed LLM-agent for automated modulation design in power electronics systems",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Liu_2024_Modulation_Design_Agent.pdf",
     "sha256": "be07dfe5ce839c85bc88cac32dc2c0fb0aa44e23f87066045e0037001ccfc6d1",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1057,8 +1167,10 @@
     "title": "BioAgents: Democratizing bioinformatics analysis with multi-agent systems",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Mehandru_2025_BioAgents.pdf",
     "sha256": "3c3293284d7c3b56183da8985613b814fe3e49c0c3d5f72671f72ce319476972",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1068,8 +1180,10 @@
     "title": "The AI Cosmologist I: An agentic system for automated data analysis",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Moss_2025_AI_Cosmologist_I.pdf",
     "sha256": "bfeea59e6c1a38bc7f88e5e2adeb99f601876e8dd93a056df17f6d561321ed35",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`; this record no longer needs to be held as a `02 / 01.04` metadata-only boundary.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1079,8 +1193,10 @@
     "title": "MechAgents: Large language model multi-agent collaborations can solve mechanics problems, generate new data, and integrate knowledge",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Ni_2024_MechAgents.pdf",
     "sha256": "ef3f88b1af6075baa78fede6bbe972f7fc07d4492493fa7a46542df08cd79420",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`; mechanics/FEM problem solving remains a stable engineering object record and is not treated as source-limited.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text_via_arxiv_fallback",
     "active_confirmed_core": true
@@ -1090,8 +1206,10 @@
     "title": "OpenFOAMGPT: a RAG-augmented LLM agent for OpenFOAM-based computational fluid dynamics",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Pandey_2025_OpenFOAMGPT.pdf",
     "sha256": "0a5901aba728c696658ebafe2c762a6b0027f5d87f6cda74e49e699e955b7323",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1101,8 +1219,10 @@
     "title": "Many heads are better than one: Improved scientific idea generation by a LLM-based multi-agent system",
     "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Su_2025_VirSci.pdf",
     "sha256": "48c0c6eb06495ac3f2b811a15bde502c045f80f15c6e94814ae20095ca49b9de",
-    "primary_module_for_filing": "11`, `general_method_bucket=none`; the concrete object is scientific idea generation, peer-style evaluation, and scientific knowledge-production workflow, so independent `01.04` treatment is no longer supported and the note has been moved into the `11` folder.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "11",
+    "scientific_object_modules": [
+      "11"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1112,8 +1232,10 @@
     "title": "Interpreting multi-band galaxy observations with large language model-based agents",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Sun_2024_Mephisto_Galaxy_Observations.pdf",
     "sha256": "c6e09d8feba9b7517640468679f7e1c46fcd3a5139cc69791f2016884ce24a9b",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`; galaxy-observation interpretation remains a stable astronomy object record rather than a general scientific-workflow paper.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1123,8 +1245,10 @@
     "title": "ChemAgent: Self-updating library in large language models improves chemical reasoning",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Tang_2025_ChemAgent.pdf",
     "sha256": "5202c199f5186d2131e0b7020a80b40809c920627cdcc941fc05c6d8a7b22bca",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; benchmark-heavy chemistry-reasoning and chemistry-tool tasks are sufficient under the current relaxed rule, while materials and drug references remain future-application context rather than accepted `04` / `07` coverage.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1134,8 +1258,10 @@
     "title": "A multi-agent framework integrating large language models and generative AI for accelerated metamaterial design",
     "pdf_path": "Reference_PDF/04_Materials_Science/Tian_2025_CrossMatAgent_Metamaterial_Design.pdf",
     "sha256": "48f6ec98ec60f00b4e87524dfe64b5c4d331f66b5c7ac05817efaaea2bfd56b4",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; metamaterial structure/performance design remains a stable materials object record rather than a general multi-agent framework.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1145,8 +1271,10 @@
     "title": "StarWhisper Telescope: An AI framework for automating end-to-end astronomical observations",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Wang_2024_StarWhisper_Telescope.pdf",
     "sha256": "8493a7481a2ffea545049f8e01cec9bb0ab97d31c9334947389443ff42774395",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1156,9 +1284,10 @@
     "title": "Accelerating primer design for amplicon sequencing using large language model-powered agents",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Wang_2025_PrimeGen_Primer_Design.pdf",
     "sha256": "cca687ed105b22e499b9453d974c6718ad3b7252a956a433f68ba9abee9c932d",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; genomics / sequencing-design coverage keeps `06` primary, biomedical targeted-assay validation adds relaxed `07`, and no project-local PDF was archived, so keep `PDF unavailable; HTML full text checked` with PDF-archival `source_limited` only.",
+    "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_html_full_text_and_supplementary",
@@ -1169,8 +1298,10 @@
     "title": "CellAgent: LLM-Driven Multi-Agent Framework for Natural Language-Based Single-Cell Analysis",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Xiao_2024_CellAgent_SingleCell_Analysis.pdf",
     "sha256": "34f6b949fa9dad7eb3778c74723806d5b953f2d32e9771b30f7bee60352fb412",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1180,8 +1311,10 @@
     "title": "Advancing AI-scientist understanding: Making LLM think like a physicist with interpretable reasoning",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xu_2025_Interpretable_Physics_Reasoning.pdf",
     "sha256": "80b67ce6de333550badf9179195b05f2fcf2bf7630990a6fea813703abcfdbbb",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`; the older independent `01.04` treatment is retired because SciBench mechanics plus statistical-thermodynamics / classical-dynamics / electrodynamics cases provide concrete physics-object benchmark coverage.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1191,8 +1324,10 @@
     "title": "Large language models for automated open-domain scientific hypotheses discovery",
     "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yang_2024_Open_Domain_Hypotheses_Discovery.pdf",
     "sha256": "e66c31affd317f6406cc4ef3885efff533fdbdd07ac02594606a12be04a8266e",
-    "primary_module_for_filing": "11`, `general_method_bucket=none`; first-hand source=`ACL PDF`; social-science hypothesis discovery is concrete class-11 object coverage, so older `11.07` wording is no longer supported.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "11",
+    "scientific_object_modules": [
+      "11"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1202,11 +1337,12 @@
     "title": "TransAgent: Dynamizing transcriptional regulation analysis via multi-omics-aware AI agent",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Zhang_2025_TransAgent_Transcriptional_Regulation.pdf",
     "sha256": "7cbb3293d658a6d28ab97ae627438e89d481098af37de8e82fdbaf53459fec41",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; `06` remains the stable primary life-science object, while `07` is accepted as a source-limited adjunct module from the ESCC disease-case evidence; no local PDF was archived.",
+    "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
-    "pdf_status": "pdf_access_limited_403",
+    "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_and_repo_materials",
     "active_confirmed_core": true
   },
@@ -1226,8 +1362,10 @@
     "title": "AIGS: Generating Science from AI-Powered Automated Falsification",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Liu_2024_AIGS.pdf",
     "sha256": "1380ee4a214f9625517f47228dc38d71437967ba2a4fe3a0b113247c78d9be5f",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; first-hand sources=`arXiv abstract + arXiv PDF + official project page`; concrete computational research tasks in data engineering, alignment, and language modeling mean independent `01.04` treatment is no longer supported.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1237,8 +1375,10 @@
     "title": "Nova: An iterative planning and search approach to enhance novelty and diversity of LLM-generated ideas",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Hu_2024_Nova.pdf",
     "sha256": "118ffc99d5d93720a0321831dddcb83c060b6bf6123fff8639ba8ed7df1ec82b",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; first-hand source=`arXiv PDF`; iterative idea generation/evaluation over 170 LLM research papers provides concrete formal/computational object coverage, so independent `01.04` treatment is no longer supported.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1248,8 +1388,10 @@
     "title": "A flexible and affordable self-driving laboratory for automated reaction optimization",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Pilon_2026_RoboChem_Flex.pdf",
     "sha256": "455ed2c03e2862a2ef1aef135bc5e3e15faeda80156f7fa730c9a91fd0baecb6",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; six autonomous reaction-optimization case studies confirm stable chemistry-object coverage.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1259,8 +1401,10 @@
     "title": "A dynamic knowledge graph approach to distributed self-driving laboratories",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Bai_2024_Distributed_Self_Driving_Labs.pdf",
     "sha256": "cd590767ba740021873778e1dc8c2fb22950229598d7fd4514dcc6273a351260",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; distributed robotic optimization of an aldol condensation remains direct chemistry-object evidence rather than generic infrastructure-only coverage.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1270,9 +1414,10 @@
     "title": "Self-driving lab discovers principles for steering spontaneous emission beyond conventional Fourier optics",
     "pdf_path": "Reference_PDF/04_Materials_Science/Desai_2026_Spontaneous_Emission_SDL.pdf",
     "sha256": "eec28351da378b612b9c12069bedac1fce112e5e5f25e9eccea661cf2e566543",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; semiconductor metasurface optimization remains primary materials coverage, while spontaneous-emission steering and governing-equation discovery add independent physics coverage in `02`.",
+    "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "02"
+      "02",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1283,9 +1428,10 @@
     "title": "An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Nouri_2026_CellAtria_scRNAseq.pdf",
     "sha256": "00b11b46a99f6700f8d293f08274e18456f00c53a658c34b2aac76166ef36c20",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; scRNA-seq ingestion/analysis supports `06`, while cancer and patient-centered multi-cancer use cases support independent `07` coverage.",
+    "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1296,8 +1442,10 @@
     "title": "Real-time experiment-theory closed-loop interaction for autonomous materials science",
     "pdf_path": "Reference_PDF/04_Materials_Science/Liang_2025_AMASE.pdf",
     "sha256": "4ffa76ab9fbec822222dd755a1ecf0709131f9315927b120cf9ec8a7e0fcaf74",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; Science.org access was blocked here, but first-hand arXiv full text confirms stable materials phase-diagram discovery coverage.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text_via_arxiv_fallback",
     "active_confirmed_core": true
@@ -1307,8 +1455,10 @@
     "title": "A multi-agentic framework for real-time, autonomous freeform metasurface design",
     "pdf_path": "Reference_PDF/04_Materials_Science/Lupoiu_2025_Freeform_Metasurface_Design.pdf",
     "sha256": "2332abef3d679d076b210957dafcb6bd70e70a0a991fefdc9396c67258032494",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; freeform dielectric metasurface design remains stable materials-object coverage.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1318,8 +1468,10 @@
     "title": "Bridging electron microscopy and materials analysis with an autonomous agentic platform",
     "pdf_path": "Reference_PDF/04_Materials_Science/Chen_2026_EMSeek.pdf",
     "sha256": "31dd37b09b0833e4e73039ad1ae191d5495e32fa8c318ad89befc654a54fc279",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; official Science Advances full text confirms stable materials-analysis object coverage across 20 material systems.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1329,8 +1481,10 @@
     "title": "Chemist-x: Large language model-empowered agent for reaction condition recommendation in chemical synthesis",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Chen_2023_ChemistX_Reaction_Conditions.pdf",
     "sha256": "607b04c152815f7f89cbdfaaa34f179302be78714fdaca834aa791688aed59d4",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; reaction-condition recommendation plus robotic validation confirm direct chemistry-synthesis coverage.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1340,8 +1494,10 @@
     "title": "MARG: Multi-Agent Review Generation for Scientific Papers",
     "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/DArcy_2024_MARG.pdf",
     "sha256": "a649059d68713f93581f6a837228ca1939ed96f5b9f13830de1e34b153940c48",
-    "primary_module_for_filing": "11`, `general_method_bucket=none`; scientific peer-review comment generation remains direct science-system / knowledge-production coverage within class `11`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "11",
+    "scientific_object_modules": [
+      "11"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1351,8 +1507,10 @@
     "title": "Automating exploratory proteomics research via language models",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Ding_2024_PROTEUS_Proteomics.pdf",
     "sha256": "dd592c2846808a1f74aa738e38caea1b096fa8025fd00a896ecb88b18d161094",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; exploratory proteomics across 12 datasets remains life-science coverage without an accepted independent `07` expansion.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1362,9 +1520,10 @@
     "title": "From intention to implementation: automating biomedical research via llms",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Luo_2025_BioResearcher.pdf",
     "sha256": "3c0d6a7c30ef87867c24e03cdd0523669f32084a3378af398d214745e93a5130",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; evidence includes liposarcoma, thyroid cancer, HCC, viral infection, transcriptomics, scRNA-seq, and biomedical research objectives. Batch03Partial1Reaudit2026-06-22: archived arXiv PDF under `Reference_PDF/07_Medical_and_Health_Sciences/`; note wording refreshed to remove stale independent `01.04` phrasing and align with the existing relaxed overlay `scientific_object_modules=06;07`; transcriptomics / scRNA-seq tasks support `06`, while cancers, viral infections, prognosis, and host-response objectives support `07`.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1389,8 +1548,10 @@
     "title": "An automatic end-to-end chemical synthesis development platform powered by large language models",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Ruan_2024_LLM_RDF_Chemical_Synthesis.pdf",
     "sha256": "978a89d42009585cfbe5736dd70ae2159ad1741443f1d38c9a7e4f282d6a5d28",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; six real synthesis-development tasks keep the record anchored in chemistry rather than a general platform bucket.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1413,8 +1574,10 @@
     "title": "MOOSE-Chem: Large language models for rediscovering unseen chemistry scientific hypotheses",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Yang_2024_MOOSE_Chem.pdf",
     "sha256": "0d6184da8958f0e8b4e127ea9238ce6dc58cfeebf4dc3c6c2520c66a6583ee4b",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; chemistry-hypothesis rediscovery remains chemistry-specific rather than domain-general.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1424,10 +1587,12 @@
     "title": "Origene: A self-evolving virtual disease biologist automating therapeutic target discovery",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.pdf",
     "sha256": "6237afec35780bdf575969bc67556f36b8335f84230e97ceb60b782d5112fd22",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`. RoundPdfArchive2026-06-26: official author-hosted PDF archived locally at `Reference_PDF/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.pdf`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_full_text",
+    "evidence_status": "first_hand_abstract_and_official_homepage",
     "active_confirmed_core": true
   },
   {
@@ -1435,8 +1600,10 @@
     "title": "Self-driving laboratories to autonomously navigate the protein fitness landscape",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.pdf",
     "sha256": "b92d71dcea6ac40249842a4ec135a4e616f0fc518b48a6093b35e0ef1a7ebe3d",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; no local PDF was archived because Nature client-side challenge blocked full-text access in this environment, so this row remains explicitly source-limited but classification-stable.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_and_metadata",
     "active_confirmed_core": true
@@ -1446,8 +1613,10 @@
     "title": "A self-driving laboratory advances the Pareto front for material properties",
     "pdf_path": "Reference_PDF/04_Materials_Science/MacLeod_2022_Pareto_Front_Materials.pdf",
     "sha256": "1c6ef6097c0ec8aafd1a0012cc25139f9f3e151943f5fd99717dcad19cf11b3c",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1457,9 +1626,10 @@
     "title": "AlphaFlow: autonomous discovery and optimization of multi-step chemistry using a self-driven fluidic lab guided by reinforcement learning",
     "pdf_path": "Reference_PDF/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.pdf",
     "sha256": "34256fe5a4aa902dc69651729d5d2f649f635b1c1e7b0c0fe3efb63334664b46",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
+    "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1470,8 +1640,10 @@
     "title": "Crystallography companion agent for high-throughput materials discovery",
     "pdf_path": "Reference_PDF/04_Materials_Science/Maffettone_2021_Crystallography_Companion_Agent.pdf",
     "sha256": "2b6e515a5d0591136906ab2fef2fff13612ab2be0788da57c0cc5cbd21680d38",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; the main residual risk remains confirmed-core strength rather than module identity.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1481,8 +1653,10 @@
     "title": "Autonomous discovery of optically active chiral inorganic perovskite nanocrystals through an intelligent cloud lab",
     "pdf_path": "Reference_PDF/04_Materials_Science/Li_2020_MAOSIC_Chiral_Perovskite.pdf",
     "sha256": "88aed5d49f7af2cfdaad05eaca91f143ea88463968dff4a50ff9103aa79a4fc4",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1492,8 +1666,10 @@
     "title": "A self-driving laboratory designed to accelerate the discovery of adhesive materials",
     "pdf_path": "Reference_PDF/04_Materials_Science/Rooney_2022_Adhesive_Materials_SDL.pdf",
     "sha256": "01baa67d7f1330a2a11c04b9c426aee88f01bf6cab4919033ddbbc5abf1b6182",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; adhesive formulation and bond-strength optimization remain materials formulation/performance objects rather than generic engineering-process coverage.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1503,8 +1679,10 @@
     "title": "On-the-fly closed-loop materials discovery via Bayesian active learning",
     "pdf_path": "Reference_PDF/04_Materials_Science/Kusne_2020_CAMEO_Materials_Discovery.pdf",
     "sha256": "c578ab421fc6cfac7c2e786443914149e4ecaa1852a1980bb59a31829b4751d3",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1514,8 +1692,10 @@
     "title": "Autonomous polymer synthesis delivered by multi-objective closed-loop optimisation",
     "pdf_path": "Reference_PDF/04_Materials_Science/Knox_2022_Autonomous_Polymer_Synthesis.pdf",
     "sha256": "c9df1d17ce6a08a23b899f4e2f20bd820f8373119174354f1f295ea452402a3f",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1525,8 +1705,10 @@
     "title": "Autonomous optimization of non-aqueous Li-ion battery electrolytes via robotic experimentation and machine learning coupling",
     "pdf_path": "Reference_PDF/04_Materials_Science/Dave_2022_LiIon_Battery_Electrolytes.pdf",
     "sha256": "58de17d3f354b547599fecb4f2e8180c63d402e732bfec8184af7bc22b78a548",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1536,8 +1718,10 @@
     "title": "Data-science driven autonomous process optimization",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Christensen_2021_Data_Science_Driven_Autonomous_Process_Optimization.pdf",
     "sha256": "976f451ad5525d63001ada809a3ecae6a37792b3f20ec74dfd03a0c938c3a7eb",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1547,8 +1731,10 @@
     "title": "Closed-loop superconducting materials discovery",
     "pdf_path": "Reference_PDF/04_Materials_Science/Pogue_2023_Superconducting_Materials_Discovery.pdf",
     "sha256": "ec3f35b56ade53633671c6d9fc3628fe56e08a599e1544557cf14fb6ef6618a5",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1558,8 +1744,10 @@
     "title": "Autonomous closed-loop mechanistic investigation of molecular electrochemistry via automation",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Sheng_2024_Molecular_Electrochemistry_Automation.pdf",
     "sha256": "0fcd488a646aa916d71f014f0a2cc2e21c6151db236a8bf564ecedd11074a577",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1569,8 +1757,10 @@
     "title": "Efficient Closed-loop Maximization of Carbon Nanotube Growth Rate using Bayesian Optimization",
     "pdf_path": "Reference_PDF/04_Materials_Science/Chang_2020_CNT_Growth_Bayesian_Optimization.pdf",
     "sha256": "6e96e01d5ee1fa65e57a20daff59fb0459104a5d24a8adfa2da190220adcfe5a",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1580,8 +1770,10 @@
     "title": "Discovering New Chemistry with an Autonomous Robotic Platform Driven by a Reactivity-Seeking Neural Network",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Caramelli_2021_Reactivity_Seeking_NN.pdf",
     "sha256": "472a9dfaa672bac721a36d023b53ed509d9364c51c2baed7b0e6d452c9585713",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1591,8 +1783,10 @@
     "title": "Toward autonomous additive manufacturing: Bayesian optimization on a 3D printer",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Deneault_2021_AM_ARES.pdf",
     "sha256": "b3670ba29967c5c4671a93092e0159d96a6b6dfa1addd081b765395fc947ecaf",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1602,8 +1796,10 @@
     "title": "An autonomous portable platform for universal chemical synthesis",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Manzano_2022_Universal_Chemical_Synthesis_Platform.pdf",
     "sha256": "1768b4705f395b92ab88c36c5eb40d6a05c4bcf7a610951263863593da20238f",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; concrete synthesis of small organic molecules, oligopeptides, and oligonucleotides prevents independent `01.04` filing. Batch15Partial1Reaudit2026-06-22: official Nature Chemistry PDF archived under `Reference_PDF/03_Chemical_Sciences/Manzano_2022_Universal_Chemical_Synthesis_Platform.pdf`; note rewritten from first-hand full text to align with the current chemistry-only classification fact; the note remains filed under `01` only as legacy filing convenience, not classification authority.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1613,8 +1809,10 @@
     "title": "A mobile robotic chemist",
     "pdf_path": "Reference_PDF/04_Materials_Science/Burger_2020_Mobile_Robotic_Chemist.pdf",
     "sha256": "4aeb478c4fac0c1a97d91487cd79f848e0b2f14d7b85184b14c24cf96b4ff50e",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1624,8 +1822,10 @@
     "title": "AI-driven robotic chemist for autonomous synthesis of organic molecules",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Ha_2023_Robotic_Chemist_Organic_Molecules.pdf",
     "sha256": "6ccb321d301a985b77428c0641a2cfdaa0546655c1da748d710060cb2c0100c8",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1648,8 +1848,10 @@
     "title": "NIMS-OS: an automation software to implement a closed loop between artificial intelligence and robotic experiments in materials science",
     "pdf_path": "Reference_PDF/04_Materials_Science/Tamura_2023_NIMS_OS.pdf",
     "sha256": "43ad92de0188d463ad0472090bdb8b9739ab50c0ce4af0bdf16f5f5f6ae0ed06",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; orchestration-heavy framing still does not displace the concrete materials-experiment object.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1659,8 +1861,10 @@
     "title": "Evolution-guided Bayesian optimization for constrained multi-objective optimization in self-driving labs",
     "pdf_path": "Reference_PDF/04_Materials_Science/Low_2024_Evolution_Guided_BO_SDL.pdf",
     "sha256": "cccf8f42d5033745f39cb9ff751a6182328c643810013b2c7e50a92996306357",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1670,8 +1874,10 @@
     "title": "Autonomous Discovery of Battery Electrolytes with Robotic Experimentation and Machine Learning",
     "pdf_path": "Reference_PDF/04_Materials_Science/Dave_2020_Autonomous_Battery_Electrolytes.pdf",
     "sha256": "9ebda871e0afe329ae8580ee98c8b44b160cc7b5ccc4ca5e68d86140e9d5bba1",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1681,8 +1887,10 @@
     "title": "Optimizing Perovskite Thin-Film Parameter Spaces with Machine Learning-Guided Robotic Platform for High-Performance Perovskite Solar Cells",
     "pdf_path": "Reference_PDF/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.pdf",
     "sha256": "fb62e473d84ac84366a76421614fd3feebfe69a9e0c71ea2566cd248359274a1",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; keep the stable perovskite thin-film materials-object reading and do not add `09`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_only",
     "active_confirmed_core": true
@@ -1692,8 +1900,10 @@
     "title": "Functional genomic hypothesis generation and experimentation by a robot scientist",
     "pdf_path": "Reference_PDF/06_Life_Sciences/King_2004_Robot_Scientist.pdf",
     "sha256": "0adac3ea961031d7a20bc92287565c06f1b14ac7583a31cdf4ff58d738bec3ef",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1703,8 +1913,10 @@
     "title": "Self-driving laboratory for accelerated discovery of thin-film materials",
     "pdf_path": "Reference_PDF/04_Materials_Science/MacLeod_2020_SelfDriving_ThinFilm_Lab.pdf",
     "sha256": "2a19ea229d3fed824cb40a2fe84165ad2d3cff937079c1708a4f086af7c7e321",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1714,8 +1926,10 @@
     "title": "A Bayesian experimental autonomous researcher for mechanical design",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Gongora_2020_BEAR_Mechanical_Design.pdf",
     "sha256": "e064f88c8257642f88358830fca96502df3848d97972cedbfbe953f2870d070d",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1725,8 +1939,10 @@
     "title": "Autonomous and dynamic precursor selection for solid-state materials synthesis",
     "pdf_path": "Reference_PDF/04_Materials_Science/Szymanski_2023_ARROWS3_SolidState_Synthesis.pdf",
     "sha256": "c8442f6336bc156bbdbf74344e2a264ef6365da0c3da16751c1c850200741e66",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1736,8 +1952,10 @@
     "title": "Closed-loop transfer enables artificial intelligence to yield chemical knowledge",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Angello_2024_ClosedLoop_Transfer_Chemical_Knowledge.pdf",
     "sha256": "14337ead4a53b4a4fdf8ca20a5b632a803dbd545c107c479cf7ab4ae7b39df16",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; keep the chemistry-object reading without reopening multi-module expansion.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_preview_only",
     "active_confirmed_core": true
@@ -1747,8 +1965,10 @@
     "title": "Identifying general reaction conditions by bandit optimization",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.pdf",
     "sha256": "28b2b7e3a4647786b4b974a6a4d4b44305ccaf9da0b21c099349efd0e5d28264",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; keep the chemistry-object reading focused on reaction-condition optimization.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_preview_only",
     "active_confirmed_core": true
@@ -1758,9 +1978,10 @@
     "title": "A conversational multi-agent AI system for automated plant phenotyping",
     "pdf_path": "Reference_PDF/08_Agricultural_Food_Forestry_Animal_and_Fishery_Sciences/Chen_2026_PhenoAssistant.pdf",
     "sha256": "1797557662ceaacf34e47e3d8bd2b86110d1be92ebd70dd40c016ab513d037b8",
-    "primary_module_for_filing": "08`, `general_method_bucket=none`; Arabidopsis, potato, and winter wheat phenotyping support both plant biology and agriculture modules. Batch15Partial1Reaudit2026-06-22: note rewritten from first-hand Nature Communications article-page evidence to align with the existing relaxed multi-module overlay; no local PDF archived this round.",
+    "primary_module_for_filing": "08",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "08"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_article_page",
@@ -1771,9 +1992,10 @@
     "title": "Operating advanced scientific instruments with AI agents that learn on the job",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Vriza_2026_AI_Agents_Scientific_Instruments.pdf",
     "sha256": "d041d6a6d8e94b4a701f82c67739f810a4b91fbd314249022cccf498e58e6d97",
-    "primary_module_for_filing": "09`, `general_method_bucket=none`; materials experiment and characterization scenes independently support `04` in addition to instrument-operation `09`; no local PDF archived this round.",
+    "primary_module_for_filing": "09",
     "scientific_object_modules": [
-      "04"
+      "04",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1784,8 +2006,10 @@
     "title": "Mathematical discoveries from program search with large language models",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/RomeraParedes_2024_FunSearch_Mathematical_Discoveries.pdf",
     "sha256": "ed64cc4af49a8010ec0313c166b622e75a1c1d548b71d5a582f934d6ed0df635",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1795,8 +2019,10 @@
     "title": "Networking autonomous material exploration systems through transfer learning",
     "pdf_path": "Reference_PDF/04_Materials_Science/Yoshida_2025_Networking_Autonomous_Material_Exploration.pdf",
     "sha256": "02dee872b1b42192b9f26abc1e565dd1c1b827aac45c1d3c70e5e54792b551a3",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1806,8 +2032,10 @@
     "title": "Autonomous phase mapping of gold nanoparticles synthesis with differentiable models of spectral shape",
     "pdf_path": "Reference_PDF/04_Materials_Science/Vaddi_2025_Autonomous_Phase_Mapping_Gold_Nanoparticles.pdf",
     "sha256": "1bdcb4d70328303ead7eada53030699f45fc4fe813bdcb9d76e8693ee169df74",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1817,8 +2045,10 @@
     "title": "Autonomous closed-loop exploration of composition-spread films for the anomalous Hall effect",
     "pdf_path": "Reference_PDF/04_Materials_Science/Toyama_2025_Autonomous_Closed_Loop_Anomalous_Hall.pdf",
     "sha256": "fe782bdcfb97ca6c72e990c5da22bf14fd90199f8e4f462e2065df876902c462",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1828,9 +2058,10 @@
     "title": "A self-driving physical vapor deposition system making sample-specific decisions on the fly",
     "pdf_path": "Reference_PDF/04_Materials_Science/Zheng_2025_Self_Driving_PVD_System.pdf",
     "sha256": "336383342a0acd87a955d46d054811f8321b208fda38a49e0c9eb06a272a75b6",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; PVD system-operation evidence supports `09` in addition to the materials-object `04`; no local PDF archived this round.",
+    "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "04"
+      "04",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1867,9 +2098,10 @@
     "title": "A high-throughput experimentation platform for data-driven discovery in electrochemistry",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Lin_2025_High_Throughput_Electrochemistry_Discovery.pdf",
     "sha256": "3eaf7524dbe6c555d5223a9cd321078063f8e3c9adb9964dac6a0ff41d6a63d5",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; aqueous zinc battery electrolyte additive screening adds independent `04` battery-material/electrolyte object coverage alongside `03` electrochemistry coverage. Keep explicit note that object evidence is now stronger than the still-borderline Agent-strength signal.",
+    "primary_module_for_filing": "03",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pmc_full_text",
@@ -1894,8 +2126,10 @@
     "title": "CRISPR-GPT for agentic automation of gene-editing experiments",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Huang_2024_CRISPR_GPT.pdf",
     "sha256": "1a3dada9dc4bd7ed0cf0a2707b8409dac3e2493aa220139874c52aab6d7b350e",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1905,9 +2139,10 @@
     "title": "Evaluating large language model agents for automation of atomic force microscopy",
     "pdf_path": "Reference_PDF/04_Materials_Science/Mandal_2025_AILA_Autonomous_Microscopy.pdf",
     "sha256": "ebac1770ee00ec309deb36c60f75fe8b70c8be8b331e0bce92eb7e693b9765d6",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; AFM sample characterization supports `04`, while scientific-instrument operation supports `09`. Batch16Partial1Reaudit2026-06-22: local archived PDF at `Reference_PDF/04_Materials_Science/Mandal_2025_AILA_Autonomous_Microscopy.pdf` rechecked; note refreshed without changing the landed `04;09` adjudication.",
+    "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "04"
+      "04",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1918,9 +2153,10 @@
     "title": "Towards end-to-end automation of AI research",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Lu_2026_End_to_End_AI_Research.pdf",
     "sha256": "a75e0d93447f400179136bf18d909df29e0c8ccaeba076a1dfb1beeef0e0e10d",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; automated peer review / scientific knowledge production supports `11.07` in addition to AI-research automation. Batch16Partial2Reaudit2026-06-23: Nature publisher abstract/full text rechecked; no local PDF archived this round; landed `01;11` closeout is now synchronized across note / master / progress.",
+    "primary_module_for_filing": "01",
     "scientific_object_modules": [
-      "01"
+      "01",
+      "11"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1931,8 +2167,10 @@
     "title": "AgenticSciML: collaborative multi-agent systems for emergent discovery in scientific machine learning",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Jiang_2026_AgenticSciML.pdf",
     "sha256": "9c3043aa8f2b86443d61f0a3d824d0b6db4d2cf208381faf9f137ef2cc633816",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; independent `01.04` only treatment is no longer supported.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_review_packet",
     "active_confirmed_core": true
@@ -1942,9 +2180,10 @@
     "title": "TeLLAgent: a dual-agent framework for reliable scientific discovery with tool-enhanced LLMs",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Sun_2026_TeLLAgent.pdf",
     "sha256": "5e95d60d92ad059ef62211a3b15585ae2bf7eb14fac396e7bca3d32a1ffd1e69",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; legacy filing fields left pending schema migration. Batch16Partial2Reaudit2026-06-23: RSC full abstract rechecked; no local PDF archived this round; landed `03;04` closeout with primary filing `04` supersedes the stale independent `01.04`-only authority.",
+    "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_review_packet",
@@ -1968,8 +2207,10 @@
     "title": "AutoSciLab: A Self-Driving Laboratory for Interpretable Scientific Discovery",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Desai_2025_AutoSciLab.pdf",
     "sha256": "bc28160aae128ebbe9296b6ee8468d2bc4bf52812643729e0962fb468b23e460",
-    "primary_module_for_filing": "02`, and `general_method_bucket=none`; projectile motion, Ising-system, and nanophotonic-device tasks provide concrete physics-object coverage, so the older independent `01.04` framing is retired.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1992,7 +2233,7 @@
     "title": "Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Yue_2025_Hierarchical_AI_Scientist_Systems.pdf",
     "sha256": "991e500a8f2ad1be49265427e2233f7e0d83a5eb44f110b64f36195352fee6fa",
-    "primary_module_for_filing": "01`, and `general_method_bucket=01.04`; current full text still does not securely establish concrete `01-11` object coverage.",
+    "primary_module_for_filing": "01",
     "scientific_object_modules": [],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -2003,11 +2244,12 @@
     "title": "GALILEO: Embodied AI scientist for autonomous therapeutic discovery in dynamic membrane systems",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Jiang_2026_GALILEO_Therapeutic_Discovery.pdf",
     "sha256": "2d7952177068dad6d91cb571d94c0f37c751f323c8810c6183ac56294d56db47",
-    "primary_module_for_filing": "07`; keep `source_limited=yes` and make the blocked unsafe/403 access trail explicit rather than marking the paper as full safety-skip.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
-    "pdf_status": "source_limited_no_local_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "crossref_abstract_checked_blocked_biorxiv_landing",
     "active_confirmed_core": true
   },
@@ -2016,8 +2258,10 @@
     "title": "Accelerated inorganic materials design with generative AI agents",
     "pdf_path": "Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf",
     "sha256": "38751207f8975fd9d1b6457b7cf74f8d94422eb11d16d5915c967e9a24d464af",
-    "primary_module_for_filing": "04`, and `general_method_bucket=none`; current first-hand evidence stabilizes the record as an inorganic-materials design Agent rather than a `01.04`-style general method hold.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_review_packet",
     "active_confirmed_core": true
@@ -2027,9 +2271,10 @@
     "title": "Medea: An omics AI agent for therapeutic discovery",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Sui_2026_Medea_Therapeutic_Discovery.pdf",
     "sha256": "1779f467f891f24690045cb233792706f34b9bb00c8283b8e103b609a34c40bf",
-    "primary_module_for_filing": "07` is now synchronized across note / master / progress; no local PDF archived this round.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pmc_full_text",
@@ -2069,7 +2314,8 @@
     "sha256": "336d4e3f9065f42918cec8053e020d12c8d8c8031eb4c180764a349d1efa1794",
     "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -2080,9 +2326,9 @@
     "title": "PromptBio: A Multi-Agent AI Platform for Bioinformatics Data Analysis",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Zhang_2025_PromptBio_Bioinformatics.pdf",
     "sha256": "0ac694cdfa5de62dc08db338d8233b1fac806398b7966aaffc0d92af06dfd7cb",
-    "primary_module_for_filing": "01`, `general_method_bucket=01.04`; current safe sources support a platform/workflow reading but do not securely anchor paper-level concrete biology-object results strong enough for `06`.",
+    "primary_module_for_filing": "01",
     "scientific_object_modules": [],
-    "pdf_status": "official_pages_checked_no_local_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "official_promptbio_pages_checked",
     "active_confirmed_core": true
   },
@@ -2109,7 +2355,7 @@
       "06",
       "07"
     ],
-    "pdf_status": "safety_blocked_paper_landing_no_local_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "official_dataset_pages_safety_supported",
     "active_confirmed_core": true
   },
@@ -2118,11 +2364,12 @@
     "title": "IMMUNIA: A Multi-LLM Reasoning Agent for Immunoregulatory Surfaceome Discovery",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Park_2025_IMMUNIA_Surfaceome_Discovery.pdf",
     "sha256": "dbc865d039e62c50d88a77514ba88f4008051173b0995dea919b6dbbd6b57f8d",
-    "primary_module_for_filing": "07`; safe Sciety abstract directly supports named immune/surfaceome gene candidates and precision-immunotherapy biomarker discovery, while DOI follow-up rechecked this round redirected to non-safe `http` bioRxiv and was not followed further.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
-    "pdf_status": "safety_blocked_paper_landing_no_local_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "safe_sciety_abstract_safety_supported",
     "active_confirmed_core": true
   },
@@ -2131,9 +2378,10 @@
     "title": "OpenScientist: evaluating an open agentic AI co-scientist to accelerate biomedical discovery",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Roberts_2026_OpenScientist_Biomedical_Discovery.pdf",
     "sha256": "ef97760f6cd511302072450548cc233d43716483f2884fb0cd799971f0a183d3",
-    "primary_module_for_filing": "07`; no local PDF was added in this round.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pmc_full_text",
@@ -2144,8 +2392,10 @@
     "title": "DeepInflation: An AI Agent for Research and Model Discovery of Inflation",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Peng_2026_DeepInflation.pdf",
     "sha256": "3b574a8ffa3686fa0704e27bd3bc74455852ffa837c0f12f0d039d7cd6a725c5",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`; legacy `02.01` is retained only as a topic/filing hint.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_preprint_and_doi_metadata",
     "active_confirmed_core": true
@@ -2155,8 +2405,10 @@
     "title": "Multi agent large language models for biomedical hypothesis generation in drug combination discovery",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Xu_2025_Drug_Combination_Hypothesis_Generation.pdf",
     "sha256": "13b3fdda9d1c75b5206682408fc254ea35185e664df59ead3aa031088acba577",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pmc_full_text",
     "active_confirmed_core": true
@@ -2168,7 +2420,7 @@
     "sha256": "38959be9cd96c03d38c3e3b78e0218dc30ddf5c01ee15ad47aaf678499ccc6cc",
     "primary_module_for_filing": "01",
     "scientific_object_modules": [],
-    "pdf_status": "safety_skip",
+    "pdf_status": "archived_pdf",
     "evidence_status": "official_pages_checked_safety_skip_closeout",
     "active_confirmed_core": true
   },
@@ -2177,8 +2429,9 @@
     "title": "BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Rahim_2026_BioAgent_Reproducible_Translational_Bioinformatics.pdf",
     "sha256": "96802bb18db20dae1c75124002192aa932228cb97bd35f317375b3cdaeefec83",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; evidence includes BRAF V600E melanoma, TP53 pan-cancer, and PBMC 3k single-cell immune profiling benchmark studies. Batch23Partial1Reaudit2026-06-23: source-limited page-level benchmark evidence rechecked; note synced and landed `scientific_object_modules=07;06`, `object_coverage_mode=multi_module`, `primary_module_for_filing=07`, `general_method_bucket=none`; retire the stale independent `01.04`-only treatment.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
+      "07",
       "06"
     ],
     "pdf_status": "archived_pdf",
@@ -2190,8 +2443,10 @@
     "title": "DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Hu_2025_DrugPilot.pdf",
     "sha256": "f47f004532c59ddaaf8185797dc2a92b8386f7770de3d0dfada88678182e9d2d",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; keep the drug-discovery-specific reading and do not drift to `01.04`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
     "active_confirmed_core": true
@@ -2201,8 +2456,10 @@
     "title": "Unlocking azobenzene isomerization mechanisms via an LLM agent-driven workflow integrating simulation, experiment, and machine learning",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Shen_2026_Azobenzene_Isomerization_Agent_Workflow.pdf",
     "sha256": "b7d5ab6b3ad4bd6d358ccf521dcd3522829dbece32b464a302fe0f34386a23c6",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2212,8 +2469,10 @@
     "title": "Closed-Loop AI Enables Organic Continuous-Wave Laser",
     "pdf_path": "Reference_PDF/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.pdf",
     "sha256": "b1cfdfe4ec2419667e3a4f4aaf90fe7a831566e613cc7ae9fe6a75ce879e045e",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; do not carry earlier `04 / 09` pressure into the landed master reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
     "active_confirmed_core": true
@@ -2223,8 +2482,9 @@
     "title": "An agentic framework for autonomous scientific discovery in cancer pathology",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Trost_2026_SPARK_Cancer_Pathology.pdf",
     "sha256": "1ef0aeb7bbbcab85f7ca169faea1830bcd5742369a77a4354ea4271bc9a33b18",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; keep `07` primary while making the additional `06` tumor-biology coverage explicit.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
+      "07",
       "06"
     ],
     "pdf_status": "archived_pdf",
@@ -2236,8 +2496,10 @@
     "title": "Egent: An Autonomous Agent for Equivalent Width Measurement",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Ting_2026_Egent_Equivalent_Width.pdf",
     "sha256": "9ea2134ac01934862d4d7346723ea91d530b88a45e0c4290d611e5c4b67a4895",
-    "primary_module_for_filing": "02`, `general_method_bucket=none`; keep the clean astronomy-measurement reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_preprint_and_doi_metadata",
     "active_confirmed_core": true
@@ -2247,8 +2509,10 @@
     "title": "Multi-Agent-Network-Based Idea Generator for Zinc-Ion Battery Electrolyte Discovery: A Case Study on Zinc Tetrafluoroborate Hydrate-Based Deep Eutectic Electrolytes",
     "pdf_path": "Reference_PDF/04_Materials_Science/Robson_2025_Zinc_Ion_Electrolyte_Idea_Generator.pdf",
     "sha256": "bcf69a280a9a45d1b7fcba4a3aa1c3acc4340028a8050cf85fb1e724a2f74b15",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; retain the materials-object reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
     "active_confirmed_core": true
@@ -2258,8 +2522,10 @@
     "title": "Knowledge-driven autonomous materials research via collaborative multi-agent and robotic system",
     "pdf_path": "Reference_PDF/04_Materials_Science/Shi_2026_Knowledge_Driven_Autonomous_Materials_Research.pdf",
     "sha256": "ed7d5d6974cf306ed5a24872b7e2180903771cbd5fd5d00e5d702d696c7eaaa2",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; the earlier high-pressure conservative wording is retired for this round.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_review_packet",
     "active_confirmed_core": true
@@ -2269,8 +2535,10 @@
     "title": "CRYSTAL: a multi-agent AI system for automated mapping of materials' crystal structures",
     "pdf_path": "Reference_PDF/04_Materials_Science/Gomes_2019_CRYSTAL_Crystal_Structure_Mapping.pdf",
     "sha256": "dccd3f341501844e79260a67b6540458f538b1300b7712bd9831c1bd77234b7c",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_author_pdf",
     "active_confirmed_core": true
@@ -2280,8 +2548,10 @@
     "title": "A Self-Driving Fluidic Lab for Data-Driven Synthesis of Lead-Free Perovskite Nanocrystals",
     "pdf_path": "Reference_PDF/04_Materials_Science/Sadeghi_2025_SelfDriving_Fluidic_Lab_Perovskite_Nanocrystals.pdf",
     "sha256": "8f8c631215a910b6a83d647f090c5bdb99e62b2c597c841e5d9bdc8b641f34f7",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2291,8 +2561,10 @@
     "title": "GeneAgent: self-verification language agent for gene-set analysis using domain databases",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Wang_2025_GeneAgent.pdf",
     "sha256": "b5361cf5c58018b542bf7f5902e494696199b580fc296d916c5f6ef09e267cc9",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2302,8 +2574,10 @@
     "title": "A curious formulation robot enables the discovery of a novel protocell behavior",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Grizou_2020_Curious_Formulation_Robot.pdf",
     "sha256": "f1b41b4227ad6c70b1d0b43fd2767127fce9fac18666d88b43fddcc7bbd6431d",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; keep the chemical-formulation discovery reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pmc_full_text",
     "active_confirmed_core": true
@@ -2313,8 +2587,10 @@
     "title": "Towards a fully automated algorithm driven platform for biosystems design",
     "pdf_path": "Reference_PDF/06_Life_Sciences/HamediRad_2019_BioAutomata_Biosystems_Design.pdf",
     "sha256": "bee919f45d596e2bc3fbbc5fb26ac0b68635365f5ed3d900a992c78f67c28c29",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; keep the biosystems-design reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_pmc_full_text",
     "active_confirmed_core": true
@@ -2324,8 +2600,10 @@
     "title": "Autonomous multi-robot synthesis and optimization of metal halide perovskite nanocrystals",
     "pdf_path": "Reference_PDF/04_Materials_Science/Xu_2025_Autonomous_MultiRobot_Perovskite_Nanocrystals.pdf",
     "sha256": "3a533de518e0a557e6441a458ad7af40ffb70ae5afb55463ad4c50a70e11a4ce",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2335,8 +2613,10 @@
     "title": "A Bayesian active learning platform for scalable combination drug screens",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Tosh_2025_BATCHIE_Drug_Screens.pdf",
     "sha256": "cf844781b50a9d566f1f3a9ac83af5c4aa1648a89fbdd10467217fb43773c77b",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`; keep the biomedical combination-screening reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2346,8 +2626,10 @@
     "title": "A chemical autonomous robotic platform for end-to-end synthesis of nanoparticles",
     "pdf_path": "Reference_PDF/04_Materials_Science/Unknown_2025_Autonomous_Nanoparticle_Synthesis.pdf",
     "sha256": "e6f6ae3106ab1fe0bcd9a00601668221a377223abf892a53815ba1a3a93724e1",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; keep the nanoparticle materials-object reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
     "active_confirmed_core": true
@@ -2357,8 +2639,10 @@
     "title": "Autonomous platform for solution processing of electronic polymers",
     "pdf_path": "Reference_PDF/04_Materials_Science/Unknown_2025_Autonomous_Electronic_Polymer_Processing.pdf",
     "sha256": "d0db0ddeb0f9f180139c8c8a32d4fcb97d73c53a1be7f2656cc0a1568ce61617",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; keep the electronic-polymer materials-object reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
     "active_confirmed_core": true
@@ -2368,8 +2652,10 @@
     "title": "A virtual platform for automated hybrid organic-enzymatic synthesis planning",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Unknown_2025_Hybrid_Organic_Enzymatic_Synthesis_Planning.pdf",
     "sha256": "e54c219b3707e27a77a5c4f27f07a32a8f6f622c3f7fa4fa0d9390b0762a778d",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2379,8 +2665,10 @@
     "title": "Collective intelligence for AI-assisted chemical synthesis",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.pdf",
     "sha256": "9b359d8c9ccabdcd178b85b44106aaced13042a183b5aad5b0032886fda21d82",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; keep explicit `03 / 01.04` boundary pressure in the note, but do not migrate this record to independent `01.04`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
     "active_confirmed_core": true
@@ -2390,8 +2678,10 @@
     "title": "An integrated self-optimizing programmable chemical synthesis and reaction engine",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Unknown_2024_Programmable_Chemical_Synthesis_Engine.pdf",
     "sha256": "6fb23417409defd963bf25497f157da1be3d324df04d015b42ade03c63d11768",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; keep the chemistry-object reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2401,8 +2691,10 @@
     "title": "A robotic platform for the synthesis of colloidal nanocrystals",
     "pdf_path": "Reference_PDF/04_Materials_Science/Zhao_2023_Robotic_Colloidal_Nanocrystals.pdf",
     "sha256": "ae410fc318e94c71067ee825e04f32afe71bd50da2bdb61756d26c86d182f46e",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; keep the nanocrystal materials-object reading.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2412,8 +2704,10 @@
     "title": "Self-optimizing parallel millifluidic reactor for scaling nanoparticle synthesis",
     "pdf_path": "Reference_PDF/04_Materials_Science/Wang_2020_SelfOptimizing_Millifluidic_Nanoparticles.pdf",
     "sha256": "cce77b8ece8d4d13b803d56a08c02a4995de4b1b030bec3148d94a8e7b2d195c",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; keep source-limited wording and do not drift to `09`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_author_pdf_review_packet",
     "active_confirmed_core": true
@@ -2423,8 +2717,10 @@
     "title": "Integrating protein language models and automatic biofoundry for enhanced protein evolution",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Unknown_2025_Protein_Language_Models_Automatic_Biofoundry.pdf",
     "sha256": "578c8d13c06a0b083e47e97a840c1f78e05dff1ce0d13c501df2dc46b4cabfc5",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2434,8 +2730,10 @@
     "title": "Operate a Cell-Free Biofoundry using Large Language Models",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Herisson_2024_Operate_CellFree_Biofoundry_LLMs.pdf",
     "sha256": "8b4960e531188c707844a7d7973cc9edbea06bfbc5ab9c2479f6e48b8151ee39",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; strong CFPS / protein-expression optimization evidence supports closeout, but note wording keeps the LLM role as workflow-heavy / design-stage code generation rather than a strong runtime research agent.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2445,8 +2743,10 @@
     "title": "Verification and execution of the scientific literature via chemputation augmented by large language models",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Pagel_2026_Chemputation_Literature_Verification.pdf",
     "sha256": "e6be067d784bcb490ec787e67ba2a7e2820f248ac47aeecc3d684e0108c92eb2",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`; keep the chemistry-object reading and do not drift to `11.07`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2469,9 +2769,11 @@
     "title": "An AI-Native Biofoundry for Autonomous Enzyme Engineering: Integrating Active Learning with Automated Experimentation",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Zhang_2026_AINative_Biofoundry_Enzyme_Engineering.pdf",
     "sha256": "031637f50a4669e45c1a23de12fc9d679bbbbd228823fad0638f7e605ae25012",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; keep the enzyme-engineering reading.",
-    "scientific_object_modules": [],
-    "pdf_status": "abstract_only_checked",
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
+    "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_review_packet",
     "active_confirmed_core": true
   },
@@ -2519,8 +2821,10 @@
     "title": "Accelerate Synthesis of Metal-Organic Frameworks by a Robotic Platform and Bayesian Optimization",
     "pdf_path": "Reference_PDF/04_Materials_Science/Xie_2021_Robotic_MOF_Synthesis_Bayesian_Optimization.pdf",
     "sha256": "9d4fbc5fc8a53bf4b6adddb4db59537df1e7a26dad5b502ff683d7c88f9b0d29",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; the prior conservative hold is retired.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text_review_packet",
     "active_confirmed_core": true
@@ -2660,8 +2964,10 @@
     "title": "ClimAgent: LLM as Agents for Autonomous Open-ended Climate Science Analysis",
     "pdf_path": "Reference_PDF/05_Earth_and_Environmental_Sciences/Wang_2026_ClimAgent.pdf",
     "sha256": "d328e67ae29468e003b6e1a87b5566793c64b1001eb4d359365c6ddc9b0ea502",
-    "primary_module_for_filing": "05`, `general_method_bucket=none` landing under the direct-landing threshold. The v3 landing remains withdrawn, the non-versioned PDF route returned `404`, and the cited repo remains broken / placeholder, so preserve explicit lineage / reproducibility risk wording without reopening the class direction.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "05",
+    "scientific_object_modules": [
+      "05"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2905,10 +3211,11 @@
     "title": "OpenEarth-Agent: From Tool Calling to Tool Creation for Open-Environment Earth Observation",
     "pdf_path": "Reference_PDF/05_Earth_and_Environmental_Sciences/Zhao_2026_OpenEarth_Agent.pdf",
     "sha256": "35a7fdb351a748fe94ae5196bce59571279b5f8fb6db073254b87b890f2b4e44",
-    "primary_module_for_filing": "05`, `general_method_bucket=none`; Earth-observation tasks remain primary, while agriculture/environment application cases and human/social-system analysis tasks add independent `08` and `11` coverage.",
+    "primary_module_for_filing": "05",
     "scientific_object_modules": [
       "05",
-      "08"
+      "08",
+      "11"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_preprint_pdf_review_packet",
@@ -3059,10 +3366,11 @@
     "title": "AutoScientists: Self-Organizing Agent Teams for Long-Running Scientific Experimentation",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoScientists.pdf",
     "sha256": "863c8e683d914451e3f4400c2b652de5d3cccfe23c8b5cf7e15e27710d6dcf29",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; arXiv abstract reports LM-training optimization, BioML-Bench, ProteinGym, biomedical imaging, protein engineering, single-cell omics, and drug-discovery task coverage.",
+    "primary_module_for_filing": "06",
     "scientific_object_modules": [
       "01",
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text_via_arxiv_fallback",
@@ -3139,9 +3447,10 @@
     "title": "MARBLE: Multi-Agent Reasoning for Bioinformatics Learning and Evolution",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Kim_2026_MARBLE.pdf",
     "sha256": "25b607a337b4e94bed6e3ce66bd4517388dbe95e7545edd4deaed9eae7bc419f",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; spatial transcriptomics supports `06`, while DTI and drug-response prediction support `07`. Batch27Partial1Reaudit2026-06-24: closed; first-hand evidence now supports `scientific_object_modules=06;07` with `06` retained as filing primary.",
+    "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3193,10 +3502,11 @@
     "title": "Harnessing AtomisticSkills for Agentic Atomistic Research",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Deng_2026_AtomisticSkills.pdf",
     "sha256": "49a829f6cc3ebfc4e4413de1a912b5657085a6f466a5192e024deaaff0825e96",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; arXiv abstract lists Li-ion electrolytes, MOFs for CO2 capture, drug virtual screening, XRD/materials tasks, and Fe-oxide OER catalyst campaigns.",
+    "primary_module_for_filing": "04",
     "scientific_object_modules": [
       "03",
-      "04"
+      "04",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text_via_arxiv_fallback",
@@ -3314,8 +3624,10 @@
     "title": "El Agente S��lido: A New Age(nt) for Solid State Simulations",
     "pdf_path": "Reference_PDF/04_Materials_Science/Kumar_2026_El_Agente_Solido.pdf",
     "sha256": "1f8816bcf964983714038cef652eeeaeb3dee89021043d44dc8f6770c2beeda4",
-    "primary_module_for_filing": "04, general_method_bucket=none, source_limited=no.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -3364,8 +3676,10 @@
     "title": "OpenFOAMGPT 2.0: end-to-end, trustworthy automation for computational fluid dynamics",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Feng_2025_OpenFOAMGPT_2_0.pdf",
     "sha256": "65bd498cb1eb87b50bec62ebbf70ab88250a2cd7cd9594a7568375f526c50c1a",
-    "primary_module_for_filing": "09, general_method_bucket=none, source_limited=no.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -3375,9 +3689,10 @@
     "title": "OASIS: Onboard Autonomous Science Investigation System for Opportunistic Rover Science",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Castano_2007_OASIS_Rover_Science.pdf",
     "sha256": "c879d3426d9c748f389cc6a7ccaedcf8c57f8d42a66912b99e37b475025ddf86",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; rocks, clouds, and dust-devil science opportunities support `05`, rover mission-science autonomy supports `10`.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3388,9 +3703,10 @@
     "title": "Enabling Onboard Detection of Events of Scientific Interest for the Europa Clipper Spacecraft",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Wagstaff_2019_Europa_Clipper_Onboard_Detection.pdf",
     "sha256": "ddc220d4bca6d2f9778b498ed115de5a2c1a7d4cd94ae5954d861583bedb3423",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; Europa thermal/compositional/plume event detection supports `05`, onboard spacecraft prioritization supports `10`.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3414,9 +3730,10 @@
     "title": "AEGIS Automated Science Targeting for the MER Opportunity Rover",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2012_AEGIS_Opportunity_Rover.pdf",
     "sha256": "0904bd9ee20e9c7ba9417f4d27deb01cb4e55b384c359a4754242e1ea02b3903",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; Mars rocks/outcrops/geologic target selection supports `05`, rover science targeting and sequencing supports `10`. Batch25Partial1Reaudit2026-06-23: closed; stale safety skip retired because safe first-hand CaltechAUTHORS evidence is accessible",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
@@ -3427,9 +3744,10 @@
     "title": "AEGIS autonomous targeting for ChemCam on Mars Science Laboratory: Deployment and results of initial science team use",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2017_AEGIS_ChemCam_MSL.pdf",
     "sha256": "022bcc44436b6673f1f2fb2f6dbcc90e8d479728518ed00375357fc1355514f2",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; Mars geological materials and geochemical ChemCam observations support `05`, autonomous rover instrument targeting supports `10`. Batch25Partial1Reaudit2026-06-23: closed; LANL accepted-manuscript evidence supports scientific_object_modules=05;10, primary_module_for_filing=10, source_limited=no.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3492,9 +3810,10 @@
     "title": "Rover-Based Autonomous Science by Probabilistic Identification and Evaluation",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.pdf",
     "sha256": "526e92f4015ab49fe4eebd04b5f55052e6551521241ddeda64d5b2ed26c5b533",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; planetary surface / geologic science features support `05`, rover autonomous science and path planning support `10`. Batch30Partial3Reaudit2026-06-24: local Springer PDF archived and controller spot-check of pp.1-3 confirms `scientific_object_modules=05;10`, `primary_module_for_filing=10`, `general_method_bucket=none`; planetary-surface feature evaluation supports `05`, rover autonomous science and path planning support `10`; retire the prior abstract-only conservative hold.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3505,9 +3824,10 @@
     "title": "Autonomous Science Agents and Sensor Webs: EO-1 and Beyond",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Sherwood_2006_EO1_Autonomous_Science_Agents.pdf",
     "sha256": "4904795740a7c416b35bc193f0bb3e03131aee12569001f353d40a74903b83fa",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; Earth events including volcanoes, floods, ice, clouds, and crust deformation support `05`, EO-1 / sensor-web autonomy supports `10`.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3583,9 +3903,10 @@
     "title": "Automated Targeting for the MSL Rover ChemCam Spectrometer",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2014_ChemCam_Automated_Targeting.pdf",
     "sha256": "abcbd59aac7145652b4d7bc43ba3577e955f2be7d62508cf5e773a2b05df975c",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; Mars rocks, soil, geologic targets, and ChemCam geochemical surveying support `05`, rover ChemCam autonomous targeting supports `10`.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3596,9 +3917,10 @@
     "title": "AEGIS Autonomous Targeting for the SuperCam Instrument on the Mars 2020 Perseverance Rover",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2024_AEGIS_SuperCam.pdf",
     "sha256": "4902936241a322a4a11882a06dbd3efe4b3f30132f7457a1930439487113431f",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; Mars geological / geochemical SuperCam target selection supports `05`, Perseverance instrument autonomy supports `10`.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3609,9 +3931,10 @@
     "title": "Developing Autonomous Science Technology for the MSL Rover Mission",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2015_Autonomous_Science_Technology_MSL.pdf",
     "sha256": "0587acfe7a7a05de9a545b0f48a72cf21a32937de6b84ff0d478bf48a1424fcb",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; rocks, soil, veins, concretions, and geologically relevant ChemCam targets support `05`, MSL autonomous science technology supports `10`.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3702,9 +4025,10 @@
     "title": "Mission Operations of Earth Observing-1 with Onboard Autonomy",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Rabideau_2006_EO1_Mission_Operations_Onboard_Autonomy.pdf",
     "sha256": "0295832b32c21c80eede34b4f878e6df809410fcd6cc4e94a7fcdaa3a5e5fe43",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; land, ice, snow, water, flooding, ice melt, lava flows, and other Earth-event targets support `05`, EO-1 onboard mission autonomy supports `10`. Batch25Partial1Reaudit2026-06-23: closed; first-hand EO-1 evidence supports scientific_object_modules=05;10 with 10 primary and explicit Earth-event detection coverage for 05.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3715,9 +4039,10 @@
     "title": "Integrated AI in Space: The Autonomous Sciencecraft on Earth Observing One",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Chien_2006_Integrated_AI_in_Space_EO1.pdf",
     "sha256": "42b68ab6f2564259ab9f7b6ce6de4f8f113010db034ed55b441415fdbb8641e6",
-    "primary_module_for_filing": "10`, `general_method_bucket=none`; volcanic activity, flooding, cryosphere events, and Earth science event detection support `05`, integrated spacecraft AI supports `10`. Batch25Partial1Reaudit2026-06-23: closed; official AAAI PDF evidence supports scientific_object_modules=05;10 with 10 primary and explicit Earth-science event detection coverage. RoundPdfArchive2026-06-26: official AAAI PDF archived locally at `Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Chien_2006_Integrated_AI_in_Space_EO1.pdf`.",
+    "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3728,9 +4053,10 @@
     "title": "An Autonomous Earth-Observing Sensorweb",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Chien_2005_Autonomous_Earth_Observing_Sensorweb.pdf",
     "sha256": "0db285fd9fdd9cddb3f73b81f18480c00679b0ddb696f98468b6927a34459c05",
-    "primary_module_for_filing": "05`, `general_method_bucket=none`; global surveillance of volcanoes, flooding, cryosphere, atmospheric and Earth-observation phenomena supports `05`, autonomous sensorweb / satellite retasking supports `10`.",
+    "primary_module_for_filing": "05",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "10"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3767,8 +4093,10 @@
     "title": "AutoClimDS: Climate Data Science Agentic AI -- A Knowledge Graph is All You Need",
     "pdf_path": "Reference_PDF/05_Earth_and_Environmental_Sciences/Jaber_2026_AutoClimDS_Climate_Data_Science.pdf",
     "sha256": "896ca1508b3abcd520b56ade8853b79acc23a7dad5825ed57f0d2e6eaea415db",
-    "primary_module_for_filing": "05`, and `general_method_bucket=none`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "05",
+    "scientific_object_modules": [
+      "05"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -3804,10 +4132,11 @@
     "title": "Self-Driving Datasets: From 20 Million Papers to Nuanced Biomedical Knowledge at Scale",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Jones_2026_Self_Driving_Datasets.pdf",
     "sha256": "cc2ef5a6d72dd15b59a8e9617d23be0340bb7b124ddc96b489f45b7e115a8f4c",
-    "primary_module_for_filing": "06`, `general_method_bucket=none`; chemical-reaction extraction supports `03`, gene-disease / protein-localization tasks support `06`, and BBB permeability / oral bioavailability / LD50 pharmacological tasks support `07`. Batch25Partial1Reaudit2026-06-23: closed; current first-hand evidence supports scientific_object_modules=03;06;07 with primary_module_for_filing=06 and source_limited=no.",
+    "primary_module_for_filing": "06",
     "scientific_object_modules": [
       "03",
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
@@ -3818,8 +4147,10 @@
     "title": "Increased Mars Rover Autonomy using AI Planning, Scheduling and Execution",
     "pdf_path": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2007_Mars_Rover_Autonomy.pdf",
     "sha256": "6c97de15f07a4b0e1d18908d22e8eb9e926591dbc7afc5fb0943087e69b64f89",
-    "primary_module_for_filing": "10`, and `general_method_bucket=none`; the paper still does not report independent planetary-environment object evidence strong enough to add `05`.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "10",
+    "scientific_object_modules": [
+      "10"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -3842,8 +4173,10 @@
     "title": "AI-Researcher: Autonomous Scientific Innovation",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Wang_2025_AI_Researcher.pdf",
     "sha256": "a3f3334cc67685b925c9523dc19149806ee996e331623f84912e0354b18c9bce",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; Scientist-Bench / AI research-domain experiments make this a concrete formal-computational research-object record rather than independent `01.04`. Batch25Partial1Reaudit2026-06-23: closed; stale independent 01.04 wording retired in note closeout, and current first-hand evidence keeps the record in module 01.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_review_packet",
     "active_confirmed_core": true
@@ -3853,8 +4186,10 @@
     "title": "ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence Verification",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_ScientistOne.pdf",
     "sha256": "9d4fa9d1e9e6b1cdccfeff02fecbd28b5b961594952a1ac96e00ad135bed0a51",
-    "primary_module_for_filing": "01`, `general_method_bucket=none`; AI / computational research tasks and chain-of-evidence audits justify concrete `01` assignment, while possible medical-imaging / 3D-perception extra modules remain full-text follow-up. Batch25Partial1Reaudit2026-06-23: keep conservative; current first-hand evidence is enough for module 01 directionally, but broader cross-domain hints remain too weak for closeout. Batch27Partial1Reaudit2026-06-24: closed; current first-hand evidence is sufficient to keep this in concrete module `01` rather than an `01.04`-only bucket.",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_review_packet",
     "active_confirmed_core": true
@@ -3877,9 +4212,10 @@
     "title": "Autonomous microfluidic experimentation for exploring reaction inference and synthesizing double perovskite nanoplatelets",
     "pdf_path": "Reference_PDF/04_Materials_Science/Sharma_2026_Double_Perovskite_Nanoplatelets.pdf",
     "sha256": "c8e8b5d99e20710c928f48d76d136a6beb6e1d3720b9b679b07db65ff5cc4f63",
-    "primary_module_for_filing": "04`, `general_method_bucket=none`; reaction inference / mechanistic chemistry supports `03`, double perovskite nanoplatelet synthesis and material-property characterization support `04`.",
+    "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -3908,7 +4244,7 @@
     "scientific_object_modules": [
       "06"
     ],
-    "pdf_status": "abstract_only_checked",
+    "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
     "active_confirmed_core": true
   },
@@ -3936,7 +4272,7 @@
       "06",
       "07"
     ],
-    "pdf_status": "source_limited_no_local_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_and_official_repo",
     "active_confirmed_core": true
   },
@@ -3949,7 +4285,7 @@
     "scientific_object_modules": [
       "06"
     ],
-    "pdf_status": "source_limited_no_local_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "source_limited_review_packet",
     "active_confirmed_core": true
   },
@@ -3963,7 +4299,7 @@
       "06",
       "07"
     ],
-    "pdf_status": "official_page_403_no_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "crossref_abstract_checked_blocked_biorxiv_landing",
     "active_confirmed_core": true
   },
@@ -4603,7 +4939,8 @@
     "sha256": "cacee7f7f3d9a48694360a2a5bf85e027c0d184a6515823764b9a3808252a456",
     "primary_module_for_filing": "05",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "11"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -4784,9 +5121,10 @@
     "title": "Probe Before You Edit: Probing-Guided Molecular Optimization for LLM Agents in Structure-Based Drug Design",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Yang_2026_PROBE_Structure_Based_Drug_Design.pdf",
     "sha256": "e0dbe4489dc9013e0509a556fbfe455541a98876ea4678adffa233ee9ddf8e04",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`, and source_limited=no.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -4811,9 +5149,10 @@
     "title": "SEISMO: Increasing Sample Efficiency in Molecular Optimization with a Trajectory-Aware LLM Agent",
     "pdf_path": "Reference_PDF/03_Chemical_Sciences/Kruger_2026_SEISMO.pdf",
     "sha256": "49a922c5da02d23991e9262f4cff874cf69e016b2999a2114c51a8810868bb1d",
-    "primary_module_for_filing": "03`, `general_method_bucket=none`, and source_limited=no.",
+    "primary_module_for_filing": "03",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -4852,9 +5191,10 @@
     "title": "Contextual Invertible World Models: A Neuro-Symbolic Agentic Framework for Colorectal Cancer Drug Response",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Baker_2026_CIWM_CRC_Drug_Response.pdf",
     "sha256": "d837c7d3dccf07bd421b1f3b686e2e8d034d5641594a1dc57255e43b839d4b63",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`, and source_limited=no.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -4865,9 +5205,10 @@
     "title": "ToolMol: Evolutionary Agentic Framework for Multi-objective Drug Discovery",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Zhou_2026_ToolMol.pdf",
     "sha256": "950eb602662a491aae9c6b89d89527eb1a3d1f089966c227723c800266fc0515",
-    "primary_module_for_filing": "07`, `general_method_bucket=none`, and source_limited=no.",
+    "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -4973,7 +5314,7 @@
     "scientific_object_modules": [
       "03"
     ],
-    "pdf_status": "source_limited_no_local_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_abstract_and_official_pages",
     "active_confirmed_core": true
   },
@@ -4999,7 +5340,7 @@
     "scientific_object_modules": [
       "03"
     ],
-    "pdf_status": "source_limited_no_local_pdf",
+    "pdf_status": "archived_pdf",
     "evidence_status": "crossref_and_official_pages_checked_cloudflare_blocked_pdf",
     "active_confirmed_core": true
   },
@@ -5220,7 +5561,8 @@
       "03",
       "04",
       "06",
-      "07"
+      "07",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
