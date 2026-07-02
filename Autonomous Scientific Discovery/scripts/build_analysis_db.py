@@ -112,7 +112,35 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
         CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, active_confirmed_core INTEGER NOT NULL, inclusion_status TEXT);
         CREATE VIEW active_confirmed_core_papers AS SELECT * FROM papers WHERE active_confirmed_core = 1;
         CREATE VIEW active_missing_local_pdf AS SELECT * FROM papers WHERE active_confirmed_core = 1 AND pdf_exists = 0;
-        CREATE VIEW module_assignment_counts AS SELECT assignment_scope, module_code, COUNT(*) AS paper_count, SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END) AS active_confirmed_core_count FROM paper_modules pm JOIN papers p ON p.paper_id = pm.paper_id GROUP BY assignment_scope, module_code;
+        CREATE VIEW canonical_paper_modules AS
+        SELECT * FROM paper_modules WHERE assignment_scope = 'scientific_object_modules';
+        CREATE VIEW workflow_mirror_paper_modules AS
+        SELECT * FROM paper_modules WHERE assignment_scope = 'final_modules_or_bucket';
+        CREATE VIEW module_assignment_counts AS
+        SELECT
+            assignment_scope,
+            module_code,
+            COUNT(*) AS paper_count,
+            SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END) AS active_confirmed_core_count
+        FROM paper_modules pm
+        JOIN papers p ON p.paper_id = pm.paper_id
+        GROUP BY assignment_scope, module_code;
+        CREATE VIEW canonical_module_assignment_counts AS
+        SELECT
+            module_code,
+            COUNT(*) AS paper_count,
+            SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END) AS active_confirmed_core_count
+        FROM canonical_paper_modules pm
+        JOIN papers p ON p.paper_id = pm.paper_id
+        GROUP BY module_code;
+        CREATE VIEW workflow_mirror_module_assignment_counts AS
+        SELECT
+            module_code,
+            COUNT(*) AS paper_count,
+            SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END) AS active_confirmed_core_count
+        FROM workflow_mirror_paper_modules pm
+        JOIN papers p ON p.paper_id = pm.paper_id
+        GROUP BY module_code;
         CREATE VIEW coverage_status_analysis AS
         WITH normalized AS (
             SELECT
@@ -177,11 +205,28 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
                 COALESCE((
                     SELECT GROUP_CONCAT(module_code, ';')
                     FROM (
+                        SELECT value AS module_code, CAST(key AS INTEGER) AS sort_key
+                        FROM json_each(p.scientific_object_modules_json)
+                        ORDER BY sort_key
+                    )
+                ), '') AS scientific_modules_declared_order,
+                COALESCE((
+                    SELECT GROUP_CONCAT(module_code, ';')
+                    FROM (
                         SELECT DISTINCT value AS module_code
                         FROM json_each(p.scientific_object_modules_json)
                         ORDER BY module_code
                     )
                 ), '') AS scientific_modules_canonical,
+                COALESCE((
+                    SELECT GROUP_CONCAT(module_code, ';')
+                    FROM (
+                        SELECT value AS module_code, CAST(key AS INTEGER) AS sort_key
+                        FROM json_each(p.final_modules_or_bucket_json)
+                        WHERE value <> '01.04'
+                        ORDER BY sort_key
+                    )
+                ), '') AS final_formal_modules_declared_order,
                 COALESCE((
                     SELECT GROUP_CONCAT(module_code, ';')
                     FROM (
@@ -231,12 +276,14 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
             source,
             active_confirmed_core,
             scientific_object_modules_json,
+            scientific_modules_declared_order,
             scientific_modules_canonical,
             scientific_module_count,
             general_method_bucket AS general_method_bucket_raw,
             normalized_general_method_bucket,
             final_modules_or_bucket_raw,
             final_modules_or_bucket_json,
+            final_formal_modules_declared_order,
             final_assignments_canonical,
             final_formal_modules_canonical,
             final_assignment_count,
@@ -249,27 +296,45 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
                 ELSE 0
             END AS scientific_matches_final_formal_modules,
             CASE
+                WHEN scientific_modules_declared_order = final_formal_modules_declared_order THEN 1
+                ELSE 0
+            END AS scientific_matches_final_formal_order,
+            CASE
                 WHEN normalized_general_method_bucket NOT IN ('none', '01.04') THEN 'dirty_general_method_bucket'
                 WHEN final_contains_bucket_0104 = 1 AND final_contains_formal_modules = 1 THEN 'mixed_final_bucket_and_formal_modules'
-                WHEN normalized_general_method_bucket = '01.04' AND final_contains_bucket_0104 = 1 AND scientific_module_count = 0 AND final_formal_module_count = 0 THEN 'bucket_only_consistent'
+                WHEN normalized_general_method_bucket = '01.04' AND final_contains_bucket_0104 = 1 AND scientific_module_count = 0 AND final_formal_module_count = 0 THEN 'acceptable_mirror'
                 WHEN normalized_general_method_bucket = '01.04' AND final_contains_bucket_0104 = 0 AND final_formal_module_count > 0 THEN 'bucket_replaced_by_formal_modules'
                 WHEN normalized_general_method_bucket = 'none' AND final_contains_bucket_0104 = 1 THEN 'bucket_added_in_final'
                 WHEN scientific_module_count = 0 AND final_formal_module_count > 0 THEN 'final_formal_without_scientific_modules'
                 WHEN scientific_module_count > 0 AND final_formal_module_count = 0 AND final_contains_bucket_0104 = 0 THEN 'scientific_modules_missing_in_final'
                 WHEN scientific_module_count > 0 AND scientific_modules_canonical <> final_formal_modules_canonical THEN 'final_formal_differs_from_scientific_modules'
+                WHEN scientific_module_count > 0 AND scientific_modules_declared_order <> final_formal_modules_declared_order THEN 'formal_module_order_drift'
                 ELSE 'aligned'
-            END AS boundary_case_kind
+            END AS boundary_case_kind,
+            CASE
+                WHEN normalized_general_method_bucket NOT IN ('none', '01.04') THEN 'semantic_drift'
+                WHEN final_contains_bucket_0104 = 1 AND final_contains_formal_modules = 1 THEN 'semantic_drift'
+                WHEN normalized_general_method_bucket = '01.04' AND final_contains_bucket_0104 = 1 AND scientific_module_count = 0 AND final_formal_module_count = 0 THEN 'acceptable_mirror'
+                WHEN normalized_general_method_bucket = '01.04' AND final_contains_bucket_0104 = 0 AND final_formal_module_count > 0 THEN 'semantic_drift'
+                WHEN normalized_general_method_bucket = 'none' AND final_contains_bucket_0104 = 1 THEN 'semantic_drift'
+                WHEN scientific_module_count = 0 AND final_formal_module_count > 0 THEN 'semantic_drift'
+                WHEN scientific_module_count > 0 AND final_formal_module_count = 0 AND final_contains_bucket_0104 = 0 THEN 'semantic_drift'
+                WHEN scientific_module_count > 0 AND scientific_modules_canonical <> final_formal_modules_canonical THEN 'semantic_drift'
+                WHEN scientific_module_count > 0 AND scientific_modules_declared_order <> final_formal_modules_declared_order THEN 'order_drift'
+                ELSE 'aligned'
+            END AS drift_class
         FROM normalized;
         CREATE VIEW classification_boundary_summary AS
         SELECT
             active_confirmed_core,
+            drift_class,
             boundary_case_kind,
             COUNT(*) AS paper_count,
             SUM(has_general_method_bucket) AS general_bucket_count,
             SUM(final_contains_bucket_0104) AS final_bucket_count,
             SUM(final_contains_formal_modules) AS final_formal_count
         FROM classification_boundary_analysis
-        GROUP BY active_confirmed_core, boundary_case_kind;
+        GROUP BY active_confirmed_core, drift_class, boundary_case_kind;
         ''')
         active = [row for row in papers if row['active_confirmed_core']]
         active_local = [row for row in active if row['pdf_exists']]

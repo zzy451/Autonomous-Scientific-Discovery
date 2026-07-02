@@ -70,7 +70,7 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `registry/asset_manifest.jsonl`: normalized asset inventory covering at least note and primary PDF records.
 - `papers.jsonl`: record-level analysis snapshot for scripts, version control, and exact per-paper inspection.
 - `papers.csv`: flattened spreadsheet view of `papers.jsonl`.
-- `paper_modules.csv`: exploded one-paper-to-many-modules table for counting and pivoting.
+- `paper_modules.csv`: exploded one-paper-to-many-modules table containing both canonical `scientific_object_modules` assignments and workflow-mirror `final_modules_or_bucket` assignments; always filter by `assignment_scope` before using it for statistics.
 - `papers.sqlite`: normalized query database for joins, filters, and aggregation.
 - `taxonomy_index.json`: code/label mapping for `01-11` and `01.04`.
 - `pdf_manifest.json`: local archived PDF inventory with hashes.
@@ -98,6 +98,15 @@ Use `papers.sqlite` when:
 - you are doing repeated analysis or reproducible query work
 - you need counts by module, missing-PDF inventory, or paper-level detail without reparsing JSONL
 
+Inside SQLite, prefer the explicit scope-separated views for classification work:
+
+- `canonical_paper_modules`
+- `workflow_mirror_paper_modules`
+- `canonical_module_assignment_counts`
+- `workflow_mirror_module_assignment_counts`
+- `classification_boundary_analysis`
+- `classification_boundary_summary`
+
 Rule of thumb:
 
 - master + progress are the only fact layer
@@ -109,6 +118,8 @@ Rule of thumb:
 ## `query_analysis_db.py` typical usage
 
 All commands below are run from the repository root and read `Data/papers.sqlite`.
+
+Unless a command is explicitly labeled `audit` / `mirror`, classification outputs should be interpreted as canonical-only.
 
 Show metadata and module counts:
 
@@ -142,9 +153,10 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" module 04
 
 Operational notes:
 
-- `summary` prints metadata plus formal-module counts from SQLite.
-- `paper` prints the full structured paper payload, including decoded JSON array fields.
+- `summary` prints metadata plus canonical formal-module counts from SQLite.
+- `paper` prints the full structured paper payload, including both canonical fields and workflow-mirror inspection fields; do not treat `final_modules_or_bucket` as canonical.
 - `missing-pdf`, `multi-module`, and `module` print tab-separated tables for shell use or redirection.
+- `boundary-cases` and `bucket-summary` are audit commands for canonical-vs-mirror inspection, not default canonical classification summaries.
 - If `papers.sqlite` is stale or missing, rerun `build_analysis_db.py` after `export -> check`.
 
 On Windows terminals that still default to GBK, Unicode-heavy titles may print poorly. If needed, run:
