@@ -16,6 +16,21 @@ Mark all that apply:
 - [ ] `Autonomous Scientific Discovery/Coverage_Check/` report or audit files were changed.
 - [ ] Only derived `Data/`, docs, CI, or governance files were changed.
 
+## Baseline Impact
+
+Mark one:
+
+- [ ] This PR does not change the accepted baseline.
+- [ ] This PR changes the accepted baseline and follows `structured_data_baseline_update_rules_2026-07-02.md`.
+
+If this PR changes the baseline, fill all fields:
+
+- old baseline:
+- new baseline:
+- approval by:
+- snapshot id (`schema_version` / `papers_jsonl_sha256`):
+- canonical-only semantics reconfirmed: `yes / no`
+
 If master/progress/report files changed, explain the single-writer coordination:
 
 - coordinating owner or reviewer:
@@ -37,6 +52,9 @@ papers.jsonl records:
 active confirmed-core:
 active local PDFs:
 active no-local-PDF:
+workflow mirror drift count:
+workflow mirror semantic drift count:
+workflow mirror order drift count:
 All structured-data consistency checks passed.
 ```
 
