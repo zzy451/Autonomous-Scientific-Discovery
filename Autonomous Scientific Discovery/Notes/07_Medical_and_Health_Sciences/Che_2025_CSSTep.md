@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：Chemical Engineering Science
 - DOI / arXiv / URL：https://doi.org/10.1016/j.ces.2025.122048；ScienceDirect / Linkinghub 记录（PII `S0009250925008711`）；Elsevier XML coredata `https://api.elsevier.com/content/article/PII:S0009250925008711?httpAccept=text/xml`；HKUST research portal 摘要页 `https://researchportal.hkust.edu.hk/en/publications/csstep-step-by-step-exploration-of-the-chemical-space-of-drug-mol/`
-- PDF / 本地文件路径：未归档本地 PDF；本 note 基于当前可访问的一手 DOI / publisher metadata / institutional abstract 证据整理。
+- PDF / 本地文件路径：未归档本地 PDF；本 note 基于当前可访问的一手 DOI / publisher indexed abstract pages / Elsevier XML coredata / institutional abstract 证据整理；未取得可直接读取的 ScienceDirect 全文或本地 PDF。
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：Round-5 harmonization keeps only the stable core `scientific_object_modules=03` with `source_limited=yes`；旧 `07` 表述只保留为 future source-limited lead，不再是当前已落地模块
 - 阅读日期：2026-06-22
@@ -20,22 +20,28 @@
 - The previously discussed `07` COVID-related drug-design coverage is now treated as a future source-limited lead rather than a current landed module.
 - If older body text below still reads like a stable `03;07` landed state, treat that as legacy wording superseded by this harmonization note.
 
+## 2026-07-03 R7 note refresh
+
+- R7 follow-up confirms a stronger first-hand source chain: DOI landing + ScienceDirect indexed abstract/full-text pages + Elsevier XML coredata + HKUST portal abstract.
+- This strengthens the current landed `03` reading, but does **not** newly land `07`.
+- COVID-related target-linked validation remains only a future source-limited full-text follow-up lead.
+
 ## Evidence Log
 
-Round-5 harmonization note: preserve authoritative `03`; keep `source_limited=yes`; treat the current evidence state as `access_limited` because the note still relies on DOI landing, publisher metadata, Elsevier XML, and institutional abstract rather than a local full text.
+Round-5 harmonization note: preserve authoritative `03`; keep `source_limited=yes`. R7 follow-up strengthens the source chain to DOI landing + ScienceDirect indexed abstract pages + Elsevier XML + HKUST institutional abstract, but direct ScienceDirect HTML/PDF access is still blocked in the current environment.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 标题；DOI landing；Elsevier XML / HKUST 摘要 | 论文明确提出 multi-agent、multi-stage reinforcement learning 框架，用于面向科研目标的分步 chemical-space exploration。 | 高 |
-| 科学对象归类 | `03` 稳定成立；`07` 仅保留为 future source-limited lead | 标题；DOI landing；Elsevier XML / HKUST 摘要 | 标题与摘要直接锚定 `drug molecules`、`chemical space`、`multi-objective molecular optimization`，稳定支持 `03`；COVID-19-related target-linked validation cases 保留为后续全文复核方向，但当前不再作为已落地 `07` 模块 | 中高 |
+| 科学对象归类 | `03` 稳定成立；`07` 仅保留为 future source-limited lead | 标题；DOI landing；ScienceDirect indexed abstract pages；Elsevier XML / HKUST 摘要 | 标题与摘要直接锚定 `drug molecules`、`chemical space`、`multi-objective molecular optimization`，稳定支持 `03`；COVID-19-related target-linked validation cases 保留为后续全文复核方向，但当前不再作为已落地 `07` 模块 | 中高 |
 | `03` 模块证据 | 稳定成立 | 标题；摘要 | 研究对象是 drug molecules 及其 chemical space exploration / optimization，本体首先是分子与化学空间。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 标题；摘要 | 论文将 chemical-space exploration 组织为 multi-agent、multi-stage RL 流程，并带有 step-by-step exploration 与多目标优化过程。 | 中高 |
-| 实验验证 | 仿真级验证成立 | 摘要；institutional abstract | 可访问摘要明确提到 visualization of multi-objective molecular optimization，并在两组 COVID-19-related drug-design cases 上做 molecular-dynamics simulation validation。 | 中 |
+| 实验验证 | 仿真级验证成立 | 摘要；institutional abstract | 可访问摘要明确提到 visualization of multi-objective molecular optimization，并给出 disease-linked molecular-dynamics simulation validation 线索；这些线索当前只作为 source-limited follow-up，而不作为已落地 `07` 模块证据。 | 中 |
 | 访问限制 | 非安全性访问受限 | 当前环境访问情况 | 可访问 DOI landing、publisher metadata、Elsevier XML 与 HKUST abstract page，但未获得本地 PDF 或可直接读取的 ScienceDirect 全文，因此本轮必须保留 `source_limited=yes`。 | 高 |
 
 ## 0. 摘要翻译
 
-从当前可访问的一手摘要级证据看，CSSTep 提出的是一个面向药物分子化学空间逐步探索的多 Agent、多阶段强化学习框架。系统并不只是输出单次分子生成结果，而是把分步探索、候选优化和多目标权衡组织成连续工作流，并对分子优化过程进行可视化。当前 authoritative 收口只稳定支持 `03`：与 COVID-19 相关靶点相联系的药物设计验证线索暂只保留为 future source-limited lead，而不是当前已落地 `07`。
+从当前可访问的一手摘要级证据看，CSSTep 提出的是一个面向药物分子化学空间逐步探索的多 Agent、多阶段强化学习框架。系统并不只是输出单次分子生成结果，而是把分步探索、候选优化和多目标权衡组织成连续工作流，并对分子优化过程进行可视化。当前 authoritative 收口只稳定支持 `03`；与疾病相关的 target-linked validation 线索暂只保留为 future source-limited lead，而不是当前已落地 `07`。
 
 ## 1. 是否纳入本综述
 
@@ -94,7 +100,7 @@ Round-5 harmonization note: preserve authoritative `03`; keep `source_limited=ye
 - 可能误归类到：只归 `07`；或因为系统方法感较强而误退回 `01.04`；继续保留旧 `03;07` landed 表述
 - 最终判定：`03`
 - 判定理由：`03` 由分子与 chemical-space 对象直接锚定，是稳定底盘；旧 `07` 来自 COVID-19-related target-linked drug-design validation cases，但 Round-5 harmonization 将其回撤为 future source-limited lead，而不是当前已落地模块。
-- 多模块覆盖说明：旧 `03;07` 讨论并非完全作废，而是改为 follow-up lead。若后续获得更强的全文级一手证据，可再重新评估是否恢复 `07`。
+- 多模块覆盖说明：旧 `03;07` 讨论已收口为 follow-up lead。若后续获得更强的全文级一手证据，可再重新评估是否足以支持 `07`。
 - `01.04` 判定说明：不进入 `01.04`，因为论文已经包含具体 drug-molecule chemical-space evidence。
 - 是否需要二次复核：需要；后续若拿到全文或 PDF，应进一步核实 `07` 的具体对象粒度、实验细节和验证强度。
 
@@ -159,7 +165,7 @@ Round-5 harmonization note: preserve authoritative `03`; keep `source_limited=ye
 3. 工具、数据库、模型或实验平台调用：通过 RL / 评价机制推进候选生成与筛选；当前可访问证据未给出完整工具清单。
 4. 中间结果反馈：根据多目标优化结果持续调整候选探索方向。
 5. 决策或迭代：保留更优分子候选并推进下一阶段探索。
-6. 输出：更优的药物分子候选与分子优化结果可视化；COVID-related target-linked validation 在当前 note 中仅保留为 future source-limited follow-up lead。
+6. 输出：更优的药物分子候选与分子优化结果可视化；disease-linked validation 线索在当前 note 中仅保留为 future source-limited follow-up lead。
 
 ### 4.3 系统组件
 
