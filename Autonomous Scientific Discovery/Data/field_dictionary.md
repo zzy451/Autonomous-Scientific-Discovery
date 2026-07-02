@@ -47,6 +47,61 @@
 
 analysis 层用于脚本消费、人工 spot check、统计和 SQL 查询；它不是新的事实口径。
 
+### 2.4 Phase 3A authoritative freeze clarifications
+
+为避免长上下文协作中再次出现字段 ownership 与语义漂移，当前冻结以下解释:
+
+- `agent_master_paper_list.md` 负责:
+  - `paper_id`
+  - 论文元信息主记录
+  - `inclusion_status`
+  - legacy filing fields
+  - remarks 中承载的 canonical classification overlay
+- `note_path` 在治理上仍由 master 主 ownership，但当前导出解析规则是:
+  - `progress.note_path or master.Note path`
+- canonical structured classification 从 master remarks 解析得到:
+  - `scientific_object_modules`
+  - `general_method_bucket`
+  - `object_coverage_mode`
+  - `primary_module_for_filing`
+- 当前 canonical 导出优先级是:
+  - remarks 结构化 token
+  - unresolved legacy `01 / 01.04` -> 独立 general bucket
+  - legacy `Main class` formal fallback
+- `multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md` 负责:
+  - `pdf_status`
+  - `evidence_status`
+  - `note_status`
+  - `master_status`
+  - `final_modules_or_bucket`
+  - `source_limited`
+  - `batch`
+  - `closed`
+- `pdf_path` 在治理上仍由 progress 主 ownership，但当前导出解析规则是:
+  - `progress.pdf_path or master.PDF path`
+- `final_modules_or_bucket` 只是 workflow mirror，不是 canonical classification fact。它可以用于审计 canonical-vs-mirror 一致性，但默认统计不应以它取代 `scientific_object_modules + general_method_bucket`。
+- `final_modules_or_bucket` 当前镜像语法是:
+  - 分号分隔列表
+  - formal `01-11` + 可选 `01.04`
+  - 保留顺序，用于 `order_drift` 审计
+- `pdf_path` 只是 authoritative pair 中声明的路径字段，不自动等于“本地真 PDF 已验证存在”。本地 PDF 真值必须结合导出后的 `pdf_exists` / `pdf_manifest.json` / 实际文件可读性判断。
+- `source_limited` 当前冻结为三态解释:
+  - `yes`: 当前 record 仍受来源或全文可得性限制
+  - `no`: 当前 record 没有 source-limited 限制
+  - 空字符串: 仅表示该 record 当前没有进入 progress 驱动工作流，不应对 active confirmed-core 统计作积极解释
+- `object_coverage_mode` 当前只允许:
+  - `single_module`
+  - `multi_module`
+  - `general_method_without_concrete_object_experiments`
+- `general_method_bucket` 当前只允许:
+  - `none`
+  - `01.04_general_asd_methods_without_concrete_object_experiments`
+- 结构化输入若写 bare `01.04`，导出会归一化为上述 canonical 长字面值
+- `scientific_object_modules` 只允许 formal `01-11`，不得出现 `01.04`。
+- `primary_module_for_filing` 只是 filing / display convenience；它可以与 legacy main class 对齐，但不能压扁多模块 canonical classification。
+- `evidence_status` 是一手来源层级的描述性 provenance 字段，不是“证据强度分数”；当前冻结为 workflow label 字段，而非正式闭集枚举。
+- `pdf_status` 是 PDF 可得性 /归档工作流字段，不是单独的本地文件真值字段；当前冻结为 workflow label 字段，而非正式闭集枚举。
+
 ## 3. Registry 文件与关键字段
 
 ### 3.1 `registry/paper_registry.jsonl`

@@ -9,12 +9,21 @@ Only two files are allowed to originate structured facts:
 - `Paper_Lists/agent_master_paper_list.md`
 - `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 
-Field ownership is intentionally split:
+Field ownership is intentionally split, but the current export layer still carries a small amount of compatibility fallback while row-level schema migration remains incomplete:
 
-- `agent_master_paper_list.md` owns paper identity, inclusion status, legacy class fields, note path, and the project-facing classification record.
-- The progress tracker owns PDF/evidence workflow fields such as `pdf_status`, `pdf_path`, `evidence_status`, `note_status`, `master_status`, `final_modules_or_bucket`, `source_limited`, `batch`, and `closed`.
+- `agent_master_paper_list.md` owns paper identity, inclusion status, legacy class fields, and the canonical classification overlay carried in `Remarks`.
+- `note_path` is master-owned in governance terms, but the exporter currently resolves it as `progress.note_path or master.Note path`.
+- The progress tracker owns PDF/evidence workflow fields such as `pdf_status`, `evidence_status`, `note_status`, `master_status`, `final_modules_or_bucket`, `source_limited`, `batch`, and `closed`.
+- `pdf_path` is progress-owned in governance terms, but the exporter currently resolves it as `progress.pdf_path or master.PDF path`.
 
-`final_modules_or_bucket` should be treated as a workflow mirror from the reaudit process, not as the canonical classification fact source. Canonical structured classification remains derived from the master list plus the current project parsing rules around `scientific_object_modules`, `general_method_bucket`, and `primary_module_for_filing`.
+`final_modules_or_bucket` should be treated as a workflow mirror from the reaudit process, not as the canonical classification fact source. It is parsed as a semicolon-delimited mirror list whose order is preserved for drift auditing.
+
+Canonical structured classification remains derived from the master list plus the current project parsing rules around `scientific_object_modules`, `general_method_bucket`, `object_coverage_mode`, and `primary_module_for_filing`. In current script behavior, `Remarks` structured tokens take priority, unresolved legacy `01 / 01.04` rows are normalized into the separate `01.04` general bucket, and only then does legacy `Main class` serve as a fallback for formal-module export.
+
+Formal Phase 3 governance artifacts:
+
+- semantics freeze: `Coverage_Check/structured_data_authoritative_semantics_freeze_2026-07-02.md`
+- baseline acceptance checklist: `Coverage_Check/structured_data_authoritative_acceptance_checklist_447_2026-07-02.md`
 
 Everything under `Data/` is derived. `Notes/`, `Reference_PDF/`, and `Coverage_Check/` reports are supporting evidence layers, not independent sources of truth for structured counts.
 
@@ -207,5 +216,6 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" summary
 - `scientific_object_modules` is an array and may contain multiple formal `01-11` modules.
 - `01.04` belongs in `general_method_bucket`, not inside `scientific_object_modules`.
 - `primary_module_for_filing` is a filing convenience, not the complete classification fact.
+- `final_modules_or_bucket` is a workflow mirror, not the canonical classification source.
 - PDF truth follows the progress file plus real local file existence.
 - A passing `check_data_consistency.py` run is the minimum bar before committing structured-data changes.

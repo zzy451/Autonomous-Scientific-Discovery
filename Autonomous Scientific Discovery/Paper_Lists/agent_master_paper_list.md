@@ -58,7 +58,7 @@ Expanded-counting note: the module table below was recomputed on `2026-07-02` fr
 | 04 | 117 |
 | 05 | 37 |
 | 06 | 78 |
-| 07 | 80 |
+| 07 | 78 |
 | 08 | 4 |
 | 09 | 40 |
 | 10 | 25 |
@@ -67,8 +67,8 @@ Expanded-counting note: the module table below was recomputed on `2026-07-02` fr
 | Relaxed-counting metric | Count |
 |---|---:|
 | Record-level confirmed included-and-classified count | 447 |
-| Expanded module assignment count | 577 |
-| Independent `01.04` general-method bucket count, after accepted relaxed migrations | 10 |
+| Expanded module assignment count | 575 |
+| Independent `01.04` general-method bucket count, after accepted relaxed migrations | 9 |
 
 ### Inclusion Status Distribution
 
