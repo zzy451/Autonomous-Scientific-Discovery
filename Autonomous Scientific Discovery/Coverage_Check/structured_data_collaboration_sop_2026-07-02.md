@@ -22,6 +22,10 @@
 - 不要把 `pdf_path` 非空或 “看过全文” 当成本地真 PDF 证据
 - 不要让子 Agent 改 master / progress / report
 
+独立红线文件清单见：
+
+- `Coverage_Check/structured_data_red_line_files_2026-07-03.md`
+
 ## 2. 先判断你在改哪一层
 
 ### 2.1 master 层

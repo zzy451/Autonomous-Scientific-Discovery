@@ -141,6 +141,18 @@ assignment count 统计的是 canonical 分类展开后的 assignment 总数。
 - 做正式分类统计时，应优先走 SQLite 的 `canonical_*` 视图
 - 若必须使用 `paper_modules.csv`，必须先按 `assignment_scope` 过滤
 
+同样的固定警告也适用于 SQLite 中的 compatibility mixed-scope 对象：
+
+- `paper_modules`
+- `module_assignment_counts`
+
+它们保留是为了 inspection / compatibility，不是为了默认 canonical-only 聚合。
+若做正式统计，应优先走：
+
+- `canonical_paper_modules`
+- `canonical_module_assignment_counts`
+- `canonical_analysis_baseline`
+
 ## 7. 本轮固定结论
 
 本轮之后，项目里的默认分析解释应收口为：

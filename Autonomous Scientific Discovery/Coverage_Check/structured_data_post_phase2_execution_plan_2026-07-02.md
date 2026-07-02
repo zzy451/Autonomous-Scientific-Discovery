@@ -97,8 +97,8 @@
 
 ### 当前状态
 
-- 状态：`进行中`
-- 本轮动作：补齐 ownership matrix、fallback 规则、exact literal spec、mirror 语法说明
+- 状态：`已完成`
+- 完成标记：authoritative semantics freeze、field dictionary、Data README 已形成统一字段 ownership / fallback / literal / mirror 口径
 
 ## 3.2 `Phase 3B` authoritative baseline 验收
 
@@ -130,8 +130,8 @@
 
 ### 当前状态
 
-- 状态：`进行中`
-- 本轮动作：把 baseline 证据、spot-check 样本和 caveat 写进 checklist
+- 状态：`已完成`
+- 完成标记：acceptance checklist 已收口到当前 accepted baseline，并能被 `export -> check -> build` + `query summary / analysis-baseline` 复核
 
 ## 3.3 `Phase 4` canonical-only 分析口径固化
 
@@ -160,11 +160,17 @@
 
 - `query_analysis_db.py` 的 canonical-only 说明与固定输出口径
 - `Data/README.md` 中的分析使用规范
+- `Coverage_Check/structured_data_canonical_analysis_semantics_2026-07-02.md`
 
 ### 验收标准
 
 - 相同问题不会因为读取 JSONL、CSV 或 SQLite 而得出不同语义的答案
 - `01.04`、`11.07`、multi-module 在统计展示中都可解释、可复核
+
+### 当前状态
+
+- 状态：`已完成`
+- 完成标记：canonical-only 默认 CLI、独立 `01.04` bucket、record-vs-assignment baseline、mixed-scope 警告、mirror-audit 命令已收口
 
 ## 3.4 `Phase 5` 协作 SOP 与 baseline 更新纪律固化
 
@@ -189,6 +195,11 @@
 
 - 协作者能独立判断“新增、改类、补 PDF、改 note path”第一落点在哪一层
 - CI 能阻断 authoritative pair 已改但派生层未重建的提交
+
+### 当前状态
+
+- 状态：`已完成`
+- 完成标记：协作者 SOP、baseline update rules、PR 模板、CI guard、CODEOWNERS 路由与红线文件清单已形成闭环
 
 ## 3.5 `Phase 6` 面向综述生产的并行增强
 
@@ -246,11 +257,11 @@
 
 ## 6. 这份总方案之后的直接动作
 
-1. 完成 `Phase 3A` 文档收口，把 ownership、fallback、literal、mirror 语法写严。
-2. 完成 `Phase 3B` baseline checklist，把 `447 / 422 / 25 / 9 / drift 0` 写成正式验收记录。
-3. 跑 `export -> check -> build` 验证当前收口文档没有引入口径漂移。
-4. 提交本轮变更，作为 Phase 3AB-R1 的正式落地。
-5. 下一轮进入 `Phase 4`，固化 canonical-only 查询与统计语义。
+1. `Phase 3A` 已完成。
+2. `Phase 3B` 已完成。
+3. `Phase 4` 已完成。
+4. `Phase 5` 已完成。
+5. 下一轮进入 `Phase 6`，在既定 canonical-only / SOP / baseline discipline 上继续推进并行生产队列。
 
 ## 7. Definition of Done
 

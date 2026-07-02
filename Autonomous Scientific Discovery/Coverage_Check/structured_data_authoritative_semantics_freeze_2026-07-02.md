@@ -25,6 +25,11 @@
 - workflow mirror semantic drift: `0`
 - workflow mirror order drift: `0`
 
+说明：
+
+- 上面这组数字是本文件冻结字段语义时对应的历史时点，不是后续 live baseline 的唯一维护入口。
+- 当前 live accepted baseline 应以 `structured_data_authoritative_acceptance_checklist_447_2026-07-02.md` 或其后继 dated acceptance checklist 为准。
+
 ## 3. Authoritative pair
 
 当前结构化事实层只有两份文件：

@@ -64,6 +64,12 @@ jobs:
               "Autonomous Scientific Discovery/Data/missing_pdf_manifest.json",
               "Autonomous Scientific Discovery/Data/note_manifest.json",
               "Autonomous Scientific Discovery/Data/taxonomy_index.json",
+              "Autonomous Scientific Discovery/Data/registry/paper_registry.jsonl",
+              "Autonomous Scientific Discovery/Data/registry/paper_identifier_aliases.jsonl",
+              "Autonomous Scientific Discovery/Data/registry/taxonomy_registry.json",
+              "Autonomous Scientific Discovery/Data/registry/classification_assignments.jsonl",
+              "Autonomous Scientific Discovery/Data/registry/pdf_archive_registry.jsonl",
+              "Autonomous Scientific Discovery/Data/registry/asset_manifest.jsonl",
           }
 
           authoritative_changed = bool(changed_files & authoritative_files)

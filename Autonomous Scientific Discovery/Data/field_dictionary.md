@@ -49,6 +49,19 @@
 
 analysis 层用于脚本消费、人工 spot check、统计和 SQL 查询；它不是新的事实口径。
 
+在 SQLite 中，当前还保留两类 compatibility mixed-scope 对象：
+
+- `paper_modules`
+- `module_assignment_counts`
+
+它们同时包含 canonical 与 workflow mirror assignment 信息，默认只应用于 inspection / compatibility，而不是 canonical-only 统计。正式统计优先使用：
+
+- `canonical_paper_modules`
+- `workflow_mirror_paper_modules`
+- `canonical_module_assignment_counts`
+- `workflow_mirror_module_assignment_counts`
+- `analysis_object_scope_registry`
+
 ### 2.4 Phase 3A authoritative freeze clarifications
 
 为避免长上下文协作中再次出现字段 ownership 与语义漂移，当前冻结以下解释:

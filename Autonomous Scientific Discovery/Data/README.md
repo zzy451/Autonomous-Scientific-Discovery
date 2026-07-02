@@ -33,16 +33,24 @@ Formal Phase 5 collaboration artifacts:
 
 - collaboration SOP: `Coverage_Check/structured_data_collaboration_sop_2026-07-02.md`
 - baseline update rules: `Coverage_Check/structured_data_baseline_update_rules_2026-07-02.md`
+- red-line file list: `Coverage_Check/structured_data_red_line_files_2026-07-03.md`
+
+Live accepted baseline note:
+
+- current accepted counts and accepted active-ID baseline should be read from `Coverage_Check/structured_data_authoritative_acceptance_checklist_447_2026-07-02.md`
+- `structured_data_authoritative_semantics_freeze_2026-07-02.md` freezes field semantics and ownership, but it is not the live baseline-number source
 
 Everything under `Data/` is derived. `Notes/`, `Reference_PDF/`, and `Coverage_Check/` reports are supporting evidence layers, not independent sources of truth for structured counts.
 
 If the structured outputs disagree with master/progress, fix master/progress first and then regenerate. Do not hand-edit `Data/*.json`, `Data/*.jsonl`, `Data/*.csv`, or `Data/*.sqlite` as a substitute for repairing the authoritative records.
 
-## Three-layer model
+## Responsibility map
 
 Treat the structured stack as:
 
 - fact layer: `Paper_Lists/agent_master_paper_list.md` + `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- canonical classification lane: `scientific_object_modules` + `general_method_bucket`
+- workflow mirror lane: `final_modules_or_bucket` + progress workflow statuses
 - normalized registry layer: `Data/registry/`
 - analysis layer: `papers.jsonl`, manifests, CSV, SQLite
 - support/evidence: notes, local PDFs, audit reports
@@ -117,6 +125,8 @@ Use `paper_modules.csv` only when:
 - you explicitly need both canonical and workflow-mirror assignment scopes in one flat export
 - you are prepared to filter by `assignment_scope` before aggregating
 
+The same warning applies to SQLite `paper_modules` and `module_assignment_counts`: they are compatibility mixed-scope objects, not the default canonical aggregation surface.
+
 Use `papers.sqlite` when:
 
 - you need stable joins across papers, module assignments, manifests, and metadata
@@ -129,8 +139,17 @@ Inside SQLite, prefer the explicit scope-separated views for classification work
 - `workflow_mirror_paper_modules`
 - `canonical_module_assignment_counts`
 - `workflow_mirror_module_assignment_counts`
+- `analysis_object_scope_registry`
 - `classification_boundary_analysis`
 - `classification_boundary_summary`
+
+Compatibility mixed-scope SQL objects still exist, but they are inspection-only by default:
+
+- `paper_modules`
+- `module_assignment_counts`
+- alias warnings: `mixed_scope_paper_modules`, `mixed_scope_module_assignment_counts`
+
+Do not use those mixed-scope objects for canonical statistics unless you are explicitly filtering by `assignment_scope`.
 
 Rule of thumb:
 

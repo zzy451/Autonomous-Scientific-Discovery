@@ -106,6 +106,13 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
         PRAGMA foreign_keys = ON;
         CREATE TABLE metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
         CREATE TABLE taxonomy_index (code TEXT PRIMARY KEY, label TEXT NOT NULL, kind TEXT NOT NULL);
+        CREATE TABLE analysis_object_scope_registry (
+            object_name TEXT PRIMARY KEY,
+            object_type TEXT NOT NULL,
+            scope_class TEXT NOT NULL,
+            default_usage TEXT NOT NULL,
+            warning TEXT NOT NULL
+        );
         CREATE TABLE papers (
             paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, authors TEXT, year TEXT, source TEXT, doi_or_url TEXT, doi TEXT, url TEXT, arxiv_id TEXT,
             pdf_path TEXT, pdf_exists INTEGER NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, is_agent TEXT, inclusion_status TEXT, exclusion_reason TEXT,
@@ -126,6 +133,8 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
         SELECT * FROM paper_modules WHERE assignment_scope = 'scientific_object_modules';
         CREATE VIEW workflow_mirror_paper_modules AS
         SELECT * FROM paper_modules WHERE assignment_scope = 'final_modules_or_bucket';
+        CREATE VIEW mixed_scope_paper_modules AS
+        SELECT * FROM paper_modules;
         CREATE VIEW module_assignment_counts AS
         SELECT
             assignment_scope,
@@ -135,6 +144,8 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
         FROM paper_modules pm
         JOIN papers p ON p.paper_id = pm.paper_id
         GROUP BY assignment_scope, module_code;
+        CREATE VIEW mixed_scope_module_assignment_counts AS
+        SELECT * FROM module_assignment_counts;
         CREATE VIEW canonical_module_assignment_counts AS
         SELECT
             module_code,
@@ -474,6 +485,116 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
             ('active_local_pdf_count', str(len(active_local))),
             ('active_no_local_pdf_count', str(len(active_missing))),
         ])
+        conn.executemany(
+            'INSERT INTO analysis_object_scope_registry(object_name, object_type, scope_class, default_usage, warning) VALUES(?, ?, ?, ?, ?)',
+            [
+                (
+                    'papers',
+                    'table',
+                    'mixed_with_workflow_fields',
+                    'record inspection only',
+                    'Contains canonical classification fields plus workflow mirror/status columns; do not treat final_modules_or_bucket as canonical classification.',
+                ),
+                (
+                    'paper_modules',
+                    'table',
+                    'mixed_scope',
+                    'compatibility inspection only',
+                    'Contains both canonical scientific_object_modules and workflow final_modules_or_bucket rows; filter assignment_scope before aggregation.',
+                ),
+                (
+                    'mixed_scope_paper_modules',
+                    'view',
+                    'mixed_scope',
+                    'compatibility inspection only',
+                    'Alias view naming the mixed-scope nature explicitly; prefer canonical_paper_modules or workflow_mirror_paper_modules for analysis.',
+                ),
+                (
+                    'canonical_paper_modules',
+                    'view',
+                    'canonical_only',
+                    'default formal-module analysis',
+                    'Canonical-only formal 01-11 assignments for default statistics.',
+                ),
+                (
+                    'workflow_mirror_paper_modules',
+                    'view',
+                    'workflow_mirror_only',
+                    'audit only',
+                    'Workflow mirror assignments for audit/debugging only, not default statistics.',
+                ),
+                (
+                    'module_assignment_counts',
+                    'view',
+                    'mixed_scope',
+                    'compatibility inspection only',
+                    'Mixed-scope counts across canonical and workflow mirror assignments; not a default canonical summary.',
+                ),
+                (
+                    'mixed_scope_module_assignment_counts',
+                    'view',
+                    'mixed_scope',
+                    'compatibility inspection only',
+                    'Alias view naming the mixed-scope nature explicitly; prefer canonical_module_assignment_counts or workflow_mirror_module_assignment_counts.',
+                ),
+                (
+                    'canonical_module_assignment_counts',
+                    'view',
+                    'canonical_only',
+                    'default formal-module analysis',
+                    'Canonical-only formal-module assignment counts for default statistics.',
+                ),
+                (
+                    'workflow_mirror_module_assignment_counts',
+                    'view',
+                    'workflow_mirror_only',
+                    'audit only',
+                    'Workflow mirror assignment counts for audit/debugging only.',
+                ),
+                (
+                    'canonical_analysis_baseline',
+                    'view',
+                    'canonical_only',
+                    'default baseline glossary',
+                    'Use together with summary before writing module statistics.',
+                ),
+                (
+                    'classification_boundary_analysis',
+                    'view',
+                    'audit_only',
+                    'drift inspection only',
+                    'Canonical-vs-mirror inspection view; not a default classification summary.',
+                ),
+                (
+                    'classification_boundary_summary',
+                    'view',
+                    'audit_only',
+                    'drift inspection only',
+                    'Boundary/drift summary; not a default classification count.',
+                ),
+                (
+                    'canonical_bucket_0104_summary',
+                    'view',
+                    'canonical_only',
+                    'default 01.04 bucket analysis',
+                    'Separate canonical 01.04 bucket summary; do not merge into formal 01-11 counts.',
+                ),
+                (
+                    'coverage_status_analysis',
+                    'view',
+                    'workflow_status',
+                    'coverage follow-up analysis',
+                    'Coverage/progress analysis, not canonical classification counting.',
+                ),
+                (
+                    'coverage_status_summary',
+                    'view',
+                    'workflow_status',
+                    'coverage follow-up analysis',
+                    'Coverage/progress summary, not canonical classification counting.',
+                ),
+            ],
+        )
         conn.executemany('INSERT INTO taxonomy_index(code, label, kind) VALUES(?, ?, ?)', [
             (code, label, 'formal_module' if code in FORMAL_MODULES else 'general_bucket')
             for code, label in taxonomy['code_to_label'].items()

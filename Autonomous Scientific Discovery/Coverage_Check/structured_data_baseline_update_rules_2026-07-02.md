@@ -24,6 +24,14 @@
 - 不影响 accepted baseline 的 query / README 表述增强
 - 纯 mirror 顺序修正，且 accepted drift baseline 不变
 
+当前 live accepted baseline 以：
+
+- `Coverage_Check/structured_data_authoritative_acceptance_checklist_447_2026-07-02.md`
+
+或其后继 dated acceptance checklist 为准。
+
+`structured_data_authoritative_semantics_freeze_2026-07-02.md` 负责冻结字段语义和 ownership，不负责维护 live baseline 数字。
+
 ## 2. 批准权与写入权
 
 - baseline 更新必须由 Main Controller 收口
