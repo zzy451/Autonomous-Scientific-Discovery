@@ -59,8 +59,14 @@ def main() -> None:
     module_rows = load_tsv(MODULE_POOL_PATH)
     representative_rows = load_tsv(REPRESENTATIVE_POOL_PATH)
     base_followup_fields = list(followup_rows[0].keys())
+    total_followup_candidates = len(followup_rows)
 
     top30 = followup_rows[:30]
+    top30_no_local_pdf = sum(1 for row in top30 if "no_local_pdf" in row["followup_reasons"])
+    top30_source_limited = sum(1 for row in top30 if row["source_limited"] == "yes")
+    top30_non_full_text = sum(
+        1 for row in top30 if "non_full_text_evidence_status" in row["followup_reasons"]
+    )
     slices = {
         "A": top30[:10],
         "B": top30[10:20],
@@ -141,7 +147,7 @@ Round 1 uses the top `30` rows from:
 
 - `{FOLLOWUP_QUEUE_PATH.relative_to(ROOT)}`
 
-The queue is already priority-sorted. This round intentionally does **not** attempt to clear all `137` follow-up candidates at once.
+The queue is already priority-sorted. This round intentionally does **not** attempt to clear all `{total_followup_candidates}` follow-up candidates at once.
 
 ## Why only 30 papers
 
@@ -149,7 +155,11 @@ The queue is already priority-sorted. This round intentionally does **not** atte
    - no local PDF
    - `source_limited=yes`
    - non-full-text evidence
-2. The top 30 includes the full `26` no-local-PDF frontier plus the first `4` source-limited local-PDF records, which is enough to exercise a parallel evidence round without overloading merge review.
+2. The current top 30 includes:
+   - `{top30_no_local_pdf}` rows still carrying `no_local_pdf` pressure
+   - `{top30_source_limited}` rows still carrying `source_limited=yes`
+   - `{top30_non_full_text}` rows still carrying non-full-text evidence pressure
+   This is enough to exercise a parallel evidence round without overloading merge review.
 3. This keeps the next real multi-agent round aligned with the established `3 x 10` evidence-slice pattern.
 
 ## Slice allocation
