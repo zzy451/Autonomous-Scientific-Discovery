@@ -35,7 +35,7 @@ Round-5 harmonization note: preserve authoritative `03`; keep `source_limited=ye
 
 ## 0. 摘要翻译
 
-从当前可访问的一手摘要级证据看，CSSTep 提出的是一个面向药物分子化学空间逐步探索的多 Agent、多阶段强化学习框架。系统并不只是输出单次分子生成结果，而是把分步探索、候选优化和多目标权衡组织成连续工作流，并对分子优化过程进行可视化。论文还报告了与 COVID-19 相关靶点相联系的两组药物设计验证案例，并使用分子动力学模拟进行验证。按 Round-5 harmonization 的保守收口，当前稳定已落地模块保留为 `03`；与 COVID-19 相关靶点相联系的 `07` 线索保留为后续全文复核方向，而不是当前 authoritative landed state。
+从当前可访问的一手摘要级证据看，CSSTep 提出的是一个面向药物分子化学空间逐步探索的多 Agent、多阶段强化学习框架。系统并不只是输出单次分子生成结果，而是把分步探索、候选优化和多目标权衡组织成连续工作流，并对分子优化过程进行可视化。当前 authoritative 收口只稳定支持 `03`：与 COVID-19 相关靶点相联系的药物设计验证线索暂只保留为 future source-limited lead，而不是当前已落地 `07`。
 
 ## 1. 是否纳入本综述
 
@@ -159,7 +159,7 @@ Round-5 harmonization note: preserve authoritative `03`; keep `source_limited=ye
 3. 工具、数据库、模型或实验平台调用：通过 RL / 评价机制推进候选生成与筛选；当前可访问证据未给出完整工具清单。
 4. 中间结果反馈：根据多目标优化结果持续调整候选探索方向。
 5. 决策或迭代：保留更优分子候选并推进下一阶段探索。
-6. 输出：更优的药物分子候选，以及在 COVID-related target-linked cases 上的仿真验证结果。
+6. 输出：更优的药物分子候选与分子优化结果可视化；COVID-related target-linked validation 在当前 note 中仅保留为 future source-limited follow-up lead。
 
 ### 4.3 系统组件
 
@@ -186,10 +186,10 @@ Round-5 harmonization note: preserve authoritative `03`; keep `source_limited=ye
 
 ### 5.2 数据、任务与指标
 
-- 数据集 / 实验对象：drug molecules；chemical space of drug molecules；COVID-19-related targets 下的两组 drug-design validation cases
+- 数据集 / 实验对象：稳定可锚定的是 drug molecules 与 chemical space of drug molecules；COVID-19-related targets 下的两组 drug-design validation cases 当前仅保留为 follow-up lead
 - 任务设置：multi-agent、multi-stage 的分步 chemical-space exploration 与 multi-objective molecular optimization
 - 对比基线：当前可访问摘要级证据未给出
-- 关键结果：论文报告了分子优化过程可视化，并在两组与 COVID-19 相关靶点相联系的药物设计案例中使用分子动力学模拟做验证；但 Round-5 harmonization 仅把 `03` 视为当前稳定 landed module
+- 关键结果：论文报告了分子优化过程可视化，并给出分子动力学模拟级验证；当前 authoritative landed module 仅保留 `03`，与 COVID-19 相关的案例线索不作为当前已落地 `07`
 - 是否有消融实验：当前不可确认
 - 是否有失败案例或负结果：当前不可确认
 
@@ -205,8 +205,8 @@ Round-5 harmonization note: preserve authoritative `03`; keep `source_limited=ye
 
 - 与普通 AI for Science 方法的区别：本文不是单步分子生成模型，而是显式的 multi-agent、multi-stage 科研优化流程。
 - 与已有 Agent / 科研智能系统的区别：它把 chemical-space exploration 和多目标分子优化组织成连续、多阶段的 Agent 工作流。
-- 与同一科学领域其他 Agent 文献的关系：适合放在 `03` 化学主线中讨论，同时保留在 `03/07` 边界 follow-up 队列中。
-- 主要创新点：将药物分子 chemical-space exploration 组织为 step-by-step、多 Agent 强化学习流程，并给出疾病相关靶点场景下的仿真验证。
+- 与同一科学领域其他 Agent 文献的关系：当前应主要放在 `03` 化学主线中讨论；旧 `07` 压力仅保留在 `03/07` 边界 follow-up 队列中。
+- 主要创新点：将药物分子 chemical-space exploration 组织为 step-by-step、多 Agent 强化学习流程，并提供 source-limited 的疾病相关验证线索。
 
 ## 7. 局限性与风险
 
@@ -221,8 +221,8 @@ Round-5 access note: the current authoritative state keeps only `03`; any earlie
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：`03` 化学科学主章节；并在 `03/07` 边界 follow-up 队列中保留
-- 可支撑哪个论点：药物分子 chemical-space exploration 的 Agent 论文不应机械地只归 `07`；但 source-limited 疾病相关验证线索也不应自动当作当前 landed `07`
+- 可放入哪个章节：`03` 化学科学主章节；`07` 仅保留在 `03/07` 边界 follow-up 队列中
+- 可支撑哪个论点：药物分子 chemical-space exploration 的 Agent 论文不应机械地只归 `07`；source-limited 的疾病相关验证线索也不应自动写成当前 landed `07`
 - 可用于哪个表格或图：边界样本表；drug-discovery / molecular-design Agent 对照表；source-limited follow-up 说明表
 - 适合作为代表性案例吗：可以作为边界代表样本，但不宜作为高置信全文证据案例
 - 推荐引用强度：standard
@@ -235,15 +235,15 @@ Frozen round-5 note: keep `scientific_object_modules=03`, keep `primary_module_f
 
 ### 9.1 一句话概括
 
-一个面向药物分子化学空间逐步探索的多 Agent RL 系统；疾病相关药物设计验证线索暂不作为当前已落地 `07` 模块。
+一个面向药物分子化学空间逐步探索的多 Agent RL 系统；当前稳定已落地模块为 `03`，旧 `07` 仅保留为 future source-limited lead。
 
 ### 9.2 速记版 pipeline
 
 1. 输入药物分子设计目标。
 2. 用多 Agent、多阶段 RL 逐步探索 chemical space。
 3. 在多目标约束下优化候选分子。
-4. 选出候选并进行分子动力学仿真验证。
-5. 保留 COVID-related target-linked cases 作为后续全文复核线索。
+4. 输出更优候选并进行仿真级验证。
+5. 将 COVID-related target-linked evidence 仅保留为后续全文复核线索。
 
 ### 9.3 标注字段汇总
 
