@@ -676,7 +676,7 @@
 
 | ASD-0734 | Controlling an organic synthesis robot with machine learning to search for new reactivity | Notes/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf | first_hand_abstract_review_packet | updated | updated | 03 | no | Batch25Partial1 | yes |
 
-| ASD-0735 | Artificial Chemist: An Autonomous Quantum Dot Synthesis Bot | Notes/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.md | abstract_only_checked |  | source_limited_review_packet | updated_source_limited | updated_source_limited | 04 | yes | Batch25Partial1 | yes |
+| ASD-0735 | Artificial Chemist: An Autonomous Quantum Dot Synthesis Bot | Notes/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.md | archived_pdf | Reference_PDF/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR8 | yes |
 
 | ASD-0736 | AI-Researcher: Autonomous Scientific Innovation | Notes/01_Formal_Information_and_Computational_Sciences/Wang_2025_AI_Researcher.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Wang_2025_AI_Researcher.pdf | first_hand_abstract_review_packet | updated | updated | 01 | no | Batch25Partial1 | yes |
 

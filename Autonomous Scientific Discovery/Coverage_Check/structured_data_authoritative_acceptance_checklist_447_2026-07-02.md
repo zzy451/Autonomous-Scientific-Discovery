@@ -4,7 +4,7 @@
 范围：`Phase 3B` baseline acceptance
 基线对象：当前 active confirmed-core `447`
 
-本文档是 `Phase6FollowupR5` 之后的第一次正式 structured-data acceptance checklist。它不替代脚本，而是把“哪些证据证明当前快照已经足够正式可依赖”写成 controller 可重复执行的检查表。
+本文档是 `Phase6FollowupR5` 之后的第一次正式 structured-data acceptance checklist。`2026-07-03` 的 `Phase6FollowupR8` 又完成了 `ASD-0735` 的 bounded authoritative landing，因此本文档当前反映的是该 landing 之后的最新 accepted baseline。它不替代脚本，而是把“哪些证据证明当前快照已经足够正式可依赖”写成 controller 可重复执行的检查表。
 
 本次验收针对的是 authoritative baseline 是否成立，不等价于“legacy row-level schema migration 已完成”。
 
@@ -28,8 +28,8 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" boundary-c
 当前可正式接受的 baseline 是：
 
 - active confirmed-core: `447`
-- active local PDF: `421`
-- active no-local-PDF: `26`
+- active local PDF: `422`
+- active no-local-PDF: `25`
 - canonical active `01.04` bucket: `9`
 - workflow mirror semantic drift: `0`
 - workflow mirror order drift: `0`
@@ -46,9 +46,9 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" boundary-c
 | authoritative pair 可正常导出 | `export_structured_data.py` 成功执行 | PASS | registry 与 analysis 层已从 master/progress 重建 |
 | strict consistency 可通过 | `check_data_consistency.py` 输出 `All structured-data consistency checks passed.` | PASS | 当前未发现结构一致性错误 |
 | active confirmed-core = `447` | `check_data_consistency.py`; `query_analysis_db.py summary` | PASS | 与项目当前 confirmed-core 基线一致 |
-| active local PDF = `421` | `check_data_consistency.py`; `query_analysis_db.py summary` | PASS | 以真实本地可读 PDF 为准，而不是只看 `pdf_path` |
-| active no-local-PDF = `26` | `check_data_consistency.py`; `query_analysis_db.py summary`; `missing_pdf_manifest.json` | PASS | 当前 26 篇仍无本地真 PDF |
-| 26 篇无本地 PDF 但可索引 | `missing_pdf_manifest.json` | PASS | `26/26` 均有 DOI，无“条目找不到”问题 |
+| active local PDF = `422` | `check_data_consistency.py`; `query_analysis_db.py summary` | PASS | 以真实本地可读 PDF 为准，而不是只看 `pdf_path` |
+| active no-local-PDF = `25` | `check_data_consistency.py`; `query_analysis_db.py summary`; `missing_pdf_manifest.json` | PASS | 当前 25 篇仍无本地真 PDF |
+| 25 篇无本地 PDF 但可索引 | `missing_pdf_manifest.json` | PASS | `25/25` 均有 DOI，无“条目找不到”问题 |
 | `01.04` 与 formal `01-11` 分离 | `papers.jsonl`; `taxonomy_registry.json`; `bucket-0104-summary` | PASS | active confirmed-core 中 canonical `01.04` bucket 当前为 `9`；`scientific_object_modules` 中 `01.04` leak 数量为 `0` |
 | canonical 与 mirror 默认区分成立 | `README.md`; `field_dictionary.md`; SQLite canonical views | PASS | 默认查询说明已明确 canonical-only；mirror 只用于 audit |
 | workflow mirror semantic drift = `0` | `check_data_consistency.py` | PASS | 当前没有 canonical-vs-final 的语义漂移 |
@@ -65,12 +65,12 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" boundary-c
 
 - `papers_record_count = 871`
 - `active_confirmed_core_count = 447`
-- `active_local_pdf_count = 421`
-- `active_no_local_pdf_count = 26`
+- `active_local_pdf_count = 422`
+- `active_no_local_pdf_count = 25`
 
 ### 4.2 Missing-PDF baseline
 
-`missing_pdf_manifest.json` 当前有 `26` 行，且 `26/26` 都有 DOI。
+`missing_pdf_manifest.json` 当前有 `25` 行，且 `25/25` 都有 DOI。
 
 这意味着当前缺的是“本地真 PDF”，不是“文献条目不可索引”。
 
@@ -174,12 +174,12 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" boundary-c
 - `doi = 10.1021/jacs.4c17738`
 - `missing_pdf_manifest.json` 中存在对应记录
 
-该样本证明：当前 `26` 篇 no-local-PDF 记录缺的是“本地真 PDF”，不是“文献条目不可索引”；因此 accepted baseline 中的 no-local-PDF 集是可追踪、可解释、且仍属于有效 confirmed-core 的。
+该样本证明：当前 `25` 篇 no-local-PDF 记录缺的是“本地真 PDF”，不是“文献条目不可索引”；因此 accepted baseline 中的 no-local-PDF 集是可追踪、可解释、且仍属于有效 confirmed-core 的。
 
 ## 5. 本轮特别备注
 
 1. 当前 machine-verified `01.04` active confirmed-core count 是 `9`，因此验收应以当前脚本快照为准，不应继续引用旧的人工作业摘要数字。
-2. 当前 baseline 已足以支撑 `447 / 421 / 26 / 9 / drift 0` 的正式 acceptance。
+2. 当前 baseline 已足以支撑 `447 / 422 / 25 / 9 / drift 0` 的正式 acceptance。
 3. 这次验收通过不意味着后续不再补全文；它只表示当前结构化快照已和 authoritative pair 对齐，且 drift 已经清零。
 4. 当前最值得保留的 spot-check 样本已经在 `4.5 Spot-check evidence` 中展开，覆盖了：
    - 真 `01.04` bucket

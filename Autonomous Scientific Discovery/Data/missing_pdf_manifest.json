@@ -190,16 +190,6 @@
     "access_note": "Source trail: OpenEarth-Agent / Earth-Agent geospatial sibling expansion 2026-06-19; NoteLanded2026-06-20: formal ASD note added from DOI / abstract evidence. MetadataCorrection2026-06-20: authors corrected from incomplete metadata. Class kept at `05.04`; the main risk remains limited `05 / 01.04` framing pressure rather than a real top-level mismatch. Batch25Partial1Reaudit2026-06-23: closed; official abstract evidence keeps this in module 05; note/master closed as source_limited rather than 01.04."
   },
   {
-    "paper_id": "ASD-0735",
-    "title": "Artificial Chemist: An Autonomous Quantum Dot Synthesis Bot",
-    "doi": "10.1002/adma.202001626",
-    "url": "https://doi.org/10.1002/adma.202001626",
-    "pdf_status": "abstract_only_checked",
-    "evidence_status": "source_limited_review_packet",
-    "source_limited": "yes",
-    "access_note": "Source trail: materials / nanocrystal / self-driving-lab sibling expansion 2026-06-19; this autonomous quantum-dot synthesis bot iteratively plans, executes, measures, and updates synthesis conditions for a concrete materials object, so it belongs cleanly to class 04 rather than generic laboratory automation. Formal note added 2026-06-19; corrected canonical authors and retained 04.03 rather than 03 because the optimized object is quantum-dot material properties. Batch25Partial1Reaudit2026-06-23: closed; current first-hand evidence keeps this in module 04 for quantum-dot material-property optimization; note/master closed as source_limited."
-  },
-  {
     "paper_id": "ASD-0854",
     "title": "Enabling Autonomous Science for a Mars Rover",
     "doi": "10.2514/6.2008-3241",

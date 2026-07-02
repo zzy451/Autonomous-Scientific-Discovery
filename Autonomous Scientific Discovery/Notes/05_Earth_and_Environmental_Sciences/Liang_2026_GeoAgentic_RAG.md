@@ -1,17 +1,17 @@
 # Liang et al. 2026 - GeoAgentic-RAG: A Multi-Agent framework for autonomous geospatial reasoning and visual insight generation with LLM
 
-## 2026-06-24 Batch25Partial1 final adjudication writeback
+## 2026-07-03 Phase6FollowupR8 note-only refresh
 
 - `scientific_object_modules`: `05`
 - `object_coverage_mode`: `single_module`
 - `has_concrete_object_experiments`: `yes`
 - `general_method_bucket`: `none`
 - `primary_module_for_filing`: `05`
-- `first_hand_sources_checked`: ScienceDirect abstract page; DOI landing page `https://doi.org/10.1016/j.jag.2026.105195`
+- `first_hand_sources_checked`: ScienceDirect article page / abstract; DOI landing page `https://doi.org/10.1016/j.jag.2026.105195`; HKU Scholars Hub handle `https://hub.hku.hk/handle/10722/373121`; visible repository PDF lead `https://hub.hku.hk/bitstream/10722/373121/1/content.pdf`
 - `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
-- `source_limited`: `no`
+- `source_limited`: `yes`
 - `note_revision_required`: `no`
-- `module_assignment_evidence`: the abstract and DOI metadata explicitly anchor the system in geospatial reasoning, vector/raster geodata retrieval, GIS-style task decomposition, spatial logic generation, and benchmarked Earth-observation analysis tasks. The stable object is concrete geospatial analysis, not a domain-general `01.04` research-agent substrate.
+- `module_assignment_evidence`: the abstract, DOI metadata, and HKU record explicitly anchor the system in geospatial reasoning, vector/raster geodata retrieval, GIS-style task decomposition, spatial logic generation, and benchmarked Earth-observation analysis tasks. The stable object is concrete geospatial analysis, not a domain-general `01.04` research-agent substrate.
 - `multi_module_object_coverage_note`: authoritative classification is `05` only. The note remains in the class-05 folder because that is also the final primary module; file location is a filing convenience, not classification authority.
 
 **论文信息**
@@ -20,11 +20,11 @@
 - 年份：2026
 - 来源 / venue：International Journal of Applied Earth Observation and Geoinformation
 - DOI / arXiv / URL：https://doi.org/10.1016/j.jag.2026.105195
-- PDF / 本地文件路径：本轮核对 ScienceDirect abstract 与 DOI 页面；未在 workspace 中确认本地归档 PDF
+- PDF / 本地文件路径：本轮核对 ScienceDirect article page / abstract、DOI 页面、HKU Scholars Hub record `https://hub.hku.hk/handle/10722/373121`，并记录其可见 repository PDF lead `https://hub.hku.hk/bitstream/10722/373121/1/content.pdf`。本 environment 未实际取回该 PDF，也未在 workspace 中确认本地归档，因此保持 `source_limited=yes`
 - 论文类型：研究论文 / geospatial analysis agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-24
-- 本轮写回口径：`modules=05`；`primary=05`；`source_limited=no`
+- 本轮写回口径：`modules=05`；`primary=05`；`source_limited=yes`
 - 笔记作者：Codex
 
 ## Evidence Log
@@ -213,7 +213,7 @@
 - 贡献强度判断：中
 - 科学贡献类型：system_platform
 - 证据强度：benchmark_only
-- 是否仍需要进一步全文复核：否；当前摘要和 DOI 已足以支撑 `05`。后续全文只会丰富基准细节，不影响 frozen adjudication。
+- 是否仍需要进一步全文复核：是；当前摘要、DOI 页面与 HKU Scholars Hub record 已足以稳定支撑 `05`，但由于本轮未实际取回 repository PDF，仍应保留 `source_limited=yes` 并继续 full-text follow-up。
 
 ## 6. 与已有工作的关系
 

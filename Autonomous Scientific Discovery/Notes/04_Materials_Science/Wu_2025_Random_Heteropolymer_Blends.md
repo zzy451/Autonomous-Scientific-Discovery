@@ -6,23 +6,23 @@
 - 年份：2025
 - 来源 / venue：Matter
 - DOI / arXiv / URL：https://doi.org/10.1016/j.matt.2025.102336
-- PDF / 本地文件路径：本轮未归档本地 PDF；已核对 PubMed 摘要、ScienceDirect highlights/progress summary 与 ChemRxiv 稳定预印本页 `https://chemrxiv.org/engage/chemrxiv/article-details/671123ff51558a15ef59f01a`。当前 authoritative harmonization 记录为 `source_limited=yes`。
+- PDF / 本地文件路径：本轮未归档本地 PDF；已核对 DOI landing / ScienceDirect article preview `https://www.sciencedirect.com/science/article/pii/S2590238525003790`、cell.com publisher PDF endpoint `https://www.cell.com/matter/pdf/S2590-2385%2825%2900379-0.pdf` 的可见入口，以及 ChemRxiv DOI page `https://chemrxiv.org/doi/10.26434/chemrxiv-2024-nh0xn` / 稳定预印本页 `https://chemrxiv.org/engage/chemrxiv/article-details/671123ff51558a15ef59f01a`。本轮不声称已取回 publisher 或 ChemRxiv PDF，当前 authoritative follow-up state 仍为 `source_limited=yes`。
 - 论文类型：研究论文
 - 当前状态：to_read；Round-5 harmonization preserves `scientific_object_modules=04;06` and resolves the cross-layer state to `source_limited=yes`
 - 阅读日期：2026-06-23
 - 笔记作者：Codex
 
-## 2026-07-02 harmonization sync
+## 2026-07-03 follow-up sync
 
 - Current authoritative harmonization preserves `scientific_object_modules=04;06`.
 - `primary_module_for_filing=04` remains unchanged.
-- `source_limited=yes` is the harmonized controller state because the currently accessible evidence is still abstract / highlights / preprint-page level rather than a local full-text PDF.
-- This round does not retract the `06` add-on; it only resolves the cross-layer `source_limited` conflict.
+- `source_limited=yes` remains the harmonized controller state because this round strengthened the note to official publisher preview + ChemRxiv lead level, but did not verify a retrieved full-text PDF or local archive copy.
+- This round does not retract the `06` add-on; it strengthens the evidence wording behind that add-on while keeping the same conservative access state.
 - If older body text below still reads like a non-source-limited settled state, treat that as legacy wording superseded by this harmonization note.
 
 ## Evidence Log
 
-Round-5 harmonization note: preserve authoritative `04;06`; do not retract `06`; keep `source_limited=yes`; treat the current evidence state as `access_limited` because the round still relied on abstract/summary/preprint-landing sources rather than a fully read canonical full text.
+Phase6FollowupR8 note-only refresh: preserve authoritative `04;06`; do not retract `06`; keep `source_limited=yes`; the current evidence state is stronger than the old abstract-only packet because official publisher preview text and a ChemRxiv DOI/preprint lead are now recorded, but no retrieved full text is claimed here.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -208,10 +208,10 @@ Round-5 harmonization note: preserve authoritative `04;06`; do not retract `06`;
 ### 5.3 科学贡献
 
 - 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：是，发现了新的高性能 RHPB 配方
-- 科学贡献是否经过验证：摘要级一手来源明确报告为是，但当前本地证据层级仍是 source-limited
+- 科学贡献是否经过验证：publisher preview / ScienceDirect preview 与 ChemRxiv lead 明确报告为是，但当前本地证据层级仍是 source-limited
 - 贡献强度判断：中到强
 - 科学贡献类型：design / experimental_discovery / system_platform
-- 证据强度：source_limited_first_hand_abstract_summary
+- 证据强度：source_limited_first_hand_preview_plus_preprint_lead
 
 ## 6. 与已有工作的关系
 
@@ -280,7 +280,7 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 验证方式：robotic_experiment; wet_lab_experiment
 交叉属性：computation_driven; data_driven; experiment_driven; high_throughput_screening; robotic_platform
 科学贡献类型：design; experimental_discovery; system_platform
-证据强度：source_limited_first_hand_abstract_summary
+证据强度：source_limited_first_hand_preview_plus_preprint_lead
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

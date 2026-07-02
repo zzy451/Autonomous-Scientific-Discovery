@@ -4169,6 +4169,19 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0735",
+    "title": "Artificial Chemist: An Autonomous Quantum Dot Synthesis Bot",
+    "pdf_path": "Reference_PDF/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.pdf",
+    "sha256": "3a4ea4151ed34a4e8b6090513bcd2f5e323eaf8ce55b5e1a4cc1d1cd177f96c8",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0736",
     "title": "AI-Researcher: Autonomous Scientific Innovation",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Wang_2025_AI_Researcher.pdf",

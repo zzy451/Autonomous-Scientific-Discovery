@@ -6,19 +6,27 @@
 - 年份：2020
 - 来源 / venue：Advanced Materials
 - DOI / arXiv / URL：https://doi.org/10.1002/adma.202001626
-- PDF / 本地文件路径：当前写回以 Crossref DOI abstract (`10.1002/adma.202001626`) 与 publisher PDF link 为一手来源；本地未归档 PDF，全文状态记为 source-limited
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.pdf`；该本地归档 PDF 对应 NSF PAR accepted-manuscript `https://par.nsf.gov/servlets/purl/10165734`，当前全文状态记为 `source_limited=no`
 - 论文类型：研究论文 / autonomous quantum-dot synthesis system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## 2026-07-03 authoritative archive sync
+
+- `scientific_object_modules=04` remains unchanged.
+- `primary_module_for_filing=04` remains unchanged.
+- Local readable archive confirmed at `Reference_PDF/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.pdf`.
+- First-hand full-text source is the NSF PAR accepted-manuscript PDF `https://par.nsf.gov/servlets/purl/10165734`, with Wiley DOI landing `https://doi.org/10.1002/adma.202001626` retained as the publisher record.
+- This note is no longer source-limited for classification wording; the stable state is `source_limited=no`.
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Crossref abstract / publisher PDF link | integration of ML-based experiment selection and autonomous flow chemistry | 高 |
-| 科学对象归类 | `04.03` | Crossref abstract | 直接对象是 inorganic perovskite quantum dots 的 synthesis composition 与 optoelectronic properties | 高 |
-| 方法流程 | experiment selection -> flow synthesis -> measurement -> update | Crossref abstract | 系统自主选择实验并调谐 quantum yield、composition polydispersity、target bandgaps | 高 |
+| Agent 纳入 | 是 | NSF PAR accepted-manuscript PDF；Wiley DOI landing | integration of ML-based experiment selection and autonomous flow chemistry | 高 |
+| 科学对象归类 | `04.03` | NSF PAR accepted-manuscript PDF | 直接对象是 inorganic perovskite quantum dots 的 synthesis composition 与 optoelectronic properties | 高 |
+| 方法流程 | experiment selection -> flow synthesis -> measurement -> update | NSF PAR accepted-manuscript PDF | 系统自主选择实验并调谐 quantum yield、composition polydispersity、target bandgaps | 高 |
 | 边界判断 | 不应改到 `03` | object-first rule | 虽然呈现为 synthesis bot，但稳定对象是 QD materials 和其性能目标 | 高 |
 | 实验验证 | 11 tailored compositions within 30h | abstract lines 107-109 | 在真实流动化学平台上得到 11 个定制 QD compositions，并可迁移先验知识 | 高 |
 
@@ -199,7 +207,7 @@
 ## 7. 局限性与风险
 
 - Agent 自主性不足：更细粒度的内部优化策略仍需全文补充
-- 科学验证不足：当前主要依赖摘要和数据库元数据
+- 科学验证不足：当前已有 NSF PAR accepted-manuscript 全文；剩余不足主要是 Wiley 定版页码与补充材料尚未在本轮逐项核对
 - 泛化性不足：对其他材料体系的转移能力需进一步核实
 - 工具链依赖：强依赖 flow chemistry 和在线表征条件
 - 数据泄漏或 benchmark 偏差：当前证据不足以细评
@@ -253,9 +261,9 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - `object_coverage_mode`: `single_module`
 - `primary_module_for_filing`: `04`
 - `general_method_bucket`: `none`
-- `first_hand_sources_checked`: Crossref DOI abstract `10.1002/adma.202001626`; publisher PDF link
-- `classification_evidence_source_level`: `source_limited`
-- `source_limited`: `yes`
+- `first_hand_sources_checked`: local archive `Reference_PDF/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.pdf`; NSF PAR accepted-manuscript PDF `https://par.nsf.gov/servlets/purl/10165734`; Wiley DOI landing `https://doi.org/10.1002/adma.202001626`
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `source_limited`: `no`
 - `note_revision_required`: `no`
 
-This writeback keeps the quantum-dot materials-property framing explicit. The current first-hand access is source-limited to the Crossref abstract and publisher PDF link, so the note should not overstate full-text coverage.
+This writeback keeps the quantum-dot materials-property framing explicit. The current first-hand access includes a readable local archive and the NSF PAR accepted-manuscript full text, so the note should no longer describe itself as source-limited.

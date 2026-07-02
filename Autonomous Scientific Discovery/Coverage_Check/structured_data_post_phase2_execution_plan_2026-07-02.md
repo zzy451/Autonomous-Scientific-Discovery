@@ -16,8 +16,8 @@
 截至 `2026-07-02`，当前默认基线是：
 
 - active confirmed-core：`447`
-- active local PDF：`421`
-- active no-local-PDF：`26`
+- active local PDF：`422`
+- active no-local-PDF：`25`
 - workflow mirror semantic drift：`0`
 - workflow mirror order drift：`0`
 - canonical active `01.04` general-method bucket count：`9`
@@ -59,7 +59,7 @@
 
 ### 2.2 审核结论 B：Phase 3B baseline 已可支撑，但要加 caveat
 
-- `447 / 421 / 26 / drift 0` 这组 baseline 可以被当前导出工件充分支撑。
+- `447 / 422 / 25 / drift 0` 这组 baseline 可以被当前导出工件充分支撑。
 - canonical `01.04` active count 当前是 `9`，不是旧摘要里的 `10`。
 - `01.04` 与 formal `01-11` 已在 canonical 机器层分离干净。
 - master 的 legacy `Main class / Secondary class` 视觉层还没完全迁移完成，所以正式验收必须明确：
@@ -104,15 +104,15 @@
 
 ### 目标
 
-把 `447 / 421 / 26 / drift 0 / canonical 01.04 = 9` 正式写成可复核的 acceptance checklist，而不是只留在上下文对话里。
+把 `447 / 422 / 25 / drift 0 / canonical 01.04 = 9` 正式写成可复核的 acceptance checklist，而不是只留在上下文对话里。
 
 ### 本阶段必须确认的检查项
 
 - active confirmed-core = `447`
-- active local PDF = `421`
-- active no-local-PDF = `26`
-- `421 + 26 = 447`
-- `missing_pdf_manifest.json` 的 26 条都可索引，且都有 DOI
+- active local PDF = `422`
+- active no-local-PDF = `25`
+- `422 + 25 = 447`
+- `missing_pdf_manifest.json` 的 25 条都可索引，且都有 DOI
 - canonical `01.04` bucket = `9`
 - `01.04` 没有漏进 formal `scientific_object_modules`
 - canonical assignments 在 `papers.jsonl` / `paper_modules.csv` / registry / SQLite 之间零漂移
@@ -247,7 +247,7 @@
 ## 6. 这份总方案之后的直接动作
 
 1. 完成 `Phase 3A` 文档收口，把 ownership、fallback、literal、mirror 语法写严。
-2. 完成 `Phase 3B` baseline checklist，把 `447 / 421 / 26 / 9 / drift 0` 写成正式验收记录。
+2. 完成 `Phase 3B` baseline checklist，把 `447 / 422 / 25 / 9 / drift 0` 写成正式验收记录。
 3. 跑 `export -> check -> build` 验证当前收口文档没有引入口径漂移。
 4. 提交本轮变更，作为 Phase 3AB-R1 的正式落地。
 5. 下一轮进入 `Phase 4`，固化 canonical-only 查询与统计语义。
@@ -258,7 +258,7 @@
 
 1. authoritative pair 的 ownership、fallback 和解析优先级都已写死。
 2. canonical classification 与 workflow mirror 的边界已固定。
-3. baseline `447 / 421 / 26 / canonical 01.04 = 9 / drift 0` 已正式验收。
+3. baseline `447 / 422 / 25 / canonical 01.04 = 9 / drift 0` 已正式验收。
 4. 默认查询和默认统计都以 canonical-only 为准。
 5. baseline 更新纪律和 PR/CI 纪律已固定。
 6. 后续 note 队列、全文跟进、综述写作支持都统一建立在这套口径上。
