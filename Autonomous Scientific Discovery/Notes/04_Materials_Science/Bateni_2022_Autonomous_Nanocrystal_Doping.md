@@ -6,7 +6,7 @@
 - 年份：2022
 - 来源 / venue：Advanced Intelligent Systems
 - DOI / arXiv / URL：https://doi.org/10.1002/aisy.202200017
-- PDF / 本地文件路径：当前未保存本地 PDF；本轮仍以 publisher abstract / DOI 页面为主，未额外声称全文已核对
+- PDF / 本地文件路径：当前未保存本地 PDF。Crossref 已验证 Wiley 官方 deposited PDF lead 为 `https://onlinelibrary.wiley.com/doi/pdf/10.1002/aisy.202200017`，但本地 2026-07-03 对 Wiley article / PDF 端点的检查仍返回 `403` / Cloudflare challenge；因此不能声称已完成本地 PDF 归档或全文获取，当前仍以 publisher abstract / DOI 页面与 Crossref metadata 为主
 - 论文类型：研究论文 / self-driving materials-experimentation system
 - 当前状态：included
 - 阅读日期：2026-06-19
@@ -19,6 +19,16 @@
 - First-hand sources checked: publisher abstract page + DOI landing page
 - Classification evidence source level: `first_hand_abstract_or_landing_page`
 - `source_limited`: `yes`
+
+## 2026-07-03 access follow-up sync
+
+- Sync scope: access-metadata refresh only; no classification change.
+- First-hand sources checked this round: DOI resolver, Wiley article endpoints, Wiley PDF endpoints, and Crossref API metadata.
+- Crossref API verifies official Wiley deposited PDF lead: `https://onlinelibrary.wiley.com/doi/pdf/10.1002/aisy.202200017`.
+- Crossref license metadata lists both AM and VOR as `CC BY 4.0`, with start date `2022-03-13` and delay `0`.
+- Crossref also records `archive=Portico`.
+- Local 2026-07-03 environment checks against Wiley article and PDF endpoints still returned `403` / Cloudflare challenge.
+- Therefore this note still must not claim local PDF retrieval or resolved full-text access, and `source_limited=yes` remains unchanged.
 
 ## Evidence Log
 

@@ -1,0 +1,2 @@
+paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
+ASD-0569	note_only_refresh	note_only	04	none	04	yes	no	yes	Controller accepts the stable `04` classification and accepts that stronger Crossref/Wiley OA metadata should be reflected in the note, but rejects any authoritative de-limiting because actual Wiley article/PDF retrieval still failed in the current environment on 2026-07-03.
