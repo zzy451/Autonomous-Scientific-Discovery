@@ -904,7 +904,7 @@
       "01"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_pdf_checked_source_limited",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -931,7 +931,7 @@
       "04"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_pdf_checked_source_limited",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -946,7 +946,7 @@
       "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_pdf_checked_source_limited",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {

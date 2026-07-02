@@ -4,10 +4,9 @@
 
 - Canonical archived PDF: `Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf`
 - Source refresh used in current reaudit: arXiv full text `https://arxiv.org/abs/2502.19629`
-- Current authoritative classification override: `scientific_object_modules = 03;04`
-- `primary_module_for_filing = 03`
-- Source-limited caution: current `04` add-on is supported by checked polymer/materials-related benchmark coverage, but this remains a source-limited relaxed multi-module update.
-- Authoritative note: treat any older single-module-only wording below as legacy draft text. The current note-level classification fact is `03;04`, with `03` retained for filing.
+- Current authoritative classification override: `scientific_object_modules = 03;04`; `general_method_bucket = none`; `primary_module_for_filing = 03`; `source_limited = no`; `safety_access_status = local_pdf`
+- Archive status note: the current classification is grounded in the checked local PDF, with `03` and `04` both supported by concrete benchmark coverage.
+- Authoritative note: treat any older single-module-only wording below as legacy draft text. The current note-level classification fact is `03;04`, with `03` retained for filing and the current note location kept only for filing convenience.
 
 **论文信息**
 - 标题：Agentic Mixture-of-Workflows for Multi-Modal Chemical Search
@@ -23,14 +22,14 @@
 
 ## Evidence Log
 
-**2026-06-21 archive note**: Project-archived PDF is now available at `Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf`. Current reaudit treats this note as a `03;04` paper under the relaxed object-coverage rule, with `03` retained as the filing module and `04` added cautiously because the checked evidence includes polymers/materials-related benchmark coverage.
+**2026-06-21 archive note**: Project-archived PDF is now available at `Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf`. Current adjudication treats this note as `03;04`, with `03` retained as the filing module and `04` supported by checked polymer/materials benchmark coverage in the local PDF.
 
 Evidence level: full-text (arXiv PDF full text).
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是，agentic self-corrective RAG workflows + aggregator agents | 摘要；Fig. 1-2；Methods | CRAG-MoW 编排多个 CRAG workflows，包含检索、相关性评分、生成、验证、修订 | 高 |
-| 科学对象归类 | `03` 化学科学，chemical search / molecular and reaction information retrieval | 摘要；Methods | benchmark 覆盖 small molecules、polymers、chemical reactions 和 NMR spectral retrieval | 高 |
+| 科学对象归类 | `03;04`，以 `03` 归档的化学/材料交叉检索任务 | 摘要；Methods；Evaluation | benchmark 覆盖 small molecules、polymers、chemical reactions 和 NMR spectral retrieval；其中 polymers/materials 结果支持加入 `04` | 高 |
 | 方法流程 | 多 workflow 检索 - 评分 - 回答生成 - hallucination check - aggregation | Fig. 1-2；Methods | Supervisor / Aggregator 综合多个 Generator workflow 输出 | 高 |
 | 实验验证 | 化学检索 benchmark + LLM judge | Evaluation；Results | 19 个 agentic workflows，跨小分子、聚合物、反应和多模态 NMR 集合比较 | 中 |
 | 科学贡献 | 化学信息检索 Agent 架构与 benchmark 分析 | Abstract；Results | 与 GPT-4o 表现可比，提供可解释、可扩展化学检索工作流 | 中 |
@@ -67,26 +66,27 @@ Evidence level: full-text (arXiv PDF full text).
 
 ### 2.1 主科学领域
 
-- 一级类：`03` 化学科学。
-- 二级类：`03.04` 化学信息学与化学空间探索。
+- 一级类：`03` 化学科学（归档主模块）。
+- 支持模块：`03;04`。
+- 二级类：`03.04` 化学信息学与化学空间探索；并有材料相关 benchmark 覆盖支撑 `04`。
 - 三级类：多模态化学检索 / molecular, polymer, reaction, NMR search。
 - 四级专题：Chemistry agents / molecular discovery。
 - 四级专题是否为新增：否。
-- 归类理由：任务和 benchmark 都围绕化学对象与化学数据，不按 RAG 技术归 `01`。
+- 归类理由：small molecules 和 reactions 支撑 `03`，polymers/materials benchmark 支撑 `04`；当前文件位置保留在 `03` 目录仅为归档便利。
 - 归类置信度：高。
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：small molecules、polymers、chemical reactions、NMR spectra。
-- 最终科学问题：如何构建可解释、可比较的 Agentic chemical search workflow。
+- 最终科学问题：如何构建可解释、可比较的 Agentic chemical/material search workflow。
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：MoW/RAG 是方法；检索对象是化学实体和光谱。
 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：`04` 材料科学，因为摘要提到 materials discovery。
-- 最终判定：`03`。
-- 判定理由：实际 benchmark 集合以化学检索、分子/聚合物/反应/NMR 为核心。
-- 是否需要二次复核：中，若后续项目把 polymer/materials informatics 单列，可交叉标注 `04`。
+- 最终判定：`03;04`，其中 `03` 为归档主模块。
+- 判定理由：实际 benchmark 集合以化学检索、分子/聚合物/反应/NMR 为核心，同时 polymers/materials benchmark 已提供足够的 `04` 支撑。
+- 是否需要二次复核：低。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -220,8 +220,8 @@ Evidence level: full-text (arXiv PDF full text).
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：化学信息学 Agent；RAG/检索增强科学 Agent；benchmark。
-- 可支撑哪个论点：信息检索型 Agent 的验证应记录检索失败、修订次数和 hallucination checks。
+- 可放入哪个章节：化学信息学 Agent；化学/材料交叉检索 Agent；RAG/检索增强科学 Agent；benchmark。
+- 可支撑哪个论点：信息检索型 Agent 的验证应记录检索失败、修订次数和 hallucination checks，且多对象 benchmark 可带来稳定的多模块覆盖。
 - 可用于哪个表格或图：Agent 验证方式表；化学 Agent 任务类型表。
 - 适合作为代表性案例吗：适合作为化学检索 Agent，不适合作为发现型强案例。
 - 推荐引用强度：普通引用。
@@ -247,6 +247,8 @@ Evidence level: full-text (arXiv PDF full text).
 ```text
 是否纳入：是
 主类：03 化学科学
+支持模块：03;04
+归档主模块：03
 二级类：03.04
 三级类：化学信息检索 / 多模态化学搜索
 四级专题：Chemistry agents / molecular discovery

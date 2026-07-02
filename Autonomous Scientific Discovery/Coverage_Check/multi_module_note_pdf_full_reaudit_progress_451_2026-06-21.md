@@ -146,13 +146,13 @@
 
 | ASD-0085 | Protagents: protein discovery via large language model multi-agent collaborations combining physics and machine learning | Notes/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.md | archived_pdf | Reference_PDF/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.pdf | first_hand_pdf_checked_source_limited | updated | updated | 04;06 | yes | Batch02 | yes |
 
-| ASD-0089 | Researchcodeagent: An llm multi-agent system for automated codification of research methodologies | Notes/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.pdf | first_hand_pdf_checked_source_limited | updated | updated | 01 | yes | Batch02 | yes |
+| ASD-0089 | Researchcodeagent: An llm multi-agent system for automated codification of research methodologies | Notes/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.pdf | first_hand_full_text | updated | updated | 01 | no | Batch02 | yes |
 
 | ASD-0090 | Agents for self-driving laboratories applied to quantum computing | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2025_K_Agents_Quantum.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2024_K_Agents_Quantum.pdf | first_hand_pdf_checked_source_limited | updated | updated | 02 | yes | Batch02 | yes |
 
-| ASD-0091 | Agentic mixture-of-workflows for multi-modal chemical search | Notes/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf | first_hand_pdf_checked_source_limited | updated | updated | 03;04 | yes | Batch02 | yes |
+| ASD-0091 | Agentic mixture-of-workflows for multi-modal chemical search | Notes/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf | first_hand_full_text | updated | updated | 03;04 | no | Batch02 | yes |
 
-| ASD-0093 | Augmenting large language models with chemistry tools | Notes/03_Chemical_Sciences/Bran_2024_ChemCrow.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Bran_2024_ChemCrow.pdf | first_hand_pdf_checked_source_limited | updated | updated | 03;04;07 | yes | Batch02 | yes |
+| ASD-0093 | Augmenting large language models with chemistry tools | Notes/03_Chemical_Sciences/Bran_2024_ChemCrow.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Bran_2024_ChemCrow.pdf | first_hand_full_text | updated | updated | 03;04;07 | no | Batch02 | yes |
 
 | ASD-0094 | Autonomous chemical research with large language models | Notes/03_Chemical_Sciences/Boiko_2023_Coscientist.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Boiko_2023_Coscientist.pdf | first_hand_full_text | updated | updated | 03 | no | Batch02 | yes |
 
