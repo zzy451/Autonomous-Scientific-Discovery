@@ -141,6 +141,89 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
         FROM workflow_mirror_paper_modules pm
         JOIN papers p ON p.paper_id = pm.paper_id
         GROUP BY module_code;
+        CREATE VIEW canonical_object_coverage_summary AS
+        SELECT
+            CASE
+                WHEN active_confirmed_core = 1 THEN 'active_confirmed_core'
+                ELSE 'inactive_or_non_core'
+            END AS scope,
+            object_coverage_mode,
+            COUNT(*) AS paper_count,
+            SUM(pdf_exists) AS local_pdf_count,
+            SUM(note_exists) AS note_count,
+            SUM(CASE WHEN lower(trim(COALESCE(source_limited, ''))) LIKE 'yes%' THEN 1 ELSE 0 END) AS source_limited_count
+        FROM papers
+        WHERE trim(COALESCE(object_coverage_mode, '')) <> ''
+        GROUP BY scope, object_coverage_mode;
+        CREATE VIEW canonical_multi_module_combo_summary AS
+        WITH combos AS (
+            SELECT
+                CASE
+                    WHEN p.active_confirmed_core = 1 THEN 'active_confirmed_core'
+                    ELSE 'inactive_or_non_core'
+                END AS scope,
+                p.paper_id,
+                COALESCE((
+                    SELECT GROUP_CONCAT(module_code, '+')
+                    FROM (
+                        SELECT DISTINCT value AS module_code
+                        FROM json_each(p.scientific_object_modules_json)
+                        ORDER BY module_code
+                    )
+                ), '') AS canonical_module_combo,
+                json_array_length(p.scientific_object_modules_json) AS module_count,
+                p.pdf_exists,
+                p.note_exists,
+                CASE WHEN lower(trim(COALESCE(p.source_limited, ''))) LIKE 'yes%' THEN 1 ELSE 0 END AS source_limited_flag
+            FROM papers p
+            WHERE p.object_coverage_mode = 'multi_module'
+        )
+        SELECT
+            scope,
+            module_count,
+            canonical_module_combo,
+            COUNT(*) AS paper_count,
+            SUM(pdf_exists) AS local_pdf_count,
+            SUM(note_exists) AS note_count,
+            SUM(source_limited_flag) AS source_limited_count
+        FROM combos
+        GROUP BY scope, module_count, canonical_module_combo;
+        CREATE VIEW canonical_formal_module_pdf_coverage_summary AS
+        SELECT
+            pm.module_code,
+            COUNT(*) AS total_assignment_count,
+            SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END) AS active_assignment_count,
+            SUM(CASE WHEN p.active_confirmed_core = 1 AND p.pdf_exists = 1 THEN 1 ELSE 0 END) AS active_local_pdf_count,
+            SUM(CASE WHEN p.active_confirmed_core = 1 AND p.pdf_exists = 0 THEN 1 ELSE 0 END) AS active_missing_local_pdf_count,
+            SUM(CASE WHEN p.active_confirmed_core = 1 AND p.note_exists = 1 THEN 1 ELSE 0 END) AS active_note_count,
+            SUM(CASE WHEN p.active_confirmed_core = 1 AND p.note_exists = 0 THEN 1 ELSE 0 END) AS active_missing_note_count,
+            SUM(CASE WHEN p.active_confirmed_core = 1 AND lower(trim(COALESCE(p.source_limited, ''))) LIKE 'yes%' THEN 1 ELSE 0 END) AS active_source_limited_count,
+            CASE
+                WHEN SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END) = 0 THEN 0.0
+                ELSE ROUND(
+                    100.0 * SUM(CASE WHEN p.active_confirmed_core = 1 AND p.pdf_exists = 1 THEN 1 ELSE 0 END)
+                    / SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END),
+                    2
+                )
+            END AS active_local_pdf_coverage_rate
+        FROM canonical_paper_modules pm
+        JOIN papers p ON p.paper_id = pm.paper_id
+        GROUP BY pm.module_code;
+        CREATE VIEW canonical_bucket_0104_papers AS
+        SELECT *
+        FROM papers
+        WHERE lower(trim(COALESCE(general_method_bucket, ''))) LIKE '01.04%';
+        CREATE VIEW canonical_bucket_0104_summary AS
+        SELECT
+            '01.04' AS general_method_bucket_code,
+            COUNT(*) AS total_paper_count,
+            SUM(active_confirmed_core) AS active_confirmed_core_count,
+            SUM(CASE WHEN active_confirmed_core = 1 AND pdf_exists = 1 THEN 1 ELSE 0 END) AS active_local_pdf_count,
+            SUM(CASE WHEN active_confirmed_core = 1 AND pdf_exists = 0 THEN 1 ELSE 0 END) AS active_missing_local_pdf_count,
+            SUM(CASE WHEN active_confirmed_core = 1 AND note_exists = 1 THEN 1 ELSE 0 END) AS active_note_count,
+            SUM(CASE WHEN active_confirmed_core = 1 AND note_exists = 0 THEN 1 ELSE 0 END) AS active_missing_note_count,
+            SUM(CASE WHEN active_confirmed_core = 1 AND lower(trim(COALESCE(source_limited, ''))) LIKE 'yes%' THEN 1 ELSE 0 END) AS active_source_limited_count
+        FROM canonical_bucket_0104_papers;
         CREATE VIEW coverage_status_analysis AS
         WITH normalized AS (
             SELECT

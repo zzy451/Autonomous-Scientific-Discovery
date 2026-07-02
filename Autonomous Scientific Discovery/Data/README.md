@@ -127,6 +127,18 @@ Show metadata and module counts:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" summary
 ```
 
+Show canonical formal-module distribution with shares:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" module-distribution
+```
+
+Show canonical object-coverage mode counts:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" object-coverage-summary
+```
+
 Inspect one paper in JSON form:
 
 ```bash
@@ -145,17 +157,40 @@ List active multi-module papers:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" multi-module
 ```
 
+List canonical multi-module combinations:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" multi-module-combo-summary
+```
+
 List papers assigned to a formal module:
 
 ```bash
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" module 04
 ```
 
+Show canonical formal-module PDF coverage:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" module-pdf-coverage
+```
+
+Show canonical `01.04` general-method bucket summary:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" bucket-0104-summary
+```
+
 Operational notes:
 
 - `summary` prints metadata plus canonical formal-module counts from SQLite.
+- `module-distribution` converts those canonical module counts into a stable distribution table with assignment shares.
+- `object-coverage-summary` is the canonical record-level split between `single_module`, `multi_module`, and `general_method_without_concrete_object_experiments`.
 - `paper` prints the full structured paper payload, including both canonical fields and workflow-mirror inspection fields; do not treat `final_modules_or_bucket` as canonical.
 - `missing-pdf`, `multi-module`, and `module` print tab-separated tables for shell use or redirection.
+- `multi-module-combo-summary` is the canonical combination-frequency view for multi-module papers.
+- `module-pdf-coverage` is the canonical per-module PDF coverage table.
+- `bucket-0104-summary` is the canonical `01.04` bucket count, distinct from the mirror audit command.
 - `boundary-cases` and `bucket-summary` are audit commands for canonical-vs-mirror inspection, not default canonical classification summaries.
 - If `papers.sqlite` is stale or missing, rerun `build_analysis_db.py` after `export -> check`.
 

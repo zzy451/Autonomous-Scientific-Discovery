@@ -70,6 +70,142 @@ def summary(conn: sqlite3.Connection) -> None:
     print()
     rows = conn.execute('''SELECT module_code, active_confirmed_core_count FROM canonical_module_assignment_counts ORDER BY module_code''').fetchall()
     print_rows(rows)
+    print()
+    bucket_row = conn.execute('SELECT active_confirmed_core_count FROM canonical_bucket_0104_summary').fetchone()
+    print_heading('Canonical 01.04 Bucket')
+    print(json.dumps({'active_confirmed_core_count': bucket_row['active_confirmed_core_count']}, ensure_ascii=False, indent=2))
+
+def module_distribution(conn: sqlite3.Connection) -> None:
+    print_heading('Canonical Formal Module Distribution')
+    meta = {row['key']: row['value'] for row in conn.execute('SELECT key, value FROM metadata')}
+    active_record_count = int(meta['active_confirmed_core_count'])
+    active_assignment_count = conn.execute(
+        'SELECT COALESCE(SUM(active_confirmed_core_count), 0) AS total FROM canonical_module_assignment_counts'
+    ).fetchone()['total']
+    bucket_row = conn.execute('SELECT active_confirmed_core_count FROM canonical_bucket_0104_summary').fetchone()
+    print(json.dumps({
+        'active_confirmed_core_record_count': active_record_count,
+        'active_formal_module_assignment_count': active_assignment_count,
+        'active_general_method_bucket_0104_count': bucket_row['active_confirmed_core_count'],
+    }, ensure_ascii=False, indent=2))
+    print()
+    rows = conn.execute('''
+        SELECT
+            c.module_code,
+            t.label,
+            c.active_confirmed_core_count,
+            ROUND(100.0 * c.active_confirmed_core_count / ?, 2) AS share_within_active_formal_assignments_pct,
+            ROUND(100.0 * c.active_confirmed_core_count / ?, 2) AS assignments_vs_active_record_count_pct
+        FROM canonical_module_assignment_counts c
+        JOIN taxonomy_index t ON t.code = c.module_code
+        ORDER BY c.module_code
+    ''', (active_assignment_count or 1, active_record_count or 1)).fetchall()
+    print_rows(rows, max_widths={'label': 44})
+
+def object_coverage_summary(conn: sqlite3.Connection, *, all_papers: bool) -> None:
+    scope_label = 'all scopes' if all_papers else 'active_confirmed_core only'
+    print_heading(f'Canonical Object Coverage Summary ({scope_label})')
+    rows = conn.execute(f'''
+        SELECT
+            scope,
+            object_coverage_mode,
+            paper_count,
+            local_pdf_count,
+            note_count,
+            source_limited_count
+        FROM canonical_object_coverage_summary
+        {'' if all_papers else "WHERE scope = 'active_confirmed_core'"}
+        ORDER BY
+            CASE object_coverage_mode
+                WHEN 'single_module' THEN 1
+                WHEN 'multi_module' THEN 2
+                WHEN 'general_method_without_concrete_object_experiments' THEN 3
+                ELSE 9
+            END
+    ''').fetchall()
+    print_rows(rows, max_widths={'object_coverage_mode': 48})
+
+def multi_module_combo_summary(
+    conn: sqlite3.Connection, *, all_papers: bool, limit: int, module_count: int | None
+) -> None:
+    scope_label = 'all scopes' if all_papers else 'active_confirmed_core only'
+    print_heading(f'Canonical Multi-Module Combination Summary ({scope_label})')
+    filters = []
+    params: list[object] = []
+    if not all_papers:
+        filters.append("scope = 'active_confirmed_core'")
+    if module_count is not None:
+        filters.append('module_count = ?')
+        params.append(module_count)
+    where_clause = f"WHERE {' AND '.join(filters)}" if filters else ''
+    denominator = conn.execute(f'''
+        SELECT COALESCE(SUM(paper_count), 0) AS total
+        FROM canonical_multi_module_combo_summary
+        {where_clause}
+    ''', params).fetchone()['total']
+    rows = conn.execute(f'''
+        SELECT
+            canonical_module_combo,
+            module_count,
+            paper_count,
+            local_pdf_count,
+            note_count,
+            source_limited_count,
+            ROUND(100.0 * paper_count / ?, 2) AS share_within_scope_multi_module_pct
+        FROM canonical_multi_module_combo_summary
+        {where_clause}
+        ORDER BY paper_count DESC, module_count, canonical_module_combo
+        LIMIT ?
+    ''', (*params, denominator or 1, limit)).fetchall()
+    print_rows(rows, max_widths={'canonical_module_combo': 28})
+
+def module_pdf_coverage(conn: sqlite3.Connection, *, sort_by: str) -> None:
+    print_heading('Canonical Formal Module PDF Coverage')
+    order_clause = {
+        'module': 'c.module_code',
+        'coverage': 'c.active_local_pdf_coverage_rate DESC, c.active_assignment_count DESC, c.module_code',
+        'missing': 'c.active_missing_local_pdf_count DESC, c.active_assignment_count DESC, c.module_code',
+    }[sort_by]
+    rows = conn.execute(f'''
+        SELECT
+            c.module_code,
+            t.label,
+            c.active_assignment_count,
+            c.active_local_pdf_count,
+            c.active_missing_local_pdf_count,
+            c.active_local_pdf_coverage_rate,
+            c.active_note_count,
+            c.active_missing_note_count,
+            c.active_source_limited_count
+        FROM canonical_formal_module_pdf_coverage_summary c
+        JOIN taxonomy_index t ON t.code = c.module_code
+        ORDER BY {order_clause}
+    ''').fetchall()
+    print_rows(rows, max_widths={'label': 44})
+
+def bucket_0104_summary(conn: sqlite3.Connection, *, details: bool, limit: int) -> None:
+    print_heading('Canonical 01.04 General-Method Bucket Summary')
+    row = conn.execute('SELECT * FROM canonical_bucket_0104_summary').fetchone()
+    print(json.dumps(dict(row), ensure_ascii=False, indent=2))
+    if not details:
+        return
+    print()
+    detail_rows = conn.execute('''
+        SELECT
+            paper_id,
+            title,
+            year,
+            source,
+            pdf_exists,
+            note_exists,
+            source_limited,
+            active_confirmed_core
+        FROM canonical_bucket_0104_papers
+        ORDER BY active_confirmed_core DESC, paper_id
+        LIMIT ?
+    ''', (limit,)).fetchall()
+    print_heading(f'Canonical 01.04 Papers (first {limit})')
+    print_rows(detail_rows, max_widths={'title': 56, 'source': 24})
 
 def paper(conn: sqlite3.Connection, paper_id: str) -> None:
     row = conn.execute('SELECT * FROM papers WHERE paper_id = ?', (paper_id,)).fetchone()
@@ -285,6 +421,18 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Query ASD analysis SQLite outputs. Default classification commands are canonical-only; workflow mirror/final fields should be interpreted only in explicit audit commands.')
     subparsers = parser.add_subparsers(dest='command', required=True)
     subparsers.add_parser('summary', help='Canonical-only formal module counts for the current structured snapshot')
+    subparsers.add_parser('module-distribution', help='Canonical formal module distribution with assignment shares and active-record baseline')
+    coverage_mode_parser = subparsers.add_parser('object-coverage-summary', help='Canonical object coverage modes at record level')
+    coverage_mode_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
+    combo_parser = subparsers.add_parser('multi-module-combo-summary', help='Canonical multi-module combination frequencies')
+    combo_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
+    combo_parser.add_argument('--limit', type=int, default=20)
+    combo_parser.add_argument('--module-count', type=int, help='Filter one canonical module-count size, for example 2 or 3')
+    pdf_cov_parser = subparsers.add_parser('module-pdf-coverage', help='Canonical formal-module PDF coverage summary')
+    pdf_cov_parser.add_argument('--sort', choices=('module', 'coverage', 'missing'), default='module')
+    bucket0104_parser = subparsers.add_parser('bucket-0104-summary', help='Canonical 01.04 bucket summary, separate from mirror audit')
+    bucket0104_parser.add_argument('--details', action='store_true', help='Include a paper-level detail sample')
+    bucket0104_parser.add_argument('--limit', type=int, default=20)
     paper_parser = subparsers.add_parser('paper', help='Paper detail view including both canonical and workflow-mirror fields for inspection')
     paper_parser.add_argument('paper_id')
     subparsers.add_parser('missing-pdf', help='Local PDF evidence inventory; not a canonical classification count')
@@ -313,6 +461,16 @@ def main() -> None:
     try:
         if args.command == 'summary':
             summary(conn)
+        elif args.command == 'module-distribution':
+            module_distribution(conn)
+        elif args.command == 'object-coverage-summary':
+            object_coverage_summary(conn, all_papers=args.all)
+        elif args.command == 'multi-module-combo-summary':
+            multi_module_combo_summary(conn, all_papers=args.all, limit=args.limit, module_count=args.module_count)
+        elif args.command == 'module-pdf-coverage':
+            module_pdf_coverage(conn, sort_by=args.sort)
+        elif args.command == 'bucket-0104-summary':
+            bucket_0104_summary(conn, details=args.details, limit=args.limit)
         elif args.command == 'paper':
             paper(conn, args.paper_id)
         elif args.command == 'missing-pdf':
