@@ -209,9 +209,7 @@ ASD-0096,dziner: Rational inverse design of materials with ai agents,final_modul
 ASD-0096,dziner: Rational inverse design of materials with ai agents,final_modules_or_bucket,04,formal_module,2,1
 ASD-0096,dziner: Rational inverse design of materials with ai agents,final_modules_or_bucket,07,formal_module,3,1
 ASD-0097,Cellvoyager: Ai compbio agent generates new insights by autonomously analyzing biological data,scientific_object_modules,06,formal_module,1,1
-ASD-0097,Cellvoyager: Ai compbio agent generates new insights by autonomously analyzing biological data,scientific_object_modules,07,formal_module,2,1
 ASD-0097,Cellvoyager: Ai compbio agent generates new insights by autonomously analyzing biological data,final_modules_or_bucket,06,formal_module,1,1
-ASD-0097,Cellvoyager: Ai compbio agent generates new insights by autonomously analyzing biological data,final_modules_or_bucket,07,formal_module,2,1
 ASD-0100,Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers,scientific_object_modules,01,formal_module,1,1
 ASD-0100,Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers,final_modules_or_bucket,01,formal_module,1,1
 ASD-0107,Tora: A tool-integrated reasoning agent for mathematical problem solving,scientific_object_modules,01,formal_module,1,0
@@ -220,9 +218,7 @@ ASD-0109,14 examples of how llms can transform materials science and chemistry: 
 ASD-0110,A foundation model for atomistic materials chemistry,scientific_object_modules,03,formal_module,1,0
 ASD-0111,"SciMaster: Towards general-purpose scientific AI agents, Part I. X-Master as foundation: Can we lead on Humanity's Last Exam?",final_modules_or_bucket,01.04,general_bucket,1,1
 ASD-0112,CSSTep: Step-by-step exploration of the chemical space of drug molecules via multi-agent and multi-stage reinforcement learning,scientific_object_modules,03,formal_module,1,1
-ASD-0112,CSSTep: Step-by-step exploration of the chemical space of drug molecules via multi-agent and multi-stage reinforcement learning,scientific_object_modules,07,formal_module,2,1
 ASD-0112,CSSTep: Step-by-step exploration of the chemical space of drug molecules via multi-agent and multi-stage reinforcement learning,final_modules_or_bucket,03,formal_module,1,1
-ASD-0112,CSSTep: Step-by-step exploration of the chemical space of drug molecules via multi-agent and multi-stage reinforcement learning,final_modules_or_bucket,07,formal_module,2,1
 ASD-0113,PharmAgents: Building a virtual pharma with large language model agents,scientific_object_modules,07,formal_module,1,1
 ASD-0113,PharmAgents: Building a virtual pharma with large language model agents,scientific_object_modules,03,formal_module,2,1
 ASD-0113,PharmAgents: Building a virtual pharma with large language model agents,final_modules_or_bucket,07,formal_module,1,1

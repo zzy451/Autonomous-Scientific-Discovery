@@ -8,25 +8,34 @@
 - DOI / arXiv / URL：https://doi.org/10.1016/j.ces.2025.122048；ScienceDirect / Linkinghub 记录（PII `S0009250925008711`）；Elsevier XML coredata `https://api.elsevier.com/content/article/PII:S0009250925008711?httpAccept=text/xml`；HKUST research portal 摘要页 `https://researchportal.hkust.edu.hk/en/publications/csstep-step-by-step-exploration-of-the-chemical-space-of-drug-mol/`
 - PDF / 本地文件路径：未归档本地 PDF；本 note 基于当前可访问的一手 DOI / publisher metadata / institutional abstract 证据整理。
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：CarryForward06 已按当前 relaxed multi-module 口径落地为 `scientific_object_modules=03;07`，`source_limited=yes`；无本地 PDF archived。
+- 当前状态：Round-5 harmonization keeps only the stable core `scientific_object_modules=03` with `source_limited=yes`；旧 `07` 表述只保留为 future source-limited lead，不再是当前已落地模块
 - 阅读日期：2026-06-22
 - 笔记作者：Codex（Writeback-Agent-2）
 
+## 2026-07-02 harmonization sync
+
+- Current authoritative harmonization keeps only the stable core `scientific_object_modules=03`.
+- `primary_module_for_filing=03` remains unchanged.
+- `source_limited=yes` remains explicit because no local PDF / full-text access was obtained in the current environment.
+- The previously discussed `07` COVID-related drug-design coverage is now treated as a future source-limited lead rather than a current landed module.
+- If older body text below still reads like a stable `03;07` landed state, treat that as legacy wording superseded by this harmonization note.
+
 ## Evidence Log
+
+Round-5 harmonization note: preserve authoritative `03`; keep `source_limited=yes`; treat the current evidence state as `access_limited` because the note still relies on DOI landing, publisher metadata, Elsevier XML, and institutional abstract rather than a local full text.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 标题；DOI landing；Elsevier XML / HKUST 摘要 | 论文明确提出 multi-agent、multi-stage reinforcement learning 框架，用于面向科研目标的分步 chemical-space exploration。 | 高 |
-| 科学对象归类 | `03;07` | 标题；DOI landing；Elsevier XML / HKUST 摘要 | 标题与摘要直接锚定 `drug molecules`、`chemical space`、`multi-objective molecular optimization`，稳定支持 `03`；同时提到与 COVID-19-related targets 相关的两组 drug-design validation cases，可按当前 relaxed rule 接受 `07` 作为 adjunct module。 | 中高 |
+| 科学对象归类 | `03` 稳定成立；`07` 仅保留为 future source-limited lead | 标题；DOI landing；Elsevier XML / HKUST 摘要 | 标题与摘要直接锚定 `drug molecules`、`chemical space`、`multi-objective molecular optimization`，稳定支持 `03`；COVID-19-related target-linked validation cases 保留为后续全文复核方向，但当前不再作为已落地 `07` 模块 | 中高 |
 | `03` 模块证据 | 稳定成立 | 标题；摘要 | 研究对象是 drug molecules 及其 chemical space exploration / optimization，本体首先是分子与化学空间。 | 高 |
-| `07` 模块证据 | 可落地但 source-limited | 摘要；institutional abstract | 验证部分涉及 two drug-design cases tied to COVID-19-related targets，说明论文并非只停留在一般分子优化，而是触及具体 biomedical / drug-discovery object coverage。 | 中 |
 | 方法流程 | 多步 Agent 工作流成立 | 标题；摘要 | 论文将 chemical-space exploration 组织为 multi-agent、multi-stage RL 流程，并带有 step-by-step exploration 与多目标优化过程。 | 中高 |
 | 实验验证 | 仿真级验证成立 | 摘要；institutional abstract | 可访问摘要明确提到 visualization of multi-objective molecular optimization，并在两组 COVID-19-related drug-design cases 上做 molecular-dynamics simulation validation。 | 中 |
 | 访问限制 | 非安全性访问受限 | 当前环境访问情况 | 可访问 DOI landing、publisher metadata、Elsevier XML 与 HKUST abstract page，但未获得本地 PDF 或可直接读取的 ScienceDirect 全文，因此本轮必须保留 `source_limited=yes`。 | 高 |
 
 ## 0. 摘要翻译
 
-从当前可访问的一手摘要级证据看，CSSTep 提出的是一个面向药物分子化学空间逐步探索的多 Agent、多阶段强化学习框架。系统并不只是输出单次分子生成结果，而是把分步探索、候选优化和多目标权衡组织成连续工作流，并对分子优化过程进行可视化。论文还报告了与 COVID-19 相关靶点相联系的两组药物设计验证案例，并使用分子动力学模拟进行验证。基于这些证据，`03` 作为稳定核心模块成立，`07` 也可按当前 relaxed rule 作为 source-limited 的医学 / 药物发现 adjunct module 落地。
+从当前可访问的一手摘要级证据看，CSSTep 提出的是一个面向药物分子化学空间逐步探索的多 Agent、多阶段强化学习框架。系统并不只是输出单次分子生成结果，而是把分步探索、候选优化和多目标权衡组织成连续工作流，并对分子优化过程进行可视化。论文还报告了与 COVID-19 相关靶点相联系的两组药物设计验证案例，并使用分子动力学模拟进行验证。按 Round-5 harmonization 的保守收口，当前稳定已落地模块保留为 `03`；与 COVID-19 相关靶点相联系的 `07` 线索保留为后续全文复核方向，而不是当前 authoritative landed state。
 
 ## 1. 是否纳入本综述
 
@@ -56,38 +65,37 @@
 
 ### 2.1 科学对象模块归类
 
-- 科学对象模块：`03;07`
-- 覆盖模式：多模块
+- 科学对象模块：`03`
+- 覆盖模式：单模块
 - 是否具有具体科学对象实验、验证、benchmark task、case study 或结果报告：是
 - 独立 `01.04` 存放区：none
 - Primary module for filing：`03`
-- Primary module for filing 说明：仅用于后续归档、排序和展示，不覆盖多模块事实。当前 note 仍位于 `Notes/07_Medical_and_Health_Sciences/` 历史目录下，这个目录位置不是分类权威。
+- Primary module for filing 说明：仅用于后续归档、排序和展示，不覆盖分类事实。当前 note 仍位于 `Notes/07_Medical_and_Health_Sciences/` 历史目录下，这个目录位置不是分类权威。
 - 主展示模块一级类：`03`
 - 主展示模块二级类：`03.04`
 - 主展示模块三级类：`03.04.05`
 - 主展示模块四级专题：drug-molecule chemical-space exploration and optimization
-- 其他覆盖模块及对应层级路径：`07 > 07.04 > 07.04.01`（drug discovery / COVID-related target-linked validation cases）
+- 其他覆盖模块及对应层级路径：当前无第二已落地模块；旧 `07` COVID-related drug-design lead 保留为 future source-limited follow-up
 - 四级专题是否为新增：否
 - 是否进入独立 `01.04` 存放区：否
-- 每个模块的对象实验证据：
+- 当前已落地模块的对象实验证据：
   - `03`：标题与摘要直接指向 `drug molecules`、`chemical space of drug molecules`、`multi-objective molecular optimization`。
-  - `07`：摘要提到 two drug-design validation cases tied to COVID-19-related targets，构成具体 biomedical / drug-discovery object coverage，但当前仍是摘要级、source-limited 证据。
-- 归类理由：按当前对象优先规则，论文首先直接研究 drug molecules 与 chemical space optimization，因此 `03` 是稳定核心；同时，论文并非只做一般化学空间优化，而是把验证落到与 COVID-19 相关靶点相联系的药物设计案例上，因此 `07` 可作为当前可接受的 source-limited adjunct module。
-- 归类置信度：中
+- 归类理由：按 Round-5 harmonization 的保守收口，论文首先直接研究 drug molecules 与 chemical space optimization，因此 `03` 是稳定核心；旧 `07` 主要依赖 COVID-19-related target-linked validation cases，在缺少更强全文级一手证据的情况下，不再保留为当前 authoritative landed module。
+- 归类置信度：中高
 
 ### 2.2 对象优先判定
 
 - 最终科学研究对象：drug molecules 及其 chemical space exploration / multi-objective optimization
-- 最终科学问题：作者试图通过 multi-agent、multi-stage reinforcement learning 流程，更高效地探索与优化药物分子化学空间，并在具体疾病相关靶点场景中验证候选设计。
+- 最终科学问题：作者试图通过 multi-agent、multi-stage reinforcement learning 流程，更高效地探索与优化药物分子化学空间。
 - 为什么不按 Agent 技术、模型方法或发表 venue 归类：项目当前按具体科学对象实验覆盖归类；multi-agent、RL 和平台化外观都只是方法标签，不是主分类依据。
 
 ### 2.3 容易混淆的边界
 
-- 可能误归类到：只归 `07`；或因为系统方法感较强而误退回 `01.04`
-- 最终判定：`03;07`
-- 判定理由：`03` 由分子与 chemical-space 对象直接锚定，是稳定底盘；`07` 来自 COVID-19-related targets 下的 drug-design validation cases，按当前 relaxed rule 可以落地，但需要保留 `source_limited=yes`。
-- 多模块覆盖说明：本轮不是“选择一个单主类”，而是记录论文已经出现的具体化学对象与 biomedical / drug-discovery case coverage。
-- `01.04` 判定说明：不进入 `01.04`，因为论文已经包含具体 drug-molecule 与 COVID-related target-linked validation evidence。
+- 可能误归类到：只归 `07`；或因为系统方法感较强而误退回 `01.04`；继续保留旧 `03;07` landed 表述
+- 最终判定：`03`
+- 判定理由：`03` 由分子与 chemical-space 对象直接锚定，是稳定底盘；旧 `07` 来自 COVID-19-related target-linked drug-design validation cases，但 Round-5 harmonization 将其回撤为 future source-limited lead，而不是当前已落地模块。
+- 多模块覆盖说明：旧 `03;07` 讨论并非完全作废，而是改为 follow-up lead。若后续获得更强的全文级一手证据，可再重新评估是否恢复 `07`。
+- `01.04` 判定说明：不进入 `01.04`，因为论文已经包含具体 drug-molecule chemical-space evidence。
 - 是否需要二次复核：需要；后续若拿到全文或 PDF，应进一步核实 `07` 的具体对象粒度、实验细节和验证强度。
 
 ## 3. Agent 系统与科研流程角色
@@ -172,7 +180,7 @@
 - 高通量计算：未见直接证据
 - 机器人实验：否
 - 湿实验：否
-- 临床数据：否
+- 临床数据：否；COVID-related target-linked cases 当前仅作为 future source-limited lead
 - 真实场景部署：否
 - 专家评估：未见直接证据
 
@@ -181,7 +189,7 @@
 - 数据集 / 实验对象：drug molecules；chemical space of drug molecules；COVID-19-related targets 下的两组 drug-design validation cases
 - 任务设置：multi-agent、multi-stage 的分步 chemical-space exploration 与 multi-objective molecular optimization
 - 对比基线：当前可访问摘要级证据未给出
-- 关键结果：论文报告了分子优化过程可视化，并在两组与 COVID-19 相关靶点相联系的药物设计案例中使用分子动力学模拟做验证
+- 关键结果：论文报告了分子优化过程可视化，并在两组与 COVID-19 相关靶点相联系的药物设计案例中使用分子动力学模拟做验证；但 Round-5 harmonization 仅把 `03` 视为当前稳定 landed module
 - 是否有消融实验：当前不可确认
 - 是否有失败案例或负结果：当前不可确认
 
@@ -197,23 +205,25 @@
 
 - 与普通 AI for Science 方法的区别：本文不是单步分子生成模型，而是显式的 multi-agent、multi-stage 科研优化流程。
 - 与已有 Agent / 科研智能系统的区别：它把 chemical-space exploration 和多目标分子优化组织成连续、多阶段的 Agent 工作流。
-- 与同一科学领域其他 Agent 文献的关系：适合放在 `03/07` 边界样本中，与药物发现 Agent、化学分子设计 Agent 并列比较。
+- 与同一科学领域其他 Agent 文献的关系：适合放在 `03` 化学主线中讨论，同时保留在 `03/07` 边界 follow-up 队列中。
 - 主要创新点：将药物分子 chemical-space exploration 组织为 step-by-step、多 Agent 强化学习流程，并给出疾病相关靶点场景下的仿真验证。
 
 ## 7. 局限性与风险
 
+Round-5 access note: the current authoritative state keeps only `03`; any earlier `07` wording in this note should be read as a future source-limited lead rather than a current landed module.
+
 - Agent 自主性不足：当前可访问摘要级证据不足以完整刻画其规划、工具链和状态管理细节。
 - 科学验证不足：目前能确认的是分子动力学仿真级验证，缺少全文支持下的更细实验细节。
-- 泛化性不足：`07` 的落地依赖 COVID-19-related target-linked drug-design cases，当前是可接受但 source-limited 的 adjunct module。
+- 泛化性不足：旧 `07` 讨论依赖 COVID-19-related target-linked drug-design cases，本轮已回撤为 future source-limited lead。
 - 工具链依赖：此类多阶段 RL / Agent 系统通常强依赖评价器、分子表示与仿真流程。
 - 数据泄漏或 benchmark 偏差：暂无全文，不足以评估。
 - 成本、可复现性或安全风险：未获得本地 PDF 或全文，当前复核仍受访问限制；这是非安全性 access limitation，不是 safety skip。
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：`03` 化学科学主章节；并在 `03/07` 边界处与药物发现 Agent 文献一起讨论
-- 可支撑哪个论点：说明药物分子 chemical-space exploration 的 Agent 论文不应机械地只归 `07`，而应按具体对象覆盖允许 `03;07`
-- 可用于哪个表格或图：多模块边界样本表；drug-discovery / molecular-design Agent 对照表；source-limited closeout 说明表
+- 可放入哪个章节：`03` 化学科学主章节；并在 `03/07` 边界 follow-up 队列中保留
+- 可支撑哪个论点：药物分子 chemical-space exploration 的 Agent 论文不应机械地只归 `07`；但 source-limited 疾病相关验证线索也不应自动当作当前 landed `07`
+- 可用于哪个表格或图：边界样本表；drug-discovery / molecular-design Agent 对照表；source-limited follow-up 说明表
 - 适合作为代表性案例吗：可以作为边界代表样本，但不宜作为高置信全文证据案例
 - 推荐引用强度：standard
 - 需要在正文中特别引用的页码 / 图 / 表：待全文补充
@@ -221,9 +231,11 @@
 
 ## 9. 总结
 
+Frozen round-5 note: keep `scientific_object_modules=03`, keep `primary_module_for_filing=03`, keep `source_limited=yes`, and treat the old `07` discussion as follow-up lead only.
+
 ### 9.1 一句话概括
 
-一个将药物分子化学空间逐步探索与疾病相关药物设计验证连接起来的多 Agent RL 系统。
+一个面向药物分子化学空间逐步探索的多 Agent RL 系统；疾病相关药物设计验证线索暂不作为当前已落地 `07` 模块。
 
 ### 9.2 速记版 pipeline
 
@@ -231,14 +243,14 @@
 2. 用多 Agent、多阶段 RL 逐步探索 chemical space。
 3. 在多目标约束下优化候选分子。
 4. 选出候选并进行分子动力学仿真验证。
-5. 在 COVID-related target-linked cases 上报告结果。
+5. 保留 COVID-related target-linked cases 作为后续全文复核线索。
 
 ### 9.3 标注字段汇总
 
 ```text
 是否纳入：是
-科学对象模块：03;07
-覆盖模式：multi_module
+科学对象模块：03
+覆盖模式：single_module
 是否具有具体科学对象实验：是
 general_method_bucket：none
 Primary module for filing：03
@@ -247,9 +259,9 @@ Primary module for filing：03
 主展示模块二级类：03.04
 主展示模块三级类：03.04.05
 主展示模块四级专题：drug-molecule chemical-space exploration and optimization
-其他覆盖模块及对应层级路径：07 > 07.04 > 07.04.01
-module_assignment_evidence：03 来自 drug molecules / chemical space / molecular optimization；07 来自 COVID-19-related target-linked drug-design validation cases
-multi_module_object_coverage_note：03 是稳定核心；07 为当前可接受的 source-limited adjunct module
+其他覆盖模块及对应层级路径：无当前已落地 secondary module；旧 07 lead 保留在 full-text follow-up
+module_assignment_evidence：03 来自 drug molecules / chemical space / molecular optimization
+multi_module_object_coverage_note：旧 07 COVID-related target-linked drug-design validation 线索在 Round-5 harmonization 中回撤为 future source-limited lead，不是当前 authoritative landed module
 Agent 类型：Multi-Agent System; Reinforcement Learning Agent; Hybrid Agent
 科研流程角色：molecular_design; optimization; data_analysis; evidence_assessment_and_validation
 自主能力：planning; feedback_iteration; autonomous_decision_making; multi_agent_collaboration
@@ -257,7 +269,7 @@ Agent 类型：Multi-Agent System; Reinforcement Learning Agent; Hybrid Agent
 交叉属性：computation_driven; simulation_driven
 科学贡献类型：design; prediction
 证据强度：first_hand_abstract_or_landing_page; source_limited
-归类置信度：中
-纳入置信度：高
+归类置信度：medium_high
+纳入置信度：high
 推荐引用强度：standard
 ```

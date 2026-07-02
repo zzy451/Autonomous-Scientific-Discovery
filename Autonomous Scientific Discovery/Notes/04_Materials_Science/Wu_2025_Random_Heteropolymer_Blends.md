@@ -6,13 +6,23 @@
 - 年份：2025
 - 来源 / venue：Matter
 - DOI / arXiv / URL：https://doi.org/10.1016/j.matt.2025.102336
-- PDF / 本地文件路径：本轮未归档本地 PDF；已核对 PubMed 摘要、ScienceDirect highlights/progress summary 与 ChemRxiv 稳定预印本页 `https://chemrxiv.org/engage/chemrxiv/article-details/671123ff51558a15ef59f01a`。当前记录不是 `source_limited`。
+- PDF / 本地文件路径：本轮未归档本地 PDF；已核对 PubMed 摘要、ScienceDirect highlights/progress summary 与 ChemRxiv 稳定预印本页 `https://chemrxiv.org/engage/chemrxiv/article-details/671123ff51558a15ef59f01a`。当前 authoritative harmonization 记录为 `source_limited=yes`。
 - 论文类型：研究论文
-- 当前状态：to_read
+- 当前状态：to_read；Round-5 harmonization preserves `scientific_object_modules=04;06` and resolves the cross-layer state to `source_limited=yes`
 - 阅读日期：2026-06-23
 - 笔记作者：Codex
 
+## 2026-07-02 harmonization sync
+
+- Current authoritative harmonization preserves `scientific_object_modules=04;06`.
+- `primary_module_for_filing=04` remains unchanged.
+- `source_limited=yes` is the harmonized controller state because the currently accessible evidence is still abstract / highlights / preprint-page level rather than a local full-text PDF.
+- This round does not retract the `06` add-on; it only resolves the cross-layer `source_limited` conflict.
+- If older body text below still reads like a non-source-limited settled state, treat that as legacy wording superseded by this harmonization note.
+
 ## Evidence Log
+
+Round-5 harmonization note: preserve authoritative `04;06`; do not retract `06`; keep `source_limited=yes`; treat the current evidence state as `access_limited` because the round still relied on abstract/summary/preprint-landing sources rather than a fully read canonical full text.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -87,7 +97,7 @@
 - 判定理由：polymer blend 是直接优化对象，所以不能把主模块改成 `06`；但 enzyme stabilization 不是抽象评分项，而是具体生命对象验证，因此不能删掉 `06`
 - 多模块覆盖说明：这是 relaxed multi-module 规则下的典型对象双覆盖样本
 - 01.04 判定说明：已有具体材料对象和具体生命对象结果，完全不属于通用方法桶
-- 是否需要二次复核：否；后续全文主要用于补页码与更细的实验细节，不影响 `04;06` 判定
+- 是否需要二次复核：需要保留 source-limited 复核；后续全文主要用于补页码与更细的实验细节，但当前 `source_limited=yes` 状态仍应显式保留
 
 ## 3. Agent 系统与科研流程角色
 
@@ -198,10 +208,10 @@
 ### 5.3 科学贡献
 
 - 是否发现新知识、新机制、新分子、新材料、新假设或新实验结果：是，发现了新的高性能 RHPB 配方
-- 科学贡献是否经过验证：是
+- 科学贡献是否经过验证：摘要级一手来源明确报告为是，但当前本地证据层级仍是 source-limited
 - 贡献强度判断：中到强
 - 科学贡献类型：design / experimental_discovery / system_platform
-- 证据强度：experimentally_validated
+- 证据强度：source_limited_first_hand_abstract_summary
 
 ## 6. 与已有工作的关系
 
@@ -211,6 +221,8 @@
 - 主要创新点：把 evolutionary formulation optimization 用于自主材料发现，并给出生命对象验证
 
 ## 7. 局限性与风险
+
+Round-5 access note: this note now explicitly records `source_limited=yes` / `access_limited`; that wording narrows evidence strength but does not change the approved `04;06` coverage.
 
 - Agent 自主性不足：依然在预定义材料与 assay 空间内搜索
 - 科学验证不足：若要引用页码级实验细节仍需补正式全文
@@ -230,6 +242,8 @@
 - 需要与哪些论文并列比较：其他 polymer / electrolyte / biomolecular materials agent 论文
 
 ## 9. 总结
+
+Frozen round-5 note: preserve `04;06`, keep `primary_module_for_filing=04`, keep `source_limited=yes`, and do not retract the life-science (`06`) coverage.
 
 ### 9.1 一句话概括
 
@@ -266,7 +280,7 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 验证方式：robotic_experiment; wet_lab_experiment
 交叉属性：computation_driven; data_driven; experiment_driven; high_throughput_screening; robotic_platform
 科学贡献类型：design; experimental_discovery; system_platform
-证据强度：experimentally_validated
+证据强度：source_limited_first_hand_abstract_summary
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

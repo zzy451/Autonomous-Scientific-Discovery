@@ -160,13 +160,13 @@
 
 | ASD-0096 | dziner: Rational inverse design of materials with ai agents | Notes/04_Materials_Science/Ansari_2024_dZiner.md | archived_pdf | Reference_PDF/04_Materials_Science/Ansari_2024_dZiner.pdf | first_hand_full_text | updated | updated | 03;04;07 | no | Batch02 | yes |
 
-| ASD-0097 | Cellvoyager: Ai compbio agent generates new insights by autonomously analyzing biological data | Notes/06_Life_Sciences/Alber_2026_CellVoyager.md | publisher_access_limited |  | first_hand_preview_repo_and_preprint_doi | updated_source_limited | updated_source_limited | 06;07 | yes | CarryForward06 | yes |
+| ASD-0097 | Cellvoyager: Ai compbio agent generates new insights by autonomously analyzing biological data | Notes/06_Life_Sciences/Alber_2026_CellVoyager.md | publisher_access_limited |  | first_hand_preview_repo_and_preprint_doi | updated_source_limited | updated_source_limited | 06 | yes | Phase6FollowupR5 | yes |
 
 | ASD-0100 | Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers | Notes/01_Formal_Information_and_Computational_Sciences/Xiang_2025_SciReplicate_Bench.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Xiang_2025_SciReplicate_Bench.pdf | first_hand_full_text | updated | updated | 01 | no | Batch02 | yes |
 
 | ASD-0111 | SciMaster: Towards general-purpose scientific AI agents, Part I. X-Master as foundation: Can we lead on Humanity's Last Exam? | Notes/01_Formal_Information_and_Computational_Sciences/Chai_2025_SciMaster.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Chai_2025_SciMaster.pdf | first_hand_full_text | updated | updated | 01.04 | no | Batch02 | yes |
 
-| ASD-0112 | CSSTep: Step-by-step exploration of the chemical space of drug molecules via multi-agent and multi-stage reinforcement learning | Notes/07_Medical_and_Health_Sciences/Che_2025_CSSTep.md | publisher_access_limited |  | first_hand_abstract_metadata_and_xml | updated_source_limited | updated_source_limited | 03;07 | yes | CarryForward06 | yes |
+| ASD-0112 | CSSTep: Step-by-step exploration of the chemical space of drug molecules via multi-agent and multi-stage reinforcement learning | Notes/07_Medical_and_Health_Sciences/Che_2025_CSSTep.md | publisher_access_limited |  | first_hand_abstract_metadata_and_xml | updated_source_limited | updated_source_limited | 03 | yes | Phase6FollowupR5 | yes |
 
 | ASD-0113 | PharmAgents: Building a virtual pharma with large language model agents | Notes/07_Medical_and_Health_Sciences/Gao_2025_PharmAgents.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Gao_2025_PharmAgents.pdf | first_hand_full_text | updated | updated | 07;03 | no | Batch02 | yes |
 
@@ -414,7 +414,7 @@
 
 | ASD-0571 | CRYSTAL: a multi-agent AI system for automated mapping of materials' crystal structures | Notes/04_Materials_Science/Gomes_2019_CRYSTAL_Crystal_Structure_Mapping.md | archived_pdf | Reference_PDF/04_Materials_Science/Gomes_2019_CRYSTAL_Crystal_Structure_Mapping.pdf | first_hand_author_pdf | updated | updated | 04 | no | Batch17Partial1 | yes |
 
-| ASD-0572 | Autonomous discovery of functional random heteropolymer blends through evolutionary formulation optimization | Notes/04_Materials_Science/Wu_2025_Random_Heteropolymer_Blends.md | abstract_only_checked |  | first_hand_abstract_review_packet | updated | updated | 04;06 | no | Batch24Partial1 | yes |
+| ASD-0572 | Autonomous discovery of functional random heteropolymer blends through evolutionary formulation optimization | Notes/04_Materials_Science/Wu_2025_Random_Heteropolymer_Blends.md | abstract_only_checked |  | first_hand_abstract_review_packet | updated_source_limited | updated | 04;06 | yes | Phase6FollowupR5 | yes |
 
 | ASD-0573 | A Self-Driving Fluidic Lab for Data-Driven Synthesis of Lead-Free Perovskite Nanocrystals | Notes/04_Materials_Science/Sadeghi_2025_SelfDriving_Fluidic_Lab_Perovskite_Nanocrystals.md | archived_pdf | Reference_PDF/04_Materials_Science/Sadeghi_2025_SelfDriving_Fluidic_Lab_Perovskite_Nanocrystals.pdf | first_hand_full_text | updated | updated | 04 | no | Batch17Partial1 | yes |
 

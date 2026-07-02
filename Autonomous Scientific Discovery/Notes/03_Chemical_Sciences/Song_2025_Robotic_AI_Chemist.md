@@ -1,5 +1,11 @@
 # Song et al. 2025 - A Multiagent-Driven Robotic AI Chemist Enabling Autonomous Chemical Research On Demand
 
+## 2026-07-02 harmonization sync
+
+- Current authoritative harmonization keeps `scientific_object_modules=03;04`.
+- `primary_module_for_filing=03` remains unchanged.
+- `source_limited=yes` remains explicit because the main PDF endpoint is still access-limited in the current environment.
+
 **论文信息**
 - 标题：A Multiagent-Driven Robotic AI Chemist Enabling Autonomous Chemical Research On Demand
 - 作者：Tao Song, Man Luo, Xiaolong Zhang, et al.
@@ -8,11 +14,13 @@
 - DOI / arXiv / URL：https://doi.org/10.1021/jacs.4c17738
 - PDF / 本地文件路径：主文官方 PDF 端点存在，但本轮访问 `https://pubs.acs.org/doi/pdf/10.1021/jacs.4c17738` 遭遇 `403`；已核 publisher landing page 与官方 supporting-information page：`https://acs.figshare.com/articles/journal_contribution/A_Multiagent-Driven_Robotic_AI_Chemist_Enabling_Autonomous_Chemical_Research_On_Demand/28558855`
 - 论文类型：研究论文 / robotic chemistry agent
-- 当前状态：已读摘要与官方补充材料线索 / 已纳入 / full-text follow-up required
+- 当前状态：已读摘要与官方补充材料线索 / 已纳入 / full-text follow-up required；Round5 harmonization preserves the current conservative `03;04` state with `source_limited=yes`
 - 阅读日期：2026-06-21
 - 笔记作者：Codex
 
 ## Evidence Log
+
+Round-5 harmonization note: preserve authoritative `03;04`; keep `source_limited=yes`; treat the current evidence state as `access_limited` because the publisher full text remained unavailable in this round even though the abstract and official supporting-information page were checked.
 
 证据级别：publisher abstract + official supporting-information page；主文全文 PDF 当前受访问门控，属于 source-limited。
 
@@ -189,6 +197,8 @@
 
 ## 7. 局限性与风险
 
+Round-5 access note: the current risk is specifically an access-limited full-text boundary, not a retraction of the existing `03;04` multi-module decision.
+
 - 主文全文 PDF 当前受访问门控，任务细节、指标和消融仍未核实
 - `03.03` 与 `03.04` 的细粒度二级类尚待全文确认
 - `04` 模块已有摘要级强证据，但具体更细的材料子对象仍待全文补强
@@ -202,5 +212,7 @@
 - 推荐引用强度：core
 
 ## 9. 总结
+
+Frozen round-5 note: keep `03;04`, keep `primary_module_for_filing=03`, and keep `source_limited=yes` with an explicit `access_limited` full-text qualifier.
 
 在当前可访问的一手来源下，这篇论文已经足够稳定地进入 confirmed core。它不是单纯的通用自动化平台，而是一个 hierarchical multi-agent robotic AI chemist，且摘要明确给出了 chemical reactions 与 functional materials 两类对象级任务。因此，当前最稳的落点是 `03;04` 多模块，`primary_module_for_filing=03`，并把“主文全文受限、仍需后续 full-text refinement”明确记为 source-limited 风险。
