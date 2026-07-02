@@ -262,7 +262,7 @@
 
 | ASD-0379 | A self-driving laboratory advances the Pareto front for material properties | Notes/04_Materials_Science/MacLeod_2022_Pareto_Front_Materials.md | archived_pdf | Reference_PDF/04_Materials_Science/MacLeod_2022_Pareto_Front_Materials.pdf | first_hand_full_text | updated | updated | 04 | no | CarryForward16 | yes |
 
-| ASD-0381 | Autonomous reaction Pareto-front mapping with a self-driving catalysis laboratory | Notes/03_Chemical_Sciences/Bennett_2024_FastCat_Pareto_Front.md | publisher_pdf_access_limited |  | first_hand_preview_and_metadata | updated_source_limited | updated_source_limited | 03 | yes | CarryForward16 | yes |
+| ASD-0381 | Autonomous reaction Pareto-front mapping with a self-driving catalysis laboratory | Notes/03_Chemical_Sciences/Bennett_2024_FastCat_Pareto_Front.md | publisher_pdf_access_limited |  | first_hand_html_full_text_and_supplementary | updated | updated | 03 | no | Phase6FollowupR6 | yes |
 
 | ASD-0385 | AlphaFlow: autonomous discovery and optimization of multi-step chemistry using a self-driven fluidic lab guided by reinforcement learning | Notes/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.md | archived_pdf | Reference_PDF/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.pdf | first_hand_full_text | updated | updated | 03;04 | no | CarryForward16 | yes |
 

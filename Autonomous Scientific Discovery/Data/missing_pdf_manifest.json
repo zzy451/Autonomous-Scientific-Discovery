@@ -45,9 +45,9 @@
     "doi": "10.1038/s44286-024-00033-5",
     "url": "https://doi.org/10.1038/s44286-024-00033-5",
     "pdf_status": "publisher_pdf_access_limited",
-    "evidence_status": "first_hand_preview_and_metadata",
-    "source_limited": "yes",
-    "access_note": "HighImpactTrail: OpenAlex query `self-driving laboratory autonomous discovery`; High-impact/citation-expansion pass 2026-06-16. CarryForward16Closeout2026-06-22: rechecked publisher preview / DOI metadata and kept stable `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local PDF was archived because full text remained unavailable in this environment, so this row remains explicitly source-limited but classification-stable."
+    "evidence_status": "first_hand_html_full_text_and_supplementary",
+    "source_limited": "no",
+    "access_note": "HighImpactTrail: OpenAlex query `self-driving laboratory autonomous discovery`; High-impact/citation-expansion pass 2026-06-16. CarryForward16Closeout2026-06-22: rechecked publisher preview / DOI metadata and kept stable `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local PDF was archived because full text remained unavailable in this environment, so this row remains explicitly source-limited but classification-stable. Phase6FollowupR6Closeout2026-07-03: publisher HTML full text and open supplementary PDF are now accessible first-hand sources; current authoritative state remains `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local main-paper PDF archived, but the row is no longer treated as `source_limited` because publisher HTML full text plus open supplementary evidence now suffice for the landed chemistry-object reading."
   },
   {
     "paper_id": "ASD-0508",
