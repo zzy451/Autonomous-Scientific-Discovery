@@ -114,12 +114,75 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" boundary-c
 
 这里的 `acceptable mirror` 不是错误，而是 canonical `01.04` bucket 在 workflow mirror 中被正确保留为 `01.04` 的可接受镜像差异类。
 
+### 4.5 Spot-check evidence
+
+为避免后续只停留在“样本 ID 名单”层，本轮保留以下 4 个代表性 spot-check 样本，直接展示当前关键字段现值。
+
+#### 样本 A：真 `01.04` bucket
+
+`ASD-0006`
+
+- `legacy_main_class = 01`
+- `legacy_secondary_class = 01.04`
+- `scientific_object_modules = []`
+- `general_method_bucket = 01.04_general_asd_methods_without_concrete_object_experiments`
+- `object_coverage_mode = general_method_without_concrete_object_experiments`
+- `final_modules_or_bucket = ["01.04"]`
+- `pdf_exists = true`，且 `pdf_manifest.json` 中有对应 `sha256`
+
+该样本证明：canonical `01.04` 是独立 bucket，而不是 formal `01-11` 模块的别名；同时它也说明 `01.04` bucket record 可以拥有本地真 PDF，但仍不进入 `scientific_object_modules`。
+
+#### 样本 B：legacy 显示滞后，但 canonical 已正确转 formal modules
+
+`ASD-0868`
+
+- `legacy_main_class = 01`
+- `legacy_secondary_class = 01.04`
+- `scientific_object_modules = ["02"]`
+- `general_method_bucket = none`
+- `object_coverage_mode = single_module`
+- `primary_module_for_filing = 02`
+- `final_modules_or_bucket = ["02"]`
+- `pdf_exists = true`
+
+该样本证明：legacy `Main class / Secondary class` 的视觉显示不能被当作最终 acceptance authority；当前 authoritative acceptance 必须看 canonical overlay 导出的 formal modules。
+
+#### 样本 C：代表性 multi-module record，且未被 filing 字段压扁
+
+`ASD-0866`
+
+- `scientific_object_modules = ["03", "04", "06", "07", "09"]`
+- `general_method_bucket = none`
+- `object_coverage_mode = multi_module`
+- `primary_module_for_filing = 07`
+- `final_modules_or_bucket = ["03", "04", "06", "07", "09"]`
+- `pdf_exists = true`
+
+该样本证明：`primary_module_for_filing` 只是 filing convenience；即使 filing 主模块是 `07`，canonical 仍保留完整的多模块数组，不会被压扁成单主类。
+
+#### 样本 D：无本地 PDF，但可索引且仍是有效 confirmed-core
+
+`ASD-0005`
+
+- `scientific_object_modules = ["03", "04"]`
+- `general_method_bucket = none`
+- `pdf_path = ""`
+- `pdf_exists = false`
+- `pdf_status = publisher_pdf_gated`
+- `evidence_status = first_hand_abstract_plus_official_supporting_info`
+- `source_limited = yes`
+- `doi = 10.1021/jacs.4c17738`
+- `missing_pdf_manifest.json` 中存在对应记录
+
+该样本证明：当前 `26` 篇 no-local-PDF 记录缺的是“本地真 PDF”，不是“文献条目不可索引”；因此 accepted baseline 中的 no-local-PDF 集是可追踪、可解释、且仍属于有效 confirmed-core 的。
+
 ## 5. 本轮特别备注
 
 1. 当前 machine-verified `01.04` active confirmed-core count 是 `9`，因此验收应以当前脚本快照为准，不应继续引用旧的人工作业摘要数字。
 2. 当前 baseline 已足以支撑 `447 / 421 / 26 / 9 / drift 0` 的正式 acceptance。
 3. 这次验收通过不意味着后续不再补全文；它只表示当前结构化快照已和 authoritative pair 对齐，且 drift 已经清零。
-4. 当前最值得保留的 spot-check 样本是：
-   - 真 `01.04` bucket：`ASD-0006`、`ASD-0541`
-   - stale legacy mirror 但 canonical 已转 formal：`ASD-0004`、`ASD-0868`
-   - 代表性 multi-module：`ASD-0004`、`ASD-0866`
+4. 当前最值得保留的 spot-check 样本已经在 `4.5 Spot-check evidence` 中展开，覆盖了：
+   - 真 `01.04` bucket
+   - legacy 显示滞后但 canonical 已正确
+   - 代表性 multi-module
+   - 无本地 PDF 但可索引
