@@ -1,0 +1,95 @@
+name: Structured Data Guard
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  structured-data-guard:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Guard source-of-truth changes without regenerated data
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_REF: ${{ github.base_ref }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          python - <<'PY'
+          import os
+          import subprocess
+          import sys
+
+          event_name = os.environ["EVENT_NAME"]
+          base_ref = os.environ.get("BASE_REF", "")
+          before_sha = os.environ.get("BEFORE_SHA", "")
+
+          if event_name == "pull_request":
+              subprocess.run(["git", "fetch", "origin", base_ref, "--depth=1"], check=True)
+              diff_cmd = ["git", "diff", "--name-only", f"origin/{base_ref}...HEAD"]
+          elif event_name == "push" and before_sha and before_sha != "0000000000000000000000000000000000000000":
+              diff_cmd = ["git", "diff", "--name-only", before_sha, "HEAD"]
+          else:
+              print("Skipping source-of-truth guard for initial push or unsupported event.")
+              sys.exit(0)
+
+          changed_files = set(
+              path.strip()
+              for path in subprocess.check_output(diff_cmd, text=True).splitlines()
+              if path.strip()
+          )
+
+          authoritative_files = {
+              "Autonomous Scientific Discovery/Paper_Lists/agent_master_paper_list.md",
+              "Autonomous Scientific Discovery/Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
+          }
+          derived_outputs = {
+              "Autonomous Scientific Discovery/Data/papers.jsonl",
+              "Autonomous Scientific Discovery/Data/papers.csv",
+              "Autonomous Scientific Discovery/Data/paper_modules.csv",
+              "Autonomous Scientific Discovery/Data/papers.sqlite",
+              "Autonomous Scientific Discovery/Data/pdf_manifest.json",
+              "Autonomous Scientific Discovery/Data/missing_pdf_manifest.json",
+              "Autonomous Scientific Discovery/Data/note_manifest.json",
+              "Autonomous Scientific Discovery/Data/taxonomy_index.json",
+          }
+
+          authoritative_changed = bool(changed_files & authoritative_files)
+          derived_changed = bool(changed_files & derived_outputs)
+
+          if authoritative_changed and not derived_changed:
+              print("Source-of-truth files changed without regenerated structured outputs.")
+              print("Required workflow: export -> check -> build")
+              print("Changed files:")
+              for path in sorted(changed_files):
+                  print(f"- {path}")
+              sys.exit(1)
+
+          print("Source-of-truth guard passed.")
+          PY
+
+      - name: Run structured-data consistency check
+        run: |
+          python "Autonomous Scientific Discovery/scripts/export_structured_data.py"
+          python "Autonomous Scientific Discovery/scripts/check_data_consistency.py"
+
+      - name: Rebuild analysis outputs from committed structured data
+        run: python "Autonomous Scientific Discovery/scripts/build_analysis_db.py"
+
+      - name: Smoke-test SQLite query entry point
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" summary
+
+      - name: Verify regenerated outputs are committed
+        run: git diff --exit-code

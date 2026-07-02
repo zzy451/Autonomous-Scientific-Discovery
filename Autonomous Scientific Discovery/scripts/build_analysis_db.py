@@ -113,6 +113,163 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
         CREATE VIEW active_confirmed_core_papers AS SELECT * FROM papers WHERE active_confirmed_core = 1;
         CREATE VIEW active_missing_local_pdf AS SELECT * FROM papers WHERE active_confirmed_core = 1 AND pdf_exists = 0;
         CREATE VIEW module_assignment_counts AS SELECT assignment_scope, module_code, COUNT(*) AS paper_count, SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END) AS active_confirmed_core_count FROM paper_modules pm JOIN papers p ON p.paper_id = pm.paper_id GROUP BY assignment_scope, module_code;
+        CREATE VIEW coverage_status_analysis AS
+        WITH normalized AS (
+            SELECT
+                p.*,
+                CASE
+                    WHEN lower(trim(COALESCE(p.source_limited, ''))) LIKE 'yes%' THEN 1
+                    ELSE 0
+                END AS source_limited_flag
+            FROM papers p
+        )
+        SELECT
+            paper_id,
+            title,
+            year,
+            source,
+            active_confirmed_core,
+            pdf_exists,
+            note_exists,
+            source_limited,
+            source_limited_flag,
+            pdf_status,
+            evidence_status,
+            note_status,
+            CASE
+                WHEN active_confirmed_core = 0 THEN 'inactive_or_non_core'
+                WHEN pdf_exists = 1 AND note_exists = 1 AND source_limited_flag = 1 THEN 'active_complete_source_limited'
+                WHEN pdf_exists = 1 AND note_exists = 1 THEN 'active_complete_local'
+                WHEN pdf_exists = 1 AND note_exists = 0 THEN 'active_pdf_only'
+                WHEN pdf_exists = 0 AND note_exists = 1 THEN 'active_note_only'
+                ELSE 'active_missing_pdf_and_note'
+            END AS coverage_state,
+            CASE WHEN active_confirmed_core = 1 AND pdf_exists = 0 THEN 1 ELSE 0 END AS needs_local_pdf,
+            CASE WHEN active_confirmed_core = 1 AND note_exists = 0 THEN 1 ELSE 0 END AS needs_note,
+            CASE
+                WHEN active_confirmed_core = 1 AND (pdf_exists = 0 OR note_exists = 0 OR source_limited_flag = 1) THEN 1
+                ELSE 0
+            END AS needs_followup
+        FROM normalized;
+        CREATE VIEW coverage_status_summary AS
+        SELECT
+            active_confirmed_core,
+            coverage_state,
+            COUNT(*) AS paper_count,
+            SUM(pdf_exists) AS local_pdf_count,
+            SUM(note_exists) AS local_note_count,
+            SUM(source_limited_flag) AS source_limited_count,
+            SUM(needs_local_pdf) AS missing_local_pdf_count,
+            SUM(needs_note) AS missing_note_count,
+            SUM(needs_followup) AS needs_followup_count
+        FROM coverage_status_analysis
+        GROUP BY active_confirmed_core, coverage_state;
+        CREATE VIEW classification_boundary_analysis AS
+        WITH normalized AS (
+            SELECT
+                p.*,
+                CASE
+                    WHEN trim(COALESCE(p.general_method_bucket, '')) = '' THEN 'none'
+                    WHEN lower(trim(p.general_method_bucket)) LIKE '01.04%' THEN '01.04'
+                    WHEN lower(trim(p.general_method_bucket)) LIKE 'none%' THEN 'none'
+                    ELSE trim(p.general_method_bucket)
+                END AS normalized_general_method_bucket,
+                COALESCE((
+                    SELECT GROUP_CONCAT(module_code, ';')
+                    FROM (
+                        SELECT DISTINCT value AS module_code
+                        FROM json_each(p.scientific_object_modules_json)
+                        ORDER BY module_code
+                    )
+                ), '') AS scientific_modules_canonical,
+                COALESCE((
+                    SELECT GROUP_CONCAT(module_code, ';')
+                    FROM (
+                        SELECT DISTINCT value AS module_code
+                        FROM json_each(p.final_modules_or_bucket_json)
+                        ORDER BY module_code
+                    )
+                ), '') AS final_assignments_canonical,
+                COALESCE((
+                    SELECT GROUP_CONCAT(module_code, ';')
+                    FROM (
+                        SELECT DISTINCT value AS module_code
+                        FROM json_each(p.final_modules_or_bucket_json)
+                        WHERE value <> '01.04'
+                        ORDER BY module_code
+                    )
+                ), '') AS final_formal_modules_canonical,
+                json_array_length(p.scientific_object_modules_json) AS scientific_module_count,
+                json_array_length(p.final_modules_or_bucket_json) AS final_assignment_count,
+                COALESCE((
+                    SELECT COUNT(*)
+                    FROM json_each(p.final_modules_or_bucket_json)
+                    WHERE value <> '01.04'
+                ), 0) AS final_formal_module_count,
+                CASE
+                    WHEN EXISTS (
+                        SELECT 1
+                        FROM json_each(p.final_modules_or_bucket_json)
+                        WHERE value = '01.04'
+                    ) THEN 1
+                    ELSE 0
+                END AS final_contains_bucket_0104,
+                CASE
+                    WHEN EXISTS (
+                        SELECT 1
+                        FROM json_each(p.final_modules_or_bucket_json)
+                        WHERE value <> '01.04'
+                    ) THEN 1
+                    ELSE 0
+                END AS final_contains_formal_modules
+            FROM papers p
+        )
+        SELECT
+            paper_id,
+            title,
+            year,
+            source,
+            active_confirmed_core,
+            scientific_object_modules_json,
+            scientific_modules_canonical,
+            scientific_module_count,
+            general_method_bucket AS general_method_bucket_raw,
+            normalized_general_method_bucket,
+            final_modules_or_bucket_raw,
+            final_modules_or_bucket_json,
+            final_assignments_canonical,
+            final_formal_modules_canonical,
+            final_assignment_count,
+            final_formal_module_count,
+            CASE WHEN normalized_general_method_bucket = '01.04' THEN 1 ELSE 0 END AS has_general_method_bucket,
+            final_contains_bucket_0104,
+            final_contains_formal_modules,
+            CASE
+                WHEN scientific_modules_canonical = final_formal_modules_canonical THEN 1
+                ELSE 0
+            END AS scientific_matches_final_formal_modules,
+            CASE
+                WHEN normalized_general_method_bucket NOT IN ('none', '01.04') THEN 'dirty_general_method_bucket'
+                WHEN final_contains_bucket_0104 = 1 AND final_contains_formal_modules = 1 THEN 'mixed_final_bucket_and_formal_modules'
+                WHEN normalized_general_method_bucket = '01.04' AND final_contains_bucket_0104 = 1 AND scientific_module_count = 0 AND final_formal_module_count = 0 THEN 'bucket_only_consistent'
+                WHEN normalized_general_method_bucket = '01.04' AND final_contains_bucket_0104 = 0 AND final_formal_module_count > 0 THEN 'bucket_replaced_by_formal_modules'
+                WHEN normalized_general_method_bucket = 'none' AND final_contains_bucket_0104 = 1 THEN 'bucket_added_in_final'
+                WHEN scientific_module_count = 0 AND final_formal_module_count > 0 THEN 'final_formal_without_scientific_modules'
+                WHEN scientific_module_count > 0 AND final_formal_module_count = 0 AND final_contains_bucket_0104 = 0 THEN 'scientific_modules_missing_in_final'
+                WHEN scientific_module_count > 0 AND scientific_modules_canonical <> final_formal_modules_canonical THEN 'final_formal_differs_from_scientific_modules'
+                ELSE 'aligned'
+            END AS boundary_case_kind
+        FROM normalized;
+        CREATE VIEW classification_boundary_summary AS
+        SELECT
+            active_confirmed_core,
+            boundary_case_kind,
+            COUNT(*) AS paper_count,
+            SUM(has_general_method_bucket) AS general_bucket_count,
+            SUM(final_contains_bucket_0104) AS final_bucket_count,
+            SUM(final_contains_formal_modules) AS final_formal_count
+        FROM classification_boundary_analysis
+        GROUP BY active_confirmed_core, boundary_case_kind;
         ''')
         active = [row for row in papers if row['active_confirmed_core']]
         active_local = [row for row in active if row['pdf_exists']]

@@ -1,0 +1,21 @@
+# Suggested CODEOWNERS for ASD long-running collaboration.
+# Replace or expand these owners when a dedicated GitHub team exists.
+#
+# Single-writer-sensitive files should route through the coordinating owner
+# below so master/progress/report edits do not race each other.
+
+* @zzy451
+
+# Single-writer-sensitive source-of-truth files.
+/Autonomous Scientific Discovery/Paper_Lists/agent_master_paper_list.md @zzy451
+/Autonomous Scientific Discovery/Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md @zzy451
+/Autonomous Scientific Discovery/Coverage_Check/*report*.md @zzy451
+/Autonomous Scientific Discovery/Coverage_Check/*audit*.md @zzy451
+
+# Structured data and the scripts that regenerate or consume it.
+/Autonomous Scientific Discovery/Data/ @zzy451
+/Autonomous Scientific Discovery/scripts/ @zzy451
+
+# Collaboration policy files.
+/.github/ @zzy451
+/CODEOWNERS @zzy451

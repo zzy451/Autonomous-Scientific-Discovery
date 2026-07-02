@@ -63,6 +63,11 @@ FORMAL_MODULES = {f"{idx:02d}" for idx in range(1, 12)}
 GENERAL_BUCKET_CANONICAL = (
     "01.04_general_asd_methods_without_concrete_object_experiments"
 )
+OBJECT_COVERAGE_MODES = {
+    "single_module",
+    "multi_module",
+    "general_method_without_concrete_object_experiments",
+}
 
 TAXONOMY_CODE_TO_LABEL = {
     "01": "Formal, Information and Computational Sciences",
@@ -86,6 +91,76 @@ REMARK_KEYS = [
     "general_method_bucket",
     "first_hand_sources_checked",
 ]
+
+REMARK_VALUE_PATTERNS = {
+    "scientific_object_modules": re.compile(
+        r"(?<![A-Za-z0-9_])scientific_object_modules\s*=\s*`?([0-9]{2}(?:\s*;\s*[0-9]{2})*)`?",
+        re.IGNORECASE,
+    ),
+    "object_coverage_mode": re.compile(
+        r"(?<![A-Za-z0-9_])object_coverage_mode\s*=\s*`?(single_module|multi_module|general_method_without_concrete_object_experiments)`?",
+        re.IGNORECASE,
+    ),
+    "primary_module_for_filing": re.compile(
+        r"(?<![A-Za-z0-9_])primary_module_for_filing\s*=\s*`?([0-9]{2})`?",
+        re.IGNORECASE,
+    ),
+    "general_method_bucket": re.compile(
+        r"(?<![A-Za-z0-9_])general_method_bucket\s*=\s*`?(none|01\.04(?:_general_asd_methods_without_concrete_object_experiments)?)`?",
+        re.IGNORECASE,
+    ),
+    "first_hand_sources_checked": re.compile(
+        r"(?<![A-Za-z0-9_])first_hand_sources_checked\s*=\s*",
+        re.IGNORECASE,
+    ),
+}
+FIRST_HAND_CONTINUATION_PREFIXES = (
+    "official",
+    "arxiv",
+    "ar5iv",
+    "crossref",
+    "doi",
+    "publisher",
+    "pmc",
+    "pubmed",
+    "amazon",
+    "science",
+    "nature",
+    "zenodo",
+    "github",
+    "repo",
+    "project",
+    "landing",
+    "html",
+    "pdf",
+    "preprint",
+    "canonical",
+    "full paper",
+    "full text",
+    "biorxiv",
+    "ssrn",
+    "api",
+    "dataset",
+    "jpl",
+)
+FIRST_HAND_STOP_PREFIXES = (
+    "evidence",
+    "the ",
+    "this ",
+    "current ",
+    "keep ",
+    "note ",
+    "prior ",
+    "independent ",
+    "legacy ",
+    "stale ",
+    "reviewer",
+    "scientific_object_modules",
+    "object_coverage_mode",
+    "primary_module_for_filing",
+    "general_method_bucket",
+    "source_limited",
+)
 
 
 @dataclass
@@ -175,26 +250,73 @@ def parse_doi_and_arxiv(value: str) -> Tuple[str, str, str]:
     return doi, arxiv_id, url
 
 
+def normalize_extracted_remark_value(raw_value: str) -> str:
+    value = raw_value.strip()
+    while value and value[0] in "'\"([{":
+        value = value[1:].lstrip()
+    while value and value[-1] in "'\".,;)]}":
+        value = value[:-1].rstrip()
+    return value
+
+
+def is_likely_first_hand_continuation(clause: str) -> bool:
+    lowered = clause.strip().lower()
+    if not lowered:
+        return False
+    if "=" in lowered:
+        return False
+    if lowered.startswith(FIRST_HAND_STOP_PREFIXES):
+        return False
+    if lowered.startswith(FIRST_HAND_CONTINUATION_PREFIXES):
+        return True
+    return any(
+        marker in lowered
+        for marker in (" github", " ar5iv", " doi", " pdf", " html", " repo", " api")
+    )
+
+
+def extract_first_hand_sources_checked(remarks: str) -> str:
+    matches = list(REMARK_VALUE_PATTERNS["first_hand_sources_checked"].finditer(remarks))
+    if not matches:
+        return ""
+    tail = remarks[matches[-1].end() :]
+    next_assignment = re.search(r"[;,]\s*[a-z_]+\s*=", tail, re.IGNORECASE)
+    candidate = tail[: next_assignment.start()] if next_assignment else tail
+    parts = [part.strip() for part in candidate.split(";") if part.strip()]
+    if not parts:
+        return ""
+    kept_parts = [parts[0]]
+    for part in parts[1:]:
+        if not is_likely_first_hand_continuation(part):
+            break
+        kept_parts.append(part)
+    return normalize_extracted_remark_value("; ".join(kept_parts))
+
+
 def extract_remark_value(remarks: str, key: str) -> str:
     if not remarks:
         return ""
-    following = [other for other in REMARK_KEYS if other != key]
-    following_pattern = "|".join(re.escape(item) for item in following)
-    pattern = re.compile(
-        rf"{re.escape(key)}=(.*?)(?=; (?:{following_pattern})=|$)",
-        re.IGNORECASE,
-    )
-    match = pattern.search(remarks)
-    return match.group(1).strip() if match else ""
+    if key == "first_hand_sources_checked":
+        return extract_first_hand_sources_checked(remarks)
+    pattern = REMARK_VALUE_PATTERNS[key]
+    matches = list(pattern.finditer(remarks))
+    if not matches:
+        return ""
+    return normalize_extracted_remark_value(matches[-1].group(1))
+
+
+def extract_structured_remark_fields(remarks: str) -> Dict[str, str]:
+    return {key: extract_remark_value(remarks, key) for key in REMARK_KEYS}
 
 
 def normalize_general_method_bucket(raw_value: str, legacy_main: str, legacy_secondary: str) -> str:
     raw = raw_value.strip()
     if not raw and legacy_main == "01" and legacy_secondary == "01.04":
         raw = "01.04"
-    if raw in {"", "none"}:
+    raw_lower = raw.lower()
+    if raw_lower in {"", "none"}:
         return "none"
-    if raw.startswith("01.04"):
+    if raw_lower.startswith("01.04"):
         return GENERAL_BUCKET_CANONICAL
     return raw
 
@@ -212,7 +334,7 @@ def normalize_modules(raw_value: str, legacy_main: str, general_bucket: str) -> 
 
 def normalize_object_coverage_mode(raw_value: str, modules: List[str], general_bucket: str) -> str:
     raw = raw_value.strip()
-    if raw:
+    if raw in OBJECT_COVERAGE_MODES:
         return raw
     if general_bucket != "none":
         return "general_method_without_concrete_object_experiments"
@@ -225,7 +347,7 @@ def normalize_object_coverage_mode(raw_value: str, modules: List[str], general_b
 
 def normalize_primary_module(raw_value: str, legacy_main: str, modules: List[str]) -> str:
     raw = raw_value.strip()
-    if raw:
+    if raw in FORMAL_MODULES:
         return raw
     if legacy_main in FORMAL_MODULES:
         return legacy_main
@@ -247,11 +369,12 @@ def build_papers(master_rows: Iterable[Dict[str, str]], progress_rows: Dict[str,
         progress = progress_rows.get(paper_id, {})
         remarks = row["Remarks"]
 
-        raw_modules = extract_remark_value(remarks, "scientific_object_modules")
-        raw_object_coverage_mode = extract_remark_value(remarks, "object_coverage_mode")
-        raw_primary_module = extract_remark_value(remarks, "primary_module_for_filing")
-        raw_general_bucket = extract_remark_value(remarks, "general_method_bucket")
-        first_hand_sources_checked = extract_remark_value(remarks, "first_hand_sources_checked")
+        structured_remarks = extract_structured_remark_fields(remarks)
+        raw_modules = structured_remarks["scientific_object_modules"]
+        raw_object_coverage_mode = structured_remarks["object_coverage_mode"]
+        raw_primary_module = structured_remarks["primary_module_for_filing"]
+        raw_general_bucket = structured_remarks["general_method_bucket"]
+        first_hand_sources_checked = structured_remarks["first_hand_sources_checked"]
 
         general_method_bucket = normalize_general_method_bucket(
             raw_general_bucket, row["Main class"], row["Secondary class"]
