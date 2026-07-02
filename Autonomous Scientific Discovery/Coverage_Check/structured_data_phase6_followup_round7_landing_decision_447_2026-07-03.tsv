@@ -1,0 +1,7 @@
+paper_id	reviewer_recommendation	controller_decision	land_now	note_writeback_now	authoritative_update_now	reason
+ASD-0005	conservative_hold	conservative_hold	no	no	no	Stronger lead exists, but no retrievable main PDF or full text emerged in this environment; keep stable 03;04 and source_limited=yes.
+ASD-0097	conservative_hold	conservative_hold	no	no	no	Stable 06 remains supported, but stronger first-hand evidence still does not justify landing 07 or a controller-authorized writeback in this round.
+ASD-0112	conservative_hold	conservative_hold	no	no	no	Stable 03 remains supported, but current access is still abstract/metadata-led and not strong enough for another authoritative change.
+ASD-0158	conservative_hold	conservative_hold	no	no	no	03 anchor remains stable and access remains blocked; no new authoritative delta emerged.
+ASD-0569	direct_landing_candidate	controller_override_conservative_hold	no	no	no	Crossref confirms CC BY metadata and an official Wiley PDF link, but controller re-check on 2026-07-03 still hit Cloudflare/403 on actual Wiley article/PDF access. Under current source_limited discipline, metadata-only OA signals are not enough to claim the access blocker is resolved.
+ASD-0603	conservative_hold	conservative_hold	no	no	no	03 anchor remains stable and full-text/PDF access remains genuinely limited.
