@@ -16,6 +16,8 @@ MISSING_PDF_JSON = DATA_DIR / 'missing_pdf_manifest.json'
 NOTE_MANIFEST_JSON = DATA_DIR / 'note_manifest.json'
 PAPERS_CSV = DATA_DIR / 'papers.csv'
 PAPER_MODULES_CSV = DATA_DIR / 'paper_modules.csv'
+CANONICAL_PAPER_MODULES_CSV = DATA_DIR / 'canonical_paper_modules.csv'
+WORKFLOW_MIRROR_PAPER_MODULES_CSV = DATA_DIR / 'workflow_mirror_paper_modules.csv'
 SQLITE_PATH = DATA_DIR / 'papers.sqlite'
 FORMAL_MODULES = {f'{idx:02d}' for idx in range(1, 12)}
 CSV_FIELDS = [
@@ -86,6 +88,14 @@ def write_module_csv(rows: list[dict[str, object]]) -> None:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
+    with CANONICAL_PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows([row for row in rows if row['assignment_scope'] == 'scientific_object_modules'])
+    with WORKFLOW_MIRROR_PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows([row for row in rows if row['assignment_scope'] == 'final_modules_or_bucket'])
 
 def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, str]], pdf_manifest: list[dict[str, object]], missing_pdf_manifest: list[dict[str, object]], note_manifest: list[dict[str, object]], module_rows: list[dict[str, object]]) -> None:
     if SQLITE_PATH.exists():
@@ -224,6 +234,40 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
             SUM(CASE WHEN active_confirmed_core = 1 AND note_exists = 0 THEN 1 ELSE 0 END) AS active_missing_note_count,
             SUM(CASE WHEN active_confirmed_core = 1 AND lower(trim(COALESCE(source_limited, ''))) LIKE 'yes%' THEN 1 ELSE 0 END) AS active_source_limited_count
         FROM canonical_bucket_0104_papers;
+        CREATE VIEW canonical_analysis_baseline AS
+        WITH active_papers AS (
+            SELECT *
+            FROM papers
+            WHERE active_confirmed_core = 1
+        ),
+        formal_assignment_counts AS (
+            SELECT COUNT(*) AS active_formal_module_assignment_count
+            FROM canonical_paper_modules pm
+            JOIN active_papers p ON p.paper_id = pm.paper_id
+        ),
+        record_counts AS (
+            SELECT
+                COUNT(*) AS active_confirmed_core_record_count,
+                SUM(CASE WHEN json_array_length(scientific_object_modules_json) > 0 THEN 1 ELSE 0 END) AS active_records_with_formal_modules_count,
+                SUM(CASE WHEN lower(trim(COALESCE(general_method_bucket, ''))) LIKE '01.04%' THEN 1 ELSE 0 END) AS active_general_method_bucket_record_count,
+                SUM(CASE WHEN object_coverage_mode = 'single_module' THEN 1 ELSE 0 END) AS active_single_module_record_count,
+                SUM(CASE WHEN object_coverage_mode = 'multi_module' THEN 1 ELSE 0 END) AS active_multi_module_record_count,
+                SUM(CASE WHEN object_coverage_mode = 'general_method_without_concrete_object_experiments' THEN 1 ELSE 0 END) AS active_general_method_record_count
+            FROM active_papers
+        )
+        SELECT
+            r.active_confirmed_core_record_count,
+            r.active_records_with_formal_modules_count,
+            r.active_general_method_bucket_record_count,
+            r.active_single_module_record_count,
+            r.active_multi_module_record_count,
+            r.active_general_method_record_count,
+            r.active_single_module_record_count + r.active_general_method_record_count AS active_single_or_general_record_count,
+            f.active_formal_module_assignment_count,
+            r.active_general_method_bucket_record_count AS active_general_method_bucket_assignment_count,
+            f.active_formal_module_assignment_count + r.active_general_method_bucket_record_count AS active_total_canonical_assignment_count
+        FROM record_counts r
+        CROSS JOIN formal_assignment_counts f;
         CREATE VIEW coverage_status_analysis AS
         WITH normalized AS (
             SELECT
@@ -478,6 +522,8 @@ def main() -> None:
     build_sqlite(papers, taxonomy, pdf_manifest, missing_pdf_manifest, note_manifest, module_rows)
     print(f'Wrote {PAPERS_CSV}')
     print(f'Wrote {PAPER_MODULES_CSV}')
+    print(f'Wrote {CANONICAL_PAPER_MODULES_CSV}')
+    print(f'Wrote {WORKFLOW_MIRROR_PAPER_MODULES_CSV}')
     print(f'Wrote {SQLITE_PATH}')
     print(f'papers rows: {len(papers)}')
     print(f'paper_modules rows: {len(module_rows)}')

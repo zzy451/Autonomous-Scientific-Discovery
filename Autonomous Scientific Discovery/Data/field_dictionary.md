@@ -43,6 +43,8 @@
 - `note_manifest.json`
 - `papers.csv`
 - `paper_modules.csv`
+- `canonical_paper_modules.csv`
+- `workflow_mirror_paper_modules.csv`
 - `papers.sqlite`
 
 analysis 层用于脚本消费、人工 spot check、统计和 SQL 查询；它不是新的事实口径。

@@ -25,6 +25,10 @@ Formal Phase 3 governance artifacts:
 - semantics freeze: `Coverage_Check/structured_data_authoritative_semantics_freeze_2026-07-02.md`
 - baseline acceptance checklist: `Coverage_Check/structured_data_authoritative_acceptance_checklist_447_2026-07-02.md`
 
+Formal Phase 4 analysis artifact:
+
+- canonical-only analysis semantics: `Coverage_Check/structured_data_canonical_analysis_semantics_2026-07-02.md`
+
 Everything under `Data/` is derived. `Notes/`, `Reference_PDF/`, and `Coverage_Check/` reports are supporting evidence layers, not independent sources of truth for structured counts.
 
 If the structured outputs disagree with master/progress, fix master/progress first and then regenerate. Do not hand-edit `Data/*.json`, `Data/*.jsonl`, `Data/*.csv`, or `Data/*.sqlite` as a substitute for repairing the authoritative records.
@@ -65,7 +69,7 @@ The order matters:
 2. `check_data_consistency.py`
    Verifies that registry and analysis outputs still agree with the master/progress-derived facts before analysis artifacts are trusted.
 3. `build_analysis_db.py`
-   Builds analysis-friendly outputs from the checked snapshot: `papers.csv`, `paper_modules.csv`, and `papers.sqlite`.
+   Builds analysis-friendly outputs from the checked snapshot: `papers.csv`, `paper_modules.csv`, `canonical_paper_modules.csv`, `workflow_mirror_paper_modules.csv`, and `papers.sqlite`.
 
 Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `papers.jsonl` and the manifests are already current.
 
@@ -79,7 +83,9 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `registry/asset_manifest.jsonl`: normalized asset inventory covering at least note and primary PDF records.
 - `papers.jsonl`: record-level analysis snapshot for scripts, version control, and exact per-paper inspection.
 - `papers.csv`: flattened spreadsheet view of `papers.jsonl`.
-- `paper_modules.csv`: exploded one-paper-to-many-modules table containing both canonical `scientific_object_modules` assignments and workflow-mirror `final_modules_or_bucket` assignments; always filter by `assignment_scope` before using it for statistics.
+- `paper_modules.csv`: mixed-scope exploded one-paper-to-many-modules export containing both canonical `scientific_object_modules` assignments and workflow-mirror `final_modules_or_bucket` assignments; use for inspection/export only, and always filter by `assignment_scope` before using it for statistics.
+- `canonical_paper_modules.csv`: canonical-only flat module-assignment export for spreadsheet review without workflow-mirror rows.
+- `workflow_mirror_paper_modules.csv`: workflow-mirror-only flat assignment export for audit/debugging.
 - `papers.sqlite`: normalized query database for joins, filters, and aggregation.
 - `taxonomy_index.json`: code/label mapping for `01-11` and `01.04`.
 - `pdf_manifest.json`: local archived PDF inventory with hashes.
@@ -95,11 +101,16 @@ Use `papers.jsonl` when:
 - array fields must stay as arrays
 - you are writing scripts or reviewing exact exported values
 
-Use `papers.csv` or `paper_modules.csv` when:
+Use `papers.csv` or `canonical_paper_modules.csv` when:
 
 - you want spreadsheet review, quick filtering, or manual spot checks
 - you need a flat table for sharing or lightweight statistics
 - you understand that arrays are flattened for convenience
+
+Use `paper_modules.csv` only when:
+
+- you explicitly need both canonical and workflow-mirror assignment scopes in one flat export
+- you are prepared to filter by `assignment_scope` before aggregating
 
 Use `papers.sqlite` when:
 
@@ -130,6 +141,12 @@ All commands below are run from the repository root and read `Data/papers.sqlite
 
 Unless a command is explicitly labeled `audit` / `mirror`, classification outputs should be interpreted as canonical-only.
 
+If you need the fixed record-vs-assignment baseline before any module chart or table, start here:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" analysis-baseline
+```
+
 Show metadata and module counts:
 
 ```bash
@@ -158,6 +175,18 @@ List the active no-local-PDF inventory:
 
 ```bash
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" missing-pdf
+```
+
+List the active source-limited inventory:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" source-limited
+```
+
+Show overall coverage / follow-up state summary:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" coverage-summary
 ```
 
 List active multi-module papers:
@@ -192,16 +221,25 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" bucket-010
 
 Operational notes:
 
+- `analysis-baseline` is the fixed canonical record-vs-assignment glossary output for the current active confirmed-core snapshot.
 - `summary` prints metadata plus canonical formal-module counts from SQLite.
 - `module-distribution` converts those canonical module counts into a stable distribution table with assignment shares.
 - `object-coverage-summary` is the canonical record-level split between `single_module`, `multi_module`, and `general_method_without_concrete_object_experiments`.
 - `paper` prints the full structured paper payload, including both canonical fields and workflow-mirror inspection fields; do not treat `final_modules_or_bucket` as canonical.
 - `missing-pdf`, `multi-module`, and `module` print tab-separated tables for shell use or redirection.
+- `source-limited` prints the active source-limited inventory and can be expanded with `--all` when non-core rows matter.
 - `multi-module-combo-summary` is the canonical combination-frequency view for multi-module papers.
 - `module-pdf-coverage` is the canonical per-module PDF coverage table.
 - `bucket-0104-summary` is the canonical `01.04` bucket count, distinct from the mirror audit command.
 - `boundary-cases` and `bucket-summary` are audit commands for canonical-vs-mirror inspection, not default canonical classification summaries.
 - If `papers.sqlite` is stale or missing, rerun `build_analysis_db.py` after `export -> check`.
+
+Interpretation guardrails:
+
+- formal `01-11` module rows are expanded assignment counts, not unique-paper counts
+- canonical `01.04` bucket statistics are always kept separate from formal `01-11`
+- `summary` and `analysis-baseline` should be read together before writing any module count into a report
+- `paper_modules.csv` is a mixed-scope flat export; for canonical-only aggregation, prefer SQLite `canonical_*` views over direct CSV grouping
 
 On Windows terminals that still default to GBK, Unicode-heavy titles may print poorly. If needed, run:
 

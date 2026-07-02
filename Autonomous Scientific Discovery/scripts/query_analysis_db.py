@@ -63,12 +63,28 @@ def print_status_breakdown(conn: sqlite3.Connection, field: str, *, active_only:
     print_rows(rows, max_widths={field: 64})
     print()
 
+def canonical_analysis_baseline(conn: sqlite3.Connection, *, heading: str = 'Canonical Analysis Baseline') -> None:
+    print_heading(heading)
+    row = conn.execute('SELECT * FROM canonical_analysis_baseline').fetchone()
+    payload = dict(row)
+    payload['semantics'] = {
+        'record_count': 'unique active confirmed-core papers',
+        'formal_assignment_count': 'expanded canonical scientific_object_modules assignments across active confirmed-core papers',
+        'general_method_bucket_assignment_count': 'expanded canonical 01.04 bucket assignments across active confirmed-core papers',
+        'total_canonical_assignment_count': 'formal assignments plus canonical 01.04 bucket assignments',
+    }
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    print()
+
 def summary(conn: sqlite3.Connection) -> None:
     print_heading('Canonical Summary')
     meta = {row['key']: row['value'] for row in conn.execute('SELECT key, value FROM metadata')}
     print(json.dumps(meta, ensure_ascii=False, indent=2))
     print()
-    rows = conn.execute('''SELECT module_code, active_confirmed_core_count FROM canonical_module_assignment_counts ORDER BY module_code''').fetchall()
+    canonical_analysis_baseline(conn)
+    rows = conn.execute('''SELECT module_code, active_confirmed_core_count AS active_assigned_paper_count FROM canonical_module_assignment_counts ORDER BY module_code''').fetchall()
+    print_heading('Canonical Formal Module Assignment Counts')
+    print('Interpretation: the table below shows expanded formal-module assignments, not unique-paper record counts.')
     print_rows(rows)
     print()
     bucket_row = conn.execute('SELECT active_confirmed_core_count FROM canonical_bucket_0104_summary').fetchone()
@@ -77,16 +93,14 @@ def summary(conn: sqlite3.Connection) -> None:
 
 def module_distribution(conn: sqlite3.Connection) -> None:
     print_heading('Canonical Formal Module Distribution')
-    meta = {row['key']: row['value'] for row in conn.execute('SELECT key, value FROM metadata')}
-    active_record_count = int(meta['active_confirmed_core_count'])
-    active_assignment_count = conn.execute(
-        'SELECT COALESCE(SUM(active_confirmed_core_count), 0) AS total FROM canonical_module_assignment_counts'
-    ).fetchone()['total']
-    bucket_row = conn.execute('SELECT active_confirmed_core_count FROM canonical_bucket_0104_summary').fetchone()
+    baseline = dict(conn.execute('SELECT * FROM canonical_analysis_baseline').fetchone())
+    active_record_count = baseline['active_confirmed_core_record_count']
+    active_assignment_count = baseline['active_formal_module_assignment_count']
     print(json.dumps({
         'active_confirmed_core_record_count': active_record_count,
         'active_formal_module_assignment_count': active_assignment_count,
-        'active_general_method_bucket_0104_count': bucket_row['active_confirmed_core_count'],
+        'active_general_method_bucket_0104_count': baseline['active_general_method_bucket_assignment_count'],
+        'active_total_canonical_assignment_count': baseline['active_total_canonical_assignment_count'],
     }, ensure_ascii=False, indent=2))
     print()
     rows = conn.execute('''
@@ -230,6 +244,27 @@ def missing_pdf(conn: sqlite3.Connection) -> None:
     print_heading('Missing Local PDF Inventory')
     rows = conn.execute('SELECT paper_id, title, doi, pdf_status, evidence_status, source_limited FROM missing_pdf_inventory ORDER BY paper_id').fetchall()
     print_rows(rows)
+
+def source_limited(conn: sqlite3.Connection, *, all_papers: bool) -> None:
+    print_heading('Source-Limited Inventory')
+    rows = conn.execute(f'''
+        SELECT
+            paper_id,
+            title,
+            active_confirmed_core,
+            object_coverage_mode,
+            primary_module_for_filing,
+            pdf_exists,
+            note_exists,
+            pdf_status,
+            evidence_status,
+            source_limited
+        FROM papers
+        WHERE lower(trim(COALESCE(source_limited, ''))) LIKE 'yes%'
+        {'AND active_confirmed_core = 1' if not all_papers else ''}
+        ORDER BY active_confirmed_core DESC, paper_id
+    ''').fetchall()
+    print_rows(rows, max_widths={'title': 56, 'object_coverage_mode': 48, 'evidence_status': 40})
 
 def multi_module(conn: sqlite3.Connection) -> None:
     print_heading('Canonical Multi-Module Papers')
@@ -421,6 +456,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Query ASD analysis SQLite outputs. Default classification commands are canonical-only; workflow mirror/final fields should be interpreted only in explicit audit commands.')
     subparsers = parser.add_subparsers(dest='command', required=True)
     subparsers.add_parser('summary', help='Canonical-only formal module counts for the current structured snapshot')
+    subparsers.add_parser('analysis-baseline', help='Canonical record-vs-assignment baseline for the current active confirmed-core snapshot')
     subparsers.add_parser('module-distribution', help='Canonical formal module distribution with assignment shares and active-record baseline')
     coverage_mode_parser = subparsers.add_parser('object-coverage-summary', help='Canonical object coverage modes at record level')
     coverage_mode_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
@@ -436,6 +472,8 @@ def build_parser() -> argparse.ArgumentParser:
     paper_parser = subparsers.add_parser('paper', help='Paper detail view including both canonical and workflow-mirror fields for inspection')
     paper_parser.add_argument('paper_id')
     subparsers.add_parser('missing-pdf', help='Local PDF evidence inventory; not a canonical classification count')
+    source_limited_parser = subparsers.add_parser('source-limited', help='Source-limited inventory; not a canonical classification count')
+    source_limited_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
     subparsers.add_parser('multi-module', help='Canonical-only active multi-module papers from scientific_object_modules')
     module_parser = subparsers.add_parser('module', help='Canonical-only papers assigned to one formal module code')
     module_parser.add_argument('code')
@@ -461,6 +499,8 @@ def main() -> None:
     try:
         if args.command == 'summary':
             summary(conn)
+        elif args.command == 'analysis-baseline':
+            canonical_analysis_baseline(conn)
         elif args.command == 'module-distribution':
             module_distribution(conn)
         elif args.command == 'object-coverage-summary':
@@ -475,6 +515,8 @@ def main() -> None:
             paper(conn, args.paper_id)
         elif args.command == 'missing-pdf':
             missing_pdf(conn)
+        elif args.command == 'source-limited':
+            source_limited(conn, all_papers=args.all)
         elif args.command == 'multi-module':
             multi_module(conn)
         elif args.command == 'module':
