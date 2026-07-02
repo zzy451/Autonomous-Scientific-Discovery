@@ -501,8 +501,10 @@ def validate_authoritative_sources(papers: List[Dict[str, object]]) -> None:
         )
 
 
-def collect_final_modules_mirror_drifts(papers: List[Dict[str, object]]) -> List[str]:
-    drift_ids: List[str] = []
+def collect_final_modules_mirror_drifts(
+    papers: List[Dict[str, object]]
+) -> List[Dict[str, object]]:
+    drifts: List[Dict[str, object]] = []
     for row in papers:
         if not row["active_confirmed_core"]:
             continue
@@ -512,9 +514,31 @@ def collect_final_modules_mirror_drifts(papers: List[Dict[str, object]]) -> List
         derived_assignments = tuple(row["scientific_object_modules"])
         derived_bucket = "01.04" if row["general_method_bucket"] != "none" else ""
         final_has_bucket = "01.04" if "01.04" in row["final_modules_or_bucket"] else ""
-        if final_assignments != derived_assignments or final_has_bucket != derived_bucket:
-            drift_ids.append(str(row["paper_id"]))
-    return drift_ids
+        if final_assignments == derived_assignments and final_has_bucket == derived_bucket:
+            continue
+
+        if final_has_bucket != derived_bucket:
+            drift_kind = "semantic_drift"
+            drift_reason = "general_bucket_mismatch"
+        elif set(final_assignments) != set(derived_assignments):
+            drift_kind = "semantic_drift"
+            drift_reason = "formal_module_membership_mismatch"
+        else:
+            drift_kind = "order_drift"
+            drift_reason = "formal_module_order_mismatch"
+
+        drifts.append(
+            {
+                "paper_id": str(row["paper_id"]),
+                "drift_kind": drift_kind,
+                "drift_reason": drift_reason,
+                "derived_modules": list(derived_assignments),
+                "final_modules": list(final_assignments),
+                "derived_bucket": derived_bucket,
+                "final_bucket": final_has_bucket,
+            }
+        )
+    return drifts
 
 
 def validate_registry_layer(
@@ -1010,6 +1034,16 @@ def main() -> None:
         require_registry=require_registry,
     )
     final_modules_mirror_drifts = collect_final_modules_mirror_drifts(papers)
+    semantic_drift_ids = [
+        drift["paper_id"]
+        for drift in final_modules_mirror_drifts
+        if drift["drift_kind"] == "semantic_drift"
+    ]
+    order_drift_ids = [
+        drift["paper_id"]
+        for drift in final_modules_mirror_drifts
+        if drift["drift_kind"] == "order_drift"
+    ]
 
     print(f"papers.jsonl records: {len(papers)}")
     print(f"active confirmed-core: {len(active)}")
@@ -1018,6 +1052,16 @@ def main() -> None:
     print(
         "workflow mirror drift count "
         f"(progress final_modules_or_bucket vs canonical derived classification): {len(final_modules_mirror_drifts)}"
+    )
+    print(
+        "workflow mirror semantic drift count: "
+        f"{len(semantic_drift_ids)}"
+        + (f" [{', '.join(semantic_drift_ids)}]" if semantic_drift_ids else "")
+    )
+    print(
+        "workflow mirror order drift count: "
+        f"{len(order_drift_ids)}"
+        + (f" [{', '.join(order_drift_ids)}]" if order_drift_ids else "")
     )
     print("All structured-data consistency checks passed.")
 

@@ -480,7 +480,7 @@
 
 | ASD-0612 | Navigating phase diagram complexity to guide robotic inorganic materials synthesis | Notes/04_Materials_Science/Chen_2024_Navigating_Phase_Diagram_Complexity.md | archived_pdf | Reference_PDF/04_Materials_Science/Chen_2024_Navigating_Phase_Diagram_Complexity.pdf | first_hand_full_text | checked | updated | 04 | no | Batch18Partial1 | yes |
 
-| ASD-0613 | Physics Discovery in Nanoplasmonic Systems via Autonomous Experiments in Scanning Transmission Electron Microscopy | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Roccapriore_2022_Physics_Discovery_Nanoplasmonic_STEM.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Roccapriore_2022_Physics_Discovery_Nanoplasmonic_STEM.pdf | first_hand_abstract_review_packet | updated | checked | 02;04 | no | Batch24Partial1 | yes |
+| ASD-0613 | Physics Discovery in Nanoplasmonic Systems via Autonomous Experiments in Scanning Transmission Electron Microscopy | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Roccapriore_2022_Physics_Discovery_Nanoplasmonic_STEM.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Roccapriore_2022_Physics_Discovery_Nanoplasmonic_STEM.pdf | first_hand_abstract_review_packet | updated | checked | 02 | no | Batch24Partial1 | yes |
 
 | ASD-0614 | Modular, Multi-Robot Integration of Laboratories: An Autonomous Solid-State Workflow for Powder X-Ray Diffraction | Notes/04_Materials_Science/Lunt_2023_Autonomous_SolidState_PXRD_Workflow.md | archived_pdf | Reference_PDF/04_Materials_Science/Lunt_2023_Autonomous_SolidState_PXRD_Workflow.pdf | first_hand_abstract_review_packet | updated | checked | 04 | no | Batch24Partial1 | yes |
 
@@ -644,7 +644,7 @@
 
 | ASD-0714 | K-Dense Analyst: Towards Fully Automated Scientific Analysis | Notes/06_Life_Sciences/Li_2025_K_Dense_Analyst.md | archived_pdf | Reference_PDF/06_Life_Sciences/Li_2025_K_Dense_Analyst.pdf | first_hand_full_text | updated | updated | 06;07 | no | Batch21Partial1 | yes |
 
-| ASD-0715 | BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation | Notes/07_Medical_and_Health_Sciences/Ke_2025_BioDisco.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Ke_2025_BioDisco.pdf | first_hand_full_text | updated | checked | 06;07 | no | Batch21Partial1 | yes |
+| ASD-0715 | BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation | Notes/07_Medical_and_Health_Sciences/Ke_2025_BioDisco.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Ke_2025_BioDisco.pdf | first_hand_full_text | updated | checked | 07;06 | no | Batch21Partial1 | yes |
 
 | ASD-0716 | Bio AI Agent: A Multi-Agent Artificial Intelligence System for Autonomous CAR-T Cell Therapy Development with Integrated Target Discovery, Toxicity Prediction, and Rational Molecular Design | Notes/07_Medical_and_Health_Sciences/Ni_2025_Bio_AI_Agent_CAR_T.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Ni_2025_Bio_AI_Agent_CAR_T.pdf | first_hand_abstract_review_packet | updated | updated | 07 | no | Batch25Partial1 | yes |
 
@@ -854,7 +854,7 @@
 
 | ASD-0833 | Towards Autonomous Mechanistic Reasoning in Virtual Cells | Notes/06_Life_Sciences/Jang_2026_Virtual_Cells_Mechanistic_Reasoning.md | archived_pdf | Reference_PDF/06_Life_Sciences/Jang_2026_Virtual_Cells_Mechanistic_Reasoning.pdf | first_hand_full_text | updated | updated | 06 | no | Batch28Partial1 | yes |
 
-| ASD-0838 | Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry | Notes/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.pdf | crossref_and_official_pages_checked_cloudflare_blocked_pdf | updated_source_limited | not_updated_conservative_hold | 03;04 | yes | Batch30Partial4 | no |
+| ASD-0838 | Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry | Notes/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.pdf | crossref_and_official_pages_checked_cloudflare_blocked_pdf | updated_source_limited | not_updated_conservative_hold | 03 | yes | Batch30Partial4 | no |
 
 | ASD-0839 | First head-to-head comparison of agentic AI applied to the analysis of simulated data of the Einstein Telescope | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Inguglia_2026_Einstein_Telescope_Agentic_Analysis.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Inguglia_2026_Einstein_Telescope_Agentic_Analysis.pdf | first_hand_full_text | updated | updated | 02 | no | Batch29Partial1 | yes |
 

@@ -801,7 +801,6 @@ ASD-0612,Navigating phase diagram complexity to guide robotic inorganic material
 ASD-0612,Navigating phase diagram complexity to guide robotic inorganic materials synthesis,final_modules_or_bucket,04,formal_module,1,1
 ASD-0613,Physics Discovery in Nanoplasmonic Systems via Autonomous Experiments in Scanning Transmission Electron Microscopy,scientific_object_modules,02,formal_module,1,1
 ASD-0613,Physics Discovery in Nanoplasmonic Systems via Autonomous Experiments in Scanning Transmission Electron Microscopy,final_modules_or_bucket,02,formal_module,1,1
-ASD-0613,Physics Discovery in Nanoplasmonic Systems via Autonomous Experiments in Scanning Transmission Electron Microscopy,final_modules_or_bucket,04,formal_module,2,1
 ASD-0614,"Modular, Multi-Robot Integration of Laboratories: An Autonomous Solid-State Workflow for Powder X-Ray Diffraction",scientific_object_modules,04,formal_module,1,1
 ASD-0614,"Modular, Multi-Robot Integration of Laboratories: An Autonomous Solid-State Workflow for Powder X-Ray Diffraction",final_modules_or_bucket,04,formal_module,1,1
 ASD-0615,Using simulation to accelerate autonomous experimentation: A case study using mechanics,scientific_object_modules,09,formal_module,1,1
@@ -1050,8 +1049,8 @@ ASD-0714,K-Dense Analyst: Towards Fully Automated Scientific Analysis,final_modu
 ASD-0714,K-Dense Analyst: Towards Fully Automated Scientific Analysis,final_modules_or_bucket,07,formal_module,2,1
 ASD-0715,"BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation",scientific_object_modules,07,formal_module,1,1
 ASD-0715,"BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation",scientific_object_modules,06,formal_module,2,1
-ASD-0715,"BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation",final_modules_or_bucket,06,formal_module,1,1
-ASD-0715,"BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation",final_modules_or_bucket,07,formal_module,2,1
+ASD-0715,"BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation",final_modules_or_bucket,07,formal_module,1,1
+ASD-0715,"BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation",final_modules_or_bucket,06,formal_module,2,1
 ASD-0716,"Bio AI Agent: A Multi-Agent Artificial Intelligence System for Autonomous CAR-T Cell Therapy Development with Integrated Target Discovery, Toxicity Prediction, and Rational Molecular Design",scientific_object_modules,07,formal_module,1,1
 ASD-0716,"Bio AI Agent: A Multi-Agent Artificial Intelligence System for Autonomous CAR-T Cell Therapy Development with Integrated Target Discovery, Toxicity Prediction, and Rational Molecular Design",final_modules_or_bucket,07,formal_module,1,1
 ASD-0717,Paper Circle: An Open-source Multi-agent Research Discovery and Analysis Framework,scientific_object_modules,11,formal_module,1,1
@@ -1325,7 +1324,6 @@ ASD-0833,Towards Autonomous Mechanistic Reasoning in Virtual Cells,final_modules
 ASD-0836,Reframing Discovery Trade-Off in Plant Genomics Through Autonomous Agents,scientific_object_modules,08,formal_module,1,0
 ASD-0838,Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry,scientific_object_modules,03,formal_module,1,1
 ASD-0838,Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry,final_modules_or_bucket,03,formal_module,1,1
-ASD-0838,Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry,final_modules_or_bucket,04,formal_module,2,1
 ASD-0839,First head-to-head comparison of agentic AI applied to the analysis of simulated data of the Einstein Telescope,scientific_object_modules,02,formal_module,1,1
 ASD-0839,First head-to-head comparison of agentic AI applied to the analysis of simulated data of the Einstein Telescope,final_modules_or_bucket,02,formal_module,1,1
 ASD-0840,Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software,scientific_object_modules,02,formal_module,1,1
