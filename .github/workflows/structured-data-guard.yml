@@ -57,6 +57,8 @@ jobs:
               "Autonomous Scientific Discovery/Data/papers.jsonl",
               "Autonomous Scientific Discovery/Data/papers.csv",
               "Autonomous Scientific Discovery/Data/paper_modules.csv",
+              "Autonomous Scientific Discovery/Data/canonical_paper_modules.csv",
+              "Autonomous Scientific Discovery/Data/workflow_mirror_paper_modules.csv",
               "Autonomous Scientific Discovery/Data/papers.sqlite",
               "Autonomous Scientific Discovery/Data/pdf_manifest.json",
               "Autonomous Scientific Discovery/Data/missing_pdf_manifest.json",
@@ -89,7 +91,9 @@ jobs:
       - name: Smoke-test SQLite query entry point
         env:
           PYTHONIOENCODING: utf-8
-        run: python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" summary
+        run: |
+          python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" summary
+          python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" analysis-baseline
 
       - name: Verify regenerated outputs are committed
         run: git diff --exit-code

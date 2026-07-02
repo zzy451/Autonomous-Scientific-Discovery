@@ -1,4 +1,4 @@
-# Suggested CODEOWNERS for ASD long-running collaboration.
+# CODEOWNERS routing for ASD long-running collaboration.
 # Replace or expand these owners when a dedicated GitHub team exists.
 #
 # Single-writer-sensitive files should route through the coordinating owner

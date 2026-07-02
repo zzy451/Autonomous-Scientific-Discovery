@@ -27,9 +27,16 @@ If this PR changes the baseline, fill all fields:
 
 - old baseline:
 - new baseline:
-- approval by:
+- approved by Main Controller / current CODEOWNER:
+- reason for change:
+- affected authoritative fields:
+- active ID set changed? `yes / no`
 - snapshot id (`schema_version` / `papers_jsonl_sha256`):
 - canonical-only semantics reconfirmed: `yes / no`
+- query summary / analysis-baseline evidence:
+- drift explanation:
+- updated acceptance record path:
+- updated companion docs:
 
 If master/progress/report files changed, explain the single-writer coordination:
 
@@ -65,12 +72,15 @@ Mark all outputs or governance files changed in this PR:
 - [ ] `Autonomous Scientific Discovery/Data/papers.jsonl`
 - [ ] `Autonomous Scientific Discovery/Data/papers.csv`
 - [ ] `Autonomous Scientific Discovery/Data/paper_modules.csv`
+- [ ] `Autonomous Scientific Discovery/Data/canonical_paper_modules.csv`
+- [ ] `Autonomous Scientific Discovery/Data/workflow_mirror_paper_modules.csv`
 - [ ] `Autonomous Scientific Discovery/Data/papers.sqlite`
 - [ ] `Autonomous Scientific Discovery/Data/pdf_manifest.json`
 - [ ] `Autonomous Scientific Discovery/Data/missing_pdf_manifest.json`
 - [ ] `Autonomous Scientific Discovery/Data/note_manifest.json`
 - [ ] `Autonomous Scientific Discovery/Data/taxonomy_index.json`
 - [ ] `Autonomous Scientific Discovery/Data/README.md`
+- [ ] `Autonomous Scientific Discovery/Coverage_Check/` SOP / baseline-rule / analysis-semantics docs
 - [ ] `.github/` or `CODEOWNERS`
 
 ## Validation Run
@@ -86,6 +96,7 @@ If you used `query_analysis_db.py`, note the command(s):
 
 ```text
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" summary
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" analysis-baseline
 ```
 
 ## Reviewer Focus

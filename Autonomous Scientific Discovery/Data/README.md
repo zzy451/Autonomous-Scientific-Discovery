@@ -29,6 +29,11 @@ Formal Phase 4 analysis artifact:
 
 - canonical-only analysis semantics: `Coverage_Check/structured_data_canonical_analysis_semantics_2026-07-02.md`
 
+Formal Phase 5 collaboration artifacts:
+
+- collaboration SOP: `Coverage_Check/structured_data_collaboration_sop_2026-07-02.md`
+- baseline update rules: `Coverage_Check/structured_data_baseline_update_rules_2026-07-02.md`
+
 Everything under `Data/` is derived. `Notes/`, `Reference_PDF/`, and `Coverage_Check/` reports are supporting evidence layers, not independent sources of truth for structured counts.
 
 If the structured outputs disagree with master/progress, fix master/progress first and then regenerate. Do not hand-edit `Data/*.json`, `Data/*.jsonl`, `Data/*.csv`, or `Data/*.sqlite` as a substitute for repairing the authoritative records.

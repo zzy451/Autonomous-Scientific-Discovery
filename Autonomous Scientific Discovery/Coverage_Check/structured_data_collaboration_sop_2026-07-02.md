@@ -1,263 +1,191 @@
-# ASD 结构化数据协作简明 SOP
+# ASD structured-data 协作 SOP
 
 日期：2026-07-02
+对应阶段：`structured_data_post_phase2_execution_plan_2026-07-02.md` 的 `Phase 5`
 
-本文档面向会直接修改 `Autonomous Scientific Discovery` 仓库的协作者。目标不是重复讲治理原则，而是回答一个更具体的问题：
-
-> 我现在要改一条记录，第一步改哪里，改完跑什么，哪些文件绝不能直接改？
-
-本 SOP 对应：
-
-- `Coverage_Check/structured_data_post_phase2_execution_plan_2026-07-02.md`
-- `Coverage_Check/structured_data_baseline_update_rules_2026-07-02.md`
-- `Data/README.md`
-- `Data/field_dictionary.md`
+本文档面向协作者，解决一个具体问题：当你准备新增论文、改分类、补 PDF、改 note path、重建 Data、提交 PR 时，第一步到底该改哪里，哪些文件绝不能手改，改完后还必须跑什么。
 
 ## 1. 适用范围与红线
 
-本 SOP 适用于以下协作动作：
+本 SOP 适用于当前 `Autonomous Scientific Discovery` structured-data 协作。
 
-1. 新增论文
-2. 改分类
-3. 改 PDF 状态
-4. 改 `note_path`
-5. 重建 `Data/`
-6. 提交 PR
+当前只有两份 authoritative pair 可以产生 structured facts：
 
-绝对红线：
+1. `Autonomous Scientific Discovery/Paper_Lists/agent_master_paper_list.md`
+2. `Autonomous Scientific Discovery/Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 
-1. 不要把 `Data/*.json*`、`*.csv`、`*.sqlite` 当事实层直接修改。
-2. 不要把 `final_modules_or_bucket` 当正式分类事实。
-3. 不要把 `primary_module_for_filing` 当完整分类事实。
-4. 不要把 `pdf_path` 非空、note 写了“已核对”、或“看过全文”直接等同于“本地真 PDF 存在”。
-5. 不要跳过 `export -> check -> build` 的再生顺序。
+红线：
+
+- 不要把 `Data/*.json*`、`Data/*.csv`、`Data/*.sqlite` 当成修事实入口
+- 不要把 `final_modules_or_bucket` 当 canonical classification source
+- 不要把 `primary_module_for_filing` 当完整分类事实
+- 不要把 `pdf_path` 非空或 “看过全文” 当成本地真 PDF 证据
+- 不要让子 Agent 改 master / progress / report
 
 ## 2. 先判断你在改哪一层
 
-开始前，先判断你的动作属于哪一层：
+### 2.1 master 层
 
-- `agent_master_paper_list.md`
-  负责 paper identity、inclusion status、canonical classification、`note_path`、remarks 等主数据。
+以下改动默认先落到 master：
 
-- `multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
-  负责 `pdf_status`、`pdf_path`、`evidence_status`、`note_status`、`master_status`、`final_modules_or_bucket`、`source_limited` 等 workflow / evidence 字段。
+- 新增论文主记录
+- 改 `inclusion_status`
+- 改 canonical classification
+- 改 `Note path`
+- 改论文元信息、DOI / URL、legacy filing fields
 
-- `Data/`
-  全部是派生层。只能通过脚本重建，不能反向充当事实层。
+### 2.2 progress 层
 
-- `Notes/` / `Reference_PDF/`
-  是 support / evidence 层，不是 authoritative pair。
+以下改动默认先落到 progress：
 
-一句话判断：
+- 改 `pdf_status`
+- 改 `pdf_path`
+- 改 `evidence_status`
+- 改 `source_limited`
+- 改 `final_modules_or_bucket`
+- 改 `note_status` / `master_status` / `batch` / `closed`
 
-- 改 canonical classification、paper identity、note path：先看 master。
-- 改 PDF / evidence / workflow 状态：先看 progress。
-- 改统计、manifest、CSV、SQLite：先修 authoritative pair，再重建。
+### 2.3 derived 层
+
+以下文件只能重建，不能手改来“修事实”：
+
+- `Data/papers.jsonl`
+- `Data/papers.csv`
+- `Data/paper_modules.csv`
+- `Data/canonical_paper_modules.csv`
+- `Data/workflow_mirror_paper_modules.csv`
+- `Data/papers.sqlite`
+- `Data/registry/*`
+- `Data/*manifest*.json`
 
 ## 3. 六类高频动作速查表
 
-| 动作 | 第一落点 | 常见伴随动作 | 禁止直接改 |
+| 动作 | 第一落点 | 不应先改的地方 | 改完后必须做什么 |
 |---|---|---|---|
-| 新增论文 | master | 视情况补 progress，再重建 Data | 直接手加 `papers.jsonl` / SQLite |
-| 改分类 | master | 必要时同步 progress mirror，再重建 Data | 直接改 `paper_modules.csv` / SQLite |
-| 改 PDF 状态 | progress | 必要时补本地 PDF 文件，再重建 Data | 直接改 `pdf_manifest.json` |
-| 改 `note_path` | master | 真正移动 note 文件，再重建 Data | 只改 `note_manifest.json` |
-| 重建 Data | 脚本链路 | `export -> check -> build` | 只跑 `build` |
-| 提交 PR | git + PR 模板 | 填清 source-of-truth / baseline 影响 | 空着 baseline 说明硬提 |
+| 新增论文 | master | `Data/`、SQLite、CSV | `export -> check -> build` |
+| 改分类 | master remarks overlay | `paper_modules.csv`、`final_modules_or_bucket` | `export -> check -> build` |
+| 改 PDF 状态 | progress | master `PDF path`、manifest | `export -> check -> build` |
+| 改 note path | master `Note path` | `note_manifest.json` | `export -> check -> build` |
+| 重建 Data | scripts | 手改 Data | 按固定顺序重建 |
+| 提交 PR | PR 模板 | 口头说明替代模板 | 填完整模板并附验证输出 |
 
 ## 4. 动作 A：新增论文
 
-适用场景：
+1. 先在 `agent_master_paper_list.md` 新增主记录。
+2. 若该条目进入当前 workflow，再补 progress 对应行。
+3. 不要先写 `Data/`、SQLite、CSV。
+4. 运行：
 
-- 新增一篇尚未进入主表的 ASD 论文
-
-执行顺序：
-
-1. 在 `Paper_Lists/agent_master_paper_list.md` 中新增记录。
-2. 分配新的稳定 `ASD-xxxx`。
-3. 填入主数据字段：
-   - `Paper title`
-   - `DOI / arXiv / URL`
-   - `Inclusion status`
-   - canonical classification 相关字段
-   - `Note path`
-4. 如果已有 PDF / workflow 证据，再补 progress 行。
-5. 运行：
-   - `python "Autonomous Scientific Discovery/scripts/export_structured_data.py"`
-   - `python "Autonomous Scientific Discovery/scripts/check_data_consistency.py"`
-   - `python "Autonomous Scientific Discovery/scripts/build_analysis_db.py"`
-
-禁止做法：
-
-- 先往 `Data/papers.jsonl` 里手加一条
-- 先往 SQLite 里插一条
-
-## 5. 动作 B：改分类
-
-适用场景：
-
-- 从单模块改为多模块
-- 从多模块收回单模块
-- 调整 `01.04` / formal module 边界
-
-执行顺序：
-
-1. 先改 `agent_master_paper_list.md` 中的 canonical classification 相关字段与 remarks。
-2. 如果 progress 中的 `final_modules_or_bucket` 需要保留为 workflow mirror，则再判断是否应同步收平。
-3. 运行：
-   - `export`
-   - `check`
-   - `build`
-4. 用以下命令 spot-check：
-   - `query_analysis_db.py paper ASD-xxxx`
-   - `query_analysis_db.py boundary-cases --limit 10`
-
-判断提醒：
-
-- `scientific_object_modules` / `general_method_bucket` 才是 canonical。
-- `final_modules_or_bucket` 是 workflow mirror。
-- `primary_module_for_filing` 只用于 filing / display。
-
-## 6. 动作 C：改 PDF 状态
-
-适用场景：
-
-- 补到本地 PDF
-- 发现原 PDF 丢失或不可读
-- 更新 `evidence_status`
-- 更新 `source_limited`
-
-执行顺序：
-
-1. 先改 progress 文件中的：
-   - `pdf_status`
-   - `pdf_path`
-   - `evidence_status`
-   - `source_limited`
-2. 若新增本地 PDF，确保真实文件已放到对应路径。
-3. 运行：
-   - `export`
-   - `check`
-   - `build`
-4. 用以下命令 spot-check：
-   - `query_analysis_db.py missing-pdf`
-   - `query_analysis_db.py module-pdf-coverage`
-
-判断提醒：
-
-- “本地真 PDF”必须同时满足：
-  - progress 口径允许
-  - 本地文件真实存在且可读
-
-## 7. 动作 D：改 `note_path`
-
-适用场景：
-
-- note 改目录
-- note 文件名调整
-
-执行顺序：
-
-1. 真正移动 note 文件。
-2. 在 master 中更新 `Note path`。
-3. 运行：
-   - `export`
-   - `check`
-   - `build`
-4. 用以下命令 spot-check：
-   - `query_analysis_db.py paper ASD-xxxx`
-
-禁止做法：
-
-- 只改 `note_manifest.json`
-- 只移动文件，不改 master
-
-## 8. 动作 E：重建 `Data/`
-
-固定顺序：
-
-```text
+```bash
 python "Autonomous Scientific Discovery/scripts/export_structured_data.py"
 python "Autonomous Scientific Discovery/scripts/check_data_consistency.py"
 python "Autonomous Scientific Discovery/scripts/build_analysis_db.py"
 ```
 
-不要只跑：
+## 5. 动作 B：改分类
 
-```text
+默认先改 master `Remarks` 中的 canonical classification overlay：
+
+- `scientific_object_modules=...`
+- `general_method_bucket=...`
+- `object_coverage_mode=...`
+- `primary_module_for_filing=...`
+
+不要把这些改动先落到：
+
+- `Data/papers.jsonl`
+- `Data/paper_modules.csv`
+- `Data/canonical_paper_modules.csv`
+- `papers.sqlite`
+- progress `final_modules_or_bucket`
+
+说明：
+
+- `scientific_object_modules + general_method_bucket` 才是 canonical classification
+- `final_modules_or_bucket` 只是 workflow mirror
+
+## 6. 动作 C：改 PDF 状态
+
+默认先改 progress：
+
+- `pdf_status`
+- `pdf_path`
+- `evidence_status`
+- `source_limited`
+
+注意：
+
+- `pdf_path` 只是路径字段，不等于本地真 PDF
+- 本地真 PDF 判断最终看导出后的 `pdf_exists`、`pdf_manifest.json`、实际文件可读性
+
+## 7. 动作 D：改 note path
+
+默认先改 master 的 `Note path`。
+
+当前导出虽然允许 `progress.note_path or master.Note path` 的兼容性回退，但这不改变 master 仍是默认主 ownership。
+
+## 8. 动作 E：重建 Data
+
+固定顺序只能是：
+
+```bash
+python "Autonomous Scientific Discovery/scripts/export_structured_data.py"
+python "Autonomous Scientific Discovery/scripts/check_data_consistency.py"
 python "Autonomous Scientific Discovery/scripts/build_analysis_db.py"
 ```
 
-最低通过标准：
-
-- `check_data_consistency.py` 严格通过
-- `workflow mirror drift count = 0`，或者若不为 `0`，必须在 PR 中明确解释
+不要只跑 `build_analysis_db.py`。
 
 ## 9. 动作 F：提交 PR
 
-提交前必须确认：
+提交前至少完成：
 
-1. 你改的是 authoritative pair，还是只改派生层 / 文档层。
-2. 如果改了 authoritative pair，是否已完成 `export -> check -> build`。
-3. 是否需要把这次改动声明为 baseline 更新。
-4. PR 模板中的 source-of-truth、baseline、再生步骤、验证输出是否已填清。
-
-如果这次改动涉及：
-
-- `447 / 421 / 26`
-- active ID 集
-- `papers_jsonl_sha256`
-- canonical classification 规则
-
-则必须同时遵守：
-
-- `structured_data_baseline_update_rules_2026-07-02.md`
+1. 填 `.github/PULL_REQUEST_TEMPLATE.md`
+2. 说明是否改了 authoritative pair
+3. 若 baseline 变化，按 `structured_data_baseline_update_rules_2026-07-02.md` 补完整证据
+4. 粘贴 `check_data_consistency.py` 关键输出
+5. 说明实际跑过的 `query_analysis_db.py` 命令
 
 ## 10. 提交前 30 秒检查清单
 
-提交前快速自检：
-
-1. 我改的是 master、progress，还是只是派生层？
-2. 我有没有误把 mirror 当 canonical？
-3. 我有没有误把 `primary_module_for_filing` 当完整分类？
-4. 我有没有误把 `pdf_path` 非空当真 PDF？
-5. 我有没有按 `export -> check -> build` 顺序跑？
-6. `check_data_consistency.py` 是否通过？
-7. `git diff` 里有没有只改 `Data/` 却没改 authoritative pair 的奇怪情况？
-8. PR 模板里是否明确写清了 source-of-truth / baseline 影响？
+- 我这次改动的第一落点是不是在 authoritative pair，而不是 `Data/`
+- 我有没有把 canonical classification 和 workflow mirror 混用
+- 我有没有把 `01.04` 混回 formal `01-11`
+- 我有没有把 `pdf_path` 非空误当作真 PDF
+- 我有没有按 `export -> check -> build` 重建
+- `check_data_consistency.py` 是否严格通过
+- PR 模板是否填完整
 
 ## 11. 常见误操作与纠正方式
 
-误操作 1：
-直接改 `Data/papers.jsonl`
+### 误操作 1
+
+直接改 `Data/papers.jsonl` 修分类。
 
 纠正：
-回到 master / progress 修事实层，再重建。
 
-误操作 2：
-把 `final_modules_or_bucket` 当正式分类
+回到 master `Remarks` 改 canonical overlay，再重建。
 
-纠正：
-先核对 master 中的 canonical classification 与 remarks，再决定是否同步收平 progress mirror。
+### 误操作 2
 
-误操作 3：
-只跑 `build_analysis_db.py`
+直接改 `paper_modules.csv` 做模块统计修正。
 
 纠正：
-重新按 `export -> check -> build` 完整跑一遍。
 
-误操作 4：
-只移动 note 文件，不改 master 的 `Note path`
+回到 authoritative pair 修事实，再重建；正式统计优先走 SQLite `canonical_*` 视图。
 
-纠正：
-更新 master，再重建。
+### 误操作 3
 
-误操作 5：
-补了 PDF 文件，但只改 manifest 没改 progress
+把 `final_modules_or_bucket` 当“最终分类”。
 
 纠正：
-更新 progress 的 PDF / evidence 字段，再重建。
 
-## 12. 一句话工作法
+把它当 workflow mirror；真正分类只看 `scientific_object_modules + general_method_bucket`。
 
-> 先改 authoritative pair，再重建 Data；先分清 canonical 和 mirror，再做统计和审计。
+### 误操作 4
+
+只跑 `build_analysis_db.py`。
+
+纠正：
+
+必须重跑 `export -> check -> build`。
