@@ -1,0 +1,8 @@
+paper_id	recommendation	landing_confidence	next_round_action	main_reason	risk_note
+ASD-0005	conservative_hold	medium	keep_out_of_writeback	source-limited 03;04 expansion remains plausible but not yet strong enough to land	multi-module landing still rests on access-limited evidence
+ASD-0097	conservative_hold	medium	keep_out_of_writeback	06 is clear but added 07 remains source-limited	07 adjunct is better deferred
+ASD-0112	conservative_hold	medium	keep_out_of_writeback	03 is clear but added 07 remains source-limited	07 adjunct is not settled enough to land now
+ASD-0572	conservative_hold	medium_high	keep_out_of_writeback_and_controller_recheck	04 is strong but added 06 is still source-limited	06 add-on is safer for a later round; note also needs controller recheck on source_limited wording
+ASD-0089	land_now	high	enter_writeback_packet	local PDF and high-confidence review support move from 01.04 to 01	main object decision looks stable
+ASD-0091	land_now	high	enter_writeback_packet	local PDF and high-confidence review support 03;04	remaining risk is mainly filing emphasis
+ASD-0093	land_now	high	enter_writeback_packet	local PDF and high-confidence review support 03;04;07	object-level coverage is strong enough to land conservatively
