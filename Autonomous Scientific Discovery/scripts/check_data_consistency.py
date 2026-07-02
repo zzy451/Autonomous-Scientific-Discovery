@@ -5,11 +5,18 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Dict, Iterable, List
+from typing import Dict, Iterable, List, Tuple
 
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "Data"
+REGISTRY_DIR = DATA_DIR / "registry"
+MASTER_PATH = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
+PROGRESS_PATH = (
+    ROOT
+    / "Coverage_Check"
+    / "multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"
+)
 EXPECTED_ACTIVE_CONFIRMED = 447
 EXPECTED_ACTIVE_LOCAL_PDF = 421
 EXPECTED_ACTIVE_NO_LOCAL_PDF = 26
@@ -140,6 +147,57 @@ LOCAL_PDF_STATUSES = {
     "official_supplementary_pdf_archived_main_article_gated",
 }
 PAPER_ID_PATTERN = re.compile(r"^ASD-\d{4}$")
+REGISTRY_REQUIRED_STEMS = (
+    "paper_registry",
+    "paper_identifier_aliases",
+    "taxonomy_registry",
+    "classification_assignments",
+    "pdf_archive_registry",
+    "asset_manifest",
+)
+CLASSIFICATION_SCOPE_MODULE = "scientific_object_modules"
+CLASSIFICATION_SCOPE_GENERAL_BUCKET = "general_method_bucket"
+ASSET_TYPE_NOTE = "note"
+ASSET_TYPE_PRIMARY_PDF = "primary_pdf"
+MASTER_HEADER = (
+    "ID",
+    "Paper title",
+    "Authors",
+    "Year",
+    "Source",
+    "DOI / arXiv / URL",
+    "PDF path",
+    "Is Agent",
+    "Inclusion status",
+    "Exclusion reason",
+    "Main class",
+    "Secondary class",
+    "Tertiary class",
+    "Fourth-level topic",
+    "New fourth-level",
+    "Agent type",
+    "Research workflow role",
+    "Validation type",
+    "Scientific contribution type",
+    "Evidence strength",
+    "Citation priority",
+    "Note path",
+    "Remarks",
+)
+PROGRESS_HEADER = (
+    "paper_id",
+    "title",
+    "note_path",
+    "pdf_status",
+    "pdf_path",
+    "evidence_status",
+    "note_status",
+    "master_status",
+    "final_modules_or_bucket",
+    "source_limited",
+    "batch",
+    "closed",
+)
 
 
 def load_json(path: Path):
@@ -157,6 +215,128 @@ def load_jsonl(path: Path) -> List[Dict[str, object]]:
 def assert_true(condition: bool, message: str) -> None:
     if not condition:
         raise AssertionError(message)
+
+
+def read_text_lossy(path: Path) -> str:
+    raw = path.read_bytes()
+    for encoding in ("utf-8", "utf-8-sig", "gb18030"):
+        try:
+            return raw.decode(encoding)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("utf-8", errors="replace")
+
+
+def is_markdown_separator(line: str) -> bool:
+    stripped = line.strip()
+    if not stripped.startswith("|") or not stripped.endswith("|"):
+        return False
+    cells = [cell.strip() for cell in stripped[1:-1].split("|")]
+    if not cells:
+        return False
+    return all(re.fullmatch(r":?-{3,}:?", cell) for cell in cells)
+
+
+def split_markdown_row_strict(line: str, expected_cols: int) -> List[str]:
+    stripped = line.strip()
+    assert_true(stripped.startswith("|") and stripped.endswith("|"), f"Malformed markdown row: {line!r}")
+    parts = [part.strip() for part in stripped[1:-1].split("|")]
+    assert_true(
+        len(parts) == expected_cols,
+        f"Unexpected markdown column count {len(parts)} != {expected_cols} in row: {line!r}",
+    )
+    return parts
+
+
+def parse_markdown_table_strict(
+    path: Path, header: Tuple[str, ...], data_prefix: str
+) -> List[Dict[str, str]]:
+    lines = read_text_lossy(path).splitlines()
+    header_marker = "| " + " | ".join(header) + " |"
+    try:
+        start_index = next(index for index, line in enumerate(lines) if line.strip() == header_marker)
+    except StopIteration as exc:
+        raise AssertionError(f"Header marker not found in {path.relative_to(ROOT)}") from exc
+
+    parsed_header = split_markdown_row_strict(lines[start_index], len(header))
+    assert_true(tuple(parsed_header) == header, f"Unexpected header in {path.relative_to(ROOT)}")
+
+    data_start = start_index + 1
+    if data_start < len(lines) and is_markdown_separator(lines[data_start]):
+        data_start += 1
+
+    rows: List[Dict[str, str]] = []
+    for line in lines[data_start:]:
+        if not line.startswith(data_prefix):
+            continue
+        rows.append(dict(zip(header, split_markdown_row_strict(line, len(header)))))
+    return rows
+
+
+def load_json_rows(path: Path, list_keys: Iterable[str] = ("records",)) -> List[Dict[str, object]]:
+    payload = load_json(path)
+    if isinstance(payload, list):
+        rows = payload
+    elif isinstance(payload, dict):
+        rows = None
+        for list_key in list_keys:
+            candidate = payload.get(list_key)
+            if isinstance(candidate, list):
+                rows = candidate
+                break
+        if rows is None:
+            raise AssertionError(
+                f"{path.relative_to(ROOT)} must serialize rows as JSONL, a top-level JSON array, or a JSON object with one of {tuple(list_keys)} as an array field"
+            )
+    else:
+        raise AssertionError(
+            f"{path.relative_to(ROOT)} must serialize rows as JSONL, a top-level JSON array, or a JSON object with one of {tuple(list_keys)} as an array field"
+        )
+    normalized_rows: List[Dict[str, object]] = []
+    for index, row in enumerate(rows, start=1):
+        assert_true(
+            isinstance(row, dict),
+            f"{path.relative_to(ROOT)} row {index} is not a JSON object",
+        )
+        normalized_rows.append(row)
+    return normalized_rows
+
+
+def load_registry_rows(stem: str) -> Tuple[Path, List[Dict[str, object]]]:
+    candidates = [REGISTRY_DIR / f"{stem}.jsonl", REGISTRY_DIR / f"{stem}.json"]
+    existing = [path for path in candidates if path.exists()]
+    assert_true(
+        len(existing) == 1,
+        f"Expected exactly one registry file for {stem} under {REGISTRY_DIR.relative_to(ROOT)}; found {[path.name for path in existing] or 'none'}",
+    )
+    path = existing[0]
+    list_keys = ("records", "taxonomy_terms") if stem == "taxonomy_registry" else ("records",)
+    rows = load_jsonl(path) if path.suffix == ".jsonl" else load_json_rows(path, list_keys=list_keys)
+    return path, rows
+
+
+def require_row_fields(path: Path, rows: List[Dict[str, object]], field_names: Iterable[str]) -> None:
+    required = tuple(field_names)
+    for index, row in enumerate(rows, start=1):
+        missing = [field_name for field_name in required if field_name not in row]
+        assert_true(
+            not missing,
+            f"{path.relative_to(ROOT)} row {index} missing required fields: {missing}",
+        )
+
+
+def assert_unique_registry_key(
+    path: Path, rows: List[Dict[str, object]], key_fields: Iterable[str]
+) -> None:
+    field_names = tuple(key_fields)
+    seen = set()
+    for index, row in enumerate(rows, start=1):
+        key = tuple(row[field_name] for field_name in field_names)
+        assert_true(
+            key not in seen,
+            f"{path.relative_to(ROOT)} has duplicate key {dict(zip(field_names, key))} at row {index}",
+        )
+        seen.add(key)
 
 
 def split_semicolon_list(value: str) -> List[str]:
@@ -249,8 +429,391 @@ def is_obvious_pdf_status_conflict(pdf_exists: bool, pdf_status: str) -> bool:
     return status in LOCAL_PDF_STATUSES
 
 
+def validate_authoritative_sources(papers: List[Dict[str, object]]) -> None:
+    master_rows = parse_markdown_table_strict(
+        MASTER_PATH, header=MASTER_HEADER, data_prefix="| ASD-"
+    )
+    progress_rows = parse_markdown_table_strict(
+        PROGRESS_PATH, header=PROGRESS_HEADER, data_prefix="| ASD-"
+    )
+    master_by_id = {row["ID"]: row for row in master_rows}
+    progress_by_id = {row["paper_id"]: row for row in progress_rows}
+    paper_rows_by_id = {row["paper_id"]: row for row in papers}
+
+    assert_true(
+        set(master_by_id.keys()) == set(paper_rows_by_id.keys()),
+        "papers.jsonl paper_id coverage does not match agent_master_paper_list.md",
+    )
+
+    for paper_id, paper_row in paper_rows_by_id.items():
+        master_row = master_by_id[paper_id]
+        progress_row = progress_by_id.get(paper_id, {})
+        assert_true(
+            paper_row["title"] == master_row["Paper title"],
+            f"{paper_id} title drift between master and papers.jsonl",
+        )
+        assert_true(
+            paper_row["inclusion_status"] == master_row["Inclusion status"],
+            f"{paper_id} inclusion_status drift between master and papers.jsonl",
+        )
+        assert_true(
+            paper_row["remarks"] == master_row["Remarks"],
+            f"{paper_id} remarks drift between master and papers.jsonl",
+        )
+        assert_true(
+            paper_row["legacy_main_class"] == master_row["Main class"],
+            f"{paper_id} legacy_main_class drift between master and papers.jsonl",
+        )
+        assert_true(
+            paper_row["legacy_secondary_class"] == master_row["Secondary class"],
+            f"{paper_id} legacy_secondary_class drift between master and papers.jsonl",
+        )
+        assert_true(
+            paper_row["legacy_tertiary_class"] == master_row["Tertiary class"],
+            f"{paper_id} legacy_tertiary_class drift between master and papers.jsonl",
+        )
+        expected_note_path = progress_row.get("note_path") or master_row["Note path"]
+        expected_pdf_path = progress_row.get("pdf_path") or master_row["PDF path"]
+        assert_true(
+            paper_row["note_path"] == expected_note_path,
+            f"{paper_id} note_path drift against master/progress derived expectation",
+        )
+        assert_true(
+            paper_row["pdf_path"] == expected_pdf_path,
+            f"{paper_id} pdf_path drift against master/progress derived expectation",
+        )
+        for progress_field, paper_field in (
+            ("title", "progress_title"),
+            ("pdf_status", "pdf_status"),
+            ("evidence_status", "evidence_status"),
+            ("note_status", "note_status"),
+            ("master_status", "master_status"),
+            ("batch", "batch"),
+            ("closed", "closed"),
+        ):
+            assert_true(
+                paper_row[paper_field] == progress_row.get(progress_field, ""),
+                f"{paper_id} {paper_field} drift between progress and papers.jsonl",
+            )
+        assert_true(
+            paper_row["source_limited"] == (progress_row.get("source_limited", "").strip().lower()),
+            f"{paper_id} source_limited drift between progress and papers.jsonl",
+        )
+
+
+def collect_final_modules_mirror_drifts(papers: List[Dict[str, object]]) -> List[str]:
+    drift_ids: List[str] = []
+    for row in papers:
+        if not row["active_confirmed_core"]:
+            continue
+        final_assignments = tuple(
+            module_code for module_code in row["final_modules_or_bucket"] if module_code != "01.04"
+        )
+        derived_assignments = tuple(row["scientific_object_modules"])
+        derived_bucket = "01.04" if row["general_method_bucket"] != "none" else ""
+        final_has_bucket = "01.04" if "01.04" in row["final_modules_or_bucket"] else ""
+        if final_assignments != derived_assignments or final_has_bucket != derived_bucket:
+            drift_ids.append(str(row["paper_id"]))
+    return drift_ids
+
+
+def validate_registry_layer(
+    papers: List[Dict[str, object]],
+    taxonomy_index: Dict[str, Dict[str, str]],
+    require_registry: bool,
+) -> None:
+    if not REGISTRY_DIR.exists():
+        assert_true(
+            not require_registry,
+            f"Registry directory missing: {REGISTRY_DIR.relative_to(ROOT)}",
+        )
+        print("Registry checks skipped because Data/registry is absent and ASD_REQUIRE_REGISTRY=0.")
+        return
+
+    paper_rows_by_id = {row["paper_id"]: row for row in papers}
+    active_ids = {row["paper_id"] for row in papers if row["active_confirmed_core"]}
+    active_local_ids = {
+        row["paper_id"] for row in papers if row["active_confirmed_core"] and row["pdf_exists"]
+    }
+    active_no_local_ids = active_ids - active_local_ids
+
+    registry_payloads = {
+        stem: load_registry_rows(stem) for stem in REGISTRY_REQUIRED_STEMS
+    }
+    paper_registry_path, paper_registry_rows = registry_payloads["paper_registry"]
+    alias_registry_path, alias_registry_rows = registry_payloads["paper_identifier_aliases"]
+    taxonomy_registry_path, taxonomy_registry_rows = registry_payloads["taxonomy_registry"]
+    assignments_path, assignment_rows = registry_payloads["classification_assignments"]
+    pdf_registry_path, pdf_registry_rows = registry_payloads["pdf_archive_registry"]
+    asset_manifest_path, asset_manifest_rows = registry_payloads["asset_manifest"]
+
+    require_row_fields(paper_registry_path, paper_registry_rows, ("paper_id",))
+    assert_unique_registry_key(paper_registry_path, paper_registry_rows, ("paper_id",))
+    paper_registry_ids = {row["paper_id"] for row in paper_registry_rows}
+    assert_true(
+        paper_registry_ids == set(paper_rows_by_id.keys()),
+        "paper_registry paper_id coverage does not match papers.jsonl",
+    )
+
+    require_row_fields(
+        alias_registry_path,
+        alias_registry_rows,
+        ("paper_id", "alias_scheme", "alias_value", "is_primary_key"),
+    )
+    assert_unique_registry_key(
+        alias_registry_path,
+        alias_registry_rows,
+        ("paper_id", "alias_scheme", "alias_value"),
+    )
+    valid_alias_schemes = {"doi", "arxiv_id", "url"}
+    for row in alias_registry_rows:
+        paper_id = row["paper_id"]
+        assert_true(
+            paper_id in paper_rows_by_id,
+            f"paper_identifier_aliases references unknown paper_id: {paper_id!r}",
+        )
+        assert_true(
+            row["alias_scheme"] in valid_alias_schemes,
+            f"paper_identifier_aliases has invalid alias_scheme for {paper_id}: {row['alias_scheme']!r}",
+        )
+        assert_true(
+            isinstance(row["alias_value"], str) and bool(row["alias_value"].strip()),
+            f"paper_identifier_aliases has blank alias_value for {paper_id}",
+        )
+        assert_true(
+            row["is_primary_key"] is False,
+            f"paper_identifier_aliases should not redefine primary keys for {paper_id}",
+        )
+
+    require_row_fields(
+        taxonomy_registry_path,
+        taxonomy_registry_rows,
+        ("taxonomy_code", "kind", "labels"),
+    )
+    assert_unique_registry_key(taxonomy_registry_path, taxonomy_registry_rows, ("taxonomy_code",))
+    taxonomy_codes = {row["taxonomy_code"] for row in taxonomy_registry_rows}
+    expected_taxonomy_codes = set(taxonomy_index["code_to_label"].keys())
+    assert_true(
+        taxonomy_codes == expected_taxonomy_codes,
+        "taxonomy_registry taxonomy_code coverage does not match taxonomy_index.json",
+    )
+    for row in taxonomy_registry_rows:
+        code = row["taxonomy_code"]
+        assert_true(
+            code in expected_taxonomy_codes,
+            f"taxonomy_registry has unknown taxonomy_code: {code!r}",
+        )
+        expected_kind = "general_bucket" if code == "01.04" else "formal_module"
+        labels = row["labels"]
+        assert_true(
+            isinstance(labels, dict) and isinstance(labels.get("display"), str),
+            f"taxonomy_registry labels.display missing or invalid for {code}",
+        )
+        assert_true(
+            labels["display"] == taxonomy_index["code_to_label"][code],
+            f"taxonomy_registry label mismatch for {code}: {labels['display']!r}",
+        )
+        assert_true(
+            row["kind"] == expected_kind,
+            f"taxonomy_registry kind mismatch for {code}: {row['kind']!r}",
+        )
+
+    require_row_fields(
+        assignments_path,
+        assignment_rows,
+        ("paper_id", "taxonomy_code", "assignment_kind", "assignment_source"),
+    )
+    assert_unique_registry_key(
+        assignments_path,
+        assignment_rows,
+        ("paper_id", "assignment_source", "taxonomy_code"),
+    )
+    expected_assignment_rows = {}
+    for row in papers:
+        paper_id = row["paper_id"]
+        for sort_order, module_code in enumerate(row["scientific_object_modules"], start=1):
+            expected_assignment_rows[
+                (paper_id, CLASSIFICATION_SCOPE_MODULE, module_code)
+            ] = sort_order
+        if row["general_method_bucket"] != "none":
+            expected_assignment_rows[(paper_id, CLASSIFICATION_SCOPE_GENERAL_BUCKET, "01.04")] = 1
+    actual_assignment_rows = {}
+    for row in assignment_rows:
+        paper_id = row["paper_id"]
+        assignment_scope = row["assignment_source"]
+        assignment_kind = row["assignment_kind"]
+        taxonomy_code = row["taxonomy_code"]
+        assert_true(
+            paper_id in paper_rows_by_id,
+            f"classification_assignments references unknown paper_id: {paper_id!r}",
+        )
+        assert_true(
+            assignment_scope in {CLASSIFICATION_SCOPE_MODULE, CLASSIFICATION_SCOPE_GENERAL_BUCKET},
+            f"classification_assignments has invalid assignment_scope for {paper_id}: {assignment_scope!r}",
+        )
+        if assignment_scope == CLASSIFICATION_SCOPE_MODULE:
+            assert_true(
+                assignment_kind == "formal_module",
+                f"classification_assignments formal module must use assignment_kind=formal_module for {paper_id}: {assignment_kind!r}",
+            )
+            assert_true(
+                taxonomy_code in FORMAL_MODULES,
+                f"classification_assignments formal module must stay in 01-11 for {paper_id}: {taxonomy_code!r}",
+            )
+        else:
+            assert_true(
+                assignment_kind == "general_bucket",
+                f"classification_assignments general bucket must use assignment_kind=general_bucket for {paper_id}: {assignment_kind!r}",
+            )
+            assert_true(
+                taxonomy_code == "01.04",
+                f"classification_assignments general bucket must use taxonomy_code 01.04 for {paper_id}: {taxonomy_code!r}",
+            )
+        actual_assignment_rows[(paper_id, assignment_scope, taxonomy_code)] = row.get("assignment_order")
+    assert_true(
+        set(actual_assignment_rows.keys()) == set(expected_assignment_rows.keys()),
+        "classification_assignments coverage does not match papers.jsonl scientific_object_modules/general_method_bucket facts",
+    )
+    for key, expected_sort_order in expected_assignment_rows.items():
+        actual_sort_order = actual_assignment_rows[key]
+        if actual_sort_order is not None:
+            assert_true(
+                actual_sort_order == expected_sort_order,
+                f"classification_assignments assignment_order mismatch for {key}: {actual_sort_order!r} != {expected_sort_order!r}",
+            )
+
+    require_row_fields(
+        pdf_registry_path,
+        pdf_registry_rows,
+        ("paper_id", "active_confirmed_core", "pdf_exists", "pdf_status"),
+    )
+    assert_unique_registry_key(pdf_registry_path, pdf_registry_rows, ("paper_id",))
+    pdf_registry_rows_by_id = {}
+    for row in pdf_registry_rows:
+        paper_id = row["paper_id"]
+        assert_true(
+            paper_id in paper_rows_by_id,
+            f"pdf_archive_registry references unknown paper_id: {paper_id!r}",
+        )
+        assert_true(
+            isinstance(row["active_confirmed_core"], bool),
+            f"pdf_archive_registry active_confirmed_core must be bool for {paper_id}",
+        )
+        assert_true(
+            isinstance(row["pdf_exists"], bool),
+            f"pdf_archive_registry pdf_exists must be bool for {paper_id}",
+        )
+        pdf_registry_rows_by_id[paper_id] = row
+    assert_true(
+        active_ids.issubset(set(pdf_registry_rows_by_id.keys())),
+        "pdf_archive_registry must cover every active confirmed-core paper",
+    )
+    registry_active_ids = {
+        paper_id
+        for paper_id, row in pdf_registry_rows_by_id.items()
+        if row["active_confirmed_core"]
+    }
+    registry_active_local_ids = {
+        paper_id
+        for paper_id, row in pdf_registry_rows_by_id.items()
+        if row["active_confirmed_core"] and row["pdf_exists"]
+    }
+    registry_active_no_local_ids = registry_active_ids - registry_active_local_ids
+    assert_true(
+        registry_active_ids == active_ids,
+        "pdf_archive_registry active_confirmed_core coverage does not match papers.jsonl",
+    )
+    assert_true(
+        registry_active_local_ids == active_local_ids,
+        "pdf_archive_registry local-PDF active set does not match papers.jsonl",
+    )
+    assert_true(
+        registry_active_no_local_ids == active_no_local_ids,
+        "pdf_archive_registry no-local-PDF active set does not match papers.jsonl",
+    )
+    for paper_id in active_ids:
+        registry_row = pdf_registry_rows_by_id[paper_id]
+        paper_row = paper_rows_by_id[paper_id]
+        assert_true(
+            registry_row["pdf_status"] == paper_row["pdf_status"],
+            f"pdf_archive_registry pdf_status mismatch for {paper_id}: {registry_row['pdf_status']!r} != {paper_row['pdf_status']!r}",
+        )
+        if "pdf_path" in registry_row:
+            assert_true(
+                registry_row["pdf_path"] == paper_row["pdf_path"],
+                f"pdf_archive_registry pdf_path mismatch for {paper_id}: {registry_row['pdf_path']!r} != {paper_row['pdf_path']!r}",
+            )
+
+    require_row_fields(
+        asset_manifest_path,
+        asset_manifest_rows,
+        ("paper_id", "asset_type", "path", "exists"),
+    )
+    note_asset_rows = []
+    primary_pdf_asset_rows = []
+    seen_asset_keys = set()
+    for index, row in enumerate(asset_manifest_rows, start=1):
+        paper_id = row["paper_id"]
+        asset_type = row["asset_type"]
+        assert_true(
+            paper_id in paper_rows_by_id,
+            f"asset_manifest references unknown paper_id: {paper_id!r}",
+        )
+        assert_true(
+            isinstance(row["exists"], bool),
+            f"asset_manifest exists must be bool for {paper_id}",
+        )
+        if asset_type in {ASSET_TYPE_NOTE, ASSET_TYPE_PRIMARY_PDF}:
+            key = (paper_id, asset_type)
+            assert_true(
+                key not in seen_asset_keys,
+                f"asset_manifest has duplicate {asset_type} record for {paper_id} at row {index}",
+            )
+            seen_asset_keys.add(key)
+            if asset_type == ASSET_TYPE_NOTE:
+                note_asset_rows.append(row)
+            else:
+                primary_pdf_asset_rows.append(row)
+    assert_true(note_asset_rows, "asset_manifest missing note asset records")
+    assert_true(primary_pdf_asset_rows, "asset_manifest missing primary_pdf asset records")
+    note_assets_by_id = {row["paper_id"]: row for row in note_asset_rows}
+    expected_note_ids = set(paper_rows_by_id.keys())
+    assert_true(
+        set(note_assets_by_id.keys()) == expected_note_ids,
+        "asset_manifest note coverage does not match papers.jsonl paper_id coverage",
+    )
+    for paper_id, asset_row in note_assets_by_id.items():
+        paper_row = paper_rows_by_id[paper_id]
+        assert_true(
+            asset_row["path"] == paper_row["note_path"],
+            f"asset_manifest note path mismatch for {paper_id}: {asset_row['path']!r} != {paper_row['note_path']!r}",
+        )
+        assert_true(
+            asset_row["exists"] == paper_row["note_exists"],
+            f"asset_manifest note existence mismatch for {paper_id}: {asset_row['exists']!r} != {paper_row['note_exists']!r}",
+        )
+    primary_pdf_assets_by_id = {row["paper_id"]: row for row in primary_pdf_asset_rows}
+    expected_primary_pdf_ids = set(paper_rows_by_id.keys())
+    assert_true(
+        set(primary_pdf_assets_by_id.keys()) == expected_primary_pdf_ids,
+        "asset_manifest primary_pdf coverage does not match papers.jsonl paper_id coverage",
+    )
+    for paper_id in expected_primary_pdf_ids:
+        asset_row = primary_pdf_assets_by_id[paper_id]
+        paper_row = paper_rows_by_id[paper_id]
+        assert_true(
+            asset_row["path"] == paper_row["pdf_path"],
+            f"asset_manifest primary_pdf path mismatch for {paper_id}: {asset_row['path']!r} != {paper_row['pdf_path']!r}",
+        )
+        assert_true(
+            asset_row["exists"] == paper_row["pdf_exists"],
+            f"asset_manifest primary_pdf existence mismatch for {paper_id}: {asset_row['exists']!r} != {paper_row['pdf_exists']!r}",
+        )
+
+
 def main() -> None:
     strict_authoritative = os.environ.get("ASD_STRICT_AUTHORITATIVE", "1") != "0"
+    require_registry = os.environ.get("ASD_REQUIRE_REGISTRY", "1") != "0"
     papers = load_jsonl(DATA_DIR / "papers.jsonl")
     taxonomy_index = load_json(DATA_DIR / "taxonomy_index.json")
     pdf_manifest = load_json(DATA_DIR / "pdf_manifest.json")
@@ -440,10 +1003,22 @@ def main() -> None:
     note_manifest_ids = {row["paper_id"] for row in note_manifest}
     assert_true(note_manifest_ids == set(paper_ids), "note_manifest paper_id coverage mismatch")
 
+    validate_authoritative_sources(papers)
+    validate_registry_layer(
+        papers=papers,
+        taxonomy_index=taxonomy_index,
+        require_registry=require_registry,
+    )
+    final_modules_mirror_drifts = collect_final_modules_mirror_drifts(papers)
+
     print(f"papers.jsonl records: {len(papers)}")
     print(f"active confirmed-core: {len(active)}")
     print(f"active local PDFs: {len(active_local_pdf)}")
     print(f"active no-local-PDF: {len(active_no_local_pdf)}")
+    print(
+        "workflow mirror drift count "
+        f"(progress final_modules_or_bucket vs canonical derived classification): {len(final_modules_mirror_drifts)}"
+    )
     print("All structured-data consistency checks passed.")
 
 

@@ -1,484 +1,282 @@
-# ASD 结构化数据字段字典
+# ASD Structured Data Field Dictionary
+日期: 2026-07-02
 
-日期：2026-07-01
+本文档定义 `Autonomous Scientific Discovery/Data/` 中 registry 层与 analysis 层的关键文件和字段语义。
 
-本文档定义 `Autonomous Scientific Discovery/Data/` 及其配套分析层的正式字段含义。目标是让后续查询、统计、补档、清洗、作图、数据库使用都基于同一套字段语义。
+## 1. 层级与原则
 
-## 1. 使用原则
+1. 事实层只有两份源文件:
+   - `Paper_Lists/agent_master_paper_list.md`
+   - `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+2. `ASD-xxxx` 是唯一永久主键。任何派生层都必须以 `paper_id` 作为稳定关联键。
+3. `01.04` 只表示 general bucket:
+   - 它可以出现在 `general_method_bucket`
+   - 它可以出现在 registry 的 `taxonomy_code = "01.04"` 行
+   - 它不能进入 formal `scientific_object_modules` 数组
+4. registry 层是规范化派生层，不是第三事实源，不允许人工维护来“修正” master/progress。
+5. analysis 层是面向查询、统计、表格和数据库消费的派生层。若 analysis 或 registry 与 master/progress 冲突，先修事实层，再重建。
 
-1. 唯一事实源仍然是 `Paper_Lists/agent_master_paper_list.md` 和 `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`。
-2. `Data/` 中的 JSON、CSV、SQLite 都是派生层，应通过脚本重建，不应手改来修正事实。
-3. `ASD-xxxx` 是唯一永久主键。
-4. 正式 scientific-object 分类用数组保存。
-5. `01.04` 是独立 general-method bucket，不属于正式 `01-11` scientific-object module 数组。
+## 2. 文件层级
 
-## 2. 文件级说明
+### 2.1 事实层
 
-当前 `Data/` 目录中的核心文件分为四类：
+- `Paper_Lists/agent_master_paper_list.md`
+- `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 
-### 2.1 主记录层
+### 2.2 Registry 层
+
+- `registry/paper_registry.jsonl`
+- `registry/paper_identifier_aliases.jsonl`
+- `registry/taxonomy_registry.json`
+- `registry/classification_assignments.jsonl`
+- `registry/pdf_archive_registry.jsonl`
+- `registry/asset_manifest.jsonl`
+
+这些文件都由脚本生成，目标是把事实层规范化成稳定、可连接、可校验的数据表。
+
+### 2.3 Analysis 层
 
 - `papers.jsonl`
-- `papers.csv`
-- SQLite `papers` 表
-
-这一层以“一篇论文一条记录”为原则。
-
-### 2.2 taxonomy 层
-
 - `taxonomy_index.json`
-- SQLite `taxonomy_index` 表
-
-这一层负责保存分类代码与分类名称的映射。
-
-### 2.3 清单层
-
 - `pdf_manifest.json`
 - `missing_pdf_manifest.json`
 - `note_manifest.json`
-- SQLite `pdf_inventory`
-- SQLite `missing_pdf_inventory`
-- SQLite `note_inventory`
-
-这一层负责 PDF、缺失 PDF、note 的审计和查询。
-
-### 2.4 分析展开层
-
+- `papers.csv`
 - `paper_modules.csv`
-- SQLite `paper_modules`
-- SQLite `module_assignment_counts` 视图
+- `papers.sqlite`
 
-这一层负责把多模块数组展开成多行，便于统计与分析。
+analysis 层用于脚本消费、人工 spot check、统计和 SQL 查询；它不是新的事实口径。
 
-## 3. `papers.jsonl` / `papers.csv` / SQLite `papers` 主字段
+## 3. Registry 文件与关键字段
 
-### 3.1 主键与基础元数据
+### 3.1 `registry/paper_registry.jsonl`
 
-`paper_id`
-: 永久唯一论文 ID，例如 `ASD-0001`。
+定位: 一篇论文一行的规范化 paper registry。
 
-`title`
-: 论文标题。
+关键字段:
 
-`authors`
-: 作者字段，保持 master 原始文本。
+- `paper_id`: 永久主键，格式固定为 `ASD-xxxx`。
+- `title`: 论文标题。
+- `authors`: 作者字符串。
+- `year`: 年份原始文本。
+- `source`: 来源或 venue 原始文本。
+- `source_locator_raw`: 原始 DOI / arXiv / URL 文本。
+- `note_path`: 当前导出的 note 路径。
+- `note_exists`: note 是否在本地存在。
+- `pdf_path`: 当前导出的主 PDF 路径。
+- `pdf_exists`: 主 PDF 是否在本地存在。
+- `scientific_object_modules`: formal scientific-object module 数组，只允许 `01-11`。
+- `general_method_bucket`: general bucket；当前合法值为 `none` 或 `01.04` 对应的 canonical bucket。
+- `object_coverage_mode`: 当前对象覆盖模式。
+- `primary_module_for_filing`: 归档主模块，仅用于目录和 filing 便利。
+- `classification_display_code`: 面向展示的分类代码，不替代完整分类事实。
+- `active_confirmed_core`: 当前结构化导出的 active confirmed-core 布尔标记。
+- `pdf_status`, `evidence_status`, `note_status`, `master_status`, `source_limited`, `batch`, `closed`: progress 层工作流字段的规范化派生结果。
+- `exported_at`: 本次导出的 UTC 时间戳。
 
-`year`
-: 年份字段，保持 master 原始文本。
+约束:
 
-`source`
-: 来源或 venue 信息，保持 master 原始文本。
+- `paper_id` 集合必须与 `papers.jsonl` 完全一致。
+- `scientific_object_modules` 内不能出现 `01.04`。
+- 当 `general_method_bucket != "none"` 时，formal `scientific_object_modules` 必须为空。
 
-`doi_or_url`
-: master 中 `DOI / arXiv / URL` 原字段原样保存。
+### 3.2 `registry/taxonomy_registry.json`
 
-`doi`
-: 从 `doi_or_url` 解析出的 DOI。
+定位: 分类术语 registry。当前文件是一个 JSON 对象，而不是 JSONL。
 
-`url`
-: 从 `doi_or_url` 保留的 URL 或原始链接文本。
+顶层字段:
 
-`arxiv_id`
-: 从 arXiv 链接中解析出的 arXiv ID；无则为空。
+- `exported_at`: 导出时间戳。
+- `taxonomy_terms`: 术语数组。
 
-### 3.2 路径与存在性字段
+`taxonomy_terms` 单行关键字段:
 
-`pdf_path`
-: 正式 PDF 路径。优先取 progress 中 `pdf_path`，否则回退到 master 中 `PDF path`。
+- `taxonomy_code`: 分类代码，如 `04` 或 `01.04`。
+- `kind`: 当前只允许 `formal_module` 或 `general_bucket`。
+- `labels.display`: 展示标签。
+- `sort_order`: 排序权重。
+- `dir_name`: 对应目录名。
+- `parent_module_code`: 父模块代码；`01.04` 当前挂在 `01` 下。
 
-`pdf_exists`
-: 布尔字段。表示 `pdf_path` 是否指向当前本地真实存在的文件。
+约束:
 
-`note_path`
-: 正式 note 路径。优先取 progress 中 `note_path`，否则回退到 master 中 `Note path`。
+- 必须覆盖 formal `01-11` 加 `01.04`。
+- `01.04` 的 `kind` 必须是 `general_bucket`。
+- 其余 `01-11` 的 `kind` 必须是 `formal_module`。
 
-`note_exists`
-: 布尔字段。表示 `note_path` 是否指向当前本地真实存在的文件。
+### 3.2A `registry/paper_identifier_aliases.jsonl`
 
-### 3.3 纳入与筛选字段
+定位: 论文永久主键之外的稳定查找别名 registry。
 
-`is_agent`
-: master 原始 `Is Agent` 字段。
+关键字段:
 
-`inclusion_status`
-: master 原始 `Inclusion status` 字段，例如 `candidate`、`to_read`、`included`、`excluded`、`needs_review`、`background_only`。
+- `paper_id`: 关联论文主键。
+- `alias_scheme`: 当前只允许 `doi`、`arxiv_id`、`url`。
+- `alias_value`: 对应 scheme 的值。
+- `is_primary_key`: 当前必须为 `false`，因为永久主键仍只允许 `ASD-xxxx`。
+- `exported_at`: 导出时间戳。
 
-`exclusion_reason`
-: 排除原因，保持 master 原始文本。
+约束:
 
-`active_confirmed_core`
-: 导出时的关键布尔字段。当前逻辑为：
+- 该文件只保存真正的外部查找标识或稳定 locator。
+- 不要把 `primary_module_for_filing`、展示号、分类显示码、目录路径之类会随重分类变化的字段塞进来。
+- 它是 lookup convenience registry，不是新的事实层，也不定义主键。
 
-1. `inclusion_status` 必须是 `to_read` 或 `included`
-2. 同时必须满足：
-   - `scientific_object_modules` 非空，或
-   - `general_method_bucket != "none"`
+### 3.3 `registry/classification_assignments.jsonl`
 
-这就是当前结构化层中“active confirmed core”的程序定义。
+定位: 一篇论文到一个 taxonomy term 的一行 assignment，属于 exploded registry。
 
-### 3.4 旧分类兼容字段
+关键字段:
 
-`legacy_main_class`
-: master 的 `Main class` 原字段。
+- `paper_id`: 关联论文主键。
+- `taxonomy_code`: 被分配的 taxonomy 代码。
+- `assignment_kind`: 当前只允许 `formal_module` 或 `general_bucket`。
+- `assignment_source`: 当前来源字段；formal assignment 来自 `scientific_object_modules`，general assignment 来自 `general_method_bucket`。
+- `assignment_order`: 在原始数组或 bucket 表达中的顺序。formal module 从 1 开始；general bucket 当前固定为 1。
+- `is_primary_filing`: 该 assignment 是否同时等于 `primary_module_for_filing`。
+- `primary_module_for_filing`: 归档主模块镜像字段。
+- `object_coverage_mode`: 当前对象覆盖模式镜像字段。
+- `active_confirmed_core`: 该论文当前是否属于 active confirmed core。
+- `exported_at`: 导出时间戳。
 
-`legacy_secondary_class`
-: master 的 `Secondary class` 原字段。
+约束:
 
-`legacy_tertiary_class`
-: master 的 `Tertiary class` 原字段。
+- formal module assignment 必须满足:
+  - `assignment_kind = "formal_module"`
+  - `assignment_source = "scientific_object_modules"`
+  - `taxonomy_code` 只能在 `01-11`
+- general bucket assignment 必须满足:
+  - `assignment_kind = "general_bucket"`
+  - `assignment_source = "general_method_bucket"`
+  - `taxonomy_code = "01.04"`
+- 它表达的是 `papers.jsonl` 中 `scientific_object_modules + general_method_bucket` 的规范化展开，不允许自成新的分类事实源。
 
-`fourth_level_topic`
-: master 的 `Fourth-level topic` 原字段。
+### 3.4 `registry/pdf_archive_registry.jsonl`
 
-`new_fourth_level`
-: master 的 `New fourth-level` 原字段。
+定位: 以论文为粒度的 PDF 归档与可用性 registry。
 
-这些字段保留用于兼容、回溯和比对，不应再被当作唯一正式分类依据。
+关键字段:
 
-### 3.5 标签数组字段
+- `paper_id`: 关联论文主键。
+- `title`: 标题镜像字段。
+- `pdf_path`: 主 PDF 路径；无本地 PDF 时可为空字符串。
+- `pdf_exists`: 本地是否存在可读主 PDF。
+- `sha256`: 本地 PDF 哈希；无本地 PDF 时可为空字符串。
+- `pdf_status`: progress 派生的 PDF 状态。
+- `evidence_status`: progress 派生的证据状态。
+- `source_limited`: 来源受限标记。
+- `primary_module_for_filing`: 归档主模块镜像字段。
+- `scientific_object_modules`: formal module 数组镜像字段。
+- `general_method_bucket`: general bucket 镜像字段。
+- `active_confirmed_core`: 是否属于当前 active confirmed core。
+- `exported_at`: 导出时间戳。
 
-`agent_type_raw`
-: master 原始 `Agent type` 字符串。
+约束:
 
-`agent_type`
-: 由 `agent_type_raw` 按分号拆分得到的数组。
+- 对 active confirmed-core 论文，`pdf_exists = true` 的集合必须与 active local PDF 口径一致。
+- 对 active confirmed-core 论文，`pdf_exists = false` 的集合必须与 active no-local PDF 口径一致。
+- 它只规范化导出 PDF 可用性，不替代 progress 对 `pdf_status` 的事实拥有权。
 
-`research_workflow_role_raw`
-: master 原始 `Research workflow role` 字符串。
+### 3.5 `registry/asset_manifest.jsonl`
 
-`research_workflow_role`
-: 由 `research_workflow_role_raw` 拆分得到的数组。
+定位: 统一资产清单。当前至少覆盖 note 和 primary PDF。
 
-`validation_type_raw`
-: master 原始 `Validation type` 字符串。
+关键字段:
 
-`validation_type`
-: 由 `validation_type_raw` 拆分得到的数组。
+- `paper_id`: 关联论文主键。
+- `title`: 标题镜像字段。
+- `asset_type`: 当前至少包含 `note` 和 `primary_pdf`。
+- `path`: 资产路径。对缺失 primary PDF 可为空字符串。
+- `exists`: 本地文件是否存在。
+- `sha256`: 文件哈希；缺失文件时可为空字符串。
+- `asset_status`: 对 note 通常承接 `note_status`，对 PDF 通常承接 `pdf_status`。
+- `source_limited`: 来源受限标记。
+- `exported_at`: 导出时间戳。
 
-`scientific_contribution_type_raw`
-: master 原始 `Scientific contribution type` 字符串。
+约束:
 
-`scientific_contribution_type`
-: 由 `scientific_contribution_type_raw` 拆分得到的数组。
+- 每个 `paper_id` 至少应有一条 `note` 记录和一条 `primary_pdf` 记录。
+- `note` 记录必须与 `papers.jsonl` 的 `note_path` / `note_exists` 对齐。
+- `primary_pdf` 记录必须与 `papers.jsonl` 的 `pdf_path` / `pdf_exists` 对齐。
 
-这些数组在 JSON 与 SQLite 中保留真实多值语义，在 CSV 中会被压平成分号连接字符串。
+## 4. Analysis 层文件简表
 
-### 3.6 证据与优先级字段
+### 4.1 `papers.jsonl`
 
-`evidence_strength`
-: master 中的证据强度字段。
+定位: 面向脚本和逐篇检查的分析层快照。
 
-`citation_priority`
-: master 中的 citation priority 字段。
+重点字段:
 
-`remarks`
-: master 原始备注全文，也是当前若干结构化字段的解析来源之一。
-
-`first_hand_sources_checked`
-: 从 `remarks` 里的 `first_hand_sources_checked=` 解析出来的字段，表示已检查的一手来源线索。
-
-### 3.7 正式分类字段
-
-`scientific_object_modules`
-: 正式 scientific-object module 数组，只允许 `01-11` 正式模块代码。
-
-规则：
-
-1. 若 `remarks` 中存在 `scientific_object_modules=`，优先使用其解析结果。
-2. 若无该字段且不是 `01.04` general bucket，则可从 `legacy_main_class` 做保守回填。
-3. 如果处于 `01.04` general-method bucket，则该数组应为空。
-
-`general_method_bucket`
-: 通用方法桶字段。当前 canonical 值为：
-
-`01.04_general_asd_methods_without_concrete_object_experiments`
-
-若不属于 general-method bucket，则值为 `none`。
-
-`object_coverage_mode`
-: 对象覆盖模式。当前常见值包括：
-
-- `single_module`
-- `multi_module`
-- `general_method_without_concrete_object_experiments`
-
-也允许保留从 `remarks` 中直接解析出的原始模式值。
-
-`primary_module_for_filing`
-: 归档主模块，仅用于 note/PDF/目录管理便利，不代表完整分类事实。
-
-`final_modules_or_bucket_raw`
-: progress 文件中的 `final_modules_or_bucket` 原始字符串。
-
-`final_modules_or_bucket`
-: 从 `final_modules_or_bucket_raw` 按分号拆分得到的数组。
-
-说明：
-
-1. 该字段更接近当前 reaudit 过程中的最终裁定口径。
-2. 它可以包含正式模块，也可以包含 general bucket。
-3. 它与 `scientific_object_modules` 不完全等价，后者更偏向结构化 formal module 数组。
-
-### 3.8 progress 派生字段
-
-`progress_title`
-: progress 文件中的标题字段。
-
-`pdf_status`
-: progress 正式 PDF 状态字段。
-
-`evidence_status`
-: progress 正式证据状态字段。
-
-`note_status`
-: progress 中的 note 状态字段。
-
-`master_status`
-: progress 中的 master 对齐状态字段。
-
-`source_limited`
-: progress 中的来源受限字段。当前导出时会转成小写文本。
-
-`batch`
-: progress 中所属批次。
-
-`closed`
-: progress 中关闭状态字段。
-
-### 3.9 导出追踪字段
-
-`exported_at`
-: 本轮导出 UTC 时间戳，用于追踪快照生成时间。
-
-## 4. `taxonomy_index.json` / SQLite `taxonomy_index`
-
-### 4.1 JSON 结构
-
-`taxonomy_index.json` 当前保存两个映射：
-
-`code_to_label`
-: 分类代码到分类名称的映射。
-
-`label_to_code`
-: 分类名称到分类代码的反向映射。
-
-### 4.2 SQLite 结构
-
-SQLite `taxonomy_index` 表字段：
-
-`code`
-: 分类代码，例如 `04` 或 `01.04`。
-
-`label`
-: 分类名称。
-
-`kind`
-: 分类种类。
-
-当前值包括：
-
-- `formal_module`
-- `general_bucket`
-
-## 5. `pdf_manifest.json` / SQLite `pdf_inventory`
-
-这一层只记录当前本地真实存在的 PDF。
-
-`paper_id`
-: 对应论文 ID。
-
-`title`
-: 论文标题。
-
-`pdf_path`
-: 当前本地 PDF 路径。
-
-`sha256`
-: PDF 文件内容哈希，用于校验和审计。
-
-`primary_module_for_filing`
-: PDF 当前归档主模块。
-
-`scientific_object_modules`
-: 对应论文的正式模块数组。
-
-`pdf_status`
-: progress 正式 PDF 状态。
-
-`evidence_status`
-: progress 正式证据状态。
-
-`active_confirmed_core`
-: 是否属于当前 active confirmed core。
-
-## 6. `missing_pdf_manifest.json` / SQLite `missing_pdf_inventory`
-
-这一层记录当前 active confirmed core 里“没有本地 PDF，但仍可索引”的论文。
-
-`paper_id`
-: 对应论文 ID。
-
-`title`
-: 论文标题。
-
-`doi`
-: DOI。
-
-`url`
-: URL。
-
-`pdf_status`
-: progress 正式 PDF 状态。
-
-`evidence_status`
-: progress 正式证据状态。
-
-`source_limited`
-: 来源受限状态。
-
-`access_note`
-: 当前导出直接复用 `remarks`，用于补充说明为什么暂无本地 PDF 或当前证据情况。
-
-注意：
-
-这一层不是“文献缺失清单”，而是“无本地 PDF 但可索引清单”。
-
-## 7. `note_manifest.json` / SQLite `note_inventory`
-
-这一层记录 note 的存在性与纳入状态。
-
-`paper_id`
-: 对应论文 ID。
-
-`title`
-: 论文标题。
-
-`note_path`
-: note 路径。
-
-`note_exists`
-: note 文件是否真实存在。
-
-`active_confirmed_core`
-: 是否属于当前 active confirmed core。
-
-`inclusion_status`
-: 当前纳入状态。
-
-## 8. `paper_modules.csv` / SQLite `paper_modules`
-
-这一层是把数组字段展开后的多对多关系表。
-
-`paper_id`
-: 对应论文 ID。
-
-`title`
-: 论文标题。
-
-`assignment_scope`
-: 当前展开的是哪一组分类。
-
-当前值包括：
-
+- `paper_id`
 - `scientific_object_modules`
+- `general_method_bucket`
 - `final_modules_or_bucket`
+- `primary_module_for_filing`
+- `pdf_path`, `pdf_exists`
+- `note_path`, `note_exists`
+- `active_confirmed_core`
 
-`module_code`
-: 单个模块代码或 bucket 代码。
+说明:
 
-`module_kind`
-: 模块类别。
+- 它保留 per-paper 视角，适合逐条检查。
+- 它不是新的事实层，只是比 registry 更接近“整篇论文一行”的分析表示。
+- `final_modules_or_bucket` 在这里应被理解为 progress workflow mirror，而不是 canonical classification source。
 
-当前值包括：
+### 4.2 `taxonomy_index.json`
 
-- `formal_module`
-- `general_bucket`
+定位: analysis 层使用的 taxonomy 映射。
 
-`sort_order`
-: 在原数组中的顺序，从 `1` 开始。
+关键字段:
 
-`active_confirmed_core`
-: 该论文是否属于当前 active confirmed core。
+- `code_to_label`
+- `label_to_code`
 
-## 9. SQLite 额外视图与元数据
+它与 registry `taxonomy_registry.json` 表达同一套 taxonomy，只是更偏分析/查询消费。
 
-### 9.1 `metadata`
+### 4.3 `pdf_manifest.json`
 
-用于记录数据库层的整体快照信息。
+定位: 当前本地真实存在的主 PDF 清单。
 
-当前关键键包括：
+关键字段:
 
-- `schema_version`
-- `papers_jsonl_sha256`
-- `papers_record_count`
-- `active_confirmed_core_count`
-- `active_local_pdf_count`
-- `active_no_local_pdf_count`
+- `paper_id`
+- `pdf_path`
+- `sha256`
+- `primary_module_for_filing`
+- `scientific_object_modules`
+- `pdf_status`
+- `active_confirmed_core`
 
-### 9.2 视图
+### 4.4 `missing_pdf_manifest.json`
 
-`active_confirmed_core_papers`
-: `papers` 表中过滤 `active_confirmed_core = 1` 的视图。
+定位: active confirmed core 中暂无本地 PDF 的论文清单。
 
-`active_missing_local_pdf`
-: 当前 active confirmed core 中 `pdf_exists = 0` 的视图。
+关键字段:
 
-`module_assignment_counts`
-: 按 `assignment_scope + module_code` 聚合后的计数视图。
+- `paper_id`
+- `doi`
+- `url`
+- `pdf_status`
+- `evidence_status`
+- `source_limited`
+- `access_note`
 
-字段包括：
+### 4.5 `note_manifest.json`
 
-- `assignment_scope`
-- `module_code`
-- `paper_count`
-- `active_confirmed_core_count`
+定位: note 路径与存在性清单。
 
-## 10. CSV 与 JSON / SQLite 的差异
+关键字段:
 
-为了避免误解，必须注意：
+- `paper_id`
+- `note_path`
+- `note_exists`
+- `active_confirmed_core`
+- `inclusion_status`
 
-1. JSON 中的数组字段在 `papers.csv` 中会被压平成分号连接字符串。
-2. SQLite 中的数组字段以 `*_json` 文本列保存 JSON 数组。
-3. `paper_modules.csv` 与 SQLite `paper_modules` 是真正用于多对多统计的展开层。
-4. 如果做严格统计，优先使用 SQLite 或 JSON，不要只依赖 CSV 字符串拆分。
+## 5. 非协商一致性规则
 
-## 11. 当前推荐用法
-
-### 11.1 查单篇论文
-
-优先查：
-
-- `papers.jsonl`
-- SQLite `papers`
-
-### 11.2 查某模块全部论文
-
-优先查：
-
-- `paper_modules.csv`
-- SQLite `paper_modules`
-
-### 11.3 查无本地 PDF 的 confirmed core
-
-优先查：
-
-- `missing_pdf_manifest.json`
-- SQLite `missing_pdf_inventory`
-- SQLite `active_missing_local_pdf`
-
-### 11.4 做正式统计
-
-优先查：
-
-- SQLite `metadata`
-- SQLite `module_assignment_counts`
-- SQLite `papers`
-
-## 12. 后续扩展规则
-
-后续如果新增字段，必须同时满足：
-
-1. 先定义语义，再落脚本。
-2. 更新本文档。
-3. 若会进入 CSV/SQLite，也要同步说明其存储形式。
-4. 不允许出现“脚本里有字段、文档里没有定义”的长期漂移状态。
+1. `ASD-xxxx` 是唯一永久主键。
+2. `01.04` 只能作为 general bucket，不进入 formal module 数组。
+3. master + progress 是事实层，registry 是规范化派生层，`papers.jsonl` / manifests / CSV / SQLite 是 analysis 层。
+4. registry 与 analysis 都不能演化成手工维护的第三事实源。
+5. 任何结构化变更都应先改事实层，再跑导出和一致性校验。

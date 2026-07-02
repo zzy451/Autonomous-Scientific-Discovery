@@ -14,22 +14,29 @@ Field ownership is intentionally split:
 - `agent_master_paper_list.md` owns paper identity, inclusion status, legacy class fields, note path, and the project-facing classification record.
 - The progress tracker owns PDF/evidence workflow fields such as `pdf_status`, `pdf_path`, `evidence_status`, `note_status`, `master_status`, `final_modules_or_bucket`, `source_limited`, `batch`, and `closed`.
 
+`final_modules_or_bucket` should be treated as a workflow mirror from the reaudit process, not as the canonical classification fact source. Canonical structured classification remains derived from the master list plus the current project parsing rules around `scientific_object_modules`, `general_method_bucket`, and `primary_module_for_filing`.
+
 Everything under `Data/` is derived. `Notes/`, `Reference_PDF/`, and `Coverage_Check/` reports are supporting evidence layers, not independent sources of truth for structured counts.
 
-If the structured outputs disagree with master/progress, fix master/progress first and then regenerate. Do not hand-edit `Data/*.json`, `Data/*.csv`, or `Data/*.sqlite` as a substitute for repairing the authoritative records.
+If the structured outputs disagree with master/progress, fix master/progress first and then regenerate. Do not hand-edit `Data/*.json`, `Data/*.jsonl`, `Data/*.csv`, or `Data/*.sqlite` as a substitute for repairing the authoritative records.
 
-## Master / derived relationship
+## Three-layer model
 
-Treat the data layer as:
+Treat the structured stack as:
 
-- authoritative pair: master + progress
-- derived snapshot: `papers.jsonl`, manifests, CSV, SQLite
+- fact layer: `Paper_Lists/agent_master_paper_list.md` + `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- normalized registry layer: `Data/registry/`
+- analysis layer: `papers.jsonl`, manifests, CSV, SQLite
 - support/evidence: notes, local PDFs, audit reports
+
+The registry layer is a normalized derivative of master + progress. It exists so downstream tools can join stable paper, taxonomy, classification, PDF, and asset records without re-parsing the authoritative markdown every time.
+
+The registry layer is not a third source of truth. If a registry row disagrees with master/progress, repair master/progress and regenerate the registry. Do not resolve drift by hand-editing registry files.
 
 This means:
 
-- classification changes start in master/progress, never in JSONL/CSV/SQLite
-- PDF status changes start in progress, never in `pdf_manifest.json`
+- classification changes start in master/progress, never in registry/JSONL/CSV/SQLite
+- PDF status changes start in progress, never in `pdf_archive_registry` or `pdf_manifest.json`
 - query bugs are fixed in scripts, then outputs are regenerated
 
 ## Regeneration order
@@ -45,9 +52,9 @@ python "Autonomous Scientific Discovery/scripts/build_analysis_db.py"
 The order matters:
 
 1. `export_structured_data.py`
-   Reads master + progress and rewrites the canonical structured snapshot in `Data/`.
+   Reads master + progress and rewrites both the normalized registry layer and the analysis-layer structured snapshot in `Data/`.
 2. `check_data_consistency.py`
-   Verifies the exported snapshot before analysis artifacts are trusted.
+   Verifies that registry and analysis outputs still agree with the master/progress-derived facts before analysis artifacts are trusted.
 3. `build_analysis_db.py`
    Builds analysis-friendly outputs from the checked snapshot: `papers.csv`, `paper_modules.csv`, and `papers.sqlite`.
 
@@ -55,7 +62,13 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 
 ## Typical file roles
 
-- `papers.jsonl`: record-level canonical export for scripts, version control, and exact per-paper inspection.
+- `registry/paper_registry.jsonl`: normalized one-paper registry keyed by permanent `ASD-xxxx` paper IDs.
+- `registry/paper_identifier_aliases.jsonl`: DOI / arXiv / source-URL alias registry for stable lookup without redefining the permanent `ASD-xxxx` key.
+- `registry/taxonomy_registry.json`: normalized taxonomy term registry for formal `01-11` modules plus the separate `01.04` general bucket.
+- `registry/classification_assignments.jsonl`: exploded paper-to-taxonomy assignment table derived from `scientific_object_modules` and `general_method_bucket`.
+- `registry/pdf_archive_registry.jsonl`: normalized per-paper PDF availability/export record aligned to active local vs no-local PDF status.
+- `registry/asset_manifest.jsonl`: normalized asset inventory covering at least note and primary PDF records.
+- `papers.jsonl`: record-level analysis snapshot for scripts, version control, and exact per-paper inspection.
 - `papers.csv`: flattened spreadsheet view of `papers.jsonl`.
 - `paper_modules.csv`: exploded one-paper-to-many-modules table for counting and pivoting.
 - `papers.sqlite`: normalized query database for joins, filters, and aggregation.
@@ -87,7 +100,9 @@ Use `papers.sqlite` when:
 
 Rule of thumb:
 
-- JSONL is the canonical structured snapshot
+- master + progress are the only fact layer
+- registry is the normalized derived layer
+- `papers.jsonl` / manifests / CSV / SQLite are the analysis layer
 - CSV is the lightweight human-analysis layer
 - SQLite is the durable query/analysis layer
 

@@ -17,6 +17,7 @@ PROGRESS_PATH = (
     / "multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"
 )
 DATA_DIR = ROOT / "Data"
+REGISTRY_DIR = DATA_DIR / "registry"
 
 MASTER_HEADER = [
     "ID",
@@ -82,6 +83,51 @@ TAXONOMY_CODE_TO_LABEL = {
     "09": "Engineering and Industrial Technology Sciences",
     "10": "Aerospace, Marine and Transportation Sciences",
     "11": "Social, Behavioral, Economic and Knowledge System Sciences",
+}
+
+TAXONOMY_CODE_TO_ZH_LABEL = {
+    "01": "形式、信息与计算科学",
+    "01.04": "无具体科学对象实验的通用 ASD 方法",
+    "02": "物理学、天文学与宇宙科学",
+    "03": "化学科学",
+    "04": "材料科学",
+    "05": "地球与环境科学",
+    "06": "生命科学",
+    "07": "医学与健康科学",
+    "08": "农业、食品、林业、畜牧与渔业科学",
+    "09": "工程与工业技术科学",
+    "10": "航空、航天、海洋与交通科学",
+    "11": "社会、行为、经济与知识系统科学",
+}
+
+TAXONOMY_DIR_NAMES = {
+    "01": "01_Formal_Information_and_Computational_Sciences",
+    "02": "02_Physics_Astronomy_and_Cosmic_Sciences",
+    "03": "03_Chemical_Sciences",
+    "04": "04_Materials_Science",
+    "05": "05_Earth_and_Environmental_Sciences",
+    "06": "06_Life_Sciences",
+    "07": "07_Medical_and_Health_Sciences",
+    "08": "08_Agricultural_Food_Forestry_Animal_and_Fishery_Sciences",
+    "09": "09_Engineering_and_Industrial_Technology_Sciences",
+    "10": "10_Aerospace_Marine_and_Transportation_Sciences",
+    "11": "11_Social_Behavioral_Economic_and_Knowledge_System_Sciences",
+    "01.04": "01_04_General_Method_Bucket",
+}
+
+TAXONOMY_SORT_ORDER = {
+    "01": 10,
+    "01.04": 14,
+    "02": 20,
+    "03": 30,
+    "04": 40,
+    "05": 50,
+    "06": 60,
+    "07": 70,
+    "08": 80,
+    "09": 90,
+    "10": 100,
+    "11": 110,
 }
 
 REMARK_KEYS = [
@@ -250,6 +296,14 @@ def parse_doi_and_arxiv(value: str) -> Tuple[str, str, str]:
     return doi, arxiv_id, url
 
 
+def extract_urls(value: str) -> List[str]:
+    urls = [
+        normalize_extracted_remark_value(match.group(0))
+        for match in re.finditer(r"https?://\S+", value, re.IGNORECASE)
+    ]
+    return list(dict.fromkeys(url for url in urls if url))
+
+
 def normalize_extracted_remark_value(raw_value: str) -> str:
     value = raw_value.strip()
     while value and value[0] in "'\"([{":
@@ -352,6 +406,16 @@ def normalize_primary_module(raw_value: str, legacy_main: str, modules: List[str
     if legacy_main in FORMAL_MODULES:
         return legacy_main
     return modules[0] if modules else ""
+
+
+def build_classification_display_code(
+    scientific_object_modules: List[str], general_method_bucket: str
+) -> str:
+    if general_method_bucket != "none":
+        return "01.04"
+    if scientific_object_modules:
+        return ";".join(scientific_object_modules)
+    return ""
 
 
 def path_exists(repo_relative_path: str) -> bool:
@@ -475,19 +539,249 @@ def compute_sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def build_pdf_manifest(papers: Iterable[Dict[str, object]]) -> List[Dict[str, object]]:
+def compute_repo_relative_sha256(
+    repo_relative_path: str, sha256_cache: Dict[str, str]
+) -> str:
+    if not repo_relative_path:
+        return ""
+    cached = sha256_cache.get(repo_relative_path)
+    if cached is not None:
+        return cached
+    repo_path = ROOT / repo_relative_path
+    if not repo_path.exists():
+        return ""
+    sha256 = compute_sha256(repo_path)
+    sha256_cache[repo_relative_path] = sha256
+    return sha256
+
+
+def build_paper_registry(papers: Iterable[Dict[str, object]]) -> List[Dict[str, object]]:
+    registry: List[Dict[str, object]] = []
+    for paper in papers:
+        registry.append(
+            {
+                "paper_id": paper["paper_id"],
+                "title": paper["title"],
+                "authors": paper["authors"],
+                "year": paper["year"],
+                "source": paper["source"],
+                "source_locator_raw": paper["doi_or_url"],
+                "is_agent": paper["is_agent"],
+                "inclusion_status": paper["inclusion_status"],
+                "exclusion_reason": paper["exclusion_reason"],
+                "note_path": paper["note_path"],
+                "note_exists": paper["note_exists"],
+                "pdf_path": paper["pdf_path"],
+                "pdf_exists": paper["pdf_exists"],
+                "legacy_main_class": paper["legacy_main_class"],
+                "legacy_secondary_class": paper["legacy_secondary_class"],
+                "legacy_tertiary_class": paper["legacy_tertiary_class"],
+                "fourth_level_topic": paper["fourth_level_topic"],
+                "new_fourth_level": paper["new_fourth_level"],
+                "scientific_object_modules": paper["scientific_object_modules"],
+                "general_method_bucket": paper["general_method_bucket"],
+                "object_coverage_mode": paper["object_coverage_mode"],
+                "primary_module_for_filing": paper["primary_module_for_filing"],
+                "classification_display_code": build_classification_display_code(
+                    paper["scientific_object_modules"], paper["general_method_bucket"]
+                ),
+                "active_confirmed_core": paper["active_confirmed_core"],
+                "first_hand_sources_checked": paper["first_hand_sources_checked"],
+                "pdf_status": paper["pdf_status"],
+                "evidence_status": paper["evidence_status"],
+                "note_status": paper["note_status"],
+                "master_status": paper["master_status"],
+                "source_limited": paper["source_limited"],
+                "batch": paper["batch"],
+                "closed": paper["closed"],
+                "exported_at": paper["exported_at"],
+            }
+        )
+    return registry
+
+
+def build_paper_identifier_aliases(
+    papers: Iterable[Dict[str, object]]
+) -> List[Dict[str, object]]:
+    aliases: List[Dict[str, object]] = []
+    seen = set()
+
+    def append_alias(
+        paper_id: str,
+        alias_scheme: str,
+        alias_value: str,
+        exported_at: str,
+    ) -> None:
+        value = alias_value.strip()
+        if not value:
+            return
+        key = (paper_id, alias_scheme, value)
+        if key in seen:
+            return
+        seen.add(key)
+        aliases.append(
+            {
+                "paper_id": paper_id,
+                "alias_scheme": alias_scheme,
+                "alias_value": value,
+                "is_primary_key": False,
+                "exported_at": exported_at,
+            }
+        )
+
+    for paper in papers:
+        paper_id = str(paper["paper_id"])
+        exported_at = str(paper["exported_at"])
+        append_alias(paper_id, "doi", str(paper["doi"]), exported_at)
+        append_alias(paper_id, "arxiv_id", str(paper["arxiv_id"]), exported_at)
+        for url in extract_urls(str(paper["doi_or_url"])):
+            append_alias(paper_id, "url", url, exported_at)
+
+    return aliases
+
+
+def build_taxonomy_registry(exported_at: str) -> Dict[str, object]:
+    terms: List[Dict[str, object]] = []
+    for code in TAXONOMY_CODE_TO_LABEL:
+        kind = "general_bucket" if code == "01.04" else "formal_module"
+        terms.append(
+            {
+                "taxonomy_code": code,
+                "kind": kind,
+                "labels": {"display": TAXONOMY_CODE_TO_LABEL[code]},
+                "zh_label": TAXONOMY_CODE_TO_ZH_LABEL[code],
+                "en_label": TAXONOMY_CODE_TO_LABEL[code],
+                "sort_order": TAXONOMY_SORT_ORDER[code],
+                "dir_name": TAXONOMY_DIR_NAMES[code],
+                "parent_module_code": "01" if code == "01.04" else "",
+            }
+        )
+    return {"exported_at": exported_at, "taxonomy_terms": terms}
+
+
+def build_classification_assignments(
+    papers: Iterable[Dict[str, object]]
+) -> List[Dict[str, object]]:
+    assignments: List[Dict[str, object]] = []
+    for paper in papers:
+        exported_at = paper["exported_at"]
+        primary_module_for_filing = paper["primary_module_for_filing"]
+        modules = list(paper["scientific_object_modules"])
+        for index, module_code in enumerate(modules, start=1):
+            assignments.append(
+                {
+                    "paper_id": paper["paper_id"],
+                    "taxonomy_code": module_code,
+                    "assignment_kind": "formal_module",
+                    "assignment_source": "scientific_object_modules",
+                    "assignment_order": index,
+                    "is_primary_filing": module_code == primary_module_for_filing,
+                    "primary_module_for_filing": primary_module_for_filing,
+                    "object_coverage_mode": paper["object_coverage_mode"],
+                    "active_confirmed_core": paper["active_confirmed_core"],
+                    "exported_at": exported_at,
+                }
+            )
+
+        general_bucket = str(paper["general_method_bucket"])
+        if general_bucket != "none":
+            assignments.append(
+                {
+                    "paper_id": paper["paper_id"],
+                    "taxonomy_code": "01.04",
+                    "assignment_kind": "general_bucket",
+                    "assignment_source": "general_method_bucket",
+                    "assignment_order": 1,
+                    "is_primary_filing": False,
+                    "primary_module_for_filing": primary_module_for_filing,
+                    "object_coverage_mode": paper["object_coverage_mode"],
+                    "active_confirmed_core": paper["active_confirmed_core"],
+                    "exported_at": exported_at,
+                }
+            )
+    return assignments
+
+
+def build_pdf_archive_registry(
+    papers: Iterable[Dict[str, object]], sha256_cache: Dict[str, str]
+) -> List[Dict[str, object]]:
+    registry: List[Dict[str, object]] = []
+    for paper in papers:
+        pdf_path = str(paper["pdf_path"])
+        registry.append(
+            {
+                "asset_id": f"{paper['paper_id']}:primary_pdf",
+                "paper_id": paper["paper_id"],
+                "asset_role": "primary_pdf",
+                "title": paper["title"],
+                "pdf_path": pdf_path,
+                "pdf_exists": paper["pdf_exists"],
+                "sha256": compute_repo_relative_sha256(pdf_path, sha256_cache),
+                "pdf_status": paper["pdf_status"],
+                "evidence_status": paper["evidence_status"],
+                "source_limited": paper["source_limited"],
+                "primary_module_for_filing": paper["primary_module_for_filing"],
+                "scientific_object_modules": paper["scientific_object_modules"],
+                "general_method_bucket": paper["general_method_bucket"],
+                "active_confirmed_core": paper["active_confirmed_core"],
+                "exported_at": paper["exported_at"],
+            }
+        )
+    return registry
+
+
+def build_asset_manifest(
+    papers: Iterable[Dict[str, object]], sha256_cache: Dict[str, str]
+) -> List[Dict[str, object]]:
+    manifest: List[Dict[str, object]] = []
+    for paper in papers:
+        note_path = str(paper["note_path"])
+        pdf_path = str(paper["pdf_path"])
+        manifest.append(
+            {
+                "asset_id": f"{paper['paper_id']}:note",
+                "paper_id": paper["paper_id"],
+                "title": paper["title"],
+                "asset_type": "note",
+                "path": note_path,
+                "exists": paper["note_exists"],
+                "sha256": compute_repo_relative_sha256(note_path, sha256_cache),
+                "asset_status": paper["note_status"],
+                "source_limited": paper["source_limited"],
+                "exported_at": paper["exported_at"],
+            }
+        )
+        manifest.append(
+            {
+                "asset_id": f"{paper['paper_id']}:primary_pdf",
+                "paper_id": paper["paper_id"],
+                "title": paper["title"],
+                "asset_type": "primary_pdf",
+                "path": pdf_path,
+                "exists": paper["pdf_exists"],
+                "sha256": compute_repo_relative_sha256(pdf_path, sha256_cache),
+                "asset_status": paper["pdf_status"],
+                "source_limited": paper["source_limited"],
+                "exported_at": paper["exported_at"],
+            }
+        )
+    return manifest
+
+
+def build_pdf_manifest(
+    papers: Iterable[Dict[str, object]], sha256_cache: Dict[str, str]
+) -> List[Dict[str, object]]:
     manifest: List[Dict[str, object]] = []
     for paper in papers:
         pdf_path = str(paper["pdf_path"])
         if not pdf_path or not bool(paper["pdf_exists"]):
             continue
-        repo_path = ROOT / pdf_path
         manifest.append(
             {
                 "paper_id": paper["paper_id"],
                 "title": paper["title"],
                 "pdf_path": pdf_path,
-                "sha256": compute_sha256(repo_path),
+                "sha256": compute_repo_relative_sha256(pdf_path, sha256_cache),
                 "primary_module_for_filing": paper["primary_module_for_filing"],
                 "scientific_object_modules": paper["scientific_object_modules"],
                 "pdf_status": paper["pdf_status"],
@@ -548,6 +842,7 @@ def write_jsonl(path: Path, rows: Iterable[Dict[str, object]]) -> None:
 
 def main() -> None:
     DATA_DIR.mkdir(exist_ok=True)
+    REGISTRY_DIR.mkdir(parents=True, exist_ok=True)
 
     master_table = parse_markdown_table(
         MASTER_PATH,
@@ -564,8 +859,15 @@ def main() -> None:
     progress_rows = {row["paper_id"]: row for row in progress_table.rows}
 
     papers = build_papers(master_table.rows, progress_rows)
+    sha256_cache: Dict[str, str] = {}
     taxonomy_index = build_taxonomy_index()
-    pdf_manifest = build_pdf_manifest(papers)
+    paper_registry = build_paper_registry(papers)
+    paper_identifier_aliases = build_paper_identifier_aliases(papers)
+    taxonomy_registry = build_taxonomy_registry(str(papers[0]["exported_at"]) if papers else "")
+    classification_assignments = build_classification_assignments(papers)
+    pdf_archive_registry = build_pdf_archive_registry(papers, sha256_cache)
+    asset_manifest = build_asset_manifest(papers, sha256_cache)
+    pdf_manifest = build_pdf_manifest(papers, sha256_cache)
     missing_pdf_manifest = build_missing_pdf_manifest(papers)
     note_manifest = build_note_manifest(papers)
 
@@ -574,11 +876,24 @@ def main() -> None:
     write_json(DATA_DIR / "pdf_manifest.json", pdf_manifest)
     write_json(DATA_DIR / "missing_pdf_manifest.json", missing_pdf_manifest)
     write_json(DATA_DIR / "note_manifest.json", note_manifest)
+    write_jsonl(REGISTRY_DIR / "paper_registry.jsonl", paper_registry)
+    write_jsonl(REGISTRY_DIR / "paper_identifier_aliases.jsonl", paper_identifier_aliases)
+    write_json(REGISTRY_DIR / "taxonomy_registry.json", taxonomy_registry)
+    write_jsonl(
+        REGISTRY_DIR / "classification_assignments.jsonl", classification_assignments
+    )
+    write_jsonl(REGISTRY_DIR / "pdf_archive_registry.jsonl", pdf_archive_registry)
+    write_jsonl(REGISTRY_DIR / "asset_manifest.jsonl", asset_manifest)
 
     print(f"Exported {len(papers)} paper records to {DATA_DIR}")
     print(f"Exported {len(pdf_manifest)} local PDF manifest rows")
     print(f"Exported {len(missing_pdf_manifest)} missing PDF manifest rows")
     print(f"Exported {len(note_manifest)} note manifest rows")
+    print(f"Exported {len(paper_registry)} paper registry rows")
+    print(f"Exported {len(paper_identifier_aliases)} paper identifier alias rows")
+    print(f"Exported {len(classification_assignments)} classification assignment rows")
+    print(f"Exported {len(pdf_archive_registry)} PDF archive registry rows")
+    print(f"Exported {len(asset_manifest)} asset manifest rows")
 
 
 if __name__ == "__main__":
