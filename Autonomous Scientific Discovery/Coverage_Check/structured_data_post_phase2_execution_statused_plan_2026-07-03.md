@@ -168,7 +168,7 @@
 
 这一点必须保留为正式事实，后续不能把这一轮误写成“标准成功 writeback-agent round”
 
-### 4.3 Follow-up rounds 6-10 已完成
+### 4.3 Follow-up rounds 6-11 已完成
 
 已完成文件族：
 
@@ -177,6 +177,7 @@
 - `Coverage_Check/structured_data_phase6_followup_round8_*_2026-07-03.*`
 - `Coverage_Check/structured_data_phase6_followup_round9_*_2026-07-03.*`
 - `Coverage_Check/structured_data_phase6_followup_round10_*_2026-07-03.*`
+- `Coverage_Check/structured_data_phase6_followup_round11_*_2026-07-04.*`
 
 当前已经确认的真实推进包括：
 
@@ -187,6 +188,7 @@
 - `R9`：完成一次 fresh bounded six-paper evidence-only conservative-hold round，并为后续 note harmonization 提供更强一手来源链
 - `note revision round 3`：对 `ASD-0536`、`ASD-0617`、`ASD-0855` 做了 note-only harmonization，authoritative pair 未改
 - `R10Approx`：在无真实子 Agent 的环境里，用并行工具保持角色边界，完成 6 篇 follow-up，其中 `ASD-0006`、`ASD-0090`、`ASD-0687`、`ASD-0506` 获得 authoritative landing，4 篇的 `source_limited=yes -> no` 与 `evidence_status -> first_hand_full_text` 被正式落地
+- `R11Approx`：完成下一组 fresh six-paper evidence-only conservative-hold round；对 `ASD-0005`、`ASD-0158`、`ASD-0097`、`ASD-0112`、`ASD-0603`、`ASD-0569` 补强了 publisher/preprint/XML/license 级一手来源链，但没有夸大为已读全文或已获本地 PDF
 
 ## 5. 当前 Phase 6 的真实位置
 
@@ -194,9 +196,10 @@
 
 - 已完成 queue refresh
 - 已完成 note revision rounds `1-3`
-- 已完成 bounded follow-up rounds `R6-R10`
+- 已完成 bounded follow-up rounds `R6-R11`
 - `R10Approx` 后的 authoritative 与派生层已经重新导出、校验、建库并刷新 Phase 6 队列
-- 当前自然下一步是：**基于 post-R10 refreshed queue 冻结新的 fresh bounded evidence round**
+- `R11Approx` 已对下一组 fresh frontier 做完 evidence-only conservative hold
+- 当前自然下一步是：**继续在 post-R10 queue 上，以 freshness override 选择下一组 bounded round；优先在 source-limited frontier 和 note-refresh frontier 之间二选一推进**
 
 也就是说，我们现在不是停留在 `Phase 1-2`，也不是停留在 `Phase 3-5`，而是已经进入 `Phase 6` 的连续执行段。
 
@@ -227,14 +230,10 @@
 - 用于说明下一轮最自然的 follow-up 方向
 - 不能替代正式的 round packet 冻结动作
 
-按照当前 post-R10 refreshed `full_text_followup_queue`，下一轮最自然的非 safety-follow-up 候选 focus set 是这 6 篇：
+按照当前 `R11Approx` 已处理完的 frontier，下一轮 controller 更自然的候选方向不再是重复 `R11Approx` 的 6 篇，而是二选一：
 
-- `ASD-0005`
-- `ASD-0158`
-- `ASD-0097`
-- `ASD-0112`
-- `ASD-0603`
-- `ASD-0569`
+1. 继续下一个 fresh non-safety follow-up set
+2. 转入 bounded note-only harmonization，对 `R11Approx` 中如果有 wording value 但没有 authority delta 的记录做保守 note refresh
 
 但在正式 launch 前，controller 还必须先做下面四步：
 
@@ -249,11 +248,7 @@
 - 但 queue 仍然是 recency-blind，不能直接把 same-day re-evidenced rows 当作 launch truth
 - 所以下一轮应基于 refreshed queue 加 controller freshness override 重新发包，而不是把历史 packet 或 score-only top rows 直接当成当前 truth
 
-如果 controller 仍决定围绕这 6 篇推进，建议 ownership 可切成：
-
-- Evidence-Agent-A：`ASD-0005`, `ASD-0158`
-- Evidence-Agent-B：`ASD-0097`, `ASD-0112`
-- Evidence-Agent-C：`ASD-0603`, `ASD-0569`
+如果 controller 继续做 fresh evidence round，建议重新基于当前 queue 和 freshness override 再冻结新 packet，而不要直接复用 `R11Approx` 的这 6 篇。
 
 这只是候选 ownership 草案，不等于已落地 packet 文件。
 

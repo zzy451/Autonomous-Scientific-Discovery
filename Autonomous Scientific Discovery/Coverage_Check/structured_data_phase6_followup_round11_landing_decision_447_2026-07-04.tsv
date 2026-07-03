@@ -1,0 +1,7 @@
+paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
+ASD-0005	conservative_hold	hold	03;04	none	03	yes	no	no	Stable multi-module anchor remains, but this round still did not retrieve readable ACS full text or PDF.
+ASD-0158	conservative_hold	hold	03	none	03	yes	no	no	Stable chemistry anchor remains, but Science access is still challenge-blocked and no new local archive was produced.
+ASD-0097	conservative_hold	hold	06	none	06	yes	no	no	Publisher/preprint registration is stronger than before, but this round still stops short of readable full-text verification and adds no landing-strength delta.
+ASD-0112	conservative_hold	hold	03	none	03	yes	no	no	The chemistry-side anchor remains stable, but visible Elsevier endpoints alone are not enough for a landed authority change.
+ASD-0603	conservative_hold	hold	03	none	03	yes	no	no	Stable chemistry-object anchor remains, but this round still did not produce readable Science full text or a local archive.
+ASD-0569	conservative_hold	hold	04	none	04	yes	no	no	CC-BY license and Wiley PDF/XML registration remain highly suggestive, but controller still cannot honestly clear `source_limited` without readable direct retrieval in this environment.
