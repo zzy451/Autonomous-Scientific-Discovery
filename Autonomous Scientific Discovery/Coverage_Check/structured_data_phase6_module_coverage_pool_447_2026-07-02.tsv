@@ -1,5 +1,5 @@
 module_code	label	active_assignment_count	active_local_pdf_count	active_missing_local_pdf_count	active_local_pdf_coverage_rate	active_note_count	active_missing_note_count	active_source_limited_count
-04	Materials Science	117	109	8	93.16	117	0	18
+04	Materials Science	117	110	7	94.02	117	0	17
 03	Chemical Sciences	90	83	7	92.22	90	0	11
 06	Life Sciences	78	74	4	94.87	78	0	22
 05	Earth and Environmental Sciences	37	33	4	89.19	37	0	8

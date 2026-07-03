@@ -14,8 +14,8 @@ This file records the first machine-generated Phase 6 preparation outputs derive
 
 ## Current counts
 
-- note revision queue candidates: `175`
-- full-text follow-up queue candidates: `134`
+- note revision queue candidates: `174`
+- full-text follow-up queue candidates: `133`
 - representative paper pool rows: `54`
 - module coverage pool rows: `11`
 - boundary case pool rows: `9`

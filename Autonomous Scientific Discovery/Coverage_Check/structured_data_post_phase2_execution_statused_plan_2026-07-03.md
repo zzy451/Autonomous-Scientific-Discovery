@@ -23,8 +23,8 @@
 截至 `2026-07-03`，当前稳定 baseline 仍然是：
 
 - active confirmed-core：`447`
-- active local PDF：`421`
-- active no-local-PDF：`26`
+- active local PDF：`422`
+- active no-local-PDF：`25`
 - active canonical `01.04` bucket：`9`
 - workflow mirror semantic drift：`0`
 - workflow mirror order drift：`0`
@@ -89,7 +89,7 @@
 
 当前作用：
 
-- `447 / 421 / 26 / 9 / drift 0` 已形成正式验收记录
+- `447 / 422 / 25 / 9 / drift 0` 已形成正式验收记录
 - 后续所有 round 都必须把这个 baseline 当成回归检查基线
 
 ### 3.5 `Phase 4`
@@ -142,11 +142,13 @@
 已完成文件：
 
 - `Coverage_Check/structured_data_phase6_queue_refresh_after_round5_closeout_2026-07-02.md`
+- `Coverage_Check/structured_data_phase6_queue_refresh_after_round6_closeout_2026-07-03.md`
+- `Coverage_Check/structured_data_phase6_queue_refresh_after_round8_closeout_2026-07-03.md`
 
 这一步已经确认：
 
 - 刷新后的队列和 authoritative pair 对齐
-- baseline 仍然稳定为 `447 / 421 / 26 / drift 0`
+- baseline 仍然稳定为 `447 / 422 / 25 / drift 0`
 - follow-up queue 已从 stale pre-R5 anchors 刷到 post-R5 状态
 
 ### 4.2 Note revision round 1 已完成
@@ -166,13 +168,29 @@
 
 这一点必须保留为正式事实，后续不能把这一轮误写成“标准成功 writeback-agent round”
 
+### 4.3 Follow-up rounds 6-8 已完成
+
+已完成文件族：
+
+- `Coverage_Check/structured_data_phase6_followup_round6_*_2026-07-03.*`
+- `Coverage_Check/structured_data_phase6_followup_round7_*_2026-07-03.*`
+- `Coverage_Check/structured_data_phase6_followup_round8_*_2026-07-03.*`
+
+当前已经确认的真实推进包括：
+
+- `R6`：`ASD-0381` 获得 evidence-state 升级并移出高压 `source_limited=yes` frontier
+- `R7`：完成一次完整 evidence-only conservative-hold round，没有假装产生 authoritative landing
+- `R8`：`ASD-0735` 获得本地合法可读 PDF 并 landed，baseline 从 `421 / 26` 前进到 `422 / 25`
+- `R8` 同时对 `ASD-0572`、`ASD-0727` 做了 note-only refresh，对 `ASD-0859`、`ASD-0860`、`ASD-0861` 保持保守挂起
+
 ## 5. 当前 Phase 6 的真实位置
 
 当前最重要的状态不是“继续写治理文档”，而是：
 
 - 已完成 queue refresh
 - 已完成 note revision round 1
-- 当前自然下一步是：**从 refreshed full-text follow-up queue 启动下一轮 bounded evidence round**
+- 已完成 bounded follow-up rounds `R6-R8`
+- 当前自然下一步是：**基于 post-R8 refreshed queue 冻结新的 fresh bounded evidence round**
 
 也就是说，我们现在不是停留在 `Phase 1-2`，也不是停留在 `Phase 3-5`，而是已经进入 `Phase 6` 的连续执行段。
 
@@ -203,14 +221,14 @@
 - 用于说明下一轮最自然的 follow-up 方向
 - 不能替代正式的 round packet 冻结动作
 
-按照当前 refreshed `full_text_followup_queue`，下一轮最自然的候选 follow-up focus set 是这 6 篇：
+按照当前 post-R8 refreshed `full_text_followup_queue`，并显式跳过 `2026-07-03` 已重查过的 recency-blind rows，下一轮最自然的候选 fresh follow-up focus set 是这 6 篇：
 
-- `ASD-0005`
-- `ASD-0158`
-- `ASD-0097`
-- `ASD-0112`
-- `ASD-0381`
-- `ASD-0603`
+- `ASD-0536`
+- `ASD-0617`
+- `ASD-0631`
+- `ASD-0724`
+- `ASD-0855`
+- `ASD-0858`
 
 但在正式 launch 前，controller 还必须先做下面四步：
 
@@ -221,15 +239,15 @@
 
 当前这样写的原因也要说明白：
 
-- refreshed queue 已经反映 post-R5 事实
-- 但旧的 round1 packet family 仍可能保留 stale anchors
-- 所以下一轮应基于 refreshed queue 重新发包，而不是把历史 packet 直接当成当前 truth
+- refreshed queue 已经反映 post-R8 事实
+- 但 queue 仍然是 recency-blind，不能直接把 same-day re-evidenced rows 当作 launch truth
+- 所以下一轮应基于 refreshed queue 加 controller freshness override 重新发包，而不是把历史 packet 或 score-only top rows 直接当成当前 truth
 
 如果 controller 仍决定围绕这 6 篇推进，建议 ownership 可切成：
 
-- Evidence-Agent-A：`ASD-0005`, `ASD-0158`
-- Evidence-Agent-B：`ASD-0097`, `ASD-0112`
-- Evidence-Agent-C：`ASD-0381`, `ASD-0603`
+- Evidence-Agent-A：`ASD-0536`, `ASD-0617`
+- Evidence-Agent-B：`ASD-0631`, `ASD-0724`
+- Evidence-Agent-C：`ASD-0855`, `ASD-0858`
 
 这只是候选 ownership 草案，不等于已落地 packet 文件。
 
