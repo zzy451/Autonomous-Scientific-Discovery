@@ -6,8 +6,8 @@
 - 年份：2025
 - 来源 / venue：Nature Chemical Engineering
 - DOI / arXiv / URL：https://doi.org/10.1038/s44286-025-00303-w
-- PDF / 本地文件路径：本轮依据 Nature publisher page、摘要与图题级材料整理，尚未取得稳定全文 PDF
-- 来源状态：source_limited=yes（本轮仍以 publisher page、摘要与图题级材料为主；冻结归类稳定为 `06`，但不能表述成已完成全文核对）
+- PDF / 本地文件路径：本轮依据 Nature publisher page、摘要、图题级材料以及页面暴露的 supplementary information / reporting summary / supplementary code / source-data 线索整理；主文 PDF 仍未稳定取得
+- 来源状态：source_limited=yes（主文 / 主 PDF 仍未取得，但 Nature 页面已暴露 supplementary information、reporting summary、supplementary code 与 source-data cues；冻结归类稳定为 `06`，但不能表述成已完成全文核对）
 - 论文类型：研究论文 / automated protein-evolution laboratory
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
@@ -19,9 +19,9 @@
 |---|---|---|---|---|
 | Agent 纳入 | 是 | publisher abstract | iAutoEvoLab 被描述为 industrial-grade automation platform，可在 minimal human intervention 下长期运行 | 中高 |
 | 科学对象归类 | 冻结为 `06`（落盘仍写作 `06.03`） | abstract | 直接对象是 programmable protein evolution、protein adaptive landscapes 与具体蛋白功能进化 | 高 |
-| 方法流程 | 长程自动化实验闭环 | abstract; Fig. 1; Extended Data | 存在 dynamic scheduling、loop control、branch switching、process termination 与 error handling | 中高 |
+| 方法流程 | 长程自动化实验闭环 | abstract; Fig. 1; Extended Data; publisher-page supplementary artifacts / reporting summary / supplementary code / source-data cues | 存在 dynamic scheduling、loop control、branch switching、process termination 与 error handling | 中高 |
 | 实验验证 | 强 | abstract | 对 LldR、LmrA、CapT7 等蛋白系统做真实进化实验，CapT7 从 inactive precursors 演化出功能 | 中高 |
-| 来源状态 | source_limited=yes | publisher page / abstract / figure-title materials | 当前仍未取得稳定全文 PDF，但页面级一手证据已足以维持冻结 `06` | 中高 |
+| 来源状态 | source_limited=yes | publisher page / abstract / figure-title materials / supplementary-artifact cues | 当前仍未取得稳定全文 PDF，但页面级一手证据连同 supplementary information、reporting summary、supplementary code 与 source-data cues 已足以维持冻结 `06` | 中高 |
 | 边界判断 | 不转 `07` 或 `09` | object-first review | 虽有 industrial lab framing，但 automation 是手段，稳定对象仍是蛋白工程 | 高 |
 
 ## 0. 摘要翻译
@@ -208,7 +208,7 @@
 - 工具链依赖：高度依赖专用工业级自动化实验室
 - 数据泄漏或 benchmark 偏差：非主风险
 - 成本、可复现性或安全风险：平台复制门槛高
-- 是否仍需后续全文复核：是；当前仍以 publisher page、摘要与图题级材料为主，因此保留 source_limited=yes，但冻结 `06` 结论不变
+- 是否仍需后续全文复核：是；虽已可见 supplementary PDFs 与 code / source-data cues，但 main article / full PDF 仍 gated，因此保留 source_limited=yes，但冻结 `06` 结论不变
 
 ## 8. 对综述写作的价值
 
@@ -217,7 +217,7 @@
 - 可用于哪个表格或图：protein-evolution platform comparison
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：标准到核心之间
-- 需要在正文中特别引用的页码 / 图 / 表：Fig. 1 与 extended data scheduling elements
+- 需要在正文中特别引用的页码 / 图 / 表：Fig. 1、extended data scheduling elements，以及 Nature 页面上的 supplementary information / reporting summary / supplementary code / source-data cues
 - 需要与哪些论文并列比较：ASD-0599, ASD-0618
 
 ## 9. 总结

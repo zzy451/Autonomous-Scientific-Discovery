@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：IFAC-PapersOnLine
 - DOI / arXiv / URL：https://doi.org/10.1016/j.ifacol.2025.12.440
-- PDF / 本地文件路径：无本地 PDF；本轮仅核对 ScienceDirect 文章页 `https://www.sciencedirect.com/science/article/pii/S240589632503157X`；`source_limited=yes`
+- PDF / 本地文件路径：无本地 PDF；本轮核对 DOI `https://doi.org/10.1016/j.ifacol.2025.12.440` 与官方 ScienceDirect 文章页 `https://www.sciencedirect.com/science/article/pii/S240589632503157X`；页面可见 publisher abstract、authors、`complimentary access` 与 `View PDF` 线索，但本环境未实际取回 PDF，因此继续 `source_limited=yes`
 - 论文类型：系统论文 / scientific-evaluation multi-agent framework
 - 当前状态：to_read
 - 阅读日期：2026-06-24
@@ -25,8 +25,8 @@ general_method_bucket: none
 primary_module_for_filing: 11
 confidence: high
 source_limited: yes
-safety_access_status: no_safety_issue_full_text_not_retrieved
-first_hand_sources_checked: ScienceDirect article page https://www.sciencedirect.com/science/article/pii/S240589632503157X
+safety_access_status: no_safety_issue_full_text_not_retrieved; official publisher page visibility is stronger, but automated/manual PDF retrieval was still not completed or verified in this environment
+first_hand_sources_checked: DOI https://doi.org/10.1016/j.ifacol.2025.12.440 + ScienceDirect article page https://www.sciencedirect.com/science/article/pii/S240589632503157X (visible `complimentary access` / `View PDF` cues)
 classification_evidence_source_level: source_limited
 module_assignment_evidence: the directly studied object is scientific evaluation / peer review itself; author / reviewer / editor style agents coordinate review generation, critique, and editorial synthesis around scientific knowledge production.
 multi_module_object_coverage_note: this is not a general-method-only `01.04` paper because the workflow explicitly studies scientific peer review as a concrete knowledge-production object.
@@ -37,7 +37,7 @@ final_reason: the paper's object is scientific peer review and trustworthy scien
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Frozen adjudication | `11`; `source_limited=yes` | Batch29Partial1 frozen packet + ScienceDirect article page | 本轮只保留单模块 `11`，不扩展也不回退到 `01.04` | 高 |
+| Frozen adjudication | `11`; `source_limited=yes` | Batch29Partial1 frozen packet + round9 official ScienceDirect publisher page cues | 本轮只保留单模块 `11`，不扩展也不回退到 `01.04`；官方页面已可见 abstract / authors / `complimentary access` / `View PDF` 线索，但未实际核读全文 / PDF | 高 |
 | Agent 纳入 | 是 | 标题；文章页摘要 | 论文明确提出 multi-agent framework，用于 transparent and trustworthy scientific evaluation | 高 |
 | 科学对象归类 | `11 / 11.07` | 标题；摘要 | 研究对象不是通用科研工作流，而是 scientific peer review / scientific evaluation 本身 | 高 |
 | 方法流程 | 多 Agent 协作评审链条成立 | 摘要 | 作者、审稿、编辑式代理围绕审稿意见生成、比较、整合与透明化展开 | 中高 |
@@ -226,7 +226,7 @@ final_reason: the paper's object is scientific peer review and trustworthy scien
 
 ## 7. 局限性与风险
 
-- source_limited：是；ScienceDirect 文章页可访问，但当前环境没有合法直达全文 PDF
+- source_limited：是；官方页已出现 `complimentary access` 与 `View PDF` 线索，但当前环境仍未完成可核验的 PDF / 全文取回
 - Agent 自主性不足：可能仍需显著的人工规则或评审标准注入
 - 科学验证不足：完整实验设计和误差分析尚未从全文核对
 - 泛化性不足：是否能跨学科、跨 venue 稳定迁移仍待更强证据

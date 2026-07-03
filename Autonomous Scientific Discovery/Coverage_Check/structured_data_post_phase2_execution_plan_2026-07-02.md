@@ -220,6 +220,8 @@
 - 子 Agent 默认只读生成候选清单和证据包
 - Main Controller 决定哪些内容正式写回 authoritative pair
 - 若进入 note writeback，仍遵守单 note 单 owner、master/progress 单写
+- 后续轮次默认保持标准多 Agent 团队拓扑，不因“担心并发槽位不够”而主动降级
+- 并发槽位通过“每轮完成后立即关闭已完成 Agent”来回收，而不是跨轮长期占用
 
 ## 4. Main Controller 与子 Agent 的固定边界
 

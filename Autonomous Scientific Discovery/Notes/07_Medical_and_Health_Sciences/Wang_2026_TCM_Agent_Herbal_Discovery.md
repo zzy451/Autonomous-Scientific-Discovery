@@ -3,8 +3,8 @@
 ## 2026-06-23 source refresh
 
 - Final adjudication landed for this note: `scientific_object_modules=07`; `object_coverage_mode=single_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
-- Current-turn first-hand sources checked: official JPA publisher page/abstract plus ScienceDirect landing snippet.
-- Local PDF status: no local PDF archived; this note remains explicitly `source_limited=yes`.
+- Current-turn first-hand sources checked: official JPA article page / abstract, DOI page, JPA latest-articles listing, and ScienceDirect landing page. The official JPA page visibly advertises HTML full text and PDF entry points, but neither artifact was actually retrieved or read in this round.
+- Local PDF status: no local PDF archived; official publisher HTML/PDF entries are now visibly available on the JPA page, but this note remains explicitly `source_limited=yes` because no first-hand full text or PDF was actually read in this environment.
 
 **论文信息**
 - 标题：TCM-Agent: Advancing Network Pharmacology and Herbal Medicine Discovery with LLM-Based Multi-Agent Systems
@@ -15,12 +15,12 @@
   - https://doi.org/10.1016/j.jpha.2026.101581
   - https://jpa.xjtu.edu.cn/article/doi/10.1016/j.jpha.2026.101581
   - https://www.sciencedirect.com/science/article/pii/S2095177926000605
-- PDF / 本地文件路径：未归档本地 PDF
+- PDF / 本地文件路径：未归档本地 PDF；官方 JPA 页面已可见 HTML full text 与 PDF 入口，但本轮未实际取回或核读对应全文 / PDF
 - 论文类型：系统论文 / TCM and herbal-medicine discovery agent
 - 当前状态：to_read（本轮 note 已按最终裁决刷新；仍待全文补强）
 - 阅读日期：2026-06-23
 - 笔记作者：Codex
-- First-hand sources checked：official JPA publisher page/abstract + ScienceDirect landing snippet
+- First-hand sources checked：official JPA article page / abstract + DOI page + JPA latest-articles listing + ScienceDirect landing page
 - Classification evidence source level：source_limited
 - source_limited：yes
 - safety/access status：no_safety_issue_full_text_not_retrieved
@@ -33,12 +33,12 @@
 | 科学对象归类 | `07` | official JPA abstract；ScienceDirect landing snippet | 研究对象明确落在 TCM formulas、herbal medicines、bioactive compound discovery 与 network pharmacology。 | 高 |
 | 不进入 `01.04` | 是 | official JPA abstract | 该系统并非领域无关科研 Agent，而是明确服务于中药/草药发现与药理研究。 | 高 |
 | 边界判断 | 保持 `07` | official JPA abstract；ScienceDirect landing snippet | 虽涉及 compound discovery 与 network pharmacology，但目标落点是药学/健康相关发现，而非纯生命机制研究或一般化学反应设计。 | 中高 |
-| 验证方式 | benchmark / validated studies 为主 | official JPA abstract | 当前可见来源支持其在 validated TCM studies 上比较 answer accuracy、retrieval precision、efficiency 等指标。 | 中高 |
-| 来源状态 | 仍需全文补强 | source refresh summary | 尚未获取本地 PDF 或已核对全文；当前分类能稳定支持 `07`，但方法细节和验证强度仍属摘要级一手来源。 | 中高 |
+| 验证方式 | benchmark / validated studies 为主 | official JPA abstract | 当前可见官方摘要明确支持其在 `100 validated TCM studies` 上比较 answer accuracy、retrieval precision、efficiency 等指标，并用于 bioactive compound discovery。 | 中高 |
+| 来源状态 | 仍需全文补强 | source refresh summary | 官方 JPA 页面现已可见 HTML full text 与 PDF 入口，但本轮未实际核读对应全文 / PDF；当前分类能稳定支持 `07`，但方法细节和验证强度仍属 source-limited 一手来源。 | 中高 |
 
 ## 0. 摘要翻译
 
-TCM-Agent 面向中医药网络药理学与草药发现任务，构建了一个基于大语言模型的多 Agent 系统。当前已核对的一手来源都把它明确描述为服务于 TCM formulas、herbal medicines 和 bioactive compound discovery 的研究系统，而不是领域无关的通用科研平台。系统强调把检索、推理、数据分析、验证和可视化串起来，用于提升中医药研究与药理发现任务的效率。当前能稳定支撑的是顶层 `07` 医学与健康科学归类；但由于尚未取得本地 PDF 或完整全文，本 note 仍需保留 `source_limited=yes`。
+TCM-Agent 面向中医药网络药理学与草药发现任务，构建了一个基于大语言模型的多 Agent 系统。当前已核对的一手来源都把它明确描述为服务于 TCM formulas、herbal medicines 和 bioactive compound discovery 的研究系统，而不是领域无关的通用科研平台。系统强调把检索、推理、数据分析、验证和可视化串起来，用于提升中医药研究与药理发现任务的效率。当前能稳定支撑的是顶层 `07` 医学与健康科学归类；虽然官方 JPA 页面已可见 HTML full text 与 PDF 入口，但本轮并未实际核读对应全文 / PDF，因此本 note 仍需保留 `source_limited=yes`。
 
 ## 1. 是否纳入本综述
 
