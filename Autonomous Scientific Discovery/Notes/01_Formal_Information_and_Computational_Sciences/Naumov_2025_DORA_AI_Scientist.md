@@ -6,13 +6,20 @@
 - 年份：2025
 - 来源 / venue：bioRxiv
 - DOI / arXiv / URL：https://doi.org/10.1101/2025.03.06.641840
-- PDF / 本地文件路径：bioRxiv PDF/HTML 本次仍被 Cloudflare challenge 阻断；未获得可读全文；仅使用 DOI/metadata、可访问摘要线索和第三方摘要，不写入项目 PDF 库
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.pdf`
 - 论文类型：系统论文 / 科研探索与报告生成 Agent
-- 当前状态：已读摘要与元数据 / 已纳入 / round-2 边界已关闭为独立 `01.04`；全文仍待补充
+- 当前状态：已复核本地 PDF 全文 / 已纳入 / round-2 边界已关闭为独立 `01.04`
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## 2026-07-03 Phase6FollowupR10 local PDF recheck
+
+- `first_hand_sources_checked`: local archived bioRxiv PDF `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.pdf`; DOI `https://doi.org/10.1101/2025.03.06.641840`.
+- Current authoritative classification: keep the independent `01.04` general-method bucket with `object_coverage_mode=general_method_without_concrete_object_experiments`; `primary_module_for_filing=01`; `general_method_bucket=01.04`.
+- Local-PDF finding: the archived bioRxiv PDF is locally present and readable; this round no longer needs to describe the record as blocked from full-text verification.
+- Why this matters: first-page full-text recheck still frames DORA as a multi-agent scientific exploration and automated report-generation system. The reread does not add concrete life-science or biomedical object experiments strong enough for `06` or `07`, but it does clear the old `source_limited` ceiling.
 
 ## 2026-06-21 relaxed round-2 boundary closure
 

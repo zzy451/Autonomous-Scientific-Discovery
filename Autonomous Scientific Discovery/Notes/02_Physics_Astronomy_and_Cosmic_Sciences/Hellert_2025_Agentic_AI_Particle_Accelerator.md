@@ -6,13 +6,20 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2509.17255
-- PDF / 本地文件路径：当前轮仅核对 arXiv 摘要；未见本地归档 PDF
+- PDF / 本地文件路径：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.pdf`
 - 论文类型：系统论文 / 真实设施上的 physics-experiment Agent
-- 当前状态：to_read
+- 当前状态：已复核本地 PDF 全文 / 已纳入
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## 2026-07-03 Phase6FollowupR10 local PDF recheck
+
+- `first_hand_sources_checked`: local archived arXiv PDF `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.pdf`; arXiv `https://arxiv.org/abs/2509.17255`.
+- Current authoritative classification: keep `scientific_object_modules=02`; `object_coverage_mode=single_module`; `primary_module_for_filing=02`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. First-page full text directly states that the system autonomously executes multi-stage physics experiments at the Advanced Light Source particle accelerator and is validated on machine-physics tasks under operator-standard safety constraints.
+- Round effect: the stable `02.02` object anchor is strengthened from abstract-level evidence to direct full-text evidence, so the authoritative `source_limited` flag can be cleared.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

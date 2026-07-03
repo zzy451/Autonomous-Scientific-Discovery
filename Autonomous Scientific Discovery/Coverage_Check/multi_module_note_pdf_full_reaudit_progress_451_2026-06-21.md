@@ -18,7 +18,7 @@
 
 | ASD-0005 | A Multiagent-Driven Robotic AI Chemist Enabling Autonomous Chemical Research On Demand | Notes/03_Chemical_Sciences/Song_2025_Robotic_AI_Chemist.md | publisher_pdf_gated |  | first_hand_abstract_plus_official_supporting_info | updated | updated | 03;04 | yes | Batch00 | yes |
 
-| ASD-0006 | DORA AI Scientist: Multi-agent Virtual Research Team for Scientific Exploration Discovery and Automated Report Generation | Notes/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.pdf | first_hand_abstract_and_official_pages | checked | updated | 01.04 | yes | Batch00 | yes |
+| ASD-0006 | DORA AI Scientist: Multi-agent Virtual Research Team for Scientific Exploration Discovery and Automated Report Generation | Notes/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.pdf | first_hand_full_text | updated | updated | 01.04 | no | Phase6FollowupR10Approx | yes |
 
 | ASD-0007 | Hypothesis Generation for Materials Discovery and Design Using Goal-Driven and Constraint-Guided LLM Agents | Notes/04_Materials_Science/Kumbhar_2025_Hypothesis_Generation_Materials.md | archived_pdf | Reference_PDF/04_Materials_Science/Kumbhar_2025_Hypothesis_Generation_Materials.pdf | first_hand_full_text | updated | updated | 04 | no | Batch00 | yes |
 
@@ -148,7 +148,7 @@
 
 | ASD-0089 | Researchcodeagent: An llm multi-agent system for automated codification of research methodologies | Notes/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.pdf | first_hand_full_text | updated | updated | 01 | no | Batch02 | yes |
 
-| ASD-0090 | Agents for self-driving laboratories applied to quantum computing | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2025_K_Agents_Quantum.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2024_K_Agents_Quantum.pdf | first_hand_pdf_checked_source_limited | updated | updated | 02 | yes | Batch02 | yes |
+| ASD-0090 | Agents for self-driving laboratories applied to quantum computing | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2025_K_Agents_Quantum.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2024_K_Agents_Quantum.pdf | first_hand_full_text | updated | updated | 02 | no | Phase6FollowupR10Approx | yes |
 
 | ASD-0091 | Agentic mixture-of-workflows for multi-modal chemical search | Notes/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf | first_hand_full_text | updated | updated | 03;04 | no | Batch02 | yes |
 
@@ -314,7 +314,7 @@
 
 | ASD-0505 | Autonomous and dynamic precursor selection for solid-state materials synthesis | Notes/04_Materials_Science/Szymanski_2023_ARROWS3_SolidState_Synthesis.md | archived_pdf | Reference_PDF/04_Materials_Science/Szymanski_2023_ARROWS3_SolidState_Synthesis.pdf | first_hand_full_text | updated | updated | 04 | no | Batch15Partial1 | yes |
 
-| ASD-0506 | Closed-loop transfer enables artificial intelligence to yield chemical knowledge | Notes/03_Chemical_Sciences/Angello_2024_ClosedLoop_Transfer_Chemical_Knowledge.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Angello_2024_ClosedLoop_Transfer_Chemical_Knowledge.pdf | first_hand_preview_only | updated_source_limited | updated_source_limited | 03 | yes | Batch23Partial1 | yes |
+| ASD-0506 | Closed-loop transfer enables artificial intelligence to yield chemical knowledge | Notes/03_Chemical_Sciences/Angello_2024_ClosedLoop_Transfer_Chemical_Knowledge.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Angello_2024_ClosedLoop_Transfer_Chemical_Knowledge.pdf | first_hand_full_text | updated | updated | 03 | no | Phase6FollowupR10Approx | yes |
 
 | ASD-0507 | Identifying general reaction conditions by bandit optimization | Notes/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.pdf | first_hand_preview_only | updated_source_limited | updated_source_limited | 03 | yes | Batch23Partial1 | yes |
 
@@ -596,7 +596,7 @@
 
 | ASD-0684 | ChemNavigator: Agentic AI Discovery of Design Rules for Organic Photocatalysts | Notes/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.pdf | first_hand_abstract_review_packet | updated | checked | 03 | yes | Batch20Partial1 | yes |
 
-| ASD-0687 | Agentic AI for Multi-Stage Physics Experiments at a Large-Scale User Facility Particle Accelerator | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.pdf | first_hand_abstract_review_packet | updated | checked | 02 | yes | Batch20Partial1 | yes |
+| ASD-0687 | Agentic AI for Multi-Stage Physics Experiments at a Large-Scale User Facility Particle Accelerator | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.pdf | first_hand_full_text | updated | updated | 02 | no | Phase6FollowupR10Approx | yes |
 
 | ASD-0688 | OpenFOAMGPT 2.0: end-to-end, trustworthy automation for computational fluid dynamics | Notes/09_Engineering_and_Industrial_Technology_Sciences/Feng_2025_OpenFOAMGPT_2_0.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Feng_2025_OpenFOAMGPT_2_0.pdf | first_hand_full_text | updated | updated | 09 | no | Batch25Partial1 | yes |
 

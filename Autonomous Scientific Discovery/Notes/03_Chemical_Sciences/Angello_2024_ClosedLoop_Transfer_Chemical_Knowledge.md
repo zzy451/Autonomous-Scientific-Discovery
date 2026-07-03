@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-024-07892-1
-- PDF / 本地文件路径：本轮仍基于官方摘要 / article page 与 reviewer 一手证据；`source_limited=yes`；未保存本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Angello_2024_ClosedLoop_Transfer_Chemical_Knowledge.pdf`
 - 论文类型：研究论文 / closed-loop chemistry discovery
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -15,10 +15,17 @@
 ## Frozen Adjudication Writeback - 2026-06-23
 
 - Final classification: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
-- Source status: `source_limited=yes`. This round remains abstract / page-level only.
+- Source status: superseded by the `2026-07-03 Phase6FollowupR10` local-PDF reread below.
 - Landed subset note: keep the chemistry-object reading and do not reopen multi-module expansion in the note wording.
 
 ## Evidence Log
+
+## 2026-07-03 Phase6FollowupR10 local PDF recheck
+
+- `first_hand_sources_checked`: local archived Nature PDF `Reference_PDF/03_Chemical_Sciences/Angello_2024_ClosedLoop_Transfer_Chemical_Knowledge.pdf`; DOI `https://doi.org/10.1038/s41586-024-07892-1`.
+- Current authoritative classification: keep `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Local-PDF finding: the archived Nature PDF is present and readable. The first-page full text directly confirms the closed-loop transfer framing, donor-acceptor molecules, photostability in solution, and the chemistry-knowledge objective.
+- Round effect: this row is no longer limited to abstract / article-page evidence, so the authoritative `source_limited=yes` ceiling can be removed while keeping the stable single-module chemistry reading.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

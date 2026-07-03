@@ -64,7 +64,7 @@
     "primary_module_for_filing": "01",
     "scientific_object_modules": [],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_and_official_pages",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -917,7 +917,7 @@
       "02"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_pdf_checked_source_limited",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -1957,7 +1957,7 @@
       "03"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_preview_only",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -3668,7 +3668,7 @@
       "02"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {

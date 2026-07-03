@@ -4,7 +4,7 @@
 
 - Canonical PDF path: `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2024_K_Agents_Quantum.pdf`
 - Current source refresh: local archived PDF; arXiv `https://arxiv.org/abs/2412.07978`
-- Current authoritative classification: `scientific_object_modules=02`; `general_method_bucket=none`; `primary_module_for_filing=02`; `source_limited=yes` for this audit round, while the note itself remains based on full-text reading
+- Current authoritative classification: `scientific_object_modules=02`; `general_method_bucket=none`; `primary_module_for_filing=02`; `source_limited=no`; `evidence_status=first_hand_full_text`
 - Override note: stable `02` judgment retained. The concrete validated object is quantum-physics experimentation on a superconducting quantum processor, including entangled-state outcomes.
 - Archive-status note: use the canonical project PDF path above for downstream reference even if older body text below still mentions temporary local reading.
 
@@ -23,6 +23,8 @@
 ## Evidence Log
 
 Evidence level: full-text (arXiv PDF full text).
+
+**2026-07-03 Phase6FollowupR10 local PDF recheck**: the canonical archived PDF was reopened and text-extracted locally in this round. The first-page full text directly confirms the k-agents framework, the self-driving-lab framing, and the superconducting-quantum-processor / entangled-state validation path, so the old authoritative `source_limited=yes` status is no longer needed.
 
 **2026-06-21 archive note**: archived project PDF confirmed at `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2024_K_Agents_Quantum.pdf`; current audit keeps the paper in `02` because the agents are validated on quantum-physics experimentation and entangled-state generation rather than a domain-general self-driving-lab benchmark.
 

@@ -168,13 +168,15 @@
 
 这一点必须保留为正式事实，后续不能把这一轮误写成“标准成功 writeback-agent round”
 
-### 4.3 Follow-up rounds 6-8 已完成
+### 4.3 Follow-up rounds 6-10 已完成
 
 已完成文件族：
 
 - `Coverage_Check/structured_data_phase6_followup_round6_*_2026-07-03.*`
 - `Coverage_Check/structured_data_phase6_followup_round7_*_2026-07-03.*`
 - `Coverage_Check/structured_data_phase6_followup_round8_*_2026-07-03.*`
+- `Coverage_Check/structured_data_phase6_followup_round9_*_2026-07-03.*`
+- `Coverage_Check/structured_data_phase6_followup_round10_*_2026-07-03.*`
 
 当前已经确认的真实推进包括：
 
@@ -182,15 +184,19 @@
 - `R7`：完成一次完整 evidence-only conservative-hold round，没有假装产生 authoritative landing
 - `R8`：`ASD-0735` 获得本地合法可读 PDF 并 landed，baseline 从 `421 / 26` 前进到 `422 / 25`
 - `R8` 同时对 `ASD-0572`、`ASD-0727` 做了 note-only refresh，对 `ASD-0859`、`ASD-0860`、`ASD-0861` 保持保守挂起
+- `R9`：完成一次 fresh bounded six-paper evidence-only conservative-hold round，并为后续 note harmonization 提供更强一手来源链
+- `note revision round 3`：对 `ASD-0536`、`ASD-0617`、`ASD-0855` 做了 note-only harmonization，authoritative pair 未改
+- `R10Approx`：在无真实子 Agent 的环境里，用并行工具保持角色边界，完成 6 篇 follow-up，其中 `ASD-0006`、`ASD-0090`、`ASD-0687`、`ASD-0506` 获得 authoritative landing，4 篇的 `source_limited=yes -> no` 与 `evidence_status -> first_hand_full_text` 被正式落地
 
 ## 5. 当前 Phase 6 的真实位置
 
 当前最重要的状态不是“继续写治理文档”，而是：
 
 - 已完成 queue refresh
-- 已完成 note revision round 1
-- 已完成 bounded follow-up rounds `R6-R8`
-- 当前自然下一步是：**基于 post-R8 refreshed queue 冻结新的 fresh bounded evidence round**
+- 已完成 note revision rounds `1-3`
+- 已完成 bounded follow-up rounds `R6-R10`
+- `R10Approx` 后的 authoritative 与派生层已经重新导出、校验、建库并刷新 Phase 6 队列
+- 当前自然下一步是：**基于 post-R10 refreshed queue 冻结新的 fresh bounded evidence round**
 
 也就是说，我们现在不是停留在 `Phase 1-2`，也不是停留在 `Phase 3-5`，而是已经进入 `Phase 6` 的连续执行段。
 
@@ -221,14 +227,14 @@
 - 用于说明下一轮最自然的 follow-up 方向
 - 不能替代正式的 round packet 冻结动作
 
-按照当前 post-R8 refreshed `full_text_followup_queue`，并显式跳过 `2026-07-03` 已重查过的 recency-blind rows，下一轮最自然的候选 fresh follow-up focus set 是这 6 篇：
+按照当前 post-R10 refreshed `full_text_followup_queue`，下一轮最自然的非 safety-follow-up 候选 focus set 是这 6 篇：
 
-- `ASD-0536`
-- `ASD-0617`
-- `ASD-0631`
-- `ASD-0724`
-- `ASD-0855`
-- `ASD-0858`
+- `ASD-0005`
+- `ASD-0158`
+- `ASD-0097`
+- `ASD-0112`
+- `ASD-0603`
+- `ASD-0569`
 
 但在正式 launch 前，controller 还必须先做下面四步：
 
@@ -245,9 +251,9 @@
 
 如果 controller 仍决定围绕这 6 篇推进，建议 ownership 可切成：
 
-- Evidence-Agent-A：`ASD-0536`, `ASD-0617`
-- Evidence-Agent-B：`ASD-0631`, `ASD-0724`
-- Evidence-Agent-C：`ASD-0855`, `ASD-0858`
+- Evidence-Agent-A：`ASD-0005`, `ASD-0158`
+- Evidence-Agent-B：`ASD-0097`, `ASD-0112`
+- Evidence-Agent-C：`ASD-0603`, `ASD-0569`
 
 这只是候选 ownership 草案，不等于已落地 packet 文件。
 
