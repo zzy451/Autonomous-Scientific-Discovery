@@ -6,9 +6,9 @@
 - 年份：2025
 - 来源 / venue：bioRxiv preprint
 - DOI / arXiv / URL：https://doi.org/10.1101/2025.04.03.646459；https://www.biorxiv.org/content/10.1101/2025.04.03.646459v1；官方代码/说明页：https://github.com/Genentech/SpatialAgent
-- PDF / 本地文件路径：bioRxiv PDF/HTML 本次仍被 Cloudflare challenge 阻断；已使用 DOI/metadata、可访问摘要线索和官方 GitHub README，未完成全文 PDF 阅读
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Wang_2025_SpatialAgent.pdf`
 - 论文类型：系统论文 / 空间生物学 Agent
-- 当前状态：已读摘要与官方仓库说明 / 已纳入 / 待全文复核
+- 当前状态：已读 / 已纳入；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
@@ -20,7 +20,20 @@
 - Why: the official abstract and repository-level task description anchor the paper in spatial biology, spatial transcriptomics, multimodal data analysis, and hypothesis generation on datasets from human brain, heart, and a mouse colon colitis model. These are concrete life-science / omics objects, but the accessible first-hand evidence does not report patient-level diagnosis, therapy ranking, treatment evaluation, or other independent medical / clinical-validation tasks strong enough to justify `07`.
 - Note implication: older wording that kept this record broadly "full-text pending for possible `07`" should now be read as resolved for the current relaxed pass. Full text would still be useful for richer page-level evidence extraction, but not for reopening the `06/07` boundary without new object-level medical evidence.
 
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the spatial-biology / spatial-omics `06` reading and do not reopen `07`.
+
 ## Evidence Log
+
+## 2026-07-04 Phase6FollowupR14Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/06_Life_Sciences/Wang_2025_SpatialAgent.pdf`; DOI `10.1101/2025.04.03.646459`; official repository README `https://github.com/Genentech/SpatialAgent`.
+- Current authoritative classification: keep `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page full text directly confirms the SpatialAgent title, author block, and spatial-biology framing.
+- Round effect: the old abstract-plus-repository ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `06` boundary.
 
 证据级别：abstract+metadata + official repository（bioRxiv 全文未能访问；官方 GitHub 对架构和工具数量提供较强辅助证据，但不能替代论文全文页码）。
 

@@ -6,13 +6,20 @@
 - 年份：2025
 - 来源 / venue：bioRxiv；SSRN / Cell Press Sneak Peek, under review
 - DOI / arXiv / URL：https://doi.org/10.1101/2025.01.23.634608；SSRN abstract id: 5433777
-- PDF / 本地文件路径：bioRxiv PDF/HTML 本次仍被 Cloudflare challenge 阻断；SSRN PDF 需登录或访问失败；已使用可访问摘要/元数据线索，未完成全文 PDF 阅读
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Su_2025_BioMaster.pdf`
 - 论文类型：系统论文 / benchmark
-- 当前状态：已读摘要与元数据 / 已纳入 / round-2 边界已关闭为 `06` only；全文仍待补充
+- 当前状态：已读 / 已纳入；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## 2026-07-04 Phase6FollowupR14Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/06_Life_Sciences/Su_2025_BioMaster.pdf`; DOI `10.1101/2025.01.23.634608`; official GitHub README `https://github.com/ai4nucleome/BioMaster`.
+- Current authoritative classification: keep `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page full text directly confirms the BioMaster title, abstract opening, and automated bioinformatics workflow framing.
+- Round effect: the old abstract-plus-repository ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `06` boundary.
 
 ## 2026-06-21 relaxed round-2 boundary closure
 

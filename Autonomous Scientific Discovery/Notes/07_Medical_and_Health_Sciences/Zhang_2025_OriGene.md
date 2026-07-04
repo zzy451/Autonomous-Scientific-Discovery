@@ -6,13 +6,26 @@
 - 年份：2025
 - 来源 / venue：bioRxiv
 - DOI / arXiv / URL：https://www.biorxiv.org/content/10.1101/2025.06.03.657658v1 ; https://gentel-lab.github.io/OriGene-Homepage/
-- PDF / 本地文件路径：本轮未归档本地 PDF；当前依据 Crossref abstract 与官方主页元数据 / case summary，一手 bioRxiv PDF 端点在本环境返回 `403`，因此此条目仍按 source-limited 记录
+- PDF / 本地文件路径：`Reference_PDF/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.pdf`
 - 论文类型：系统论文 / 疾病机制与治疗靶点发现
-- 当前状态：已读 / confirmed core；复核后继续保留 `07`；当前 source-limited
+- 当前状态：已读 / confirmed core；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=07`; `object_coverage_mode=single_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the therapeutic-target-discovery `07` reading and do not reopen other top-level modules.
+
 ## Evidence Log
+
+## 2026-07-04 Phase6FollowupR14Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.pdf`; official homepage `https://gentel-lab.github.io/OriGene-Homepage/`.
+- Current authoritative classification: keep `scientific_object_modules=07`; `object_coverage_mode=single_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page full text directly confirms the OriGene title and therapeutic-target-discovery framing.
+- Round effect: the old Crossref-plus-homepage ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `07` boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -20,7 +33,7 @@
 | 科学对象归类 | `07` | Homepage abstract | therapeutic target discovery, disease mechanism inference | 高 |
 | 方法流程 | 多 Agent / 多证据整合 | Homepage description | 融合 disease ontologies, literature, networks, multi-omics | 高 |
 | 实验验证 | 疾病案例与下游验证 | Homepage case studies | HCC, CRC, organoid, tumor fragments, humanized mouse model | 高 |
-| 来源强度 | source-limited 但分类稳定 | Crossref abstract；official homepage metadata | 当前可确认一手来源是摘要级与官方主页级证据；bioRxiv PDF `403` 是主要限制，但不动摇 `07` 判断 | 高 |
+| 来源强度 | 本地 archived PDF 已可读，`source_limited` ceiling 已清除 | local archived PDF + official homepage metadata | 当前已由可读本地 PDF 支撑 first-hand full-text 落地；旧的 Crossref / homepage 证据继续作为补充来源 | 高 |
 
 ## 0. 摘要翻译
 

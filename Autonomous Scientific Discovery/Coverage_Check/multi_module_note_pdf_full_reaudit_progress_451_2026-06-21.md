@@ -32,7 +32,7 @@
 
 | ASD-0013 | The ai scientist-v2: Workshop-level automated scientific discovery via agentic tree search | Notes/01_Formal_Information_and_Computational_Sciences/Yamada_2025_AI_Scientist_V2.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Yamada_2025_AI_Scientist_V2.pdf | first_hand_full_text | updated | updated | 01 | no | Batch01 | yes |
 
-| ASD-0014 | Spatialagent: An autonomous ai agent for spatial biology | Notes/06_Life_Sciences/Wang_2025_SpatialAgent.md | archived_pdf | Reference_PDF/06_Life_Sciences/Wang_2025_SpatialAgent.pdf | first_hand_abstract_and_official_repo | updated | updated | 06 | yes | Batch01 | yes |
+| ASD-0014 | Spatialagent: An autonomous ai agent for spatial biology | Notes/06_Life_Sciences/Wang_2025_SpatialAgent.md | archived_pdf | Reference_PDF/06_Life_Sciences/Wang_2025_SpatialAgent.pdf | first_hand_full_text | updated | updated | 06 | no | Phase6FollowupR14Approx | yes |
 
 | ASD-0016 | An autonomous laboratory for the accelerated synthesis of novel materials | Notes/04_Materials_Science/Szymanski_2023_A_Lab.md | archived_pdf | Reference_PDF/04_Materials_Science/Szymanski_2023_A_Lab.pdf | first_hand_full_text | updated | updated | 04 | no | Batch01 | yes |
 
@@ -98,7 +98,7 @@
 
 | ASD-0054 | The virtual lab: Ai agents design new sars-cov-2 nanobodies with experimental validation | Notes/07_Medical_and_Health_Sciences/Swanson_2025_Virtual_Lab_Nanobodies.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Swanson_2025_Virtual_Lab_Nanobodies.pdf | first_hand_html_full_text | updated | updated | 07;06 | no | Batch23Partial1 | yes |
 
-| ASD-0055 | Biomaster: Multi-agent system for automated bioinformatics analysis workflow | Notes/06_Life_Sciences/Su_2025_BioMaster.md | archived_pdf | Reference_PDF/06_Life_Sciences/Su_2025_BioMaster.pdf | first_hand_abstract_and_repo_metadata | checked | updated | 06 | yes | Batch02 | yes |
+| ASD-0055 | Biomaster: Multi-agent system for automated bioinformatics analysis workflow | Notes/06_Life_Sciences/Su_2025_BioMaster.md | archived_pdf | Reference_PDF/06_Life_Sciences/Su_2025_BioMaster.pdf | first_hand_full_text | updated | updated | 06 | no | Phase6FollowupR14Approx | yes |
 
 | ASD-0056 | Delocalized, asynchronous, closed-loop discovery of organic laser emitters | Notes/03_Chemical_Sciences/StriethKalthoff_2024_Organic_Laser_Emitters.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/StriethKalthoff_2024_Organic_Laser_Emitters.pdf | first_hand_full_text | updated | updated | 03;04 | no | Batch02 | yes |
 
@@ -144,7 +144,7 @@
 
 | ASD-0084 | Automating alloy design and discovery with physics-aware multimodal multiagent ai | Notes/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.md | archived_pdf | Reference_PDF/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR12Approx | yes |
 
-| ASD-0085 | Protagents: protein discovery via large language model multi-agent collaborations combining physics and machine learning | Notes/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.md | archived_pdf | Reference_PDF/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.pdf | first_hand_pdf_checked_source_limited | updated | updated | 04;06 | yes | Batch02 | yes |
+| ASD-0085 | Protagents: protein discovery via large language model multi-agent collaborations combining physics and machine learning | Notes/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.md | archived_pdf | Reference_PDF/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.pdf | first_hand_full_text | updated | updated | 04;06 | no | Phase6FollowupR14Approx | yes |
 
 | ASD-0089 | Researchcodeagent: An llm multi-agent system for automated codification of research methodologies | Notes/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Gandhi_2025_ResearchCodeAgent.pdf | first_hand_full_text | updated | updated | 01 | no | Batch02 | yes |
 
@@ -256,7 +256,7 @@
 
 | ASD-0333 | MOOSE-Chem: Large language models for rediscovering unseen chemistry scientific hypotheses | Notes/03_Chemical_Sciences/Yang_2024_MOOSE_Chem.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Yang_2024_MOOSE_Chem.pdf | first_hand_full_text | updated | updated | 03 | no | Batch03 | yes |
 
-| ASD-0357 | Origene: A self-evolving virtual disease biologist automating therapeutic target discovery | Notes/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.pdf | first_hand_abstract_and_official_homepage | updated_source_limited | updated_source_limited | 07 | yes | CarryForward16 | yes |
+| ASD-0357 | Origene: A self-evolving virtual disease biologist automating therapeutic target discovery | Notes/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.pdf | first_hand_full_text | updated | updated | 07 | no | Phase6FollowupR14Approx | yes |
 
 | ASD-0370 | Self-driving laboratories to autonomously navigate the protein fitness landscape | Notes/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.md | archived_pdf | Reference_PDF/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.pdf | first_hand_abstract_and_metadata | updated_source_limited | updated_source_limited | 06 | yes | CarryForward16 | yes |
 
@@ -400,7 +400,7 @@
 
 | ASD-0558 | Closed-Loop AI Enables Organic Continuous-Wave Laser | Notes/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.md | archived_pdf | Reference_PDF/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 04 | yes | Batch23Partial1 | yes |
 
-| ASD-0564 | An agentic framework for autonomous scientific discovery in cancer pathology | Notes/07_Medical_and_Health_Sciences/Trost_2026_SPARK_Cancer_Pathology.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Trost_2026_SPARK_Cancer_Pathology.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 07;06 | yes | Batch23Partial1 | yes |
+| ASD-0564 | An agentic framework for autonomous scientific discovery in cancer pathology | Notes/07_Medical_and_Health_Sciences/Trost_2026_SPARK_Cancer_Pathology.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Trost_2026_SPARK_Cancer_Pathology.pdf | first_hand_full_text | updated | updated | 07;06 | no | Phase6FollowupR14Approx | yes |
 
 | ASD-0565 | Agentic AI for autonomous discovery of radiation-tolerant CoCrFeMnNi high entropy alloys | Notes/04_Materials_Science/Roy_2026_Radiation_Tolerant_HEA_Discovery.md | abstract_only_checked |  | first_hand_abstract_review_packet | updated | updated | 04 | no | Batch24Partial1 | yes |
 
@@ -566,7 +566,7 @@
 
 | ASD-0669 | MARBLE: Multi-Agent Reasoning for Bioinformatics Learning and Evolution | Notes/06_Life_Sciences/Kim_2026_MARBLE.md | archived_pdf | Reference_PDF/06_Life_Sciences/Kim_2026_MARBLE.pdf | first_hand_full_text | updated | updated | 06;07 | no | Batch27Partial1 | yes |
 
-| ASD-0670 | Mozi: Governed Autonomy for Drug Discovery LLM Agents | Notes/07_Medical_and_Health_Sciences/Cao_2026_Mozi.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Cao_2026_Mozi.pdf | source_limited_review_packet | checked | checked | 07 | yes | Batch19Partial1 | yes |
+| ASD-0670 | Mozi: Governed Autonomy for Drug Discovery LLM Agents | Notes/07_Medical_and_Health_Sciences/Cao_2026_Mozi.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Cao_2026_Mozi.pdf | first_hand_full_text | updated | updated | 07 | no | Phase6FollowupR14Approx | yes |
 
 | ASD-0671 | AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration | Notes/01_Formal_Information_and_Computational_Sciences/Liu_2026_AutoResearchClaw.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Liu_2026_AutoResearchClaw.pdf | first_hand_full_text | updated | checked | 01;02;06 | no | Batch24Partial1 | yes |
 

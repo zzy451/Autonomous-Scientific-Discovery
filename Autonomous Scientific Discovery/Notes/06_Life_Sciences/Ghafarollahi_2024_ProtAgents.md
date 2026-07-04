@@ -17,14 +17,14 @@
 - Canonical PDF path: `Reference_PDF/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.pdf`
 - PDF-path override: this archived project PDF now supersedes the older damaged-download / temporary-access wording previously used in the note.
 - Current-turn source refresh: the writeback follows the reviewed source trail `https://arxiv.org/abs/2402.04268`, `https://doi.org/10.1039/D4DD00013G`, plus the PMC HTML full text already reflected in the note.
-- Current authoritative classification: `scientific_object_modules=04;06`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`; `classification_evidence_source_level=source_limited`.
+- Current authoritative classification: `scientific_object_modules=04;06`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`; `classification_evidence_source_level=first_hand_full_text`.
 - Authoritative note: if older body text below still reads like a pure single-module `06` note, treat that as legacy wording superseded by the current `04;06` override.
 
 ## Evidence Log
 
-**2026-06-21 archive note**: project archived PDF path recorded under `Reference_PDF/`; current reaudit retains protein-science coverage and adds explicit materials-style object coverage for targeted mechanical-property design, so the authoritative classification is now `04;06`.
+**2026-07-04 archive note**: the canonical local PDF was reopened and text-checked in `Phase6FollowupR14Approx`; current reaudit retains protein-science coverage and explicit materials-style object coverage for targeted mechanical-property design, and the old source-limited qualifier is now removed.
 
-Evidence level: source-limited first-hand mix (project archived PDF path + arXiv / DOI / PMC HTML evidence aligned during the current reaudit writeback).
+Evidence level: first-hand full-text local archive plus aligned arXiv / DOI / PMC evidence.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -45,7 +45,7 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 06
-classification_evidence_source_level: source_limited
+classification_evidence_source_level: first_hand_full_text
 note_revision_required: yes
 ```
 

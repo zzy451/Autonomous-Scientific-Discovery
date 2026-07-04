@@ -6,13 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.03655
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与 reviewer 一手 PDF 证据整理
+- PDF / 本地文件路径：`Reference_PDF/07_Medical_and_Health_Sciences/Cao_2026_Mozi.pdf`
 - 论文类型：系统论文 / drug discovery agent
-- 当前状态：to_read
+- 当前状态：to_read；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=07`; `object_coverage_mode=single_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the drug-discovery `07.04` reading and do not reopen `01.04`.
+
 ## Evidence Log
+
+## 2026-07-04 Phase6FollowupR14Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/07_Medical_and_Health_Sciences/Cao_2026_Mozi.pdf`; arXiv `https://arxiv.org/abs/2603.03655`.
+- Current authoritative classification: keep `scientific_object_modules=07`; `object_coverage_mode=single_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page full text directly confirms the drug-discovery framing and governed-autonomy workflow description.
+- Round effect: the old abstract-only ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `07` boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

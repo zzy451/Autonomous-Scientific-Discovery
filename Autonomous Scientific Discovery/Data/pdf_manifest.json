@@ -156,7 +156,7 @@
       "06"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_and_official_repo",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -585,7 +585,7 @@
       "06"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_and_repo_metadata",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -891,7 +891,7 @@
       "06"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_pdf_checked_source_limited",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -1592,7 +1592,7 @@
       "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_and_official_homepage",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2488,7 +2488,7 @@
       "06"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "source_limited_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -3466,7 +3466,7 @@
       "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "source_limited_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
