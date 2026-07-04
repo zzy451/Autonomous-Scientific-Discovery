@@ -169,7 +169,7 @@
 
 这一点必须保留为正式事实，后续不能把这一轮误写成“标准成功 writeback-agent round”
 
-### 4.3 Follow-up rounds 6-12 已完成
+### 4.3 Follow-up rounds 6-13 已完成
 
 已完成文件族：
 
@@ -180,6 +180,7 @@
 - `Coverage_Check/structured_data_phase6_followup_round10_*_2026-07-03.*`
 - `Coverage_Check/structured_data_phase6_followup_round11_*_2026-07-04.*`
 - `Coverage_Check/structured_data_phase6_followup_round12_*_2026-07-04.*`
+- `Coverage_Check/structured_data_phase6_followup_round13_*_2026-07-04.*`
 
 当前已经确认的真实推进包括：
 
@@ -192,6 +193,7 @@
 - `R10Approx`：在无真实子 Agent 的环境里，用并行工具保持角色边界，完成 6 篇 follow-up，其中 `ASD-0006`、`ASD-0090`、`ASD-0687`、`ASD-0506` 获得 authoritative landing，4 篇的 `source_limited=yes -> no` 与 `evidence_status -> first_hand_full_text` 被正式落地
 - `R11Approx`：完成下一组 fresh six-paper evidence-only conservative-hold round；对 `ASD-0005`、`ASD-0158`、`ASD-0097`、`ASD-0112`、`ASD-0603`、`ASD-0569` 补强了 publisher/preprint/XML/license 级一手来源链，但没有夸大为已读全文或已获本地 PDF
 - `R12Approx`：完成下一组 local-PDF source-limited 清压 round；`ASD-0507`、`ASD-0684`、`ASD-0084`、`ASD-0666`、`ASD-0667`、`ASD-0653` 全部获得 authoritative landing，6 篇的 `source_limited=yes -> no` 与 `evidence_status -> first_hand_full_text` 被正式落地，并已同步刷新 post-R12 Phase 6 队列
+- `R13Approx`：完成下一组 post-R12 no-local-PDF / non-full-text frontier evidence round；对 `ASD-0572`、`ASD-0617`、`ASD-0727`、`ASD-0859`、`ASD-0860`、`ASD-0861` 补强了官方 DOI / publisher preview / repository-lead 级一手来源链，其中 `ASD-0617` 的 Nature preview 证据显著增强，但整组仍未达到可诚实声称 first-hand full text 或本地 PDF 落地的阈值，因此本轮保持 evidence-only conservative hold
 
 ## 5. 当前 Phase 6 的真实位置
 
@@ -199,10 +201,11 @@
 
 - 已完成 queue refresh
 - 已完成 note revision rounds `1-3`
-- 已完成 bounded follow-up rounds `R6-R12`
+- 已完成 bounded follow-up rounds `R6-R13`
 - `R12Approx` 后的 authoritative 与派生层已经重新导出、校验、建库并刷新 Phase 6 队列
 - 当前队列已经不再把 `ASD-0507`、`ASD-0684`、`ASD-0084`、`ASD-0666`、`ASD-0667`、`ASD-0653` 继续错误暴露为 local-PDF source-limited pressure
-- 当前自然下一步是：**继续在 post-R12 queue 上，以 freshness override 选择下一组 bounded round；优先处理仍未落地的 no-local-PDF / non-full-text frontier**
+- `R13Approx` 已对下一组 post-R12 no-local-PDF / non-full-text frontier 做完 evidence-only conservative hold
+- 当前自然下一步是：**继续在 post-R12 queue 上，以 freshness override 跳过 `R11Approx` 和 `R13Approx` 当日已重查行，继续处理仍未落地的 no-local-PDF / non-full-text frontier**
 
 也就是说，我们现在不是停留在 `Phase 1-2`，也不是停留在 `Phase 3-5`，而是已经进入 `Phase 6` 的连续执行段。
 
