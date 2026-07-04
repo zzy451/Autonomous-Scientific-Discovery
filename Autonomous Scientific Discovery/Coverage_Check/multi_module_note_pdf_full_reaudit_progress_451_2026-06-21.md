@@ -304,7 +304,7 @@
 
 | ASD-0487 | Autonomous Discovery of Battery Electrolytes with Robotic Experimentation and Machine Learning | Notes/04_Materials_Science/Dave_2020_Autonomous_Battery_Electrolytes.md | archived_pdf | Reference_PDF/04_Materials_Science/Dave_2020_Autonomous_Battery_Electrolytes.pdf | first_hand_full_text | updated | updated | 04 | no | Batch15Partial1 | yes |
 
-| ASD-0491 | Optimizing Perovskite Thin-Film Parameter Spaces with Machine Learning-Guided Robotic Platform for High-Performance Perovskite Solar Cells | Notes/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.md | archived_pdf | Reference_PDF/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.pdf | first_hand_abstract_only | updated_source_limited | updated_source_limited | 04 | yes | Batch23Partial1 | yes |
+| ASD-0491 | Optimizing Perovskite Thin-Film Parameter Spaces with Machine Learning-Guided Robotic Platform for High-Performance Perovskite Solar Cells | Notes/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.md | archived_pdf | Reference_PDF/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR16Approx | yes |
 
 | ASD-0501 | Functional genomic hypothesis generation and experimentation by a robot scientist | Notes/06_Life_Sciences/King_2004_Robot_Scientist.md | archived_pdf | Reference_PDF/06_Life_Sciences/King_2004_Robot_Scientist.pdf | first_hand_full_text | updated | updated | 06 | no | Batch15Partial1 | yes |
 
@@ -398,7 +398,7 @@
 
 | ASD-0557 | Unlocking azobenzene isomerization mechanisms via an LLM agent-driven workflow integrating simulation, experiment, and machine learning | Notes/03_Chemical_Sciences/Shen_2026_Azobenzene_Isomerization_Agent_Workflow.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Shen_2026_Azobenzene_Isomerization_Agent_Workflow.pdf | first_hand_full_text | updated | updated | 03 | no | Batch17Partial1 | yes |
 
-| ASD-0558 | Closed-Loop AI Enables Organic Continuous-Wave Laser | Notes/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.md | archived_pdf | Reference_PDF/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 04 | yes | Batch23Partial1 | yes |
+| ASD-0558 | Closed-Loop AI Enables Organic Continuous-Wave Laser | Notes/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.md | archived_pdf | Reference_PDF/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR16Approx | yes |
 
 | ASD-0564 | An agentic framework for autonomous scientific discovery in cancer pathology | Notes/07_Medical_and_Health_Sciences/Trost_2026_SPARK_Cancer_Pathology.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Trost_2026_SPARK_Cancer_Pathology.pdf | first_hand_full_text | updated | updated | 07;06 | no | Phase6FollowupR14Approx | yes |
 
@@ -434,7 +434,7 @@
 
 | ASD-0586 | A virtual platform for automated hybrid organic-enzymatic synthesis planning | Notes/03_Chemical_Sciences/Unknown_2025_Hybrid_Organic_Enzymatic_Synthesis_Planning.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Unknown_2025_Hybrid_Organic_Enzymatic_Synthesis_Planning.pdf | first_hand_full_text | updated | updated | 03 | no | Batch17Partial1 | yes |
 
-| ASD-0587 | Collective intelligence for AI-assisted chemical synthesis | Notes/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 03 | yes | Batch23Partial1 | yes |
+| ASD-0587 | Collective intelligence for AI-assisted chemical synthesis | Notes/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.pdf | first_hand_full_text | updated | updated | 03 | no | Phase6FollowupR16Approx | yes |
 
 | ASD-0589 | An integrated self-optimizing programmable chemical synthesis and reaction engine | Notes/03_Chemical_Sciences/Unknown_2024_Programmable_Chemical_Synthesis_Engine.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Unknown_2024_Programmable_Chemical_Synthesis_Engine.pdf | first_hand_full_text | updated | updated | 03 | no | Batch23Partial1 | yes |
 
@@ -556,7 +556,7 @@
 
 | ASD-0664 | Autonomous computational catalysis through an agentic research system | Notes/03_Chemical_Sciences/Unknown_2026_Autonomous_Computational_Catalysis.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Unknown_2026_Autonomous_Computational_Catalysis.pdf | first_hand_full_text_via_arxiv_fallback | updated | checked | 03;04 | no | Batch24Partial1 | yes |
 
-| ASD-0665 | TSAgent: An Agentic Workflow for Autonomous Transition State Search | Notes/03_Chemical_Sciences/Unknown_2026_TSAgent.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Unknown_2026_TSAgent.pdf | source_limited_review_packet | checked | checked | 03 | yes | Batch19Partial1 | yes |
+| ASD-0665 | TSAgent: An Agentic Workflow for Autonomous Transition State Search | Notes/03_Chemical_Sciences/Unknown_2026_TSAgent.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Unknown_2026_TSAgent.pdf | first_hand_full_text | updated | updated | 03 | no | Phase6FollowupR16Approx | yes |
 
 | ASD-0666 | MatClaw: An Autonomous Code-First LLM Agent for End-to-End Materials Exploration | Notes/04_Materials_Science/Unknown_2026_MatClaw.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2026_MatClaw.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR12Approx | yes |
 
@@ -850,11 +850,11 @@
 
 | ASD-0831 | Frontier LLM-based agents can overcome the ontology curation bottleneck for natural phenotypes | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Balhoff_2026_Phenotype_Ontology_Curation.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Balhoff_2026_Phenotype_Ontology_Curation.pdf | first_hand_full_text | updated | updated | 11 | no | Batch28Partial1 | yes |
 
-| ASD-0832 | Nikolas: AI Agent for Semi-Autonomous Catalyst Discovery Using the PRISM Meta-Cognitive Architecture | Notes/03_Chemical_Sciences/Mopgar_2026_Nikolas_Catalyst_Discovery.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Mopgar_2026_Nikolas_Catalyst_Discovery.pdf | first_hand_abstract_and_official_pages | updated_source_limited | updated_source_limited | 03 | yes | Batch30Partial2 | yes |
+| ASD-0832 | Nikolas: AI Agent for Semi-Autonomous Catalyst Discovery Using the PRISM Meta-Cognitive Architecture | Notes/03_Chemical_Sciences/Mopgar_2026_Nikolas_Catalyst_Discovery.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Mopgar_2026_Nikolas_Catalyst_Discovery.pdf | first_hand_full_text | updated | updated | 03 | no | Phase6FollowupR16Approx | yes |
 
 | ASD-0833 | Towards Autonomous Mechanistic Reasoning in Virtual Cells | Notes/06_Life_Sciences/Jang_2026_Virtual_Cells_Mechanistic_Reasoning.md | archived_pdf | Reference_PDF/06_Life_Sciences/Jang_2026_Virtual_Cells_Mechanistic_Reasoning.pdf | first_hand_full_text | updated | updated | 06 | no | Batch28Partial1 | yes |
 
-| ASD-0838 | Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry | Notes/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.pdf | crossref_and_official_pages_checked_cloudflare_blocked_pdf | updated_source_limited | not_updated_conservative_hold | 03 | yes | Batch30Partial4 | no |
+| ASD-0838 | Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry | Notes/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.pdf | first_hand_full_text | updated | updated | 03 | no | Phase6FollowupR16Approx | yes |
 
 | ASD-0839 | First head-to-head comparison of agentic AI applied to the analysis of simulated data of the Einstein Telescope | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Inguglia_2026_Einstein_Telescope_Agentic_Analysis.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Inguglia_2026_Einstein_Telescope_Agentic_Analysis.pdf | first_hand_full_text | updated | updated | 02 | no | Batch29Partial1 | yes |
 

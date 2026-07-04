@@ -6,14 +6,27 @@
 - 年份：2026
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-026-10131-4
-- PDF / 本地文件路径：未保存本地 PDF；本笔记基于 Nature 正式页面与 reviewer 一手证据
-- 来源状态：source_limited=yes（当前未取得稳定全文 PDF；冻结归类已确定落在 `03`，但细节仍需后续全文补足）
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.pdf`
+- 来源状态：source_limited=no（2026-07-04 local archived PDF full-text recheck completed）
 - 论文类型：research paper / collective-intelligence chemistry system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the chemistry synthesis `03` reading and do not reopen `01.04`.
+
+## 2026-07-04 Phase6FollowupR16Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.pdf`; DOI `https://doi.org/10.1038/s41586-026-10131-4`.
+- Current authoritative classification: keep `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Local-PDF finding: the archived Nature article PDF is present and readable. The first-page full text directly confirms MOSAIC, specialized chemical experts, executable experimental protocols, chemical synthesis validation, and new compound realization.
+- Round effect: the old Nature-page / reviewer-evidence source-limited ceiling is retired; this row now lands with first-hand full-text support while keeping the stable chemistry-object boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -59,7 +72,7 @@
 - 一级类：03
 - 冻结归类结论：03（化学科学）
 - 二级类：03.03
-- source_limited：yes
+- source_limited：no
 - 三级类：
 - 四级专题：Collective-intelligence chemical synthesis systems
 - 四级专题是否为新增：否

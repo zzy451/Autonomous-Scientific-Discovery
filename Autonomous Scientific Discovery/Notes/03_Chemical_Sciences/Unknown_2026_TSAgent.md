@@ -6,13 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.14154
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Unknown_2026_TSAgent.pdf`
 - 论文类型：预印本 / transition-state-search agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the transition-state / mechanistic chemistry `03` reading and do not reopen `04`.
+
+## 2026-07-04 Phase6FollowupR16Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/03_Chemical_Sciences/Unknown_2026_TSAgent.pdf`; arXiv `https://arxiv.org/abs/2605.14154`.
+- Current authoritative classification: keep `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Local-PDF finding: the archived arXiv PDF is present and readable. The first-page full text directly confirms the plan-execute-analyze-replan transition-state-search workflow, OC20NEB catalysis benchmark, and NH3 dissociation BEP reproduction.
+- Round effect: the old abstract-only source-limited ceiling is retired; this row now lands with first-hand full-text support while keeping the stable chemistry-object boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

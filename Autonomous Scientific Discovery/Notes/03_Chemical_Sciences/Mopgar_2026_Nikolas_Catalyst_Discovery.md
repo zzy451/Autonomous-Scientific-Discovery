@@ -8,7 +8,7 @@
 - `object_coverage_mode`: `single_module`
 - `primary_module_for_filing`: `03`
 - `general_method_bucket`: `none`
-- `source_limited`: `yes`
+- `source_limited`: `yes` (historical Batch30Partial2 status; superseded by Phase6FollowupR16Approx below)
 - `safety_access_status`: `no_safety_skip__non_safety_access_limit`
 - `first_hand_sources_checked`: Crossref DOI metadata / abstract; official DOI check
 - `pdf_path`: `none`
@@ -19,13 +19,26 @@
 - 年份：2026
 - 来源 / venue：ChemRxiv
 - DOI / arXiv / URL：https://doi.org/10.26434/chemrxiv.15000226/v2
-- PDF / 本地文件路径：无；官方 ChemRxiv PDF 在当前环境仍受 Cloudflare 阻断，未获取本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Mopgar_2026_Nikolas_Catalyst_Discovery.pdf`
 - 论文类型：研究论文 / computational catalyst-discovery agent
-- 当前状态：已纳入（source-limited，待全文跟进）
+- 当前状态：已纳入；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the catalyst-discovery `03` reading and do not reopen `01.04`.
+
+## 2026-07-04 Phase6FollowupR16Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/03_Chemical_Sciences/Mopgar_2026_Nikolas_Catalyst_Discovery.pdf`; DOI `https://doi.org/10.26434/chemrxiv.15000226/v2`.
+- Current authoritative classification: keep `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Local-PDF finding: the archived ChemRxiv PDF is present and readable. The first-page full text directly confirms the Nikolas title, CO2 reduction catalyst-discovery object, candidate generation, RDKit validation, xTB CO2 binding calculations, Sabatier filtering, and champion-catalyst validation.
+- Round effect: the old DOI/abstract-only and ChemRxiv-access-limited ceiling is retired; this row now lands with first-hand full-text support while keeping the stable chemistry-object boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

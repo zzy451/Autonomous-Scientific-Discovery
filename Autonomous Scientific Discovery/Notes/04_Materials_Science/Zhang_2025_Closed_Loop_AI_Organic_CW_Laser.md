@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：Research Square Preprint
 - DOI / arXiv / URL：https://doi.org/10.21203/rs.3.rs-6802885/v1
-- PDF / 本地文件路径：当前未保存本地 PDF；本轮仍主要基于 publisher metadata / Crossref 摘要与页面证据；`source_limited=yes`
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.pdf`
 - 论文类型：研究论文 / closed-loop materials-discovery workflow
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -19,6 +19,19 @@
 - Landed subset note: keep the concrete optical-material / gain-media discovery framing.
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the concrete optical-material / gain-media discovery framing.
+
+## 2026-07-04 Phase6FollowupR16Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.pdf`; DOI `https://doi.org/10.21203/rs.3.rs-6802885/v1`.
+- Current authoritative classification: keep `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. Page 3 directly confirms closed-loop AI, autonomous molecular design, gain-media screening, and experimental continuous-wave organic thin-film laser validation.
+- Round effect: the old metadata/page-level source-limited ceiling is retired; this row now lands with first-hand full-text support while keeping the stable optical-materials boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -38,7 +51,7 @@
 
 ### 1.1 Agent 判定
 
-- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=yes`，但对象层材料归类稳定。
+- 冻结复核状态：Phase6FollowupR16Approx 已补本地 PDF 全文复核；`source_limited=no`。
 
 - 是否属于 Agent 文献：是
 - 判断依据：面向明确科研目标，具有自主候选生成、性能评估、筛选、实验验证与闭环迭代
@@ -69,7 +82,7 @@
 - has_concrete_object_experiments：yes
 - general_method_bucket：none
 - primary_module_for_filing：`04`
-- source_limited：yes
+- source_limited：no
 
 - 一级类：04
 - 二级类：04.04

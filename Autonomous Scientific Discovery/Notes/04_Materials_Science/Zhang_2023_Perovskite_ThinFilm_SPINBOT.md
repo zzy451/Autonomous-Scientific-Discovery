@@ -6,7 +6,7 @@
 - 年份：2023
 - 来源 / venue：Advanced Energy Materials
 - DOI / arXiv / URL：https://doi.org/10.1002/aenm.202302594
-- PDF / 本地文件路径：本轮仍以官方摘要 / article page 与 reviewer 一手证据为主；`source_limited=yes`；未保存本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.pdf`
 - 论文类型：研究论文 / perovskite thin-film self-driving platform
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -19,6 +19,19 @@
 - Landed subset note: keep the stable materials-object reading and do not drift to `09`.
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the stable perovskite thin-film materials-object reading and do not drift to `09`.
+
+## 2026-07-04 Phase6FollowupR16Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.pdf`; DOI `https://doi.org/10.1002/aenm.202302594`.
+- Current authoritative classification: keep `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Local-PDF finding: the archived OA article PDF is present and readable. Page 2 directly confirms SPINBOT, unsupervised robotic thin-film processing, Bayesian optimization, perovskite thin-film quality optimization, 21.6% PCE, and stability validation.
+- Round effect: the old abstract/page-only source-limited ceiling is retired; this row now lands with first-hand full-text support while keeping the stable materials-object boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -38,7 +51,7 @@
 
 ### 1.1 Agent 判定
 
-- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=yes`，本轮仍按摘要 / page-level 证据写回。
+- 冻结复核状态：Phase6FollowupR16Approx 已补本地 PDF 全文复核；`source_limited=no`。
 
 - 是否属于 Agent 文献：是
 - 判断依据：具备无人监督、多步机器人实验执行与反馈驱动搜索
@@ -69,7 +82,7 @@
 - has_concrete_object_experiments：yes
 - general_method_bucket：none
 - primary_module_for_filing：`04`
-- source_limited：yes
+- source_limited：no
 
 - 一级类：04
 - 二级类：04.04

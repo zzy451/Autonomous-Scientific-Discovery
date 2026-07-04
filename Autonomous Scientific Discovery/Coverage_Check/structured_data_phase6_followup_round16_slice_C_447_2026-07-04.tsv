@@ -1,0 +1,3 @@
+paper_id	title	note_path	current_pdf_path	approx_role	read_only_instruction
+ASD-0491	Optimizing Perovskite Thin-Film Parameter Spaces with Machine Learning-Guided Robotic Platform for High-Performance Perovskite Solar Cells	Notes/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.md	Reference_PDF/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.pdf	Evidence-Agent-C	Read only; return evidence fields; do not edit project files.
+ASD-0558	Closed-Loop AI Enables Organic Continuous-Wave Laser	Notes/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.md	Reference_PDF/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.pdf	Evidence-Agent-C	Read only; return evidence fields; do not edit project files.

@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：ChemRxiv
 - DOI / arXiv / URL：https://doi.org/10.26434/chemrxiv.15000295
-- PDF / 本地文件路径：当前 DOI 在复核时未稳定解析；本 note 基于 ORNL 官方项目页、ORNL 新闻 Q&A、作者官方帖文与 batch12 reviewer evidence pack
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.pdf`
 - 论文类型：研究论文 / autonomous flow-chemistry discovery system
 - 当前状态：to_read
 - 阅读日期：2026-06-20
@@ -29,13 +29,26 @@
 
 ## Evidence Log
 
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep chemistry primary for autonomous continuous-flow discovery; do not land a new `04` module in this round.
+
+## 2026-07-04 Phase6FollowupR16Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.pdf`; DOI `https://doi.org/10.26434/chemrxiv.15000295`.
+- Current authoritative classification: keep `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Local-PDF finding: the archived ChemRxiv PDF is present and readable. The first-page full text directly confirms autonomous ML-driven continuous-flow chemistry, multimodal reaction data, closed-loop self-driving-lab workflows, and chemistry-space discovery framing.
+- Round effect: the old Cloudflare-limited conservative hold is retired; this row now lands with first-hand full-text support while keeping the chemistry-primary boundary.
+
 ### 2026-06-24 Evidence Refresh
 
 - First-hand source summary checked this round: Crossref-linked official ChemRxiv routes, existing ORNL project / news materials already reflected in the note, and prior reviewer evidence.
 - Official access status as of `2026-06-24`: no legal local PDF archived; official ChemRxiv `v1` full / PDF routes blocked by Cloudflare in this environment; DOI without `/v1` returned `404`.
 - Primary module remains `03` because the directly optimized object is continuous-flow chemistry / synthesis / reaction discovery rather than an engineering device record.
 - Secondary `04` support should remain visible but clearly source-limited because the accessible evidence mentions polymer / materials-side results without a stable official full-text route in this environment.
-- Keep this note as a conservative hold with `confidence=medium` and `source_limited=yes`.
+- Phase6FollowupR16Approx supersedes this conservative hold for source status: keep the chemistry-primary classification but clear to `source_limited=no` based on the local archived PDF.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -281,7 +294,7 @@ final_01_04_bucket: none
 primary_module_for_filing: 03
 boundary_type: 03 primary with source-limited secondary 04 support; low 03-vs-09 risk
 confidence: medium
-source_limited: yes
+source_limited: no
 safety_access_status: no_safety_skip; official ChemRxiv full/PDF routes Cloudflare-blocked in this environment
 master_update_required: no
 source_status: no legal local PDF archived; Crossref points to official ChemRxiv full/PDF URLs for v1, but those routes were blocked by Cloudflare in this environment; DOI without /v1 returned 404

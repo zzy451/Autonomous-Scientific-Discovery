@@ -1,0 +1,4 @@
+paper_id	note_path	final_modules	primary_module_for_filing	source_limited	expected_note_update
+ASD-0838	Notes/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.md	03	03	no	Add local archived PDF path; add Phase6FollowupR16Approx local PDF recheck; keep `03` primary chemistry anchor.
+ASD-0491	Notes/04_Materials_Science/Zhang_2023_Perovskite_ThinFilm_SPINBOT.md	04	04	no	Add local archived PDF path; add Phase6FollowupR16Approx local PDF recheck; keep `04` perovskite materials anchor.
+ASD-0558	Notes/04_Materials_Science/Zhang_2025_Closed_Loop_AI_Organic_CW_Laser.md	04	04	no	Add local archived PDF path; add Phase6FollowupR16Approx local PDF recheck; keep `04` optical-materials anchor.

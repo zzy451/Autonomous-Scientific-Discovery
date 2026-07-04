@@ -1,0 +1,3 @@
+paper_id	title	note_path	current_pdf_path	approx_role	read_only_instruction
+ASD-0587	Collective intelligence for AI-assisted chemical synthesis	Notes/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.md	Reference_PDF/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.pdf	Evidence-Agent-A	Read only; return evidence fields; do not edit project files.
+ASD-0665	TSAgent: An Agentic Workflow for Autonomous Transition State Search	Notes/03_Chemical_Sciences/Unknown_2026_TSAgent.md	Reference_PDF/03_Chemical_Sciences/Unknown_2026_TSAgent.pdf	Evidence-Agent-A	Read only; return evidence fields; do not edit project files.

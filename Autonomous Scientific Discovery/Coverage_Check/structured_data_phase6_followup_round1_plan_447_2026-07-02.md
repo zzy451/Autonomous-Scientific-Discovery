@@ -11,7 +11,7 @@ Round 1 uses the top `30` rows from:
 
 - `Coverage_Check\structured_data_phase6_full_text_followup_queue_447_2026-07-02.tsv`
 
-The queue is already priority-sorted. This round intentionally does **not** attempt to clear all `111` follow-up candidates at once.
+The queue is already priority-sorted. This round intentionally does **not** attempt to clear all `105` follow-up candidates at once.
 
 ## Why only 30 papers
 
