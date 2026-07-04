@@ -6,13 +6,26 @@
 - 年份：2012
 - 来源 / venue：ACM Transactions on Intelligent Systems and Technology
 - DOI / arXiv / URL：https://doi.org/10.1145/2168752.2168764
-- PDF / 本地文件路径：当前笔记基于 CaltechAUTHORS 摘要与在线附带 PDF 一手证据整理；当前 note 未记录本地归档 PDF 路径。
+- PDF / 本地文件路径：`Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2012_AEGIS_Opportunity_Rover.pdf`
 - 论文类型：研究论文 / rover autonomous science targeting
-- 当前状态：to_read
+- 当前状态：to_read；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=05;10`; `object_coverage_mode=multi_module`; `primary_module_for_filing=10`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep rover mission-science `10` primary while preserving the relaxed `05` Mars-surface-science coverage.
+
+## 2026-07-04 Phase6FollowupR15Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2012_AEGIS_Opportunity_Rover.pdf`; DOI `https://doi.org/10.1145/2168752.2168764`.
+- Current authoritative classification: keep `scientific_object_modules=05;10`; `object_coverage_mode=multi_module`; `primary_module_for_filing=10`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page full text directly confirms the AEGIS title, author block, and onboard rover targeting framing.
+- Round effect: the old CaltechAUTHORS abstract plus attached-PDF lead ceiling is retired; this row now lands with first-hand full-text support while keeping the stable relaxed `05;10` boundary.
 
 ## 2026-06-20 relaxed multi-module revision
 
@@ -22,9 +35,9 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 10
-first_hand_sources_checked: CaltechAUTHORS abstract; attached PDF located online
-classification_evidence_source_level: source_limited
-source_limited: yes
+first_hand_sources_checked: local archived PDF `Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2012_AEGIS_Opportunity_Rover.pdf`; DOI landing page `https://doi.org/10.1145/2168752.2168764`
+classification_evidence_source_level: first_hand_full_text
+source_limited: no
 module_assignment_evidence: `05` is supported by Mars rocks, outcrops, and geologic target selection; `10` is supported by autonomous rover science targeting, sequencing, and observation execution.
 multi_module_object_coverage_note: AEGIS remains filed under rover / mission-science autonomy, but the reported geological target selection is concrete planetary surface science evidence and should be counted as `05` under the relaxed rule.
 note_location_rule: 本 note 落在 `10` 文件夹仅为归档便利，不是分类权威；当前权威对象模块判断是 `05;10`，其中 `10` 仅是 primary_module_for_filing。

@@ -6,13 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.13940
-- PDF / 本地文件路径：未配置本地 PDF；本 note 基于当前可得摘要级 / 元数据级证据整理。
+- PDF / 本地文件路径：`Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Biswas_2026_AAAI_AI_Review_Pilot.pdf`
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
+- 当前状态：to_read；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-18
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=11`; `object_coverage_mode=single_module`; `primary_module_for_filing=11`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the scientific peer-review `11.07` reading and do not reopen `01.04`.
+
+## 2026-07-04 Phase6FollowupR15Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Biswas_2026_AAAI_AI_Review_Pilot.pdf`; arXiv `https://arxiv.org/abs/2604.13940`.
+- Current authoritative classification: keep `scientific_object_modules=11`; `object_coverage_mode=single_module`; `primary_module_for_filing=11`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page full text directly confirms the AAAI-26 AI Review Pilot title and conference-scale scientific peer-review deployment framing.
+- Round effect: the old abstract/metadata-only source-limited ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `11.07` peer-review boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

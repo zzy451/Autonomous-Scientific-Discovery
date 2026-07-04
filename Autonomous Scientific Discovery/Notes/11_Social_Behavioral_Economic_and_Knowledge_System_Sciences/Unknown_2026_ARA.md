@@ -6,13 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.02651
-- PDF / 本地文件路径：未配置本地 PDF；本轮仅核对 arXiv 摘要级证据（https://arxiv.org/abs/2605.02651），当前结论仍属 source-limited。
+- PDF / 本地文件路径：`Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ARA.pdf`
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
+- 当前状态：to_read；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-18
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=11`; `object_coverage_mode=single_module`; `primary_module_for_filing=11`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the reproducibility-assessment / peer-review-support `11.07` reading and do not reopen `01.04`.
+
+## 2026-07-04 Phase6FollowupR15Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ARA.pdf`; arXiv `https://arxiv.org/abs/2605.02651`.
+- Current authoritative classification: keep `scientific_object_modules=11`; `object_coverage_mode=single_module`; `primary_module_for_filing=11`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page full text directly confirms the ARA title, author block, and reproducibility-assessment framing for peer-review support.
+- Round effect: the old abstract-only source-limited ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `11.07` reproducibility boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

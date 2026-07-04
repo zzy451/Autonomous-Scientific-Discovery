@@ -6,13 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.00058
-- PDF / 本地文件路径：当前笔记沿用既有 arXiv PDF / HTML 线索；本轮仅核对 arXiv 摘要，未确认本地归档 PDF
+- PDF / 本地文件路径：`Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Zhang_2026_PaperRepro.pdf`
 - 论文类型：系统论文 / reproducibility assessment agent
-- 当前状态：to_read
+- 当前状态：to_read；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=11`; `object_coverage_mode=single_module`; `primary_module_for_filing=11`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the social-science reproducibility-assessment `11.07` reading and do not reopen `01.04`.
+
+## 2026-07-04 Phase6FollowupR15Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Zhang_2026_PaperRepro.pdf`; arXiv `https://arxiv.org/abs/2603.00058`.
+- Current authoritative classification: keep `scientific_object_modules=11`; `object_coverage_mode=single_module`; `primary_module_for_filing=11`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page full text directly confirms the PaperRepro title, author block, and social-science reproducibility-assessment framing.
+- Round effect: the old abstract-only source-limited ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `11.07` reproducibility boundary.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
