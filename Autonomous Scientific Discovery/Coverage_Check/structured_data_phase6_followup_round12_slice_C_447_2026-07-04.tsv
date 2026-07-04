@@ -1,0 +1,4 @@
+paper_id	title	note_path	doi	url	primary_module_for_filing	canonical_modules_or_bucket	current_pdf_status	current_evidence_status	current_source_limited	current_pdf_exists	round_label	assigned_agent	slice_role
+ASD-0667	From Natural Language to Materials Discovery: The Materials Knowledge Navigation Agent	Notes/04_Materials_Science/Unknown_2026_MKNA.md		https://arxiv.org/abs/2602.11123	04	04	archived_pdf	source_limited_review_packet	yes	yes	Phase6FollowupR12Approx	Evidence-Agent-C	mkna_fulltext_recheck
+ASD-0653	Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents	Notes/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.md		https://arxiv.org/abs/2509.23141	05	05	archived_pdf	source_limited_review_packet	yes	yes	Phase6FollowupR12Approx	Evidence-Agent-C	earth_agent_fulltext_recheck
+

@@ -1,6 +1,6 @@
 # 451 Confirmed Core 鍏ㄩ噺澶嶆牳杩涘害琛?
 
-鏇存柊鏃ユ湡锛歚2026-07-02`
+更新日期：`2026-07-04`
 
 
 
@@ -142,7 +142,7 @@
 
 | ASD-0083 | Robin: A multi-agent system for automating scientific discovery | Notes/07_Medical_and_Health_Sciences/Ghareeb_2025_Robin.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Ghareeb_2026_Robin.pdf | first_hand_full_text | updated | updated | 06;07 | no | Batch02 | yes |
 
-| ASD-0084 | Automating alloy design and discovery with physics-aware multimodal multiagent ai | Notes/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.md | archived_pdf | Reference_PDF/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.pdf | first_hand_pdf_checked_source_limited | updated | updated | 04 | yes | Batch02 | yes |
+| ASD-0084 | Automating alloy design and discovery with physics-aware multimodal multiagent ai | Notes/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.md | archived_pdf | Reference_PDF/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR12Approx | yes |
 
 | ASD-0085 | Protagents: protein discovery via large language model multi-agent collaborations combining physics and machine learning | Notes/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.md | archived_pdf | Reference_PDF/06_Life_Sciences/Ghafarollahi_2024_ProtAgents.pdf | first_hand_pdf_checked_source_limited | updated | updated | 04;06 | yes | Batch02 | yes |
 
@@ -316,7 +316,7 @@
 
 | ASD-0506 | Closed-loop transfer enables artificial intelligence to yield chemical knowledge | Notes/03_Chemical_Sciences/Angello_2024_ClosedLoop_Transfer_Chemical_Knowledge.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Angello_2024_ClosedLoop_Transfer_Chemical_Knowledge.pdf | first_hand_full_text | updated | updated | 03 | no | Phase6FollowupR10Approx | yes |
 
-| ASD-0507 | Identifying general reaction conditions by bandit optimization | Notes/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.pdf | first_hand_preview_only | updated_source_limited | updated_source_limited | 03 | yes | Batch23Partial1 | yes |
+| ASD-0507 | Identifying general reaction conditions by bandit optimization | Notes/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.pdf | first_hand_full_text | updated | updated | 03 | no | Phase6FollowupR12Approx | yes |
 
 | ASD-0508 | Autonomous, multiproperty-driven molecular discovery: From predictions to measurements and back | Notes/03_Chemical_Sciences/Koscher_2023_Multiproperty_Molecular_Discovery.md | publisher_full_text_checked |  | first_hand_full_text | updated | updated | 03 | no | Batch15Partial1 | yes |
 
@@ -536,7 +536,7 @@
 
 | ASD-0652 | ResearchTown: Simulator of Human Research Community | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.pdf | source_limited_review_packet | checked | checked | 11 | yes | Batch19Partial1 | yes |
 
-| ASD-0653 | Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents | Notes/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.md | archived_pdf | Reference_PDF/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.pdf | source_limited_review_packet | checked | checked | 05 | yes | Batch19Partial1 | yes |
+| ASD-0653 | Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents | Notes/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.md | archived_pdf | Reference_PDF/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.pdf | first_hand_full_text | updated | updated | 05 | no | Phase6FollowupR12Approx | yes |
 
 | ASD-0654 | HLER: Human-in-the-Loop Economic Research via Multi-Agent Pipelines for Empirical Discovery | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Zhu_2026_HLER.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Zhu_2026_HLER.pdf | source_limited_review_packet | checked | checked | 11 | yes | Batch19Partial1 | yes |
 
@@ -558,9 +558,9 @@
 
 | ASD-0665 | TSAgent: An Agentic Workflow for Autonomous Transition State Search | Notes/03_Chemical_Sciences/Unknown_2026_TSAgent.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Unknown_2026_TSAgent.pdf | source_limited_review_packet | checked | checked | 03 | yes | Batch19Partial1 | yes |
 
-| ASD-0666 | MatClaw: An Autonomous Code-First LLM Agent for End-to-End Materials Exploration | Notes/04_Materials_Science/Unknown_2026_MatClaw.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2026_MatClaw.pdf | source_limited_review_packet | checked | checked | 04 | yes | Batch19Partial1 | yes |
+| ASD-0666 | MatClaw: An Autonomous Code-First LLM Agent for End-to-End Materials Exploration | Notes/04_Materials_Science/Unknown_2026_MatClaw.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2026_MatClaw.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR12Approx | yes |
 
-| ASD-0667 | From Natural Language to Materials Discovery: The Materials Knowledge Navigation Agent | Notes/04_Materials_Science/Unknown_2026_MKNA.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2026_MKNA.pdf | source_limited_review_packet | checked | checked | 04 | yes | Batch19Partial1 | yes |
+| ASD-0667 | From Natural Language to Materials Discovery: The Materials Knowledge Navigation Agent | Notes/04_Materials_Science/Unknown_2026_MKNA.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2026_MKNA.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR12Approx | yes |
 
 | ASD-0668 | Autonomous Multi-Agent AI for High-Throughput Polymer Informatics: From Property Prediction to Generative Design Across Synthetic and Bio-Polymers | Notes/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.md | archived_pdf | Reference_PDF/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.pdf | source_limited_review_packet | checked | checked | 04 | yes | Batch19Partial1 | yes |
 
@@ -594,7 +594,7 @@
 
 | ASD-0683 | PeroMAS: A Multi-agent System of Perovskite Material Discovery | Notes/04_Materials_Science/Wang_2026_PeroMAS.md | archived_pdf | Reference_PDF/04_Materials_Science/Wang_2026_PeroMAS.pdf | first_hand_abstract_review_packet | updated | checked | 04 | no | Batch20Partial1 | yes |
 
-| ASD-0684 | ChemNavigator: Agentic AI Discovery of Design Rules for Organic Photocatalysts | Notes/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.pdf | first_hand_abstract_review_packet | updated | checked | 03 | yes | Batch20Partial1 | yes |
+| ASD-0684 | ChemNavigator: Agentic AI Discovery of Design Rules for Organic Photocatalysts | Notes/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.pdf | first_hand_full_text | updated | updated | 03 | no | Phase6FollowupR12Approx | yes |
 
 | ASD-0687 | Agentic AI for Multi-Stage Physics Experiments at a Large-Scale User Facility Particle Accelerator | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.pdf | first_hand_full_text | updated | updated | 02 | no | Phase6FollowupR10Approx | yes |
 

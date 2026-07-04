@@ -6,13 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2601.17084
-- PDF / 本地文件路径：本轮仅核对 arXiv abstract；未确认本地归档 PDF，当前结论仍属 source-limited
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.pdf`
 - 论文类型：系统论文 / chemical discovery agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Source status: locally archived arXiv full text checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the chemistry-object reading focused on organic-photocatalyst molecular-rule discovery rather than reopening a materials-side filing.
+
 ## Evidence Log
+
+## 2026-07-04 Phase6FollowupR12Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived arXiv PDF `Reference_PDF/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.pdf`; landing page `https://arxiv.org/abs/2601.17084`.
+- Current authoritative classification: keep `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Local-PDF finding: the archived arXiv PDF is present and readable. The full text confirms 200-molecule iterative discovery cycles, DFTB execution, and six statistically validated design rules for organic photocatalysts.
+- Round effect: the old abstract-only ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `03.04` chemistry anchor.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -73,7 +86,7 @@
 - 可能误归类到：04
 - 最终判定：保留 03.04
 - 判定理由：虽然目标和材料用途相关，但直接搜索、计算和解释的是有机分子与官能团规则，不是材料相、器件或宏观材料性能
-- 是否需要二次复核：否，主类方向较稳
+- 是否需要二次复核：否，`Phase6FollowupR12Approx` 已以本地全文再次确认主类方向稳定
 
 ## 3. Agent 系统与科研流程角色
 
@@ -187,7 +200,7 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：强
 - 科学贡献类型：scientific_discovery; chemical_discovery
-- 证据强度：medium_high_primary_abstract
+- 证据强度：high_full_text_checked
 
 ## 6. 与已有工作的关系
 
@@ -204,7 +217,7 @@
 - 工具链依赖：依赖 DFTB 与统计分析模块
 - 数据泄漏或 benchmark 偏差：待全文核查
 - 成本、可复现性或安全风险：化学空间选择与统计设计会影响复现
-- 是否仍需进一步全文复核：是；本轮仅核对 arXiv abstract，未确认本地归档 PDF，当前结论仍属 source-limited
+- 是否仍需进一步全文复核：当前 authoritative source status 已升级为 first-hand full text；如后续继续精读，只用于补更细化学规则细节
 
 ## 8. 对综述写作的价值
 

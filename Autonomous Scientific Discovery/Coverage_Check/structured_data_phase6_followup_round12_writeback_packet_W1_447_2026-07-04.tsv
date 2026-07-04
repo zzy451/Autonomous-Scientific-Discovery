@@ -1,0 +1,5 @@
+paper_id	note_path	final_modules_or_bucket	source_limited	writeback_scope	note_sections_to_refresh
+ASD-0507	Notes/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.md	03	no	authoritative_plus_note	论文信息;Frozen adjudication writeback;Evidence Log;source-limited wording
+ASD-0684	Notes/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.md	03	no	authoritative_plus_note	论文信息;Frozen adjudication writeback;Evidence Log;source-limited wording
+ASD-0084	Notes/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.md	04	no	authoritative_plus_note	当前状态;full-text closeout block;Evidence Log;classification_evidence_source_level wording
+

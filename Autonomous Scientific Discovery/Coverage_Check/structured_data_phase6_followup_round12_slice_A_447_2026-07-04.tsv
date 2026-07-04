@@ -1,0 +1,4 @@
+paper_id	title	note_path	doi	url	primary_module_for_filing	canonical_modules_or_bucket	current_pdf_status	current_evidence_status	current_source_limited	current_pdf_exists	round_label	assigned_agent	slice_role
+ASD-0507	Identifying general reaction conditions by bandit optimization	Notes/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.md	10.1038/s41586-024-07021-y	https://doi.org/10.1038/s41586-024-07021-y	03	03	archived_pdf	first_hand_preview_only	yes	yes	Phase6FollowupR12Approx	Evidence-Agent-A	reaction_conditions_fulltext_recheck
+ASD-0684	ChemNavigator: Agentic AI Discovery of Design Rules for Organic Photocatalysts	Notes/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.md		arXiv:2601.17084 / https://arxiv.org/abs/2601.17084	03	03	archived_pdf	first_hand_abstract_review_packet	yes	yes	Phase6FollowupR12Approx	Evidence-Agent-A	photocatalyst_rules_fulltext_recheck
+

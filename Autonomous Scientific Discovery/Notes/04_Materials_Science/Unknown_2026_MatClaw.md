@@ -6,13 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.02688
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Unknown_2026_MatClaw.pdf`
 - 论文类型：预印本 / code-first materials agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: locally archived arXiv full text checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the materials-object reading focused on concrete CuInP2S6 demonstrations rather than a domain-general workflow shell.
+
 ## Evidence Log
+
+## 2026-07-04 Phase6FollowupR12Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived arXiv PDF `Reference_PDF/04_Materials_Science/Unknown_2026_MatClaw.pdf`; landing page `https://arxiv.org/abs/2604.02688`.
+- Current authoritative classification: keep `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Local-PDF finding: the archived arXiv PDF is present and readable. The full text confirms three concrete CuInP2S6 materials demonstrations spanning force-field distillation, Curie-temperature prediction, and heuristic parameter-space search.
+- Round effect: the old abstract-only ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `04.04` materials anchor.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -73,7 +86,7 @@
 - 可能误归类到：01.04
 - 最终判定：暂保留 04.04
 - 判定理由：关键 demonstrations 与 claims 都落在具体材料对象；但 autonomy 表述偏 guided，需谨慎写强度
-- 是否需要二次复核：是
+- 是否需要二次复核：否，`Phase6FollowupR12Approx` 已以本地全文确认 concrete materials demonstrations 支撑稳定 `04`
 
 ## 3. Agent 系统与科研流程角色
 
@@ -175,11 +188,11 @@
 
 - 数据集 / 实验对象：ferroelectric CuInP2S6
 - 任务设置：ML force-field active learning、Curie temperature prediction、parameter-space search
-- 对比基线：当前摘要级信息未系统展开
+- 对比基线：当前笔记尚未系统抽取全文中的对比基线细节
 - 评价指标：workflow completion 与材料研究目标达成
 - 关键结果：三个 demonstrations 都可完成端到端材料探索工作流
-- 是否有消融实验：当前摘要级笔记未展开
-- 是否有失败案例或负结果：摘要明确指出 tacit domain knowledge 仍是主要缺口
+- 是否有消融实验：当前笔记尚未系统抽取全文中的消融细节
+- 是否有失败案例或负结果：全文与摘要都指出 tacit domain knowledge 仍是主要缺口
 
 ### 5.3 科学贡献
 
@@ -187,7 +200,7 @@
 - 科学贡献是否经过验证：部分是
 - 贡献强度判断：中
 - 科学贡献类型：system_platform / materials_discovery
-- 证据强度：仍需全文复核
+- 证据强度：high_full_text_checked
 
 ## 6. 与已有工作的关系
 
@@ -199,12 +212,12 @@
 ## 7. 局限性与风险
 
 - Agent 自主性不足：guided autonomy 意味着专家高层知识仍重要
-- 科学验证不足：当前主要证据来自摘要级信息
+- 科学验证不足：虽然当前 authoritative source status 已升级为全文级，但 note 还未完全抽取所有验证细节
 - 泛化性不足：三项 demo 都集中在同一材料体系
 - 工具链依赖：高度依赖 HPC 与材料软件生态
 - 数据泄漏或 benchmark 偏差：当前公开信息不足以完整判断
 - 成本、可复现性或安全风险：HPC 工作流复现门槛高
-- 是否仍需进一步全文复核：是，重点确认人工约束比例与三项 demo 的科学贡献强弱
+- 是否仍需进一步全文复核：当前 authoritative source status 已升级为 first-hand full text；如后续继续精读，重点只剩 autonomy-strength 和 demo 细节刻画
 
 ## 8. 对综述写作的价值
 

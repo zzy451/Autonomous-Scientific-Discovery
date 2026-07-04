@@ -6,15 +6,28 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2602.11123
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Unknown_2026_MKNA.pdf`
 - 论文类型：预印本 / language-guided materials discovery agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: locally archived arXiv full text checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the materials-object reading focused on high-Debye-temperature ceramics and Be-C-rich materials discovery rather than reopening `01.04`.
+
 ## Evidence Log
 
-| 判断项 | 结论 | 璇佹嵁浣嶇疆 | 原文短摘或概括 | 可信度 |
+## 2026-07-04 Phase6FollowupR12Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived arXiv PDF `Reference_PDF/04_Materials_Science/Unknown_2026_MKNA.pdf`; landing page `https://arxiv.org/abs/2602.11123`.
+- Current authoritative classification: keep `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Local-PDF finding: the archived arXiv PDF is present and readable. The full text confirms literature-grounded screening over high-Debye-temperature ceramics and the proposal of previously unreported Be-C-rich material candidates.
+- Round effect: the old abstract-only ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `04.04` materials anchor.
+
+| 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | 系统将自然语言科研意图转为 database retrieval、property prediction、structure generation 和 stability evaluation | 中高 |
 | 科学对象归类 | `04.04` | abstract | 对象是高 Debye 温度陶瓷与 Be-C-rich 材料候选的发现 | 中高 |
@@ -73,7 +86,7 @@
 - 可能误归类到：01.04
 - 最终判定：保留 04.04
 - 判定理由：候选、阈值和案例都直接锚定材料对象，不是通用科研能力评测
-- 是否需要二次复核：是
+- 是否需要二次复核：否，`Phase6FollowupR12Approx` 已以本地全文再次确认 `04` 主锚点
 
 ## 3. Agent 系统与科研流程角色
 
@@ -155,7 +168,7 @@
 - 记忆或状态模块：research intent 与 design cues
 - 规划器：knowledge navigation workflow
 - 评估器 / verifier：stability evaluation 与 property thresholds
-- 人类反馈或专家介入：当前摘要级信息未突出
+- 人类反馈或专家介入：当前已核对全文，但 note 尚未抽取出更明确的人类介入细节
 - 实验平台或仿真环境：computational materials discovery workflow
 
 ## 5. 实验与验证
@@ -175,11 +188,11 @@
 
 - 数据集 / 实验对象：high-Debye-temperature ceramics；Be-C-rich candidates
 - 任务设置：基于自然语言目标的材料发现
-- 对比基线：当前摘要级信息未系统展开
+- 对比基线：当前笔记尚未系统抽取全文中的对比基线细节
 - 评价指标：重发现已知候选、提出新候选、规则抽取有效性
 - 关键结果：重发现 diamond、SiC、SiN、BeO，并提出 thermodynamically stable、previously unreported Be-C-rich compounds
-- 是否有消融实验：当前摘要级笔记未展开
-- 是否有失败案例或负结果：当前摘要级笔记未展开
+- 是否有消融实验：当前笔记尚未系统抽取全文中的消融细节
+- 是否有失败案例或负结果：当前笔记尚未系统抽取全文中的失败案例或负结果细节
 
 ### 5.3 科学贡献
 
@@ -187,7 +200,7 @@
 - 科学贡献是否经过验证：部分是
 - 贡献强度判断：中高
 - 科学贡献类型：materials_discovery / system_platform
-- 证据强度：仍需全文复核
+- 证据强度：high_full_text_checked
 
 ## 6. 与已有工作的关系
 
@@ -204,7 +217,7 @@
 - 工具链依赖：依赖 literature / database coverage 与 prediction module 质量
 - 数据泄漏或 benchmark 偏差：候选重发现与新候选判断方式仍需核实
 - 成本、可复现性或安全风险：完整 discovery path 复现实践成本较高
-- 是否仍需进一步全文复核：是
+- 是否仍需进一步全文复核：当前 authoritative source status 已升级为 first-hand full text；如后续继续精读，只用于补更细 candidate / threshold 细节
 
 ## 8. 对综述写作的价值
 

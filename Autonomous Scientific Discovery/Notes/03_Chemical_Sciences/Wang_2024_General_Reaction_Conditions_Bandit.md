@@ -6,7 +6,7 @@
 - 年份：2024
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-024-07021-y
-- PDF / 本地文件路径：本轮仍基于官方摘要 / article page 与 reviewer 一手证据；`source_limited=yes`；未保存本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.pdf`
 - 论文类型：研究论文 / reaction-optimization agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -15,10 +15,17 @@
 ## Frozen Adjudication Writeback - 2026-06-23
 
 - Final classification: `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
-- Source status: `source_limited=yes`. This round remains abstract / page-level only.
+- Source status: superseded by the `2026-07-04 Phase6FollowupR12Approx` local-PDF reread below.
 - Landed subset note: keep the chemistry-object reading focused on reaction-condition optimization.
 
 ## Evidence Log
+
+## 2026-07-04 Phase6FollowupR12Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived Nature PDF `Reference_PDF/03_Chemical_Sciences/Wang_2024_General_Reaction_Conditions_Bandit.pdf`; DOI `https://doi.org/10.1038/s41586-024-07021-y`.
+- Current authoritative classification: keep `scientific_object_modules=03`; `object_coverage_mode=single_module`; `primary_module_for_filing=03`; `general_method_bucket=none`.
+- Local-PDF finding: the archived Nature PDF is present and readable. The local full text confirms the bandit-optimization workflow and the concrete reaction-family validation over imidazole C-H arylation, aniline amide coupling, and phenol alkylation.
+- Round effect: this row is no longer limited to abstract / article-page evidence, so the authoritative `source_limited=yes` ceiling is cleared while the stable chemistry-only reading is preserved.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -28,7 +35,7 @@
 | 实验验证 | 真实实验 | official abstract / reviewer evidence | 在三类真实反应上验证并高效找到 general conditions | 高 |
 | 边界判断 | 不应归 `01.04` | official abstract / reviewer evidence | 产出是反应条件知识而不是通用 benchmark | 高 |
 
-| Frozen adjudication | `03`; `source_limited=yes` | Batch23Partial1 frozen adjudication | 落地结论保持反应条件优化的化学单模块读法；当前仍不应写成已完成全文确认 | 高 |
+| Frozen adjudication | `03`; source-limited ceiling cleared by `Phase6FollowupR12Approx` | Batch23Partial1 frozen adjudication + R12 local PDF reread | 化学单模块读法保持不变；当前已由本地 archived PDF 支撑 first-hand full-text 落地 | 高 |
 
 ## 0. 摘要翻译
 
@@ -36,13 +43,13 @@
 
 ## 1. 是否纳入本综述
 
-- 冻结复核状态：已按 Batch23Partial1 落地；`source_limited=yes`，但 `03` 反应条件优化归类稳定。
+- 冻结复核状态：已由 `Phase6FollowupR12Approx` 以本地 archived PDF 完成全文级 source refresh；`03` 反应条件优化归类稳定，且 `source_limited=no`。
 
 - 是否属于 Agent 文献：是
 - 判断依据：明确科研目标、多步条件选择、实验反馈和自主采样决策
 - 判定置信度：高
 - 在科研流程中承担的明确角色：experimental_design；experiment_execution；feedback_iteration
-- 是否仍需进一步全文复核：不影响一级类判断
+- 是否仍需进一步全文复核：当前 authoritative source status 已升级为 first-hand full text；如后续需要，只用于补更细子主题细节
 
 ## 2. 科学领域归类
 
@@ -51,7 +58,7 @@
 - has_concrete_object_experiments：yes
 - general_method_bucket：none
 - primary_module_for_filing：`03`
-- source_limited：yes
+- source_limited：no
 
 - 一级类：03
 - 二级类：03.03
@@ -94,7 +101,7 @@
 
 ## 7. 局限性与风险
 
-- source-limited：是；本轮仍主要是摘要 / page-level 证据，所以保持化学单模块结论，但不额外扩写全文级细节。
+- source-limited：否；`Phase6FollowupR12Approx` 已确认本地 archived Nature PDF 可读，并据此完成全文级落地。
 
 - 更细的反应家族范围仍可在全文中补足。
 - 主风险不在主类，而在后续如何放入化学子主题比较。
@@ -108,7 +115,7 @@
 
 ## 9. 总结
 
-- Frozen adjudication summary：该 note 已固定为 `03` 单模块、反应条件优化导向，并保留 `source_limited=yes`。
+- Frozen adjudication summary：该 note 已固定为 `03` 单模块、反应条件优化导向；`Phase6FollowupR12Approx` 已把 source status 升级为本地 PDF 支撑的 `source_limited=no`。
 
 ### 9.1 一句话概括
 

@@ -6,13 +6,26 @@
 - 年份：2025
 - 来源 / venue：arXiv / ICLR 2026 conference paper
 - DOI / arXiv / URL：https://arxiv.org/abs/2509.23141
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与官方 GitHub
+- PDF / 本地文件路径：`Reference_PDF/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.pdf`
 - 论文类型：预印本 / Earth observation agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=05`; `object_coverage_mode=single_module`; `primary_module_for_filing=05`; `general_method_bucket=none`.
+- Source status: locally archived conference/arXiv full text checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the Earth-observation object reading focused on EO scientific tasks and Earth-Bench rather than reopening an independent `01.04` framing.
+
 ## Evidence Log
+
+## 2026-07-04 Phase6FollowupR12Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived conference/arXiv PDF `Reference_PDF/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.pdf`; landing page `https://arxiv.org/abs/2509.23141`.
+- Current authoritative classification: keep `scientific_object_modules=05`; `object_coverage_mode=single_module`; `primary_module_for_filing=05`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The full text confirms EO-specific tool invocation, quantitative spatiotemporal reasoning, and Earth-Bench as a benchmark anchored on Earth-observation scientific tasks.
+- Round effect: the old abstract-plus-GitHub ceiling is retired; this row now lands with first-hand full-text support while keeping the stable `05.04` Earth-observation anchor.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -73,7 +86,7 @@
 - 可能误归类到：01.04
 - 最终判定：保留 05.04
 - 判定理由：Earth-Bench 的任务和工具都不是领域无关 benchmark，而是 EO-specific scientific tasks
-- 是否需要二次复核：否
+- 是否需要二次复核：否，`Phase6FollowupR12Approx` 已以本地全文再次确认主类和对象锚点
 
 ## 3. Agent 系统与科研流程角色
 
@@ -178,7 +191,7 @@
 - 对比基线：general agents 与 remote-sensing MLLMs
 - 评价指标：final answer correctness 与 reasoning trajectory quality
 - 关键结果：Earth-Agent 显著优于 general agents，并超过专门 remote-sensing MLLMs
-- 是否有消融实验：摘要级证据有限
+- 是否有消融实验：当前笔记尚未系统抽取全文中的消融细节
 - 是否有失败案例或负结果：当前摘要未详细展开
 
 ### 5.3 科学贡献
@@ -187,7 +200,7 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中高
 - 科学贡献类型：系统平台
-- 证据强度：一手 abstract / repo 证据较强
+- 证据强度：high_full_text_checked
 
 ## 6. 与已有工作的关系
 
@@ -204,7 +217,7 @@
 - 工具链依赖：高度依赖 specialized EO tools
 - 数据泄漏或 benchmark 偏差：expert-curated benchmark 可能影响表现上限
 - 成本、可复现性或安全风险：完整 tool ecosystem 的复现成本较高
-- 是否仍需进一步全文复核：否
+- 是否仍需进一步全文复核：否；当前 authoritative source status 已升级为 first-hand full text
 
 ## 8. 对综述写作的价值
 
