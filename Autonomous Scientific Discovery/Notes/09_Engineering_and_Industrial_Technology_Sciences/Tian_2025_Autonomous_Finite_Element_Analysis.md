@@ -1,5 +1,16 @@
 # Tian et al. 2025 - Optimizing collaboration of large language model based agents for autonomous finite element analysis
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0052`
+- `final_adjudicated_modules`: `09`
+- `primary_module_for_filing`: `09`
+- `canonical_local_pdf`: `Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2025_Autonomous_Finite_Element_Analysis.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older fallback-PDF-but-`source_limited=yes` wording in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable finite-element engineering-object landing in `09`; the archived local PDF is now controller-approved for non-source-limited writeback
+
 ## 2026-06-22 carry-forward closeout / archive sync
 
 - Canonical PDF path: `Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2025_Autonomous_Finite_Element_Analysis.pdf`

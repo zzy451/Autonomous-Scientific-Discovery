@@ -6,7 +6,7 @@
 - 年份：2018
 - 来源 / venue：SpaceOps 2018
 - DOI / arXiv / URL：https://doi.org/10.2514/6.2018-2576
-- PDF / 本地文件路径：无本地 PDF；NASA NTRS 落地页 `https://ntrs.nasa.gov/citations/20210008310` 当前无可下载文件；`source_limited=yes`
+- PDF / 本地文件路径：无本地 PDF；本轮依据官方 AIAA result snippet 与可见 publisher PDF route 按冻结裁决改写为 `source_limited=no`；但这只表示 official-result / visible publisher-route 证据已明确，不表示已有本地 PDF 或已完成全文通读
 - 论文类型：研究论文 / rover mission-operations autonomous-science system
 - 当前状态：to_read
 - 阅读日期：2026-06-24
@@ -24,20 +24,33 @@ has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 10
 confidence: high
-source_limited: yes
-safety_access_status: no_safety_issue_full_text_not_retrieved
-first_hand_sources_checked: NASA NTRS record https://ntrs.nasa.gov/citations/20210008310
-classification_evidence_source_level: source_limited
+source_limited: no
+safety_access_status: official AIAA result snippet checked; visible publisher PDF route confirmed; this strengthens source state without claiming a local archived PDF or completed full-text read
+first_hand_sources_checked: official AIAA result snippet + visible publisher PDF route
+classification_evidence_source_level: first_hand_abstract_or_landing_page
 module_assignment_evidence: the paper centers AEGIS deployment for onboard ChemCam target selection and its incorporation into Mars Science Laboratory rover mission operations.
 multi_module_object_coverage_note: this note remains a single-module `10` record; the paper is about rover mission-science operations rather than a general scientific-method platform.
 final_reason: the directly studied object is autonomous rover mission operations, so the top-level module remains `10`.
+```
+
+## Phase6FollowupR19 Frozen Adjudication / Source-State Recheck - 2026-07-05
+
+This writeback applies the frozen `Phase6FollowupR19` adjudication for `ASD-0858`.
+
+```text
+supported_modules: 10
+primary_module_for_filing: 10
+source_limited: no
+confirmed_source_state: official AIAA result snippet checked; visible publisher PDF route confirmed
+recheck_result: the concrete object is Mars rover mission-science target selection and operational rollout, so the note remains a clean `10` filing and the old `source_limited=yes` wording should be cleared
+truthfulness_guardrail: this recheck strengthens official-result / visible publisher-route evidence only; it does not claim a local archived PDF or a completed full-text read
 ```
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Frozen adjudication | `10`; `source_limited=yes` | Batch29Partial1 frozen packet + NTRS record | 本轮保持单模块 `10`，不扩展、不回退 | 高 |
+| Frozen adjudication | `10`; `source_limited=no` | Batch29Partial1 frozen packet + Phase6FollowupR19 official AIAA result-snippet recheck | 本轮保持单模块 `10`，不扩展、不回退；官方 AIAA result snippet 与可见 publisher PDF route 已提供更强的来源状态证据，因此旧的 `source_limited=yes` 说法应清除；但仍不声称已有本地 PDF 或已通读全文 | 高 |
 | Agent 纳入 | 是 | NTRS title / abstract | AEGIS is an autonomous science / targeting system integrated into MSL operations | 高 |
 | 科学对象归类 | `10 / 10.02` | NTRS abstract | 研究对象是 Mars Science Laboratory rover mission operations | 高 |
 | 方法流程 | onboard analysis -> target selection -> mission integration | NTRS abstract / record summary | 系统围绕 ChemCam 自主选靶与任务流程整合形成多步行动链 | 高 |
@@ -81,7 +94,7 @@ final_reason: the directly studied object is autonomous rover mission operations
 - has_concrete_object_experiments：yes
 - general_method_bucket：none
 - primary_module_for_filing：`10`
-- source_limited：yes
+- source_limited：no
 - 一级类：10
 - 二级类：10.02
 - 三级类：Mars rover mission-science operations
@@ -215,7 +228,7 @@ final_reason: the directly studied object is autonomous rover mission operations
 - 科学贡献是否经过验证：是，来自真实 mission operations 部署
 - 贡献强度判断：中
 - 科学贡献类型：system_platform; mission_science_planning
-- 证据强度：source_limited
+- 证据强度：first_hand_abstract_or_landing_page
 
 ## 6. 与已有工作的关系
 
@@ -226,7 +239,7 @@ final_reason: the directly studied object is autonomous rover mission operations
 
 ## 7. 局限性与风险
 
-- source_limited：是；NASA NTRS record 无可下载全文，当前写回依据为一手记录页
+- source_limited：否；本轮已以官方 AIAA result snippet 与可见 publisher PDF route 作为稳定来源状态证据；但仍不声称已有本地 PDF 或已完成全文通读
 - Agent 自主性不足：仍受 mission constraints 与人工流程边界约束
 - 科学验证不足：更细实验与误差分析仍需全文
 - 泛化性不足：强依赖 MSL / ChemCam 环境
@@ -265,7 +278,7 @@ object_coverage_mode：single_module
 has_concrete_object_experiments：yes
 general_method_bucket：none
 primary_module_for_filing：10
-source_limited：yes
+source_limited：no
 一级类：10
 二级类：10.02
 三级类：Mars rover mission-science operations
@@ -276,7 +289,7 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 验证方式：real_world_deployment
 交叉属性：computation_driven; data_driven; experiment_driven; robotic_platform
 科学贡献类型：system_platform; mission_science_planning
-证据强度：source_limited
+证据强度：first_hand_abstract_or_landing_page
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

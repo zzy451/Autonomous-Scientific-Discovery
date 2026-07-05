@@ -30,6 +30,12 @@
 - Local-PDF finding: the archived PDF is present and readable. The first-page and early-page full text directly confirm PrimeGen, multi-agent primer design, automated protocol generation, and biomedical targeted-assay validation.
 - Round effect: the old PDF-archival source-limited wording is retired; this row now lands with first-hand full-text support.
 
+### 2026-07-05 wording harmonization
+
+- Active source-state wording for this note is now: local archived PDF present and checked; `source_limited=no`.
+- Any older `PDF unavailable`, `HTML full text checked`, or `no archived PDF` wording elsewhere in the note should be treated as retired historical wording rather than the current repository state.
+- The landed object wording remains `06;07` with `06` kept as the filing primary and `07` kept only as accepted biomedical targeted-assay coverage.
+
 ### 2026-06-22 reaudit writeback revision
 
 - Round decision：更新为 `scientific_object_modules=06;07`，`primary_module_for_filing=06`，`general_method_bucket=none`。

@@ -6,9 +6,9 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2606.05050
-- PDF / 本地文件路径：当前未在项目中记录本地归档 PDF；本笔记依据 arXiv 摘要页、arXiv PDF 与 arXiv HTML 全文的一手证据整理。
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Song_2026_CatDT_Heterogeneous_Catalyst_Discovery.pdf`；本笔记依据项目内归档 PDF、arXiv 摘要页、arXiv PDF 与 arXiv HTML 全文的一手证据整理。
 - 论文类型：研究论文 / catalyst digital-twin multi-agent system
-- 当前状态：主表当前为 `to_read`；本 note 已完成一手来源写回
+- 当前状态：本 note 已完成一手来源写回，并已与项目内归档 PDF 对齐
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 
@@ -82,7 +82,7 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：只记 `04`、只记 `03`、或误转 `09`
-- 最终判定：记录 `03;04`，filling 保持 `04`
+- 最终判定：记录 `03;04`，filing 保持 `04`
 - 判定理由：最终被发现和比较的是材料 / 表面候选，因此 `04` 为主；但 mechanism、transition state 与 kinetics 也是直接报告对象，因此 `03` 也成立
 - 多模块覆盖说明：本条不是因为“平台很通用”，而是因为确有并列对象层验证
 - 01.04 判定说明：不属于通用方法存放区，因为论文对具体催化对象给出直接结果
@@ -222,7 +222,7 @@
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：`04` 材料科学中的 catalyst materials discovery，同时是 `03/04/09` 边界讨论的重要案例
-- 可支撑哪个论点：`digital twin` 不应自动改判到 `09`；对象事实仍以材料 / 化学验证为准
+- 可支撑哪个论点：`digital twin` 不应自动改判到 `09`；即使归档全文证据补齐，对象事实仍以材料 / 化学验证为准
 - 可用于哪个表格或图：`03 / 04 / 09` 边界对照表；catalyst-discovery agent 代表案例表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：core
@@ -258,7 +258,7 @@ Primary module for filing：04
 主展示模块四级专题：self-evolving catalyst digital-twin discovery
 其他覆盖模块及对应层级路径：03 -> reaction pathways / transition states / kinetics
 module_assignment_evidence：04 来自 catalyst candidates 与 working surfaces；03 来自 pathway、transition-state、kinetics validation
-multi_module_object_coverage_note：digital twin 是方法标签，不改写 materials-first + chemistry-validated 的对象事实
+multi_module_object_coverage_note：digital twin 是方法标签；当前已按归档全文证据同步，但不改写 materials-first + chemistry-validated 的对象事实
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
 科研流程角色：hypothesis_generation; simulation_modeling; tool_use_and_code_execution; result_interpretation; evidence_assessment_and_validation
 自主能力：task_decomposition; planning; tool_use; memory_or_state_tracking; feedback_iteration; autonomous_decision_making; multi_agent_collaboration

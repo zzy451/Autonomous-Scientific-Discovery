@@ -14,12 +14,22 @@
 
 ## 2026-06-23 writeback sync
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- Frozen paper ID: `ASD-0567`
+- Frozen landed modules: `02`
+- Frozen `01.04` bucket: `none`
+- Frozen `primary_module_for_filing`: `02`
+- Canonical local archived PDF: `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Ting_2026_Egent_Equivalent_Width.pdf`
+- First-hand source status in R21: local archived PDF full text confirmed; this supersedes earlier non-full-text / no-local-PDF wording in the note.
+- Adjudication note: preserve the astronomy-measurement reading in `02` only.
+
 - Final adjudication landed: `scientific_object_modules=02`; `final_01_04_bucket=none`; `primary_module_for_filing=02`.
-- Current source refresh: official DOI landing page plus arXiv PDF full text checked; this note仍不声明本地 PDF 归档路径。
-- First-hand sources checked: official journal DOI page + arXiv PDF full text (`https://arxiv.org/pdf/2512.01270`)
+- Current source refresh: canonical local archived PDF path confirmed in R21; DOI page and arXiv PDF remain supporting locators.
+- First-hand sources checked: local archived PDF full text; official journal DOI page
 - Classification evidence source level: `first_hand_full_text`
 - `source_limited`: `no`
-- Safety/access status: `safe_https_journal_page_and_arXiv_pdf_checked`
+- Safety/access status: `local_archived_pdf_confirmed_in_R21`
 
 ## Evidence Log
 

@@ -1,12 +1,23 @@
 # Granda et al. 2018 - Controlling an organic synthesis robot with machine learning to search for new reactivity
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- `paper_id`: `ASD-0734`
+- Frozen adjudicated modules: `03`
+- `primary_module_for_filing`: `03`
+- Canonical local archived PDF: `Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf`
+- `first_hand_sources_checked`: local archived PDF full text (`Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf`)
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `source_limited`: `no`
+- Filing note: note location is filing convenience only and does not override the frozen module-`03` adjudication.
+
 **论文信息**
 - 标题：Controlling an organic synthesis robot with machine learning to search for new reactivity
 - 作者：Jarosław M. Granda; Liva Donina; Vincenza Dragone; De-Liang Long; Leroy Cronin
 - 年份：2018
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-018-0307-8
-- PDF / 本地文件路径：当前写回以 Nature article page 与 Crossref DOI record (`10.1038/s41586-018-0307-8`) 作为一手来源；本地未归档 PDF
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf`；本轮已核对本地归档 PDF 全文，对应 DOI `10.1038/s41586-018-0307-8`
 - 论文类型：研究论文 / organic-reactivity discovery robot
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -16,9 +27,10 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | Nature article page / Crossref | synthesis robot can perform reactions and analysis, predict reactivity, navigate reaction space, and follow up discoveries | 高 |
+| 一手来源与归档状态 | 已核对本地归档 PDF 全文 | local archived PDF full text | 本轮冻结裁决使用 `Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf` 作为一手全文来源 | 高 |
+| Agent 纳入 | 是 | local archived PDF full text | synthesis robot can perform reactions and analysis, predict reactivity, navigate reaction space, and follow up discoveries | 高 |
 | 科学对象归类 | `03.03` | title / Nature abstract / Crossref | 对象是 chemical reaction space 与 new reactivity discovery，而不是 materials property space | 高 |
-| 方法流程 | experiments -> real-time analysis -> ML decision -> follow-up | Nature article page / Crossref | 系统实时用 NMR / IR 反馈驱动决策并探索反应空间 | 高 |
+| 方法流程 | experiments -> real-time analysis -> ML decision -> follow-up | local archived PDF full text | 系统实时用 NMR / IR 反馈驱动决策并探索反应空间 | 高 |
 | 边界判断 | 不应改到 `04` | object-first rule | 重点是 reaction combinations 与 new reactions 的发现，不是材料性能优化 | 高 |
 | 实验验证 | discovered four reactions | RePEc abstract line 76 | 由机器学习预测后，化学家跟进发现四个反应 | 高 |
 
@@ -253,8 +265,8 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - `object_coverage_mode`: `single_module`
 - `primary_module_for_filing`: `03`
 - `general_method_bucket`: `none`
-- `first_hand_sources_checked`: Nature article page; Crossref DOI record `10.1038/s41586-018-0307-8`
-- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `first_hand_sources_checked`: local archived PDF full text (`Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf`)
+- `classification_evidence_source_level`: `first_hand_full_text`
 - `source_limited`: `no`
 - `note_revision_required`: `no`
 

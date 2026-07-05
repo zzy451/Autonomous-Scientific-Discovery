@@ -1,4 +1,9 @@
 # Naumov 2025 - DORA AI Scientist
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- Frozen landing decision: keep independent `01.04` with `object_coverage_mode=general_method_without_concrete_object_experiments`, `primary_module_for_filing=01`, `general_method_bucket=01.04`, and `source_limited=no`.
+- Current PDF state: the local archived bioRxiv PDF at `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.pdf` has already been reopened and text-checked.
+- Note harmonization rule for this file: any older `abstract-only`, `full-text follow-up`, `no local PDF`, or `source-limited` wording below is historical and superseded by the 2026-07-03 local-PDF recheck block.
 
 **论文信息**
 - 标题：DORA AI Scientist: Multi-agent Virtual Research Team for Scientific Exploration Discovery and Automated Report Generation

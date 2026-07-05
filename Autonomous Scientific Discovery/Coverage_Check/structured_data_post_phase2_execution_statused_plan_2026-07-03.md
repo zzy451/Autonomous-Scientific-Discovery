@@ -394,6 +394,24 @@
 ## 11. 当前一句话版本
 
 **是的，这份方案就是承接我们已经完成的 `Phase 1-2` 继续往下走；而且按当前仓库真实状态，我们已经不在前两阶段本身，而是在稳定 baseline 上执行 `Phase 6` 的后续轮次。**
+
+## Post-R21 Status Addendum (2026-07-05)
+
+The repository has now advanced beyond the post-R18 state recorded in the earlier addendum.
+
+Current Phase 6 controller facts after `Phase6FollowupR21`:
+
+- `Phase6FollowupR19`, `Phase6FollowupR20`, and `Phase6FollowupR21` all used the restored standard real multi-agent shape
+- each `Evidence-Agent-A/B/C` independently handles `10` notes / papers
+- each round therefore processes `30` notes / papers in total
+- future round packets should remain frozen as `3` contiguous slices of `10`, unless the user explicitly approves a bounded exception
+- `Phase6FollowupR21` is closed, all round agents were closed, and the authoritative baseline remains `447 / 422 / 25 / drift 0`
+
+Current queue-state implication:
+
+- after refreshing the current queue layer from the post-R21 authoritative pair, the `full_text_followup_queue` no longer contains a truthful fresh `30`-paper packet once `R19-R21` are freshness-overridden
+- therefore the next natural standard round should switch from follow-up pressure clearing to a `30`-paper note-harmonization round drawn from the refreshed `note_revision_queue`
+- this is not a plan change; it is the truthful next application of the same Phase 6 rules under current queue reality
 ## R18 status update - 2026-07-05
 
 The repository has now advanced beyond the post-R17 state recorded in the main body of this file.
@@ -433,3 +451,17 @@ Next-step interpretation:
 
 - the next controller launch should start from the post-R18 queue, not the post-R17 queue
 - the same execution rule remains active: if a paper still lacks a realistically obtainable PDF, skip repeated hard-fighting and retain a truthful HTML / abstract / official-page evidence chain instead
+
+## Post-R18 round-sizing update - 2026-07-05
+
+From this point forward, the default real multi-agent follow-up cadence changes back to the standard full round shape:
+
+- each `Evidence-Agent-A/B/C` independently handles `10` notes / papers
+- each round therefore processes `30` notes / papers in total
+- future round packets should be frozen as `3` contiguous slices of `10`, not as six-paper pockets, unless the user explicitly approves a bounded exception
+
+Interpretation note:
+
+- the earlier `R6-R18` six-paper follow-up rhythm remains a truthful historical description of what those rounds actually did
+- it is no longer the default planning template for future rounds after this update
+- any transitional six-paper packet drafted on `2026-07-05` should be treated as a temporary controller-side artifact rather than the new standing SOP

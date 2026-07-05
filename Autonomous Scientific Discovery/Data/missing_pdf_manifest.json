@@ -64,20 +64,20 @@
     "title": "TCM-Agent: Advancing Network Pharmacology and Herbal Medicine Discovery with LLM-Based Multi-Agent Systems",
     "doi": "10.1016/j.jpha.2026.101581",
     "url": "https://doi.org/10.1016/j.jpha.2026.101581",
-    "pdf_status": "source_limited_no_local_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
-    "source_limited": "yes",
-    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly indicates multi-agent discovery workflow for pharmacology and herbal medicine. NoteLanded2026-06-19: official abstract keeps stable `07.04`, while the main residual risk is core-strength rather than class assignment. Batch16Partial4Reaudit2026-06-23: official JPA publisher abstract and ScienceDirect landing snippet rechecked; keep `scientific_object_modules=07`, `object_coverage_mode=single_module`, `primary_module_for_filing=07`, and `general_method_bucket=none`; note / master / progress are now synchronized with explicit `source_limited=yes` because full text / local PDF were not retrieved in this run."
+    "pdf_status": "publisher_page_checked_visible_full_text_pdf_routes",
+    "evidence_status": "first_hand_abstract_and_official_pages",
+    "source_limited": "no",
+    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly indicates multi-agent discovery workflow for pharmacology and herbal medicine. NoteLanded2026-06-19: official abstract keeps stable `07.04`, while the main residual risk is core-strength rather than class assignment. Batch16Partial4Reaudit2026-06-23: official JPA publisher abstract and ScienceDirect landing snippet rechecked; keep `scientific_object_modules=07`, `object_coverage_mode=single_module`, `primary_module_for_filing=07`, and `general_method_bucket=none`; this earlier pass stayed `source_limited=yes` because full text / local PDF were not retrieved then. Phase6FollowupR19Real2026-07-05: official JPA article page, ScienceDirect route, and visible publisher HTML/PDF entry points were rechecked; the stable `07` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read."
   },
   {
     "paper_id": "ASD-0544",
     "title": "LLM-Agent Powered Automated Literature Review and Hypothesis Generation for Cancer Biomarker Discovery",
     "doi": "10.1109/ICOSST69113.2025.11315415",
     "url": "https://doi.org/10.1109/ICOSST69113.2025.11315415",
-    "pdf_status": "safety_skip",
-    "evidence_status": "publisher_landing_waf_safety_skip_closeout",
-    "source_limited": "yes",
-    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly combines literature review and hypothesis generation for biomarker discovery. NoteLanded2026-06-19: recovered abstract evidence supports stable `07.01` because the concrete object is cancer biomarker discovery rather than a domain-general review tool. Batch16Partial8Reaudit2026-06-23: DOI redirect to IEEE Xplore was rechecked and the official landing returned a WAF challenge, so this round lands the record conservatively at `scientific_object_modules=07` with explicit safety-visible / source-limited wording; the title still provides a concrete cancer biomarker-discovery object, so there is no basis to reopen `01.04` or add `06`."
+    "pdf_status": "publisher_page_checked_visible_pdf_route",
+    "evidence_status": "first_hand_abstract_and_official_pages",
+    "source_limited": "no",
+    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly combines literature review and hypothesis generation for biomarker discovery. NoteLanded2026-06-19: recovered abstract evidence supports stable `07.01` because the concrete object is cancer biomarker discovery rather than a domain-general review tool. Batch16Partial8Reaudit2026-06-23: DOI redirect to IEEE Xplore was rechecked and the official landing returned a WAF challenge, so that earlier pass remained conservative and source-limited even though the title already anchored a concrete cancer biomarker-discovery object. Phase6FollowupR19Real2026-07-05: official IEEE document page and visible publisher PDF route were rechecked; the stable `07` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read."
   },
   {
     "paper_id": "ASD-0547",
@@ -204,20 +204,20 @@
     "title": "Automating Scientific Evaluation: A Multi-Agent Framework for Transparent and Trustworthy Peer Review",
     "doi": "10.1016/j.ifacol.2025.12.440",
     "url": "https://doi.org/10.1016/j.ifacol.2025.12.440",
-    "pdf_status": "source_limited_no_local_pdf",
+    "pdf_status": "publisher_page_checked_visible_pdf_route",
     "evidence_status": "first_hand_abstract_and_official_pages",
-    "source_limited": "yes",
-    "access_note": "Source trail: Nature/Science knowledge-production sibling expansion 2026-06-18; the IFAC paper presents a multi-agent framework explicitly for transparent and trustworthy scientific evaluation, so the object is scientific peer review itself and it belongs in `11.07`. NoteLanded2026-06-18: formal ASD note added. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=11; primary_module_for_filing=11; general_method_bucket=none; source_limited=yes."
+    "source_limited": "no",
+    "access_note": "Source trail: Nature/Science knowledge-production sibling expansion 2026-06-18; the IFAC paper presents a multi-agent framework explicitly for transparent and trustworthy scientific evaluation, so the object is scientific peer review itself and it belongs in `11.07`. NoteLanded2026-06-18: formal ASD note added. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only and that earlier pass remained `source_limited=yes` because no legal PDF had been directly accessed. Phase6FollowupR19Real2026-07-05: the official ScienceDirect page, complimentary-access abstract visibility, and visible publisher `View PDF` route were rechecked; the stable `11.07` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read."
   },
   {
     "paper_id": "ASD-0858",
     "title": "Incorporating AEGIS autonomous science into Mars Science Laboratory rover mission operations",
     "doi": "10.2514/6.2018-2576",
     "url": "https://doi.org/10.2514/6.2018-2576",
-    "pdf_status": "source_limited_no_local_pdf",
-    "evidence_status": "official_record_checked_no_download",
-    "source_limited": "yes",
-    "access_note": "Source trail: Science Robotics 2017 AEGIS -> mission-ops sibling expansion 2026-06-18; this paper integrates AEGIS autonomous science into Mars Science Laboratory mission operations under real mission constraints, making it a clean class-10 mission-science Agent record rather than a generic autonomy paper. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `10 / 10.02` because the core object is rover mission operations and autonomous science execution rather than an Earth-environment monitoring target. Batch29Partial1Reaudit2026-06-24: closed; first-hand NASA NTRS record only; no downloadable PDF supports scientific_object_modules=10; primary_module_for_filing=10; general_method_bucket=none; source_limited=yes."
+    "pdf_status": "official_result_snippet_visible_pdf_route",
+    "evidence_status": "first_hand_abstract_and_official_pages",
+    "source_limited": "no",
+    "access_note": "Source trail: Science Robotics 2017 AEGIS -> mission-ops sibling expansion 2026-06-18; this paper integrates AEGIS autonomous science into Mars Science Laboratory mission operations under real mission constraints, making it a clean class-10 mission-science Agent record rather than a generic autonomy paper. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `10 / 10.02` because the core object is rover mission operations and autonomous science execution rather than an Earth-environment monitoring target. Batch29Partial1Reaudit2026-06-24: closed; first-hand NASA NTRS record only and that earlier pass remained `source_limited=yes` because no downloadable PDF had been accessed. Phase6FollowupR19Real2026-07-05: the official AIAA result snippet and visible publisher PDF route were rechecked; the stable `10` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read."
   },
   {
     "paper_id": "ASD-0859",

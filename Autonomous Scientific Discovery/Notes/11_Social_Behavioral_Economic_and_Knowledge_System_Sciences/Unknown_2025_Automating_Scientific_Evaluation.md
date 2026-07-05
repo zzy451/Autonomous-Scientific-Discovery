@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：IFAC-PapersOnLine
 - DOI / arXiv / URL：https://doi.org/10.1016/j.ifacol.2025.12.440
-- PDF / 本地文件路径：无本地 PDF；本轮核对 DOI `https://doi.org/10.1016/j.ifacol.2025.12.440` 与官方 ScienceDirect 文章页 `https://www.sciencedirect.com/science/article/pii/S240589632503157X`；页面可见 publisher abstract、authors、`complimentary access` 与 `View PDF` 线索，但本环境未实际取回 PDF，因此继续 `source_limited=yes`
+- PDF / 本地文件路径：无本地 PDF；本轮核对 DOI `https://doi.org/10.1016/j.ifacol.2025.12.440` 与官方 ScienceDirect 文章页 `https://www.sciencedirect.com/science/article/pii/S240589632503157X`；页面可见 publisher abstract、authors、`complimentary access` 与 `View PDF` 线索，因此本轮按冻结裁决改写为 `source_limited=no`；但这只表示 official-page / visible publisher-route 证据已明确，不表示已有本地 PDF 或已完成全文通读
 - 论文类型：系统论文 / scientific-evaluation multi-agent framework
 - 当前状态：to_read
 - 阅读日期：2026-06-24
@@ -24,20 +24,33 @@ has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 11
 confidence: high
-source_limited: yes
-safety_access_status: no_safety_issue_full_text_not_retrieved; official publisher page visibility is stronger, but automated/manual PDF retrieval was still not completed or verified in this environment
+source_limited: no
+safety_access_status: official ScienceDirect page checked; complimentary-access abstract and visible publisher `View PDF` route confirmed; this strengthens source state without claiming a local archived PDF or completed full-text read
 first_hand_sources_checked: DOI https://doi.org/10.1016/j.ifacol.2025.12.440 + ScienceDirect article page https://www.sciencedirect.com/science/article/pii/S240589632503157X (visible `complimentary access` / `View PDF` cues)
-classification_evidence_source_level: source_limited
+classification_evidence_source_level: first_hand_abstract_or_landing_page
 module_assignment_evidence: the directly studied object is scientific evaluation / peer review itself; author / reviewer / editor style agents coordinate review generation, critique, and editorial synthesis around scientific knowledge production.
 multi_module_object_coverage_note: this is not a general-method-only `01.04` paper because the workflow explicitly studies scientific peer review as a concrete knowledge-production object.
 final_reason: the paper's object is scientific peer review and trustworthy scientific evaluation, so it belongs in top-level module `11`, specifically the scientific knowledge production boundary `11.07`.
+```
+
+## Phase6FollowupR19 Frozen Adjudication / Source-State Recheck - 2026-07-05
+
+This writeback applies the frozen `Phase6FollowupR19` adjudication for `ASD-0855`.
+
+```text
+supported_modules: 11
+primary_module_for_filing: 11
+source_limited: no
+confirmed_source_state: official ScienceDirect page checked; complimentary-access abstract visible; publisher `View PDF` route visible
+recheck_result: the studied scientific object is scientific evaluation / peer review itself, so the note remains a clean `11` filing and the old `source_limited=yes` wording should be cleared
+truthfulness_guardrail: this recheck strengthens official-page / visible publisher-route evidence only; it does not claim a local archived PDF or a completed full-text read
 ```
 
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Frozen adjudication | `11`; `source_limited=yes` | Batch29Partial1 frozen packet + round9 official ScienceDirect publisher page cues | 本轮只保留单模块 `11`，不扩展也不回退到 `01.04`；官方页面已可见 abstract / authors / `complimentary access` / `View PDF` 线索，但未实际核读全文 / PDF | 高 |
+| Frozen adjudication | `11`; `source_limited=no` | Batch29Partial1 frozen packet + Phase6FollowupR19 official ScienceDirect publisher-page recheck | 本轮只保留单模块 `11`，不扩展也不回退到 `01.04`；官方页面已可见 abstract / authors / `complimentary access` / `View PDF` 路径，因此旧的 `source_limited=yes` 说法应清除；但仍不声称已有本地 PDF 或已通读全文 | 高 |
 | Agent 纳入 | 是 | 标题；文章页摘要 | 论文明确提出 multi-agent framework，用于 transparent and trustworthy scientific evaluation | 高 |
 | 科学对象归类 | `11 / 11.07` | 标题；摘要 | 研究对象不是通用科研工作流，而是 scientific peer review / scientific evaluation 本身 | 高 |
 | 方法流程 | 多 Agent 协作评审链条成立 | 摘要 | 作者、审稿、编辑式代理围绕审稿意见生成、比较、整合与透明化展开 | 中高 |
@@ -81,7 +94,7 @@ final_reason: the paper's object is scientific peer review and trustworthy scien
 - has_concrete_object_experiments：yes
 - general_method_bucket：none
 - primary_module_for_filing：`11`
-- source_limited：yes
+- source_limited：no
 - 一级类：11
 - 二级类：11.07
 - 三级类：scientific peer review / scientific evaluation
@@ -215,7 +228,7 @@ final_reason: the paper's object is scientific peer review and trustworthy scien
 - 科学贡献是否经过验证：有任务级验证线索，但全文细节暂缺
 - 贡献强度判断：中
 - 科学贡献类型：system_platform; evidence_assessment
-- 证据强度：source_limited
+- 证据强度：first_hand_abstract_or_landing_page
 
 ## 6. 与已有工作的关系
 
@@ -226,7 +239,7 @@ final_reason: the paper's object is scientific peer review and trustworthy scien
 
 ## 7. 局限性与风险
 
-- source_limited：是；官方页已出现 `complimentary access` 与 `View PDF` 线索，但当前环境仍未完成可核验的 PDF / 全文取回
+- source_limited：否；本轮已以官方 ScienceDirect 页面、可见 `complimentary access` 标记与 `View PDF` publisher route 作为稳定来源状态证据；但仍不声称已有本地 PDF 或已完成全文通读
 - Agent 自主性不足：可能仍需显著的人工规则或评审标准注入
 - 科学验证不足：完整实验设计和误差分析尚未从全文核对
 - 泛化性不足：是否能跨学科、跨 venue 稳定迁移仍待更强证据
@@ -266,7 +279,7 @@ object_coverage_mode：single_module
 has_concrete_object_experiments：yes
 general_method_bucket：none
 primary_module_for_filing：11
-source_limited：yes
+source_limited：no
 一级类：11
 二级类：11.07
 三级类：scientific peer review / scientific evaluation
@@ -277,7 +290,7 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven; data_driven
 科学贡献类型：system_platform; evidence_assessment
-证据强度：source_limited
+证据强度：first_hand_abstract_or_landing_page
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

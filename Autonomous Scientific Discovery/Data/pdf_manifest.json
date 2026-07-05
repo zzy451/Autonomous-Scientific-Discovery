@@ -547,7 +547,7 @@
       "09"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_plus_archived_arxiv_fallback",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2250,7 +2250,7 @@
       "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "crossref_abstract_checked_blocked_biorxiv_landing",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2263,7 +2263,7 @@
       "04"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2356,7 +2356,7 @@
       "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "official_dataset_pages_safety_supported",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2370,7 +2370,7 @@
       "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "safe_sciety_abstract_safety_supported",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2397,7 +2397,7 @@
       "02"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_preprint_and_doi_metadata",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2431,11 +2431,11 @@
     "sha256": "96802bb18db20dae1c75124002192aa932228cb97bd35f317375b3cdaeefec83",
     "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "07",
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "source_limited_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2448,7 +2448,7 @@
       "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "source_limited_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2501,7 +2501,7 @@
       "02"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_preprint_and_doi_metadata",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2904,7 +2904,7 @@
       "02"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -2995,7 +2995,7 @@
       "11"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -3008,7 +3008,7 @@
       "11"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -3245,7 +3245,7 @@
       "11"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "source_limited_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -3284,7 +3284,7 @@
       "11"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "source_limited_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -3802,7 +3802,7 @@
       "11"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4165,7 +4165,7 @@
       "03"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4204,7 +4204,7 @@
       "01"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4217,7 +4217,7 @@
       "01"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4286,7 +4286,7 @@
       "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_and_official_repo",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4296,10 +4296,11 @@
     "sha256": "176e7edca97bb55e15d57e6bc3547c0db14929b154eeaa74398b2d13421577e4",
     "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "source_limited_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4313,7 +4314,7 @@
       "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "crossref_abstract_checked_blocked_biorxiv_landing",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4326,7 +4327,7 @@
       "09"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4339,7 +4340,7 @@
       "02"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4352,7 +4353,7 @@
       "09"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4365,7 +4366,7 @@
       "02"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4404,7 +4405,7 @@
       "09"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4417,7 +4418,7 @@
       "09"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4573,7 +4574,7 @@
       "11"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4609,10 +4610,11 @@
     "sha256": "46a8ff477f208bc860144d2c6db2ac9f8026c12e2f8b31d1d7b61a0f193b85f8",
     "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4677,7 +4679,7 @@
       "09"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {

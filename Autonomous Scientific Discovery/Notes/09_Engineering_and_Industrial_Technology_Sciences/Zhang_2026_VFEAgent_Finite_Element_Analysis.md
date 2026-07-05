@@ -1,5 +1,16 @@
 # Zhang et al. 2026 - VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- `paper_id`: `ASD-0747`
+- Frozen adjudicated modules: `09`
+- `primary_module_for_filing`: `09`
+- Canonical local archived PDF: `Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf`
+- `first_hand_sources_checked`: local archived PDF full text (`Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf`)
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `source_limited`: `no`
+- Filing note: note location is filing convenience only and does not override the frozen module-`09` adjudication.
+
 ## 2026-06-23 landed writeback refresh
 
 - `paper_id`: `ASD-0747`
@@ -7,8 +18,8 @@
 - `classification_confidence`: `high`
 - `source_limited`: `no`
 - `safety_access_status`: `none`
-- First-hand source checked this round: arXiv abstract page `https://arxiv.org/abs/2605.28978`
-- PDF / archive status: no local archived PDF was confirmed in this workspace; recommended official PDF URL is `https://arxiv.org/pdf/2605.28978`
+- First-hand source checked this round: local archived PDF full text (`Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf`)
+- PDF / archive status: canonical local archived PDF `Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf`
 - Writeback implication: keep the note anchored in concrete finite-element-analysis engineering objects, not `01.04`
 
 **论文信息**
@@ -17,7 +28,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.28978
-- PDF / 本地文件路径：未确认本地归档 PDF；本次写回基于 arXiv abstract page
+- PDF / 本地文件路径：`Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf`
 - 论文类型：研究论文 / engineering FEA multi-agent system
 - 当前状态：to_read
 - 阅读日期：2026-06-23
@@ -130,7 +141,7 @@
 
 ## 7. 局限性与风险
 
-- 当前未确认本地归档 PDF，后续复核仍建议优先补档
+- 当前已确认本地归档 PDF，后续复核可直接回到该 PDF 做页码级核对
 - 科学贡献更偏工程分析自动化，而非新的工程规律发现
 - 泛化范围与失败模式细节仍需更强全文证据支持
 - 当前主要风险是 core-strength 细化，不是对象分类风险
@@ -158,7 +169,7 @@ general_method_bucket: none
 classification_confidence: high
 source_limited: no
 safety_access_status: none
-first_hand_sources_checked: arXiv abstract page
-pdf_archive_status: no local archived PDF confirmed
+first_hand_sources_checked: local archived PDF full text (`Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf`)
+pdf_archive_status: local archived PDF confirmed
 recommended_pdf_url: https://arxiv.org/pdf/2605.28978
 ```

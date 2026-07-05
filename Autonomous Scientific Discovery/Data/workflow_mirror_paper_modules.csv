@@ -244,8 +244,8 @@ ASD-0548,OpenScientist: evaluating an open agentic AI co-scientist to accelerate
 ASD-0549,DeepInflation: An AI Agent for Research and Model Discovery of Inflation,final_modules_or_bucket,02,formal_module,1,1
 ASD-0552,Multi agent large language models for biomedical hypothesis generation in drug combination discovery,final_modules_or_bucket,07,formal_module,1,1
 ASD-0553,ToolsGenie 2.0: A Scalable and Extensible Multi-Agent System for Bioinformatics Automation,final_modules_or_bucket,01.04,general_bucket,1,1
-ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,final_modules_or_bucket,07,formal_module,1,1
-ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,final_modules_or_bucket,06,formal_module,2,1
+ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,final_modules_or_bucket,06,formal_module,1,1
+ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,final_modules_or_bucket,07,formal_module,2,1
 ASD-0556,DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery,final_modules_or_bucket,07,formal_module,1,1
 ASD-0557,"Unlocking azobenzene isomerization mechanisms via an LLM agent-driven workflow integrating simulation, experiment, and machine learning",final_modules_or_bucket,03,formal_module,1,1
 ASD-0558,Closed-Loop AI Enables Organic Continuous-Wave Laser,final_modules_or_bucket,04,formal_module,1,1
@@ -441,6 +441,7 @@ ASD-0742,Talk2Biomodels: AI agent-based open-source LLM initiative for kinetic b
 ASD-0743,STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis,final_modules_or_bucket,06,formal_module,1,1
 ASD-0743,STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis,final_modules_or_bucket,07,formal_module,2,1
 ASD-0744,"BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks",final_modules_or_bucket,06,formal_module,1,1
+ASD-0744,"BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks",final_modules_or_bucket,07,formal_module,2,1
 ASD-0745,BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models,final_modules_or_bucket,06,formal_module,1,1
 ASD-0745,BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models,final_modules_or_bucket,07,formal_module,2,1
 ASD-0747,VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis,final_modules_or_bucket,09,formal_module,1,1
@@ -466,6 +467,7 @@ ASD-0766,"ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, T
 ASD-0768,When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews,final_modules_or_bucket,11,formal_module,1,1
 ASD-0769,DeepER-Med: Advancing Deep Evidence-Based Research in Medicine Through Agentic AI,final_modules_or_bucket,07,formal_module,1,1
 ASD-0770,Progressive Multi-Agent Reasoning for Biological Perturbation Prediction,final_modules_or_bucket,06,formal_module,1,1
+ASD-0770,Progressive Multi-Agent Reasoning for Biological Perturbation Prediction,final_modules_or_bucket,07,formal_module,2,1
 ASD-0771,Process-Supervised Multi-Agent Reinforcement Learning for Reliable Clinical Reasoning,final_modules_or_bucket,07,formal_module,1,1
 ASD-0772,TRACE: A Multi-Agent System for Autonomous Physical Reasoning for Seismology,final_modules_or_bucket,05,formal_module,1,1
 ASD-0773,Skill-Augmented AI Agents for Medical Research Analysis: An Exploratory Multi-Model Human Evaluation in an NSCLC Transcriptomic Biomarker Task,final_modules_or_bucket,07,formal_module,1,1

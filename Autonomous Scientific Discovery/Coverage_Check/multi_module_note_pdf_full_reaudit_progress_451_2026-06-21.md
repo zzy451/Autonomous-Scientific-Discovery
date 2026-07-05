@@ -1,6 +1,6 @@
 # 451 Confirmed Core 鍏ㄩ噺澶嶆牳杩涘害琛?
 
-更新日期：`2026-07-04`
+更新日期：`2026-07-05`
 
 
 
@@ -92,7 +92,7 @@
 
 | ASD-0051 | Geneagent: Self-verification language agent for gene set knowledge discovery using domain databases | Notes/06_Life_Sciences/Wang_2024_GeneAgent.md | archived_pdf | Reference_PDF/06_Life_Sciences/Wang_2024_GeneAgent.pdf | first_hand_full_text | updated | updated | 06 | no | Batch02 | yes |
 
-| ASD-0052 | Optimizing collaboration of large language model based agents for autonomous finite element analysis | Notes/09_Engineering_and_Industrial_Technology_Sciences/Tian_2025_Autonomous_Finite_Element_Analysis.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2025_Autonomous_Finite_Element_Analysis.pdf | first_hand_abstract_plus_archived_arxiv_fallback | updated_source_limited | updated_source_limited | 09 | yes | CarryForward05 | yes |
+| ASD-0052 | Optimizing collaboration of large language model based agents for autonomous finite element analysis | Notes/09_Engineering_and_Industrial_Technology_Sciences/Tian_2025_Autonomous_Finite_Element_Analysis.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2025_Autonomous_Finite_Element_Analysis.pdf | first_hand_full_text | updated | updated | 09 | no | Phase6FollowupR20 | yes |
 
 | ASD-0053 | Towards autonomous hypothesis verification via language models with minimal guidance | Notes/01_Formal_Information_and_Computational_Sciences/Takagi_2023_Autonomous_Hypothesis_Verification.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Takagi_2023_Autonomous_Hypothesis_Verification.pdf | first_hand_full_text | updated | updated | 01.04 | no | Batch02 | yes |
 
@@ -360,11 +360,11 @@
 
 | ASD-0530 | Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems | Notes/01_Formal_Information_and_Computational_Sciences/Yue_2025_Hierarchical_AI_Scientist_Systems.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Yue_2025_Hierarchical_AI_Scientist_Systems.pdf | first_hand_full_text | updated | updated | 01.04 | no | Batch16Partial3 | yes |
 
-| ASD-0531 | GALILEO: Embodied AI scientist for autonomous therapeutic discovery in dynamic membrane systems | Notes/07_Medical_and_Health_Sciences/Jiang_2026_GALILEO_Therapeutic_Discovery.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Jiang_2026_GALILEO_Therapeutic_Discovery.pdf | crossref_abstract_checked_blocked_biorxiv_landing | updated_source_limited | updated_source_limited | 06;07 | yes | Batch16Partial9 | yes |
+| ASD-0531 | GALILEO: Embodied AI scientist for autonomous therapeutic discovery in dynamic membrane systems | Notes/07_Medical_and_Health_Sciences/Jiang_2026_GALILEO_Therapeutic_Discovery.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Jiang_2026_GALILEO_Therapeutic_Discovery.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR20 | yes |
 
-| ASD-0535 | Accelerated inorganic materials design with generative AI agents | Notes/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.md | archived_pdf | Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf | first_hand_abstract_review_packet | updated | updated | 04 | no | Batch16Partial4 | yes |
+| ASD-0535 | Accelerated inorganic materials design with generative AI agents | Notes/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.md | archived_pdf | Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR21 | yes |
 
-| ASD-0536 | TCM-Agent: Advancing Network Pharmacology and Herbal Medicine Discovery with LLM-Based Multi-Agent Systems | Notes/07_Medical_and_Health_Sciences/Wang_2026_TCM_Agent_Herbal_Discovery.md | source_limited_no_local_pdf |  | first_hand_abstract_review_packet | updated_source_limited | updated_source_limited | 07 | yes | Batch16Partial4 | yes |
+| ASD-0536 | TCM-Agent: Advancing Network Pharmacology and Herbal Medicine Discovery with LLM-Based Multi-Agent Systems | Notes/07_Medical_and_Health_Sciences/Wang_2026_TCM_Agent_Herbal_Discovery.md | publisher_page_checked_visible_full_text_pdf_routes |  | first_hand_abstract_and_official_pages | updated | updated | 07 | no | Phase6FollowupR19 | yes |
 
 | ASD-0537 | Medea: An omics AI agent for therapeutic discovery | Notes/07_Medical_and_Health_Sciences/Sui_2026_Medea_Therapeutic_Discovery.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Sui_2026_Medea_Therapeutic_Discovery.pdf | first_hand_pmc_full_text | updated | updated | 06;07 | no | Batch16Partial3 | yes |
 
@@ -378,23 +378,23 @@
 
 | ASD-0542 | MADD: Multi-Agent Drug Discovery Orchestra | Notes/07_Medical_and_Health_Sciences/Solovev_2025_MADD_Drug_Discovery.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Solovev_2025_MADD_Drug_Discovery.pdf | first_hand_full_text | updated | updated | 07 | no | Batch16Partial3 | yes |
 
-| ASD-0543 | Machine Learning Copilot Agent: An LLM-Guided Workflow for Prognostic Gene Discovery | Notes/06_Life_Sciences/Patel_2025_ML_Copilot_Prognostic_Gene_Discovery.md | archived_pdf | Reference_PDF/06_Life_Sciences/Patel_2025_ML_Copilot_Prognostic_Gene_Discovery.pdf | official_dataset_pages_safety_supported | updated_source_limited | updated_source_limited | 06;07 | yes | Batch16Partial3 | yes |
+| ASD-0543 | Machine Learning Copilot Agent: An LLM-Guided Workflow for Prognostic Gene Discovery | Notes/06_Life_Sciences/Patel_2025_ML_Copilot_Prognostic_Gene_Discovery.md | archived_pdf | Reference_PDF/06_Life_Sciences/Patel_2025_ML_Copilot_Prognostic_Gene_Discovery.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR20 | yes |
 
-| ASD-0544 | LLM-Agent Powered Automated Literature Review and Hypothesis Generation for Cancer Biomarker Discovery | Notes/07_Medical_and_Health_Sciences/Younis_2025_Cancer_Biomarker_LitReview_Agent.md | safety_skip |  | publisher_landing_waf_safety_skip_closeout | updated_source_limited | updated_source_limited | 07 | yes | Batch16Partial8 | yes |
+| ASD-0544 | LLM-Agent Powered Automated Literature Review and Hypothesis Generation for Cancer Biomarker Discovery | Notes/07_Medical_and_Health_Sciences/Younis_2025_Cancer_Biomarker_LitReview_Agent.md | publisher_page_checked_visible_pdf_route |  | first_hand_abstract_and_official_pages | updated | updated | 07 | no | Phase6FollowupR19 | yes |
 
-| ASD-0545 | IMMUNIA: A Multi-LLM Reasoning Agent for Immunoregulatory Surfaceome Discovery | Notes/07_Medical_and_Health_Sciences/Park_2025_IMMUNIA_Surfaceome_Discovery.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Park_2025_IMMUNIA_Surfaceome_Discovery.pdf | safe_sciety_abstract_safety_supported | updated_source_limited | updated_source_limited | 06;07 | yes | Batch16Partial7 | yes |
+| ASD-0545 | IMMUNIA: A Multi-LLM Reasoning Agent for Immunoregulatory Surfaceome Discovery | Notes/07_Medical_and_Health_Sciences/Park_2025_IMMUNIA_Surfaceome_Discovery.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Park_2025_IMMUNIA_Surfaceome_Discovery.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR20 | yes |
 
 | ASD-0547 | Closed-loop experimental AI for pixelated metasurface design | Notes/04_Materials_Science/Lee_2026_Closed_Loop_Pixelated_Metasurface_Design.md | safety_skip |  | doi_metadata_safety_skip_closeout | updated_source_limited | updated_source_limited | 04 | yes | Batch16Partial8 | yes |
 
 | ASD-0548 | OpenScientist: evaluating an open agentic AI co-scientist to accelerate biomedical discovery | Notes/07_Medical_and_Health_Sciences/Roberts_2026_OpenScientist_Biomedical_Discovery.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Roberts_2026_OpenScientist_Biomedical_Discovery.pdf | first_hand_pmc_full_text | updated | updated | 06;07 | no | Batch16Partial1 | yes |
 
-| ASD-0549 | DeepInflation: An AI Agent for Research and Model Discovery of Inflation | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Peng_2026_DeepInflation.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Peng_2026_DeepInflation.pdf | first_hand_preprint_and_doi_metadata | updated | updated | 02 | no | Batch16Partial1 | yes |
+| ASD-0549 | DeepInflation: An AI Agent for Research and Model Discovery of Inflation | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Peng_2026_DeepInflation.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Peng_2026_DeepInflation.pdf | first_hand_full_text | updated | updated | 02 | no | Phase6FollowupR21 | yes |
 
 | ASD-0552 | Multi agent large language models for biomedical hypothesis generation in drug combination discovery | Notes/07_Medical_and_Health_Sciences/Xu_2025_Drug_Combination_Hypothesis_Generation.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Xu_2025_Drug_Combination_Hypothesis_Generation.pdf | first_hand_pmc_full_text | updated | updated | 07 | no | Batch16Partial1 | yes |
 
-| ASD-0554 | BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics | Notes/01_Formal_Information_and_Computational_Sciences/Rahim_2026_BioAgent_Reproducible_Translational_Bioinformatics.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Rahim_2026_BioAgent_Reproducible_Translational_Bioinformatics.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 07;06 | yes | Batch23Partial1 | yes |
+| ASD-0554 | BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics | Notes/01_Formal_Information_and_Computational_Sciences/Rahim_2026_BioAgent_Reproducible_Translational_Bioinformatics.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Rahim_2026_BioAgent_Reproducible_Translational_Bioinformatics.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR20 | yes |
 
-| ASD-0556 | DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery | Notes/07_Medical_and_Health_Sciences/Hu_2025_DrugPilot.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Hu_2025_DrugPilot.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 07 | yes | Batch23Partial1 | yes |
+| ASD-0556 | DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery | Notes/07_Medical_and_Health_Sciences/Hu_2025_DrugPilot.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Hu_2025_DrugPilot.pdf | first_hand_full_text | updated | updated | 07 | no | Phase6FollowupR20 | yes |
 
 | ASD-0557 | Unlocking azobenzene isomerization mechanisms via an LLM agent-driven workflow integrating simulation, experiment, and machine learning | Notes/03_Chemical_Sciences/Shen_2026_Azobenzene_Isomerization_Agent_Workflow.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Shen_2026_Azobenzene_Isomerization_Agent_Workflow.pdf | first_hand_full_text | updated | updated | 03 | no | Batch17Partial1 | yes |
 
@@ -404,7 +404,7 @@
 
 | ASD-0565 | Agentic AI for autonomous discovery of radiation-tolerant CoCrFeMnNi high entropy alloys | Notes/04_Materials_Science/Roy_2026_Radiation_Tolerant_HEA_Discovery.md | abstract_only_checked |  | first_hand_abstract_review_packet | updated | updated | 04 | no | Batch24Partial1 | yes |
 
-| ASD-0567 | Egent: An Autonomous Agent for Equivalent Width Measurement | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Ting_2026_Egent_Equivalent_Width.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Ting_2026_Egent_Equivalent_Width.pdf | first_hand_preprint_and_doi_metadata | updated | updated | 02 | no | Batch23Partial1 | yes |
+| ASD-0567 | Egent: An Autonomous Agent for Equivalent Width Measurement | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Ting_2026_Egent_Equivalent_Width.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Ting_2026_Egent_Equivalent_Width.pdf | first_hand_full_text | updated | updated | 02 | no | Phase6FollowupR21 | yes |
 
 | ASD-0568 | Multi-Agent-Network-Based Idea Generator for Zinc-Ion Battery Electrolyte Discovery: A Case Study on Zinc Tetrafluoroborate Hydrate-Based Deep Eutectic Electrolytes | Notes/04_Materials_Science/Robson_2025_Zinc_Ion_Electrolyte_Idea_Generator.md | archived_pdf | Reference_PDF/04_Materials_Science/Robson_2025_Zinc_Ion_Electrolyte_Idea_Generator.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR17Approx | yes |
 
@@ -480,7 +480,7 @@
 
 | ASD-0612 | Navigating phase diagram complexity to guide robotic inorganic materials synthesis | Notes/04_Materials_Science/Chen_2024_Navigating_Phase_Diagram_Complexity.md | archived_pdf | Reference_PDF/04_Materials_Science/Chen_2024_Navigating_Phase_Diagram_Complexity.pdf | first_hand_full_text | checked | updated | 04 | no | Batch18Partial1 | yes |
 
-| ASD-0613 | Physics Discovery in Nanoplasmonic Systems via Autonomous Experiments in Scanning Transmission Electron Microscopy | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Roccapriore_2022_Physics_Discovery_Nanoplasmonic_STEM.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Roccapriore_2022_Physics_Discovery_Nanoplasmonic_STEM.pdf | first_hand_abstract_review_packet | updated | checked | 02 | no | Batch24Partial1 | yes |
+| ASD-0613 | Physics Discovery in Nanoplasmonic Systems via Autonomous Experiments in Scanning Transmission Electron Microscopy | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Roccapriore_2022_Physics_Discovery_Nanoplasmonic_STEM.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Roccapriore_2022_Physics_Discovery_Nanoplasmonic_STEM.pdf | first_hand_full_text | updated | updated | 02 | no | Phase6FollowupR21 | yes |
 
 | ASD-0614 | Modular, Multi-Robot Integration of Laboratories: An Autonomous Solid-State Workflow for Powder X-Ray Diffraction | Notes/04_Materials_Science/Lunt_2023_Autonomous_SolidState_PXRD_Workflow.md | archived_pdf | Reference_PDF/04_Materials_Science/Lunt_2023_Autonomous_SolidState_PXRD_Workflow.pdf | first_hand_abstract_review_packet | updated | checked | 04 | no | Batch24Partial1 | yes |
 
@@ -494,9 +494,9 @@
 
 | ASD-0624 | SciSciGPT: advancing human-AI collaboration in the science of science | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shao_2025_SciSciGPT.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shao_2025_SciSciGPT.pdf | first_hand_full_text_review_packet | checked | updated | 11 | no | Batch18Partial1 | yes |
 
-| ASD-0625 | ReviewAgents: Bridging the Gap Between Human and AI-Generated Paper Reviews | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Gao_2025_ReviewAgents.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Gao_2025_ReviewAgents.pdf | first_hand_abstract_review_packet | updated | updated | 11 | no | Batch18Partial1 | yes |
+| ASD-0625 | ReviewAgents: Bridging the Gap Between Human and AI-Generated Paper Reviews | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Gao_2025_ReviewAgents.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Gao_2025_ReviewAgents.pdf | first_hand_full_text | updated | updated | 11 | no | Phase6FollowupR21 | yes |
 
-| ASD-0626 | From Passive Generation to Investigation: A Proactive Scientific Peer Review Agent | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Fang_2026_ProReviewer.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Fang_2026_ProReviewer.pdf | first_hand_abstract_review_packet | updated | updated | 11 | no | Batch18Partial1 | yes |
+| ASD-0626 | From Passive Generation to Investigation: A Proactive Scientific Peer Review Agent | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Fang_2026_ProReviewer.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Fang_2026_ProReviewer.pdf | first_hand_full_text | updated | updated | 11 | no | Phase6FollowupR21 | yes |
 
 | ASD-0627 | Adaptive Science Operations in Deep Space Missions Using Offline Belief State Planning | Notes/10_Aerospace_Marine_and_Transportation_Sciences/Kim_2025_Adaptive_Science_Operations_Deep_Space.md | archived_pdf | Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Kim_2025_Adaptive_Science_Operations_Deep_Space.pdf | first_hand_full_text_via_arxiv_fallback | checked | updated | 10 | no | Batch18Partial1 | yes |
 
@@ -534,13 +534,13 @@
 
 | ASD-0651 | AI Driven Discovery of Bio Ecological Mediation in Cascading Heatwave Risks | Notes/05_Earth_and_Environmental_Sciences/Wang_2025_Heatwave_Discovery_Agent.md | archived_pdf | Reference_PDF/05_Earth_and_Environmental_Sciences/Wang_2025_Heatwave_Discovery_Agent.pdf | first_hand_preprint_pdf_review_packet | updated | updated | 05;11 | no | Batch24Partial1 | yes |
 
-| ASD-0652 | ResearchTown: Simulator of Human Research Community | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.pdf | source_limited_review_packet | checked | checked | 11 | yes | Batch19Partial1 | yes |
+| ASD-0652 | ResearchTown: Simulator of Human Research Community | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.pdf | first_hand_full_text | updated | updated | 11 | no | Phase6FollowupR20 | yes |
 
 | ASD-0653 | Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents | Notes/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.md | archived_pdf | Reference_PDF/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.pdf | first_hand_full_text | updated | updated | 05 | no | Phase6FollowupR12Approx | yes |
 
 | ASD-0654 | HLER: Human-in-the-Loop Economic Research via Multi-Agent Pipelines for Empirical Discovery | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Zhu_2026_HLER.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Zhu_2026_HLER.pdf | first_hand_full_text | updated | updated | 11 | no | Phase6FollowupR15Approx | yes |
 
-| ASD-0655 | TreeReview: A Dynamic Tree of Questions Framework for Deep and Efficient LLM-based Scientific Peer Review | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Chang_2025_TreeReview.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Chang_2025_TreeReview.pdf | source_limited_review_packet | checked | checked | 11 | yes | Batch19Partial1 | yes |
+| ASD-0655 | TreeReview: A Dynamic Tree of Questions Framework for Deep and Efficient LLM-based Scientific Peer Review | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Chang_2025_TreeReview.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Chang_2025_TreeReview.pdf | first_hand_full_text | updated | updated | 11 | no | Phase6FollowupR20 | yes |
 
 | ASD-0656 | AI-Assisted Peer Review at Scale: The AAAI-26 AI Review Pilot | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Biswas_2026_AAAI_AI_Review_Pilot.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Biswas_2026_AAAI_AI_Review_Pilot.pdf | first_hand_full_text | updated | updated | 11 | no | Phase6FollowupR15Approx | yes |
 
@@ -616,7 +616,7 @@
 
 | ASD-0700 | Reimagining Peer Review Process Through Multi-Agent Mechanism Design | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_Peer_Review_Mechanism_Design.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_Peer_Review_Mechanism_Design.pdf | first_hand_full_text | updated_background_only | updated_background_only | 11 | no | Batch30Partial2 | yes |
 
-| ASD-0701 | Automating Computational Reproducibility in Social Science: Comparing Prompt-Based and Agent-Based Approaches | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shah_2026_Automating_Computational_Reproducibility.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shah_2026_Automating_Computational_Reproducibility.pdf | first_hand_abstract_review_packet | updated | checked | 11 | yes | Batch20Partial1 | yes |
+| ASD-0701 | Automating Computational Reproducibility in Social Science: Comparing Prompt-Based and Agent-Based Approaches | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shah_2026_Automating_Computational_Reproducibility.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shah_2026_Automating_Computational_Reproducibility.pdf | first_hand_full_text | updated | updated | 11 | no | Phase6FollowupR20 | yes |
 
 | ASD-0702 | Rover-Based Autonomous Science by Probabilistic Identification and Evaluation | Notes/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.md | archived_pdf | Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.pdf | first_hand_full_text | updated | updated | 05;10 | no | Batch30Partial3 | yes |
 
@@ -674,15 +674,15 @@
 
 | ASD-0733 | Increased Mars Rover Autonomy using AI Planning, Scheduling and Execution | Notes/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2007_Mars_Rover_Autonomy.md | archived_pdf | Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2007_Mars_Rover_Autonomy.pdf | first_hand_full_text | updated | updated | 10 | no | Batch21Partial1 | yes |
 
-| ASD-0734 | Controlling an organic synthesis robot with machine learning to search for new reactivity | Notes/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf | first_hand_abstract_review_packet | updated | updated | 03 | no | Batch25Partial1 | yes |
+| ASD-0734 | Controlling an organic synthesis robot with machine learning to search for new reactivity | Notes/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf | first_hand_full_text | updated | updated | 03 | no | Phase6FollowupR21 | yes |
 
 | ASD-0735 | Artificial Chemist: An Autonomous Quantum Dot Synthesis Bot | Notes/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.md | archived_pdf | Reference_PDF/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR8 | yes |
 
 | ASD-0736 | AI-Researcher: Autonomous Scientific Innovation | Notes/01_Formal_Information_and_Computational_Sciences/Wang_2025_AI_Researcher.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Wang_2025_AI_Researcher.pdf | first_hand_abstract_review_packet | updated | updated | 01 | no | Batch25Partial1 | yes |
 
-| ASD-0737 | ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence Verification | Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2026_ScientistOne.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_ScientistOne.pdf | first_hand_abstract_review_packet | updated | updated | 01 | no | Batch27Partial1 | yes |
+| ASD-0737 | ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence Verification | Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2026_ScientistOne.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_ScientistOne.pdf | first_hand_full_text | updated | updated | 01 | no | Phase6FollowupR21 | yes |
 
-| ASD-0738 | AutoSOTA: An End-to-End Automated Research System for State-of-the-Art AI Model Discovery | Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoSOTA.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoSOTA.pdf | first_hand_abstract_review_packet | updated | updated | 01 | no | Batch25Partial1 | yes |
+| ASD-0738 | AutoSOTA: An End-to-End Automated Research System for State-of-the-Art AI Model Discovery | Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoSOTA.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoSOTA.pdf | first_hand_full_text | updated | updated | 01 | no | Phase6FollowupR21 | yes |
 
 | ASD-0739 | Autonomous microfluidic experimentation for exploring reaction inference and synthesizing double perovskite nanoplatelets | Notes/04_Materials_Science/Sharma_2026_Double_Perovskite_Nanoplatelets.md | archived_pdf | Reference_PDF/04_Materials_Science/Sharma_2026_Double_Perovskite_Nanoplatelets.pdf | first_hand_full_text | updated | checked | 03;04 | no | Batch21Partial1 | yes |
 
@@ -692,27 +692,27 @@
 
 | ASD-0742 | Talk2Biomodels: AI agent-based open-source LLM initiative for kinetic biological models | Notes/06_Life_Sciences/Wehling_2025_Talk2Biomodels.md | archived_pdf | Reference_PDF/06_Life_Sciences/Wehling_2025_Talk2Biomodels.pdf | first_hand_full_text | updated | checked | 06;07 | no | Batch21Partial1 | yes |
 
-| ASD-0743 | STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis | Notes/06_Life_Sciences/Chen_2026_STAT_Spatial_Transcriptomics.md | archived_pdf | Reference_PDF/06_Life_Sciences/Chen_2026_STAT_Spatial_Transcriptomics.pdf | first_hand_abstract_and_official_repo | updated_source_limited | updated_source_limited | 06;07 | yes | Batch30Partial2 | yes |
+| ASD-0743 | STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis | Notes/06_Life_Sciences/Chen_2026_STAT_Spatial_Transcriptomics.md | archived_pdf | Reference_PDF/06_Life_Sciences/Chen_2026_STAT_Spatial_Transcriptomics.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR20 | yes |
 
-| ASD-0744 | BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks | Notes/06_Life_Sciences/Zhang_2026_BioGAIP_Bioinformatics.md | archived_pdf | Reference_PDF/06_Life_Sciences/Zhang_2026_BioGAIP_Bioinformatics.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 06 | yes | Batch25Partial1 | yes |
+| ASD-0744 | BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks | Notes/06_Life_Sciences/Zhang_2026_BioGAIP_Bioinformatics.md | archived_pdf | Reference_PDF/06_Life_Sciences/Zhang_2026_BioGAIP_Bioinformatics.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR20 | yes |
 
-| ASD-0745 | BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models | Notes/06_Life_Sciences/Jin_2025_BioLab_Life_Sciences.md | archived_pdf | Reference_PDF/06_Life_Sciences/Jin_2025_BioLab_Life_Sciences.pdf | crossref_abstract_checked_blocked_biorxiv_landing | updated_source_limited | updated_source_limited | 06;07 | yes | Batch30Partial3 | yes |
+| ASD-0745 | BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models | Notes/06_Life_Sciences/Jin_2025_BioLab_Life_Sciences.md | archived_pdf | Reference_PDF/06_Life_Sciences/Jin_2025_BioLab_Life_Sciences.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR20 | yes |
 
-| ASD-0747 | VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis | Notes/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf | first_hand_abstract_review_packet | updated | checked | 09 | no | Batch22Partial1 | yes |
+| ASD-0747 | VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis | Notes/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf | first_hand_full_text | updated | updated | 09 | no | Phase6FollowupR21 | yes |
 
-| ASD-0748 | ASTER -- Agentic Science Toolkit for Exoplanet Research | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Panek_2026_ASTER_Exoplanet_Research.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Panek_2026_ASTER_Exoplanet_Research.pdf | first_hand_abstract_review_packet | updated | checked | 02 | no | Batch22Partial1 | yes |
+| ASD-0748 | ASTER -- Agentic Science Toolkit for Exoplanet Research | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Panek_2026_ASTER_Exoplanet_Research.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Panek_2026_ASTER_Exoplanet_Research.pdf | first_hand_full_text | updated | updated | 02 | no | Phase6FollowupR21 | yes |
 
-| ASD-0749 | Self-Refining Topology Optimization via an LLM-Based Multi-Agent Framework | Notes/09_Engineering_and_Industrial_Technology_Sciences/Park_2026_TopOptAgents.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Park_2026_TopOptAgents.pdf | first_hand_abstract_review_packet | updated | updated | 09 | no | Batch22Partial1 | yes |
+| ASD-0749 | Self-Refining Topology Optimization via an LLM-Based Multi-Agent Framework | Notes/09_Engineering_and_Industrial_Technology_Sciences/Park_2026_TopOptAgents.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Park_2026_TopOptAgents.pdf | first_hand_full_text | updated | updated | 09 | no | Phase6FollowupR21 | yes |
 
-| ASD-0750 | GRACE: an Agentic AI for Particle Physics Experiment Design and Simulation | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Kaboth_2026_GRACE_Particle_Physics_Design.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Kaboth_2026_GRACE_Particle_Physics_Design.pdf | first_hand_abstract_review_packet | updated | updated | 02 | no | Batch22Partial1 | yes |
+| ASD-0750 | GRACE: an Agentic AI for Particle Physics Experiment Design and Simulation | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Kaboth_2026_GRACE_Particle_Physics_Design.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Kaboth_2026_GRACE_Particle_Physics_Design.pdf | first_hand_full_text | updated | updated | 02 | no | Phase6FollowupR21 | yes |
 
 | ASD-0751 | Beyond AI as Assistants: Toward Autonomous Discovery in Cosmology | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Xu_2026_Autonomous_Discovery_Cosmology.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xu_2026_Autonomous_Discovery_Cosmology.pdf | first_hand_full_text | updated | updated | 02 | no | Batch30Partial2 | yes |
 
 | ASD-0752 | Integrating Large Language Models for Automated Structural Analysis | Notes/09_Engineering_and_Industrial_Technology_Sciences/Liang_2025_Automated_Structural_Analysis.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Liang_2025_Automated_Structural_Analysis.pdf | first_hand_full_text | updated | updated | 09 | no | Batch26Partial1 | yes |
 
-| ASD-0753 | A Lightweight Large Language Model-Based Multi-Agent System for 2D Frame Structural Analysis | Notes/09_Engineering_and_Industrial_Technology_Sciences/Geng_2025_MultiAgent_2D_Frame_Analysis.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Geng_2025_MultiAgent_2D_Frame_Analysis.pdf | first_hand_abstract_review_packet | updated | checked | 09 | no | Batch22Partial1 | yes |
+| ASD-0753 | A Lightweight Large Language Model-Based Multi-Agent System for 2D Frame Structural Analysis | Notes/09_Engineering_and_Industrial_Technology_Sciences/Geng_2025_MultiAgent_2D_Frame_Analysis.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Geng_2025_MultiAgent_2D_Frame_Analysis.pdf | first_hand_full_text | updated | updated | 09 | no | Phase6FollowupR21 | yes |
 
-| ASD-0754 | Automating Structural Engineering Workflows with Large Language Model Agents | Notes/09_Engineering_and_Industrial_Technology_Sciences/Liang_2025_MASSE_Structural_Engineering.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Liang_2025_MASSE_Structural_Engineering.pdf | first_hand_abstract_review_packet | updated | checked | 09 | no | Batch22Partial1 | yes |
+| ASD-0754 | Automating Structural Engineering Workflows with Large Language Model Agents | Notes/09_Engineering_and_Industrial_Technology_Sciences/Liang_2025_MASSE_Structural_Engineering.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Liang_2025_MASSE_Structural_Engineering.pdf | first_hand_full_text | updated | updated | 09 | no | Phase6FollowupR21 | yes |
 
 | ASD-0755 | Automating Structural Analysis Across Multiple Software Platforms Using Large Language Models | Notes/09_Engineering_and_Industrial_Technology_Sciences/Geng_2026_CrossPlatform_Structural_Analysis.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Geng_2026_CrossPlatform_Structural_Analysis.pdf | first_hand_full_text | updated | updated | 09 | no | Batch26Partial1 | yes |
 
@@ -736,13 +736,13 @@
 
 | ASD-0765 | CLIMATEAGENT: Multi-Agent Orchestration for Complex Climate Data Science Workflows | Notes/05_Earth_and_Environmental_Sciences/Kim_2025_ClimateAgent_Climate_Data_Science.md | archived_pdf | Reference_PDF/05_Earth_and_Environmental_Sciences/Kim_2025_ClimateAgent_Climate_Data_Science.pdf | first_hand_full_text | updated | updated | 05 | no | Phase6FollowupR18Approx | yes |
 
-| ASD-0766 | ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ReviewGrounder.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ReviewGrounder.pdf | first_hand_abstract_review_packet | updated | updated | 11 | yes | Batch22Partial1 | yes |
+| ASD-0766 | ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ReviewGrounder.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ReviewGrounder.pdf | first_hand_full_text | updated | updated | 11 | no | Phase6FollowupR20 | yes |
 
 | ASD-0768 | When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_When_Reviews_Disagree.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_When_Reviews_Disagree.pdf | first_hand_abstract_review_packet | updated | updated | 11 | yes | Batch22Partial1 | yes |
 
 | ASD-0769 | DeepER-Med: Advancing Deep Evidence-Based Research in Medicine Through Agentic AI | Notes/07_Medical_and_Health_Sciences/Wang_2026_DeepER_Med.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Wang_2026_DeepER_Med.pdf | first_hand_full_text | updated | updated | 07 | no | Batch27Partial1 | yes |
 
-| ASD-0770 | Progressive Multi-Agent Reasoning for Biological Perturbation Prediction | Notes/06_Life_Sciences/Kim_2026_PBio_Agent_Perturbation_Biology.md | archived_pdf | Reference_PDF/06_Life_Sciences/Kim_2026_PBio_Agent_Perturbation_Biology.pdf | first_hand_abstract_review_packet | updated | checked | 06 | yes | Batch22Partial1 | yes |
+| ASD-0770 | Progressive Multi-Agent Reasoning for Biological Perturbation Prediction | Notes/06_Life_Sciences/Kim_2026_PBio_Agent_Perturbation_Biology.md | archived_pdf | Reference_PDF/06_Life_Sciences/Kim_2026_PBio_Agent_Perturbation_Biology.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR20 | yes |
 
 | ASD-0771 | Process-Supervised Multi-Agent Reinforcement Learning for Reliable Clinical Reasoning | Notes/07_Medical_and_Health_Sciences/Lee_2026_Process_Supervised_Clinical_Reasoning.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Lee_2026_Process_Supervised_Clinical_Reasoning.pdf | first_hand_full_text | updated | updated | 07 | no | Batch27Partial1 | yes |
 
@@ -752,7 +752,7 @@
 
 | ASD-0774 | Causal-Enhanced AI Agents for Medical Research Screening | Notes/07_Medical_and_Health_Sciences/Ngo_2026_Causal_Enhanced_Medical_Research_Screening.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Ngo_2026_Causal_Enhanced_Medical_Research_Screening.pdf | first_hand_full_text | updated | updated | 07 | no | Batch26Partial1 | yes |
 
-| ASD-0775 | Owl-AuraID 1.0: An Intelligent System for Autonomous Scientific Instrumentation and Scientific Data Analysis | Notes/09_Engineering_and_Industrial_Technology_Sciences/Deng_2026_Owl_AuraID_Instrumentation.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Deng_2026_Owl_AuraID_Instrumentation.pdf | first_hand_abstract_review_packet | updated | checked | 09 | yes | Batch22Partial1 | yes |
+| ASD-0775 | Owl-AuraID 1.0: An Intelligent System for Autonomous Scientific Instrumentation and Scientific Data Analysis | Notes/09_Engineering_and_Industrial_Technology_Sciences/Deng_2026_Owl_AuraID_Instrumentation.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Deng_2026_Owl_AuraID_Instrumentation.pdf | first_hand_full_text | updated | updated | 09 | no | Phase6FollowupR20 | yes |
 
 | ASD-0779 | From Text to Simulation: A Multi-Agent LLM Workflow for Automated Chemical Process Design | Notes/09_Engineering_and_Industrial_Technology_Sciences/Tian_2026_Text_to_Simulation_Process_Design.md | archived_pdf | Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2026_Text_to_Simulation_Process_Design.pdf | first_hand_full_text | updated | updated | 09 | no | Batch26Partial1 | yes |
 
@@ -878,13 +878,13 @@
 
 | ASD-0854 | Enabling Autonomous Science for a Mars Rover | Notes/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2008_Enabling_Autonomous_Science_Mars_Rover.md | safety_skip |  | first_hand_public_full_text_and_official_project_page | updated | updated | 10 | no | Batch30Partial3 | yes |
 
-| ASD-0855 | Automating Scientific Evaluation: A Multi-Agent Framework for Transparent and Trustworthy Peer Review | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2025_Automating_Scientific_Evaluation.md | source_limited_no_local_pdf |  | first_hand_abstract_and_official_pages | updated_source_limited | updated_source_limited | 11 | yes | Batch29Partial1 | yes |
+| ASD-0855 | Automating Scientific Evaluation: A Multi-Agent Framework for Transparent and Trustworthy Peer Review | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2025_Automating_Scientific_Evaluation.md | publisher_page_checked_visible_pdf_route |  | first_hand_abstract_and_official_pages | updated | updated | 11 | no | Phase6FollowupR19 | yes |
 
 | ASD-0856 | AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise | Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2025_AutoDiscovery.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2025_AutoDiscovery.pdf | first_hand_full_text | updated | updated | 06;07;11 | no | Batch29Partial1 | yes |
 
 | ASD-0857 | Machine Collective Intelligence for Explainable Scientific Discovery | Notes/01_Formal_Information_and_Computational_Sciences/Na_2026_Machine_Collective_Intelligence.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Na_2026_Machine_Collective_Intelligence.pdf | first_hand_full_text | updated | updated | 02;03;04;06;09 | no | Batch29Partial1 | yes |
 
-| ASD-0858 | Incorporating AEGIS autonomous science into Mars Science Laboratory rover mission operations | Notes/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2018_AEGIS_MSL_Mission_Operations.md | source_limited_no_local_pdf |  | official_record_checked_no_download | updated_source_limited | updated_source_limited | 10 | yes | Batch29Partial1 | yes |
+| ASD-0858 | Incorporating AEGIS autonomous science into Mars Science Laboratory rover mission operations | Notes/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2018_AEGIS_MSL_Mission_Operations.md | official_result_snippet_visible_pdf_route |  | first_hand_abstract_and_official_pages | updated | updated | 10 | no | Phase6FollowupR19 | yes |
 
 | ASD-0859 | Monitoring active volcanism with the Autonomous Sciencecraft Experiment on EO-1 | Notes/05_Earth_and_Environmental_Sciences/Davies_2006_EO1_Volcanism_Monitoring.md | source_limited_no_local_pdf |  | first_hand_abstract_and_official_pages | updated_source_limited | updated_source_limited | 05 | yes | Batch29Partial1 | yes |
 

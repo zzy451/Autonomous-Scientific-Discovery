@@ -6,9 +6,9 @@
 - 年份：2026
 - 来源 / venue：npj Computational Materials
 - DOI / arXiv / URL：https://doi.org/10.1038/s41524-026-02139-1
-- PDF / 本地文件路径：当前未在项目中记录本地归档 PDF；本笔记依据 publisher page 与 publisher PDF 全文的一手证据整理。
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Rothfarb_2026_Heterogeneous_Catalyst_Discovery.pdf`；本笔记依据项目内归档 PDF、publisher page 与 publisher PDF 全文的一手证据整理。
 - 论文类型：研究论文 / catalyst-material discovery multi-agent system
-- 当前状态：主表当前为 `to_read`；本 note 已完成一手来源写回
+- 当前状态：本 note 已完成一手来源写回，并已与项目内归档 PDF 对齐
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 
@@ -221,7 +221,7 @@
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：`04` 材料科学中的 catalyst-material discovery，同时在 `03/04` 边界讨论中占重要位置
+- 可放入哪个章节：`04` 材料科学中的 catalyst-material discovery，同时在 `03/04` 边界讨论中占重要位置；当前表述已按归档全文证据同步
 - 可支撑哪个论点：催化论文即使以材料对象为主，也可能同时具备直接化学验证，从而支持多模块
 - 可用于哪个表格或图：`03 / 04` 边界对照表；materials discovery agent 对比表
 - 适合作为代表性案例吗：适合

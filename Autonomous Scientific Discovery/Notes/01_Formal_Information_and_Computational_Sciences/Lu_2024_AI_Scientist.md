@@ -1,4 +1,9 @@
 # Lu 2024 - The AI Scientist
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- Frozen landing decision: `scientific_object_modules=01;11`, `object_coverage_mode=multi_module`, `primary_module_for_filing=01`, `general_method_bucket=none`, `source_limited=no`.
+- Current PDF state: the authoritative local archived PDF is `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Lu_2024_AI_Scientist.pdf`.
+- Note harmonization rule for this file: any older `01.04`-only wording below is stale legacy text superseded by the current PDF-backed multi-module overlay; note location under `01_...` is filing convenience only.
 ## 2026-06-21 archive sync
 
 - Canonical PDF path: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Lu_2024_AI_Scientist.pdf`

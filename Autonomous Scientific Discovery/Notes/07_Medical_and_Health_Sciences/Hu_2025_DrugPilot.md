@@ -1,5 +1,16 @@
 # Hu et al. 2025 - DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0556`
+- `final_adjudicated_modules`: `07`
+- `primary_module_for_filing`: `07`
+- `canonical_local_pdf`: `Reference_PDF/07_Medical_and_Health_Sciences/Hu_2025_DrugPilot.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older abstract-only or `source_limited=yes` wording in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable drug-discovery `07` reading with first-hand local-PDF support and without drifting to general-method framing
+
 **论文信息**
 - 标题：DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery
 - 作者：Hu et al.

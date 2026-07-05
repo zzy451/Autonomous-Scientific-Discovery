@@ -1,5 +1,16 @@
 # Chen et al. 2026 - STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0743`
+- `final_adjudicated_modules`: `06;07`
+- `primary_module_for_filing`: `06`
+- `canonical_local_pdf`: `Reference_PDF/06_Life_Sciences/Chen_2026_STAT_Spatial_Transcriptomics.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older `source_limited=yes`, `pdf_path: none`, or repo-only access wording in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable `06;07` reading; this note remains filed under `06` for convenience only and the note path is not sole classification authority
+
 ## 2026-06-24 Batch30Partial2 writeback closure
 
 - `paper_id`: `ASD-0743`

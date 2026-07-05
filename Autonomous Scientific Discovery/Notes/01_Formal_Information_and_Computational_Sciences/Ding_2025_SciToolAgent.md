@@ -1,5 +1,20 @@
 # Keyan Ding et al. 2025 - SciToolAgent: a knowledge-graph-driven scientific agent for multitool integration
 
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- `paper_id`: `ASD-0787`
+- `scientific_object_modules`: `03;04;06`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `03`
+- `general_method_bucket`: `none`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: local archived publisher PDF
+- `pdf_path`: `Reference_PDF/03_Chemical_Sciences/Ding_2025_SciToolAgent.pdf`
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `R22_section_override`: read `Evidence Log`, section `2`, section `8`, and section `9.3` through this frozen multi-module state rather than any older `01.04` wording that remains lower in the note
+
+This R22 harmonization keeps the frozen concrete multi-module overlay, retires stale no-local-PDF wording, and supersedes old `01.04` body language where it conflicts with the authoritative chemistry / materials / biology case coverage.
+
 ## 2026-06-24 Batch30Partial2 writeback closure
 
 - `paper_id`: `ASD-0787`

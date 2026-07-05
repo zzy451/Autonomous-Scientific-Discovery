@@ -1,5 +1,16 @@
 # Kim et al. 2026 - Progressive Multi-Agent Reasoning for Biological Perturbation Prediction
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0770`
+- `final_adjudicated_modules`: `06;07`
+- `primary_module_for_filing`: `06`
+- `canonical_local_pdf`: `Reference_PDF/06_Life_Sciences/Kim_2026_PBio_Agent_Perturbation_Biology.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older `06`-only, abstract-page-only, or `source_limited=yes` wording in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable perturbation-biology `06` primary filing while recording the now-supported `07` disease and drug-response layer from first-hand full text
+
 **论文信息**
 - 标题：Progressive Multi-Agent Reasoning for Biological Perturbation Prediction
 - 作者：Hyomin Kim; Sang-Yeon Hwang; Jaechang Lim; Yinhua Piao; Yunhak Oh; Woo Youn Kim; Chanyoung Park; Sungsoo Ahn; Junhyeok Jeon

@@ -693,10 +693,10 @@ ASD-0551,PANGAEA GPT: A Coordinated Multi-Agent Architecture for Earth System Da
 ASD-0552,Multi agent large language models for biomedical hypothesis generation in drug combination discovery,scientific_object_modules,07,formal_module,1,1
 ASD-0552,Multi agent large language models for biomedical hypothesis generation in drug combination discovery,final_modules_or_bucket,07,formal_module,1,1
 ASD-0553,ToolsGenie 2.0: A Scalable and Extensible Multi-Agent System for Bioinformatics Automation,final_modules_or_bucket,01.04,general_bucket,1,1
-ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,scientific_object_modules,07,formal_module,1,1
-ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,scientific_object_modules,06,formal_module,2,1
-ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,final_modules_or_bucket,07,formal_module,1,1
-ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,final_modules_or_bucket,06,formal_module,2,1
+ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,scientific_object_modules,06,formal_module,1,1
+ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,scientific_object_modules,07,formal_module,2,1
+ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,final_modules_or_bucket,06,formal_module,1,1
+ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,final_modules_or_bucket,07,formal_module,2,1
 ASD-0556,DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery,scientific_object_modules,07,formal_module,1,1
 ASD-0556,DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery,final_modules_or_bucket,07,formal_module,1,1
 ASD-0557,"Unlocking azobenzene isomerization mechanisms via an LLM agent-driven workflow integrating simulation, experiment, and machine learning",scientific_object_modules,03,formal_module,1,1
@@ -1118,7 +1118,9 @@ ASD-0743,STAT: A multi-agent framework for integrated and interactive spatial tr
 ASD-0743,STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis,final_modules_or_bucket,06,formal_module,1,1
 ASD-0743,STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis,final_modules_or_bucket,07,formal_module,2,1
 ASD-0744,"BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks",scientific_object_modules,06,formal_module,1,1
+ASD-0744,"BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks",scientific_object_modules,07,formal_module,2,1
 ASD-0744,"BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks",final_modules_or_bucket,06,formal_module,1,1
+ASD-0744,"BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks",final_modules_or_bucket,07,formal_module,2,1
 ASD-0745,BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models,scientific_object_modules,06,formal_module,1,1
 ASD-0745,BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models,scientific_object_modules,07,formal_module,2,1
 ASD-0745,BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models,final_modules_or_bucket,06,formal_module,1,1
@@ -1170,7 +1172,9 @@ ASD-0768,When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientifi
 ASD-0769,DeepER-Med: Advancing Deep Evidence-Based Research in Medicine Through Agentic AI,scientific_object_modules,07,formal_module,1,1
 ASD-0769,DeepER-Med: Advancing Deep Evidence-Based Research in Medicine Through Agentic AI,final_modules_or_bucket,07,formal_module,1,1
 ASD-0770,Progressive Multi-Agent Reasoning for Biological Perturbation Prediction,scientific_object_modules,06,formal_module,1,1
+ASD-0770,Progressive Multi-Agent Reasoning for Biological Perturbation Prediction,scientific_object_modules,07,formal_module,2,1
 ASD-0770,Progressive Multi-Agent Reasoning for Biological Perturbation Prediction,final_modules_or_bucket,06,formal_module,1,1
+ASD-0770,Progressive Multi-Agent Reasoning for Biological Perturbation Prediction,final_modules_or_bucket,07,formal_module,2,1
 ASD-0771,Process-Supervised Multi-Agent Reinforcement Learning for Reliable Clinical Reasoning,scientific_object_modules,07,formal_module,1,1
 ASD-0771,Process-Supervised Multi-Agent Reinforcement Learning for Reliable Clinical Reasoning,final_modules_or_bucket,07,formal_module,1,1
 ASD-0772,TRACE: A Multi-Agent System for Autonomous Physical Reasoning for Seismology,scientific_object_modules,05,formal_module,1,1

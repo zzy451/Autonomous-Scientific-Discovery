@@ -11,7 +11,7 @@ Round 1 uses the top `30` rows from:
 
 - `Coverage_Check\structured_data_phase6_full_text_followup_queue_447_2026-07-02.tsv`
 
-The queue is already priority-sorted. This round intentionally does **not** attempt to clear all `99` follow-up candidates at once.
+The queue is already priority-sorted. This round intentionally does **not** attempt to clear all `93` follow-up candidates at once.
 
 ## Why only 30 papers
 
@@ -21,7 +21,7 @@ The queue is already priority-sorted. This round intentionally does **not** atte
    - non-full-text evidence
 2. The current top 30 includes:
    - `25` rows still carrying `no_local_pdf` pressure
-   - `23` rows still carrying `source_limited=yes`
+   - `19` rows still carrying `source_limited=yes`
    - `25` rows still carrying non-full-text evidence pressure
    This is enough to exercise a parallel evidence round without overloading merge review.
 3. This keeps the next real multi-agent round aligned with the established `3 x 10` evidence-slice pattern.

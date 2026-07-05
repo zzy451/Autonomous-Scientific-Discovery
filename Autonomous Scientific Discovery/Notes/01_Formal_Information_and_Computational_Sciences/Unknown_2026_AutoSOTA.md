@@ -14,6 +14,16 @@
 
 ## Evidence Log
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- Frozen paper ID: `ASD-0738`
+- Frozen landed modules: `01`
+- Frozen `01.04` bucket: `none`
+- Frozen `primary_module_for_filing`: `01`
+- Canonical local archived PDF: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoSOTA.pdf`
+- First-hand source status in R21: local archived PDF full text confirmed; this supersedes earlier no-local-PDF / abstract-only wording in the note.
+- Adjudication note: keep the landed reading at concrete AI / computational model-discovery work in `01`. Do not expand extra modules from broader framing alone.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
@@ -214,9 +224,9 @@ Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
 - `object_coverage_mode`: `single_module`
 - `primary_module_for_filing`: `01`
 - `general_method_bucket`: `none`
-- `first_hand_sources_checked`: arXiv abstract `2604.05550`
-- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `first_hand_sources_checked`: local archived PDF full text
+- `classification_evidence_source_level`: `first_hand_full_text`
 - `source_limited`: `no`
 - `note_revision_required`: `yes`
 
-This writeback keeps the AI model discovery framing explicit and removes stale independent `01.04` wording. AutoSOTA is validated on concrete AI-model discovery and computational research tasks, so it should stay inside formal and computational science (`01`) rather than the standalone general-method bucket.
+This writeback keeps the AI model discovery framing explicit and removes stale independent `01.04` wording. AutoSOTA is backed by the local archived PDF full text in R21 and stays inside formal and computational science (`01`) rather than the standalone general-method bucket.

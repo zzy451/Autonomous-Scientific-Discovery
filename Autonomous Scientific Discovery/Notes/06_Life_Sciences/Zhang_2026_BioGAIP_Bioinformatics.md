@@ -1,5 +1,16 @@
 # Zhang et al. 2026 - BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0744`
+- `final_adjudicated_modules`: `06;07`
+- `primary_module_for_filing`: `06`
+- `canonical_local_pdf`: `Reference_PDF/06_Life_Sciences/Zhang_2026_BioGAIP_Bioinformatics.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older abstract-only, API-only, `06`-only, or `source_limited=yes` wording in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable `06;07` reading with `06` primary; the medical/health-facing `07` layer is now first-hand full-text-backed rather than only suspected from abstract/API evidence
+
 ## 2026-06-21 relaxed round-2 boundary closure
 
 - `scientific_object_modules`: `06`

@@ -1,12 +1,23 @@
 # Hill and Ryoo 2026 - GRACE: an Agentic AI for Particle Physics Experiment Design and Simulation
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- `paper_id`: `ASD-0750`
+- Frozen adjudicated modules: `02`
+- `primary_module_for_filing`: `02`
+- Canonical local archived PDF: `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Kaboth_2026_GRACE_Particle_Physics_Design.pdf`
+- `first_hand_sources_checked`: local archived PDF full text (`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Kaboth_2026_GRACE_Particle_Physics_Design.pdf`)
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `source_limited`: `no`
+- Filing note: note location is filing convenience only and does not override the frozen module-`02` adjudication.
+
 **论文信息**
 - 标题：GRACE: an Agentic AI for Particle Physics Experiment Design and Simulation
 - 作者：Justin Hill; Hong Joo Ryoo
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2602.15039
-- PDF / 本地文件路径：当前未确认本地归档 PDF；本轮已核对官方 arXiv 摘要页 `https://arxiv.org/abs/2602.15039`；推荐 PDF URL：`https://arxiv.org/pdf/2602.15039`
+- PDF / 本地文件路径：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Kaboth_2026_GRACE_Particle_Physics_Design.pdf`；本轮已核对本地归档 PDF 全文，对应官方 arXiv 条目 `https://arxiv.org/abs/2602.15039`
 - 论文类型：研究论文 / particle-physics experiment-design agent
 - 当前状态：to_read
 - 阅读日期：2026-06-23
@@ -16,12 +27,12 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| 一手来源与作者元数据 | 官方 arXiv 作者为 Justin Hill; Hong Joo Ryoo；未确认本地归档 PDF | arXiv abs metadata | arXiv 条目作者栏显示 Justin Hill 与 Hong Joo Ryoo；当前仓库内未见已落盘 PDF | 高 |
-| Agent 纳入 | 是 | arXiv abs abstract | GRACE 从 prompt 或已发表实验论文出发，抽取实验结构、构建 simulation 并自主探索设计修改 | 高 |
-| 科学对象归类 | `02`，主落 `02.02.14` 粒子物理学 | arXiv abs abstract | 论文明确写的是 autonomous experimental design in high-energy and nuclear physics，而非通用工程自动化 | 高 |
-| 方法流程 | 物理约束下的实验设计与仿真搜索 | arXiv abs abstract | agent 构建 runnable toy simulation，用 first-principles Monte Carlo、physics-motivated utility functions 和 Geant4 escalation 评估候选方案 | 高 |
-| 实验 / 任务验证 | 针对具体粒子物理实验设计任务做验证 | arXiv abs abstract | 在历史实验 setup 上验证，agent 找到与已知 upgrade priorities 一致的优化方向，并做自然语言 prompt benchmark | 高 |
-| 边界判定 | 不是 `09` 工程平台论文 | arXiv abs abstract + 当前分类规则 | detector geometry、materials、configuration 修改都服务于 physics performance 与 experiment objective，最终对象仍是粒子物理实验设计 | 高 |
+| 一手来源与作者元数据 | 官方 arXiv 作者为 Justin Hill; Hong Joo Ryoo；已核对本地归档 PDF 全文 | local archived PDF full text | 本轮冻结裁决使用 `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Kaboth_2026_GRACE_Particle_Physics_Design.pdf` 作为一手全文来源 | 高 |
+| Agent 纳入 | 是 | local archived PDF full text | GRACE 从 prompt 或已发表实验论文出发，抽取实验结构、构建 simulation 并自主探索设计修改 | 高 |
+| 科学对象归类 | `02`，主落 `02.02.14` 粒子物理学 | local archived PDF full text | 论文明确写的是 autonomous experimental design in high-energy and nuclear physics，而非通用工程自动化 | 高 |
+| 方法流程 | 物理约束下的实验设计与仿真搜索 | local archived PDF full text | agent 构建 runnable toy simulation，用 first-principles Monte Carlo、physics-motivated utility functions 和 Geant4 escalation 评估候选方案 | 高 |
+| 实验 / 任务验证 | 针对具体粒子物理实验设计任务做验证 | local archived PDF full text | 在历史实验 setup 上验证，agent 找到与已知 upgrade priorities 一致的优化方向，并做自然语言 prompt benchmark | 高 |
+| 边界判定 | 不是 `09` 工程平台论文 | local archived PDF full text + 当前分类规则 | detector geometry、materials、configuration 修改都服务于 physics performance 与 experiment objective，最终对象仍是粒子物理实验设计 | 高 |
 
 ## 0. 摘要翻译
 
@@ -86,7 +97,7 @@
 - 判定理由：论文虽涉及 geometry、materials 与 instrument configurations，但这些修改的评价目标是 physics performance under physical and practical constraints，而不是脱离物理对象的通用工程优化
 - 多模块覆盖说明：当前没有独立、稳定的其他对象模块证据
 - 01.04 判定说明：不适用；本文不是无对象的通用科研 Agent，而是锚定粒子物理实验设计
-- 是否需要二次复核：顶层模块不需要；若后续补档 PDF，可再补具体 benchmark 页码和案例
+- 是否需要二次复核：顶层模块不需要；本地归档 PDF 已确认，后续如需可补具体 benchmark 页码和案例，但不影响冻结的 `02` 裁决
 
 ## 3. Agent 系统与科研流程角色
 
@@ -200,7 +211,7 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
 - 科学贡献类型：design; system_platform; simulation_modeling
-- 证据强度：first_hand_abstract_or_landing_page
+- 证据强度：first_hand_full_text
 - 任务验证总结：该论文的验证对象是具体的粒子物理实验设计任务，而不是一般工程装置优化；因此其分类措辞应牢牢锚定 `02` 粒子物理实验设计 / 仿真
 
 ## 6. 与已有工作的关系
@@ -226,7 +237,7 @@
 - 可用于哪个表格或图：`02 / 09` 边界案例表；粒子物理实验设计 Agent 对比表
 - 适合作为代表性案例吗：是
 - 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：后续若补档 PDF 可再加；当前可直接引用 arXiv 摘要对 physics performance、Monte Carlo、Geant4 escalation 的表述
+- 需要在正文中特别引用的页码 / 图 / 表：本地归档 PDF 已可支持 physics performance、Monte Carlo、Geant4 escalation 等对象级表述；若正文需要，可后续补具体页码 / 图 / 表
 - 需要与哪些论文并列比较：`Panek_2026_ASTER_Exoplanet_Research`、`Sha_2025_QCopilot_Quantum_Sensor` 以及其他 class-02 physics agents
 
 ## 9. 总结
@@ -265,7 +276,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 验证方式：benchmark; simulation_validation
 交叉属性：computation_driven; data_driven; simulation_driven; multimodal
 科学贡献类型：design; system_platform; simulation_modeling
-证据强度：first_hand_abstract_or_landing_page
+证据强度：first_hand_full_text
 归类置信度：high
 纳入置信度：high
 推荐引用强度：standard

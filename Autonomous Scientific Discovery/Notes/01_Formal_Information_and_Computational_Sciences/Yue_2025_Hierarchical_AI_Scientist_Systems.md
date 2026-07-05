@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：Preprints.org
 - DOI / arXiv / URL：https://doi.org/10.20944/preprints202507.1951.v1
-- PDF / 本地文件路径：本轮未归档本地 PDF；已直接核对 Preprints.org 官方 PDF
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Yue_2025_Hierarchical_AI_Scientist_Systems.pdf`；本轮重开本地归档 PDF，并交叉核对 Preprints.org 官方 PDF
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：已读（本轮按一手来源重审）；主列表流程状态仍可保持 `to_read`
 - 阅读日期：2026-06-23
@@ -35,10 +35,10 @@
 ## 2. 科学领域归类
 
 - scientific_object_modules：`none`
-- object_coverage_mode：`general_method_only`
+- object_coverage_mode：`general_method_without_concrete_object_experiments`
 - has_concrete_object_experiments：`no`
 - general_method_bucket：`01.04`
-- primary_module_for_filing：`01.04`
+- primary_module_for_filing：`01`
 - first_hand_sources_checked：Preprints.org official paper page; official PDF
 - classification_evidence_source_level：`first_hand_full_text`
 - source_limited：`no`
@@ -71,7 +71,7 @@
 
 ## 7. 局限性与风险
 
-- 本轮未新增本地 PDF 归档，只核对了官方在线 PDF。
+- 当前本地归档 PDF 已存在，并已与官方在线 PDF 交叉核对。
 - 若未来出现更强的一手证据证明其覆盖具体 scientific-object experiments，再考虑离开 `01.04`；在当前证据下不应主动扩张模块。
 
 ## 8. 对综述写作的价值
@@ -91,13 +91,13 @@
 ```text
 是否纳入：是
 scientific_object_modules：none
-object_coverage_mode：general_method_only
+object_coverage_mode：general_method_without_concrete_object_experiments
 has_concrete_object_experiments：no
 general_method_bucket：01.04
-primary_module_for_filing：01.04
+primary_module_for_filing：01
 first_hand_sources_checked：Preprints.org official paper page; official PDF
 classification_evidence_source_level：first_hand_full_text
-local_pdf_archived_this_round：no
+local_pdf_archived_this_round：yes
 source_limited：no
 safety_access_status：none
 boundary_type：direct_landing

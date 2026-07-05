@@ -1,5 +1,16 @@
 # Rahim 2026 - BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0554`
+- `final_adjudicated_modules`: `06;07`
+- `primary_module_for_filing`: `07`
+- `canonical_local_pdf`: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Rahim_2026_BioAgent_Reproducible_Translational_Bioinformatics.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older `source_limited=yes`, page-level-only, or surviving independent `01.04` residue in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable `06;07` reading with `07` primary; this note path is filing convenience only and no longer implies `01.04` authority
+
 **论文信息**
 - 标题：BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics
 - 作者：Rahim

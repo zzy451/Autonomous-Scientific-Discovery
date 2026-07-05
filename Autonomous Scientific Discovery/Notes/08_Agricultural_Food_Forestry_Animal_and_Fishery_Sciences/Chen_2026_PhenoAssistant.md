@@ -6,13 +6,15 @@
 - 年份：2026
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-026-71090-y
-- PDF / 本地文件路径：本轮未新增本地 PDF；已核对 Nature Communications article page，当前 note 不补写不存在的本地归档路径。
+- PDF / 本地文件路径：`Reference_PDF/08_Agricultural_Food_Forestry_Animal_and_Fishery_Sciences/Chen_2026_PhenoAssistant.pdf`；Nature Communications article page / DOI 亦已核对。
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：已核对一手 article page 证据；主列表当前保持 `to_read`
+- 当前状态：已读 / 已纳入 / 冻结落地写回已吸收
 - 阅读日期：2026-06-18
 - 笔记作者：Codex
 
 ## Evidence Log
+
+- 2026-07-05 writeback note: archived local PDF is now present at `Reference_PDF/08_Agricultural_Food_Forestry_Animal_and_Fishery_Sciences/Chen_2026_PhenoAssistant.pdf`; older article-page-only / no-local-PDF wording should be read as superseded, while the landed `06;08` classification with `08` as filing module remains unchanged.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -152,7 +154,7 @@
 
 - 科学贡献类型：system_platform; measurement_and_analysis
 - 贡献强度判断：中等到较强，取决于论文是平台型还是有直接实验发现。
-- 证据强度：high_metadata_only
+- 证据强度：first_hand_full_text supported by archived local PDF
 
 ## 6. 与已有工作的关系
 
@@ -203,8 +205,8 @@ object_coverage_mode：multi_module
 has_concrete_object_experiments：yes
 general_method_bucket：none
 primary_module_for_filing：08
-first_hand_sources_checked：Nature Communications article page
-classification_evidence_source_level：first_hand_abstract_or_landing_page
+first_hand_sources_checked：archived local PDF; Nature Communications article page / DOI
+classification_evidence_source_level：first_hand_full_text
 主类：08
 二级类：08.01
 三级类：
@@ -215,7 +217,7 @@ Agent 类型：Multi-Agent System; Hybrid Agent
 验证方式：real_world_deployment
 交叉属性：computation_driven
 科学贡献类型：system_platform; measurement_and_analysis
-证据强度：high_metadata_only
+证据强度：first_hand_full_text supported by archived local PDF
 归类置信度：高（2026-06-20 relaxed multi-module 复核；一手来源为 Nature Communications DOI / publisher abstract）
 纳入置信度：高
 推荐引用强度：core

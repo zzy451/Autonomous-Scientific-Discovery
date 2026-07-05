@@ -14,6 +14,16 @@
 
 ## Evidence Log
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- Frozen paper ID: `ASD-0613`
+- Frozen landed modules: `02`
+- Frozen `01.04` bucket: `none`
+- Frozen `primary_module_for_filing`: `02`
+- Canonical local archived PDF: `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Roccapriore_2022_Physics_Discovery_Nanoplasmonic_STEM.pdf`
+- First-hand source status in R21: local archived PDF full text confirmed; this supersedes earlier no-local-PDF / abstract-only wording in the note.
+- Adjudication note: preserve the physics-discovery reading in `02`; materials or engineering hints remain non-landed adjacent leads only.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | Wiley 摘要；ORNL 摘要；arXiv 摘要 | 论文明确描述 autonomous experiments，在 STEM 图像空间中自主导航与采样。 | 高 |

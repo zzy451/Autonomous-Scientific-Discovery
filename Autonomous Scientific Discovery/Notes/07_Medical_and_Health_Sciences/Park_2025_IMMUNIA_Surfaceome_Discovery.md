@@ -1,5 +1,16 @@
 # Park and Lee 2025 - IMMUNIA: A Multi-LLM Reasoning Agent for Immunoregulatory Surfaceome Discovery
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0545`
+- `final_adjudicated_modules`: `06;07`
+- `primary_module_for_filing`: `07`
+- `canonical_local_pdf`: `Reference_PDF/07_Medical_and_Health_Sciences/Park_2025_IMMUNIA_Surfaceome_Discovery.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older safety-supported abstract-only or `source_limited=yes` wording in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable `06;07` reading with `07` primary while retiring the earlier safe-abstract-only access framing
+
 **论文信息**
 - 标题：IMMUNIA: A Multi-LLM Reasoning Agent for Immunoregulatory Surfaceome Discovery
 - 作者：Park and Lee

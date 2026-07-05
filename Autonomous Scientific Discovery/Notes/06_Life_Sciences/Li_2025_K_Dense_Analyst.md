@@ -13,6 +13,12 @@
 - `module_assignment_evidence`: `06` is supported by open-ended biological-analysis benchmarking and case studies on RNA m6A analysis plus microbial co-culture phenotypes; `07` is additionally supported by the clinical-trial logistic-regression case on camrelizumab treatment response.
 - `multi_module_object_coverage_note`: earlier single-module wording overstated the `06 / 01.04` boundary and omitted medical-object evidence. Under the current relaxed object-coverage rule, the paper lands as `06;07`, with `06` retained as primary because the benchmark framing remains autonomous bioinformatics / computational biology analysis.
 
+## 2026-07-05 wording harmonization
+
+- Active source-state wording for this note is now: local archived PDF exists at `Reference_PDF/06_Life_Sciences/Li_2025_K_Dense_Analyst.pdf`.
+- Active landed classification wording remains `06;07` with `06` retained as the filing primary.
+- Any older note wording that sounds like local-PDF-unconfirmed or single-module-only should be read as retired historical phrasing rather than the current landed state.
+
 **论文信息**
 - 标题：K-Dense Analyst: Towards Fully Automated Scientific Analysis
 - 作者：Orion Li; Vinayak Agarwal; Summer Zhou; Ashwin Gopinath; Timothy Kassis

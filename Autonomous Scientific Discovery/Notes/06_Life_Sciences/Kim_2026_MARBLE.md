@@ -14,6 +14,12 @@
 
 ## Evidence Log
 
+### 2026-07-05 wording harmonization
+
+- Active source-state wording for this note is now: local archived PDF exists at `Reference_PDF/06_Life_Sciences/Kim_2026_MARBLE.pdf` and the note should no longer read like an abstract-stage or reviewer-pack-only record.
+- Active landed classification wording remains `scientific_object_modules=06;07`, `object_coverage_mode=multi_module`, and `primary_module_for_filing=06`.
+- Any older wording that sounds like provisional single-module `06` body language should be treated as legacy phrasing superseded by the landed multi-module overlay.
+
 ## 2026-06-24 confirmed-core full-reaudit writeback
 
 This writeback aligns the note to the frozen adjudication for `ASD-0669`.

@@ -1,4 +1,9 @@
 # Ma et al. 2026 - ToolsGenie 2.0: A Scalable and Extensible Multi-Agent System for Bioinformatics Automation
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- Frozen landing decision: keep independent `01.04` with `object_coverage_mode=general_method_without_concrete_object_experiments`, `primary_module_for_filing=01`, `general_method_bucket=01.04`, and `source_limited=yes`.
+- Current PDF state: a local archived PDF is present at `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Ma_2026_ToolsGenie_2_Bioinformatics_Automation.pdf`.
+- Note harmonization rule for this file: any older `no local PDF` wording below is superseded by the archived-PDF state above; this writeback does not reopen the adjudicated `source_limited=yes` boundary.
 
 **论文信息**
 - 标题：ToolsGenie 2.0: A Scalable and Extensible Multi-Agent System for Bioinformatics Automation

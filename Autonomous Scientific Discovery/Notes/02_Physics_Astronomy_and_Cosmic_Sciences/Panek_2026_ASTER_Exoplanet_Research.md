@@ -1,12 +1,23 @@
 # Panek et al. 2026 - ASTER: Agentic Science Toolkit for Exoplanet Research
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- `paper_id`: `ASD-0748`
+- Frozen adjudicated modules: `02`
+- `primary_module_for_filing`: `02`
+- Canonical local archived PDF: `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Panek_2026_ASTER_Exoplanet_Research.pdf`
+- `first_hand_sources_checked`: local archived PDF full text (`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Panek_2026_ASTER_Exoplanet_Research.pdf`)
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `source_limited`: `no`
+- Filing note: note location is filing convenience only and does not override the frozen module-`02` adjudication.
+
 **论文信息**
 - 标题：ASTER: Agentic Science Toolkit for Exoplanet Research
 - 作者：Emilie Panek; Alexander Roman; Gaurav Shukla; Leonardo Pagliaro; Katia Matcheva; Konstantin Matchev
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.26953
-- PDF / 本地文件路径：当前未确认本地归档 PDF；本轮已核对官方 arXiv 摘要页 `https://arxiv.org/abs/2603.26953`；推荐 PDF URL：`https://arxiv.org/pdf/2603.26953`
+- PDF / 本地文件路径：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Panek_2026_ASTER_Exoplanet_Research.pdf`；本轮已核对本地归档 PDF 全文，对应官方 arXiv 条目 `https://arxiv.org/abs/2603.26953`
 - 论文类型：研究论文 / exoplanet atmospheric-analysis agent
 - 当前状态：to_read
 - 阅读日期：2026-06-23
@@ -16,12 +27,12 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| 一手来源与归档状态 | 已核对官方 arXiv 摘要页；未确认本地归档 PDF | arXiv abs metadata + abstract | arXiv 条目给出正式标题、作者、摘要与 PDF 入口；当前仓库内未见已落盘 PDF | 高 |
-| Agent 纳入 | 是 | arXiv abs abstract | ASTER 不是单次问答，而是围绕多步科研任务做 workflow planning、tool integration 和 iterative reasoning | 高 |
-| 科学对象归类 | `02`，主落 `02.01.08` 系外行星研究 | arXiv abs abstract | 论文直接写明对象是 exoplanet observations、transmission spectroscopy、exoplanet atmospheres 与 planetary-parameter retrieval | 高 |
-| 方法流程 | exoplanet 领域工具链的端到端编排 | arXiv abs abstract | 系统集成 NASA Exoplanet Archive、TauREx forward model 与 Bayesian retrieval，支持数据获取、前向建模、参数反演与解释 | 高 |
-| 实验 / 任务验证 | 有具体对象案例，非通用空壳 | arXiv abs abstract | 论文以 WASP-39b 完成完整案例，基于 archive 中的多组观测数据执行 retrieval workflow | 高 |
-| 边界判定 | 不是 `01.04` | arXiv abs abstract + 当前分类规则 | 虽然 ASTER 是 orchestration framework，但其工具、任务、案例和输出都稳定锚定在 exoplanet atmosphere characterization，而非无对象通用科研 Agent | 高 |
+| 一手来源与归档状态 | 已核对本地归档 PDF 全文 | local archived PDF full text | 本轮冻结裁决使用 `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Panek_2026_ASTER_Exoplanet_Research.pdf` 作为一手全文来源 | 高 |
+| Agent 纳入 | 是 | local archived PDF full text | ASTER 不是单次问答，而是围绕多步科研任务做 workflow planning、tool integration 和 iterative reasoning | 高 |
+| 科学对象归类 | `02`，主落 `02.01.08` 系外行星研究 | local archived PDF full text | 论文直接写明对象是 exoplanet observations、transmission spectroscopy、exoplanet atmospheres 与 planetary-parameter retrieval | 高 |
+| 方法流程 | exoplanet 领域工具链的端到端编排 | local archived PDF full text | 系统集成 NASA Exoplanet Archive、TauREx forward model 与 Bayesian retrieval，支持数据获取、前向建模、参数反演与解释 | 高 |
+| 实验 / 任务验证 | 有具体对象案例，非通用空壳 | local archived PDF full text | 论文以 WASP-39b 完成完整案例，基于 archive 中的多组观测数据执行 retrieval workflow | 高 |
+| 边界判定 | 不是 `01.04` | local archived PDF full text + 当前分类规则 | 虽然 ASTER 是 orchestration framework，但其工具、任务、案例和输出都稳定锚定在 exoplanet atmosphere characterization，而非无对象通用科研 Agent | 高 |
 
 ## 0. 摘要翻译
 
@@ -86,7 +97,7 @@
 - 判定理由：只要论文已经对具体 exoplanet object workflow 做案例验证，就不应因其“toolkit / orchestration”外观退回通用方法桶
 - 多模块覆盖说明：当前没有独立、稳定的其他科学对象模块证据
 - 01.04 判定说明：不满足 `01.04` 条件，因为论文存在明确的系外行星对象案例和领域工具链
-- 是否需要二次复核：顶层模块不需要；若后续补档 PDF，可再补页码级方法细节
+- 是否需要二次复核：顶层模块不需要；本地归档 PDF 已确认，后续如需可补页码级方法细节，但不影响冻结的 `02` 裁决
 
 ## 3. Agent 系统与科研流程角色
 
@@ -200,7 +211,7 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中
 - 科学贡献类型：system_platform; data_analysis; result_interpretation
-- 证据强度：first_hand_abstract_or_landing_page
+- 证据强度：first_hand_full_text
 - 任务验证总结：本论文最关键的验证不是通用 benchmark，而是以 WASP-39b 为对象，实际跑通 exoplanet atmospheric workflow，足以支撑其稳定归入 `02`，且不是 `01.04`
 
 ## 6. 与已有工作的关系
@@ -226,7 +237,7 @@
 - 可用于哪个表格或图：`02 / 01.04` 边界案例表；天文学对象任务案例表
 - 适合作为代表性案例吗：是
 - 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：后续若补档 PDF 可再补；当前可直接引用 arXiv 摘要中的对象与案例表述
+- 需要在正文中特别引用的页码 / 图 / 表：本地归档 PDF 已可支持对象与案例表述；若正文需要，可后续补充具体页码 / 图 / 表
 - 需要与哪些论文并列比较：同批 `02` 中的 GRACE、QCopilot 等“对象明确而非通用方法桶”的案例
 
 ## 9. 总结
@@ -265,7 +276,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 验证方式：simulation_validation
 交叉属性：computation_driven; data_driven; simulation_driven
 科学贡献类型：system_platform; data_analysis; result_interpretation
-证据强度：first_hand_abstract_or_landing_page
+证据强度：first_hand_full_text
 归类置信度：high
 纳入置信度：high
 推荐引用强度：standard

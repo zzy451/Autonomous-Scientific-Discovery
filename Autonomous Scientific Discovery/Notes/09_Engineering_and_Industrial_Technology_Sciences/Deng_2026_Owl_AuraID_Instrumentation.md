@@ -16,6 +16,17 @@
 - 本轮写回口径：`modules=09`；`primary=09`；`confidence=high`；`source_limited=yes`；`safety_access_status=none`
 - 笔记作者：Codex
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- paper_id: `ASD-0775`
+- final_adjudicated_modules: `09`
+- primary_module_for_filing: `09`
+- canonical_local_pdf: `Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Deng_2026_Owl_AuraID_Instrumentation.pdf`
+- frozen_source_state: `source_limited=no`
+- first_hand_pdf_status: local archived PDF sampled in `Phase6FollowupR20`
+- superseded_note_wording: any older `source_limited=yes`, abstract-only, or no-local-archive wording in this note is superseded by this frozen round update
+- adjudication_note: preserve the stable instrumentation-object landing in module `09`; note location remains filing convenience only
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |

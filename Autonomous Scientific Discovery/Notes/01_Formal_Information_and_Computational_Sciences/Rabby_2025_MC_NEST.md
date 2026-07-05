@@ -1,4 +1,9 @@
 # Rabby 2025 - Iterative Hypothesis Generation for Scientific Discovery with Monte Carlo Nash Equilibrium Self-Refining Trees
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- Frozen landing decision: keep independent `01.04` with `object_coverage_mode=general_method_without_concrete_object_experiments`, `primary_module_for_filing=01`, `general_method_bucket=01.04`, and `source_limited=no`.
+- Current PDF state: the authoritative local archived PDF is `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Rabby_2025_MC_NEST.pdf`.
+- Note harmonization rule for this file: any older wording that says the project had not registered a formal PDF is superseded by the archive-sync state above.
 ## 2026-06-21 archive sync
 
 - Canonical PDF path: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Rabby_2025_MC_NEST.pdf`

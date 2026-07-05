@@ -19,6 +19,12 @@
 - Rationale: `07` remains the filing module because Tippy is framed around drug discovery and the DMTA cycle. The same full-text evidence also supports `03`: the workflow includes molecule generation, synthetic chemistry / synthesis workflow scheduling, HPLC retention-time analysis, purity and yield reporting, and an Appendix COVID drug molecule demonstration derived from Ensitrelvir.
 - Note update: older single-module wording should be interpreted as legacy primary filing only. The chemistry operations are concrete object-level tasks under the relaxed rule, even though the overall research target remains drug discovery.
 
+## 2026-07-05 wording harmonization
+
+- Active landed classification wording for this note remains `scientific_object_modules=07;03`, `object_coverage_mode=multi_module`, and `primary_module_for_filing=07`.
+- Any older wording elsewhere in the note that reads as pure single-`07` or drug-discovery-only should be interpreted as legacy filing emphasis rather than the active landed object coverage.
+- The chemistry-side wording now stays absorbed as parallel `03` coverage without changing the settled `07` filing primary.
+
 ## Evidence Log
 
 证据级别：full-text（arXiv PDF 已读取并抽取文本）。

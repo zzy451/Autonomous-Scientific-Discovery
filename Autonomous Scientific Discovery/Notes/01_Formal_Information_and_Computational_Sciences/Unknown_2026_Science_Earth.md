@@ -23,7 +23,7 @@
 | `06` 模块证据 | 支持 `06` | p.1 摘要；p.4 Case 2 概述 | PDF 直接报告 eight-agent single-cell run、4.88M-cell pan-cancer atlas、REAL / RareShield，以及对 adjacent CCR8-TIGIT+ Treg subset 的 wet-lab anchor，属于单细胞与生命科学对象。 | 高 |
 | `01.04` 边界 | 不进入 `01.04` | p.1 摘要；p.4 案例说明 | 标题与 framing 很像通用 scientific operating system，但全文并非只有平台宣称，而是给出 `01` 与 `06` 的具体对象 run。 | 高 |
 | 验证强度 | 中等偏强 | p.1 摘要；p.4 案例说明 | 论文写明 these cases are a first empirical reading, not a benchmark sweep；说明已有对象级实证，但不应夸大为广泛 benchmark 结论。 | 中 |
-| 旧 note 修订需求 | 需要修订 | 旧 note 对比本轮 PDF | 旧 note 中 `01.04`-only、abstract/HTML-only、未配置本地 PDF 的表述已被本轮本地 PDF 证据推翻。 | 高 |
+| 旧 note 修订状态 | 本轮已完成吸收 | 当前 note 对比本轮 PDF | 旧 note 中 `01.04`-only、abstract/HTML-only、未配置本地 PDF 的表述已由当前本地 PDF 支撑的 `01;06` 写回吸收。 | 高 |
 
 ## 0. 摘要翻译
 
@@ -248,7 +248,7 @@ general_method_bucket：none
 Primary module for filing：01
 是否进入 01.04 存放区：否
 module_assignment_evidence：01 来自 Kuramoto / Ott-Antonsen 理论 run；06 来自 pan-cancer single-cell atlas 与 Treg anchor
-multi_module_object_coverage_note：旧版 01.04-only 表述已失效；平台 framing 不覆盖对象级实验覆盖
+multi_module_object_coverage_note：旧版 `01.04`-only 表述已在本轮落地写回中吸收；平台 framing 不覆盖对象级实验覆盖
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
 科研流程角色：workflow orchestration; tool use and code execution; data analysis; evidence assessment and validation
 自主能力：task_decomposition; planning; tool_use; feedback_iteration; autonomous_decision_making; multi_agent_collaboration

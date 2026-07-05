@@ -19,6 +19,12 @@
 - Source status: `source_limited=no`. Prior safety-only carry-forward is retired and should no longer be treated as active note status.
 - Note update: keep `07` primary for biomedical / therapeutic nanobody discovery while making the additional `06` protein / nanobody life-science coverage explicit.
 
+## 2026-07-05 wording harmonization
+
+- Active source-state wording for this note is now: local archived PDF exists at `Reference_PDF/07_Medical_and_Health_Sciences/Swanson_2025_Virtual_Lab_Nanobodies.pdf` and has been harmonized with the official Nature full text.
+- The landed multi-module wording remains `scientific_object_modules=07;06` with `07` as the filing primary.
+- Any older wording that sounds like no local PDF, safety-hold, or source-state lag should be treated as retired historical phrasing rather than the current repository state.
+
 ## Evidence Log
 
 证据级别：safe official Nature full-text HTML（Batch23Partial1 本轮恢复访问）。

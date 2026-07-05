@@ -1,5 +1,16 @@
 # Patel et al. 2025 - Machine Learning Copilot Agent: An LLM-Guided Workflow for Prognostic Gene Discovery
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0543`
+- `final_adjudicated_modules`: `06;07`
+- `primary_module_for_filing`: `07`
+- `canonical_local_pdf`: `Reference_PDF/06_Life_Sciences/Patel_2025_ML_Copilot_Prognostic_Gene_Discovery.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older safety-supported, dataset-page-only, or `source_limited=yes` wording in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable `06;07` reading with `07` primary; this note remains filed under `06` for convenience only and the note path is not sole classification authority
+
 **论文信息**
 - 标题：Machine Learning Copilot Agent: An LLM-Guided Workflow for Prognostic Gene Discovery
 - 作者：Patel et al.

@@ -8,11 +8,13 @@
 - DOI / URL：https://doi.org/10.1126/science.adk9227
 - 当前状态：to_read；round-2 边界已关闭为 `03;04`，`primary_module_for_filing=03`
 
+- PDF / 鏈湴鏂囦欢璺緞锛歊eference_PDF/03_Chemical_Sciences/StriethKalthoff_2024_Organic_Laser_Emitters.pdf
+
 ## Evidence Log
 
 ## 2026-06-21 relaxed round-2 boundary closure
 
-- `PDF path`: no local archived PDF is stored under `Reference_PDF/` yet. The existing first-hand evidence trail already relied on the official ChemRxiv full-text PDF, but a fresh direct re-download attempt on `2026-06-21` was access-blocked in the current environment.
+- `PDF path`: `Reference_PDF/03_Chemical_Sciences/StriethKalthoff_2024_Organic_Laser_Emitters.pdf` is now present locally. The note should follow the archived-PDF-backed state rather than the older no-local-PDF wording.
 - `current-turn source refresh`: the PubMed final record for DOI `10.1126/science.adk9227` / PMID `38753786` was rechecked on `2026-06-21` and remains consistent with the accepted `03;04` multi-module closure.
 
 - `first_hand_sources_checked`: PubMed final paper record for DOI `10.1126/science.adk9227`; official ChemRxiv landing page and full-text PDF; official Zenodo dataset; official Acceleration Consortium project/news page; official GitHub repository `aspuru-guzik-group/acdc_laser`.

@@ -1,5 +1,16 @@
 # Jiang et al. 2026 - GALILEO: Embodied AI scientist for autonomous therapeutic discovery in dynamic membrane systems
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0531`
+- `final_adjudicated_modules`: `06;07`
+- `primary_module_for_filing`: `07`
+- `canonical_local_pdf`: `Reference_PDF/07_Medical_and_Health_Sciences/Jiang_2026_GALILEO_Therapeutic_Discovery.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older Crossref-only, blocked-landing, or `source_limited=yes` wording in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable `06;07` reading with `07` primary; this record is now local-PDF-backed rather than abstract-only
+
 ## 2026-06-23 Batch16 partial-9 closeout
 
 This round closes the record as source-limited `06;07` with `07` primary.

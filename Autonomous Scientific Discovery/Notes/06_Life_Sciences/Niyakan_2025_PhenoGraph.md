@@ -11,7 +11,7 @@
 - 年份：2025
 - 来源 / venue：Workshop on Generative AI for Biology at ICML 2025, PMLR 267；bioRxiv
 - DOI / arXiv / URL：https://openreview.net/forum?id=4aa39a777762cc61ac3ba7dbbe09960c043918ea；bioRxiv: https://doi.org/10.1101/2025.06.06.658341
-- PDF / 本地文件路径：临时读取 OpenReview PDF，未保存至项目目录
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Niyakan_2025_PhenoGraph.pdf`
 - 论文类型：系统论文 / omics discovery Agent
 - 当前状态：已读全文文本；已纳入；round-2 边界已关闭为 `06;07`，`primary_module_for_filing=06`
 - 阅读日期：2026-06-15
@@ -28,7 +28,7 @@
 - Why: the system's core workflow remains phenotype-driven spatial-transcriptomics / TME analysis, which keeps `06` as the filing module. At the same time, the breast-carcinoma tumor-vs-normal case and the PDAC survival-phenotype case use TCGA clinical metadata, patient prognosis, clinically aggressive tumor-region localization, and prognostic spatial biomarkers, which is enough to add `07` under the relaxed object-coverage rule.
 - Note implication: this note should no longer keep `07` as merely a tentative future possibility. The current first-hand full-text evidence is already sufficient to close the `06/07` boundary as `06;07`.
 
-**证据级别**：full-text（OpenReview PDF 已下载到临时目录并转文本核读；未保存到项目目录）
+**证据级别**：full-text（OpenReview PDF 已归档到项目 `Reference_PDF/06_Life_Sciences/Niyakan_2025_PhenoGraph.pdf` 并转文本核读）
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

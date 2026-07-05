@@ -1,5 +1,18 @@
 # Lin et al. 2025 - A high-throughput experimentation platform for data-driven discovery in electrochemistry
 
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- `paper_id`: `ASD-0519`
+- `scientific_object_modules`: `03;04`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `03`
+- `general_method_bucket`: `none`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: local archived PMC PDF; PMC article landing / full text
+- `pdf_path`: `Reference_PDF/03_Chemical_Sciences/Lin_2025_High_Throughput_Electrochemistry_Discovery.pdf`
+
+This R22 harmonization keeps the existing `03;04` classification and retires stale no-local-PDF wording. The note path under `03` remains a filing convenience and does not override the authoritative multi-module state.
+
 **论文信息**
 - 标题：A high-throughput experimentation platform for data-driven discovery in electrochemistry
 - 作者：Lin et al.

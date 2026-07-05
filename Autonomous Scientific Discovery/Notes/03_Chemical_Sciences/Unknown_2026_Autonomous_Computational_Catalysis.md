@@ -1,5 +1,18 @@
 # Unknown 2026 - Autonomous computational catalysis through an agentic research system
 
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- `paper_id`: `ASD-0664`
+- `scientific_object_modules`: `03;04`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `03`
+- `general_method_bucket`: `none`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: local archived arXiv PDF; arXiv HTML full text v1; official CatMaster repo
+- `pdf_path`: `Reference_PDF/03_Chemical_Sciences/Unknown_2026_Autonomous_Computational_Catalysis.pdf`
+
+This R22 harmonization keeps the chemistry-primary / materials-secondary overlay and retires stale no-local-PDF wording. The note's filing directory remains subordinate to the authoritative `03;04` decision.
+
 **论文信息**
 - 标题：Autonomous computational catalysis through an agentic research system
 - 作者：Unknown

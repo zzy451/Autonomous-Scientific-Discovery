@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：Nature
 - DOI / arXiv / URL：https://doi.org/10.1038/s41586-026-10265-5
-- PDF / 本地文件路径：本轮未归档本地 PDF；已核对 Nature DOI 页面上的 publisher abstract / full text
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Lu_2026_End_to_End_AI_Research.pdf`；本轮重开本地归档 PDF，并交叉核对 Nature DOI 页面上的 publisher abstract / full text
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：已读（本轮核对一手来源）；主列表流程状态仍可保持 `to_read`
 - 阅读日期：2026-06-23
@@ -64,7 +64,7 @@
 
 ## 7. 局限性与风险
 
-- 本轮未新增本地 PDF 归档
+- 当前本地归档 PDF 已存在，并已与 Nature DOI 页面上的 publisher abstract / full text 交叉核对
 - 主要风险不是是否属于 `01.04`，而是后续若做更细粒度二级类迁移，需统一处理 `01` 与 `11.07` 的展示写法
 
 ## 8. 对综述写作的价值
@@ -88,7 +88,7 @@ has_concrete_object_experiments：yes
 general_method_bucket：none
 primary_module_for_filing：01
 first_hand_sources_checked：Nature DOI 10.1038/s41586-026-10265-5 publisher abstract / full text
-local_pdf_archived_this_round：no
+local_pdf_archived_this_round：yes
 归类置信度：高
 推荐引用强度：core
 ```

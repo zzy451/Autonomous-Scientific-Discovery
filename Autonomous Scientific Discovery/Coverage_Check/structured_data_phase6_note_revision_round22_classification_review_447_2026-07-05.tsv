@@ -1,0 +1,31 @@
+paper_id	final_agent_inclusion	supported_modules	final_01_04_bucket	primary_module_for_filing	boundary_type	confidence	source_limited	safety_access_status	note_revision_required	master_update_required	final_reason
+ASD-0541	yes	none	01.04	01	note_aligned_low_risk	high	yes	ok	no	no	Current note already matches the independent 01.04 authoritative state closely enough; no note writeback is required beyond optional light confirmation.
+ASD-0572	yes	04;06	none	04	note_aligned_low_risk	high	yes	ok	no	no	Current note already matches the stable 04;06 multi-module authoritative state and source-limited ceiling; no round writeback is required.
+ASD-0553	yes	none	01.04	01	stale_pdf_status_only	high	yes	ok	yes	no	Authoritative 01.04 state is stable, but the note still says no local PDF despite the current archived-PDF state, so note-only wording refresh is justified.
+ASD-0005	yes	03;04	none	03	note_aligned_low_risk	high	yes	ok	no	no	Current note already preserves 03;04 plus source-limited access truth without obvious stale 01.04 or single-module drift.
+ASD-0006	yes	none	01.04	01	stale_abstract_only_tail	high	no	ok	yes	no	Top-level archive-sync wording is current, but the note body still retains old abstract-only/full-text-follow-up pressure that should be cleared in a note-only refresh.
+ASD-0040	yes	none	01.04	01	note_aligned_low_risk	high	no	ok	no	no	Current note remains aligned to the stable 01.04 authoritative state and does not require a round writeback.
+ASD-0004	yes	01;03;06;09;10	none	01	stale_01_04_tail	high	no	ok	yes	no	The relaxed multi-module overlay is now stable, but the structured tail still preserves old 01.04-only wording and should be harmonized.
+ASD-0053	yes	none	01.04	01	note_aligned_low_risk	high	no	ok	no	no	Current note still correctly treats the ML task as evaluation carrier rather than object-module evidence, so 01.04 remains aligned.
+ASD-0059	yes	none	01.04	01	stale_pdf_registration	high	no	ok	yes	no	The note now acknowledges archived PDF support inconsistently; refresh is needed so note PDF wording fully matches current authoritative archive state.
+ASD-0062	yes	01;02;04	none	01	stale_01_04_body_conflict	high	no	ok	yes	no	Top-level override is current, but section 2 and evidence text still argue for 01.04, creating an internal conflict that should be resolved by note-only harmonization.
+ASD-0069	yes	01;11	none	01	stale_01_04_body_conflict	high	no	ok	yes	no	Archive-sync is current, but lower sections still read as a 01.04-only general-method paper rather than the settled 01;11 authoritative state.
+ASD-0111	yes	none	01.04	01	note_aligned_low_risk	high	no	ok	no	no	Current note remains aligned to the stable independent 01.04 authoritative state without meaningful stale pressure.
+ASD-0145	yes	none	01.04	01	note_aligned_low_risk	high	no	ok	no	no	Current note correctly preserves the 01.04 reading and does not drift into 11.07 or another object module.
+ASD-0523	yes	01;11	none	01	stale_pdf_status_only	high	no	ok	yes	no	Classification is already aligned, but the note still says no local PDF / non-archived source wording, which is now stale.
+ASD-0530	yes	none	01.04	01	stale_pdf_and_filing_wording	high	no	ok	yes	no	Current authoritative state is independent 01.04 with filing primary 01, but the note still contains old no-local-PDF and filing wording drift.
+ASD-0662	yes	03;05;06;11	none	01	stale_pdf_status_only	high	no	ok	yes	no	Multi-module classification is already aligned, but PDF/source wording has not caught up to the current archived-PDF authoritative state.
+ASD-0671	yes	01;02;06	none	01	stale_pdf_status_only	high	no	ok	yes	no	Classification is aligned, but the note still says no local archived PDF, leaving stale source-depth pressure.
+ASD-0676	yes	01;06;07	none	01	stale_pdf_status_only	high	no	ok	yes	no	Classification is aligned, but the note still says only HTML full text / no local archived PDF, which is no longer truthful.
+ASD-0056	yes	03;04	none	03	stale_pdf_status_only	high	no	ok	yes	no	03;04 classification is stable, but the note still claims no local archived PDF and should be harmonized.
+ASD-0091	yes	03;04	none	03	note_aligned_low_risk	high	no	ok	no	no	Current note is already well aligned, with local PDF and 03;04 override clearly written.
+ASD-0093	yes	03;04;07	none	03	note_aligned_low_risk	high	no	ok	no	no	Top-level archive-sync already supersedes older wording and current note is sufficiently aligned for this round.
+ASD-0158	yes	03	none	03	note_aligned_low_risk	high	yes	ok	no	no	Current note truthfully preserves 03 plus source-limited/no-local-PDF status without overclaiming access.
+ASD-0519	yes	03;04	none	03	stale_pdf_status_only	high	no	ok	yes	no	Classification is aligned, but the note still says no local PDF even though the current authoritative state has archived PDF support.
+ASD-0664	yes	03;04	none	03	stale_pdf_status_only	high	no	ok	yes	no	Multi-module classification is aligned, but archived-PDF wording in the note has not been refreshed to current truth.
+ASD-0787	yes	03;04;06	none	03	stale_01_04_body_conflict	high	no	ok	yes	no	Top-level closure is current, but the body still repeatedly argues 01/01.04 and no-local-PDF, making this one of the clearest note-drift cases in the round.
+ASD-0060	yes	03;04;07	none	04	stale_01_04_body_conflict	high	no	ok	yes	no	Top-level archive-sync is current, but the body still treats 01.04 as final and says no saved PDF, so note-only harmonization is required.
+ASD-0096	yes	03;04;07	none	04	note_aligned_low_risk	high	no	ok	no	no	Current note already aligns well with the authoritative multi-module state and archived-PDF truth.
+ASD-0151	yes	02;04	none	04	note_aligned_low_risk	high	no	ok	no	no	Current note is already aligned to 02;04, archived publisher PDF, and filing-only path semantics.
+ASD-0516	yes	04;09	none	04	stale_pdf_status_only	high	no	ok	yes	no	Classification is aligned, but the note still says no newly archived local PDF / no archive-path backfill, which now conflicts with current truth.
+ASD-0525	yes	03;04	none	04	stale_pdf_status_only	high	no	ok	yes	no	03;04 override is already correct, but the note still claims no local archived PDF and should be refreshed.

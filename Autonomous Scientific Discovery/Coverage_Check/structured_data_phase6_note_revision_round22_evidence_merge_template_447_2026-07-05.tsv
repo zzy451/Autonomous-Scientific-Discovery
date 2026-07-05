@@ -1,0 +1,31 @@
+paper_id	title	evidence_agent	note_path	current_authoritative_anchor	main_wording_risk	needs_note_revision	safe_for_note_only_landing	must_escalate_to_controller	short_reason	suggested_refresh_sections
+ASD-0541	PromptBio: A Multi-Agent AI Platform for Bioinformatics Data Analysis	Evidence-Agent-A	Notes/06_Life_Sciences/Zhang_2025_PromptBio_Bioinformatics.md							
+ASD-0572	Autonomous discovery of functional random heteropolymer blends through evolutionary formulation optimization	Evidence-Agent-A	Notes/04_Materials_Science/Wu_2025_Random_Heteropolymer_Blends.md							
+ASD-0553	ToolsGenie 2.0: A Scalable and Extensible Multi-Agent System for Bioinformatics Automation	Evidence-Agent-A	Notes/01_Formal_Information_and_Computational_Sciences/Ma_2026_ToolsGenie_2_Bioinformatics_Automation.md							
+ASD-0005	A Multiagent-Driven Robotic AI Chemist Enabling Autonomous Chemical Research On Demand	Evidence-Agent-A	Notes/03_Chemical_Sciences/Song_2025_Robotic_AI_Chemist.md							
+ASD-0006	DORA AI Scientist: Multi-agent Virtual Research Team for Scientific Exploration Discovery and Automated Report Generation	Evidence-Agent-A	Notes/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.md							
+ASD-0040	Researchagent: Iterative research idea generation over scientific literature with large language models, 2025	Evidence-Agent-A	Notes/01_Formal_Information_and_Computational_Sciences/Baek_2025_ResearchAgent.md							
+ASD-0004	InternAgent: When Agent Becomes the Scientist -- Building Closed-Loop System from Hypothesis to Verification	Evidence-Agent-A	Notes/01_Formal_Information_and_Computational_Sciences/InternAgentTeam_2025_InternAgent.md							
+ASD-0053	Towards autonomous hypothesis verification via language models with minimal guidance	Evidence-Agent-A	Notes/01_Formal_Information_and_Computational_Sciences/Takagi_2023_Autonomous_Hypothesis_Verification.md							
+ASD-0059	Iterative hypothesis generation for scientific discovery with monte carlo nash equilibrium self-refining trees, 2025	Evidence-Agent-A	Notes/01_Formal_Information_and_Computational_Sciences/Rabby_2025_MC_NEST.md							
+ASD-0062	Empowering scientific workflows with federated agents	Evidence-Agent-A	Notes/01_Formal_Information_and_Computational_Sciences/Pauloski_2026_Federated_Agents.md							
+ASD-0069	The ai scientist: Towards fully automated open-ended scientific discovery	Evidence-Agent-B	Notes/01_Formal_Information_and_Computational_Sciences/Lu_2024_AI_Scientist.md							
+ASD-0111	SciMaster: Towards general-purpose scientific AI agents, Part I. X-Master as foundation: Can we lead on Humanity's Last Exam?	Evidence-Agent-B	Notes/01_Formal_Information_and_Computational_Sciences/Chai_2025_SciMaster.md							
+ASD-0145	CycleResearcher: Improving automated research via automated review	Evidence-Agent-B	Notes/01_Formal_Information_and_Computational_Sciences/Weng_2025_CycleResearcher.md							
+ASD-0523	Towards end-to-end automation of AI research	Evidence-Agent-B	Notes/01_Formal_Information_and_Computational_Sciences/Lu_2026_End_to_End_AI_Research.md							
+ASD-0530	Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems	Evidence-Agent-B	Notes/01_Formal_Information_and_Computational_Sciences/Yue_2025_Hierarchical_AI_Scientist_Systems.md							
+ASD-0662	Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research	Evidence-Agent-B	Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2026_Mimosa_Framework.md							
+ASD-0671	AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration	Evidence-Agent-B	Notes/01_Formal_Information_and_Computational_Sciences/Liu_2026_AutoResearchClaw.md							
+ASD-0676	AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle	Evidence-Agent-B	Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoSci.md							
+ASD-0056	Delocalized, asynchronous, closed-loop discovery of organic laser emitters	Evidence-Agent-B	Notes/03_Chemical_Sciences/StriethKalthoff_2024_Organic_Laser_Emitters.md							
+ASD-0091	Agentic mixture-of-workflows for multi-modal chemical search	Evidence-Agent-B	Notes/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.md							
+ASD-0093	Augmenting large language models with chemistry tools	Evidence-Agent-C	Notes/03_Chemical_Sciences/Bran_2024_ChemCrow.md							
+ASD-0158	A robotic platform for flow synthesis of organic compounds informed by AI planning	Evidence-Agent-C	Notes/03_Chemical_Sciences/Coley_2019_Flow_Synthesis_AI_Planning.md							
+ASD-0519	A high-throughput experimentation platform for data-driven discovery in electrochemistry	Evidence-Agent-C	Notes/03_Chemical_Sciences/Lin_2025_High_Throughput_Electrochemistry_Discovery.md							
+ASD-0664	Autonomous computational catalysis through an agentic research system	Evidence-Agent-C	Notes/03_Chemical_Sciences/Unknown_2026_Autonomous_Computational_Catalysis.md							
+ASD-0787	SciToolAgent: a knowledge-graph-driven scientific agent for multitool integration	Evidence-Agent-C	Notes/01_Formal_Information_and_Computational_Sciences/Ding_2025_SciToolAgent.md							
+ASD-0060	Piflow: Principle-aware scientific discovery with multi-agent collaboration	Evidence-Agent-C	Notes/01_Formal_Information_and_Computational_Sciences/Pu_2026_PiFlow.md							
+ASD-0096	dziner: Rational inverse design of materials with ai agents	Evidence-Agent-C	Notes/04_Materials_Science/Ansari_2024_dZiner.md							
+ASD-0151	Self-driving lab discovers principles for steering spontaneous emission beyond conventional Fourier optics	Evidence-Agent-C	Notes/04_Materials_Science/Desai_2026_Spontaneous_Emission_SDL.md							
+ASD-0516	A self-driving physical vapor deposition system making sample-specific decisions on the fly	Evidence-Agent-C	Notes/04_Materials_Science/Zheng_2025_Self_Driving_PVD_System.md							
+ASD-0525	TeLLAgent: a dual-agent framework for reliable scientific discovery with tool-enhanced LLMs	Evidence-Agent-C	Notes/01_Formal_Information_and_Computational_Sciences/Sun_2026_TeLLAgent.md							

@@ -12,6 +12,17 @@
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- paper_id: `ASD-0655`
+- final_adjudicated_modules: `11`
+- primary_module_for_filing: `11`
+- canonical_local_pdf: `Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Chang_2025_TreeReview.pdf`
+- frozen_source_state: `source_limited=no`
+- first_hand_pdf_status: local archived PDF sampled in `Phase6FollowupR20`
+- superseded_note_wording: any older source-limited or abstract-led phrasing is superseded by this frozen round update
+- adjudication_note: preserve the stable scientific-peer-review / `11.07` reading; note location remains filing convenience only
+
 ## Evidence Log
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |

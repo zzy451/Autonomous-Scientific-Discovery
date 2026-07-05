@@ -6,9 +6,9 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.22148
-- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2603.22148`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check
+- PDF / 本地文件路径：`Reference_PDF/05_Earth_and_Environmental_Sciences/Zhao_2026_OpenEarth_Agent.pdf`；当前笔记基于项目内归档 PDF、arXiv abstract 与 PDF text spot-check
 - 论文类型：预印本 / Earth observation agent system
-- 当前状态：to_read
+- 当前状态：已完成归档 PDF 同步写回
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -16,18 +16,18 @@
 
 ## Reaudit Update (2026-06-23)
 
-- `scientific_object_modules`: `05;08;11.02`
+- `scientific_object_modules`: `05;08;11`
 - `object_coverage_mode`: `multi_module`
 - `primary_module_for_filing`: `05`
 - `source_limited`: `no`
-- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
-- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2603.22148`
-- `final_note_classification`: primary `05`, with additional supported modules `08` and `11.02`; note filing path is convenience only, not classification authority.
+- `first_hand_sources_checked`: 项目内归档 PDF + arXiv abstract + arXiv PDF text spot-check
+- `pdf_status`: archived project PDF `Reference_PDF/05_Earth_and_Environmental_Sciences/Zhao_2026_OpenEarth_Agent.pdf`
+- `final_note_classification`: primary `05`, with additional supported modules `08` and `11`; note filing path is convenience only, not classification authority.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | 系统具备 adaptive workflow planning 与 tool creation，不是单轮 EO 问答 | 高 |
-| 科学对象归类 | `05;08;11.02` | arXiv abstract / PDF text spot-check | 论文以 open-environment Earth observation 为 primary object，同时 benchmark / use-case objects 还显式覆盖 agriculture 与 socio-economic / population-system tasks | 高 |
+| 科学对象归类 | `05;08;11` | 项目内归档 PDF；arXiv abstract / PDF text spot-check | 论文以 open-environment Earth observation 为 primary object，同时 benchmark / use-case objects 还显式覆盖 agriculture 与 socio-economic / population-system tasks | 高 |
 | 方法流程 | 多 Agent 闭环 | HTML | Data Summary、Planning、Workflow、Coding、Checking 五类 agents 协同完成任务 | 高 |
 | 工具与对象绑定 | 很强 | HTML / GitHub | GEE、gdal、rasterio、geopandas、PySAL 与多源遥感数据深度绑定 EO 分析 | 高 |
 | 实验验证 | benchmark + cross-benchmark | abstract / HTML | OpenEarth-Bench 有 596 个真实案例，并在 Earth-Bench 上与大量专用工具系统对比 | 高 |
@@ -64,8 +64,8 @@
 
 ### 2.1 主科学领域
 
-- 一级类：05（primary；additional supported modules: 08, 11.02）
-- 二级类：05.04（primary Earth observation）；08；11.02
+- 一级类：05（primary；additional supported modules: 08, 11）
+- 二级类：05.04（primary Earth observation）；08；11
 - 三级类：Earth observation 与地理空间分析
 - 四级专题：open-environment EO tool-creation agents
 - 四级专题是否为新增：否
@@ -81,7 +81,7 @@
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04
-- 最终判定：`05;08;11.02`（primary=`05`）
+- 最终判定：`05;08;11`（primary=`05`）
 - 判定理由：OpenEarth-Bench、Earth-Bench、EO tools 与任务定义都不是领域无关平台证据
 - 是否需要二次复核：否
 
@@ -197,13 +197,13 @@
 - 科学贡献是否经过验证：是
 - 贡献强度判断：中高
 - 科学贡献类型：系统平台
-- 证据强度：以一手 abstract / HTML 为主
+- 证据强度：以项目内归档 PDF + 一手 arXiv abstract / HTML 为主
 
 ## 6. 与已有工作的关系
 
 - 与普通 AI for Science 方法的区别：关键不是普通 EO 多模态问答，而是能主动创建工具的 workflow agent
 - 与已有 Agent / 科研智能系统的区别：强调从 tool calling 走向 tool creation
-- 与同一科学领域其他 Agent 文献的关系：可与 Earth-Agent、CMIP-Forge、EarthLink 一起构成以 `05` 为 primary、同时允许 `08` 与 `11.02` object coverage 的平台感较强样本
+- 与同一科学领域其他 Agent 文献的关系：可与 Earth-Agent、CMIP-Forge、EarthLink 一起构成以 `05` 为 primary、同时允许 `08` 与 `11` object coverage 的平台感较强样本
 - 主要创新点：在 EO 场景中把 workflow planning、tool creation 和 geoscientific checking 统一起来
 
 ## 7. 局限性与风险
@@ -244,8 +244,8 @@
 ```text
 是否纳入：是
 主类：05（primary）
-二级类：05.04（primary）；08；11.02
-scientific_object_modules：05;08;11.02
+二级类：05.04（primary）；08；11
+scientific_object_modules：05;08;11
 三级类：Earth observation 与地理空间分析
 四级专题：open-environment EO tool-creation agents
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent
@@ -254,7 +254,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven; data_driven; multimodal
 科学贡献类型：system_platform
-证据强度：medium_high_primary_abstract
+证据强度：first_hand_preprint_pdf_review_packet
 归类置信度：高
 纳入置信度：高
 推荐引用强度：核心引用

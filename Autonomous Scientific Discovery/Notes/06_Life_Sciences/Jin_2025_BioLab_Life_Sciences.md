@@ -1,5 +1,16 @@
 # Jin et al. 2025 - BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models
 
+## Phase6FollowupR20 Frozen Adjudication
+
+- `paper_id`: `ASD-0745`
+- `final_adjudicated_modules`: `06;07`
+- `primary_module_for_filing`: `06`
+- `canonical_local_pdf`: `Reference_PDF/06_Life_Sciences/Jin_2025_BioLab_Life_Sciences.pdf`
+- `frozen_source_state`: `source_limited=no`
+- `first_hand_pdf_status`: local archived PDF sampled in `Phase6FollowupR20`
+- `superseded_note_wording`: any older Crossref-only, `403`-blocked, or `source_limited=yes` wording in this note is superseded by this frozen round update
+- `adjudication_note`: preserve the stable `06;07` reading with `06` primary while making the therapeutic-validation support for `07` explicitly first-hand full-text-backed
+
 ## 2026-06-24 confirmed-core full reaudit revision
 
 ```text

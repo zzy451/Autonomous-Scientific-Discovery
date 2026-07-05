@@ -14,6 +14,12 @@
 
 ## Evidence Log
 
+### 2026-07-05 wording harmonization
+
+- Active source-state wording for this note is now: local archived PDF exists at `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoScientists.pdf`.
+- Active landed classification wording remains `scientific_object_modules=01;06;07`, `object_coverage_mode=multi_module`, and `primary_module_for_filing=06`.
+- The current note path under `01` should be read as historical filing residue only; it is not active evidence for a `01.04`-style or `01`-primary reading.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract；HTML full text v1 | 系统强调 self-organizing agent teams、长期实验、记忆与失败回顾，满足多步 Agent 标准 | 高 |

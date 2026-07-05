@@ -1,0 +1,31 @@
+paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
+ASD-0737	authoritative_land	authoritative_plus_note	01	none	01	no	yes	yes	Concrete 01 is supportable from local full text; clear stale abstract-only/no-local-PDF pressure without expanding extra modules.
+ASD-0738	authoritative_land	authoritative_plus_note	01	none	01	no	yes	yes	Full-text-backed AI model-discovery object makes current 01 stable and suitable for note/master refresh.
+ASD-0549	authoritative_land	authoritative_plus_note	02	none	02	no	yes	yes	Inflationary-cosmology object is stable and stale no-local-PDF wording can be cleared.
+ASD-0567	authoritative_land	authoritative_plus_note	02	none	02	no	yes	yes	Astronomy measurement object is strongly supported and current authority can be refreshed.
+ASD-0613	authoritative_land	authoritative_plus_note	02	none	02	no	yes	yes	Autonomous STEM physics-discovery object is stable in 02 and stale non-full-text wording can be retired.
+ASD-0707	conservative_hold	evidence_only	02	none	02	no	no	no	Keep conservative because the paper remains framework-heavy with modest demonstrated scope despite stable class direction.
+ASD-0748	authoritative_land	authoritative_plus_note	02	none	02	no	yes	yes	Exoplanet-research case evidence is strong enough to clear stale local-PDF and abstract-only pressure.
+ASD-0750	authoritative_land	authoritative_plus_note	02	none	02	no	yes	yes	Particle-physics experiment-design object remains 02 and current stale authority wording can be refreshed.
+ASD-0734	authoritative_land	authoritative_plus_note	03	none	03	no	yes	yes	Chemical-reactivity-discovery object is clear and can be landed with full-text-backed note cleanup.
+ASD-0535	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Inorganic-materials design object is stable and stale no-local-PDF wording can be cleared.
+ASD-0570	conservative_hold	evidence_only	04	none	04	no	no	no	Object is clear and already stable; this round does not need duplicate authoritative landing.
+ASD-0571	conservative_hold	evidence_only	04	none	04	no	no	no	Object is clear and already stable; this round does not need duplicate authoritative landing.
+ASD-0614	conservative_hold	evidence_only	04	none	04	no	no	no	Object is clear and already stable; this round does not need duplicate authoritative landing.
+ASD-0635	conservative_hold	evidence_only	05	none	05	no	no	no	Object is clear and already stable; this round does not need duplicate authoritative landing.
+ASD-0651	conservative_hold	evidence_only	05;11	none	05	no	no	no	Keep conservative because the 05;11 multi-module boundary remains conceptually sensitive despite stable direction.
+ASD-0725	conservative_hold	evidence_only	05	none	05	no	no	no	Object is clear and already stable; this round does not need duplicate authoritative landing.
+ASD-0728	conservative_hold	evidence_only	06	none	06	no	no	no	Object is clear and already stable; this round does not need duplicate authoritative landing.
+ASD-0729	conservative_hold	evidence_only	06	none	06	no	no	no	Object is clear and already stable; this round does not need duplicate authoritative landing.
+ASD-0731	conservative_hold	evidence_only	03;06;07	none	06	no	no	no	Keep conservative because the dataset-driven 03;06;07 expansion remains the slice's most boundary-sensitive multi-module case.
+ASD-0526	conservative_hold	evidence_only	09	none	09	no	no	no	Object is clear and already stable; this round does not need duplicate authoritative landing.
+ASD-0747	authoritative_land	authoritative_plus_note	09	none	09	no	yes	yes	Finite-element-analysis object is stable and stale abstract-only/non-full-text authority pressure can be cleared now.
+ASD-0749	authoritative_land	authoritative_plus_note	09	none	09	no	yes	yes	Topology-optimization engineering-design object is stable and stale authority wording can be refreshed now.
+ASD-0753	authoritative_land	authoritative_plus_note	09	none	09	no	yes	yes	2D-frame structural-analysis object is stable and stale no-local-PDF/abstract wording can be cleared now.
+ASD-0754	authoritative_land	authoritative_plus_note	09	none	09	no	yes	yes	Structural-engineering workflow object is stable and stale abstract-level authority wording can be refreshed now.
+ASD-0647	conservative_hold	evidence_only	10	none	10	no	no	no	Current authority is already full-paper-backed enough; no additional landing is needed this round.
+ASD-0648	conservative_hold	evidence_only	10	none	10	no	no	no	Class direction is stable and the remaining issue is core-strength rather than source-state or class drift.
+ASD-0625	authoritative_land	authoritative_plus_note	11	none	11	no	yes	yes	Scientific peer-review generation/evaluation is stable in 11 and stale abstract-based authority can be cleared now.
+ASD-0626	authoritative_land	authoritative_plus_note	11	none	11	no	yes	yes	Investigative scientific peer review is stable in 11 and stale non-full-text authority wording can be updated now.
+ASD-0629	conservative_hold	evidence_only	11	none	11	no	no	no	Current authority is already strong enough; no additional landing is needed this round.
+ASD-0636	conservative_hold	evidence_only	11	none	11	no	no	no	Current authority is already strong enough; no additional landing is needed this round.

@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.28986
-- PDF / 本地文件路径：当前未配置本地 PDF；本 note 依据本轮 reviewer evidence pack 中已核对的 arXiv PDF 更新
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_Mimosa_Framework.pdf`；本轮重开本地归档 arXiv PDF，并据此同步 note
 - 论文类型：系统论文 / Agent 论文
 - 当前状态：to_read
 - 阅读日期：2026-06-24
@@ -24,7 +24,7 @@
 - `source_limited`: `no`
 - `safety_access_status`: `accessed_no_safety_issue`
 - `final_reason`: Official PDF benchmark evidence supports concrete bioinformatics, chemistry, GIS, and psychology / cognitive-neuroscience task coverage.
-- `writeback_note`: 删除旧的 `01.04`-only 口径；目录仍放在 `01` 仅是 filing convenience，不是分类权威。
+- `writeback_note`: 删除旧的 `01.04`-only 口径；目录仍放在 `01` 仅是 filing convenience，不是分类权威；本地归档 PDF 已存在并已重开核对。
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

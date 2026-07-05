@@ -1,0 +1,31 @@
+paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
+ASD-0005	conservative_hold	evidence_only	03;04	none	03	yes	no	no	Keep the stable multi-module reading, but this round does not add authoritative value without readable full text or a clearer source-state improvement.
+ASD-0158	conservative_hold	evidence_only	03	none	03	yes	no	no	The classification is already stable and the current pass mainly reconfirms source-limited chemistry-object evidence.
+ASD-0097	conservative_hold	evidence_only	06	none	06	yes	no	no	The current master/progress state already reflects the stable 06 landing; this round adds evidence strength but no controller-frozen authoritative delta.
+ASD-0112	conservative_hold	evidence_only	03	none	03	yes	no	no	The current master/progress state already reflects the stable 03 landing; keep the new evidence as support rather than forcing a duplicate authoritative pass.
+ASD-0603	conservative_hold	evidence_only	03	none	03	yes	no	no	The chemistry-object reading is reaffirmed, but there is no sufficiently concrete new authoritative delta to land this round.
+ASD-0547	conservative_hold	evidence_only	04	none	04	yes	no	no	Metadata-level evidence is enough to keep a conservative 04 reading, but too thin for a controller-authorized writeback this round.
+ASD-0569	conservative_hold	evidence_only	04	none	04	yes	no	no	The material-object landing is stable, but source-limited remains unchanged and no new authoritative delta needs landing now.
+ASD-0572	conservative_hold	evidence_only	04;06	none	04	yes	no	no	Multi-module support is stable, but the paper remains clearly source-limited and does not need a forced authoritative rewrite in this round.
+ASD-0727	conservative_hold	evidence_only	05	none	05	yes	no	no	The geospatial Earth-observation object is stable, but the current round does not change the authoritative source-limited state.
+ASD-0859	conservative_hold	evidence_only	05	none	05	yes	no	no	The volcanism reading is stable and truthful under source-limited handling; no authoritative delta beyond evidence confirmation is required now.
+ASD-0860	conservative_hold	evidence_only	05	none	05	yes	no	no	The current progress/master state already matches a stable 05 source-limited reading.
+ASD-0861	conservative_hold	evidence_only	05	none	05	yes	no	no	The current progress/master state already matches a stable 05 source-limited reading.
+ASD-0617	conservative_hold	evidence_only	06	none	06	yes	no	no	The protein-evolution object remains stable, but this round does not materially change the authoritative source-state.
+ASD-0724	conservative_hold	evidence_only	06	none	06	yes	no	no	The coral-reef biodiversity reading is supported, but evidence is still snippet-level and the current authoritative state is already conservative.
+ASD-0536	authoritative_land	authoritative_plus_note	07	none	07	no	yes	yes	The official publisher page now exposes sufficiently strong first-hand article evidence to clear source-limited while keeping the stable 07 landing.
+ASD-0544	authoritative_land	authoritative_plus_note	07	none	07	no	yes	yes	The official IEEE document page plus visible PDF route materially improve the source state, so this round clears source-limited while preserving 07.
+ASD-0858	authoritative_land	authoritative_plus_note	10	none	10	no	yes	yes	The official AIAA result snippet plus surfaced PDF route strengthen first-hand support enough to clear source-limited while keeping a stable 10 mission-operations landing.
+ASD-0855	authoritative_land	authoritative_plus_note	11	none	11	no	yes	yes	The official ScienceDirect page now provides strong first-hand abstract-level support for the 11.07 peer-review object, so source-limited can be cleared truthfully.
+ASD-0508	conservative_hold	evidence_only	03	none	03	no	no	no	The current authoritative state is already stronger than this round needs; no further writeback is necessary.
+ASD-0565	conservative_hold	evidence_only	04	none	04	yes	no	no	The alloy object is stable, but the evidence remains too thin to justify a new authoritative pass.
+ASD-0631	conservative_hold	evidence_only	04	none	04	yes	no	no	The polymer-electrolyte materials reading is supported, but the round does not create a concrete authoritative delta beyond reconfirmation.
+ASD-0381	conservative_hold	evidence_only	03	none	03	no	no	no	The authoritative state already reflects accessible HTML/supplementary first-hand evidence; no writeback is needed.
+ASD-0609	conservative_hold	evidence_only	03	none	03	no	no	no	The authoritative state already reflects readable official HTML full text; no duplicate landing is needed.
+ASD-0592	conservative_hold	evidence_only	04	none	04	no	no	no	The authoritative state already reflects open-access full text/PDF support; no further controller landing is needed.
+ASD-0854	conservative_hold	evidence_only	10	none	10	yes	no	no	The mission-science classification is stable, but evidence remains snippet/project-page limited and does not warrant a new authoritative pass.
+ASD-0541	conservative_hold	evidence_only	none	01.04_general_asd_methods_without_concrete_object_experiments	01	yes	no	no	The current 01.04 source-limited state remains the right conservative treatment; no authoritative delta is needed this round.
+ASD-0553	conservative_hold	evidence_only	none	01.04_general_asd_methods_without_concrete_object_experiments	01	yes	no	no	The current 01.04 source-limited state remains appropriate and unchanged.
+ASD-0466	conservative_hold	evidence_only	04	none	04	yes	no	no	The nanomaterials object remains stable, but the round does not supply enough new evidence depth for a writeback.
+ASD-0599	conservative_hold	evidence_only	06	none	06	yes	no	no	The enzyme-engineering object remains stable, but current evidence is still metadata-driven and not strong enough for a new authoritative landing.
+ASD-0741	conservative_hold	evidence_only	06	none	06	yes	no	no	The spatial-transcriptomics biology object remains stable, but current evidence is still preprint-metadata-plus-repo level and stays conservative.

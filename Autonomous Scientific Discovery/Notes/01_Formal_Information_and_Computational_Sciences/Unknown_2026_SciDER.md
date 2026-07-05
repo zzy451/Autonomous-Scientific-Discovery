@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.01421
 - PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_SciDER.pdf`
 - 论文类型：系统论文 / multi-agent scientific research system
-- 当前状态：to_read（note 已按 Batch29Partial1 writeback 更新）
+- 当前状态：已读 / 已纳入 / Batch29Partial1 writeback 已吸收
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 
@@ -22,7 +22,7 @@
 - safety_access_status：`accessed_no_safety_issue`
 - evidence source level：`first_hand_full_text; official_arxiv_pdf_archived_locally_and_checked`
 - first-hand source checked：`official arXiv PDF checked locally: Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_SciDER.pdf`；original source `https://arxiv.org/pdf/2603.01421v3.pdf`
-- note_revision_required：`yes`
+- note_revision_required：`no`
 - adjudication confidence：`medium`
 - final_reason：AI/ML/code research benchmarks support `01`, AstroVisBench supports `02`, and the ASSISTments knowledge-tracing end-to-end case study supports `11`.
 
@@ -129,7 +129,7 @@ SciDER 提出一个 data-centric 的 end-to-end scientific researcher，多 Agen
 
 - broad domain generalization 叙事很强，但并非所有提到的学科都具备同等强度的对象级结果
 - 多模块中 `02` 与 `11` 的证据强度弱于 `01`，因此本轮置信度保持 `medium`
-- 旧 note 把它写成 `01.04`；本次写回已移除该表述
+- 旧 `01.04` 表述已在本轮落地写回中吸收；当前不再保留待修订状态
 - 若未来要扩到 `03/04/05/06`，需要更明确的任务清单和结果页证据
 
 ## 8. 对综述写作的价值

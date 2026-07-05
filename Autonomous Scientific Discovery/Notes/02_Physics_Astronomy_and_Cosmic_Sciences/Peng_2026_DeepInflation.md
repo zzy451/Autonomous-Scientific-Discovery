@@ -14,6 +14,16 @@
 
 ## 2026-06-22 Batch16 full-reaudit check
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- Frozen paper ID: `ASD-0549`
+- Frozen landed modules: `02`
+- Frozen `01.04` bucket: `none`
+- Frozen `primary_module_for_filing`: `02`
+- Canonical local archived PDF: `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Peng_2026_DeepInflation.pdf`
+- First-hand source status in R21: local archived PDF full text confirmed; this supersedes earlier no-local-PDF wording in the note.
+- Adjudication note: preserve the concrete inflationary-cosmology reading in `02` only. The `02.01` wording remains a topic hint, not an extra landed module.
+
 - 一手来源复核：当前按主控裁决使用 arXiv 预印本 `https://arxiv.org/abs/2601.14288` 与 DOI 元数据 `https://doi.org/10.1088/1674-4527/ae6ad8`；本轮未确认本地归档 PDF。
 - 裁决同步：维持 `supported_modules=02`、`final_01_04_bucket=none`、`primary_module_for_filing=02`、`confidence=medium-high`、`source_limited=no`、`safety_access_status=no_safety_skip`。
 - 位置说明：本 note 存放在 `02_Physics_Astronomy_and_Cosmic_Sciences/` 目录仅为 filing convenience，不是分类 authority；旧的 `02.01` 写法仅可作为宇宙学主题提示，不应读成额外 supported module。

@@ -8,14 +8,14 @@
 - DOI / arXiv / URL：https://doi.org/10.1038/s41591-026-04357-y
 - PDF / 本地文件路径：`Reference_PDF/07_Medical_and_Health_Sciences/Trost_2026_SPARK_Cancer_Pathology.pdf`
 - 论文类型：研究论文 / agentic biomedical discovery framework
-- 当前状态：to_read；2026-07-04 local-PDF full-text writeback completed
+- 当前状态：已读 / 已纳入 / 2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Frozen Adjudication Writeback - 2026-06-23
 
 - Final classification: `scientific_object_modules=07;06`; `object_coverage_mode=multi_module`; `primary_module_for_filing=07`; `general_method_bucket=none`.
-- Source status: superseded by the `2026-07-04 Phase6FollowupR14Approx` local-PDF reread below.
+- Source status: already refreshed by the `2026-07-04 Phase6FollowupR14Approx` local-PDF reread below; current source footing is archived-PDF-backed full text.
 - Landed subset note: keep `07` primary for cancer pathology / patient biomarker validation while making the additional `06` tumor-biology / spatial-biology coverage explicit.
 
 ## Evidence Log
@@ -37,7 +37,7 @@ object_coverage_mode: multi_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 07
-first_hand_sources_checked: Nature Medicine abstract / article landing page
+first_hand_sources_checked: local archived PDF full text; DOI landing page
 classification_evidence_source_level: first_hand_full_text
 module_assignment_evidence: `07` is supported by cancer pathology, patient cohorts, prognostic/predictive biomarkers, and clinical pathology validation; `06` is supported by tumor biology, spatial biology, and tumor-progression / temporal-change biological concept analysis.
 multi_module_object_coverage_note: SPARK remains a medical cancer-pathology paper for filing, but its tumor/spatial-biology analyses support an additional `06` module under the relaxed rule.
@@ -112,7 +112,7 @@ multi_module_object_coverage_note: SPARK remains a medical cancer-pathology pape
 - 可能误归类到：06.03 / 01.04
 - 最终判定：保持 07.01
 - 判定理由：输出并不是一般组学或基础生物机制，而是与预后、病理变量、predictive biomarkers 直接相关的医学病理概念
-- 是否需要二次复核：是，建议后续查全文细化 07.01 与 07.03 的二级边界
+- 是否需要二次复核：否；冻结落地已吸收 `07;06`，当前仅保留 `07.01` 作为 filing-side 展示锚点。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -275,7 +275,7 @@ SPARK 自主生成并验证癌症病理分析概念。
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 主类：07
 二级类：07.01
 三级类：cancer pathology and biomarker-oriented pathology research

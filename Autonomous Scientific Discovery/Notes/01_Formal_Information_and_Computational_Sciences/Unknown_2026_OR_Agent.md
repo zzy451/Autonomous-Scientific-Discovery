@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://arxiv.org/abs/2602.13769
 - PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_OR_Agent.pdf`
 - 论文类型：研究论文 / operations-research algorithm-discovery agent
-- 当前状态：to_read（note 已按 Batch29Partial1 writeback 更新）
+- 当前状态：已读 / 已纳入 / Batch29Partial1 writeback 已吸收
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 
@@ -22,7 +22,7 @@
 - safety_access_status：`accessed_no_safety_issue`
 - evidence source level：`first_hand_full_text; official_arxiv_pdf_archived_locally_and_checked`
 - first-hand source checked：`official arXiv PDF checked locally: Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_OR_Agent.pdf`；original source `https://arxiv.org/pdf/2602.13769.pdf`
-- note_revision_required：`yes`
+- note_revision_required：`no`
 - adjudication confidence：`medium`
 - final_reason：Classical operations-research benchmarks support `01`, while the SUMO-based cooperative-driving scenario provides concrete transportation object evidence for `10`.
 

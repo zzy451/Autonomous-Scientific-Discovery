@@ -14,6 +14,16 @@
 
 ## Evidence Log
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- Frozen paper ID: `ASD-0737`
+- Frozen landed modules: `01`
+- Frozen `01.04` bucket: `none`
+- Frozen `primary_module_for_filing`: `01`
+- Canonical local archived PDF: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_ScientistOne.pdf`
+- First-hand source status in R21: local archived PDF full text confirmed; this supersedes earlier no-local-PDF / abstract-level wording in the note.
+- Adjudication note: keep concrete `01` only. Any broader cross-domain hints remain follow-up leads and do not land as extra modules in this round.
+
 ## 2026-06-24 confirmed-core full-reaudit writeback
 
 - `final_agent_inclusion`: `yes`
@@ -32,9 +42,9 @@ object_coverage_mode: single_module
 has_concrete_object_experiments: yes
 general_method_bucket: none
 primary_module_for_filing: 01
-first_hand_sources_checked: arXiv abstract; project page
-classification_evidence_source_level: first_hand_abstract_or_landing_page
-module_assignment_evidence: `01` is supported by frontier AI / computational research tasks, language-modeling and AI-systems research, the 75-paper audit, and chain-of-evidence verification over concrete research tasks.
+first_hand_sources_checked: local archived PDF full text; project page
+classification_evidence_source_level: first_hand_full_text
+module_assignment_evidence: `01` is supported by frontier AI / computational research tasks, language-modeling and AI-systems research, the 75-paper audit, and chain-of-evidence verification over concrete research tasks, with the local archived PDF confirmed in R21.
 multi_module_object_coverage_note: The old `01.04`-only wording is retired. Possible adjacent signals remain follow-up leads only and are not landed as extra modules in this round.
 ```
 

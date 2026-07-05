@@ -1,4 +1,8 @@
 # InternAgent Team 2025 - InternAgent
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- Frozen landing decision: `scientific_object_modules=01;03;06;09;10`, `object_coverage_mode=multi_module`, `primary_module_for_filing=01`, `general_method_bucket=none`, `source_limited=no`.
+- Note harmonization rule for this file: any older `01.04`-only wording below, especially in summary-style tail fields, is stale legacy text superseded by the multi-module overlay above.
 
 **论文信息**
 - 标题：InternAgent: When Agent Becomes the Scientist - Building Closed-loop System from Hypothesis to Verification

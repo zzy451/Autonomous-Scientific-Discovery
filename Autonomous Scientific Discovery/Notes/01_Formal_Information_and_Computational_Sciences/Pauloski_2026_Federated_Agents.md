@@ -1,4 +1,9 @@
 # Pauloski et al. 2025 - Empowering Scientific Workflows with Federated Agents
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- Frozen landing decision: `scientific_object_modules=01;02;04`, `object_coverage_mode=multi_module`, `primary_module_for_filing=01`, `general_method_bucket=none`, `source_limited=no`.
+- Current PDF state: the authoritative local archived PDF is `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Pauloski_2025_Federated_Agents.pdf`.
+- Note harmonization rule for this file: any older `01.04`-only or single-object wording below is stale legacy text superseded by the current multi-module overlay; note location under `01_...` is filing convenience only.
 ## 2026-06-21 archive sync
 
 - Canonical PDF path: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Pauloski_2025_Federated_Agents.pdf`

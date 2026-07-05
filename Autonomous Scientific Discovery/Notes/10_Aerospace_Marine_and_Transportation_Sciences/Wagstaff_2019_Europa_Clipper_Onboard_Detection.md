@@ -85,9 +85,9 @@ multi_module_object_coverage_note: The old 10-only wording is retained as filing
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：02、05
-- 最终判定：保留 10.02
-- 判定理由：thermal anomalies、plumes 等是行星科学场景，但论文本体是 onboard detection and prioritization
-- 是否需要二次复核：需要 fuller full-text detail 强化 core-strength，但主类方向稳定
+- 最终判定：落地为 `05;10`，其中 `10.02` 继续作为 filing-primary / 展示锚点
+- 判定理由：thermal anomalies、compositional anomalies 与 plumes 等并非只提供场景外观，而是直接构成并行 `05` 对象覆盖；与此同时，论文本体仍以 onboard detection and prioritization 的 `10` 侧任务组织全文。
+- 是否需要二次复核：否；当前冻结落地已吸收 `05;10`，后续若补充全文细节，重点仅在 core-strength 说明而不在模块重判。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -161,4 +161,4 @@ multi_module_object_coverage_note: The old 10-only wording is retained as filing
 
 ## 9. 总结
 
-该文以 `10` 为 filing-primary，但在当前 relaxed multi-module 口径下应明确记录为 `05;10`：它既研究 spacecraft onboard detection and prioritization for mission-science autonomy，也直接围绕 Europa planetary-science events 展开检测与排序。
+该文当前以 `05;10` 落地，其中 `10` 保持 filing-primary；它既研究 spacecraft onboard detection and prioritization for mission-science autonomy，也直接围绕 Europa planetary-surface / planetary-environment science events 展开检测与排序，因此不应再被写成仅有 `10.02` 的单侧样本。

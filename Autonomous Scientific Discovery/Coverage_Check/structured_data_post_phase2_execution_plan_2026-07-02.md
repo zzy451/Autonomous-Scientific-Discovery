@@ -275,3 +275,15 @@
 4. 默认查询和默认统计都以 canonical-only 为准。
 5. baseline 更新纪律和 PR/CI 纪律已固定。
 6. 后续 note 队列、全文跟进、综述写作支持都统一建立在这套口径上。
+
+## Post-R21 Addendum (2026-07-05)
+
+This file remains the governing post-Phase-2 execution plan after `Phase6FollowupR21`.
+
+Additional frozen execution rule for all subsequent Phase 6 note-checking rounds:
+
+- default round shape is `3` sub-agents x `10` notes / papers each = `30` notes / papers total
+- the controller should freeze each round as three contiguous `10`-paper ownership slices
+- if the current `full_text_followup_queue` no longer contains a truthful `30`-paper packet after freshness override, the next standard `30`-paper round should switch to the refreshed `note_revision_queue` rather than padding a follow-up round with non-existent pressure
+- when a realistically obtainable PDF is unavailable, do not keep fighting the same route; truthful HTML / abstract / official-page evidence is acceptable as long as the record remains real, indexable, and source-truthful
+- real sub-agents should be used when the interface is actually available; all completed round agents must be closed at round end

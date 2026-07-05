@@ -1,5 +1,18 @@
 # Sun et al. 2026 - TeLLAgent: a dual-agent framework for reliable scientific discovery with tool-enhanced LLMs
 
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- `paper_id`: `ASD-0525`
+- `scientific_object_modules`: `03;04`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `04`
+- `general_method_bucket`: `none`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: local archived OA PDF; RSC DOI full abstract
+- `pdf_path`: `Reference_PDF/01_Formal_Information_and_Computational_Sciences/Sun_2026_TeLLAgent.pdf`
+
+This R22 harmonization keeps the existing `03;04` adjudication, retires stale no-local-PDF wording, and preserves the rule that the note path does not override the authoritative filing/module distinction.
+
 **论文信息**
 - 标题：TeLLAgent: a dual-agent framework for reliable scientific discovery with tool-enhanced LLMs
 - 作者：Sun et al.

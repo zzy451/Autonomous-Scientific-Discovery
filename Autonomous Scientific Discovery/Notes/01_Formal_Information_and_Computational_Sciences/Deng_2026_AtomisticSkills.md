@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.24002
-- PDF / 本地文件路径：未见本地归档 PDF；本轮已核对 arXiv HTML full text v1，并确认可用 PDF `https://arxiv.org/pdf/2605.24002.pdf`
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Deng_2026_AtomisticSkills.pdf`；本轮已核对 arXiv HTML full text v1，并与项目内归档 PDF 对齐
 - 论文类型：系统论文 / atomistic research harness
 - 当前状态：已读；已按 relaxed multi-module 口径完成复核
 - 阅读日期：2026-06-23
@@ -16,7 +16,7 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | arXiv HTML full text v1 | 系统把 atomistic research tasks 封装成 skills 并由 Agent 编排执行 | 高 |
+| Agent 纳入 | 是 | arXiv HTML full text v1；项目内归档 PDF | 系统把 atomistic research tasks 封装成 skills 并由 Agent 编排执行 | 高 |
 | 科学对象归类 | `03;04;07` | abstract；task descriptions；campaign examples | 材料、化学 / 催化、药物设计对象都有 concrete campaign coverage，因此不能写成 `01.04` only | 高 |
 | `04` 证据 | 是 | Li-ion solid-state electrolytes；MOFs；XRD/materials tasks；Fe-oxide OER catalyst campaigns | 材料对象覆盖最强，因此 primary 设为 `04` | 高 |
 | `03` 证据 | 是 | atomistic chemistry / catalysis mechanism tasks | 化学 / 催化对象提供真实 secondary 模块证据 | 高 |
@@ -267,7 +267,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 验证方式：benchmark; simulation_validation
 交叉属性：computation_driven; simulation_driven
 科学贡献类型：system_platform; benchmark
-证据强度：first_hand_full_text
+证据强度：first_hand_full_text（arXiv HTML full text v1 + 项目内归档 PDF）
 归类置信度：高
 纳入置信度：高
 推荐引用强度：core

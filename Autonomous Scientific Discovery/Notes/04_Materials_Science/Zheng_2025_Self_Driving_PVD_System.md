@@ -1,5 +1,18 @@
 # Zheng et al. 2025 - A self-driving physical vapor deposition system making sample-specific decisions on the fly
 
+## 2026-07-05 Phase6NoteRevisionR22 harmonization
+
+- `paper_id`: `ASD-0516`
+- `scientific_object_modules`: `04;09`
+- `object_coverage_mode`: `multi_module`
+- `primary_module_for_filing`: `04`
+- `general_method_bucket`: `none`
+- `source_limited`: `no`
+- `first_hand_sources_checked`: local archived publisher PDF; npj Computational Materials article page
+- `pdf_path`: `Reference_PDF/04_Materials_Science/Zheng_2025_Self_Driving_PVD_System.pdf`
+
+This R22 harmonization keeps the existing `04;09` result and clears stale no-local-PDF wording. Filing under `04` remains a convenience only and does not narrow the authoritative multi-module state.
+
 **论文信息**
 - 标题：A self-driving physical vapor deposition system making sample-specific decisions on the fly
 - 作者：Zheng et al.

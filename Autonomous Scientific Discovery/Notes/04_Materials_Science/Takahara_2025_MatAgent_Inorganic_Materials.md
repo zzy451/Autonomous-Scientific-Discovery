@@ -1,10 +1,21 @@
 # Takahara et al. 2025 - Accelerated inorganic materials design with generative AI agents
 
+## Phase6FollowupR21 Frozen Adjudication
+
+- `paper_id`: `ASD-0535`
+- Frozen adjudicated modules: `04`
+- `primary_module_for_filing`: `04`
+- Canonical local archived PDF: `Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf`
+- `first_hand_sources_checked`: local archived PDF full text (`Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf`)
+- `classification_evidence_source_level`: `first_hand_full_text`
+- `source_limited`: `no`
+- Filing note: note location is filing convenience only and does not override the frozen module-`04` adjudication.
+
 ## 2026-06-23 source refresh
 
 - Final adjudication landed for this note: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
-- Current-turn first-hand sources checked: official publisher open-access abstract/highlights page plus arXiv abstract.
-- Local PDF status: no local PDF archived; current classification does not require inventing a PDF path.
+- Current-turn first-hand sources checked: local archived PDF full text (`Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf`).
+- Local PDF status: canonical local archived PDF confirmed at `Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf`.
 
 **论文信息**
 - 标题：Accelerated inorganic materials design with generative AI agents
@@ -15,13 +26,13 @@
   - https://doi.org/10.1016/j.xcrp.2025.103019
   - https://www.sciencedirect.com/science/article/pii/S2666386425006186
   - https://arxiv.org/abs/2504.00741
-- PDF / 本地文件路径：未归档本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf`
 - 论文类型：研究论文 / inorganic-materials design agent
 - 当前状态：to_read（本轮 note 已按最终裁决刷新）
 - 阅读日期：2026-06-23
 - 笔记作者：Codex
-- First-hand sources checked：official publisher open-access abstract/highlights + arXiv abstract
-- Classification evidence source level：first_hand_abstract_or_landing_page
+- First-hand sources checked：local archived PDF full text (`Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf`)
+- Classification evidence source level：first_hand_full_text
 - source_limited：no
 - safety/access status：no_safety_blocker_open_publisher_or_arXiv_available
 
@@ -29,13 +40,13 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | publisher abstract/highlights；arXiv abstract | 论文明确以 generative AI agents 加速 inorganic materials design，并描述面向材料设计任务的多步代理流程。 | 高 |
-| 科学对象归类 | `04` | 标题；publisher abstract/highlights；arXiv abstract | 研究对象被明确锚定为 inorganic / crystalline materials 及其目标性质设计，而不是领域无关科研工作流。 | 高 |
-| 不进入 `01.04` | 是 | publisher abstract/highlights；arXiv abstract | 已有具体科学对象与对象级设计/评估任务，因此不能按通用 ASD 方法存放区处理。 | 高 |
-| 与 `03` 的边界 | 保持 `04` | publisher abstract/highlights | 重点是无机晶体/材料设计与性质导向筛选，不是分子反应、合成路线或催化条件优化。 | 高 |
-| 方法流程 | 多步 agent loop | publisher abstract/highlights；arXiv abstract | 当前可见一手来源支持 proposal / structure estimation / property evaluation 等串联步骤。 | 中高 |
-| 验证方式 | 以计算/评估为主 | publisher abstract/highlights；arXiv abstract | 可见证据支持候选材料生成与性质导向评估；当前未从已检来源确认湿实验闭环。 | 中 |
-| 来源状态 | 分类已稳定 | source refresh summary | 虽未归档本地 PDF，但开放 publisher 页面与 arXiv 摘要足以支撑顶层 `04` 裁决；当前不属于 `source_limited`。 | 高 |
+| Agent 纳入 | 是 | local archived PDF full text | 论文明确以 generative AI agents 加速 inorganic materials design，并描述面向材料设计任务的多步代理流程。 | 高 |
+| 科学对象归类 | `04` | local archived PDF full text | 研究对象被明确锚定为 inorganic / crystalline materials 及其目标性质设计，而不是领域无关科研工作流。 | 高 |
+| 不进入 `01.04` | 是 | local archived PDF full text | 已有具体科学对象与对象级设计/评估任务，因此不能按通用 ASD 方法存放区处理。 | 高 |
+| 与 `03` 的边界 | 保持 `04` | local archived PDF full text | 重点是无机晶体/材料设计与性质导向筛选，不是分子反应、合成路线或催化条件优化。 | 高 |
+| 方法流程 | 多步 agent loop | local archived PDF full text | 当前可见一手来源支持 proposal / structure estimation / property evaluation 等串联步骤。 | 中高 |
+| 验证方式 | 以计算/评估为主 | local archived PDF full text | 可见证据支持候选材料生成与性质导向评估；当前未从已检来源确认湿实验闭环。 | 中 |
+| 来源状态 | 分类已稳定 | phase6 follow-up R21 frozen adjudication | 已核对本地归档 PDF 全文，当前 `04` 裁决与材料对象读法均已稳定。 | 高 |
 
 ## 0. 摘要翻译
 
@@ -284,8 +295,8 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 归类置信度：high
 纳入置信度：high
 推荐引用强度：standard
-first_hand_sources_checked：official publisher open-access abstract/highlights + arXiv abstract
-classification_evidence_source_level：first_hand_abstract_or_landing_page
+first_hand_sources_checked：local archived PDF full text (`Reference_PDF/04_Materials_Science/Takahara_2025_MatAgent_Inorganic_Materials.pdf`)
+classification_evidence_source_level：first_hand_full_text
 source_limited：no
 safety_access_status：no_safety_blocker_open_publisher_or_arXiv_available
 是否仍需全文复核：可补细节，但不是当前 04 裁决所必需
