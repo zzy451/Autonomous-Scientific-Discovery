@@ -9,13 +9,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / 'Data'
+REGISTRY_DIR = DATA_DIR / 'registry'
 PAPERS_JSONL = DATA_DIR / 'papers.jsonl'
 TAXONOMY_JSON = DATA_DIR / 'taxonomy_index.json'
+CLASSIFICATION_CODE_INDEX_JSON = DATA_DIR / 'classification_code_index.json'
 PDF_MANIFEST_JSON = DATA_DIR / 'pdf_manifest.json'
 MISSING_PDF_JSON = DATA_DIR / 'missing_pdf_manifest.json'
 NOTE_MANIFEST_JSON = DATA_DIR / 'note_manifest.json'
 DISCIPLINE_CODE_ASSIGNMENTS_JSONL = DATA_DIR / 'discipline_code_assignments.jsonl'
 DISCIPLINE_LOCAL_CODE_REGISTRY_JSONL = DATA_DIR / 'discipline_local_code_registry.jsonl'
+ASSET_MANIFEST_JSONL = REGISTRY_DIR / 'asset_manifest.jsonl'
+PDF_ARCHIVE_REGISTRY_JSONL = REGISTRY_DIR / 'pdf_archive_registry.jsonl'
 PAPERS_CSV = DATA_DIR / 'papers.csv'
 PAPER_MODULES_CSV = DATA_DIR / 'paper_modules.csv'
 CANONICAL_PAPER_MODULES_CSV = DATA_DIR / 'canonical_paper_modules.csv'
@@ -118,15 +122,62 @@ def write_discipline_local_code_registry_csv(rows: list[dict[str, object]]) -> N
                 for field in DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS
             })
 
+def build_general_method_bucket_rows(papers: list[dict[str, object]]) -> list[dict[str, object]]:
+    rows: list[dict[str, object]] = []
+    for paper in papers:
+        bucket = paper.get('general_method_bucket')
+        if not bucket or bucket == 'none':
+            continue
+        rows.append({
+            'paper_id': paper['paper_id'],
+            'general_method_bucket': bucket,
+            'active_confirmed_core': bool_to_int(paper['active_confirmed_core']),
+            'source_limited': paper['source_limited'],
+        })
+    return rows
+
+def build_classification_term_rows(classification_code_index: dict[str, object]) -> list[dict[str, object]]:
+    rows: list[dict[str, object]] = []
+    for term in classification_code_index.get('primary_terms', []):
+        rows.append({
+            'taxonomy_code': term['primary_code'],
+            'term_level': 'primary',
+            'parent_primary_code': None,
+            'label': term['label'],
+            'definition': term['definition'],
+            'include_json': json.dumps(term.get('include', []), ensure_ascii=False),
+            'exclude_json': json.dumps(term.get('exclude', []), ensure_ascii=False),
+            'status': term['status'],
+            'source': term['source'],
+            'review_status': None,
+        })
+    for term in classification_code_index.get('secondary_terms', []):
+        rows.append({
+            'taxonomy_code': term['secondary_code'],
+            'term_level': 'secondary',
+            'parent_primary_code': term['parent_primary_code'],
+            'label': term['label'],
+            'definition': term['definition'],
+            'include_json': json.dumps(term.get('include', []), ensure_ascii=False),
+            'exclude_json': json.dumps(term.get('exclude', []), ensure_ascii=False),
+            'status': term['status'],
+            'source': term['source'],
+            'review_status': term.get('review_status'),
+        })
+    return rows
+
 def build_sqlite(
     papers: list[dict[str, object]],
     taxonomy: dict[str, dict[str, str]],
+    classification_code_index: dict[str, object],
     pdf_manifest: list[dict[str, object]],
     missing_pdf_manifest: list[dict[str, object]],
     note_manifest: list[dict[str, object]],
     module_rows: list[dict[str, object]],
     discipline_code_assignments: list[dict[str, object]],
     discipline_local_code_registry: list[dict[str, object]],
+    asset_manifest: list[dict[str, object]],
+    pdf_archive_registry: list[dict[str, object]],
 ) -> None:
     if SQLITE_PATH.exists():
         SQLITE_PATH.unlink()
@@ -136,6 +187,19 @@ def build_sqlite(
         PRAGMA foreign_keys = ON;
         CREATE TABLE metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
         CREATE TABLE taxonomy_index (code TEXT PRIMARY KEY, label TEXT NOT NULL, kind TEXT NOT NULL);
+        CREATE TABLE classification_terms (
+            taxonomy_code TEXT NOT NULL,
+            term_level TEXT NOT NULL,
+            parent_primary_code TEXT,
+            label TEXT NOT NULL,
+            definition TEXT NOT NULL,
+            include_json TEXT NOT NULL,
+            exclude_json TEXT NOT NULL,
+            status TEXT NOT NULL,
+            source TEXT NOT NULL,
+            review_status TEXT,
+            PRIMARY KEY (taxonomy_code, term_level)
+        );
         CREATE TABLE analysis_object_scope_registry (
             object_name TEXT PRIMARY KEY,
             object_type TEXT NOT NULL,
@@ -154,6 +218,12 @@ def build_sqlite(
             active_confirmed_core INTEGER NOT NULL, exported_at TEXT NOT NULL
         );
         CREATE TABLE paper_modules (paper_id TEXT NOT NULL, assignment_scope TEXT NOT NULL, module_code TEXT NOT NULL, module_kind TEXT NOT NULL, sort_order INTEGER NOT NULL, PRIMARY KEY (paper_id, assignment_scope, module_code));
+        CREATE TABLE paper_general_method_buckets (
+            paper_id TEXT PRIMARY KEY,
+            general_method_bucket TEXT NOT NULL,
+            active_confirmed_core INTEGER NOT NULL,
+            source_limited TEXT
+        );
         CREATE TABLE discipline_code_assignments (
             assignment_id TEXT PRIMARY KEY,
             paper_id TEXT NOT NULL,
@@ -196,6 +266,37 @@ def build_sqlite(
             generated_by TEXT NOT NULL,
             source_commit TEXT,
             worktree_dirty INTEGER NOT NULL
+        );
+        CREATE TABLE pdf_evidence_status (
+            paper_id TEXT PRIMARY KEY,
+            title TEXT NOT NULL,
+            pdf_path TEXT,
+            pdf_exists INTEGER NOT NULL,
+            pdf_status TEXT,
+            evidence_status TEXT,
+            source_limited TEXT,
+            primary_module_for_filing TEXT,
+            active_confirmed_core INTEGER NOT NULL
+        );
+        CREATE TABLE paper_assets (
+            asset_id TEXT PRIMARY KEY,
+            paper_id TEXT NOT NULL,
+            title TEXT NOT NULL,
+            asset_type TEXT NOT NULL,
+            path TEXT,
+            asset_exists INTEGER NOT NULL,
+            sha256 TEXT,
+            asset_status TEXT,
+            source_limited TEXT,
+            exported_at TEXT
+        );
+        CREATE TABLE notes (
+            paper_id TEXT PRIMARY KEY,
+            title TEXT NOT NULL,
+            note_path TEXT,
+            note_exists INTEGER NOT NULL,
+            active_confirmed_core INTEGER NOT NULL,
+            inclusion_status TEXT
         );
         CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT, scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL);
         CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT, access_note TEXT);
@@ -562,6 +663,13 @@ def build_sqlite(
             'INSERT INTO analysis_object_scope_registry(object_name, object_type, scope_class, default_usage, warning) VALUES(?, ?, ?, ?, ?)',
             [
                 (
+                    'classification_terms',
+                    'table',
+                    'taxonomy_owner_snapshot',
+                    'default taxonomy term lookup',
+                    'Normalized taxonomy owner snapshot built from Data/classification_code_index.json.',
+                ),
+                (
                     'discipline_code_assignments',
                     'table',
                     'owner_snapshot',
@@ -569,11 +677,39 @@ def build_sqlite(
                     'Stable discipline code assignment owner table loaded from Data/discipline_code_assignments.jsonl; changes must originate in the owner file, not SQLite.',
                 ),
                 (
+                    'paper_general_method_buckets',
+                    'table',
+                    'canonical_only',
+                    'default 01.04 bucket lookup',
+                    'One-row-per-paper canonical general-method bucket table; empty for non-bucket papers.',
+                ),
+                (
                     'discipline_local_code_registry',
                     'table',
                     'derived_snapshot',
                     'default discipline filing review',
                     'Derived one-row-per-ledger-entry snapshot joining assignment owner data with paper facts; rebuild from export instead of editing in SQLite.',
+                ),
+                (
+                    'pdf_evidence_status',
+                    'table',
+                    'workflow_status',
+                    'default PDF/source status lookup',
+                    'Per-paper PDF/source evidence table derived from the authoritative paper/progress lane.',
+                ),
+                (
+                    'paper_assets',
+                    'table',
+                    'derived_snapshot',
+                    'default note/PDF asset lookup',
+                    'Per-asset snapshot loaded from Data/registry/asset_manifest.jsonl.',
+                ),
+                (
+                    'notes',
+                    'table',
+                    'derived_snapshot',
+                    'default note inventory lookup',
+                    'Per-paper note snapshot loaded from Data/note_manifest.json.',
                 ),
                 (
                     'papers',
@@ -686,6 +822,22 @@ def build_sqlite(
             (code, label, 'formal_module' if code in FORMAL_MODULES else 'general_bucket')
             for code, label in taxonomy['code_to_label'].items()
         ])
+        classification_term_rows = build_classification_term_rows(classification_code_index)
+        conn.executemany('INSERT INTO classification_terms VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+            (
+                row['taxonomy_code'],
+                row['term_level'],
+                row['parent_primary_code'],
+                row['label'],
+                row['definition'],
+                row['include_json'],
+                row['exclude_json'],
+                row['status'],
+                row['source'],
+                row['review_status'],
+            )
+            for row in classification_term_rows
+        ])
         conn.executemany('INSERT INTO papers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 paper['paper_id'], paper['title'], paper['authors'], paper['year'], paper['source'], paper['doi_or_url'], paper['doi'], paper['url'], paper['arxiv_id'],
@@ -701,6 +853,16 @@ def build_sqlite(
         conn.executemany('INSERT INTO paper_modules(paper_id, assignment_scope, module_code, module_kind, sort_order) VALUES(?, ?, ?, ?, ?)', [
             (row['paper_id'], row['assignment_scope'], row['module_code'], row['module_kind'], row['sort_order'])
             for row in module_rows
+        ])
+        general_method_bucket_rows = build_general_method_bucket_rows(papers)
+        conn.executemany('INSERT INTO paper_general_method_buckets VALUES(?, ?, ?, ?)', [
+            (
+                row['paper_id'],
+                row['general_method_bucket'],
+                row['active_confirmed_core'],
+                row['source_limited'],
+            )
+            for row in general_method_bucket_rows
         ])
         conn.executemany('INSERT INTO discipline_code_assignments VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
@@ -751,6 +913,46 @@ def build_sqlite(
             )
             for row in discipline_local_code_registry
         ])
+        conn.executemany('INSERT INTO pdf_evidence_status VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+            (
+                row['paper_id'],
+                row['title'],
+                row['pdf_path'],
+                bool_to_int(row['pdf_exists']),
+                row['pdf_status'],
+                row['evidence_status'],
+                row['source_limited'],
+                row['primary_module_for_filing'],
+                bool_to_int(row['active_confirmed_core']),
+            )
+            for row in pdf_archive_registry
+        ])
+        conn.executemany('INSERT INTO paper_assets VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+            (
+                row['asset_id'],
+                row['paper_id'],
+                row['title'],
+                row['asset_type'],
+                row['path'],
+                bool_to_int(row['exists']),
+                row['sha256'],
+                row['asset_status'],
+                row['source_limited'],
+                row['exported_at'],
+            )
+            for row in asset_manifest
+        ])
+        conn.executemany('INSERT INTO notes VALUES(?, ?, ?, ?, ?, ?)', [
+            (
+                row['paper_id'],
+                row['title'],
+                row['note_path'],
+                bool_to_int(row['note_exists']),
+                bool_to_int(row['active_confirmed_core']),
+                row['inclusion_status'],
+            )
+            for row in note_manifest
+        ])
         conn.executemany('INSERT INTO pdf_inventory VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (row['paper_id'], row['title'], row['pdf_path'], row['sha256'], row['primary_module_for_filing'], json_list(row['scientific_object_modules']), row['pdf_status'], row['evidence_status'], bool_to_int(row['active_confirmed_core']))
             for row in pdf_manifest
@@ -770,11 +972,14 @@ def build_sqlite(
 def main() -> None:
     papers = load_jsonl(PAPERS_JSONL)
     taxonomy = load_json(TAXONOMY_JSON)
+    classification_code_index = load_json(CLASSIFICATION_CODE_INDEX_JSON)
     pdf_manifest = load_json(PDF_MANIFEST_JSON)
     missing_pdf_manifest = load_json(MISSING_PDF_JSON)
     note_manifest = load_json(NOTE_MANIFEST_JSON)
     discipline_code_assignments = load_jsonl(DISCIPLINE_CODE_ASSIGNMENTS_JSONL)
     discipline_local_code_registry = load_jsonl(DISCIPLINE_LOCAL_CODE_REGISTRY_JSONL)
+    asset_manifest = load_jsonl(ASSET_MANIFEST_JSONL)
+    pdf_archive_registry = load_jsonl(PDF_ARCHIVE_REGISTRY_JSONL)
     module_rows = build_module_rows(papers)
     write_papers_csv(papers)
     write_module_csv(module_rows)
@@ -782,12 +987,15 @@ def main() -> None:
     build_sqlite(
         papers,
         taxonomy,
+        classification_code_index,
         pdf_manifest,
         missing_pdf_manifest,
         note_manifest,
         module_rows,
         discipline_code_assignments,
         discipline_local_code_registry,
+        asset_manifest,
+        pdf_archive_registry,
     )
     print(f'Wrote {PAPERS_CSV}')
     print(f'Wrote {PAPER_MODULES_CSV}')

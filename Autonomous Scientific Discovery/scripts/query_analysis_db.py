@@ -453,6 +453,159 @@ def bucket_summary(conn: sqlite3.Connection, *, limit: int, all_papers: bool) ->
         'boundary_case_kind': 40,
     })
 
+def discipline_code_summary(conn: sqlite3.Connection) -> None:
+    print_heading('Discipline Code Summary')
+    totals = conn.execute('''
+        SELECT
+            COUNT(*) AS current_registry_row_count,
+            SUM(CASE WHEN assignment_status = 'active_code' THEN 1 ELSE 0 END) AS active_code_count,
+            SUM(CASE WHEN assignment_status = 'pending_secondary' THEN 1 ELSE 0 END) AS pending_secondary_count,
+            SUM(CASE WHEN assignment_status = 'non_discipline_general_method' THEN 1 ELSE 0 END) AS non_discipline_general_method_count,
+            SUM(CASE WHEN active_confirmed_core = 1 AND assignment_status = 'active_code' THEN 1 ELSE 0 END) AS active_core_active_code_count,
+            SUM(CASE WHEN active_confirmed_core = 1 AND assignment_status = 'active_code' AND pdf_path IS NOT NULL AND pdf_path <> '' THEN 1 ELSE 0 END) AS active_core_active_code_with_pdf_path_count
+        FROM discipline_local_code_registry
+    ''').fetchone()
+    print(json.dumps(dict(totals), ensure_ascii=False, indent=2))
+    print()
+
+    status_rows = conn.execute('''
+        SELECT
+            assignment_status,
+            COUNT(*) AS paper_count
+        FROM discipline_local_code_registry
+        GROUP BY assignment_status
+        ORDER BY paper_count DESC, assignment_status
+    ''').fetchall()
+    print_heading('Current Discipline Registry Status Breakdown')
+    print_rows(status_rows)
+    print()
+
+    secondary_rows = conn.execute('''
+        SELECT
+            r.primary_taxonomy_code_2lvl,
+            COALESCE(t.label, '(missing secondary term)') AS secondary_label,
+            COUNT(*) AS paper_count,
+            SUM(CASE WHEN r.pdf_path IS NOT NULL AND r.pdf_path <> '' THEN 1 ELSE 0 END) AS with_pdf_path_count,
+            SUM(CASE WHEN json_array_length(r.scientific_object_modules_json) > 1 THEN 1 ELSE 0 END) AS multi_module_count
+        FROM discipline_local_code_registry r
+        LEFT JOIN classification_terms t
+          ON t.taxonomy_code = r.primary_taxonomy_code_2lvl
+         AND t.term_level = 'secondary'
+        WHERE r.assignment_status = 'active_code'
+        GROUP BY r.primary_taxonomy_code_2lvl, secondary_label
+        ORDER BY paper_count DESC, r.primary_taxonomy_code_2lvl
+    ''').fetchall()
+    print_heading('Active Codes by Secondary Class')
+    print_rows(secondary_rows, max_widths={'secondary_label': 40})
+
+def discipline_code_detail(conn: sqlite3.Connection, code: str) -> None:
+    print_heading(f'Discipline Code {code}')
+    ledger_rows = conn.execute('''
+        SELECT
+            d.assignment_id,
+            d.paper_id,
+            d.discipline_local_code,
+            d.primary_taxonomy_code_2lvl,
+            d.assignment_status,
+            d.assigned_at,
+            d.assigned_by,
+            d.retired_at,
+            d.redirected_to_code,
+            d.assignment_reason,
+            d.pending_reason,
+            d.source_primary_module_for_filing,
+            d.source_legacy_secondary_class,
+            p.title
+        FROM discipline_code_assignments d
+        LEFT JOIN papers p ON p.paper_id = d.paper_id
+        WHERE d.discipline_local_code = ? OR d.redirected_to_code = ?
+        ORDER BY
+            CASE d.assignment_status
+                WHEN 'active_code' THEN 1
+                WHEN 'redirected_code' THEN 2
+                WHEN 'retired_code' THEN 3
+                ELSE 9
+            END,
+            d.assignment_id
+    ''', (code, code)).fetchall()
+    print_heading('Ledger Matches')
+    print_rows(ledger_rows, max_widths={'title': 56, 'assignment_reason': 24, 'pending_reason': 28})
+    print()
+
+    registry_rows = conn.execute('''
+        SELECT
+            paper_id,
+            assignment_id,
+            discipline_local_code,
+            assignment_status,
+            primary_taxonomy_code_2lvl,
+            primary_module_for_filing,
+            legacy_secondary_class,
+            scientific_object_modules_json,
+            general_method_bucket,
+            title,
+            note_path,
+            pdf_path,
+            active_confirmed_core
+        FROM discipline_local_code_registry
+        WHERE discipline_local_code = ?
+        ORDER BY paper_id
+    ''', (code,)).fetchall()
+    print_heading('Current Registry Matches')
+    print_rows(registry_rows, max_widths={'title': 56, 'scientific_object_modules_json': 28})
+
+def secondary_class_summary(conn: sqlite3.Connection) -> None:
+    print_heading('Secondary Class Summary')
+    rows = conn.execute('''
+        SELECT
+            r.primary_taxonomy_code_2lvl AS secondary_code,
+            COALESCE(t.label, '(missing secondary term)') AS secondary_label,
+            COALESCE(t.status, '(missing)') AS term_status,
+            COALESCE(t.review_status, '(none)') AS review_status,
+            COUNT(*) AS paper_count,
+            SUM(CASE WHEN r.active_confirmed_core = 1 THEN 1 ELSE 0 END) AS active_confirmed_core_count,
+            SUM(CASE WHEN r.assignment_status = 'active_code' THEN 1 ELSE 0 END) AS active_code_count,
+            SUM(CASE WHEN json_array_length(r.scientific_object_modules_json) > 1 THEN 1 ELSE 0 END) AS multi_module_count
+        FROM discipline_local_code_registry r
+        LEFT JOIN classification_terms t
+          ON t.taxonomy_code = r.primary_taxonomy_code_2lvl
+         AND t.term_level = 'secondary'
+        WHERE r.primary_taxonomy_code_2lvl IS NOT NULL
+        GROUP BY secondary_code, secondary_label, term_status, review_status
+        ORDER BY paper_count DESC, secondary_code
+    ''').fetchall()
+    print_rows(rows, max_widths={'secondary_label': 40, 'review_status': 16})
+
+def secondary_class_pdf_coverage(conn: sqlite3.Connection) -> None:
+    print_heading('Secondary Class PDF Coverage')
+    rows = conn.execute('''
+        SELECT
+            r.primary_taxonomy_code_2lvl AS secondary_code,
+            COALESCE(t.label, '(missing secondary term)') AS secondary_label,
+            COUNT(*) AS current_registry_count,
+            SUM(CASE WHEN r.assignment_status = 'active_code' THEN 1 ELSE 0 END) AS active_code_count,
+            SUM(CASE WHEN r.assignment_status = 'active_code' AND p.pdf_exists = 1 THEN 1 ELSE 0 END) AS active_code_local_pdf_count,
+            SUM(CASE WHEN r.assignment_status = 'active_code' AND p.pdf_exists = 0 THEN 1 ELSE 0 END) AS active_code_missing_local_pdf_count,
+            SUM(CASE WHEN r.assignment_status = 'active_code' AND lower(trim(COALESCE(p.source_limited, ''))) LIKE 'yes%' THEN 1 ELSE 0 END) AS active_code_source_limited_count,
+            CASE
+                WHEN SUM(CASE WHEN r.assignment_status = 'active_code' THEN 1 ELSE 0 END) = 0 THEN 0.0
+                ELSE ROUND(
+                    100.0 * SUM(CASE WHEN r.assignment_status = 'active_code' AND p.pdf_exists = 1 THEN 1 ELSE 0 END)
+                    / SUM(CASE WHEN r.assignment_status = 'active_code' THEN 1 ELSE 0 END),
+                    2
+                )
+            END AS active_code_local_pdf_coverage_pct
+        FROM discipline_local_code_registry r
+        LEFT JOIN classification_terms t
+          ON t.taxonomy_code = r.primary_taxonomy_code_2lvl
+         AND t.term_level = 'secondary'
+        LEFT JOIN papers p ON p.paper_id = r.paper_id
+        WHERE r.primary_taxonomy_code_2lvl IS NOT NULL
+        GROUP BY secondary_code, secondary_label
+        ORDER BY active_code_missing_local_pdf_count DESC, active_code_count DESC, secondary_code
+    ''').fetchall()
+    print_rows(rows, max_widths={'secondary_label': 40})
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Query ASD analysis SQLite outputs. Default classification commands are canonical-only; workflow mirror/final fields should be interpreted only in explicit audit commands.')
     subparsers = parser.add_subparsers(dest='command', required=True)
@@ -491,6 +644,11 @@ def build_parser() -> argparse.ArgumentParser:
     bucket_parser = subparsers.add_parser('bucket-summary', help='Audit canonical-vs-mirror 01.04 bucket behavior')
     bucket_parser.add_argument('--limit', type=int, default=20)
     bucket_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
+    subparsers.add_parser('discipline-code-summary', help='Current discipline-code snapshot summary from the ledger-derived registry')
+    discipline_code_parser = subparsers.add_parser('discipline-code', help='Show ledger and current-registry detail for one discipline_local_code')
+    discipline_code_parser.add_argument('code')
+    subparsers.add_parser('secondary-class-summary', help='Current secondary-class summary from discipline-local registry and taxonomy terms')
+    subparsers.add_parser('secondary-class-pdf-coverage', help='Current secondary-class local-PDF coverage summary')
     return parser
 
 def main() -> None:
@@ -534,6 +692,14 @@ def main() -> None:
             boundary_cases(conn, kind=args.kind, limit=args.limit, all_papers=args.all)
         elif args.command == 'bucket-summary':
             bucket_summary(conn, limit=args.limit, all_papers=args.all)
+        elif args.command == 'discipline-code-summary':
+            discipline_code_summary(conn)
+        elif args.command == 'discipline-code':
+            discipline_code_detail(conn, args.code)
+        elif args.command == 'secondary-class-summary':
+            secondary_class_summary(conn)
+        elif args.command == 'secondary-class-pdf-coverage':
+            secondary_class_pdf_coverage(conn)
         else:
             parser.error(f'Unknown command: {args.command}')
     finally:
