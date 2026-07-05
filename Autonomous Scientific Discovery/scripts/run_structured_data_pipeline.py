@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import subprocess
 import sys
 from pathlib import Path
@@ -59,7 +60,24 @@ def run_step(script_name: str) -> None:
     subprocess.run(command, cwd=ROOT, check=True)
 
 
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Run the canonical structured-data pipeline. "
+            "Default workflow is export -> check -> build; "
+            "--with-execution-audit additionally runs the Section 12 audit after build."
+        )
+    )
+    parser.add_argument(
+        "--with-execution-audit",
+        action="store_true",
+        help="Run audit_execution_definition.py after the canonical export -> check -> build sequence.",
+    )
+    return parser
+
+
 def main() -> None:
+    args = build_parser().parse_args()
     print_preflight_summary()
     for script_name in (
         "export_structured_data.py",
@@ -67,7 +85,11 @@ def main() -> None:
         "build_analysis_db.py",
     ):
         run_step(script_name)
-    print("[pipeline] export -> check -> build completed successfully", flush=True)
+    if args.with_execution_audit:
+        run_step("audit_execution_definition.py")
+        print("[pipeline] export -> check -> build -> execution-audit completed successfully", flush=True)
+    else:
+        print("[pipeline] export -> check -> build completed successfully", flush=True)
 
 
 if __name__ == "__main__":

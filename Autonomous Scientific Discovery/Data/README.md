@@ -170,7 +170,7 @@ Day-to-day structured-data maintenance should follow the frozen workflow order:
 Use:
 
 - `scripts/run_structured_data_pipeline.py`
-  Runs the canonical `export_structured_data.py -> check_data_consistency.py -> build_analysis_db.py` sequence from repo root so routine maintenance follows the project workflow instead of ad hoc command order. The preflight step also reports which of the four owner fact sources are currently changed in the worktree and whether `Data/change_log.jsonl` changed alongside them.
+  Runs the canonical `export_structured_data.py -> check_data_consistency.py -> build_analysis_db.py` sequence from repo root so routine maintenance follows the project workflow instead of ad hoc command order. The preflight step also reports which of the four owner fact sources are currently changed in the worktree and whether `Data/change_log.jsonl` changed alongside them. Use `--with-execution-audit` to append `audit_execution_definition.py` after the canonical sequence when you want the latest Section 12 audit report refreshed too.
 - `scripts/audit_execution_definition.py`
   Audits the current repo state against Section 12 of the locked long-term plan and writes `Coverage_Check/structured_data_execution_definition_audit_latest.md` as a current pass/fail evidence report.
 
