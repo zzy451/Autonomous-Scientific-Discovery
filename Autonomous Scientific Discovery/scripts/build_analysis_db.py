@@ -1000,6 +1000,13 @@ def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
             'Convenience view over active_confirmed_core papers with no local PDF.',
         ),
         (
+            'analysis_object_scope_registry',
+            'table',
+            'registry_metadata',
+            'object semantics lookup',
+            'SQLite object semantics registry declared by build_analysis_db.py and validated against sqlite_master.',
+        ),
+        (
             'change_log',
             'table',
             'audit_owner',
@@ -1161,6 +1168,13 @@ def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
             'Use together with summary before writing module statistics.',
         ),
         (
+            'canonical_bucket_0104_papers',
+            'view',
+            'canonical_only',
+            'canonical 01.04 detail lookup',
+            'Canonical paper-level 01.04 bucket detail view, separate from formal module tables.',
+        ),
+        (
             'classification_boundary_analysis',
             'view',
             'audit_only',
@@ -1173,6 +1187,27 @@ def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
             'audit_only',
             'drift inspection only',
             'Boundary/drift summary; not a default classification count.',
+        ),
+        (
+            'canonical_formal_module_pdf_coverage_summary',
+            'view',
+            'canonical_only',
+            'formal-module PDF coverage summary',
+            'Canonical formal-module PDF coverage summary derived from paper_modules and papers.',
+        ),
+        (
+            'canonical_multi_module_combo_summary',
+            'view',
+            'canonical_only',
+            'multi-module combo summary',
+            'Canonical multi-module combination frequency summary derived from scientific_object_modules.',
+        ),
+        (
+            'canonical_object_coverage_summary',
+            'view',
+            'canonical_only',
+            'object coverage summary',
+            'Canonical record-level object coverage mode summary derived from papers.',
         ),
         (
             'canonical_bucket_0104_summary',
