@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 import sqlite3
+import sys
 from pathlib import Path
 from typing import Sequence
 
@@ -606,6 +607,125 @@ def secondary_class_pdf_coverage(conn: sqlite3.Connection) -> None:
     ''').fetchall()
     print_rows(rows, max_widths={'secondary_label': 40})
 
+def classification_terms(conn: sqlite3.Connection, *, level: str | None, status: str | None) -> None:
+    print_heading('Classification Terms')
+    filters = []
+    params: list[object] = []
+    if level:
+        filters.append('term_level = ?')
+        params.append(level)
+    if status:
+        filters.append('status = ?')
+        params.append(status)
+    where_clause = f"WHERE {' AND '.join(filters)}" if filters else ''
+    rows = conn.execute(f'''
+        SELECT
+            taxonomy_code,
+            term_level,
+            parent_primary_code,
+            label,
+            status,
+            review_status,
+            source
+        FROM classification_terms
+        {where_clause}
+        ORDER BY term_level, taxonomy_code
+    ''', params).fetchall()
+    print_rows(rows, max_widths={'label': 44, 'source': 32})
+
+def general_method_buckets(conn: sqlite3.Connection, *, all_papers: bool) -> None:
+    scope_label = 'all scopes' if all_papers else 'active_confirmed_core only'
+    print_heading(f'General-Method Buckets ({scope_label})')
+    rows = conn.execute(f'''
+        SELECT
+            g.paper_id,
+            p.title,
+            g.general_method_bucket,
+            g.active_confirmed_core,
+            p.primary_module_for_filing,
+            p.pdf_exists,
+            p.note_exists,
+            g.source_limited
+        FROM paper_general_method_buckets g
+        JOIN papers p ON p.paper_id = g.paper_id
+        {'' if all_papers else 'WHERE g.active_confirmed_core = 1'}
+        ORDER BY g.active_confirmed_core DESC, g.paper_id
+    ''').fetchall()
+    print_rows(rows, max_widths={'title': 56, 'general_method_bucket': 40})
+
+def pdf_evidence_summary(conn: sqlite3.Connection, *, all_papers: bool, missing_only: bool) -> None:
+    scope_label = 'all scopes' if all_papers else 'active_confirmed_core only'
+    print_heading(f'PDF Evidence Status ({scope_label})')
+    filters = []
+    if not all_papers:
+        filters.append('active_confirmed_core = 1')
+    if missing_only:
+        filters.append('pdf_exists = 0')
+    where_clause = f"WHERE {' AND '.join(filters)}" if filters else ''
+    rows = conn.execute(f'''
+        SELECT
+            paper_id,
+            title,
+            pdf_exists,
+            pdf_status,
+            evidence_status,
+            source_limited,
+            primary_module_for_filing
+        FROM pdf_evidence_status
+        {where_clause}
+        ORDER BY active_confirmed_core DESC, pdf_exists ASC, paper_id
+    ''').fetchall()
+    print_rows(rows, max_widths={'title': 56, 'pdf_status': 28, 'evidence_status': 40})
+
+def paper_assets(conn: sqlite3.Connection, *, asset_type: str | None, missing_only: bool) -> None:
+    print_heading('Paper Assets')
+    filters = []
+    params: list[object] = []
+    if asset_type:
+        filters.append('asset_type = ?')
+        params.append(asset_type)
+    if missing_only:
+        filters.append('asset_exists = 0')
+    where_clause = f"WHERE {' AND '.join(filters)}" if filters else ''
+    rows = conn.execute(f'''
+        SELECT
+            asset_id,
+            paper_id,
+            title,
+            asset_type,
+            asset_exists,
+            asset_status,
+            source_limited,
+            path
+        FROM paper_assets
+        {where_clause}
+        ORDER BY asset_type, asset_exists ASC, paper_id
+    ''', params).fetchall()
+    print_rows(rows, max_widths={'title': 48, 'path': 56, 'asset_status': 24})
+
+def note_summary(conn: sqlite3.Connection, *, all_papers: bool, missing_only: bool) -> None:
+    scope_label = 'all scopes' if all_papers else 'active_confirmed_core only'
+    print_heading(f'Notes ({scope_label})')
+    filters = []
+    if not all_papers:
+        filters.append('active_confirmed_core = 1')
+    if missing_only:
+        filters.append('note_exists = 0')
+    where_clause = f"WHERE {' AND '.join(filters)}" if filters else ''
+    rows = conn.execute(f'''
+        SELECT
+            paper_id,
+            title,
+            note_exists,
+            active_confirmed_core,
+            inclusion_status,
+            note_path
+        FROM notes
+        {where_clause}
+        ORDER BY active_confirmed_core DESC, note_exists ASC, paper_id
+    ''').fetchall()
+    print_rows(rows, max_widths={'title': 56, 'note_path': 56, 'inclusion_status': 24})
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Query ASD analysis SQLite outputs. Default classification commands are canonical-only; workflow mirror/final fields should be interpreted only in explicit audit commands.')
     subparsers = parser.add_subparsers(dest='command', required=True)
@@ -649,9 +769,27 @@ def build_parser() -> argparse.ArgumentParser:
     discipline_code_parser.add_argument('code')
     subparsers.add_parser('secondary-class-summary', help='Current secondary-class summary from discipline-local registry and taxonomy terms')
     subparsers.add_parser('secondary-class-pdf-coverage', help='Current secondary-class local-PDF coverage summary')
+    classification_terms_parser = subparsers.add_parser('classification-terms', help='List normalized taxonomy terms from classification_terms')
+    classification_terms_parser.add_argument('--level', choices=('primary', 'secondary'))
+    classification_terms_parser.add_argument('--status', choices=('active', 'deprecated', 'needs_review'))
+    general_method_parser = subparsers.add_parser('general-method-buckets', help='List canonical general-method bucket papers from paper_general_method_buckets')
+    general_method_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
+    pdf_evidence_parser = subparsers.add_parser('pdf-evidence-status', help='List per-paper PDF/source evidence rows')
+    pdf_evidence_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
+    pdf_evidence_parser.add_argument('--missing-only', action='store_true', help='Only show rows without a local PDF')
+    paper_assets_parser = subparsers.add_parser('paper-assets', help='List paper_assets rows')
+    paper_assets_parser.add_argument('--asset-type', choices=('note', 'primary_pdf'))
+    paper_assets_parser.add_argument('--missing-only', action='store_true', help='Only show missing assets')
+    notes_parser = subparsers.add_parser('notes', help='List notes table rows')
+    notes_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
+    notes_parser.add_argument('--missing-only', action='store_true', help='Only show missing notes')
     return parser
 
 def main() -> None:
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(errors='replace')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(errors='replace')
     parser = build_parser()
     args = parser.parse_args()
     conn = connect()
@@ -700,6 +838,16 @@ def main() -> None:
             secondary_class_summary(conn)
         elif args.command == 'secondary-class-pdf-coverage':
             secondary_class_pdf_coverage(conn)
+        elif args.command == 'classification-terms':
+            classification_terms(conn, level=args.level, status=args.status)
+        elif args.command == 'general-method-buckets':
+            general_method_buckets(conn, all_papers=args.all)
+        elif args.command == 'pdf-evidence-status':
+            pdf_evidence_summary(conn, all_papers=args.all, missing_only=args.missing_only)
+        elif args.command == 'paper-assets':
+            paper_assets(conn, asset_type=args.asset_type, missing_only=args.missing_only)
+        elif args.command == 'notes':
+            note_summary(conn, all_papers=args.all, missing_only=args.missing_only)
         else:
             parser.error(f'Unknown command: {args.command}')
     finally:
