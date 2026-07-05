@@ -19,7 +19,7 @@
 |---|---|---|---|
 | `paper_id` | master | all Data outputs, notes, SQLite | Permanent key; never changes after assignment |
 | title, authors, year, venue/source, DOI/URL | master | registries, CSV, SQLite, notes | Registry copies are display snapshots |
-| `inclusion_status`, active/core record state | master-derived lane | `papers.jsonl`, SQLite | Lifecycle may later receive a dedicated owner, but first pass remains master-derived |
+| `inclusion_status`, `record_status`, `inclusion_decision`, `duplicate_of`, active/core record state | master-derived lane | `papers.jsonl`, SQLite | Lifecycle may later receive a dedicated owner, but first pass remains master-derived |
 | `legacy_main_class`, `legacy_secondary_class`, `legacy_tertiary_class` | master | code preview, classification index seeding | First-pass source for secondary filing position |
 | `scientific_object_modules` | master-derived canonical lane | `classification_assignments.jsonl`, `paper_modules`, SQLite | Array of formal `01-11` modules only |
 | `general_method_bucket` | master-derived canonical lane | registry, SQLite | `01.04` only lives here, never in `scientific_object_modules` |

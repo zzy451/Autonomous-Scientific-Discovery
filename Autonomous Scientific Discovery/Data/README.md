@@ -28,6 +28,8 @@ Field ownership is intentionally split, but the current export layer still carri
 
 Canonical structured classification remains derived from the master list plus the current project parsing rules around `scientific_object_modules`, `general_method_bucket`, `object_coverage_mode`, and `primary_module_for_filing`. In current script behavior, `Remarks` structured tokens take priority, unresolved legacy `01 / 01.04` rows are normalized into the separate `01.04` general bucket, and only then does legacy `Main class` serve as a fallback for formal-module export.
 
+The current lifecycle-derived lane also includes `record_status`, `inclusion_decision`, and `duplicate_of`. When an excluded record's `Exclusion reason` explicitly marks it as a duplicate of another `ASD-xxxx` record, export derives a structured duplicate linkage instead of leaving that evidence only in free text.
+
 Formal Phase 3 governance artifacts:
 
 - semantics freeze: `Coverage_Check/structured_data_authoritative_semantics_freeze_2026-07-02.md`

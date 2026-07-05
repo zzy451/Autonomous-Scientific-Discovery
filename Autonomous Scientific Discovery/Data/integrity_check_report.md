@@ -6,7 +6,7 @@ Status: `passed`
 
 - `ERROR`: 0
 - `WARNING`: 96
-- `INFO`: 10
+- `INFO`: 412
 
 ## Summary By Category
 
@@ -14,10 +14,13 @@ Status: `passed`
 - `discipline_code`: 24
 - `taxonomy`: 36
 - `derived_snapshot`: 1
+- `audit`: 402
 
 ## Summary By Finding Code
 
+- `BACKGROUND_ONLY_RECORD`: 371
 - `SECONDARY_TERM_NEEDS_REVIEW`: 36
+- `DUPLICATE_RECORD`: 31
 - `MISSING_LOCAL_PDF`: 25
 - `SOURCE_LIMITED`: 20
 - `PENDING_SECONDARY`: 15
@@ -258,3 +261,810 @@ Status: `passed`
 
 - `DERIVED_SNAPSHOT_WORKTREE_DIRTY` | Derived discipline-local registry snapshot was generated from a dirty worktree.
   Owner file: `Data/discipline_local_code_registry.jsonl`
+
+### audit
+
+- `BACKGROUND_ONLY_RECORD` | `ASD-0011` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0015` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0021` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0023` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0026` | Record is intentionally marked as duplicate of ASD-0522.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0027` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0043` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0050` | Record is intentionally marked as duplicate of ASD-0100.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0066` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0067` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0072` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0074` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0078` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0081` | Record is intentionally marked as duplicate of ASD-0521.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0082` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0083` | Record is intentionally marked as duplicate of ASD-0540.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0086` | Record is intentionally marked as duplicate of ASD-0084.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0087` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0088` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0092` | Record is intentionally marked as duplicate of ASD-0093.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0099` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0101` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0102` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0103` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0107` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0108` | Record is intentionally marked as duplicate of ASD-0107.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0109` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0122` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0123` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0130` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0131` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0142` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0143` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0144` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0148` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0153` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0157` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0159` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0160` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0161` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0162` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0163` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0164` | Record is intentionally marked as duplicate of ASD-0040.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0165` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0166` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0167` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0168` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0169` | Record is intentionally marked as duplicate of ASD-0170.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0170` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0171` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0173` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0174` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0175` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0176` | Record is intentionally marked as duplicate of ASD-0144.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0177` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0178` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0180` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0181` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0182` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0183` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0184` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0185` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0187` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0188` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0190` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0191` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0192` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0193` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0194` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0195` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0196` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0197` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0198` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0199` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0200` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0201` | Record is intentionally marked as duplicate of ASD-0035.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0202` | Record is intentionally marked as duplicate of ASD-0115.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0203` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0204` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0205` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0207` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0208` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0209` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0210` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0211` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0212` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0213` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0214` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0215` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0216` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0217` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0218` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0219` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0220` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0221` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0222` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0223` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0224` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0225` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0226` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0227` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0228` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0229` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0230` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0231` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0232` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0233` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0234` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0235` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0236` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0237` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0238` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0239` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0240` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0241` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0242` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0243` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0244` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0245` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0246` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0247` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0248` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0249` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0250` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0252` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0253` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0255` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0256` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0258` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0259` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0260` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0261` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0262` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0263` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0264` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0265` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0266` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0267` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0268` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0269` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0270` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0272` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0273` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0274` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0275` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0277` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0278` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0279` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0281` | Record is intentionally marked as duplicate of ASD-0280.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0282` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0283` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0284` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0285` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0286` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0287` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0289` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0291` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0292` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0293` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0294` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0295` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0296` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0297` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0298` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0299` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0301` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0302` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0303` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0304` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0305` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0306` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0307` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0308` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0309` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0310` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0311` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0312` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0313` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0314` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0315` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0316` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0317` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0319` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0320` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0321` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0322` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0323` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0324` | Record is intentionally marked as duplicate of ASD-0139.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0325` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0326` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0327` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0328` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0329` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0330` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0331` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0332` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0334` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0335` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0336` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0337` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0338` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0339` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0340` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0341` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0342` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0343` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0344` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0345` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0346` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0347` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0348` | Record is intentionally marked as duplicate of ASD-0143.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0349` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0350` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0351` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0352` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0353` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0354` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0355` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0356` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0358` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0359` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0360` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0361` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0362` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0363` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0365` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0368` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0369` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0371` | Record is intentionally marked as duplicate of ASD-0016.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0372` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0373` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0374` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0375` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0376` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0377` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0378` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0380` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0382` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0383` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0384` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0386` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0387` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0391` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0392` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0393` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0394` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0395` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0396` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0397` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0398` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0399` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0400` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0401` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0402` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0403` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0404` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0405` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0406` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0407` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0408` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0409` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0411` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0412` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0413` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0414` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0416` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0419` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0420` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0423` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0424` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0426` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0427` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0430` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0431` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0432` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0433` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0434` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0435` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0436` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0437` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0438` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0439` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0440` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0441` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0442` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0443` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0444` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0445` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0446` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0449` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0450` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0451` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0452` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0453` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0456` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0457` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0458` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0459` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0460` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0461` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0462` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0464` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0465` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0467` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0468` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0469` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0471` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0472` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0473` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0474` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0475` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0476` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0477` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0479` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0480` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0481` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0482` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0483` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0485` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0486` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0488` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0489` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0490` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0492` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0493` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0494` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0495` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0496` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0497` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0498` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0499` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0500` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0502` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0509` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0527` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0532` | Record is intentionally marked as duplicate of ASD-0097.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0533` | Record is intentionally marked as duplicate of ASD-0041.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0534` | Record is intentionally marked as duplicate of ASD-0085.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0546` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0550` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0551` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0555` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0559` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0560` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0561` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0562` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0563` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0566` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0578` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0580` | Record is intentionally marked as duplicate of ASD-0579.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0583` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0584` | Record is intentionally marked as duplicate of ASD-0577.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0585` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0588` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0593` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0594` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0595` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0602` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0604` | Record is intentionally marked as duplicate of ASD-0154.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0616` | Record is intentionally marked as duplicate of ASD-0478.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0619` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0620` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0638` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0639` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0640` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0641` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0642` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0643` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0646` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0657` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0661` | Record is intentionally marked as duplicate of ASD-0083.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0685` | Record is intentionally marked as duplicate of ASD-0077.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0686` | Record is intentionally marked as duplicate of ASD-0254.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0689` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0690` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0692` | Record is intentionally marked as duplicate of ASD-0646.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0694` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0700` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0718` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0720` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0730` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0732` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0746` | Record is intentionally marked as duplicate of ASD-0712.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0767` | Record is intentionally marked as duplicate of ASD-0636.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0776` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0777` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0778` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0785` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0788` | Record is intentionally marked as duplicate of ASD-0574.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0795` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0802` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `DUPLICATE_RECORD` | `ASD-0823` | Record is intentionally marked as duplicate of ASD-0716.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0834` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0835` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0836` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0837` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0841` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0842` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0843` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0846` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0847` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0865` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`

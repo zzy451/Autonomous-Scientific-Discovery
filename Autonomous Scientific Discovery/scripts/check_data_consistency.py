@@ -189,6 +189,7 @@ LOCAL_PDF_STATUSES = {
     "official_supplementary_pdf_archived_main_article_gated",
 }
 PAPER_ID_PATTERN = re.compile(r"^ASD-\d{4}$")
+PAPER_ID_SEARCH_PATTERN = re.compile(r"ASD-\d{4}")
 CHANGE_ID_PATTERN = re.compile(r"^CL-[0-9]{6}$")
 DISCIPLINE_CODE_PATTERN = re.compile(r"^[0-9]{2}-[0-9]{2}-[0-9]{3}$")
 PRIMARY_TAXONOMY_2LVL_PATTERN = re.compile(r"^[0-9]{2}\.[0-9]{2}$")
@@ -1078,6 +1079,34 @@ def collect_non_blocking_findings(
                 message="Active confirmed-core paper remains source-limited.",
                 owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
             )
+        if str(paper.get("record_status", "")) == "background_only":
+            add_finding(
+                findings,
+                severity="INFO",
+                category="audit",
+                code="BACKGROUND_ONLY_RECORD",
+                subject_id=paper_id,
+                message="Record is intentionally kept as background_only in the current lifecycle layer.",
+                owner_file="Paper_Lists/agent_master_paper_list.md",
+            )
+        if str(paper.get("record_status", "")) == "duplicate":
+            add_finding(
+                findings,
+                severity="INFO",
+                category="audit",
+                code="DUPLICATE_RECORD",
+                subject_id=paper_id,
+                message=(
+                    "Record is intentionally marked as duplicate"
+                    + (
+                        f" of {paper.get('duplicate_of')}"
+                        if str(paper.get("duplicate_of", "")).strip()
+                        else ""
+                    )
+                    + "."
+                ),
+                owner_file="Paper_Lists/agent_master_paper_list.md",
+            )
 
     for assignment in discipline_code_assignments:
         paper_id = str(assignment["paper_id"])
@@ -1425,6 +1454,13 @@ def normalize_module_list(raw_value: str) -> List[str]:
 def has_pollution_artifact(value: str) -> bool:
     lower_value = value.lower()
     return any(token in lower_value for token in POLLUTION_TOKENS)
+
+
+def derive_duplicate_of(exclusion_reason: str) -> str:
+    if "duplicate" not in exclusion_reason.strip().lower():
+        return ""
+    matches = PAPER_ID_SEARCH_PATTERN.findall(exclusion_reason)
+    return matches[0] if matches else ""
 
 
 def derive_source_checked_at(
@@ -2062,6 +2098,25 @@ def main() -> None:
                 isinstance(row.get("duplicate_of"), str),
                 f"{paper_id} duplicate_of must be a string",
             )
+            duplicate_of = str(row.get("duplicate_of") or "")
+            expected_duplicate_of = derive_duplicate_of(str(row.get("exclusion_reason") or ""))
+            assert_true(
+                duplicate_of == expected_duplicate_of,
+                f"{paper_id} duplicate_of disagrees with exclusion_reason-derived expectation: {duplicate_of!r} != {expected_duplicate_of!r}",
+            )
+            if duplicate_of:
+                assert_true(
+                    PAPER_ID_PATTERN.fullmatch(duplicate_of) is not None,
+                    f"{paper_id} duplicate_of has invalid format: {duplicate_of!r}",
+                )
+                assert_true(
+                    duplicate_of != paper_id,
+                    f"{paper_id} duplicate_of must not self-reference",
+                )
+                assert_true(
+                    duplicate_of in paper_ids,
+                    f"{paper_id} duplicate_of references unknown paper_id: {duplicate_of!r}",
+                )
             assert_true(
                 isinstance(row.get("last_reviewed_at"), str),
                 f"{paper_id} last_reviewed_at must be a string",
@@ -2279,6 +2334,15 @@ def main() -> None:
                 assert_true(
                     row["record_status"] == "background_only",
                     f"{paper_id} background_only rows must use record_status=background_only",
+                )
+            elif duplicate_of:
+                assert_true(
+                    row["record_status"] == "duplicate",
+                    f"{paper_id} duplicate-trace rows must use record_status=duplicate",
+                )
+                assert_true(
+                    row["inclusion_decision"] == "duplicate",
+                    f"{paper_id} duplicate-trace rows must use inclusion_decision=duplicate",
                 )
             elif row["inclusion_status"] == "excluded":
                 assert_true(

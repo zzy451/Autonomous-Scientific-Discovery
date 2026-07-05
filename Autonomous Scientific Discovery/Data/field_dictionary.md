@@ -305,6 +305,9 @@
 - `secondary_class_source`
 - `secondary_class_confidence`
 - `secondary_class_review_status`
+- `record_status`
+- `inclusion_decision`
+- `duplicate_of`
 - `source_checked_at`
 - `pdf_path`, `pdf_exists`
 - `note_path`, `note_exists`
@@ -316,6 +319,11 @@
 - 它不是新的事实层，只是比 registry 更接近“整篇论文一行”的分析表示。
 - `final_modules_or_bucket` 在这里应被理解为 progress workflow mirror，而不是 canonical classification source。
 - `secondary_class_*` 三元字段是二级位 provenance trace，不是新的 taxonomy owner facts。
+- `record_status / inclusion_decision / duplicate_of` 是当前 lifecycle derived layer。
+- 对 exclusion reason 中有明确 duplicate 线索且能回连 `ASD-xxxx` 的记录，当前会派生：
+  - `record_status = duplicate`
+  - `inclusion_decision = duplicate`
+  - `duplicate_of = ASD-xxxx`
 
 ### 4.2 `taxonomy_index.json`
 

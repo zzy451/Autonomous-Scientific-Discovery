@@ -220,6 +220,7 @@ FIRST_HAND_STOP_PREFIXES = (
 )
 SECONDARY_CODE_PATTERN = re.compile(r"^(0[1-9]|1[0-1])\.(\d{2})$")
 SOURCE_CHECK_DATE_PATTERN = re.compile(r"20[0-9]{2}-[0-9]{2}-[0-9]{2}")
+PAPER_ID_PATTERN = re.compile(r"ASD-\d{4}")
 SOURCE_CHECK_CONTEXT_KEYWORDS = (
     "checked",
     "rechecked",
@@ -620,20 +621,42 @@ def derive_record_status(inclusion_status: str, active_confirmed_core: bool) -> 
     normalized = inclusion_status.strip().lower()
     if active_confirmed_core:
         return "active_confirmed_core"
-    if normalized == "background_only":
-        return "background_only"
     if normalized == "excluded":
         return "excluded"
     if normalized in {"duplicate", "duplicated"}:
         return "duplicate"
     if normalized in {"retired", "retire"}:
         return "retired"
+    if normalized in {"background_only", "background"}:
+        return "background_only"
     if normalized in {"candidate", "pending", "to_read"}:
         return "candidate"
     return "candidate"
 
 
-def derive_inclusion_decision(inclusion_status: str, active_confirmed_core: bool) -> str:
+def derive_duplicate_of(exclusion_reason: str) -> str:
+    if "duplicate" not in exclusion_reason.strip().lower():
+        return ""
+    matches = PAPER_ID_PATTERN.findall(exclusion_reason)
+    return matches[0] if matches else ""
+
+
+def adjust_record_status_for_duplicate(
+    *,
+    inclusion_status: str,
+    active_confirmed_core: bool,
+    duplicate_of: str,
+) -> str:
+    if duplicate_of and not active_confirmed_core:
+        return "duplicate"
+    return derive_record_status(inclusion_status, active_confirmed_core)
+
+
+def derive_inclusion_decision(
+    inclusion_status: str, active_confirmed_core: bool, duplicate_of: str = ""
+) -> str:
+    if duplicate_of and not active_confirmed_core:
+        return "duplicate"
     normalized = inclusion_status.strip().lower()
     if active_confirmed_core:
         return "confirmed_core"
@@ -1110,9 +1133,14 @@ def build_papers(
             row["Inclusion status"] in {"to_read", "included"}
             and (bool(scientific_object_modules) or general_method_bucket != "none")
         )
-        record_status = derive_record_status(row["Inclusion status"], is_active_confirmed_core)
+        duplicate_of = derive_duplicate_of(row["Exclusion reason"])
+        record_status = adjust_record_status_for_duplicate(
+            inclusion_status=row["Inclusion status"],
+            active_confirmed_core=is_active_confirmed_core,
+            duplicate_of=duplicate_of,
+        )
         inclusion_decision = derive_inclusion_decision(
-            row["Inclusion status"], is_active_confirmed_core
+            row["Inclusion status"], is_active_confirmed_core, duplicate_of
         )
         latest_change = latest_change_log_by_paper_id.get(paper_id, {})
         pdf_status = progress.get("pdf_status", "")
@@ -1191,7 +1219,7 @@ def build_papers(
                 "active_confirmed_core": is_active_confirmed_core,
                 "record_status": record_status,
                 "inclusion_decision": inclusion_decision,
-                "duplicate_of": "",
+                "duplicate_of": duplicate_of,
                 "last_reviewed_at": latest_change.get("changed_at", ""),
                 "last_reviewed_by": latest_change.get("changed_by", ""),
                 "exported_at": exported_at,
