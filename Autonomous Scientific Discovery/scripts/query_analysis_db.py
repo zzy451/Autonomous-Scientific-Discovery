@@ -753,6 +753,21 @@ def change_log(conn: sqlite3.Connection, *, paper_id: str | None, change_type: s
     ''', (*params, limit)).fetchall()
     print_rows(rows, max_widths={'reason': 56, 'related_commit': 16})
 
+def change_log_summary(conn: sqlite3.Connection) -> None:
+    print_heading('Change Log Summary')
+    rows = conn.execute('''
+        SELECT
+            change_type,
+            COUNT(*) AS change_count,
+            COUNT(DISTINCT paper_id) AS paper_count,
+            MIN(changed_at) AS first_changed_at,
+            MAX(changed_at) AS last_changed_at
+        FROM change_log
+        GROUP BY change_type
+        ORDER BY change_count DESC, change_type
+    ''').fetchall()
+    print_rows(rows, max_widths={'change_type': 36})
+
 def lifecycle_summary(conn: sqlite3.Connection, *, all_papers: bool) -> None:
     scope_label = 'all scopes' if all_papers else 'active_confirmed_core only'
     print_heading(f'Lifecycle Summary ({scope_label})')
@@ -854,6 +869,7 @@ def build_parser() -> argparse.ArgumentParser:
     notes_parser = subparsers.add_parser('notes', help='List notes table rows')
     notes_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
     notes_parser.add_argument('--missing-only', action='store_true', help='Only show missing notes')
+    subparsers.add_parser('change-log-summary', help='Summarize change_log rows by change_type and affected paper count')
     change_log_parser = subparsers.add_parser('change-log', help='List lightweight audit rows from change_log')
     change_log_parser.add_argument('--paper-id')
     change_log_parser.add_argument('--change-type')
@@ -928,6 +944,8 @@ def main() -> None:
             paper_assets(conn, asset_type=args.asset_type, missing_only=args.missing_only)
         elif args.command == 'notes':
             note_summary(conn, all_papers=args.all, missing_only=args.missing_only)
+        elif args.command == 'change-log-summary':
+            change_log_summary(conn)
         elif args.command == 'change-log':
             change_log(conn, paper_id=args.paper_id, change_type=args.change_type, limit=args.limit)
         elif args.command == 'lifecycle-summary':

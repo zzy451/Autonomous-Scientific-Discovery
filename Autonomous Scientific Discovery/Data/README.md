@@ -289,6 +289,18 @@ Show canonical `01.04` general-method bucket summary:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" bucket-0104-summary
 ```
 
+Summarize audit rows by `change_type`:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" change-log-summary
+```
+
+List lightweight audit rows:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" change-log
+```
+
 Operational notes:
 
 - `analysis-baseline` is the fixed canonical record-vs-assignment glossary output for the current active confirmed-core snapshot.
@@ -301,6 +313,8 @@ Operational notes:
 - `multi-module-combo-summary` is the canonical combination-frequency view for multi-module papers.
 - `module-pdf-coverage` is the canonical per-module PDF coverage table.
 - `bucket-0104-summary` is the canonical `01.04` bucket count, distinct from the mirror audit command.
+- `change-log-summary` is the audit summary surface for owner-maintenance activity by `change_type`.
+- `change-log` lists raw audit rows from `Data/change_log.jsonl` after they are loaded into SQLite.
 - `boundary-cases` and `bucket-summary` are audit commands for canonical-vs-mirror inspection, not default canonical classification summaries.
 - If `papers.sqlite` is stale or missing, rerun `build_analysis_db.py` after `export -> check`.
 

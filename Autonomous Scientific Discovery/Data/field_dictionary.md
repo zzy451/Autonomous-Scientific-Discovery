@@ -496,6 +496,57 @@
 - `discipline_display_order` 是 derived 排序字段，用于展示 / CSV / review 排序，不拥有稳定管理码事实。
 - registry 是 derived snapshot，不能手工回写成为事实源。
 
+### 4.2D `change_log.jsonl`
+
+定位: 轻量 owner-change 审计账本，记录 owner fact source 的显式更新动作及其 paper-level 影响。
+
+关键字段:
+
+- `change_id`
+- `paper_id`
+- `changed_at`
+- `changed_by`
+- `change_type`
+- `old_value`
+- `new_value`
+- `reason`
+- `related_commit`
+
+当前语义:
+
+- `change_id`
+  - 采用 `CL-000001` 递增格式
+  - 由 helper / append 脚本分配
+- `paper_id`
+  - 受该次 owner 变更影响的论文主键
+- `change_type`
+  - 当前既可能是显式传入，也可能由 owner helper 根据改动字段推导
+  - 已出现的典型值包括：
+    - `taxonomy_owner_add_secondary`
+    - `pdf_source_status_update`
+    - `note_progress_update`
+    - `progress_workflow_update`
+    - `classification_fact_update`
+    - `record_status_update`
+    - `citation_priority_update`
+- `old_value` / `new_value`
+  - 保存本次变更的结构化前后值快照
+  - 对 taxonomy owner 变更，可记录 term 级 before/after
+- `reason`
+  - 人工解释本次 owner 变更的必要性
+- `related_commit`
+  - 关联 git commit，方便回溯
+
+约束:
+
+- 它是审计账本，不是新的内容事实 owner。
+- 不能用 `change_log.jsonl` 反向覆盖 master / progress / taxonomy / discipline ledger。
+- 它优先记录：
+  - 分类改变
+  - PDF / source 状态改变
+  - record status / duplicate linkage 改变
+- `last_reviewed_at / last_reviewed_by` 等 derived review 追踪字段可以从这里回投到 analysis 层，但 `change_log` 本身不替代 owner fact source。
+
 ### 4.3 `pdf_manifest.json`
 
 定位: 当前本地真实存在的主 PDF 清单。
