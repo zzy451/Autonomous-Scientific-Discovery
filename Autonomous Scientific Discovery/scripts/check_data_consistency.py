@@ -1402,6 +1402,7 @@ def add_finding(
     message: str,
     owner_file: str,
     subject_id: str = "",
+    field: str = "",
 ) -> None:
     findings.append(
         {
@@ -1409,6 +1410,7 @@ def add_finding(
             "category": category,
             "code": code,
             "subject_id": subject_id,
+            "field": field,
             "message": message,
             "owner_file": owner_file,
         }
@@ -1443,6 +1445,7 @@ def collect_non_blocking_findings(
                 category="evidence",
                 code="MISSING_LOCAL_PDF",
                 subject_id=paper_id,
+                field="pdf_path / pdf_exists",
                 message="Active confirmed-core paper currently has no local PDF.",
                 owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
             )
@@ -1458,6 +1461,7 @@ def collect_non_blocking_findings(
                     category="evidence",
                     code="MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE",
                     subject_id=paper_id,
+                    field="pdf_path / pdf_evidence_type",
                     message=(
                         "Active confirmed-core paper has no local PDF, but alternate first-hand "
                         f"source evidence remains available via {pdf_registry_row.get('pdf_evidence_type')}."
@@ -1471,6 +1475,7 @@ def collect_non_blocking_findings(
                 category="evidence",
                 code="SOURCE_LIMITED",
                 subject_id=paper_id,
+                field="source_limited",
                 message="Active confirmed-core paper remains source-limited.",
                 owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
             )
@@ -1481,6 +1486,7 @@ def collect_non_blocking_findings(
                 category="taxonomy",
                 code="PRIMARY_MODULE_CONFIDENCE_LOW",
                 subject_id=paper_id,
+                field="primary_module_confidence",
                 message="Primary filing module remains low-confidence and should stay visible in review backlog.",
                 owner_file="Paper_Lists/agent_master_paper_list.md",
             )
@@ -1491,6 +1497,7 @@ def collect_non_blocking_findings(
                 category="audit",
                 code="BACKGROUND_ONLY_RECORD",
                 subject_id=paper_id,
+                field="record_status",
                 message="Record is intentionally kept as background_only in the current lifecycle layer.",
                 owner_file="Paper_Lists/agent_master_paper_list.md",
             )
@@ -1501,6 +1508,7 @@ def collect_non_blocking_findings(
                 category="audit",
                 code="DUPLICATE_RECORD",
                 subject_id=paper_id,
+                field="duplicate_of / record_status",
                 message=(
                     "Record is intentionally marked as duplicate"
                     + (
@@ -1519,6 +1527,7 @@ def collect_non_blocking_findings(
                 category="evidence",
                 code="SUPPLEMENTARY_ONLY_SOURCE_STATE",
                 subject_id=paper_id,
+                field="pdf_evidence_type",
                 message="Active confirmed-core paper currently relies on supplementary-only PDF/source state.",
                 owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
             )
@@ -1532,6 +1541,7 @@ def collect_non_blocking_findings(
             severity="WARNING",
             category="taxonomy",
             code="SECONDARY_CLASS_CONFIDENCE_LOW_SUMMARY",
+            field="secondary_class_confidence",
             message=(
                 "Low secondary-class confidence remains widespread: "
                 f"{len(low_secondary_confidence_rows)} papers total, "
@@ -1552,6 +1562,7 @@ def collect_non_blocking_findings(
                 category="discipline_code",
                 code="PENDING_SECONDARY",
                 subject_id=f"{paper_id} / {assignment_id}",
+                field="assignment_status / pending_reason",
                 message=(
                     "Discipline code assignment remains pending secondary review: "
                     f"{assignment.get('pending_reason') or '(no pending_reason)'}."
@@ -1565,6 +1576,7 @@ def collect_non_blocking_findings(
                 category="discipline_code",
                 code="NON_DISCIPLINE_GENERAL_METHOD",
                 subject_id=f"{paper_id} / {assignment_id}",
+                field="assignment_status",
                 message="Record is intentionally kept outside normal discipline shelving as pure general-method-only.",
                 owner_file="Data/discipline_code_assignments.jsonl",
             )
@@ -1580,6 +1592,7 @@ def collect_non_blocking_findings(
                 category="taxonomy",
                 code="SECONDARY_TERM_NEEDS_REVIEW",
                 subject_id=secondary_code,
+                field="status / review_status",
                 message=(
                     f"Secondary taxonomy term remains provisional "
                     f"(status={status or '(blank)'}, review_status={review_status or '(blank)'})."
@@ -1595,6 +1608,7 @@ def collect_non_blocking_findings(
                 severity="INFO",
                 category="derived_snapshot",
                 code="DERIVED_SNAPSHOT_WORKTREE_DIRTY",
+                field="worktree_dirty",
                 message="Derived discipline-local registry snapshot was generated from a dirty worktree.",
                 owner_file="Data/discipline_local_code_registry.jsonl",
             )
@@ -1680,6 +1694,8 @@ def write_integrity_check_report(
                     parts.append(f"`{finding['subject_id']}`")
                 parts.append(finding["message"])
                 lines.append("- " + " | ".join(parts))
+                if finding.get("field"):
+                    lines.append(f"  Field: `{finding['field']}`")
                 lines.append(f"  Owner file: `{finding['owner_file']}`")
             lines.append("")
 
@@ -1696,44 +1712,45 @@ def classify_assertion_failure(message: str) -> Dict[str, str]:
     subject_id = extract_subject_id_from_message(message)
 
     mappings = (
-        ("discipline_code_assignments", "discipline_code", "DISCIPLINE_CODE_ASSERTION", "Data/discipline_code_assignments.jsonl"),
-        ("discipline_local_code_registry", "derived_snapshot", "DISCIPLINE_LOCAL_CODE_REGISTRY_ASSERTION", "Data/discipline_local_code_registry.jsonl"),
-        ("discipline_code_initial_assignment_preview", "derived_snapshot", "DISCIPLINE_INITIAL_PREVIEW_ASSERTION", "Data/discipline_code_initial_assignment_preview.csv"),
-        ("classification_code_index", "taxonomy", "CLASSIFICATION_CODE_INDEX_ASSERTION", "Data/classification_code_index.json"),
-        ("taxonomy_registry", "taxonomy", "TAXONOMY_REGISTRY_ASSERTION", "Data/registry/taxonomy_registry.json"),
-        ("taxonomy_index", "taxonomy", "TAXONOMY_INDEX_ASSERTION", "Data/taxonomy_index.json"),
-        ("paper_identifier_aliases", "identity", "PAPER_IDENTIFIER_ALIASES_ASSERTION", "Data/registry/paper_identifier_aliases.jsonl"),
-        ("paper_registry", "identity", "PAPER_REGISTRY_ASSERTION", "Data/registry/paper_registry.jsonl"),
-        ("classification_assignments", "taxonomy", "CLASSIFICATION_ASSIGNMENTS_ASSERTION", "Data/registry/classification_assignments.jsonl"),
-        ("pdf_archive_registry", "evidence", "PDF_ARCHIVE_REGISTRY_ASSERTION", "Data/registry/pdf_archive_registry.jsonl"),
-        ("pdf_manifest", "evidence", "PDF_MANIFEST_ASSERTION", "Data/pdf_manifest.json"),
-        ("missing_pdf_manifest", "evidence", "MISSING_PDF_MANIFEST_ASSERTION", "Data/missing_pdf_manifest.json"),
-        ("asset_manifest", "asset", "ASSET_MANIFEST_ASSERTION", "Data/registry/asset_manifest.jsonl"),
-        ("note_manifest", "note", "NOTE_MANIFEST_ASSERTION", "Data/note_manifest.json"),
-        ("active_confirmed_core row cannot be joined to progress owner file", "evidence", "ACTIVE_PROGRESS_JOIN_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
-        ("source_limited", "evidence", "SOURCE_LIMITED_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
-        ("pdf_status", "evidence", "PDF_STATUS_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
-        ("evidence_status", "evidence", "EVIDENCE_STATUS_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
-        ("final_modules_or_bucket", "evidence", "PROGRESS_MODULE_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
-        ("scientific_object_modules", "taxonomy", "SCIENTIFIC_OBJECT_MODULES_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
-        ("general_method_bucket", "taxonomy", "GENERAL_METHOD_BUCKET_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
-        ("primary_module_for_filing", "taxonomy", "PRIMARY_FILING_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
-        ("legacy_main_class", "taxonomy", "LEGACY_MAIN_CLASS_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
-        ("legacy_secondary_class", "taxonomy", "LEGACY_SECONDARY_CLASS_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
-        ("remarks", "taxonomy", "MASTER_REMARKS_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
-        ("note_path drift against master/progress derived expectation", "note", "NOTE_PATH_ASSERTION", "Paper_Lists/agent_master_paper_list.md or Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
-        ("pdf_path drift against master/progress derived expectation", "evidence", "PDF_PATH_ASSERTION", "Paper_Lists/agent_master_paper_list.md or Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
-        ("title drift between master and papers.jsonl", "identity", "MASTER_TITLE_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
-        ("inclusion_status drift between master and papers.jsonl", "identity", "MASTER_INCLUSION_STATUS_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
+        ("discipline_code_assignments", "discipline_code", "DISCIPLINE_CODE_ASSERTION", "Data/discipline_code_assignments.jsonl", "discipline_code_assignments"),
+        ("discipline_local_code_registry", "derived_snapshot", "DISCIPLINE_LOCAL_CODE_REGISTRY_ASSERTION", "Data/discipline_local_code_registry.jsonl", "discipline_local_code_registry"),
+        ("discipline_code_initial_assignment_preview", "derived_snapshot", "DISCIPLINE_INITIAL_PREVIEW_ASSERTION", "Data/discipline_code_initial_assignment_preview.csv", "discipline_code_initial_assignment_preview"),
+        ("classification_code_index", "taxonomy", "CLASSIFICATION_CODE_INDEX_ASSERTION", "Data/classification_code_index.json", "classification_code_index"),
+        ("taxonomy_registry", "taxonomy", "TAXONOMY_REGISTRY_ASSERTION", "Data/registry/taxonomy_registry.json", "taxonomy_registry"),
+        ("taxonomy_index", "taxonomy", "TAXONOMY_INDEX_ASSERTION", "Data/taxonomy_index.json", "taxonomy_index"),
+        ("paper_identifier_aliases", "identity", "PAPER_IDENTIFIER_ALIASES_ASSERTION", "Data/registry/paper_identifier_aliases.jsonl", "paper_identifier_aliases"),
+        ("paper_registry", "identity", "PAPER_REGISTRY_ASSERTION", "Data/registry/paper_registry.jsonl", "paper_registry"),
+        ("classification_assignments", "taxonomy", "CLASSIFICATION_ASSIGNMENTS_ASSERTION", "Data/registry/classification_assignments.jsonl", "classification_assignments"),
+        ("pdf_archive_registry", "evidence", "PDF_ARCHIVE_REGISTRY_ASSERTION", "Data/registry/pdf_archive_registry.jsonl", "pdf_archive_registry"),
+        ("pdf_manifest", "evidence", "PDF_MANIFEST_ASSERTION", "Data/pdf_manifest.json", "pdf_manifest"),
+        ("missing_pdf_manifest", "evidence", "MISSING_PDF_MANIFEST_ASSERTION", "Data/missing_pdf_manifest.json", "missing_pdf_manifest"),
+        ("asset_manifest", "asset", "ASSET_MANIFEST_ASSERTION", "Data/registry/asset_manifest.jsonl", "asset_manifest"),
+        ("note_manifest", "note", "NOTE_MANIFEST_ASSERTION", "Data/note_manifest.json", "note_manifest"),
+        ("active_confirmed_core row cannot be joined to progress owner file", "evidence", "ACTIVE_PROGRESS_JOIN_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md", "paper_id / progress join"),
+        ("source_limited", "evidence", "SOURCE_LIMITED_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md", "source_limited"),
+        ("pdf_status", "evidence", "PDF_STATUS_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md", "pdf_status"),
+        ("evidence_status", "evidence", "EVIDENCE_STATUS_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md", "evidence_status"),
+        ("final_modules_or_bucket", "evidence", "PROGRESS_MODULE_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md", "final_modules_or_bucket"),
+        ("scientific_object_modules", "taxonomy", "SCIENTIFIC_OBJECT_MODULES_ASSERTION", "Paper_Lists/agent_master_paper_list.md", "scientific_object_modules"),
+        ("general_method_bucket", "taxonomy", "GENERAL_METHOD_BUCKET_ASSERTION", "Paper_Lists/agent_master_paper_list.md", "general_method_bucket"),
+        ("primary_module_for_filing", "taxonomy", "PRIMARY_FILING_ASSERTION", "Paper_Lists/agent_master_paper_list.md", "primary_module_for_filing"),
+        ("legacy_main_class", "taxonomy", "LEGACY_MAIN_CLASS_ASSERTION", "Paper_Lists/agent_master_paper_list.md", "legacy_main_class"),
+        ("legacy_secondary_class", "taxonomy", "LEGACY_SECONDARY_CLASS_ASSERTION", "Paper_Lists/agent_master_paper_list.md", "legacy_secondary_class"),
+        ("remarks", "taxonomy", "MASTER_REMARKS_ASSERTION", "Paper_Lists/agent_master_paper_list.md", "remarks"),
+        ("note_path drift against master/progress derived expectation", "note", "NOTE_PATH_ASSERTION", "Paper_Lists/agent_master_paper_list.md or Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md", "note_path"),
+        ("pdf_path drift against master/progress derived expectation", "evidence", "PDF_PATH_ASSERTION", "Paper_Lists/agent_master_paper_list.md or Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md", "pdf_path"),
+        ("title drift between master and papers.jsonl", "identity", "MASTER_TITLE_ASSERTION", "Paper_Lists/agent_master_paper_list.md", "title"),
+        ("inclusion_status drift between master and papers.jsonl", "identity", "MASTER_INCLUSION_STATUS_ASSERTION", "Paper_Lists/agent_master_paper_list.md", "inclusion_status"),
     )
 
-    for pattern, category, code, owner_file in mappings:
+    for pattern, category, code, owner_file, field in mappings:
         if pattern in normalized:
             return {
                 "severity": "ERROR",
                 "category": category,
                 "code": code,
                 "subject_id": subject_id,
+                "field": field,
                 "message": message,
                 "owner_file": owner_file,
             }
@@ -1743,6 +1760,7 @@ def classify_assertion_failure(message: str) -> Dict[str, str]:
         "category": "other",
         "code": "CHECK_ABORTED",
         "subject_id": subject_id,
+        "field": "",
         "message": message,
         "owner_file": "See assertion context in check_data_consistency.py",
     }
