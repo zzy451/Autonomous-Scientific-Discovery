@@ -141,6 +141,8 @@ Daily export must not write owner fact sources. The corresponding owner-maintena
   Updates the current discipline-code snapshot for one paper in the owner ledger and appends one audit row to `Data/change_log.jsonl`. Use `--dry-run` first when checking a planned reassignment.
 - `scripts/manage_classification_code_index.py`
   Maintains `Data/classification_code_index.json` as the taxonomy vocabulary owner, with explicit `sync`, `upsert-primary`, and `upsert-secondary` entry points. For secondary-term updates, it can also append impacted-paper audit rows to `Data/change_log.jsonl` so taxonomy-owner changes that affect derived paper-level provenance stay reviewable. Daily export still only reads this file and must never rewrite it.
+- `scripts/init_classification_code_index.py`
+  Explicit taxonomy-owner initialization command. It seeds `Data/classification_code_index.json` from the current taxonomy code map plus legacy secondary classes in the master owner file, so taxonomy-owner initialization remains separate from daily export.
 - `scripts/manage_progress_tracking.py`
   Updates one row in the progress owner file `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md` and appends one matching audit row to `Data/change_log.jsonl`. Use this for PDF/source/evidence workflow updates instead of hand-editing derived registries.
 - `scripts/manage_master_paper_list.py`
