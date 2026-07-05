@@ -1,5 +1,10 @@
 # Wang 2026 - Rhizome OS-1: Rhizome's Semi-Autonomous Operating System for Small Molecule Drug Discovery
 
+## 2026-07-05 Phase6NoteRevisionR25 harmonization
+
+- Frozen landing decision: scientific_object_modules=03;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; source_limited=no.
+- Current note-status rule: treat this record as already included / landed under the current authoritative pair; older to_read, pending, conservative-hold, or stale single-module / 01.04 shorthand below is superseded by this harmonization.
+- Current PDF/source rule: the authoritative local archived PDF is Reference_PDF\07_Medical_and_Health_Sciences\Wang_2026_Rhizome_OS_1.pdf; older pending, abstract-only, no-local-PDF, or stale source_limited=yes wording below is superseded by this harmonization.
 ## 2026-06-24 Batch30Partial2 writeback closure
 
 - `paper_id`: `ASD-0679`

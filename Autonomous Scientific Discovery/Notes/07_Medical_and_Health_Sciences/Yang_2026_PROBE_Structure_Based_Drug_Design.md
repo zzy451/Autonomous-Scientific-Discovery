@@ -1,5 +1,10 @@
 # Yang et al. 2026 - Probe Before You Edit: Probing-Guided Molecular Optimization for LLM Agents in Structure-Based Drug Design
 
+## 2026-07-05 Phase6NoteRevisionR25 harmonization
+
+- Frozen landing decision: scientific_object_modules=03;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; source_limited=no.
+- Current note-status rule: treat this record as already included / landed under the current authoritative pair; older to_read, pending, conservative-hold, or stale single-module / 01.04 shorthand below is superseded by this harmonization.
+- Current PDF/source rule: the authoritative local archived PDF is Reference_PDF\07_Medical_and_Health_Sciences\Yang_2026_PROBE_Structure_Based_Drug_Design.pdf; older pending, abstract-only, no-local-PDF, or stale source_limited=yes wording below is superseded by this harmonization.
 ## 2026-06-24 Batch28Partial1 full reaudit revision
 
 ```text

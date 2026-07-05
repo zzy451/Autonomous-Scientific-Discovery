@@ -1,5 +1,10 @@
 # Zhang et al. 2026 - An AI-Native Biofoundry for Autonomous Enzyme Engineering: Integrating Active Learning with Automated Experimentation
 
+## 2026-07-05 Phase6NoteRevisionR25 harmonization
+
+- Frozen landing decision: scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; source_limited=yes.
+- Current note-status rule: treat this record as already included / landed under the current authoritative pair; older to_read, pending, conservative-hold, or stale single-module / 01.04 shorthand below is superseded by this harmonization.
+- Current source rule: keep source_limited=yes in this note; older pending-only or stale non-authoritative source wording below is superseded by this harmonization.
 **论文信息**
 - 标题：An AI-Native Biofoundry for Autonomous Enzyme Engineering: Integrating Active Learning with Automated Experimentation
 - 作者：Chuwen Zhang et al.

@@ -1,5 +1,10 @@
 # Xu et al. 2025 - CFDagent: A Language-Guided, Zero-Shot Multi-Agent System for Complex Flow Simulation
 
+## 2026-07-05 Phase6NoteRevisionR25 harmonization
+
+- Frozen landing decision: scientific_object_modules=02;09; object_coverage_mode=multi_module; primary_module_for_filing=09; general_method_bucket=none; source_limited=no.
+- Current note-status rule: treat this record as already included / landed under the current authoritative pair; older to_read, pending, conservative-hold, or stale single-module / 01.04 shorthand below is superseded by this harmonization.
+- Current PDF/source rule: the authoritative local archived PDF is Reference_PDF\09_Engineering_and_Industrial_Technology_Sciences\Xu_2025_CFDagent.pdf; older pending, abstract-only, no-local-PDF, or stale source_limited=yes wording below is superseded by this harmonization.
 ## 2026-06-20 relaxed multi-module revision
 
 ```text

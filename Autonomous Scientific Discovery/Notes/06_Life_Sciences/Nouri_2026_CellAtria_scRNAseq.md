@@ -1,5 +1,10 @@
-﻿# Nouri 2026 - An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis
+# Nouri 2026 - An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis
 
+## 2026-07-05 Phase6NoteRevisionR25 harmonization
+
+- Frozen landing decision: scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=06; general_method_bucket=none; source_limited=no.
+- Current note-status rule: treat this record as already included / landed under the current authoritative pair; older to_read, pending, conservative-hold, or stale single-module / 01.04 shorthand below is superseded by this harmonization.
+- Current PDF/source rule: the authoritative local archived PDF is Reference_PDF\06_Life_Sciences\Nouri_2026_CellAtria_scRNAseq.pdf; older pending, abstract-only, no-local-PDF, or stale source_limited=yes wording below is superseded by this harmonization.
 **论文信息**
 - 标题：An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis
 - 作者：Nima Nouri, Ronen Artzi, Virginia Savova
@@ -248,4 +253,3 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：standard
 ```
-

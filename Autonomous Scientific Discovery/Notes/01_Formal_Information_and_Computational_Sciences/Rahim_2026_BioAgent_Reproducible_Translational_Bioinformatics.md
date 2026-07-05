@@ -1,5 +1,10 @@
 # Rahim 2026 - BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics
 
+## 2026-07-05 Phase6NoteRevisionR25 harmonization
+
+- Frozen landing decision: scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; source_limited=no.
+- Current note-status rule: treat this record as already included / landed under the current authoritative pair; older to_read, pending, conservative-hold, or stale single-module / 01.04 shorthand below is superseded by this harmonization.
+- Current PDF/source rule: the authoritative local archived PDF is Reference_PDF\01_Formal_Information_and_Computational_Sciences\Rahim_2026_BioAgent_Reproducible_Translational_Bioinformatics.pdf; older pending, abstract-only, no-local-PDF, or stale source_limited=yes wording below is superseded by this harmonization.
 ## Phase6FollowupR20 Frozen Adjudication
 
 - `paper_id`: `ASD-0554`

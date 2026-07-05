@@ -1,5 +1,10 @@
 # Patel et al. 2025 - Machine Learning Copilot Agent: An LLM-Guided Workflow for Prognostic Gene Discovery
 
+## 2026-07-05 Phase6NoteRevisionR25 harmonization
+
+- Frozen landing decision: scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; source_limited=no.
+- Current note-status rule: treat this record as already included / landed under the current authoritative pair; older to_read, pending, conservative-hold, or stale single-module / 01.04 shorthand below is superseded by this harmonization.
+- Current PDF/source rule: the authoritative local archived PDF is Reference_PDF\06_Life_Sciences\Patel_2025_ML_Copilot_Prognostic_Gene_Discovery.pdf; older pending, abstract-only, no-local-PDF, or stale source_limited=yes wording below is superseded by this harmonization.
 ## Phase6FollowupR20 Frozen Adjudication
 
 - `paper_id`: `ASD-0543`
