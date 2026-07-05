@@ -119,6 +119,7 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `papers.sqlite`: normalized query database for joins, filters, and aggregation.
 - `taxonomy_index.json`: code/label mapping for `01-11` and `01.04`.
 - `classification_code_index.json`: taxonomy vocabulary owner for primary / secondary code labels, definitions, include/exclude boundaries, term status, and term source.
+- `discipline_code_initial_assignment_preview.csv`: derived initial-assignment review sheet built from master + progress + taxonomy owner facts before freezing or editing the stable discipline-code ledger; review it, fix owner files, then rerun export instead of hand-editing the preview.
 - `discipline_code_assignments.jsonl`: stable discipline-local code assignment ledger using `assignment_status`.
 - `discipline_local_code_registry.jsonl`: derived snapshot joining paper facts, progress facts, taxonomy vocabulary, and discipline code assignments.
 - `discipline_local_code_registry.csv`: spreadsheet-oriented derived snapshot for discipline-local code review.
@@ -291,6 +292,54 @@ Show canonical `01.04` general-method bucket summary:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" bucket-0104-summary
 ```
 
+Summarize the current discipline-code snapshot:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" discipline-code-summary
+```
+
+Inspect one current or historical discipline-local code:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" discipline-code 04-03-017
+```
+
+Show current secondary-class summary from the discipline registry:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" secondary-class-summary
+```
+
+Show current secondary-class local-PDF coverage:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" secondary-class-pdf-coverage
+```
+
+List normalized taxonomy owner terms:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" classification-terms --level secondary
+```
+
+List canonical general-method bucket records:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" general-method-buckets
+```
+
+List asset-inventory rows:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" paper-assets --asset-type primary_pdf
+```
+
+List note-inventory rows:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" notes --missing-only
+```
+
 Summarize audit rows by `change_type`:
 
 ```bash
@@ -315,6 +364,12 @@ Operational notes:
 - `multi-module-combo-summary` is the canonical combination-frequency view for multi-module papers.
 - `module-pdf-coverage` is the canonical per-module PDF coverage table.
 - `bucket-0104-summary` is the canonical `01.04` bucket count, distinct from the mirror audit command.
+- `discipline-code-summary` is the current discipline-code snapshot summary from the ledger-derived registry, grouped by `assignment_status`, primary filing module, and secondary filing code.
+- `discipline-code` joins the stable ledger with the current derived registry so one code can be traced through its active / retired / redirected lifecycle context.
+- `secondary-class-summary` and `secondary-class-pdf-coverage` are the spreadsheet-friendly secondary-filing review surfaces built from `discipline_local_code_registry` plus taxonomy-owner terms.
+- `classification-terms` is the direct taxonomy vocabulary inspection surface for `classification_code_index.json` after it is loaded into SQLite.
+- `general-method-buckets` lists canonical `01.04` bucket records from the explicit `paper_general_method_buckets` relation instead of inferring them from mixed-scope module tables.
+- `paper-assets` and `notes` expose the normalized asset/note inventory tables for missing-file review, export sanity checks, and downstream maintenance audits.
 - `change-log-summary` is the audit summary surface for owner-maintenance activity by `change_type`.
 - `change-log` lists raw audit rows from `Data/change_log.jsonl` after they are loaded into SQLite.
 - `boundary-cases` and `bucket-summary` are audit commands for canonical-vs-mirror inspection, not default canonical classification summaries.
