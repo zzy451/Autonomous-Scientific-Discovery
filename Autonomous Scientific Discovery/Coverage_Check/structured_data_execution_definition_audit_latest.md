@@ -53,7 +53,7 @@ Evidence: `Data/classification_code_index.json + Data/papers.sqlite`
 
 ### Item 8 - PASS
 
-discipline_code_initial_assignment_preview.csv exists and matches the 447 active-paper review surface.
+discipline_code_initial_assignment_preview.csv matches the active-paper review surface and obeys preview assignment rules (active=423, pending=15, general_method=9).
 
 Evidence: `Data/discipline_code_initial_assignment_preview.csv`
 

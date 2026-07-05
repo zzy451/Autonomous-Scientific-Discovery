@@ -35,6 +35,8 @@ PLAN_PATH = COVERAGE_DIR / "structured_data_long_term_catalog_and_index_plan_202
 OUTPUT_PATH = COVERAGE_DIR / "structured_data_execution_definition_audit_latest.md"
 
 PAPER_ID_PATTERN = re.compile(r"ASD-\d{4}")
+DISCIPLINE_LOCAL_CODE_PATTERN = re.compile(r"^(0[1-9]|1[0-1])-(\d{2})-(\d{3})$")
+SECONDARY_CODE_PATTERN = re.compile(r"^(0[1-9]|1[0-1])\.(\d{2})$")
 ALLOWED_ASSIGNMENT_STATUSES = {
     "active_code",
     "retired_code",
@@ -265,11 +267,79 @@ def main() -> None:
     )
     add_result(results, "7", status, detail, "Data/classification_code_index.json + Data/papers.sqlite")
 
-    preview_ok = PREVIEW_CSV.exists() and len(preview_rows) == len(active_papers)
+    active_papers_by_id = {str(row["paper_id"]): row for row in active_papers}
+    preview_status_counts: dict[str, int] = {}
+    preview_current_statuses = {
+        "active_code",
+        "pending_secondary",
+        "non_discipline_general_method",
+    }
+    preview_rows_ok = PREVIEW_CSV.exists() and len(preview_rows) == len(active_papers)
+    preview_paper_ids_ok = {str(row.get("paper_id", "")) for row in preview_rows} == set(active_papers_by_id)
+    preview_statuses_ok = all(
+        str(row.get("proposed_assignment_status", "")) in preview_current_statuses
+        for row in preview_rows
+    )
+    preview_pending_ok = True
+    preview_general_method_ok = True
+    preview_active_ok = True
+    for row in preview_rows:
+        status_name = str(row.get("proposed_assignment_status", "")).strip()
+        preview_status_counts[status_name] = preview_status_counts.get(status_name, 0) + 1
+        paper_id = str(row.get("paper_id", "")).strip()
+        paper = active_papers_by_id.get(paper_id, {})
+        modules = paper.get("scientific_object_modules", [])
+        general_bucket = str(paper.get("general_method_bucket", ""))
+        proposed_code = str(row.get("proposed_discipline_local_code", "")).strip()
+        proposed_rank = str(row.get("discipline_local_rank", "")).strip()
+        proposed_secondary = str(row.get("proposed_primary_taxonomy_code_2lvl", "")).strip()
+        pending_reason = str(row.get("pending_reason", "")).strip()
+
+        if status_name == "pending_secondary":
+            preview_pending_ok = preview_pending_ok and (
+                not proposed_code
+                and not proposed_rank
+                and not proposed_secondary
+                and not DISCIPLINE_LOCAL_CODE_PATTERN.fullmatch(proposed_code)
+                and pending_reason in {"missing_primary_module_for_filing", "missing_or_uncertain_secondary_class", "secondary_primary_mismatch"}
+            )
+        elif status_name == "non_discipline_general_method":
+            preview_general_method_ok = preview_general_method_ok and (
+                general_bucket != "none"
+                and not modules
+                and not proposed_code
+                and not proposed_rank
+                and not proposed_secondary
+                and not pending_reason
+            )
+        elif status_name == "active_code":
+            code_match = DISCIPLINE_LOCAL_CODE_PATTERN.fullmatch(proposed_code)
+            secondary_match = SECONDARY_CODE_PATTERN.fullmatch(proposed_secondary)
+            preview_active_ok = preview_active_ok and (
+                code_match is not None
+                and secondary_match is not None
+                and proposed_rank == proposed_code.rsplit("-", 1)[-1]
+                and code_match.group(1) == secondary_match.group(1)
+                and code_match.group(2) == secondary_match.group(2)
+                and not pending_reason
+            )
+    preview_ok = (
+        preview_rows_ok
+        and preview_paper_ids_ok
+        and preview_statuses_ok
+        and preview_pending_ok
+        and preview_general_method_ok
+        and preview_active_ok
+    )
     status, detail = check(
         preview_ok,
-        f"discipline_code_initial_assignment_preview.csv exists and matches the {len(active_papers)} active-paper review surface.",
-        "discipline_code_initial_assignment_preview.csv is missing or does not match active-paper coverage.",
+        (
+            "discipline_code_initial_assignment_preview.csv matches the active-paper review surface "
+            f"and obeys preview assignment rules (active={preview_status_counts.get('active_code', 0)}, "
+            f"pending={preview_status_counts.get('pending_secondary', 0)}, "
+            f"general_method={preview_status_counts.get('non_discipline_general_method', 0)})."
+        ),
+        "discipline_code_initial_assignment_preview.csv is missing, mismatches active-paper coverage, or violates preview assignment rules.",
     )
     add_result(results, "8", status, detail, "Data/discipline_code_initial_assignment_preview.csv")
 
