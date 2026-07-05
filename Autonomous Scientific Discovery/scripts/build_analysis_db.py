@@ -526,6 +526,12 @@ def validate_discipline_sqlite_constraints() -> None:
         index_rows = conn.execute(
             "SELECT name, sql FROM sqlite_master WHERE type = 'index' AND tbl_name = 'discipline_code_assignments'"
         ).fetchall()
+        assignment_fk_rows = conn.execute(
+            "PRAGMA foreign_key_list(discipline_code_assignments)"
+        ).fetchall()
+        registry_fk_rows = conn.execute(
+            "PRAGMA foreign_key_list(discipline_local_code_registry)"
+        ).fetchall()
     finally:
         conn.close()
 
@@ -535,6 +541,8 @@ def validate_discipline_sqlite_constraints() -> None:
         str(name): str(sql or '')
         for name, sql in index_rows
     }
+    assignment_fk_targets = {(str(row[2]), str(row[3]), str(row[4])) for row in assignment_fk_rows}
+    registry_fk_targets = {(str(row[2]), str(row[3]), str(row[4])) for row in registry_fk_rows}
 
     assert_build_condition(
         "assignment_status IN (" in assignment_sql
@@ -557,6 +565,15 @@ def validate_discipline_sqlite_constraints() -> None:
         'discipline_code_assignments_one_active_per_paper' in index_sql_by_name
         and "WHERE assignment_status = 'active_code'" in index_sql_by_name['discipline_code_assignments_one_active_per_paper'],
         'discipline_code_assignments_one_active_per_paper partial index is missing or malformed',
+    )
+    assert_build_condition(
+        ('papers', 'paper_id', 'paper_id') in assignment_fk_targets,
+        'discipline_code_assignments SQLite table is missing expected foreign key to papers(paper_id)',
+    )
+    assert_build_condition(
+        ('papers', 'paper_id', 'paper_id') in registry_fk_targets
+        and ('discipline_code_assignments', 'assignment_id', 'assignment_id') in registry_fk_targets,
+        'discipline_local_code_registry SQLite table is missing expected foreign keys to papers and discipline_code_assignments',
     )
 
 def validate_auxiliary_analysis_tables(
@@ -1511,7 +1528,7 @@ def build_sqlite(
         );
         CREATE TABLE discipline_code_assignments (
             assignment_id TEXT PRIMARY KEY,
-            paper_id TEXT NOT NULL,
+            paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             discipline_local_code TEXT,
             primary_taxonomy_code_2lvl TEXT,
             assignment_status TEXT NOT NULL CHECK (
@@ -1564,8 +1581,8 @@ def build_sqlite(
         ON discipline_code_assignments(paper_id)
         WHERE assignment_status = 'active_code';
         CREATE TABLE discipline_local_code_registry (
-            paper_id TEXT PRIMARY KEY,
-            assignment_id TEXT NOT NULL,
+            paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
+            assignment_id TEXT NOT NULL REFERENCES discipline_code_assignments(assignment_id),
             discipline_local_code TEXT,
             discipline_local_rank TEXT,
             discipline_display_order TEXT NOT NULL,
