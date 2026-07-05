@@ -1060,6 +1060,11 @@ def collect_non_blocking_findings(
     pdf_registry_by_id = {
         str(row.get("paper_id")): row for row in pdf_archive_registry if row.get("paper_id")
     }
+    low_secondary_confidence_rows = [
+        paper
+        for paper in papers
+        if str(paper.get("secondary_class_confidence", "")).strip() == "low"
+    ]
 
     for paper in papers:
         paper_id = str(paper["paper_id"])
@@ -1150,6 +1155,24 @@ def collect_non_blocking_findings(
                 message="Active confirmed-core paper currently relies on supplementary-only PDF/source state.",
                 owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
             )
+
+    if low_secondary_confidence_rows:
+        active_low_secondary_confidence = sum(
+            1 for paper in low_secondary_confidence_rows if bool(paper.get("active_confirmed_core"))
+        )
+        add_finding(
+            findings,
+            severity="WARNING",
+            category="taxonomy",
+            code="SECONDARY_CLASS_CONFIDENCE_LOW_SUMMARY",
+            message=(
+                "Low secondary-class confidence remains widespread: "
+                f"{len(low_secondary_confidence_rows)} papers total, "
+                f"{active_low_secondary_confidence} active confirmed-core. "
+                "Review taxonomy secondary terms and legacy secondary-class mappings before treating the current 2-level layer as fully stabilized."
+            ),
+            owner_file="Data/classification_code_index.json",
+        )
 
     for assignment in discipline_code_assignments:
         paper_id = str(assignment["paper_id"])

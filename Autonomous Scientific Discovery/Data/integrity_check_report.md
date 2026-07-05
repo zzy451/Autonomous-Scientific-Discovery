@@ -5,14 +5,14 @@ Status: `passed`
 ## Summary
 
 - `ERROR`: 0
-- `WARNING`: 123
+- `WARNING`: 124
 - `INFO`: 414
 
 ## Summary By Category
 
 - `evidence`: 71
 - `discipline_code`: 24
-- `taxonomy`: 39
+- `taxonomy`: 40
 - `derived_snapshot`: 1
 - `audit`: 402
 
@@ -29,6 +29,7 @@ Status: `passed`
 - `PRIMARY_MODULE_CONFIDENCE_LOW`: 3
 - `SUPPLEMENTARY_ONLY_SOURCE_STATE`: 2
 - `DERIVED_SNAPSHOT_WORKTREE_DIRTY`: 1
+- `SECONDARY_CLASS_CONFIDENCE_LOW_SUMMARY`: 1
 
 ## ERROR
 
@@ -218,6 +219,8 @@ Status: `passed`
   Owner file: `Paper_Lists/agent_master_paper_list.md`
 - `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0803` | Primary filing module remains low-confidence and should stay visible in review backlog.
   Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `SECONDARY_CLASS_CONFIDENCE_LOW_SUMMARY` | Low secondary-class confidence remains widespread: 871 papers total, 447 active confirmed-core. Review taxonomy secondary terms and legacy secondary-class mappings before treating the current 2-level layer as fully stabilized.
+  Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `01.01` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
   Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `01.02` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
