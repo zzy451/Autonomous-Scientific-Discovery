@@ -131,8 +131,10 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `discipline_code_assignment_policy.md`: discipline-local code assignment policy.
 - `primary_filing_policy.md`: policy for choosing the single filing module for multi-module papers.
 - `check_policy.md`: `ERROR` / `WARNING` / `INFO` consistency-check policy.
+- `schema/discipline_code_assignments.schema.json`: frozen schema contract for `Data/discipline_code_assignments.jsonl`.
+- `schema/classification_code_index.schema.json`: frozen schema contract for `Data/classification_code_index.json`.
 - `scripts/manage_discipline_code_assignments.py`: owner-maintenance helper for daily discipline-code ledger updates; appends a matching `change_log` row unless `--dry-run` is used.
-- `Data/schema/*.schema.json`: owner schema contracts enforced by `check_data_consistency.py` for the current discipline-code ledger and taxonomy vocabulary owner files.
+- together, `field_ownership_matrix.md`, `check_policy.md`, and the two schema files above are the current frozen governance contracts referenced by the structured-data workflow.
 - `pdf_manifest.json`: local archived PDF inventory with hashes.
 - `missing_pdf_manifest.json`: active confirmed-core papers that remain valid records but currently have no local readable PDF.
 - `note_manifest.json`: note-path inventory and note existence flags.
