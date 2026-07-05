@@ -35,13 +35,13 @@ Evidence: `Data/classification_code_index.json`
 
 ### Item 5 - PASS
 
-discipline_code_assignments current snapshot covers all 447 active papers with allowed statuses.
+discipline_code_assignments current snapshot covers all 447 active papers with valid current-status semantics (active=423, pending=15, general_method=9).
 
 Evidence: `Data/discipline_code_assignments.jsonl`
 
 ### Item 6 - PASS
 
-Stable discipline code assignment ledger exists and uses auditable assignment statuses.
+Stable discipline code assignment ledger exists with unique DCA assignment IDs, valid assignment statuses, and auditable assignment metadata fields.
 
 Evidence: `Data/discipline_code_assignments.jsonl`
 

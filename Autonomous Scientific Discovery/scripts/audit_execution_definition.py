@@ -35,6 +35,8 @@ PLAN_PATH = COVERAGE_DIR / "structured_data_long_term_catalog_and_index_plan_202
 OUTPUT_PATH = COVERAGE_DIR / "structured_data_execution_definition_audit_latest.md"
 
 PAPER_ID_PATTERN = re.compile(r"ASD-\d{4}")
+ASSIGNMENT_ID_PATTERN = re.compile(r"DCA-\d{6}")
+DATE_PATTERN = re.compile(r"20\d{2}-\d{2}-\d{2}")
 DISCIPLINE_LOCAL_CODE_PATTERN = re.compile(r"^(0[1-9]|1[0-1])-(\d{2})-(\d{3})$")
 SECONDARY_CODE_PATTERN = re.compile(r"^(0[1-9]|1[0-1])\.(\d{2})$")
 ALLOWED_ASSIGNMENT_STATUSES = {
@@ -239,20 +241,93 @@ def main() -> None:
     )
     add_result(results, "4", status, detail, "Data/classification_code_index.json")
 
-    active_ids = {str(row["paper_id"]) for row in active_papers}
+    active_papers_by_id = {str(row["paper_id"]): row for row in active_papers}
+    active_ids = set(active_papers_by_id)
     current_snapshot_ids = {str(row["paper_id"]) for row in current_snapshot_rows}
     assignment_statuses_ok = all(str(row.get("assignment_status")) in ALLOWED_ASSIGNMENT_STATUSES for row in assignments)
+    current_assignment_counts: dict[str, int] = {}
+    current_snapshot_unique_papers_ok = True
+    current_snapshot_semantics_ok = True
+    for row in current_snapshot_rows:
+        paper_id = str(row.get("paper_id", "")).strip()
+        status_name = str(row.get("assignment_status", "")).strip()
+        current_assignment_counts[status_name] = current_assignment_counts.get(status_name, 0) + 1
+        discipline_local_code = row.get("discipline_local_code")
+        primary_taxonomy_code_2lvl = row.get("primary_taxonomy_code_2lvl")
+        pending_reason = row.get("pending_reason")
+        source_primary_module = row.get("source_primary_module_for_filing")
+        paper = active_papers_by_id.get(paper_id)
+        if paper is None:
+            current_snapshot_unique_papers_ok = False
+            continue
+        modules = paper.get("scientific_object_modules", [])
+        general_method_bucket = str(paper.get("general_method_bucket", ""))
+        if status_name == "active_code":
+            code_match = DISCIPLINE_LOCAL_CODE_PATTERN.fullmatch(str(discipline_local_code or "").strip())
+            secondary_match = SECONDARY_CODE_PATTERN.fullmatch(str(primary_taxonomy_code_2lvl or "").strip())
+            current_snapshot_semantics_ok = current_snapshot_semantics_ok and (
+                code_match is not None
+                and secondary_match is not None
+                and code_match.group(1) == secondary_match.group(1)
+                and code_match.group(2) == secondary_match.group(2)
+                and str(source_primary_module or "").strip() == code_match.group(1)
+                and pending_reason in (None, "")
+            )
+        elif status_name == "pending_secondary":
+            current_snapshot_semantics_ok = current_snapshot_semantics_ok and (
+                not discipline_local_code
+                and not primary_taxonomy_code_2lvl
+                and str(pending_reason or "").strip() in {
+                    "missing_primary_module_for_filing",
+                    "missing_or_uncertain_secondary_class",
+                    "secondary_primary_mismatch",
+                }
+            )
+        elif status_name == "non_discipline_general_method":
+            current_snapshot_semantics_ok = current_snapshot_semantics_ok and (
+                not discipline_local_code
+                and not primary_taxonomy_code_2lvl
+                and pending_reason in (None, "")
+                and general_method_bucket != "none"
+                and not modules
+            )
     status, detail = check(
-        current_snapshot_ids == active_ids and assignment_statuses_ok,
-        f"discipline_code_assignments current snapshot covers all {len(active_ids)} active papers with allowed statuses.",
-        "discipline_code_assignments current snapshot does not cover active papers correctly or contains invalid statuses.",
+        current_snapshot_ids == active_ids
+        and assignment_statuses_ok
+        and current_snapshot_unique_papers_ok
+        and current_snapshot_semantics_ok,
+        (
+            "discipline_code_assignments current snapshot covers all "
+            f"{len(active_ids)} active papers with valid current-status semantics "
+            f"(active={current_assignment_counts.get('active_code', 0)}, "
+            f"pending={current_assignment_counts.get('pending_secondary', 0)}, "
+            f"general_method={current_assignment_counts.get('non_discipline_general_method', 0)})."
+        ),
+        "discipline_code_assignments current snapshot does not cover active papers correctly or violates current-status ledger semantics.",
     )
     add_result(results, "5", status, detail, "Data/discipline_code_assignments.jsonl")
 
+    assignment_ids = [str(row.get("assignment_id", "")).strip() for row in assignments]
+    assignment_id_uniqueness_ok = len(assignment_ids) == len(set(assignment_ids))
+    assignment_id_format_ok = all(ASSIGNMENT_ID_PATTERN.fullmatch(value) for value in assignment_ids)
+    assignment_core_fields_ok = all(
+        DATE_PATTERN.fullmatch(str(row.get("assigned_at", "")).strip())
+        and bool(str(row.get("assigned_by", "")).strip())
+        and bool(str(row.get("assignment_reason", "")).strip())
+        and int(row.get("schema_version", 0)) == 1
+        for row in assignments
+    )
     status, detail = check(
-        DISCIPLINE_ASSIGNMENTS_JSONL.exists() and assignment_statuses_ok,
-        "Stable discipline code assignment ledger exists and uses auditable assignment statuses.",
-        "Stable discipline code assignment ledger is missing or contains invalid statuses.",
+        DISCIPLINE_ASSIGNMENTS_JSONL.exists()
+        and assignment_statuses_ok
+        and assignment_id_uniqueness_ok
+        and assignment_id_format_ok
+        and assignment_core_fields_ok,
+        (
+            "Stable discipline code assignment ledger exists with unique DCA assignment IDs, "
+            "valid assignment statuses, and auditable assignment metadata fields."
+        ),
+        "Stable discipline code assignment ledger is missing or contains invalid assignment IDs, statuses, or required audit fields.",
     )
     add_result(results, "6", status, detail, "Data/discipline_code_assignments.jsonl")
 
@@ -267,7 +342,6 @@ def main() -> None:
     )
     add_result(results, "7", status, detail, "Data/classification_code_index.json + Data/papers.sqlite")
 
-    active_papers_by_id = {str(row["paper_id"]): row for row in active_papers}
     preview_status_counts: dict[str, int] = {}
     preview_current_statuses = {
         "active_code",
