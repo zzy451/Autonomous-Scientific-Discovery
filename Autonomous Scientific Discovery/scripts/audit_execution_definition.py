@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import json
 import re
 import sqlite3
@@ -52,17 +53,8 @@ def load_json(path: Path) -> dict[str, object]:
 
 
 def load_csv_rows(path: Path) -> list[dict[str, str]]:
-    lines = [line for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
-    if not lines:
-        return []
-    headers = lines[0].split(",")
-    rows: list[dict[str, str]] = []
-    for line in lines[1:]:
-        # CSV module not needed for current simple row-count / field checks.
-        values = line.split(",")
-        row = {headers[index]: values[index] if index < len(values) else "" for index in range(len(headers))}
-        rows.append(row)
-    return rows
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        return [dict(row) for row in csv.DictReader(handle)]
 
 
 def read_text(path: Path) -> str:
