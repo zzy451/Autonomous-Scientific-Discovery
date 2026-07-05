@@ -34,6 +34,10 @@ OWNER_GUARDED_PATHS = {
     DISCIPLINE_CODE_ASSIGNMENTS_JSONL.resolve(),
 }
 FORMAL_MODULES = {f'{idx:02d}' for idx in range(1, 12)}
+MODULE_ROW_FIELDNAMES = [
+    'paper_id', 'title', 'assignment_scope', 'module_code', 'module_kind', 'sort_order',
+    'is_primary_for_filing', 'confidence', 'source', 'active_confirmed_core'
+]
 CSV_FIELDS = [
     'paper_id', 'title', 'authors', 'year', 'source', 'doi_or_url', 'doi', 'url', 'arxiv_id',
     'pdf_path', 'pdf_exists', 'note_path', 'note_exists', 'is_agent', 'inclusion_status',
@@ -95,6 +99,10 @@ def assert_safe_output_paths(paths: list[Path]) -> None:
             + ', '.join(conflicts)
         )
 
+def assert_build_condition(condition: bool, message: str) -> None:
+    if not condition:
+        raise RuntimeError(message)
+
 def write_papers_csv(papers: list[dict[str, object]]) -> None:
     with PAPERS_CSV.open('w', encoding='utf-8', newline='') as handle:
         writer = csv.DictWriter(handle, fieldnames=CSV_FIELDS)
@@ -143,28 +151,182 @@ def build_module_rows(papers: list[dict[str, object]]) -> list[dict[str, object]
     return rows
 
 def write_module_csv(rows: list[dict[str, object]]) -> None:
-    fieldnames = [
-        'paper_id', 'title', 'assignment_scope', 'module_code', 'module_kind', 'sort_order',
-        'is_primary_for_filing', 'confidence', 'source', 'active_confirmed_core'
-    ]
     canonical_rows = [row for row in rows if row['assignment_scope'] == 'scientific_object_modules']
     workflow_rows = [row for row in rows if row['assignment_scope'] == 'final_modules_or_bucket']
     with PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=MODULE_ROW_FIELDNAMES)
         writer.writeheader()
         writer.writerows(canonical_rows)
     with CANONICAL_PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=MODULE_ROW_FIELDNAMES)
         writer.writeheader()
         writer.writerows(canonical_rows)
     with WORKFLOW_MIRROR_PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=MODULE_ROW_FIELDNAMES)
         writer.writeheader()
         writer.writerows(workflow_rows)
     with MIXED_SCOPE_PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(handle, fieldnames=MODULE_ROW_FIELDNAMES)
         writer.writeheader()
         writer.writerows(rows)
+
+def normalize_module_csv_row(row: dict[str, object]) -> dict[str, str]:
+    return {
+        field: flatten_list(row.get(field))
+        for field in MODULE_ROW_FIELDNAMES
+    }
+
+def load_csv_rows(path: Path) -> list[dict[str, str]]:
+    with path.open('r', encoding='utf-8-sig', newline='') as handle:
+        return list(csv.DictReader(handle))
+
+def validate_module_csv_outputs(rows: list[dict[str, object]]) -> None:
+    canonical_expected = [
+        normalize_module_csv_row(row)
+        for row in rows
+        if row['assignment_scope'] == 'scientific_object_modules'
+    ]
+    workflow_expected = [
+        normalize_module_csv_row(row)
+        for row in rows
+        if row['assignment_scope'] == 'final_modules_or_bucket'
+    ]
+    mixed_expected = [normalize_module_csv_row(row) for row in rows]
+
+    paper_modules_rows = load_csv_rows(PAPER_MODULES_CSV)
+    canonical_alias_rows = load_csv_rows(CANONICAL_PAPER_MODULES_CSV)
+    workflow_rows = load_csv_rows(WORKFLOW_MIRROR_PAPER_MODULES_CSV)
+    mixed_rows = load_csv_rows(MIXED_SCOPE_PAPER_MODULES_CSV)
+
+    assert_build_condition(
+        paper_modules_rows == canonical_expected,
+        'paper_modules.csv drifted from expected canonical module rows',
+    )
+    assert_build_condition(
+        canonical_alias_rows == canonical_expected,
+        'canonical_paper_modules.csv drifted from expected canonical module rows',
+    )
+    assert_build_condition(
+        workflow_rows == workflow_expected,
+        'workflow_mirror_paper_modules.csv drifted from expected workflow-mirror module rows',
+    )
+    assert_build_condition(
+        mixed_rows == mixed_expected,
+        'mixed_scope_paper_modules.csv drifted from expected mixed-scope module rows',
+    )
+    assert_build_condition(
+        paper_modules_rows == canonical_alias_rows,
+        'paper_modules.csv and canonical_paper_modules.csv must stay identical',
+    )
+
+def validate_sqlite_module_surfaces(rows: list[dict[str, object]]) -> None:
+    canonical_expected_count = sum(
+        1 for row in rows if row['assignment_scope'] == 'scientific_object_modules'
+    )
+    workflow_expected_count = sum(
+        1 for row in rows if row['assignment_scope'] == 'final_modules_or_bucket'
+    )
+    mixed_expected_count = len(rows)
+
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        paper_modules_count = conn.execute(
+            'SELECT COUNT(*) FROM paper_modules'
+        ).fetchone()[0]
+        workflow_count = conn.execute(
+            'SELECT COUNT(*) FROM workflow_mirror_paper_modules'
+        ).fetchone()[0]
+        mixed_count = conn.execute(
+            'SELECT COUNT(*) FROM mixed_scope_paper_modules'
+        ).fetchone()[0]
+        canonical_alias_count = conn.execute(
+            'SELECT COUNT(*) FROM canonical_paper_modules'
+        ).fetchone()[0]
+        canonical_count_view = conn.execute(
+            'SELECT COALESCE(SUM(paper_count), 0) FROM module_assignment_counts'
+        ).fetchone()[0]
+        canonical_alias_count_view = conn.execute(
+            'SELECT COALESCE(SUM(paper_count), 0) FROM canonical_module_assignment_counts'
+        ).fetchone()[0]
+        workflow_count_view = conn.execute(
+            'SELECT COALESCE(SUM(paper_count), 0) FROM workflow_mirror_module_assignment_counts'
+        ).fetchone()[0]
+        mixed_count_view = conn.execute(
+            'SELECT COALESCE(SUM(paper_count), 0) FROM mixed_scope_module_assignment_counts'
+        ).fetchone()[0]
+        paper_module_scopes = {
+            row[0]
+            for row in conn.execute(
+                'SELECT DISTINCT assignment_scope FROM paper_modules ORDER BY assignment_scope'
+            )
+        }
+        workflow_scopes = {
+            row[0]
+            for row in conn.execute(
+                'SELECT DISTINCT assignment_scope FROM workflow_mirror_paper_modules ORDER BY assignment_scope'
+            )
+        }
+        mixed_scopes = {
+            row[0]
+            for row in conn.execute(
+                'SELECT DISTINCT assignment_scope FROM mixed_scope_paper_modules ORDER BY assignment_scope'
+            )
+        }
+    finally:
+        conn.close()
+
+    expected_mixed_scopes = set()
+    if canonical_expected_count:
+        expected_mixed_scopes.add('scientific_object_modules')
+    if workflow_expected_count:
+        expected_mixed_scopes.add('final_modules_or_bucket')
+
+    assert_build_condition(
+        paper_modules_count == canonical_expected_count,
+        'SQLite paper_modules row count drifted from expected canonical module rows',
+    )
+    assert_build_condition(
+        workflow_count == workflow_expected_count,
+        'SQLite workflow_mirror_paper_modules row count drifted from expected workflow module rows',
+    )
+    assert_build_condition(
+        mixed_count == mixed_expected_count,
+        'SQLite mixed_scope_paper_modules row count drifted from expected mixed-scope module rows',
+    )
+    assert_build_condition(
+        canonical_alias_count == canonical_expected_count,
+        'SQLite canonical_paper_modules alias row count drifted from canonical module rows',
+    )
+    assert_build_condition(
+        canonical_count_view == canonical_expected_count,
+        'SQLite module_assignment_counts drifted from canonical module rows',
+    )
+    assert_build_condition(
+        canonical_alias_count_view == canonical_expected_count,
+        'SQLite canonical_module_assignment_counts drifted from canonical module rows',
+    )
+    assert_build_condition(
+        workflow_count_view == workflow_expected_count,
+        'SQLite workflow_mirror_module_assignment_counts drifted from workflow module rows',
+    )
+    assert_build_condition(
+        mixed_count_view == mixed_expected_count,
+        'SQLite mixed_scope_module_assignment_counts drifted from mixed-scope module rows',
+    )
+    assert_build_condition(
+        paper_module_scopes
+        == ({'scientific_object_modules'} if canonical_expected_count else set()),
+        'SQLite paper_modules must only expose canonical scientific_object_modules rows',
+    )
+    assert_build_condition(
+        workflow_scopes
+        == ({'final_modules_or_bucket'} if workflow_expected_count else set()),
+        'SQLite workflow_mirror_paper_modules must only expose workflow final_modules_or_bucket rows',
+    )
+    assert_build_condition(
+        mixed_scopes == expected_mixed_scopes,
+        'SQLite mixed_scope_paper_modules must expose the union of canonical and workflow scopes',
+    )
 
 def write_discipline_local_code_registry_csv(rows: list[dict[str, object]]) -> None:
     with DISCIPLINE_LOCAL_CODE_REGISTRY_CSV.open('w', encoding='utf-8', newline='') as handle:
