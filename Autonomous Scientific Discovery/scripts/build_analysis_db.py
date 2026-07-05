@@ -615,6 +615,249 @@ def validate_auxiliary_analysis_tables(
         'SQLite notes table drifted from expected note manifest rows',
     )
 
+def validate_owner_loaded_and_inventory_tables(
+    classification_code_index: dict[str, object],
+    discipline_code_assignments: list[dict[str, object]],
+    pdf_manifest: list[dict[str, object]],
+    missing_pdf_manifest: list[dict[str, object]],
+    note_manifest: list[dict[str, object]],
+) -> None:
+    classification_term_rows = build_classification_term_rows(classification_code_index)
+    change_log_rows = load_jsonl(CHANGE_LOG_JSONL) if CHANGE_LOG_JSONL.exists() else []
+
+    expected_change_log_rows = sorted(
+        [
+            (
+                row['change_id'],
+                row['paper_id'],
+                row['changed_at'],
+                row['changed_by'],
+                row['change_type'],
+                json.dumps(row.get('old_value'), ensure_ascii=False),
+                json.dumps(row.get('new_value'), ensure_ascii=False),
+                row['reason'],
+                row.get('related_commit'),
+            )
+            for row in change_log_rows
+        ],
+        key=lambda item: item[0],
+    )
+    expected_classification_term_rows = sorted(
+        [
+            (
+                row['taxonomy_code'],
+                row['term_level'],
+                row['parent_primary_code'],
+                row['label'],
+                row['definition'],
+                row['include_json'],
+                row['exclude_json'],
+                row['status'],
+                row['source'],
+                row['review_status'],
+            )
+            for row in classification_term_rows
+        ],
+        key=lambda item: (item[0], item[1]),
+    )
+    expected_discipline_assignment_rows = sorted(
+        [
+            (
+                row['assignment_id'],
+                row['paper_id'],
+                row['discipline_local_code'],
+                row['primary_taxonomy_code_2lvl'],
+                row['assignment_status'],
+                row['assigned_at'],
+                row['assigned_by'],
+                row['retired_at'],
+                row['redirected_to_code'],
+                row['assignment_reason'],
+                row['pending_reason'],
+                row['source_primary_module_for_filing'],
+                row['source_legacy_secondary_class'],
+                row['schema_version'],
+            )
+            for row in discipline_code_assignments
+        ],
+        key=lambda item: item[0],
+    )
+    expected_pdf_inventory_rows = sorted(
+        [
+            (
+                row['paper_id'],
+                row['title'],
+                row['pdf_path'],
+                row['sha256'],
+                row['primary_module_for_filing'],
+                json_list(row['scientific_object_modules']),
+                row['pdf_status'],
+                row['evidence_status'],
+                bool_to_int(row['active_confirmed_core']),
+            )
+            for row in pdf_manifest
+        ],
+        key=lambda item: item[0],
+    )
+    expected_missing_pdf_rows = sorted(
+        [
+            (
+                row['paper_id'],
+                row['title'],
+                row['doi'],
+                row['url'],
+                row['pdf_status'],
+                row['evidence_status'],
+                row['source_limited'],
+                row['access_note'],
+            )
+            for row in missing_pdf_manifest
+        ],
+        key=lambda item: item[0],
+    )
+    expected_note_inventory_rows = sorted(
+        [
+            (
+                row['paper_id'],
+                row['title'],
+                row['note_path'],
+                bool_to_int(row['note_exists']),
+                bool_to_int(row['active_confirmed_core']),
+                row['inclusion_status'],
+            )
+            for row in note_manifest
+        ],
+        key=lambda item: item[0],
+    )
+
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        actual_change_log_rows = conn.execute(
+            '''
+            SELECT
+                change_id,
+                paper_id,
+                changed_at,
+                changed_by,
+                change_type,
+                old_value_json,
+                new_value_json,
+                reason,
+                related_commit
+            FROM change_log
+            ORDER BY change_id
+            '''
+        ).fetchall()
+        actual_classification_term_rows = conn.execute(
+            '''
+            SELECT
+                taxonomy_code,
+                term_level,
+                parent_primary_code,
+                label,
+                definition,
+                include_json,
+                exclude_json,
+                status,
+                source,
+                review_status
+            FROM classification_terms
+            ORDER BY taxonomy_code, term_level
+            '''
+        ).fetchall()
+        actual_discipline_assignment_rows = conn.execute(
+            '''
+            SELECT
+                assignment_id,
+                paper_id,
+                discipline_local_code,
+                primary_taxonomy_code_2lvl,
+                assignment_status,
+                assigned_at,
+                assigned_by,
+                retired_at,
+                redirected_to_code,
+                assignment_reason,
+                pending_reason,
+                source_primary_module_for_filing,
+                source_legacy_secondary_class,
+                schema_version
+            FROM discipline_code_assignments
+            ORDER BY assignment_id
+            '''
+        ).fetchall()
+        actual_pdf_inventory_rows = conn.execute(
+            '''
+            SELECT
+                paper_id,
+                title,
+                pdf_path,
+                sha256,
+                primary_module_for_filing,
+                scientific_object_modules_json,
+                pdf_status,
+                evidence_status,
+                active_confirmed_core
+            FROM pdf_inventory
+            ORDER BY paper_id
+            '''
+        ).fetchall()
+        actual_missing_pdf_rows = conn.execute(
+            '''
+            SELECT
+                paper_id,
+                title,
+                doi,
+                url,
+                pdf_status,
+                evidence_status,
+                source_limited,
+                access_note
+            FROM missing_pdf_inventory
+            ORDER BY paper_id
+            '''
+        ).fetchall()
+        actual_note_inventory_rows = conn.execute(
+            '''
+            SELECT
+                paper_id,
+                title,
+                note_path,
+                note_exists,
+                active_confirmed_core,
+                inclusion_status
+            FROM note_inventory
+            ORDER BY paper_id
+            '''
+        ).fetchall()
+    finally:
+        conn.close()
+
+    assert_build_condition(
+        actual_change_log_rows == expected_change_log_rows,
+        'SQLite change_log table drifted from expected change_log rows',
+    )
+    assert_build_condition(
+        actual_classification_term_rows == expected_classification_term_rows,
+        'SQLite classification_terms table drifted from expected taxonomy term rows',
+    )
+    assert_build_condition(
+        actual_discipline_assignment_rows == expected_discipline_assignment_rows,
+        'SQLite discipline_code_assignments table drifted from expected owner ledger rows',
+    )
+    assert_build_condition(
+        actual_pdf_inventory_rows == expected_pdf_inventory_rows,
+        'SQLite pdf_inventory table drifted from expected pdf_manifest rows',
+    )
+    assert_build_condition(
+        actual_missing_pdf_rows == expected_missing_pdf_rows,
+        'SQLite missing_pdf_inventory table drifted from expected missing PDF manifest rows',
+    )
+    assert_build_condition(
+        actual_note_inventory_rows == expected_note_inventory_rows,
+        'SQLite note_inventory table drifted from expected note manifest rows',
+    )
+
 def build_general_method_bucket_rows(papers: list[dict[str, object]]) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for paper in papers:
@@ -1636,6 +1879,13 @@ def main() -> None:
         papers,
         pdf_archive_registry,
         asset_manifest,
+        note_manifest,
+    )
+    validate_owner_loaded_and_inventory_tables(
+        classification_code_index,
+        discipline_code_assignments,
+        pdf_manifest,
+        missing_pdf_manifest,
         note_manifest,
     )
     print(f'Wrote {PAPERS_CSV}')

@@ -101,7 +101,7 @@ The order matters:
 
 Both `export_structured_data.py` and `build_analysis_db.py` now carry runtime owner-path guardrails: if a future code change ever tries to write a guarded owner fact source such as `classification_code_index.json`, `discipline_code_assignments.jsonl`, or `change_log.jsonl`, the command aborts instead of silently overwriting the owner file.
 
-`build_analysis_db.py` now also self-validates key derived analysis surfaces after writing outputs: the module-surface split must remain canonical/workflow/mixed-scope clean, `discipline_local_code_registry.csv` plus SQLite `discipline_local_code_registry` must remain faithful to the current JSONL snapshot, and the SQLite analysis tables `paper_general_method_buckets`, `pdf_evidence_status`, `paper_assets`, and `notes` must remain faithful to their current derived source rows.
+`build_analysis_db.py` now also self-validates key derived analysis surfaces after writing outputs: the module-surface split must remain canonical/workflow/mixed-scope clean, `discipline_local_code_registry.csv` plus SQLite `discipline_local_code_registry` must remain faithful to the current JSONL snapshot, the SQLite analysis tables `paper_general_method_buckets`, `pdf_evidence_status`, `paper_assets`, and `notes` must remain faithful to their current derived source rows, and the owner-loaded / inventory tables `classification_terms`, `discipline_code_assignments`, `change_log`, `pdf_inventory`, `missing_pdf_inventory`, and `note_inventory` must remain faithful to the source rows that build loaded for the current run.
 
 Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `papers.jsonl` and the manifests are already current.
 
