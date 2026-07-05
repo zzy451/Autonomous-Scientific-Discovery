@@ -6,16 +6,29 @@
 - 年份：2025
 - 来源 / venue：Nature Biomedical Engineering
 - DOI / arXiv / URL：https://doi.org/10.1038/s41551-025-01455-z
-- PDF / 本地文件路径：none archived in project workspace
-- First-hand source checked：Nature HTML full text；supplementary/source-data sections
-- PDF version：PDF unavailable; HTML full text checked
-- Source-limited status：classification `no`；PDF archival `yes`
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Wang_2025_PrimeGen_Primer_Design.pdf`
+- First-hand source checked：local archived PDF；DOI landing page
+- PDF version：publisher PDF archived locally and checked
+- Source-limited status：classification `no`；PDF archival `no`
 - 论文类型：研究论文 / primer-design agent
 - 当前状态：to_read
 - 阅读与复核日期：2026-06-22
 - 笔记作者：Codex
 
 ## Evidence Log
+
+### Frozen Adjudication Writeback - 2026-07-05
+
+- Final adjudication landed: `scientific_object_modules=06;07`; `final_01_04_bucket=none`; `primary_module_for_filing=06`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep `06` as primary genomics / sequencing-design anchor and preserve the relaxed `07` biomedical validation coverage.
+
+### 2026-07-05 Phase6FollowupR18Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/06_Life_Sciences/Wang_2025_PrimeGen_Primer_Design.pdf`; DOI `https://doi.org/10.1038/s41551-025-01455-z`.
+- Current authoritative classification: keep `scientific_object_modules=06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page and early-page full text directly confirm PrimeGen, multi-agent primer design, automated protocol generation, and biomedical targeted-assay validation.
+- Round effect: the old PDF-archival source-limited wording is retired; this row now lands with first-hand full-text support.
 
 ### 2026-06-22 reaudit writeback revision
 
@@ -130,7 +143,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 交叉属性：computation_driven; data_driven; experiment_driven; high_throughput_screening; robotic_platform
 科学贡献类型：design; experimental_optimization; system_platform
 证据强度：first_hand_html_full_text
-source_limited：classification no; PDF archival yes
+source_limited：no
 归类置信度：中高
 纳入置信度：高
 推荐引用强度：core

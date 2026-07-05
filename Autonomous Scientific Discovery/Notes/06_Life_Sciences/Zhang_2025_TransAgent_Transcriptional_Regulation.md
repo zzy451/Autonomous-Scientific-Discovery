@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：bioRxiv preprint
 - DOI / arXiv / URL：https://doi.org/10.1101/2025.04.27.650826
-- PDF / 本地文件路径：未归档本地 PDF；官方 bioRxiv landing page / PDF 本轮尝试仍被 Cloudflare 阻断，approved bioRxiv PDF attempt 返回 `HTTP 403 Forbidden`
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Zhang_2025_TransAgent_Transcriptional_Regulation.pdf`
 - 论文类型：系统论文 / multi-omics regulation-analysis agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -20,14 +20,14 @@
 | 科学对象归类 | `06;07`（`primary_module_for_filing = 06`） | Crossref DOI abstract；official repo materials | `06` 由 transcriptional regulation、multi-omics joint analysis、key regulators 等生命科学对象稳定支持；`07` 由 ESCC 疾病案例与病理相关调控回路支持 | 高 |
 | 方法流程 | 多工具多数据源自动分析 | Crossref DOI abstract；official repo materials | 集成 30+ tools 与 20+ data sources，覆盖 raw data processing 到 advanced analysis | 高 |
 | 实验验证 | 多案例分析 | Crossref DOI abstract；official repo materials | 应用于食管鳞癌和 cardiomyocyte differentiation 等场景，识别调控回路与关键调控因子 | 高 |
-| 来源 / 归档状态 | `source_limited` | bioRxiv landing attempt；bioRxiv PDF attempt | 官方 bioRxiv HTML / PDF 本轮尝试仍被 Cloudflare 阻断，未归档本地 PDF；当前 closeout 依据为 Crossref DOI abstract + official repo materials | 高 |
+| 来源 / 归档状态 | canonical local archived PDF checked | local archived PDF | 本轮已补本地 archived PDF 全文复核；旧 Cloudflare 阻断说明不再是当前 authoritative ceiling。 | 高 |
 | 边界判断 | 接受 `06/07` 边界；`07` 为 source-limited adjunct module | Crossref DOI abstract；official repo materials；bioRxiv landing/PDF attempt | 论文主线仍是 transcriptional regulation analysis，因此 `06` 保持 primary filing；但 ESCC disease-case evidence 足以接受 `07` 作为附加医学对象模块，而不是被否决的边界假说 | 中高 |
 
 ## 2026-06-20 relaxed multi-module classification update
 
 本节保留 2026-06-20 relaxed multi-module update 的位置，但 wording 已按当前 closeout 刷新。`06` 仍然是 `primary_module_for_filing`，不过 `07` 不再是“应被拒绝的边界假说”；在当前 relaxed multi-module rule 下，只要有疾病 / 病理对象 case study 和结果报告，就可以接受附加医学模块。对本文而言，ESCC disease-case evidence 足以支持一个 source-limited 的 `07` adjunct module，而无需把论文改写成临床决策支持工作。
 
-- first_hand_sources_checked: `crossref_doi_abstract`; `official_repo_materials`; `bioRxiv_landing_page_attempt`; `bioRxiv_pdf_attempt_403`
+- first_hand_sources_checked: `local_archived_pdf`; `doi_landing_page`
 - scientific_object_modules: `06;07`
 - object_coverage_mode: `multi_module`
 - general_method_bucket: `none`
@@ -35,11 +35,24 @@
 - module_assignment_evidence: `06` 由 transcriptional regulation、multi-omics、epigenomics、gene expression profiles、enhancers / super-enhancers、gene regulatory networks 和 cardiomyocyte differentiation 支持；`07` 由 esophageal squamous cell carcinoma / ESCC super-enhancer regulatory circuit、oncogenic transcriptional regulators、cancer pathogenesis 和 potential therapeutic-target discovery 支持。
 - multi_module_object_coverage_note: `06` 是生命科学主线；`07` 是基于 ESCC 疾病调控回路 case study 的 accepted source-limited adjunct module，不再按“被拒绝的边界假说”处理，也不要求改写为临床决策支持论文。
 - note_revision_required: `yes`
-- confidence: `medium_high` overall; `06` strong, `07` accepted as source-limited adjunct evidence
+- confidence: `high`; `06` strong and `07` now supported by first-hand full text
 - full_text_required: `no_for_classification`
-- source_limited: `yes`
-- safety_access_status: `source-limited: bioRxiv HTML/PDF blocked by Cloudflare`
-- pdf_archive_status: `no_local_pdf_archived`
+- source_limited: `no`
+- safety_access_status: `none`
+- pdf_archive_status: `local_pdf_archived_and_checked`
+
+## Frozen Adjudication Writeback - 2026-07-05
+
+- Final adjudication landed: `scientific_object_modules=06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep `06` as the stable primary life-science object while preserving the accepted `07` disease-case coverage.
+
+## 2026-07-05 Phase6FollowupR18Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/06_Life_Sciences/Zhang_2025_TransAgent_Transcriptional_Regulation.pdf`; DOI `https://doi.org/10.1101/2025.04.27.650826`.
+- Current authoritative classification: keep `scientific_object_modules=06;07`; `object_coverage_mode=multi_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page and early-page full text directly confirm multi-omics-aware agent analysis, transcriptional-regulation workflows, and disease-case evidence supporting `06;07`.
+- Round effect: the old blocked-landing source-limited ceiling is retired; this row now lands with first-hand full-text support.
 
 ## 0. 摘要翻译
 

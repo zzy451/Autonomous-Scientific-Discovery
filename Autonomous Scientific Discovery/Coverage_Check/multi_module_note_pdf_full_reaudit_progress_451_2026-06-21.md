@@ -88,7 +88,7 @@
 
 | ASD-0048 | Dolphin: Closed-loop open-ended auto-research through thinking, practice, and feedback | Notes/01_Formal_Information_and_Computational_Sciences/Yuan_2025_Dolphin.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Yuan_2025_Dolphin.pdf | first_hand_full_text | updated | updated | 01 | no | Batch02 | yes |
 
-| ASD-0049 | Bioinformatics agent (bia): Unleashing the power of large language models to reshape bioinformatics workflow | Notes/06_Life_Sciences/Xin_2024_BIA.md | archived_pdf | Reference_PDF/06_Life_Sciences/Xin_2024_BIA.pdf | first_hand_abstract_and_official_repo | updated | updated | 06 | yes | Batch02 | yes |
+| ASD-0049 | Bioinformatics agent (bia): Unleashing the power of large language models to reshape bioinformatics workflow | Notes/06_Life_Sciences/Xin_2024_BIA.md | archived_pdf | Reference_PDF/06_Life_Sciences/Xin_2024_BIA.pdf | first_hand_full_text | updated | updated | 06 | no | Phase6FollowupR18Approx | yes |
 
 | ASD-0051 | Geneagent: Self-verification language agent for gene set knowledge discovery using domain databases | Notes/06_Life_Sciences/Wang_2024_GeneAgent.md | archived_pdf | Reference_PDF/06_Life_Sciences/Wang_2024_GeneAgent.pdf | first_hand_full_text | updated | updated | 06 | no | Batch02 | yes |
 
@@ -208,7 +208,7 @@
 
 | ASD-0136 | StarWhisper Telescope: An AI framework for automating end-to-end astronomical observations | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Wang_2024_StarWhisper_Telescope.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Wang_2024_StarWhisper_Telescope.pdf | first_hand_full_text | updated | updated | 02 | no | Batch02 | yes |
 
-| ASD-0137 | Accelerating primer design for amplicon sequencing using large language model-powered agents | Notes/06_Life_Sciences/Wang_2025_PrimeGen_Primer_Design.md | archived_pdf | Reference_PDF/06_Life_Sciences/Wang_2025_PrimeGen_Primer_Design.pdf | first_hand_html_full_text_and_supplementary | updated | updated | 06;07 | yes | Batch02 | yes |
+| ASD-0137 | Accelerating primer design for amplicon sequencing using large language model-powered agents | Notes/06_Life_Sciences/Wang_2025_PrimeGen_Primer_Design.md | archived_pdf | Reference_PDF/06_Life_Sciences/Wang_2025_PrimeGen_Primer_Design.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR18Approx | yes |
 
 | ASD-0138 | CellAgent: LLM-Driven Multi-Agent Framework for Natural Language-Based Single-Cell Analysis | Notes/06_Life_Sciences/Xiao_2024_CellAgent_SingleCell_Analysis.md | archived_pdf | Reference_PDF/06_Life_Sciences/Xiao_2024_CellAgent_SingleCell_Analysis.pdf | first_hand_full_text | updated | updated | 06 | no | Batch02 | yes |
 
@@ -216,7 +216,7 @@
 
 | ASD-0140 | Large language models for automated open-domain scientific hypotheses discovery | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yang_2024_Open_Domain_Hypotheses_Discovery.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yang_2024_Open_Domain_Hypotheses_Discovery.pdf | first_hand_full_text | updated | updated | 11 | no | Batch03 | yes |
 
-| ASD-0141 | TransAgent: Dynamizing transcriptional regulation analysis via multi-omics-aware AI agent | Notes/06_Life_Sciences/Zhang_2025_TransAgent_Transcriptional_Regulation.md | archived_pdf | Reference_PDF/06_Life_Sciences/Zhang_2025_TransAgent_Transcriptional_Regulation.pdf | first_hand_abstract_and_repo_materials | updated_source_limited | updated_source_limited | 06;07 | yes | CarryForward05 | yes |
+| ASD-0141 | TransAgent: Dynamizing transcriptional regulation analysis via multi-omics-aware AI agent | Notes/06_Life_Sciences/Zhang_2025_TransAgent_Transcriptional_Regulation.md | archived_pdf | Reference_PDF/06_Life_Sciences/Zhang_2025_TransAgent_Transcriptional_Regulation.pdf | first_hand_full_text | updated | updated | 06;07 | no | Phase6FollowupR18Approx | yes |
 
 | ASD-0145 | CycleResearcher: Improving automated research via automated review | Notes/01_Formal_Information_and_Computational_Sciences/Weng_2025_CycleResearcher.md | archived_pdf | Reference_PDF/01_04_General_Method_Bucket/Weng_2025_CycleResearcher.pdf | first_hand_full_text | updated | updated | 01.04 | no | CarryForward16 | yes |
 
@@ -258,7 +258,7 @@
 
 | ASD-0357 | Origene: A self-evolving virtual disease biologist automating therapeutic target discovery | Notes/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Zhang_2025_OriGene.pdf | first_hand_full_text | updated | updated | 07 | no | Phase6FollowupR14Approx | yes |
 
-| ASD-0370 | Self-driving laboratories to autonomously navigate the protein fitness landscape | Notes/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.md | archived_pdf | Reference_PDF/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.pdf | first_hand_abstract_and_metadata | updated_source_limited | updated_source_limited | 06 | yes | CarryForward16 | yes |
+| ASD-0370 | Self-driving laboratories to autonomously navigate the protein fitness landscape | Notes/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.md | archived_pdf | Reference_PDF/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.pdf | first_hand_full_text | updated | updated | 06 | no | Phase6FollowupR18Approx | yes |
 
 | ASD-0379 | A self-driving laboratory advances the Pareto front for material properties | Notes/04_Materials_Science/MacLeod_2022_Pareto_Front_Materials.md | archived_pdf | Reference_PDF/04_Materials_Science/MacLeod_2022_Pareto_Front_Materials.pdf | first_hand_full_text | updated | updated | 04 | no | CarryForward16 | yes |
 
@@ -734,7 +734,7 @@
 
 | ASD-0764 | An agentic framework for gravitational-wave counterpart association in the multi-messenger era | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Dong_2026_GW_Eyes_Multimessenger_Association.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Dong_2026_GW_Eyes_Multimessenger_Association.pdf | first_hand_full_text | updated | updated | 02 | no | Batch26Partial1 | yes |
 
-| ASD-0765 | CLIMATEAGENT: Multi-Agent Orchestration for Complex Climate Data Science Workflows | Notes/05_Earth_and_Environmental_Sciences/Kim_2025_ClimateAgent_Climate_Data_Science.md | archived_pdf | Reference_PDF/05_Earth_and_Environmental_Sciences/Kim_2025_ClimateAgent_Climate_Data_Science.pdf | first_hand_abstract_review_packet | updated | checked | 05 | yes | Batch22Partial1 | yes |
+| ASD-0765 | CLIMATEAGENT: Multi-Agent Orchestration for Complex Climate Data Science Workflows | Notes/05_Earth_and_Environmental_Sciences/Kim_2025_ClimateAgent_Climate_Data_Science.md | archived_pdf | Reference_PDF/05_Earth_and_Environmental_Sciences/Kim_2025_ClimateAgent_Climate_Data_Science.pdf | first_hand_full_text | updated | updated | 05 | no | Phase6FollowupR18Approx | yes |
 
 | ASD-0766 | ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents | Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ReviewGrounder.md | archived_pdf | Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ReviewGrounder.pdf | first_hand_abstract_review_packet | updated | updated | 11 | yes | Batch22Partial1 | yes |
 
@@ -746,7 +746,7 @@
 
 | ASD-0771 | Process-Supervised Multi-Agent Reinforcement Learning for Reliable Clinical Reasoning | Notes/07_Medical_and_Health_Sciences/Lee_2026_Process_Supervised_Clinical_Reasoning.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Lee_2026_Process_Supervised_Clinical_Reasoning.pdf | first_hand_full_text | updated | updated | 07 | no | Batch27Partial1 | yes |
 
-| ASD-0772 | TRACE: A Multi-Agent System for Autonomous Physical Reasoning for Seismology | Notes/05_Earth_and_Environmental_Sciences/Liu_2026_TRACE_Seismology.md | archived_pdf | Reference_PDF/05_Earth_and_Environmental_Sciences/Liu_2026_TRACE_Seismology.pdf | first_hand_abstract_review_packet | updated | checked | 05 | yes | Batch22Partial1 | yes |
+| ASD-0772 | TRACE: A Multi-Agent System for Autonomous Physical Reasoning for Seismology | Notes/05_Earth_and_Environmental_Sciences/Liu_2026_TRACE_Seismology.md | archived_pdf | Reference_PDF/05_Earth_and_Environmental_Sciences/Liu_2026_TRACE_Seismology.pdf | first_hand_full_text | updated | updated | 05 | no | Phase6FollowupR18Approx | yes |
 
 | ASD-0773 | Skill-Augmented AI Agents for Medical Research Analysis: An Exploratory Multi-Model Human Evaluation in an NSCLC Transcriptomic Biomarker Task | Notes/07_Medical_and_Health_Sciences/Yao_2026_Skill_Augmented_Medical_Research_Analysis.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Yao_2026_Skill_Augmented_Medical_Research_Analysis.pdf | first_hand_full_text | updated | updated | 07 | no | Batch27Partial1 | yes |
 

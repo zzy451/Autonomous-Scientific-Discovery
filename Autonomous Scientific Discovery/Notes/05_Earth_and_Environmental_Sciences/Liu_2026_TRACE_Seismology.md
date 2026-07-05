@@ -9,19 +9,32 @@
 - paper_id：ASD-0772
 - 科学对象模块（本轮裁定）：`05`
 - Primary module for filing：`05`
-- PDF / 本地文件路径：当前 note 保留既有 PDF / reviewer evidence pack 摘录；但本轮仍按 source-limited 写回，不补写本地 archive 路径
+- PDF / 本地文件路径：`Reference_PDF/05_Earth_and_Environmental_Sciences/Liu_2026_TRACE_Seismology.pdf`
 - 论文类型：研究论文 / seismology multi-agent reasoning system
-- 当前状态：landed note 已写回；主列表字段仍由主控统一维护
+- 当前状态：landed note 已写回；本轮已补本地 archived PDF 全文复核
 - 阅读日期：2026-06-23
-- 本轮写回口径：`modules=05`；`primary=05`；`confidence=high`；`source_limited=yes`；`safety_access_status=none`
+- 本轮写回口径：`modules=05`；`primary=05`；`confidence=high`；`source_limited=no`；`safety_access_status=none`
 - 笔记作者：Codex
 
 ## Evidence Log
 
+## Frozen Adjudication Writeback - 2026-07-05
+
+- Final classification: `scientific_object_modules=05`; `object_coverage_mode=single_module`; `primary_module_for_filing=05`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the seismology reasoning `05` reading.
+
+## 2026-07-05 Phase6FollowupR18Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/05_Earth_and_Environmental_Sciences/Liu_2026_TRACE_Seismology.pdf`; arXiv `https://arxiv.org/abs/2603.21152`.
+- Current authoritative classification: keep `scientific_object_modules=05`; `object_coverage_mode=single_module`; `primary_module_for_filing=05`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page and early-page full text directly confirm autonomous physical reasoning for seismology, benchmark evidence, and geophysical case-study coverage.
+- Round effect: the old abstract-level source-limited ceiling is retired; this row now lands with first-hand full-text support.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| 一手来源核对 | 已核对现有 PDF 摘录与 note 内容 | current note | 既有摘录已覆盖 benchmark、真实案例与对象边界，本轮不新增 archive 路径。 | 高 |
-| PDF / archive 状态 | source-limited；无本地 archive 路径 | current note | 本轮不补写本地 PDF/归档路径。 | 高 |
+| 一手来源核对 | 已核对本地 archived PDF 与 note 内容 | local archived PDF | 本地全文已覆盖 benchmark、真实案例与对象边界。 | 高 |
+| PDF / archive 状态 | canonical local archived PDF 已核对 | local archived PDF | 本轮补写本地 PDF/归档路径，并以全文复核清除旧 source-limited 状态。 | 高 |
 | Agent 纳入 | 是 | PDF p2 abstract | 问题被定义为从地球物理观测中推断 earthquake sequences 的 physical mechanisms | 高 |
 | 多 Agent 架构 | 是 | PDF p12 Fig. 1 | 包含 Planning、Workflow、Coding、Result Checking、Analysis & Summary 等 agents | 高 |
 | 多步闭环 | 是 | PDF p3 Sec. 2.1 | 分为 Hypothesis Planning、Empirical Execution and Diagnostics、Interpretive Synthesis 三阶段，并有 backtracking | 高 |
@@ -263,7 +276,7 @@ Primary module for filing：05
 module_assignment_evidence：earthquake sequences; geophysical observations; Ridgecrest; Santorini-Kolumbo
 multi_module_object_coverage_note：单模块；冻结 landed 结果为 05
 first_hand_sources_checked：existing PDF-derived note excerpts
-classification_evidence_source_level：source_limited
+classification_evidence_source_level：first_hand_full_text
 PDF/archive_status：no_local_archive_path
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：scientific_question_formulation; hypothesis_generation; tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation
@@ -271,7 +284,7 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven; data_driven
 科学贡献类型：system_platform; explanation
-证据强度：source_limited
+证据强度：first_hand_full_text
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

@@ -9,19 +9,32 @@
 - paper_id：ASD-0765
 - 科学对象模块（本轮裁定）：`05`
 - Primary module for filing：`05`
-- PDF / 本地文件路径：当前 note 沿用 arXiv 摘要 / 既有摘录整理；本轮按 source-limited 写回，不补写本地 archive 路径
+- PDF / 本地文件路径：`Reference_PDF/05_Earth_and_Environmental_Sciences/Kim_2025_ClimateAgent_Climate_Data_Science.pdf`
 - 论文类型：系统论文 / climate-science workflow agent
-- 当前状态：landed note 已写回；主列表字段仍由主控统一维护
+- 当前状态：landed note 已写回；本轮已补本地 archived PDF 全文复核
 - 阅读日期：2026-06-23
-- 本轮写回口径：`modules=05`；`primary=05`；`confidence=high`；`source_limited=yes`；`safety_access_status=none`
+- 本轮写回口径：`modules=05`；`primary=05`；`confidence=high`；`source_limited=no`；`safety_access_status=none`
 - 笔记作者：Codex
 
 ## Evidence Log
 
+## Frozen Adjudication Writeback - 2026-07-05
+
+- Final classification: `scientific_object_modules=05`; `object_coverage_mode=single_module`; `primary_module_for_filing=05`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the climate-science workflow `05` reading.
+
+## 2026-07-05 Phase6FollowupR18Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/05_Earth_and_Environmental_Sciences/Kim_2025_ClimateAgent_Climate_Data_Science.pdf`; arXiv `https://arxiv.org/abs/2511.20109`.
+- Current authoritative classification: keep `scientific_object_modules=05`; `object_coverage_mode=single_module`; `primary_module_for_filing=05`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page and early-page full text directly confirm the multi-agent climate workflow, climate-task scope, and concrete climate data science objects.
+- Round effect: the old abstract-level source-limited ceiling is retired; this row now lands with first-hand full-text support.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| 一手来源核对 | 已核对 arXiv 摘要页与现有摘录 | arXiv abs page + current note | 题名、作者、气候任务对象与 Climate-Agent-Bench 摘要级信息已复核。 | 高 |
-| PDF / archive 状态 | source-limited；无本地 archive 路径 | current note | 本轮不补写本地 PDF/归档路径，现有笔记仅保留既有摘录与摘要级核对。 | 高 |
+| 一手来源核对 | 已核对本地 archived PDF 与 arXiv 记录 | local archived PDF + arXiv abs page | 题名、作者、气候任务对象与 Climate-Agent-Bench 工作流信息已由本地全文复核。 | 高 |
+| PDF / archive 状态 | canonical local archived PDF 已核对 | local archived PDF | 本轮补写本地 PDF/归档路径，并以全文复核清除旧 source-limited 状态。 | 高 |
 | Agent 纳入 | 是 | Abstract | autonomous multi-agent framework for climate data science workflows | 高 |
 | 科学对象归类 | `05`，主展示落在 `05.02` | Abstract; Introduction | 任务覆盖 atmospheric rivers、drought、extreme precipitation、heat waves、SST、tropical cyclones | 高 |
 | 任务 / 对象覆盖 | 六类气候对象与 climate data science workflows | Abstract; Introduction | 对象稳定指向气候系统与气候数据分析，而非通用 research-agent substrate。 | 高 |
@@ -262,7 +275,7 @@ Primary module for filing：05
 module_assignment_evidence：atmospheric rivers; drought; extreme precipitation; heat waves; SST; tropical cyclones
 multi_module_object_coverage_note：单模块；冻结 landed 结果为 05
 first_hand_sources_checked：arXiv abs page
-classification_evidence_source_level：source_limited
+classification_evidence_source_level：first_hand_full_text
 PDF/archive_status：no_local_archive_path
 Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 科研流程角色：tool_use_and_code_execution; data_analysis; result_interpretation; evidence_assessment_and_validation; paper_writing; end_to_end_research_automation
@@ -270,7 +283,7 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 验证方式：benchmark; expert_evaluation
 交叉属性：computation_driven; data_driven
 科学贡献类型：analysis; system_platform; benchmark
-证据强度：source_limited
+证据强度：first_hand_full_text
 归类置信度：高
 纳入置信度：高
 推荐引用强度：standard

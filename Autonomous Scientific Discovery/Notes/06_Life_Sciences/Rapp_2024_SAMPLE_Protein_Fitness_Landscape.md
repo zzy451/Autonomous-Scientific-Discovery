@@ -6,13 +6,26 @@
 - 年份：2024
 - 来源 / venue：Nature Chemical Engineering
 - DOI / arXiv / URL：https://doi.org/10.1038/s44286-023-00002-4
-- PDF / 本地文件路径：本轮仅核对 Crossref / Nature metadata 与官方摘要；Nature 客户端 challenge 导致全文未能在此环境打开，未归档本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.pdf`
 - 论文类型：研究论文 / protein-engineering self-driving laboratory
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-05
+
+- Final classification: `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the protein-engineering / fitness-landscape `06` reading.
+
+## 2026-07-05 Phase6FollowupR18Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.pdf`; DOI `https://doi.org/10.1038/s44286-023-00002-4`.
+- Current authoritative classification: keep `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page and early-page full text directly confirm SAMPLE, self-driving lab design-test-feedback loops, and protein thermostability optimization.
+- Round effect: the old metadata-only source-limited ceiling is retired; this row now lands with first-hand full-text support.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

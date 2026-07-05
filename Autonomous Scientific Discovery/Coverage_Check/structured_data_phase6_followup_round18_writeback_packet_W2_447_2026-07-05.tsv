@@ -1,0 +1,4 @@
+paper_id	note_path	owned_by	final_adjudicated_modules	primary_module_for_filing	source_limited	confirmed_pdf_or_full_text_status	note_refresh_scope
+ASD-0137	Notes/06_Life_Sciences/Wang_2025_PrimeGen_Primer_Design.md	Writeback-Agent-2	06;07	06	no	local archived PDF checked	archive-sync + source refresh + evidence-log refresh
+ASD-0141	Notes/06_Life_Sciences/Zhang_2025_TransAgent_Transcriptional_Regulation.md	Writeback-Agent-2	06;07	06	no	local archived PDF checked	archive-sync + source refresh + evidence-log refresh
+ASD-0370	Notes/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.md	Writeback-Agent-2	06	06	no	local archived PDF checked	archive-sync + source refresh + evidence-log refresh

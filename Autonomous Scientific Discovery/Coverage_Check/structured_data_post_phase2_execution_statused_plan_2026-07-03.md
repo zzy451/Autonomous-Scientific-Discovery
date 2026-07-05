@@ -394,3 +394,42 @@
 ## 11. 当前一句话版本
 
 **是的，这份方案就是承接我们已经完成的 `Phase 1-2` 继续往下走；而且按当前仓库真实状态，我们已经不在前两阶段本身，而是在稳定 baseline 上执行 `Phase 6` 的后续轮次。**
+## R18 status update - 2026-07-05
+
+The repository has now advanced beyond the post-R17 state recorded in the main body of this file.
+
+New round artifacts created:
+
+- `Coverage_Check/structured_data_phase6_followup_round18_plan_447_2026-07-05.md`
+- `Coverage_Check/structured_data_phase6_followup_round18_launch_status_2026-07-05.md`
+- `Coverage_Check/structured_data_phase6_followup_round18_slice_A_447_2026-07-05.tsv`
+- `Coverage_Check/structured_data_phase6_followup_round18_slice_B_447_2026-07-05.tsv`
+- `Coverage_Check/structured_data_phase6_followup_round18_slice_C_447_2026-07-05.tsv`
+- `Coverage_Check/structured_data_phase6_followup_round18_evidence_merge_template_447_2026-07-05.tsv`
+- `Coverage_Check/structured_data_phase6_followup_round18_classification_review_447_2026-07-05.tsv`
+- `Coverage_Check/structured_data_phase6_followup_round18_landing_decision_447_2026-07-05.tsv`
+- `Coverage_Check/structured_data_phase6_followup_round18_writeback_launch_packet_447_2026-07-05.md`
+- `Coverage_Check/structured_data_phase6_followup_round18_writeback_packet_W1_447_2026-07-05.tsv`
+- `Coverage_Check/structured_data_phase6_followup_round18_writeback_packet_W2_447_2026-07-05.tsv`
+- `Coverage_Check/structured_data_phase6_followup_round18_closeout_2026-07-05.md`
+- `Coverage_Check/structured_data_phase6_queue_refresh_after_round18_closeout_2026-07-05.md`
+
+R18 authoritative result:
+
+- `R18Approx` landed `ASD-0765`, `ASD-0772`, `ASD-0049`, `ASD-0137`, `ASD-0141`, and `ASD-0370`
+- for all six rows: `evidence_status -> first_hand_full_text`
+- for all six rows: `source_limited -> no`
+- batch label for all six rows: `Phase6FollowupR18Approx`
+- master remarks and note wording were refreshed from the canonical local archived PDFs
+
+Post-R18 verification state:
+
+- baseline remains `447 / 422 / 25 / canonical 01.04 = 9 / drift 0`
+- `R14Approx` through `R18Approx` have now cleared five consecutive local archived PDF source-limited pockets
+- all six landed rows are gone from the refreshed full-text follow-up queue
+- four landed rows are gone from the refreshed note-revision queue; `ASD-0137` and `ASD-0141` remain there only under the generic `multi_module_note_wording_check` queue rule
+
+Next-step interpretation:
+
+- the next controller launch should start from the post-R18 queue, not the post-R17 queue
+- the same execution rule remains active: if a paper still lacks a realistically obtainable PDF, skip repeated hard-fighting and retain a truthful HTML / abstract / official-page evidence chain instead

@@ -6,17 +6,30 @@
 - 年份：2024
 - 来源 / venue：bioRxiv posted content
 - DOI / arXiv / URL：https://doi.org/10.1101/2024.05.22.595240
-- PDF / 本地文件路径：bioRxiv official page / PDF remained inaccessible (`403`) in the current environment; current evidence comes from the Crossref DOI abstract and the official GitHub repository `https://github.com/biagent-dev/biagent`
+- PDF / 本地文件路径：`Reference_PDF/06_Life_Sciences/Xin_2024_BIA.pdf`
 - 论文类型：系统论文 / 技术报告
-- 当前状态：已读 / 已纳入 / source-limited
+- 当前状态：已读 / 已纳入 / first-hand full text checked
 - 阅读日期：2026-06-16
 - 笔记作者：Codex
 
 ## Evidence Log
 
+## Frozen Adjudication Writeback - 2026-07-05
+
+- Final classification: `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the bioinformatics / scRNA-seq workflow `06` reading.
+
+## 2026-07-05 Phase6FollowupR18Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/06_Life_Sciences/Xin_2024_BIA.pdf`; DOI `https://doi.org/10.1101/2024.05.22.595240`.
+- Current authoritative classification: keep `scientific_object_modules=06`; `object_coverage_mode=single_module`; `primary_module_for_filing=06`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page and early-page full text directly confirm BIA as a bioinformatics workflow agent centered on scRNA-seq and related omics-analysis tasks.
+- Round effect: the old Crossref-abstract-plus-repo source-limited ceiling is retired; this row now lands with first-hand full-text support.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 纳入，LLM bioinformatics workflow agent | Crossref abstract；GitHub repository file tree | 摘要称 BIA 是 intelligent agent，支持 raw data/metadata extraction, database querying, workflow design, executable code generation, comprehensive reports；仓库含 `geo_search.py`、`metadata.py`、`count_matrix_reader.py`、`pipeline_extractor.py`、`code_runner.py`。 | 中 |
+| Agent 纳入 | 纳入，LLM bioinformatics workflow agent | local archived PDF | 全文直接确认 BIA 的 workflow design、database querying、code generation 与 report generation。 | 高 |
 | 科学对象归类 | 06 生命科学 | 标题、摘要、bioinformatics / scRNA-seq focus | 论文聚焦 bioinformatics workflow，示例对象是 single-cell RNA sequencing data。 | 高 |
 | 方法流程 | 自然语言驱动的生信数据获取、处理、workflow 生成与报告 | Crossref abstract；GitHub code tree | 摘要列出 extraction/processing、local and public database queries、workflow designs、executable code、reports；代码模块与该流程一致。 | 中 |
 | 实验验证 | scRNA-seq 任务展示；失败执行分析 | Crossref abstract | 摘要称 paper demonstrates BIA's proficiency in information processing and analysis, executing sophisticated tasks and interactions，并分析 failed executions 与 self-refinement/domain adaptation。 | 中/低 |
@@ -32,7 +45,7 @@
 
 - 是否属于 Agent 文献：是。
 - 判断依据：BIA 被定义为 intelligent agent；功能覆盖数据/元数据抽取、数据库查询、workflow 设计、代码生成、报告生成，是多步生信研究工作流。
-- 判定置信度：中。未能直接读取 bioRxiv PDF 页码，需复核全文。
+- 判定置信度：高。已补本地 archived PDF 全文复核。
 - 是否面向明确科研目标：是，scRNA-seq / bioinformatics analysis。
 - 是否具有多步行动过程：是，数据定位、读取、metadata 处理、pipeline 设计、代码执行与报告。
 - 是否具备以下至少一项 Agent 能力：
