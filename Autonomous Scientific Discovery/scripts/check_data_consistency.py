@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import csv
 import json
 import os
 import re
@@ -14,6 +15,9 @@ REGISTRY_DIR = DATA_DIR / "registry"
 CLASSIFICATION_CODE_INDEX_PATH = DATA_DIR / "classification_code_index.json"
 DISCIPLINE_CODE_ASSIGNMENTS_PATH = DATA_DIR / "discipline_code_assignments.jsonl"
 DISCIPLINE_LOCAL_CODE_REGISTRY_PATH = DATA_DIR / "discipline_local_code_registry.jsonl"
+DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH = (
+    DATA_DIR / "discipline_code_initial_assignment_preview.csv"
+)
 CHANGE_LOG_PATH = DATA_DIR / "change_log.jsonl"
 INTEGRITY_CHECK_REPORT_PATH = DATA_DIR / "integrity_check_report.md"
 SCHEMA_DIR = DATA_DIR / "schema"
@@ -759,6 +763,326 @@ def validate_discipline_local_code_registry(
     )
 
 
+def validate_discipline_initial_assignment_preview(
+    papers: List[Dict[str, object]],
+    classification_code_index: Dict[str, object],
+) -> None:
+    assert_true(
+        DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH.exists(),
+        "discipline_code_initial_assignment_preview.csv is missing",
+    )
+    rows = load_csv_rows(DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH)
+    required_fields = (
+        "paper_id",
+        "title",
+        "active_confirmed_core",
+        "inclusion_status",
+        "scientific_object_modules",
+        "general_method_bucket",
+        "object_coverage_mode",
+        "primary_module_for_filing",
+        "primary_module_label",
+        "legacy_main_class",
+        "legacy_secondary_class",
+        "proposed_primary_taxonomy_code_2lvl",
+        "secondary_term_in_index",
+        "secondary_term_label",
+        "secondary_term_status",
+        "secondary_term_review_status",
+        "proposed_assignment_status",
+        "pending_reason",
+        "proposed_discipline_local_code",
+        "discipline_local_rank",
+        "source_limited",
+        "pdf_status",
+        "evidence_status",
+        "note_path",
+        "pdf_path",
+        "review_flags",
+    )
+    require_row_fields(
+        DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH, rows, required_fields
+    )
+
+    papers_by_id = {str(row["paper_id"]): row for row in papers}
+    active_papers = {
+        str(row["paper_id"]): row
+        for row in papers
+        if bool(row["active_confirmed_core"])
+    }
+    primary_code_to_label = {
+        str(code): str(label)
+        for code, label in dict(
+            classification_code_index["primary_code_to_label"]
+        ).items()
+    }
+    secondary_code_to_label = {
+        str(code): str(label)
+        for code, label in dict(
+            classification_code_index["secondary_code_to_label"]
+        ).items()
+    }
+    secondary_terms_by_code = {
+        str(term["secondary_code"]): term
+        for term in classification_code_index.get("secondary_terms", [])
+        if isinstance(term, dict) and term.get("secondary_code")
+    }
+
+    assert_true(
+        len(rows) == len(active_papers),
+        "discipline_code_initial_assignment_preview.csv row count must match active_confirmed_core papers",
+    )
+
+    seen_paper_ids = set()
+    active_rows_by_secondary: Dict[str, List[Dict[str, str]]] = {}
+
+    for index, row in enumerate(rows, start=1):
+        paper_id = str(row["paper_id"]).strip()
+        assert_true(
+            paper_id in active_papers,
+            f"discipline_code_initial_assignment_preview unknown or inactive paper_id at row {index}: {paper_id!r}",
+        )
+        assert_true(
+            paper_id not in seen_paper_ids,
+            f"discipline_code_initial_assignment_preview duplicate paper_id: {paper_id!r}",
+        )
+        seen_paper_ids.add(paper_id)
+
+        paper_row = papers_by_id[paper_id]
+        scientific_object_modules = [
+            str(code) for code in paper_row["scientific_object_modules"]
+        ]
+        scientific_object_modules_joined = ";".join(scientific_object_modules)
+        general_method_bucket = str(paper_row["general_method_bucket"])
+        primary_module_for_filing = str(paper_row["primary_module_for_filing"])
+        legacy_secondary_class = str(paper_row["legacy_secondary_class"]).strip()
+        secondary_term = secondary_terms_by_code.get(legacy_secondary_class)
+        review_flags = set(split_semicolon_list(str(row["review_flags"])))
+
+        assert_true(
+            row["title"] == paper_row["title"],
+            f"discipline_code_initial_assignment_preview title mismatch for {paper_id}",
+        )
+        assert_true(
+            parse_csv_bool(row["active_confirmed_core"])
+            == bool(paper_row["active_confirmed_core"]),
+            f"discipline_code_initial_assignment_preview active_confirmed_core mismatch for {paper_id}",
+        )
+        assert_true(
+            row["inclusion_status"] == paper_row["inclusion_status"],
+            f"discipline_code_initial_assignment_preview inclusion_status mismatch for {paper_id}",
+        )
+        assert_true(
+            row["scientific_object_modules"] == scientific_object_modules_joined,
+            f"discipline_code_initial_assignment_preview scientific_object_modules mismatch for {paper_id}",
+        )
+        assert_true(
+            row["general_method_bucket"] == general_method_bucket,
+            f"discipline_code_initial_assignment_preview general_method_bucket mismatch for {paper_id}",
+        )
+        assert_true(
+            row["object_coverage_mode"] == paper_row["object_coverage_mode"],
+            f"discipline_code_initial_assignment_preview object_coverage_mode mismatch for {paper_id}",
+        )
+        assert_true(
+            row["primary_module_for_filing"] == primary_module_for_filing,
+            f"discipline_code_initial_assignment_preview primary_module_for_filing mismatch for {paper_id}",
+        )
+        assert_true(
+            row["primary_module_label"]
+            == primary_code_to_label.get(primary_module_for_filing, ""),
+            f"discipline_code_initial_assignment_preview primary_module_label mismatch for {paper_id}",
+        )
+        assert_true(
+            row["legacy_main_class"] == paper_row["legacy_main_class"],
+            f"discipline_code_initial_assignment_preview legacy_main_class mismatch for {paper_id}",
+        )
+        assert_true(
+            row["legacy_secondary_class"] == legacy_secondary_class,
+            f"discipline_code_initial_assignment_preview legacy_secondary_class mismatch for {paper_id}",
+        )
+        assert_true(
+            parse_csv_bool(row["secondary_term_in_index"])
+            == (secondary_term is not None),
+            f"discipline_code_initial_assignment_preview secondary_term_in_index mismatch for {paper_id}",
+        )
+        assert_true(
+            row["secondary_term_label"]
+            == (
+                str(secondary_term.get("label", ""))
+                if secondary_term is not None
+                else secondary_code_to_label.get(legacy_secondary_class, "")
+            ),
+            f"discipline_code_initial_assignment_preview secondary_term_label mismatch for {paper_id}",
+        )
+        assert_true(
+            row["secondary_term_status"]
+            == (str(secondary_term.get("status", "")) if secondary_term is not None else ""),
+            f"discipline_code_initial_assignment_preview secondary_term_status mismatch for {paper_id}",
+        )
+        assert_true(
+            row["secondary_term_review_status"]
+            == (
+                str(secondary_term.get("review_status", ""))
+                if secondary_term is not None
+                else ""
+            ),
+            f"discipline_code_initial_assignment_preview secondary_term_review_status mismatch for {paper_id}",
+        )
+        assert_true(
+            row["source_limited"] == paper_row["source_limited"],
+            f"discipline_code_initial_assignment_preview source_limited mismatch for {paper_id}",
+        )
+        assert_true(
+            row["pdf_status"] == paper_row["pdf_status"],
+            f"discipline_code_initial_assignment_preview pdf_status mismatch for {paper_id}",
+        )
+        assert_true(
+            row["evidence_status"] == paper_row["evidence_status"],
+            f"discipline_code_initial_assignment_preview evidence_status mismatch for {paper_id}",
+        )
+        assert_true(
+            row["note_path"] == paper_row["note_path"],
+            f"discipline_code_initial_assignment_preview note_path mismatch for {paper_id}",
+        )
+        assert_true(
+            row["pdf_path"] == paper_row["pdf_path"],
+            f"discipline_code_initial_assignment_preview pdf_path mismatch for {paper_id}",
+        )
+
+        if len(scientific_object_modules) > 1:
+            assert_true(
+                "multi_module" in review_flags,
+                f"discipline_code_initial_assignment_preview missing multi_module flag for {paper_id}",
+            )
+        if str(paper_row["source_limited"]).startswith("yes"):
+            assert_true(
+                "source_limited" in review_flags,
+                f"discipline_code_initial_assignment_preview missing source_limited flag for {paper_id}",
+            )
+        if (
+            primary_module_for_filing
+            and scientific_object_modules
+            and primary_module_for_filing not in scientific_object_modules
+        ):
+            assert_true(
+                "primary_module_outside_scientific_object_modules" in review_flags,
+                f"discipline_code_initial_assignment_preview missing primary/outside flag for {paper_id}",
+            )
+        if legacy_secondary_class and secondary_term is None:
+            assert_true(
+                "secondary_not_in_taxonomy_index" in review_flags,
+                f"discipline_code_initial_assignment_preview missing taxonomy-index flag for {paper_id}",
+            )
+
+        is_pure_general_method = (
+            general_method_bucket != "none" and not scientific_object_modules
+        )
+        proposed_status = str(row["proposed_assignment_status"]).strip()
+        proposed_code = str(row["proposed_discipline_local_code"]).strip()
+        proposed_rank = str(row["discipline_local_rank"]).strip()
+        proposed_secondary = str(row["proposed_primary_taxonomy_code_2lvl"]).strip()
+        pending_reason = str(row["pending_reason"]).strip()
+
+        if is_pure_general_method:
+            assert_true(
+                proposed_status == "non_discipline_general_method",
+                f"discipline_code_initial_assignment_preview pure general-method row must use non_discipline_general_method: {paper_id}",
+            )
+            assert_true(
+                not proposed_code and not proposed_rank and not proposed_secondary,
+                f"discipline_code_initial_assignment_preview pure general-method row must not carry proposed code fields: {paper_id}",
+            )
+            assert_true(
+                not pending_reason,
+                f"discipline_code_initial_assignment_preview pure general-method row must not carry pending_reason: {paper_id}",
+            )
+        elif not primary_module_for_filing:
+            assert_true(
+                proposed_status == "pending_secondary",
+                f"discipline_code_initial_assignment_preview missing primary-module row must use pending_secondary: {paper_id}",
+            )
+            assert_true(
+                pending_reason == "missing_primary_module_for_filing",
+                f"discipline_code_initial_assignment_preview missing primary-module row pending_reason mismatch: {paper_id}",
+            )
+            assert_true(
+                not proposed_code and not proposed_rank and not proposed_secondary,
+                f"discipline_code_initial_assignment_preview missing primary-module row must not carry proposed code fields: {paper_id}",
+            )
+        elif not PRIMARY_TAXONOMY_2LVL_PATTERN.fullmatch(legacy_secondary_class):
+            assert_true(
+                proposed_status == "pending_secondary",
+                f"discipline_code_initial_assignment_preview uncertain secondary row must use pending_secondary: {paper_id}",
+            )
+            assert_true(
+                pending_reason == "missing_or_uncertain_secondary_class",
+                f"discipline_code_initial_assignment_preview uncertain secondary pending_reason mismatch: {paper_id}",
+            )
+            assert_true(
+                not proposed_code and not proposed_rank and not proposed_secondary,
+                f"discipline_code_initial_assignment_preview uncertain secondary row must not carry proposed code fields: {paper_id}",
+            )
+        elif legacy_secondary_class.split(".", 1)[0] != primary_module_for_filing:
+            assert_true(
+                proposed_status == "pending_secondary",
+                f"discipline_code_initial_assignment_preview secondary/primary mismatch row must use pending_secondary: {paper_id}",
+            )
+            assert_true(
+                pending_reason == "secondary_primary_mismatch",
+                f"discipline_code_initial_assignment_preview secondary/primary mismatch pending_reason mismatch: {paper_id}",
+            )
+            assert_true(
+                not proposed_code and not proposed_rank,
+                f"discipline_code_initial_assignment_preview secondary/primary mismatch row must not carry proposed code/rank: {paper_id}",
+            )
+        else:
+            assert_true(
+                proposed_status == "active_code",
+                f"discipline_code_initial_assignment_preview active proposal status mismatch for {paper_id}",
+            )
+            assert_true(
+                proposed_secondary == legacy_secondary_class,
+                f"discipline_code_initial_assignment_preview proposed secondary mismatch for {paper_id}",
+            )
+            assert_true(
+                DISCIPLINE_CODE_PATTERN.fullmatch(proposed_code) is not None,
+                f"discipline_code_initial_assignment_preview active proposal code format mismatch for {paper_id}",
+            )
+            assert_true(
+                proposed_rank == proposed_code.rsplit("-", 1)[-1],
+                f"discipline_code_initial_assignment_preview active proposal rank mismatch for {paper_id}",
+            )
+            assert_true(
+                not pending_reason,
+                f"discipline_code_initial_assignment_preview active proposal must not carry pending_reason: {paper_id}",
+            )
+            active_rows_by_secondary.setdefault(legacy_secondary_class, []).append(row)
+
+    assert_true(
+        seen_paper_ids == set(active_papers),
+        "discipline_code_initial_assignment_preview paper coverage must exactly match active_confirmed_core papers",
+    )
+
+    for secondary_code, grouped_rows in sorted(active_rows_by_secondary.items()):
+        primary_code, secondary_rank = secondary_code.split(".")
+        for index, row in enumerate(
+            sorted(grouped_rows, key=lambda item: str(item["paper_id"])), start=1
+        ):
+            expected_code = f"{primary_code}-{secondary_rank}-{index:03d}"
+            expected_rank = f"{index:03d}"
+            assert_true(
+                str(row["proposed_discipline_local_code"]).strip() == expected_code,
+                "discipline_code_initial_assignment_preview active proposal code sequence mismatch "
+                f"for {row['paper_id']}",
+            )
+            assert_true(
+                str(row["discipline_local_rank"]).strip() == expected_rank,
+                "discipline_code_initial_assignment_preview active proposal rank sequence mismatch "
+                f"for {row['paper_id']}",
+            )
+
+
 def validate_change_log_owner(papers: List[Dict[str, object]]) -> None:
     if not CHANGE_LOG_PATH.exists():
         return
@@ -822,6 +1146,11 @@ def load_jsonl(path: Path) -> List[Dict[str, object]]:
         if line.strip():
             rows.append(json.loads(line))
     return rows
+
+
+def load_csv_rows(path: Path) -> List[Dict[str, str]]:
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
 
 
 class SchemaValidationError(Exception):
@@ -1461,6 +1790,10 @@ def assert_unique_registry_key(
 
 def split_semicolon_list(value: str) -> List[str]:
     return [item.strip() for item in value.split(";") if item.strip()]
+
+
+def parse_csv_bool(value: str) -> bool:
+    return str(value).strip().lower() == "true"
 
 
 def normalize_extracted_remark_value(raw_value: str) -> str:
@@ -2122,6 +2455,9 @@ def main() -> None:
         )
         validate_discipline_code_assignments_owner(papers)
         validate_discipline_local_code_registry(papers)
+        validate_discipline_initial_assignment_preview(
+            papers, classification_code_index
+        )
         validate_change_log_owner(papers)
 
         paper_ids = [row["paper_id"] for row in papers]

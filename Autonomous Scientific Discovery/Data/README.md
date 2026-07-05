@@ -121,6 +121,7 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `taxonomy_index.json`: code/label mapping for `01-11` and `01.04`.
 - `classification_code_index.json`: taxonomy vocabulary owner for primary / secondary code labels, definitions, include/exclude boundaries, term status, and term source.
 - `discipline_code_initial_assignment_preview.csv`: derived initial-assignment review sheet built from master + progress + taxonomy owner facts before freezing or editing the stable discipline-code ledger; review it, fix owner files, then rerun export instead of hand-editing the preview.
+  `check_data_consistency.py` now also validates its current-snapshot paper coverage, status branching, no-fake-code rules, and active-code sequence stability.
 - `discipline_code_assignments.jsonl`: stable discipline-local code assignment ledger using `assignment_status`.
 - `discipline_local_code_registry.jsonl`: derived snapshot joining paper facts, progress facts, taxonomy vocabulary, and discipline code assignments.
 - `discipline_local_code_registry.csv`: spreadsheet-oriented derived snapshot for discipline-local code review.
