@@ -159,6 +159,19 @@ Daily export must not write owner fact sources. The corresponding owner-maintena
 - `scripts/append_change_log.py`
   Low-level manual audit helper for change types that are not yet covered by a dedicated owner-maintenance command.
 
+## Workflow order
+
+Day-to-day structured-data maintenance should follow the frozen workflow order:
+
+1. change the appropriate owner fact source
+2. run `export -> check -> build`
+3. review the derived outputs / report
+
+Use:
+
+- `scripts/run_structured_data_pipeline.py`
+  Runs the canonical `export_structured_data.py -> check_data_consistency.py -> build_analysis_db.py` sequence from repo root so routine maintenance follows the project workflow instead of ad hoc command order.
+
 ## When to use JSONL, CSV, or SQLite
 
 Use `papers.jsonl` when:
