@@ -6,13 +6,26 @@
 - 年份：2026
 - 来源 / venue：Journal of Chemical Information and Modeling / arXiv
 - DOI / arXiv / URL：https://doi.org/10.1021/acs.jcim.6c00343 ; https://arxiv.org/abs/2601.16376
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与 reviewer 一手证据整理
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Nigam_2026_Polymer_Agent.pdf`
 - 论文类型：系统论文 / polymer design agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the polymer-design materials `04` reading.
+
+## 2026-07-04 Phase6FollowupR17Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/04_Materials_Science/Nigam_2026_Polymer_Agent.pdf`; DOI `https://doi.org/10.1021/acs.jcim.6c00343`; arXiv `https://arxiv.org/abs/2601.16376`.
+- Current authoritative classification: keep `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Local-PDF finding: the archived arXiv PDF is present and readable. The first-page full text directly confirms Polymer-Agent, closed-loop polymer structure-property prediction, property-guided generation, and synthetically accessible polymer design.
+- Round effect: the old abstract/reviewer-evidence source-limited ceiling is retired; this row now lands with first-hand full-text support.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

@@ -1,0 +1,3 @@
+paper_id	title	note_path	current_pdf_path	approx_role	read_only_instruction
+ASD-0668	Autonomous Multi-Agent AI for High-Throughput Polymer Informatics	Notes/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.md	Reference_PDF/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.pdf	Evidence-Agent-C	Read only; return evidence fields; do not edit project files.
+ASD-0672	Polymer-Agent: Large Language Model Agent for Polymer Design	Notes/04_Materials_Science/Nigam_2026_Polymer_Agent.md	Reference_PDF/04_Materials_Science/Nigam_2026_Polymer_Agent.pdf	Evidence-Agent-C	Read only; return evidence fields; do not edit project files.

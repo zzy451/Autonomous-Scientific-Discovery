@@ -406,7 +406,7 @@
 
 | ASD-0567 | Egent: An Autonomous Agent for Equivalent Width Measurement | Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Ting_2026_Egent_Equivalent_Width.md | archived_pdf | Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Ting_2026_Egent_Equivalent_Width.pdf | first_hand_preprint_and_doi_metadata | updated | updated | 02 | no | Batch23Partial1 | yes |
 
-| ASD-0568 | Multi-Agent-Network-Based Idea Generator for Zinc-Ion Battery Electrolyte Discovery: A Case Study on Zinc Tetrafluoroborate Hydrate-Based Deep Eutectic Electrolytes | Notes/04_Materials_Science/Robson_2025_Zinc_Ion_Electrolyte_Idea_Generator.md | archived_pdf | Reference_PDF/04_Materials_Science/Robson_2025_Zinc_Ion_Electrolyte_Idea_Generator.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 04 | yes | Batch23Partial1 | yes |
+| ASD-0568 | Multi-Agent-Network-Based Idea Generator for Zinc-Ion Battery Electrolyte Discovery: A Case Study on Zinc Tetrafluoroborate Hydrate-Based Deep Eutectic Electrolytes | Notes/04_Materials_Science/Robson_2025_Zinc_Ion_Electrolyte_Idea_Generator.md | archived_pdf | Reference_PDF/04_Materials_Science/Robson_2025_Zinc_Ion_Electrolyte_Idea_Generator.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR17Approx | yes |
 
 | ASD-0569 | Autonomous Nanocrystal Doping by Self-Driving Fluidic Micro-Processors | Notes/04_Materials_Science/Bateni_2022_Autonomous_Nanocrystal_Doping.md | source_limited_no_local_pdf |  | source_limited_review_packet | updated_source_limited | updated_source_limited | 04 | yes | Batch23Partial1 | yes |
 
@@ -428,9 +428,9 @@
 
 | ASD-0579 | A Bayesian active learning platform for scalable combination drug screens | Notes/07_Medical_and_Health_Sciences/Tosh_2025_BATCHIE_Drug_Screens.md | archived_pdf | Reference_PDF/07_Medical_and_Health_Sciences/Tosh_2025_BATCHIE_Drug_Screens.pdf | first_hand_full_text | updated | updated | 07 | no | Batch23Partial1 | yes |
 
-| ASD-0581 | A chemical autonomous robotic platform for end-to-end synthesis of nanoparticles | Notes/04_Materials_Science/Unknown_2025_Autonomous_Nanoparticle_Synthesis.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2025_Autonomous_Nanoparticle_Synthesis.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 04 | yes | Batch23Partial1 | yes |
+| ASD-0581 | A chemical autonomous robotic platform for end-to-end synthesis of nanoparticles | Notes/04_Materials_Science/Unknown_2025_Autonomous_Nanoparticle_Synthesis.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2025_Autonomous_Nanoparticle_Synthesis.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR17Approx | yes |
 
-| ASD-0582 | Autonomous platform for solution processing of electronic polymers | Notes/04_Materials_Science/Unknown_2025_Autonomous_Electronic_Polymer_Processing.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2025_Autonomous_Electronic_Polymer_Processing.pdf | source_limited_review_packet | updated_source_limited | updated_source_limited | 04 | yes | Batch23Partial1 | yes |
+| ASD-0582 | Autonomous platform for solution processing of electronic polymers | Notes/04_Materials_Science/Unknown_2025_Autonomous_Electronic_Polymer_Processing.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2025_Autonomous_Electronic_Polymer_Processing.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR17Approx | yes |
 
 | ASD-0586 | A virtual platform for automated hybrid organic-enzymatic synthesis planning | Notes/03_Chemical_Sciences/Unknown_2025_Hybrid_Organic_Enzymatic_Synthesis_Planning.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Unknown_2025_Hybrid_Organic_Enzymatic_Synthesis_Planning.pdf | first_hand_full_text | updated | updated | 03 | no | Batch17Partial1 | yes |
 
@@ -440,7 +440,7 @@
 
 | ASD-0590 | A robotic platform for the synthesis of colloidal nanocrystals | Notes/04_Materials_Science/Zhao_2023_Robotic_Colloidal_Nanocrystals.md | archived_pdf | Reference_PDF/04_Materials_Science/Zhao_2023_Robotic_Colloidal_Nanocrystals.pdf | first_hand_full_text | updated | updated | 04 | no | Batch23Partial1 | yes |
 
-| ASD-0591 | Self-optimizing parallel millifluidic reactor for scaling nanoparticle synthesis | Notes/04_Materials_Science/Wang_2020_SelfOptimizing_Millifluidic_Nanoparticles.md | archived_pdf | Reference_PDF/04_Materials_Science/Wang_2020_SelfOptimizing_Millifluidic_Nanoparticles.pdf | first_hand_author_pdf_review_packet | updated_source_limited | updated_source_limited | 04 | yes | Batch23Partial1 | yes |
+| ASD-0591 | Self-optimizing parallel millifluidic reactor for scaling nanoparticle synthesis | Notes/04_Materials_Science/Wang_2020_SelfOptimizing_Millifluidic_Nanoparticles.md | archived_pdf | Reference_PDF/04_Materials_Science/Wang_2020_SelfOptimizing_Millifluidic_Nanoparticles.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR17Approx | yes |
 
 | ASD-0592 | Autonomous materials synthesis by machine learning and robotics | Notes/04_Materials_Science/Shimizu_2020_Autonomous_Materials_Synthesis.md | publisher_pdf_checked_no_local_archive |  | first_hand_full_text | updated | updated | 04 | no | Batch17Partial1 | yes |
 
@@ -562,7 +562,7 @@
 
 | ASD-0667 | From Natural Language to Materials Discovery: The Materials Knowledge Navigation Agent | Notes/04_Materials_Science/Unknown_2026_MKNA.md | archived_pdf | Reference_PDF/04_Materials_Science/Unknown_2026_MKNA.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR12Approx | yes |
 
-| ASD-0668 | Autonomous Multi-Agent AI for High-Throughput Polymer Informatics: From Property Prediction to Generative Design Across Synthetic and Bio-Polymers | Notes/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.md | archived_pdf | Reference_PDF/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.pdf | source_limited_review_packet | checked | checked | 04 | yes | Batch19Partial1 | yes |
+| ASD-0668 | Autonomous Multi-Agent AI for High-Throughput Polymer Informatics: From Property Prediction to Generative Design Across Synthetic and Bio-Polymers | Notes/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.md | archived_pdf | Reference_PDF/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR17Approx | yes |
 
 | ASD-0669 | MARBLE: Multi-Agent Reasoning for Bioinformatics Learning and Evolution | Notes/06_Life_Sciences/Kim_2026_MARBLE.md | archived_pdf | Reference_PDF/06_Life_Sciences/Kim_2026_MARBLE.pdf | first_hand_full_text | updated | updated | 06;07 | no | Batch27Partial1 | yes |
 
@@ -570,7 +570,7 @@
 
 | ASD-0671 | AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration | Notes/01_Formal_Information_and_Computational_Sciences/Liu_2026_AutoResearchClaw.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Liu_2026_AutoResearchClaw.pdf | first_hand_full_text | updated | checked | 01;02;06 | no | Batch24Partial1 | yes |
 
-| ASD-0672 | Polymer-Agent: Large Language Model Agent for Polymer Design | Notes/04_Materials_Science/Nigam_2026_Polymer_Agent.md | archived_pdf | Reference_PDF/04_Materials_Science/Nigam_2026_Polymer_Agent.pdf | source_limited_review_packet | checked | checked | 04 | yes | Batch19Partial1 | yes |
+| ASD-0672 | Polymer-Agent: Large Language Model Agent for Polymer Design | Notes/04_Materials_Science/Nigam_2026_Polymer_Agent.md | archived_pdf | Reference_PDF/04_Materials_Science/Nigam_2026_Polymer_Agent.pdf | first_hand_full_text | updated | updated | 04 | no | Phase6FollowupR17Approx | yes |
 
 | ASD-0673 | Harnessing AtomisticSkills for Agentic Atomistic Research | Notes/01_Formal_Information_and_Computational_Sciences/Deng_2026_AtomisticSkills.md | archived_pdf | Reference_PDF/01_Formal_Information_and_Computational_Sciences/Deng_2026_AtomisticSkills.pdf | first_hand_full_text_via_arxiv_fallback | updated | checked | 03;04;07 | no | Batch24Partial1 | yes |
 

@@ -6,13 +6,26 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2602.00103
-- PDF / 本地文件路径：当前笔记基于 arXiv abstract 与 reviewer 一手证据整理
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.pdf`
 - 论文类型：系统论文 / polymer informatics agent
 - 当前状态：to_read
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the polymer materials `04` reading.
+
+## 2026-07-04 Phase6FollowupR17Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.pdf`; arXiv `https://arxiv.org/abs/2602.00103`.
+- Current authoritative classification: keep `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Local-PDF finding: the archived arXiv PDF is present and readable. The first-page full text directly confirms the multiagent polymer discovery ecosystem, property prediction, generative design, polymer benchmarks, and metacognitive self-assessment.
+- Round effect: the old abstract/reviewer-evidence source-limited ceiling is retired; this row now lands with first-hand full-text support.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

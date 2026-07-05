@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-025-62994-2
-- PDF / 本地文件路径：未保存本地 PDF；本笔记沿用 Nature Communications 正式页面与 reviewer 一手证据，不额外声称本轮完成本地 PDF 复核
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Unknown_2025_Autonomous_Nanoparticle_Synthesis.pdf`
 - 论文类型：research paper / autonomous robotic nanomaterials platform
 - 当前状态：included
 - 阅读日期：2026-06-19
@@ -20,6 +20,19 @@
 - Classification evidence source level: `first_hand_article_page_plus_reviewer_packet`
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the nanoparticle materials `04` reading.
+
+## 2026-07-04 Phase6FollowupR17Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/04_Materials_Science/Unknown_2025_Autonomous_Nanoparticle_Synthesis.pdf`; DOI `https://doi.org/10.1038/s41467-025-62994-2`.
+- Current authoritative classification: keep `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Local-PDF finding: the archived Nature Communications PDF is present and readable. The first-page full text directly confirms the data-driven automated platform, GPT retrieval, A*-centered closed-loop optimization, and diverse nanomaterial synthesis targets.
+- Round effect: the old article-page source-limited ceiling is retired; this row now lands with first-hand full-text support.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

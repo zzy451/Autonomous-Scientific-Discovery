@@ -6,14 +6,27 @@
 - 年份：2020
 - 来源 / venue：Chemical Communications
 - DOI / arXiv / URL：https://doi.org/10.1039/D0CC00064G
-- PDF / 本地文件路径：本轮依据 author version PDF 与 reviewer 一手证据整理
-- 来源状态：source_limited=yes（更深的自动续读在本轮已因安全原因停止；当前仅依据已安全核到的作者版 PDF、摘要与图示维持冻结 `04` 结论）
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Wang_2020_SelfOptimizing_Millifluidic_Nanoparticles.pdf`
+- 来源状态：source_limited=no（2026-07-04 local archived author-version PDF full-text recheck completed）
 - 论文类型：研究论文 / 纳米材料连续合成平台
 - 当前状态：to_read / confirmed core
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: locally archived author-version PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the nanoparticle materials `04` reading and do not drift to `09`.
+
+## 2026-07-04 Phase6FollowupR17Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived author-version PDF `Reference_PDF/04_Materials_Science/Wang_2020_SelfOptimizing_Millifluidic_Nanoparticles.pdf`; DOI `https://doi.org/10.1039/D0CC00064G`.
+- Current authoritative classification: keep `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Local-PDF finding: the archived author-version PDF is present and readable. Page 2 directly confirms the self-optimizing millifluidic reactor, in-situ photoluminescence monitoring, real-time reaction-condition optimization, and CsPbBr3 quantum-dot synthesis object.
+- Round effect: the old source-limited wording is retired; this row now lands with first-hand full-text support from the local author-version PDF.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
@@ -59,7 +72,7 @@
 - 一级类：04
 - 冻结归类结论：04（材料科学）
 - 二级类：04.03
-- source_limited：yes
+- source_limited：no
 - 三级类：量子点纳米材料连续合成与优化
 - 四级专题：Self-optimizing nanoparticle-synthesis reactors
 - 四级专题是否为新增：否

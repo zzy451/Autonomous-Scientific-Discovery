@@ -1,0 +1,7 @@
+paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
+ASD-0568	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text supports clearing source-limited while keeping `04`.
+ASD-0581	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text supports clearing source-limited while keeping `04`.
+ASD-0582	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text supports clearing source-limited while keeping `04`.
+ASD-0591	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived author-version full text supports clearing source-limited while keeping `04`.
+ASD-0668	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text supports clearing source-limited while keeping `04`.
+ASD-0672	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text supports clearing source-limited while keeping `04`.

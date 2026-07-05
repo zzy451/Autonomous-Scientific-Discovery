@@ -148,12 +148,13 @@
 - `Coverage_Check/structured_data_phase6_queue_refresh_after_round14_closeout_2026-07-04.md`
 - `Coverage_Check/structured_data_phase6_queue_refresh_after_round15_closeout_2026-07-04.md`
 - `Coverage_Check/structured_data_phase6_queue_refresh_after_round16_closeout_2026-07-04.md`
+- `Coverage_Check/structured_data_phase6_queue_refresh_after_round17_closeout_2026-07-04.md`
 
 这一步已经确认：
 
 - 刷新后的队列和 authoritative pair 对齐
 - baseline 仍然稳定为 `447 / 422 / 25 / drift 0`
-- follow-up queue 已从 stale pre-R5 anchors 刷到 post-R16 authoritative 状态
+- follow-up queue 已从 stale pre-R5 anchors 刷到 post-R17 authoritative 状态
 
 ### 4.2 Note revision round 1 已完成
 
@@ -172,7 +173,7 @@
 
 这一点必须保留为正式事实，后续不能把这一轮误写成“标准成功 writeback-agent round”
 
-### 4.3 Follow-up rounds 6-16 已完成
+### 4.3 Follow-up rounds 6-17 已完成
 
 已完成文件族：
 
@@ -187,6 +188,7 @@
 - `Coverage_Check/structured_data_phase6_followup_round14_*_2026-07-04.*`
 - `Coverage_Check/structured_data_phase6_followup_round15_*_2026-07-04.*`
 - `Coverage_Check/structured_data_phase6_followup_round16_*_2026-07-04.*`
+- `Coverage_Check/structured_data_phase6_followup_round17_*_2026-07-04.*`
 
 当前已经确认的真实推进包括：
 
@@ -203,6 +205,7 @@
 - `R14Approx`：按照当前“找不到 PDF 就跳过，不在同一路由上反复硬啃”的执行规则，从 hard-blocked no-local-PDF frontier 切换到下一组 local archived PDF source-limited 清压 round；`ASD-0014`、`ASD-0055`、`ASD-0085`、`ASD-0357`、`ASD-0564`、`ASD-0670` 全部获得 authoritative landing，6 篇的 `source_limited=yes -> no` 与 `evidence_status -> first_hand_full_text` 被正式落地，并已同步刷新 post-R14 Phase 6 队列
 - `R15Approx`：继续清理下一组 canonical local archived PDF source-limited pocket；`ASD-0696`、`ASD-0654`、`ASD-0656`、`ASD-0658`、`ASD-0699`、`ASD-0704` 全部获得 authoritative landing，6 篇的 `source_limited=yes -> no` 与 `evidence_status -> first_hand_full_text` 被正式落地，并已同步刷新 post-R15 Phase 6 队列
 - `R16Approx`：继续清理下一组 chemistry/materials local archived PDF source-limited pocket；`ASD-0587`、`ASD-0665`、`ASD-0832`、`ASD-0838`、`ASD-0491`、`ASD-0558` 全部获得 authoritative landing，6 篇的 `source_limited=yes -> no` 与 `evidence_status -> first_hand_full_text` 被正式落地，并已同步刷新 post-R16 Phase 6 队列
+- `R17Approx`：继续清理下一组 materials local archived PDF source-limited pocket；`ASD-0568`、`ASD-0581`、`ASD-0582`、`ASD-0591`、`ASD-0668`、`ASD-0672` 全部获得 authoritative landing，6 篇的 `source_limited=yes -> no` 与 `evidence_status -> first_hand_full_text` 被正式落地，并已同步刷新 post-R17 Phase 6 队列
 
 ## 5. 当前 Phase 6 的真实位置
 
@@ -210,12 +213,12 @@
 
 - 已完成 queue refresh
 - 已完成 note revision rounds `1-3`
-- 已完成 bounded follow-up rounds `R6-R16`
-- `R16Approx` 后的 authoritative 与派生层已经重新导出、校验、建库并刷新 Phase 6 队列
-- 当前队列已经不再把 `ASD-0587`、`ASD-0665`、`ASD-0832`、`ASD-0838`、`ASD-0491`、`ASD-0558` 继续错误暴露为 local-PDF source-limited pressure
+- 已完成 bounded follow-up rounds `R6-R17`
+- `R17Approx` 后的 authoritative 与派生层已经重新导出、校验、建库并刷新 Phase 6 队列
+- 当前队列已经不再把 `ASD-0568`、`ASD-0581`、`ASD-0582`、`ASD-0591`、`ASD-0668`、`ASD-0672` 继续错误暴露为 local-PDF source-limited pressure
 - `R13Approx` 已对下一组 post-R12 no-local-PDF / non-full-text frontier 做完 evidence-only conservative hold
-- `R14Approx`、`R15Approx` 与 `R16Approx` 已连续清掉三组 local archived PDF source-limited pockets
-- 当前自然下一步是：**继续在 post-R16 queue 上，以 freshness override 跳过已确认 hard-blocked 的 PDF 路由；对实在找不到 PDF 的论文不再反复硬啃，只要保留可索引、可核真的 HTML / abstract / official-page 证据链即可**
+- `R14Approx`、`R15Approx`、`R16Approx` 与 `R17Approx` 已连续清掉四组 local archived PDF source-limited pockets
+- 当前自然下一步是：**继续在 post-R17 queue 上，以 freshness override 跳过已确认 hard-blocked 的 PDF 路由；对实在找不到 PDF 的论文不再反复硬啃，只要保留可索引、可核真的 HTML / abstract / official-page 证据链即可**
 
 也就是说，我们现在不是停留在 `Phase 1-2`，也不是停留在 `Phase 3-5`，而是已经进入 `Phase 6` 的连续执行段。
 

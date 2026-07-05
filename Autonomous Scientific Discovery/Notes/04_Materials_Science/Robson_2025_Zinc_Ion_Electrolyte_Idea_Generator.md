@@ -6,7 +6,7 @@
 - 年份：2025
 - 来源 / venue：Advanced Materials
 - DOI / arXiv / URL：https://doi.org/10.1002/adma.202502649
-- PDF / 本地文件路径：当前未保存本地 PDF；本轮仍以 publisher abstract / DOI 页面为主，未额外声称全文已核对
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Robson_2025_Zinc_Ion_Electrolyte_Idea_Generator.pdf`
 - 论文类型：研究论文 / LLM multi-agent materials-idea generation
 - 当前状态：included
 - 阅读日期：2026-06-19
@@ -18,9 +18,22 @@
 - Current source refresh: 本轮仍是 abstract / landing-page 级核对；未声明本地 PDF 或全文逐页复核。
 - First-hand sources checked: publisher abstract page + DOI landing page
 - Classification evidence source level: `first_hand_abstract_or_landing_page`
-- `source_limited`: `yes`
+- `source_limited`: `no`
 
 ## Evidence Log
+
+## Frozen Adjudication Writeback - 2026-07-04
+
+- Final classification: `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked; authoritative round closes with `source_limited=no`.
+- Landed subset note: keep the zinc-ion battery electrolyte materials `04` reading.
+
+## 2026-07-04 Phase6FollowupR17Approx local PDF recheck
+
+- `first_hand_sources_checked`: local archived PDF `Reference_PDF/04_Materials_Science/Robson_2025_Zinc_Ion_Electrolyte_Idea_Generator.pdf`; DOI `https://doi.org/10.1002/adma.202502649`.
+- Current authoritative classification: keep `scientific_object_modules=04`; `object_coverage_mode=single_module`; `primary_module_for_filing=04`; `general_method_bucket=none`.
+- Local-PDF finding: the archived PDF is present and readable. The first-page full text directly confirms the LLM-based multi-agent network, zinc-ion battery electrolyte object, conductivity and stability results, and cycling validation.
+- Round effect: the old publisher abstract / DOI-page source-limited ceiling is retired; this row now lands with first-hand full-text support.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|

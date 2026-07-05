@@ -1,0 +1,7 @@
+paper_id	final_agent_inclusion	supported_modules	final_01_04_bucket	primary_module_for_filing	boundary_type	confidence	source_limited	safety_access_status	note_revision_required	master_update_required	final_reason
+ASD-0568	yes	04	none	04	04_stable_singlemodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms zinc-ion battery electrolyte materials discovery; keep `04`.
+ASD-0581	yes	04	none	04	04_stable_singlemodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms autonomous nanoparticle synthesis and materials optimization; keep `04`.
+ASD-0582	yes	04	none	04	04_stable_singlemodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms electronic polymer processing and materials properties; keep `04`.
+ASD-0591	yes	04	none	04	04_stable_singlemodule	high	no	no_safety_blocker; locally_archived_author_full_text_checked	yes	yes	Local archived author-version full text confirms self-optimizing nanoparticle synthesis; keep `04`.
+ASD-0668	yes	04	none	04	04_stable_singlemodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms polymer informatics and generative polymer design; keep `04`.
+ASD-0672	yes	04	none	04	04_stable_singlemodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms Polymer-Agent for polymer design; keep `04`.
