@@ -484,6 +484,36 @@ def normalize_primary_module_for_export(
     return normalize_primary_module(raw_value, legacy_main, modules)
 
 
+def derive_classification_trace(
+    *,
+    raw_modules: str,
+    raw_object_coverage_mode: str,
+    raw_primary_module: str,
+    raw_general_bucket: str,
+    legacy_main: str,
+    legacy_secondary: str,
+) -> Tuple[str, str, str]:
+    if any(
+        value.strip()
+        for value in (
+            raw_modules,
+            raw_object_coverage_mode,
+            raw_primary_module,
+            raw_general_bucket,
+        )
+    ):
+        return ("Remarks", "high", "structured_remark_token")
+    if legacy_main == "01" and legacy_secondary == "01.04":
+        return (
+            "Main class;Secondary class",
+            "medium",
+            "legacy_general_method_fallback",
+        )
+    if legacy_main in FORMAL_MODULES:
+        return ("Main class", "medium", "legacy_main_class_fallback")
+    return ("", "low", "needs_review")
+
+
 def derive_record_status(inclusion_status: str, active_confirmed_core: bool) -> str:
     normalized = inclusion_status.strip().lower()
     if active_confirmed_core:
@@ -851,6 +881,18 @@ def build_papers(
             scientific_object_modules,
             general_method_bucket,
         )
+        (
+            classification_source_field,
+            classification_source_confidence,
+            classification_parser_rule,
+        ) = derive_classification_trace(
+            raw_modules=raw_modules,
+            raw_object_coverage_mode=raw_object_coverage_mode,
+            raw_primary_module=raw_primary_module,
+            raw_general_bucket=raw_general_bucket,
+            legacy_main=row["Main class"],
+            legacy_secondary=row["Secondary class"],
+        )
 
         doi, arxiv_id, url = parse_doi_and_arxiv(row["DOI / arXiv / URL"])
         note_path = progress.get("note_path") or row["Note path"]
@@ -908,6 +950,9 @@ def build_papers(
                 "general_method_bucket": general_method_bucket,
                 "object_coverage_mode": object_coverage_mode,
                 "primary_module_for_filing": primary_module_for_filing,
+                "classification_source_field": classification_source_field,
+                "classification_source_confidence": classification_source_confidence,
+                "classification_parser_rule": classification_parser_rule,
                 "first_hand_sources_checked": first_hand_sources_checked,
                 "progress_title": progress.get("title", ""),
                 "pdf_status": progress.get("pdf_status", ""),

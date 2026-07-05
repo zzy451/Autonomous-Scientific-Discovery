@@ -68,6 +68,13 @@ OBJECT_COVERAGE_MODES = {
     "multi_module",
     "general_method_without_concrete_object_experiments",
 }
+CLASSIFICATION_SOURCE_CONFIDENCE_VALUES = {"high", "medium", "low"}
+CLASSIFICATION_PARSER_RULE_VALUES = {
+    "structured_remark_token",
+    "legacy_general_method_fallback",
+    "legacy_main_class_fallback",
+    "needs_review",
+}
 RECORD_STATUSES = {
     "candidate",
     "active_confirmed_core",
@@ -1829,6 +1836,34 @@ def main() -> None:
                 isinstance(row.get("last_reviewed_by"), str),
                 f"{paper_id} last_reviewed_by must be a string",
             )
+            assert_true(
+                isinstance(row.get("classification_source_field"), str),
+                f"{paper_id} classification_source_field must be a string",
+            )
+            assert_true(
+                isinstance(row.get("classification_source_confidence"), str)
+                and row["classification_source_confidence"] in CLASSIFICATION_SOURCE_CONFIDENCE_VALUES,
+                f"{paper_id} has invalid classification_source_confidence: {row.get('classification_source_confidence')!r}",
+            )
+            assert_true(
+                isinstance(row.get("classification_parser_rule"), str)
+                and row["classification_parser_rule"] in CLASSIFICATION_PARSER_RULE_VALUES,
+                f"{paper_id} has invalid classification_parser_rule: {row.get('classification_parser_rule')!r}",
+            )
+            if row["classification_parser_rule"] == "needs_review":
+                assert_true(
+                    row["classification_source_confidence"] == "low",
+                    f"{paper_id} needs_review classification trace must use source_confidence=low",
+                )
+            if row["classification_parser_rule"] == "structured_remark_token":
+                assert_true(
+                    row["classification_source_field"] == "Remarks",
+                    f"{paper_id} structured_remark_token classification trace must use source_field=Remarks",
+                )
+                assert_true(
+                    row["classification_source_confidence"] == "high",
+                    f"{paper_id} structured_remark_token classification trace must use source_confidence=high",
+                )
             if row["last_reviewed_at"]:
                 assert_true(
                     re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", row["last_reviewed_at"]) is not None,

@@ -337,6 +337,44 @@
 - 日常 export 只能读取它来校验 taxonomy term，不得覆盖它。
 - 若需维护 taxonomy vocabulary，应使用显式 owner helper（当前为 `scripts/manage_classification_code_index.py`），而不是手工去改 derived registry / SQLite。
 
+### 4.2AA canonical classification trace fields
+
+定位: `master-derived canonical lane` 的结构化来源追踪字段，当前导出到 `papers.jsonl` / `papers.csv` / SQLite `papers`。
+
+关键字段:
+
+- `classification_source_field`
+- `classification_source_confidence`
+- `classification_parser_rule`
+
+当前语义:
+
+- `classification_source_field`
+  - 当前 canonical classification 主要来自哪个 owner 字段面
+  - 现阶段常见值:
+    - `Remarks`
+    - `Main class`
+    - `Main class;Secondary class`
+- `classification_source_confidence`
+  - 当前 parser 对 canonical classification lane 来源的置信度
+  - 现阶段受控值:
+    - `high`
+    - `medium`
+    - `low`
+- `classification_parser_rule`
+  - 当前 canonical classification lane 采用的推导规则
+  - 现阶段受控值:
+    - `structured_remark_token`
+    - `legacy_general_method_fallback`
+    - `legacy_main_class_fallback`
+    - `needs_review`
+
+约束:
+
+- 它们是 trace fields，不是新的事实 owner。
+- 它们只解释 canonical classification 如何从 owner facts 推导出来。
+- 若未来 master 出现显式 canonical columns，可在不改变 trace 字段职责的前提下扩展 parser rule 枚举。
+
 ### 4.2B `discipline_code_assignments.jsonl`
 
 定位: 稳定 discipline-local code assignment 当前状态账本。
