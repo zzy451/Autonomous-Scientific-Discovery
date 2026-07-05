@@ -8,11 +8,29 @@ Status: `passed`
 - `WARNING`: 96
 - `INFO`: 10
 
+## Summary By Category
+
+- `evidence`: 45
+- `discipline_code`: 24
+- `taxonomy`: 36
+- `derived_snapshot`: 1
+
+## Summary By Finding Code
+
+- `SECONDARY_TERM_NEEDS_REVIEW`: 36
+- `MISSING_LOCAL_PDF`: 25
+- `SOURCE_LIMITED`: 20
+- `PENDING_SECONDARY`: 15
+- `NON_DISCIPLINE_GENERAL_METHOD`: 9
+- `DERIVED_SNAPSHOT_WORKTREE_DIRTY`: 1
+
 ## ERROR
 
 - None
 
 ## WARNING
+
+### evidence
 
 - `MISSING_LOCAL_PDF` | `ASD-0005` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
@@ -104,6 +122,9 @@ Status: `passed`
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0861` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+
+### discipline_code
+
 - `PENDING_SECONDARY` | `ASD-0060 / DCA-000050` | Discipline code assignment remains pending secondary review: secondary_primary_mismatch.
   Owner file: `Data/discipline_code_assignments.jsonl`
 - `PENDING_SECONDARY` | `ASD-0254 / DCA-000117` | Discipline code assignment remains pending secondary review: secondary_primary_mismatch.
@@ -134,6 +155,9 @@ Status: `passed`
   Owner file: `Data/discipline_code_assignments.jsonl`
 - `PENDING_SECONDARY` | `ASD-0871 / DCA-000447` | Discipline code assignment remains pending secondary review: secondary_primary_mismatch.
   Owner file: `Data/discipline_code_assignments.jsonl`
+
+### taxonomy
+
 - `SECONDARY_TERM_NEEDS_REVIEW` | `01.01` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
   Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `01.02` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
@@ -209,6 +233,8 @@ Status: `passed`
 
 ## INFO
 
+### discipline_code
+
 - `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0006 / DCA-000006` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
   Owner file: `Data/discipline_code_assignments.jsonl`
 - `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0040 / DCA-000033` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
@@ -227,5 +253,8 @@ Status: `passed`
   Owner file: `Data/discipline_code_assignments.jsonl`
 - `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0553 / DCA-000190` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
   Owner file: `Data/discipline_code_assignments.jsonl`
+
+### derived_snapshot
+
 - `DERIVED_SNAPSHOT_WORKTREE_DIRTY` | Derived discipline-local registry snapshot was generated from a dirty worktree.
   Owner file: `Data/discipline_local_code_registry.jsonl`

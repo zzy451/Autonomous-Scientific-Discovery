@@ -647,6 +647,7 @@ def add_finding(
     findings: List[Dict[str, str]],
     *,
     severity: str,
+    category: str,
     code: str,
     message: str,
     owner_file: str,
@@ -655,6 +656,7 @@ def add_finding(
     findings.append(
         {
             "severity": severity,
+            "category": category,
             "code": code,
             "subject_id": subject_id,
             "message": message,
@@ -678,6 +680,7 @@ def collect_non_blocking_findings(
             add_finding(
                 findings,
                 severity="WARNING",
+                category="evidence",
                 code="MISSING_LOCAL_PDF",
                 subject_id=paper_id,
                 message="Active confirmed-core paper currently has no local PDF.",
@@ -687,6 +690,7 @@ def collect_non_blocking_findings(
             add_finding(
                 findings,
                 severity="WARNING",
+                category="evidence",
                 code="SOURCE_LIMITED",
                 subject_id=paper_id,
                 message="Active confirmed-core paper remains source-limited.",
@@ -701,6 +705,7 @@ def collect_non_blocking_findings(
             add_finding(
                 findings,
                 severity="WARNING",
+                category="discipline_code",
                 code="PENDING_SECONDARY",
                 subject_id=f"{paper_id} / {assignment_id}",
                 message=(
@@ -713,6 +718,7 @@ def collect_non_blocking_findings(
             add_finding(
                 findings,
                 severity="INFO",
+                category="discipline_code",
                 code="NON_DISCIPLINE_GENERAL_METHOD",
                 subject_id=f"{paper_id} / {assignment_id}",
                 message="Record is intentionally kept outside normal discipline shelving as pure general-method-only.",
@@ -727,6 +733,7 @@ def collect_non_blocking_findings(
             add_finding(
                 findings,
                 severity="WARNING",
+                category="taxonomy",
                 code="SECONDARY_TERM_NEEDS_REVIEW",
                 subject_id=secondary_code,
                 message=(
@@ -742,6 +749,7 @@ def collect_non_blocking_findings(
             add_finding(
                 findings,
                 severity="INFO",
+                category="derived_snapshot",
                 code="DERIVED_SNAPSHOT_WORKTREE_DIRTY",
                 message="Derived discipline-local registry snapshot was generated from a dirty worktree.",
                 owner_file="Data/discipline_local_code_registry.jsonl",
@@ -756,10 +764,29 @@ def write_integrity_check_report(
     status: str,
 ) -> None:
     severity_order = ("ERROR", "WARNING", "INFO")
+    category_order = (
+        "identity",
+        "evidence",
+        "discipline_code",
+        "taxonomy",
+        "asset",
+        "note",
+        "derived_snapshot",
+        "audit",
+        "other",
+    )
     counts = {
         severity: sum(1 for finding in findings if finding["severity"] == severity)
         for severity in severity_order
     }
+    category_counts = {
+        category: sum(1 for finding in findings if finding["category"] == category)
+        for category in category_order
+        if any(finding["category"] == category for finding in findings)
+    }
+    code_counts = {}
+    for finding in findings:
+        code_counts[finding["code"]] = code_counts.get(finding["code"], 0) + 1
 
     lines = [
         "# ASD integrity check report",
@@ -772,7 +799,22 @@ def write_integrity_check_report(
         f"- `WARNING`: {counts['WARNING']}",
         f"- `INFO`: {counts['INFO']}",
         "",
+        "## Summary By Category",
+        "",
     ]
+
+    if category_counts:
+        for category, count in category_counts.items():
+            lines.append(f"- `{category}`: {count}")
+    else:
+        lines.append("- None")
+    lines.extend(["", "## Summary By Finding Code", ""])
+    if code_counts:
+        for code, count in sorted(code_counts.items(), key=lambda item: (-item[1], item[0])):
+            lines.append(f"- `{code}`: {count}")
+    else:
+        lines.append("- None")
+    lines.append("")
 
     for severity in severity_order:
         lines.extend([f"## {severity}", ""])
@@ -780,14 +822,22 @@ def write_integrity_check_report(
         if not severity_findings:
             lines.extend(["- None", ""])
             continue
+        grouped: Dict[str, List[Dict[str, str]]] = {}
         for finding in severity_findings:
-            parts = [f"`{finding['code']}`"]
-            if finding["subject_id"]:
-                parts.append(f"`{finding['subject_id']}`")
-            parts.append(finding["message"])
-            lines.append("- " + " | ".join(parts))
-            lines.append(f"  Owner file: `{finding['owner_file']}`")
-        lines.append("")
+            grouped.setdefault(finding["category"], []).append(finding)
+        for category in category_order:
+            category_findings = grouped.get(category, [])
+            if not category_findings:
+                continue
+            lines.extend([f"### {category}", ""])
+            for finding in category_findings:
+                parts = [f"`{finding['code']}`"]
+                if finding["subject_id"]:
+                    parts.append(f"`{finding['subject_id']}`")
+                parts.append(finding["message"])
+                lines.append("- " + " | ".join(parts))
+                lines.append(f"  Owner file: `{finding['owner_file']}`")
+            lines.append("")
 
     INTEGRITY_CHECK_REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
 
@@ -1669,6 +1719,7 @@ def main() -> None:
         add_finding(
             findings,
             severity="ERROR",
+            category="other",
             code="CHECK_ABORTED",
             message=str(exc),
             owner_file="See assertion context in check_data_consistency.py",
