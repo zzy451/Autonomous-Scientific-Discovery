@@ -79,6 +79,13 @@ def compute_sha256(path: Path) -> str:
 def bool_to_int(value: object) -> int:
     return 1 if bool(value) else 0
 
+def blank_to_none(value: object) -> object:
+    if value is None:
+        return None
+    if isinstance(value, str) and not value.strip():
+        return None
+    return value
+
 def flatten_list(value: object) -> str:
     if isinstance(value, list):
         return ';'.join(str(item) for item in value)
@@ -424,8 +431,8 @@ def validate_discipline_local_code_registry_outputs(
             (
                 row['paper_id'],
                 row['assignment_id'],
-                row['discipline_local_code'],
-                row['discipline_local_rank'],
+                blank_to_none(row['discipline_local_code']),
+                blank_to_none(row['discipline_local_rank']),
                 row['discipline_display_order'],
                 row['assignment_status'],
                 row['assigned_at'],
@@ -438,7 +445,7 @@ def validate_discipline_local_code_registry_outputs(
                 row['primary_module_confidence'],
                 row['primary_module_assignment_rule'],
                 row['primary_module_override_reason'],
-                row['primary_taxonomy_code_2lvl'],
+                blank_to_none(row['primary_taxonomy_code_2lvl']),
                 row['legacy_secondary_class'],
                 row['secondary_class_source'],
                 row['secondary_class_confidence'],
@@ -505,6 +512,51 @@ def validate_discipline_local_code_registry_outputs(
     assert_build_condition(
         actual_sqlite_rows == expected_sqlite_rows,
         'SQLite discipline_local_code_registry table drifted from expected registry snapshot rows',
+    )
+
+def validate_discipline_sqlite_constraints() -> None:
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        assignment_create_sql = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'discipline_code_assignments'"
+        ).fetchone()
+        registry_create_sql = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'discipline_local_code_registry'"
+        ).fetchone()
+        index_rows = conn.execute(
+            "SELECT name, sql FROM sqlite_master WHERE type = 'index' AND tbl_name = 'discipline_code_assignments'"
+        ).fetchall()
+    finally:
+        conn.close()
+
+    assignment_sql = assignment_create_sql[0] if assignment_create_sql else ''
+    registry_sql = registry_create_sql[0] if registry_create_sql else ''
+    index_sql_by_name = {
+        str(name): str(sql or '')
+        for name, sql in index_rows
+    }
+
+    assert_build_condition(
+        "assignment_status IN (" in assignment_sql
+        and "schema_version = 1" in assignment_sql
+        and "redirected_to_code IS NULL" in assignment_sql,
+        'discipline_code_assignments SQLite table is missing expected status/schema/redirect guardrail CHECK constraints',
+    )
+    assert_build_condition(
+        "is_derived_snapshot = 1" in registry_sql
+        and "assignment_status = 'active_code'" in registry_sql
+        and "discipline_local_rank IS NULL" in registry_sql,
+        'discipline_local_code_registry SQLite table is missing expected derived/current-snapshot CHECK constraints',
+    )
+    assert_build_condition(
+        'discipline_code_assignments_active_code_unique' in index_sql_by_name
+        and "WHERE assignment_status = 'active_code'" in index_sql_by_name['discipline_code_assignments_active_code_unique'],
+        'discipline_code_assignments_active_code_unique partial index is missing or malformed',
+    )
+    assert_build_condition(
+        'discipline_code_assignments_one_active_per_paper' in index_sql_by_name
+        and "WHERE assignment_status = 'active_code'" in index_sql_by_name['discipline_code_assignments_one_active_per_paper'],
+        'discipline_code_assignments_one_active_per_paper partial index is missing or malformed',
     )
 
 def validate_auxiliary_analysis_tables(
@@ -1462,7 +1514,15 @@ def build_sqlite(
             paper_id TEXT NOT NULL,
             discipline_local_code TEXT,
             primary_taxonomy_code_2lvl TEXT,
-            assignment_status TEXT NOT NULL,
+            assignment_status TEXT NOT NULL CHECK (
+                assignment_status IN (
+                    'active_code',
+                    'retired_code',
+                    'redirected_code',
+                    'pending_secondary',
+                    'non_discipline_general_method'
+                )
+            ),
             assigned_at TEXT NOT NULL,
             assigned_by TEXT NOT NULL,
             retired_at TEXT,
@@ -1471,15 +1531,51 @@ def build_sqlite(
             pending_reason TEXT,
             source_primary_module_for_filing TEXT,
             source_legacy_secondary_class TEXT,
-            schema_version INTEGER NOT NULL
+            schema_version INTEGER NOT NULL CHECK (schema_version = 1),
+            CHECK (
+                (
+                    assignment_status IN ('active_code', 'retired_code', 'redirected_code')
+                    AND discipline_local_code IS NOT NULL
+                    AND primary_taxonomy_code_2lvl IS NOT NULL
+                )
+                OR (
+                    assignment_status IN ('pending_secondary', 'non_discipline_general_method')
+                    AND discipline_local_code IS NULL
+                    AND primary_taxonomy_code_2lvl IS NULL
+                )
+            ),
+            CHECK (
+                assignment_status <> 'pending_secondary'
+                OR pending_reason IS NOT NULL
+            ),
+            CHECK (
+                assignment_status <> 'non_discipline_general_method'
+                OR pending_reason IS NULL
+            ),
+            CHECK (
+                assignment_status = 'redirected_code'
+                OR redirected_to_code IS NULL
+            )
         );
+        CREATE UNIQUE INDEX discipline_code_assignments_active_code_unique
+        ON discipline_code_assignments(discipline_local_code)
+        WHERE assignment_status = 'active_code';
+        CREATE UNIQUE INDEX discipline_code_assignments_one_active_per_paper
+        ON discipline_code_assignments(paper_id)
+        WHERE assignment_status = 'active_code';
         CREATE TABLE discipline_local_code_registry (
             paper_id TEXT PRIMARY KEY,
             assignment_id TEXT NOT NULL,
             discipline_local_code TEXT,
             discipline_local_rank TEXT,
             discipline_display_order TEXT NOT NULL,
-            assignment_status TEXT NOT NULL,
+            assignment_status TEXT NOT NULL CHECK (
+                assignment_status IN (
+                    'active_code',
+                    'pending_secondary',
+                    'non_discipline_general_method'
+                )
+            ),
             assigned_at TEXT NOT NULL,
             assigned_by TEXT NOT NULL,
             retired_at TEXT,
@@ -1501,11 +1597,25 @@ def build_sqlite(
             note_path TEXT,
             pdf_path TEXT,
             active_confirmed_core INTEGER NOT NULL,
-            is_derived_snapshot INTEGER NOT NULL,
+            is_derived_snapshot INTEGER NOT NULL CHECK (is_derived_snapshot = 1),
             generated_at TEXT NOT NULL,
             generated_by TEXT NOT NULL,
             source_commit TEXT,
-            worktree_dirty INTEGER NOT NULL
+            worktree_dirty INTEGER NOT NULL,
+            CHECK (
+                (
+                    assignment_status = 'active_code'
+                    AND discipline_local_code IS NOT NULL
+                    AND discipline_local_rank IS NOT NULL
+                    AND primary_taxonomy_code_2lvl IS NOT NULL
+                )
+                OR (
+                    assignment_status IN ('pending_secondary', 'non_discipline_general_method')
+                    AND discipline_local_code IS NULL
+                    AND discipline_local_rank IS NULL
+                    AND primary_taxonomy_code_2lvl IS NULL
+                )
+            )
         );
         CREATE TABLE pdf_evidence_status (
             paper_id TEXT PRIMARY KEY,
@@ -2035,8 +2145,8 @@ def build_sqlite(
             (
                 row['paper_id'],
                 row['assignment_id'],
-                row['discipline_local_code'],
-                row['discipline_local_rank'],
+                blank_to_none(row['discipline_local_code']),
+                blank_to_none(row['discipline_local_rank']),
                 row['discipline_display_order'],
                 row['assignment_status'],
                 row['assigned_at'],
@@ -2049,7 +2159,7 @@ def build_sqlite(
                 row['primary_module_confidence'],
                 row['primary_module_assignment_rule'],
                 row['primary_module_override_reason'],
-                row['primary_taxonomy_code_2lvl'],
+                blank_to_none(row['primary_taxonomy_code_2lvl']),
                 row['legacy_secondary_class'],
                 row['secondary_class_source'],
                 row['secondary_class_confidence'],
@@ -2183,6 +2293,7 @@ def main() -> None:
     validate_module_csv_outputs(module_rows)
     validate_sqlite_module_surfaces(module_rows)
     validate_discipline_local_code_registry_outputs(discipline_local_code_registry)
+    validate_discipline_sqlite_constraints()
     validate_auxiliary_analysis_tables(
         papers,
         pdf_archive_registry,
