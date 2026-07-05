@@ -92,6 +92,33 @@ def summary(conn: sqlite3.Connection) -> None:
     print_heading('Canonical 01.04 Bucket')
     print(json.dumps({'active_confirmed_core_count': bucket_row['active_confirmed_core_count']}, ensure_ascii=False, indent=2))
 
+def metadata_summary(conn: sqlite3.Connection) -> None:
+    print_heading('Metadata')
+    rows = conn.execute('SELECT key, value FROM metadata ORDER BY key').fetchall()
+    print_rows(rows, max_widths={'key': 36, 'value': 64})
+
+def object_scope_registry(conn: sqlite3.Connection) -> None:
+    print_heading('Analysis Object Scope Registry')
+    rows = conn.execute('''
+        SELECT
+            object_name,
+            object_type,
+            scope_class,
+            default_usage,
+            warning
+        FROM analysis_object_scope_registry
+        ORDER BY object_name
+    ''').fetchall()
+    print_rows(
+        rows,
+        max_widths={
+            'object_name': 40,
+            'scope_class': 28,
+            'default_usage': 32,
+            'warning': 72,
+        },
+    )
+
 def module_distribution(conn: sqlite3.Connection) -> None:
     print_heading('Canonical Formal Module Distribution')
     baseline = dict(conn.execute('SELECT * FROM canonical_analysis_baseline').fetchone())
@@ -816,6 +843,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Query ASD analysis SQLite outputs. Default classification commands are canonical-only; workflow mirror/final fields should be interpreted only in explicit audit commands.')
     subparsers = parser.add_subparsers(dest='command', required=True)
     subparsers.add_parser('summary', help='Canonical-only formal module counts for the current structured snapshot')
+    subparsers.add_parser('metadata', help='Show build metadata loaded into SQLite metadata')
+    subparsers.add_parser('object-scope-registry', help='List analysis_object_scope_registry rows describing SQLite object semantics')
     subparsers.add_parser('analysis-baseline', help='Canonical record-vs-assignment baseline for the current active confirmed-core snapshot')
     subparsers.add_parser('module-distribution', help='Canonical formal module distribution with assignment shares and active-record baseline')
     coverage_mode_parser = subparsers.add_parser('object-coverage-summary', help='Canonical object coverage modes at record level')
@@ -892,6 +921,10 @@ def main() -> None:
     try:
         if args.command == 'summary':
             summary(conn)
+        elif args.command == 'metadata':
+            metadata_summary(conn)
+        elif args.command == 'object-scope-registry':
+            object_scope_registry(conn)
         elif args.command == 'analysis-baseline':
             canonical_analysis_baseline(conn)
         elif args.command == 'module-distribution':

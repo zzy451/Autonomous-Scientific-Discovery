@@ -238,6 +238,18 @@ Show metadata and module counts:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" summary
 ```
 
+Show raw build metadata:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" metadata
+```
+
+List SQLite object-scope registry rows:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" object-scope-registry
+```
+
 Show canonical formal-module distribution with shares:
 
 ```bash
@@ -368,6 +380,8 @@ Operational notes:
 
 - `analysis-baseline` is the fixed canonical record-vs-assignment glossary output for the current active confirmed-core snapshot.
 - `summary` prints metadata plus canonical formal-module counts from SQLite.
+- `metadata` prints the raw build metadata rows loaded into SQLite `metadata`.
+- `object-scope-registry` prints the current `analysis_object_scope_registry` rows so the declared semantics of SQLite objects can be inspected directly.
 - `module-distribution` converts those canonical module counts into a stable distribution table with assignment shares.
 - `object-coverage-summary` is the canonical record-level split between `single_module`, `multi_module`, and `general_method_without_concrete_object_experiments`.
 - `paper` prints the full structured paper payload, including both canonical fields and workflow-mirror inspection fields; do not treat `final_modules_or_bucket` as canonical.
