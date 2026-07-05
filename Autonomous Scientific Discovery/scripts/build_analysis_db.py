@@ -447,6 +447,174 @@ def validate_discipline_local_code_registry_outputs(
         'SQLite discipline_local_code_registry table drifted from expected registry snapshot rows',
     )
 
+def validate_auxiliary_analysis_tables(
+    papers: list[dict[str, object]],
+    pdf_archive_registry: list[dict[str, object]],
+    asset_manifest: list[dict[str, object]],
+    note_manifest: list[dict[str, object]],
+) -> None:
+    general_method_bucket_rows = build_general_method_bucket_rows(papers)
+    expected_general_method_rows = sorted(
+        [
+            (
+                row['paper_id'],
+                row['general_method_bucket'],
+                row['active_confirmed_core'],
+                row['source_limited'],
+            )
+            for row in general_method_bucket_rows
+        ],
+        key=lambda item: item[0],
+    )
+    expected_pdf_evidence_rows = sorted(
+        [
+            (
+                row['paper_id'],
+                row['title'],
+                row['pdf_path'],
+                bool_to_int(row['pdf_exists']),
+                row['pdf_status'],
+                row['evidence_status'],
+                row['pdf_evidence_type'],
+                row['pdf_check_status'],
+                bool_to_int(row['is_main_text']),
+                bool_to_int(row['is_supplementary']),
+                row['asset_size_bytes'],
+                row['source_limited'],
+                row.get('source_checked_at', ''),
+                row['primary_module_for_filing'],
+                bool_to_int(row['active_confirmed_core']),
+            )
+            for row in pdf_archive_registry
+        ],
+        key=lambda item: item[0],
+    )
+    expected_asset_rows = sorted(
+        [
+            (
+                row['asset_id'],
+                row['paper_id'],
+                row['title'],
+                row['asset_type'],
+                row['path'],
+                bool_to_int(row['exists']),
+                row['sha256'],
+                row['asset_size_bytes'],
+                row['asset_status'],
+                bool_to_int(row['is_main_text']),
+                bool_to_int(row['is_supplementary']),
+                row['source_limited'],
+                row.get('source_checked_at', ''),
+                row['exported_at'],
+            )
+            for row in asset_manifest
+        ],
+        key=lambda item: item[0],
+    )
+    expected_note_rows = sorted(
+        [
+            (
+                row['paper_id'],
+                row['title'],
+                row['note_path'],
+                bool_to_int(row['note_exists']),
+                bool_to_int(row['active_confirmed_core']),
+                row['inclusion_status'],
+            )
+            for row in note_manifest
+        ],
+        key=lambda item: item[0],
+    )
+
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        actual_general_method_rows = conn.execute(
+            '''
+            SELECT
+                paper_id,
+                general_method_bucket,
+                active_confirmed_core,
+                source_limited
+            FROM paper_general_method_buckets
+            ORDER BY paper_id
+            '''
+        ).fetchall()
+        actual_pdf_evidence_rows = conn.execute(
+            '''
+            SELECT
+                paper_id,
+                title,
+                pdf_path,
+                pdf_exists,
+                pdf_status,
+                evidence_status,
+                pdf_evidence_type,
+                pdf_check_status,
+                is_main_text,
+                is_supplementary,
+                asset_size_bytes,
+                source_limited,
+                source_checked_at,
+                primary_module_for_filing,
+                active_confirmed_core
+            FROM pdf_evidence_status
+            ORDER BY paper_id
+            '''
+        ).fetchall()
+        actual_asset_rows = conn.execute(
+            '''
+            SELECT
+                asset_id,
+                paper_id,
+                title,
+                asset_type,
+                path,
+                asset_exists,
+                sha256,
+                asset_size_bytes,
+                asset_status,
+                is_main_text,
+                is_supplementary,
+                source_limited,
+                source_checked_at,
+                exported_at
+            FROM paper_assets
+            ORDER BY asset_id
+            '''
+        ).fetchall()
+        actual_note_rows = conn.execute(
+            '''
+            SELECT
+                paper_id,
+                title,
+                note_path,
+                note_exists,
+                active_confirmed_core,
+                inclusion_status
+            FROM notes
+            ORDER BY paper_id
+            '''
+        ).fetchall()
+    finally:
+        conn.close()
+
+    assert_build_condition(
+        actual_general_method_rows == expected_general_method_rows,
+        'SQLite paper_general_method_buckets drifted from expected general-method rows',
+    )
+    assert_build_condition(
+        actual_pdf_evidence_rows == expected_pdf_evidence_rows,
+        'SQLite pdf_evidence_status drifted from expected PDF evidence rows',
+    )
+    assert_build_condition(
+        actual_asset_rows == expected_asset_rows,
+        'SQLite paper_assets drifted from expected asset manifest rows',
+    )
+    assert_build_condition(
+        actual_note_rows == expected_note_rows,
+        'SQLite notes table drifted from expected note manifest rows',
+    )
+
 def build_general_method_bucket_rows(papers: list[dict[str, object]]) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for paper in papers:
@@ -1460,6 +1628,15 @@ def main() -> None:
         discipline_local_code_registry,
         asset_manifest,
         pdf_archive_registry,
+    )
+    validate_module_csv_outputs(module_rows)
+    validate_sqlite_module_surfaces(module_rows)
+    validate_discipline_local_code_registry_outputs(discipline_local_code_registry)
+    validate_auxiliary_analysis_tables(
+        papers,
+        pdf_archive_registry,
+        asset_manifest,
+        note_manifest,
     )
     print(f'Wrote {PAPERS_CSV}')
     print(f'Wrote {PAPER_MODULES_CSV}')
