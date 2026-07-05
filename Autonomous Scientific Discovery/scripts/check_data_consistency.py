@@ -2771,6 +2771,17 @@ def main() -> None:
                 )
 
             pdf_path = row["pdf_path"]
+            note_path = row["note_path"]
+            assert_true(isinstance(note_path, str), f"{paper_id} note_path is not a string")
+            if row["active_confirmed_core"]:
+                assert_true(
+                    bool(note_path),
+                    f"{paper_id} active_confirmed_core rows must carry a non-empty note_path",
+                )
+                assert_true(
+                    row["note_exists"],
+                    f"{paper_id} active_confirmed_core note file is missing: {note_path!r}",
+                )
             assert_true(isinstance(pdf_path, str), f"{paper_id} pdf_path is not a string")
             if row["pdf_exists"]:
                 assert_true(bool(pdf_path), f"{paper_id} has pdf_exists=true but empty pdf_path")
