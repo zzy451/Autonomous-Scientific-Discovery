@@ -143,6 +143,8 @@ Daily export must not write owner fact sources. The corresponding owner-maintena
   Maintains `Data/classification_code_index.json` as the taxonomy vocabulary owner, with explicit `sync`, `upsert-primary`, and `upsert-secondary` entry points. For secondary-term updates, it can also append impacted-paper audit rows to `Data/change_log.jsonl` so taxonomy-owner changes that affect derived paper-level provenance stay reviewable. Daily export still only reads this file and must never rewrite it.
 - `scripts/manage_progress_tracking.py`
   Updates one row in the progress owner file `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md` and appends one matching audit row to `Data/change_log.jsonl`. Use this for PDF/source/evidence workflow updates instead of hand-editing derived registries.
+- `scripts/manage_master_paper_list.py`
+  Updates one row in the master owner file `Paper_Lists/agent_master_paper_list.md` and appends one matching audit row to `Data/change_log.jsonl`. Use this for paper/classification fact updates instead of hand-editing derived outputs.
 - `scripts/append_change_log.py`
   Low-level manual audit helper for change types that are not yet covered by a dedicated owner-maintenance command.
 
