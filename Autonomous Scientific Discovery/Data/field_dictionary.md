@@ -55,21 +55,31 @@
 - `paper_modules.csv`
 - `canonical_paper_modules.csv`
 - `workflow_mirror_paper_modules.csv`
+- `mixed_scope_paper_modules.csv`
 - `papers.sqlite`
 
 除 `classification_code_index.json` 和 `discipline_code_assignments.jsonl` 两个 owner 文件外，analysis 层用于脚本消费、人工 spot check、统计和 SQL 查询；它不是新的事实口径。
 
-在 SQLite 中，当前还保留两类 compatibility mixed-scope 对象：
+当前默认 canonical module 关系层是：
 
 - `paper_modules`
 - `module_assignment_counts`
 
-它们同时包含 canonical 与 workflow mirror assignment 信息，默认只应用于 inspection / compatibility，而不是 canonical-only 统计。正式统计优先使用：
+它们只承载 canonical `scientific_object_modules` assignment。为兼容旧分析面，当前仍保留 canonical alias：
 
 - `canonical_paper_modules`
-- `workflow_mirror_paper_modules`
 - `canonical_module_assignment_counts`
+
+workflow mirror 审计层单独放在：
+
+- `workflow_mirror_paper_modules`
 - `workflow_mirror_module_assignment_counts`
+
+只有在明确需要 canonical + workflow mirror combined surface 时，才使用 compatibility mixed-scope 对象：
+
+- `mixed_scope_paper_modules.csv`
+- `mixed_scope_paper_modules`
+- `mixed_scope_module_assignment_counts`
 - `analysis_object_scope_registry`
 
 ### 2.4 Phase 3A authoritative freeze clarifications
