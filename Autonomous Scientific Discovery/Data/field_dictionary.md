@@ -335,6 +335,7 @@
 - 二级 term 可先为空，后续从 legacy secondary class 归纳后补。
 - 它不是 derived snapshot；分类术语定义变更必须从这里开始。
 - 日常 export 只能读取它来校验 taxonomy term，不得覆盖它。
+- 若需维护 taxonomy vocabulary，应使用显式 owner helper（当前为 `scripts/manage_classification_code_index.py`），而不是手工去改 derived registry / SQLite。
 
 ### 4.2B `discipline_code_assignments.jsonl`
 

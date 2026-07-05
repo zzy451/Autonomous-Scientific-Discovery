@@ -137,6 +137,8 @@ Daily export must not write owner fact sources. The corresponding owner-maintena
   Initializes `Data/discipline_code_assignments.jsonl` from the reviewed preview; this is for explicit initial ledger creation, not daily export.
 - `scripts/manage_discipline_code_assignments.py`
   Updates the current discipline-code snapshot for one paper in the owner ledger and appends one audit row to `Data/change_log.jsonl`. Use `--dry-run` first when checking a planned reassignment.
+- `scripts/manage_classification_code_index.py`
+  Maintains `Data/classification_code_index.json` as the taxonomy vocabulary owner, with explicit `sync`, `upsert-primary`, and `upsert-secondary` entry points. Daily export still only reads this file and must never rewrite it.
 - `scripts/append_change_log.py`
   Low-level manual audit helper for change types that are not yet covered by a dedicated owner-maintenance command.
 
