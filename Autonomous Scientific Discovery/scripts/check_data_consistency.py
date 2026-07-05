@@ -14,6 +14,7 @@ REGISTRY_DIR = DATA_DIR / "registry"
 CLASSIFICATION_CODE_INDEX_PATH = DATA_DIR / "classification_code_index.json"
 DISCIPLINE_CODE_ASSIGNMENTS_PATH = DATA_DIR / "discipline_code_assignments.jsonl"
 DISCIPLINE_LOCAL_CODE_REGISTRY_PATH = DATA_DIR / "discipline_local_code_registry.jsonl"
+INTEGRITY_CHECK_REPORT_PATH = DATA_DIR / "integrity_check_report.md"
 MASTER_PATH = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_PATH = (
     ROOT
@@ -586,6 +587,155 @@ def load_jsonl(path: Path) -> List[Dict[str, object]]:
 def assert_true(condition: bool, message: str) -> None:
     if not condition:
         raise AssertionError(message)
+
+
+def add_finding(
+    findings: List[Dict[str, str]],
+    *,
+    severity: str,
+    code: str,
+    message: str,
+    owner_file: str,
+    subject_id: str = "",
+) -> None:
+    findings.append(
+        {
+            "severity": severity,
+            "code": code,
+            "subject_id": subject_id,
+            "message": message,
+            "owner_file": owner_file,
+        }
+    )
+
+
+def collect_non_blocking_findings(
+    *,
+    papers: List[Dict[str, object]],
+    classification_code_index: Dict[str, object],
+    discipline_code_assignments: List[Dict[str, object]],
+    discipline_local_code_registry: List[Dict[str, object]],
+) -> List[Dict[str, str]]:
+    findings: List[Dict[str, str]] = []
+
+    for paper in papers:
+        paper_id = str(paper["paper_id"])
+        if bool(paper["active_confirmed_core"]) and not bool(paper["pdf_exists"]):
+            add_finding(
+                findings,
+                severity="WARNING",
+                code="MISSING_LOCAL_PDF",
+                subject_id=paper_id,
+                message="Active confirmed-core paper currently has no local PDF.",
+                owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
+            )
+        if bool(paper["active_confirmed_core"]) and str(paper["source_limited"]).startswith("yes"):
+            add_finding(
+                findings,
+                severity="WARNING",
+                code="SOURCE_LIMITED",
+                subject_id=paper_id,
+                message="Active confirmed-core paper remains source-limited.",
+                owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
+            )
+
+    for assignment in discipline_code_assignments:
+        paper_id = str(assignment["paper_id"])
+        assignment_id = str(assignment["assignment_id"])
+        status = str(assignment["assignment_status"])
+        if status == "pending_secondary":
+            add_finding(
+                findings,
+                severity="WARNING",
+                code="PENDING_SECONDARY",
+                subject_id=f"{paper_id} / {assignment_id}",
+                message=(
+                    "Discipline code assignment remains pending secondary review: "
+                    f"{assignment.get('pending_reason') or '(no pending_reason)'}."
+                ),
+                owner_file="Data/discipline_code_assignments.jsonl",
+            )
+        elif status == "non_discipline_general_method":
+            add_finding(
+                findings,
+                severity="INFO",
+                code="NON_DISCIPLINE_GENERAL_METHOD",
+                subject_id=f"{paper_id} / {assignment_id}",
+                message="Record is intentionally kept outside normal discipline shelving as pure general-method-only.",
+                owner_file="Data/discipline_code_assignments.jsonl",
+            )
+
+    for term in classification_code_index.get("secondary_terms", []):
+        secondary_code = str(term.get("secondary_code", ""))
+        status = str(term.get("status", ""))
+        review_status = str(term.get("review_status", ""))
+        if status != "active" or review_status != "reviewed":
+            add_finding(
+                findings,
+                severity="WARNING",
+                code="SECONDARY_TERM_NEEDS_REVIEW",
+                subject_id=secondary_code,
+                message=(
+                    f"Secondary taxonomy term remains provisional "
+                    f"(status={status or '(blank)'}, review_status={review_status or '(blank)'})."
+                ),
+                owner_file="Data/classification_code_index.json",
+            )
+
+    if discipline_local_code_registry:
+        worktree_dirty_values = {bool(row.get("worktree_dirty")) for row in discipline_local_code_registry}
+        if worktree_dirty_values == {True}:
+            add_finding(
+                findings,
+                severity="INFO",
+                code="DERIVED_SNAPSHOT_WORKTREE_DIRTY",
+                message="Derived discipline-local registry snapshot was generated from a dirty worktree.",
+                owner_file="Data/discipline_local_code_registry.jsonl",
+            )
+
+    return findings
+
+
+def write_integrity_check_report(
+    *,
+    findings: List[Dict[str, str]],
+    status: str,
+) -> None:
+    severity_order = ("ERROR", "WARNING", "INFO")
+    counts = {
+        severity: sum(1 for finding in findings if finding["severity"] == severity)
+        for severity in severity_order
+    }
+
+    lines = [
+        "# ASD integrity check report",
+        "",
+        f"Status: `{status}`",
+        "",
+        "## Summary",
+        "",
+        f"- `ERROR`: {counts['ERROR']}",
+        f"- `WARNING`: {counts['WARNING']}",
+        f"- `INFO`: {counts['INFO']}",
+        "",
+    ]
+
+    for severity in severity_order:
+        lines.extend([f"## {severity}", ""])
+        severity_findings = [finding for finding in findings if finding["severity"] == severity]
+        if not severity_findings:
+            lines.extend(["- None", ""])
+            continue
+        for finding in severity_findings:
+            parts = [f"`{finding['code']}`"]
+            if finding["subject_id"]:
+                parts.append(f"`{finding['subject_id']}`")
+            parts.append(finding["message"])
+            lines.append("- " + " | ".join(parts))
+            lines.append(f"  Owner file: `{finding['owner_file']}`")
+        lines.append("")
+
+    INTEGRITY_CHECK_REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
 def read_text_lossy(path: Path) -> str:
@@ -1209,235 +1359,267 @@ def validate_registry_layer(
 def main() -> None:
     strict_authoritative = os.environ.get("ASD_STRICT_AUTHORITATIVE", "1") != "0"
     require_registry = os.environ.get("ASD_REQUIRE_REGISTRY", "1") != "0"
-    validate_classification_code_index_owner()
-    papers = load_jsonl(DATA_DIR / "papers.jsonl")
-    taxonomy_index = load_json(DATA_DIR / "taxonomy_index.json")
-    pdf_manifest = load_json(DATA_DIR / "pdf_manifest.json")
-    missing_pdf_manifest = load_json(DATA_DIR / "missing_pdf_manifest.json")
-    note_manifest = load_json(DATA_DIR / "note_manifest.json")
-    validate_discipline_code_assignments_owner(papers)
-    validate_discipline_local_code_registry(papers)
-
-    paper_ids = [row["paper_id"] for row in papers]
-    assert_true(len(paper_ids) == len(set(paper_ids)), "Duplicate paper_id found in papers.jsonl")
-
-    active = [row for row in papers if row["active_confirmed_core"]]
-    active_local_pdf = [row for row in active if row["pdf_exists"]]
-    active_no_local_pdf = [row for row in active if not row["pdf_exists"]]
-    active_no_local_ids = {row["paper_id"] for row in active_no_local_pdf}
-    assert_true(
-        len(active_local_pdf) + len(active_no_local_pdf) == len(active),
-        "Active paper PDF partition mismatch",
-    )
-
-    if strict_authoritative:
-        assert_true(
-            len(active) == EXPECTED_ACTIVE_CONFIRMED,
-            f"Active confirmed-core count mismatch: {len(active)} != {EXPECTED_ACTIVE_CONFIRMED}",
+    findings: List[Dict[str, str]] = []
+    try:
+        validate_classification_code_index_owner()
+        classification_code_index = load_json(CLASSIFICATION_CODE_INDEX_PATH)
+        papers = load_jsonl(DATA_DIR / "papers.jsonl")
+        taxonomy_index = load_json(DATA_DIR / "taxonomy_index.json")
+        pdf_manifest = load_json(DATA_DIR / "pdf_manifest.json")
+        missing_pdf_manifest = load_json(DATA_DIR / "missing_pdf_manifest.json")
+        note_manifest = load_json(DATA_DIR / "note_manifest.json")
+        discipline_code_assignments = (
+            load_jsonl(DISCIPLINE_CODE_ASSIGNMENTS_PATH)
+            if DISCIPLINE_CODE_ASSIGNMENTS_PATH.exists()
+            else []
         )
-        assert_true(
-            len(active_local_pdf) == EXPECTED_ACTIVE_LOCAL_PDF,
-            f"Active local-PDF count mismatch: {len(active_local_pdf)} != {EXPECTED_ACTIVE_LOCAL_PDF}",
+        discipline_local_code_registry = (
+            load_jsonl(DISCIPLINE_LOCAL_CODE_REGISTRY_PATH)
+            if DISCIPLINE_LOCAL_CODE_REGISTRY_PATH.exists()
+            else []
         )
+        validate_discipline_code_assignments_owner(papers)
+        validate_discipline_local_code_registry(papers)
+
+        paper_ids = [row["paper_id"] for row in papers]
+        assert_true(len(paper_ids) == len(set(paper_ids)), "Duplicate paper_id found in papers.jsonl")
+
+        active = [row for row in papers if row["active_confirmed_core"]]
+        active_local_pdf = [row for row in active if row["pdf_exists"]]
+        active_no_local_pdf = [row for row in active if not row["pdf_exists"]]
+        active_no_local_ids = {row["paper_id"] for row in active_no_local_pdf}
         assert_true(
-            len(active_no_local_pdf) == EXPECTED_ACTIVE_NO_LOCAL_PDF,
-            f"Active no-local-PDF count mismatch: {len(active_no_local_pdf)} != {EXPECTED_ACTIVE_NO_LOCAL_PDF}",
-        )
-        assert_true(
-            active_no_local_ids == EXPECTED_NO_LOCAL_IDS,
-            "Active no-local-PDF ID set does not match authoritative 26-paper baseline",
+            len(active_local_pdf) + len(active_no_local_pdf) == len(active),
+            "Active paper PDF partition mismatch",
         )
 
-    taxonomy_codes = set(taxonomy_index["code_to_label"].keys())
-    assert_true("01.04" in taxonomy_codes, "taxonomy_index.json missing 01.04")
-    assert_true(FORMAL_MODULES.issubset(taxonomy_codes), "taxonomy_index.json missing formal module codes")
-
-    for row in papers:
-        paper_id = row["paper_id"]
-        assert_true(
-            isinstance(paper_id, str) and PAPER_ID_PATTERN.fullmatch(paper_id) is not None,
-            f"Invalid paper_id format: {paper_id!r}",
-        )
-        assert_true(isinstance(row["pdf_exists"], bool), f"{paper_id} pdf_exists is not a bool")
-        assert_true(isinstance(row["note_exists"], bool), f"{paper_id} note_exists is not a bool")
-        assert_true(
-            isinstance(row["active_confirmed_core"], bool),
-            f"{paper_id} active_confirmed_core is not a bool",
-        )
-
-        modules = row["scientific_object_modules"]
-        assert_true(isinstance(modules, list), f"{paper_id} scientific_object_modules is not a list")
-        invalid_modules = [code for code in modules if code not in FORMAL_MODULES]
-        assert_true(not invalid_modules, f"{paper_id} has invalid module codes: {invalid_modules}")
-        assert_true(len(modules) == len(set(modules)), f"{paper_id} has duplicate scientific_object_modules")
-        assert_true(
-            GENERAL_BUCKET_CANONICAL not in modules,
-            f"{paper_id} general method bucket leaked into scientific_object_modules",
-        )
-
-        general_bucket = row["general_method_bucket"]
-        assert_true(
-            general_bucket in {"none", GENERAL_BUCKET_CANONICAL},
-            f"{paper_id} has invalid general_method_bucket: {general_bucket!r}",
-        )
-
-        object_coverage_mode = row["object_coverage_mode"]
-        assert_true(
-            object_coverage_mode in OBJECT_COVERAGE_MODES or object_coverage_mode == "",
-            f"{paper_id} has invalid object_coverage_mode: {object_coverage_mode!r}",
-        )
-
-        primary_module = row["primary_module_for_filing"]
-        assert_true(
-            primary_module in FORMAL_MODULES or primary_module == "",
-            f"{paper_id} has invalid primary_module_for_filing: {primary_module!r}",
-        )
-
-        first_hand_sources_checked = row["first_hand_sources_checked"]
-        assert_true(
-            isinstance(first_hand_sources_checked, str),
-            f"{paper_id} first_hand_sources_checked is not a string",
-        )
-        assert_true(
-            not has_pollution_artifact(first_hand_sources_checked),
-            f"{paper_id} first_hand_sources_checked appears polluted: {first_hand_sources_checked!r}",
-        )
-
-        if general_bucket != "none":
+        if strict_authoritative:
             assert_true(
-                modules == [],
-                f"{paper_id} should not carry scientific_object_modules when general_method_bucket is set",
+                len(active) == EXPECTED_ACTIVE_CONFIRMED,
+                f"Active confirmed-core count mismatch: {len(active)} != {EXPECTED_ACTIVE_CONFIRMED}",
             )
             assert_true(
-                object_coverage_mode == "general_method_without_concrete_object_experiments",
-                f"{paper_id} has inconsistent object_coverage_mode for general_method_bucket",
+                len(active_local_pdf) == EXPECTED_ACTIVE_LOCAL_PDF,
+                f"Active local-PDF count mismatch: {len(active_local_pdf)} != {EXPECTED_ACTIVE_LOCAL_PDF}",
             )
             assert_true(
-                primary_module == "",
-                f"{paper_id} pure general-method rows should not force primary_module_for_filing",
-            )
-        elif modules:
-            expected_mode = "multi_module" if len(modules) > 1 else "single_module"
-            assert_true(
-                object_coverage_mode == expected_mode,
-                f"{paper_id} has inconsistent object_coverage_mode {object_coverage_mode!r} for modules {modules}",
+                len(active_no_local_pdf) == EXPECTED_ACTIVE_NO_LOCAL_PDF,
+                f"Active no-local-PDF count mismatch: {len(active_no_local_pdf)} != {EXPECTED_ACTIVE_NO_LOCAL_PDF}",
             )
             assert_true(
-                primary_module in modules or primary_module == row["legacy_main_class"],
-                f"{paper_id} primary_module_for_filing {primary_module!r} is neither in scientific_object_modules {modules} nor equal to legacy_main_class {row['legacy_main_class']!r}",
+                active_no_local_ids == EXPECTED_NO_LOCAL_IDS,
+                "Active no-local-PDF ID set does not match authoritative 26-paper baseline",
             )
 
-        pdf_path = row["pdf_path"]
-        assert_true(isinstance(pdf_path, str), f"{paper_id} pdf_path is not a string")
-        if row["pdf_exists"]:
-            assert_true(bool(pdf_path), f"{paper_id} has pdf_exists=true but empty pdf_path")
+        taxonomy_codes = set(taxonomy_index["code_to_label"].keys())
+        assert_true("01.04" in taxonomy_codes, "taxonomy_index.json missing 01.04")
+        assert_true(FORMAL_MODULES.issubset(taxonomy_codes), "taxonomy_index.json missing formal module codes")
+
+        for row in papers:
+            paper_id = row["paper_id"]
+            assert_true(
+                isinstance(paper_id, str) and PAPER_ID_PATTERN.fullmatch(paper_id) is not None,
+                f"Invalid paper_id format: {paper_id!r}",
+            )
+            assert_true(isinstance(row["pdf_exists"], bool), f"{paper_id} pdf_exists is not a bool")
+            assert_true(isinstance(row["note_exists"], bool), f"{paper_id} note_exists is not a bool")
+            assert_true(
+                isinstance(row["active_confirmed_core"], bool),
+                f"{paper_id} active_confirmed_core is not a bool",
+            )
+
+            modules = row["scientific_object_modules"]
+            assert_true(isinstance(modules, list), f"{paper_id} scientific_object_modules is not a list")
+            invalid_modules = [code for code in modules if code not in FORMAL_MODULES]
+            assert_true(not invalid_modules, f"{paper_id} has invalid module codes: {invalid_modules}")
+            assert_true(len(modules) == len(set(modules)), f"{paper_id} has duplicate scientific_object_modules")
+            assert_true(
+                GENERAL_BUCKET_CANONICAL not in modules,
+                f"{paper_id} general method bucket leaked into scientific_object_modules",
+            )
+
+            general_bucket = row["general_method_bucket"]
+            assert_true(
+                general_bucket in {"none", GENERAL_BUCKET_CANONICAL},
+                f"{paper_id} has invalid general_method_bucket: {general_bucket!r}",
+            )
+
+            object_coverage_mode = row["object_coverage_mode"]
+            assert_true(
+                object_coverage_mode in OBJECT_COVERAGE_MODES or object_coverage_mode == "",
+                f"{paper_id} has invalid object_coverage_mode: {object_coverage_mode!r}",
+            )
+
+            primary_module = row["primary_module_for_filing"]
+            assert_true(
+                primary_module in FORMAL_MODULES or primary_module == "",
+                f"{paper_id} has invalid primary_module_for_filing: {primary_module!r}",
+            )
+
+            first_hand_sources_checked = row["first_hand_sources_checked"]
+            assert_true(
+                isinstance(first_hand_sources_checked, str),
+                f"{paper_id} first_hand_sources_checked is not a string",
+            )
+            assert_true(
+                not has_pollution_artifact(first_hand_sources_checked),
+                f"{paper_id} first_hand_sources_checked appears polluted: {first_hand_sources_checked!r}",
+            )
+
+            if general_bucket != "none":
+                assert_true(
+                    modules == [],
+                    f"{paper_id} should not carry scientific_object_modules when general_method_bucket is set",
+                )
+                assert_true(
+                    object_coverage_mode == "general_method_without_concrete_object_experiments",
+                    f"{paper_id} has inconsistent object_coverage_mode for general_method_bucket",
+                )
+                assert_true(
+                    primary_module == "",
+                    f"{paper_id} pure general-method rows should not force primary_module_for_filing",
+                )
+            elif modules:
+                expected_mode = "multi_module" if len(modules) > 1 else "single_module"
+                assert_true(
+                    object_coverage_mode == expected_mode,
+                    f"{paper_id} has inconsistent object_coverage_mode {object_coverage_mode!r} for modules {modules}",
+                )
+                assert_true(
+                    primary_module in modules or primary_module == row["legacy_main_class"],
+                    f"{paper_id} primary_module_for_filing {primary_module!r} is neither in scientific_object_modules {modules} nor equal to legacy_main_class {row['legacy_main_class']!r}",
+                )
+
+            pdf_path = row["pdf_path"]
+            assert_true(isinstance(pdf_path, str), f"{paper_id} pdf_path is not a string")
+            if row["pdf_exists"]:
+                assert_true(bool(pdf_path), f"{paper_id} has pdf_exists=true but empty pdf_path")
+            assert_true(
+                not is_obvious_pdf_status_conflict(row["pdf_exists"], row["pdf_status"]),
+                f"{paper_id} has obvious pdf_exists/pdf_status conflict: pdf_exists={row['pdf_exists']}, pdf_status={row['pdf_status']!r}",
+            )
+
+            expected_from_remarks = extract_expected_structured_values(row["remarks"])
+            expected_modules = normalize_module_list(expected_from_remarks["scientific_object_modules"])
+            if expected_modules:
+                assert_true(
+                    modules == expected_modules,
+                    f"{paper_id} scientific_object_modules disagrees with remarks: {modules} != {expected_modules}",
+                )
+
+            expected_coverage_mode = expected_from_remarks["object_coverage_mode"]
+            if expected_coverage_mode:
+                assert_true(
+                    object_coverage_mode == expected_coverage_mode,
+                    f"{paper_id} object_coverage_mode disagrees with remarks: {object_coverage_mode!r} != {expected_coverage_mode!r}",
+                )
+
+            expected_primary_module = expected_from_remarks["primary_module_for_filing"]
+            if expected_primary_module and general_bucket == "none":
+                assert_true(
+                    primary_module == expected_primary_module,
+                    f"{paper_id} primary_module_for_filing disagrees with remarks: {primary_module!r} != {expected_primary_module!r}",
+                )
+
+            raw_expected_general_bucket = expected_from_remarks["general_method_bucket"]
+            if raw_expected_general_bucket:
+                expected_general_bucket = normalize_general_bucket(raw_expected_general_bucket)
+                assert_true(
+                    general_bucket == expected_general_bucket,
+                    f"{paper_id} general_method_bucket disagrees with remarks: {general_bucket!r} != {expected_general_bucket!r}",
+                )
+
+            expected_first_hand = expected_from_remarks["first_hand_sources_checked"]
+            if expected_first_hand:
+                assert_true(
+                    first_hand_sources_checked == expected_first_hand,
+                    f"{paper_id} first_hand_sources_checked disagrees with remarks: {first_hand_sources_checked!r} != {expected_first_hand!r}",
+                )
+
+        pdf_manifest_ids = {row["paper_id"] for row in pdf_manifest}
+        missing_manifest_ids = {row["paper_id"] for row in missing_pdf_manifest}
+        active_ids = {row["paper_id"] for row in active}
         assert_true(
-            not is_obvious_pdf_status_conflict(row["pdf_exists"], row["pdf_status"]),
-            f"{paper_id} has obvious pdf_exists/pdf_status conflict: pdf_exists={row['pdf_exists']}, pdf_status={row['pdf_status']!r}",
+            pdf_manifest_ids.intersection(missing_manifest_ids) == set(),
+            "Some papers appear in both pdf_manifest and missing_pdf_manifest",
+        )
+        assert_true(
+            pdf_manifest_ids.union(missing_manifest_ids).issuperset(active_ids),
+            "Some active confirmed-core papers are missing from both PDF manifests",
+        )
+        assert_true(
+            pdf_manifest_ids == {row["paper_id"] for row in papers if row["pdf_exists"]},
+            "pdf_manifest paper_id coverage does not match papers.jsonl pdf_exists=true rows",
+        )
+        assert_true(
+            missing_manifest_ids == {row["paper_id"] for row in active_no_local_pdf},
+            "missing_pdf_manifest paper_id coverage does not match active no-local-PDF rows",
         )
 
-        expected_from_remarks = extract_expected_structured_values(row["remarks"])
-        expected_modules = normalize_module_list(expected_from_remarks["scientific_object_modules"])
-        if expected_modules:
-            assert_true(
-                modules == expected_modules,
-                f"{paper_id} scientific_object_modules disagrees with remarks: {modules} != {expected_modules}",
-            )
+        for row in pdf_manifest:
+            pdf_path = row["pdf_path"]
+            assert_true((ROOT / pdf_path).exists(), f"PDF path does not exist: {pdf_path}")
+            assert_true(bool(row["sha256"]), f"Missing sha256 for {row['paper_id']}")
 
-        expected_coverage_mode = expected_from_remarks["object_coverage_mode"]
-        if expected_coverage_mode:
-            assert_true(
-                object_coverage_mode == expected_coverage_mode,
-                f"{paper_id} object_coverage_mode disagrees with remarks: {object_coverage_mode!r} != {expected_coverage_mode!r}",
-            )
+        note_manifest_ids = {row["paper_id"] for row in note_manifest}
+        assert_true(note_manifest_ids == set(paper_ids), "note_manifest paper_id coverage mismatch")
 
-        expected_primary_module = expected_from_remarks["primary_module_for_filing"]
-        if expected_primary_module and general_bucket == "none":
-            assert_true(
-                primary_module == expected_primary_module,
-                f"{paper_id} primary_module_for_filing disagrees with remarks: {primary_module!r} != {expected_primary_module!r}",
-            )
+        validate_authoritative_sources(papers)
+        validate_registry_layer(
+            papers=papers,
+            taxonomy_index=taxonomy_index,
+            require_registry=require_registry,
+        )
+        final_modules_mirror_drifts = collect_final_modules_mirror_drifts(papers)
+        semantic_drift_ids = [
+            drift["paper_id"]
+            for drift in final_modules_mirror_drifts
+            if drift["drift_kind"] == "semantic_drift"
+        ]
+        order_drift_ids = [
+            drift["paper_id"]
+            for drift in final_modules_mirror_drifts
+            if drift["drift_kind"] == "order_drift"
+        ]
 
-        raw_expected_general_bucket = expected_from_remarks["general_method_bucket"]
-        if raw_expected_general_bucket:
-            expected_general_bucket = normalize_general_bucket(raw_expected_general_bucket)
-            assert_true(
-                general_bucket == expected_general_bucket,
-                f"{paper_id} general_method_bucket disagrees with remarks: {general_bucket!r} != {expected_general_bucket!r}",
-            )
+        findings = collect_non_blocking_findings(
+            papers=papers,
+            classification_code_index=classification_code_index,
+            discipline_code_assignments=discipline_code_assignments,
+            discipline_local_code_registry=discipline_local_code_registry,
+        )
+        write_integrity_check_report(findings=findings, status="passed")
 
-        expected_first_hand = expected_from_remarks["first_hand_sources_checked"]
-        if expected_first_hand:
-            assert_true(
-                first_hand_sources_checked == expected_first_hand,
-                f"{paper_id} first_hand_sources_checked disagrees with remarks: {first_hand_sources_checked!r} != {expected_first_hand!r}",
-            )
-
-    pdf_manifest_ids = {row["paper_id"] for row in pdf_manifest}
-    missing_manifest_ids = {row["paper_id"] for row in missing_pdf_manifest}
-    active_ids = {row["paper_id"] for row in active}
-    assert_true(
-        pdf_manifest_ids.intersection(missing_manifest_ids) == set(),
-        "Some papers appear in both pdf_manifest and missing_pdf_manifest",
-    )
-    assert_true(
-        pdf_manifest_ids.union(missing_manifest_ids).issuperset(active_ids),
-        "Some active confirmed-core papers are missing from both PDF manifests",
-    )
-    assert_true(
-        pdf_manifest_ids == {row["paper_id"] for row in papers if row["pdf_exists"]},
-        "pdf_manifest paper_id coverage does not match papers.jsonl pdf_exists=true rows",
-    )
-    assert_true(
-        missing_manifest_ids == {row["paper_id"] for row in active_no_local_pdf},
-        "missing_pdf_manifest paper_id coverage does not match active no-local-PDF rows",
-    )
-
-    for row in pdf_manifest:
-        pdf_path = row["pdf_path"]
-        assert_true((ROOT / pdf_path).exists(), f"PDF path does not exist: {pdf_path}")
-        assert_true(bool(row["sha256"]), f"Missing sha256 for {row['paper_id']}")
-
-    note_manifest_ids = {row["paper_id"] for row in note_manifest}
-    assert_true(note_manifest_ids == set(paper_ids), "note_manifest paper_id coverage mismatch")
-
-    validate_authoritative_sources(papers)
-    validate_registry_layer(
-        papers=papers,
-        taxonomy_index=taxonomy_index,
-        require_registry=require_registry,
-    )
-    final_modules_mirror_drifts = collect_final_modules_mirror_drifts(papers)
-    semantic_drift_ids = [
-        drift["paper_id"]
-        for drift in final_modules_mirror_drifts
-        if drift["drift_kind"] == "semantic_drift"
-    ]
-    order_drift_ids = [
-        drift["paper_id"]
-        for drift in final_modules_mirror_drifts
-        if drift["drift_kind"] == "order_drift"
-    ]
-
-    print(f"papers.jsonl records: {len(papers)}")
-    print(f"active confirmed-core: {len(active)}")
-    print(f"active local PDFs: {len(active_local_pdf)}")
-    print(f"active no-local-PDF: {len(active_no_local_pdf)}")
-    print(
-        "workflow mirror drift count "
-        f"(progress final_modules_or_bucket vs canonical derived classification): {len(final_modules_mirror_drifts)}"
-    )
-    print(
-        "workflow mirror semantic drift count: "
-        f"{len(semantic_drift_ids)}"
-        + (f" [{', '.join(semantic_drift_ids)}]" if semantic_drift_ids else "")
-    )
-    print(
-        "workflow mirror order drift count: "
-        f"{len(order_drift_ids)}"
-        + (f" [{', '.join(order_drift_ids)}]" if order_drift_ids else "")
-    )
-    print("All structured-data consistency checks passed.")
+        print(f"papers.jsonl records: {len(papers)}")
+        print(f"active confirmed-core: {len(active)}")
+        print(f"active local PDFs: {len(active_local_pdf)}")
+        print(f"active no-local-PDF: {len(active_no_local_pdf)}")
+        print(
+            "workflow mirror drift count "
+            f"(progress final_modules_or_bucket vs canonical derived classification): {len(final_modules_mirror_drifts)}"
+        )
+        print(
+            "workflow mirror semantic drift count: "
+            f"{len(semantic_drift_ids)}"
+            + (f" [{', '.join(semantic_drift_ids)}]" if semantic_drift_ids else "")
+        )
+        print(
+            "workflow mirror order drift count: "
+            f"{len(order_drift_ids)}"
+            + (f" [{', '.join(order_drift_ids)}]" if order_drift_ids else "")
+        )
+        print(f"integrity check report: {INTEGRITY_CHECK_REPORT_PATH}")
+        print("All structured-data consistency checks passed.")
+    except AssertionError as exc:
+        add_finding(
+            findings,
+            severity="ERROR",
+            code="CHECK_ABORTED",
+            message=str(exc),
+            owner_file="See assertion context in check_data_consistency.py",
+        )
+        write_integrity_check_report(findings=findings, status="failed")
+        raise
 
 
 if __name__ == "__main__":
