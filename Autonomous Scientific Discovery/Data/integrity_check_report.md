@@ -6,14 +6,13 @@ Status: `passed`
 
 - `ERROR`: 0
 - `WARNING`: 129
-- `INFO`: 412
+- `INFO`: 411
 
 ## Summary By Category
 
 - `evidence`: 70
 - `discipline_code`: 24
 - `taxonomy`: 44
-- `derived_snapshot`: 1
 - `audit`: 402
 
 ## Summary By Finding Code
@@ -27,7 +26,6 @@ Status: `passed`
 - `PENDING_SECONDARY`: 15
 - `NON_DISCIPLINE_GENERAL_METHOD`: 9
 - `PRIMARY_MODULE_CONFIDENCE_LOW`: 3
-- `DERIVED_SNAPSHOT_WORKTREE_DIRTY`: 1
 - `SECONDARY_CLASS_CONFIDENCE_LOW_SUMMARY`: 1
 
 ## ERROR
@@ -463,12 +461,6 @@ Status: `passed`
 - `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0553 / DCA-000190` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
   Field: `assignment_status`
   Owner file: `Data/discipline_code_assignments.jsonl`
-
-### derived_snapshot
-
-- `DERIVED_SNAPSHOT_WORKTREE_DIRTY` | Derived discipline-local registry snapshot was generated from a dirty worktree.
-  Field: `worktree_dirty`
-  Owner file: `Data/discipline_local_code_registry.jsonl`
 
 ### audit
 
