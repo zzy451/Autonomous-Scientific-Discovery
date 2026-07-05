@@ -5,7 +5,7 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Dict, Iterable, List, Tuple
+from typing import Any, Dict, Iterable, List, Tuple
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -16,6 +16,13 @@ DISCIPLINE_CODE_ASSIGNMENTS_PATH = DATA_DIR / "discipline_code_assignments.jsonl
 DISCIPLINE_LOCAL_CODE_REGISTRY_PATH = DATA_DIR / "discipline_local_code_registry.jsonl"
 CHANGE_LOG_PATH = DATA_DIR / "change_log.jsonl"
 INTEGRITY_CHECK_REPORT_PATH = DATA_DIR / "integrity_check_report.md"
+SCHEMA_DIR = DATA_DIR / "schema"
+CLASSIFICATION_CODE_INDEX_SCHEMA_PATH = (
+    SCHEMA_DIR / "classification_code_index.schema.json"
+)
+DISCIPLINE_CODE_ASSIGNMENTS_SCHEMA_PATH = (
+    SCHEMA_DIR / "discipline_code_assignments.schema.json"
+)
 MASTER_PATH = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_PATH = (
     ROOT
@@ -216,6 +223,11 @@ PROGRESS_HEADER = (
 
 
 def validate_classification_code_index_owner() -> None:
+    validate_payload_against_schema_file(
+        payload=load_json(CLASSIFICATION_CODE_INDEX_PATH),
+        schema_path=CLASSIFICATION_CODE_INDEX_SCHEMA_PATH,
+        subject_label="classification_code_index.json",
+    )
     payload = load_json(CLASSIFICATION_CODE_INDEX_PATH)
     required_keys = (
         "primary_code_to_label",
@@ -303,6 +315,11 @@ def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) 
 
     rows = load_jsonl(DISCIPLINE_CODE_ASSIGNMENTS_PATH)
     assert_true(rows, "discipline_code_assignments.jsonl must not be empty")
+    validate_jsonl_rows_against_schema_file(
+        rows=rows,
+        schema_path=DISCIPLINE_CODE_ASSIGNMENTS_SCHEMA_PATH,
+        subject_label="discipline_code_assignments.jsonl",
+    )
 
     paper_rows_by_id = {str(row["paper_id"]): row for row in papers}
     seen_assignment_ids = set()
@@ -648,6 +665,221 @@ def load_jsonl(path: Path) -> List[Dict[str, object]]:
         if line.strip():
             rows.append(json.loads(line))
     return rows
+
+
+class SchemaValidationError(Exception):
+    pass
+
+
+def resolve_schema_ref(root_schema: Dict[str, Any], ref: str) -> Dict[str, Any]:
+    assert_true(ref.startswith("#/"), f"Unsupported schema ref: {ref!r}")
+    target: Any = root_schema
+    for part in ref[2:].split("/"):
+        assert_true(
+            isinstance(target, dict) and part in target,
+            f"Broken schema ref: {ref!r}",
+        )
+        target = target[part]
+    assert_true(isinstance(target, dict), f"Schema ref must resolve to object: {ref!r}")
+    return target
+
+
+def matches_json_type(value: Any, expected_type: str) -> bool:
+    if expected_type == "object":
+        return isinstance(value, dict)
+    if expected_type == "array":
+        return isinstance(value, list)
+    if expected_type == "string":
+        return isinstance(value, str)
+    if expected_type == "integer":
+        return isinstance(value, int) and not isinstance(value, bool)
+    if expected_type == "number":
+        return (isinstance(value, int) or isinstance(value, float)) and not isinstance(
+            value, bool
+        )
+    if expected_type == "boolean":
+        return isinstance(value, bool)
+    if expected_type == "null":
+        return value is None
+    raise SchemaValidationError(f"Unsupported schema type: {expected_type!r}")
+
+
+def schema_condition_matches(
+    value: Any,
+    schema_fragment: Dict[str, Any],
+    root_schema: Dict[str, Any],
+    path: str,
+) -> bool:
+    try:
+        validate_against_schema(
+            value=value,
+            schema=schema_fragment,
+            root_schema=root_schema,
+            path=path,
+        )
+    except SchemaValidationError:
+        return False
+    return True
+
+
+def validate_against_schema(
+    *,
+    value: Any,
+    schema: Dict[str, Any],
+    root_schema: Dict[str, Any],
+    path: str,
+) -> None:
+    if "$ref" in schema:
+        validate_against_schema(
+            value=value,
+            schema=resolve_schema_ref(root_schema, str(schema["$ref"])),
+            root_schema=root_schema,
+            path=path,
+        )
+        return
+
+    for subschema in schema.get("allOf", []):
+        assert_true(isinstance(subschema, dict), f"Invalid allOf schema at {path}")
+        validate_against_schema(
+            value=value,
+            schema=subschema,
+            root_schema=root_schema,
+            path=path,
+        )
+
+    conditional = schema.get("if")
+    then_schema = schema.get("then")
+    if isinstance(conditional, dict) and isinstance(then_schema, dict):
+        if schema_condition_matches(
+            value=value,
+            schema_fragment=conditional,
+            root_schema=root_schema,
+            path=path,
+        ):
+            validate_against_schema(
+                value=value,
+                schema=then_schema,
+                root_schema=root_schema,
+                path=path,
+            )
+
+    expected_type = schema.get("type")
+    if expected_type is not None:
+        if isinstance(expected_type, list):
+            if not any(matches_json_type(value, str(item)) for item in expected_type):
+                raise SchemaValidationError(
+                    f"{path} has type {type(value).__name__}, expected one of {expected_type!r}"
+                )
+        else:
+            if not matches_json_type(value, str(expected_type)):
+                raise SchemaValidationError(
+                    f"{path} has type {type(value).__name__}, expected {expected_type!r}"
+                )
+
+    if "enum" in schema and value not in schema["enum"]:
+        raise SchemaValidationError(f"{path} value {value!r} is outside enum {schema['enum']!r}")
+
+    if "const" in schema and value != schema["const"]:
+        raise SchemaValidationError(f"{path} value {value!r} does not match const {schema['const']!r}")
+
+    if isinstance(value, str):
+        min_length = schema.get("minLength")
+        if isinstance(min_length, int) and len(value) < min_length:
+            raise SchemaValidationError(
+                f"{path} string is shorter than minLength {min_length}"
+            )
+        pattern = schema.get("pattern")
+        if isinstance(pattern, str) and not re.fullmatch(pattern, value):
+            raise SchemaValidationError(
+                f"{path} value {value!r} does not match pattern {pattern!r}"
+            )
+
+    if isinstance(value, dict):
+        required = schema.get("required", [])
+        for key in required:
+            if key not in value:
+                raise SchemaValidationError(f"{path} is missing required key {key!r}")
+
+        properties = schema.get("properties", {})
+        for key, prop_schema in properties.items():
+            if key in value:
+                assert_true(
+                    isinstance(prop_schema, dict),
+                    f"Invalid property schema for {path}.{key}",
+                )
+                validate_against_schema(
+                    value=value[key],
+                    schema=prop_schema,
+                    root_schema=root_schema,
+                    path=f"{path}.{key}",
+                )
+
+        additional_properties = schema.get("additionalProperties", True)
+        extra_keys = [key for key in value if key not in properties]
+        if additional_properties is False and extra_keys:
+            raise SchemaValidationError(
+                f"{path} has unexpected keys: {', '.join(sorted(extra_keys))}"
+            )
+        if isinstance(additional_properties, dict):
+            for key in extra_keys:
+                validate_against_schema(
+                    value=value[key],
+                    schema=additional_properties,
+                    root_schema=root_schema,
+                    path=f"{path}.{key}",
+                )
+
+    if isinstance(value, list):
+        items_schema = schema.get("items")
+        if isinstance(items_schema, dict):
+            for index, item in enumerate(value):
+                validate_against_schema(
+                    value=item,
+                    schema=items_schema,
+                    root_schema=root_schema,
+                    path=f"{path}[{index}]",
+                )
+
+
+def validate_payload_against_schema_file(
+    *,
+    payload: Any,
+    schema_path: Path,
+    subject_label: str,
+) -> None:
+    assert_true(schema_path.exists(), f"Missing schema file: {schema_path}")
+    schema = load_json(schema_path)
+    try:
+        validate_against_schema(
+            value=payload,
+            schema=schema,
+            root_schema=schema,
+            path=subject_label,
+        )
+    except SchemaValidationError as exc:
+        raise AssertionError(f"{subject_label} failed schema validation: {exc}") from exc
+
+
+def validate_jsonl_rows_against_schema_file(
+    *,
+    rows: List[Dict[str, object]],
+    schema_path: Path,
+    subject_label: str,
+) -> None:
+    assert_true(schema_path.exists(), f"Missing schema file: {schema_path}")
+    schema = load_json(schema_path)
+    for index, row in enumerate(rows, start=1):
+        try:
+            validate_against_schema(
+                value=row,
+                schema=schema,
+                root_schema=schema,
+                path=f"{subject_label}[{index}]",
+            )
+        except SchemaValidationError as exc:
+            raise AssertionError(
+                f"{subject_label} row {index} failed schema validation: {exc}"
+            ) from exc
 
 
 def assert_true(condition: bool, message: str) -> None:
