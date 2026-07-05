@@ -27,6 +27,11 @@ CANONICAL_PAPER_MODULES_CSV = DATA_DIR / 'canonical_paper_modules.csv'
 WORKFLOW_MIRROR_PAPER_MODULES_CSV = DATA_DIR / 'workflow_mirror_paper_modules.csv'
 DISCIPLINE_LOCAL_CODE_REGISTRY_CSV = DATA_DIR / 'discipline_local_code_registry.csv'
 SQLITE_PATH = DATA_DIR / 'papers.sqlite'
+OWNER_GUARDED_PATHS = {
+    CLASSIFICATION_CODE_INDEX_JSON.resolve(),
+    CHANGE_LOG_JSONL.resolve(),
+    DISCIPLINE_CODE_ASSIGNMENTS_JSONL.resolve(),
+}
 FORMAL_MODULES = {f'{idx:02d}' for idx in range(1, 12)}
 CSV_FIELDS = [
     'paper_id', 'title', 'authors', 'year', 'source', 'doi_or_url', 'doi', 'url', 'arxiv_id',
@@ -76,6 +81,18 @@ def flatten_list(value: object) -> str:
 
 def json_list(value: object) -> str:
     return json.dumps(value if isinstance(value, list) else [], ensure_ascii=False)
+
+def assert_safe_output_paths(paths: list[Path]) -> None:
+    conflicts = sorted(
+        str(path.resolve().relative_to(ROOT))
+        for path in paths
+        if path.resolve() in OWNER_GUARDED_PATHS
+    )
+    if conflicts:
+        raise RuntimeError(
+            'build_analysis_db.py attempted to write owner fact source paths: '
+            + ', '.join(conflicts)
+        )
 
 def write_papers_csv(papers: list[dict[str, object]]) -> None:
     with PAPERS_CSV.open('w', encoding='utf-8', newline='') as handle:
@@ -1051,6 +1068,14 @@ def build_sqlite(
         conn.close()
 
 def main() -> None:
+    assert_safe_output_paths([
+        PAPERS_CSV,
+        PAPER_MODULES_CSV,
+        CANONICAL_PAPER_MODULES_CSV,
+        WORKFLOW_MIRROR_PAPER_MODULES_CSV,
+        DISCIPLINE_LOCAL_CODE_REGISTRY_CSV,
+        SQLITE_PATH,
+    ])
     papers = load_jsonl(PAPERS_JSONL)
     taxonomy = load_json(TAXONOMY_JSON)
     classification_code_index = load_json(CLASSIFICATION_CODE_INDEX_JSON)

@@ -27,6 +27,13 @@ DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH = (
     DATA_DIR / "discipline_code_initial_assignment_preview.csv"
 )
 DISCIPLINE_LOCAL_CODE_REGISTRY_PATH = DATA_DIR / "discipline_local_code_registry.jsonl"
+OWNER_GUARDED_PATHS = {
+    MASTER_PATH.resolve(),
+    PROGRESS_PATH.resolve(),
+    CLASSIFICATION_CODE_INDEX_PATH.resolve(),
+    DISCIPLINE_CODE_ASSIGNMENTS_PATH.resolve(),
+    CHANGE_LOG_PATH.resolve(),
+}
 
 MASTER_HEADER = [
     "ID",
@@ -1641,6 +1648,19 @@ def write_csv(path: Path, rows: Iterable[Dict[str, object]], fieldnames: List[st
             writer.writerow(row)
 
 
+def assert_safe_output_paths(paths: Iterable[Path]) -> None:
+    conflicts = sorted(
+        str(path.resolve().relative_to(ROOT))
+        for path in paths
+        if path.resolve() in OWNER_GUARDED_PATHS
+    )
+    if conflicts:
+        raise RuntimeError(
+            "export_structured_data.py attempted to write owner fact source paths: "
+            + ", ".join(conflicts)
+        )
+
+
 def main() -> None:
     DATA_DIR.mkdir(exist_ok=True)
     REGISTRY_DIR.mkdir(parents=True, exist_ok=True)
@@ -1699,6 +1719,23 @@ def main() -> None:
     discipline_code_initial_assignment_preview = build_discipline_initial_assignment_preview(
         papers, classification_code_index
     )
+
+    output_paths = [
+        DATA_DIR / "papers.jsonl",
+        DATA_DIR / "taxonomy_index.json",
+        DATA_DIR / "pdf_manifest.json",
+        DATA_DIR / "missing_pdf_manifest.json",
+        DATA_DIR / "note_manifest.json",
+        DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH,
+        DISCIPLINE_LOCAL_CODE_REGISTRY_PATH,
+        REGISTRY_DIR / "paper_registry.jsonl",
+        REGISTRY_DIR / "paper_identifier_aliases.jsonl",
+        REGISTRY_DIR / "taxonomy_registry.json",
+        REGISTRY_DIR / "classification_assignments.jsonl",
+        REGISTRY_DIR / "pdf_archive_registry.jsonl",
+        REGISTRY_DIR / "asset_manifest.jsonl",
+    ]
+    assert_safe_output_paths(output_paths)
 
     write_jsonl(DATA_DIR / "papers.jsonl", papers)
     write_json(DATA_DIR / "taxonomy_index.json", taxonomy_index)

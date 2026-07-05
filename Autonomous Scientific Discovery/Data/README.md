@@ -99,6 +99,8 @@ The order matters:
 3. `build_analysis_db.py`
    Builds analysis-friendly outputs from the checked snapshot: `papers.csv`, `paper_modules.csv`, `canonical_paper_modules.csv`, `workflow_mirror_paper_modules.csv`, and `papers.sqlite`.
 
+Both `export_structured_data.py` and `build_analysis_db.py` now carry runtime owner-path guardrails: if a future code change ever tries to write a guarded owner fact source such as `classification_code_index.json`, `discipline_code_assignments.jsonl`, or `change_log.jsonl`, the command aborts instead of silently overwriting the owner file.
+
 Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `papers.jsonl` and the manifests are already current.
 
 ## Typical file roles
