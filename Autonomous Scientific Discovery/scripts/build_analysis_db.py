@@ -110,6 +110,66 @@ def write_papers_csv(papers: list[dict[str, object]]) -> None:
         for paper in papers:
             writer.writerow({field: flatten_list(paper.get(field)) for field in CSV_FIELDS})
 
+def normalize_papers_csv_row(paper: dict[str, object]) -> dict[str, str]:
+    return {field: flatten_list(paper.get(field)) for field in CSV_FIELDS}
+
+def build_expected_papers_sqlite_rows(
+    papers: list[dict[str, object]]
+) -> list[tuple[object, ...]]:
+    return sorted(
+        [
+            (
+                paper['paper_id'], paper['title'], paper['authors'], paper['year'], paper['source'], paper['doi_or_url'], paper['doi'], paper['url'], paper['arxiv_id'],
+                paper['pdf_path'], bool_to_int(paper['pdf_exists']), paper['note_path'], bool_to_int(paper['note_exists']), paper['is_agent'], paper['inclusion_status'], paper['exclusion_reason'],
+                paper['legacy_main_class'], paper['legacy_secondary_class'], paper['legacy_tertiary_class'], paper['secondary_class_source'], paper['secondary_class_confidence'], paper['secondary_class_review_status'], paper['fourth_level_topic'], paper['new_fourth_level'],
+                json_list(paper['agent_type']), json_list(paper['research_workflow_role']), json_list(paper['validation_type']), json_list(paper['scientific_contribution_type']),
+                paper['evidence_strength'], paper['citation_priority'], paper['remarks'], json_list(paper['scientific_object_modules']), paper['general_method_bucket'], paper['object_coverage_mode'],
+                paper['primary_module_for_filing'], paper['primary_module_confidence'], paper['primary_module_assignment_rule'], paper['primary_module_override_reason'],
+                paper['classification_source_field'], paper['classification_source_confidence'], paper['classification_parser_rule'],
+                paper['first_hand_sources_checked'], paper['source_checked_at'], paper['progress_title'], paper['pdf_status'], paper['evidence_status'], paper['note_status'], paper['master_status'],
+                paper['final_modules_or_bucket_raw'], json_list(paper['final_modules_or_bucket']), paper['source_limited'], paper['batch'], paper['closed'], bool_to_int(paper['active_confirmed_core']),
+                paper['record_status'], paper['inclusion_decision'], paper['duplicate_of'], paper['last_reviewed_at'], paper['last_reviewed_by'], paper['exported_at'],
+            )
+            for paper in papers
+        ],
+        key=lambda item: item[0],
+    )
+
+def validate_papers_outputs(papers: list[dict[str, object]]) -> None:
+    expected_csv_rows = [normalize_papers_csv_row(paper) for paper in papers]
+    actual_csv_rows = load_csv_rows(PAPERS_CSV)
+    assert_build_condition(
+        actual_csv_rows == expected_csv_rows,
+        'papers.csv drifted from expected papers.jsonl snapshot rows',
+    )
+
+    expected_sqlite_rows = build_expected_papers_sqlite_rows(papers)
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        actual_sqlite_rows = conn.execute(
+            '''
+            SELECT
+                paper_id, title, authors, year, source, doi_or_url, doi, url, arxiv_id,
+                pdf_path, pdf_exists, note_path, note_exists, is_agent, inclusion_status, exclusion_reason,
+                legacy_main_class, legacy_secondary_class, legacy_tertiary_class, secondary_class_source, secondary_class_confidence, secondary_class_review_status, fourth_level_topic, new_fourth_level,
+                agent_type_json, research_workflow_role_json, validation_type_json, scientific_contribution_type_json,
+                evidence_strength, citation_priority, remarks, scientific_object_modules_json, general_method_bucket, object_coverage_mode,
+                primary_module_for_filing, primary_module_confidence, primary_module_assignment_rule, primary_module_override_reason,
+                classification_source_field, classification_source_confidence, classification_parser_rule,
+                first_hand_sources_checked, source_checked_at, progress_title, pdf_status, evidence_status, note_status, master_status,
+                final_modules_or_bucket_raw, final_modules_or_bucket_json, source_limited, batch, closed, active_confirmed_core,
+                record_status, inclusion_decision, duplicate_of, last_reviewed_at, last_reviewed_by, exported_at
+            FROM papers
+            ORDER BY paper_id
+            '''
+        ).fetchall()
+    finally:
+        conn.close()
+    assert_build_condition(
+        actual_sqlite_rows == expected_sqlite_rows,
+        'SQLite papers table drifted from expected papers.jsonl snapshot rows',
+    )
+
 def build_module_rows(papers: list[dict[str, object]]) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for paper in papers:
@@ -1872,6 +1932,7 @@ def main() -> None:
         asset_manifest,
         pdf_archive_registry,
     )
+    validate_papers_outputs(papers)
     validate_module_csv_outputs(module_rows)
     validate_sqlite_module_surfaces(module_rows)
     validate_discipline_local_code_registry_outputs(discipline_local_code_registry)
