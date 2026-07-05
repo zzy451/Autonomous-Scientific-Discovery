@@ -441,7 +441,7 @@ def validate_discipline_local_code_registry_outputs(
                 row['redirected_to_code'],
                 row['assignment_reason'],
                 row['pending_reason'],
-                row['primary_module_for_filing'],
+                blank_to_none(row['primary_module_for_filing']),
                 row['primary_module_confidence'],
                 row['primary_module_assignment_rule'],
                 row['primary_module_override_reason'],
@@ -571,9 +571,14 @@ def validate_discipline_sqlite_constraints() -> None:
         'discipline_code_assignments SQLite table is missing expected foreign key to papers(paper_id)',
     )
     assert_build_condition(
+        ('taxonomy_index', 'source_primary_module_for_filing', 'code') in assignment_fk_targets,
+        'discipline_code_assignments SQLite table is missing expected foreign key to taxonomy_index(code) for source_primary_module_for_filing',
+    )
+    assert_build_condition(
         ('papers', 'paper_id', 'paper_id') in registry_fk_targets
-        and ('discipline_code_assignments', 'assignment_id', 'assignment_id') in registry_fk_targets,
-        'discipline_local_code_registry SQLite table is missing expected foreign keys to papers and discipline_code_assignments',
+        and ('discipline_code_assignments', 'assignment_id', 'assignment_id') in registry_fk_targets
+        and ('taxonomy_index', 'primary_module_for_filing', 'code') in registry_fk_targets,
+        'discipline_local_code_registry SQLite table is missing expected foreign keys to papers, discipline_code_assignments, or taxonomy_index',
     )
 
 def validate_auxiliary_analysis_tables(
@@ -1546,7 +1551,7 @@ def build_sqlite(
             redirected_to_code TEXT,
             assignment_reason TEXT NOT NULL,
             pending_reason TEXT,
-            source_primary_module_for_filing TEXT,
+            source_primary_module_for_filing TEXT REFERENCES taxonomy_index(code),
             source_legacy_secondary_class TEXT,
             schema_version INTEGER NOT NULL CHECK (schema_version = 1),
             CHECK (
@@ -1599,7 +1604,7 @@ def build_sqlite(
             redirected_to_code TEXT,
             assignment_reason TEXT NOT NULL,
             pending_reason TEXT,
-            primary_module_for_filing TEXT,
+            primary_module_for_filing TEXT REFERENCES taxonomy_index(code),
             primary_module_confidence TEXT,
             primary_module_assignment_rule TEXT,
             primary_module_override_reason TEXT,
@@ -2172,7 +2177,7 @@ def build_sqlite(
                 row['redirected_to_code'],
                 row['assignment_reason'],
                 row['pending_reason'],
-                row['primary_module_for_filing'],
+                blank_to_none(row['primary_module_for_filing']),
                 row['primary_module_confidence'],
                 row['primary_module_assignment_rule'],
                 row['primary_module_override_reason'],
