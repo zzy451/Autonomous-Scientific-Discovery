@@ -20,6 +20,8 @@ CLASSIFICATION_ASSIGNMENTS_JSONL = DATA_DIR / "registry" / "classification_assig
 CLASSIFICATION_CODE_INDEX = DATA_DIR / "classification_code_index.json"
 PREVIEW_CSV = DATA_DIR / "discipline_code_initial_assignment_preview.csv"
 FIELD_OWNERSHIP_MATRIX = DATA_DIR / "field_ownership_matrix.md"
+DISCIPLINE_CODE_ASSIGNMENT_POLICY = DATA_DIR / "discipline_code_assignment_policy.md"
+PRIMARY_FILING_POLICY = DATA_DIR / "primary_filing_policy.md"
 CHECK_POLICY = DATA_DIR / "check_policy.md"
 DISCIPLINE_SCHEMA = DATA_DIR / "schema" / "discipline_code_assignments.schema.json"
 CLASSIFICATION_SCHEMA = DATA_DIR / "schema" / "classification_code_index.schema.json"
@@ -247,6 +249,8 @@ def main() -> None:
 
     governance_contracts = (
         (FIELD_OWNERSHIP_MATRIX, "field_ownership_matrix.md"),
+        (DISCIPLINE_CODE_ASSIGNMENT_POLICY, "discipline_code_assignment_policy.md"),
+        (PRIMARY_FILING_POLICY, "primary_filing_policy.md"),
         (CHECK_POLICY, "check_policy.md"),
         (DISCIPLINE_SCHEMA, "schema/discipline_code_assignments.schema.json"),
         (CLASSIFICATION_SCHEMA, "schema/classification_code_index.schema.json"),
@@ -255,15 +259,15 @@ def main() -> None:
     governance_files_exist = all(path.exists() for path, _ in governance_contracts)
     status, detail = check(
         governance_refs_ok and governance_files_exist,
-        "README references the frozen ownership matrix, check policy, and both schema contracts, and those governance files exist.",
-        "README references and/or governance contract file existence are incomplete for the frozen ownership matrix, check policy, or schema contracts.",
+        "README references the frozen ownership matrix, assignment/filing policies, check policy, and both schema contracts, and those governance files exist.",
+        "README references and/or governance contract file existence are incomplete for the frozen ownership matrix, policy docs, check policy, or schema contracts.",
     )
     add_result(
         results,
         "10",
         status,
         detail,
-        "Data/README.md + Data/field_ownership_matrix.md + Data/check_policy.md + Data/schema/*.json",
+        "Data/README.md + Data/field_ownership_matrix.md + Data/discipline_code_assignment_policy.md + Data/primary_filing_policy.md + Data/check_policy.md + Data/schema/*.json",
     )
 
     report_ok = all(section in integrity_report_text for section in ("## ERROR", "## WARNING", "## INFO"))

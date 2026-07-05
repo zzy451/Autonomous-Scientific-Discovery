@@ -65,9 +65,9 @@ Evidence: `Data/discipline_local_code_registry.jsonl + Data/discipline_local_cod
 
 ### Item 10 - PASS
 
-README references the frozen ownership matrix, check policy, and both schema contracts, and those governance files exist.
+README references the frozen ownership matrix, assignment/filing policies, check policy, and both schema contracts, and those governance files exist.
 
-Evidence: `Data/README.md + Data/field_ownership_matrix.md + Data/check_policy.md + Data/schema/*.json`
+Evidence: `Data/README.md + Data/field_ownership_matrix.md + Data/discipline_code_assignment_policy.md + Data/primary_filing_policy.md + Data/check_policy.md + Data/schema/*.json`
 
 ### Item 11 - PASS
 
