@@ -2793,6 +2793,15 @@ def main() -> None:
                     f"{paper_id} active_confirmed_core note file is missing: {note_path!r}",
                 )
             assert_true(isinstance(pdf_path, str), f"{paper_id} pdf_path is not a string")
+            if pdf_path:
+                assert_true(
+                    row["pdf_exists"],
+                    f"{paper_id} carries non-empty pdf_path but pdf_exists=false: {pdf_path!r}",
+                )
+                assert_true(
+                    (ROOT / pdf_path).exists(),
+                    f"{paper_id} non-empty pdf_path does not exist on disk: {pdf_path!r}",
+                )
             if row["pdf_exists"]:
                 assert_true(bool(pdf_path), f"{paper_id} has pdf_exists=true but empty pdf_path")
             assert_true(
