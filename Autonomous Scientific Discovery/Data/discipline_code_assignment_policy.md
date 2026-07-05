@@ -73,6 +73,7 @@ MM-SS-NNN
 
 ## 7. Daily Maintenance Workflow
 
+- Prefer `scripts/manage_discipline_code_assignments.py` for day-to-day owner-ledger changes so the ledger update and matching `change_log` row stay in sync.
 - New paper with clear secondary position: append a new `active_code`.
 - Missing or uncertain secondary position: append `pending_secondary` with `pending_reason`.
 - Pure general-method-only record: append `non_discipline_general_method`.

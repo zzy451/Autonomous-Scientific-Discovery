@@ -122,10 +122,22 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `discipline_code_assignment_policy.md`: discipline-local code assignment policy.
 - `primary_filing_policy.md`: policy for choosing the single filing module for multi-module papers.
 - `check_policy.md`: `ERROR` / `WARNING` / `INFO` consistency-check policy.
+- `scripts/manage_discipline_code_assignments.py`: owner-maintenance helper for daily discipline-code ledger updates; appends a matching `change_log` row unless `--dry-run` is used.
 - `pdf_manifest.json`: local archived PDF inventory with hashes.
 - `missing_pdf_manifest.json`: active confirmed-core papers that remain valid records but currently have no local readable PDF.
 - `note_manifest.json`: note-path inventory and note existence flags.
 - `field_dictionary.md`: field semantics reference for the structured layer.
+
+## Owner maintenance helpers
+
+Daily export must not write owner fact sources. The corresponding owner-maintenance helpers are explicit commands:
+
+- `scripts/init_discipline_code_assignments.py`
+  Initializes `Data/discipline_code_assignments.jsonl` from the reviewed preview; this is for explicit initial ledger creation, not daily export.
+- `scripts/manage_discipline_code_assignments.py`
+  Updates the current discipline-code snapshot for one paper in the owner ledger and appends one audit row to `Data/change_log.jsonl`. Use `--dry-run` first when checking a planned reassignment.
+- `scripts/append_change_log.py`
+  Low-level manual audit helper for change types that are not yet covered by a dedicated owner-maintenance command.
 
 ## When to use JSONL, CSV, or SQLite
 

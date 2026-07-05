@@ -308,7 +308,7 @@ def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) 
     seen_assignment_ids = set()
     active_codes = {}
     active_code_by_paper = {}
-    retired_or_redirected_codes = set()
+    all_used_codes = {}
 
     for index, row in enumerate(rows, start=1):
         assignment_id = row.get("assignment_id")
@@ -356,6 +356,12 @@ def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) 
                 and PRIMARY_TAXONOMY_2LVL_PATTERN.fullmatch(primary_taxonomy_code_2lvl),
                 f"discipline_code_assignments {assignment_id} must carry a valid primary_taxonomy_code_2lvl",
             )
+            assert_true(
+                discipline_local_code not in all_used_codes,
+                "discipline_code_assignments reused historical discipline_local_code: "
+                f"{discipline_local_code} ({all_used_codes.get(discipline_local_code)} vs {assignment_id})",
+            )
+            all_used_codes[discipline_local_code] = assignment_id
             if assignment_status == "active_code":
                 assert_true(
                     discipline_local_code not in active_codes,
@@ -367,8 +373,6 @@ def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) 
                     f"discipline_code_assignments paper_id has multiple active_code rows: {paper_id}",
                 )
                 active_code_by_paper[paper_id] = assignment_id
-            else:
-                retired_or_redirected_codes.add(discipline_local_code)
         else:
             assert_true(
                 discipline_local_code is None,
