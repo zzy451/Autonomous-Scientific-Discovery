@@ -5,12 +5,12 @@ Status: `passed`
 ## Summary
 
 - `ERROR`: 0
-- `WARNING`: 128
-- `INFO`: 414
+- `WARNING`: 129
+- `INFO`: 412
 
 ## Summary By Category
 
-- `evidence`: 71
+- `evidence`: 70
 - `discipline_code`: 24
 - `taxonomy`: 44
 - `derived_snapshot`: 1
@@ -22,12 +22,11 @@ Status: `passed`
 - `SECONDARY_TERM_NEEDS_REVIEW`: 40
 - `DUPLICATE_RECORD`: 31
 - `MISSING_LOCAL_PDF`: 25
-- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE`: 24
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE`: 25
 - `SOURCE_LIMITED`: 20
 - `PENDING_SECONDARY`: 15
 - `NON_DISCIPLINE_GENERAL_METHOD`: 9
 - `PRIMARY_MODULE_CONFIDENCE_LOW`: 3
-- `SUPPLEMENTARY_ONLY_SOURCE_STATE`: 2
 - `DERIVED_SNAPSHOT_WORKTREE_DIRTY`: 1
 - `SECONDARY_CLASS_CONFIDENCE_LOW_SUMMARY`: 1
 
@@ -64,6 +63,8 @@ Status: `passed`
 - `SOURCE_LIMITED` | `ASD-0158` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0381` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0381` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via html_full_text.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0466` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
@@ -303,13 +304,6 @@ Status: `passed`
   Owner file: `Data/classification_code_index.json`
 
 ## INFO
-
-### evidence
-
-- `SUPPLEMENTARY_ONLY_SOURCE_STATE` | `ASD-0381` | Active confirmed-core paper currently relies on supplementary-only PDF/source state.
-  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
-- `SUPPLEMENTARY_ONLY_SOURCE_STATE` | `ASD-0466` | Active confirmed-core paper currently relies on supplementary-only PDF/source state.
-  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 
 ### discipline_code
 

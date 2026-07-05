@@ -1284,8 +1284,6 @@ def derive_pdf_evidence_type(
     pdf_status_lower = pdf_status.strip().lower()
     evidence_status_lower = evidence_status.strip().lower()
     combined = f"{pdf_status_lower} {evidence_status_lower}"
-    if "supplement" in combined:
-        return "supplementary_pdf"
     if pdf_exists:
         return "main_pdf"
     if any(
@@ -1293,6 +1291,8 @@ def derive_pdf_evidence_type(
         for token in ("html_full_text", "pmc_full_text", "public_full_text", "article_page")
     ):
         return "html_full_text"
+    if "supplement" in combined:
+        return "supplementary_pdf"
     if any(token in combined for token in ("project_page", "repo", "preview_repo")):
         return "project_page"
     if any(token in combined for token in ("official", "page", "doi", "metadata", "promptbio")):

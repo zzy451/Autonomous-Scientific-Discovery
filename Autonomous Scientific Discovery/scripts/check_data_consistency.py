@@ -2306,9 +2306,13 @@ def validate_registry_layer(
                 registry_row["is_supplementary"] and not registry_row["is_main_text"],
                 f"pdf_archive_registry supplementary_pdf rows must set is_supplementary=true for {paper_id}",
             )
+            assert_true(
+                registry_row["pdf_check_status"] != "full_text_checked",
+                f"pdf_archive_registry supplementary_pdf rows must not be marked full_text_checked for {paper_id}",
+            )
         if registry_row["pdf_check_status"] == "full_text_checked":
             assert_true(
-                registry_row["pdf_evidence_type"] in {"main_pdf", "html_full_text", "supplementary_pdf"},
+                registry_row["pdf_evidence_type"] in {"main_pdf", "html_full_text"},
                 f"pdf_archive_registry full_text_checked rows must come from a full-text evidence type for {paper_id}",
             )
         if registry_row["asset_size_bytes"] is not None:
