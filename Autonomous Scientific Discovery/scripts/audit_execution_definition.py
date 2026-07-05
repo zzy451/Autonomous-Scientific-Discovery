@@ -245,21 +245,26 @@ def main() -> None:
     )
     add_result(results, "9", status, detail, "Data/discipline_local_code_registry.jsonl + Data/discipline_local_code_registry.csv + Data/papers.sqlite")
 
-    governance_refs_ok = all(
-        token in readme_text
-        for token in (
-            "field_ownership_matrix.md",
-            "check_policy.md",
-            "schema/discipline_code_assignments.schema.json",
-            "schema/classification_code_index.schema.json",
-        )
+    governance_contracts = (
+        (FIELD_OWNERSHIP_MATRIX, "field_ownership_matrix.md"),
+        (CHECK_POLICY, "check_policy.md"),
+        (DISCIPLINE_SCHEMA, "schema/discipline_code_assignments.schema.json"),
+        (CLASSIFICATION_SCHEMA, "schema/classification_code_index.schema.json"),
     )
+    governance_refs_ok = all(token in readme_text for _, token in governance_contracts)
+    governance_files_exist = all(path.exists() for path, _ in governance_contracts)
     status, detail = check(
-        governance_refs_ok,
-        "README explicitly references the frozen ownership matrix, check policy, and both schema contracts.",
-        "README does not yet explicitly reference all frozen governance contracts.",
+        governance_refs_ok and governance_files_exist,
+        "README references the frozen ownership matrix, check policy, and both schema contracts, and those governance files exist.",
+        "README references and/or governance contract file existence are incomplete for the frozen ownership matrix, check policy, or schema contracts.",
     )
-    add_result(results, "10", status, detail, "Data/README.md")
+    add_result(
+        results,
+        "10",
+        status,
+        detail,
+        "Data/README.md + Data/field_ownership_matrix.md + Data/check_policy.md + Data/schema/*.json",
+    )
 
     report_ok = all(section in integrity_report_text for section in ("## ERROR", "## WARNING", "## INFO"))
     status, detail = check(
