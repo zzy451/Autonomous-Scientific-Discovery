@@ -46,6 +46,7 @@
 - `taxonomy_index.json`
 - `classification_code_index.json`
 - `discipline_code_assignments.jsonl`
+- `discipline_code_initial_assignment_preview.csv`
 - `discipline_local_code_registry.jsonl`
 - `discipline_local_code_registry.csv`
 - `pdf_manifest.json`
@@ -484,7 +485,38 @@ workflow mirror 审计层单独放在：
 - 同一 `paper_id` 最多一条 `active_code`。
 - 它不是 derived snapshot，不得由 export 覆盖重建。
 
-### 4.2C `discipline_local_code_registry.jsonl`
+### 4.2C `discipline_code_initial_assignment_preview.csv`
+
+定位: discipline code 初始冻结前的 derived review surface，用于人工审查 secondary 缺失、多模块主排架位、pure general-method、source-limited 与 legacy secondary 异常。
+
+关键字段:
+
+- `paper_id`
+- `scientific_object_modules`
+- `general_method_bucket`
+- `primary_module_for_filing`
+- `legacy_secondary_class`
+- `proposed_primary_taxonomy_code_2lvl`
+- `proposed_assignment_status`
+- `pending_reason`
+- `proposed_discipline_local_code`
+- `discipline_local_rank`
+- `review_flags`
+
+当前语义:
+
+- 它从 `master + progress + classification_code_index.json` 派生，不是 owner fact source。
+- 它的 paper coverage 应与当前 `active_confirmed_core` 记录精确一致。
+- `pending_secondary` 与 `non_discipline_general_method` 不得生成假 `MM-SS-NNN` code。
+- `discipline_local_rank` 只允许从 `proposed_discipline_local_code` 尾部派生。
+- 对 `active_code` proposal，同一 secondary code 组内按 `paper_id` 排序生成稳定 `NNN` 顺序号。
+- 当前 `check_data_consistency.py` 已显式校验它的：
+  - current-snapshot coverage
+  - status branching
+  - no-fake-code rules
+  - active-code sequence stability
+
+### 4.2D `discipline_local_code_registry.jsonl`
 
 定位: discipline code owner ledger 的当前快照层，供 CSV / SQLite / review 排序使用。
 
@@ -506,7 +538,7 @@ workflow mirror 审计层单独放在：
 - `discipline_display_order` 是 derived 排序字段，用于展示 / CSV / review 排序，不拥有稳定管理码事实。
 - registry 是 derived snapshot，不能手工回写成为事实源。
 
-### 4.2D `change_log.jsonl`
+### 4.2E `change_log.jsonl`
 
 定位: 轻量 owner-change 审计账本，记录 owner fact source 的显式更新动作及其 paper-level 影响。
 
