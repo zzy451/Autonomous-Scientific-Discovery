@@ -71,7 +71,7 @@ Evidence: `Data/README.md + Data/field_ownership_matrix.md + Data/discipline_cod
 
 ### Item 11 - PASS
 
-Consistency checking currently emits ERROR / WARNING / INFO report sections.
+Consistency checking emits structured severity summaries, finding-code summary, and detail rows with identifiers, fields, and owner-file attribution.
 
 Evidence: `Data/integrity_check_report.md`
 

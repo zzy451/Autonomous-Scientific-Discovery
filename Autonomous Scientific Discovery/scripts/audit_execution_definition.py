@@ -270,11 +270,39 @@ def main() -> None:
         "Data/README.md + Data/field_ownership_matrix.md + Data/discipline_code_assignment_policy.md + Data/primary_filing_policy.md + Data/check_policy.md + Data/schema/*.json",
     )
 
-    report_ok = all(section in integrity_report_text for section in ("## ERROR", "## WARNING", "## INFO"))
+    severity_counts = {}
+    for severity in ("ERROR", "WARNING", "INFO"):
+        match = re.search(
+            rf"- `{severity}`:\s+(\d+)",
+            integrity_report_text,
+        )
+        severity_counts[severity] = int(match.group(1)) if match else -1
+    report_has_findings = any(count > 0 for count in severity_counts.values())
+    report_sections_ok = all(
+        section in integrity_report_text
+        for section in ("## Summary", "## Summary By Finding Code", "## ERROR", "## WARNING", "## INFO")
+    )
+    report_summary_counts_ok = all(count >= 0 for count in severity_counts.values())
+    report_detail_contract_ok = (
+        ("Field:" in integrity_report_text and "Owner file:" in integrity_report_text)
+        if report_has_findings
+        else True
+    )
+    report_identifier_ok = (
+        bool(re.search(r"`ASD-\d{4}`|`DCA-\d{6}`", integrity_report_text))
+        if report_has_findings
+        else True
+    )
+    report_ok = (
+        report_sections_ok
+        and report_summary_counts_ok
+        and report_detail_contract_ok
+        and report_identifier_ok
+    )
     status, detail = check(
         report_ok,
-        "Consistency checking currently emits ERROR / WARNING / INFO report sections.",
-        "integrity_check_report.md is missing one or more ERROR / WARNING / INFO sections.",
+        "Consistency checking emits structured severity summaries, finding-code summary, and detail rows with identifiers, fields, and owner-file attribution.",
+        "integrity_check_report.md is missing required severity-summary, finding-code, identifier, field, or owner-file report structure.",
     )
     add_result(results, "11", status, detail, "Data/integrity_check_report.md")
 
