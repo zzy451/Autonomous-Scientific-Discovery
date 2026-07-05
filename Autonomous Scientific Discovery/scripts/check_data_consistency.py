@@ -371,6 +371,24 @@ def validate_classification_code_index_owner() -> None:
         "classification_code_index.json label_to_secondary_code coverage does not match secondary_terms",
     )
 
+    master_rows = parse_markdown_table_strict(
+        MASTER_PATH, header=MASTER_HEADER, data_prefix="| ASD-"
+    )
+    master_secondary_codes = {
+        str(row.get("Secondary class") or "").strip()
+        for row in master_rows
+        if str(row.get("Secondary class") or "").strip()
+        and PRIMARY_TAXONOMY_2LVL_PATTERN.fullmatch(
+            str(row.get("Secondary class") or "").strip()
+        )
+    }
+    missing_master_secondary_codes = sorted(master_secondary_codes - seen_secondary_codes)
+    assert_true(
+        not missing_master_secondary_codes,
+        "classification_code_index.json is missing secondary_terms required by master legacy Secondary class coverage: "
+        + ", ".join(missing_master_secondary_codes),
+    )
+
 
 def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) -> None:
     if not DISCIPLINE_CODE_ASSIGNMENTS_PATH.exists():
