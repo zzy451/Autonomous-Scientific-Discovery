@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import csv
 import json
 import re
 from dataclasses import dataclass
@@ -18,6 +19,10 @@ PROGRESS_PATH = (
 )
 DATA_DIR = ROOT / "Data"
 REGISTRY_DIR = DATA_DIR / "registry"
+CLASSIFICATION_CODE_INDEX_PATH = DATA_DIR / "classification_code_index.json"
+DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH = (
+    DATA_DIR / "discipline_code_initial_assignment_preview.csv"
+)
 
 MASTER_HEADER = [
     "ID",
@@ -207,6 +212,35 @@ FIRST_HAND_STOP_PREFIXES = (
     "general_method_bucket",
     "source_limited",
 )
+SECONDARY_CODE_PATTERN = re.compile(r"^(0[1-9]|1[0-1])\.(\d{2})$")
+PREVIEW_FIELDNAMES = [
+    "paper_id",
+    "title",
+    "active_confirmed_core",
+    "inclusion_status",
+    "scientific_object_modules",
+    "general_method_bucket",
+    "object_coverage_mode",
+    "primary_module_for_filing",
+    "primary_module_label",
+    "legacy_main_class",
+    "legacy_secondary_class",
+    "proposed_primary_taxonomy_code_2lvl",
+    "secondary_term_in_index",
+    "secondary_term_label",
+    "secondary_term_status",
+    "secondary_term_review_status",
+    "proposed_assignment_status",
+    "pending_reason",
+    "proposed_discipline_local_code",
+    "discipline_local_rank",
+    "source_limited",
+    "pdf_status",
+    "evidence_status",
+    "note_path",
+    "pdf_path",
+    "review_flags",
+]
 
 
 @dataclass
@@ -408,6 +442,17 @@ def normalize_primary_module(raw_value: str, legacy_main: str, modules: List[str
     return modules[0] if modules else ""
 
 
+def normalize_primary_module_for_export(
+    raw_value: str,
+    legacy_main: str,
+    modules: List[str],
+    general_method_bucket: str,
+) -> str:
+    if general_method_bucket != "none":
+        return ""
+    return normalize_primary_module(raw_value, legacy_main, modules)
+
+
 def build_classification_display_code(
     scientific_object_modules: List[str], general_method_bucket: str
 ) -> str:
@@ -422,6 +467,152 @@ def path_exists(repo_relative_path: str) -> bool:
     if not repo_relative_path:
         return False
     return (ROOT / repo_relative_path).exists()
+
+
+def load_classification_code_index() -> Dict[str, object]:
+    payload = json.loads(CLASSIFICATION_CODE_INDEX_PATH.read_text(encoding="utf-8"))
+    required_keys = (
+        "primary_code_to_label",
+        "secondary_code_to_label",
+        "primary_terms",
+        "secondary_terms",
+    )
+    missing = [key for key in required_keys if key not in payload]
+    if missing:
+        raise ValueError(
+            "classification_code_index.json missing required keys: "
+            + ", ".join(missing)
+        )
+    return payload
+
+
+def is_yes_like(value: str) -> bool:
+    return value.strip().lower().startswith("yes")
+
+
+def stringify_list(values: List[str]) -> str:
+    return ";".join(values)
+
+
+def build_discipline_initial_assignment_preview(
+    papers: Iterable[Dict[str, object]],
+    classification_code_index: Dict[str, object],
+) -> List[Dict[str, object]]:
+    primary_code_to_label = {
+        str(code): str(label)
+        for code, label in dict(classification_code_index["primary_code_to_label"]).items()
+    }
+    secondary_code_to_label = {
+        str(code): str(label)
+        for code, label in dict(classification_code_index["secondary_code_to_label"]).items()
+    }
+    secondary_terms_by_code = {
+        str(term["secondary_code"]): term
+        for term in classification_code_index["secondary_terms"]
+        if isinstance(term, dict) and term.get("secondary_code")
+    }
+    preview_rows: List[Dict[str, object]] = []
+    active_code_groups: Dict[str, List[Dict[str, object]]] = {}
+
+    for paper in sorted(
+        (paper for paper in papers if bool(paper["active_confirmed_core"])),
+        key=lambda item: str(item["paper_id"]),
+    ):
+        scientific_object_modules = [str(code) for code in paper["scientific_object_modules"]]
+        general_method_bucket = str(paper["general_method_bucket"])
+        primary_module_for_filing = str(paper["primary_module_for_filing"])
+        legacy_secondary_class = str(paper["legacy_secondary_class"]).strip()
+        legacy_secondary_match = SECONDARY_CODE_PATTERN.fullmatch(legacy_secondary_class)
+        secondary_term = secondary_terms_by_code.get(legacy_secondary_class)
+        review_flags: List[str] = []
+        if len(scientific_object_modules) > 1:
+            review_flags.append("multi_module")
+        if is_yes_like(str(paper["source_limited"])):
+            review_flags.append("source_limited")
+        if (
+            primary_module_for_filing
+            and scientific_object_modules
+            and primary_module_for_filing not in scientific_object_modules
+        ):
+            review_flags.append("primary_module_outside_scientific_object_modules")
+        if legacy_secondary_class and secondary_term is None:
+            review_flags.append("secondary_not_in_taxonomy_index")
+
+        preview_row: Dict[str, object] = {
+            "paper_id": paper["paper_id"],
+            "title": paper["title"],
+            "active_confirmed_core": bool(paper["active_confirmed_core"]),
+            "inclusion_status": paper["inclusion_status"],
+            "scientific_object_modules": stringify_list(scientific_object_modules),
+            "general_method_bucket": general_method_bucket,
+            "object_coverage_mode": paper["object_coverage_mode"],
+            "primary_module_for_filing": primary_module_for_filing,
+            "primary_module_label": primary_code_to_label.get(primary_module_for_filing, ""),
+            "legacy_main_class": paper["legacy_main_class"],
+            "legacy_secondary_class": legacy_secondary_class,
+            "proposed_primary_taxonomy_code_2lvl": "",
+            "secondary_term_in_index": secondary_term is not None,
+            "secondary_term_label": (
+                str(secondary_term.get("label", ""))
+                if secondary_term is not None
+                else secondary_code_to_label.get(legacy_secondary_class, "")
+            ),
+            "secondary_term_status": (
+                str(secondary_term.get("status", "")) if secondary_term is not None else ""
+            ),
+            "secondary_term_review_status": (
+                str(secondary_term.get("review_status", ""))
+                if secondary_term is not None
+                else ""
+            ),
+            "proposed_assignment_status": "",
+            "pending_reason": "",
+            "proposed_discipline_local_code": "",
+            "discipline_local_rank": "",
+            "source_limited": paper["source_limited"],
+            "pdf_status": paper["pdf_status"],
+            "evidence_status": paper["evidence_status"],
+            "note_path": paper["note_path"],
+            "pdf_path": paper["pdf_path"],
+            "review_flags": "",
+        }
+
+        is_pure_general_method = (
+            general_method_bucket != "none" and not scientific_object_modules
+        )
+        if is_pure_general_method:
+            preview_row["proposed_assignment_status"] = "non_discipline_general_method"
+            if legacy_secondary_class and legacy_secondary_class != "01.04":
+                review_flags.append("general_method_secondary_not_01_04")
+        elif not primary_module_for_filing:
+            preview_row["proposed_assignment_status"] = "pending_secondary"
+            preview_row["pending_reason"] = "missing_primary_module_for_filing"
+            review_flags.append("missing_primary_module_for_filing")
+        elif legacy_secondary_match is None:
+            preview_row["proposed_assignment_status"] = "pending_secondary"
+            preview_row["pending_reason"] = "missing_or_uncertain_secondary_class"
+            review_flags.append("missing_or_uncertain_secondary_class")
+        elif legacy_secondary_match.group(1) != primary_module_for_filing:
+            preview_row["proposed_assignment_status"] = "pending_secondary"
+            preview_row["pending_reason"] = "secondary_primary_mismatch"
+            review_flags.append("secondary_primary_mismatch")
+        else:
+            preview_row["proposed_assignment_status"] = "active_code"
+            preview_row["proposed_primary_taxonomy_code_2lvl"] = legacy_secondary_class
+            active_code_groups.setdefault(legacy_secondary_class, []).append(preview_row)
+
+        preview_row["review_flags"] = stringify_list(review_flags)
+        preview_rows.append(preview_row)
+
+    for secondary_code, rows in sorted(active_code_groups.items()):
+        primary_code, secondary_rank = secondary_code.split(".")
+        for index, row in enumerate(sorted(rows, key=lambda item: str(item["paper_id"])), start=1):
+            row["proposed_discipline_local_code"] = (
+                f"{primary_code}-{secondary_rank}-{index:03d}"
+            )
+            row["discipline_local_rank"] = f"{index:03d}"
+
+    return preview_rows
 
 
 def build_papers(master_rows: Iterable[Dict[str, str]], progress_rows: Dict[str, Dict[str, str]]) -> List[Dict[str, object]]:
@@ -449,8 +640,11 @@ def build_papers(master_rows: Iterable[Dict[str, str]], progress_rows: Dict[str,
         object_coverage_mode = normalize_object_coverage_mode(
             raw_object_coverage_mode, scientific_object_modules, general_method_bucket
         )
-        primary_module_for_filing = normalize_primary_module(
-            raw_primary_module, row["Main class"], scientific_object_modules
+        primary_module_for_filing = normalize_primary_module_for_export(
+            raw_primary_module,
+            row["Main class"],
+            scientific_object_modules,
+            general_method_bucket,
         )
 
         doi, arxiv_id, url = parse_doi_and_arxiv(row["DOI / arXiv / URL"])
@@ -840,9 +1034,18 @@ def write_jsonl(path: Path, rows: Iterable[Dict[str, object]]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def write_csv(path: Path, rows: Iterable[Dict[str, object]], fieldnames: List[str]) -> None:
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow(row)
+
+
 def main() -> None:
     DATA_DIR.mkdir(exist_ok=True)
     REGISTRY_DIR.mkdir(parents=True, exist_ok=True)
+    classification_code_index = load_classification_code_index()
 
     master_table = parse_markdown_table(
         MASTER_PATH,
@@ -870,12 +1073,20 @@ def main() -> None:
     pdf_manifest = build_pdf_manifest(papers, sha256_cache)
     missing_pdf_manifest = build_missing_pdf_manifest(papers)
     note_manifest = build_note_manifest(papers)
+    discipline_code_initial_assignment_preview = build_discipline_initial_assignment_preview(
+        papers, classification_code_index
+    )
 
     write_jsonl(DATA_DIR / "papers.jsonl", papers)
     write_json(DATA_DIR / "taxonomy_index.json", taxonomy_index)
     write_json(DATA_DIR / "pdf_manifest.json", pdf_manifest)
     write_json(DATA_DIR / "missing_pdf_manifest.json", missing_pdf_manifest)
     write_json(DATA_DIR / "note_manifest.json", note_manifest)
+    write_csv(
+        DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH,
+        discipline_code_initial_assignment_preview,
+        PREVIEW_FIELDNAMES,
+    )
     write_jsonl(REGISTRY_DIR / "paper_registry.jsonl", paper_registry)
     write_jsonl(REGISTRY_DIR / "paper_identifier_aliases.jsonl", paper_identifier_aliases)
     write_json(REGISTRY_DIR / "taxonomy_registry.json", taxonomy_registry)
@@ -889,6 +1100,10 @@ def main() -> None:
     print(f"Exported {len(pdf_manifest)} local PDF manifest rows")
     print(f"Exported {len(missing_pdf_manifest)} missing PDF manifest rows")
     print(f"Exported {len(note_manifest)} note manifest rows")
+    print(
+        "Exported "
+        f"{len(discipline_code_initial_assignment_preview)} initial discipline-code preview rows"
+    )
     print(f"Exported {len(paper_registry)} paper registry rows")
     print(f"Exported {len(paper_identifier_aliases)} paper identifier alias rows")
     print(f"Exported {len(classification_assignments)} classification assignment rows")

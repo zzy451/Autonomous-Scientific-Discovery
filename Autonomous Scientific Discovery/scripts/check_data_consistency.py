@@ -938,8 +938,8 @@ def main() -> None:
                 f"{paper_id} has inconsistent object_coverage_mode for general_method_bucket",
             )
             assert_true(
-                primary_module == "01",
-                f"{paper_id} should file general-method bucket rows under module 01",
+                primary_module == "",
+                f"{paper_id} pure general-method rows should not force primary_module_for_filing",
             )
         elif modules:
             expected_mode = "multi_module" if len(modules) > 1 else "single_module"
@@ -977,7 +977,7 @@ def main() -> None:
             )
 
         expected_primary_module = expected_from_remarks["primary_module_for_filing"]
-        if expected_primary_module:
+        if expected_primary_module and general_bucket == "none":
             assert_true(
                 primary_module == expected_primary_module,
                 f"{paper_id} primary_module_for_filing disagrees with remarks: {primary_module!r} != {expected_primary_module!r}",
