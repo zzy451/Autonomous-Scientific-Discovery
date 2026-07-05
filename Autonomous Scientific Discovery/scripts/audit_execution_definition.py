@@ -124,6 +124,9 @@ def main() -> None:
         for row in assignments
         if row.get("assignment_status") in {"active_code", "pending_secondary", "non_discipline_general_method"}
     ]
+    current_snapshot_by_paper_id = {
+        str(row.get("paper_id")): row for row in current_snapshot_rows
+    }
 
     results: list[dict[str, str]] = []
 
@@ -417,6 +420,70 @@ def main() -> None:
     )
     add_result(results, "8", status, detail, "Data/discipline_code_initial_assignment_preview.csv")
 
+    registry_status_counts: dict[str, int] = {}
+    registry_semantics_ok = True
+    registry_metadata_uniform_ok = True
+    for row in registry:
+        paper_id = str(row.get("paper_id", "")).strip()
+        assignment_status = str(row.get("assignment_status", "")).strip()
+        registry_status_counts[assignment_status] = registry_status_counts.get(assignment_status, 0) + 1
+        paper = active_papers_by_id.get(paper_id)
+        assignment = current_snapshot_by_paper_id.get(paper_id)
+        discipline_local_code = str(row.get("discipline_local_code") or "").strip()
+        discipline_local_rank = str(row.get("discipline_local_rank") or "").strip()
+        discipline_display_order = str(row.get("discipline_display_order") or "").strip()
+        primary_taxonomy_code_2lvl = str(row.get("primary_taxonomy_code_2lvl") or "").strip()
+        if paper is None or assignment is None:
+            registry_semantics_ok = False
+            continue
+        if assignment_status != str(assignment.get("assignment_status", "")).strip():
+            registry_semantics_ok = False
+        if str(row.get("assignment_id", "")).strip() != str(assignment.get("assignment_id", "")).strip():
+            registry_semantics_ok = False
+        if str(row.get("title", "")).strip() != str(paper.get("title", "")).strip():
+            registry_semantics_ok = False
+        if row.get("scientific_object_modules") != paper.get("scientific_object_modules"):
+            registry_semantics_ok = False
+        if str(row.get("general_method_bucket", "")).strip() != str(paper.get("general_method_bucket", "")).strip():
+            registry_semantics_ok = False
+        if str(row.get("primary_module_for_filing", "")).strip() != str(paper.get("primary_module_for_filing", "")).strip():
+            registry_semantics_ok = False
+        if str(row.get("note_path", "")).strip() != str(paper.get("note_path", "")).strip():
+            registry_semantics_ok = False
+        if str(row.get("pdf_path", "")).strip() != str(paper.get("pdf_path", "")).strip():
+            registry_semantics_ok = False
+        if bool(row.get("active_confirmed_core")) != bool(paper.get("active_confirmed_core")):
+            registry_semantics_ok = False
+        if row.get("is_derived_snapshot") is not True:
+            registry_semantics_ok = False
+        if str(row.get("generated_by", "")).strip() != "export_structured_data.py":
+            registry_metadata_uniform_ok = False
+        if assignment_status == "active_code":
+            code_match = DISCIPLINE_LOCAL_CODE_PATTERN.fullmatch(discipline_local_code)
+            secondary_match = SECONDARY_CODE_PATTERN.fullmatch(primary_taxonomy_code_2lvl)
+            registry_semantics_ok = registry_semantics_ok and (
+                code_match is not None
+                and secondary_match is not None
+                and discipline_local_rank == discipline_local_code.rsplit("-", 1)[-1]
+                and discipline_display_order == discipline_local_code
+            )
+        elif assignment_status == "pending_secondary":
+            registry_semantics_ok = registry_semantics_ok and (
+                not discipline_local_code
+                and not discipline_local_rank
+                and not primary_taxonomy_code_2lvl
+                and discipline_display_order.startswith(
+                    (str(row.get("primary_module_for_filing") or "").strip() or "ZZ") + "-"
+                )
+            )
+        elif assignment_status == "non_discipline_general_method":
+            registry_semantics_ok = registry_semantics_ok and (
+                not discipline_local_code
+                and not discipline_local_rank
+                and not primary_taxonomy_code_2lvl
+                and discipline_display_order.startswith("GM-PENDING-")
+            )
+
     registry_metadata_ok = (
         DISCIPLINE_REGISTRY_JSONL.exists()
         and DISCIPLINE_REGISTRY_CSV.exists()
@@ -426,11 +493,17 @@ def main() -> None:
         and metadata.get("discipline_local_code_registry_row_count") == str(len(registry))
         and metadata.get("discipline_local_code_registry_generated_at") == metadata.get("papers_exported_at")
         and metadata.get("discipline_local_code_registry_generated_by") == "export_structured_data.py"
+        and registry_metadata_uniform_ok
     )
     status, detail = check(
-        registry_metadata_ok,
-        "discipline_local_code_registry is present in JSONL / CSV / SQLite with aligned derived snapshot metadata.",
-        "discipline_local_code_registry surfaces or snapshot metadata are missing or inconsistent.",
+        registry_metadata_ok and registry_semantics_ok,
+        (
+            "discipline_local_code_registry is present in JSONL / CSV / SQLite with aligned derived snapshot metadata "
+            f"and current-snapshot semantics (active={registry_status_counts.get('active_code', 0)}, "
+            f"pending={registry_status_counts.get('pending_secondary', 0)}, "
+            f"general_method={registry_status_counts.get('non_discipline_general_method', 0)})."
+        ),
+        "discipline_local_code_registry surfaces, snapshot metadata, or current-snapshot derived semantics are missing or inconsistent.",
     )
     add_result(results, "9", status, detail, "Data/discipline_local_code_registry.jsonl + Data/discipline_local_code_registry.csv + Data/papers.sqlite")
 

@@ -59,7 +59,7 @@ Evidence: `Data/discipline_code_initial_assignment_preview.csv`
 
 ### Item 9 - PASS
 
-discipline_local_code_registry is present in JSONL / CSV / SQLite with aligned derived snapshot metadata.
+discipline_local_code_registry is present in JSONL / CSV / SQLite with aligned derived snapshot metadata and current-snapshot semantics (active=423, pending=15, general_method=9).
 
 Evidence: `Data/discipline_local_code_registry.jsonl + Data/discipline_local_code_registry.csv + Data/papers.sqlite`
 
