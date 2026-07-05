@@ -983,6 +983,194 @@ def validate_metadata_and_summary_tables(
         'SQLite active_missing_local_pdf view drifted from expected active missing-PDF count',
     )
 
+def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
+    return [
+        (
+            'change_log',
+            'table',
+            'audit_owner',
+            'change audit lookup',
+            'Lightweight audit trail loaded from Data/change_log.jsonl for change history and maintenance review.',
+        ),
+        (
+            'classification_terms',
+            'table',
+            'taxonomy_owner_snapshot',
+            'default taxonomy term lookup',
+            'Normalized taxonomy owner snapshot built from Data/classification_code_index.json.',
+        ),
+        (
+            'discipline_code_assignments',
+            'table',
+            'owner_snapshot',
+            'management-code owner inspection',
+            'Stable discipline code assignment owner table loaded from Data/discipline_code_assignments.jsonl; changes must originate in the owner file, not SQLite.',
+        ),
+        (
+            'paper_general_method_buckets',
+            'table',
+            'canonical_only',
+            'default 01.04 bucket lookup',
+            'One-row-per-paper canonical general-method bucket table; empty for non-bucket papers.',
+        ),
+        (
+            'discipline_local_code_registry',
+            'table',
+            'derived_snapshot',
+            'default discipline filing review',
+            'Derived one-row-per-ledger-entry snapshot joining assignment owner data with paper facts; rebuild from export instead of editing in SQLite.',
+        ),
+        (
+            'pdf_evidence_status',
+            'table',
+            'workflow_status',
+            'default PDF/source status lookup',
+            'Per-paper PDF/source evidence table derived from the authoritative paper/progress lane.',
+        ),
+        (
+            'paper_assets',
+            'table',
+            'derived_snapshot',
+            'default note/PDF asset lookup',
+            'Per-asset snapshot loaded from Data/registry/asset_manifest.jsonl.',
+        ),
+        (
+            'notes',
+            'table',
+            'derived_snapshot',
+            'default note inventory lookup',
+            'Per-paper note snapshot loaded from Data/note_manifest.json.',
+        ),
+        (
+            'papers',
+            'table',
+            'mixed_with_workflow_fields',
+            'record inspection only',
+            'Contains canonical classification fields plus workflow mirror/status columns; do not treat final_modules_or_bucket as canonical classification.',
+        ),
+        (
+            'paper_modules',
+            'table',
+            'canonical_only',
+            'default formal-module analysis',
+            'Canonical scientific_object_modules many-to-many relation; this is the default formal-module analysis table.',
+        ),
+        (
+            'mixed_scope_paper_modules',
+            'view',
+            'mixed_scope',
+            'compatibility inspection only',
+            'Compatibility union over canonical paper_modules plus workflow_mirror_paper_modules; use only when a mixed-scope audit surface is explicitly required.',
+        ),
+        (
+            'canonical_paper_modules',
+            'view',
+            'canonical_only',
+            'compatibility canonical alias',
+            'Compatibility alias over paper_modules for older query/document surfaces that still reference canonical_paper_modules.',
+        ),
+        (
+            'workflow_mirror_paper_modules',
+            'table',
+            'workflow_mirror_only',
+            'audit only',
+            'Workflow mirror assignments for audit/debugging only, not default statistics.',
+        ),
+        (
+            'module_assignment_counts',
+            'view',
+            'canonical_only',
+            'default formal-module analysis',
+            'Canonical formal-module assignment counts derived from paper_modules.',
+        ),
+        (
+            'mixed_scope_module_assignment_counts',
+            'view',
+            'mixed_scope',
+            'compatibility inspection only',
+            'Mixed-scope counts across canonical and workflow mirror assignments; use only for compatibility audits.',
+        ),
+        (
+            'canonical_module_assignment_counts',
+            'view',
+            'canonical_only',
+            'compatibility canonical alias',
+            'Compatibility alias over module_assignment_counts for older query/document surfaces that still reference canonical_module_assignment_counts.',
+        ),
+        (
+            'workflow_mirror_module_assignment_counts',
+            'view',
+            'workflow_mirror_only',
+            'audit only',
+            'Workflow mirror assignment counts for audit/debugging only.',
+        ),
+        (
+            'canonical_analysis_baseline',
+            'view',
+            'canonical_only',
+            'default baseline glossary',
+            'Use together with summary before writing module statistics.',
+        ),
+        (
+            'classification_boundary_analysis',
+            'view',
+            'audit_only',
+            'drift inspection only',
+            'Canonical-vs-mirror inspection view; not a default classification summary.',
+        ),
+        (
+            'classification_boundary_summary',
+            'view',
+            'audit_only',
+            'drift inspection only',
+            'Boundary/drift summary; not a default classification count.',
+        ),
+        (
+            'canonical_bucket_0104_summary',
+            'view',
+            'canonical_only',
+            'default 01.04 bucket analysis',
+            'Separate canonical 01.04 bucket summary; do not merge into formal 01-11 counts.',
+        ),
+        (
+            'coverage_status_analysis',
+            'view',
+            'workflow_status',
+            'coverage follow-up analysis',
+            'Coverage/progress analysis, not canonical classification counting.',
+        ),
+        (
+            'coverage_status_summary',
+            'view',
+            'workflow_status',
+            'coverage follow-up analysis',
+            'Coverage/progress summary, not canonical classification counting.',
+        ),
+    ]
+
+def validate_analysis_object_scope_registry() -> None:
+    expected_rows = sorted(build_analysis_object_scope_rows(), key=lambda item: item[0])
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        actual_rows = conn.execute(
+            '''
+            SELECT
+                object_name,
+                object_type,
+                scope_class,
+                default_usage,
+                warning
+            FROM analysis_object_scope_registry
+            ORDER BY object_name
+            '''
+        ).fetchall()
+    finally:
+        conn.close()
+    assert_build_condition(
+        actual_rows == expected_rows,
+        'SQLite analysis_object_scope_registry drifted from expected declared object-scope rows',
+    )
+
 def build_general_method_bucket_rows(papers: list[dict[str, object]]) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for paper in papers:
@@ -1573,169 +1761,7 @@ def build_sqlite(
         ])
         conn.executemany(
             'INSERT INTO analysis_object_scope_registry(object_name, object_type, scope_class, default_usage, warning) VALUES(?, ?, ?, ?, ?)',
-            [
-                (
-                    'change_log',
-                    'table',
-                    'audit_owner',
-                    'change audit lookup',
-                    'Lightweight audit trail loaded from Data/change_log.jsonl for change history and maintenance review.',
-                ),
-                (
-                    'classification_terms',
-                    'table',
-                    'taxonomy_owner_snapshot',
-                    'default taxonomy term lookup',
-                    'Normalized taxonomy owner snapshot built from Data/classification_code_index.json.',
-                ),
-                (
-                    'discipline_code_assignments',
-                    'table',
-                    'owner_snapshot',
-                    'management-code owner inspection',
-                    'Stable discipline code assignment owner table loaded from Data/discipline_code_assignments.jsonl; changes must originate in the owner file, not SQLite.',
-                ),
-                (
-                    'paper_general_method_buckets',
-                    'table',
-                    'canonical_only',
-                    'default 01.04 bucket lookup',
-                    'One-row-per-paper canonical general-method bucket table; empty for non-bucket papers.',
-                ),
-                (
-                    'discipline_local_code_registry',
-                    'table',
-                    'derived_snapshot',
-                    'default discipline filing review',
-                    'Derived one-row-per-ledger-entry snapshot joining assignment owner data with paper facts; rebuild from export instead of editing in SQLite.',
-                ),
-                (
-                    'pdf_evidence_status',
-                    'table',
-                    'workflow_status',
-                    'default PDF/source status lookup',
-                    'Per-paper PDF/source evidence table derived from the authoritative paper/progress lane.',
-                ),
-                (
-                    'paper_assets',
-                    'table',
-                    'derived_snapshot',
-                    'default note/PDF asset lookup',
-                    'Per-asset snapshot loaded from Data/registry/asset_manifest.jsonl.',
-                ),
-                (
-                    'notes',
-                    'table',
-                    'derived_snapshot',
-                    'default note inventory lookup',
-                    'Per-paper note snapshot loaded from Data/note_manifest.json.',
-                ),
-                (
-                    'papers',
-                    'table',
-                    'mixed_with_workflow_fields',
-                    'record inspection only',
-                    'Contains canonical classification fields plus workflow mirror/status columns; do not treat final_modules_or_bucket as canonical classification.',
-                ),
-                (
-                    'paper_modules',
-                    'table',
-                    'canonical_only',
-                    'default formal-module analysis',
-                    'Canonical scientific_object_modules many-to-many relation; this is the default formal-module analysis table.',
-                ),
-                (
-                    'mixed_scope_paper_modules',
-                    'view',
-                    'mixed_scope',
-                    'compatibility inspection only',
-                    'Compatibility union over canonical paper_modules plus workflow_mirror_paper_modules; use only when a mixed-scope audit surface is explicitly required.',
-                ),
-                (
-                    'canonical_paper_modules',
-                    'view',
-                    'canonical_only',
-                    'compatibility canonical alias',
-                    'Compatibility alias over paper_modules for older query/document surfaces that still reference canonical_paper_modules.',
-                ),
-                (
-                    'workflow_mirror_paper_modules',
-                    'table',
-                    'workflow_mirror_only',
-                    'audit only',
-                    'Workflow mirror assignments for audit/debugging only, not default statistics.',
-                ),
-                (
-                    'module_assignment_counts',
-                    'view',
-                    'canonical_only',
-                    'default formal-module analysis',
-                    'Canonical formal-module assignment counts derived from paper_modules.',
-                ),
-                (
-                    'mixed_scope_module_assignment_counts',
-                    'view',
-                    'mixed_scope',
-                    'compatibility inspection only',
-                    'Mixed-scope counts across canonical and workflow mirror assignments; use only for compatibility audits.',
-                ),
-                (
-                    'canonical_module_assignment_counts',
-                    'view',
-                    'canonical_only',
-                    'compatibility canonical alias',
-                    'Compatibility alias over module_assignment_counts for older query/document surfaces that still reference canonical_module_assignment_counts.',
-                ),
-                (
-                    'workflow_mirror_module_assignment_counts',
-                    'view',
-                    'workflow_mirror_only',
-                    'audit only',
-                    'Workflow mirror assignment counts for audit/debugging only.',
-                ),
-                (
-                    'canonical_analysis_baseline',
-                    'view',
-                    'canonical_only',
-                    'default baseline glossary',
-                    'Use together with summary before writing module statistics.',
-                ),
-                (
-                    'classification_boundary_analysis',
-                    'view',
-                    'audit_only',
-                    'drift inspection only',
-                    'Canonical-vs-mirror inspection view; not a default classification summary.',
-                ),
-                (
-                    'classification_boundary_summary',
-                    'view',
-                    'audit_only',
-                    'drift inspection only',
-                    'Boundary/drift summary; not a default classification count.',
-                ),
-                (
-                    'canonical_bucket_0104_summary',
-                    'view',
-                    'canonical_only',
-                    'default 01.04 bucket analysis',
-                    'Separate canonical 01.04 bucket summary; do not merge into formal 01-11 counts.',
-                ),
-                (
-                    'coverage_status_analysis',
-                    'view',
-                    'workflow_status',
-                    'coverage follow-up analysis',
-                    'Coverage/progress analysis, not canonical classification counting.',
-                ),
-                (
-                    'coverage_status_summary',
-                    'view',
-                    'workflow_status',
-                    'coverage follow-up analysis',
-                    'Coverage/progress summary, not canonical classification counting.',
-                ),
-            ],
+            build_analysis_object_scope_rows(),
         )
         conn.executemany('INSERT INTO taxonomy_index(code, label, kind) VALUES(?, ?, ?)', [
             (code, label, 'formal_module' if code in FORMAL_MODULES else 'general_bucket')
@@ -2018,6 +2044,7 @@ def main() -> None:
         papers,
         taxonomy,
     )
+    validate_analysis_object_scope_registry()
     print(f'Wrote {PAPERS_CSV}')
     print(f'Wrote {PAPER_MODULES_CSV}')
     print(f'Wrote {CANONICAL_PAPER_MODULES_CSV}')
