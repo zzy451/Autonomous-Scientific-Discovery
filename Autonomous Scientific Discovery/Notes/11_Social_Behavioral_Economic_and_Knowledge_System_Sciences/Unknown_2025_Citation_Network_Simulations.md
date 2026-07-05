@@ -1,12 +1,12 @@
-# Unknown 2025 - Leveraging LLM-based agents for social science research: insights from citation network simulations
+# Ji et al. 2025 - Leveraging LLM-based agents for social science research: insights from citation network simulations
 
 **论文信息**
 - 标题：Leveraging LLM-based agents for social science research: insights from citation network simulations
-- 作者：Unknown
+- 作者：Jiarui Ji; Runlin Lei; Xuchen Pan; Zhewei Wei; Hao Sun; Yankai Lin; Xu Chen; Yongzheng Yang; Yaliang Li; Bolin Ding; Ji-Rong Wen
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2511.03758
-- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2511.03758`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check；主表作者字段仍待后续补齐
+- PDF / 本地文件路径：`Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2025_Citation_Network_Simulations.pdf`（当前归档文件名沿用旧占位符）；本轮已基于本地归档 arXiv PDF 全文复核
 - 论文类型：预印本 / citation-network simulation agents
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,22 +14,23 @@
 
 ## Evidence Log
 
-## Reaudit Update (2026-06-23)
+## Reaudit Update (2026-07-05)
 
-- `scientific_object_modules`: `11.07`
-- `primary_module_for_filing`: `11.07`
+- `scientific_object_modules`: `11`
+- `primary_module_for_filing`: `11`
 - `source_limited`: `no`
-- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
-- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2511.03758`
+- `first_hand_sources_checked`: local archived arXiv PDF full text
+- `pdf_status`: local archived PDF `Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2025_Citation_Network_Simulations.pdf`
 - `final_note_classification`: stable `11.07` landing; note filing path is convenience only, not classification authority.
+- `metadata_refresh`: visible authors corrected from placeholder `Unknown`; archive filename is intentionally unchanged.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要；正文 | 提出 CiteAgent 以 author/paper agents 模拟 citation-network formation | 高 |
-| 科学对象归类 | `11.07` | arXiv abstract / PDF text spot-check | 对象是 citation networks、reference behavior、academic environment | 高 |
-| 方法流程 | 多步 agent simulation | framework section | 包含 Initialization / Socialization / Creation 等阶段 | 高 |
-| 验证内容 | science-of-science patterns | results | 验证 power-law、citational distortion、shrinking diameter | 高 |
-| 边界风险 | 标题误导 | 摘要 / 正文 | 虽写 social science research，但正文反复指向 science-of-science object | 高 |
+| Agent 纳入 | 是 | 本地归档 PDF 第 1-2 页；正文 | 提出 CiteAgent 以 author / paper agents 模拟 citation-network formation | 高 |
+| 科学对象归类 | `11.07` | 本地归档 PDF 第 1-2 页 | 对象是 citation networks、reference behavior、academic environments 与 science of science 研究 | 高 |
+| 方法流程 | 多步 agent simulation | 本地归档 PDF 第 2 页；framework section | 包含 Initialization / Socialization / Creation 等阶段 | 高 |
+| 验证内容 | science-of-science patterns | 本地归档 PDF 第 1 页摘要；results | 验证 power-law、citational distortion、shrinking diameter | 高 |
+| 边界风险 | 标题误导 | 本地归档 PDF 第 1-2 页 | 虽写 social science research，但正文明确把对象锚定到 science-of-science citation-network simulation | 高 |
 
 ## 0. 摘要翻译
 
@@ -207,7 +208,7 @@
 
 ## 7. 局限性与风险
 
-- Agent 自主性不足：当前主控对作者元数据仍未补齐
+- Agent 自主性不足：系统主要用于模拟与解释引文行为，而非直接执行现实科研闭环
 - 科学验证不足：主要依赖 simulation
 - 泛化性不足：对真实学术生态的映射仍有限
 - 工具链依赖：依赖环境设定与 simulation assumptions

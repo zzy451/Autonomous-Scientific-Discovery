@@ -3138,7 +3138,7 @@
       "11"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_preprint_pdf_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -3151,7 +3151,7 @@
       "11"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_preprint_pdf_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {
@@ -4017,7 +4017,7 @@
       "11"
     ],
     "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_abstract_review_packet",
+    "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
   },
   {

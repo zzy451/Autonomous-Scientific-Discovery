@@ -7,8 +7,8 @@
 - `has_concrete_object_experiments`: `yes`
 - `general_method_bucket`: `none`
 - `primary_module_for_filing`: `11`
-- `first_hand_sources_checked`: arXiv abstract page `https://arxiv.org/abs/2604.06170`
-- `classification_evidence_source_level`: `first_hand_abstract_or_landing_page`
+- `first_hand_sources_checked`: local archived arXiv PDF full text
+- `classification_evidence_source_level`: `first_hand_full_text`
 - `source_limited`: `no`
 - `note_revision_required`: `no`
 - `module_assignment_evidence`: the abstract frames Paper Circle as a multi-agent system for scientific literature discovery, analysis, and synthesis. The stable object is scientific knowledge production and literature-centered research support, so it belongs in `11`, not in the independent `01.04` general-method bucket.
@@ -20,7 +20,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.06170
-- PDF / 本地文件路径：本轮以 arXiv abstract page 为一手来源；未在 workspace 中确认本地归档 PDF
+- PDF / 本地文件路径：`Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Kumar_2026_Paper_Circle.pdf`；本轮已基于本地归档 arXiv PDF 全文复核
 - 论文类型：系统论文 / scientific-literature discovery agents
 - 当前状态：to_read
 - 阅读日期：2026-06-24
@@ -31,12 +31,12 @@
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| 一手来源核对 | 已核对 arXiv 摘要页 | arXiv abs page | 当前分类基于题目、作者元数据与摘要中的任务定义、系统目标和输出 | 高 |
-| Agent 纳入 | 是 | arXiv abstract | 系统把 research discovery、analysis 与 synthesis 拆成多步 Agent workflow | 高 |
-| 科学对象归类 | `11` only | arXiv abstract | 对象是 scientific literature discovery / analysis / knowledge-production support，而不是通用无对象方法 | 高 |
-| 不进 `01.04` | 是 | arXiv abstract | 虽然有 framework 外观，但任务稳定锚定在 scientific knowledge production itself | 高 |
-| 方法流程 | 多步闭环明确 | arXiv abstract | 包含检索、组织、分析、综合等连续任务链 | 高 |
-| 验证方式 | pipeline outputs / task-level evaluation | arXiv abstract | 当前公开证据强调 discovery pipeline 与 analysis outputs，而非自然科学对象实验 | 中高 |
+| 一手来源核对 | 已核对本地归档 PDF 全文 | 本地归档 PDF 第 1-2 页 | 当前分类基于摘要、系统图、任务定义和 benchmark 描述，而非仅依赖 arXiv 摘要页 | 高 |
+| Agent 纳入 | 是 | 本地归档 PDF 第 1-2 页 | 系统把 research discovery、analysis 与 synthesis 拆成多步 Agent workflow | 高 |
+| 科学对象归类 | `11` only | 本地归档 PDF 第 1-2 页 | 对象是 scientific literature discovery / analysis / knowledge-production support，而不是通用无对象方法 | 高 |
+| 不进 `01.04` | 是 | 本地归档 PDF 第 1-2 页 | 虽然有 framework 外观，但任务稳定锚定在 scientific knowledge production itself | 高 |
+| 方法流程 | 多步闭环明确 | 本地归档 PDF 第 1-2 页 | 包含 discovery、analysis、review、export 与 coverage verification 等连续任务链 | 高 |
+| 验证方式 | pipeline outputs / task-level evaluation | 本地归档 PDF 第 1-2 页 | 明确报告 paper retrieval 与 paper review generation benchmark，并给出 hit rate、MRR、Recall@K | 高 |
 
 ## 0. 摘要翻译
 
@@ -98,7 +98,7 @@ Paper Circle 提出一个开源多 Agent 框架，用于支持 scientific litera
 - 判定理由：本文关注 scientific literature discovery 和知识生产流程本身，符合 `11.07` 方向
 - 多模块覆盖说明：无；当前冻结口径不增加其他对象模块
 - 01.04 判定说明：不适用；并非无具体对象任务的通用 research-agent runtime
-- 是否需要二次复核：否；摘要已足以支撑顶层分类。后续全文只会丰富方法细节。
+- 是否需要二次复核：否；本地归档 PDF 全文已复核，当前 `11.07` 判断稳定。
 
 ## 3. Agent 系统与科研流程角色
 
@@ -202,7 +202,7 @@ Paper Circle 提出一个开源多 Agent 框架，用于支持 scientific litera
 - 任务设置：文献发现、组织、分析和综合
 - 对比基线：摘要未展开
 - 评价指标：pipeline outputs、analysis quality
-- 关键结果：系统能形成可迭代的 literature-discovery and analysis workflow
+- 关键结果：系统形成可迭代的 literature-discovery and analysis workflow，并报告 paper retrieval 与 paper review generation benchmark 表现
 - 是否有消融实验：摘要未展开
 - 是否有失败案例或负结果：摘要未展开
 
@@ -213,7 +213,7 @@ Paper Circle 提出一个开源多 Agent 框架，用于支持 scientific litera
 - 贡献强度判断：中
 - 科学贡献类型：system_platform; knowledge_production
 - 证据强度：benchmark_only
-- 是否仍需要进一步全文复核：否；当前摘要足以支撑 `11` 分类。后续全文只会补足系统细节，不改变是否属于 `11` 而非 `01.04`。
+- 是否仍需要进一步全文复核：否；本地归档 PDF 全文已核对，当前 `11` 分类和非 `01.04` 判断稳定。
 
 ## 6. 与已有工作的关系
 

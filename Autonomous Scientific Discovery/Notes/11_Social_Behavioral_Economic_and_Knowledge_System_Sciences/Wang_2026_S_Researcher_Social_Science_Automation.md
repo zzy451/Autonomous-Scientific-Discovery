@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.01520
-- PDF / 本地文件路径：arXiv PDF text spot-check `https://arxiv.org/pdf/2604.01520`；当前笔记基于 arXiv abstract + arXiv PDF text spot-check
+- PDF / 本地文件路径：`Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Wang_2026_S_Researcher_Social_Science_Automation.pdf`；本轮已基于本地归档 arXiv PDF 全文复核
 - 论文类型：预印本 / social-science research automation platform
 - 当前状态：to_read
 - 阅读日期：2026-06-19
@@ -14,22 +14,22 @@
 
 ## Evidence Log
 
-## Reaudit Update (2026-06-23)
+## Reaudit Update (2026-07-05)
 
-- `scientific_object_modules`: `11.02`
-- `primary_module_for_filing`: `11.02`
+- `scientific_object_modules`: `11`
+- `primary_module_for_filing`: `11`
 - `source_limited`: `no`
-- `first_hand_sources_checked`: arXiv abstract + arXiv PDF text spot-check
-- `pdf_status`: arXiv PDF `https://arxiv.org/pdf/2604.01520`
+- `first_hand_sources_checked`: local archived arXiv PDF full text
+- `pdf_status`: local archived PDF `Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Wang_2026_S_Researcher_Social_Science_Automation.pdf`
 - `final_note_classification`: stable `11.02` landing; note filing path is convenience only, not classification authority.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
-| Agent 纳入 | 是 | 摘要 / 正文 | S-Researcher 负责 experiment design、behavior simulation、analysis、report generation | 高 |
-| 科学对象归类 | `11.02` | arXiv abstract / PDF text spot-check | 研究对象是 cultural dynamics、teacher attention、public goods cooperation 等社会行为对象 | 高 |
-| 方法流程 | 多 Agent full loop | 正文 | detailer / planner / analysis / reviewer / report agents + simulation engine | 高 |
-| 验证方式 | expert + human experiments | results | 有 `N=120` 人类实验、`r=0.915` 对照与专家评估 | 高 |
-| 边界风险 | research automation 外观 | 摘要 / 正文 | 虽是 research automation platform，但对象不是 knowledge production itself，而是 social-science phenomena | 高 |
+| Agent 纳入 | 是 | 本地归档 PDF 第 1-2 页；正文 | S-Researcher 负责 experiment design、behavior simulation、analysis、report generation | 高 |
+| 科学对象归类 | `11.02` | 本地归档 PDF 第 1-2 页 | 研究对象是 cultural dynamics、teacher attention、public goods cooperation 等社会行为对象 | 高 |
+| 方法流程 | 多 Agent full loop | 本地归档 PDF 第 1-2 页；正文 | detailer / planner / analysis / reviewer / report agents + simulation engine | 高 |
+| 验证方式 | expert + human experiments | 本地归档 PDF 第 1 页摘要；第 2 页 | 有 `N=120` 人类实验、`r=0.915` 对照与专家评估，并覆盖 50 个场景、8 个社会科学域的模拟器验证 | 高 |
+| 边界风险 | research automation 外观 | 本地归档 PDF 第 1-2 页 | 虽是 research automation platform，但对象不是 knowledge production itself，而是 social-science phenomena | 高 |
 
 ## 0. 摘要翻译
 
