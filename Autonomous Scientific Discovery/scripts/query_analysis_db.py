@@ -107,6 +107,24 @@ def discipline_registry_metadata(conn: sqlite3.Connection) -> None:
     ''').fetchall()
     print_rows(rows, max_widths={'key': 56, 'value': 80})
 
+def snapshot_provenance(conn: sqlite3.Connection) -> None:
+    print_heading('Snapshot Provenance')
+    rows = conn.execute('''
+        SELECT key, value
+        FROM metadata
+        WHERE key IN (
+            'papers_jsonl_sha256',
+            'papers_exported_at',
+            'discipline_local_code_registry_generated_at',
+            'discipline_local_code_registry_generated_by',
+            'discipline_local_code_registry_source_commit',
+            'discipline_local_code_registry_worktree_dirty',
+            'discipline_local_code_registry_row_count'
+        )
+        ORDER BY key
+    ''').fetchall()
+    print_rows(rows, max_widths={'key': 56, 'value': 80})
+
 def object_scope_registry(conn: sqlite3.Connection) -> None:
     print_heading('Analysis Object Scope Registry')
     rows = conn.execute('''
@@ -855,6 +873,7 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers.add_parser('summary', help='Canonical-only formal module counts for the current structured snapshot')
     subparsers.add_parser('metadata', help='Show build metadata loaded into SQLite metadata')
     subparsers.add_parser('discipline-registry-metadata', help='Show discipline_local_code_registry snapshot metadata loaded into SQLite metadata')
+    subparsers.add_parser('snapshot-provenance', help='Show the current papers snapshot and discipline registry snapshot provenance metadata together')
     subparsers.add_parser('object-scope-registry', help='List analysis_object_scope_registry rows describing SQLite object semantics')
     subparsers.add_parser('analysis-baseline', help='Canonical record-vs-assignment baseline for the current active confirmed-core snapshot')
     subparsers.add_parser('module-distribution', help='Canonical formal module distribution with assignment shares and active-record baseline')
@@ -936,6 +955,8 @@ def main() -> None:
             metadata_summary(conn)
         elif args.command == 'discipline-registry-metadata':
             discipline_registry_metadata(conn)
+        elif args.command == 'snapshot-provenance':
+            snapshot_provenance(conn)
         elif args.command == 'object-scope-registry':
             object_scope_registry(conn)
         elif args.command == 'analysis-baseline':

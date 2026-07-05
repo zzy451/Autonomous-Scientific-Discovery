@@ -265,6 +265,12 @@ Show only the current discipline registry snapshot provenance metadata:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" discipline-registry-metadata
 ```
 
+Show the current papers snapshot and discipline registry snapshot provenance together:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" snapshot-provenance
+```
+
 List SQLite object-scope registry rows:
 
 ```bash
@@ -403,6 +409,7 @@ Operational notes:
 - `summary` prints metadata plus canonical formal-module counts from SQLite.
 - `metadata` prints the raw build metadata rows loaded into SQLite `metadata`, including both the current `papers.jsonl` export timestamp and the current `discipline_local_code_registry` snapshot metadata (`generated_at`, `generated_by`, `source_commit`, `worktree_dirty`, row count).
 - `discipline-registry-metadata` prints just the `discipline_local_code_registry` snapshot provenance rows from SQLite `metadata`.
+- `snapshot-provenance` prints the compact cross-snapshot provenance bundle for the current `papers.jsonl` batch plus the current `discipline_local_code_registry` batch.
 - `object-scope-registry` prints the current `analysis_object_scope_registry` rows so the declared semantics of SQLite objects can be inspected directly.
 - `module-distribution` converts those canonical module counts into a stable distribution table with assignment shares.
 - `object-coverage-summary` is the canonical record-level split between `single_module`, `multi_module`, and `general_method_without_concrete_object_experiments`.
