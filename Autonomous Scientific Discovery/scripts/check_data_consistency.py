@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "Data"
 REGISTRY_DIR = DATA_DIR / "registry"
 CLASSIFICATION_CODE_INDEX_PATH = DATA_DIR / "classification_code_index.json"
+DISCIPLINE_CODE_ASSIGNMENTS_PATH = DATA_DIR / "discipline_code_assignments.jsonl"
 MASTER_PATH = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_PATH = (
     ROOT
@@ -147,6 +148,8 @@ LOCAL_PDF_STATUSES = {
     "official_supplementary_pdf_archived_main_article_gated",
 }
 PAPER_ID_PATTERN = re.compile(r"^ASD-\d{4}$")
+DISCIPLINE_CODE_PATTERN = re.compile(r"^[0-9]{2}-[0-9]{2}-[0-9]{3}$")
+PRIMARY_TAXONOMY_2LVL_PATTERN = re.compile(r"^[0-9]{2}\.[0-9]{2}$")
 REGISTRY_REQUIRED_STEMS = (
     "paper_registry",
     "paper_identifier_aliases",
@@ -280,6 +283,125 @@ def validate_classification_code_index_owner() -> None:
         set(label_to_secondary_code.values()) == seen_secondary_codes,
         "classification_code_index.json label_to_secondary_code coverage does not match secondary_terms",
     )
+
+
+def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) -> None:
+    if not DISCIPLINE_CODE_ASSIGNMENTS_PATH.exists():
+        return
+
+    rows = load_jsonl(DISCIPLINE_CODE_ASSIGNMENTS_PATH)
+    assert_true(rows, "discipline_code_assignments.jsonl must not be empty")
+
+    paper_rows_by_id = {str(row["paper_id"]): row for row in papers}
+    seen_assignment_ids = set()
+    active_codes = {}
+    active_code_by_paper = {}
+    retired_or_redirected_codes = set()
+
+    for index, row in enumerate(rows, start=1):
+        assignment_id = row.get("assignment_id")
+        paper_id = row.get("paper_id")
+        assignment_status = row.get("assignment_status")
+        discipline_local_code = row.get("discipline_local_code")
+        primary_taxonomy_code_2lvl = row.get("primary_taxonomy_code_2lvl")
+        redirected_to_code = row.get("redirected_to_code")
+        pending_reason = row.get("pending_reason")
+
+        assert_true(
+            isinstance(assignment_id, str) and re.fullmatch(r"DCA-[0-9]{6}", assignment_id),
+            f"discipline_code_assignments row {index} has invalid assignment_id: {assignment_id!r}",
+        )
+        assert_true(
+            assignment_id not in seen_assignment_ids,
+            f"discipline_code_assignments duplicate assignment_id: {assignment_id!r}",
+        )
+        seen_assignment_ids.add(assignment_id)
+
+        assert_true(
+            isinstance(paper_id, str) and paper_id in paper_rows_by_id,
+            f"discipline_code_assignments references unknown paper_id: {paper_id!r}",
+        )
+        assert_true(
+            assignment_status
+            in {
+                "active_code",
+                "retired_code",
+                "redirected_code",
+                "pending_secondary",
+                "non_discipline_general_method",
+            },
+            f"discipline_code_assignments {assignment_id} has invalid assignment_status: {assignment_status!r}",
+        )
+
+        if assignment_status in {"active_code", "retired_code", "redirected_code"}:
+            assert_true(
+                isinstance(discipline_local_code, str)
+                and DISCIPLINE_CODE_PATTERN.fullmatch(discipline_local_code),
+                f"discipline_code_assignments {assignment_id} must carry a valid discipline_local_code",
+            )
+            assert_true(
+                isinstance(primary_taxonomy_code_2lvl, str)
+                and PRIMARY_TAXONOMY_2LVL_PATTERN.fullmatch(primary_taxonomy_code_2lvl),
+                f"discipline_code_assignments {assignment_id} must carry a valid primary_taxonomy_code_2lvl",
+            )
+            if assignment_status == "active_code":
+                assert_true(
+                    discipline_local_code not in active_codes,
+                    f"discipline_code_assignments duplicate active discipline_local_code: {discipline_local_code}",
+                )
+                active_codes[discipline_local_code] = assignment_id
+                assert_true(
+                    paper_id not in active_code_by_paper,
+                    f"discipline_code_assignments paper_id has multiple active_code rows: {paper_id}",
+                )
+                active_code_by_paper[paper_id] = assignment_id
+            else:
+                retired_or_redirected_codes.add(discipline_local_code)
+        else:
+            assert_true(
+                discipline_local_code is None,
+                f"discipline_code_assignments {assignment_id} pending/general-method row must not carry discipline_local_code",
+            )
+            assert_true(
+                primary_taxonomy_code_2lvl is None,
+                f"discipline_code_assignments {assignment_id} pending/general-method row must not carry primary_taxonomy_code_2lvl",
+            )
+
+        if assignment_status == "pending_secondary":
+            assert_true(
+                isinstance(pending_reason, str) and pending_reason.strip(),
+                f"discipline_code_assignments {assignment_id} pending_secondary row missing pending_reason",
+            )
+        elif assignment_status == "non_discipline_general_method":
+            assert_true(
+                pending_reason is None,
+                f"discipline_code_assignments {assignment_id} non_discipline_general_method row must not carry pending_reason",
+            )
+        else:
+            assert_true(
+                pending_reason is None,
+                f"discipline_code_assignments {assignment_id} active/retired/redirected row must not carry pending_reason",
+            )
+
+        if assignment_status == "redirected_code":
+            assert_true(
+                isinstance(redirected_to_code, str)
+                and DISCIPLINE_CODE_PATTERN.fullmatch(redirected_to_code),
+                f"discipline_code_assignments {assignment_id} redirected_code row missing valid redirected_to_code",
+            )
+        else:
+            assert_true(
+                redirected_to_code is None,
+                f"discipline_code_assignments {assignment_id} non-redirected row must not carry redirected_to_code",
+            )
+
+    for row in rows:
+        if row["assignment_status"] == "redirected_code":
+            assert_true(
+                row["redirected_to_code"] in active_codes,
+                f"discipline_code_assignments redirected_to_code does not point to an active code: {row['redirected_to_code']!r}",
+            )
+
 
 
 def load_json(path: Path):
@@ -926,6 +1048,7 @@ def main() -> None:
     pdf_manifest = load_json(DATA_DIR / "pdf_manifest.json")
     missing_pdf_manifest = load_json(DATA_DIR / "missing_pdf_manifest.json")
     note_manifest = load_json(DATA_DIR / "note_manifest.json")
+    validate_discipline_code_assignments_owner(papers)
 
     paper_ids = [row["paper_id"] for row in papers]
     assert_true(len(paper_ids) == len(set(paper_ids)), "Duplicate paper_id found in papers.jsonl")
