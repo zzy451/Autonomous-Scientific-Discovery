@@ -9,10 +9,17 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
+from append_change_log import (
+    append_row as append_change_log_row,
+    current_commit,
+    load_rows as load_change_log_rows,
+    next_change_id,
+)
 from check_data_consistency import (
     CLASSIFICATION_CODE_INDEX_SCHEMA_PATH,
     validate_payload_against_schema_file,
 )
+from export_structured_data import MASTER_HEADER, MASTER_PATH, parse_markdown_table
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -113,6 +120,39 @@ def add_common_write_args(parser: argparse.ArgumentParser) -> None:
         "--dry-run",
         action="store_true",
         help="Preview the owner-file changes without writing classification_code_index.json.",
+    )
+    parser.add_argument(
+        "--append-change-log",
+        action="store_true",
+        help=(
+            "Append per-paper audit rows to Data/change_log.jsonl for papers impacted by "
+            "this taxonomy-owner update. For upsert-secondary, affected paper_ids default "
+            "to master rows whose legacy Secondary class matches the updated code."
+        ),
+    )
+    parser.add_argument(
+        "--change-reason",
+        default="",
+        help="Human-readable audit reason written to Data/change_log.jsonl when --append-change-log is used.",
+    )
+    parser.add_argument(
+        "--changed-by",
+        default="codex",
+        help="changed_by value for appended change-log rows. Default: codex",
+    )
+    parser.add_argument(
+        "--related-commit",
+        default="",
+        help="Optional related_commit override for appended change-log rows.",
+    )
+    parser.add_argument(
+        "--paper-id",
+        action="append",
+        default=[],
+        help=(
+            "Explicit impacted paper_id override. Repeatable. For upsert-secondary, omitted values "
+            "default to master rows whose legacy Secondary class matches the updated code."
+        ),
     )
 
 
@@ -237,14 +277,16 @@ def find_term_index(
     return None
 
 
-def upsert_primary_term(payload: Dict[str, Any], args: argparse.Namespace) -> Tuple[str, str]:
+def upsert_primary_term(
+    payload: Dict[str, Any], args: argparse.Namespace
+) -> Tuple[str, str, Dict[str, Any] | None, Dict[str, Any]]:
     primary_code = args.primary_code.strip()
     if not PRIMARY_CODE_PATTERN.fullmatch(primary_code):
         raise SystemExit(f"Invalid --primary-code: {args.primary_code!r}")
 
     terms = deepcopy(payload.get("primary_terms") or [])
     index = find_term_index(terms, "primary_code", primary_code)
-    existing = terms[index] if index is not None else {}
+    existing = deepcopy(terms[index]) if index is not None else {}
 
     label = args.label.strip() or str(existing.get("label") or "").strip()
     definition = args.definition.strip() or str(existing.get("definition") or "").strip()
@@ -275,17 +317,19 @@ def upsert_primary_term(payload: Dict[str, Any], args: argparse.Namespace) -> Tu
     else:
         terms.append(updated_term)
     payload["primary_terms"] = terms
-    return action, primary_code
+    return action, primary_code, (existing or None), updated_term
 
 
-def upsert_secondary_term(payload: Dict[str, Any], args: argparse.Namespace) -> Tuple[str, str]:
+def upsert_secondary_term(
+    payload: Dict[str, Any], args: argparse.Namespace
+) -> Tuple[str, str, Dict[str, Any] | None, Dict[str, Any]]:
     secondary_code = args.secondary_code.strip()
     if not SECONDARY_CODE_PATTERN.fullmatch(secondary_code):
         raise SystemExit(f"Invalid --secondary-code: {args.secondary_code!r}")
 
     terms = deepcopy(payload.get("secondary_terms") or [])
     index = find_term_index(terms, "secondary_code", secondary_code)
-    existing = terms[index] if index is not None else {}
+    existing = deepcopy(terms[index]) if index is not None else {}
 
     derived_parent_code = secondary_code.split(".", 1)[0]
     parent_primary_code = args.parent_primary_code.strip() or str(
@@ -327,7 +371,7 @@ def upsert_secondary_term(payload: Dict[str, Any], args: argparse.Namespace) -> 
     else:
         terms.append(updated_term)
     payload["secondary_terms"] = terms
-    return action, secondary_code
+    return action, secondary_code, (existing or None), updated_term
 
 
 def summarize_changes(before: Dict[str, Any], after: Dict[str, Any]) -> str:
@@ -343,23 +387,98 @@ def summarize_changes(before: Dict[str, Any], after: Dict[str, Any]) -> str:
     )
 
 
+def impacted_paper_ids_for_secondary_code(secondary_code: str) -> List[str]:
+    master_table = parse_markdown_table(
+        MASTER_PATH,
+        header_marker="| " + " | ".join(MASTER_HEADER) + " |",
+        expected_header=MASTER_HEADER,
+        data_prefix="| ASD-",
+    )
+    paper_ids = [
+        str(row["ID"])
+        for row in master_table.rows
+        if str(row.get("Secondary class") or "").strip() == secondary_code
+    ]
+    return sorted(dict.fromkeys(paper_ids))
+
+
+def normalize_impacted_paper_ids(raw_paper_ids: List[str]) -> List[str]:
+    normalized = [paper_id.strip() for paper_id in raw_paper_ids if paper_id.strip()]
+    return sorted(dict.fromkeys(normalized))
+
+
+def resolve_impacted_paper_ids(
+    *,
+    args: argparse.Namespace,
+    action_label: str,
+    subject_code: str,
+) -> List[str]:
+    explicit_ids = normalize_impacted_paper_ids(args.paper_id)
+    if explicit_ids:
+        return explicit_ids
+    if action_label.endswith("_secondary") and subject_code:
+        return impacted_paper_ids_for_secondary_code(subject_code)
+    return []
+
+
+def build_change_log_rows(
+    *,
+    impacted_paper_ids: List[str],
+    changed_at: str,
+    changed_by: str,
+    change_reason: str,
+    related_commit: str,
+    action_label: str,
+    subject_code: str,
+    before_term: Dict[str, Any] | None,
+    after_term: Dict[str, Any] | None,
+) -> List[Dict[str, Any]]:
+    existing_rows = load_change_log_rows()
+    rows: List[Dict[str, Any]] = []
+    next_rows_seed = list(existing_rows)
+    for paper_id in impacted_paper_ids:
+        row = {
+            "change_id": next_change_id(next_rows_seed),
+            "paper_id": paper_id,
+            "changed_at": changed_at,
+            "changed_by": changed_by,
+            "change_type": f"taxonomy_owner_{action_label}",
+            "old_value": {
+                "taxonomy_subject_code": subject_code,
+                "term_before": before_term,
+            },
+            "new_value": {
+                "taxonomy_subject_code": subject_code,
+                "term_after": after_term,
+            },
+            "reason": change_reason,
+            "related_commit": related_commit,
+        }
+        rows.append(row)
+        next_rows_seed.append(row)
+    return rows
+
+
 def main() -> None:
     args = parse_args()
     updated_at = ensure_date(args.updated_at)
     updated_by = args.updated_by.strip() or "codex"
+    changed_by = args.changed_by.strip() or "codex"
 
     original_payload = load_payload()
     payload = deepcopy(original_payload)
+    before_term: Dict[str, Any] | None = None
+    after_term: Dict[str, Any] | None = None
 
     if args.command == "sync":
         action_label = "sync"
         subject_code = ""
     elif args.command == "upsert-primary":
-        action, code = upsert_primary_term(payload, args)
+        action, code, before_term, after_term = upsert_primary_term(payload, args)
         action_label = f"{action}_primary"
         subject_code = code
     elif args.command == "upsert-secondary":
-        action, code = upsert_secondary_term(payload, args)
+        action, code, before_term, after_term = upsert_secondary_term(payload, args)
         action_label = f"{action}_secondary"
         subject_code = code
     else:
@@ -376,8 +495,45 @@ def main() -> None:
         print("No owner changes required for classification_code_index.json.")
         return
 
+    impacted_paper_ids = resolve_impacted_paper_ids(
+        args=args,
+        action_label=action_label,
+        subject_code=subject_code,
+    )
+    change_log_rows: List[Dict[str, Any]] = []
+    if args.append_change_log:
+        if not args.change_reason.strip():
+            raise SystemExit("--change-reason is required when --append-change-log is used.")
+        if not impacted_paper_ids:
+            raise SystemExit(
+                "--append-change-log requires impacted paper_ids. "
+                "Provide --paper-id or use upsert-secondary on a secondary code that maps to master rows."
+            )
+        related_commit = args.related_commit.strip() or current_commit()
+        change_log_rows = build_change_log_rows(
+            impacted_paper_ids=impacted_paper_ids,
+            changed_at=updated_at,
+            changed_by=changed_by,
+            change_reason=args.change_reason.strip(),
+            related_commit=related_commit,
+            action_label=action_label,
+            subject_code=subject_code,
+            before_term=before_term,
+            after_term=after_term,
+        )
+
     print(f"Action: {action_label}{' ' + subject_code if subject_code else ''}")
     print(summarize_changes(original_payload, payload))
+    if impacted_paper_ids:
+        preview_ids = ", ".join(impacted_paper_ids[:8])
+        if len(impacted_paper_ids) > 8:
+            preview_ids += ", ..."
+        print(
+            f"Impacted paper_ids: {len(impacted_paper_ids)}"
+            f"{' [' + preview_ids + ']' if preview_ids else ''}"
+        )
+    if args.append_change_log:
+        print(f"Planned change_log rows: {len(change_log_rows)}")
 
     if args.dry_run:
         print("Dry run only; no files written.")
@@ -385,6 +541,10 @@ def main() -> None:
 
     write_payload(payload)
     print(f"Wrote {CLASSIFICATION_CODE_INDEX_PATH}")
+    for row in change_log_rows:
+        append_change_log_row(row)
+    if change_log_rows:
+        print(f"Appended {len(change_log_rows)} rows to {ROOT / 'Data' / 'change_log.jsonl'}")
 
 
 if __name__ == "__main__":
