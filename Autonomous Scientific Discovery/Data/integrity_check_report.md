@@ -5,21 +5,21 @@ Status: `passed`
 ## Summary
 
 - `ERROR`: 0
-- `WARNING`: 124
+- `WARNING`: 128
 - `INFO`: 414
 
 ## Summary By Category
 
 - `evidence`: 71
 - `discipline_code`: 24
-- `taxonomy`: 40
+- `taxonomy`: 44
 - `derived_snapshot`: 1
 - `audit`: 402
 
 ## Summary By Finding Code
 
 - `BACKGROUND_ONLY_RECORD`: 371
-- `SECONDARY_TERM_NEEDS_REVIEW`: 36
+- `SECONDARY_TERM_NEEDS_REVIEW`: 40
 - `DUPLICATE_RECORD`: 31
 - `MISSING_LOCAL_PDF`: 25
 - `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE`: 24
@@ -253,6 +253,8 @@ Status: `passed`
   Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `05.02` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
   Owner file: `Data/classification_code_index.json`
+- `SECONDARY_TERM_NEEDS_REVIEW` | `05.03` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
+  Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `05.04` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
   Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `06.01` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
@@ -287,9 +289,15 @@ Status: `passed`
   Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `10.02` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
   Owner file: `Data/classification_code_index.json`
+- `SECONDARY_TERM_NEEDS_REVIEW` | `10.04` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
+  Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `11.01` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
   Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `11.02` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
+  Owner file: `Data/classification_code_index.json`
+- `SECONDARY_TERM_NEEDS_REVIEW` | `11.03` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
+  Owner file: `Data/classification_code_index.json`
+- `SECONDARY_TERM_NEEDS_REVIEW` | `11.04` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
   Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `11.07` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
   Owner file: `Data/classification_code_index.json`
