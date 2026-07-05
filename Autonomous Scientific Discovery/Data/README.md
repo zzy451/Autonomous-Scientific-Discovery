@@ -401,7 +401,7 @@ Operational notes:
 
 - `analysis-baseline` is the fixed canonical record-vs-assignment glossary output for the current active confirmed-core snapshot.
 - `summary` prints metadata plus canonical formal-module counts from SQLite.
-- `metadata` prints the raw build metadata rows loaded into SQLite `metadata`, including the current `discipline_local_code_registry` snapshot metadata (`generated_at`, `generated_by`, `source_commit`, `worktree_dirty`, row count).
+- `metadata` prints the raw build metadata rows loaded into SQLite `metadata`, including both the current `papers.jsonl` export timestamp and the current `discipline_local_code_registry` snapshot metadata (`generated_at`, `generated_by`, `source_commit`, `worktree_dirty`, row count).
 - `discipline-registry-metadata` prints just the `discipline_local_code_registry` snapshot provenance rows from SQLite `metadata`.
 - `object-scope-registry` prints the current `analysis_object_scope_registry` rows so the declared semantics of SQLite objects can be inspected directly.
 - `module-distribution` converts those canonical module counts into a stable distribution table with assignment shares.

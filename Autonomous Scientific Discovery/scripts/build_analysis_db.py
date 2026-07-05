@@ -926,10 +926,32 @@ def validate_metadata_and_summary_tables(
     active = [row for row in papers if row['active_confirmed_core']]
     active_local = [row for row in active if row['pdf_exists']]
     active_missing = [row for row in active if not row['pdf_exists']]
+    papers_exported_at_values = sorted({str(row['exported_at']) for row in papers})
     registry_generated_at_values = sorted({str(row['generated_at']) for row in discipline_local_code_registry})
     registry_generated_by_values = sorted({str(row['generated_by']) for row in discipline_local_code_registry})
     registry_source_commit_values = sorted({str(row['source_commit']) for row in discipline_local_code_registry})
     registry_worktree_dirty_values = sorted({str(bool(row['worktree_dirty'])).lower() for row in discipline_local_code_registry})
+
+    assert_build_condition(
+        len(papers_exported_at_values) == 1,
+        'papers.jsonl exported_at must be uniform for SQLite metadata build',
+    )
+    assert_build_condition(
+        len(registry_generated_at_values) <= 1,
+        'discipline_local_code_registry generated_at must be uniform for SQLite metadata build',
+    )
+    assert_build_condition(
+        len(registry_generated_by_values) <= 1,
+        'discipline_local_code_registry generated_by must be uniform for SQLite metadata build',
+    )
+    assert_build_condition(
+        len(registry_source_commit_values) <= 1,
+        'discipline_local_code_registry source_commit must be uniform for SQLite metadata build',
+    )
+    assert_build_condition(
+        len(registry_worktree_dirty_values) <= 1,
+        'discipline_local_code_registry worktree_dirty must be uniform for SQLite metadata build',
+    )
 
     expected_taxonomy_rows = sorted(
         [
@@ -946,6 +968,7 @@ def validate_metadata_and_summary_tables(
         [
             ('schema_version', '2026-07-01'),
             ('papers_jsonl_sha256', compute_sha256(PAPERS_JSONL)),
+            ('papers_exported_at', papers_exported_at_values[0]),
             ('papers_record_count', str(len(papers))),
             ('active_confirmed_core_count', str(len(active))),
             ('active_local_pdf_count', str(len(active_local))),
@@ -1881,6 +1904,7 @@ def build_sqlite(
         conn.executemany('INSERT INTO metadata(key, value) VALUES(?, ?)', [
             ('schema_version', '2026-07-01'),
             ('papers_jsonl_sha256', compute_sha256(PAPERS_JSONL)),
+            ('papers_exported_at', str(papers[0]['exported_at']) if papers else ''),
             ('papers_record_count', str(len(papers))),
             ('active_confirmed_core_count', str(len(active))),
             ('active_local_pdf_count', str(len(active_local))),
