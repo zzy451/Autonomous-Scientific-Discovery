@@ -102,6 +102,7 @@ def main() -> None:
         sqlite_pdf_evidence_count = count_sqlite_table(conn, "pdf_evidence_status")
         sqlite_paper_modules_count = count_sqlite_table(conn, "paper_modules")
         sqlite_general_method_buckets_count = count_sqlite_table(conn, "paper_general_method_buckets")
+        sqlite_classification_terms_count = count_sqlite_table(conn, "classification_terms")
         metadata_rows = conn.execute(
             "SELECT key, value FROM metadata WHERE key IN ("
             "'papers_exported_at',"
@@ -187,15 +188,52 @@ def main() -> None:
     )
     add_result(results, "3", status, detail, "Data/papers.jsonl + Data/registry/pdf_archive_registry.jsonl + Data/papers.sqlite")
 
+    primary_terms = classification_index.get("primary_terms", [])
+    secondary_terms = classification_index.get("secondary_terms", [])
+    primary_term_fields_ok = all(
+        isinstance(row, dict)
+        and all(
+            key in row
+            for key in ("primary_code", "label", "definition", "include", "exclude", "status", "source")
+        )
+        for row in primary_terms
+    )
+    secondary_term_fields_ok = all(
+        isinstance(row, dict)
+        and all(
+            key in row
+            for key in (
+                "secondary_code",
+                "parent_primary_code",
+                "label",
+                "definition",
+                "include",
+                "exclude",
+                "status",
+                "source",
+                "review_status",
+            )
+        )
+        for row in secondary_terms
+    )
     index_ok = (
         CLASSIFICATION_CODE_INDEX.exists()
         and "primary_code_to_label" in classification_index
-        and "secondary_terms" in classification_index
+        and "secondary_code_to_label" in classification_index
+        and isinstance(primary_terms, list)
+        and isinstance(secondary_terms, list)
+        and bool(primary_terms)
+        and bool(secondary_terms)
+        and primary_term_fields_ok
+        and secondary_term_fields_ok
     )
     status, detail = check(
         index_ok,
-        "classification_code_index.json exists and exposes taxonomy-owner structures.",
-        "classification_code_index.json is missing or lacks required taxonomy-owner structures.",
+        (
+            "classification_code_index.json exists and exposes non-empty taxonomy-owner "
+            "primary/secondary term structures with definition/include/exclude/status/source fields."
+        ),
+        "classification_code_index.json is missing or lacks required non-empty taxonomy-owner term structures.",
     )
     add_result(results, "4", status, detail, "Data/classification_code_index.json")
 
@@ -217,11 +255,15 @@ def main() -> None:
     add_result(results, "6", status, detail, "Data/discipline_code_assignments.jsonl")
 
     status, detail = check(
-        CLASSIFICATION_CODE_INDEX.exists(),
-        "classification_code_index.json is present as taxonomy vocabulary owner.",
-        "classification_code_index.json is missing.",
+        CLASSIFICATION_CODE_INDEX.exists()
+        and sqlite_classification_terms_count == len(primary_terms) + len(secondary_terms),
+        (
+            "classification_code_index.json is present as taxonomy vocabulary owner and "
+            f"mirrors into SQLite classification_terms={sqlite_classification_terms_count}."
+        ),
+        "classification_code_index.json is missing or does not mirror cleanly into SQLite classification_terms.",
     )
-    add_result(results, "7", status, detail, "Data/classification_code_index.json")
+    add_result(results, "7", status, detail, "Data/classification_code_index.json + Data/papers.sqlite")
 
     preview_ok = PREVIEW_CSV.exists() and len(preview_rows) == len(active_papers)
     status, detail = check(

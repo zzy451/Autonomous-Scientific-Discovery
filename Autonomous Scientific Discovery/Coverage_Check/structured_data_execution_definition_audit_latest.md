@@ -29,7 +29,7 @@ Evidence: `Data/papers.jsonl + Data/registry/pdf_archive_registry.jsonl + Data/p
 
 ### Item 4 - PASS
 
-classification_code_index.json exists and exposes taxonomy-owner structures.
+classification_code_index.json exists and exposes non-empty taxonomy-owner primary/secondary term structures with definition/include/exclude/status/source fields.
 
 Evidence: `Data/classification_code_index.json`
 
@@ -47,9 +47,9 @@ Evidence: `Data/discipline_code_assignments.jsonl`
 
 ### Item 7 - PASS
 
-classification_code_index.json is present as taxonomy vocabulary owner.
+classification_code_index.json is present as taxonomy vocabulary owner and mirrors into SQLite classification_terms=52.
 
-Evidence: `Data/classification_code_index.json`
+Evidence: `Data/classification_code_index.json + Data/papers.sqlite`
 
 ### Item 8 - PASS
 
