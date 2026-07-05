@@ -918,6 +918,71 @@ def validate_owner_loaded_and_inventory_tables(
         'SQLite note_inventory table drifted from expected note manifest rows',
     )
 
+def validate_metadata_and_summary_tables(
+    papers: list[dict[str, object]],
+    taxonomy: dict[str, dict[str, str]],
+) -> None:
+    active = [row for row in papers if row['active_confirmed_core']]
+    active_local = [row for row in active if row['pdf_exists']]
+    active_missing = [row for row in active if not row['pdf_exists']]
+
+    expected_taxonomy_rows = sorted(
+        [
+            (
+                code,
+                label,
+                'formal_module' if code in FORMAL_MODULES else 'general_bucket',
+            )
+            for code, label in taxonomy['code_to_label'].items()
+        ],
+        key=lambda item: item[0],
+    )
+    expected_metadata_rows = sorted(
+        [
+            ('schema_version', '2026-07-01'),
+            ('papers_jsonl_sha256', compute_sha256(PAPERS_JSONL)),
+            ('papers_record_count', str(len(papers))),
+            ('active_confirmed_core_count', str(len(active))),
+            ('active_local_pdf_count', str(len(active_local))),
+            ('active_no_local_pdf_count', str(len(active_missing))),
+        ],
+        key=lambda item: item[0],
+    )
+
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        actual_taxonomy_rows = conn.execute(
+            'SELECT code, label, kind FROM taxonomy_index ORDER BY code'
+        ).fetchall()
+        actual_metadata_rows = conn.execute(
+            'SELECT key, value FROM metadata ORDER BY key'
+        ).fetchall()
+        actual_active_count = conn.execute(
+            'SELECT COUNT(*) FROM active_confirmed_core_papers'
+        ).fetchone()[0]
+        actual_missing_count = conn.execute(
+            'SELECT COUNT(*) FROM active_missing_local_pdf'
+        ).fetchone()[0]
+    finally:
+        conn.close()
+
+    assert_build_condition(
+        actual_taxonomy_rows == expected_taxonomy_rows,
+        'SQLite taxonomy_index table drifted from expected taxonomy rows',
+    )
+    assert_build_condition(
+        actual_metadata_rows == expected_metadata_rows,
+        'SQLite metadata table drifted from expected build metadata rows',
+    )
+    assert_build_condition(
+        actual_active_count == len(active),
+        'SQLite active_confirmed_core_papers view drifted from expected active paper count',
+    )
+    assert_build_condition(
+        actual_missing_count == len(active_missing),
+        'SQLite active_missing_local_pdf view drifted from expected active missing-PDF count',
+    )
+
 def build_general_method_bucket_rows(papers: list[dict[str, object]]) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for paper in papers:
@@ -1948,6 +2013,10 @@ def main() -> None:
         pdf_manifest,
         missing_pdf_manifest,
         note_manifest,
+    )
+    validate_metadata_and_summary_tables(
+        papers,
+        taxonomy,
     )
     print(f'Wrote {PAPERS_CSV}')
     print(f'Wrote {PAPER_MODULES_CSV}')
