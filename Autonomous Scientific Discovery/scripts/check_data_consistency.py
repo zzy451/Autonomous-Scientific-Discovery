@@ -1937,7 +1937,13 @@ def validate_authoritative_sources(papers: List[Dict[str, object]]) -> None:
 
     for paper_id, paper_row in paper_rows_by_id.items():
         master_row = master_by_id[paper_id]
-        progress_row = progress_by_id.get(paper_id, {})
+        progress_row = progress_by_id.get(paper_id)
+        if bool(paper_row["active_confirmed_core"]):
+            assert_true(
+                progress_row is not None,
+                f"{paper_id} active_confirmed_core row cannot be joined to progress owner file",
+            )
+        progress_row = progress_row or {}
         assert_true(
             paper_row["title"] == master_row["Paper title"],
             f"{paper_id} title drift between master and papers.jsonl",
