@@ -1309,13 +1309,15 @@ def derive_pdf_check_status(
 ) -> str:
     evidence_status_lower = evidence_status.strip().lower()
     source_limited_lower = source_limited.strip().lower()
+    if source_limited_lower.startswith("yes"):
+        return "source_limited"
     if pdf_evidence_type == "main_pdf" and pdf_exists:
         return "full_text_checked"
     if pdf_evidence_type == "html_full_text":
         return "full_text_checked"
     if pdf_evidence_type == "supplementary_pdf" and "full_text" in evidence_status_lower:
         return "full_text_checked"
-    if source_limited_lower.startswith("yes") or pdf_evidence_type == "supplementary_pdf":
+    if pdf_evidence_type == "supplementary_pdf":
         return "source_limited"
     return "metadata_only"
 

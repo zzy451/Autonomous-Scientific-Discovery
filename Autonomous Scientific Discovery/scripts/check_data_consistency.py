@@ -2284,6 +2284,11 @@ def validate_registry_layer(
             registry_row["pdf_check_status"] in PDF_CHECK_STATUS_VALUES,
             f"pdf_archive_registry has invalid pdf_check_status for {paper_id}: {registry_row['pdf_check_status']!r}",
         )
+        if str(registry_row.get("source_limited", "")).startswith("yes"):
+            assert_true(
+                registry_row["pdf_check_status"] != "full_text_checked",
+                f"pdf_archive_registry source_limited rows must not be marked full_text_checked for {paper_id}",
+            )
         assert_true(
             isinstance(registry_row["is_main_text"], bool),
             f"pdf_archive_registry is_main_text must be bool for {paper_id}",
