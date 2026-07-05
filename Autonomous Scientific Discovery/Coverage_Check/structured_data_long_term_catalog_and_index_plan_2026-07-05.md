@@ -198,7 +198,6 @@ required_trace_fields:
   - 示例：`active_code` / `retired_code` / `redirected_code` / `pending_secondary` / `non_discipline_general_method`
 - `assigned_at`
 - `retired_at`
-- `previous_discipline_local_code`
 - `redirected_to_code`
 - `assignment_reason`
 - `pending_reason`
@@ -522,6 +521,8 @@ pending_reason = null
 
 ```json
 {
+  "schema_version": 1,
+  "generated_or_updated_at": "2026-07-05",
   "primary_code_to_label": {},
   "secondary_code_to_label": {},
   "label_to_primary_code": {},
@@ -599,11 +600,16 @@ pending_reason = null
 状态语义：
 
 - `discipline_code_assignments.jsonl` 采用“当前状态账本 + `Data/change_log.jsonl` 辅助审计”，不是复杂事件溯源。
+- `assignment_id` 使用 `DCA-000001` 递增格式，一旦分配永久不变，不因排序、删除、retired_code、redirected_code 或分类变化而重排；新增 assignment 使用当前最大编号 + 1。
 - 一篇论文可以有多行 assignment 历史记录。
 - 同一篇论文最多只能有一条 `assignment_status=active_code`。
 - `active_code` / `retired_code` / `redirected_code` 必须有非空 `discipline_local_code`。
 - `pending_secondary` / `non_discipline_general_method` 必须有空 `discipline_local_code`。
 - `redirected_to_code` 指向目标 active `discipline_local_code`，不指向 `paper_id`。
+- `redirected_code` 必须有非空 `redirected_to_code`。
+- `retired_code` 的 `redirected_to_code` 必须为 null。
+- `retired_code` 用于误分配、撤销、记录不再适合学科排架等不推荐自动跳转的旧 code。
+- `redirected_code` 用于论文主排架位改变、编码迁移、分类规范化后仍希望旧引用可追踪的旧 code。
 - 旧 code 不删除；主排架位改变时旧行改为 `retired_code` 或 `redirected_code`，再新增一条 active assignment。
 
 ## 5.3 `Data/discipline_code_assignment_policy.md`
@@ -671,7 +677,6 @@ pending_reason = null
 - `assignment_status`
 - `assigned_at`
 - `retired_at`
-- `previous_discipline_local_code`
 - `primary_module_for_filing`
 - `primary_taxonomy_code_2lvl`
 - `legacy_secondary_class`
@@ -686,9 +691,10 @@ pending_reason = null
 
 - code assignment 字段来自 `Data/discipline_code_assignments.jsonl`
 - `discipline_local_rank = parse_NNN(discipline_local_code)`，只能派生，不允许人工维护
+- 历史 code 查询走 `discipline_code_assignments`，registry 不保存 `previous_discipline_local_code`
 - 冗余展示字段：`title`、`scientific_object_modules`、`note_path`、`pdf_path`
 - 冗余展示字段必须由脚本覆盖生成，并在 README 中标明 `derived_snapshot`
-- registry 应包含 `is_derived_snapshot=true`、`generated_at`、`generated_by`、`source_commit`
+- registry 应包含 `is_derived_snapshot=true`、`generated_at`、`generated_by`、`source_commit`、`worktree_dirty`
 
 `discipline_local_code_registry.jsonl` 是 derived snapshot，可以由 export 覆盖重建，不得手工当作事实源。
 

@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/asd/discipline_code_assignments.schema.json",
+  "title": "ASD Discipline Code Assignment",
+  "description": "One JSONL row in Data/discipline_code_assignments.jsonl.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "assignment_id",
+    "paper_id",
+    "discipline_local_code",
+    "primary_taxonomy_code_2lvl",
+    "assignment_status",
+    "assigned_at",
+    "assigned_by",
+    "retired_at",
+    "redirected_to_code",
+    "assignment_reason",
+    "pending_reason",
+    "source_primary_module_for_filing",
+    "source_legacy_secondary_class",
+    "schema_version"
+  ],
+  "properties": {
+    "assignment_id": {
+      "type": "string",
+      "pattern": "^DCA-[0-9]{6}$"
+    },
+    "paper_id": {
+      "type": "string",
+      "pattern": "^ASD-[0-9]{4}$"
+    },
+    "discipline_local_code": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{2}-[0-9]{2}-[0-9]{3}$"
+    },
+    "primary_taxonomy_code_2lvl": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{2}\\.[0-9]{2}$"
+    },
+    "assignment_status": {
+      "type": "string",
+      "enum": [
+        "active_code",
+        "retired_code",
+        "redirected_code",
+        "pending_secondary",
+        "non_discipline_general_method"
+      ]
+    },
+    "assigned_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "assigned_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retired_at": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "redirected_to_code": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{2}-[0-9]{2}-[0-9]{3}$"
+    },
+    "assignment_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pending_reason": {
+      "type": ["string", "null"]
+    },
+    "source_primary_module_for_filing": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9]{2}$"
+    },
+    "source_legacy_secondary_class": {
+      "type": ["string", "null"]
+    },
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "assignment_status": {
+            "enum": ["active_code", "retired_code", "redirected_code"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "discipline_local_code": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "assignment_status": {
+            "enum": ["pending_secondary", "non_discipline_general_method"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "discipline_local_code": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "assignment_status": {
+            "const": "redirected_code"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "redirected_to_code": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "assignment_status": {
+            "const": "retired_code"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "redirected_to_code": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

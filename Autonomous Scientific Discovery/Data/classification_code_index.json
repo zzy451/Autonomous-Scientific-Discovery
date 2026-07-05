@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "generated_or_updated_at": "2026-07-05",
+  "primary_code_to_label": {
+    "01": "Formal, Information and Computational Sciences",
+    "01.04": "General ASD Methods without Concrete Object Experiments",
+    "02": "Physics, Astronomy and Cosmic Sciences",
+    "03": "Chemical Sciences",
+    "04": "Materials Science",
+    "05": "Earth and Environmental Sciences",
+    "06": "Life Sciences",
+    "07": "Medical and Health Sciences",
+    "08": "Agricultural, Food, Forestry, Animal and Fishery Sciences",
+    "09": "Engineering and Industrial Technology Sciences",
+    "10": "Aerospace, Marine and Transportation Sciences",
+    "11": "Social, Behavioral, Economic and Knowledge System Sciences"
+  },
+  "secondary_code_to_label": {},
+  "label_to_primary_code": {
+    "Formal, Information and Computational Sciences": "01",
+    "General ASD Methods without Concrete Object Experiments": "01.04",
+    "Physics, Astronomy and Cosmic Sciences": "02",
+    "Chemical Sciences": "03",
+    "Materials Science": "04",
+    "Earth and Environmental Sciences": "05",
+    "Life Sciences": "06",
+    "Medical and Health Sciences": "07",
+    "Agricultural, Food, Forestry, Animal and Fishery Sciences": "08",
+    "Engineering and Industrial Technology Sciences": "09",
+    "Aerospace, Marine and Transportation Sciences": "10",
+    "Social, Behavioral, Economic and Knowledge System Sciences": "11"
+  },
+  "label_to_secondary_code": {},
+  "primary_terms": [
+    {
+      "primary_code": "01",
+      "label": "Formal, Information and Computational Sciences",
+      "definition": "Formal, information, computational, mathematical, and systems-science research objects, excluding general ASD method-only records that belong in the separate 01.04 bucket.",
+      "include": [
+        "formal sciences",
+        "information sciences",
+        "computational sciences",
+        "mathematics",
+        "general systems or complexity science with a concrete formal-science object"
+      ],
+      "exclude": [
+        "general ASD method papers without concrete scientific-object experiments",
+        "science-system or knowledge-production studies that belong in 11"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "01.04",
+      "label": "General ASD Methods without Concrete Object Experiments",
+      "definition": "Separate general-method bucket for ASD / research-agent method papers without concrete scientific-object experiments, validations, benchmark tasks, case studies, or reported results.",
+      "include": [
+        "general research-agent framework papers without concrete scientific-object validation",
+        "general ASD methodology without object-level experiments"
+      ],
+      "exclude": [
+        "any paper with concrete object-level experiments in formal 01-11 modules",
+        "formal 01 computational-science research objects"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "02",
+      "label": "Physics, Astronomy and Cosmic Sciences",
+      "definition": "Physics, astronomy, astrophysics, cosmology, and cosmic-science research objects.",
+      "include": [
+        "physics",
+        "astronomy",
+        "astrophysics",
+        "cosmology"
+      ],
+      "exclude": [
+        "materials-science experiments classified under 04",
+        "engineering applications classified under 09 or 10"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "03",
+      "label": "Chemical Sciences",
+      "definition": "Chemistry and chemical-science research objects.",
+      "include": [
+        "molecular chemistry",
+        "reaction discovery",
+        "chemical synthesis",
+        "chemical property prediction"
+      ],
+      "exclude": [
+        "materials systems whose primary object is material structure or property",
+        "biological assays whose primary object is life science"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "04",
+      "label": "Materials Science",
+      "definition": "Materials-science research objects, including material discovery, synthesis, characterization, and properties.",
+      "include": [
+        "materials discovery",
+        "materials synthesis",
+        "materials characterization",
+        "structure-property relationships"
+      ],
+      "exclude": [
+        "pure chemistry records whose primary object is chemical reaction or molecule",
+        "engineering manufacturing systems without materials-science object focus"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "05",
+      "label": "Earth and Environmental Sciences",
+      "definition": "Earth, climate, geoscience, ecology, and environmental-science research objects.",
+      "include": [
+        "earth science",
+        "climate science",
+        "geoscience",
+        "environmental monitoring"
+      ],
+      "exclude": [
+        "agricultural systems classified under 08",
+        "social-policy studies classified under 11"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "06",
+      "label": "Life Sciences",
+      "definition": "Biological and life-science research objects outside direct clinical medicine.",
+      "include": [
+        "biology",
+        "genomics",
+        "protein science",
+        "cell biology",
+        "systems biology"
+      ],
+      "exclude": [
+        "clinical diagnosis or treatment classified under 07",
+        "agricultural biology classified under 08 when the primary object is agricultural production"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "07",
+      "label": "Medical and Health Sciences",
+      "definition": "Medicine, clinical health, diagnostics, therapeutics, translational health, and biomedical-care research objects.",
+      "include": [
+        "clinical medicine",
+        "medical diagnosis",
+        "drug development with health target",
+        "translational bioinformatics"
+      ],
+      "exclude": [
+        "basic life-science mechanism studies without clinical or health target",
+        "agricultural or veterinary production systems classified under 08"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "08",
+      "label": "Agricultural, Food, Forestry, Animal and Fishery Sciences",
+      "definition": "Agricultural, food, forestry, animal, fishery, and production-oriented biological research objects.",
+      "include": [
+        "agriculture",
+        "food science",
+        "forestry",
+        "animal science",
+        "fishery science"
+      ],
+      "exclude": [
+        "basic life science without production-oriented agricultural object",
+        "human clinical health classified under 07"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "09",
+      "label": "Engineering and Industrial Technology Sciences",
+      "definition": "Engineering, industrial technology, manufacturing, robotics, and applied technical-system research objects.",
+      "include": [
+        "engineering design",
+        "industrial technology",
+        "manufacturing systems",
+        "robotic laboratories"
+      ],
+      "exclude": [
+        "materials-science object studies classified under 04",
+        "transportation, marine, aerospace, and related systems classified under 10"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "10",
+      "label": "Aerospace, Marine and Transportation Sciences",
+      "definition": "Aerospace, marine, ocean engineering, transportation, and mobility-system research objects.",
+      "include": [
+        "aerospace systems",
+        "marine systems",
+        "transportation systems",
+        "mobility science"
+      ],
+      "exclude": [
+        "general engineering systems classified under 09 when not aerospace, marine, or transportation focused"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    },
+    {
+      "primary_code": "11",
+      "label": "Social, Behavioral, Economic and Knowledge System Sciences",
+      "definition": "Social, behavioral, economic, science-system, knowledge-production, policy, and human-system research objects.",
+      "include": [
+        "social science",
+        "behavioral science",
+        "economics",
+        "science of science",
+        "knowledge-production systems"
+      ],
+      "exclude": [
+        "technical system papers without social, behavioral, economic, or knowledge-system object"
+      ],
+      "status": "active",
+      "source": "taxonomy_index.json + long_term_catalog_plan"
+    }
+  ],
+  "secondary_terms": []
+}

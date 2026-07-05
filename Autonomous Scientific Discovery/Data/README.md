@@ -4,10 +4,16 @@ This directory is the machine-readable layer for ASD long-running collaboration.
 
 ## Authoritative hierarchy
 
-Only two files are allowed to originate structured facts:
+The current structured-data system distinguishes four fact-source classes:
 
-- `Paper_Lists/agent_master_paper_list.md`
-- `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+1. Paper and classification facts:
+   - `Paper_Lists/agent_master_paper_list.md`
+2. Source / PDF / progress facts:
+   - `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+3. Discipline-local code assignment facts:
+   - `Data/discipline_code_assignments.jsonl`
+4. Taxonomy vocabulary facts:
+   - `Data/classification_code_index.json`
 
 Field ownership is intentionally split, but the current export layer still carries a small amount of compatibility fallback while row-level schema migration remains incomplete:
 
@@ -15,6 +21,8 @@ Field ownership is intentionally split, but the current export layer still carri
 - `note_path` is master-owned in governance terms, but the exporter currently resolves it as `progress.note_path or master.Note path`.
 - The progress tracker owns PDF/evidence workflow fields such as `pdf_status`, `evidence_status`, `note_status`, `master_status`, `final_modules_or_bucket`, `source_limited`, `batch`, and `closed`.
 - `pdf_path` is progress-owned in governance terms, but the exporter currently resolves it as `progress.pdf_path or master.PDF path`.
+- `discipline_code_assignments.jsonl` owns stable `discipline_local_code` assignment records and `assignment_status`.
+- `classification_code_index.json` owns primary / secondary taxonomy vocabulary labels, definitions, include/exclude boundaries, term status, and term source.
 
 `final_modules_or_bucket` should be treated as a workflow mirror from the reaudit process, not as the canonical classification fact source. It is parsed as a semicolon-delimited mirror list whose order is preserved for drift auditing.
 
@@ -40,15 +48,17 @@ Live accepted baseline note:
 - current accepted counts and accepted active-ID baseline should be read from `Coverage_Check/structured_data_authoritative_acceptance_checklist_447_2026-07-02.md`
 - `structured_data_authoritative_semantics_freeze_2026-07-02.md` freezes field semantics and ownership, but it is not the live baseline-number source
 
-Everything under `Data/` is derived. `Notes/`, `Reference_PDF/`, and `Coverage_Check/` reports are supporting evidence layers, not independent sources of truth for structured counts.
+Most files under `Data/` are derived. The current exceptions are `Data/discipline_code_assignments.jsonl` and `Data/classification_code_index.json`, which own management-code and taxonomy-vocabulary facts respectively. `Notes/`, `Reference_PDF/`, and `Coverage_Check/` reports are supporting evidence layers, not independent sources of truth for structured counts.
 
-If the structured outputs disagree with master/progress, fix master/progress first and then regenerate. Do not hand-edit `Data/*.json`, `Data/*.jsonl`, `Data/*.csv`, or `Data/*.sqlite` as a substitute for repairing the authoritative records.
+If derived structured outputs disagree with their owner files, fix the owner file first and then regenerate. Do not hand-edit derived `Data/*.json`, `Data/*.jsonl`, `Data/*.csv`, or `Data/*.sqlite` as a substitute for repairing the owner records.
 
 ## Responsibility map
 
 Treat the structured stack as:
 
-- fact layer: `Paper_Lists/agent_master_paper_list.md` + `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- paper/progress fact layer: `Paper_Lists/agent_master_paper_list.md` + `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- stable code assignment ledger: `Data/discipline_code_assignments.jsonl`
+- taxonomy vocabulary owner: `Data/classification_code_index.json`
 - canonical classification lane: `scientific_object_modules` + `general_method_bucket`
 - workflow mirror lane: `final_modules_or_bucket` + progress workflow statuses
 - normalized registry layer: `Data/registry/`
@@ -57,12 +67,14 @@ Treat the structured stack as:
 
 The registry layer is a normalized derivative of master + progress. It exists so downstream tools can join stable paper, taxonomy, classification, PDF, and asset records without re-parsing the authoritative markdown every time.
 
-The registry layer is not a third source of truth. If a registry row disagrees with master/progress, repair master/progress and regenerate the registry. Do not resolve drift by hand-editing registry files.
+The registry layer is not a source of truth. If a registry row disagrees with master, progress, discipline code assignments, or classification code index, repair the relevant owner and regenerate the registry. Do not resolve drift by hand-editing registry files.
 
 This means:
 
 - classification changes start in master/progress, never in registry/JSONL/CSV/SQLite
 - PDF status changes start in progress, never in `pdf_archive_registry` or `pdf_manifest.json`
+- discipline-local code changes start in `discipline_code_assignments.jsonl`, never in `discipline_local_code_registry.jsonl` or CSV
+- taxonomy vocabulary changes start in `classification_code_index.json`, never in registry or SQLite
 - query bugs are fixed in scripts, then outputs are regenerated
 
 ## Regeneration order
@@ -101,6 +113,14 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `workflow_mirror_paper_modules.csv`: workflow-mirror-only flat assignment export for audit/debugging.
 - `papers.sqlite`: normalized query database for joins, filters, and aggregation.
 - `taxonomy_index.json`: code/label mapping for `01-11` and `01.04`.
+- `classification_code_index.json`: taxonomy vocabulary owner for primary / secondary code labels, definitions, include/exclude boundaries, term status, and term source.
+- `discipline_code_assignments.jsonl`: stable discipline-local code assignment ledger using `assignment_status`.
+- `discipline_local_code_registry.jsonl`: derived snapshot joining paper facts, progress facts, taxonomy vocabulary, and discipline code assignments.
+- `discipline_local_code_registry.csv`: spreadsheet-oriented derived snapshot for discipline-local code review.
+- `field_ownership_matrix.md`: owner matrix for structured fields.
+- `discipline_code_assignment_policy.md`: discipline-local code assignment policy.
+- `primary_filing_policy.md`: policy for choosing the single filing module for multi-module papers.
+- `check_policy.md`: `ERROR` / `WARNING` / `INFO` consistency-check policy.
 - `pdf_manifest.json`: local archived PDF inventory with hashes.
 - `missing_pdf_manifest.json`: active confirmed-core papers that remain valid records but currently have no local readable PDF.
 - `note_manifest.json`: note-path inventory and note existence flags.
@@ -153,7 +173,9 @@ Do not use those mixed-scope objects for canonical statistics unless you are exp
 
 Rule of thumb:
 
-- master + progress are the only fact layer
+- master + progress own paper/classification and source/PDF workflow facts
+- `discipline_code_assignments.jsonl` owns stable code assignment facts
+- `classification_code_index.json` owns taxonomy vocabulary facts
 - registry is the normalized derived layer
 - `papers.jsonl` / manifests / CSV / SQLite are the analysis layer
 - CSV is the lightweight human-analysis layer
@@ -280,4 +302,6 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" summary
 - `primary_module_for_filing` is a filing convenience, not the complete classification fact.
 - `final_modules_or_bucket` is a workflow mirror, not the canonical classification source.
 - PDF truth follows the progress file plus real local file existence.
+- `discipline_local_code` truth follows `Data/discipline_code_assignments.jsonl`.
+- taxonomy vocabulary truth follows `Data/classification_code_index.json`.
 - A passing `check_data_consistency.py` run is the minimum bar before committing structured-data changes.
