@@ -11,10 +11,16 @@
 - Primary module for filing：`11`
 - PDF / 本地文件路径：未配置本地 PDF；本轮按 source-limited 写回，仅核对 arXiv 摘要页与现有 note 内容，不补写本地 archive 路径。
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：landed note 已写回；主列表字段仍由主控统一维护
+- 当前状态：已读摘要级一手来源 / 已纳入；source-limited hold preserved
 - 阅读日期：2026-06-23
 - 本轮写回口径：`modules=11`；`primary=11`；`confidence=high`；`source_limited=yes`；`safety_access_status=none`
 - 笔记作者：Codex
+
+## Phase6NoteRevisionR26 source-limited harmonization override - 2026-07-05
+
+- Final classification: `scientific_object_modules=11`; `object_coverage_mode=single_module`; `primary_module_for_filing=11`; `general_method_bucket=none`.
+- Source status: authoritative state remains `source_limited=yes`; the current first-hand evidence is the arXiv abstract page only, and no local PDF/archive path is confirmed.
+- Override note: preserve the conservative source-limited wording for this note. Do not read this record as local-PDF-backed or first-hand full-text-checked.
 
 ## Evidence Log
 

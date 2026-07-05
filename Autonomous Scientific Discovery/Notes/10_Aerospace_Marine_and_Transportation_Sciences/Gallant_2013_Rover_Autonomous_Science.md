@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://doi.org/10.1007/s10846-013-9818-6
 - PDF / 本地文件路径：`Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.pdf`（本轮已归档本地 Springer PDF）
 - 论文类型：研究论文 / rover mission-science autonomy
-- 当前状态：included
+- 当前状态：已读 / 已纳入；2026-06-24 local-PDF closeout completed
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 

@@ -8,9 +8,15 @@
 - DOI / arXiv / URL：https://ai.jpl.nasa.gov/public/documents/papers/estlin-ijcai2015-autonomous.pdf
 - PDF / 本地文件路径：本轮复核已核对官方 JPL PDF（https://ai.jpl.nasa.gov/public/documents/papers/estlin-ijcai2015-autonomous.pdf）；未见本地归档 PDF
 - 论文类型：系统扩展摘要 / rover mission-science autonomy integration
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入；2026-07-05 note-harmonization override completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## Phase6NoteRevisionR26 harmonization override - 2026-07-05
+
+- Final classification: `scientific_object_modules=05;10`; `object_coverage_mode=multi_module`; `primary_module_for_filing=10`; `general_method_bucket=none`.
+- Source status: official JPL PDF checked at `https://ai.jpl.nasa.gov/public/documents/papers/estlin-ijcai2015-autonomous.pdf`; no local archive path is currently confirmed in the workspace; authoritative note state remains `source_limited=no`.
+- Override note: this note is already read and included in the confirmed core. Older `to_read` or single-module shorthand below should be treated as stale legacy text superseded by the frozen `05;10` reading.
 
 ## Evidence Log
 
@@ -186,7 +192,7 @@ MSL 自主科学技术同时覆盖火星地质目标与 rover mission-science in
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 科学对象模块：05;10
 覆盖模式：multi_module
 是否具有具体科学对象实验：yes

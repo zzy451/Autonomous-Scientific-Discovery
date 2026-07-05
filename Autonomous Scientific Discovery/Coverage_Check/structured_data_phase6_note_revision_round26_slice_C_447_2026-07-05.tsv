@@ -1,0 +1,4 @@
+paper_id	title	note_path	drift_flags	planned_check
+ASD-0849	OmniScientist: Toward a Co-evolving Ecosystem of Human and AI Scientists	Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shao_2025_OmniScientist.md	status_harmonization	retire stale top pending wording while preserving the frozen `01;11` reading
+ASD-0856	AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise	Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2025_AutoDiscovery.md	status_harmonization	retire stale top pending wording while preserving the frozen `06;07;11` reading and the retired `01.04` boundary note
+ASD-0768	When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews	Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_When_Reviews_Disagree.md	source_limited_wording_confirmation	make the source-limited hold explicit so later writing does not misread the note as full-text-backed

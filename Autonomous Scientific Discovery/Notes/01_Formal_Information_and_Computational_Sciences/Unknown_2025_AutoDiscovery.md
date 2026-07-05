@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://arxiv.org/abs/2507.00310
 - PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2025_AutoDiscovery.pdf`（official arXiv PDF archived locally and checked）
 - 论文类型：研究论文 / open-ended scientific-discovery agent system
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入；2026-06-24 Batch29Partial1 writeback completed
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 

@@ -8,9 +8,15 @@
 - DOI / arXiv / URL：https://ai.jpl.nasa.gov/public/documents/papers/estlin-isairas2014-automated.pdf
 - PDF / 本地文件路径：当前笔记基于官方 PDF（https://ai.jpl.nasa.gov/public/documents/papers/estlin-isairas2014-automated.pdf）；未见本地归档 PDF
 - 论文类型：系统论文 / rover instrument-targeting autonomy
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入；2026-07-05 note-harmonization override completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## Phase6NoteRevisionR26 harmonization override - 2026-07-05
+
+- Final classification: `scientific_object_modules=05;10`; `object_coverage_mode=multi_module`; `primary_module_for_filing=10`; `general_method_bucket=none`.
+- Source status: official JPL PDF checked at `https://ai.jpl.nasa.gov/public/documents/papers/estlin-isairas2014-automated.pdf`; no local archive path is currently confirmed in the workspace; authoritative note state remains `source_limited=no`.
+- Override note: this note is already read and included in the confirmed core. Older `to_read` or single-module shorthand below should be treated as stale legacy text superseded by the frozen `05;10` reading.
 
 ## Evidence Log
 

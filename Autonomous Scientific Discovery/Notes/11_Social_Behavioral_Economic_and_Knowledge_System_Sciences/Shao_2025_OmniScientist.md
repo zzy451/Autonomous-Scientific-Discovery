@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://arxiv.org/abs/2511.16931
 - PDF / 本地文件路径：`Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shao_2025_OmniScientist.pdf`
 - 论文类型：系统论文 / scientific ecosystem co-scientist framework
-- 当前状态：to_read（note 已按 Batch29Partial1 writeback 更新）
+- 当前状态：已读 / 已纳入；2026-06-24 Batch29Partial1 writeback completed
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 

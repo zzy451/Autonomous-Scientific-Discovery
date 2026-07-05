@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://doi.org/10.1002/rob.20289
 - PDF / 本地文件路径：`Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Woods_2009_ExoMars_Rover_Like_Mission.pdf`
 - 论文类型：研究论文 / rover mission-science autonomy system
-- 当前状态：to_read（note 已按 Batch29Partial1 writeback 更新）
+- 当前状态：已读 / 已纳入；2026-06-24 Batch29Partial1 writeback completed
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 

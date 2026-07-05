@@ -22,8 +22,15 @@
 - DOI / arXiv / URL：https://doi.org/10.1109/SMC-IT.2006.48
 - PDF / 本地文件路径：本轮核对 NASA NTRS、JPL ASE 页面与官方 PDF 链接；未在 workspace 中确认本地归档 PDF
 - 论文类型：研究论文 / EO-1 mission-science autonomy operations
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入；2026-07-05 note-harmonization override completed
 - 阅读日期：2026-06-24
+
+## Phase6NoteRevisionR26 harmonization override - 2026-07-05
+
+- Final classification: `scientific_object_modules=05;10`; `object_coverage_mode=multi_module`; `primary_module_for_filing=10`; `general_method_bucket=none`.
+- Source status: first-hand official sources were checked through NASA NTRS, the JPL ASE page, and the official conference PDF link; no local archive path is currently confirmed in the workspace; authoritative note state remains `source_limited=no`.
+- Override note: this note is already read and included in the confirmed core. Older `to_read` residue below should be treated as stale legacy text superseded by the frozen `05;10` reading.
+
 - 本轮写回口径：`modules=05;10`；`primary=10`；`source_limited=no`
 - 笔记作者：Codex
 
