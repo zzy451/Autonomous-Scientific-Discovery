@@ -465,3 +465,38 @@ Interpretation note:
 - the earlier `R6-R18` six-paper follow-up rhythm remains a truthful historical description of what those rounds actually did
 - it is no longer the default planning template for future rounds after this update
 - any transitional six-paper packet drafted on `2026-07-05` should be treated as a temporary controller-side artifact rather than the new standing SOP
+
+## Post-R23 Status Addendum (2026-07-05)
+
+The repository has now advanced beyond the post-R21 / post-R18 state recorded above.
+
+New controller facts:
+
+- `Phase6FollowupR22Approx` closed the truthful remaining three-paper full-text-followup tail:
+  - `ASD-0637`
+  - `ASD-0644`
+  - `ASD-0717`
+- `Phase6FollowupR23Approx` closed the final single-row authoritative progress tail:
+  - `ASD-0466`
+
+Current authoritative state after `R23`:
+
+- the progress tracker now has `451` rows with `451` rows closed and `0` remaining `closed=no`
+- the stable baseline remains:
+  - active confirmed-core: `447`
+  - active local PDF: `422`
+  - active no-local-PDF: `25`
+  - active canonical `01.04`: `9`
+  - semantic drift: `0`
+  - order drift: `0`
+
+Truthful queue interpretation after `R23`:
+
+- generated `note_revision_queue` / `full_text_followup_queue` rows may still exist
+- these rows should now be read as heuristic future-strengthening pressure rather than unresolved authoritative progress debt
+- future controller work, if any, should be framed as optional strengthening / synthesis / writing-support work unless a new live contradiction is found in the authoritative pair
+
+Bottom-line status:
+
+- the project is still on the same post-Phase-2 execution plan stack
+- but the original “close the 451-row confirmed-core authoritative progress tracker” Phase 6 execution line is now complete in authoritative state

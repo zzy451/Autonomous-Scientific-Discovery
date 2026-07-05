@@ -287,3 +287,21 @@ Additional frozen execution rule for all subsequent Phase 6 note-checking rounds
 - if the current `full_text_followup_queue` no longer contains a truthful `30`-paper packet after freshness override, the next standard `30`-paper round should switch to the refreshed `note_revision_queue` rather than padding a follow-up round with non-existent pressure
 - when a realistically obtainable PDF is unavailable, do not keep fighting the same route; truthful HTML / abstract / official-page evidence is acceptable as long as the record remains real, indexable, and source-truthful
 - real sub-agents should be used when the interface is actually available; all completed round agents must be closed at round end
+
+## Post-R23 Completion Addendum (2026-07-05)
+
+The repository has now advanced beyond the post-R21 state recorded above.
+
+Current proven controller facts after `Phase6FollowupR22Approx` and `Phase6FollowupR23Approx`:
+
+- the truthful bounded three-paper full-text-followup tail (`ASD-0637`, `ASD-0644`, `ASD-0717`) was closed in `R22`
+- the final single-row authoritative progress tail (`ASD-0466`) was closed in `R23` as a truthful `source_limited=yes` conservative hold
+- the authoritative progress tracker now has `451` rows with `451` rows closed and `0` remaining `closed=no`
+- the stable canonical baseline remains `447 / 422 / 25 / canonical 01.04 = 9 / drift 0`
+
+Important interpretation rule frozen by current evidence:
+
+- a non-empty generated Phase 6 queue is no longer proof of unresolved authoritative progress debt
+- after `R23`, queue rows must be interpreted as heuristic future strengthening pressure unless the controller finds a new current-state contradiction in the authoritative pair
+
+This means the original “close the 451-row confirmed-core progress tracker” execution objective is now satisfied in authoritative state, even though optional future source-strengthening or writing-support work may still exist.
