@@ -25,6 +25,7 @@ PAPERS_CSV = DATA_DIR / 'papers.csv'
 PAPER_MODULES_CSV = DATA_DIR / 'paper_modules.csv'
 CANONICAL_PAPER_MODULES_CSV = DATA_DIR / 'canonical_paper_modules.csv'
 WORKFLOW_MIRROR_PAPER_MODULES_CSV = DATA_DIR / 'workflow_mirror_paper_modules.csv'
+MIXED_SCOPE_PAPER_MODULES_CSV = DATA_DIR / 'mixed_scope_paper_modules.csv'
 DISCIPLINE_LOCAL_CODE_REGISTRY_CSV = DATA_DIR / 'discipline_local_code_registry.csv'
 SQLITE_PATH = DATA_DIR / 'papers.sqlite'
 OWNER_GUARDED_PATHS = {
@@ -146,18 +147,24 @@ def write_module_csv(rows: list[dict[str, object]]) -> None:
         'paper_id', 'title', 'assignment_scope', 'module_code', 'module_kind', 'sort_order',
         'is_primary_for_filing', 'confidence', 'source', 'active_confirmed_core'
     ]
+    canonical_rows = [row for row in rows if row['assignment_scope'] == 'scientific_object_modules']
+    workflow_rows = [row for row in rows if row['assignment_scope'] == 'final_modules_or_bucket']
     with PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows(rows)
+        writer.writerows(canonical_rows)
     with CANONICAL_PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows([row for row in rows if row['assignment_scope'] == 'scientific_object_modules'])
+        writer.writerows(canonical_rows)
     with WORKFLOW_MIRROR_PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerows([row for row in rows if row['assignment_scope'] == 'final_modules_or_bucket'])
+        writer.writerows(workflow_rows)
+    with MIXED_SCOPE_PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
 
 def write_discipline_local_code_registry_csv(rows: list[dict[str, object]]) -> None:
     with DISCIPLINE_LOCAL_CODE_REGISTRY_CSV.open('w', encoding='utf-8', newline='') as handle:
@@ -286,7 +293,18 @@ def build_sqlite(
             is_primary_for_filing INTEGER NOT NULL,
             confidence TEXT,
             source TEXT NOT NULL,
-            PRIMARY KEY (paper_id, assignment_scope, module_code)
+            PRIMARY KEY (paper_id, module_code)
+        );
+        CREATE TABLE workflow_mirror_paper_modules (
+            paper_id TEXT NOT NULL,
+            assignment_scope TEXT NOT NULL,
+            module_code TEXT NOT NULL,
+            module_kind TEXT NOT NULL,
+            sort_order INTEGER NOT NULL,
+            is_primary_for_filing INTEGER NOT NULL,
+            confidence TEXT,
+            source TEXT NOT NULL,
+            PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE paper_general_method_buckets (
             paper_id TEXT PRIMARY KEY,
@@ -391,30 +409,30 @@ def build_sqlite(
         CREATE VIEW active_confirmed_core_papers AS SELECT * FROM papers WHERE active_confirmed_core = 1;
         CREATE VIEW active_missing_local_pdf AS SELECT * FROM papers WHERE active_confirmed_core = 1 AND pdf_exists = 0;
         CREATE VIEW canonical_paper_modules AS
-        SELECT * FROM paper_modules WHERE assignment_scope = 'scientific_object_modules';
-        CREATE VIEW workflow_mirror_paper_modules AS
-        SELECT * FROM paper_modules WHERE assignment_scope = 'final_modules_or_bucket';
-        CREATE VIEW mixed_scope_paper_modules AS
         SELECT * FROM paper_modules;
+        CREATE VIEW mixed_scope_paper_modules AS
+        SELECT * FROM paper_modules
+        UNION ALL
+        SELECT * FROM workflow_mirror_paper_modules;
         CREATE VIEW module_assignment_counts AS
         SELECT
-            assignment_scope,
             module_code,
             COUNT(*) AS paper_count,
             SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END) AS active_confirmed_core_count
         FROM paper_modules pm
         JOIN papers p ON p.paper_id = pm.paper_id
-        GROUP BY assignment_scope, module_code;
+        GROUP BY module_code;
         CREATE VIEW mixed_scope_module_assignment_counts AS
-        SELECT * FROM module_assignment_counts;
-        CREATE VIEW canonical_module_assignment_counts AS
         SELECT
+            assignment_scope,
             module_code,
             COUNT(*) AS paper_count,
             SUM(CASE WHEN p.active_confirmed_core = 1 THEN 1 ELSE 0 END) AS active_confirmed_core_count
-        FROM canonical_paper_modules pm
+        FROM mixed_scope_paper_modules pm
         JOIN papers p ON p.paper_id = pm.paper_id
-        GROUP BY module_code;
+        GROUP BY assignment_scope, module_code;
+        CREATE VIEW canonical_module_assignment_counts AS
+        SELECT * FROM module_assignment_counts;
         CREATE VIEW workflow_mirror_module_assignment_counts AS
         SELECT
             module_code,
@@ -815,27 +833,27 @@ def build_sqlite(
                 (
                     'paper_modules',
                     'table',
-                    'mixed_scope',
-                    'compatibility inspection only',
-                    'Contains both canonical scientific_object_modules and workflow final_modules_or_bucket rows; filter assignment_scope before aggregation.',
+                    'canonical_only',
+                    'default formal-module analysis',
+                    'Canonical scientific_object_modules many-to-many relation; this is the default formal-module analysis table.',
                 ),
                 (
                     'mixed_scope_paper_modules',
                     'view',
                     'mixed_scope',
                     'compatibility inspection only',
-                    'Alias view naming the mixed-scope nature explicitly; prefer canonical_paper_modules or workflow_mirror_paper_modules for analysis.',
+                    'Compatibility union over canonical paper_modules plus workflow_mirror_paper_modules; use only when a mixed-scope audit surface is explicitly required.',
                 ),
                 (
                     'canonical_paper_modules',
                     'view',
                     'canonical_only',
-                    'default formal-module analysis',
-                    'Canonical-only formal 01-11 assignments for default statistics.',
+                    'compatibility canonical alias',
+                    'Compatibility alias over paper_modules for older query/document surfaces that still reference canonical_paper_modules.',
                 ),
                 (
                     'workflow_mirror_paper_modules',
-                    'view',
+                    'table',
                     'workflow_mirror_only',
                     'audit only',
                     'Workflow mirror assignments for audit/debugging only, not default statistics.',
@@ -843,23 +861,23 @@ def build_sqlite(
                 (
                     'module_assignment_counts',
                     'view',
-                    'mixed_scope',
-                    'compatibility inspection only',
-                    'Mixed-scope counts across canonical and workflow mirror assignments; not a default canonical summary.',
+                    'canonical_only',
+                    'default formal-module analysis',
+                    'Canonical formal-module assignment counts derived from paper_modules.',
                 ),
                 (
                     'mixed_scope_module_assignment_counts',
                     'view',
                     'mixed_scope',
                     'compatibility inspection only',
-                    'Alias view naming the mixed-scope nature explicitly; prefer canonical_module_assignment_counts or workflow_mirror_module_assignment_counts.',
+                    'Mixed-scope counts across canonical and workflow mirror assignments; use only for compatibility audits.',
                 ),
                 (
                     'canonical_module_assignment_counts',
                     'view',
                     'canonical_only',
-                    'default formal-module analysis',
-                    'Canonical-only formal-module assignment counts for default statistics.',
+                    'compatibility canonical alias',
+                    'Compatibility alias over module_assignment_counts for older query/document surfaces that still reference canonical_module_assignment_counts.',
                 ),
                 (
                     'workflow_mirror_module_assignment_counts',
@@ -963,6 +981,12 @@ def build_sqlite(
             )
             for paper in papers
         ])
+        canonical_module_rows = [
+            row for row in module_rows if row['assignment_scope'] == 'scientific_object_modules'
+        ]
+        workflow_module_rows = [
+            row for row in module_rows if row['assignment_scope'] == 'final_modules_or_bucket'
+        ]
         conn.executemany('INSERT INTO paper_modules(paper_id, assignment_scope, module_code, module_kind, sort_order, is_primary_for_filing, confidence, source) VALUES(?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 row['paper_id'],
@@ -974,7 +998,20 @@ def build_sqlite(
                 row['confidence'],
                 row['source'],
             )
-            for row in module_rows
+            for row in canonical_module_rows
+        ])
+        conn.executemany('INSERT INTO workflow_mirror_paper_modules(paper_id, assignment_scope, module_code, module_kind, sort_order, is_primary_for_filing, confidence, source) VALUES(?, ?, ?, ?, ?, ?, ?, ?)', [
+            (
+                row['paper_id'],
+                row['assignment_scope'],
+                row['module_code'],
+                row['module_kind'],
+                row['sort_order'],
+                row['is_primary_for_filing'],
+                row['confidence'],
+                row['source'],
+            )
+            for row in workflow_module_rows
         ])
         general_method_bucket_rows = build_general_method_bucket_rows(papers)
         conn.executemany('INSERT INTO paper_general_method_buckets VALUES(?, ?, ?, ?)', [
@@ -1116,6 +1153,7 @@ def main() -> None:
         PAPER_MODULES_CSV,
         CANONICAL_PAPER_MODULES_CSV,
         WORKFLOW_MIRROR_PAPER_MODULES_CSV,
+        MIXED_SCOPE_PAPER_MODULES_CSV,
         DISCIPLINE_LOCAL_CODE_REGISTRY_CSV,
         SQLITE_PATH,
     ])
@@ -1130,6 +1168,12 @@ def main() -> None:
     asset_manifest = load_jsonl(ASSET_MANIFEST_JSONL)
     pdf_archive_registry = load_jsonl(PDF_ARCHIVE_REGISTRY_JSONL)
     module_rows = build_module_rows(papers)
+    canonical_module_rows = [
+        row for row in module_rows if row['assignment_scope'] == 'scientific_object_modules'
+    ]
+    workflow_module_rows = [
+        row for row in module_rows if row['assignment_scope'] == 'final_modules_or_bucket'
+    ]
     write_papers_csv(papers)
     write_module_csv(module_rows)
     write_discipline_local_code_registry_csv(discipline_local_code_registry)
@@ -1150,10 +1194,13 @@ def main() -> None:
     print(f'Wrote {PAPER_MODULES_CSV}')
     print(f'Wrote {CANONICAL_PAPER_MODULES_CSV}')
     print(f'Wrote {WORKFLOW_MIRROR_PAPER_MODULES_CSV}')
+    print(f'Wrote {MIXED_SCOPE_PAPER_MODULES_CSV}')
     print(f'Wrote {DISCIPLINE_LOCAL_CODE_REGISTRY_CSV}')
     print(f'Wrote {SQLITE_PATH}')
     print(f'papers rows: {len(papers)}')
-    print(f'paper_modules rows: {len(module_rows)}')
+    print(f'paper_modules rows: {len(canonical_module_rows)}')
+    print(f'workflow_mirror_paper_modules rows: {len(workflow_module_rows)}')
+    print(f'mixed_scope_paper_modules rows: {len(module_rows)}')
     print(f'discipline_code_assignments rows: {len(discipline_code_assignments)}')
     print(f'discipline_local_code_registry rows: {len(discipline_local_code_registry)}')
 

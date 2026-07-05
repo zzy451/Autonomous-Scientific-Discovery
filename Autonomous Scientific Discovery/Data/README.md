@@ -97,7 +97,7 @@ The order matters:
 2. `check_data_consistency.py`
    Verifies that registry and analysis outputs still agree with the master/progress-derived facts before analysis artifacts are trusted.
 3. `build_analysis_db.py`
-   Builds analysis-friendly outputs from the checked snapshot: `papers.csv`, `paper_modules.csv`, `canonical_paper_modules.csv`, `workflow_mirror_paper_modules.csv`, and `papers.sqlite`.
+   Builds analysis-friendly outputs from the checked snapshot: `papers.csv`, `paper_modules.csv`, `canonical_paper_modules.csv`, `workflow_mirror_paper_modules.csv`, `mixed_scope_paper_modules.csv`, and `papers.sqlite`.
 
 Both `export_structured_data.py` and `build_analysis_db.py` now carry runtime owner-path guardrails: if a future code change ever tries to write a guarded owner fact source such as `classification_code_index.json`, `discipline_code_assignments.jsonl`, or `change_log.jsonl`, the command aborts instead of silently overwriting the owner file.
 
@@ -113,9 +113,10 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `registry/asset_manifest.jsonl`: normalized asset inventory covering at least note and primary PDF records; primary-PDF rows mirror derived source-check timing.
 - `papers.jsonl`: record-level analysis snapshot for scripts, version control, and exact per-paper inspection, including derived source/PDF review timing.
 - `papers.csv`: flattened spreadsheet view of `papers.jsonl`.
-- `paper_modules.csv`: mixed-scope exploded one-paper-to-many-modules export containing both canonical `scientific_object_modules` assignments and workflow-mirror `final_modules_or_bucket` assignments; now also carries `is_primary_for_filing`, `confidence`, and `source` trace columns. Use for inspection/export only, and always filter by `assignment_scope` before using it for statistics.
-- `canonical_paper_modules.csv`: canonical-only flat module-assignment export for spreadsheet review without workflow-mirror rows.
+- `paper_modules.csv`: canonical exploded one-paper-to-many-modules export for the formal `scientific_object_modules` relation. This is the default flat analysis surface for module-level spreadsheet work and carries `is_primary_for_filing`, `confidence`, and `source` trace columns.
+- `canonical_paper_modules.csv`: compatibility alias export carrying the same canonical rows as `paper_modules.csv` for older analysis surfaces that still reference the older canonical filename.
 - `workflow_mirror_paper_modules.csv`: workflow-mirror-only flat assignment export for audit/debugging.
+- `mixed_scope_paper_modules.csv`: compatibility mixed-scope flat export containing both canonical `scientific_object_modules` assignments and workflow-mirror `final_modules_or_bucket` assignments; use only when an explicit canonical-vs-workflow comparison surface is needed.
 - `papers.sqlite`: normalized query database for joins, filters, and aggregation.
 - `taxonomy_index.json`: code/label mapping for `01-11` and `01.04`.
 - `classification_code_index.json`: taxonomy vocabulary owner for primary / secondary code labels, definitions, include/exclude boundaries, term status, and term source.
@@ -161,18 +162,27 @@ Use `papers.jsonl` when:
 - array fields must stay as arrays
 - you are writing scripts or reviewing exact exported values
 
-Use `papers.csv` or `canonical_paper_modules.csv` when:
+Use `papers.csv` or `paper_modules.csv` when:
 
 - you want spreadsheet review, quick filtering, or manual spot checks
 - you need a flat table for sharing or lightweight statistics
 - you understand that arrays are flattened for convenience
 
-Use `paper_modules.csv` only when:
+Use `canonical_paper_modules.csv` when:
+
+- you are working with an older notebook or review sheet that still expects the legacy canonical filename
+- you want the same canonical rows as `paper_modules.csv` without changing that downstream surface yet
+
+Use `mixed_scope_paper_modules.csv` only when:
 
 - you explicitly need both canonical and workflow-mirror assignment scopes in one flat export
 - you are prepared to filter by `assignment_scope` before aggregating
 
-The same warning applies to SQLite `paper_modules` and `module_assignment_counts`: they are compatibility mixed-scope objects, not the default canonical aggregation surface.
+The mixed-scope warning now applies only to the explicit compatibility surfaces:
+
+- `mixed_scope_paper_modules.csv`
+- SQLite `mixed_scope_paper_modules`
+- SQLite `mixed_scope_module_assignment_counts`
 
 Use `papers.sqlite` when:
 
@@ -180,21 +190,20 @@ Use `papers.sqlite` when:
 - you are doing repeated analysis or reproducible query work
 - you need counts by module, missing-PDF inventory, or paper-level detail without reparsing JSONL
 
-Inside SQLite, prefer the explicit scope-separated views for classification work:
+Inside SQLite, the default canonical classification surfaces are:
 
-- `canonical_paper_modules`
-- `workflow_mirror_paper_modules`
-- `canonical_module_assignment_counts`
-- `workflow_mirror_module_assignment_counts`
+- `paper_modules`
+- `module_assignment_counts`
+- compatibility canonical aliases: `canonical_paper_modules`, `canonical_module_assignment_counts`
+- workflow audit surfaces: `workflow_mirror_paper_modules`, `workflow_mirror_module_assignment_counts`
 - `analysis_object_scope_registry`
 - `classification_boundary_analysis`
 - `classification_boundary_summary`
 
 Compatibility mixed-scope SQL objects still exist, but they are inspection-only by default:
 
-- `paper_modules`
-- `module_assignment_counts`
-- alias warnings: `mixed_scope_paper_modules`, `mixed_scope_module_assignment_counts`
+- `mixed_scope_paper_modules`
+- `mixed_scope_module_assignment_counts`
 
 Do not use those mixed-scope objects for canonical statistics unless you are explicitly filtering by `assignment_scope`.
 
@@ -380,7 +389,7 @@ Interpretation guardrails:
 - formal `01-11` module rows are expanded assignment counts, not unique-paper counts
 - canonical `01.04` bucket statistics are always kept separate from formal `01-11`
 - `summary` and `analysis-baseline` should be read together before writing any module count into a report
-- `paper_modules.csv` is a mixed-scope flat export; for canonical-only aggregation, prefer SQLite `canonical_*` views over direct CSV grouping
+- `paper_modules.csv` is now canonical-only; if you intentionally need canonical + workflow mirror together, switch to `mixed_scope_paper_modules.csv` or SQLite `mixed_scope_*`
 
 On Windows terminals that still default to GBK, Unicode-heavy titles may print poorly. If needed, run:
 

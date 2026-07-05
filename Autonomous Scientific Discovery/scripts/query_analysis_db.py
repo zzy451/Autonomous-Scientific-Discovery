@@ -239,7 +239,7 @@ def paper(conn: sqlite3.Connection, paper_id: str) -> None:
         for module_row in conn.execute('SELECT module_code, module_kind, sort_order FROM workflow_mirror_paper_modules WHERE paper_id = ? ORDER BY sort_order', (paper_id,))
     ]
     print('Semantics: canonical classification fields = scientific_object_modules/general_method_bucket; workflow mirror fields = final_modules_or_bucket/workflow_mirror_assignments')
-    print('Guardrail: do not aggregate from compatibility mixed-scope SQL objects `paper_modules` / `module_assignment_counts`; use `canonical_*` or `workflow_mirror_*` views explicitly.')
+    print('Guardrail: default SQL `paper_modules` / `module_assignment_counts` are canonical-only; use explicit `mixed_scope_*` objects only when a canonical-vs-workflow audit surface is intentionally required.')
     print(json.dumps(payload, ensure_ascii=False, indent=2))
 
 def missing_pdf(conn: sqlite3.Connection) -> None:
