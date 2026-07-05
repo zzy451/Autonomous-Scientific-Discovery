@@ -325,6 +325,7 @@ def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) 
     seen_assignment_ids = set()
     active_codes = {}
     active_code_by_paper = {}
+    current_snapshot_by_paper = {}
     all_used_codes = {}
 
     for index, row in enumerate(rows, start=1):
@@ -428,12 +429,35 @@ def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) 
                 f"discipline_code_assignments {assignment_id} non-redirected row must not carry redirected_to_code",
             )
 
+        if assignment_status in {
+            "active_code",
+            "pending_secondary",
+            "non_discipline_general_method",
+        }:
+            assert_true(
+                paper_id not in current_snapshot_by_paper,
+                "discipline_code_assignments paper_id has multiple current snapshot rows: "
+                f"{paper_id}",
+            )
+            current_snapshot_by_paper[paper_id] = assignment_id
+
     for row in rows:
         if row["assignment_status"] == "redirected_code":
             assert_true(
                 row["redirected_to_code"] in active_codes,
                 f"discipline_code_assignments redirected_to_code does not point to an active code: {row['redirected_to_code']!r}",
             )
+
+    expected_active_confirmed_core_ids = {
+        str(row["paper_id"])
+        for row in papers
+        if bool(row["active_confirmed_core"])
+    }
+    current_snapshot_paper_ids = set(current_snapshot_by_paper)
+    assert_true(
+        current_snapshot_paper_ids == expected_active_confirmed_core_ids,
+        "discipline_code_assignments current snapshot coverage must exactly match active_confirmed_core papers",
+    )
 
 
 def validate_discipline_local_code_registry(
@@ -463,6 +487,11 @@ def validate_discipline_local_code_registry(
         len(registry_rows) == len(current_snapshot_assignment_ids),
         "discipline_local_code_registry.jsonl row count does not match current snapshot rows in discipline_code_assignments.jsonl",
     )
+    expected_active_confirmed_core_ids = {
+        str(row["paper_id"])
+        for row in papers
+        if bool(row["active_confirmed_core"])
+    }
 
     seen_paper_ids = set()
     generated_at_values = set()
@@ -599,6 +628,10 @@ def validate_discipline_local_code_registry(
     assert_true(
         len(worktree_dirty_values) == 1,
         "discipline_local_code_registry worktree_dirty must be uniform across the snapshot",
+    )
+    assert_true(
+        seen_paper_ids == expected_active_confirmed_core_ids,
+        "discipline_local_code_registry paper coverage must exactly match active_confirmed_core papers",
     )
 
 
