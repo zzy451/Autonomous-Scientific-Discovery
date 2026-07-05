@@ -14,10 +14,13 @@ TAXONOMY_JSON = DATA_DIR / 'taxonomy_index.json'
 PDF_MANIFEST_JSON = DATA_DIR / 'pdf_manifest.json'
 MISSING_PDF_JSON = DATA_DIR / 'missing_pdf_manifest.json'
 NOTE_MANIFEST_JSON = DATA_DIR / 'note_manifest.json'
+DISCIPLINE_CODE_ASSIGNMENTS_JSONL = DATA_DIR / 'discipline_code_assignments.jsonl'
+DISCIPLINE_LOCAL_CODE_REGISTRY_JSONL = DATA_DIR / 'discipline_local_code_registry.jsonl'
 PAPERS_CSV = DATA_DIR / 'papers.csv'
 PAPER_MODULES_CSV = DATA_DIR / 'paper_modules.csv'
 CANONICAL_PAPER_MODULES_CSV = DATA_DIR / 'canonical_paper_modules.csv'
 WORKFLOW_MIRROR_PAPER_MODULES_CSV = DATA_DIR / 'workflow_mirror_paper_modules.csv'
+DISCIPLINE_LOCAL_CODE_REGISTRY_CSV = DATA_DIR / 'discipline_local_code_registry.csv'
 SQLITE_PATH = DATA_DIR / 'papers.sqlite'
 FORMAL_MODULES = {f'{idx:02d}' for idx in range(1, 12)}
 CSV_FIELDS = [
@@ -30,6 +33,14 @@ CSV_FIELDS = [
     'primary_module_for_filing', 'first_hand_sources_checked', 'progress_title', 'pdf_status',
     'evidence_status', 'note_status', 'master_status', 'final_modules_or_bucket',
     'source_limited', 'batch', 'closed', 'active_confirmed_core', 'exported_at',
+]
+DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS = [
+    'paper_id', 'assignment_id', 'discipline_local_code', 'discipline_local_rank',
+    'assignment_status', 'assigned_at', 'assigned_by', 'retired_at', 'redirected_to_code',
+    'assignment_reason', 'pending_reason', 'primary_module_for_filing',
+    'primary_taxonomy_code_2lvl', 'legacy_secondary_class', 'scientific_object_modules',
+    'general_method_bucket', 'title', 'note_path', 'pdf_path', 'active_confirmed_core',
+    'is_derived_snapshot', 'generated_at', 'generated_by', 'source_commit', 'worktree_dirty',
 ]
 
 def load_json(path: Path):
@@ -97,7 +108,26 @@ def write_module_csv(rows: list[dict[str, object]]) -> None:
         writer.writeheader()
         writer.writerows([row for row in rows if row['assignment_scope'] == 'final_modules_or_bucket'])
 
-def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, str]], pdf_manifest: list[dict[str, object]], missing_pdf_manifest: list[dict[str, object]], note_manifest: list[dict[str, object]], module_rows: list[dict[str, object]]) -> None:
+def write_discipline_local_code_registry_csv(rows: list[dict[str, object]]) -> None:
+    with DISCIPLINE_LOCAL_CODE_REGISTRY_CSV.open('w', encoding='utf-8', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({
+                field: flatten_list(row.get(field))
+                for field in DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS
+            })
+
+def build_sqlite(
+    papers: list[dict[str, object]],
+    taxonomy: dict[str, dict[str, str]],
+    pdf_manifest: list[dict[str, object]],
+    missing_pdf_manifest: list[dict[str, object]],
+    note_manifest: list[dict[str, object]],
+    module_rows: list[dict[str, object]],
+    discipline_code_assignments: list[dict[str, object]],
+    discipline_local_code_registry: list[dict[str, object]],
+) -> None:
     if SQLITE_PATH.exists():
         SQLITE_PATH.unlink()
     conn = sqlite3.connect(SQLITE_PATH)
@@ -124,6 +154,49 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
             active_confirmed_core INTEGER NOT NULL, exported_at TEXT NOT NULL
         );
         CREATE TABLE paper_modules (paper_id TEXT NOT NULL, assignment_scope TEXT NOT NULL, module_code TEXT NOT NULL, module_kind TEXT NOT NULL, sort_order INTEGER NOT NULL, PRIMARY KEY (paper_id, assignment_scope, module_code));
+        CREATE TABLE discipline_code_assignments (
+            assignment_id TEXT PRIMARY KEY,
+            paper_id TEXT NOT NULL,
+            discipline_local_code TEXT,
+            primary_taxonomy_code_2lvl TEXT,
+            assignment_status TEXT NOT NULL,
+            assigned_at TEXT NOT NULL,
+            assigned_by TEXT NOT NULL,
+            retired_at TEXT,
+            redirected_to_code TEXT,
+            assignment_reason TEXT NOT NULL,
+            pending_reason TEXT,
+            source_primary_module_for_filing TEXT,
+            source_legacy_secondary_class TEXT,
+            schema_version INTEGER NOT NULL
+        );
+        CREATE TABLE discipline_local_code_registry (
+            paper_id TEXT PRIMARY KEY,
+            assignment_id TEXT NOT NULL,
+            discipline_local_code TEXT,
+            discipline_local_rank TEXT,
+            assignment_status TEXT NOT NULL,
+            assigned_at TEXT NOT NULL,
+            assigned_by TEXT NOT NULL,
+            retired_at TEXT,
+            redirected_to_code TEXT,
+            assignment_reason TEXT NOT NULL,
+            pending_reason TEXT,
+            primary_module_for_filing TEXT,
+            primary_taxonomy_code_2lvl TEXT,
+            legacy_secondary_class TEXT,
+            scientific_object_modules_json TEXT NOT NULL,
+            general_method_bucket TEXT,
+            title TEXT NOT NULL,
+            note_path TEXT,
+            pdf_path TEXT,
+            active_confirmed_core INTEGER NOT NULL,
+            is_derived_snapshot INTEGER NOT NULL,
+            generated_at TEXT NOT NULL,
+            generated_by TEXT NOT NULL,
+            source_commit TEXT,
+            worktree_dirty INTEGER NOT NULL
+        );
         CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT, scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL);
         CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT, access_note TEXT);
         CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, active_confirmed_core INTEGER NOT NULL, inclusion_status TEXT);
@@ -489,6 +562,20 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
             'INSERT INTO analysis_object_scope_registry(object_name, object_type, scope_class, default_usage, warning) VALUES(?, ?, ?, ?, ?)',
             [
                 (
+                    'discipline_code_assignments',
+                    'table',
+                    'owner_snapshot',
+                    'management-code owner inspection',
+                    'Stable discipline code assignment owner table loaded from Data/discipline_code_assignments.jsonl; changes must originate in the owner file, not SQLite.',
+                ),
+                (
+                    'discipline_local_code_registry',
+                    'table',
+                    'derived_snapshot',
+                    'default discipline filing review',
+                    'Derived one-row-per-ledger-entry snapshot joining assignment owner data with paper facts; rebuild from export instead of editing in SQLite.',
+                ),
+                (
                     'papers',
                     'table',
                     'mixed_with_workflow_fields',
@@ -615,6 +702,55 @@ def build_sqlite(papers: list[dict[str, object]], taxonomy: dict[str, dict[str, 
             (row['paper_id'], row['assignment_scope'], row['module_code'], row['module_kind'], row['sort_order'])
             for row in module_rows
         ])
+        conn.executemany('INSERT INTO discipline_code_assignments VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+            (
+                row['assignment_id'],
+                row['paper_id'],
+                row['discipline_local_code'],
+                row['primary_taxonomy_code_2lvl'],
+                row['assignment_status'],
+                row['assigned_at'],
+                row['assigned_by'],
+                row['retired_at'],
+                row['redirected_to_code'],
+                row['assignment_reason'],
+                row['pending_reason'],
+                row['source_primary_module_for_filing'],
+                row['source_legacy_secondary_class'],
+                row['schema_version'],
+            )
+            for row in discipline_code_assignments
+        ])
+        conn.executemany('INSERT INTO discipline_local_code_registry VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+            (
+                row['paper_id'],
+                row['assignment_id'],
+                row['discipline_local_code'],
+                row['discipline_local_rank'],
+                row['assignment_status'],
+                row['assigned_at'],
+                row['assigned_by'],
+                row['retired_at'],
+                row['redirected_to_code'],
+                row['assignment_reason'],
+                row['pending_reason'],
+                row['primary_module_for_filing'],
+                row['primary_taxonomy_code_2lvl'],
+                row['legacy_secondary_class'],
+                json_list(row['scientific_object_modules']),
+                row['general_method_bucket'],
+                row['title'],
+                row['note_path'],
+                row['pdf_path'],
+                bool_to_int(row['active_confirmed_core']),
+                bool_to_int(row['is_derived_snapshot']),
+                row['generated_at'],
+                row['generated_by'],
+                row['source_commit'],
+                bool_to_int(row['worktree_dirty']),
+            )
+            for row in discipline_local_code_registry
+        ])
         conn.executemany('INSERT INTO pdf_inventory VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (row['paper_id'], row['title'], row['pdf_path'], row['sha256'], row['primary_module_for_filing'], json_list(row['scientific_object_modules']), row['pdf_status'], row['evidence_status'], bool_to_int(row['active_confirmed_core']))
             for row in pdf_manifest
@@ -637,17 +773,32 @@ def main() -> None:
     pdf_manifest = load_json(PDF_MANIFEST_JSON)
     missing_pdf_manifest = load_json(MISSING_PDF_JSON)
     note_manifest = load_json(NOTE_MANIFEST_JSON)
+    discipline_code_assignments = load_jsonl(DISCIPLINE_CODE_ASSIGNMENTS_JSONL)
+    discipline_local_code_registry = load_jsonl(DISCIPLINE_LOCAL_CODE_REGISTRY_JSONL)
     module_rows = build_module_rows(papers)
     write_papers_csv(papers)
     write_module_csv(module_rows)
-    build_sqlite(papers, taxonomy, pdf_manifest, missing_pdf_manifest, note_manifest, module_rows)
+    write_discipline_local_code_registry_csv(discipline_local_code_registry)
+    build_sqlite(
+        papers,
+        taxonomy,
+        pdf_manifest,
+        missing_pdf_manifest,
+        note_manifest,
+        module_rows,
+        discipline_code_assignments,
+        discipline_local_code_registry,
+    )
     print(f'Wrote {PAPERS_CSV}')
     print(f'Wrote {PAPER_MODULES_CSV}')
     print(f'Wrote {CANONICAL_PAPER_MODULES_CSV}')
     print(f'Wrote {WORKFLOW_MIRROR_PAPER_MODULES_CSV}')
+    print(f'Wrote {DISCIPLINE_LOCAL_CODE_REGISTRY_CSV}')
     print(f'Wrote {SQLITE_PATH}')
     print(f'papers rows: {len(papers)}')
     print(f'paper_modules rows: {len(module_rows)}')
+    print(f'discipline_code_assignments rows: {len(discipline_code_assignments)}')
+    print(f'discipline_local_code_registry rows: {len(discipline_local_code_registry)}')
 
 if __name__ == '__main__':
     main()

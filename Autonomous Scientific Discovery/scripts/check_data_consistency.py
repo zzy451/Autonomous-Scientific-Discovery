@@ -13,6 +13,7 @@ DATA_DIR = ROOT / "Data"
 REGISTRY_DIR = DATA_DIR / "registry"
 CLASSIFICATION_CODE_INDEX_PATH = DATA_DIR / "classification_code_index.json"
 DISCIPLINE_CODE_ASSIGNMENTS_PATH = DATA_DIR / "discipline_code_assignments.jsonl"
+DISCIPLINE_LOCAL_CODE_REGISTRY_PATH = DATA_DIR / "discipline_local_code_registry.jsonl"
 MASTER_PATH = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_PATH = (
     ROOT
@@ -401,6 +402,172 @@ def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) 
                 row["redirected_to_code"] in active_codes,
                 f"discipline_code_assignments redirected_to_code does not point to an active code: {row['redirected_to_code']!r}",
             )
+
+
+def validate_discipline_local_code_registry(
+    papers: List[Dict[str, object]],
+) -> None:
+    if not DISCIPLINE_LOCAL_CODE_REGISTRY_PATH.exists():
+        return
+    assert_true(
+        DISCIPLINE_CODE_ASSIGNMENTS_PATH.exists(),
+        "discipline_local_code_registry.jsonl exists but discipline_code_assignments.jsonl is missing",
+    )
+
+    registry_rows = load_jsonl(DISCIPLINE_LOCAL_CODE_REGISTRY_PATH)
+    ledger_rows = load_jsonl(DISCIPLINE_CODE_ASSIGNMENTS_PATH)
+    papers_by_id = {str(row["paper_id"]): row for row in papers}
+    ledger_by_assignment_id = {
+        str(row["assignment_id"]): row for row in ledger_rows
+    }
+    current_snapshot_assignment_ids = {
+        str(row["assignment_id"])
+        for row in ledger_rows
+        if row["assignment_status"]
+        in {"active_code", "pending_secondary", "non_discipline_general_method"}
+    }
+
+    assert_true(
+        len(registry_rows) == len(current_snapshot_assignment_ids),
+        "discipline_local_code_registry.jsonl row count does not match current snapshot rows in discipline_code_assignments.jsonl",
+    )
+
+    seen_paper_ids = set()
+    generated_at_values = set()
+    generated_by_values = set()
+    source_commit_values = set()
+    worktree_dirty_values = set()
+
+    for index, row in enumerate(registry_rows, start=1):
+        assignment_id = str(row.get("assignment_id", ""))
+        paper_id = str(row.get("paper_id", ""))
+        assert_true(
+            assignment_id in ledger_by_assignment_id,
+            f"discipline_local_code_registry unknown assignment_id at row {index}: {assignment_id!r}",
+        )
+        assert_true(
+            assignment_id in current_snapshot_assignment_ids,
+            f"discipline_local_code_registry must only expose current snapshot assignments: {assignment_id!r}",
+        )
+        assert_true(
+            paper_id in papers_by_id,
+            f"discipline_local_code_registry unknown paper_id at row {index}: {paper_id!r}",
+        )
+        assert_true(
+            paper_id not in seen_paper_ids,
+            f"discipline_local_code_registry duplicate paper_id: {paper_id!r}",
+        )
+        seen_paper_ids.add(paper_id)
+
+        ledger_row = ledger_by_assignment_id[assignment_id]
+        paper_row = papers_by_id[paper_id]
+        assert_true(
+            paper_id == str(ledger_row["paper_id"]),
+            f"discipline_local_code_registry assignment/paper mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["assignment_status"] == ledger_row["assignment_status"],
+            f"discipline_local_code_registry assignment_status mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["discipline_local_code"] == ledger_row["discipline_local_code"],
+            f"discipline_local_code_registry discipline_local_code mismatch for {assignment_id}",
+        )
+        expected_rank = (
+            str(row["discipline_local_code"]).rsplit("-", 1)[-1]
+            if row["discipline_local_code"]
+            else ""
+        )
+        assert_true(
+            row["discipline_local_rank"] == expected_rank,
+            f"discipline_local_code_registry discipline_local_rank mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["primary_taxonomy_code_2lvl"] == ledger_row["primary_taxonomy_code_2lvl"],
+            f"discipline_local_code_registry primary_taxonomy_code_2lvl mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["assigned_at"] == ledger_row["assigned_at"],
+            f"discipline_local_code_registry assigned_at mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["assigned_by"] == ledger_row["assigned_by"],
+            f"discipline_local_code_registry assigned_by mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["retired_at"] == ledger_row["retired_at"],
+            f"discipline_local_code_registry retired_at mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["redirected_to_code"] == ledger_row["redirected_to_code"],
+            f"discipline_local_code_registry redirected_to_code mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["assignment_reason"] == ledger_row["assignment_reason"],
+            f"discipline_local_code_registry assignment_reason mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["pending_reason"] == ledger_row["pending_reason"],
+            f"discipline_local_code_registry pending_reason mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["primary_module_for_filing"] == paper_row["primary_module_for_filing"],
+            f"discipline_local_code_registry primary_module_for_filing mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["legacy_secondary_class"] == paper_row["legacy_secondary_class"],
+            f"discipline_local_code_registry legacy_secondary_class mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["scientific_object_modules"] == paper_row["scientific_object_modules"],
+            f"discipline_local_code_registry scientific_object_modules mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["general_method_bucket"] == paper_row["general_method_bucket"],
+            f"discipline_local_code_registry general_method_bucket mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["title"] == paper_row["title"],
+            f"discipline_local_code_registry title mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["note_path"] == paper_row["note_path"],
+            f"discipline_local_code_registry note_path mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["pdf_path"] == paper_row["pdf_path"],
+            f"discipline_local_code_registry pdf_path mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["active_confirmed_core"] == paper_row["active_confirmed_core"],
+            f"discipline_local_code_registry active_confirmed_core mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["is_derived_snapshot"] is True,
+            f"discipline_local_code_registry is_derived_snapshot must be true for {assignment_id}",
+        )
+
+        generated_at_values.add(str(row["generated_at"]))
+        generated_by_values.add(str(row["generated_by"]))
+        source_commit_values.add(str(row["source_commit"]))
+        worktree_dirty_values.add(bool(row["worktree_dirty"]))
+
+    assert_true(
+        len(generated_at_values) == 1,
+        "discipline_local_code_registry generated_at must be uniform across the snapshot",
+    )
+    assert_true(
+        len(generated_by_values) == 1,
+        "discipline_local_code_registry generated_by must be uniform across the snapshot",
+    )
+    assert_true(
+        len(source_commit_values) == 1,
+        "discipline_local_code_registry source_commit must be uniform across the snapshot",
+    )
+    assert_true(
+        len(worktree_dirty_values) == 1,
+        "discipline_local_code_registry worktree_dirty must be uniform across the snapshot",
+    )
 
 
 
@@ -1049,6 +1216,7 @@ def main() -> None:
     missing_pdf_manifest = load_json(DATA_DIR / "missing_pdf_manifest.json")
     note_manifest = load_json(DATA_DIR / "note_manifest.json")
     validate_discipline_code_assignments_owner(papers)
+    validate_discipline_local_code_registry(papers)
 
     paper_ids = [row["paper_id"] for row in papers]
     assert_true(len(paper_ids) == len(set(paper_ids)), "Duplicate paper_id found in papers.jsonl")

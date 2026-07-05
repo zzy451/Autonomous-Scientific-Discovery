@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import json
 import re
+import subprocess
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -20,9 +21,11 @@ PROGRESS_PATH = (
 DATA_DIR = ROOT / "Data"
 REGISTRY_DIR = DATA_DIR / "registry"
 CLASSIFICATION_CODE_INDEX_PATH = DATA_DIR / "classification_code_index.json"
+DISCIPLINE_CODE_ASSIGNMENTS_PATH = DATA_DIR / "discipline_code_assignments.jsonl"
 DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH = (
     DATA_DIR / "discipline_code_initial_assignment_preview.csv"
 )
+DISCIPLINE_LOCAL_CODE_REGISTRY_PATH = DATA_DIR / "discipline_local_code_registry.jsonl"
 
 MASTER_HEADER = [
     "ID",
@@ -240,6 +243,33 @@ PREVIEW_FIELDNAMES = [
     "note_path",
     "pdf_path",
     "review_flags",
+]
+DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDNAMES = [
+    "paper_id",
+    "assignment_id",
+    "discipline_local_code",
+    "discipline_local_rank",
+    "assignment_status",
+    "assigned_at",
+    "assigned_by",
+    "retired_at",
+    "redirected_to_code",
+    "assignment_reason",
+    "pending_reason",
+    "primary_module_for_filing",
+    "primary_taxonomy_code_2lvl",
+    "legacy_secondary_class",
+    "scientific_object_modules",
+    "general_method_bucket",
+    "title",
+    "note_path",
+    "pdf_path",
+    "active_confirmed_core",
+    "is_derived_snapshot",
+    "generated_at",
+    "generated_by",
+    "source_commit",
+    "worktree_dirty",
 ]
 
 
@@ -486,12 +516,49 @@ def load_classification_code_index() -> Dict[str, object]:
     return payload
 
 
+def load_jsonl_rows(path: Path) -> List[Dict[str, object]]:
+    rows: List[Dict[str, object]] = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            rows.append(json.loads(line))
+    return rows
+
+
 def is_yes_like(value: str) -> bool:
     return value.strip().lower().startswith("yes")
 
 
 def stringify_list(values: List[str]) -> str:
     return ";".join(values)
+
+
+def parse_discipline_local_rank(discipline_local_code: object) -> str:
+    if not discipline_local_code:
+        return ""
+    return str(discipline_local_code).rsplit("-", 1)[-1]
+
+
+def get_git_export_metadata() -> Tuple[str, bool]:
+    try:
+        source_commit = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+        ).strip()
+    except Exception:
+        source_commit = ""
+    try:
+        worktree_status = subprocess.check_output(
+            ["git", "status", "--porcelain"],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+        )
+        worktree_dirty = bool(worktree_status.strip())
+    except Exception:
+        worktree_dirty = False
+    return source_commit, worktree_dirty
 
 
 def build_discipline_initial_assignment_preview(
@@ -622,6 +689,79 @@ def build_discipline_initial_assignment_preview(
             row["discipline_local_rank"] = f"{index:03d}"
 
     return preview_rows
+
+
+def build_discipline_local_code_registry(
+    papers: Iterable[Dict[str, object]],
+    discipline_code_assignments: List[Dict[str, object]],
+    generated_at: str,
+    generated_by: str,
+    source_commit: str,
+    worktree_dirty: bool,
+) -> List[Dict[str, object]]:
+    papers_by_id = {str(paper["paper_id"]): paper for paper in papers}
+    registry_rows: List[Dict[str, object]] = []
+    current_statuses = {
+        "active_code",
+        "pending_secondary",
+        "non_discipline_general_method",
+    }
+    assignments_by_paper_id: Dict[str, List[Dict[str, object]]] = {}
+
+    for assignment in discipline_code_assignments:
+        paper_id = str(assignment["paper_id"])
+        assignments_by_paper_id.setdefault(paper_id, []).append(assignment)
+
+    for paper_id, assignments in sorted(assignments_by_paper_id.items()):
+        paper = papers_by_id.get(paper_id)
+        if paper is None:
+            raise ValueError(
+                f"discipline_code_assignments.jsonl references unknown paper_id during registry export: {paper_id}"
+            )
+        current_assignments = [
+            assignment
+            for assignment in assignments
+            if str(assignment["assignment_status"]) in current_statuses
+        ]
+        if len(current_assignments) != 1:
+            raise ValueError(
+                "discipline_code_assignments.jsonl must provide exactly one current "
+                f"snapshot row per paper for registry export: {paper_id} -> {len(current_assignments)}"
+            )
+        assignment = current_assignments[0]
+
+        discipline_local_code = assignment.get("discipline_local_code")
+        registry_rows.append(
+            {
+                "paper_id": paper_id,
+                "assignment_id": assignment["assignment_id"],
+                "discipline_local_code": discipline_local_code,
+                "discipline_local_rank": parse_discipline_local_rank(discipline_local_code),
+                "assignment_status": assignment["assignment_status"],
+                "assigned_at": assignment["assigned_at"],
+                "assigned_by": assignment["assigned_by"],
+                "retired_at": assignment["retired_at"],
+                "redirected_to_code": assignment["redirected_to_code"],
+                "assignment_reason": assignment["assignment_reason"],
+                "pending_reason": assignment["pending_reason"],
+                "primary_module_for_filing": paper["primary_module_for_filing"],
+                "primary_taxonomy_code_2lvl": assignment["primary_taxonomy_code_2lvl"],
+                "legacy_secondary_class": paper["legacy_secondary_class"],
+                "scientific_object_modules": paper["scientific_object_modules"],
+                "general_method_bucket": paper["general_method_bucket"],
+                "title": paper["title"],
+                "note_path": paper["note_path"],
+                "pdf_path": paper["pdf_path"],
+                "active_confirmed_core": paper["active_confirmed_core"],
+                "is_derived_snapshot": True,
+                "generated_at": generated_at,
+                "generated_by": generated_by,
+                "source_commit": source_commit,
+                "worktree_dirty": worktree_dirty,
+            }
+        )
+
+    return registry_rows
 
 
 def build_papers(master_rows: Iterable[Dict[str, str]], progress_rows: Dict[str, Dict[str, str]]) -> List[Dict[str, object]]:
@@ -1071,17 +1211,32 @@ def main() -> None:
     progress_rows = {row["paper_id"]: row for row in progress_table.rows}
 
     papers = build_papers(master_table.rows, progress_rows)
+    discipline_code_assignments = (
+        load_jsonl_rows(DISCIPLINE_CODE_ASSIGNMENTS_PATH)
+        if DISCIPLINE_CODE_ASSIGNMENTS_PATH.exists()
+        else []
+    )
     sha256_cache: Dict[str, str] = {}
     taxonomy_index = build_taxonomy_index()
+    source_commit, worktree_dirty = get_git_export_metadata()
+    generated_at = str(papers[0]["exported_at"]) if papers else ""
     paper_registry = build_paper_registry(papers)
     paper_identifier_aliases = build_paper_identifier_aliases(papers)
-    taxonomy_registry = build_taxonomy_registry(str(papers[0]["exported_at"]) if papers else "")
+    taxonomy_registry = build_taxonomy_registry(generated_at)
     classification_assignments = build_classification_assignments(papers)
     pdf_archive_registry = build_pdf_archive_registry(papers, sha256_cache)
     asset_manifest = build_asset_manifest(papers, sha256_cache)
     pdf_manifest = build_pdf_manifest(papers, sha256_cache)
     missing_pdf_manifest = build_missing_pdf_manifest(papers)
     note_manifest = build_note_manifest(papers)
+    discipline_local_code_registry = build_discipline_local_code_registry(
+        papers=papers,
+        discipline_code_assignments=discipline_code_assignments,
+        generated_at=generated_at,
+        generated_by="export_structured_data.py",
+        source_commit=source_commit,
+        worktree_dirty=worktree_dirty,
+    )
     discipline_code_initial_assignment_preview = build_discipline_initial_assignment_preview(
         papers, classification_code_index
     )
@@ -1096,6 +1251,7 @@ def main() -> None:
         discipline_code_initial_assignment_preview,
         PREVIEW_FIELDNAMES,
     )
+    write_jsonl(DISCIPLINE_LOCAL_CODE_REGISTRY_PATH, discipline_local_code_registry)
     write_jsonl(REGISTRY_DIR / "paper_registry.jsonl", paper_registry)
     write_jsonl(REGISTRY_DIR / "paper_identifier_aliases.jsonl", paper_identifier_aliases)
     write_json(REGISTRY_DIR / "taxonomy_registry.json", taxonomy_registry)
@@ -1112,6 +1268,10 @@ def main() -> None:
     print(
         "Exported "
         f"{len(discipline_code_initial_assignment_preview)} initial discipline-code preview rows"
+    )
+    print(
+        "Exported "
+        f"{len(discipline_local_code_registry)} discipline local code registry rows"
     )
     print(f"Exported {len(paper_registry)} paper registry rows")
     print(f"Exported {len(paper_identifier_aliases)} paper identifier alias rows")
