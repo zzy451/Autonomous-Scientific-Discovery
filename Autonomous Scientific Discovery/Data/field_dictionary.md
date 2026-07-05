@@ -629,6 +629,57 @@ workflow mirror 审计层单独放在：
 - `active_confirmed_core`
 - `inclusion_status`
 
+### 4.6 SQLite `metadata`
+
+定位: 当前 `papers.sqlite` 的 build metadata 表，记录本轮 analysis build 的基础计数与输入快照摘要。
+
+关键字段:
+
+- `key`
+- `value`
+
+当前语义:
+
+- 当前至少包含：
+  - `schema_version`
+  - `papers_jsonl_sha256`
+  - `papers_record_count`
+  - `active_confirmed_core_count`
+  - `active_local_pdf_count`
+  - `active_no_local_pdf_count`
+- 它不是 owner fact source，而是 build 过程生成的运行元信息。
+- 当前 `build_analysis_db.py` 已显式校验：
+  - `metadata` rows 必须与本轮 build 实际输入和计数一致
+- 当前 `query_analysis_db.py` 已提供：
+  - `metadata`
+  用于直接检查这张表。
+
+### 4.7 SQLite `analysis_object_scope_registry`
+
+定位: 当前 `papers.sqlite` 的对象语义注册表，用来声明 SQLite 中每个 table/view 的 scope class、默认用途和 warning。
+
+关键字段:
+
+- `object_name`
+- `object_type`
+- `scope_class`
+- `default_usage`
+- `warning`
+
+当前语义:
+
+- 它是 SQLite 内部对象解释层，不是新的事实源。
+- 它服务于：
+  - 区分 canonical-only / workflow-status / mixed-scope / audit-only surfaces
+  - 给 query / analysis / review 提供对象级 guardrail
+- 当前 `build_analysis_db.py` 已显式校验：
+  - 注册表 rows 必须与 build 脚本当前声明一致
+  - 注册表中的每个对象必须在 SQLite 中真实存在
+  - `object_type` 必须与实际 `table/view` 类型一致
+- 当前 `query_analysis_db.py` 已提供：
+  - `object-scope-registry`
+  用于直接检查这张表。
+
 ## 5. 非协商一致性规则
 
 1. `ASD-xxxx` 是唯一永久主键。
