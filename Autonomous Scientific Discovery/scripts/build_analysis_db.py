@@ -986,6 +986,20 @@ def validate_metadata_and_summary_tables(
 def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
     return [
         (
+            'active_confirmed_core_papers',
+            'view',
+            'derived_snapshot',
+            'default active-paper subset',
+            'Convenience view over papers WHERE active_confirmed_core = 1.',
+        ),
+        (
+            'active_missing_local_pdf',
+            'view',
+            'workflow_status',
+            'missing PDF follow-up subset',
+            'Convenience view over active_confirmed_core papers with no local PDF.',
+        ),
+        (
             'change_log',
             'table',
             'audit_owner',
@@ -998,6 +1012,13 @@ def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
             'taxonomy_owner_snapshot',
             'default taxonomy term lookup',
             'Normalized taxonomy owner snapshot built from Data/classification_code_index.json.',
+        ),
+        (
+            'metadata',
+            'table',
+            'build_metadata',
+            'build/run metadata lookup',
+            'Build metadata rows derived during build_analysis_db.py; not a paper-level fact source.',
         ),
         (
             'discipline_code_assignments',
@@ -1014,6 +1035,13 @@ def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
             'One-row-per-paper canonical general-method bucket table; empty for non-bucket papers.',
         ),
         (
+            'taxonomy_index',
+            'table',
+            'taxonomy_lookup',
+            'default code/label lookup',
+            'SQLite copy of Data/taxonomy_index.json for compact code/label joins; use classification_terms for richer taxonomy owner semantics.',
+        ),
+        (
             'discipline_local_code_registry',
             'table',
             'derived_snapshot',
@@ -1028,6 +1056,13 @@ def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
             'Per-paper PDF/source evidence table derived from the authoritative paper/progress lane.',
         ),
         (
+            'pdf_inventory',
+            'table',
+            'derived_snapshot',
+            'local PDF inventory lookup',
+            'Per-paper local PDF inventory built from Data/pdf_manifest.json.',
+        ),
+        (
             'paper_assets',
             'table',
             'derived_snapshot',
@@ -1035,11 +1070,25 @@ def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
             'Per-asset snapshot loaded from Data/registry/asset_manifest.jsonl.',
         ),
         (
+            'missing_pdf_inventory',
+            'table',
+            'workflow_status',
+            'missing PDF follow-up lookup',
+            'Active confirmed-core no-local-PDF inventory built from Data/missing_pdf_manifest.json.',
+        ),
+        (
             'notes',
             'table',
             'derived_snapshot',
             'default note inventory lookup',
             'Per-paper note snapshot loaded from Data/note_manifest.json.',
+        ),
+        (
+            'note_inventory',
+            'table',
+            'derived_snapshot',
+            'note inventory compatibility lookup',
+            'Per-paper note inventory table built from Data/note_manifest.json.',
         ),
         (
             'papers',
