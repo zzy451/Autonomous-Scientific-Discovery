@@ -1164,12 +1164,33 @@ def validate_analysis_object_scope_registry() -> None:
             ORDER BY object_name
             '''
         ).fetchall()
+        sqlite_objects = {
+            row[0]: row[1]
+            for row in conn.execute(
+                '''
+                SELECT name, type
+                FROM sqlite_master
+                WHERE type IN ('table', 'view')
+                '''
+            ).fetchall()
+        }
     finally:
         conn.close()
     assert_build_condition(
         actual_rows == expected_rows,
         'SQLite analysis_object_scope_registry drifted from expected declared object-scope rows',
     )
+    for object_name, object_type, _scope_class, _default_usage, _warning in expected_rows:
+        actual_type = sqlite_objects.get(object_name)
+        assert_build_condition(
+            actual_type is not None,
+            f'SQLite analysis_object_scope_registry references missing object: {object_name}',
+        )
+        assert_build_condition(
+            actual_type == object_type,
+            'SQLite analysis_object_scope_registry object_type mismatch for '
+            f'{object_name}: declared {object_type!r}, actual {actual_type!r}',
+        )
 
 def build_general_method_bucket_rows(papers: list[dict[str, object]]) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
