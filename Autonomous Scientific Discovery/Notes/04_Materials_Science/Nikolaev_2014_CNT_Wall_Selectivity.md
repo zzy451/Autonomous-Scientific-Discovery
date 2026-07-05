@@ -37,13 +37,20 @@
 - The main unresolved issue is Agent-strength / autonomy-loop strength, not the materials-object classification.
 - Keep this note as a conservative hold with `confidence=medium` and `source_limited=yes`.
 
+### 2026-07-05 Source-Limited Closeout Refresh
+
+- Rechecked the archived official supplementary PDF directly. Page 2 shows the ARES instrument diagram, including the growth chamber, gas-flow control inputs, x-y-z motion stage, and optical/Raman path.
+- Rechecked the archived official supplementary PDF pages 3-5. They explicitly compare experimental outcomes against logistic-regression predictions across the parameter space, strengthening the claim that this was a real automated experimentation / model-updating workflow rather than a one-shot materials screen.
+- The official ACS abstract remains the only accessible first-hand source for the main article narrative; it still anchors adaptive rapid experimentation, automated control, in situ Raman characterization, and 100+ experiments per day.
+- This extra supplementary evidence improves the supporting picture for automated experimentation, but it still does not justify pretending that the main article full text was read. Keep `source_limited=yes`.
+
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 暂保留 confirmed core，但强度仍待全文核查 | official abstract | 论文有 automated CVD growth experimentation、adaptive rapid experimentation、automated control 与 in situ Raman characterization | 中 |
-| 科学对象归类 | `04.03` | official abstract | 直接对象是 carbon nanotube growth selectivity 与 wall-number control | 高 |
-| 方法流程 | 自动实验 + 在线表征 | official abstract | 系统一天可做 100+ experiments，并带 automated control 和 in situ Raman characterization | 高 |
+| 科学对象归类 | `04.03` | official abstract + official supplementary PDF | 直接对象是 carbon nanotube growth selectivity 与 wall-number control | 高 |
+| 方法流程 | 自动实验 + 在线表征 | official abstract + official supplementary PDF | 系统一天可做 100+ experiments，并带 automated control、ARES instrument 与 in situ Raman characterization | 高 |
 | 实验验证 | 真实 CNT 生长实验 | official abstract | 基于真实 CVD 生长和在线 Raman characterization | 高 |
-| 边界判断 | 更像 core-strength risk，不是 class risk | official abstract | 当前不确定点是“自主决策强度”是否足够，不是材料对象归类 | 中高 |
+| 边界判断 | 更像 core-strength risk，不是 class risk | official abstract + official supplementary PDF | 当前不确定点是“自主决策强度”是否足够，不是材料对象归类；supplementary PDF 已进一步坐实自动化装置与模型-实验联动 | 中高 |
 
 ## 0. 摘要翻译
 

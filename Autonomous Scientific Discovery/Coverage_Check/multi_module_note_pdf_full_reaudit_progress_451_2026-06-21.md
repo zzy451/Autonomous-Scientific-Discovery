@@ -296,7 +296,7 @@
 
 | ASD-0463 | AI-driven robotic chemist for autonomous synthesis of organic molecules | Notes/03_Chemical_Sciences/Ha_2023_Robotic_Chemist_Organic_Molecules.md | archived_pdf | Reference_PDF/03_Chemical_Sciences/Ha_2023_Robotic_Chemist_Organic_Molecules.pdf | first_hand_full_text | updated | updated | 03 | no | Batch15Partial1 | yes |
 
-| ASD-0466 | Discovery of Wall-Selective Carbon Nanotube Growth Conditions <i>via</i> Automated Experimentation | Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md | official_supplementary_pdf_archived_main_article_gated | Reference_PDF/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity_Supplementary.pdf | first_hand_abstract_and_official_supplementary | updated_source_limited | not_updated_conservative_hold | 04 | yes | Batch30Partial4 | no |
+| ASD-0466 | Discovery of Wall-Selective Carbon Nanotube Growth Conditions <i>via</i> Automated Experimentation | Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md | official_supplementary_pdf_archived_main_article_gated | Reference_PDF/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity_Supplementary.pdf | first_hand_abstract_and_official_supplementary | updated_source_limited | updated_source_limited | 04 | yes | Phase6FollowupR23Approx | yes |
 
 | ASD-0478 | NIMS-OS: an automation software to implement a closed loop between artificial intelligence and robotic experiments in materials science | Notes/04_Materials_Science/Tamura_2023_NIMS_OS.md | archived_pdf | Reference_PDF/04_Materials_Science/Tamura_2023_NIMS_OS.pdf | first_hand_full_text | updated | updated | 04 | no | Batch15Partial1 | yes |
 

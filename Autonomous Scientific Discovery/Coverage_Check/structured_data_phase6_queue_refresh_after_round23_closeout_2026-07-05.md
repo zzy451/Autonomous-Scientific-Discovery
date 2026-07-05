@@ -3,81 +3,49 @@
 Date: 2026-07-05
 Round label: `Phase6QueueRefreshAfterR23`
 
-This refresh step propagates the already-landed `Phase6NoteRevisionR23` result into the reusable Phase 6 queue layer. It does not create new authoritative facts.
+This refresh step propagates the already-landed `Phase6FollowupR23Approx` result into the reusable Phase 6 queue layer. It does not create new authoritative facts beyond the already-landed round23 deltas.
 
 ## 1. Landed deltas
 
-`Phase6NoteRevisionR23` landed nineteen note-only harmonization deltas:
+`Phase6FollowupR23Approx` landed one authoritative source-limited closeout:
 
-- `ASD-0673`
-- `ASD-0790`
-- `ASD-0792`
-- `ASD-0650`
-- `ASD-0064`
-- `ASD-0085`
-- `ASD-0137`
-- `ASD-0663`
-- `ASD-0669`
-- `ASD-0714`
-- `ASD-0008`
-- `ASD-0054`
-- `ASD-0540`
-- `ASD-0564`
-- `ASD-0510`
-- `ASD-0693`
-- `ASD-0844`
-- `ASD-0845`
-- `ASD-0850`
+- `ASD-0466`
 
-For all nineteen rows:
+For this row:
 
 - authoritative modules / `01.04` bucket decisions remained unchanged
-- note wording was tightened against the current authoritative pair
-- stale no-local-PDF, stale article-page-only / abstract-stage wording, stale single-module body language, and stale pending-revision status prose were explicitly superseded
-- no master / progress writeback was introduced in this round
+- the stable state remains `scientific_object_modules=04`, `source_limited=yes`
+- the progress row is now fully closed
+- master remarks now reflect the current official-abstract + official-supplementary conservative-hold state
 
 ## 2. Controller actions
 
 The controller ran:
 
-1. `python "Autonomous Scientific Discovery/scripts/generate_phase6_preparation_queues.py"`
-2. reviewed the refreshed note-revision and full-text follow-up queues under freshness override
-
-No authoritative files were edited in this refresh step beyond the already-landed R23 note-only harmonization.
+1. `python "Autonomous Scientific Discovery/scripts/export_structured_data.py"`
+2. `python "Autonomous Scientific Discovery/scripts/check_data_consistency.py"`
+3. `python "Autonomous Scientific Discovery/scripts/build_analysis_db.py"`
+4. `python "Autonomous Scientific Discovery/scripts/generate_phase6_preparation_queues.py"`
+5. reviewed the refreshed `note_revision_queue` and `full_text_followup_queue`
 
 ## 3. Verified refresh results
 
-- the refreshed `note_revision_queue` still supports another truthful standard `30`-paper note-harmonization round after freshness override of the full `R22` and `R23` 30-paper packets
-- the refreshed `full_text_followup_queue` still contains real source-limited pressure, but this refresh does not force a packet-type switch away from note-harmonization
-- the next natural standard packet after skipping the full `R22` and `R23` 30-paper sets starts with:
-  - `ASD-0857`
-  - `ASD-0869`
-  - `ASD-0870`
-  - `ASD-0871`
-  - `ASD-0003`
-  - `ASD-0112`
-  - `ASD-0117`
-  - `ASD-0603`
-  - `ASD-0740`
-  - `ASD-0818`
+After the round23 landing and queue refresh:
+
+- the authoritative progress tracker contains `451` rows with `0` remaining `closed=no` rows
 - the refreshed preparation layer still reflects the stable `447 / 422 / 25 / canonical 01.04 = 9 / drift 0` baseline
+- `ASD-0466` still appears in the generated note-revision and full-text-followup queues because the generator continues to surface source-limited and non-full-text rows as optional future strengthening candidates
+
+Important interpretation note:
+
+- queue presence here is heuristic future pressure only
+- it does not reopen the now-closed authoritative progress state for `ASD-0466`
+- future controller rounds must still be refrozen from the current authoritative pair plus controller freshness override, not inferred mechanically from residual queue presence
 
 ## 4. Conclusion
 
-`Phase6QueueRefreshAfterR23` confirms two things:
+`Phase6QueueRefreshAfterR23` confirms three things:
 
-1. the nineteen R23 note-only harmonization landings are fully preserved in the note layer without altering the authoritative pair
-2. the next natural standard `3 x 10 = 30` Phase 6 round can continue as a note-harmonization round drawn from the refreshed note-revision queue after freshness override of the `R22` and `R23` packets
-
-This is a queue-layer consequence of the current state, not a change to the governing plan stack.
-
-## 5. Next controller launch direction
-
-The next standard round should be frozen as:
-
-- a real multi-agent round if the sub-agent interface remains available
-- `3` contiguous slices of `10` notes / papers each
-- sourced from the refreshed `structured_data_phase6_note_revision_queue_447_2026-07-02.tsv`
-- with the exact `Phase6NoteRevisionR22` and `Phase6NoteRevisionR23` 30-paper sets freshness-overridden before packet freezing
-
-Completed round agents from `R23` were closed before this refresh step.
+1. the final authoritative progress-tail row has now been fully closed
+2. the landed conservative source-limited hold is preserved without changing the canonical baseline counts
+3. any remaining queue pressure from `ASD-0466` is now purely about optional future source-strengthening rather than unresolved authoritative closeout
