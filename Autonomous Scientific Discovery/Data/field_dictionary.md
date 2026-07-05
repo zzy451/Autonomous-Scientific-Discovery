@@ -320,7 +320,8 @@
 关键字段:
 
 - `schema_version`
-- `generated_or_updated_at`
+- `updated_at`
+- `updated_by`
 - `primary_code_to_label`
 - `secondary_code_to_label`
 - `label_to_primary_code`
@@ -333,6 +334,7 @@
 - `01.04` 是 general-method bucket，不是 formal module。
 - 二级 term 可先为空，后续从 legacy secondary class 归纳后补。
 - 它不是 derived snapshot；分类术语定义变更必须从这里开始。
+- 日常 export 只能读取它来校验 taxonomy term，不得覆盖它。
 
 ### 4.2B `discipline_code_assignments.jsonl`
 
@@ -409,4 +411,5 @@
 2. `01.04` 只能作为 general bucket，不进入 formal module 数组。
 3. master + progress 是论文内容与核查状态事实层；`discipline_code_assignments.jsonl` 与 `classification_code_index.json` 是 Data 内的 owner 例外。
 4. registry 与普通 analysis outputs 都不能演化成手工维护的事实源。
-5. 任何结构化变更都应先改对应 owner file，再跑导出和一致性校验。
+5. 日常 export 只生成 derived outputs，不得覆盖 `discipline_code_assignments.jsonl` 或 `classification_code_index.json`。
+6. 任何结构化变更都应先改对应 owner file，再跑导出和一致性校验。

@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
-  "generated_or_updated_at": "2026-07-05",
+  "updated_at": "2026-07-05",
+  "updated_by": "codex",
   "primary_code_to_label": {
     "01": "Formal, Information and Computational Sciences",
     "01.04": "General ASD Methods without Concrete Object Experiments",

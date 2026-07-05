@@ -31,6 +31,7 @@
 - `discipline_code_assignments.jsonl` references an unknown `paper_id`.
 - Derived Data outputs cannot be regenerated from owner sources.
 - Export overwrites `discipline_code_assignments.jsonl`.
+- Daily export overwrites `classification_code_index.json`.
 
 ## 3. WARNING Examples
 

@@ -522,7 +522,8 @@ pending_reason = null
 ```json
 {
   "schema_version": 1,
-  "generated_or_updated_at": "2026-07-05",
+  "updated_at": "2026-07-05",
+  "updated_by": "codex",
   "primary_code_to_label": {},
   "secondary_code_to_label": {},
   "label_to_primary_code": {},
@@ -777,7 +778,6 @@ discipline_code_assignments(
    - `discipline_local_code`
    - `discipline_display_order`
 4. 写出：
-   - `classification_code_index.json`
    - `discipline_local_code_registry.jsonl`
 
 注意：
@@ -790,7 +790,9 @@ discipline_code_assignments(
 - 如果是 pure general-method-only，写入 `non_discipline_general_method`，不生成普通学科 code。
 - export 只读取 code assignment ledger 并生成 registry，不直接决定稳定 code 历史。
 - export 应读取 `classification_code_index.json` 校验 taxonomy term 合法性。
-- export 写出的 registry 应标记 `is_derived_snapshot=true`、`generated_at`、`generated_by`、`source_commit`。
+- 日常 export 不得覆盖任何 owner fact source，尤其不得覆盖 `classification_code_index.json` 或 `discipline_code_assignments.jsonl`。
+- 如果确实需要初始化或维护 taxonomy vocabulary，应使用专门命令，例如 `init_classification_code_index.py` 或 `export_structured_data.py --init-taxonomy-index`，且不得混入日常 export 流程。
+- export 写出的 registry 应标记 `is_derived_snapshot=true`、`generated_at`、`generated_by`、`source_commit`、`worktree_dirty`。
 
 ## 6.2 扩展 `build_analysis_db.py`
 
@@ -854,6 +856,7 @@ ERROR 示例：
 - `01.04` 进入 formal `scientific_object_modules`
 - derived Data 层不能由 export / build 重建
 - `discipline_code_assignments.jsonl` 被 export 覆盖重建
+- `classification_code_index.json` 被日常 export 覆盖重建
 
 WARNING 示例：
 

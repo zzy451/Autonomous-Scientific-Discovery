@@ -75,6 +75,7 @@ This means:
 - PDF status changes start in progress, never in `pdf_archive_registry` or `pdf_manifest.json`
 - discipline-local code changes start in `discipline_code_assignments.jsonl`, never in `discipline_local_code_registry.jsonl` or CSV
 - taxonomy vocabulary changes start in `classification_code_index.json`, never in registry or SQLite
+- daily export must not overwrite owner fact sources, including `discipline_code_assignments.jsonl` and `classification_code_index.json`
 - query bugs are fixed in scripts, then outputs are regenerated
 
 ## Regeneration order
@@ -304,4 +305,5 @@ python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" summary
 - PDF truth follows the progress file plus real local file existence.
 - `discipline_local_code` truth follows `Data/discipline_code_assignments.jsonl`.
 - taxonomy vocabulary truth follows `Data/classification_code_index.json`.
+- Daily export only writes derived outputs; owner fact sources require explicit initialization or maintenance flow.
 - A passing `check_data_consistency.py` run is the minimum bar before committing structured-data changes.
