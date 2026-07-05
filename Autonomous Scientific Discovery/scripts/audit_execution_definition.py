@@ -94,6 +94,7 @@ def main() -> None:
     classification_index = load_json(CLASSIFICATION_CODE_INDEX)
     readme_text = read_text(README)
     integrity_report_text = read_text(INTEGRITY_REPORT)
+    pipeline_script_text = read_text(PIPELINE_SCRIPT)
     active_papers = [row for row in papers if bool(row.get("active_confirmed_core"))]
 
     with sqlite3.connect(SQLITE_PATH) as conn:
@@ -306,11 +307,43 @@ def main() -> None:
     )
     add_result(results, "11", status, detail, "Data/integrity_check_report.md")
 
-    workflow_ok = PIPELINE_SCRIPT.exists() and "owner fact source" in readme_text and "Workflow order" in readme_text
+    workflow_readme_ok = all(
+        token in readme_text
+        for token in (
+            "Workflow order",
+            "owner fact source",
+            "scripts/run_structured_data_pipeline.py",
+            "--with-execution-audit",
+            "audit_execution_definition.py",
+        )
+    )
+    workflow_pipeline_ok = all(
+        token in pipeline_script_text
+        for token in (
+            "OWNER_FACT_SOURCE_PATHS",
+            "print_preflight_summary",
+            "export_structured_data.py",
+            "check_data_consistency.py",
+            "build_analysis_db.py",
+            "--with-execution-audit",
+            "audit_execution_definition.py",
+        )
+    )
+    ordered_steps_ok = (
+        pipeline_script_text.find("export_structured_data.py")
+        < pipeline_script_text.find("check_data_consistency.py")
+        < pipeline_script_text.find("build_analysis_db.py")
+    )
+    workflow_ok = (
+        PIPELINE_SCRIPT.exists()
+        and workflow_readme_ok
+        and workflow_pipeline_ok
+        and ordered_steps_ok
+    )
     status, detail = check(
         workflow_ok,
-        "The owner fact source -> export -> check -> build workflow is documented and exposed via a canonical pipeline script.",
-        "The owner fact source -> export -> check -> build workflow is not yet fully documented and exposed as a canonical pipeline.",
+        "The owner fact source -> export -> check -> build workflow is documented in README and exposed via a canonical pipeline script with preflight owner summary and optional execution audit.",
+        "The canonical workflow is missing README coverage and/or pipeline-script support for owner preflight, ordered export/check/build execution, or optional execution audit.",
     )
     add_result(results, "12", status, detail, "scripts/run_structured_data_pipeline.py + Data/README.md")
 

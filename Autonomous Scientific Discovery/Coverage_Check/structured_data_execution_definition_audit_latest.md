@@ -77,6 +77,6 @@ Evidence: `Data/integrity_check_report.md`
 
 ### Item 12 - PASS
 
-The owner fact source -> export -> check -> build workflow is documented and exposed via a canonical pipeline script.
+The owner fact source -> export -> check -> build workflow is documented in README and exposed via a canonical pipeline script with preflight owner summary and optional execution audit.
 
 Evidence: `scripts/run_structured_data_pipeline.py + Data/README.md`
