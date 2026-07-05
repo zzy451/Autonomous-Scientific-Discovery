@@ -5,6 +5,7 @@ import argparse
 import csv
 import json
 import re
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List
 
@@ -26,6 +27,7 @@ ALLOWED_STATUSES = {
     STATUS_PENDING,
     STATUS_GENERAL_METHOD,
 }
+DATE_PATTERN = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}$")
 
 
 def load_preview_rows() -> List[Dict[str, str]]:
@@ -190,6 +192,13 @@ def write_jsonl(path: Path, rows: List[Dict[str, object]]) -> None:
             handle.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+def ensure_date(value: str) -> str:
+    normalized = value.strip()
+    if not DATE_PATTERN.fullmatch(normalized):
+        raise SystemExit(f"--assigned-at must be YYYY-MM-DD: {value!r}")
+    return normalized
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
@@ -199,8 +208,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--assigned-at",
-        default="2026-07-05",
-        help="Assignment date in YYYY-MM-DD format. Default: 2026-07-05",
+        default=datetime.now().strftime("%Y-%m-%d"),
+        help="Assignment date in YYYY-MM-DD format. Default: today",
     )
     parser.add_argument(
         "--assigned-by",
@@ -221,16 +230,23 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Overwrite an existing discipline_code_assignments.jsonl owner file.",
     )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Preview ledger initialization without writing discipline_code_assignments.jsonl.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+    assigned_at = ensure_date(args.assigned_at)
     if LEDGER_PATH.exists() and not args.overwrite:
-        raise SystemExit(
-            "discipline_code_assignments.jsonl already exists. "
-            "Refusing to overwrite without --overwrite."
-        )
+        if not args.dry_run:
+            raise SystemExit(
+                "discipline_code_assignments.jsonl already exists. "
+                "Refusing to overwrite without --overwrite."
+            )
 
     preview_rows = load_preview_rows()
     summary = validate_preview_rows(
@@ -239,16 +255,21 @@ def main() -> None:
     )
     ledger_rows = build_ledger_rows(
         preview_rows,
-        assigned_at=args.assigned_at,
+        assigned_at=assigned_at,
         assigned_by=args.assigned_by,
     )
-    write_jsonl(LEDGER_PATH, ledger_rows)
 
-    print(f"Wrote {LEDGER_PATH}")
+    print(f"Prepared {len(ledger_rows)} ledger rows from {PREVIEW_PATH}")
     for status, count in summary.items():
         print(f"{status}: {count}")
     if args.allow_unreviewed_preview:
         print("Initialized with --allow-unreviewed-preview.")
+    if args.dry_run:
+        print("Dry run only; no files written.")
+        return
+
+    write_jsonl(LEDGER_PATH, ledger_rows)
+    print(f"Wrote {LEDGER_PATH}")
 
 
 if __name__ == "__main__":

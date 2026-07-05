@@ -136,7 +136,7 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 Daily export must not write owner fact sources. The corresponding owner-maintenance helpers are explicit commands:
 
 - `scripts/init_discipline_code_assignments.py`
-  Initializes `Data/discipline_code_assignments.jsonl` from the reviewed preview; this is for explicit initial ledger creation, not daily export.
+  Initializes `Data/discipline_code_assignments.jsonl` from the reviewed preview; this is for explicit initial ledger creation, not daily export. Use `--dry-run` to preview the initial ledger summary before writing the owner file.
 - `scripts/manage_discipline_code_assignments.py`
   Updates the current discipline-code snapshot for one paper in the owner ledger and appends one audit row to `Data/change_log.jsonl`. Use `--dry-run` first when checking a planned reassignment.
 - `scripts/manage_classification_code_index.py`
