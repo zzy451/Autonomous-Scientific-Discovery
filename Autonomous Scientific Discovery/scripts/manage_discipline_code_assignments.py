@@ -75,6 +75,7 @@ def load_current_papers() -> Dict[str, Dict[str, object]]:
         master_table.rows,
         progress_rows,
         latest_change_log_by_paper_id,
+        load_classification_code_index(),
     )
     return {str(paper["paper_id"]): paper for paper in papers}
 

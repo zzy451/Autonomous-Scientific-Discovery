@@ -79,6 +79,7 @@ OBJECT_COVERAGE_MODES = {
     "general_method_without_concrete_object_experiments",
 }
 PRIMARY_MODULE_CONFIDENCE_VALUES = {"high", "medium", "low"}
+SECONDARY_CLASS_SOURCE_VALUES = {"legacy", "normalized", "manual_override"}
 
 TAXONOMY_CODE_TO_LABEL = {
     "01": "Formal, Information and Computational Sciences",
@@ -554,6 +555,41 @@ def derive_primary_filing_trace(
     return ("low", "manual_override", "needs_primary_module_review")
 
 
+def derive_secondary_class_source(term: Dict[str, object] | None, legacy_secondary_class: str) -> str:
+    if not legacy_secondary_class.strip():
+        return ""
+    if term is None:
+        return "legacy"
+    source_value = str(term.get("source", "")).strip().lower()
+    if "manual_override" in source_value:
+        return "manual_override"
+    if "normalized" in source_value:
+        return "normalized"
+    return "legacy"
+
+
+def derive_secondary_class_confidence(term: Dict[str, object] | None, legacy_secondary_class: str) -> str:
+    if not legacy_secondary_class.strip():
+        return ""
+    if term is None:
+        return "low"
+    status = str(term.get("status", "")).strip()
+    review_status = str(term.get("review_status", "")).strip()
+    if status == "active" and review_status == "reviewed":
+        return "high"
+    if status == "needs_review" or review_status in {"unreviewed", "needs_split", "needs_merge"}:
+        return "low"
+    return "medium"
+
+
+def derive_secondary_class_review_status(term: Dict[str, object] | None, legacy_secondary_class: str) -> str:
+    if not legacy_secondary_class.strip():
+        return ""
+    if term is None:
+        return "unreviewed"
+    return str(term.get("review_status", "")).strip() or "unreviewed"
+
+
 def derive_record_status(inclusion_status: str, active_confirmed_core: bool) -> str:
     normalized = inclusion_status.strip().lower()
     if active_confirmed_core:
@@ -906,6 +942,9 @@ def build_discipline_local_code_registry(
                 "primary_module_override_reason": paper["primary_module_override_reason"],
                 "primary_taxonomy_code_2lvl": assignment["primary_taxonomy_code_2lvl"],
                 "legacy_secondary_class": paper["legacy_secondary_class"],
+                "secondary_class_source": paper["secondary_class_source"],
+                "secondary_class_confidence": paper["secondary_class_confidence"],
+                "secondary_class_review_status": paper["secondary_class_review_status"],
                 "scientific_object_modules": paper["scientific_object_modules"],
                 "general_method_bucket": paper["general_method_bucket"],
                 "title": paper["title"],
@@ -927,9 +966,15 @@ def build_papers(
     master_rows: Iterable[Dict[str, str]],
     progress_rows: Dict[str, Dict[str, str]],
     latest_change_log_by_paper_id: Dict[str, Dict[str, str]],
+    classification_code_index: Dict[str, object],
 ) -> List[Dict[str, object]]:
     exported_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     papers: List[Dict[str, object]] = []
+    secondary_terms_by_code = {
+        str(term.get("secondary_code")): term
+        for term in classification_code_index.get("secondary_terms", [])
+        if isinstance(term, dict) and term.get("secondary_code")
+    }
 
     for row in master_rows:
         paper_id = row["ID"]
@@ -981,6 +1026,20 @@ def build_papers(
             general_method_bucket=general_method_bucket,
             primary_module_for_filing=primary_module_for_filing,
         )
+        legacy_secondary_class = row["Secondary class"]
+        secondary_term = secondary_terms_by_code.get(legacy_secondary_class)
+        secondary_class_source = derive_secondary_class_source(
+            term=secondary_term,
+            legacy_secondary_class=legacy_secondary_class,
+        )
+        secondary_class_confidence = derive_secondary_class_confidence(
+            term=secondary_term,
+            legacy_secondary_class=legacy_secondary_class,
+        )
+        secondary_class_review_status = derive_secondary_class_review_status(
+            term=secondary_term,
+            legacy_secondary_class=legacy_secondary_class,
+        )
 
         doi, arxiv_id, url = parse_doi_and_arxiv(row["DOI / arXiv / URL"])
         note_path = progress.get("note_path") or row["Note path"]
@@ -1017,8 +1076,11 @@ def build_papers(
                 "inclusion_status": row["Inclusion status"],
                 "exclusion_reason": row["Exclusion reason"],
                 "legacy_main_class": row["Main class"],
-                "legacy_secondary_class": row["Secondary class"],
+                "legacy_secondary_class": legacy_secondary_class,
                 "legacy_tertiary_class": row["Tertiary class"],
+                "secondary_class_source": secondary_class_source,
+                "secondary_class_confidence": secondary_class_confidence,
+                "secondary_class_review_status": secondary_class_review_status,
                 "fourth_level_topic": row["Fourth-level topic"],
                 "new_fourth_level": row["New fourth-level"],
                 "agent_type_raw": row["Agent type"],
@@ -1506,6 +1568,7 @@ def main() -> None:
         master_table.rows,
         progress_rows,
         latest_change_log_by_paper_id,
+        classification_code_index,
     )
     discipline_code_assignments = (
         load_jsonl_rows(DISCIPLINE_CODE_ASSIGNMENTS_PATH)

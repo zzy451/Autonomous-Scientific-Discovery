@@ -76,6 +76,14 @@ PRIMARY_MODULE_ASSIGNMENT_RULE_VALUES = {
     "substantive_application_object",
     "manual_override",
 }
+SECONDARY_CLASS_SOURCE_VALUES = {"legacy", "normalized", "manual_override"}
+SECONDARY_CLASS_CONFIDENCE_VALUES = {"high", "medium", "low"}
+SECONDARY_CLASS_REVIEW_STATUS_VALUES = {
+    "unreviewed",
+    "reviewed",
+    "needs_split",
+    "needs_merge",
+}
 CLASSIFICATION_SOURCE_CONFIDENCE_VALUES = {"high", "medium", "low"}
 CLASSIFICATION_PARSER_RULE_VALUES = {
     "structured_remark_token",
@@ -637,6 +645,18 @@ def validate_discipline_local_code_registry(
         assert_true(
             row["legacy_secondary_class"] == paper_row["legacy_secondary_class"],
             f"discipline_local_code_registry legacy_secondary_class mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["secondary_class_source"] == paper_row["secondary_class_source"],
+            f"discipline_local_code_registry secondary_class_source mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["secondary_class_confidence"] == paper_row["secondary_class_confidence"],
+            f"discipline_local_code_registry secondary_class_confidence mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["secondary_class_review_status"] == paper_row["secondary_class_review_status"],
+            f"discipline_local_code_registry secondary_class_review_status mismatch for {assignment_id}",
         )
         assert_true(
             row["scientific_object_modules"] == paper_row["scientific_object_modules"],
@@ -1969,6 +1989,18 @@ def main() -> None:
                 f"{paper_id} last_reviewed_by must be a string",
             )
             assert_true(
+                isinstance(row.get("secondary_class_source"), str),
+                f"{paper_id} secondary_class_source must be a string",
+            )
+            assert_true(
+                isinstance(row.get("secondary_class_confidence"), str),
+                f"{paper_id} secondary_class_confidence must be a string",
+            )
+            assert_true(
+                isinstance(row.get("secondary_class_review_status"), str),
+                f"{paper_id} secondary_class_review_status must be a string",
+            )
+            assert_true(
                 isinstance(row.get("primary_module_confidence"), str),
                 f"{paper_id} primary_module_confidence must be a string",
             )
@@ -2113,6 +2145,34 @@ def main() -> None:
                         bool(row["primary_module_override_reason"]),
                         f"{paper_id} manual_override primary module rows must carry primary_module_override_reason",
                     )
+
+            legacy_secondary_class = str(row["legacy_secondary_class"])
+            if legacy_secondary_class:
+                assert_true(
+                    row["secondary_class_source"] in SECONDARY_CLASS_SOURCE_VALUES,
+                    f"{paper_id} has invalid secondary_class_source: {row['secondary_class_source']!r}",
+                )
+                assert_true(
+                    row["secondary_class_confidence"] in SECONDARY_CLASS_CONFIDENCE_VALUES,
+                    f"{paper_id} has invalid secondary_class_confidence: {row['secondary_class_confidence']!r}",
+                )
+                assert_true(
+                    row["secondary_class_review_status"] in SECONDARY_CLASS_REVIEW_STATUS_VALUES,
+                    f"{paper_id} has invalid secondary_class_review_status: {row['secondary_class_review_status']!r}",
+                )
+            else:
+                assert_true(
+                    row["secondary_class_source"] == "",
+                    f"{paper_id} blank legacy_secondary_class rows should not carry secondary_class_source",
+                )
+                assert_true(
+                    row["secondary_class_confidence"] == "",
+                    f"{paper_id} blank legacy_secondary_class rows should not carry secondary_class_confidence",
+                )
+                assert_true(
+                    row["secondary_class_review_status"] == "",
+                    f"{paper_id} blank legacy_secondary_class rows should not carry secondary_class_review_status",
+                )
 
             if row["active_confirmed_core"]:
                 assert_true(

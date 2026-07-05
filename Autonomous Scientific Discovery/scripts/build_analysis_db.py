@@ -32,6 +32,7 @@ CSV_FIELDS = [
     'paper_id', 'title', 'authors', 'year', 'source', 'doi_or_url', 'doi', 'url', 'arxiv_id',
     'pdf_path', 'pdf_exists', 'note_path', 'note_exists', 'is_agent', 'inclusion_status',
     'exclusion_reason', 'legacy_main_class', 'legacy_secondary_class', 'legacy_tertiary_class',
+    'secondary_class_source', 'secondary_class_confidence', 'secondary_class_review_status',
     'fourth_level_topic', 'new_fourth_level', 'agent_type', 'research_workflow_role',
     'validation_type', 'scientific_contribution_type', 'evidence_strength', 'citation_priority',
     'scientific_object_modules', 'general_method_bucket', 'object_coverage_mode',
@@ -47,7 +48,7 @@ DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS = [
     'assignment_status', 'assigned_at', 'assigned_by', 'retired_at', 'redirected_to_code',
     'assignment_reason', 'pending_reason', 'primary_module_for_filing',
     'primary_module_confidence', 'primary_module_assignment_rule', 'primary_module_override_reason',
-    'primary_taxonomy_code_2lvl', 'legacy_secondary_class', 'scientific_object_modules',
+    'primary_taxonomy_code_2lvl', 'legacy_secondary_class', 'secondary_class_source', 'secondary_class_confidence', 'secondary_class_review_status', 'scientific_object_modules',
     'general_method_bucket', 'title', 'note_path', 'pdf_path', 'active_confirmed_core',
     'is_derived_snapshot', 'generated_at', 'generated_by', 'source_commit', 'worktree_dirty',
 ]
@@ -226,7 +227,7 @@ def build_sqlite(
         CREATE TABLE papers (
             paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, authors TEXT, year TEXT, source TEXT, doi_or_url TEXT, doi TEXT, url TEXT, arxiv_id TEXT,
             pdf_path TEXT, pdf_exists INTEGER NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, is_agent TEXT, inclusion_status TEXT, exclusion_reason TEXT,
-            legacy_main_class TEXT, legacy_secondary_class TEXT, legacy_tertiary_class TEXT, fourth_level_topic TEXT, new_fourth_level TEXT,
+            legacy_main_class TEXT, legacy_secondary_class TEXT, legacy_tertiary_class TEXT, secondary_class_source TEXT, secondary_class_confidence TEXT, secondary_class_review_status TEXT, fourth_level_topic TEXT, new_fourth_level TEXT,
             agent_type_json TEXT NOT NULL, research_workflow_role_json TEXT NOT NULL, validation_type_json TEXT NOT NULL, scientific_contribution_type_json TEXT NOT NULL,
             evidence_strength TEXT, citation_priority TEXT, remarks TEXT, scientific_object_modules_json TEXT NOT NULL, general_method_bucket TEXT NOT NULL,
             object_coverage_mode TEXT, primary_module_for_filing TEXT, primary_module_confidence TEXT, primary_module_assignment_rule TEXT, primary_module_override_reason TEXT,
@@ -277,6 +278,9 @@ def build_sqlite(
             primary_module_override_reason TEXT,
             primary_taxonomy_code_2lvl TEXT,
             legacy_secondary_class TEXT,
+            secondary_class_source TEXT,
+            secondary_class_confidence TEXT,
+            secondary_class_review_status TEXT,
             scientific_object_modules_json TEXT NOT NULL,
             general_method_bucket TEXT,
             title TEXT NOT NULL,
@@ -890,11 +894,11 @@ def build_sqlite(
             )
             for row in classification_term_rows
         ])
-        conn.executemany('INSERT INTO papers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        conn.executemany('INSERT INTO papers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 paper['paper_id'], paper['title'], paper['authors'], paper['year'], paper['source'], paper['doi_or_url'], paper['doi'], paper['url'], paper['arxiv_id'],
                 paper['pdf_path'], bool_to_int(paper['pdf_exists']), paper['note_path'], bool_to_int(paper['note_exists']), paper['is_agent'], paper['inclusion_status'], paper['exclusion_reason'],
-                paper['legacy_main_class'], paper['legacy_secondary_class'], paper['legacy_tertiary_class'], paper['fourth_level_topic'], paper['new_fourth_level'],
+                paper['legacy_main_class'], paper['legacy_secondary_class'], paper['legacy_tertiary_class'], paper['secondary_class_source'], paper['secondary_class_confidence'], paper['secondary_class_review_status'], paper['fourth_level_topic'], paper['new_fourth_level'],
                 json_list(paper['agent_type']), json_list(paper['research_workflow_role']), json_list(paper['validation_type']), json_list(paper['scientific_contribution_type']),
                 paper['evidence_strength'], paper['citation_priority'], paper['remarks'], json_list(paper['scientific_object_modules']), paper['general_method_bucket'], paper['object_coverage_mode'],
                 paper['primary_module_for_filing'], paper['primary_module_confidence'], paper['primary_module_assignment_rule'], paper['primary_module_override_reason'],
@@ -938,7 +942,7 @@ def build_sqlite(
             )
             for row in discipline_code_assignments
         ])
-        conn.executemany('INSERT INTO discipline_local_code_registry VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        conn.executemany('INSERT INTO discipline_local_code_registry VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 row['paper_id'],
                 row['assignment_id'],
@@ -958,6 +962,9 @@ def build_sqlite(
                 row['primary_module_override_reason'],
                 row['primary_taxonomy_code_2lvl'],
                 row['legacy_secondary_class'],
+                row['secondary_class_source'],
+                row['secondary_class_confidence'],
+                row['secondary_class_review_status'],
                 json_list(row['scientific_object_modules']),
                 row['general_method_bucket'],
                 row['title'],

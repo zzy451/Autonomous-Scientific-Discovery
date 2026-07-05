@@ -300,6 +300,9 @@
 - `general_method_bucket`
 - `final_modules_or_bucket`
 - `primary_module_for_filing`
+- `secondary_class_source`
+- `secondary_class_confidence`
+- `secondary_class_review_status`
 - `pdf_path`, `pdf_exists`
 - `note_path`, `note_exists`
 - `active_confirmed_core`
@@ -309,6 +312,7 @@
 - 它保留 per-paper 视角，适合逐条检查。
 - 它不是新的事实层，只是比 registry 更接近“整篇论文一行”的分析表示。
 - `final_modules_or_bucket` 在这里应被理解为 progress workflow mirror，而不是 canonical classification source。
+- `secondary_class_*` 三元字段是二级位 provenance trace，不是新的 taxonomy owner facts。
 
 ### 4.2 `taxonomy_index.json`
 
@@ -471,6 +475,9 @@
 - `discipline_local_rank`
 - `discipline_display_order`
 - `assignment_status`
+- `secondary_class_source`
+- `secondary_class_confidence`
+- `secondary_class_review_status`
 
 约束:
 
