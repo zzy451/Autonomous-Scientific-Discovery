@@ -338,6 +338,115 @@ def write_discipline_local_code_registry_csv(rows: list[dict[str, object]]) -> N
                 for field in DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS
             })
 
+def normalize_discipline_local_code_registry_csv_row(
+    row: dict[str, object],
+) -> dict[str, str]:
+    return {
+        field: flatten_list(row.get(field))
+        for field in DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS
+    }
+
+def validate_discipline_local_code_registry_outputs(
+    rows: list[dict[str, object]]
+) -> None:
+    expected_csv_rows = [
+        normalize_discipline_local_code_registry_csv_row(row)
+        for row in rows
+    ]
+    csv_rows = load_csv_rows(DISCIPLINE_LOCAL_CODE_REGISTRY_CSV)
+    assert_build_condition(
+        csv_rows == expected_csv_rows,
+        'discipline_local_code_registry.csv drifted from expected registry snapshot rows',
+    )
+
+    expected_sqlite_rows = sorted(
+        [
+            (
+                row['paper_id'],
+                row['assignment_id'],
+                row['discipline_local_code'],
+                row['discipline_local_rank'],
+                row['discipline_display_order'],
+                row['assignment_status'],
+                row['assigned_at'],
+                row['assigned_by'],
+                row['retired_at'],
+                row['redirected_to_code'],
+                row['assignment_reason'],
+                row['pending_reason'],
+                row['primary_module_for_filing'],
+                row['primary_module_confidence'],
+                row['primary_module_assignment_rule'],
+                row['primary_module_override_reason'],
+                row['primary_taxonomy_code_2lvl'],
+                row['legacy_secondary_class'],
+                row['secondary_class_source'],
+                row['secondary_class_confidence'],
+                row['secondary_class_review_status'],
+                json_list(row['scientific_object_modules']),
+                row['general_method_bucket'],
+                row['title'],
+                row['note_path'],
+                row['pdf_path'],
+                bool_to_int(row['active_confirmed_core']),
+                bool_to_int(row['is_derived_snapshot']),
+                row['generated_at'],
+                row['generated_by'],
+                row['source_commit'],
+                bool_to_int(row['worktree_dirty']),
+            )
+            for row in rows
+        ],
+        key=lambda item: item[0],
+    )
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        actual_sqlite_rows = conn.execute(
+            '''
+            SELECT
+                paper_id,
+                assignment_id,
+                discipline_local_code,
+                discipline_local_rank,
+                discipline_display_order,
+                assignment_status,
+                assigned_at,
+                assigned_by,
+                retired_at,
+                redirected_to_code,
+                assignment_reason,
+                pending_reason,
+                primary_module_for_filing,
+                primary_module_confidence,
+                primary_module_assignment_rule,
+                primary_module_override_reason,
+                primary_taxonomy_code_2lvl,
+                legacy_secondary_class,
+                secondary_class_source,
+                secondary_class_confidence,
+                secondary_class_review_status,
+                scientific_object_modules_json,
+                general_method_bucket,
+                title,
+                note_path,
+                pdf_path,
+                active_confirmed_core,
+                is_derived_snapshot,
+                generated_at,
+                generated_by,
+                source_commit,
+                worktree_dirty
+            FROM discipline_local_code_registry
+            ORDER BY paper_id
+            '''
+        ).fetchall()
+    finally:
+        conn.close()
+    assert_build_condition(
+        actual_sqlite_rows == expected_sqlite_rows,
+        'SQLite discipline_local_code_registry table drifted from expected registry snapshot rows',
+    )
+
 def build_general_method_bucket_rows(papers: list[dict[str, object]]) -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for paper in papers:
