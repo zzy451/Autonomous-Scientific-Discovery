@@ -27,6 +27,7 @@
 | `primary_module_for_filing` | master-derived canonical lane | notes directory policy, discipline code assignment | Filing convenience, not full classification fact |
 | `primary_module_confidence`, `primary_module_assignment_rule`, `primary_module_override_reason` | master-derived canonical lane or future policy note | registry / check report | Required when filing choice is ambiguous |
 | `pdf_status`, `evidence_status`, `source_limited`, `closed` | progress | PDF registry, manifests, SQLite | Do not infer full-text status from `pdf_path` alone |
+| `pdf_evidence_type`, `pdf_check_status`, `source_checked_at` | generated PDF/evidence layer from progress + remarks provenance + change-log fallback | PDF registry, manifests, SQLite | Derived evidence-layer fields; repair owner records first, then regenerate |
 | `note_path` | export resolution from master/progress | note manifest, registry | Fallback order must remain explicit in export code |
 | `pdf_path` | export resolution from progress/master | PDF registry, asset manifest | Fallback order must remain explicit in export code |
 | `assignment_id` | `discipline_code_assignments.jsonl` | registry, SQLite | `DCA-000001` monotonic ledger ID; never reused |

@@ -192,6 +192,32 @@ PAPER_ID_PATTERN = re.compile(r"^ASD-\d{4}$")
 CHANGE_ID_PATTERN = re.compile(r"^CL-[0-9]{6}$")
 DISCIPLINE_CODE_PATTERN = re.compile(r"^[0-9]{2}-[0-9]{2}-[0-9]{3}$")
 PRIMARY_TAXONOMY_2LVL_PATTERN = re.compile(r"^[0-9]{2}\.[0-9]{2}$")
+SOURCE_CHECK_DATE_PATTERN = re.compile(r"20[0-9]{2}-[0-9]{2}-[0-9]{2}")
+SOURCE_CHECK_CONTEXT_KEYWORDS = (
+    "checked",
+    "rechecked",
+    "text-checked",
+    "full text",
+    "full-text",
+    "html full text",
+    "html",
+    "pdf",
+    "archived",
+    "landing page",
+    "landing",
+    "official",
+    "supporting-information",
+    "supporting information",
+    "supplementary",
+    "first-hand",
+    "first hand",
+    "reopened",
+    "readme",
+    "repo",
+    "blog",
+    "page",
+    "xml",
+)
 REGISTRY_REQUIRED_STEMS = (
     "paper_registry",
     "paper_identifier_aliases",
@@ -1401,6 +1427,36 @@ def has_pollution_artifact(value: str) -> bool:
     return any(token in lower_value for token in POLLUTION_TOKENS)
 
 
+def derive_source_checked_at(
+    *,
+    remarks: str,
+    first_hand_sources_checked: str,
+    pdf_status: str,
+    evidence_status: str,
+    last_reviewed_at: str,
+) -> str:
+    candidate_dates: List[str] = []
+    for match in SOURCE_CHECK_DATE_PATTERN.finditer(remarks):
+        snippet_start = max(0, match.start() - 120)
+        snippet_end = min(len(remarks), match.end() + 160)
+        snippet = remarks[snippet_start:snippet_end].lower()
+        if any(keyword in snippet for keyword in SOURCE_CHECK_CONTEXT_KEYWORDS):
+            candidate_dates.append(match.group(0))
+    if candidate_dates:
+        return max(candidate_dates)
+
+    if first_hand_sources_checked.strip():
+        all_dates = SOURCE_CHECK_DATE_PATTERN.findall(remarks)
+        if all_dates:
+            return max(all_dates)
+
+    if last_reviewed_at and (
+        first_hand_sources_checked.strip() or pdf_status.strip() or evidence_status.strip()
+    ):
+        return last_reviewed_at
+    return ""
+
+
 def is_obvious_pdf_status_conflict(pdf_exists: bool, pdf_status: str) -> bool:
     status = pdf_status.strip().lower()
     if not status:
@@ -1747,10 +1803,19 @@ def validate_registry_layer(
             registry_row["evidence_status"] == paper_row["evidence_status"],
             f"pdf_archive_registry evidence_status mismatch for {paper_id}: {registry_row['evidence_status']!r} != {paper_row['evidence_status']!r}",
         )
+        assert_true(
+            registry_row.get("source_checked_at", "") == paper_row.get("source_checked_at", ""),
+            f"pdf_archive_registry source_checked_at mismatch for {paper_id}: {registry_row.get('source_checked_at', '')!r} != {paper_row.get('source_checked_at', '')!r}",
+        )
         if "pdf_path" in registry_row:
             assert_true(
                 registry_row["pdf_path"] == paper_row["pdf_path"],
                 f"pdf_archive_registry pdf_path mismatch for {paper_id}: {registry_row['pdf_path']!r} != {paper_row['pdf_path']!r}",
+            )
+        if registry_row.get("source_checked_at"):
+            assert_true(
+                re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", registry_row["source_checked_at"]) is not None,
+                f"pdf_archive_registry has invalid source_checked_at for {paper_id}: {registry_row['source_checked_at']!r}",
             )
         assert_true(
             registry_row["pdf_evidence_type"] in PDF_EVIDENCE_TYPE_VALUES,
@@ -1820,6 +1885,15 @@ def validate_registry_layer(
             isinstance(row.get("is_supplementary"), bool),
             f"asset_manifest is_supplementary must be bool for {paper_id}",
         )
+        assert_true(
+            isinstance(row.get("source_checked_at", ""), str),
+            f"asset_manifest source_checked_at must be string for {paper_id}",
+        )
+        if row.get("source_checked_at"):
+            assert_true(
+                re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", row["source_checked_at"]) is not None,
+                f"asset_manifest source_checked_at has invalid format for {paper_id}: {row['source_checked_at']!r}",
+            )
         if row.get("asset_size_bytes") is not None:
             assert_true(
                 isinstance(row["asset_size_bytes"], int) and row["asset_size_bytes"] >= 0,
@@ -1855,6 +1929,10 @@ def validate_registry_layer(
             f"asset_manifest note existence mismatch for {paper_id}: {asset_row['exists']!r} != {paper_row['note_exists']!r}",
         )
         assert_true(
+            asset_row.get("source_checked_at", "") == "",
+            f"asset_manifest note rows must keep source_checked_at blank for {paper_id}",
+        )
+        assert_true(
             not asset_row["is_main_text"] and not asset_row["is_supplementary"],
             f"asset_manifest note rows must not be marked main/supplementary for {paper_id}",
         )
@@ -1874,6 +1952,10 @@ def validate_registry_layer(
         assert_true(
             asset_row["exists"] == paper_row["pdf_exists"],
             f"asset_manifest primary_pdf existence mismatch for {paper_id}: {asset_row['exists']!r} != {paper_row['pdf_exists']!r}",
+        )
+        assert_true(
+            asset_row.get("source_checked_at", "") == paper_row.get("source_checked_at", ""),
+            f"asset_manifest primary_pdf source_checked_at mismatch for {paper_id}: {asset_row.get('source_checked_at', '')!r} != {paper_row.get('source_checked_at', '')!r}",
         )
         if asset_row["exists"]:
             assert_true(
@@ -2083,6 +2165,16 @@ def main() -> None:
                 not has_pollution_artifact(first_hand_sources_checked),
                 f"{paper_id} first_hand_sources_checked appears polluted: {first_hand_sources_checked!r}",
             )
+            source_checked_at = row.get("source_checked_at", "")
+            assert_true(
+                isinstance(source_checked_at, str),
+                f"{paper_id} source_checked_at must be a string",
+            )
+            if source_checked_at:
+                assert_true(
+                    re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", source_checked_at) is not None,
+                    f"{paper_id} has invalid source_checked_at: {source_checked_at!r}",
+                )
 
             if general_bucket != "none":
                 assert_true(
@@ -2239,6 +2331,18 @@ def main() -> None:
                     first_hand_sources_checked == expected_first_hand,
                     f"{paper_id} first_hand_sources_checked disagrees with remarks: {first_hand_sources_checked!r} != {expected_first_hand!r}",
                 )
+
+            expected_source_checked_at = derive_source_checked_at(
+                remarks=row["remarks"],
+                first_hand_sources_checked=first_hand_sources_checked,
+                pdf_status=str(row["pdf_status"]),
+                evidence_status=str(row["evidence_status"]),
+                last_reviewed_at=str(row["last_reviewed_at"]),
+            )
+            assert_true(
+                source_checked_at == expected_source_checked_at,
+                f"{paper_id} source_checked_at disagrees with derived expectation: {source_checked_at!r} != {expected_source_checked_at!r}",
+            )
 
         pdf_manifest_ids = {row["paper_id"] for row in pdf_manifest}
         missing_manifest_ids = {row["paper_id"] for row in missing_pdf_manifest}

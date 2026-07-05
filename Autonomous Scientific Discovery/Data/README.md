@@ -105,9 +105,9 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `registry/paper_identifier_aliases.jsonl`: DOI / arXiv / source-URL alias registry for stable lookup without redefining the permanent `ASD-xxxx` key.
 - `registry/taxonomy_registry.json`: normalized taxonomy term registry for formal `01-11` modules plus the separate `01.04` general bucket.
 - `registry/classification_assignments.jsonl`: exploded paper-to-taxonomy assignment table derived from `scientific_object_modules` and `general_method_bucket`.
-- `registry/pdf_archive_registry.jsonl`: normalized per-paper PDF availability/export record aligned to active local vs no-local PDF status.
-- `registry/asset_manifest.jsonl`: normalized asset inventory covering at least note and primary PDF records.
-- `papers.jsonl`: record-level analysis snapshot for scripts, version control, and exact per-paper inspection.
+- `registry/pdf_archive_registry.jsonl`: normalized per-paper PDF availability/export record aligned to active local vs no-local PDF status, including derived evidence type/check-depth fields and `source_checked_at`.
+- `registry/asset_manifest.jsonl`: normalized asset inventory covering at least note and primary PDF records; primary-PDF rows mirror derived source-check timing.
+- `papers.jsonl`: record-level analysis snapshot for scripts, version control, and exact per-paper inspection, including derived source/PDF review timing.
 - `papers.csv`: flattened spreadsheet view of `papers.jsonl`.
 - `paper_modules.csv`: mixed-scope exploded one-paper-to-many-modules export containing both canonical `scientific_object_modules` assignments and workflow-mirror `final_modules_or_bucket` assignments; use for inspection/export only, and always filter by `assignment_scope` before using it for statistics.
 - `canonical_paper_modules.csv`: canonical-only flat module-assignment export for spreadsheet review without workflow-mirror rows.

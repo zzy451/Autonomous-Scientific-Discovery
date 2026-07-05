@@ -247,6 +247,7 @@
 - `evidence_status`: progress 派生的证据状态。
 - `pdf_evidence_type`: derived 证据类型，如 `main_pdf` / `supplementary_pdf` / `html_full_text` / `abstract` / `official_page` / `project_page`。
 - `pdf_check_status`: derived 核查深度状态，如 `full_text_checked` / `source_limited` / `metadata_only`。
+- `source_checked_at`: derived 源证据核查日期代理字段，当前从 remarks 中最近的 source/evidence review 日期推导，必要时退回 change-log 最近审查日期。
 - `is_main_text`: 当前 PDF 证据是否为主文全文。
 - `is_supplementary`: 当前 PDF 证据是否为 supplementary。
 - `source_limited`: 来源受限标记。
@@ -279,6 +280,7 @@
 - `is_main_text`: 对 PDF 资产记录，是否为主文全文。
 - `is_supplementary`: 对 PDF 资产记录，是否为 supplementary。
 - `source_limited`: 来源受限标记。
+- `source_checked_at`: 对 `primary_pdf` 资产记录镜像 derived 源证据核查日期；对 `note` 记录保持空字符串。
 - `exported_at`: 导出时间戳。
 
 约束:
@@ -303,6 +305,7 @@
 - `secondary_class_source`
 - `secondary_class_confidence`
 - `secondary_class_review_status`
+- `source_checked_at`
 - `pdf_path`, `pdf_exists`
 - `note_path`, `note_exists`
 - `active_confirmed_core`

@@ -38,7 +38,7 @@ CSV_FIELDS = [
     'scientific_object_modules', 'general_method_bucket', 'object_coverage_mode',
     'primary_module_for_filing', 'primary_module_confidence', 'primary_module_assignment_rule',
     'primary_module_override_reason', 'classification_source_field', 'classification_source_confidence',
-    'classification_parser_rule', 'first_hand_sources_checked', 'progress_title', 'pdf_status',
+    'classification_parser_rule', 'first_hand_sources_checked', 'source_checked_at', 'progress_title', 'pdf_status',
     'evidence_status', 'note_status', 'master_status', 'final_modules_or_bucket',
     'source_limited', 'batch', 'closed', 'active_confirmed_core', 'record_status',
     'inclusion_decision', 'duplicate_of', 'last_reviewed_at', 'last_reviewed_by', 'exported_at',
@@ -232,7 +232,7 @@ def build_sqlite(
             evidence_strength TEXT, citation_priority TEXT, remarks TEXT, scientific_object_modules_json TEXT NOT NULL, general_method_bucket TEXT NOT NULL,
             object_coverage_mode TEXT, primary_module_for_filing TEXT, primary_module_confidence TEXT, primary_module_assignment_rule TEXT, primary_module_override_reason TEXT,
             classification_source_field TEXT, classification_source_confidence TEXT, classification_parser_rule TEXT,
-            first_hand_sources_checked TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
+            first_hand_sources_checked TEXT, source_checked_at TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
             note_status TEXT, master_status TEXT, final_modules_or_bucket_raw TEXT, final_modules_or_bucket_json TEXT NOT NULL, source_limited TEXT, batch TEXT, closed TEXT,
             active_confirmed_core INTEGER NOT NULL, record_status TEXT, inclusion_decision TEXT, duplicate_of TEXT, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL
         );
@@ -306,6 +306,7 @@ def build_sqlite(
             is_supplementary INTEGER NOT NULL,
             asset_size_bytes INTEGER,
             source_limited TEXT,
+            source_checked_at TEXT,
             primary_module_for_filing TEXT,
             active_confirmed_core INTEGER NOT NULL
         );
@@ -322,6 +323,7 @@ def build_sqlite(
             is_main_text INTEGER NOT NULL,
             is_supplementary INTEGER NOT NULL,
             source_limited TEXT,
+            source_checked_at TEXT,
             exported_at TEXT
         );
         CREATE TABLE notes (
@@ -894,7 +896,8 @@ def build_sqlite(
             )
             for row in classification_term_rows
         ])
-        conn.executemany('INSERT INTO papers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        papers_insert_sql = f"INSERT INTO papers VALUES({', '.join(['?'] * 60)})"
+        conn.executemany(papers_insert_sql, [
             (
                 paper['paper_id'], paper['title'], paper['authors'], paper['year'], paper['source'], paper['doi_or_url'], paper['doi'], paper['url'], paper['arxiv_id'],
                 paper['pdf_path'], bool_to_int(paper['pdf_exists']), paper['note_path'], bool_to_int(paper['note_exists']), paper['is_agent'], paper['inclusion_status'], paper['exclusion_reason'],
@@ -903,7 +906,7 @@ def build_sqlite(
                 paper['evidence_strength'], paper['citation_priority'], paper['remarks'], json_list(paper['scientific_object_modules']), paper['general_method_bucket'], paper['object_coverage_mode'],
                 paper['primary_module_for_filing'], paper['primary_module_confidence'], paper['primary_module_assignment_rule'], paper['primary_module_override_reason'],
                 paper['classification_source_field'], paper['classification_source_confidence'], paper['classification_parser_rule'],
-                paper['first_hand_sources_checked'], paper['progress_title'], paper['pdf_status'], paper['evidence_status'], paper['note_status'], paper['master_status'],
+                paper['first_hand_sources_checked'], paper['source_checked_at'], paper['progress_title'], paper['pdf_status'], paper['evidence_status'], paper['note_status'], paper['master_status'],
                 paper['final_modules_or_bucket_raw'], json_list(paper['final_modules_or_bucket']), paper['source_limited'], paper['batch'], paper['closed'], bool_to_int(paper['active_confirmed_core']),
                 paper['record_status'], paper['inclusion_decision'], paper['duplicate_of'], paper['last_reviewed_at'], paper['last_reviewed_by'], paper['exported_at'],
             )
@@ -979,7 +982,8 @@ def build_sqlite(
             )
             for row in discipline_local_code_registry
         ])
-        conn.executemany('INSERT INTO pdf_evidence_status VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        pdf_evidence_insert_sql = f"INSERT INTO pdf_evidence_status VALUES({', '.join(['?'] * 15)})"
+        conn.executemany(pdf_evidence_insert_sql, [
             (
                 row['paper_id'],
                 row['title'],
@@ -993,12 +997,14 @@ def build_sqlite(
                 bool_to_int(row['is_supplementary']),
                 row['asset_size_bytes'],
                 row['source_limited'],
+                row.get('source_checked_at', ''),
                 row['primary_module_for_filing'],
                 bool_to_int(row['active_confirmed_core']),
             )
             for row in pdf_archive_registry
         ])
-        conn.executemany('INSERT INTO paper_assets VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        paper_assets_insert_sql = f"INSERT INTO paper_assets VALUES({', '.join(['?'] * 14)})"
+        conn.executemany(paper_assets_insert_sql, [
             (
                 row['asset_id'],
                 row['paper_id'],
@@ -1012,6 +1018,7 @@ def build_sqlite(
                 bool_to_int(row['is_main_text']),
                 bool_to_int(row['is_supplementary']),
                 row['source_limited'],
+                row.get('source_checked_at', ''),
                 row['exported_at'],
             )
             for row in asset_manifest

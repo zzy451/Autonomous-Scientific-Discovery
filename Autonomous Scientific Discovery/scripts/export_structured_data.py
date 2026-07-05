@@ -219,6 +219,32 @@ FIRST_HAND_STOP_PREFIXES = (
     "source_limited",
 )
 SECONDARY_CODE_PATTERN = re.compile(r"^(0[1-9]|1[0-1])\.(\d{2})$")
+SOURCE_CHECK_DATE_PATTERN = re.compile(r"20[0-9]{2}-[0-9]{2}-[0-9]{2}")
+SOURCE_CHECK_CONTEXT_KEYWORDS = (
+    "checked",
+    "rechecked",
+    "text-checked",
+    "full text",
+    "full-text",
+    "html full text",
+    "html",
+    "pdf",
+    "archived",
+    "landing page",
+    "landing",
+    "official",
+    "supporting-information",
+    "supporting information",
+    "supplementary",
+    "first-hand",
+    "first hand",
+    "reopened",
+    "readme",
+    "repo",
+    "blog",
+    "page",
+    "xml",
+)
 PREVIEW_FIELDNAMES = [
     "paper_id",
     "title",
@@ -682,6 +708,39 @@ def build_latest_change_log_index(
     return latest
 
 
+def derive_source_checked_at(
+    *,
+    remarks: str,
+    first_hand_sources_checked: str,
+    pdf_status: str,
+    evidence_status: str,
+    latest_change: Dict[str, str],
+) -> str:
+    candidate_dates: List[str] = []
+    for match in SOURCE_CHECK_DATE_PATTERN.finditer(remarks):
+        snippet_start = max(0, match.start() - 120)
+        snippet_end = min(len(remarks), match.end() + 160)
+        snippet = remarks[snippet_start:snippet_end].lower()
+        if any(keyword in snippet for keyword in SOURCE_CHECK_CONTEXT_KEYWORDS):
+            candidate_dates.append(match.group(0))
+    if candidate_dates:
+        return max(candidate_dates)
+
+    if first_hand_sources_checked.strip():
+        all_dates = SOURCE_CHECK_DATE_PATTERN.findall(remarks)
+        if all_dates:
+            return max(all_dates)
+
+    latest_change_date = str(latest_change.get("changed_at") or "").strip()
+    if latest_change_date and (
+        first_hand_sources_checked.strip()
+        or pdf_status.strip()
+        or evidence_status.strip()
+    ):
+        return latest_change_date
+    return ""
+
+
 def is_yes_like(value: str) -> bool:
     return value.strip().lower().startswith("yes")
 
@@ -1056,6 +1115,15 @@ def build_papers(
             row["Inclusion status"], is_active_confirmed_core
         )
         latest_change = latest_change_log_by_paper_id.get(paper_id, {})
+        pdf_status = progress.get("pdf_status", "")
+        evidence_status = progress.get("evidence_status", "")
+        source_checked_at = derive_source_checked_at(
+            remarks=remarks,
+            first_hand_sources_checked=first_hand_sources_checked,
+            pdf_status=pdf_status,
+            evidence_status=evidence_status,
+            latest_change=latest_change,
+        )
 
         papers.append(
             {
@@ -1107,9 +1175,10 @@ def build_papers(
                 "classification_source_confidence": classification_source_confidence,
                 "classification_parser_rule": classification_parser_rule,
                 "first_hand_sources_checked": first_hand_sources_checked,
+                "source_checked_at": source_checked_at,
                 "progress_title": progress.get("title", ""),
-                "pdf_status": progress.get("pdf_status", ""),
-                "evidence_status": progress.get("evidence_status", ""),
+                "pdf_status": pdf_status,
+                "evidence_status": evidence_status,
                 "note_status": progress.get("note_status", ""),
                 "master_status": progress.get("master_status", ""),
                 "final_modules_or_bucket_raw": progress.get("final_modules_or_bucket", ""),
@@ -1401,6 +1470,7 @@ def build_pdf_archive_registry(
                 "is_main_text": pdf_evidence_type == "main_pdf",
                 "is_supplementary": pdf_evidence_type == "supplementary_pdf",
                 "source_limited": source_limited,
+                "source_checked_at": paper["source_checked_at"],
                 "primary_module_for_filing": paper["primary_module_for_filing"],
                 "scientific_object_modules": paper["scientific_object_modules"],
                 "general_method_bucket": paper["general_method_bucket"],
@@ -1432,6 +1502,7 @@ def build_asset_manifest(
                 "is_main_text": False,
                 "is_supplementary": False,
                 "source_limited": paper["source_limited"],
+                "source_checked_at": "",
                 "exported_at": paper["exported_at"],
             }
         )
@@ -1455,6 +1526,7 @@ def build_asset_manifest(
                 "is_main_text": pdf_evidence_type == "main_pdf",
                 "is_supplementary": pdf_evidence_type == "supplementary_pdf",
                 "source_limited": paper["source_limited"],
+                "source_checked_at": paper["source_checked_at"],
                 "exported_at": paper["exported_at"],
             }
         )
