@@ -170,7 +170,7 @@ Day-to-day structured-data maintenance should follow the frozen workflow order:
 Use:
 
 - `scripts/run_structured_data_pipeline.py`
-  Runs the canonical `export_structured_data.py -> check_data_consistency.py -> build_analysis_db.py` sequence from repo root so routine maintenance follows the project workflow instead of ad hoc command order.
+  Runs the canonical `export_structured_data.py -> check_data_consistency.py -> build_analysis_db.py` sequence from repo root so routine maintenance follows the project workflow instead of ad hoc command order. The preflight step also reports which of the four owner fact sources are currently changed in the worktree and whether `Data/change_log.jsonl` changed alongside them.
 
 ## When to use JSONL, CSV, or SQLite
 
