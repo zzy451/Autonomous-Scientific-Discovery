@@ -1054,11 +1054,16 @@ def collect_non_blocking_findings(
     classification_code_index: Dict[str, object],
     discipline_code_assignments: List[Dict[str, object]],
     discipline_local_code_registry: List[Dict[str, object]],
+    pdf_archive_registry: List[Dict[str, object]],
 ) -> List[Dict[str, str]]:
     findings: List[Dict[str, str]] = []
+    pdf_registry_by_id = {
+        str(row.get("paper_id")): row for row in pdf_archive_registry if row.get("paper_id")
+    }
 
     for paper in papers:
         paper_id = str(paper["paper_id"])
+        pdf_registry_row = pdf_registry_by_id.get(paper_id, {})
         if bool(paper["active_confirmed_core"]) and not bool(paper["pdf_exists"]):
             add_finding(
                 findings,
@@ -1069,6 +1074,24 @@ def collect_non_blocking_findings(
                 message="Active confirmed-core paper currently has no local PDF.",
                 owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
             )
+            if str(pdf_registry_row.get("pdf_evidence_type", "")).strip() in {
+                "official_page",
+                "project_page",
+                "html_full_text",
+                "abstract",
+            }:
+                add_finding(
+                    findings,
+                    severity="WARNING",
+                    category="evidence",
+                    code="MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE",
+                    subject_id=paper_id,
+                    message=(
+                        "Active confirmed-core paper has no local PDF, but alternate first-hand "
+                        f"source evidence remains available via {pdf_registry_row.get('pdf_evidence_type')}."
+                    ),
+                    owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
+                )
         if bool(paper["active_confirmed_core"]) and str(paper["source_limited"]).startswith("yes"):
             add_finding(
                 findings,
@@ -1078,6 +1101,16 @@ def collect_non_blocking_findings(
                 subject_id=paper_id,
                 message="Active confirmed-core paper remains source-limited.",
                 owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
+            )
+        if bool(paper["active_confirmed_core"]) and str(paper.get("primary_module_confidence", "")) == "low":
+            add_finding(
+                findings,
+                severity="WARNING",
+                category="taxonomy",
+                code="PRIMARY_MODULE_CONFIDENCE_LOW",
+                subject_id=paper_id,
+                message="Primary filing module remains low-confidence and should stay visible in review backlog.",
+                owner_file="Paper_Lists/agent_master_paper_list.md",
             )
         if str(paper.get("record_status", "")) == "background_only":
             add_finding(
@@ -1106,6 +1139,16 @@ def collect_non_blocking_findings(
                     + "."
                 ),
                 owner_file="Paper_Lists/agent_master_paper_list.md",
+            )
+        if bool(paper["active_confirmed_core"]) and str(pdf_registry_row.get("pdf_evidence_type", "")) == "supplementary_pdf":
+            add_finding(
+                findings,
+                severity="INFO",
+                category="evidence",
+                code="SUPPLEMENTARY_ONLY_SOURCE_STATE",
+                subject_id=paper_id,
+                message="Active confirmed-core paper currently relies on supplementary-only PDF/source state.",
+                owner_file="Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
             )
 
     for assignment in discipline_code_assignments:
@@ -2459,6 +2502,7 @@ def main() -> None:
             classification_code_index=classification_code_index,
             discipline_code_assignments=discipline_code_assignments,
             discipline_local_code_registry=discipline_local_code_registry,
+            pdf_archive_registry=load_jsonl(REGISTRY_DIR / "pdf_archive_registry.jsonl"),
         )
         write_integrity_check_report(findings=findings, status="passed")
 

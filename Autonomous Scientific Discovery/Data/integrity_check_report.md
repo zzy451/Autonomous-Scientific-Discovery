@@ -5,14 +5,14 @@ Status: `passed`
 ## Summary
 
 - `ERROR`: 0
-- `WARNING`: 96
-- `INFO`: 412
+- `WARNING`: 123
+- `INFO`: 414
 
 ## Summary By Category
 
-- `evidence`: 45
+- `evidence`: 71
 - `discipline_code`: 24
-- `taxonomy`: 36
+- `taxonomy`: 39
 - `derived_snapshot`: 1
 - `audit`: 402
 
@@ -22,9 +22,12 @@ Status: `passed`
 - `SECONDARY_TERM_NEEDS_REVIEW`: 36
 - `DUPLICATE_RECORD`: 31
 - `MISSING_LOCAL_PDF`: 25
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE`: 24
 - `SOURCE_LIMITED`: 20
 - `PENDING_SECONDARY`: 15
 - `NON_DISCIPLINE_GENERAL_METHOD`: 9
+- `PRIMARY_MODULE_CONFIDENCE_LOW`: 3
+- `SUPPLEMENTARY_ONLY_SOURCE_STATE`: 2
 - `DERIVED_SNAPSHOT_WORKTREE_DIRTY`: 1
 
 ## ERROR
@@ -37,17 +40,25 @@ Status: `passed`
 
 - `MISSING_LOCAL_PDF` | `ASD-0005` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0005` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0005` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0097` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0097` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via project_page.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0097` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0112` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0112` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0112` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0158` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0158` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0158` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
@@ -57,13 +68,21 @@ Status: `passed`
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0508` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0508` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0536` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0536` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0541` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0544` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0544` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0547` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0547` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0547` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
@@ -71,17 +90,27 @@ Status: `passed`
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0565` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0565` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0569` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0569` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0569` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0572` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0572` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0572` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0592` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0592` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0617` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0617` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0617` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
@@ -89,17 +118,27 @@ Status: `passed`
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0603` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0603` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0603` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0609` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0609` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0631` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0631` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0724` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0724` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0724` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0727` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0727` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via abstract.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0727` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
@@ -109,19 +148,31 @@ Status: `passed`
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0854` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0854` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via html_full_text.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0855` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0855` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0858` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0858` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0859` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0859` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0859` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0860` | Active confirmed-core paper currently has no local PDF.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0860` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0860` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `MISSING_LOCAL_PDF` | `ASD-0861` | Active confirmed-core paper currently has no local PDF.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE` | `ASD-0861` | Active confirmed-core paper has no local PDF, but alternate first-hand source evidence remains available via official_page.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 - `SOURCE_LIMITED` | `ASD-0861` | Active confirmed-core paper remains source-limited.
   Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
@@ -161,6 +212,12 @@ Status: `passed`
 
 ### taxonomy
 
+- `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0540` | Primary filing module remains low-confidence and should stay visible in review backlog.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0662` | Primary filing module remains low-confidence and should stay visible in review backlog.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0803` | Primary filing module remains low-confidence and should stay visible in review backlog.
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `01.01` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
   Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `01.02` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
@@ -235,6 +292,13 @@ Status: `passed`
   Owner file: `Data/classification_code_index.json`
 
 ## INFO
+
+### evidence
+
+- `SUPPLEMENTARY_ONLY_SOURCE_STATE` | `ASD-0381` | Active confirmed-core paper currently relies on supplementary-only PDF/source state.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
+- `SUPPLEMENTARY_ONLY_SOURCE_STATE` | `ASD-0466` | Active confirmed-core paper currently relies on supplementary-only PDF/source state.
+  Owner file: `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md`
 
 ### discipline_code
 
