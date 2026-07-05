@@ -23,9 +23,9 @@ note_revision_required: no
 - 年份：2026
 - 来源 / venue：Nature Communications
 - DOI / arXiv / URL：https://doi.org/10.1038/s41467-026-69233-2
-- PDF / 本地文件路径：本轮按 Nature Communications publisher full text 与 DOI 落地页复核；当前未在 workspace 中确认到本地归档 PDF
+- PDF / 本地文件路径：`Reference_PDF/03_Chemical_Sciences/Park_2026_Organic_Emitters_SelfDriving_Lab.pdf`；本轮已重新确认本地归档 PDF，并与 Nature Communications publisher full text / DOI 落地页交叉核对
 - 论文类型：研究论文 / molecular-discovery self-driving laboratory
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入 / 冻结落地写回已吸收
 - 阅读日期：2026-06-22
 - 笔记作者：Codex
 
@@ -259,7 +259,7 @@ note_revision_required: no
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 科学对象模块：03;04
 覆盖模式：multi_module
 是否具有具体科学对象实验：yes

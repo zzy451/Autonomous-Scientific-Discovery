@@ -6,12 +6,12 @@
 - 年份：2025
 - 来源 / venue：ICLR 2026 Poster / arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2510.11661
-- PDF / 本地文件路径：Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xia_2025_SR_Scientist.pdf
+- PDF / 本地文件路径：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xia_2025_SR_Scientist.pdf`；本轮核对本地归档 arXiv PDF
 - 论文类型：研究论文 / equation discovery agent
-- 当前状态：to_read
+- 当前状态：已读（本轮核对本地归档 PDF）；主列表流程状态仍可保持 `to_read`
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
-- 一手来源核对：arXiv PDF/HTML `https://arxiv.org/abs/2510.11661`
+- 一手来源核对：本轮核对本地归档 arXiv PDF `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xia_2025_SR_Scientist.pdf`，并对照 arXiv HTML / abstract `https://arxiv.org/abs/2510.11661`
 - 复核结论：`supported_modules=02;03;04;06`; `general_method_bucket=none`; `primary_module_for_filing=02`; `confidence=medium-high`; `source_limited=no`
 
 ## Evidence Log

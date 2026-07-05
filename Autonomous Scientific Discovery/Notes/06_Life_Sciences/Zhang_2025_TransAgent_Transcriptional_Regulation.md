@@ -21,11 +21,11 @@
 | 方法流程 | 多工具多数据源自动分析 | Crossref DOI abstract；official repo materials | 集成 30+ tools 与 20+ data sources，覆盖 raw data processing 到 advanced analysis | 高 |
 | 实验验证 | 多案例分析 | Crossref DOI abstract；official repo materials | 应用于食管鳞癌和 cardiomyocyte differentiation 等场景，识别调控回路与关键调控因子 | 高 |
 | 来源 / 归档状态 | canonical local archived PDF checked | local archived PDF | 本轮已补本地 archived PDF 全文复核；旧 Cloudflare 阻断说明不再是当前 authoritative ceiling。 | 高 |
-| 边界判断 | 接受 `06/07` 边界；`07` 为 source-limited adjunct module | Crossref DOI abstract；official repo materials；bioRxiv landing/PDF attempt | 论文主线仍是 transcriptional regulation analysis，因此 `06` 保持 primary filing；但 ESCC disease-case evidence 足以接受 `07` 作为附加医学对象模块，而不是被否决的边界假说 | 中高 |
+| 边界判断 | 接受 `06/07` 边界；`07` 为 accepted adjunct module | local archived PDF；Crossref DOI abstract；official repo materials | 论文主线仍是 transcriptional regulation analysis，因此 `06` 保持 primary filing；但 ESCC disease-case evidence 足以接受 `07` 作为附加医学对象模块，而不是被否决的边界假说 | 中高 |
 
 ## 2026-06-20 relaxed multi-module classification update
 
-本节保留 2026-06-20 relaxed multi-module update 的位置，但 wording 已按当前 closeout 刷新。`06` 仍然是 `primary_module_for_filing`，不过 `07` 不再是“应被拒绝的边界假说”；在当前 relaxed multi-module rule 下，只要有疾病 / 病理对象 case study 和结果报告，就可以接受附加医学模块。对本文而言，ESCC disease-case evidence 足以支持一个 source-limited 的 `07` adjunct module，而无需把论文改写成临床决策支持工作。
+本节保留 2026-06-20 relaxed multi-module update 的位置，但 wording 已按当前 closeout 刷新。`06` 仍然是 `primary_module_for_filing`，而 `07` 也不再是“应被拒绝的边界假说”；在当前 relaxed multi-module rule 下，只要有疾病 / 病理对象 case study 和结果报告，就可以接受附加医学模块。对本文而言，ESCC disease-case evidence 已在本地 archived PDF 全文复核后足以支持 `07` adjunct module，而无需把论文改写成临床决策支持工作。
 
 - first_hand_sources_checked: `local_archived_pdf`; `doi_landing_page`
 - scientific_object_modules: `06;07`
@@ -33,7 +33,7 @@
 - general_method_bucket: `none`
 - primary_module_for_filing: `06`
 - module_assignment_evidence: `06` 由 transcriptional regulation、multi-omics、epigenomics、gene expression profiles、enhancers / super-enhancers、gene regulatory networks 和 cardiomyocyte differentiation 支持；`07` 由 esophageal squamous cell carcinoma / ESCC super-enhancer regulatory circuit、oncogenic transcriptional regulators、cancer pathogenesis 和 potential therapeutic-target discovery 支持。
-- multi_module_object_coverage_note: `06` 是生命科学主线；`07` 是基于 ESCC 疾病调控回路 case study 的 accepted source-limited adjunct module，不再按“被拒绝的边界假说”处理，也不要求改写为临床决策支持论文。
+- multi_module_object_coverage_note: `06` 是生命科学主线；`07` 是基于 ESCC 疾病调控回路 case study 的 accepted adjunct module，且当前已由本地 archived PDF 全文复核支撑，不再按“被拒绝的边界假说”处理，也不要求改写为临床决策支持论文。
 - note_revision_required: `yes`
 - confidence: `high`; `06` strong and `07` now supported by first-hand full text
 - full_text_required: `no_for_classification`
@@ -96,7 +96,7 @@
 - 四级专题：Multi-omics / transcriptional regulation agents
 - 四级专题是否为新增：否
 - 归类理由：主对象是生命机制与调控网络分析，而不是患者级医疗决策
-- 归类置信度：中高（`06` 强；`07` 为 accepted source-limited adjunct module）
+- 归类置信度：中高（`06` 强；`07` 为 accepted adjunct module，且已获 first-hand full-text support）
 
 ### 2.2 对象优先判定
 
@@ -108,7 +108,7 @@
 
 - 相邻边界模块：`06/07`
 - 最终判定：`scientific_object_modules = 06;07`，其中 `primary_module_for_filing = 06`
-- 判定理由：癌症案例不改变主对象，所以 `06` 继续作为主归档模块；但 ESCC super-enhancer circuitry、oncogenic regulators、cancer pathogenesis 与潜在 therapeutic-target discovery 已构成可识别的疾病对象 case evidence，因此 `07` 作为 accepted source-limited adjunct module 予以保留
+- 判定理由：癌症案例不改变主对象，所以 `06` 继续作为主归档模块；但 ESCC super-enhancer circuitry、oncogenic regulators、cancer pathogenesis 与潜在 therapeutic-target discovery 已构成可识别的疾病对象 case evidence，因此 `07` 作为 accepted adjunct module 予以保留
 - 是否需要二次复核：否，就当前分类落地而言已足够；后续仅可继续补全文获取与验证细节
 
 ## 3. Agent 系统与科研流程角色
@@ -238,7 +238,7 @@
 - 科学验证不足：摘要未展开外部 wet-lab 支撑
 - 泛化性不足：当前案例仍有限
 - 工具链依赖：依赖大量外部分析工具与数据源
-- 来源受限：官方 bioRxiv HTML / PDF 持续被 Cloudflare 阻断，当前 closeout 主要依赖 Crossref DOI abstract 与 official repo materials
+- 来源状态：本地 archived PDF 已完成全文复核；旧 bioRxiv HTML / PDF 的 Cloudflare 阻断说明不再代表当前 closeout ceiling
 - 数据泄漏或 benchmark 偏差：摘要未展开
 - 成本、可复现性或安全风险：复杂工具链的维护成本较高
 
@@ -249,7 +249,7 @@
 - 可用于哪个表格或图：omics regulation-analysis Agent 对比表
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：standard
-- 需要在正文中特别引用的页码 / 图 / 表：当前以 Crossref DOI 摘要与 official repo materials 为主；无本地 PDF
+- 需要在正文中特别引用的页码 / 图 / 表：如需补页码 / 图表可直接回看本地 archived PDF；当前 landed wording 已有 first-hand full-text support
 - 需要与哪些论文并列比较：CellAgent、PrimeGen、PROTEUS 等
 
 ## 9. 总结
@@ -283,9 +283,9 @@ scientific_object_modules：06;07
 object_coverage_mode：multi_module
 primary_module_for_filing：06
 general_method_bucket：none
-source_limited：yes
-safety_access_status：source-limited: bioRxiv HTML/PDF blocked by Cloudflare
-pdf_archive_status：no_local_pdf_archived
+source_limited：no
+safety_access_status：none
+pdf_archive_status：local_pdf_archived_and_checked
 科学贡献类型：analysis; hypothesis; system_platform
 证据强度：high_primary_abstract
 归类置信度：medium_high

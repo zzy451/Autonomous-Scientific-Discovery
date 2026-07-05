@@ -55,7 +55,7 @@ final_reason: CLIO simultaneously studies chemistry-native molecular design and 
 |---|---|---|---|---|
 | 2026-06-24 full reaudit | frozen `03;04` adjudication confirmed | Batch28Partial1 frozen adjudication + locally archived arXiv PDF full-text recheck | stale single-module `04` wording is retired; the authoritative closeout is dual-module `03;04` with filing kept at `04` | high |
 | Agent 纳入 | 是 | 摘要 / 标题 / 方法概览 | 系统面向明确科研目标，并包含多步行动、反馈迭代或多 Agent 协作。 | 高 |
-| 科学对象归类 | `04` / `04.04` | 摘要 | 最稳定对象是“aqueous organic redox-flow-battery negolyte design agent”，而不是单纯的模型方法或发表 venue。 | 高 |
+| 科学对象归类 | `03;04`（primary filing=`04`） | 摘要 + locally archived arXiv PDF full-text recheck | 最稳定对象仍是“aqueous organic redox-flow-battery negolyte design agent”，但分子设计 / 合成证据已独立支持 `03`，电池材料性能验证保持 `04` 为 filing primary。 | 高 |
 | 方法流程 | 多步 Agent 工作流成立 | 摘要 / 系统描述 | 论文把检索、生成、分析、评估或写作等环节串成可迭代流程。 | 中高 |
 | 实验验证 | 17 candidates、3 rounds 与实验 characterization | 摘要 / 结果概览 | 当前可得证据显示论文主要通过 17 candidates、3 rounds 与实验 characterization 支撑其主张。 | 中高 |
 | 边界判断 | 03 / 04 高压边界；当前更偏 energy-materials / battery-negolyte object | 摘要 / 任务定义 | 当前风险主要集中在边界解释与强度判断，不足以推翻现有主类。 | 中高 |
@@ -92,12 +92,12 @@ final_reason: CLIO simultaneously studies chemistry-native molecular design and 
 
 ### 2.1 主科学领域
 
-- 一级类：04
+- 一级类：04（filing primary；supported modules: `03;04`）
 - 二级类：04.04
 - 三级类：
 - 四级专题：Closed-loop molecular design agents for battery materials
 - 四级专题是否为新增：否
-- 归类理由：按对象优先规则，本文最稳定的研究对象是“aqueous organic redox-flow-battery negolyte design agent”，因此当前主类保持为 `04` / `04.04`。
+- 归类理由：按对象优先规则，本文最稳定的研究对象仍是“aqueous organic redox-flow-battery negolyte design agent”；同时，分子设计 / 合成证据已独立支持 `03`，因此冻结 closeout 应写为 `03;04`，并保留 `04` 作为 filing primary。
 - 归类置信度：中高
 
 ### 2.2 对象优先判定
@@ -109,9 +109,9 @@ final_reason: CLIO simultaneously studies chemistry-native molecular design and 
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：03 / 04 高压边界；当前更偏 energy-materials / battery-negolyte object
-- 最终判定：保持 `04` / `04.04`
-- 判定理由：03 / 04 高压边界；当前更偏 energy-materials / battery-negolyte object
-- 是否需要二次复核：需要。
+- 最终判定：`03;04`（primary_module_for_filing=`04`）
+- 判定理由：`04` 继续由 battery-material performance object 支撑 filing primary，`03` 由 molecular design / synthesis evidence 独立落地；当前不再是单模块 `04` closeout。
+- 是否需要二次复核：否；当前 frozen adjudication 与 locally archived arXiv PDF full-text recheck 已完成对齐。
 
 ### 2.4 2026-06-24 Batch28Partial1 adjudication alignment
 
@@ -215,7 +215,7 @@ final_reason: CLIO simultaneously studies chemistry-native molecular design and 
 
 ## 8. 对综述写作的价值
 
-- 可放入哪个章节：主类 `04` / `04.04` 对应章节。
+- 可放入哪个章节：按 filing convenience 进入 `04` / `04.04` 对应章节，并在交叉讨论中明确其 landed `03;04` 多模块归类。
 - 可支撑哪个论点：Agent 已经能够围绕“aqueous organic redox-flow-battery negolyte design agent”形成稳定的多步科研工作流。
 - 可用于哪个表格或图：主类代表作表、边界样本表、验证方式对比表。
 - 适合作为代表性案例吗：是，但代表性强弱仍受证据强度影响。
@@ -227,7 +227,7 @@ final_reason: CLIO simultaneously studies chemistry-native molecular design and 
 
 ### 9.1 一句话概括
 
-围绕“aqueous organic redox-flow-battery negolyte design agent”组织多步科研工作的 Agent 系统。
+围绕“aqueous organic redox-flow-battery negolyte design agent”组织多步科研工作的 Agent 系统，authoritative closeout 为 `03;04`、filing 保持 `04`。
 
 ### 9.2 速记版 pipeline
 

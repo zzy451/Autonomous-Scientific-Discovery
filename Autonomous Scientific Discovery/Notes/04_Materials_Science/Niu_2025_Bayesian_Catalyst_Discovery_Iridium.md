@@ -6,10 +6,10 @@
 - 年份：2025
 - 来源 / venue：Science Advances
 - DOI / arXiv / URL：https://doi.org/10.1126/sciadv.adw0894
-- PDF / 本地文件路径：未保存本地 PDF；推荐一手来源为 PMC 开放获取全文 https://pmc.ncbi.nlm.nih.gov/articles/PMC12366704/
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Niu_2025_Bayesian_Catalyst_Discovery_Iridium.pdf`；本轮已确认本地归档 PDF，并与 PMC 开放获取全文 https://pmc.ncbi.nlm.nih.gov/articles/PMC12366704/ 交叉核对
 - 一手来源核对：PMC full text / abstract（open access）
 - 论文类型：研究论文 / catalyst materials discovery
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入 / PMC full text 与本地归档 PDF 已核对
 - 阅读日期：2026-06-23
 - 笔记作者：Codex
 
@@ -201,7 +201,7 @@
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 科学对象模块：03;04
 覆盖模式：multi_module
 是否具有具体科学对象实验：yes

@@ -16,7 +16,7 @@
 
 ## Round-3 Adjudicated Multi-Module Update (2026-06-23)
 
-- `scientific_object_modules`: `05;11.02`
+- `scientific_object_modules`: `05;11`
 - `object_coverage_mode`: `multi_module`
 - `primary_module_for_filing`: `05`
 - `general_method_bucket`: `none`
@@ -26,12 +26,12 @@
 - `classification_evidence_source_level`: `first_hand_full_text`
 - `note_revision_required`: `no`
 
-This note now lands as stable `05;11.02` rather than a provisional `05`-only sample. Compound heatwaves, climate-risk propagation, and historical heatwave-event validation keep `05` primary, while the discovered chains explicitly cover small-business disruption, hospital-service interruption, migration pressure, housing-market strain, educational achievement gaps, and intergenerational inequality, which add independent social / population-system coverage for `11.02`. The current first-hand evidence does not justify a separate `06` landing.
+This note now lands as stable `05;11` rather than a provisional `05`-only sample. Compound heatwaves, climate-risk propagation, and historical heatwave-event validation keep `05` primary, while the discovered chains explicitly cover small-business disruption, hospital-service interruption, migration pressure, housing-market strain, educational achievement gaps, and intergenerational inequality, which add independent social / population-system coverage for `11`. The current first-hand evidence does not justify a separate `06` landing.
 
 | 判断项 | 结论 | 证据位置 | 原文短摘或概括 | 可信度 |
 |---|---|---|---|---|
 | Agent 纳入 | 是 | arXiv abstract | HeDA 从 8,111 篇论文构图并进行 automated scientific discovery，不是单轮 QA | 中高 |
-| 科学对象归类 | `05;11.02`（primary=`05`） | arXiv abstract / PDF text spot-check | 对象一端是 compound heatwaves、cascading climate risks 与 bio-ecological mediation，另一端还显式覆盖 migration、housing、education、small-business 与 hospital-service 等社会 / population-system effects | 中高 |
+| 科学对象归类 | `05;11`（primary=`05`） | arXiv abstract / PDF text spot-check | 对象一端是 compound heatwaves、cascading climate risks 与 bio-ecological mediation，另一端还显式覆盖 migration、housing、education、small-business 与 hospital-service 等社会 / population-system effects | 中高 |
 | 方法流程 | 多 Agent 综合推理 | HTML | hierarchical multi-agent workflow 将 climatology、ecology、economics 证据整合成 risk topology | 中高 |
 | 证据基础 | 大规模知识图 | HTML | 图谱包含 70,297 nodes 与 120,168 relationships，支持多跳风险传播推理 | 中高 |
 | 验证与边界 | 有 QA 与案例，但边界压力高 | HTML / OpenReview | complex QA accuracy 70.0%，并用 2022 长江流域 compound drought + heatwave 事件做经验对应 | 中高 |
@@ -68,8 +68,8 @@ This note now lands as stable `05;11.02` rather than a provisional `05`-only sam
 
 ### 2.1 主科学领域
 
-- 一级类：05（primary；additional supported module: 11.02）
-- 二级类：05.02（primary）；11.02（additional supported module）
+- 一级类：05（primary；additional supported module: 11）
+- 二级类：05.02（primary）；11（additional supported module）
 - 三级类：复合热浪与级联气候风险机制
 - 四级专题：heatwave-risk scientific synthesis agents
 - 四级专题是否为新增：否
@@ -85,8 +85,8 @@ This note now lands as stable `05;11.02` rather than a provisional `05`-only sam
 ### 2.3 容易混淆的边界
 
 - 可能误归类到：01.04、06、11.07
-- 最终判定：`05;11.02`（primary=`05`）
-- 判定理由：虽然论文以热浪级联风险为 primary object，但正文与案例已显式覆盖 migration、housing、education、small-business 与 hospital-service 等社会 / population-system outcomes，因此可稳定补入 `11.02`，而不是停留在泛 `11` 或单一 `05`
+- 最终判定：`05;11`（primary=`05`）
+- 判定理由：虽然论文以热浪级联风险为 primary object，但正文与案例已显式覆盖 migration、housing、education、small-business 与 hospital-service 等社会 / population-system outcomes，因此可稳定补入 `11`，而不是停留在单一 `05`
 - 是否需要二次复核：否
 
 ## 3. Agent 系统与科研流程角色
@@ -218,12 +218,12 @@ This note now lands as stable `05;11.02` rather than a provisional `05`-only sam
 - 工具链依赖：依赖知识图谱构建与 LLM 推理质量
 - 数据泄漏或 benchmark 偏差：QA 与图谱构造方式可能影响结论
 - 成本、可复现性或安全风险：知识图重建与跨学科验证门槛较高
-- 是否仍需进一步全文复核：否；当前 arXiv abstract + PDF text spot-check 已足以支撑 landed `05;11.02` wording
+- 是否仍需进一步全文复核：否；当前 arXiv abstract + PDF text spot-check 已足以支撑 landed `05;11` wording
 
 ## 8. 对综述写作的价值
 
 - 可放入哪个章节：气候风险与 Earth-system scientific synthesis agents
-- 可支撑哪个论点：复杂社会-生态耦合样本中，可保持 `05` 为 primary，同时把已显式落到社会 / population-system对象的结果记为 `11.02`
+- 可支撑哪个论点：复杂社会-生态耦合样本中，可保持 `05` 为 primary，同时把已显式落到社会 / population-system 对象的结果记为 `11`
 - 可用于哪个表格或图：高边界压力样本清单
 - 适合作为代表性案例吗：是
 - 推荐引用强度：普通引用
@@ -248,8 +248,8 @@ This note now lands as stable `05;11.02` rather than a provisional `05`-only sam
 ```text
 是否纳入：是
 主类：05（primary）
-二级类：05.02（primary）；11.02
-scientific_object_modules：05;11.02
+二级类：05.02（primary）；11
+scientific_object_modules：05;11
 三级类：复合热浪与级联气候风险机制
 四级专题：heatwave-risk scientific synthesis agents
 Agent 类型：LLM Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Agent System; Hybrid Agent

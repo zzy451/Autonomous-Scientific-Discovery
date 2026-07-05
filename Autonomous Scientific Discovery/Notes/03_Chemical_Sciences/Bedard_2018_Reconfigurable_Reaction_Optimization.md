@@ -9,7 +9,7 @@
 - PDF / 本地文件路径：本轮依据 Science 官方元数据与稳定摘要级材料整理
 - 来源状态：source_limited=yes（本轮仍以 Science 官方元数据与稳定摘要级材料为主；冻结归类稳定为 `03`，但不要写成已核过全文的通用平台文）
 - 论文类型：研究论文 / 自动化反应优化平台
-- 当前状态：to_read / confirmed core
+- 当前状态：confirmed core；冻结落地为稳定 `03`，并保留 source_limited=yes
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 

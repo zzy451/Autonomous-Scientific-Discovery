@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://arxiv.org/abs/2604.27297
 - PDF / 本地文件路径：`Autonomous Scientific Discovery/Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Na_2026_Machine_Collective_Intelligence.pdf`（official arXiv PDF archived locally and checked）
 - 论文类型：研究论文 / symbolic-equation-discovery multi-agent system
-- 当前状态：to_read
+- 当前状态：已读（本轮核对本地归档 PDF）；主列表流程状态仍可保持 `to_read`
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 

@@ -6,12 +6,12 @@
 - 年份：2026
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2605.17790
-- PDF / 本地文件路径：Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Su_2026_STRIDE_Equation_Discovery.pdf
+- PDF / 本地文件路径：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Su_2026_STRIDE_Equation_Discovery.pdf`；本轮核对本地归档 arXiv PDF
 - 论文类型：研究论文 / equation discovery agent
-- 当前状态：to_read
+- 当前状态：已读（本轮核对本地归档 PDF）；主列表流程状态仍可保持 `to_read`
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
-- 一手来源核对：arXiv PDF `https://arxiv.org/pdf/2605.17790.pdf`
+- 一手来源核对：本轮核对本地归档 arXiv PDF `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Su_2026_STRIDE_Equation_Discovery.pdf`，并对照 arXiv PDF `https://arxiv.org/pdf/2605.17790.pdf`
 - 复核结论：`supported_modules=02;03;04;06`; `general_method_bucket=none`; `primary_module_for_filing=02`; `confidence=high`; `source_limited=no`
 
 ## Evidence Log

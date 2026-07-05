@@ -6,9 +6,9 @@
 - 年份：2014
 - 来源 / venue：ACS Nano
 - DOI / arXiv / URL：https://doi.org/10.1021/nn503347a
-- PDF / 本地文件路径：本轮基于官方摘要与 Reviewer 一手证据；未保存本地 PDF
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity_Supplementary.pdf` 已确认；这是 supplementary support only，不是主文 article PDF
 - 论文类型：研究论文 / early automated CNT growth optimization
-- 当前状态：to_read
+- 当前状态：confirmed core；以保守口径落地为 `04`，并保留 source_limited=yes
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -255,7 +255,7 @@
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 主类：04
 二级类：04.03
 三级类：carbon nanotube growth selectivity optimization

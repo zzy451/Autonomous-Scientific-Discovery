@@ -6,7 +6,7 @@
 - 年份：2026
 - 来源 / venue：Journal of Materials Informatics
 - DOI / arXiv / URL：https://doi.org/10.20517/jmi.2025.69
-- PDF / 本地文件路径：当前未保存本地 PDF；本笔记基于官方 JMI HTML 全文复核
+- PDF / 本地文件路径：`Reference_PDF/04_Materials_Science/Wang_2026_AI_Agent_Materials_Discovery.pdf`（已归档）；当前 landed wording 仍以官方 JMI HTML 全文复核为准
 - 论文类型：研究论文 / AI-agent materials discovery system
 - 当前状态：to_read
 - 阅读日期：2026-06-23
@@ -229,7 +229,7 @@
 - 可用于哪个表格或图：materials discovery multi-module cases table
 - 适合作为代表性案例吗：适合
 - 推荐引用强度：普通引用
-- 需要在正文中特别引用的页码 / 图 / 表：后续如归档本地 PDF 可补；当前 HTML 全文已足以支撑 landed judgment
+- 需要在正文中特别引用的页码 / 图 / 表：如需补充页码可回看已归档本地 PDF；当前 HTML 全文复核已足以支撑 landed judgment
 - 需要与哪些论文并列比较：ASD-0538、ASD-0535、ASD-0541
 
 ## 9. 总结

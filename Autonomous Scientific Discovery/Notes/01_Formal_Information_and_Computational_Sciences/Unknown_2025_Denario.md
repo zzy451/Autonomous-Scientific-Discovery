@@ -6,12 +6,12 @@
 - 年份：2025
 - 来源 / venue：arXiv
 - DOI / arXiv / URL：https://arxiv.org/abs/2510.26887
-- PDF / 本地文件路径：Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Unknown_2025_Denario.pdf
+- PDF / 本地文件路径：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Unknown_2025_Denario.pdf`；本轮核对本地归档 arXiv PDF
 - 论文类型：系统论文 / scientific research assistant
-- 当前状态：to_read
+- 当前状态：已读（本轮核对本地归档 PDF）；主列表流程状态仍可保持 `to_read`
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
-- 一手来源核对：arXiv HTML / abstract `https://arxiv.org/abs/2510.26887`
+- 一手来源核对：本轮核对本地归档 arXiv PDF `Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Unknown_2025_Denario.pdf`，并对照 arXiv HTML / abstract `https://arxiv.org/abs/2510.26887`
 - 复核结论：`supported_modules=02;03;04;06;07`; `general_method_bucket=none`; `primary_module_for_filing=02`; `confidence=medium-high`; `source_limited=no`
 
 ## Evidence Log
