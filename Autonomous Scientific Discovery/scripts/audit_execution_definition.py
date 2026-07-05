@@ -16,6 +16,7 @@ DISCIPLINE_ASSIGNMENTS_JSONL = DATA_DIR / "discipline_code_assignments.jsonl"
 DISCIPLINE_REGISTRY_JSONL = DATA_DIR / "discipline_local_code_registry.jsonl"
 DISCIPLINE_REGISTRY_CSV = DATA_DIR / "discipline_local_code_registry.csv"
 PDF_ARCHIVE_REGISTRY_JSONL = DATA_DIR / "registry" / "pdf_archive_registry.jsonl"
+CLASSIFICATION_ASSIGNMENTS_JSONL = DATA_DIR / "registry" / "classification_assignments.jsonl"
 CLASSIFICATION_CODE_INDEX = DATA_DIR / "classification_code_index.json"
 PREVIEW_CSV = DATA_DIR / "discipline_code_initial_assignment_preview.csv"
 FIELD_OWNERSHIP_MATRIX = DATA_DIR / "field_ownership_matrix.md"
@@ -86,6 +87,7 @@ def main() -> None:
     assignments = load_jsonl(DISCIPLINE_ASSIGNMENTS_JSONL)
     registry = load_jsonl(DISCIPLINE_REGISTRY_JSONL)
     pdf_archive_registry = load_jsonl(PDF_ARCHIVE_REGISTRY_JSONL)
+    classification_assignments = load_jsonl(CLASSIFICATION_ASSIGNMENTS_JSONL)
     preview_rows = load_csv_rows(PREVIEW_CSV)
     classification_index = load_json(CLASSIFICATION_CODE_INDEX)
     readme_text = read_text(README)
@@ -95,6 +97,8 @@ def main() -> None:
     with sqlite3.connect(SQLITE_PATH) as conn:
         sqlite_registry_count = count_sqlite_table(conn, "discipline_local_code_registry")
         sqlite_pdf_evidence_count = count_sqlite_table(conn, "pdf_evidence_status")
+        sqlite_paper_modules_count = count_sqlite_table(conn, "paper_modules")
+        sqlite_general_method_buckets_count = count_sqlite_table(conn, "paper_general_method_buckets")
         metadata_rows = conn.execute(
             "SELECT key, value FROM metadata WHERE key IN ("
             "'papers_exported_at',"
@@ -131,12 +135,29 @@ def main() -> None:
         and isinstance(row.get("primary_module_for_filing"), str)
         for row in papers
     )
-    status, detail = check(
-        structured_fields_ok,
-        f"All {len(papers)} papers carry structured classification fields.",
-        "Some papers are missing structured classification fields.",
+    formal_assignment_expected = sum(len(row.get("scientific_object_modules", [])) for row in papers)
+    general_bucket_expected = sum(1 for row in papers if row.get("general_method_bucket") != "none")
+    classification_assignment_rows_ok = all(
+        isinstance(row.get("paper_id"), str)
+        and isinstance(row.get("taxonomy_code"), str)
+        and isinstance(row.get("assignment_kind"), str)
+        for row in classification_assignments
     )
-    add_result(results, "2", status, detail, "Data/papers.jsonl")
+    status, detail = check(
+        structured_fields_ok
+        and classification_assignment_rows_ok
+        and len(classification_assignments) == formal_assignment_expected + general_bucket_expected
+        and sqlite_paper_modules_count == formal_assignment_expected
+        and sqlite_general_method_buckets_count == general_bucket_expected,
+        (
+            f"All {len(papers)} papers carry structured classification fields, "
+            f"with {len(classification_assignments)} classification assignment rows "
+            f"aligned to SQLite paper_modules={sqlite_paper_modules_count} and "
+            f"paper_general_method_buckets={sqlite_general_method_buckets_count}."
+        ),
+        "Structured classification surfaces are missing fields or drift across papers.jsonl / classification_assignments / SQLite module tables.",
+    )
+    add_result(results, "2", status, detail, "Data/papers.jsonl + Data/registry/classification_assignments.jsonl + Data/papers.sqlite")
 
     evidence_fields_ok = all(
         isinstance(row.get("pdf_status"), str)

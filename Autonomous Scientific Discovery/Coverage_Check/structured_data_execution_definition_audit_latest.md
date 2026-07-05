@@ -17,9 +17,9 @@ Evidence: `Data/papers.jsonl`
 
 ### Item 2 - PASS
 
-All 871 papers carry structured classification fields.
+All 871 papers carry structured classification fields, with 1012 classification assignment rows aligned to SQLite paper_modules=843 and paper_general_method_buckets=169.
 
-Evidence: `Data/papers.jsonl`
+Evidence: `Data/papers.jsonl + Data/registry/classification_assignments.jsonl + Data/papers.sqlite`
 
 ### Item 3 - PASS
 
