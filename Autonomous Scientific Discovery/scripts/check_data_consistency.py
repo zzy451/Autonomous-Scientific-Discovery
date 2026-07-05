@@ -1686,6 +1686,68 @@ def write_integrity_check_report(
     INTEGRITY_CHECK_REPORT_PATH.write_text("\n".join(lines), encoding="utf-8")
 
 
+def extract_subject_id_from_message(message: str) -> str:
+    match = re.search(r"\b(ASD-[0-9]{4}|DCA-[0-9]{6}|CL-[0-9]{6})\b", message)
+    return match.group(1) if match else ""
+
+
+def classify_assertion_failure(message: str) -> Dict[str, str]:
+    normalized = message.lower()
+    subject_id = extract_subject_id_from_message(message)
+
+    mappings = (
+        ("discipline_code_assignments", "discipline_code", "DISCIPLINE_CODE_ASSERTION", "Data/discipline_code_assignments.jsonl"),
+        ("discipline_local_code_registry", "derived_snapshot", "DISCIPLINE_LOCAL_CODE_REGISTRY_ASSERTION", "Data/discipline_local_code_registry.jsonl"),
+        ("discipline_code_initial_assignment_preview", "derived_snapshot", "DISCIPLINE_INITIAL_PREVIEW_ASSERTION", "Data/discipline_code_initial_assignment_preview.csv"),
+        ("classification_code_index", "taxonomy", "CLASSIFICATION_CODE_INDEX_ASSERTION", "Data/classification_code_index.json"),
+        ("taxonomy_registry", "taxonomy", "TAXONOMY_REGISTRY_ASSERTION", "Data/registry/taxonomy_registry.json"),
+        ("taxonomy_index", "taxonomy", "TAXONOMY_INDEX_ASSERTION", "Data/taxonomy_index.json"),
+        ("paper_identifier_aliases", "identity", "PAPER_IDENTIFIER_ALIASES_ASSERTION", "Data/registry/paper_identifier_aliases.jsonl"),
+        ("paper_registry", "identity", "PAPER_REGISTRY_ASSERTION", "Data/registry/paper_registry.jsonl"),
+        ("classification_assignments", "taxonomy", "CLASSIFICATION_ASSIGNMENTS_ASSERTION", "Data/registry/classification_assignments.jsonl"),
+        ("pdf_archive_registry", "evidence", "PDF_ARCHIVE_REGISTRY_ASSERTION", "Data/registry/pdf_archive_registry.jsonl"),
+        ("pdf_manifest", "evidence", "PDF_MANIFEST_ASSERTION", "Data/pdf_manifest.json"),
+        ("missing_pdf_manifest", "evidence", "MISSING_PDF_MANIFEST_ASSERTION", "Data/missing_pdf_manifest.json"),
+        ("asset_manifest", "asset", "ASSET_MANIFEST_ASSERTION", "Data/registry/asset_manifest.jsonl"),
+        ("note_manifest", "note", "NOTE_MANIFEST_ASSERTION", "Data/note_manifest.json"),
+        ("active_confirmed_core row cannot be joined to progress owner file", "evidence", "ACTIVE_PROGRESS_JOIN_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
+        ("source_limited", "evidence", "SOURCE_LIMITED_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
+        ("pdf_status", "evidence", "PDF_STATUS_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
+        ("evidence_status", "evidence", "EVIDENCE_STATUS_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
+        ("final_modules_or_bucket", "evidence", "PROGRESS_MODULE_ASSERTION", "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
+        ("scientific_object_modules", "taxonomy", "SCIENTIFIC_OBJECT_MODULES_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
+        ("general_method_bucket", "taxonomy", "GENERAL_METHOD_BUCKET_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
+        ("primary_module_for_filing", "taxonomy", "PRIMARY_FILING_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
+        ("legacy_main_class", "taxonomy", "LEGACY_MAIN_CLASS_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
+        ("legacy_secondary_class", "taxonomy", "LEGACY_SECONDARY_CLASS_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
+        ("remarks", "taxonomy", "MASTER_REMARKS_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
+        ("note_path drift against master/progress derived expectation", "note", "NOTE_PATH_ASSERTION", "Paper_Lists/agent_master_paper_list.md or Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
+        ("pdf_path drift against master/progress derived expectation", "evidence", "PDF_PATH_ASSERTION", "Paper_Lists/agent_master_paper_list.md or Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"),
+        ("title drift between master and papers.jsonl", "identity", "MASTER_TITLE_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
+        ("inclusion_status drift between master and papers.jsonl", "identity", "MASTER_INCLUSION_STATUS_ASSERTION", "Paper_Lists/agent_master_paper_list.md"),
+    )
+
+    for pattern, category, code, owner_file in mappings:
+        if pattern in normalized:
+            return {
+                "severity": "ERROR",
+                "category": category,
+                "code": code,
+                "subject_id": subject_id,
+                "message": message,
+                "owner_file": owner_file,
+            }
+
+    return {
+        "severity": "ERROR",
+        "category": "other",
+        "code": "CHECK_ABORTED",
+        "subject_id": subject_id,
+        "message": message,
+        "owner_file": "See assertion context in check_data_consistency.py",
+    }
+
+
 def read_text_lossy(path: Path) -> str:
     raw = path.read_bytes()
     for encoding in ("utf-8", "utf-8-sig", "gb18030"):
@@ -2981,14 +3043,7 @@ def main() -> None:
         print(f"integrity check report: {INTEGRITY_CHECK_REPORT_PATH}")
         print("All structured-data consistency checks passed.")
     except AssertionError as exc:
-        add_finding(
-            findings,
-            severity="ERROR",
-            category="other",
-            code="CHECK_ABORTED",
-            message=str(exc),
-            owner_file="See assertion context in check_data_consistency.py",
-        )
+        findings.append(classify_assertion_failure(str(exc)))
         write_integrity_check_report(findings=findings, status="failed")
         raise
 
