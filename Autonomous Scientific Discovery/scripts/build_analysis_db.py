@@ -43,7 +43,7 @@ CSV_FIELDS = [
     'inclusion_decision', 'duplicate_of', 'last_reviewed_at', 'last_reviewed_by', 'exported_at',
 ]
 DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS = [
-    'paper_id', 'assignment_id', 'discipline_local_code', 'discipline_local_rank',
+    'paper_id', 'assignment_id', 'discipline_local_code', 'discipline_local_rank', 'discipline_display_order',
     'assignment_status', 'assigned_at', 'assigned_by', 'retired_at', 'redirected_to_code',
     'assignment_reason', 'pending_reason', 'primary_module_for_filing',
     'primary_module_confidence', 'primary_module_assignment_rule', 'primary_module_override_reason',
@@ -263,6 +263,7 @@ def build_sqlite(
             assignment_id TEXT NOT NULL,
             discipline_local_code TEXT,
             discipline_local_rank TEXT,
+            discipline_display_order TEXT NOT NULL,
             assignment_status TEXT NOT NULL,
             assigned_at TEXT NOT NULL,
             assigned_by TEXT NOT NULL,
@@ -937,12 +938,13 @@ def build_sqlite(
             )
             for row in discipline_code_assignments
         ])
-        conn.executemany('INSERT INTO discipline_local_code_registry VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        conn.executemany('INSERT INTO discipline_local_code_registry VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 row['paper_id'],
                 row['assignment_id'],
                 row['discipline_local_code'],
                 row['discipline_local_rank'],
+                row['discipline_display_order'],
                 row['assignment_status'],
                 row['assigned_at'],
                 row['assigned_by'],

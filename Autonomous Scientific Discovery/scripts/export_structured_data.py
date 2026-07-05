@@ -251,6 +251,7 @@ DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDNAMES = [
     "assignment_id",
     "discipline_local_code",
     "discipline_local_rank",
+    "discipline_display_order",
     "assignment_status",
     "assigned_at",
     "assigned_by",
@@ -659,6 +660,33 @@ def parse_discipline_local_rank(discipline_local_code: object) -> str:
     return str(discipline_local_code).rsplit("-", 1)[-1]
 
 
+def build_discipline_display_order(
+    *,
+    assignment_status: str,
+    discipline_local_code: object,
+    primary_module_for_filing: object,
+    primary_taxonomy_code_2lvl: object,
+    paper_id: object,
+) -> str:
+    discipline_local_code_str = str(discipline_local_code or "").strip()
+    if assignment_status == "active_code" and discipline_local_code_str:
+        return discipline_local_code_str
+
+    primary_module = str(primary_module_for_filing or "").strip() or "ZZ"
+    secondary_code = str(primary_taxonomy_code_2lvl or "").strip()
+    secondary_rank = "ZZ"
+    secondary_match = SECONDARY_CODE_PATTERN.fullmatch(secondary_code)
+    if secondary_match:
+        secondary_rank = secondary_match.group(2)
+    paper_id_str = str(paper_id or "").strip()
+
+    if assignment_status == "pending_secondary":
+        return f"{primary_module}-{secondary_rank}-PENDING-{paper_id_str}"
+    if assignment_status == "non_discipline_general_method":
+        return f"GM-PENDING-{paper_id_str}"
+    return f"UNSORTED-{paper_id_str}"
+
+
 def get_git_export_metadata() -> Tuple[str, bool]:
     try:
         source_commit = subprocess.check_output(
@@ -858,6 +886,13 @@ def build_discipline_local_code_registry(
                 "assignment_id": assignment["assignment_id"],
                 "discipline_local_code": discipline_local_code,
                 "discipline_local_rank": parse_discipline_local_rank(discipline_local_code),
+                "discipline_display_order": build_discipline_display_order(
+                    assignment_status=str(assignment["assignment_status"]),
+                    discipline_local_code=discipline_local_code,
+                    primary_module_for_filing=paper["primary_module_for_filing"],
+                    primary_taxonomy_code_2lvl=assignment["primary_taxonomy_code_2lvl"],
+                    paper_id=paper_id,
+                ),
                 "assignment_status": assignment["assignment_status"],
                 "assigned_at": assignment["assigned_at"],
                 "assigned_by": assignment["assigned_by"],

@@ -571,6 +571,25 @@ def validate_discipline_local_code_registry(
             row["discipline_local_rank"] == expected_rank,
             f"discipline_local_code_registry discipline_local_rank mismatch for {assignment_id}",
         )
+        assignment_status = str(row["assignment_status"])
+        if assignment_status == "active_code":
+            assert_true(
+                row["discipline_display_order"] == row["discipline_local_code"],
+                f"discipline_local_code_registry active_code discipline_display_order mismatch for {assignment_id}",
+            )
+        elif assignment_status == "pending_secondary":
+            assert_true(
+                str(row["discipline_display_order"]).startswith(
+                    f"{row['primary_module_for_filing'] or 'ZZ'}-"
+                )
+                and "PENDING" in str(row["discipline_display_order"]),
+                f"discipline_local_code_registry pending_secondary discipline_display_order mismatch for {assignment_id}",
+            )
+        elif assignment_status == "non_discipline_general_method":
+            assert_true(
+                str(row["discipline_display_order"]).startswith("GM-PENDING-"),
+                f"discipline_local_code_registry general-method discipline_display_order mismatch for {assignment_id}",
+            )
         assert_true(
             row["primary_taxonomy_code_2lvl"] == ledger_row["primary_taxonomy_code_2lvl"],
             f"discipline_local_code_registry primary_taxonomy_code_2lvl mismatch for {assignment_id}",

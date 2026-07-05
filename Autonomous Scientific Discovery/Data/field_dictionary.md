@@ -459,6 +459,25 @@
 - 同一 `paper_id` 最多一条 `active_code`。
 - 它不是 derived snapshot，不得由 export 覆盖重建。
 
+### 4.2C `discipline_local_code_registry.jsonl`
+
+定位: discipline code owner ledger 的当前快照层，供 CSV / SQLite / review 排序使用。
+
+关键字段:
+
+- `paper_id`
+- `assignment_id`
+- `discipline_local_code`
+- `discipline_local_rank`
+- `discipline_display_order`
+- `assignment_status`
+
+约束:
+
+- `discipline_local_rank = parse_NNN(discipline_local_code)`，只能派生，不允许人工维护。
+- `discipline_display_order` 是 derived 排序字段，用于展示 / CSV / review 排序，不拥有稳定管理码事实。
+- registry 是 derived snapshot，不能手工回写成为事实源。
+
 ### 4.3 `pdf_manifest.json`
 
 定位: 当前本地真实存在的主 PDF 清单。
