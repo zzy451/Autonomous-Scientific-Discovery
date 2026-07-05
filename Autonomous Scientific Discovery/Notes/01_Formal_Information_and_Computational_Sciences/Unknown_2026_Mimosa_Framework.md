@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://arxiv.org/abs/2603.28986
 - PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_Mimosa_Framework.pdf`；本轮重开本地归档 arXiv PDF，并据此同步 note
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入；2026-06-24 confirmed-core full-reaudit writeback completed
 - 阅读日期：2026-06-24
 - 笔记作者：Codex
 

@@ -1,0 +1,3 @@
+paper_id	title	note_path	module_code	section_role	drift_flags	planned_check
+ASD-0693	Enabling Onboard Detection of Events of Scientific Interest for the Europa Clipper Spacecraft	Notes/10_Aerospace_Marine_and_Transportation_Sciences/Wagstaff_2019_Europa_Clipper_Onboard_Detection.md	05	boundary	cross_module;stale_to_read;stale_source_state	retire stale `to_read` and no-local-PDF wording while preserving the frozen `05;10` boundary
+ASD-0696	AEGIS Automated Science Targeting for the MER Opportunity Rover	Notes/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2012_AEGIS_Opportunity_Rover.md	05	boundary	cross_module;stale_to_read	retire stale `to_read` residue in the top metadata and 9.3 summary while preserving the frozen `05;10` boundary

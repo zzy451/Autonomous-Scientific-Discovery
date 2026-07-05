@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://arxiv.org/abs/2509.23141
 - PDF / 本地文件路径：`Reference_PDF/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.pdf`
 - 论文类型：预印本 / Earth observation agent system
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 

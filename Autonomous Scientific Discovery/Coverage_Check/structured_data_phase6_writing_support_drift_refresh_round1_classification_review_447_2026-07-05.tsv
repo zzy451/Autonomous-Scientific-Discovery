@@ -1,0 +1,8 @@
+paper_id	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	note_revision_required	master_update_required	land_now	final_reason
+ASD-0090	02	none	02	no	yes	no	yes	stable 02 quantum-physics reading already holds; only stale source-state wording needs retirement
+ASD-0687	02	none	02	no	yes	no	yes	stable 02 accelerator-physics reading already holds; only stale to_read residue needs retirement
+ASD-0653	05	none	05	no	yes	no	yes	stable 05 Earth-observation reading already holds; only stale to_read residue needs retirement
+ASD-0662	03;05;06;11	none	01	no	yes	no	yes	stable multi-module reading already holds; only stale top pending wording needs retirement
+ASD-0691	05;10	none	10	no	yes	no	yes	stable 05;10 rover / planetary-science boundary already holds; only stale metadata and source-state residue need retirement
+ASD-0693	05;10	none	10	no	yes	no	yes	stable 05;10 Europa mission-science boundary already holds; only stale metadata and source-state residue need retirement
+ASD-0696	05;10	none	10	no	yes	no	yes	stable 05;10 rover / Mars-surface-science boundary already holds; only stale to_read residue needs retirement

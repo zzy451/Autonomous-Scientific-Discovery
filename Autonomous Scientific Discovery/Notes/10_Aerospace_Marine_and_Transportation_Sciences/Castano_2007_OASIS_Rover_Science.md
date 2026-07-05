@@ -6,11 +6,17 @@
 - 年份：2007
 - 来源 / venue：Journal of Field Robotics
 - DOI / arXiv / URL：https://doi.org/10.1002/rob.20192
-- PDF / 本地文件路径：当前笔记基于 JPL official PDF URL（https://ai.jpl.nasa.gov/public/documents/papers/castano-jfr07-oasis.pdf）；未见本地归档 PDF
+- PDF / 本地文件路径：`Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Castano_2007_OASIS_Rover_Science.pdf`；本地 JPL official PDF 已归档（https://ai.jpl.nasa.gov/public/documents/papers/castano-jfr07-oasis.pdf）
 - 论文类型：研究论文 / rover mission-science autonomy
-- 当前状态：to_read
+- 当前状态：已读 / 已纳入；2026-07-05 representative drift-refresh harmonization completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
+
+## Phase6WritingSupportDriftRefreshR1 harmonization override - 2026-07-05
+
+- Final classification: `scientific_object_modules=05;10`; `object_coverage_mode=multi_module`; `primary_module_for_filing=10`; `general_method_bucket=none`.
+- Source status: locally archived PDF checked at `Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Castano_2007_OASIS_Rover_Science.pdf`; authoritative note state is `source_limited=no`.
+- Override note: this note is already read and included in the confirmed core. Older `to_read` / no-local-PDF wording below should be treated as stale legacy text.
 
 ## Evidence Log
 
@@ -243,7 +249,7 @@ OASIS 是一个面向行星 rover 的 onboard autonomous science system。它能
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 科学对象模块：05;10
 覆盖模式：multi_module
 是否具有具体科学对象实验：yes

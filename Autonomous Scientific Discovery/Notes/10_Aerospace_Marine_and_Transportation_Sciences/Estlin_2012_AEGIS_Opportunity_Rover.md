@@ -8,7 +8,7 @@
 - DOI / arXiv / URL：https://doi.org/10.1145/2168752.2168764
 - PDF / 本地文件路径：`Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2012_AEGIS_Opportunity_Rover.pdf`
 - 论文类型：研究论文 / rover autonomous science targeting
-- 当前状态：to_read；2026-07-04 local-PDF full-text writeback completed
+- 当前状态：已读 / 已纳入；2026-07-04 local-PDF full-text writeback completed
 - 阅读日期：2026-06-19
 - 笔记作者：Codex
 
@@ -265,7 +265,7 @@ AEGIS 是部署在 MER Opportunity rover 上的自动科学目标选择系统。
 ### 9.3 标注字段汇总
 
 ```text
-是否纳入：to_read
+是否纳入：是
 主类：10
 二级类：10.02
 三级类：rover science targeting

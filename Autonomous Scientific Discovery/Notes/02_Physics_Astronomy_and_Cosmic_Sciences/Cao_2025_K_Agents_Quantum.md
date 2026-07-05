@@ -6,7 +6,7 @@
 - Current source refresh: local archived PDF; arXiv `https://arxiv.org/abs/2412.07978`
 - Current authoritative classification: `scientific_object_modules=02`; `general_method_bucket=none`; `primary_module_for_filing=02`; `source_limited=no`; `evidence_status=first_hand_full_text`
 - Override note: stable `02` judgment retained. The concrete validated object is quantum-physics experimentation on a superconducting quantum processor, including entangled-state outcomes.
-- Archive-status note: use the canonical project PDF path above for downstream reference even if older body text below still mentions temporary local reading.
+- Archive-status note: treat the canonical archived PDF path above as authoritative for downstream use; any older temporary-source wording below is stale legacy text superseded by this override.
 
 **论文信息**
 - 标题：Agents for self-driving laboratories applied to quantum computing
