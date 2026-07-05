@@ -16,7 +16,44 @@
     "10": "Aerospace, Marine and Transportation Sciences",
     "11": "Social, Behavioral, Economic and Knowledge System Sciences"
   },
-  "secondary_code_to_label": {},
+  "secondary_code_to_label": {
+    "01.01": "Legacy secondary filing term 01.01",
+    "01.02": "Legacy secondary filing term 01.02",
+    "01.03": "Legacy secondary filing term 01.03",
+    "01.04": "Legacy secondary filing term 01.04",
+    "02.01": "Legacy secondary filing term 02.01",
+    "02.02": "Legacy secondary filing term 02.02",
+    "03.01": "Legacy secondary filing term 03.01",
+    "03.02": "Legacy secondary filing term 03.02",
+    "03.03": "Legacy secondary filing term 03.03",
+    "03.04": "Legacy secondary filing term 03.04",
+    "04.01": "Legacy secondary filing term 04.01",
+    "04.02": "Legacy secondary filing term 04.02",
+    "04.03": "Legacy secondary filing term 04.03",
+    "04.04": "Legacy secondary filing term 04.04",
+    "05.01": "Legacy secondary filing term 05.01",
+    "05.02": "Legacy secondary filing term 05.02",
+    "05.04": "Legacy secondary filing term 05.04",
+    "06.01": "Legacy secondary filing term 06.01",
+    "06.02": "Legacy secondary filing term 06.02",
+    "06.03": "Legacy secondary filing term 06.03",
+    "07.01": "Legacy secondary filing term 07.01",
+    "07.02": "Legacy secondary filing term 07.02",
+    "07.03": "Legacy secondary filing term 07.03",
+    "07.04": "Legacy secondary filing term 07.04",
+    "08.01": "Legacy secondary filing term 08.01",
+    "08.05": "Legacy secondary filing term 08.05",
+    "09.01": "Legacy secondary filing term 09.01",
+    "09.02": "Legacy secondary filing term 09.02",
+    "09.03": "Legacy secondary filing term 09.03",
+    "09.04": "Legacy secondary filing term 09.04",
+    "09.05": "Legacy secondary filing term 09.05",
+    "09.06": "Legacy secondary filing term 09.06",
+    "10.02": "Legacy secondary filing term 10.02",
+    "11.01": "Legacy secondary filing term 11.01",
+    "11.02": "Legacy secondary filing term 11.02",
+    "11.07": "Legacy secondary filing term 11.07"
+  },
   "label_to_primary_code": {
     "Formal, Information and Computational Sciences": "01",
     "General ASD Methods without Concrete Object Experiments": "01.04",
@@ -31,7 +68,44 @@
     "Aerospace, Marine and Transportation Sciences": "10",
     "Social, Behavioral, Economic and Knowledge System Sciences": "11"
   },
-  "label_to_secondary_code": {},
+  "label_to_secondary_code": {
+    "Legacy secondary filing term 01.01": "01.01",
+    "Legacy secondary filing term 01.02": "01.02",
+    "Legacy secondary filing term 01.03": "01.03",
+    "Legacy secondary filing term 01.04": "01.04",
+    "Legacy secondary filing term 02.01": "02.01",
+    "Legacy secondary filing term 02.02": "02.02",
+    "Legacy secondary filing term 03.01": "03.01",
+    "Legacy secondary filing term 03.02": "03.02",
+    "Legacy secondary filing term 03.03": "03.03",
+    "Legacy secondary filing term 03.04": "03.04",
+    "Legacy secondary filing term 04.01": "04.01",
+    "Legacy secondary filing term 04.02": "04.02",
+    "Legacy secondary filing term 04.03": "04.03",
+    "Legacy secondary filing term 04.04": "04.04",
+    "Legacy secondary filing term 05.01": "05.01",
+    "Legacy secondary filing term 05.02": "05.02",
+    "Legacy secondary filing term 05.04": "05.04",
+    "Legacy secondary filing term 06.01": "06.01",
+    "Legacy secondary filing term 06.02": "06.02",
+    "Legacy secondary filing term 06.03": "06.03",
+    "Legacy secondary filing term 07.01": "07.01",
+    "Legacy secondary filing term 07.02": "07.02",
+    "Legacy secondary filing term 07.03": "07.03",
+    "Legacy secondary filing term 07.04": "07.04",
+    "Legacy secondary filing term 08.01": "08.01",
+    "Legacy secondary filing term 08.05": "08.05",
+    "Legacy secondary filing term 09.01": "09.01",
+    "Legacy secondary filing term 09.02": "09.02",
+    "Legacy secondary filing term 09.03": "09.03",
+    "Legacy secondary filing term 09.04": "09.04",
+    "Legacy secondary filing term 09.05": "09.05",
+    "Legacy secondary filing term 09.06": "09.06",
+    "Legacy secondary filing term 10.02": "10.02",
+    "Legacy secondary filing term 11.01": "11.01",
+    "Legacy secondary filing term 11.02": "11.02",
+    "Legacy secondary filing term 11.07": "11.07"
+  },
   "primary_terms": [
     {
       "primary_code": "01",
@@ -238,5 +312,582 @@
       "source": "taxonomy_index.json + long_term_catalog_plan"
     }
   ],
-  "secondary_terms": []
+  "secondary_terms": [
+    {
+      "secondary_code": "01.01",
+      "parent_primary_code": "01",
+      "label": "Legacy secondary filing term 01.01",
+      "definition": "Provisional legacy secondary filing term 01.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "01.02",
+      "parent_primary_code": "01",
+      "label": "Legacy secondary filing term 01.02",
+      "definition": "Provisional legacy secondary filing term 01.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "01.03",
+      "parent_primary_code": "01",
+      "label": "Legacy secondary filing term 01.03",
+      "definition": "Provisional legacy secondary filing term 01.03 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "01.04",
+      "parent_primary_code": "01",
+      "label": "Legacy secondary filing term 01.04",
+      "definition": "Provisional legacy secondary filing term 01.04 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "02.01",
+      "parent_primary_code": "02",
+      "label": "Legacy secondary filing term 02.01",
+      "definition": "Provisional legacy secondary filing term 02.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "02.02",
+      "parent_primary_code": "02",
+      "label": "Legacy secondary filing term 02.02",
+      "definition": "Provisional legacy secondary filing term 02.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "03.01",
+      "parent_primary_code": "03",
+      "label": "Legacy secondary filing term 03.01",
+      "definition": "Provisional legacy secondary filing term 03.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "03.02",
+      "parent_primary_code": "03",
+      "label": "Legacy secondary filing term 03.02",
+      "definition": "Provisional legacy secondary filing term 03.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "03.03",
+      "parent_primary_code": "03",
+      "label": "Legacy secondary filing term 03.03",
+      "definition": "Provisional legacy secondary filing term 03.03 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "03.04",
+      "parent_primary_code": "03",
+      "label": "Legacy secondary filing term 03.04",
+      "definition": "Provisional legacy secondary filing term 03.04 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "04.01",
+      "parent_primary_code": "04",
+      "label": "Legacy secondary filing term 04.01",
+      "definition": "Provisional legacy secondary filing term 04.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "04.02",
+      "parent_primary_code": "04",
+      "label": "Legacy secondary filing term 04.02",
+      "definition": "Provisional legacy secondary filing term 04.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "04.03",
+      "parent_primary_code": "04",
+      "label": "Legacy secondary filing term 04.03",
+      "definition": "Provisional legacy secondary filing term 04.03 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "04.04",
+      "parent_primary_code": "04",
+      "label": "Legacy secondary filing term 04.04",
+      "definition": "Provisional legacy secondary filing term 04.04 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "05.01",
+      "parent_primary_code": "05",
+      "label": "Legacy secondary filing term 05.01",
+      "definition": "Provisional legacy secondary filing term 05.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "05.02",
+      "parent_primary_code": "05",
+      "label": "Legacy secondary filing term 05.02",
+      "definition": "Provisional legacy secondary filing term 05.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "05.04",
+      "parent_primary_code": "05",
+      "label": "Legacy secondary filing term 05.04",
+      "definition": "Provisional legacy secondary filing term 05.04 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "06.01",
+      "parent_primary_code": "06",
+      "label": "Legacy secondary filing term 06.01",
+      "definition": "Provisional legacy secondary filing term 06.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "06.02",
+      "parent_primary_code": "06",
+      "label": "Legacy secondary filing term 06.02",
+      "definition": "Provisional legacy secondary filing term 06.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "06.03",
+      "parent_primary_code": "06",
+      "label": "Legacy secondary filing term 06.03",
+      "definition": "Provisional legacy secondary filing term 06.03 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "07.01",
+      "parent_primary_code": "07",
+      "label": "Legacy secondary filing term 07.01",
+      "definition": "Provisional legacy secondary filing term 07.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "07.02",
+      "parent_primary_code": "07",
+      "label": "Legacy secondary filing term 07.02",
+      "definition": "Provisional legacy secondary filing term 07.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "07.03",
+      "parent_primary_code": "07",
+      "label": "Legacy secondary filing term 07.03",
+      "definition": "Provisional legacy secondary filing term 07.03 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "07.04",
+      "parent_primary_code": "07",
+      "label": "Legacy secondary filing term 07.04",
+      "definition": "Provisional legacy secondary filing term 07.04 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "08.01",
+      "parent_primary_code": "08",
+      "label": "Legacy secondary filing term 08.01",
+      "definition": "Provisional legacy secondary filing term 08.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "08.05",
+      "parent_primary_code": "08",
+      "label": "Legacy secondary filing term 08.05",
+      "definition": "Provisional legacy secondary filing term 08.05 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "09.01",
+      "parent_primary_code": "09",
+      "label": "Legacy secondary filing term 09.01",
+      "definition": "Provisional legacy secondary filing term 09.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "09.02",
+      "parent_primary_code": "09",
+      "label": "Legacy secondary filing term 09.02",
+      "definition": "Provisional legacy secondary filing term 09.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "09.03",
+      "parent_primary_code": "09",
+      "label": "Legacy secondary filing term 09.03",
+      "definition": "Provisional legacy secondary filing term 09.03 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "09.04",
+      "parent_primary_code": "09",
+      "label": "Legacy secondary filing term 09.04",
+      "definition": "Provisional legacy secondary filing term 09.04 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "09.05",
+      "parent_primary_code": "09",
+      "label": "Legacy secondary filing term 09.05",
+      "definition": "Provisional legacy secondary filing term 09.05 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "09.06",
+      "parent_primary_code": "09",
+      "label": "Legacy secondary filing term 09.06",
+      "definition": "Provisional legacy secondary filing term 09.06 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "10.02",
+      "parent_primary_code": "10",
+      "label": "Legacy secondary filing term 10.02",
+      "definition": "Provisional legacy secondary filing term 10.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "11.01",
+      "parent_primary_code": "11",
+      "label": "Legacy secondary filing term 11.01",
+      "definition": "Provisional legacy secondary filing term 11.01 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "11.02",
+      "parent_primary_code": "11",
+      "label": "Legacy secondary filing term 11.02",
+      "definition": "Provisional legacy secondary filing term 11.02 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    },
+    {
+      "secondary_code": "11.07",
+      "parent_primary_code": "11",
+      "label": "Legacy secondary filing term 11.07",
+      "definition": "Provisional legacy secondary filing term 11.07 inherited from the current master list; retained for first-pass discipline filing and review, not yet a fully normalized canonical secondary taxonomy term.",
+      "include": [
+        "Records currently carrying this legacy secondary class in the authoritative master list."
+      ],
+      "exclude": [
+        "Records that only match the primary module but do not currently carry this exact legacy secondary class.",
+        "Any future normalized split or merge that replaces this provisional legacy filing term."
+      ],
+      "status": "needs_review",
+      "source": "legacy_secondary_class_seed_2026-07-05",
+      "review_status": "unreviewed"
+    }
+  ]
 }

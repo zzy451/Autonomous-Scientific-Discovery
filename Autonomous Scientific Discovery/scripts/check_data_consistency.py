@@ -11,6 +11,7 @@ from typing import Dict, Iterable, List, Tuple
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "Data"
 REGISTRY_DIR = DATA_DIR / "registry"
+CLASSIFICATION_CODE_INDEX_PATH = DATA_DIR / "classification_code_index.json"
 MASTER_PATH = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_PATH = (
     ROOT
@@ -197,6 +198,88 @@ PROGRESS_HEADER = (
     "batch",
     "closed",
 )
+
+
+def validate_classification_code_index_owner() -> None:
+    payload = load_json(CLASSIFICATION_CODE_INDEX_PATH)
+    required_keys = (
+        "primary_code_to_label",
+        "secondary_code_to_label",
+        "label_to_primary_code",
+        "label_to_secondary_code",
+        "primary_terms",
+        "secondary_terms",
+    )
+    for key in required_keys:
+        assert_true(
+            key in payload,
+            f"classification_code_index.json missing required key {key!r}",
+        )
+
+    primary_code_to_label = payload["primary_code_to_label"]
+    label_to_primary_code = payload["label_to_primary_code"]
+    secondary_code_to_label = payload["secondary_code_to_label"]
+    label_to_secondary_code = payload["label_to_secondary_code"]
+    primary_terms = payload["primary_terms"]
+    secondary_terms = payload["secondary_terms"]
+
+    assert_true(isinstance(primary_terms, list), "classification_code_index.json primary_terms must be a list")
+    assert_true(isinstance(secondary_terms, list), "classification_code_index.json secondary_terms must be a list")
+
+    seen_primary_codes = set()
+    for term in primary_terms:
+        assert_true(isinstance(term, dict), "classification_code_index.json primary_terms rows must be objects")
+        code = term.get("primary_code")
+        label = term.get("label")
+        assert_true(isinstance(code, str) and code, "primary_terms row missing primary_code")
+        assert_true(code not in seen_primary_codes, f"classification_code_index.json duplicate primary_code {code!r}")
+        seen_primary_codes.add(code)
+        assert_true(
+            primary_code_to_label.get(code) == label,
+            f"classification_code_index.json primary_code_to_label mismatch for {code!r}",
+        )
+        assert_true(
+            label_to_primary_code.get(label) == code,
+            f"classification_code_index.json label_to_primary_code mismatch for {label!r}",
+        )
+
+    seen_secondary_codes = set()
+    for term in secondary_terms:
+        assert_true(isinstance(term, dict), "classification_code_index.json secondary_terms rows must be objects")
+        code = term.get("secondary_code")
+        label = term.get("label")
+        parent_primary_code = term.get("parent_primary_code")
+        assert_true(isinstance(code, str) and code, "secondary_terms row missing secondary_code")
+        assert_true(
+            code not in seen_secondary_codes,
+            f"classification_code_index.json duplicate secondary_code {code!r}",
+        )
+        seen_secondary_codes.add(code)
+        assert_true(
+            isinstance(parent_primary_code, str) and parent_primary_code in FORMAL_MODULES,
+            f"classification_code_index.json secondary_code {code!r} has invalid parent_primary_code {parent_primary_code!r}",
+        )
+        assert_true(
+            code.startswith(parent_primary_code + "."),
+            f"classification_code_index.json secondary_code {code!r} does not match parent_primary_code {parent_primary_code!r}",
+        )
+        assert_true(
+            secondary_code_to_label.get(code) == label,
+            f"classification_code_index.json secondary_code_to_label mismatch for {code!r}",
+        )
+        assert_true(
+            label_to_secondary_code.get(label) == code,
+            f"classification_code_index.json label_to_secondary_code mismatch for {label!r}",
+        )
+
+    assert_true(
+        set(secondary_code_to_label.keys()) == seen_secondary_codes,
+        "classification_code_index.json secondary_code_to_label coverage does not match secondary_terms",
+    )
+    assert_true(
+        set(label_to_secondary_code.values()) == seen_secondary_codes,
+        "classification_code_index.json label_to_secondary_code coverage does not match secondary_terms",
+    )
 
 
 def load_json(path: Path):
@@ -837,6 +920,7 @@ def validate_registry_layer(
 def main() -> None:
     strict_authoritative = os.environ.get("ASD_STRICT_AUTHORITATIVE", "1") != "0"
     require_registry = os.environ.get("ASD_REQUIRE_REGISTRY", "1") != "0"
+    validate_classification_code_index_owner()
     papers = load_jsonl(DATA_DIR / "papers.jsonl")
     taxonomy_index = load_json(DATA_DIR / "taxonomy_index.json")
     pdf_manifest = load_json(DATA_DIR / "pdf_manifest.json")

@@ -537,6 +537,15 @@ def build_discipline_initial_assignment_preview(
             review_flags.append("primary_module_outside_scientific_object_modules")
         if legacy_secondary_class and secondary_term is None:
             review_flags.append("secondary_not_in_taxonomy_index")
+        if secondary_term is not None and secondary_term.get("status") != "active":
+            review_flags.append(
+                f"secondary_term_status_{str(secondary_term.get('status', '')).strip() or 'unknown'}"
+            )
+        if secondary_term is not None and secondary_term.get("review_status") != "reviewed":
+            review_flags.append(
+                "secondary_term_review_"
+                f"{str(secondary_term.get('review_status', '')).strip() or 'unknown'}"
+            )
 
         preview_row: Dict[str, object] = {
             "paper_id": paper["paper_id"],
