@@ -921,10 +921,15 @@ def validate_owner_loaded_and_inventory_tables(
 def validate_metadata_and_summary_tables(
     papers: list[dict[str, object]],
     taxonomy: dict[str, dict[str, str]],
+    discipline_local_code_registry: list[dict[str, object]],
 ) -> None:
     active = [row for row in papers if row['active_confirmed_core']]
     active_local = [row for row in active if row['pdf_exists']]
     active_missing = [row for row in active if not row['pdf_exists']]
+    registry_generated_at_values = sorted({str(row['generated_at']) for row in discipline_local_code_registry})
+    registry_generated_by_values = sorted({str(row['generated_by']) for row in discipline_local_code_registry})
+    registry_source_commit_values = sorted({str(row['source_commit']) for row in discipline_local_code_registry})
+    registry_worktree_dirty_values = sorted({str(bool(row['worktree_dirty'])).lower() for row in discipline_local_code_registry})
 
     expected_taxonomy_rows = sorted(
         [
@@ -945,6 +950,11 @@ def validate_metadata_and_summary_tables(
             ('active_confirmed_core_count', str(len(active))),
             ('active_local_pdf_count', str(len(active_local))),
             ('active_no_local_pdf_count', str(len(active_missing))),
+            ('discipline_local_code_registry_row_count', str(len(discipline_local_code_registry))),
+            ('discipline_local_code_registry_generated_at', registry_generated_at_values[0] if registry_generated_at_values else ''),
+            ('discipline_local_code_registry_generated_by', registry_generated_by_values[0] if registry_generated_by_values else ''),
+            ('discipline_local_code_registry_source_commit', registry_source_commit_values[0] if registry_source_commit_values else ''),
+            ('discipline_local_code_registry_worktree_dirty', registry_worktree_dirty_values[0] if registry_worktree_dirty_values else 'false'),
         ],
         key=lambda item: item[0],
     )
@@ -1875,6 +1885,11 @@ def build_sqlite(
             ('active_confirmed_core_count', str(len(active))),
             ('active_local_pdf_count', str(len(active_local))),
             ('active_no_local_pdf_count', str(len(active_missing))),
+            ('discipline_local_code_registry_row_count', str(len(discipline_local_code_registry))),
+            ('discipline_local_code_registry_generated_at', str(discipline_local_code_registry[0]['generated_at']) if discipline_local_code_registry else ''),
+            ('discipline_local_code_registry_generated_by', str(discipline_local_code_registry[0]['generated_by']) if discipline_local_code_registry else ''),
+            ('discipline_local_code_registry_source_commit', str(discipline_local_code_registry[0]['source_commit']) if discipline_local_code_registry else ''),
+            ('discipline_local_code_registry_worktree_dirty', str(bool(discipline_local_code_registry[0]['worktree_dirty'])).lower() if discipline_local_code_registry else 'false'),
         ])
         conn.executemany(
             'INSERT INTO analysis_object_scope_registry(object_name, object_type, scope_class, default_usage, warning) VALUES(?, ?, ?, ?, ?)',
@@ -2160,6 +2175,7 @@ def main() -> None:
     validate_metadata_and_summary_tables(
         papers,
         taxonomy,
+        discipline_local_code_registry,
     )
     validate_analysis_object_scope_registry()
     print(f'Wrote {PAPERS_CSV}')
