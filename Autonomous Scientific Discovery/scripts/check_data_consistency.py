@@ -558,6 +558,12 @@ def validate_discipline_local_code_registry(
     registry_rows = load_jsonl(DISCIPLINE_LOCAL_CODE_REGISTRY_PATH)
     ledger_rows = load_jsonl(DISCIPLINE_CODE_ASSIGNMENTS_PATH)
     papers_by_id = {str(row["paper_id"]): row for row in papers}
+    paper_exported_at_values = {str(row.get("exported_at", "")) for row in papers}
+    assert_true(
+        len(paper_exported_at_values) == 1,
+        "papers.jsonl exported_at must be uniform before validating discipline_local_code_registry metadata",
+    )
+    expected_generated_at = next(iter(paper_exported_at_values))
     ledger_by_assignment_id = {
         str(row["assignment_id"]): row for row in ledger_rows
     }
@@ -746,12 +752,26 @@ def validate_discipline_local_code_registry(
         "discipline_local_code_registry generated_at must be uniform across the snapshot",
     )
     assert_true(
+        generated_at_values == {expected_generated_at},
+        "discipline_local_code_registry generated_at must match papers.jsonl exported_at",
+    )
+    assert_true(
         len(generated_by_values) == 1,
         "discipline_local_code_registry generated_by must be uniform across the snapshot",
     )
     assert_true(
+        generated_by_values == {"export_structured_data.py"},
+        "discipline_local_code_registry generated_by must be export_structured_data.py",
+    )
+    assert_true(
         len(source_commit_values) == 1,
         "discipline_local_code_registry source_commit must be uniform across the snapshot",
+    )
+    only_source_commit = next(iter(source_commit_values), "")
+    assert_true(
+        isinstance(only_source_commit, str)
+        and re.fullmatch(r"[0-9a-f]{40}", only_source_commit) is not None,
+        "discipline_local_code_registry source_commit must be a non-empty 40-hex git commit id",
     )
     assert_true(
         len(worktree_dirty_values) == 1,
@@ -2560,6 +2580,12 @@ def main() -> None:
                 isinstance(row.get("last_reviewed_by"), str),
                 f"{paper_id} last_reviewed_by must be a string",
             )
+            exported_at = row.get("exported_at", "")
+            assert_true(
+                isinstance(exported_at, str)
+                and re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\+00:00", exported_at) is not None,
+                f"{paper_id} has invalid exported_at: {exported_at!r}",
+            )
             assert_true(
                 isinstance(row.get("secondary_class_source"), str),
                 f"{paper_id} secondary_class_source must be a string",
@@ -2872,6 +2898,12 @@ def main() -> None:
                 source_checked_at == expected_source_checked_at,
                 f"{paper_id} source_checked_at disagrees with derived expectation: {source_checked_at!r} != {expected_source_checked_at!r}",
             )
+
+        exported_at_values = {str(row.get("exported_at", "")) for row in papers}
+        assert_true(
+            len(exported_at_values) == 1,
+            "papers.jsonl exported_at must be uniform across the export snapshot",
+        )
 
         pdf_manifest_ids = {row["paper_id"] for row in pdf_manifest}
         missing_manifest_ids = {row["paper_id"] for row in missing_pdf_manifest}
