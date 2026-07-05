@@ -109,6 +109,24 @@ def build_module_rows(papers: list[dict[str, object]]) -> list[dict[str, object]
             if not isinstance(modules, list):
                 continue
             for sort_order, module_code in enumerate(modules, start=1):
+                is_primary_for_filing = (
+                    scope == 'scientific_object_modules'
+                    and module_code == paper.get('primary_module_for_filing')
+                )
+                if scope == 'scientific_object_modules':
+                    confidence = (
+                        paper.get('primary_module_confidence')
+                        if is_primary_for_filing
+                        else paper.get('classification_source_confidence')
+                    )
+                    source = (
+                        'primary_module_for_filing'
+                        if is_primary_for_filing
+                        else 'scientific_object_modules'
+                    )
+                else:
+                    confidence = ''
+                    source = 'final_modules_or_bucket'
                 rows.append({
                     'paper_id': paper['paper_id'],
                     'title': paper['title'],
@@ -116,12 +134,18 @@ def build_module_rows(papers: list[dict[str, object]]) -> list[dict[str, object]
                     'module_code': module_code,
                     'module_kind': 'formal_module' if module_code in FORMAL_MODULES else 'general_bucket',
                     'sort_order': sort_order,
+                    'is_primary_for_filing': bool_to_int(is_primary_for_filing),
+                    'confidence': confidence or '',
+                    'source': source,
                     'active_confirmed_core': bool_to_int(paper['active_confirmed_core']),
                 })
     return rows
 
 def write_module_csv(rows: list[dict[str, object]]) -> None:
-    fieldnames = ['paper_id', 'title', 'assignment_scope', 'module_code', 'module_kind', 'sort_order', 'active_confirmed_core']
+    fieldnames = [
+        'paper_id', 'title', 'assignment_scope', 'module_code', 'module_kind', 'sort_order',
+        'is_primary_for_filing', 'confidence', 'source', 'active_confirmed_core'
+    ]
     with PAPER_MODULES_CSV.open('w', encoding='utf-8', newline='') as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
@@ -253,7 +277,17 @@ def build_sqlite(
             note_status TEXT, master_status TEXT, final_modules_or_bucket_raw TEXT, final_modules_or_bucket_json TEXT NOT NULL, source_limited TEXT, batch TEXT, closed TEXT,
             active_confirmed_core INTEGER NOT NULL, record_status TEXT, inclusion_decision TEXT, duplicate_of TEXT, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL
         );
-        CREATE TABLE paper_modules (paper_id TEXT NOT NULL, assignment_scope TEXT NOT NULL, module_code TEXT NOT NULL, module_kind TEXT NOT NULL, sort_order INTEGER NOT NULL, PRIMARY KEY (paper_id, assignment_scope, module_code));
+        CREATE TABLE paper_modules (
+            paper_id TEXT NOT NULL,
+            assignment_scope TEXT NOT NULL,
+            module_code TEXT NOT NULL,
+            module_kind TEXT NOT NULL,
+            sort_order INTEGER NOT NULL,
+            is_primary_for_filing INTEGER NOT NULL,
+            confidence TEXT,
+            source TEXT NOT NULL,
+            PRIMARY KEY (paper_id, assignment_scope, module_code)
+        );
         CREATE TABLE paper_general_method_buckets (
             paper_id TEXT PRIMARY KEY,
             general_method_bucket TEXT NOT NULL,
@@ -929,8 +963,17 @@ def build_sqlite(
             )
             for paper in papers
         ])
-        conn.executemany('INSERT INTO paper_modules(paper_id, assignment_scope, module_code, module_kind, sort_order) VALUES(?, ?, ?, ?, ?)', [
-            (row['paper_id'], row['assignment_scope'], row['module_code'], row['module_kind'], row['sort_order'])
+        conn.executemany('INSERT INTO paper_modules(paper_id, assignment_scope, module_code, module_kind, sort_order, is_primary_for_filing, confidence, source) VALUES(?, ?, ?, ?, ?, ?, ?, ?)', [
+            (
+                row['paper_id'],
+                row['assignment_scope'],
+                row['module_code'],
+                row['module_kind'],
+                row['sort_order'],
+                row['is_primary_for_filing'],
+                row['confidence'],
+                row['source'],
+            )
             for row in module_rows
         ])
         general_method_bucket_rows = build_general_method_bucket_rows(papers)

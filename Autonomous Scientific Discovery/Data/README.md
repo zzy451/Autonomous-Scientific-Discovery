@@ -113,7 +113,7 @@ Do not run `build_analysis_db.py` as a substitute for export. `build` assumes `p
 - `registry/asset_manifest.jsonl`: normalized asset inventory covering at least note and primary PDF records; primary-PDF rows mirror derived source-check timing.
 - `papers.jsonl`: record-level analysis snapshot for scripts, version control, and exact per-paper inspection, including derived source/PDF review timing.
 - `papers.csv`: flattened spreadsheet view of `papers.jsonl`.
-- `paper_modules.csv`: mixed-scope exploded one-paper-to-many-modules export containing both canonical `scientific_object_modules` assignments and workflow-mirror `final_modules_or_bucket` assignments; use for inspection/export only, and always filter by `assignment_scope` before using it for statistics.
+- `paper_modules.csv`: mixed-scope exploded one-paper-to-many-modules export containing both canonical `scientific_object_modules` assignments and workflow-mirror `final_modules_or_bucket` assignments; now also carries `is_primary_for_filing`, `confidence`, and `source` trace columns. Use for inspection/export only, and always filter by `assignment_scope` before using it for statistics.
 - `canonical_paper_modules.csv`: canonical-only flat module-assignment export for spreadsheet review without workflow-mirror rows.
 - `workflow_mirror_paper_modules.csv`: workflow-mirror-only flat assignment export for audit/debugging.
 - `papers.sqlite`: normalized query database for joins, filters, and aggregation.
