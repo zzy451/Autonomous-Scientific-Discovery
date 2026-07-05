@@ -6,6 +6,7 @@ import json
 from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
+import re
 from typing import Dict, List, Tuple
 
 from append_change_log import (
@@ -25,6 +26,11 @@ from export_structured_data import (
 
 ROOT = Path(__file__).resolve().parent.parent
 MASTER_COLUMNS = tuple(column for column in MASTER_HEADER if column != "ID")
+DATE_PATTERN = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}$")
+CLASSIFICATION_FIELDS = {"Main class", "Secondary class", "Tertiary class", "Remarks"}
+LIFECYCLE_FIELDS = {"Inclusion status", "Exclusion reason"}
+METADATA_FIELDS = {"Paper title", "Authors", "Year", "Source", "DOI / arXiv / URL"}
+SUPPORTING_PATH_FIELDS = {"PDF path", "Note path"}
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -62,8 +68,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--change-type",
-        default="master_owner_update",
-        help="change_log change_type value. Default: master_owner_update",
+        default="",
+        help=(
+            "Optional change_log change_type override. "
+            "If omitted, the helper derives a semantic default from the changed master fields."
+        ),
     )
     parser.add_argument(
         "--dry-run",
@@ -90,6 +99,30 @@ def parse_updates(raw_updates: List[str]) -> Dict[str, str]:
             )
         updates[normalized_column] = value.strip()
     return updates
+
+
+def ensure_date(value: str) -> str:
+    normalized = value.strip()
+    if not DATE_PATTERN.fullmatch(normalized):
+        raise SystemExit(f"--changed-at must be YYYY-MM-DD: {value!r}")
+    return normalized
+
+
+def derive_change_type(changed_fields: List[str]) -> str:
+    changed = set(changed_fields)
+    if changed and changed.issubset(CLASSIFICATION_FIELDS):
+        return "classification_fact_update"
+    if changed and changed.issubset(LIFECYCLE_FIELDS):
+        return "record_status_update"
+    if changed and changed.issubset(METADATA_FIELDS):
+        return "master_metadata_update"
+    if changed and changed.issubset(SUPPORTING_PATH_FIELDS):
+        return "master_path_update"
+    if changed == {"Citation priority"}:
+        return "citation_priority_update"
+    if changed == {"Evidence strength"}:
+        return "evidence_strength_update"
+    return "master_owner_update"
 
 
 def parse_master_table() -> Tuple[List[str], int, List[Dict[str, str]]]:
@@ -175,6 +208,7 @@ def main() -> None:
     paper_id = args.paper_id.strip()
     updates = parse_updates(args.set)
     reason = args.reason.strip()
+    changed_at = ensure_date(args.changed_at)
     if not paper_id:
         raise SystemExit("--paper-id must be non-empty.")
     if not reason:
@@ -203,11 +237,12 @@ def main() -> None:
     rows[row_index] = updated_row
     new_text = rebuild_master_file(lines, header_index, rows)
     related_commit = args.related_commit.strip() or current_commit()
+    change_type = args.change_type.strip() or derive_change_type(sorted(changed_new))
     change_log_row = build_change_log_row(
         paper_id=paper_id,
-        changed_at=args.changed_at.strip(),
+        changed_at=changed_at,
         changed_by=args.changed_by.strip() or "codex",
-        change_type=args.change_type.strip() or "master_owner_update",
+        change_type=change_type,
         reason=reason,
         related_commit=related_commit,
         old_value=changed_old,

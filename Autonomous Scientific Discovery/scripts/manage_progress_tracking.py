@@ -6,6 +6,7 @@ import json
 from copy import deepcopy
 from datetime import datetime
 from pathlib import Path
+import re
 from typing import Dict, List, Tuple
 
 from append_change_log import (
@@ -25,6 +26,11 @@ from export_structured_data import (
 
 ROOT = Path(__file__).resolve().parent.parent
 PROGRESS_COLUMNS = tuple(column for column in PROGRESS_HEADER if column != "paper_id")
+DATE_PATTERN = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}$")
+PDF_SOURCE_FIELDS = {"pdf_status", "pdf_path", "evidence_status", "source_limited"}
+NOTE_FIELDS = {"note_path", "note_status"}
+WORKFLOW_FIELDS = {"batch", "closed"}
+MIRROR_FIELDS = {"final_modules_or_bucket", "master_status"}
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -63,8 +69,11 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--change-type",
-        default="progress_owner_update",
-        help="change_log change_type value. Default: progress_owner_update",
+        default="",
+        help=(
+            "Optional change_log change_type override. "
+            "If omitted, the helper derives a semantic default from the changed progress fields."
+        ),
     )
     parser.add_argument(
         "--dry-run",
@@ -91,6 +100,28 @@ def parse_updates(raw_updates: List[str]) -> Dict[str, str]:
             )
         updates[normalized_column] = value.strip()
     return updates
+
+
+def ensure_date(value: str) -> str:
+    normalized = value.strip()
+    if not DATE_PATTERN.fullmatch(normalized):
+        raise SystemExit(f"--changed-at must be YYYY-MM-DD: {value!r}")
+    return normalized
+
+
+def derive_change_type(changed_fields: List[str]) -> str:
+    changed = set(changed_fields)
+    if changed and changed.issubset(PDF_SOURCE_FIELDS):
+        return "pdf_source_status_update"
+    if changed and changed.issubset(NOTE_FIELDS):
+        return "note_progress_update"
+    if changed and changed.issubset(WORKFLOW_FIELDS):
+        return "progress_workflow_update"
+    if changed and changed.issubset(MIRROR_FIELDS):
+        return "progress_mirror_update"
+    if changed == {"title"}:
+        return "progress_title_update"
+    return "progress_owner_update"
 
 
 def parse_progress_table() -> Tuple[List[str], int, List[Dict[str, str]]]:
@@ -174,6 +205,7 @@ def main() -> None:
     paper_id = args.paper_id.strip()
     updates = parse_updates(args.set)
     reason = args.reason.strip()
+    changed_at = ensure_date(args.changed_at)
     if not paper_id:
         raise SystemExit("--paper-id must be non-empty.")
     if not reason:
@@ -202,11 +234,12 @@ def main() -> None:
     rows[row_index] = updated_row
     new_text = rebuild_progress_file(lines, header_index, rows)
     related_commit = args.related_commit.strip() or current_commit()
+    change_type = args.change_type.strip() or derive_change_type(sorted(changed_new))
     change_log_row = build_change_log_row(
         paper_id=paper_id,
-        changed_at=args.changed_at.strip(),
+        changed_at=changed_at,
         changed_by=args.changed_by.strip() or "codex",
-        change_type=args.change_type.strip() or "progress_owner_update",
+        change_type=change_type,
         reason=reason,
         related_commit=related_commit,
         old_value=changed_old,
