@@ -242,8 +242,13 @@
 - `pdf_path`: 主 PDF 路径；无本地 PDF 时可为空字符串。
 - `pdf_exists`: 本地是否存在可读主 PDF。
 - `sha256`: 本地 PDF 哈希；无本地 PDF 时可为空字符串。
+- `asset_size_bytes`: 本地 PDF 文件大小；无本地文件时可为空。
 - `pdf_status`: progress 派生的 PDF 状态。
 - `evidence_status`: progress 派生的证据状态。
+- `pdf_evidence_type`: derived 证据类型，如 `main_pdf` / `supplementary_pdf` / `html_full_text` / `abstract` / `official_page` / `project_page`。
+- `pdf_check_status`: derived 核查深度状态，如 `full_text_checked` / `source_limited` / `metadata_only`。
+- `is_main_text`: 当前 PDF 证据是否为主文全文。
+- `is_supplementary`: 当前 PDF 证据是否为 supplementary。
 - `source_limited`: 来源受限标记。
 - `primary_module_for_filing`: 归档主模块镜像字段。
 - `scientific_object_modules`: formal module 数组镜像字段。
@@ -269,7 +274,10 @@
 - `path`: 资产路径。对缺失 primary PDF 可为空字符串。
 - `exists`: 本地文件是否存在。
 - `sha256`: 文件哈希；缺失文件时可为空字符串。
+- `asset_size_bytes`: 文件大小；缺失文件时可为空。
 - `asset_status`: 对 note 通常承接 `note_status`，对 PDF 通常承接 `pdf_status`。
+- `is_main_text`: 对 PDF 资产记录，是否为主文全文。
+- `is_supplementary`: 对 PDF 资产记录，是否为 supplementary。
 - `source_limited`: 来源受限标记。
 - `exported_at`: 导出时间戳。
 

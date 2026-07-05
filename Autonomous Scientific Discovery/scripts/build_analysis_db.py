@@ -295,6 +295,11 @@ def build_sqlite(
             pdf_exists INTEGER NOT NULL,
             pdf_status TEXT,
             evidence_status TEXT,
+            pdf_evidence_type TEXT,
+            pdf_check_status TEXT,
+            is_main_text INTEGER NOT NULL,
+            is_supplementary INTEGER NOT NULL,
+            asset_size_bytes INTEGER,
             source_limited TEXT,
             primary_module_for_filing TEXT,
             active_confirmed_core INTEGER NOT NULL
@@ -307,7 +312,10 @@ def build_sqlite(
             path TEXT,
             asset_exists INTEGER NOT NULL,
             sha256 TEXT,
+            asset_size_bytes INTEGER,
             asset_status TEXT,
+            is_main_text INTEGER NOT NULL,
+            is_supplementary INTEGER NOT NULL,
             source_limited TEXT,
             exported_at TEXT
         );
@@ -962,7 +970,7 @@ def build_sqlite(
             )
             for row in discipline_local_code_registry
         ])
-        conn.executemany('INSERT INTO pdf_evidence_status VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        conn.executemany('INSERT INTO pdf_evidence_status VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 row['paper_id'],
                 row['title'],
@@ -970,13 +978,18 @@ def build_sqlite(
                 bool_to_int(row['pdf_exists']),
                 row['pdf_status'],
                 row['evidence_status'],
+                row['pdf_evidence_type'],
+                row['pdf_check_status'],
+                bool_to_int(row['is_main_text']),
+                bool_to_int(row['is_supplementary']),
+                row['asset_size_bytes'],
                 row['source_limited'],
                 row['primary_module_for_filing'],
                 bool_to_int(row['active_confirmed_core']),
             )
             for row in pdf_archive_registry
         ])
-        conn.executemany('INSERT INTO paper_assets VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        conn.executemany('INSERT INTO paper_assets VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 row['asset_id'],
                 row['paper_id'],
@@ -985,7 +998,10 @@ def build_sqlite(
                 row['path'],
                 bool_to_int(row['exists']),
                 row['sha256'],
+                row['asset_size_bytes'],
                 row['asset_status'],
+                bool_to_int(row['is_main_text']),
+                bool_to_int(row['is_supplementary']),
                 row['source_limited'],
                 row['exported_at'],
             )

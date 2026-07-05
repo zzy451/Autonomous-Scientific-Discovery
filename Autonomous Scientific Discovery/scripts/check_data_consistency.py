@@ -196,6 +196,19 @@ CLASSIFICATION_SCOPE_MODULE = "scientific_object_modules"
 CLASSIFICATION_SCOPE_GENERAL_BUCKET = "general_method_bucket"
 ASSET_TYPE_NOTE = "note"
 ASSET_TYPE_PRIMARY_PDF = "primary_pdf"
+PDF_EVIDENCE_TYPE_VALUES = {
+    "main_pdf",
+    "supplementary_pdf",
+    "html_full_text",
+    "abstract",
+    "official_page",
+    "project_page",
+}
+PDF_CHECK_STATUS_VALUES = {
+    "full_text_checked",
+    "source_limited",
+    "metadata_only",
+}
 MASTER_HEADER = (
     "ID",
     "Paper title",
@@ -1691,10 +1704,54 @@ def validate_registry_layer(
             registry_row["pdf_status"] == paper_row["pdf_status"],
             f"pdf_archive_registry pdf_status mismatch for {paper_id}: {registry_row['pdf_status']!r} != {paper_row['pdf_status']!r}",
         )
+        assert_true(
+            registry_row["evidence_status"] == paper_row["evidence_status"],
+            f"pdf_archive_registry evidence_status mismatch for {paper_id}: {registry_row['evidence_status']!r} != {paper_row['evidence_status']!r}",
+        )
         if "pdf_path" in registry_row:
             assert_true(
                 registry_row["pdf_path"] == paper_row["pdf_path"],
                 f"pdf_archive_registry pdf_path mismatch for {paper_id}: {registry_row['pdf_path']!r} != {paper_row['pdf_path']!r}",
+            )
+        assert_true(
+            registry_row["pdf_evidence_type"] in PDF_EVIDENCE_TYPE_VALUES,
+            f"pdf_archive_registry has invalid pdf_evidence_type for {paper_id}: {registry_row['pdf_evidence_type']!r}",
+        )
+        assert_true(
+            registry_row["pdf_check_status"] in PDF_CHECK_STATUS_VALUES,
+            f"pdf_archive_registry has invalid pdf_check_status for {paper_id}: {registry_row['pdf_check_status']!r}",
+        )
+        assert_true(
+            isinstance(registry_row["is_main_text"], bool),
+            f"pdf_archive_registry is_main_text must be bool for {paper_id}",
+        )
+        assert_true(
+            isinstance(registry_row["is_supplementary"], bool),
+            f"pdf_archive_registry is_supplementary must be bool for {paper_id}",
+        )
+        assert_true(
+            not (registry_row["is_main_text"] and registry_row["is_supplementary"]),
+            f"pdf_archive_registry rows cannot be both main_text and supplementary for {paper_id}",
+        )
+        if registry_row["pdf_evidence_type"] == "main_pdf":
+            assert_true(
+                registry_row["is_main_text"] and not registry_row["is_supplementary"],
+                f"pdf_archive_registry main_pdf rows must set is_main_text=true for {paper_id}",
+            )
+        if registry_row["pdf_evidence_type"] == "supplementary_pdf":
+            assert_true(
+                registry_row["is_supplementary"] and not registry_row["is_main_text"],
+                f"pdf_archive_registry supplementary_pdf rows must set is_supplementary=true for {paper_id}",
+            )
+        if registry_row["pdf_check_status"] == "full_text_checked":
+            assert_true(
+                registry_row["pdf_evidence_type"] in {"main_pdf", "html_full_text", "supplementary_pdf"},
+                f"pdf_archive_registry full_text_checked rows must come from a full-text evidence type for {paper_id}",
+            )
+        if registry_row["asset_size_bytes"] is not None:
+            assert_true(
+                isinstance(registry_row["asset_size_bytes"], int) and registry_row["asset_size_bytes"] >= 0,
+                f"pdf_archive_registry asset_size_bytes must be non-negative int for {paper_id}",
             )
 
     require_row_fields(
@@ -1716,6 +1773,19 @@ def validate_registry_layer(
             isinstance(row["exists"], bool),
             f"asset_manifest exists must be bool for {paper_id}",
         )
+        assert_true(
+            isinstance(row.get("is_main_text"), bool),
+            f"asset_manifest is_main_text must be bool for {paper_id}",
+        )
+        assert_true(
+            isinstance(row.get("is_supplementary"), bool),
+            f"asset_manifest is_supplementary must be bool for {paper_id}",
+        )
+        if row.get("asset_size_bytes") is not None:
+            assert_true(
+                isinstance(row["asset_size_bytes"], int) and row["asset_size_bytes"] >= 0,
+                f"asset_manifest asset_size_bytes must be non-negative int for {paper_id}",
+            )
         if asset_type in {ASSET_TYPE_NOTE, ASSET_TYPE_PRIMARY_PDF}:
             key = (paper_id, asset_type)
             assert_true(
@@ -1745,6 +1815,10 @@ def validate_registry_layer(
             asset_row["exists"] == paper_row["note_exists"],
             f"asset_manifest note existence mismatch for {paper_id}: {asset_row['exists']!r} != {paper_row['note_exists']!r}",
         )
+        assert_true(
+            not asset_row["is_main_text"] and not asset_row["is_supplementary"],
+            f"asset_manifest note rows must not be marked main/supplementary for {paper_id}",
+        )
     primary_pdf_assets_by_id = {row["paper_id"]: row for row in primary_pdf_asset_rows}
     expected_primary_pdf_ids = set(paper_rows_by_id.keys())
     assert_true(
@@ -1762,6 +1836,25 @@ def validate_registry_layer(
             asset_row["exists"] == paper_row["pdf_exists"],
             f"asset_manifest primary_pdf existence mismatch for {paper_id}: {asset_row['exists']!r} != {paper_row['pdf_exists']!r}",
         )
+        if asset_row["exists"]:
+            assert_true(
+                bool(asset_row["sha256"]),
+                f"asset_manifest existing primary_pdf rows must carry sha256 for {paper_id}",
+            )
+            assert_true(
+                asset_row["asset_size_bytes"] is not None,
+                f"asset_manifest existing primary_pdf rows must carry asset_size_bytes for {paper_id}",
+            )
+        if asset_row["is_supplementary"]:
+            assert_true(
+                not asset_row["is_main_text"],
+                f"asset_manifest supplementary primary_pdf rows must not be marked is_main_text for {paper_id}",
+            )
+        if asset_row["is_main_text"]:
+            assert_true(
+                not asset_row["is_supplementary"],
+                f"asset_manifest main-text primary_pdf rows must not be marked is_supplementary for {paper_id}",
+            )
 
 
 def main() -> None:

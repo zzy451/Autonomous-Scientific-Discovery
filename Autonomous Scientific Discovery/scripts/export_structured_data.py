@@ -1065,6 +1065,60 @@ def compute_repo_relative_sha256(
     return sha256
 
 
+def compute_repo_relative_size_bytes(repo_relative_path: str) -> int | None:
+    if not repo_relative_path:
+        return None
+    repo_path = ROOT / repo_relative_path
+    if not repo_path.exists() or not repo_path.is_file():
+        return None
+    return repo_path.stat().st_size
+
+
+def derive_pdf_evidence_type(
+    *,
+    pdf_exists: bool,
+    pdf_status: str,
+    evidence_status: str,
+) -> str:
+    pdf_status_lower = pdf_status.strip().lower()
+    evidence_status_lower = evidence_status.strip().lower()
+    combined = f"{pdf_status_lower} {evidence_status_lower}"
+    if "supplement" in combined:
+        return "supplementary_pdf"
+    if pdf_exists:
+        return "main_pdf"
+    if any(
+        token in combined
+        for token in ("html_full_text", "pmc_full_text", "public_full_text", "article_page")
+    ):
+        return "html_full_text"
+    if any(token in combined for token in ("project_page", "repo", "preview_repo")):
+        return "project_page"
+    if any(token in combined for token in ("official", "page", "doi", "metadata", "promptbio")):
+        return "official_page"
+    return "abstract"
+
+
+def derive_pdf_check_status(
+    *,
+    pdf_evidence_type: str,
+    pdf_exists: bool,
+    evidence_status: str,
+    source_limited: str,
+) -> str:
+    evidence_status_lower = evidence_status.strip().lower()
+    source_limited_lower = source_limited.strip().lower()
+    if pdf_evidence_type == "main_pdf" and pdf_exists:
+        return "full_text_checked"
+    if pdf_evidence_type == "html_full_text":
+        return "full_text_checked"
+    if pdf_evidence_type == "supplementary_pdf" and "full_text" in evidence_status_lower:
+        return "full_text_checked"
+    if source_limited_lower.startswith("yes") or pdf_evidence_type == "supplementary_pdf":
+        return "source_limited"
+    return "metadata_only"
+
+
 def build_paper_registry(papers: Iterable[Dict[str, object]]) -> List[Dict[str, object]]:
     registry: List[Dict[str, object]] = []
     for paper in papers:
@@ -1218,6 +1272,21 @@ def build_pdf_archive_registry(
     registry: List[Dict[str, object]] = []
     for paper in papers:
         pdf_path = str(paper["pdf_path"])
+        pdf_exists = bool(paper["pdf_exists"])
+        pdf_status = str(paper["pdf_status"])
+        evidence_status = str(paper["evidence_status"])
+        source_limited = str(paper["source_limited"])
+        pdf_evidence_type = derive_pdf_evidence_type(
+            pdf_exists=pdf_exists,
+            pdf_status=pdf_status,
+            evidence_status=evidence_status,
+        )
+        pdf_check_status = derive_pdf_check_status(
+            pdf_evidence_type=pdf_evidence_type,
+            pdf_exists=pdf_exists,
+            evidence_status=evidence_status,
+            source_limited=source_limited,
+        )
         registry.append(
             {
                 "asset_id": f"{paper['paper_id']}:primary_pdf",
@@ -1225,11 +1294,16 @@ def build_pdf_archive_registry(
                 "asset_role": "primary_pdf",
                 "title": paper["title"],
                 "pdf_path": pdf_path,
-                "pdf_exists": paper["pdf_exists"],
+                "pdf_exists": pdf_exists,
                 "sha256": compute_repo_relative_sha256(pdf_path, sha256_cache),
-                "pdf_status": paper["pdf_status"],
-                "evidence_status": paper["evidence_status"],
-                "source_limited": paper["source_limited"],
+                "asset_size_bytes": compute_repo_relative_size_bytes(pdf_path),
+                "pdf_status": pdf_status,
+                "evidence_status": evidence_status,
+                "pdf_evidence_type": pdf_evidence_type,
+                "pdf_check_status": pdf_check_status,
+                "is_main_text": pdf_evidence_type == "main_pdf",
+                "is_supplementary": pdf_evidence_type == "supplementary_pdf",
+                "source_limited": source_limited,
                 "primary_module_for_filing": paper["primary_module_for_filing"],
                 "scientific_object_modules": paper["scientific_object_modules"],
                 "general_method_bucket": paper["general_method_bucket"],
@@ -1256,10 +1330,19 @@ def build_asset_manifest(
                 "path": note_path,
                 "exists": paper["note_exists"],
                 "sha256": compute_repo_relative_sha256(note_path, sha256_cache),
+                "asset_size_bytes": compute_repo_relative_size_bytes(note_path),
                 "asset_status": paper["note_status"],
+                "is_main_text": False,
+                "is_supplementary": False,
                 "source_limited": paper["source_limited"],
                 "exported_at": paper["exported_at"],
             }
+        )
+        pdf_exists = bool(paper["pdf_exists"])
+        pdf_evidence_type = derive_pdf_evidence_type(
+            pdf_exists=pdf_exists,
+            pdf_status=str(paper["pdf_status"]),
+            evidence_status=str(paper["evidence_status"]),
         )
         manifest.append(
             {
@@ -1268,9 +1351,12 @@ def build_asset_manifest(
                 "title": paper["title"],
                 "asset_type": "primary_pdf",
                 "path": pdf_path,
-                "exists": paper["pdf_exists"],
+                "exists": pdf_exists,
                 "sha256": compute_repo_relative_sha256(pdf_path, sha256_cache),
+                "asset_size_bytes": compute_repo_relative_size_bytes(pdf_path),
                 "asset_status": paper["pdf_status"],
+                "is_main_text": pdf_evidence_type == "main_pdf",
+                "is_supplementary": pdf_evidence_type == "supplementary_pdf",
                 "source_limited": paper["source_limited"],
                 "exported_at": paper["exported_at"],
             }
