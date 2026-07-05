@@ -15,6 +15,7 @@ PAPERS_JSONL = DATA_DIR / "papers.jsonl"
 DISCIPLINE_ASSIGNMENTS_JSONL = DATA_DIR / "discipline_code_assignments.jsonl"
 DISCIPLINE_REGISTRY_JSONL = DATA_DIR / "discipline_local_code_registry.jsonl"
 DISCIPLINE_REGISTRY_CSV = DATA_DIR / "discipline_local_code_registry.csv"
+PDF_ARCHIVE_REGISTRY_JSONL = DATA_DIR / "registry" / "pdf_archive_registry.jsonl"
 CLASSIFICATION_CODE_INDEX = DATA_DIR / "classification_code_index.json"
 PREVIEW_CSV = DATA_DIR / "discipline_code_initial_assignment_preview.csv"
 FIELD_OWNERSHIP_MATRIX = DATA_DIR / "field_ownership_matrix.md"
@@ -84,6 +85,7 @@ def main() -> None:
     papers = load_jsonl(PAPERS_JSONL)
     assignments = load_jsonl(DISCIPLINE_ASSIGNMENTS_JSONL)
     registry = load_jsonl(DISCIPLINE_REGISTRY_JSONL)
+    pdf_archive_registry = load_jsonl(PDF_ARCHIVE_REGISTRY_JSONL)
     preview_rows = load_csv_rows(PREVIEW_CSV)
     classification_index = load_json(CLASSIFICATION_CODE_INDEX)
     readme_text = read_text(README)
@@ -92,6 +94,7 @@ def main() -> None:
 
     with sqlite3.connect(SQLITE_PATH) as conn:
         sqlite_registry_count = count_sqlite_table(conn, "discipline_local_code_registry")
+        sqlite_pdf_evidence_count = count_sqlite_table(conn, "pdf_evidence_status")
         metadata_rows = conn.execute(
             "SELECT key, value FROM metadata WHERE key IN ("
             "'papers_exported_at',"
@@ -141,12 +144,24 @@ def main() -> None:
         and isinstance(row.get("source_limited"), str)
         for row in papers
     )
-    status, detail = check(
-        evidence_fields_ok,
-        f"All {len(papers)} papers carry structured evidence-status fields.",
-        "Some papers are missing structured evidence-status fields.",
+    pdf_registry_fields_ok = all(
+        isinstance(row.get("pdf_evidence_type"), str)
+        and isinstance(row.get("pdf_check_status"), str)
+        and isinstance(row.get("source_limited"), str)
+        for row in pdf_archive_registry
     )
-    add_result(results, "3", status, detail, "Data/papers.jsonl")
+    status, detail = check(
+        evidence_fields_ok
+        and len(pdf_archive_registry) == len(papers)
+        and sqlite_pdf_evidence_count == len(pdf_archive_registry)
+        and pdf_registry_fields_ok,
+        (
+            f"All {len(papers)} papers carry structured evidence-status fields, "
+            f"with {len(pdf_archive_registry)} pdf_archive_registry rows mirrored into SQLite pdf_evidence_status."
+        ),
+        "Structured evidence-status surfaces are missing fields or drift across papers.jsonl / pdf_archive_registry / SQLite pdf_evidence_status.",
+    )
+    add_result(results, "3", status, detail, "Data/papers.jsonl + Data/registry/pdf_archive_registry.jsonl + Data/papers.sqlite")
 
     index_ok = (
         CLASSIFICATION_CODE_INDEX.exists()

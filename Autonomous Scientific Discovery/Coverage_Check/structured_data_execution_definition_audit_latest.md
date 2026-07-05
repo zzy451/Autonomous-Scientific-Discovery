@@ -23,9 +23,9 @@ Evidence: `Data/papers.jsonl`
 
 ### Item 3 - PASS
 
-All 871 papers carry structured evidence-status fields.
+All 871 papers carry structured evidence-status fields, with 871 pdf_archive_registry rows mirrored into SQLite pdf_evidence_status.
 
-Evidence: `Data/papers.jsonl`
+Evidence: `Data/papers.jsonl + Data/registry/pdf_archive_registry.jsonl + Data/papers.sqlite`
 
 ### Item 4 - PASS
 
