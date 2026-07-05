@@ -2691,10 +2691,20 @@ def main() -> None:
                     f"{paper_id} has inconsistent object_coverage_mode {object_coverage_mode!r} for modules {modules}",
                 )
                 assert_true(
-                    primary_module in modules or primary_module == row["legacy_main_class"],
-                    f"{paper_id} primary_module_for_filing {primary_module!r} is neither in scientific_object_modules {modules} nor equal to legacy_main_class {row['legacy_main_class']!r}",
+                    primary_module in FORMAL_MODULES,
+                    f"{paper_id} has invalid primary_module_for_filing inside module validation: {primary_module!r}",
                 )
-                if len(modules) == 1:
+                primary_outside_modules = primary_module not in modules
+                if primary_outside_modules:
+                    assert_true(
+                        row["primary_module_assignment_rule"] == "manual_override",
+                        f"{paper_id} primary_module_for_filing {primary_module!r} is outside scientific_object_modules {modules} and must use primary_module_assignment_rule=manual_override",
+                    )
+                    assert_true(
+                        bool(row["primary_module_override_reason"]),
+                        f"{paper_id} primary_module_for_filing {primary_module!r} is outside scientific_object_modules {modules} and must carry primary_module_override_reason",
+                    )
+                elif len(modules) == 1:
                     assert_true(
                         row["primary_module_confidence"] == "high",
                         f"{paper_id} single-module rows should use primary_module_confidence=high",
