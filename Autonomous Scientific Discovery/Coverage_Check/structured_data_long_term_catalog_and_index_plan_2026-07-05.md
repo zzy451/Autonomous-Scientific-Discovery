@@ -47,7 +47,7 @@
 
 - `discipline_local_code` 是稳定管理码，不是临时 display rank。
 - 新增论文默认在对应二级位下追加最大编号 + 1。
-- 如果论文主排架位发生变化，旧码不得静默复用，应进入 retired / redirected 状态，并生成新码。
+- 如果论文主排架位发生变化，旧码不得静默复用，应进入 `retired_code` / `redirected_code` 状态，并生成新码。
 - 如果只是为了临时排序，应使用 `discipline_display_order`，不能复用 `discipline_local_code` 这个字段名。
 
 ### 2.2 分类事实与排架展示分离
@@ -68,9 +68,9 @@
 
 > 事实分类可以多选，排架位置只能有一个。
 
-### 2.3 三类事实源与 derived layer 分离
+### 2.3 四类事实源与 derived layer 分离
 
-后续必须区分三类事实源，而不是让 derived registry 承担事实源角色。
+后续必须区分四类事实源，而不是让 derived registry 承担事实源角色。
 
 1. **文献与分类事实源**
    - `Paper_Lists/agent_master_paper_list.md`
@@ -82,12 +82,17 @@
 
 3. **系统管理码事实源**
    - `Data/discipline_code_assignments.jsonl`
-   - 负责稳定 `discipline_local_code` 的分配历史、active / retired / redirected / pending 状态。
+   - 负责稳定 `discipline_local_code` 的分配历史、active_code / retired_code / redirected_code / pending_secondary / non_discipline_general_method 状态。
    - 它只管理“排架管理码”，不覆盖论文元数据、分类事实或资料核查事实。
+
+4. **taxonomy vocabulary 事实源**
+   - `Data/classification_code_index.json`
+   - 负责一级 / 二级分类词表、定义、纳入边界、排除边界、状态和来源。
+   - 它管理“分类术语定义”，不管理某篇论文具体分到哪里。
 
 一句话：
 
-> master 和 progress 仍是论文内容与核查状态的 authoritative pair；`discipline_code_assignments.jsonl` 是稳定管理码账本；registry / CSV / SQLite 是 derived layer。
+> master 和 progress 仍是论文内容与核查状态的 authoritative pair；`discipline_code_assignments.jsonl` 是稳定管理码账本；`classification_code_index.json` 是 taxonomy vocabulary owner；registry / CSV / SQLite 是 derived layer。
 
 以后新增任何展示 registry、index、CSV、SQLite 表，都属于 derived layer；只有明确列入字段归属矩阵的账本文件才能成为特定字段的 owner。
 
@@ -117,7 +122,8 @@ Data/field_ownership_matrix.md
 | `legacy_main_class`、`legacy_secondary_class`、`legacy_tertiary_class` | master | 第一阶段二级排架来源 |
 | `pdf_status`、`evidence_status`、`source_limited`、`closed` | progress | note 只能解释 |
 | `note_path`、`pdf_path` | current export resolution from master / progress | 需要在 field matrix 中固定 fallback 优先级 |
-| `discipline_local_code`、`code_status`、`assigned_at`、`retired_at`、`redirected_to` | `Data/discipline_code_assignments.jsonl` | 稳定管理码账本，不由 export 每次重排生成 |
+| `discipline_local_code`、`assignment_status`、`assigned_at`、`retired_at`、`redirected_to_code` | `Data/discipline_code_assignments.jsonl` | 稳定管理码账本，不由 export 每次重排生成 |
+| taxonomy term label、definition、include / exclude boundary、term status、term source | `Data/classification_code_index.json` | taxonomy vocabulary owner，不是普通 derived index |
 
 `master-derived canonical lane` 必须在 `Data/field_ownership_matrix.md` 中具体化为：
 
@@ -188,12 +194,12 @@ required_trace_fields:
   - 示例：`04-03-001`
 - `discipline_local_rank`
   - 示例：`001`
-- `code_status`
-  - 示例：`active` / `retired` / `redirected`
+- `assignment_status`
+  - 示例：`active_code` / `retired_code` / `redirected_code` / `pending_secondary` / `non_discipline_general_method`
 - `assigned_at`
 - `retired_at`
 - `previous_discipline_local_code`
-- `redirected_to`
+- `redirected_to_code`
 - `assignment_reason`
 - `pending_reason`
 
@@ -240,6 +246,12 @@ required_trace_fields:
   - `full_text_checked`
   - `source_limited`
   - `metadata_only`
+- `asset_sha256`
+- `asset_size_bytes`
+- `asset_type`
+- `is_main_text`
+- `is_supplementary`
+- `source_checked_at`
 
 ### 3.5 Note 层
 
@@ -336,7 +348,7 @@ GitHub 上最终按以下逻辑管理：
 
 一句话：
 
-> GitHub 管目录，registry 管映射，数据库管查询，三类事实源管真值。
+> GitHub 管目录，registry 管映射，数据库管查询，四类事实源管真值。
 
 ---
 
@@ -415,7 +427,7 @@ MM-SS-NNN
 
 - `discipline_local_code` 一旦进入 `Data/discipline_code_assignments.jsonl`，不因排序、年份、标题或新增论文自动重排。
 - 同一 active code 不得指向多篇论文。
-- 已分配 code 如果不再适用，应保留历史记录并标记 `retired` 或 `redirected`。
+- 已分配 code 如果不再适用，应保留历史记录并标记 `retired_code` 或 `redirected_code`。
 - 如果暂时只需要展示排序，另用 `discipline_display_order`，不污染稳定管理码。
 - export 脚本不能“凭空重算稳定 code”，只能读取账本并生成 derived registry。
 
@@ -461,7 +473,7 @@ MM-SS-NNN
 ```text
 primary_taxonomy_code_2lvl = null
 discipline_local_code = null
-code_status = pending_secondary
+assignment_status = pending_secondary
 pending_reason = "missing_or_uncertain_secondary_class"
 ```
 
@@ -490,7 +502,7 @@ scientific_object_modules = []
 ```text
 primary_taxonomy_code_2lvl = null
 discipline_local_code = null
-code_status = non_discipline_general_method
+assignment_status = non_discipline_general_method
 pending_reason = null
 ```
 
@@ -535,48 +547,64 @@ pending_reason = null
 
 - 保存稳定 `discipline_local_code` 的分配历史
 - 防止每次 export 重排导致 code drift
-- 支持 active / retired / redirected / pending / non-discipline 状态
+- 支持 active_code / retired_code / redirected_code / pending_secondary / non_discipline_general_method 状态
 
 每个 code assignment 一行。
 
 建议字段：
 
+- `assignment_id`
 - `paper_id`
 - `discipline_local_code`
 - `primary_taxonomy_code_2lvl`
-- `code_status`
-  - `active`
-  - `retired`
-  - `redirected`
+- `assignment_status`
+  - `active_code`
+  - `retired_code`
+  - `redirected_code`
   - `pending_secondary`
   - `non_discipline_general_method`
 - `assigned_at`
 - `assigned_by`
 - `retired_at`
-- `redirected_to`
+- `redirected_to_code`
 - `assignment_reason`
 - `pending_reason`
 - `source_primary_module_for_filing`
 - `source_legacy_secondary_class`
+- `schema_version`
 
 示例：
 
 ```json
 {
+  "assignment_id": "DCA-000001",
   "paper_id": "ASD-0123",
   "discipline_local_code": "04-03-017",
   "primary_taxonomy_code_2lvl": "04.03",
-  "code_status": "active",
+  "assignment_status": "active_code",
   "assigned_at": "2026-07-05",
   "assigned_by": "codex",
   "retired_at": null,
-  "redirected_to": null,
+  "redirected_to_code": null,
   "assignment_reason": "initial_assignment",
-  "pending_reason": null
+  "pending_reason": null,
+  "source_primary_module_for_filing": "04",
+  "source_legacy_secondary_class": "04.03",
+  "schema_version": 1
 }
 ```
 
-这个文件不是普通 derived file。它是系统管理码账本，可以增量维护，但修改必须经过 check，并在 git 中留下可审计记录。
+这个文件不是普通 derived file。它是系统管理码当前状态账本，可以增量维护，但修改必须经过 check，并在 git 中留下可审计记录。
+
+状态语义：
+
+- `discipline_code_assignments.jsonl` 采用“当前状态账本 + `Data/change_log.jsonl` 辅助审计”，不是复杂事件溯源。
+- 一篇论文可以有多行 assignment 历史记录。
+- 同一篇论文最多只能有一条 `assignment_status=active_code`。
+- `active_code` / `retired_code` / `redirected_code` 必须有非空 `discipline_local_code`。
+- `pending_secondary` / `non_discipline_general_method` 必须有空 `discipline_local_code`。
+- `redirected_to_code` 指向目标 active `discipline_local_code`，不指向 `paper_id`。
+- 旧 code 不删除；主排架位改变时旧行改为 `retired_code` 或 `redirected_code`，再新增一条 active assignment。
 
 ## 5.3 `Data/discipline_code_assignment_policy.md`
 
@@ -584,7 +612,7 @@ pending_reason = null
 
 - 单独规定 code 如何初始分配
 - 如何追加编号
-- 如何 retired / redirected
+- 如何 retired_code / redirected_code
 - 如何处理 pending secondary
 - 如何处理 pure general-method records
 - 如何防止 code reuse
@@ -596,7 +624,42 @@ pending_reason = null
 - 单独规定多模块论文如何选择 `primary_module_for_filing`
 - 保存主排架位选择优先级、confidence、override reason 规则
 
-## 5.5 `Data/discipline_local_code_registry.jsonl`
+## 5.5 `Data/discipline_code_initial_assignment_preview.csv`
+
+作用：
+
+- 在正式冻结 `discipline_code_assignments.jsonl` 之前，先生成初始 code 分配预览
+- 支持人工审查 secondary class 缺失、多模块主排架位、general-method-only、source_limited、legacy class 异常
+- 避免一开始就把大量错误写进长期账本，减少后续 retired_code / redirected_code 噪音
+
+流程：
+
+1. 生成 preview。
+2. 人工审查。
+3. 回到 master / progress / classification index 修正源事实。
+4. 再生成正式 `discipline_code_assignments.jsonl`。
+5. 冻结 `initial_assignment`。
+
+## 5.6 `Data/schema/*.schema.json`
+
+建议新增：
+
+- `Data/schema/discipline_code_assignments.schema.json`
+- `Data/schema/classification_code_index.schema.json`
+
+作用：
+
+- 校验 JSONL / JSON 字段名、必填字段、枚举值和 schema version
+- 防止 `assignment_status`、`redirected_to_code` 等字段发生拼写漂移
+
+## 5.7 `Data/check_policy.md`
+
+作用：
+
+- 定义 check severity：`ERROR` / `WARNING` / `INFO`
+- 明确哪些问题阻断 build / commit，哪些进入 backlog，哪些只记录状态
+
+## 5.8 `Data/discipline_local_code_registry.jsonl`
 
 每篇论文一行。
 
@@ -605,7 +668,7 @@ pending_reason = null
 - `paper_id`
 - `discipline_local_code`
 - `discipline_local_rank`
-- `code_status`
+- `assignment_status`
 - `assigned_at`
 - `retired_at`
 - `previous_discipline_local_code`
@@ -622,12 +685,14 @@ pending_reason = null
 字段分层要求：
 
 - code assignment 字段来自 `Data/discipline_code_assignments.jsonl`
+- `discipline_local_rank = parse_NNN(discipline_local_code)`，只能派生，不允许人工维护
 - 冗余展示字段：`title`、`scientific_object_modules`、`note_path`、`pdf_path`
 - 冗余展示字段必须由脚本覆盖生成，并在 README 中标明 `derived_snapshot`
+- registry 应包含 `is_derived_snapshot=true`、`generated_at`、`generated_by`、`source_commit`
 
 `discipline_local_code_registry.jsonl` 是 derived snapshot，可以由 export 覆盖重建，不得手工当作事实源。
 
-## 5.6 `Data/discipline_local_code_registry.csv`
+## 5.9 `Data/discipline_local_code_registry.csv`
 
 作用：
 
@@ -635,7 +700,7 @@ pending_reason = null
 - 人工筛选
 - 导出给写作与汇报使用
 
-## 5.7 `SQLite` 新表或视图
+## 5.10 `SQLite` 新表或视图
 
 建议至少新增 / 明确：
 
@@ -672,13 +737,14 @@ paper_modules(
 
 ```text
 discipline_code_assignments(
+  assignment_id,
   paper_id,
   discipline_local_code,
   primary_taxonomy_code_2lvl,
-  code_status,
+  assignment_status,
   assigned_at,
   retired_at,
-  redirected_to,
+  redirected_to_code,
   assignment_reason
 )
 ```
@@ -710,12 +776,15 @@ discipline_code_assignments(
 
 注意：
 
-- 第一版可以用当前 row order 生成一次性 `initial_assignment` 账本。
+- 第一版必须先生成 `Data/discipline_code_initial_assignment_preview.csv`。
+- preview 经人工审查并修正源事实后，才允许写入一次性 `initial_assignment` 账本。
 - `initial_assignment` 写入 `Data/discipline_code_assignments.jsonl` 后即冻结，不再由 export 全量重排。
 - 后续新增论文应在对应二级位下追加最大编号 + 1。
 - 如果二级位不明确，写入 `pending_secondary`，不生成假 code。
 - 如果是 pure general-method-only，写入 `non_discipline_general_method`，不生成普通学科 code。
 - export 只读取 code assignment ledger 并生成 registry，不直接决定稳定 code 历史。
+- export 应读取 `classification_code_index.json` 校验 taxonomy term 合法性。
+- export 写出的 registry 应标记 `is_derived_snapshot=true`、`generated_at`、`generated_by`、`source_commit`。
 
 ## 6.2 扩展 `build_analysis_db.py`
 
@@ -727,6 +796,17 @@ discipline_code_assignments(
 - 明确生成 `paper_modules` 多对多表
 - 明确生成 `paper_general_method_buckets` 表
 - 明确生成 `pdf_evidence_status`、`paper_assets`、`notes` 表或视图
+
+SQLite 逻辑约束：
+
+- `papers.paper_id` 是 primary key
+- `paper_modules` 使用 `(paper_id, module_code)` 作为 primary key
+- `discipline_code_assignments.assignment_id` 是 primary key
+- `active_code` 的 `discipline_local_code` 全库唯一
+- 同一 `paper_id` 最多一条 `active_code`
+- `pending_secondary` 与 `non_discipline_general_method` 的 `discipline_local_code` 必须为 null
+
+SQLite 对复杂约束支持有限时，由 `check_data_consistency.py` 强制执行。
 
 ## 6.3 可选扩展查询命令
 
@@ -741,25 +821,47 @@ discipline_code_assignments(
 
 必须扩展现有 `check_data_consistency.py`，或新增专门完整性检查脚本。
 
+check report 必须区分 severity：
+
+- `ERROR`：必须修复，否则不能 build / commit
+- `WARNING`：可暂时保留，但必须进入 backlog
+- `INFO`：只记录状态，不阻断流程
+
 建议检查项：
 
-- `paper_id` 唯一且格式合法
-- master 与 progress 可互相回连
-- active paper 有 note path，且 note 文件存在
-- `pdf_path` 非空时文件存在
-- supplementary PDF 不得被标记为 main PDF full-text
-- `scientific_object_modules` 合法
-- `primary_module_for_filing` 必须属于 `scientific_object_modules`，除非有明确 override reason
-- `discipline_local_code` 唯一
-- `discipline_local_code` 与 `primary_module_for_filing` / 二级位一致
-- active code 不得重复
-- retired code 不得复用
-- redirected code 的 `redirected_to` 必须指向合法 active code
-- `pending_secondary` 不得有假 `MM-00-NNN` code
-- `non_discipline_general_method` 不得有普通 `MM-SS-NNN` code
-- `discipline_code_assignments.jsonl` 中的 `paper_id` 必须能回连 master
-- `01.04` 不得进入 formal `scientific_object_modules`
-- derived Data 层必须可由 export / build 重建；`discipline_code_assignments.jsonl` 作为账本不得被覆盖重建
+ERROR 示例：
+
+- `paper_id` 重复或格式非法
+- master 与 progress 无法回连
+- active paper 缺 note path 或 note 文件不存在
+- `pdf_path` 非空但文件不存在
+- supplementary PDF 被标记为 main PDF full-text
+- `scientific_object_modules` 非法
+- `primary_module_for_filing` 不属于 `scientific_object_modules` 且没有明确 override reason
+- `assignment_status=active_code` 的 `discipline_local_code` 重复
+- 同一 `paper_id` 有多条 `active_code`
+- `retired_code` 被复用
+- `redirected_code` 的 `redirected_to_code` 未指向合法 active code
+- `pending_secondary` 有普通 `MM-SS-NNN` code
+- `non_discipline_general_method` 有普通 `MM-SS-NNN` code
+- `discipline_code_assignments.jsonl` 中的 `paper_id` 无法回连 master
+- `01.04` 进入 formal `scientific_object_modules`
+- derived Data 层不能由 export / build 重建
+- `discipline_code_assignments.jsonl` 被 export 覆盖重建
+
+WARNING 示例：
+
+- `secondary_class_confidence=low`
+- `primary_module_confidence=low`
+- `source_limited=yes`
+- missing PDF but has official page
+- pending secondary 记录需要人工补二级位
+
+INFO 示例：
+
+- `background_only`
+- `non_discipline_general_method`
+- supplementary-only source state
 
 建议输出：
 
@@ -823,19 +925,20 @@ Data/change_log.jsonl
 3. 指定初始 note path、primary module、secondary class
 4. 建 note
 5. 建 progress 行
-6. 在 `Data/discipline_code_assignments.jsonl` 增量追加 code assignment
-7. 跑：
+6. 如果是初始全库分配阶段，先进入 `Data/discipline_code_initial_assignment_preview.csv`
+7. 如果是日常新增阶段，在 `Data/discipline_code_assignments.jsonl` 增量追加 code assignment
+8. 跑：
    - `export`
    - `check`
    - `build`
-8. 由 export 生成该论文的 derived registry / CSV / SQLite 记录
+9. 由 export 生成该论文的 derived registry / CSV / SQLite 记录
 
 新增论文的 code 分配必须遵守：
 
 - 在对应二级位下追加编号
 - 不重排既有 active code
-- 如果二级位暂不明确，使用 `code_status=pending_secondary`，不伪造精确二级码
-- 如果是 pure general-method-only，使用 `code_status=non_discipline_general_method`，不分配普通学科 code
+- 如果二级位暂不明确，使用 `assignment_status=pending_secondary`，不伪造精确二级码
+- 如果是 pure general-method-only，使用 `assignment_status=non_discipline_general_method`，不分配普通学科 code
 
 ## 7.2 改分类
 
@@ -849,7 +952,7 @@ Data/change_log.jsonl
    - `check`
    - `build`
 4. 如果主排架位改变：
-   - 旧 `discipline_local_code` 标记为 retired / redirected
+   - 旧 `discipline_local_code` 标记为 `retired_code` / `redirected_code`
    - 新主排架位分配新 code
    - 保留变更理由
 5. 如果只是事实多模块数组微调、主排架位不变，原 `discipline_local_code` 保持不变
@@ -939,9 +1042,19 @@ Data/change_log.jsonl
 - `Data/discipline_code_assignment_policy.md`
 - `Data/primary_filing_policy.md`
 
-先把 code 增量分配、retired / redirected、pending、general-method-only、主排架位选择规则写死。
+先把 code 增量分配、retired_code / redirected_code、pending、general-method-only、主排架位选择规则写死。
 
-## 第三步：冻结编码规则
+## 第三步：写 schema 与 check policy
+
+新增：
+
+- `Data/schema/discipline_code_assignments.schema.json`
+- `Data/schema/classification_code_index.schema.json`
+- `Data/check_policy.md`
+
+先锁定 assignment schema、taxonomy index schema、ERROR / WARNING / INFO 规则。
+
+## 第四步：冻结编码规则
 
 冻结：
 
@@ -949,10 +1062,19 @@ Data/change_log.jsonl
 - `discipline_local_code` 作为二级管理码
 - 管理码格式：`MM-SS-NNN`
 - 管理码稳定，不自动重排
-- 旧码支持 retired / redirected 状态
+- 旧码支持 retired_code / redirected_code 状态
 - pending secondary 与 non-discipline general-method 不生成普通学科 code
+- `code_status` 不再使用，统一使用 `assignment_status`
 
-## 第四步：创建稳定 code assignment ledger
+## 第五步：生成 initial assignment preview
+
+新增：
+
+- `Data/discipline_code_initial_assignment_preview.csv`
+
+先审查 preview，重点看 secondary class 缺失、多模块主排架位、general-method-only、source_limited、legacy class 异常。
+
+## 第六步：创建稳定 code assignment ledger
 
 新增：
 
@@ -960,7 +1082,7 @@ Data/change_log.jsonl
 
 第一版只做 `initial_assignment`，完成后冻结，后续新增论文只追加，不重排旧 code。
 
-## 第五步：做 index
+## 第七步：做 index
 
 新增：
 
@@ -971,7 +1093,7 @@ Data/change_log.jsonl
 - 包含 code-label
 - 包含 definition / include / exclude / status / source
 
-## 第六步：做 registry
+## 第八步：做 registry
 
 新增：
 
@@ -980,17 +1102,19 @@ Data/change_log.jsonl
 
 它们从 master + progress + `discipline_code_assignments.jsonl` 派生，可覆盖重建。
 
-## 第七步：扩展校验
+## 第九步：扩展校验
 
 新增：
 
 - `discipline_local_code` 唯一性检查
-- code ledger active / retired / redirected / pending 检查
+- code ledger active_code / retired_code / redirected_code / pending_secondary 检查
+- `assignment_status` 语义检查
+- ERROR / WARNING / INFO severity
 - 路径存在性检查
 - 分类合法性检查
 - owner / derived layer guardrail
 
-## 第八步：接入 SQLite
+## 第十步：接入 SQLite
 
 新增或明确：
 
@@ -1003,7 +1127,7 @@ Data/change_log.jsonl
 - `paper_assets`
 - `notes`
 
-## 第九步：小批量试运行
+## 第十一步：小批量试运行
 
 先选 20-30 篇覆盖不同边界：
 
@@ -1017,14 +1141,14 @@ Data/change_log.jsonl
 
 小批量 check report 稳定后，再跑全库。
 
-## 第十步：写文档与查询说明
+## 第十二步：写文档与查询说明
 
 更新：
 
 - `Data/README.md`
 - 必要时补 query 示例
 
-## 第十一步：后续再考虑是否升级到更强二级 canonical 层
+## 第十三步：后续再考虑是否升级到更强二级 canonical 层
 
 只有当正文写作和分析稳定需要时，再决定是否把二级位进一步升级为更强事实层。
 
@@ -1061,8 +1185,10 @@ Data/change_log.jsonl
 3. 每篇论文有结构化资料状态。
 4. 一级 / 二级分类码有正式 index 文件。
 5. 每篇论文有 code assignment record；符合学科排架条件的论文有 active `discipline_local_code`。
-6. 稳定 code assignment 已进入 `Data/discipline_code_assignments.jsonl`，且 active / retired / redirected / pending / non-discipline 状态可审计。
-7. `discipline_local_code_registry` 已从账本导出到 JSONL / CSV / SQLite。
-8. 字段归属矩阵已经冻结并被 README 引用。
-9. 校验脚本能检查 paper ID、code、路径、分类、PDF/source 状态的基本完整性。
-10. 后续任何增删改查都遵守 owner fact source -> export -> check -> build 的流程。
+6. 稳定 code assignment 已进入 `Data/discipline_code_assignments.jsonl`，且 active_code / retired_code / redirected_code / pending_secondary / non_discipline_general_method 状态可审计。
+7. `classification_code_index.json` 被明确为 taxonomy vocabulary owner。
+8. `discipline_code_initial_assignment_preview.csv` 已在正式账本冻结前完成审查。
+9. `discipline_local_code_registry` 已从账本导出到 JSONL / CSV / SQLite，并标记 derived snapshot metadata。
+10. 字段归属矩阵、schema 和 check policy 已经冻结并被 README 引用。
+11. 校验脚本能按 ERROR / WARNING / INFO 检查 paper ID、code、路径、分类、PDF/source 状态的基本完整性。
+12. 后续任何增删改查都遵守 owner fact source -> export -> check -> build 的流程。
