@@ -726,6 +726,33 @@ def note_summary(conn: sqlite3.Connection, *, all_papers: bool, missing_only: bo
     ''').fetchall()
     print_rows(rows, max_widths={'title': 56, 'note_path': 56, 'inclusion_status': 24})
 
+def change_log(conn: sqlite3.Connection, *, paper_id: str | None, change_type: str | None, limit: int) -> None:
+    print_heading('Change Log')
+    filters = []
+    params: list[object] = []
+    if paper_id:
+        filters.append('paper_id = ?')
+        params.append(paper_id)
+    if change_type:
+        filters.append('change_type = ?')
+        params.append(change_type)
+    where_clause = f"WHERE {' AND '.join(filters)}" if filters else ''
+    rows = conn.execute(f'''
+        SELECT
+            change_id,
+            paper_id,
+            changed_at,
+            changed_by,
+            change_type,
+            reason,
+            related_commit
+        FROM change_log
+        {where_clause}
+        ORDER BY change_id DESC
+        LIMIT ?
+    ''', (*params, limit)).fetchall()
+    print_rows(rows, max_widths={'reason': 56, 'related_commit': 16})
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Query ASD analysis SQLite outputs. Default classification commands are canonical-only; workflow mirror/final fields should be interpreted only in explicit audit commands.')
     subparsers = parser.add_subparsers(dest='command', required=True)
@@ -783,6 +810,10 @@ def build_parser() -> argparse.ArgumentParser:
     notes_parser = subparsers.add_parser('notes', help='List notes table rows')
     notes_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
     notes_parser.add_argument('--missing-only', action='store_true', help='Only show missing notes')
+    change_log_parser = subparsers.add_parser('change-log', help='List lightweight audit rows from change_log')
+    change_log_parser.add_argument('--paper-id')
+    change_log_parser.add_argument('--change-type')
+    change_log_parser.add_argument('--limit', type=int, default=50)
     return parser
 
 def main() -> None:
@@ -848,6 +879,8 @@ def main() -> None:
             paper_assets(conn, asset_type=args.asset_type, missing_only=args.missing_only)
         elif args.command == 'notes':
             note_summary(conn, all_papers=args.all, missing_only=args.missing_only)
+        elif args.command == 'change-log':
+            change_log(conn, paper_id=args.paper_id, change_type=args.change_type, limit=args.limit)
         else:
             parser.error(f'Unknown command: {args.command}')
     finally:

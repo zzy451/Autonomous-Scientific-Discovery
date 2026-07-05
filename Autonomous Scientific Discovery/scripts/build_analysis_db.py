@@ -13,6 +13,7 @@ REGISTRY_DIR = DATA_DIR / 'registry'
 PAPERS_JSONL = DATA_DIR / 'papers.jsonl'
 TAXONOMY_JSON = DATA_DIR / 'taxonomy_index.json'
 CLASSIFICATION_CODE_INDEX_JSON = DATA_DIR / 'classification_code_index.json'
+CHANGE_LOG_JSONL = DATA_DIR / 'change_log.jsonl'
 PDF_MANIFEST_JSON = DATA_DIR / 'pdf_manifest.json'
 MISSING_PDF_JSON = DATA_DIR / 'missing_pdf_manifest.json'
 NOTE_MANIFEST_JSON = DATA_DIR / 'note_manifest.json'
@@ -199,6 +200,17 @@ def build_sqlite(
             source TEXT NOT NULL,
             review_status TEXT,
             PRIMARY KEY (taxonomy_code, term_level)
+        );
+        CREATE TABLE change_log (
+            change_id TEXT PRIMARY KEY,
+            paper_id TEXT NOT NULL,
+            changed_at TEXT NOT NULL,
+            changed_by TEXT NOT NULL,
+            change_type TEXT NOT NULL,
+            old_value_json TEXT NOT NULL,
+            new_value_json TEXT NOT NULL,
+            reason TEXT NOT NULL,
+            related_commit TEXT
         );
         CREATE TABLE analysis_object_scope_registry (
             object_name TEXT PRIMARY KEY,
@@ -663,6 +675,13 @@ def build_sqlite(
             'INSERT INTO analysis_object_scope_registry(object_name, object_type, scope_class, default_usage, warning) VALUES(?, ?, ?, ?, ?)',
             [
                 (
+                    'change_log',
+                    'table',
+                    'audit_owner',
+                    'change audit lookup',
+                    'Lightweight audit trail loaded from Data/change_log.jsonl for change history and maintenance review.',
+                ),
+                (
                     'classification_terms',
                     'table',
                     'taxonomy_owner_snapshot',
@@ -823,6 +842,21 @@ def build_sqlite(
             for code, label in taxonomy['code_to_label'].items()
         ])
         classification_term_rows = build_classification_term_rows(classification_code_index)
+        change_log_rows = load_jsonl(CHANGE_LOG_JSONL) if CHANGE_LOG_JSONL.exists() else []
+        conn.executemany('INSERT INTO change_log VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+            (
+                row['change_id'],
+                row['paper_id'],
+                row['changed_at'],
+                row['changed_by'],
+                row['change_type'],
+                json.dumps(row.get('old_value'), ensure_ascii=False),
+                json.dumps(row.get('new_value'), ensure_ascii=False),
+                row['reason'],
+                row.get('related_commit'),
+            )
+            for row in change_log_rows
+        ])
         conn.executemany('INSERT INTO classification_terms VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 row['taxonomy_code'],

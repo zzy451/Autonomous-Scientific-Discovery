@@ -14,6 +14,7 @@ REGISTRY_DIR = DATA_DIR / "registry"
 CLASSIFICATION_CODE_INDEX_PATH = DATA_DIR / "classification_code_index.json"
 DISCIPLINE_CODE_ASSIGNMENTS_PATH = DATA_DIR / "discipline_code_assignments.jsonl"
 DISCIPLINE_LOCAL_CODE_REGISTRY_PATH = DATA_DIR / "discipline_local_code_registry.jsonl"
+CHANGE_LOG_PATH = DATA_DIR / "change_log.jsonl"
 INTEGRITY_CHECK_REPORT_PATH = DATA_DIR / "integrity_check_report.md"
 MASTER_PATH = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_PATH = (
@@ -150,6 +151,7 @@ LOCAL_PDF_STATUSES = {
     "official_supplementary_pdf_archived_main_article_gated",
 }
 PAPER_ID_PATTERN = re.compile(r"^ASD-\d{4}$")
+CHANGE_ID_PATTERN = re.compile(r"^CL-[0-9]{6}$")
 DISCIPLINE_CODE_PATTERN = re.compile(r"^[0-9]{2}-[0-9]{2}-[0-9]{3}$")
 PRIMARY_TAXONOMY_2LVL_PATTERN = re.compile(r"^[0-9]{2}\.[0-9]{2}$")
 REGISTRY_REQUIRED_STEMS = (
@@ -569,6 +571,58 @@ def validate_discipline_local_code_registry(
         len(worktree_dirty_values) == 1,
         "discipline_local_code_registry worktree_dirty must be uniform across the snapshot",
     )
+
+
+def validate_change_log_owner(papers: List[Dict[str, object]]) -> None:
+    if not CHANGE_LOG_PATH.exists():
+        return
+
+    rows = load_jsonl(CHANGE_LOG_PATH)
+    papers_by_id = {str(row["paper_id"]): row for row in papers}
+    seen_change_ids = set()
+
+    for index, row in enumerate(rows, start=1):
+        change_id = row.get("change_id")
+        paper_id = row.get("paper_id")
+        changed_at = row.get("changed_at")
+        changed_by = row.get("changed_by")
+        change_type = row.get("change_type")
+        reason = row.get("reason")
+
+        assert_true(
+            isinstance(change_id, str) and CHANGE_ID_PATTERN.fullmatch(change_id),
+            f"change_log row {index} has invalid change_id: {change_id!r}",
+        )
+        assert_true(
+            change_id not in seen_change_ids,
+            f"change_log duplicate change_id: {change_id!r}",
+        )
+        seen_change_ids.add(change_id)
+
+        assert_true(
+            isinstance(paper_id, str) and paper_id in papers_by_id,
+            f"change_log references unknown paper_id: {paper_id!r}",
+        )
+        assert_true(
+            isinstance(changed_at, str) and re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", changed_at),
+            f"change_log {change_id} has invalid changed_at: {changed_at!r}",
+        )
+        assert_true(
+            isinstance(changed_by, str) and changed_by.strip(),
+            f"change_log {change_id} missing changed_by",
+        )
+        assert_true(
+            isinstance(change_type, str) and change_type.strip(),
+            f"change_log {change_id} missing change_type",
+        )
+        assert_true(
+            isinstance(reason, str) and reason.strip(),
+            f"change_log {change_id} missing reason",
+        )
+        assert_true(
+            "old_value" in row and "new_value" in row,
+            f"change_log {change_id} must include old_value and new_value",
+        )
 
 
 
@@ -1380,6 +1434,7 @@ def main() -> None:
         )
         validate_discipline_code_assignments_owner(papers)
         validate_discipline_local_code_registry(papers)
+        validate_change_log_owner(papers)
 
         paper_ids = [row["paper_id"] for row in papers]
         assert_true(len(paper_ids) == len(set(paper_ids)), "Duplicate paper_id found in papers.jsonl")
