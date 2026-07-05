@@ -375,6 +375,53 @@
 - 它们只解释 canonical classification 如何从 owner facts 推导出来。
 - 若未来 master 出现显式 canonical columns，可在不改变 trace 字段职责的前提下扩展 parser rule 枚举。
 
+### 4.2AB primary filing trace fields
+
+定位: `primary_filing_policy` 的结构化派生 trace 字段，当前导出到 `papers.jsonl` / `papers.csv` / SQLite `papers`，并冗余进入 `discipline_local_code_registry`。
+
+关键字段:
+
+- `primary_module_confidence`
+- `primary_module_assignment_rule`
+- `primary_module_override_reason`
+
+当前语义:
+
+- `primary_module_confidence`
+  - 当前 `primary_module_for_filing` 的派生置信度
+  - 现阶段受控值:
+    - `high`
+    - `medium`
+    - `low`
+- `primary_module_assignment_rule`
+  - 当前 `primary_module_for_filing` 使用的推导 / 归档规则
+  - 现阶段受控值:
+    - `main_scientific_object`
+    - `main_validation_object`
+    - `direct_contribution_target`
+    - `substantive_application_object`
+    - `manual_override`
+- `primary_module_override_reason`
+  - 当当前排架位需要 override / fallback 解释时，记录派生原因
+
+当前导出层已使用的派生模式:
+
+- 单模块 formal record:
+  - `primary_module_confidence = high`
+  - `primary_module_assignment_rule = main_scientific_object`
+- 多模块且由显式 `Remarks` 主排架 token 支撑:
+  - `primary_module_assignment_rule = manual_override`
+  - `primary_module_override_reason = structured_remark_primary_module_for_filing`
+- 多模块且退回 legacy main-class 解释:
+  - `primary_module_assignment_rule = manual_override`
+  - `primary_module_override_reason = legacy_main_class_fallback_for_multi_module`
+
+约束:
+
+- 它们是 derived trace fields，不是新的 owner fact。
+- pure `01.04` general-method-only 记录不应携带这三个字段的非空值。
+- 单模块 record 不应凭空出现 override reason。
+
 ### 4.2B `discipline_code_assignments.jsonl`
 
 定位: 稳定 discipline-local code assignment 当前状态账本。

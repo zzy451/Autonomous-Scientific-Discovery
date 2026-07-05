@@ -68,6 +68,14 @@ OBJECT_COVERAGE_MODES = {
     "multi_module",
     "general_method_without_concrete_object_experiments",
 }
+PRIMARY_MODULE_CONFIDENCE_VALUES = {"high", "medium", "low"}
+PRIMARY_MODULE_ASSIGNMENT_RULE_VALUES = {
+    "main_scientific_object",
+    "main_validation_object",
+    "direct_contribution_target",
+    "substantive_application_object",
+    "manual_override",
+}
 CLASSIFICATION_SOURCE_CONFIDENCE_VALUES = {"high", "medium", "low"}
 CLASSIFICATION_PARSER_RULE_VALUES = {
     "structured_remark_token",
@@ -581,6 +589,18 @@ def validate_discipline_local_code_registry(
         assert_true(
             row["primary_module_for_filing"] == paper_row["primary_module_for_filing"],
             f"discipline_local_code_registry primary_module_for_filing mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["primary_module_confidence"] == paper_row["primary_module_confidence"],
+            f"discipline_local_code_registry primary_module_confidence mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["primary_module_assignment_rule"] == paper_row["primary_module_assignment_rule"],
+            f"discipline_local_code_registry primary_module_assignment_rule mismatch for {assignment_id}",
+        )
+        assert_true(
+            row["primary_module_override_reason"] == paper_row["primary_module_override_reason"],
+            f"discipline_local_code_registry primary_module_override_reason mismatch for {assignment_id}",
         )
         assert_true(
             row["legacy_secondary_class"] == paper_row["legacy_secondary_class"],
@@ -1837,6 +1857,18 @@ def main() -> None:
                 f"{paper_id} last_reviewed_by must be a string",
             )
             assert_true(
+                isinstance(row.get("primary_module_confidence"), str),
+                f"{paper_id} primary_module_confidence must be a string",
+            )
+            assert_true(
+                isinstance(row.get("primary_module_assignment_rule"), str),
+                f"{paper_id} primary_module_assignment_rule must be a string",
+            )
+            assert_true(
+                isinstance(row.get("primary_module_override_reason"), str),
+                f"{paper_id} primary_module_override_reason must be a string",
+            )
+            assert_true(
                 isinstance(row.get("classification_source_field"), str),
                 f"{paper_id} classification_source_field must be a string",
             )
@@ -1921,7 +1953,27 @@ def main() -> None:
                     primary_module == "",
                     f"{paper_id} pure general-method rows should not force primary_module_for_filing",
                 )
+                assert_true(
+                    row["primary_module_confidence"] == "",
+                    f"{paper_id} pure general-method rows should not carry primary_module_confidence",
+                )
+                assert_true(
+                    row["primary_module_assignment_rule"] == "",
+                    f"{paper_id} pure general-method rows should not carry primary_module_assignment_rule",
+                )
+                assert_true(
+                    row["primary_module_override_reason"] == "",
+                    f"{paper_id} pure general-method rows should not carry primary_module_override_reason",
+                )
             elif modules:
+                assert_true(
+                    row["primary_module_confidence"] in PRIMARY_MODULE_CONFIDENCE_VALUES,
+                    f"{paper_id} has invalid primary_module_confidence: {row['primary_module_confidence']!r}",
+                )
+                assert_true(
+                    row["primary_module_assignment_rule"] in PRIMARY_MODULE_ASSIGNMENT_RULE_VALUES,
+                    f"{paper_id} has invalid primary_module_assignment_rule: {row['primary_module_assignment_rule']!r}",
+                )
                 expected_mode = "multi_module" if len(modules) > 1 else "single_module"
                 assert_true(
                     object_coverage_mode == expected_mode,
@@ -1931,6 +1983,24 @@ def main() -> None:
                     primary_module in modules or primary_module == row["legacy_main_class"],
                     f"{paper_id} primary_module_for_filing {primary_module!r} is neither in scientific_object_modules {modules} nor equal to legacy_main_class {row['legacy_main_class']!r}",
                 )
+                if len(modules) == 1:
+                    assert_true(
+                        row["primary_module_confidence"] == "high",
+                        f"{paper_id} single-module rows should use primary_module_confidence=high",
+                    )
+                    assert_true(
+                        row["primary_module_assignment_rule"] == "main_scientific_object",
+                        f"{paper_id} single-module rows should use primary_module_assignment_rule=main_scientific_object",
+                    )
+                    assert_true(
+                        row["primary_module_override_reason"] == "",
+                        f"{paper_id} single-module rows should not carry primary_module_override_reason",
+                    )
+                elif row["primary_module_assignment_rule"] == "manual_override":
+                    assert_true(
+                        bool(row["primary_module_override_reason"]),
+                        f"{paper_id} manual_override primary module rows must carry primary_module_override_reason",
+                    )
 
             if row["active_confirmed_core"]:
                 assert_true(

@@ -78,6 +78,7 @@ OBJECT_COVERAGE_MODES = {
     "multi_module",
     "general_method_without_concrete_object_experiments",
 }
+PRIMARY_MODULE_CONFIDENCE_VALUES = {"high", "medium", "low"}
 
 TAXONOMY_CODE_TO_LABEL = {
     "01": "Formal, Information and Computational Sciences",
@@ -258,6 +259,9 @@ DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDNAMES = [
     "assignment_reason",
     "pending_reason",
     "primary_module_for_filing",
+    "primary_module_confidence",
+    "primary_module_assignment_rule",
+    "primary_module_override_reason",
     "primary_taxonomy_code_2lvl",
     "legacy_secondary_class",
     "scientific_object_modules",
@@ -512,6 +516,41 @@ def derive_classification_trace(
     if legacy_main in FORMAL_MODULES:
         return ("Main class", "medium", "legacy_main_class_fallback")
     return ("", "low", "needs_review")
+
+
+def derive_primary_filing_trace(
+    *,
+    raw_primary_module: str,
+    legacy_main: str,
+    scientific_object_modules: List[str],
+    general_method_bucket: str,
+    primary_module_for_filing: str,
+) -> Tuple[str, str, str]:
+    if general_method_bucket != "none" or not primary_module_for_filing:
+        return ("", "", "")
+    if len(scientific_object_modules) == 1 and primary_module_for_filing == scientific_object_modules[0]:
+        return ("high", "main_scientific_object", "")
+    if len(scientific_object_modules) > 1:
+        raw_primary = raw_primary_module.strip()
+        if raw_primary and raw_primary == primary_module_for_filing and raw_primary in scientific_object_modules:
+            return (
+                "medium",
+                "manual_override",
+                "structured_remark_primary_module_for_filing",
+            )
+        if legacy_main == primary_module_for_filing and legacy_main in scientific_object_modules:
+            return (
+                "low",
+                "manual_override",
+                "legacy_main_class_fallback_for_multi_module",
+            )
+        if primary_module_for_filing in scientific_object_modules:
+            return (
+                "low",
+                "manual_override",
+                "derived_primary_module_without_explicit_trace",
+            )
+    return ("low", "manual_override", "needs_primary_module_review")
 
 
 def derive_record_status(inclusion_status: str, active_confirmed_core: bool) -> str:
@@ -827,6 +866,9 @@ def build_discipline_local_code_registry(
                 "assignment_reason": assignment["assignment_reason"],
                 "pending_reason": assignment["pending_reason"],
                 "primary_module_for_filing": paper["primary_module_for_filing"],
+                "primary_module_confidence": paper["primary_module_confidence"],
+                "primary_module_assignment_rule": paper["primary_module_assignment_rule"],
+                "primary_module_override_reason": paper["primary_module_override_reason"],
                 "primary_taxonomy_code_2lvl": assignment["primary_taxonomy_code_2lvl"],
                 "legacy_secondary_class": paper["legacy_secondary_class"],
                 "scientific_object_modules": paper["scientific_object_modules"],
@@ -893,6 +935,17 @@ def build_papers(
             legacy_main=row["Main class"],
             legacy_secondary=row["Secondary class"],
         )
+        (
+            primary_module_confidence,
+            primary_module_assignment_rule,
+            primary_module_override_reason,
+        ) = derive_primary_filing_trace(
+            raw_primary_module=raw_primary_module,
+            legacy_main=row["Main class"],
+            scientific_object_modules=scientific_object_modules,
+            general_method_bucket=general_method_bucket,
+            primary_module_for_filing=primary_module_for_filing,
+        )
 
         doi, arxiv_id, url = parse_doi_and_arxiv(row["DOI / arXiv / URL"])
         note_path = progress.get("note_path") or row["Note path"]
@@ -950,6 +1003,9 @@ def build_papers(
                 "general_method_bucket": general_method_bucket,
                 "object_coverage_mode": object_coverage_mode,
                 "primary_module_for_filing": primary_module_for_filing,
+                "primary_module_confidence": primary_module_confidence,
+                "primary_module_assignment_rule": primary_module_assignment_rule,
+                "primary_module_override_reason": primary_module_override_reason,
                 "classification_source_field": classification_source_field,
                 "classification_source_confidence": classification_source_confidence,
                 "classification_parser_rule": classification_parser_rule,

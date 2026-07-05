@@ -35,7 +35,8 @@ CSV_FIELDS = [
     'fourth_level_topic', 'new_fourth_level', 'agent_type', 'research_workflow_role',
     'validation_type', 'scientific_contribution_type', 'evidence_strength', 'citation_priority',
     'scientific_object_modules', 'general_method_bucket', 'object_coverage_mode',
-    'primary_module_for_filing', 'classification_source_field', 'classification_source_confidence',
+    'primary_module_for_filing', 'primary_module_confidence', 'primary_module_assignment_rule',
+    'primary_module_override_reason', 'classification_source_field', 'classification_source_confidence',
     'classification_parser_rule', 'first_hand_sources_checked', 'progress_title', 'pdf_status',
     'evidence_status', 'note_status', 'master_status', 'final_modules_or_bucket',
     'source_limited', 'batch', 'closed', 'active_confirmed_core', 'record_status',
@@ -45,6 +46,7 @@ DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS = [
     'paper_id', 'assignment_id', 'discipline_local_code', 'discipline_local_rank',
     'assignment_status', 'assigned_at', 'assigned_by', 'retired_at', 'redirected_to_code',
     'assignment_reason', 'pending_reason', 'primary_module_for_filing',
+    'primary_module_confidence', 'primary_module_assignment_rule', 'primary_module_override_reason',
     'primary_taxonomy_code_2lvl', 'legacy_secondary_class', 'scientific_object_modules',
     'general_method_bucket', 'title', 'note_path', 'pdf_path', 'active_confirmed_core',
     'is_derived_snapshot', 'generated_at', 'generated_by', 'source_commit', 'worktree_dirty',
@@ -227,7 +229,8 @@ def build_sqlite(
             legacy_main_class TEXT, legacy_secondary_class TEXT, legacy_tertiary_class TEXT, fourth_level_topic TEXT, new_fourth_level TEXT,
             agent_type_json TEXT NOT NULL, research_workflow_role_json TEXT NOT NULL, validation_type_json TEXT NOT NULL, scientific_contribution_type_json TEXT NOT NULL,
             evidence_strength TEXT, citation_priority TEXT, remarks TEXT, scientific_object_modules_json TEXT NOT NULL, general_method_bucket TEXT NOT NULL,
-            object_coverage_mode TEXT, primary_module_for_filing TEXT, classification_source_field TEXT, classification_source_confidence TEXT, classification_parser_rule TEXT,
+            object_coverage_mode TEXT, primary_module_for_filing TEXT, primary_module_confidence TEXT, primary_module_assignment_rule TEXT, primary_module_override_reason TEXT,
+            classification_source_field TEXT, classification_source_confidence TEXT, classification_parser_rule TEXT,
             first_hand_sources_checked TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
             note_status TEXT, master_status TEXT, final_modules_or_bucket_raw TEXT, final_modules_or_bucket_json TEXT NOT NULL, source_limited TEXT, batch TEXT, closed TEXT,
             active_confirmed_core INTEGER NOT NULL, record_status TEXT, inclusion_decision TEXT, duplicate_of TEXT, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL
@@ -268,6 +271,9 @@ def build_sqlite(
             assignment_reason TEXT NOT NULL,
             pending_reason TEXT,
             primary_module_for_filing TEXT,
+            primary_module_confidence TEXT,
+            primary_module_assignment_rule TEXT,
+            primary_module_override_reason TEXT,
             primary_taxonomy_code_2lvl TEXT,
             legacy_secondary_class TEXT,
             scientific_object_modules_json TEXT NOT NULL,
@@ -875,14 +881,15 @@ def build_sqlite(
             )
             for row in classification_term_rows
         ])
-        conn.executemany('INSERT INTO papers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        conn.executemany('INSERT INTO papers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 paper['paper_id'], paper['title'], paper['authors'], paper['year'], paper['source'], paper['doi_or_url'], paper['doi'], paper['url'], paper['arxiv_id'],
                 paper['pdf_path'], bool_to_int(paper['pdf_exists']), paper['note_path'], bool_to_int(paper['note_exists']), paper['is_agent'], paper['inclusion_status'], paper['exclusion_reason'],
                 paper['legacy_main_class'], paper['legacy_secondary_class'], paper['legacy_tertiary_class'], paper['fourth_level_topic'], paper['new_fourth_level'],
                 json_list(paper['agent_type']), json_list(paper['research_workflow_role']), json_list(paper['validation_type']), json_list(paper['scientific_contribution_type']),
                 paper['evidence_strength'], paper['citation_priority'], paper['remarks'], json_list(paper['scientific_object_modules']), paper['general_method_bucket'], paper['object_coverage_mode'],
-                paper['primary_module_for_filing'], paper['classification_source_field'], paper['classification_source_confidence'], paper['classification_parser_rule'],
+                paper['primary_module_for_filing'], paper['primary_module_confidence'], paper['primary_module_assignment_rule'], paper['primary_module_override_reason'],
+                paper['classification_source_field'], paper['classification_source_confidence'], paper['classification_parser_rule'],
                 paper['first_hand_sources_checked'], paper['progress_title'], paper['pdf_status'], paper['evidence_status'], paper['note_status'], paper['master_status'],
                 paper['final_modules_or_bucket_raw'], json_list(paper['final_modules_or_bucket']), paper['source_limited'], paper['batch'], paper['closed'], bool_to_int(paper['active_confirmed_core']),
                 paper['record_status'], paper['inclusion_decision'], paper['duplicate_of'], paper['last_reviewed_at'], paper['last_reviewed_by'], paper['exported_at'],
@@ -922,7 +929,7 @@ def build_sqlite(
             )
             for row in discipline_code_assignments
         ])
-        conn.executemany('INSERT INTO discipline_local_code_registry VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        conn.executemany('INSERT INTO discipline_local_code_registry VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 row['paper_id'],
                 row['assignment_id'],
@@ -936,6 +943,9 @@ def build_sqlite(
                 row['assignment_reason'],
                 row['pending_reason'],
                 row['primary_module_for_filing'],
+                row['primary_module_confidence'],
+                row['primary_module_assignment_rule'],
+                row['primary_module_override_reason'],
                 row['primary_taxonomy_code_2lvl'],
                 row['legacy_secondary_class'],
                 json_list(row['scientific_object_modules']),
