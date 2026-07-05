@@ -37,7 +37,8 @@ CSV_FIELDS = [
     'scientific_object_modules', 'general_method_bucket', 'object_coverage_mode',
     'primary_module_for_filing', 'first_hand_sources_checked', 'progress_title', 'pdf_status',
     'evidence_status', 'note_status', 'master_status', 'final_modules_or_bucket',
-    'source_limited', 'batch', 'closed', 'active_confirmed_core', 'exported_at',
+    'source_limited', 'batch', 'closed', 'active_confirmed_core', 'record_status',
+    'inclusion_decision', 'duplicate_of', 'last_reviewed_at', 'last_reviewed_by', 'exported_at',
 ]
 DISCIPLINE_LOCAL_CODE_REGISTRY_FIELDS = [
     'paper_id', 'assignment_id', 'discipline_local_code', 'discipline_local_rank',
@@ -227,7 +228,7 @@ def build_sqlite(
             evidence_strength TEXT, citation_priority TEXT, remarks TEXT, scientific_object_modules_json TEXT NOT NULL, general_method_bucket TEXT NOT NULL,
             object_coverage_mode TEXT, primary_module_for_filing TEXT, first_hand_sources_checked TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
             note_status TEXT, master_status TEXT, final_modules_or_bucket_raw TEXT, final_modules_or_bucket_json TEXT NOT NULL, source_limited TEXT, batch TEXT, closed TEXT,
-            active_confirmed_core INTEGER NOT NULL, exported_at TEXT NOT NULL
+            active_confirmed_core INTEGER NOT NULL, record_status TEXT, inclusion_decision TEXT, duplicate_of TEXT, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL
         );
         CREATE TABLE paper_modules (paper_id TEXT NOT NULL, assignment_scope TEXT NOT NULL, module_code TEXT NOT NULL, module_kind TEXT NOT NULL, sort_order INTEGER NOT NULL, PRIMARY KEY (paper_id, assignment_scope, module_code));
         CREATE TABLE paper_general_method_buckets (
@@ -872,7 +873,7 @@ def build_sqlite(
             )
             for row in classification_term_rows
         ])
-        conn.executemany('INSERT INTO papers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        conn.executemany('INSERT INTO papers VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 paper['paper_id'], paper['title'], paper['authors'], paper['year'], paper['source'], paper['doi_or_url'], paper['doi'], paper['url'], paper['arxiv_id'],
                 paper['pdf_path'], bool_to_int(paper['pdf_exists']), paper['note_path'], bool_to_int(paper['note_exists']), paper['is_agent'], paper['inclusion_status'], paper['exclusion_reason'],
@@ -880,7 +881,8 @@ def build_sqlite(
                 json_list(paper['agent_type']), json_list(paper['research_workflow_role']), json_list(paper['validation_type']), json_list(paper['scientific_contribution_type']),
                 paper['evidence_strength'], paper['citation_priority'], paper['remarks'], json_list(paper['scientific_object_modules']), paper['general_method_bucket'], paper['object_coverage_mode'],
                 paper['primary_module_for_filing'], paper['first_hand_sources_checked'], paper['progress_title'], paper['pdf_status'], paper['evidence_status'], paper['note_status'], paper['master_status'],
-                paper['final_modules_or_bucket_raw'], json_list(paper['final_modules_or_bucket']), paper['source_limited'], paper['batch'], paper['closed'], bool_to_int(paper['active_confirmed_core']), paper['exported_at'],
+                paper['final_modules_or_bucket_raw'], json_list(paper['final_modules_or_bucket']), paper['source_limited'], paper['batch'], paper['closed'], bool_to_int(paper['active_confirmed_core']),
+                paper['record_status'], paper['inclusion_decision'], paper['duplicate_of'], paper['last_reviewed_at'], paper['last_reviewed_by'], paper['exported_at'],
             )
             for paper in papers
         ])

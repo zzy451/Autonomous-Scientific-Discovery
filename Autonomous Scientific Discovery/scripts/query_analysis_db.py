@@ -753,6 +753,50 @@ def change_log(conn: sqlite3.Connection, *, paper_id: str | None, change_type: s
     ''', (*params, limit)).fetchall()
     print_rows(rows, max_widths={'reason': 56, 'related_commit': 16})
 
+def lifecycle_summary(conn: sqlite3.Connection, *, all_papers: bool) -> None:
+    scope_label = 'all scopes' if all_papers else 'active_confirmed_core only'
+    print_heading(f'Lifecycle Summary ({scope_label})')
+    rows = conn.execute(f'''
+        SELECT
+            record_status,
+            inclusion_decision,
+            COUNT(*) AS paper_count,
+            SUM(pdf_exists) AS local_pdf_count,
+            SUM(note_exists) AS local_note_count,
+            SUM(CASE WHEN COALESCE(last_reviewed_at, '') <> '' THEN 1 ELSE 0 END) AS reviewed_count
+        FROM papers
+        {'' if all_papers else 'WHERE active_confirmed_core = 1'}
+        GROUP BY record_status, inclusion_decision
+        ORDER BY paper_count DESC, record_status, inclusion_decision
+    ''').fetchall()
+    print_rows(rows, max_widths={'inclusion_decision': 24})
+
+def lifecycle_records(conn: sqlite3.Connection, *, record_status: str | None, limit: int) -> None:
+    print_heading('Lifecycle Records')
+    filters = []
+    params: list[object] = []
+    if record_status:
+        filters.append('record_status = ?')
+        params.append(record_status)
+    where_clause = f"WHERE {' AND '.join(filters)}" if filters else ''
+    rows = conn.execute(f'''
+        SELECT
+            paper_id,
+            title,
+            record_status,
+            inclusion_decision,
+            active_confirmed_core,
+            last_reviewed_at,
+            last_reviewed_by,
+            pdf_exists,
+            note_exists
+        FROM papers
+        {where_clause}
+        ORDER BY paper_id
+        LIMIT ?
+    ''', (*params, limit)).fetchall()
+    print_rows(rows, max_widths={'title': 56, 'inclusion_decision': 24})
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='Query ASD analysis SQLite outputs. Default classification commands are canonical-only; workflow mirror/final fields should be interpreted only in explicit audit commands.')
     subparsers = parser.add_subparsers(dest='command', required=True)
@@ -814,6 +858,11 @@ def build_parser() -> argparse.ArgumentParser:
     change_log_parser.add_argument('--paper-id')
     change_log_parser.add_argument('--change-type')
     change_log_parser.add_argument('--limit', type=int, default=50)
+    lifecycle_summary_parser = subparsers.add_parser('lifecycle-summary', help='Summarize derived lifecycle fields from papers')
+    lifecycle_summary_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
+    lifecycle_records_parser = subparsers.add_parser('lifecycle-records', help='List papers with derived lifecycle fields')
+    lifecycle_records_parser.add_argument('--record-status', choices=('candidate', 'active_confirmed_core', 'background_only', 'excluded', 'duplicate', 'retired'))
+    lifecycle_records_parser.add_argument('--limit', type=int, default=50)
     return parser
 
 def main() -> None:
@@ -881,6 +930,10 @@ def main() -> None:
             note_summary(conn, all_papers=args.all, missing_only=args.missing_only)
         elif args.command == 'change-log':
             change_log(conn, paper_id=args.paper_id, change_type=args.change_type, limit=args.limit)
+        elif args.command == 'lifecycle-summary':
+            lifecycle_summary(conn, all_papers=args.all)
+        elif args.command == 'lifecycle-records':
+            lifecycle_records(conn, record_status=args.record_status, limit=args.limit)
         else:
             parser.error(f'Unknown command: {args.command}')
     finally:

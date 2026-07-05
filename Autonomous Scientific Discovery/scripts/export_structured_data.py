@@ -22,6 +22,7 @@ DATA_DIR = ROOT / "Data"
 REGISTRY_DIR = DATA_DIR / "registry"
 CLASSIFICATION_CODE_INDEX_PATH = DATA_DIR / "classification_code_index.json"
 DISCIPLINE_CODE_ASSIGNMENTS_PATH = DATA_DIR / "discipline_code_assignments.jsonl"
+CHANGE_LOG_PATH = DATA_DIR / "change_log.jsonl"
 DISCIPLINE_CODE_INITIAL_ASSIGNMENT_PREVIEW_PATH = (
     DATA_DIR / "discipline_code_initial_assignment_preview.csv"
 )
@@ -483,6 +484,38 @@ def normalize_primary_module_for_export(
     return normalize_primary_module(raw_value, legacy_main, modules)
 
 
+def derive_record_status(inclusion_status: str, active_confirmed_core: bool) -> str:
+    normalized = inclusion_status.strip().lower()
+    if active_confirmed_core:
+        return "active_confirmed_core"
+    if normalized == "background_only":
+        return "background_only"
+    if normalized == "excluded":
+        return "excluded"
+    if normalized in {"duplicate", "duplicated"}:
+        return "duplicate"
+    if normalized in {"retired", "retire"}:
+        return "retired"
+    if normalized in {"candidate", "pending", "to_read"}:
+        return "candidate"
+    return "candidate"
+
+
+def derive_inclusion_decision(inclusion_status: str, active_confirmed_core: bool) -> str:
+    normalized = inclusion_status.strip().lower()
+    if active_confirmed_core:
+        return "confirmed_core"
+    if normalized == "background_only":
+        return "background_only"
+    if normalized == "excluded":
+        return "excluded"
+    if normalized in {"duplicate", "duplicated"}:
+        return "duplicate"
+    if normalized in {"retired", "retire"}:
+        return "retired"
+    return normalized or "candidate"
+
+
 def build_classification_display_code(
     scientific_object_modules: List[str], general_method_bucket: str
 ) -> str:
@@ -522,6 +555,25 @@ def load_jsonl_rows(path: Path) -> List[Dict[str, object]]:
         if line.strip():
             rows.append(json.loads(line))
     return rows
+
+
+def build_latest_change_log_index(
+    change_log_rows: List[Dict[str, object]],
+) -> Dict[str, Dict[str, str]]:
+    latest: Dict[str, Dict[str, str]] = {}
+    for row in change_log_rows:
+        paper_id = str(row.get("paper_id") or "").strip()
+        changed_at = str(row.get("changed_at") or "").strip()
+        changed_by = str(row.get("changed_by") or "").strip()
+        if not paper_id or not changed_at:
+            continue
+        current = latest.get(paper_id)
+        if current is None or changed_at >= current["changed_at"]:
+            latest[paper_id] = {
+                "changed_at": changed_at,
+                "changed_by": changed_by,
+            }
+    return latest
 
 
 def is_yes_like(value: str) -> bool:
@@ -764,7 +816,11 @@ def build_discipline_local_code_registry(
     return registry_rows
 
 
-def build_papers(master_rows: Iterable[Dict[str, str]], progress_rows: Dict[str, Dict[str, str]]) -> List[Dict[str, object]]:
+def build_papers(
+    master_rows: Iterable[Dict[str, str]],
+    progress_rows: Dict[str, Dict[str, str]],
+    latest_change_log_by_paper_id: Dict[str, Dict[str, str]],
+) -> List[Dict[str, object]]:
     exported_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     papers: List[Dict[str, object]] = []
 
@@ -806,6 +862,11 @@ def build_papers(master_rows: Iterable[Dict[str, str]], progress_rows: Dict[str,
             row["Inclusion status"] in {"to_read", "included"}
             and (bool(scientific_object_modules) or general_method_bucket != "none")
         )
+        record_status = derive_record_status(row["Inclusion status"], is_active_confirmed_core)
+        inclusion_decision = derive_inclusion_decision(
+            row["Inclusion status"], is_active_confirmed_core
+        )
+        latest_change = latest_change_log_by_paper_id.get(paper_id, {})
 
         papers.append(
             {
@@ -861,6 +922,11 @@ def build_papers(master_rows: Iterable[Dict[str, str]], progress_rows: Dict[str,
                 "batch": progress.get("batch", ""),
                 "closed": progress.get("closed", ""),
                 "active_confirmed_core": is_active_confirmed_core,
+                "record_status": record_status,
+                "inclusion_decision": inclusion_decision,
+                "duplicate_of": "",
+                "last_reviewed_at": latest_change.get("changed_at", ""),
+                "last_reviewed_by": latest_change.get("changed_by", ""),
                 "exported_at": exported_at,
             }
         )
@@ -1210,7 +1276,15 @@ def main() -> None:
     )
     progress_rows = {row["paper_id"]: row for row in progress_table.rows}
 
-    papers = build_papers(master_table.rows, progress_rows)
+    change_log_rows = (
+        load_jsonl_rows(CHANGE_LOG_PATH) if CHANGE_LOG_PATH.exists() else []
+    )
+    latest_change_log_by_paper_id = build_latest_change_log_index(change_log_rows)
+    papers = build_papers(
+        master_table.rows,
+        progress_rows,
+        latest_change_log_by_paper_id,
+    )
     discipline_code_assignments = (
         load_jsonl_rows(DISCIPLINE_CODE_ASSIGNMENTS_PATH)
         if DISCIPLINE_CODE_ASSIGNMENTS_PATH.exists()

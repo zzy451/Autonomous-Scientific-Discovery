@@ -61,6 +61,14 @@ OBJECT_COVERAGE_MODES = {
     "multi_module",
     "general_method_without_concrete_object_experiments",
 }
+RECORD_STATUSES = {
+    "candidate",
+    "active_confirmed_core",
+    "background_only",
+    "excluded",
+    "duplicate",
+    "retired",
+}
 REMARK_KEYS = (
     "scientific_object_modules",
     "object_coverage_mode",
@@ -1532,6 +1540,31 @@ def main() -> None:
                 isinstance(row["active_confirmed_core"], bool),
                 f"{paper_id} active_confirmed_core is not a bool",
             )
+            assert_true(
+                row.get("record_status") in RECORD_STATUSES,
+                f"{paper_id} has invalid record_status: {row.get('record_status')!r}",
+            )
+            assert_true(
+                isinstance(row.get("inclusion_decision"), str) and row.get("inclusion_decision", "").strip(),
+                f"{paper_id} has blank inclusion_decision",
+            )
+            assert_true(
+                isinstance(row.get("duplicate_of"), str),
+                f"{paper_id} duplicate_of must be a string",
+            )
+            assert_true(
+                isinstance(row.get("last_reviewed_at"), str),
+                f"{paper_id} last_reviewed_at must be a string",
+            )
+            assert_true(
+                isinstance(row.get("last_reviewed_by"), str),
+                f"{paper_id} last_reviewed_by must be a string",
+            )
+            if row["last_reviewed_at"]:
+                assert_true(
+                    re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", row["last_reviewed_at"]) is not None,
+                    f"{paper_id} has invalid last_reviewed_at: {row['last_reviewed_at']!r}",
+                )
 
             modules = row["scientific_object_modules"]
             assert_true(isinstance(modules, list), f"{paper_id} scientific_object_modules is not a list")
@@ -1593,6 +1626,26 @@ def main() -> None:
                 assert_true(
                     primary_module in modules or primary_module == row["legacy_main_class"],
                     f"{paper_id} primary_module_for_filing {primary_module!r} is neither in scientific_object_modules {modules} nor equal to legacy_main_class {row['legacy_main_class']!r}",
+                )
+
+            if row["active_confirmed_core"]:
+                assert_true(
+                    row["record_status"] == "active_confirmed_core",
+                    f"{paper_id} active_confirmed_core rows must use record_status=active_confirmed_core",
+                )
+                assert_true(
+                    row["inclusion_decision"] == "confirmed_core",
+                    f"{paper_id} active_confirmed_core rows must use inclusion_decision=confirmed_core",
+                )
+            elif row["inclusion_status"] == "background_only":
+                assert_true(
+                    row["record_status"] == "background_only",
+                    f"{paper_id} background_only rows must use record_status=background_only",
+                )
+            elif row["inclusion_status"] == "excluded":
+                assert_true(
+                    row["record_status"] == "excluded",
+                    f"{paper_id} excluded rows must use record_status=excluded",
                 )
 
             pdf_path = row["pdf_path"]
