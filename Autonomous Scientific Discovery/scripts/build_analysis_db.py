@@ -1234,6 +1234,7 @@ def build_analysis_object_scope_rows() -> list[tuple[str, str, str, str, str]]:
 
 def validate_analysis_object_scope_registry() -> None:
     expected_rows = sorted(build_analysis_object_scope_rows(), key=lambda item: item[0])
+    expected_object_names = {row[0] for row in expected_rows}
     conn = sqlite3.connect(SQLITE_PATH)
     try:
         actual_rows = conn.execute(
@@ -1263,6 +1264,17 @@ def validate_analysis_object_scope_registry() -> None:
     assert_build_condition(
         actual_rows == expected_rows,
         'SQLite analysis_object_scope_registry drifted from expected declared object-scope rows',
+    )
+    actual_object_names = {
+        object_name
+        for object_name in sqlite_objects
+        if not object_name.startswith('sqlite_')
+    }
+    assert_build_condition(
+        actual_object_names == expected_object_names,
+        'SQLite analysis_object_scope_registry must cover every current SQLite table/view; '
+        f'missing_in_registry={sorted(actual_object_names - expected_object_names)!r}, '
+        f'extra_registry_rows={sorted(expected_object_names - actual_object_names)!r}',
     )
     for object_name, object_type, _scope_class, _default_usage, _warning in expected_rows:
         actual_type = sqlite_objects.get(object_name)
