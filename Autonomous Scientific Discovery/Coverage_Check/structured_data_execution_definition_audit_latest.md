@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 29
+- `PASS`: 30
 - `FAIL`: 0
 
 ## Items
@@ -182,3 +182,9 @@ Evidence: `scripts/manage_discipline_code_assignments.py + scripts/manage_classi
 Registry/taxonomy/audit query surfaces are documented and execute successfully for representative discipline-code, secondary-class, taxonomy, change-log, and lifecycle lookups.
 
 Evidence: `scripts/query_analysis_db.py + Data/README.md + representative registry/taxonomy/audit query executions`
+
+### Item 30 - PASS
+
+Core metadata/baseline/boundary query surfaces are documented and execute successfully for representative summary, provenance, canonical baseline, inventory, and boundary-audit lookups.
+
+Evidence: `scripts/query_analysis_db.py + Data/README.md + representative metadata/baseline/boundary query executions`

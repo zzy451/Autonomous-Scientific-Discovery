@@ -906,6 +906,7 @@ def build_parser() -> argparse.ArgumentParser:
     boundary_parser.add_argument('--kind', help='Filter a specific boundary_case_kind, including acceptable_mirror if needed')
     boundary_parser.add_argument('--limit', type=int, default=25)
     boundary_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')
+    boundary_parser.add_argument('--real-only', action='store_true', help='Explicit no-op alias for the default real-drift-only view')
     bucket_parser = subparsers.add_parser('bucket-summary', help='Audit canonical-vs-mirror 01.04 bucket behavior')
     bucket_parser.add_argument('--limit', type=int, default=20)
     bucket_parser.add_argument('--all', action='store_true', help='Include inactive and non-core papers')

@@ -1341,6 +1341,74 @@ def main() -> None:
     )
     add_result(results, "29", status, detail, "scripts/query_analysis_db.py + Data/README.md + representative registry/taxonomy/audit query executions")
 
+    core_query_tokens = (
+        'summary',
+        'metadata',
+        'discipline-registry-metadata',
+        'snapshot-provenance',
+        'analysis-baseline',
+        'object-scope-registry',
+        'module-distribution',
+        'object-coverage-summary',
+        'multi-module-combo-summary',
+        'bucket-0104-summary',
+        'missing-pdf',
+        'source-limited',
+        'coverage-summary',
+        'boundary-cases --real-only',
+        'bucket-summary',
+    )
+    core_query_runs = {
+        'summary': run_query_command(['summary']),
+        'metadata': run_query_command(['metadata']),
+        'discipline_registry_metadata': run_query_command(['discipline-registry-metadata']),
+        'snapshot_provenance': run_query_command(['snapshot-provenance']),
+        'analysis_baseline': run_query_command(['analysis-baseline']),
+        'object_scope_registry': run_query_command(['object-scope-registry']),
+        'module_distribution': run_query_command(['module-distribution']),
+        'object_coverage_summary': run_query_command(['object-coverage-summary']),
+        'multi_module_combo_summary': run_query_command(['multi-module-combo-summary']),
+        'bucket_0104_summary': run_query_command(['bucket-0104-summary']),
+        'missing_pdf': run_query_command(['missing-pdf']),
+        'source_limited': run_query_command(['source-limited']),
+        'coverage_summary': run_query_command(['coverage-summary']),
+        'boundary_cases': run_query_command(['boundary-cases', '--real-only']),
+        'bucket_summary': run_query_command(['bucket-summary']),
+    }
+    core_query_outputs_ok = all(
+        ok and output.strip() and 'Traceback' not in output
+        for ok, output in core_query_runs.values()
+    )
+    status, detail = check(
+        all(token in readme_text for token in core_query_tokens)
+        and all(
+            token in query_script_text
+            for token in (
+                'summary',
+                'metadata',
+                'discipline-registry-metadata',
+                'snapshot-provenance',
+                'analysis-baseline',
+                'object-scope-registry',
+                'module-distribution',
+                'object-coverage-summary',
+                'multi-module-combo-summary',
+                'bucket-0104-summary',
+                'missing-pdf',
+                'source-limited',
+                'coverage-summary',
+                'boundary-cases',
+                'bucket-summary',
+            )
+        )
+        and core_query_outputs_ok,
+        (
+            'Core metadata/baseline/boundary query surfaces are documented and execute successfully for representative summary, provenance, canonical baseline, inventory, and boundary-audit lookups.'
+        ),
+        'One or more documented core metadata/baseline/boundary query surfaces is missing from README/query_analysis_db.py or failed when executed during the representative execution audit.',
+    )
+    add_result(results, "30", status, detail, "scripts/query_analysis_db.py + Data/README.md + representative metadata/baseline/boundary query executions")
+
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")
 
