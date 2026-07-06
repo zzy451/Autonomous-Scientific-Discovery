@@ -1939,6 +1939,21 @@ def assert_unique_registry_key(
         seen.add(key)
 
 
+def assert_registry_exported_at(
+    path: Path, rows: List[Dict[str, object]], expected_exported_at: str
+) -> None:
+    require_row_fields(path, rows, ("exported_at",))
+    exported_at_values = {str(row["exported_at"]) for row in rows}
+    assert_true(
+        len(exported_at_values) == 1,
+        f"{path.relative_to(ROOT)} exported_at must be uniform across the registry snapshot",
+    )
+    assert_true(
+        exported_at_values == {expected_exported_at},
+        f"{path.relative_to(ROOT)} exported_at must match papers.jsonl exported_at",
+    )
+
+
 def split_semicolon_list(value: str) -> List[str]:
     return [item.strip() for item in value.split(";") if item.strip()]
 
@@ -2207,6 +2222,12 @@ def validate_registry_layer(
         row["paper_id"] for row in papers if row["active_confirmed_core"] and row["pdf_exists"]
     }
     active_no_local_ids = active_ids - active_local_ids
+    papers_exported_at_values = {str(row.get("exported_at", "")) for row in papers}
+    assert_true(
+        len(papers_exported_at_values) == 1,
+        "papers.jsonl exported_at must be uniform before validating registry exported_at metadata",
+    )
+    expected_exported_at = next(iter(papers_exported_at_values))
 
     registry_payloads = {
         stem: load_registry_rows(stem) for stem in REGISTRY_REQUIRED_STEMS
@@ -2217,6 +2238,25 @@ def validate_registry_layer(
     assignments_path, assignment_rows = registry_payloads["classification_assignments"]
     pdf_registry_path, pdf_registry_rows = registry_payloads["pdf_archive_registry"]
     asset_manifest_path, asset_manifest_rows = registry_payloads["asset_manifest"]
+    for registry_path, registry_rows in (
+        (paper_registry_path, paper_registry_rows),
+        (alias_registry_path, alias_registry_rows),
+        (assignments_path, assignment_rows),
+        (pdf_registry_path, pdf_registry_rows),
+        (asset_manifest_path, asset_manifest_rows),
+    ):
+        assert_registry_exported_at(registry_path, registry_rows, expected_exported_at)
+
+    if taxonomy_registry_path.suffix == ".json":
+        taxonomy_registry_payload = load_json(taxonomy_registry_path)
+        assert_true(
+            isinstance(taxonomy_registry_payload, dict),
+            "taxonomy_registry.json must be a JSON object with exported_at metadata",
+        )
+        assert_true(
+            str(taxonomy_registry_payload.get("exported_at", "")) == expected_exported_at,
+            "taxonomy_registry.json exported_at must match papers.jsonl exported_at",
+        )
 
     require_row_fields(paper_registry_path, paper_registry_rows, ("paper_id",))
     assert_unique_registry_key(paper_registry_path, paper_registry_rows, ("paper_id",))
