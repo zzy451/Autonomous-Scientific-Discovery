@@ -634,6 +634,8 @@ def validate_discipline_local_code_registry_outputs(
                     OR length(source_commit) <> 40
                     OR source_commit GLOB '*[^0-9a-f]*'
                 )
+                OR (active_confirmed_core <> 1)
+                OR (note_path IS NULL OR trim(note_path) = '')
             '''
         ).fetchone()[0]
     finally:
@@ -734,7 +736,8 @@ def validate_discipline_sqlite_constraints() -> None:
         "secondary_class_confidence IS NULL OR secondary_class_confidence IN ('high', 'medium', 'low')",
         "secondary_class_review_status IS NULL OR secondary_class_review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')",
         "general_method_bucket IS NULL OR general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')",
-        "active_confirmed_core IN (0, 1)",
+        "active_confirmed_core = 1",
+        "trim(note_path) <> ''",
         "worktree_dirty IN (0, 1)",
         "discipline_local_rank = substr(discipline_local_code, -3)",
         "discipline_display_order = discipline_local_code",
@@ -2226,9 +2229,9 @@ def build_sqlite(
             scientific_object_modules_json TEXT NOT NULL,
             general_method_bucket TEXT CHECK (general_method_bucket IS NULL OR general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')),
             title TEXT NOT NULL,
-            note_path TEXT,
+            note_path TEXT NOT NULL CHECK (trim(note_path) <> ''),
             pdf_path TEXT,
-            active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
+            active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core = 1),
             is_derived_snapshot INTEGER NOT NULL CHECK (is_derived_snapshot = 1),
             generated_at TEXT NOT NULL CHECK (generated_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T*'),
             generated_by TEXT NOT NULL CHECK (generated_by = 'export_structured_data.py'),
