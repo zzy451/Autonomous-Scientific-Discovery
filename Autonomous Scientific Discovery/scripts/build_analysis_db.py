@@ -131,7 +131,7 @@ def build_expected_papers_sqlite_rows(
                 paper['legacy_main_class'], paper['legacy_secondary_class'], paper['legacy_tertiary_class'], paper['secondary_class_source'], paper['secondary_class_confidence'], paper['secondary_class_review_status'], paper['fourth_level_topic'], paper['new_fourth_level'],
                 json_list(paper['agent_type']), json_list(paper['research_workflow_role']), json_list(paper['validation_type']), json_list(paper['scientific_contribution_type']),
                 paper['evidence_strength'], paper['citation_priority'], paper['remarks'], json_list(paper['scientific_object_modules']), paper['general_method_bucket'], paper['object_coverage_mode'],
-                paper['primary_module_for_filing'], paper['primary_module_confidence'], paper['primary_module_assignment_rule'], paper['primary_module_override_reason'],
+                blank_to_none(paper['primary_module_for_filing']), paper['primary_module_confidence'], paper['primary_module_assignment_rule'], paper['primary_module_override_reason'],
                 paper['classification_source_field'], paper['classification_source_confidence'], paper['classification_parser_rule'],
                 paper['first_hand_sources_checked'], paper['source_checked_at'], paper['progress_title'], paper['pdf_status'], paper['evidence_status'], paper['note_status'], paper['master_status'],
                 paper['final_modules_or_bucket_raw'], json_list(paper['final_modules_or_bucket']), paper['source_limited'], paper['batch'], paper['closed'], bool_to_int(paper['active_confirmed_core']),
@@ -585,6 +585,7 @@ def validate_core_analysis_foreign_keys() -> None:
     conn = sqlite3.connect(SQLITE_PATH)
     try:
         tables = (
+            'papers',
             'paper_modules',
             'workflow_mirror_paper_modules',
             'paper_general_method_buckets',
@@ -618,6 +619,26 @@ def validate_core_analysis_foreign_keys() -> None:
         assert_build_condition(
             ('papers', 'paper_id', 'paper_id') in fk_targets,
             f'{table} SQLite table is missing expected foreign key to papers(paper_id)',
+        )
+    papers_fk_targets = {
+        (str(row[2]), str(row[3]), str(row[4]))
+        for row in fk_rows_by_table['papers']
+    }
+    assert_build_condition(
+        ('taxonomy_index', 'primary_module_for_filing', 'code') in papers_fk_targets,
+        'papers SQLite table is missing expected foreign key to taxonomy_index(code) for primary_module_for_filing',
+    )
+    for table in ('paper_modules', 'workflow_mirror_paper_modules'):
+        fk_targets = {(str(row[2]), str(row[3]), str(row[4])) for row in fk_rows_by_table[table]}
+        assert_build_condition(
+            ('taxonomy_index', 'module_code', 'code') in fk_targets,
+            f'{table} SQLite table is missing expected foreign key to taxonomy_index(code) for module_code',
+        )
+    for table in ('pdf_evidence_status', 'pdf_inventory'):
+        fk_targets = {(str(row[2]), str(row[3]), str(row[4])) for row in fk_rows_by_table[table]}
+        assert_build_condition(
+            ('taxonomy_index', 'primary_module_for_filing', 'code') in fk_targets,
+            f'{table} SQLite table is missing expected foreign key to taxonomy_index(code) for primary_module_for_filing',
         )
 
 def validate_auxiliary_analysis_tables(
@@ -655,7 +676,7 @@ def validate_auxiliary_analysis_tables(
                 row['asset_size_bytes'],
                 row['source_limited'],
                 row.get('source_checked_at', ''),
-                row['primary_module_for_filing'],
+                blank_to_none(row['primary_module_for_filing']),
                 bool_to_int(row['active_confirmed_core']),
             )
             for row in pdf_archive_registry
@@ -862,7 +883,7 @@ def validate_owner_loaded_and_inventory_tables(
                 row['title'],
                 row['pdf_path'],
                 row['sha256'],
-                row['primary_module_for_filing'],
+                blank_to_none(row['primary_module_for_filing']),
                 json_list(row['scientific_object_modules']),
                 row['pdf_status'],
                 row['evidence_status'],
@@ -1536,7 +1557,7 @@ def build_sqlite(
             legacy_main_class TEXT, legacy_secondary_class TEXT, legacy_tertiary_class TEXT, secondary_class_source TEXT, secondary_class_confidence TEXT, secondary_class_review_status TEXT, fourth_level_topic TEXT, new_fourth_level TEXT,
             agent_type_json TEXT NOT NULL, research_workflow_role_json TEXT NOT NULL, validation_type_json TEXT NOT NULL, scientific_contribution_type_json TEXT NOT NULL,
             evidence_strength TEXT, citation_priority TEXT, remarks TEXT, scientific_object_modules_json TEXT NOT NULL, general_method_bucket TEXT NOT NULL,
-            object_coverage_mode TEXT, primary_module_for_filing TEXT, primary_module_confidence TEXT, primary_module_assignment_rule TEXT, primary_module_override_reason TEXT,
+            object_coverage_mode TEXT, primary_module_for_filing TEXT REFERENCES taxonomy_index(code), primary_module_confidence TEXT, primary_module_assignment_rule TEXT, primary_module_override_reason TEXT,
             classification_source_field TEXT, classification_source_confidence TEXT, classification_parser_rule TEXT,
             first_hand_sources_checked TEXT, source_checked_at TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
             note_status TEXT, master_status TEXT, final_modules_or_bucket_raw TEXT, final_modules_or_bucket_json TEXT NOT NULL, source_limited TEXT, batch TEXT, closed TEXT,
@@ -1545,7 +1566,7 @@ def build_sqlite(
         CREATE TABLE paper_modules (
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             assignment_scope TEXT NOT NULL,
-            module_code TEXT NOT NULL,
+            module_code TEXT NOT NULL REFERENCES taxonomy_index(code),
             module_kind TEXT NOT NULL,
             sort_order INTEGER NOT NULL,
             is_primary_for_filing INTEGER NOT NULL,
@@ -1556,7 +1577,7 @@ def build_sqlite(
         CREATE TABLE workflow_mirror_paper_modules (
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             assignment_scope TEXT NOT NULL,
-            module_code TEXT NOT NULL,
+            module_code TEXT NOT NULL REFERENCES taxonomy_index(code),
             module_kind TEXT NOT NULL,
             sort_order INTEGER NOT NULL,
             is_primary_for_filing INTEGER NOT NULL,
@@ -1692,7 +1713,7 @@ def build_sqlite(
             asset_size_bytes INTEGER,
             source_limited TEXT,
             source_checked_at TEXT,
-            primary_module_for_filing TEXT,
+            primary_module_for_filing TEXT REFERENCES taxonomy_index(code),
             active_confirmed_core INTEGER NOT NULL
         );
         CREATE TABLE paper_assets (
@@ -1719,7 +1740,7 @@ def build_sqlite(
             active_confirmed_core INTEGER NOT NULL,
             inclusion_status TEXT
         );
-        CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT, scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL);
+        CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT REFERENCES taxonomy_index(code), scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL);
         CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT, access_note TEXT);
         CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, active_confirmed_core INTEGER NOT NULL, inclusion_status TEXT);
         CREATE VIEW active_confirmed_core_papers AS SELECT * FROM papers WHERE active_confirmed_core = 1;
@@ -2133,7 +2154,7 @@ def build_sqlite(
                 paper['legacy_main_class'], paper['legacy_secondary_class'], paper['legacy_tertiary_class'], paper['secondary_class_source'], paper['secondary_class_confidence'], paper['secondary_class_review_status'], paper['fourth_level_topic'], paper['new_fourth_level'],
                 json_list(paper['agent_type']), json_list(paper['research_workflow_role']), json_list(paper['validation_type']), json_list(paper['scientific_contribution_type']),
                 paper['evidence_strength'], paper['citation_priority'], paper['remarks'], json_list(paper['scientific_object_modules']), paper['general_method_bucket'], paper['object_coverage_mode'],
-                paper['primary_module_for_filing'], paper['primary_module_confidence'], paper['primary_module_assignment_rule'], paper['primary_module_override_reason'],
+                blank_to_none(paper['primary_module_for_filing']), paper['primary_module_confidence'], paper['primary_module_assignment_rule'], paper['primary_module_override_reason'],
                 paper['classification_source_field'], paper['classification_source_confidence'], paper['classification_parser_rule'],
                 paper['first_hand_sources_checked'], paper['source_checked_at'], paper['progress_title'], paper['pdf_status'], paper['evidence_status'], paper['note_status'], paper['master_status'],
                 paper['final_modules_or_bucket_raw'], json_list(paper['final_modules_or_bucket']), paper['source_limited'], paper['batch'], paper['closed'], bool_to_int(paper['active_confirmed_core']),
@@ -2255,7 +2276,7 @@ def build_sqlite(
                 row['asset_size_bytes'],
                 row['source_limited'],
                 row.get('source_checked_at', ''),
-                row['primary_module_for_filing'],
+                blank_to_none(row['primary_module_for_filing']),
                 bool_to_int(row['active_confirmed_core']),
             )
             for row in pdf_archive_registry
@@ -2292,7 +2313,7 @@ def build_sqlite(
             for row in note_manifest
         ])
         conn.executemany('INSERT INTO pdf_inventory VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [
-            (row['paper_id'], row['title'], row['pdf_path'], row['sha256'], row['primary_module_for_filing'], json_list(row['scientific_object_modules']), row['pdf_status'], row['evidence_status'], bool_to_int(row['active_confirmed_core']))
+            (row['paper_id'], row['title'], row['pdf_path'], row['sha256'], blank_to_none(row['primary_module_for_filing']), json_list(row['scientific_object_modules']), row['pdf_status'], row['evidence_status'], bool_to_int(row['active_confirmed_core']))
             for row in pdf_manifest
         ])
         conn.executemany('INSERT INTO missing_pdf_inventory VALUES(?, ?, ?, ?, ?, ?, ?, ?)', [
