@@ -1081,6 +1081,7 @@ def validate_evidence_sqlite_constraints() -> None:
                 'paper_assets',
                 'notes',
                 'pdf_inventory',
+                'missing_pdf_inventory',
                 'note_inventory',
             )
         }
@@ -1091,11 +1092,13 @@ def validate_evidence_sqlite_constraints() -> None:
     paper_assets_sql = table_sql_rows['paper_assets'][0] if table_sql_rows['paper_assets'] else ''
     notes_sql = table_sql_rows['notes'][0] if table_sql_rows['notes'] else ''
     pdf_inventory_sql = table_sql_rows['pdf_inventory'][0] if table_sql_rows['pdf_inventory'] else ''
+    missing_pdf_inventory_sql = table_sql_rows['missing_pdf_inventory'][0] if table_sql_rows['missing_pdf_inventory'] else ''
     note_inventory_sql = table_sql_rows['note_inventory'][0] if table_sql_rows['note_inventory'] else ''
     normalized_pdf_evidence_sql = " ".join(pdf_evidence_sql.split())
     normalized_paper_assets_sql = " ".join(paper_assets_sql.split())
     normalized_notes_sql = " ".join(notes_sql.split())
     normalized_pdf_inventory_sql = " ".join(pdf_inventory_sql.split())
+    normalized_missing_pdf_inventory_sql = " ".join(missing_pdf_inventory_sql.split())
     normalized_note_inventory_sql = " ".join(note_inventory_sql.split())
 
     for fragment in (
@@ -1165,6 +1168,14 @@ def validate_evidence_sqlite_constraints() -> None:
         assert_build_condition(
             fragment in normalized_pdf_inventory_sql,
             f'pdf_inventory SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+    for fragment in (
+        "source_limited IS NULL OR source_limited IN ('', 'no', 'yes')",
+        "trim(access_note) <> ''",
+    ):
+        assert_build_condition(
+            fragment in normalized_missing_pdf_inventory_sql,
+            f'missing_pdf_inventory SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
 
 def validate_papers_sqlite_constraints() -> None:
@@ -2639,7 +2650,7 @@ def build_sqlite(
             inclusion_status TEXT
         );
         CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, pdf_path TEXT NOT NULL CHECK (trim(pdf_path) <> ''), sha256 TEXT NOT NULL CHECK (length(sha256) = 64 AND sha256 NOT GLOB '*[^0-9a-f]*'), primary_module_for_filing TEXT REFERENCES taxonomy_index(code), scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)));
-        CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT, access_note TEXT);
+        CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT CHECK (source_limited IS NULL OR source_limited IN ('', 'no', 'yes')), access_note TEXT CHECK (trim(access_note) <> ''));
         CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, note_path TEXT NOT NULL CHECK (active_confirmed_core <> 1 OR trim(note_path) <> ''), note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)), active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)), inclusion_status TEXT);
         CREATE VIEW active_confirmed_core_papers AS SELECT * FROM papers WHERE active_confirmed_core = 1;
         CREATE VIEW active_missing_local_pdf AS SELECT * FROM papers WHERE active_confirmed_core = 1 AND pdf_exists = 0;

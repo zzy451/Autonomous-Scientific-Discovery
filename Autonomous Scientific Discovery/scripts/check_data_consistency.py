@@ -3387,6 +3387,42 @@ def main() -> None:
             missing_manifest_ids == {row["paper_id"] for row in active_no_local_pdf},
             "missing_pdf_manifest paper_id coverage does not match active no-local-PDF rows",
         )
+        papers_by_id = {row["paper_id"]: row for row in papers}
+        for row in missing_pdf_manifest:
+            paper_id = row["paper_id"]
+            paper_row = papers_by_id[paper_id]
+            assert_true(
+                row["title"] == paper_row["title"],
+                f"missing_pdf_manifest title mismatch for {paper_id}: {row['title']!r} != {paper_row['title']!r}",
+            )
+            assert_true(
+                row["doi"] == paper_row["doi"],
+                f"missing_pdf_manifest doi mismatch for {paper_id}: {row['doi']!r} != {paper_row['doi']!r}",
+            )
+            assert_true(
+                row["url"] == paper_row["url"],
+                f"missing_pdf_manifest url mismatch for {paper_id}: {row['url']!r} != {paper_row['url']!r}",
+            )
+            assert_true(
+                row["pdf_status"] == paper_row["pdf_status"],
+                f"missing_pdf_manifest pdf_status mismatch for {paper_id}: {row['pdf_status']!r} != {paper_row['pdf_status']!r}",
+            )
+            assert_true(
+                row["evidence_status"] == paper_row["evidence_status"],
+                f"missing_pdf_manifest evidence_status mismatch for {paper_id}: {row['evidence_status']!r} != {paper_row['evidence_status']!r}",
+            )
+            assert_true(
+                row["source_limited"] == paper_row["source_limited"],
+                f"missing_pdf_manifest source_limited mismatch for {paper_id}: {row['source_limited']!r} != {paper_row['source_limited']!r}",
+            )
+            assert_true(
+                row["access_note"] == paper_row["remarks"],
+                f"missing_pdf_manifest access_note mismatch for {paper_id}",
+            )
+            assert_true(
+                isinstance(row["access_note"], str) and bool(row["access_note"].strip()),
+                f"missing_pdf_manifest access_note must be non-blank for {paper_id}",
+            )
 
         for row in pdf_manifest:
             pdf_path = row["pdf_path"]
