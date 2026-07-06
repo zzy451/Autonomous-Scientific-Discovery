@@ -711,6 +711,8 @@ def validate_discipline_sqlite_constraints() -> None:
         "trim(assignment_reason) <> ''",
         "assignment_status NOT IN ('active_code', 'retired_code', 'redirected_code') OR pending_reason IS NULL",
         "assignment_status <> 'redirected_code' OR redirected_to_code GLOB '[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9]'",
+        "assignment_status IN ('retired_code', 'redirected_code') OR retired_at IS NULL",
+        "assignment_status NOT IN ('retired_code', 'redirected_code') OR retired_at IS NOT NULL",
         "source_legacy_secondary_class = primary_taxonomy_code_2lvl",
         "source_primary_module_for_filing = substr(discipline_local_code, 1, 2)",
         "source_primary_module_for_filing = substr(primary_taxonomy_code_2lvl, 1, 2)",
@@ -1465,6 +1467,14 @@ def validate_owner_loaded_and_inventory_tables(
                     AND retired_at NOT GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'
                 )
                 OR (
+                    assignment_status IN ('retired_code', 'redirected_code')
+                    AND retired_at IS NULL
+                )
+                OR (
+                    assignment_status NOT IN ('retired_code', 'redirected_code')
+                    AND retired_at IS NOT NULL
+                )
+                OR (
                     assigned_by IS NULL
                     OR trim(assigned_by) = ''
                 )
@@ -2157,6 +2167,14 @@ def build_sqlite(
             CHECK (
                 assignment_status NOT IN ('active_code', 'retired_code', 'redirected_code')
                 OR pending_reason IS NULL
+            ),
+            CHECK (
+                assignment_status IN ('retired_code', 'redirected_code')
+                OR retired_at IS NULL
+            ),
+            CHECK (
+                assignment_status NOT IN ('retired_code', 'redirected_code')
+                OR retired_at IS NOT NULL
             ),
             CHECK (
                 assignment_status = 'redirected_code'
