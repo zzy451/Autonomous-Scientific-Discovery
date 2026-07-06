@@ -3,9 +3,12 @@ from __future__ import annotations
 import argparse
 import csv
 import sqlite3
+import textwrap
 from pathlib import Path
 
 import matplotlib
+import numpy as np
+from scipy.interpolate import PchipInterpolator
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -18,17 +21,17 @@ DEFAULT_OUTPUT_DIR = DATA_DIR / "figures" / "review_charts"
 
 MODULE_CODES = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"]
 MODULE_LABELS = {
-    "01": "01  Formal / Info / Comp",
-    "02": "02  Physics / Astro",
-    "03": "03  Chemistry",
-    "04": "04  Materials",
-    "05": "05  Earth / Environment",
-    "06": "06  Life Sciences",
-    "07": "07  Medical / Health",
-    "08": "08  Agriculture",
-    "09": "09  Engineering",
-    "10": "10  Aerospace / Marine / Transport",
-    "11": "11  Social / Behavioral / Econ",
+    "01": "Formal, Information and Computational Sciences",
+    "02": "Physics, Astronomy and Cosmic Sciences",
+    "03": "Chemical Sciences",
+    "04": "Materials Science",
+    "05": "Earth and Environmental Sciences",
+    "06": "Life Sciences",
+    "07": "Medical and Health Sciences",
+    "08": "Agricultural, Food, Forestry, Animal and Fishery Sciences",
+    "09": "Engineering and Industrial Technology Sciences",
+    "10": "Aerospace, Marine and Transportation Sciences",
+    "11": "Social, Behavioral, Economic and Knowledge Systems Sciences",
 }
 
 COLORS = {
@@ -38,6 +41,20 @@ COLORS = {
     "rust": "#e76f51",
     "slate": "#577590",
     "cloud": "#d9e2ec",
+}
+
+MODULE_LINE_COLORS = {
+    "01": "#264653",
+    "02": "#3a86ff",
+    "03": "#f4a261",
+    "04": "#e76f51",
+    "05": "#6c757d",
+    "06": "#2a9d8f",
+    "07": "#d62828",
+    "08": "#8ac926",
+    "09": "#7b2cbf",
+    "10": "#4361ee",
+    "11": "#bc6c25",
 }
 
 
@@ -93,6 +110,10 @@ def apply_chart_style() -> None:
 def fetch_rows(conn: sqlite3.Connection, sql: str, params: tuple[object, ...] = ()) -> list[sqlite3.Row]:
     conn.row_factory = sqlite3.Row
     return conn.execute(sql, params).fetchall()
+
+
+def wrap_label(label: str, width: int = 18) -> str:
+    return "\n".join(textwrap.wrap(label, width=width, break_long_words=False))
 
 
 def export_year_trend(conn: sqlite3.Connection, output_dir: Path) -> None:
@@ -179,6 +200,152 @@ def export_formal_module_bar(conn: sqlite3.Connection, output_dir: Path) -> None
     ax.invert_yaxis()
     fig.tight_layout()
     fig.savefig(output_dir / "formal_module_assignment_counts.png", bbox_inches="tight")
+    plt.close(fig)
+
+
+def export_multimodule_year_lines(conn: sqlite3.Connection, output_dir: Path) -> None:
+    min_year_row = fetch_rows(
+        conn,
+        """
+        SELECT MIN(CAST(p.year AS INTEGER)) AS start_year
+        FROM papers p
+        JOIN paper_modules pm ON pm.paper_id = p.paper_id
+        WHERE p.active_confirmed_core = 1
+          AND pm.assignment_scope = 'scientific_object_modules'
+          AND pm.module_kind = 'formal_module'
+          AND p.year GLOB '[0-9][0-9][0-9][0-9]'
+        """,
+    )
+    start_year = int(min_year_row[0]["start_year"])
+    end_year = 2026
+    years = list(range(start_year, end_year + 1))
+
+    raw_rows = fetch_rows(
+        conn,
+        """
+        SELECT
+            CAST(p.year AS INTEGER) AS year,
+            pm.module_code,
+            COUNT(DISTINCT pm.paper_id) AS paper_count
+        FROM papers p
+        JOIN paper_modules pm ON pm.paper_id = p.paper_id
+        WHERE p.active_confirmed_core = 1
+          AND pm.assignment_scope = 'scientific_object_modules'
+          AND pm.module_kind = 'formal_module'
+          AND p.year GLOB '[0-9][0-9][0-9][0-9]'
+        GROUP BY CAST(p.year AS INTEGER), pm.module_code
+        ORDER BY CAST(p.year AS INTEGER), pm.module_code
+        """,
+    )
+
+    count_map = {
+        (int(row["year"]), str(row["module_code"])): int(row["paper_count"])
+        for row in raw_rows
+    }
+    csv_rows: list[dict[str, object]] = []
+    for year in years:
+        row: dict[str, object] = {"year": year}
+        for code in MODULE_CODES:
+            value = count_map.get((year, code), 0)
+            row[code] = value
+        csv_rows.append(row)
+
+    write_csv(
+        output_dir / "multimodule_year_trend_by_module.csv",
+        ["year", *MODULE_CODES],
+        csv_rows,
+    )
+
+    fig, ax = plt.subplots(figsize=(13.2, 7.2))
+    for code in MODULE_CODES:
+        series = np.array([int(row[code]) for row in csv_rows], dtype=float)
+        x = np.array(years, dtype=float)
+        x_dense = np.linspace(x.min(), x.max(), 400)
+        curve = PchipInterpolator(x, series)(x_dense)
+        ax.plot(
+            x_dense,
+            curve,
+            linewidth=2.0,
+            color=MODULE_LINE_COLORS[code],
+            label=MODULE_LABELS[code],
+        )
+        ax.plot(
+            x,
+            series,
+            linestyle="None",
+            marker="o",
+            markersize=3.2,
+            color=MODULE_LINE_COLORS[code],
+        )
+    ax.set_title("Multi-Module Formal Module Year Trend")
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Expanded paper count")
+    ax.set_xlim(start_year, end_year)
+    ax.set_xticks(years)
+    ax.tick_params(axis="x", rotation=45)
+    ax.grid(axis="y", linestyle="--", alpha=0.8)
+    ax.legend(
+        title="Primary-level class",
+        ncol=2,
+        frameon=False,
+        loc="upper left",
+        bbox_to_anchor=(0.0, 1.02),
+        fontsize=9,
+        title_fontsize=10,
+    )
+    fig.tight_layout()
+    fig.savefig(output_dir / "multimodule_year_trend_by_module.png", bbox_inches="tight")
+    plt.close(fig)
+
+
+def export_multimodule_module_bar(conn: sqlite3.Connection, output_dir: Path) -> None:
+    rows = fetch_rows(
+        conn,
+        """
+        SELECT
+            pm.module_code,
+            COUNT(DISTINCT pm.paper_id) AS paper_count
+        FROM papers p
+        JOIN paper_modules pm ON pm.paper_id = p.paper_id
+        WHERE p.active_confirmed_core = 1
+          AND pm.assignment_scope = 'scientific_object_modules'
+          AND pm.module_kind = 'formal_module'
+        GROUP BY pm.module_code
+        ORDER BY pm.module_code
+        """,
+    )
+
+    csv_rows = [
+        {
+            "module_code": str(row["module_code"]),
+            "paper_count": int(row["paper_count"]),
+            "module_label": MODULE_LABELS[str(row["module_code"])],
+        }
+        for row in rows
+    ]
+    write_csv(
+        output_dir / "multimodule_module_counts_bar.csv",
+        ["module_code", "module_label", "paper_count"],
+        csv_rows,
+    )
+
+    codes = [row["module_code"] for row in csv_rows]
+    values = [row["paper_count"] for row in csv_rows]
+    labels = [wrap_label(MODULE_LABELS[code], width=14) for code in codes]
+    colors = [MODULE_LINE_COLORS[code] for code in codes]
+
+    fig, ax = plt.subplots(figsize=(14.8, 7.2))
+    bars = ax.bar(labels, values, color=colors, width=0.72)
+    ax.set_title("Multi-Module Formal Module Counts")
+    ax.set_xlabel("Primary-level class")
+    ax.set_ylabel("Expanded paper count")
+    ax.grid(axis="y", linestyle="--", alpha=0.8)
+    ax.set_axisbelow(True)
+    ax.tick_params(axis="x", rotation=18)
+    for bar, value in zip(bars, values):
+        ax.text(bar.get_x() + bar.get_width() / 2, value + 1, str(value), ha="center", va="bottom", fontsize=9)
+    fig.tight_layout()
+    fig.savefig(output_dir / "multimodule_module_counts_bar.png", bbox_inches="tight")
     plt.close(fig)
 
 
@@ -272,6 +439,8 @@ def main() -> None:
     with sqlite3.connect(args.db) as conn:
         export_year_trend(conn, args.output_dir)
         export_formal_module_bar(conn, args.output_dir)
+        export_multimodule_year_lines(conn, args.output_dir)
+        export_multimodule_module_bar(conn, args.output_dir)
         export_primary_filing_bar(conn, args.output_dir)
         export_pdf_coverage_bar(conn, args.output_dir)
     print(f"Generated review charts in {args.output_dir}")
