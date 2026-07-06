@@ -652,6 +652,10 @@ def validate_discipline_sqlite_constraints() -> None:
         'discipline_code_assignments_one_active_per_paper partial index is missing or malformed',
     )
     for fragment in (
+        "assignment_id GLOB 'DCA-[0-9][0-9][0-9][0-9][0-9][0-9]'",
+        "assigned_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
+        "retired_at IS NULL OR retired_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
+        "trim(assigned_by) <> ''",
         "assignment_status NOT IN ('active_code', 'retired_code', 'redirected_code') OR pending_reason IS NULL",
         "assignment_status <> 'redirected_code' OR redirected_to_code GLOB '[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9]'",
         "substr(discipline_local_code, 1, 2) = substr(primary_taxonomy_code_2lvl, 1, 2)",
@@ -1377,6 +1381,20 @@ def validate_owner_loaded_and_inventory_tables(
             FROM discipline_code_assignments
             WHERE
                 (
+                    assignment_id NOT GLOB 'DCA-[0-9][0-9][0-9][0-9][0-9][0-9]'
+                )
+                OR (
+                    assigned_at NOT GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'
+                )
+                OR (
+                    retired_at IS NOT NULL
+                    AND retired_at NOT GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'
+                )
+                OR (
+                    assigned_by IS NULL
+                    OR trim(assigned_by) = ''
+                )
+                OR (
                     assignment_status IN ('active_code', 'retired_code', 'redirected_code')
                     AND pending_reason IS NOT NULL
                 )
@@ -1998,7 +2016,7 @@ def build_sqlite(
             source_limited TEXT
         );
         CREATE TABLE discipline_code_assignments (
-            assignment_id TEXT PRIMARY KEY,
+            assignment_id TEXT PRIMARY KEY CHECK (assignment_id GLOB 'DCA-[0-9][0-9][0-9][0-9][0-9][0-9]'),
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             discipline_local_code TEXT,
             primary_taxonomy_code_2lvl TEXT,
@@ -2011,9 +2029,9 @@ def build_sqlite(
                     'non_discipline_general_method'
                 )
             ),
-            assigned_at TEXT NOT NULL,
-            assigned_by TEXT NOT NULL,
-            retired_at TEXT,
+            assigned_at TEXT NOT NULL CHECK (assigned_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'),
+            assigned_by TEXT NOT NULL CHECK (trim(assigned_by) <> ''),
+            retired_at TEXT CHECK (retired_at IS NULL OR retired_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'),
             redirected_to_code TEXT,
             assignment_reason TEXT NOT NULL,
             pending_reason TEXT,
