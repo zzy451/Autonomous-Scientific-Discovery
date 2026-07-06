@@ -641,6 +641,42 @@ def validate_core_analysis_foreign_keys() -> None:
             f'{table} SQLite table is missing expected foreign key to taxonomy_index(code) for primary_module_for_filing',
         )
 
+def validate_reference_owner_foreign_keys() -> None:
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        change_log_fk_rows = conn.execute('PRAGMA foreign_key_list(change_log)').fetchall()
+        classification_terms_fk_rows = conn.execute('PRAGMA foreign_key_list(classification_terms)').fetchall()
+        classification_terms_sql_row = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'classification_terms'"
+        ).fetchone()
+    finally:
+        conn.close()
+
+    change_log_fk_targets = {
+        (str(row[2]), str(row[3]), str(row[4]))
+        for row in change_log_fk_rows
+    }
+    classification_terms_fk_targets = {
+        (str(row[2]), str(row[3]), str(row[4]))
+        for row in classification_terms_fk_rows
+    }
+    classification_terms_sql = classification_terms_sql_row[0] if classification_terms_sql_row else ''
+
+    assert_build_condition(
+        ('papers', 'paper_id', 'paper_id') in change_log_fk_targets,
+        'change_log SQLite table is missing expected foreign key to papers(paper_id)',
+    )
+    assert_build_condition(
+        ('taxonomy_index', 'parent_primary_code', 'code') in classification_terms_fk_targets,
+        'classification_terms SQLite table is missing expected foreign key to taxonomy_index(code) for parent_primary_code',
+    )
+    assert_build_condition(
+        "term_level IN ('primary', 'secondary')" in classification_terms_sql
+        and "term_level = 'primary'" in classification_terms_sql
+        and "term_level = 'secondary'" in classification_terms_sql,
+        'classification_terms SQLite table is missing expected term-level CHECK constraints',
+    )
+
 def validate_auxiliary_analysis_tables(
     papers: list[dict[str, object]],
     pdf_archive_registry: list[dict[str, object]],
@@ -1522,8 +1558,8 @@ def build_sqlite(
         CREATE TABLE taxonomy_index (code TEXT PRIMARY KEY, label TEXT NOT NULL, kind TEXT NOT NULL);
         CREATE TABLE classification_terms (
             taxonomy_code TEXT NOT NULL,
-            term_level TEXT NOT NULL,
-            parent_primary_code TEXT,
+            term_level TEXT NOT NULL CHECK (term_level IN ('primary', 'secondary')),
+            parent_primary_code TEXT REFERENCES taxonomy_index(code),
             label TEXT NOT NULL,
             definition TEXT NOT NULL,
             include_json TEXT NOT NULL,
@@ -1531,11 +1567,15 @@ def build_sqlite(
             status TEXT NOT NULL,
             source TEXT NOT NULL,
             review_status TEXT,
+            CHECK (
+                (term_level = 'primary' AND parent_primary_code IS NULL)
+                OR (term_level = 'secondary' AND parent_primary_code IS NOT NULL)
+            ),
             PRIMARY KEY (taxonomy_code, term_level)
         );
         CREATE TABLE change_log (
             change_id TEXT PRIMARY KEY,
-            paper_id TEXT NOT NULL,
+            paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             changed_at TEXT NOT NULL,
             changed_by TEXT NOT NULL,
             change_type TEXT NOT NULL,
@@ -2117,20 +2157,6 @@ def build_sqlite(
         ])
         classification_term_rows = build_classification_term_rows(classification_code_index)
         change_log_rows = load_jsonl(CHANGE_LOG_JSONL) if CHANGE_LOG_JSONL.exists() else []
-        conn.executemany('INSERT INTO change_log VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [
-            (
-                row['change_id'],
-                row['paper_id'],
-                row['changed_at'],
-                row['changed_by'],
-                row['change_type'],
-                json.dumps(row.get('old_value'), ensure_ascii=False),
-                json.dumps(row.get('new_value'), ensure_ascii=False),
-                row['reason'],
-                row.get('related_commit'),
-            )
-            for row in change_log_rows
-        ])
         conn.executemany('INSERT INTO classification_terms VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             (
                 row['taxonomy_code'],
@@ -2161,6 +2187,20 @@ def build_sqlite(
                 paper['record_status'], paper['inclusion_decision'], paper['duplicate_of'], paper['last_reviewed_at'], paper['last_reviewed_by'], paper['exported_at'],
             )
             for paper in papers
+        ])
+        conn.executemany('INSERT INTO change_log VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+            (
+                row['change_id'],
+                row['paper_id'],
+                row['changed_at'],
+                row['changed_by'],
+                row['change_type'],
+                json.dumps(row.get('old_value'), ensure_ascii=False),
+                json.dumps(row.get('new_value'), ensure_ascii=False),
+                row['reason'],
+                row.get('related_commit'),
+            )
+            for row in change_log_rows
         ])
         canonical_module_rows = [
             row for row in module_rows if row['assignment_scope'] == 'scientific_object_modules'
@@ -2377,6 +2417,7 @@ def main() -> None:
     validate_discipline_local_code_registry_outputs(discipline_local_code_registry)
     validate_discipline_sqlite_constraints()
     validate_core_analysis_foreign_keys()
+    validate_reference_owner_foreign_keys()
     validate_auxiliary_analysis_tables(
         papers,
         pdf_archive_registry,
