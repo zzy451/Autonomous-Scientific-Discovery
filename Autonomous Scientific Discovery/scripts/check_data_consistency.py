@@ -3425,12 +3425,67 @@ def main() -> None:
             )
 
         for row in pdf_manifest:
+            paper_row = papers_by_id[row["paper_id"]]
             pdf_path = row["pdf_path"]
+            assert_true(
+                row["title"] == paper_row["title"],
+                f"pdf_manifest title mismatch for {row['paper_id']}: {row['title']!r} != {paper_row['title']!r}",
+            )
+            assert_true(
+                row["pdf_path"] == paper_row["pdf_path"],
+                f"pdf_manifest pdf_path mismatch for {row['paper_id']}: {row['pdf_path']!r} != {paper_row['pdf_path']!r}",
+            )
+            assert_true(
+                row["primary_module_for_filing"] == paper_row["primary_module_for_filing"],
+                f"pdf_manifest primary_module_for_filing mismatch for {row['paper_id']}: {row['primary_module_for_filing']!r} != {paper_row['primary_module_for_filing']!r}",
+            )
+            assert_true(
+                row["scientific_object_modules"] == paper_row["scientific_object_modules"],
+                f"pdf_manifest scientific_object_modules mismatch for {row['paper_id']}",
+            )
+            assert_true(
+                row["pdf_status"] == paper_row["pdf_status"],
+                f"pdf_manifest pdf_status mismatch for {row['paper_id']}: {row['pdf_status']!r} != {paper_row['pdf_status']!r}",
+            )
+            assert_true(
+                row["evidence_status"] == paper_row["evidence_status"],
+                f"pdf_manifest evidence_status mismatch for {row['paper_id']}: {row['evidence_status']!r} != {paper_row['evidence_status']!r}",
+            )
+            assert_true(
+                row["active_confirmed_core"] == paper_row["active_confirmed_core"],
+                f"pdf_manifest active_confirmed_core mismatch for {row['paper_id']}: {row['active_confirmed_core']!r} != {paper_row['active_confirmed_core']!r}",
+            )
             assert_true((ROOT / pdf_path).exists(), f"PDF path does not exist: {pdf_path}")
             assert_true(bool(row["sha256"]), f"Missing sha256 for {row['paper_id']}")
+            assert_true(
+                re.fullmatch(r"[0-9a-f]{64}", str(row["sha256"])) is not None,
+                f"pdf_manifest sha256 has invalid format for {row['paper_id']}: {row['sha256']!r}",
+            )
 
         note_manifest_ids = {row["paper_id"] for row in note_manifest}
         assert_true(note_manifest_ids == set(paper_ids), "note_manifest paper_id coverage mismatch")
+        for row in note_manifest:
+            paper_row = papers_by_id[row["paper_id"]]
+            assert_true(
+                row["title"] == paper_row["title"],
+                f"note_manifest title mismatch for {row['paper_id']}: {row['title']!r} != {paper_row['title']!r}",
+            )
+            assert_true(
+                row["note_path"] == paper_row["note_path"],
+                f"note_manifest note_path mismatch for {row['paper_id']}: {row['note_path']!r} != {paper_row['note_path']!r}",
+            )
+            assert_true(
+                row["note_exists"] == paper_row["note_exists"],
+                f"note_manifest note_exists mismatch for {row['paper_id']}: {row['note_exists']!r} != {paper_row['note_exists']!r}",
+            )
+            assert_true(
+                row["active_confirmed_core"] == paper_row["active_confirmed_core"],
+                f"note_manifest active_confirmed_core mismatch for {row['paper_id']}: {row['active_confirmed_core']!r} != {paper_row['active_confirmed_core']!r}",
+            )
+            assert_true(
+                row["inclusion_status"] == paper_row["inclusion_status"],
+                f"note_manifest inclusion_status mismatch for {row['paper_id']}: {row['inclusion_status']!r} != {paper_row['inclusion_status']!r}",
+            )
 
         validate_authoritative_sources(papers)
         validate_registry_layer(
