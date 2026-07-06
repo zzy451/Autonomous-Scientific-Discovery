@@ -5,6 +5,7 @@ import csv
 import json
 import os
 import re
+import subprocess
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
 
@@ -787,6 +788,12 @@ def validate_discipline_local_code_registry(
         and re.fullmatch(r"[0-9a-f]{40}", only_source_commit) is not None,
         "discipline_local_code_registry source_commit must be a non-empty 40-hex git commit id",
     )
+    current_head_commit = get_git_head_commit()
+    if current_head_commit:
+        assert_true(
+            only_source_commit == current_head_commit,
+            "discipline_local_code_registry source_commit must match current git HEAD",
+        )
     assert_true(
         len(worktree_dirty_values) == 1,
         "discipline_local_code_registry worktree_dirty must be uniform across the snapshot",
@@ -1198,6 +1205,18 @@ def load_jsonl(path: Path) -> List[Dict[str, object]]:
         if line.strip():
             rows.append(json.loads(line))
     return rows
+
+
+def get_git_head_commit() -> str:
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+        ).strip()
+    except Exception:
+        return ""
 
 
 def load_csv_rows(path: Path) -> List[Dict[str, str]]:
