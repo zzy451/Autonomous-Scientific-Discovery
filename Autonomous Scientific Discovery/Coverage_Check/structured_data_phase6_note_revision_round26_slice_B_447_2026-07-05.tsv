@@ -1,4 +1,0 @@
-paper_id	title	note_path	drift_flags	planned_check
-ASD-0719	Mission Operations of Earth Observing-1 with Onboard Autonomy	Notes/10_Aerospace_Marine_and_Transportation_Sciences/Rabideau_2006_EO1_Mission_Operations_Onboard_Autonomy.md	status_harmonization	retire stale `to_read` residue while preserving truthful no-local-archive wording and the frozen `05;10` boundary
-ASD-0721	Integrated AI in Space: The Autonomous Sciencecraft on Earth Observing One	Notes/10_Aerospace_Marine_and_Transportation_Sciences/Chien_2006_Integrated_AI_in_Space_EO1.md	status_harmonization	retire stale `to_read` residue while preserving truthful no-local-archive wording and the frozen `05;10` boundary
-ASD-0852	Autonomous science for an ExoMars Rover-like mission	Notes/10_Aerospace_Marine_and_Transportation_Sciences/Woods_2009_ExoMars_Rover_Like_Mission.md	status_harmonization	retire stale top pending wording now that the Batch29Partial1 writeback is already stable

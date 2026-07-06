@@ -1,8 +1,0 @@
-paper_id	final_agent_inclusion	supported_modules	final_01_04_bucket	primary_module_for_filing	boundary_type	confidence	source_limited	safety_access_status	note_revision_required	master_update_required	final_reason
-ASD-0765	yes	05	none	05	05_stable_singlemodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms stable climate-science object coverage; keep `05`.
-ASD-0772	yes	05	none	05	05_stable_singlemodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms stable seismology object coverage; keep `05`.
-ASD-0049	yes	06	none	06	06_stable_singlemodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms stable bioinformatics / scRNA-seq object coverage; keep `06`.
-ASD-0137	yes	06;07	none	06	06_07_stable_multimodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms stable genomics primary coverage plus biomedical validation support; keep `06;07`.
-ASD-0141	yes	06;07	none	06	06_07_stable_multimodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms stable multi-omics regulation primary coverage plus disease-case support; keep `06;07`.
-ASD-0370	yes	06	none	06	06_stable_singlemodule	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms stable protein-engineering object coverage; keep `06`.
- 

@@ -1,4 +1,0 @@
-paper_id	note_path	final_modules	primary_module_for_filing	source_limited	expected_note_update
-ASD-0587	Notes/03_Chemical_Sciences/Unknown_2026_MOSAIC_Chemical_Synthesis.md	03	03	no	Add local archived PDF path; add Phase6FollowupR16Approx local PDF recheck; keep `03` chemistry anchor.
-ASD-0665	Notes/03_Chemical_Sciences/Unknown_2026_TSAgent.md	03	03	no	Add local archived PDF path; add Phase6FollowupR16Approx local PDF recheck; keep `03` transition-state chemistry anchor.
-ASD-0832	Notes/03_Chemical_Sciences/Mopgar_2026_Nikolas_Catalyst_Discovery.md	03	03	no	Add local archived PDF path; add Phase6FollowupR16Approx local PDF recheck; keep `03` catalyst-discovery anchor.

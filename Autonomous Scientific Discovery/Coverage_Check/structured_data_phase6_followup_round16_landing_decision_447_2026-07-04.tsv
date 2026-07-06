@@ -1,7 +1,0 @@
-paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
-ASD-0587	authoritative_land	authoritative_plus_note	03	none	03	no	yes	yes	Local archived full text supports clearing the old source-limited ceiling while keeping the stable chemistry synthesis `03` anchor.
-ASD-0665	authoritative_land	authoritative_plus_note	03	none	03	no	yes	yes	Local archived full text supports clearing the old source-limited ceiling while keeping the stable transition-state chemistry `03` anchor.
-ASD-0832	authoritative_land	authoritative_plus_note	03	none	03	no	yes	yes	Local archived full text supports clearing the old source-limited ceiling while keeping the stable catalyst-discovery `03` anchor.
-ASD-0838	authoritative_land	authoritative_plus_note	03	none	03	no	yes	yes	Local archived full text supports clearing the old source-limited ceiling while keeping chemistry primary for autonomous continuous-flow discovery.
-ASD-0491	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text supports clearing the old source-limited ceiling while keeping the stable perovskite thin-film materials `04` anchor.
-ASD-0558	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text supports clearing the old source-limited ceiling while keeping the stable optical-materials `04` anchor.

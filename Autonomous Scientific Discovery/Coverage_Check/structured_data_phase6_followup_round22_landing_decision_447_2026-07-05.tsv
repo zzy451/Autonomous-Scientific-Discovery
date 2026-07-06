@@ -1,4 +1,0 @@
-paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
-ASD-0637	authoritative_land	authoritative_plus_note	11	none	11	no	yes	yes	Local archived full text supports upgrading `evidence_status` to `first_hand_full_text`, preserving `11.07`, and correcting placeholder author metadata.
-ASD-0644	authoritative_land	authoritative_plus_note	11	none	11	no	yes	yes	Local archived full text supports upgrading `evidence_status` to `first_hand_full_text` while preserving the stable `11.02` reading.
-ASD-0717	authoritative_land	authoritative_plus_note	11	none	11	no	yes	yes	Local archived full text supports upgrading `evidence_status` to `first_hand_full_text` while preserving the stable `11.07` reading.

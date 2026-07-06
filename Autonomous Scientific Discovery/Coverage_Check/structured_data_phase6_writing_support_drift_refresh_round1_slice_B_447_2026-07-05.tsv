@@ -1,3 +1,0 @@
-paper_id	title	note_path	module_code	section_role	drift_flags	planned_check
-ASD-0662	Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research	Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2026_Mimosa_Framework.md	05	anchor	cross_module;stale_to_read	retire stale `to_read` residue while preserving the frozen multi-module `03;05;06;11` reading and `01` filing-only location
-ASD-0691	OASIS: Onboard Autonomous Science Investigation System for Opportunistic Rover Science	Notes/10_Aerospace_Marine_and_Transportation_Sciences/Castano_2007_OASIS_Rover_Science.md	05	boundary	cross_module;stale_to_read;stale_source_state	retire stale `to_read` and no-local-PDF wording while preserving the frozen `05;10` boundary

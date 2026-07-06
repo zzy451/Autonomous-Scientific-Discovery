@@ -1,7 +1,0 @@
-paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
-ASD-0572	conservative_hold	evidence_only	04;06	none	04	yes	no	no	Stable multi-module reading remains intact, but official and preprint routes stayed challenge-blocked and produced no new full-text or archive delta.
-ASD-0617	conservative_hold	evidence_only	06	none	06	yes	no	no	Nature preview HTML is stronger than before, but it still does not justify claiming first-hand full text or clearing `source_limited`.
-ASD-0727	conservative_hold	evidence_only	05	none	05	yes	no	no	Stable geospatial `05` reading remains intact, but ScienceDirect and HKU repository routes stayed blocked and produced no readable full text.
-ASD-0859	conservative_hold	evidence_only	05	none	05	yes	no	no	Current rerun did not improve beyond the prior article-page packet, so no authoritative landing is supportable.
-ASD-0860	conservative_hold	evidence_only	05	none	05	yes	no	no	Official routing confirms the stable cryosphere-monitoring anchor, but this round still lacks readable full text or a local archive.
-ASD-0861	conservative_hold	evidence_only	05	none	05	yes	no	no	Official routing confirms the stable flood-monitoring anchor, but this round still lacks readable full text or a local archive.

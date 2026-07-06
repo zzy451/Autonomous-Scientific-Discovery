@@ -14,6 +14,15 @@ desktop.ini
 /LLM Survey/
 /Scientific Discovery by Agents/
 /codex_agents_sdk_demo/
+/Autonomous Scientific Discovery/Coverage_Check/**
+!/Autonomous Scientific Discovery/Coverage_Check/
+!/Autonomous Scientific Discovery/Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md
+!/Autonomous Scientific Discovery/Coverage_Check/structured_data_long_term_catalog_and_index_plan_2026-07-05.md
+/Autonomous Scientific Discovery/Section_Scratch/
+/Autonomous Scientific Discovery/paper_note_templates_and_prompts/
+/Autonomous Scientific Discovery/domain_classification_rules.md
+/Autonomous Scientific Discovery/review_scope_and_classification_policy.md
+/Autonomous Scientific Discovery/science_domain_taxonomy.md
 
 # LaTeX build artifacts
 *.aux

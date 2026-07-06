@@ -1,7 +1,0 @@
-paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
-ASD-0014	authoritative_land	authoritative_plus_note	06	none	06	no	yes	yes	Local archived PDF reread supports clearing the old source-limited ceiling while keeping the stable `06` spatial-biology anchor.
-ASD-0055	authoritative_land	authoritative_plus_note	06	none	06	no	yes	yes	Local archived PDF reread supports clearing the old source-limited ceiling while keeping the stable `06` bioinformatics anchor.
-ASD-0085	authoritative_land	authoritative_plus_note	04;06	none	06	no	yes	yes	Local archived PDF reread supports clearing the old source-limited ceiling while keeping the stable relaxed `04;06` coverage.
-ASD-0357	authoritative_land	authoritative_plus_note	07	none	07	no	yes	yes	Local archived PDF reread supports clearing the old source-limited ceiling while keeping the stable `07` therapeutic-target-discovery anchor.
-ASD-0564	authoritative_land	authoritative_plus_note	07;06	none	07	no	yes	yes	Local archived PDF reread supports clearing the old source-limited ceiling while keeping the stable relaxed `07;06` coverage.
-ASD-0670	authoritative_land	authoritative_plus_note	07	none	07	no	yes	yes	Local archived PDF reread supports clearing the old source-limited ceiling while keeping the stable `07` drug-discovery anchor.

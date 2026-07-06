@@ -1,4 +1,0 @@
-paper_id	final_agent_inclusion	supported_modules	final_01_04_bucket	primary_module_for_filing	boundary_type	confidence	source_limited	safety_access_status	note_revision_required	master_update_required	final_reason
-ASD-0637	yes	11	none	11	11_07_stable_science_of_science	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms stable citation-network / science-of-science object coverage; keep `11.07`.
-ASD-0644	yes	11	none	11	11_02_stable_social_science	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms stable general social-science behavior object coverage; keep `11.02` rather than `11.07` or `01.04`.
-ASD-0717	yes	11	none	11	11_07_stable_knowledge_production	high	no	no_safety_blocker; locally_archived_full_text_checked	yes	yes	Local archived full text confirms stable scientific-literature / knowledge-production object coverage; keep `11.07`.

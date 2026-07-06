@@ -1,4 +1,0 @@
-paper_id	title	note_path	doi	url	primary_module_for_filing	canonical_modules_or_bucket	current_pdf_status	current_evidence_status	current_source_limited	current_pdf_exists	round_label	assigned_agent	slice_role
-ASD-0084	Automating alloy design and discovery with physics-aware multimodal multiagent ai	Notes/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.md	10.1073/pnas.2414074122	https://doi.org/10.1073/pnas.2414074122	04	04	archived_pdf	first_hand_pdf_checked_source_limited	yes	yes	Phase6FollowupR12Approx	Evidence-Agent-B	alloy_design_fulltext_recheck
-ASD-0666	MatClaw: An Autonomous Code-First LLM Agent for End-to-End Materials Exploration	Notes/04_Materials_Science/Unknown_2026_MatClaw.md		https://arxiv.org/abs/2604.02688	04	04	archived_pdf	source_limited_review_packet	yes	yes	Phase6FollowupR12Approx	Evidence-Agent-B	matclaw_fulltext_recheck
-

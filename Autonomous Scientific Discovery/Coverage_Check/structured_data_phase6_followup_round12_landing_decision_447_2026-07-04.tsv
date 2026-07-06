@@ -1,8 +1,0 @@
-paper_id	controller_decision	landing_scope	supported_modules	final_01_04_bucket	primary_module_for_filing	source_limited	authoritative_pair_change	note_writeback_required	rationale
-ASD-0507	authoritative_land	authoritative_plus_note	03	none	03	no	yes	yes	Local archived full text replaces the old preview-only ceiling and supports a clean `first_hand_full_text` chemistry landing.
-ASD-0684	authoritative_land	authoritative_plus_note	03	none	03	no	yes	yes	Local archived full text directly supports the chemistry-object reading and removes the old abstract-only source-limited ceiling.
-ASD-0084	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text confirms stable alloy / material-discovery evidence strong enough for authoritative landing plus note refresh.
-ASD-0666	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text confirms concrete CuInP2S6 materials demonstrations and supports clearing `source_limited`.
-ASD-0667	authoritative_land	authoritative_plus_note	04	none	04	no	yes	yes	Local archived full text confirms concrete high-Debye-temperature ceramics / Be-C-rich materials discovery and supports clearing `source_limited`.
-ASD-0653	authoritative_land	authoritative_plus_note	05	none	05	no	yes	yes	Local archived full text confirms a concrete Earth-observation scientific-task framework and supports a `05` first-hand full-text landing.
-

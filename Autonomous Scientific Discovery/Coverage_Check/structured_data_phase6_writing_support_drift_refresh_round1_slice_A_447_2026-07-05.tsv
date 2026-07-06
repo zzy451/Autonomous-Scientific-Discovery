@@ -1,4 +1,0 @@
-paper_id	title	note_path	module_code	section_role	drift_flags	planned_check
-ASD-0090	Agents for self-driving laboratories applied to quantum computing	Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Cao_2025_K_Agents_Quantum.md	02	anchor	stale_source_state	retire stale temporary-source wording and confirm local archived PDF is the authoritative source state
-ASD-0687	Agentic AI for Multi-Stage Physics Experiments at a Large-Scale User Facility Particle Accelerator	Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.md	02	exemplar	stale_to_read	retire stale `to_read` residue in the note summary while keeping the stable 02 anchor
-ASD-0653	Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents	Notes/05_Earth_and_Environmental_Sciences/Feng_2025_Earth_Agent.md	05	anchor	stale_to_read	retire stale `to_read` residue in the top metadata while keeping the stable 05 anchor
