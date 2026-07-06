@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 26
+- `PASS`: 27
 - `FAIL`: 0
 
 ## Items
@@ -164,3 +164,9 @@ Evidence: `Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py
 Explicit owner-initialization commands for discipline_code_assignments and classification_code_index exist, are documented, and both succeed in dry-run mode without writing owner files.
 
 Evidence: `scripts/init_discipline_code_assignments.py + scripts/init_classification_code_index.py + Data/README.md`
+
+### Item 27 - PASS
+
+Corpus/review query surfaces are documented and execute successfully for representative paper/module/status/source/evidence lookups.
+
+Evidence: `scripts/query_analysis_db.py + Data/README.md + representative query executions`

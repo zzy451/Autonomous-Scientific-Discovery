@@ -315,6 +315,24 @@ Show overall coverage / follow-up state summary:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" coverage-summary
 ```
 
+Show coverage/workflow status counts:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" status-summary
+```
+
+Show corpus year distribution:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" year-summary
+```
+
+Show corpus source distribution:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" source-summary
+```
+
 List active multi-module papers:
 
 ```bash
@@ -381,6 +399,12 @@ List canonical general-method bucket records:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" general-method-buckets
 ```
 
+List per-paper PDF/source evidence rows:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" pdf-evidence-status --missing-only
+```
+
 List asset-inventory rows:
 
 ```bash
@@ -442,6 +466,7 @@ Operational notes:
 - `paper` prints the full structured paper payload, including both canonical fields and workflow-mirror inspection fields; do not treat `final_modules_or_bucket` as canonical.
 - `missing-pdf`, `multi-module`, and `module` print tab-separated tables for shell use or redirection.
 - `source-limited` prints the active source-limited inventory and can be expanded with `--all` when non-core rows matter.
+- `status-summary`, `year-summary`, and `source-summary` are corpus/workflow review surfaces, not canonical classification counts.
 - `multi-module-combo-summary` is the canonical combination-frequency view for multi-module papers.
 - `module-pdf-coverage` is the canonical per-module PDF coverage table.
 - `bucket-0104-summary` is the canonical `01.04` bucket count, distinct from the mirror audit command.
@@ -450,6 +475,7 @@ Operational notes:
 - `secondary-class-summary` and `secondary-class-pdf-coverage` are the spreadsheet-friendly secondary-filing review surfaces built from `discipline_local_code_registry` plus taxonomy-owner terms.
 - `classification-terms` is the direct taxonomy vocabulary inspection surface for `classification_code_index.json` after it is loaded into SQLite.
 - `general-method-buckets` lists canonical `01.04` bucket records from the explicit `paper_general_method_buckets` relation instead of inferring them from mixed-scope module tables.
+- `pdf-evidence-status` exposes the normalized per-paper evidence rows loaded into SQLite `pdf_evidence_status`.
 - `paper-assets` and `notes` expose the normalized asset/note inventory tables for missing-file review, export sanity checks, and downstream maintenance audits.
 - `change-log-summary` is the audit summary surface for owner-maintenance activity by `change_type`.
 - `change-log` lists raw audit rows from `Data/change_log.jsonl` after they are loaded into SQLite.

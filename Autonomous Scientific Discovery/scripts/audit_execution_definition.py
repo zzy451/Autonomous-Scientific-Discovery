@@ -108,6 +108,22 @@ def run_dry_run_command(script_path: Path) -> tuple[bool, str]:
     return True, ((completed.stdout or "") + (completed.stderr or ""))
 
 
+def run_query_command(arguments: list[str]) -> tuple[bool, str]:
+    try:
+        completed = subprocess.run(
+            [sys.executable, str(QUERY_SCRIPT), *arguments],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            check=True,
+        )
+    except Exception as exc:
+        return False, str(exc)
+    return True, ((completed.stdout or "") + (completed.stderr or ""))
+
+
 def check(condition: bool, success: str, failure: str) -> tuple[str, str]:
     return ("PASS", success) if condition else ("FAIL", failure)
 
@@ -1129,6 +1145,40 @@ def main() -> None:
         "Owner-initialization command surfaces are missing, undocumented, or their dry-run flows no longer succeed as explicit non-export initialization paths.",
     )
     add_result(results, "26", status, detail, "scripts/init_discipline_code_assignments.py + scripts/init_classification_code_index.py + Data/README.md")
+
+    corpus_query_tokens = (
+        "paper ASD-0001",
+        "multi-module",
+        "module-pdf-coverage",
+        "status-summary",
+        "year-summary",
+        "source-summary",
+        "pdf-evidence-status",
+    )
+    query_runs = {
+        "paper": run_query_command(["paper", "ASD-0001"]),
+        "module": run_query_command(["module", "04"]),
+        "multi_module": run_query_command(["multi-module"]),
+        "module_pdf_coverage": run_query_command(["module-pdf-coverage"]),
+        "status_summary": run_query_command(["status-summary"]),
+        "year_summary": run_query_command(["year-summary"]),
+        "source_summary": run_query_command(["source-summary"]),
+        "pdf_evidence_status": run_query_command(["pdf-evidence-status", "--missing-only"]),
+    }
+    query_outputs_ok = all(
+        ok and output.strip() and "Traceback" not in output
+        for ok, output in query_runs.values()
+    )
+    status, detail = check(
+        all(token in readme_text for token in corpus_query_tokens)
+        and all(token in query_script_text for token in ("paper", "module-pdf-coverage", "status-summary", "year-summary", "source-summary", "pdf-evidence-status"))
+        and query_outputs_ok,
+        (
+            "Corpus/review query surfaces are documented and execute successfully for representative paper/module/status/source/evidence lookups."
+        ),
+        "One or more documented corpus/review query surfaces is missing from README/query_analysis_db.py or failed when executed during the representative execution audit.",
+    )
+    add_result(results, "27", status, detail, "scripts/query_analysis_db.py + Data/README.md + representative query executions")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")
