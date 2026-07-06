@@ -2569,7 +2569,27 @@ def validate_registry_layer(
     require_row_fields(
         pdf_registry_path,
         pdf_registry_rows,
-        ("paper_id", "active_confirmed_core", "pdf_exists", "pdf_status"),
+        (
+            "asset_id",
+            "asset_role",
+            "paper_id",
+            "title",
+            "pdf_path",
+            "pdf_exists",
+            "pdf_status",
+            "evidence_status",
+            "pdf_evidence_type",
+            "pdf_check_status",
+            "is_main_text",
+            "is_supplementary",
+            "source_limited",
+            "source_checked_at",
+            "primary_module_for_filing",
+            "scientific_object_modules",
+            "general_method_bucket",
+            "active_confirmed_core",
+            "exported_at",
+        ),
     )
     assert_unique_registry_key(pdf_registry_path, pdf_registry_rows, ("paper_id",))
     pdf_registry_rows_by_id = {}
@@ -2619,6 +2639,18 @@ def validate_registry_layer(
         registry_row = pdf_registry_rows_by_id[paper_id]
         paper_row = paper_rows_by_id[paper_id]
         assert_true(
+            registry_row["asset_id"] == f"{paper_id}:primary_pdf",
+            f"pdf_archive_registry asset_id mismatch for {paper_id}: {registry_row['asset_id']!r}",
+        )
+        assert_true(
+            registry_row["asset_role"] == "primary_pdf",
+            f"pdf_archive_registry asset_role mismatch for {paper_id}: {registry_row['asset_role']!r}",
+        )
+        assert_true(
+            registry_row["title"] == paper_row["title"],
+            f"pdf_archive_registry title mismatch for {paper_id}: {registry_row['title']!r} != {paper_row['title']!r}",
+        )
+        assert_true(
             registry_row["pdf_status"] == paper_row["pdf_status"],
             f"pdf_archive_registry pdf_status mismatch for {paper_id}: {registry_row['pdf_status']!r} != {paper_row['pdf_status']!r}",
         )
@@ -2635,6 +2667,30 @@ def validate_registry_layer(
                 registry_row["pdf_path"] == paper_row["pdf_path"],
                 f"pdf_archive_registry pdf_path mismatch for {paper_id}: {registry_row['pdf_path']!r} != {paper_row['pdf_path']!r}",
             )
+        assert_true(
+            registry_row["source_limited"] == paper_row["source_limited"],
+            f"pdf_archive_registry source_limited mismatch for {paper_id}: {registry_row['source_limited']!r} != {paper_row['source_limited']!r}",
+        )
+        assert_true(
+            registry_row["primary_module_for_filing"] == paper_row["primary_module_for_filing"],
+            f"pdf_archive_registry primary_module_for_filing mismatch for {paper_id}: {registry_row['primary_module_for_filing']!r} != {paper_row['primary_module_for_filing']!r}",
+        )
+        assert_true(
+            registry_row["scientific_object_modules"] == paper_row["scientific_object_modules"],
+            f"pdf_archive_registry scientific_object_modules mismatch for {paper_id}",
+        )
+        assert_true(
+            registry_row["general_method_bucket"] == paper_row["general_method_bucket"],
+            f"pdf_archive_registry general_method_bucket mismatch for {paper_id}: {registry_row['general_method_bucket']!r} != {paper_row['general_method_bucket']!r}",
+        )
+        assert_true(
+            registry_row["active_confirmed_core"] == paper_row["active_confirmed_core"],
+            f"pdf_archive_registry active_confirmed_core mismatch for {paper_id}: {registry_row['active_confirmed_core']!r} != {paper_row['active_confirmed_core']!r}",
+        )
+        assert_true(
+            registry_row["exported_at"] == paper_row["exported_at"],
+            f"pdf_archive_registry exported_at mismatch for {paper_id}: {registry_row['exported_at']!r} != {paper_row['exported_at']!r}",
+        )
         if registry_row.get("source_checked_at"):
             assert_true(
                 re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", registry_row["source_checked_at"]) is not None,
