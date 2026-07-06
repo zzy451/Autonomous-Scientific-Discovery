@@ -801,6 +801,54 @@ def main() -> None:
     )
     add_result(results, "18", status, detail, "scripts/manage_*.py + scripts/append_change_log.py + Data/README.md")
 
+    field_ownership_matrix_text = read_text(FIELD_OWNERSHIP_MATRIX)
+    field_ownership_tokens = (
+        "source_file: Paper_Lists/agent_master_paper_list.md",
+        "fallback_order:",
+        "required_trace_fields:",
+        "source_confidence",
+        "parser_rule",
+        "discipline_code_assignments.jsonl",
+        "classification_code_index.json",
+        "repair the owner file, then rerun `export -> check -> build`",
+    )
+    status, detail = check(
+        all(token in field_ownership_matrix_text for token in field_ownership_tokens),
+        (
+            "field_ownership_matrix.md encodes the canonical master-derived fallback/trace contract "
+            "and the owner-vs-derived repair rule for discipline-code and taxonomy owner files."
+        ),
+        "field_ownership_matrix.md is missing one or more frozen canonical-lane fallback/trace or owner-vs-derived repair semantics required by the long-term plan.",
+    )
+    add_result(results, "19", status, detail, "Data/field_ownership_matrix.md")
+
+    check_policy_text = read_text(CHECK_POLICY)
+    check_policy_tokens = (
+        "`ERROR`",
+        "`WARNING`",
+        "`INFO`",
+        "Must be fixed before build / commit",
+        "Does not block, but must enter review backlog",
+        "Does not block",
+    )
+    severity_enforcement_tokens = (
+        "validate_classification_code_index_owner(",
+        "validate_discipline_code_assignments_owner(",
+        "validate_payload_against_schema_file(",
+        "validate_jsonl_rows_against_schema_file(",
+        'severity_order = ("ERROR", "WARNING", "INFO")',
+    )
+    status, detail = check(
+        all(token in check_policy_text for token in check_policy_tokens)
+        and all(token in read_text(ROOT / "scripts" / "check_data_consistency.py") for token in severity_enforcement_tokens),
+        (
+            "check_policy.md defines the frozen ERROR/WARNING/INFO build semantics, and "
+            "check_data_consistency.py enforces schema-backed owner validation plus the same severity buckets."
+        ),
+        "The frozen severity/build policy is not fully documented in check_policy.md and/or check_data_consistency.py is missing the expected schema-backed owner validation and severity enforcement hooks.",
+    )
+    add_result(results, "20", status, detail, "Data/check_policy.md + scripts/check_data_consistency.py")
+
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")
 

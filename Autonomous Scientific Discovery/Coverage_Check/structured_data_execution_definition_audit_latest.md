@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 18
+- `PASS`: 20
 - `FAIL`: 0
 
 ## Items
@@ -116,3 +116,15 @@ Evidence: `Data/change_log.jsonl + Data/papers.sqlite + scripts/query_analysis_d
 Explicit owner-maintenance helper commands exist for discipline-code, taxonomy, progress, master, and direct change-log updates, and README documents those operational entry points.
 
 Evidence: `scripts/manage_*.py + scripts/append_change_log.py + Data/README.md`
+
+### Item 19 - PASS
+
+field_ownership_matrix.md encodes the canonical master-derived fallback/trace contract and the owner-vs-derived repair rule for discipline-code and taxonomy owner files.
+
+Evidence: `Data/field_ownership_matrix.md`
+
+### Item 20 - PASS
+
+check_policy.md defines the frozen ERROR/WARNING/INFO build semantics, and check_data_consistency.py enforces schema-backed owner validation plus the same severity buckets.
+
+Evidence: `Data/check_policy.md + scripts/check_data_consistency.py`
