@@ -585,6 +585,8 @@ def validate_discipline_local_code_registry(
     }
 
     seen_paper_ids = set()
+    seen_assignment_ids = set()
+    seen_active_codes: Dict[str, str] = {}
     generated_at_values = set()
     generated_by_values = set()
     source_commit_values = set()
@@ -610,6 +612,11 @@ def validate_discipline_local_code_registry(
             f"discipline_local_code_registry duplicate paper_id: {paper_id!r}",
         )
         seen_paper_ids.add(paper_id)
+        assert_true(
+            assignment_id not in seen_assignment_ids,
+            f"discipline_local_code_registry duplicate assignment_id: {assignment_id!r}",
+        )
+        seen_assignment_ids.add(assignment_id)
 
         ledger_row = ledger_by_assignment_id[assignment_id]
         paper_row = papers_by_id[paper_id]
@@ -636,6 +643,13 @@ def validate_discipline_local_code_registry(
         )
         assignment_status = str(row["assignment_status"])
         if assignment_status == "active_code":
+            discipline_local_code = str(row["discipline_local_code"]).strip()
+            assert_true(
+                discipline_local_code not in seen_active_codes,
+                "discipline_local_code_registry duplicate active discipline_local_code: "
+                f"{discipline_local_code!r} ({seen_active_codes.get(discipline_local_code)} vs {assignment_id})",
+            )
+            seen_active_codes[discipline_local_code] = assignment_id
             assert_true(
                 row["discipline_display_order"] == row["discipline_local_code"],
                 f"discipline_local_code_registry active_code discipline_display_order mismatch for {assignment_id}",
@@ -780,6 +794,10 @@ def validate_discipline_local_code_registry(
     assert_true(
         seen_paper_ids == expected_active_confirmed_core_ids,
         "discipline_local_code_registry paper coverage must exactly match active_confirmed_core papers",
+    )
+    assert_true(
+        seen_assignment_ids == current_snapshot_assignment_ids,
+        "discipline_local_code_registry assignment coverage must exactly match current snapshot rows in discipline_code_assignments.jsonl",
     )
 
 
