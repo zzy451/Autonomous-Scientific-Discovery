@@ -598,7 +598,28 @@ def validate_discipline_local_code_registry_outputs(
                         OR primary_module_for_filing IS NOT NULL
                         OR general_method_bucket <> '01.04_general_asd_methods_without_concrete_object_experiments'
                         OR scientific_object_modules_json <> '[]'
+                        OR (primary_module_confidence IS NOT NULL AND primary_module_confidence <> '')
+                        OR (primary_module_assignment_rule IS NOT NULL AND primary_module_assignment_rule <> '')
+                        OR (primary_module_override_reason IS NOT NULL AND primary_module_override_reason <> '')
                     )
+                )
+                OR (
+                    assignment_status = 'active_code'
+                    AND (
+                        primary_module_confidence IS NULL
+                        OR primary_module_confidence = ''
+                        OR primary_module_assignment_rule IS NULL
+                        OR primary_module_assignment_rule = ''
+                    )
+                )
+                OR (
+                    primary_module_assignment_rule = 'manual_override'
+                    AND (primary_module_override_reason IS NULL OR primary_module_override_reason = '')
+                )
+                OR (
+                    (primary_module_assignment_rule IS NULL OR primary_module_assignment_rule <> 'manual_override')
+                    AND primary_module_override_reason IS NOT NULL
+                    AND primary_module_override_reason <> ''
                 )
                 OR (
                     assignment_status = 'active_code'
@@ -792,6 +813,8 @@ def validate_discipline_sqlite_constraints() -> None:
         "source_commit NOT GLOB '*[^0-9a-f]*'",
         "primary_module_confidence IS NULL OR primary_module_confidence IN ('', 'high', 'medium', 'low')",
         "primary_module_assignment_rule IS NULL OR primary_module_assignment_rule IN ('', 'main_scientific_object', 'main_validation_object', 'direct_contribution_target', 'substantive_application_object', 'manual_override')",
+        "primary_module_assignment_rule = 'manual_override'",
+        "primary_module_override_reason IS NULL OR primary_module_override_reason = ''",
         "secondary_class_source IS NULL OR secondary_class_source IN ('legacy', 'normalized', 'manual_override')",
         "secondary_class_confidence IS NULL OR secondary_class_confidence IN ('high', 'medium', 'low')",
         "secondary_class_review_status IS NULL OR secondary_class_review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')",
@@ -809,6 +832,10 @@ def validate_discipline_sqlite_constraints() -> None:
         "pending_reason = 'missing_primary_module_for_filing'",
         "general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'",
         "scientific_object_modules_json = '[]'",
+        "primary_module_confidence IS NOT NULL",
+        "primary_module_confidence <> ''",
+        "primary_module_assignment_rule IS NOT NULL",
+        "primary_module_assignment_rule <> ''",
         "assignment_status <> 'active_code' OR ( pending_reason IS NULL AND retired_at IS NULL AND redirected_to_code IS NULL )",
         "assignment_status <> 'pending_secondary' OR ( pending_reason IS NOT NULL AND retired_at IS NULL AND redirected_to_code IS NULL )",
         "assignment_status <> 'non_discipline_general_method' OR ( pending_reason IS NULL AND retired_at IS NULL AND redirected_to_code IS NULL )",
@@ -2358,7 +2385,27 @@ def build_sqlite(
                     primary_module_for_filing IS NULL
                     AND general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'
                     AND scientific_object_modules_json = '[]'
+                    AND (primary_module_confidence IS NULL OR primary_module_confidence = '')
+                    AND (primary_module_assignment_rule IS NULL OR primary_module_assignment_rule = '')
+                    AND (primary_module_override_reason IS NULL OR primary_module_override_reason = '')
                 )
+            ),
+            CHECK (
+                assignment_status <> 'active_code'
+                OR (
+                    primary_module_confidence IS NOT NULL
+                    AND primary_module_confidence <> ''
+                    AND primary_module_assignment_rule IS NOT NULL
+                    AND primary_module_assignment_rule <> ''
+                )
+            ),
+            CHECK (
+                primary_module_assignment_rule <> 'manual_override'
+                OR (primary_module_override_reason IS NOT NULL AND primary_module_override_reason <> '')
+            ),
+            CHECK (
+                primary_module_assignment_rule = 'manual_override'
+                OR (primary_module_override_reason IS NULL OR primary_module_override_reason = '')
             ),
             CHECK (assigned_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'),
             CHECK (trim(assigned_by) <> ''),
