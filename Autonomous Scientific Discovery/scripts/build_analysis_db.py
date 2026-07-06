@@ -1092,6 +1092,11 @@ def validate_evidence_sqlite_constraints() -> None:
     notes_sql = table_sql_rows['notes'][0] if table_sql_rows['notes'] else ''
     pdf_inventory_sql = table_sql_rows['pdf_inventory'][0] if table_sql_rows['pdf_inventory'] else ''
     note_inventory_sql = table_sql_rows['note_inventory'][0] if table_sql_rows['note_inventory'] else ''
+    normalized_pdf_evidence_sql = " ".join(pdf_evidence_sql.split())
+    normalized_paper_assets_sql = " ".join(paper_assets_sql.split())
+    normalized_notes_sql = " ".join(notes_sql.split())
+    normalized_pdf_inventory_sql = " ".join(pdf_inventory_sql.split())
+    normalized_note_inventory_sql = " ".join(note_inventory_sql.split())
 
     for fragment in (
         "pdf_exists IN (0, 1)",
@@ -1102,14 +1107,17 @@ def validate_evidence_sqlite_constraints() -> None:
         "source_limited IS NULL OR source_limited IN ('', 'no', 'yes')",
         "active_confirmed_core IN (0, 1)",
         "NOT (is_main_text = 1 AND is_supplementary = 1)",
+        "asset_size_bytes IS NULL OR asset_size_bytes >= 0",
+        "source_checked_at IS NULL OR source_checked_at = '' OR source_checked_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
         "pdf_evidence_type <> 'main_pdf'",
+        "pdf_evidence_type <> 'main_pdf' OR pdf_exists = 1",
         "pdf_evidence_type <> 'supplementary_pdf'",
         "pdf_check_status <> 'source_limited'",
         "source_limited <> 'yes'",
         "pdf_check_status <> 'full_text_checked'",
     ):
         assert_build_condition(
-            fragment in pdf_evidence_sql,
+            fragment in normalized_pdf_evidence_sql,
             f'pdf_evidence_status SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
     for fragment in (
@@ -1121,9 +1129,14 @@ def validate_evidence_sqlite_constraints() -> None:
         "source_limited IS NULL OR source_limited IN ('', 'no', 'yes')",
         "NOT (is_main_text = 1 AND is_supplementary = 1)",
         "asset_type <> 'note'",
+        "asset_id = paper_id || ':' || asset_type",
+        "asset_size_bytes IS NULL OR asset_size_bytes >= 0",
+        "source_checked_at IS NULL OR source_checked_at = '' OR source_checked_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
+        "exported_at IS NULL OR exported_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T*'",
+        "asset_type <> 'note' OR IFNULL(source_checked_at, '') = ''",
     ):
         assert_build_condition(
-            fragment in paper_assets_sql,
+            fragment in normalized_paper_assets_sql,
             f'paper_assets SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
     for fragment in (
@@ -1132,15 +1145,15 @@ def validate_evidence_sqlite_constraints() -> None:
         "active_confirmed_core IN (0, 1)",
     ):
         assert_build_condition(
-            fragment in notes_sql,
+            fragment in normalized_notes_sql,
             f'notes SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
         assert_build_condition(
-            fragment in note_inventory_sql,
+            fragment in normalized_note_inventory_sql,
             f'note_inventory SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
     assert_build_condition(
-        "active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1))" in pdf_inventory_sql,
+        "active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1))" in normalized_pdf_inventory_sql,
         'pdf_inventory SQLite table is missing expected active_confirmed_core CHECK constraint',
     )
 
@@ -2543,9 +2556,19 @@ def build_sqlite(
             primary_module_for_filing TEXT REFERENCES taxonomy_index(code),
             active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
             CHECK (NOT (is_main_text = 1 AND is_supplementary = 1)),
+            CHECK (asset_size_bytes IS NULL OR asset_size_bytes >= 0),
+            CHECK (
+                source_checked_at IS NULL
+                OR source_checked_at = ''
+                OR source_checked_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'
+            ),
             CHECK (
                 pdf_evidence_type <> 'main_pdf'
                 OR (is_main_text = 1 AND is_supplementary = 0)
+            ),
+            CHECK (
+                pdf_evidence_type <> 'main_pdf'
+                OR pdf_exists = 1
             ),
             CHECK (
                 pdf_evidence_type <> 'supplementary_pdf'
@@ -2580,9 +2603,21 @@ def build_sqlite(
             source_checked_at TEXT,
             exported_at TEXT,
             CHECK (NOT (is_main_text = 1 AND is_supplementary = 1)),
+            CHECK (asset_id = paper_id || ':' || asset_type),
+            CHECK (asset_size_bytes IS NULL OR asset_size_bytes >= 0),
+            CHECK (
+                source_checked_at IS NULL
+                OR source_checked_at = ''
+                OR source_checked_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'
+            ),
+            CHECK (exported_at IS NULL OR exported_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T*'),
             CHECK (
                 asset_type <> 'note'
                 OR (is_main_text = 0 AND is_supplementary = 0)
+            ),
+            CHECK (
+                asset_type <> 'note'
+                OR IFNULL(source_checked_at, '') = ''
             )
         );
         CREATE TABLE notes (
