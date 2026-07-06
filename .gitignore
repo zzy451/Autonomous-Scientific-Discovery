@@ -14,10 +14,35 @@ desktop.ini
 /LLM Survey/
 /Scientific Discovery by Agents/
 /codex_agents_sdk_demo/
+/Autonomous Scientific Discovery/Notes/
+/Autonomous Scientific Discovery/Paper_Lists/
 /Autonomous Scientific Discovery/Coverage_Check/**
 !/Autonomous Scientific Discovery/Coverage_Check/
-!/Autonomous Scientific Discovery/Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md
-!/Autonomous Scientific Discovery/Coverage_Check/structured_data_long_term_catalog_and_index_plan_2026-07-05.md
+!/Autonomous Scientific Discovery/Coverage_Check/missing_pdf_evidence_status_public_register_25_2026-07-05.md
+/Autonomous Scientific Discovery/Data/**
+!/Autonomous Scientific Discovery/Data/
+!/Autonomous Scientific Discovery/Data/schema/
+!/Autonomous Scientific Discovery/Data/schema/classification_code_index.schema.json
+!/Autonomous Scientific Discovery/Data/schema/discipline_code_assignments.schema.json
+!/Autonomous Scientific Discovery/Data/classification_code_index.json
+!/Autonomous Scientific Discovery/Data/discipline_code_assignments.jsonl
+!/Autonomous Scientific Discovery/Data/papers.jsonl
+!/Autonomous Scientific Discovery/Data/papers.sqlite
+!/Autonomous Scientific Discovery/Data/discipline_local_code_registry.jsonl
+!/Autonomous Scientific Discovery/Data/pdf_manifest.json
+!/Autonomous Scientific Discovery/Data/missing_pdf_manifest.json
+!/Autonomous Scientific Discovery/Data/note_manifest.json
+!/Autonomous Scientific Discovery/Data/field_ownership_matrix.md
+!/Autonomous Scientific Discovery/Data/discipline_code_assignment_policy.md
+!/Autonomous Scientific Discovery/Data/primary_filing_policy.md
+!/Autonomous Scientific Discovery/Data/check_policy.md
+/Autonomous Scientific Discovery/scripts/**
+!/Autonomous Scientific Discovery/scripts/
+!/Autonomous Scientific Discovery/scripts/export_structured_data.py
+!/Autonomous Scientific Discovery/scripts/check_data_consistency.py
+!/Autonomous Scientific Discovery/scripts/build_analysis_db.py
+!/Autonomous Scientific Discovery/scripts/query_analysis_db.py
+!/Autonomous Scientific Discovery/scripts/run_structured_data_pipeline.py
 /Autonomous Scientific Discovery/Section_Scratch/
 /Autonomous Scientific Discovery/paper_note_templates_and_prompts/
 /Autonomous Scientific Discovery/domain_classification_rules.md
