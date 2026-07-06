@@ -652,6 +652,16 @@ def validate_discipline_sqlite_constraints() -> None:
         'discipline_code_assignments_one_active_per_paper partial index is missing or malformed',
     )
     for fragment in (
+        "assignment_status NOT IN ('active_code', 'retired_code', 'redirected_code') OR pending_reason IS NULL",
+        "assignment_status <> 'redirected_code' OR redirected_to_code GLOB '[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9]'",
+        "substr(discipline_local_code, 1, 2) = substr(primary_taxonomy_code_2lvl, 1, 2)",
+        "substr(discipline_local_code, 4, 2) = substr(primary_taxonomy_code_2lvl, 4, 2)",
+    ):
+        assert_build_condition(
+            fragment in normalized_assignment_sql,
+            f'discipline_code_assignments SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+    for fragment in (
         "primary_module_confidence IS NULL OR primary_module_confidence IN ('', 'high', 'medium', 'low')",
         "primary_module_assignment_rule IS NULL OR primary_module_assignment_rule IN ('', 'main_scientific_object', 'main_validation_object', 'direct_contribution_target', 'substantive_application_object', 'manual_override')",
         "secondary_class_source IS NULL OR secondary_class_source IN ('legacy', 'normalized', 'manual_override')",
@@ -1361,6 +1371,32 @@ def validate_owner_loaded_and_inventory_tables(
             ORDER BY paper_id
             '''
         ).fetchall()
+        discipline_assignment_semantic_violations = conn.execute(
+            '''
+            SELECT COUNT(*)
+            FROM discipline_code_assignments
+            WHERE
+                (
+                    assignment_status IN ('active_code', 'retired_code', 'redirected_code')
+                    AND pending_reason IS NOT NULL
+                )
+                OR (
+                    assignment_status = 'redirected_code'
+                    AND (
+                        redirected_to_code IS NULL
+                        OR redirected_to_code = ''
+                        OR redirected_to_code NOT GLOB '[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9]'
+                    )
+                )
+                OR (
+                    assignment_status IN ('active_code', 'retired_code', 'redirected_code')
+                    AND (
+                        substr(discipline_local_code, 1, 2) <> substr(primary_taxonomy_code_2lvl, 1, 2)
+                        OR substr(discipline_local_code, 4, 2) <> substr(primary_taxonomy_code_2lvl, 4, 2)
+                    )
+                )
+            '''
+        ).fetchone()[0]
     finally:
         conn.close()
 
@@ -1375,6 +1411,10 @@ def validate_owner_loaded_and_inventory_tables(
     assert_build_condition(
         actual_discipline_assignment_rows == expected_discipline_assignment_rows,
         'SQLite discipline_code_assignments table drifted from expected owner ledger rows',
+    )
+    assert_build_condition(
+        discipline_assignment_semantic_violations == 0,
+        'SQLite discipline_code_assignments table violated pending/redirect/code-prefix semantics',
     )
     assert_build_condition(
         actual_pdf_inventory_rows == expected_pdf_inventory_rows,
@@ -2001,8 +2041,23 @@ def build_sqlite(
                 OR pending_reason IS NULL
             ),
             CHECK (
+                assignment_status NOT IN ('active_code', 'retired_code', 'redirected_code')
+                OR pending_reason IS NULL
+            ),
+            CHECK (
                 assignment_status = 'redirected_code'
                 OR redirected_to_code IS NULL
+            ),
+            CHECK (
+                assignment_status <> 'redirected_code'
+                OR redirected_to_code GLOB '[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9]'
+            ),
+            CHECK (
+                assignment_status NOT IN ('active_code', 'retired_code', 'redirected_code')
+                OR (
+                    substr(discipline_local_code, 1, 2) = substr(primary_taxonomy_code_2lvl, 1, 2)
+                    AND substr(discipline_local_code, 4, 2) = substr(primary_taxonomy_code_2lvl, 4, 2)
+                )
             )
         );
         CREATE UNIQUE INDEX discipline_code_assignments_active_code_unique
