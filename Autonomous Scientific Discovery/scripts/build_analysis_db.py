@@ -724,7 +724,25 @@ def validate_discipline_local_code_registry_outputs(
                        OR COALESCE(r.redirected_to_code, '') <> COALESCE(d.redirected_to_code, '')
                        OR COALESCE(r.assignment_reason, '') <> COALESCE(d.assignment_reason, '')
                        OR COALESCE(r.pending_reason, '') <> COALESCE(d.pending_reason, '')
-                ) AS registry_ledger_field_mismatch
+                ) AS registry_ledger_field_mismatch,
+                (
+                    SELECT COUNT(*)
+                    FROM discipline_local_code_registry r
+                    JOIN papers p ON r.paper_id = p.paper_id
+                    WHERE COALESCE(r.primary_module_for_filing, '') <> COALESCE(p.primary_module_for_filing, '')
+                       OR COALESCE(r.primary_module_confidence, '') <> COALESCE(p.primary_module_confidence, '')
+                       OR COALESCE(r.primary_module_assignment_rule, '') <> COALESCE(p.primary_module_assignment_rule, '')
+                       OR COALESCE(r.primary_module_override_reason, '') <> COALESCE(p.primary_module_override_reason, '')
+                       OR COALESCE(r.legacy_secondary_class, '') <> COALESCE(p.legacy_secondary_class, '')
+                       OR COALESCE(r.secondary_class_source, '') <> COALESCE(p.secondary_class_source, '')
+                       OR COALESCE(r.secondary_class_confidence, '') <> COALESCE(p.secondary_class_confidence, '')
+                       OR COALESCE(r.secondary_class_review_status, '') <> COALESCE(p.secondary_class_review_status, '')
+                       OR COALESCE(r.general_method_bucket, '') <> COALESCE(p.general_method_bucket, '')
+                       OR COALESCE(r.title, '') <> COALESCE(p.title, '')
+                       OR COALESCE(r.note_path, '') <> COALESCE(p.note_path, '')
+                       OR COALESCE(r.pdf_path, '') <> COALESCE(p.pdf_path, '')
+                       OR r.active_confirmed_core <> p.active_confirmed_core
+                ) AS registry_papers_field_mismatch
             '''
         ).fetchone()
     finally:
@@ -768,6 +786,10 @@ def validate_discipline_local_code_registry_outputs(
     assert_build_condition(
         snapshot_coverage_counts[9] == 0,
         'SQLite registry mirrored ledger fields drifted from discipline assignments',
+    )
+    assert_build_condition(
+        snapshot_coverage_counts[10] == 0,
+        'SQLite registry mirrored paper fields drifted from papers table',
     )
 
 def validate_discipline_sqlite_constraints() -> None:
