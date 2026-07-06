@@ -638,6 +638,44 @@ def validate_discipline_local_code_registry_outputs(
                 OR (note_path IS NULL OR trim(note_path) = '')
             '''
         ).fetchone()[0]
+        snapshot_coverage_counts = conn.execute(
+            '''
+            SELECT
+                (SELECT COUNT(*) FROM papers WHERE active_confirmed_core = 1) AS active_papers,
+                (SELECT COUNT(*) FROM discipline_code_assignments WHERE assignment_status IN ('active_code', 'pending_secondary', 'non_discipline_general_method')) AS current_assignments,
+                (SELECT COUNT(*) FROM discipline_local_code_registry) AS registry_rows,
+                (
+                    SELECT COUNT(*)
+                    FROM papers p
+                    LEFT JOIN discipline_code_assignments d
+                      ON p.paper_id = d.paper_id
+                     AND d.assignment_status IN ('active_code', 'pending_secondary', 'non_discipline_general_method')
+                    WHERE p.active_confirmed_core = 1
+                      AND d.assignment_id IS NULL
+                ) AS active_missing_current_assignment,
+                (
+                    SELECT COUNT(*)
+                    FROM discipline_code_assignments d
+                    LEFT JOIN papers p ON p.paper_id = d.paper_id
+                    WHERE d.assignment_status IN ('active_code', 'pending_secondary', 'non_discipline_general_method')
+                      AND COALESCE(p.active_confirmed_core, 0) <> 1
+                ) AS current_assignment_non_active,
+                (
+                    SELECT COUNT(*)
+                    FROM discipline_code_assignments d
+                    LEFT JOIN discipline_local_code_registry r ON d.assignment_id = r.assignment_id
+                    WHERE d.assignment_status IN ('active_code', 'pending_secondary', 'non_discipline_general_method')
+                      AND r.assignment_id IS NULL
+                ) AS current_assignment_missing_registry,
+                (
+                    SELECT COUNT(*)
+                    FROM discipline_local_code_registry r
+                    LEFT JOIN discipline_code_assignments d ON r.assignment_id = d.assignment_id
+                    WHERE d.assignment_id IS NULL
+                       OR d.assignment_status NOT IN ('active_code', 'pending_secondary', 'non_discipline_general_method')
+                ) AS registry_non_current_assignment
+            '''
+        ).fetchone()
     finally:
         conn.close()
     assert_build_condition(
@@ -647,6 +685,26 @@ def validate_discipline_local_code_registry_outputs(
     assert_build_condition(
         semantic_violations == 0,
         'SQLite discipline_local_code_registry violated derived rank/display-order semantics',
+    )
+    assert_build_condition(
+        snapshot_coverage_counts[0] == snapshot_coverage_counts[1] == snapshot_coverage_counts[2],
+        'SQLite discipline current-snapshot counts drifted across papers, ledger, or registry',
+    )
+    assert_build_condition(
+        snapshot_coverage_counts[3] == 0,
+        'SQLite active confirmed-core papers are missing current discipline assignments',
+    )
+    assert_build_condition(
+        snapshot_coverage_counts[4] == 0,
+        'SQLite current discipline assignments point to non-active papers',
+    )
+    assert_build_condition(
+        snapshot_coverage_counts[5] == 0,
+        'SQLite current discipline assignments are missing registry snapshot rows',
+    )
+    assert_build_condition(
+        snapshot_coverage_counts[6] == 0,
+        'SQLite registry rows reference non-current or missing discipline assignments',
     )
 
 def validate_discipline_sqlite_constraints() -> None:
