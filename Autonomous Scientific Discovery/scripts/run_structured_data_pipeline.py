@@ -54,7 +54,7 @@ def print_preflight_summary() -> None:
 
 
 def run_step(script_name: str) -> None:
-    script_path = ROOT / "scripts" / script_name
+    script_path = Path("scripts") / script_name
     command = [sys.executable, str(script_path)]
     print(f"[pipeline] running {script_name}", flush=True)
     subprocess.run(command, cwd=ROOT, check=True)

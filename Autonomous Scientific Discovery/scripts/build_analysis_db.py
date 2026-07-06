@@ -802,7 +802,12 @@ def validate_discipline_sqlite_constraints() -> None:
             "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'discipline_local_code_registry'"
         ).fetchone()
         index_rows = conn.execute(
-            "SELECT name, sql FROM sqlite_master WHERE type = 'index' AND tbl_name = 'discipline_code_assignments'"
+            """
+            SELECT name, sql
+            FROM sqlite_master
+            WHERE type = 'index'
+              AND tbl_name IN ('discipline_code_assignments', 'discipline_local_code_registry')
+            """
         ).fetchall()
         assignment_fk_rows = conn.execute(
             "PRAGMA foreign_key_list(discipline_code_assignments)"
@@ -850,6 +855,16 @@ def validate_discipline_sqlite_constraints() -> None:
         'discipline_code_assignments_one_current_snapshot_per_paper' in index_sql_by_name
         and "WHERE assignment_status IN ('active_code', 'pending_secondary', 'non_discipline_general_method')" in index_sql_by_name['discipline_code_assignments_one_current_snapshot_per_paper'],
         'discipline_code_assignments_one_current_snapshot_per_paper partial index is missing or malformed',
+    )
+    assert_build_condition(
+        'discipline_local_code_registry_assignment_id_unique' in index_sql_by_name
+        and 'ON discipline_local_code_registry(assignment_id)' in index_sql_by_name['discipline_local_code_registry_assignment_id_unique'],
+        'discipline_local_code_registry_assignment_id_unique index is missing or malformed',
+    )
+    assert_build_condition(
+        'discipline_local_code_registry_active_code_unique' in index_sql_by_name
+        and "WHERE assignment_status = 'active_code'" in index_sql_by_name['discipline_local_code_registry_active_code_unique'],
+        'discipline_local_code_registry_active_code_unique partial index is missing or malformed',
     )
     for fragment in (
         "assignment_id GLOB 'DCA-[0-9][0-9][0-9][0-9][0-9][0-9]'",
@@ -2506,6 +2521,11 @@ def build_sqlite(
                 )
             )
         );
+        CREATE UNIQUE INDEX discipline_local_code_registry_assignment_id_unique
+        ON discipline_local_code_registry(assignment_id);
+        CREATE UNIQUE INDEX discipline_local_code_registry_active_code_unique
+        ON discipline_local_code_registry(discipline_local_code)
+        WHERE assignment_status = 'active_code';
         CREATE TABLE pdf_evidence_status (
             paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             title TEXT NOT NULL,
