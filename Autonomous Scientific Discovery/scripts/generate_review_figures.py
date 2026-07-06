@@ -277,15 +277,17 @@ def export_multimodule_year_lines(conn: sqlite3.Connection, output_dir: Path) ->
             markersize=3.2,
             color=MODULE_LINE_COLORS[code],
         )
-    ax.set_title("Multi-Module Formal Module Year Trend")
-    ax.set_xlabel("Year")
-    ax.set_ylabel("Expanded paper count")
+    ax.set_title(
+        "Annual Distribution of Included Agent Publications Across Primary Scientific Domains"
+    )
+    ax.set_xlabel("Publication Year")
+    ax.set_ylabel("Number of Publications (Multi-Domain Counting)")
     ax.set_xlim(start_year, end_year)
     ax.set_xticks(years)
     ax.tick_params(axis="x", rotation=45)
     ax.grid(axis="y", linestyle="--", alpha=0.8)
     ax.legend(
-        title="Primary-level class",
+        title="Primary Scientific Domain",
         ncol=2,
         frameon=False,
         loc="upper left",
@@ -336,9 +338,11 @@ def export_multimodule_module_bar(conn: sqlite3.Connection, output_dir: Path) ->
 
     fig, ax = plt.subplots(figsize=(14.8, 7.2))
     bars = ax.bar(labels, values, color=colors, width=0.72)
-    ax.set_title("Multi-Module Formal Module Counts")
-    ax.set_xlabel("Primary-level class")
-    ax.set_ylabel("Expanded paper count")
+    ax.set_title(
+        "Distribution of Included Agent Publications Across Primary Scientific Domains"
+    )
+    ax.set_xlabel("Primary Scientific Domain")
+    ax.set_ylabel("Number of Publications (Multi-Domain Counting)")
     ax.grid(axis="y", linestyle="--", alpha=0.8)
     ax.set_axisbelow(True)
     ax.tick_params(axis="x", rotation=18)
