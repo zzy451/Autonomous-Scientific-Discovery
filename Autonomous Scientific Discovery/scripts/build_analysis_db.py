@@ -761,6 +761,7 @@ def validate_evidence_sqlite_constraints() -> None:
         )
     for fragment in (
         "asset_type IN ('note', 'primary_pdf')",
+        "path TEXT NOT NULL",
         "asset_exists IN (0, 1)",
         "is_main_text IN (0, 1)",
         "is_supplementary IN (0, 1)",
@@ -773,6 +774,7 @@ def validate_evidence_sqlite_constraints() -> None:
             f'paper_assets SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
     for fragment in (
+        "note_path TEXT NOT NULL",
         "note_exists IN (0, 1)",
         "active_confirmed_core IN (0, 1)",
     ):
@@ -800,6 +802,9 @@ def validate_papers_sqlite_constraints() -> None:
 
     papers_sql = papers_sql_row[0] if papers_sql_row else ''
     required_fragments = (
+        "pdf_exists IN (0, 1)",
+        "note_exists IN (0, 1)",
+        "active_confirmed_core IN (0, 1)",
         "secondary_class_source IN ('legacy', 'normalized', 'manual_override')",
         "secondary_class_confidence IN ('high', 'medium', 'low')",
         "secondary_class_review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')",
@@ -1769,7 +1774,7 @@ def build_sqlite(
         );
         CREATE TABLE papers (
             paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, authors TEXT, year TEXT, source TEXT, doi_or_url TEXT, doi TEXT, url TEXT, arxiv_id TEXT,
-            pdf_path TEXT, pdf_exists INTEGER NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, is_agent TEXT, inclusion_status TEXT, exclusion_reason TEXT,
+            pdf_path TEXT, pdf_exists INTEGER NOT NULL CHECK (pdf_exists IN (0, 1)), note_path TEXT, note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)), is_agent TEXT, inclusion_status TEXT, exclusion_reason TEXT,
             legacy_main_class TEXT, legacy_secondary_class TEXT, legacy_tertiary_class TEXT, secondary_class_source TEXT CHECK (secondary_class_source IN ('legacy', 'normalized', 'manual_override')), secondary_class_confidence TEXT CHECK (secondary_class_confidence IN ('high', 'medium', 'low')), secondary_class_review_status TEXT CHECK (secondary_class_review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')), fourth_level_topic TEXT, new_fourth_level TEXT,
             agent_type_json TEXT NOT NULL, research_workflow_role_json TEXT NOT NULL, validation_type_json TEXT NOT NULL, scientific_contribution_type_json TEXT NOT NULL,
             evidence_strength TEXT, citation_priority TEXT, remarks TEXT, scientific_object_modules_json TEXT NOT NULL, general_method_bucket TEXT NOT NULL CHECK (general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')),
@@ -1777,7 +1782,7 @@ def build_sqlite(
             classification_source_field TEXT, classification_source_confidence TEXT CHECK (classification_source_confidence IS NULL OR classification_source_confidence IN ('high', 'medium', 'low')), classification_parser_rule TEXT CHECK (classification_parser_rule IS NULL OR classification_parser_rule IN ('structured_remark_token', 'legacy_general_method_fallback', 'legacy_main_class_fallback', 'needs_review')),
             first_hand_sources_checked TEXT, source_checked_at TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
             note_status TEXT, master_status TEXT, final_modules_or_bucket_raw TEXT, final_modules_or_bucket_json TEXT NOT NULL, source_limited TEXT, batch TEXT, closed TEXT,
-            active_confirmed_core INTEGER NOT NULL, record_status TEXT CHECK (record_status IS NULL OR record_status IN ('candidate', 'active_confirmed_core', 'background_only', 'excluded', 'duplicate', 'retired')), inclusion_decision TEXT, duplicate_of TEXT REFERENCES papers(paper_id) DEFERRABLE INITIALLY DEFERRED, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL,
+            active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)), record_status TEXT CHECK (record_status IS NULL OR record_status IN ('candidate', 'active_confirmed_core', 'background_only', 'excluded', 'duplicate', 'retired')), inclusion_decision TEXT, duplicate_of TEXT REFERENCES papers(paper_id) DEFERRABLE INITIALLY DEFERRED, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL,
             CHECK (duplicate_of IS NULL OR duplicate_of <> paper_id)
         );
         CREATE TABLE paper_modules (
@@ -1959,7 +1964,7 @@ def build_sqlite(
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             title TEXT NOT NULL,
             asset_type TEXT NOT NULL CHECK (asset_type IN ('note', 'primary_pdf')),
-            path TEXT,
+            path TEXT NOT NULL,
             asset_exists INTEGER NOT NULL CHECK (asset_exists IN (0, 1)),
             sha256 TEXT,
             asset_size_bytes INTEGER,
@@ -1978,14 +1983,14 @@ def build_sqlite(
         CREATE TABLE notes (
             paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             title TEXT NOT NULL,
-            note_path TEXT,
+            note_path TEXT NOT NULL,
             note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)),
             active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
             inclusion_status TEXT
         );
         CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT REFERENCES taxonomy_index(code), scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)));
         CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT, access_note TEXT);
-        CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)), active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)), inclusion_status TEXT);
+        CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, note_path TEXT NOT NULL, note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)), active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)), inclusion_status TEXT);
         CREATE VIEW active_confirmed_core_papers AS SELECT * FROM papers WHERE active_confirmed_core = 1;
         CREATE VIEW active_missing_local_pdf AS SELECT * FROM papers WHERE active_confirmed_core = 1 AND pdf_exists = 0;
         CREATE VIEW canonical_paper_modules AS
