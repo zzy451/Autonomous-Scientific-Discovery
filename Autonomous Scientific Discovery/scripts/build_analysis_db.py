@@ -827,6 +827,9 @@ def validate_reference_owner_foreign_keys() -> None:
     try:
         change_log_fk_rows = conn.execute('PRAGMA foreign_key_list(change_log)').fetchall()
         classification_terms_fk_rows = conn.execute('PRAGMA foreign_key_list(classification_terms)').fetchall()
+        change_log_sql_row = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'change_log'"
+        ).fetchone()
         classification_terms_sql_row = conn.execute(
             "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'classification_terms'"
         ).fetchone()
@@ -857,6 +860,26 @@ def validate_reference_owner_foreign_keys() -> None:
         and "term_level = 'secondary'" in classification_terms_sql,
         'classification_terms SQLite table is missing expected term-level CHECK constraints',
     )
+    for fragment in (
+        "status IN ('active', 'deprecated', 'needs_review')",
+        "review_status IS NULL OR review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')",
+        "term_level = 'primary' AND review_status IS NULL",
+        "term_level = 'secondary' AND review_status IS NOT NULL",
+    ):
+        assert_build_condition(
+            fragment in classification_terms_sql,
+            f'classification_terms SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+    change_log_sql = change_log_sql_row[0] if change_log_sql_row else ''
+    for fragment in (
+        "change_id GLOB 'CL-[0-9][0-9][0-9][0-9][0-9][0-9]'",
+        "changed_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
+        "related_commit IS NULL OR related_commit = '' OR related_commit GLOB '[0-9a-f][0-9a-f]*'",
+    ):
+        assert_build_condition(
+            fragment in change_log_sql,
+            f'change_log SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
 
 def validate_auxiliary_analysis_tables(
     papers: list[dict[str, object]],
@@ -1745,25 +1768,29 @@ def build_sqlite(
             definition TEXT NOT NULL,
             include_json TEXT NOT NULL,
             exclude_json TEXT NOT NULL,
-            status TEXT NOT NULL,
+            status TEXT NOT NULL CHECK (status IN ('active', 'deprecated', 'needs_review')),
             source TEXT NOT NULL,
-            review_status TEXT,
+            review_status TEXT CHECK (review_status IS NULL OR review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')),
             CHECK (
                 (term_level = 'primary' AND parent_primary_code IS NULL)
                 OR (term_level = 'secondary' AND parent_primary_code IS NOT NULL)
             ),
+            CHECK (
+                (term_level = 'primary' AND review_status IS NULL)
+                OR (term_level = 'secondary' AND review_status IS NOT NULL)
+            ),
             PRIMARY KEY (taxonomy_code, term_level)
         );
         CREATE TABLE change_log (
-            change_id TEXT PRIMARY KEY,
+            change_id TEXT PRIMARY KEY CHECK (change_id GLOB 'CL-[0-9][0-9][0-9][0-9][0-9][0-9]'),
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
-            changed_at TEXT NOT NULL,
+            changed_at TEXT NOT NULL CHECK (changed_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'),
             changed_by TEXT NOT NULL,
             change_type TEXT NOT NULL,
             old_value_json TEXT NOT NULL,
             new_value_json TEXT NOT NULL,
             reason TEXT NOT NULL,
-            related_commit TEXT
+            related_commit TEXT CHECK (related_commit IS NULL OR related_commit = '' OR related_commit GLOB '[0-9a-f][0-9a-f]*')
         );
         CREATE TABLE analysis_object_scope_registry (
             object_name TEXT PRIMARY KEY,
