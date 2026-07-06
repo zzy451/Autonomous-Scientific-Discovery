@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 25
+- `PASS`: 26
 - `FAIL`: 0
 
 ## Items
@@ -158,3 +158,9 @@ Evidence: `Data/taxonomy_index.json + Data/papers.jsonl + Data/papers.sqlite + s
 01.04 stays outside formal scientific_object_modules/paper_modules, remains isolated in paper_general_method_buckets, and the canonical-vs-mirror boundary audit surfaces are documented and exposed (formal_0104_rows=0, workflow_0104_rows=9, boundary_rows=4, real_drift_rows=3).
 
 Evidence: `Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md`
+
+### Item 26 - PASS
+
+Explicit owner-initialization commands for discipline_code_assignments and classification_code_index exist, are documented, and both succeed in dry-run mode without writing owner files.
+
+Evidence: `scripts/init_discipline_code_assignments.py + scripts/init_classification_code_index.py + Data/README.md`

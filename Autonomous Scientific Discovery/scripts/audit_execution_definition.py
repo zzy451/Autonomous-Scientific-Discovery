@@ -4,6 +4,8 @@ import csv
 import json
 import re
 import sqlite3
+import subprocess
+import sys
 from pathlib import Path
 from typing import Iterable
 
@@ -44,6 +46,8 @@ MANAGE_DISCIPLINE_CODE_ASSIGNMENTS_SCRIPT = ROOT / "scripts" / "manage_disciplin
 MANAGE_CLASSIFICATION_CODE_INDEX_SCRIPT = ROOT / "scripts" / "manage_classification_code_index.py"
 MANAGE_PROGRESS_TRACKING_SCRIPT = ROOT / "scripts" / "manage_progress_tracking.py"
 MANAGE_MASTER_PAPER_LIST_SCRIPT = ROOT / "scripts" / "manage_master_paper_list.py"
+INIT_DISCIPLINE_CODE_ASSIGNMENTS_SCRIPT = ROOT / "scripts" / "init_discipline_code_assignments.py"
+INIT_CLASSIFICATION_CODE_INDEX_SCRIPT = ROOT / "scripts" / "init_classification_code_index.py"
 MASTER_OWNER = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_OWNER = ROOT / "Coverage_Check" / "multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"
 PLAN_PATH = COVERAGE_DIR / "structured_data_long_term_catalog_and_index_plan_2026-07-05.md"
@@ -86,6 +90,22 @@ def load_csv_rows(path: Path) -> list[dict[str, str]]:
 
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8", errors="replace")
+
+
+def run_dry_run_command(script_path: Path) -> tuple[bool, str]:
+    try:
+        completed = subprocess.run(
+            [sys.executable, str(script_path), "--dry-run"],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            check=True,
+        )
+    except Exception as exc:
+        return False, str(exc)
+    return True, ((completed.stdout or "") + (completed.stderr or ""))
 
 
 def check(condition: bool, success: str, failure: str) -> tuple[str, str]:
@@ -133,6 +153,8 @@ def main() -> None:
     manage_classification_code_index_script_text = read_text(MANAGE_CLASSIFICATION_CODE_INDEX_SCRIPT)
     manage_progress_tracking_script_text = read_text(MANAGE_PROGRESS_TRACKING_SCRIPT)
     manage_master_paper_list_script_text = read_text(MANAGE_MASTER_PAPER_LIST_SCRIPT)
+    init_discipline_code_assignments_script_text = read_text(INIT_DISCIPLINE_CODE_ASSIGNMENTS_SCRIPT)
+    init_classification_code_index_script_text = read_text(INIT_CLASSIFICATION_CODE_INDEX_SCRIPT)
     active_papers = [row for row in papers if bool(row.get("active_confirmed_core"))]
 
     with sqlite3.connect(SQLITE_PATH) as conn:
@@ -1072,6 +1094,41 @@ def main() -> None:
         "01.04 boundary separation drifted into formal-module surfaces, general-method isolation no longer matches current papers, or the canonical-vs-mirror boundary audit commands are not fully exposed and documented.",
     )
     add_result(results, "25", status, detail, "Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
+
+    init_owner_readme_tokens = (
+        "scripts/init_discipline_code_assignments.py",
+        "scripts/init_classification_code_index.py",
+    )
+    init_owner_script_tokens_ok = (
+        INIT_DISCIPLINE_CODE_ASSIGNMENTS_SCRIPT.exists()
+        and INIT_CLASSIFICATION_CODE_INDEX_SCRIPT.exists()
+        and all(
+            token in init_discipline_code_assignments_script_text
+            for token in ("--dry-run", "--overwrite", "initial preview", "not daily export")
+        )
+        and all(
+            token in init_classification_code_index_script_text
+            for token in ("--dry-run", "--overwrite", "separate from daily export", "taxonomy code map")
+        )
+    )
+    init_discipline_ok, init_discipline_output = run_dry_run_command(INIT_DISCIPLINE_CODE_ASSIGNMENTS_SCRIPT)
+    init_classification_ok, init_classification_output = run_dry_run_command(INIT_CLASSIFICATION_CODE_INDEX_SCRIPT)
+    status, detail = check(
+        init_owner_script_tokens_ok
+        and all(token in readme_text for token in init_owner_readme_tokens)
+        and init_discipline_ok
+        and "Dry run only; no files written." in init_discipline_output
+        and "Prepared" in init_discipline_output
+        and init_classification_ok
+        and "Dry run" in init_classification_output
+        and "Prepared classification_code_index payload" in init_classification_output,
+        (
+            "Explicit owner-initialization commands for discipline_code_assignments and classification_code_index "
+            "exist, are documented, and both succeed in dry-run mode without writing owner files."
+        ),
+        "Owner-initialization command surfaces are missing, undocumented, or their dry-run flows no longer succeed as explicit non-export initialization paths.",
+    )
+    add_result(results, "26", status, detail, "scripts/init_discipline_code_assignments.py + scripts/init_classification_code_index.py + Data/README.md")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")
