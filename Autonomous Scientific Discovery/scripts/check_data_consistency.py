@@ -2505,7 +2505,18 @@ def validate_registry_layer(
     require_row_fields(
         assignments_path,
         assignment_rows,
-        ("paper_id", "taxonomy_code", "assignment_kind", "assignment_source"),
+        (
+            "paper_id",
+            "taxonomy_code",
+            "assignment_kind",
+            "assignment_source",
+            "assignment_order",
+            "is_primary_filing",
+            "primary_module_for_filing",
+            "object_coverage_mode",
+            "active_confirmed_core",
+            "exported_at",
+        ),
     )
     assert_unique_registry_key(
         assignments_path,
@@ -2552,6 +2563,37 @@ def validate_registry_layer(
             assert_true(
                 taxonomy_code == "01.04",
                 f"classification_assignments general bucket must use taxonomy_code 01.04 for {paper_id}: {taxonomy_code!r}",
+            )
+        paper_row = paper_rows_by_id[paper_id]
+        assert_true(
+            row["primary_module_for_filing"] == paper_row["primary_module_for_filing"],
+            "classification_assignments primary_module_for_filing mismatch for "
+            f"{paper_id}: {row['primary_module_for_filing']!r} != {paper_row['primary_module_for_filing']!r}",
+        )
+        assert_true(
+            row["object_coverage_mode"] == paper_row["object_coverage_mode"],
+            "classification_assignments object_coverage_mode mismatch for "
+            f"{paper_id}: {row['object_coverage_mode']!r} != {paper_row['object_coverage_mode']!r}",
+        )
+        assert_true(
+            row["active_confirmed_core"] == paper_row["active_confirmed_core"],
+            "classification_assignments active_confirmed_core mismatch for "
+            f"{paper_id}: {row['active_confirmed_core']!r} != {paper_row['active_confirmed_core']!r}",
+        )
+        assert_true(
+            row["exported_at"] == paper_row["exported_at"],
+            f"classification_assignments exported_at mismatch for {paper_id}: {row['exported_at']!r} != {paper_row['exported_at']!r}",
+        )
+        if assignment_scope == CLASSIFICATION_SCOPE_MODULE:
+            assert_true(
+                row["is_primary_filing"] == (taxonomy_code == paper_row["primary_module_for_filing"]),
+                "classification_assignments is_primary_filing mismatch for "
+                f"{paper_id} / {taxonomy_code}",
+            )
+        else:
+            assert_true(
+                row["is_primary_filing"] is False,
+                f"classification_assignments general bucket rows must not be primary_filing for {paper_id}",
             )
         actual_assignment_rows[(paper_id, assignment_scope, taxonomy_code)] = row.get("assignment_order")
     assert_true(
