@@ -566,6 +566,11 @@ def validate_discipline_local_code_registry_outputs(
                         OR discipline_local_code IS NULL
                         OR discipline_local_rank <> substr(discipline_local_code, -3)
                         OR discipline_display_order <> discipline_local_code
+                        OR primary_module_for_filing IS NULL
+                        OR primary_module_for_filing = ''
+                        OR primary_module_for_filing <> substr(discipline_local_code, 1, 2)
+                        OR primary_module_for_filing <> substr(primary_taxonomy_code_2lvl, 1, 2)
+                        OR legacy_secondary_class <> primary_taxonomy_code_2lvl
                     )
                 )
                 OR (
@@ -574,6 +579,14 @@ def validate_discipline_local_code_registry_outputs(
                         discipline_local_code IS NOT NULL
                         OR discipline_local_rank IS NOT NULL
                         OR discipline_display_order NOT LIKE '%PENDING-ASD-%'
+                        OR (
+                            pending_reason = 'missing_primary_module_for_filing'
+                            AND primary_module_for_filing IS NOT NULL
+                        )
+                        OR (
+                            pending_reason <> 'missing_primary_module_for_filing'
+                            AND (primary_module_for_filing IS NULL OR primary_module_for_filing = '')
+                        )
                     )
                 )
                 OR (
@@ -582,6 +595,9 @@ def validate_discipline_local_code_registry_outputs(
                         discipline_local_code IS NOT NULL
                         OR discipline_local_rank IS NOT NULL
                         OR discipline_display_order NOT LIKE 'GM-PENDING-ASD-%'
+                        OR primary_module_for_filing IS NOT NULL
+                        OR general_method_bucket <> '01.04_general_asd_methods_without_concrete_object_experiments'
+                        OR scientific_object_modules_json <> '[]'
                     )
                 )
                 OR (
@@ -724,6 +740,12 @@ def validate_discipline_sqlite_constraints() -> None:
         "discipline_display_order = discipline_local_code",
         "discipline_display_order LIKE '%PENDING-ASD-%'",
         "discipline_display_order LIKE 'GM-PENDING-ASD-%'",
+        "primary_module_for_filing = substr(discipline_local_code, 1, 2)",
+        "primary_module_for_filing = substr(primary_taxonomy_code_2lvl, 1, 2)",
+        "legacy_secondary_class = primary_taxonomy_code_2lvl",
+        "pending_reason = 'missing_primary_module_for_filing'",
+        "general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'",
+        "scientific_object_modules_json = '[]'",
         "assignment_status <> 'active_code' OR ( pending_reason IS NULL AND retired_at IS NULL AND redirected_to_code IS NULL )",
         "assignment_status <> 'pending_secondary' OR ( pending_reason IS NOT NULL AND retired_at IS NULL AND redirected_to_code IS NULL )",
         "assignment_status <> 'non_discipline_general_method' OR ( pending_reason IS NULL AND retired_at IS NULL AND redirected_to_code IS NULL )",
@@ -2223,6 +2245,11 @@ def build_sqlite(
                     AND primary_taxonomy_code_2lvl IS NOT NULL
                     AND discipline_local_rank = substr(discipline_local_code, -3)
                     AND discipline_display_order = discipline_local_code
+                    AND primary_module_for_filing IS NOT NULL
+                    AND primary_module_for_filing <> ''
+                    AND primary_module_for_filing = substr(discipline_local_code, 1, 2)
+                    AND primary_module_for_filing = substr(primary_taxonomy_code_2lvl, 1, 2)
+                    AND legacy_secondary_class = primary_taxonomy_code_2lvl
                 )
                 OR (
                     assignment_status IN ('pending_secondary', 'non_discipline_general_method')
@@ -2238,6 +2265,21 @@ def build_sqlite(
             CHECK (
                 assignment_status <> 'non_discipline_general_method'
                 OR discipline_display_order LIKE 'GM-PENDING-ASD-%'
+            ),
+            CHECK (
+                assignment_status <> 'pending_secondary'
+                OR (
+                    (pending_reason = 'missing_primary_module_for_filing' AND primary_module_for_filing IS NULL)
+                    OR (pending_reason <> 'missing_primary_module_for_filing' AND primary_module_for_filing IS NOT NULL AND primary_module_for_filing <> '')
+                )
+            ),
+            CHECK (
+                assignment_status <> 'non_discipline_general_method'
+                OR (
+                    primary_module_for_filing IS NULL
+                    AND general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'
+                    AND scientific_object_modules_json = '[]'
+                )
             ),
             CHECK (assigned_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'),
             CHECK (trim(assigned_by) <> ''),
