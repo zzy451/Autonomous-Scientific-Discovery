@@ -1276,6 +1276,71 @@ def main() -> None:
     )
     add_result(results, "28", status, detail, "scripts/manage_discipline_code_assignments.py + scripts/manage_classification_code_index.py + scripts/manage_progress_tracking.py + scripts/manage_master_paper_list.py + representative dry-run executions")
 
+    registry_query_tokens = (
+        "discipline-code-summary",
+        "discipline-code 04-03-017",
+        "secondary-class-summary",
+        "secondary-class-pdf-coverage",
+        "classification-terms --level secondary",
+        "general-method-buckets",
+        "change-log-summary",
+        "change-log",
+        "lifecycle-summary",
+        "lifecycle-records --record-status duplicate",
+    )
+    representative_discipline_code = next(
+        (
+            str(row.get("discipline_local_code"))
+            for row in registry
+            if str(row.get("assignment_status")) == "active_code"
+            and str(row.get("discipline_local_code") or "").strip()
+        ),
+        "",
+    )
+    registry_query_runs = {
+        "discipline_code_summary": run_query_command(["discipline-code-summary"]),
+        "discipline_code_detail": run_query_command(["discipline-code", representative_discipline_code]),
+        "secondary_class_summary": run_query_command(["secondary-class-summary"]),
+        "secondary_class_pdf_coverage": run_query_command(["secondary-class-pdf-coverage"]),
+        "classification_terms": run_query_command(["classification-terms", "--level", "secondary"]),
+        "general_method_buckets": run_query_command(["general-method-buckets"]),
+        "change_log_summary": run_query_command(["change-log-summary"]),
+        "change_log": run_query_command(["change-log", "--limit", "5"]),
+        "lifecycle_summary": run_query_command(["lifecycle-summary"]),
+        "lifecycle_records": run_query_command(["lifecycle-records", "--record-status", "duplicate", "--limit", "5"]),
+    }
+    registry_query_outputs_ok = (
+        bool(representative_discipline_code)
+        and all(
+            ok and output.strip() and "Traceback" not in output
+            for ok, output in registry_query_runs.values()
+        )
+    )
+    status, detail = check(
+        all(token in readme_text for token in registry_query_tokens)
+        and all(
+            token in query_script_text
+            for token in (
+                "discipline-code-summary",
+                "discipline-code",
+                "secondary-class-summary",
+                "secondary-class-pdf-coverage",
+                "classification-terms",
+                "general-method-buckets",
+                "change-log-summary",
+                "change-log",
+                "lifecycle-summary",
+                "lifecycle-records",
+            )
+        )
+        and registry_query_outputs_ok,
+        (
+            "Registry/taxonomy/audit query surfaces are documented and execute successfully for representative discipline-code, secondary-class, taxonomy, change-log, and lifecycle lookups."
+        ),
+        "One or more documented registry/taxonomy/audit query surfaces is missing from README/query_analysis_db.py or failed when executed during the representative execution audit.",
+    )
+    add_result(results, "29", status, detail, "scripts/query_analysis_db.py + Data/README.md + representative registry/taxonomy/audit query executions")
+
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")
 
