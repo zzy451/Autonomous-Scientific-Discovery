@@ -566,6 +566,20 @@ def validate_discipline_sqlite_constraints() -> None:
         and "WHERE assignment_status = 'active_code'" in index_sql_by_name['discipline_code_assignments_one_active_per_paper'],
         'discipline_code_assignments_one_active_per_paper partial index is missing or malformed',
     )
+    for fragment in (
+        "primary_module_confidence IS NULL OR primary_module_confidence IN ('', 'high', 'medium', 'low')",
+        "primary_module_assignment_rule IS NULL OR primary_module_assignment_rule IN ('', 'main_scientific_object', 'main_validation_object', 'direct_contribution_target', 'substantive_application_object', 'manual_override')",
+        "secondary_class_source IS NULL OR secondary_class_source IN ('legacy', 'normalized', 'manual_override')",
+        "secondary_class_confidence IS NULL OR secondary_class_confidence IN ('high', 'medium', 'low')",
+        "secondary_class_review_status IS NULL OR secondary_class_review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')",
+        "general_method_bucket IS NULL OR general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')",
+        "active_confirmed_core IN (0, 1)",
+        "worktree_dirty IN (0, 1)",
+    ):
+        assert_build_condition(
+            fragment in registry_sql,
+            f'discipline_local_code_registry SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
     assert_build_condition(
         ('papers', 'paper_id', 'paper_id') in assignment_fk_targets,
         'discipline_code_assignments SQLite table is missing expected foreign key to papers(paper_id)',
@@ -1860,25 +1874,25 @@ def build_sqlite(
             assignment_reason TEXT NOT NULL,
             pending_reason TEXT,
             primary_module_for_filing TEXT REFERENCES taxonomy_index(code),
-            primary_module_confidence TEXT,
-            primary_module_assignment_rule TEXT,
+            primary_module_confidence TEXT CHECK (primary_module_confidence IS NULL OR primary_module_confidence IN ('', 'high', 'medium', 'low')),
+            primary_module_assignment_rule TEXT CHECK (primary_module_assignment_rule IS NULL OR primary_module_assignment_rule IN ('', 'main_scientific_object', 'main_validation_object', 'direct_contribution_target', 'substantive_application_object', 'manual_override')),
             primary_module_override_reason TEXT,
             primary_taxonomy_code_2lvl TEXT,
             legacy_secondary_class TEXT,
-            secondary_class_source TEXT,
-            secondary_class_confidence TEXT,
-            secondary_class_review_status TEXT,
+            secondary_class_source TEXT CHECK (secondary_class_source IS NULL OR secondary_class_source IN ('legacy', 'normalized', 'manual_override')),
+            secondary_class_confidence TEXT CHECK (secondary_class_confidence IS NULL OR secondary_class_confidence IN ('high', 'medium', 'low')),
+            secondary_class_review_status TEXT CHECK (secondary_class_review_status IS NULL OR secondary_class_review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')),
             scientific_object_modules_json TEXT NOT NULL,
-            general_method_bucket TEXT,
+            general_method_bucket TEXT CHECK (general_method_bucket IS NULL OR general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')),
             title TEXT NOT NULL,
             note_path TEXT,
             pdf_path TEXT,
-            active_confirmed_core INTEGER NOT NULL,
+            active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
             is_derived_snapshot INTEGER NOT NULL CHECK (is_derived_snapshot = 1),
             generated_at TEXT NOT NULL,
             generated_by TEXT NOT NULL,
             source_commit TEXT,
-            worktree_dirty INTEGER NOT NULL,
+            worktree_dirty INTEGER NOT NULL CHECK (worktree_dirty IN (0, 1)),
             CHECK (
                 (
                     assignment_status = 'active_code'
