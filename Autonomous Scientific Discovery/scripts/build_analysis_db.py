@@ -354,6 +354,18 @@ def validate_sqlite_module_surfaces(rows: list[dict[str, object]]) -> None:
                 'SELECT DISTINCT assignment_scope FROM paper_modules ORDER BY assignment_scope'
             )
         }
+        canonical_non_formal_count = conn.execute(
+            "SELECT COUNT(*) FROM paper_modules WHERE module_kind <> 'formal_module'"
+        ).fetchone()[0]
+        canonical_source_mismatch_count = conn.execute(
+            """
+            SELECT COUNT(*)
+            FROM paper_modules
+            WHERE
+                (is_primary_for_filing = 1 AND source <> 'primary_module_for_filing')
+                OR (is_primary_for_filing = 0 AND source <> 'scientific_object_modules')
+            """
+        ).fetchone()[0]
         workflow_scopes = {
             row[0]
             for row in conn.execute(
@@ -411,6 +423,14 @@ def validate_sqlite_module_surfaces(rows: list[dict[str, object]]) -> None:
         paper_module_scopes
         == ({'scientific_object_modules'} if canonical_expected_count else set()),
         'SQLite paper_modules must only expose canonical scientific_object_modules rows',
+    )
+    assert_build_condition(
+        canonical_non_formal_count == 0,
+        'SQLite paper_modules must not contain general_bucket rows; 01.04 belongs in paper_general_method_buckets',
+    )
+    assert_build_condition(
+        canonical_source_mismatch_count == 0,
+        'SQLite paper_modules primary/source semantics drifted from canonical filing rules',
     )
     assert_build_condition(
         workflow_scopes
@@ -707,20 +727,25 @@ def validate_module_sqlite_constraints() -> None:
     paper_modules_sql = table_sql_rows['paper_modules'][0] if table_sql_rows['paper_modules'] else ''
     workflow_modules_sql = table_sql_rows['workflow_mirror_paper_modules'][0] if table_sql_rows['workflow_mirror_paper_modules'] else ''
     general_method_sql = table_sql_rows['paper_general_method_buckets'][0] if table_sql_rows['paper_general_method_buckets'] else ''
+    normalized_papers_sql = " ".join(papers_sql.split())
+    normalized_paper_modules_sql = " ".join(paper_modules_sql.split())
+    normalized_workflow_modules_sql = " ".join(workflow_modules_sql.split())
+    normalized_general_method_sql = " ".join(general_method_sql.split())
 
     assert_build_condition(
-        "general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')" in papers_sql,
+        "general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')" in normalized_papers_sql,
         'papers SQLite table is missing expected general_method_bucket CHECK constraint',
     )
     for fragment in (
         "assignment_scope = 'scientific_object_modules'",
-        "module_kind IN ('formal_module', 'general_bucket')",
+        "module_kind = 'formal_module'",
         "is_primary_for_filing IN (0, 1)",
         "confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')",
         "source IN ('primary_module_for_filing', 'scientific_object_modules')",
+        "(is_primary_for_filing = 1 AND source = 'primary_module_for_filing') OR (is_primary_for_filing = 0 AND source = 'scientific_object_modules')",
     ):
         assert_build_condition(
-            fragment in paper_modules_sql,
+            fragment in normalized_paper_modules_sql,
             f'paper_modules SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
     for fragment in (
@@ -731,7 +756,7 @@ def validate_module_sqlite_constraints() -> None:
         "source = 'final_modules_or_bucket'",
     ):
         assert_build_condition(
-            fragment in workflow_modules_sql,
+            fragment in normalized_workflow_modules_sql,
             f'workflow_mirror_paper_modules SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
     for fragment in (
@@ -739,7 +764,7 @@ def validate_module_sqlite_constraints() -> None:
         "active_confirmed_core IN (0, 1)",
     ):
         assert_build_condition(
-            fragment in general_method_sql,
+            fragment in normalized_general_method_sql,
             f'paper_general_method_buckets SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
 
@@ -1862,11 +1887,15 @@ def build_sqlite(
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             assignment_scope TEXT NOT NULL CHECK (assignment_scope = 'scientific_object_modules'),
             module_code TEXT NOT NULL REFERENCES taxonomy_index(code),
-            module_kind TEXT NOT NULL CHECK (module_kind IN ('formal_module', 'general_bucket')),
+            module_kind TEXT NOT NULL CHECK (module_kind = 'formal_module'),
             sort_order INTEGER NOT NULL,
             is_primary_for_filing INTEGER NOT NULL CHECK (is_primary_for_filing IN (0, 1)),
             confidence TEXT CHECK (confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')),
             source TEXT NOT NULL CHECK (source IN ('primary_module_for_filing', 'scientific_object_modules')),
+            CHECK (
+                (is_primary_for_filing = 1 AND source = 'primary_module_for_filing')
+                OR (is_primary_for_filing = 0 AND source = 'scientific_object_modules')
+            ),
             PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE workflow_mirror_paper_modules (
