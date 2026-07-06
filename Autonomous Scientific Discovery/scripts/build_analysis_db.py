@@ -1055,6 +1055,8 @@ def validate_module_sqlite_constraints() -> None:
         "is_primary_for_filing IN (0, 1)",
         "confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')",
         "source = 'final_modules_or_bucket'",
+        "is_primary_for_filing = 0",
+        "IFNULL(confidence, '') = ''",
     ):
         assert_build_condition(
             fragment in normalized_workflow_modules_sql,
@@ -1063,6 +1065,7 @@ def validate_module_sqlite_constraints() -> None:
     for fragment in (
         "general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'",
         "active_confirmed_core IN (0, 1)",
+        "source_limited IS NULL OR source_limited IN ('', 'no', 'yes')",
     ):
         assert_build_condition(
             fragment in normalized_general_method_sql,
@@ -2317,16 +2320,17 @@ def build_sqlite(
             module_code TEXT NOT NULL REFERENCES taxonomy_index(code),
             module_kind TEXT NOT NULL CHECK (module_kind IN ('formal_module', 'general_bucket')),
             sort_order INTEGER NOT NULL,
-            is_primary_for_filing INTEGER NOT NULL CHECK (is_primary_for_filing IN (0, 1)),
+            is_primary_for_filing INTEGER NOT NULL CHECK (is_primary_for_filing IN (0, 1)) CHECK (is_primary_for_filing = 0),
             confidence TEXT CHECK (confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')),
             source TEXT NOT NULL CHECK (source = 'final_modules_or_bucket'),
+            CHECK (IFNULL(confidence, '') = ''),
             PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE paper_general_method_buckets (
             paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             general_method_bucket TEXT NOT NULL CHECK (general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'),
             active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
-            source_limited TEXT
+            source_limited TEXT CHECK (source_limited IS NULL OR source_limited IN ('', 'no', 'yes'))
         );
         CREATE TABLE discipline_code_assignments (
             assignment_id TEXT PRIMARY KEY CHECK (assignment_id GLOB 'DCA-[0-9][0-9][0-9][0-9][0-9][0-9]'),
