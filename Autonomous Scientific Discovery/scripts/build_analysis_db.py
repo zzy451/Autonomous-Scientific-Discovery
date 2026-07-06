@@ -135,7 +135,7 @@ def build_expected_papers_sqlite_rows(
                 paper['classification_source_field'], paper['classification_source_confidence'], paper['classification_parser_rule'],
                 paper['first_hand_sources_checked'], paper['source_checked_at'], paper['progress_title'], paper['pdf_status'], paper['evidence_status'], paper['note_status'], paper['master_status'],
                 paper['final_modules_or_bucket_raw'], json_list(paper['final_modules_or_bucket']), paper['source_limited'], paper['batch'], paper['closed'], bool_to_int(paper['active_confirmed_core']),
-                paper['record_status'], paper['inclusion_decision'], paper['duplicate_of'], paper['last_reviewed_at'], paper['last_reviewed_by'], paper['exported_at'],
+                paper['record_status'], paper['inclusion_decision'], blank_to_none(paper['duplicate_of']), paper['last_reviewed_at'], paper['last_reviewed_by'], paper['exported_at'],
             )
             for paper in papers
         ],
@@ -627,6 +627,10 @@ def validate_core_analysis_foreign_keys() -> None:
     assert_build_condition(
         ('taxonomy_index', 'primary_module_for_filing', 'code') in papers_fk_targets,
         'papers SQLite table is missing expected foreign key to taxonomy_index(code) for primary_module_for_filing',
+    )
+    assert_build_condition(
+        ('papers', 'duplicate_of', 'paper_id') in papers_fk_targets,
+        'papers SQLite table is missing expected self-referential foreign key for duplicate_of -> papers(paper_id)',
     )
     for table in ('paper_modules', 'workflow_mirror_paper_modules'):
         fk_targets = {(str(row[2]), str(row[3]), str(row[4])) for row in fk_rows_by_table[table]}
@@ -1601,7 +1605,7 @@ def build_sqlite(
             classification_source_field TEXT, classification_source_confidence TEXT, classification_parser_rule TEXT,
             first_hand_sources_checked TEXT, source_checked_at TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
             note_status TEXT, master_status TEXT, final_modules_or_bucket_raw TEXT, final_modules_or_bucket_json TEXT NOT NULL, source_limited TEXT, batch TEXT, closed TEXT,
-            active_confirmed_core INTEGER NOT NULL, record_status TEXT, inclusion_decision TEXT, duplicate_of TEXT, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL
+            active_confirmed_core INTEGER NOT NULL, record_status TEXT, inclusion_decision TEXT, duplicate_of TEXT REFERENCES papers(paper_id) DEFERRABLE INITIALLY DEFERRED, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL
         );
         CREATE TABLE paper_modules (
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
@@ -2184,7 +2188,7 @@ def build_sqlite(
                 paper['classification_source_field'], paper['classification_source_confidence'], paper['classification_parser_rule'],
                 paper['first_hand_sources_checked'], paper['source_checked_at'], paper['progress_title'], paper['pdf_status'], paper['evidence_status'], paper['note_status'], paper['master_status'],
                 paper['final_modules_or_bucket_raw'], json_list(paper['final_modules_or_bucket']), paper['source_limited'], paper['batch'], paper['closed'], bool_to_int(paper['active_confirmed_core']),
-                paper['record_status'], paper['inclusion_decision'], paper['duplicate_of'], paper['last_reviewed_at'], paper['last_reviewed_by'], paper['exported_at'],
+                paper['record_status'], paper['inclusion_decision'], blank_to_none(paper['duplicate_of']), paper['last_reviewed_at'], paper['last_reviewed_by'], paper['exported_at'],
             )
             for paper in papers
         ])
