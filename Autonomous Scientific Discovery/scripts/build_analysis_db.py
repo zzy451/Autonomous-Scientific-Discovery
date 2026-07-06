@@ -690,6 +690,16 @@ def validate_discipline_local_code_registry_outputs(
                 ) AS current_assignment_missing_registry,
                 (
                     SELECT COUNT(*)
+                    FROM (
+                        SELECT paper_id
+                        FROM discipline_code_assignments
+                        WHERE assignment_status IN ('active_code', 'pending_secondary', 'non_discipline_general_method')
+                        GROUP BY paper_id
+                        HAVING COUNT(*) > 1
+                    )
+                ) AS duplicate_current_assignments_per_paper,
+                (
+                    SELECT COUNT(*)
                     FROM discipline_local_code_registry r
                     LEFT JOIN discipline_code_assignments d ON r.assignment_id = d.assignment_id
                     WHERE d.assignment_id IS NULL
@@ -745,14 +755,18 @@ def validate_discipline_local_code_registry_outputs(
     )
     assert_build_condition(
         snapshot_coverage_counts[6] == 0,
-        'SQLite registry rows reference non-current or missing discipline assignments',
+        'SQLite current discipline assignments contain duplicate current rows for the same paper',
     )
     assert_build_condition(
         snapshot_coverage_counts[7] == 0,
-        'SQLite registry assignment_id to paper_id mapping drifted from discipline ledger',
+        'SQLite registry rows reference non-current or missing discipline assignments',
     )
     assert_build_condition(
         snapshot_coverage_counts[8] == 0,
+        'SQLite registry assignment_id to paper_id mapping drifted from discipline ledger',
+    )
+    assert_build_condition(
+        snapshot_coverage_counts[9] == 0,
         'SQLite registry mirrored ledger fields drifted from discipline assignments',
     )
 
@@ -809,6 +823,11 @@ def validate_discipline_sqlite_constraints() -> None:
         'discipline_code_assignments_one_active_per_paper' in index_sql_by_name
         and "WHERE assignment_status = 'active_code'" in index_sql_by_name['discipline_code_assignments_one_active_per_paper'],
         'discipline_code_assignments_one_active_per_paper partial index is missing or malformed',
+    )
+    assert_build_condition(
+        'discipline_code_assignments_one_current_snapshot_per_paper' in index_sql_by_name
+        and "WHERE assignment_status IN ('active_code', 'pending_secondary', 'non_discipline_general_method')" in index_sql_by_name['discipline_code_assignments_one_current_snapshot_per_paper'],
+        'discipline_code_assignments_one_current_snapshot_per_paper partial index is missing or malformed',
     )
     for fragment in (
         "assignment_id GLOB 'DCA-[0-9][0-9][0-9][0-9][0-9][0-9]'",
@@ -2329,6 +2348,9 @@ def build_sqlite(
         CREATE UNIQUE INDEX discipline_code_assignments_one_active_per_paper
         ON discipline_code_assignments(paper_id)
         WHERE assignment_status = 'active_code';
+        CREATE UNIQUE INDEX discipline_code_assignments_one_current_snapshot_per_paper
+        ON discipline_code_assignments(paper_id)
+        WHERE assignment_status IN ('active_code', 'pending_secondary', 'non_discipline_general_method');
         CREATE TABLE discipline_local_code_registry (
             paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             assignment_id TEXT NOT NULL REFERENCES discipline_code_assignments(assignment_id),
