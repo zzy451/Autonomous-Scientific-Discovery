@@ -645,6 +645,34 @@ def validate_core_analysis_foreign_keys() -> None:
             f'{table} SQLite table is missing expected foreign key to taxonomy_index(code) for primary_module_for_filing',
         )
 
+def validate_papers_sqlite_constraints() -> None:
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        papers_sql_row = conn.execute(
+            "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'papers'"
+        ).fetchone()
+    finally:
+        conn.close()
+
+    papers_sql = papers_sql_row[0] if papers_sql_row else ''
+    required_fragments = (
+        "secondary_class_source IN ('legacy', 'normalized', 'manual_override')",
+        "secondary_class_confidence IN ('high', 'medium', 'low')",
+        "secondary_class_review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')",
+        "object_coverage_mode IN ('single_module', 'multi_module', 'general_method_without_concrete_object_experiments')",
+        "primary_module_confidence IN ('', 'high', 'medium', 'low')",
+        "primary_module_assignment_rule IN ('', 'main_scientific_object', 'main_validation_object', 'direct_contribution_target', 'substantive_application_object', 'manual_override')",
+        "classification_source_confidence IN ('high', 'medium', 'low')",
+        "classification_parser_rule IN ('structured_remark_token', 'legacy_general_method_fallback', 'legacy_main_class_fallback', 'needs_review')",
+        "record_status IN ('candidate', 'active_confirmed_core', 'background_only', 'excluded', 'duplicate', 'retired')",
+        "CHECK (duplicate_of IS NULL OR duplicate_of <> paper_id)",
+    )
+    for fragment in required_fragments:
+        assert_build_condition(
+            fragment in papers_sql,
+            f'papers SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+
 def validate_reference_owner_foreign_keys() -> None:
     conn = sqlite3.connect(SQLITE_PATH)
     try:
@@ -1598,14 +1626,15 @@ def build_sqlite(
         CREATE TABLE papers (
             paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, authors TEXT, year TEXT, source TEXT, doi_or_url TEXT, doi TEXT, url TEXT, arxiv_id TEXT,
             pdf_path TEXT, pdf_exists INTEGER NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, is_agent TEXT, inclusion_status TEXT, exclusion_reason TEXT,
-            legacy_main_class TEXT, legacy_secondary_class TEXT, legacy_tertiary_class TEXT, secondary_class_source TEXT, secondary_class_confidence TEXT, secondary_class_review_status TEXT, fourth_level_topic TEXT, new_fourth_level TEXT,
+            legacy_main_class TEXT, legacy_secondary_class TEXT, legacy_tertiary_class TEXT, secondary_class_source TEXT CHECK (secondary_class_source IN ('legacy', 'normalized', 'manual_override')), secondary_class_confidence TEXT CHECK (secondary_class_confidence IN ('high', 'medium', 'low')), secondary_class_review_status TEXT CHECK (secondary_class_review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')), fourth_level_topic TEXT, new_fourth_level TEXT,
             agent_type_json TEXT NOT NULL, research_workflow_role_json TEXT NOT NULL, validation_type_json TEXT NOT NULL, scientific_contribution_type_json TEXT NOT NULL,
             evidence_strength TEXT, citation_priority TEXT, remarks TEXT, scientific_object_modules_json TEXT NOT NULL, general_method_bucket TEXT NOT NULL,
-            object_coverage_mode TEXT, primary_module_for_filing TEXT REFERENCES taxonomy_index(code), primary_module_confidence TEXT, primary_module_assignment_rule TEXT, primary_module_override_reason TEXT,
-            classification_source_field TEXT, classification_source_confidence TEXT, classification_parser_rule TEXT,
+            object_coverage_mode TEXT CHECK (object_coverage_mode IS NULL OR object_coverage_mode IN ('single_module', 'multi_module', 'general_method_without_concrete_object_experiments')), primary_module_for_filing TEXT REFERENCES taxonomy_index(code), primary_module_confidence TEXT CHECK (primary_module_confidence IS NULL OR primary_module_confidence IN ('', 'high', 'medium', 'low')), primary_module_assignment_rule TEXT CHECK (primary_module_assignment_rule IS NULL OR primary_module_assignment_rule IN ('', 'main_scientific_object', 'main_validation_object', 'direct_contribution_target', 'substantive_application_object', 'manual_override')), primary_module_override_reason TEXT,
+            classification_source_field TEXT, classification_source_confidence TEXT CHECK (classification_source_confidence IS NULL OR classification_source_confidence IN ('high', 'medium', 'low')), classification_parser_rule TEXT CHECK (classification_parser_rule IS NULL OR classification_parser_rule IN ('structured_remark_token', 'legacy_general_method_fallback', 'legacy_main_class_fallback', 'needs_review')),
             first_hand_sources_checked TEXT, source_checked_at TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
             note_status TEXT, master_status TEXT, final_modules_or_bucket_raw TEXT, final_modules_or_bucket_json TEXT NOT NULL, source_limited TEXT, batch TEXT, closed TEXT,
-            active_confirmed_core INTEGER NOT NULL, record_status TEXT, inclusion_decision TEXT, duplicate_of TEXT REFERENCES papers(paper_id) DEFERRABLE INITIALLY DEFERRED, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL
+            active_confirmed_core INTEGER NOT NULL, record_status TEXT CHECK (record_status IS NULL OR record_status IN ('candidate', 'active_confirmed_core', 'background_only', 'excluded', 'duplicate', 'retired')), inclusion_decision TEXT, duplicate_of TEXT REFERENCES papers(paper_id) DEFERRABLE INITIALLY DEFERRED, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL,
+            CHECK (duplicate_of IS NULL OR duplicate_of <> paper_id)
         );
         CREATE TABLE paper_modules (
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
@@ -2421,6 +2450,7 @@ def main() -> None:
     validate_discipline_local_code_registry_outputs(discipline_local_code_registry)
     validate_discipline_sqlite_constraints()
     validate_core_analysis_foreign_keys()
+    validate_papers_sqlite_constraints()
     validate_reference_owner_foreign_keys()
     validate_auxiliary_analysis_tables(
         papers,
