@@ -8,6 +8,13 @@ desktop.ini
 .missing_originals/
 .tmp_asd_pdfs/
 
+# Keep this repository focused on the ASD project body on GitHub.
+/.github/
+/CODEOWNERS
+/LLM Survey/
+/Scientific Discovery by Agents/
+/codex_agents_sdk_demo/
+
 # LaTeX build artifacts
 *.aux
 *.bbl
