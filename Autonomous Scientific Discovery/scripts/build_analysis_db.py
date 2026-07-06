@@ -702,6 +702,71 @@ def validate_module_sqlite_constraints() -> None:
             f'paper_general_method_buckets SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
 
+def validate_evidence_sqlite_constraints() -> None:
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        table_sql_rows = {
+            table: conn.execute(
+                f"SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '{table}'"
+            ).fetchone()
+            for table in (
+                'pdf_evidence_status',
+                'paper_assets',
+                'notes',
+                'pdf_inventory',
+                'note_inventory',
+            )
+        }
+    finally:
+        conn.close()
+
+    pdf_evidence_sql = table_sql_rows['pdf_evidence_status'][0] if table_sql_rows['pdf_evidence_status'] else ''
+    paper_assets_sql = table_sql_rows['paper_assets'][0] if table_sql_rows['paper_assets'] else ''
+    notes_sql = table_sql_rows['notes'][0] if table_sql_rows['notes'] else ''
+    pdf_inventory_sql = table_sql_rows['pdf_inventory'][0] if table_sql_rows['pdf_inventory'] else ''
+    note_inventory_sql = table_sql_rows['note_inventory'][0] if table_sql_rows['note_inventory'] else ''
+
+    for fragment in (
+        "pdf_exists IN (0, 1)",
+        "pdf_evidence_type IS NULL OR pdf_evidence_type IN ('main_pdf', 'supplementary_pdf', 'html_full_text', 'abstract', 'official_page', 'project_page')",
+        "pdf_check_status IS NULL OR pdf_check_status IN ('full_text_checked', 'source_limited', 'metadata_only')",
+        "is_main_text IN (0, 1)",
+        "is_supplementary IN (0, 1)",
+        "source_limited IS NULL OR source_limited IN ('', 'no', 'yes')",
+        "active_confirmed_core IN (0, 1)",
+    ):
+        assert_build_condition(
+            fragment in pdf_evidence_sql,
+            f'pdf_evidence_status SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+    for fragment in (
+        "asset_type IN ('note', 'primary_pdf')",
+        "asset_exists IN (0, 1)",
+        "is_main_text IN (0, 1)",
+        "is_supplementary IN (0, 1)",
+        "source_limited IS NULL OR source_limited IN ('', 'no', 'yes')",
+    ):
+        assert_build_condition(
+            fragment in paper_assets_sql,
+            f'paper_assets SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+    for fragment in (
+        "note_exists IN (0, 1)",
+        "active_confirmed_core IN (0, 1)",
+    ):
+        assert_build_condition(
+            fragment in notes_sql,
+            f'notes SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+        assert_build_condition(
+            fragment in note_inventory_sql,
+            f'note_inventory SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+    assert_build_condition(
+        "active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1))" in pdf_inventory_sql,
+        'pdf_inventory SQLite table is missing expected active_confirmed_core CHECK constraint',
+    )
+
 def validate_papers_sqlite_constraints() -> None:
     conn = sqlite3.connect(SQLITE_PATH)
     try:
@@ -1833,32 +1898,32 @@ def build_sqlite(
             paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             title TEXT NOT NULL,
             pdf_path TEXT,
-            pdf_exists INTEGER NOT NULL,
+            pdf_exists INTEGER NOT NULL CHECK (pdf_exists IN (0, 1)),
             pdf_status TEXT,
             evidence_status TEXT,
-            pdf_evidence_type TEXT,
-            pdf_check_status TEXT,
-            is_main_text INTEGER NOT NULL,
-            is_supplementary INTEGER NOT NULL,
+            pdf_evidence_type TEXT CHECK (pdf_evidence_type IS NULL OR pdf_evidence_type IN ('main_pdf', 'supplementary_pdf', 'html_full_text', 'abstract', 'official_page', 'project_page')),
+            pdf_check_status TEXT CHECK (pdf_check_status IS NULL OR pdf_check_status IN ('full_text_checked', 'source_limited', 'metadata_only')),
+            is_main_text INTEGER NOT NULL CHECK (is_main_text IN (0, 1)),
+            is_supplementary INTEGER NOT NULL CHECK (is_supplementary IN (0, 1)),
             asset_size_bytes INTEGER,
-            source_limited TEXT,
+            source_limited TEXT CHECK (source_limited IS NULL OR source_limited IN ('', 'no', 'yes')),
             source_checked_at TEXT,
             primary_module_for_filing TEXT REFERENCES taxonomy_index(code),
-            active_confirmed_core INTEGER NOT NULL
+            active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1))
         );
         CREATE TABLE paper_assets (
             asset_id TEXT PRIMARY KEY,
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             title TEXT NOT NULL,
-            asset_type TEXT NOT NULL,
+            asset_type TEXT NOT NULL CHECK (asset_type IN ('note', 'primary_pdf')),
             path TEXT,
-            asset_exists INTEGER NOT NULL,
+            asset_exists INTEGER NOT NULL CHECK (asset_exists IN (0, 1)),
             sha256 TEXT,
             asset_size_bytes INTEGER,
             asset_status TEXT,
-            is_main_text INTEGER NOT NULL,
-            is_supplementary INTEGER NOT NULL,
-            source_limited TEXT,
+            is_main_text INTEGER NOT NULL CHECK (is_main_text IN (0, 1)),
+            is_supplementary INTEGER NOT NULL CHECK (is_supplementary IN (0, 1)),
+            source_limited TEXT CHECK (source_limited IS NULL OR source_limited IN ('', 'no', 'yes')),
             source_checked_at TEXT,
             exported_at TEXT
         );
@@ -1866,13 +1931,13 @@ def build_sqlite(
             paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             title TEXT NOT NULL,
             note_path TEXT,
-            note_exists INTEGER NOT NULL,
-            active_confirmed_core INTEGER NOT NULL,
+            note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)),
+            active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
             inclusion_status TEXT
         );
-        CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT REFERENCES taxonomy_index(code), scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL);
+        CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT REFERENCES taxonomy_index(code), scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)));
         CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT, access_note TEXT);
-        CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, active_confirmed_core INTEGER NOT NULL, inclusion_status TEXT);
+        CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)), active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)), inclusion_status TEXT);
         CREATE VIEW active_confirmed_core_papers AS SELECT * FROM papers WHERE active_confirmed_core = 1;
         CREATE VIEW active_missing_local_pdf AS SELECT * FROM papers WHERE active_confirmed_core = 1 AND pdf_exists = 0;
         CREATE VIEW canonical_paper_modules AS
@@ -2508,6 +2573,7 @@ def main() -> None:
     validate_discipline_sqlite_constraints()
     validate_core_analysis_foreign_keys()
     validate_module_sqlite_constraints()
+    validate_evidence_sqlite_constraints()
     validate_papers_sqlite_constraints()
     validate_reference_owner_foreign_keys()
     validate_auxiliary_analysis_tables(
