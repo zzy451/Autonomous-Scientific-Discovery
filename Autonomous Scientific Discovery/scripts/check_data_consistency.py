@@ -2749,10 +2749,26 @@ def validate_registry_layer(
     require_row_fields(
         asset_manifest_path,
         asset_manifest_rows,
-        ("paper_id", "asset_type", "path", "exists"),
+        (
+            "asset_id",
+            "paper_id",
+            "title",
+            "asset_type",
+            "path",
+            "exists",
+            "sha256",
+            "asset_size_bytes",
+            "asset_status",
+            "is_main_text",
+            "is_supplementary",
+            "source_limited",
+            "source_checked_at",
+            "exported_at",
+        ),
     )
     note_asset_rows = []
     primary_pdf_asset_rows = []
+    actual_asset_keys = set()
     seen_asset_keys = set()
     for index, row in enumerate(asset_manifest_rows, start=1):
         paper_id = row["paper_id"]
@@ -2764,6 +2780,14 @@ def validate_registry_layer(
         assert_true(
             isinstance(row["exists"], bool),
             f"asset_manifest exists must be bool for {paper_id}",
+        )
+        assert_true(
+            row["asset_id"] == f"{paper_id}:{asset_type}",
+            f"asset_manifest asset_id mismatch for {paper_id} {asset_type}: {row['asset_id']!r}",
+        )
+        assert_true(
+            row["title"] == paper_rows_by_id[paper_id]["title"],
+            f"asset_manifest title mismatch for {paper_id} {asset_type}: {row['title']!r}",
         )
         assert_true(
             isinstance(row.get("is_main_text"), bool),
@@ -2787,6 +2811,7 @@ def validate_registry_layer(
                 isinstance(row["asset_size_bytes"], int) and row["asset_size_bytes"] >= 0,
                 f"asset_manifest asset_size_bytes must be non-negative int for {paper_id}",
             )
+        actual_asset_keys.add((paper_id, asset_type))
         if asset_type in {ASSET_TYPE_NOTE, ASSET_TYPE_PRIMARY_PDF}:
             key = (paper_id, asset_type)
             assert_true(
@@ -2798,8 +2823,22 @@ def validate_registry_layer(
                 note_asset_rows.append(row)
             else:
                 primary_pdf_asset_rows.append(row)
+        else:
+            assert_true(
+                False,
+                f"asset_manifest has unexpected asset_type for {paper_id}: {asset_type!r}",
+            )
     assert_true(note_asset_rows, "asset_manifest missing note asset records")
     assert_true(primary_pdf_asset_rows, "asset_manifest missing primary_pdf asset records")
+    expected_asset_keys = {
+        (paper_id, asset_type)
+        for paper_id in paper_rows_by_id
+        for asset_type in (ASSET_TYPE_NOTE, ASSET_TYPE_PRIMARY_PDF)
+    }
+    assert_true(
+        actual_asset_keys == expected_asset_keys,
+        "asset_manifest asset-type coverage does not match expected note/primary_pdf rows per paper",
+    )
     note_assets_by_id = {row["paper_id"]: row for row in note_asset_rows}
     expected_note_ids = set(paper_rows_by_id.keys())
     assert_true(
@@ -2815,6 +2854,18 @@ def validate_registry_layer(
         assert_true(
             asset_row["exists"] == paper_row["note_exists"],
             f"asset_manifest note existence mismatch for {paper_id}: {asset_row['exists']!r} != {paper_row['note_exists']!r}",
+        )
+        assert_true(
+            asset_row["asset_status"] == paper_row["note_status"],
+            f"asset_manifest note asset_status mismatch for {paper_id}: {asset_row['asset_status']!r} != {paper_row['note_status']!r}",
+        )
+        assert_true(
+            asset_row["source_limited"] == paper_row["source_limited"],
+            f"asset_manifest note source_limited mismatch for {paper_id}: {asset_row['source_limited']!r} != {paper_row['source_limited']!r}",
+        )
+        assert_true(
+            asset_row["exported_at"] == paper_row["exported_at"],
+            f"asset_manifest note exported_at mismatch for {paper_id}: {asset_row['exported_at']!r} != {paper_row['exported_at']!r}",
         )
         assert_true(
             asset_row.get("source_checked_at", "") == "",
@@ -2840,6 +2891,18 @@ def validate_registry_layer(
         assert_true(
             asset_row["exists"] == paper_row["pdf_exists"],
             f"asset_manifest primary_pdf existence mismatch for {paper_id}: {asset_row['exists']!r} != {paper_row['pdf_exists']!r}",
+        )
+        assert_true(
+            asset_row["asset_status"] == paper_row["pdf_status"],
+            f"asset_manifest primary_pdf asset_status mismatch for {paper_id}: {asset_row['asset_status']!r} != {paper_row['pdf_status']!r}",
+        )
+        assert_true(
+            asset_row["source_limited"] == paper_row["source_limited"],
+            f"asset_manifest primary_pdf source_limited mismatch for {paper_id}: {asset_row['source_limited']!r} != {paper_row['source_limited']!r}",
+        )
+        assert_true(
+            asset_row["exported_at"] == paper_row["exported_at"],
+            f"asset_manifest primary_pdf exported_at mismatch for {paper_id}: {asset_row['exported_at']!r} != {paper_row['exported_at']!r}",
         )
         assert_true(
             asset_row.get("source_checked_at", "") == paper_row.get("source_checked_at", ""),
