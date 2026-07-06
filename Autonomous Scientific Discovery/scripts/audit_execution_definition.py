@@ -30,6 +30,10 @@ FIELD_DICTIONARY = DATA_DIR / "field_dictionary.md"
 INTEGRITY_REPORT = DATA_DIR / "integrity_check_report.md"
 SQLITE_PATH = DATA_DIR / "papers.sqlite"
 CHANGE_LOG_JSONL = DATA_DIR / "change_log.jsonl"
+PDF_MANIFEST_JSON = DATA_DIR / "pdf_manifest.json"
+MISSING_PDF_MANIFEST_JSON = DATA_DIR / "missing_pdf_manifest.json"
+NOTE_MANIFEST_JSON = DATA_DIR / "note_manifest.json"
+ASSET_MANIFEST_JSONL = DATA_DIR / "registry" / "asset_manifest.jsonl"
 PIPELINE_SCRIPT = ROOT / "scripts" / "run_structured_data_pipeline.py"
 QUERY_SCRIPT = ROOT / "scripts" / "query_analysis_db.py"
 EXPORT_SCRIPT = ROOT / "scripts" / "export_structured_data.py"
@@ -70,6 +74,10 @@ def load_json(path: Path) -> dict[str, object]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_json_value(path: Path) -> object:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def load_csv_rows(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8", newline="") as handle:
         return [dict(row) for row in csv.DictReader(handle)]
@@ -104,9 +112,13 @@ def main() -> None:
     registry = load_jsonl(DISCIPLINE_REGISTRY_JSONL)
     pdf_archive_registry = load_jsonl(PDF_ARCHIVE_REGISTRY_JSONL)
     classification_assignments = load_jsonl(CLASSIFICATION_ASSIGNMENTS_JSONL)
+    asset_manifest_rows = load_jsonl(ASSET_MANIFEST_JSONL)
     preview_rows = load_csv_rows(PREVIEW_CSV)
     classification_index = load_json(CLASSIFICATION_CODE_INDEX)
     change_log_rows = load_jsonl(CHANGE_LOG_JSONL) if CHANGE_LOG_JSONL.exists() else []
+    pdf_manifest_rows = load_json_value(PDF_MANIFEST_JSON)
+    missing_pdf_manifest_rows = load_json_value(MISSING_PDF_MANIFEST_JSON)
+    note_manifest_rows = load_json_value(NOTE_MANIFEST_JSON)
     readme_text = read_text(README)
     field_dictionary_text = read_text(FIELD_DICTIONARY)
     integrity_report_text = read_text(INTEGRITY_REPORT)
@@ -125,6 +137,11 @@ def main() -> None:
         sqlite_papers_count = count_sqlite_table(conn, "papers")
         sqlite_registry_count = count_sqlite_table(conn, "discipline_local_code_registry")
         sqlite_pdf_evidence_count = count_sqlite_table(conn, "pdf_evidence_status")
+        sqlite_paper_assets_count = count_sqlite_table(conn, "paper_assets")
+        sqlite_notes_count = count_sqlite_table(conn, "notes")
+        sqlite_pdf_inventory_count = count_sqlite_table(conn, "pdf_inventory")
+        sqlite_missing_pdf_inventory_count = count_sqlite_table(conn, "missing_pdf_inventory")
+        sqlite_note_inventory_count = count_sqlite_table(conn, "note_inventory")
         sqlite_paper_modules_count = count_sqlite_table(conn, "paper_modules")
         sqlite_general_method_buckets_count = count_sqlite_table(conn, "paper_general_method_buckets")
         sqlite_classification_terms_count = count_sqlite_table(conn, "classification_terms")
@@ -928,6 +945,37 @@ def main() -> None:
         "SQLite metadata provenance keys are incomplete or the metadata/provenance query surfaces are not fully exposed and documented.",
     )
     add_result(results, "22", status, detail, "Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
+
+    evidence_inventory_query_tokens = (
+        "missing-pdf",
+        "source-limited",
+        "coverage-summary",
+        "paper-assets",
+        "notes",
+    )
+    evidence_inventory_files_ok = (
+        isinstance(pdf_manifest_rows, list)
+        and isinstance(missing_pdf_manifest_rows, list)
+        and isinstance(note_manifest_rows, list)
+    )
+    status, detail = check(
+        evidence_inventory_files_ok
+        and len(asset_manifest_rows) == sqlite_paper_assets_count
+        and len(note_manifest_rows) == sqlite_notes_count
+        and len(pdf_manifest_rows) == sqlite_pdf_inventory_count
+        and len(missing_pdf_manifest_rows) == sqlite_missing_pdf_inventory_count
+        and len(note_manifest_rows) == sqlite_note_inventory_count
+        and all(token in query_script_text for token in evidence_inventory_query_tokens)
+        and all(token in readme_text for token in evidence_inventory_query_tokens),
+        (
+            "Evidence/asset/note inventory surfaces are populated, mirrored into SQLite, and queryable via the documented "
+            f"missing-pdf/source-limited/coverage-summary/paper-assets/notes commands "
+            f"(assets={sqlite_paper_assets_count}, notes={sqlite_notes_count}, "
+            f"pdf_inventory={sqlite_pdf_inventory_count}, missing_pdf_inventory={sqlite_missing_pdf_inventory_count})."
+        ),
+        "Evidence/asset/note inventory surfaces are missing, drifted from SQLite, or the corresponding maintenance/query commands are not fully exposed and documented.",
+    )
+    add_result(results, "23", status, detail, "Data/pdf_manifest.json + Data/missing_pdf_manifest.json + Data/note_manifest.json + Data/registry/asset_manifest.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")

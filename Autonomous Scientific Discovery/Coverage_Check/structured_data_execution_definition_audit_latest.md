@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 22
+- `PASS`: 23
 - `FAIL`: 0
 
 ## Items
@@ -140,3 +140,9 @@ Evidence: `Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py
 SQLite metadata carries the current papers/registry provenance bundle and the metadata / discipline-registry-metadata / snapshot-provenance query surfaces are documented and exposed.
 
 Evidence: `Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md`
+
+### Item 23 - PASS
+
+Evidence/asset/note inventory surfaces are populated, mirrored into SQLite, and queryable via the documented missing-pdf/source-limited/coverage-summary/paper-assets/notes commands (assets=1742, notes=871, pdf_inventory=426, missing_pdf_inventory=25).
+
+Evidence: `Data/pdf_manifest.json + Data/missing_pdf_manifest.json + Data/note_manifest.json + Data/registry/asset_manifest.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md`
