@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 15
+- `PASS`: 16
 - `FAIL`: 0
 
 ## Items
@@ -98,3 +98,9 @@ Evidence: `Data/README.md + Data/field_dictionary.md`
 query_analysis_db.py exposes the named discipline/secondary-class query surfaces and README documents those commands for current structured-data querying.
 
 Evidence: `scripts/query_analysis_db.py + Data/README.md`
+
+### Item 16 - PASS
+
+export_structured_data.py and build_analysis_db.py both carry explicit owner-path write guardrails for discipline_code_assignments.jsonl, classification_code_index.json, and change_log.jsonl, and README documents the same protection.
+
+Evidence: `scripts/export_structured_data.py + scripts/build_analysis_db.py + Data/README.md`
