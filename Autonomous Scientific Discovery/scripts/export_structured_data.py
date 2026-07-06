@@ -957,10 +957,9 @@ def build_discipline_initial_assignment_preview(
     for secondary_code, rows in sorted(active_code_groups.items()):
         primary_code, secondary_rank = secondary_code.split(".")
         for index, row in enumerate(sorted(rows, key=lambda item: str(item["paper_id"])), start=1):
-            row["proposed_discipline_local_code"] = (
-                f"{primary_code}-{secondary_rank}-{index:03d}"
-            )
-            row["discipline_local_rank"] = f"{index:03d}"
+            proposed_code = f"{primary_code}-{secondary_rank}-{index:03d}"
+            row["proposed_discipline_local_code"] = proposed_code
+            row["discipline_local_rank"] = parse_discipline_local_rank(proposed_code)
 
     return preview_rows
 
