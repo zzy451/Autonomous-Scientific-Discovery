@@ -30,6 +30,7 @@ FIELD_DICTIONARY = DATA_DIR / "field_dictionary.md"
 INTEGRITY_REPORT = DATA_DIR / "integrity_check_report.md"
 SQLITE_PATH = DATA_DIR / "papers.sqlite"
 PIPELINE_SCRIPT = ROOT / "scripts" / "run_structured_data_pipeline.py"
+QUERY_SCRIPT = ROOT / "scripts" / "query_analysis_db.py"
 MASTER_OWNER = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_OWNER = ROOT / "Coverage_Check" / "multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"
 PLAN_PATH = COVERAGE_DIR / "structured_data_long_term_catalog_and_index_plan_2026-07-05.md"
@@ -101,6 +102,7 @@ def main() -> None:
     field_dictionary_text = read_text(FIELD_DICTIONARY)
     integrity_report_text = read_text(INTEGRITY_REPORT)
     pipeline_script_text = read_text(PIPELINE_SCRIPT)
+    query_script_text = read_text(QUERY_SCRIPT)
     active_papers = [row for row in papers if bool(row.get("active_confirmed_core"))]
 
     with sqlite3.connect(SQLITE_PATH) as conn:
@@ -653,6 +655,25 @@ def main() -> None:
         "README and/or field_dictionary do not fully document the four fact-source model and its owner files.",
     )
     add_result(results, "14", status, detail, "Data/README.md + Data/field_dictionary.md")
+
+    query_tokens = (
+        "discipline-code-summary",
+        "discipline-code",
+        "secondary-class-summary",
+        "secondary-class-pdf-coverage",
+        "classification-terms",
+    )
+    status, detail = check(
+        QUERY_SCRIPT.exists()
+        and all(token in query_script_text for token in query_tokens)
+        and all(token in readme_text for token in query_tokens),
+        (
+            "query_analysis_db.py exposes the named discipline/secondary-class query surfaces "
+            "and README documents those commands for current structured-data querying."
+        ),
+        "query_analysis_db.py and/or README is missing the named discipline/secondary-class query surfaces from the current structured-data workflow.",
+    )
+    add_result(results, "15", status, detail, "scripts/query_analysis_db.py + Data/README.md")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")

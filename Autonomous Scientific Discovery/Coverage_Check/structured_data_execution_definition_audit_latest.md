@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 14
+- `PASS`: 15
 - `FAIL`: 0
 
 ## Items
@@ -92,3 +92,9 @@ Evidence: `Data/papers.sqlite`
 README and field_dictionary both document the four fact-source model and explicitly name master, progress, discipline-code ledger, and taxonomy-owner files.
 
 Evidence: `Data/README.md + Data/field_dictionary.md`
+
+### Item 15 - PASS
+
+query_analysis_db.py exposes the named discipline/secondary-class query surfaces and README documents those commands for current structured-data querying.
+
+Evidence: `scripts/query_analysis_db.py + Data/README.md`
