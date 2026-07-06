@@ -124,6 +124,22 @@ def run_query_command(arguments: list[str]) -> tuple[bool, str]:
     return True, ((completed.stdout or "") + (completed.stderr or ""))
 
 
+def run_python_command(arguments: list[str]) -> tuple[bool, str]:
+    try:
+        completed = subprocess.run(
+            [sys.executable, *arguments],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            check=True,
+        )
+    except Exception as exc:
+        return False, str(exc)
+    return True, ((completed.stdout or "") + (completed.stderr or ""))
+
+
 def check(condition: bool, success: str, failure: str) -> tuple[str, str]:
     return ("PASS", success) if condition else ("FAIL", failure)
 
@@ -1179,6 +1195,86 @@ def main() -> None:
         "One or more documented corpus/review query surfaces is missing from README/query_analysis_db.py or failed when executed during the representative execution audit.",
     )
     add_result(results, "27", status, detail, "scripts/query_analysis_db.py + Data/README.md + representative query executions")
+
+    owner_helper_runs = {
+        "discipline": run_python_command(
+            [
+                str(MANAGE_DISCIPLINE_CODE_ASSIGNMENTS_SCRIPT),
+                "--paper-id",
+                "ASD-0060",
+                "--target-status",
+                "active_code",
+                "--assignment-reason",
+                "resolve_pending_secondary",
+                "--change-reason",
+                "dry run audit of discipline helper",
+                "--effective-date",
+                "2026-07-06",
+                "--primary-taxonomy-code-2lvl",
+                "04.04",
+                "--close-current-as",
+                "retired_code",
+                "--dry-run",
+            ]
+        ),
+        "taxonomy": run_python_command(
+            [
+                str(MANAGE_CLASSIFICATION_CODE_INDEX_SCRIPT),
+                "upsert-secondary",
+                "--secondary-code",
+                "04.04",
+                "--review-status",
+                "reviewed",
+                "--dry-run",
+            ]
+        ),
+        "progress": run_python_command(
+            [
+                str(MANAGE_PROGRESS_TRACKING_SCRIPT),
+                "--paper-id",
+                "ASD-0001",
+                "--set",
+                "source_limited=yes",
+                "--reason",
+                "dry run audit of progress helper",
+                "--dry-run",
+            ]
+        ),
+        "master": run_python_command(
+            [
+                str(MANAGE_MASTER_PAPER_LIST_SCRIPT),
+                "--paper-id",
+                "ASD-0001",
+                "--set",
+                "Citation priority=standard",
+                "--reason",
+                "dry run audit of master helper",
+                "--dry-run",
+            ]
+        ),
+    }
+    owner_helper_outputs_ok = (
+        owner_helper_runs["discipline"][0]
+        and "Dry run only; no files written." in owner_helper_runs["discipline"][1]
+        and "Change log:" in owner_helper_runs["discipline"][1]
+        and owner_helper_runs["taxonomy"][0]
+        and "Dry run only; no files written." in owner_helper_runs["taxonomy"][1]
+        and "Action: update_secondary 04.04" in owner_helper_runs["taxonomy"][1]
+        and owner_helper_runs["progress"][0]
+        and "Dry run only; no files written." in owner_helper_runs["progress"][1]
+        and "Planned change_log row:" in owner_helper_runs["progress"][1]
+        and owner_helper_runs["master"][0]
+        and "Dry run only; no files written." in owner_helper_runs["master"][1]
+        and "Planned change_log row:" in owner_helper_runs["master"][1]
+    )
+    status, detail = check(
+        owner_helper_outputs_ok,
+        (
+            "Day-to-day owner-maintenance helper commands for discipline, taxonomy, progress, and master all succeed in representative dry-run mode without writing owner files."
+        ),
+        "One or more day-to-day owner-maintenance helpers failed during representative dry-run execution or no longer emitted the expected preview/no-write audit output.",
+    )
+    add_result(results, "28", status, detail, "scripts/manage_discipline_code_assignments.py + scripts/manage_classification_code_index.py + scripts/manage_progress_tracking.py + scripts/manage_master_paper_list.py + representative dry-run executions")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")
