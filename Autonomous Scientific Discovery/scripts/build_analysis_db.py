@@ -1141,6 +1141,7 @@ def validate_evidence_sqlite_constraints() -> None:
         )
     for fragment in (
         "note_path TEXT NOT NULL",
+        "active_confirmed_core <> 1 OR trim(note_path) <> ''",
         "note_exists IN (0, 1)",
         "active_confirmed_core IN (0, 1)",
     ):
@@ -1156,6 +1157,15 @@ def validate_evidence_sqlite_constraints() -> None:
         "active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1))" in normalized_pdf_inventory_sql,
         'pdf_inventory SQLite table is missing expected active_confirmed_core CHECK constraint',
     )
+    for fragment in (
+        "trim(pdf_path) <> ''",
+        "length(sha256) = 64",
+        "sha256 NOT GLOB '*[^0-9a-f]*'",
+    ):
+        assert_build_condition(
+            fragment in normalized_pdf_inventory_sql,
+            f'pdf_inventory SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
 
 def validate_papers_sqlite_constraints() -> None:
     conn = sqlite3.connect(SQLITE_PATH)
@@ -2623,14 +2633,14 @@ def build_sqlite(
         CREATE TABLE notes (
             paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             title TEXT NOT NULL,
-            note_path TEXT NOT NULL,
+            note_path TEXT NOT NULL CHECK (active_confirmed_core <> 1 OR trim(note_path) <> ''),
             note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)),
             active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
             inclusion_status TEXT
         );
-        CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT REFERENCES taxonomy_index(code), scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)));
+        CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, pdf_path TEXT NOT NULL CHECK (trim(pdf_path) <> ''), sha256 TEXT NOT NULL CHECK (length(sha256) = 64 AND sha256 NOT GLOB '*[^0-9a-f]*'), primary_module_for_filing TEXT REFERENCES taxonomy_index(code), scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)));
         CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT, access_note TEXT);
-        CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, note_path TEXT NOT NULL, note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)), active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)), inclusion_status TEXT);
+        CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, note_path TEXT NOT NULL CHECK (active_confirmed_core <> 1 OR trim(note_path) <> ''), note_exists INTEGER NOT NULL CHECK (note_exists IN (0, 1)), active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)), inclusion_status TEXT);
         CREATE VIEW active_confirmed_core_papers AS SELECT * FROM papers WHERE active_confirmed_core = 1;
         CREATE VIEW active_missing_local_pdf AS SELECT * FROM papers WHERE active_confirmed_core = 1 AND pdf_exists = 0;
         CREATE VIEW canonical_paper_modules AS
