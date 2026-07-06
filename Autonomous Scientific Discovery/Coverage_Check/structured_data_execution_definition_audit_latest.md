@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 30
+- `PASS`: 31
 - `FAIL`: 0
 
 ## Items
@@ -188,3 +188,9 @@ Evidence: `scripts/query_analysis_db.py + Data/README.md + representative regist
 Core metadata/baseline/boundary query surfaces are documented and execute successfully for representative summary, provenance, canonical baseline, inventory, and boundary-audit lookups.
 
 Evidence: `scripts/query_analysis_db.py + Data/README.md + representative metadata/baseline/boundary query executions`
+
+### Item 31 - PASS
+
+The initial discipline-code ledger freeze is explicitly recorded as coming from the reviewed preview pipeline, the init command still enforces the preview review gate, and the current ledger retains a full initial_assignment baseline.
+
+Evidence: `Coverage_Check/structured_data_catalog_round3_initial_ledger_closeout_2026-07-05.md + scripts/init_discipline_code_assignments.py + Data/discipline_code_assignments.jsonl + Data/discipline_code_initial_assignment_preview.csv`

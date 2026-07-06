@@ -52,6 +52,7 @@ MASTER_OWNER = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_OWNER = ROOT / "Coverage_Check" / "multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"
 PLAN_PATH = COVERAGE_DIR / "structured_data_long_term_catalog_and_index_plan_2026-07-05.md"
 OUTPUT_PATH = COVERAGE_DIR / "structured_data_execution_definition_audit_latest.md"
+INITIAL_LEDGER_CLOSEOUT = COVERAGE_DIR / "structured_data_catalog_round3_initial_ledger_closeout_2026-07-05.md"
 
 PAPER_ID_PATTERN = re.compile(r"ASD-\d{4}")
 ASSIGNMENT_ID_PATTERN = re.compile(r"DCA-\d{6}")
@@ -176,6 +177,7 @@ def main() -> None:
     readme_text = read_text(README)
     field_dictionary_text = read_text(FIELD_DICTIONARY)
     integrity_report_text = read_text(INTEGRITY_REPORT)
+    initial_ledger_closeout_text = read_text(INITIAL_LEDGER_CLOSEOUT)
     pipeline_script_text = read_text(PIPELINE_SCRIPT)
     query_script_text = read_text(QUERY_SCRIPT)
     export_script_text = read_text(EXPORT_SCRIPT)
@@ -1408,6 +1410,39 @@ def main() -> None:
         'One or more documented core metadata/baseline/boundary query surfaces is missing from README/query_analysis_db.py or failed when executed during the representative execution audit.',
     )
     add_result(results, "30", status, detail, "scripts/query_analysis_db.py + Data/README.md + representative metadata/baseline/boundary query executions")
+
+    initial_assignment_rows = [
+        row for row in assignments if str(row.get("assignment_reason")) == "initial_assignment"
+    ]
+    initial_assignment_fields_ok = all(
+        str(row.get("assigned_at")) == "2026-07-05"
+        and str(row.get("assigned_by")) == "codex"
+        for row in initial_assignment_rows
+    )
+    initial_closeout_tokens = (
+        "from the reviewed preview pipeline",
+        "`secondary_not_in_taxonomy_index`",
+        "has been eliminated",
+        "seeded-but-unreviewed secondary terms are allowed to enter the initial ledger",
+    )
+    init_review_gate_tokens = (
+        "secondary_not_in_taxonomy_index",
+        "--allow-unreviewed-preview",
+        "Review gate failed",
+    )
+    status, detail = check(
+        INITIAL_LEDGER_CLOSEOUT.exists()
+        and all(token in initial_ledger_closeout_text for token in initial_closeout_tokens)
+        and all(token in init_discipline_code_assignments_script_text for token in init_review_gate_tokens)
+        and len(initial_assignment_rows) == len(preview_rows)
+        and initial_assignment_fields_ok,
+        (
+            "The initial discipline-code ledger freeze is explicitly recorded as coming from the reviewed preview pipeline, "
+            "the init command still enforces the preview review gate, and the current ledger retains a full initial_assignment baseline."
+        ),
+        "The reviewed-preview-to-initial-ledger freeze is not yet strongly proven: the round3 closeout, init review-gate semantics, or current initial_assignment ledger baseline no longer align.",
+    )
+    add_result(results, "31", status, detail, "Coverage_Check/structured_data_catalog_round3_initial_ledger_closeout_2026-07-05.md + scripts/init_discipline_code_assignments.py + Data/discipline_code_assignments.jsonl + Data/discipline_code_initial_assignment_preview.csv")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")
