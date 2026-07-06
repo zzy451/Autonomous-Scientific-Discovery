@@ -1041,8 +1041,10 @@ def validate_module_sqlite_constraints() -> None:
         "assignment_scope = 'scientific_object_modules'",
         "module_kind = 'formal_module'",
         "module_code <> '01.04'",
+        "sort_order >= 1",
         "is_primary_for_filing IN (0, 1)",
         "confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')",
+        "confidence IS NOT NULL AND confidence <> ''",
         "source IN ('primary_module_for_filing', 'scientific_object_modules')",
         "(is_primary_for_filing = 1 AND source = 'primary_module_for_filing') OR (is_primary_for_filing = 0 AND source = 'scientific_object_modules')",
     ):
@@ -1053,6 +1055,7 @@ def validate_module_sqlite_constraints() -> None:
     for fragment in (
         "assignment_scope = 'final_modules_or_bucket'",
         "module_kind IN ('formal_module', 'general_bucket')",
+        "sort_order >= 1",
         "is_primary_for_filing IN (0, 1)",
         "confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')",
         "source = 'final_modules_or_bucket'",
@@ -2306,7 +2309,7 @@ def build_sqlite(
             assignment_scope TEXT NOT NULL CHECK (assignment_scope = 'scientific_object_modules'),
             module_code TEXT NOT NULL REFERENCES taxonomy_index(code),
             module_kind TEXT NOT NULL CHECK (module_kind = 'formal_module'),
-            sort_order INTEGER NOT NULL,
+            sort_order INTEGER NOT NULL CHECK (sort_order >= 1),
             is_primary_for_filing INTEGER NOT NULL CHECK (is_primary_for_filing IN (0, 1)),
             confidence TEXT CHECK (confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')),
             source TEXT NOT NULL CHECK (source IN ('primary_module_for_filing', 'scientific_object_modules')),
@@ -2315,6 +2318,7 @@ def build_sqlite(
                 OR (is_primary_for_filing = 0 AND source = 'scientific_object_modules')
             ),
             CHECK (module_code <> '01.04'),
+            CHECK (confidence IS NOT NULL AND confidence <> ''),
             PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE workflow_mirror_paper_modules (
@@ -2322,7 +2326,7 @@ def build_sqlite(
             assignment_scope TEXT NOT NULL CHECK (assignment_scope = 'final_modules_or_bucket'),
             module_code TEXT NOT NULL REFERENCES taxonomy_index(code),
             module_kind TEXT NOT NULL CHECK (module_kind IN ('formal_module', 'general_bucket')),
-            sort_order INTEGER NOT NULL,
+            sort_order INTEGER NOT NULL CHECK (sort_order >= 1),
             is_primary_for_filing INTEGER NOT NULL CHECK (is_primary_for_filing IN (0, 1)) CHECK (is_primary_for_filing = 0),
             confidence TEXT CHECK (confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')),
             source TEXT NOT NULL CHECK (source = 'final_modules_or_bucket'),
