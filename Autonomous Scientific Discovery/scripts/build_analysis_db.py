@@ -748,6 +748,12 @@ def validate_evidence_sqlite_constraints() -> None:
         "is_supplementary IN (0, 1)",
         "source_limited IS NULL OR source_limited IN ('', 'no', 'yes')",
         "active_confirmed_core IN (0, 1)",
+        "NOT (is_main_text = 1 AND is_supplementary = 1)",
+        "pdf_evidence_type <> 'main_pdf'",
+        "pdf_evidence_type <> 'supplementary_pdf'",
+        "pdf_check_status <> 'source_limited'",
+        "source_limited <> 'yes'",
+        "pdf_check_status <> 'full_text_checked'",
     ):
         assert_build_condition(
             fragment in pdf_evidence_sql,
@@ -759,6 +765,8 @@ def validate_evidence_sqlite_constraints() -> None:
         "is_main_text IN (0, 1)",
         "is_supplementary IN (0, 1)",
         "source_limited IS NULL OR source_limited IN ('', 'no', 'yes')",
+        "NOT (is_main_text = 1 AND is_supplementary = 1)",
+        "asset_type <> 'note'",
     ):
         assert_build_condition(
             fragment in paper_assets_sql,
@@ -1923,7 +1931,28 @@ def build_sqlite(
             source_limited TEXT CHECK (source_limited IS NULL OR source_limited IN ('', 'no', 'yes')),
             source_checked_at TEXT,
             primary_module_for_filing TEXT REFERENCES taxonomy_index(code),
-            active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1))
+            active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
+            CHECK (NOT (is_main_text = 1 AND is_supplementary = 1)),
+            CHECK (
+                pdf_evidence_type <> 'main_pdf'
+                OR (is_main_text = 1 AND is_supplementary = 0)
+            ),
+            CHECK (
+                pdf_evidence_type <> 'supplementary_pdf'
+                OR (is_main_text = 0 AND is_supplementary = 1)
+            ),
+            CHECK (
+                pdf_check_status <> 'source_limited'
+                OR source_limited = 'yes'
+            ),
+            CHECK (
+                source_limited <> 'yes'
+                OR pdf_check_status = 'source_limited'
+            ),
+            CHECK (
+                pdf_check_status <> 'full_text_checked'
+                OR IFNULL(source_limited, '') <> 'yes'
+            )
         );
         CREATE TABLE paper_assets (
             asset_id TEXT PRIMARY KEY,
@@ -1939,7 +1968,12 @@ def build_sqlite(
             is_supplementary INTEGER NOT NULL CHECK (is_supplementary IN (0, 1)),
             source_limited TEXT CHECK (source_limited IS NULL OR source_limited IN ('', 'no', 'yes')),
             source_checked_at TEXT,
-            exported_at TEXT
+            exported_at TEXT,
+            CHECK (NOT (is_main_text = 1 AND is_supplementary = 1)),
+            CHECK (
+                asset_type <> 'note'
+                OR (is_main_text = 0 AND is_supplementary = 0)
+            )
         );
         CREATE TABLE notes (
             paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
