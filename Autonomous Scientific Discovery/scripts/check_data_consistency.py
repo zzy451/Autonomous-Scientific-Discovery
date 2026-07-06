@@ -895,7 +895,8 @@ def validate_discipline_initial_assignment_preview(
         primary_module_for_filing = str(paper_row["primary_module_for_filing"])
         legacy_secondary_class = str(paper_row["legacy_secondary_class"]).strip()
         secondary_term = secondary_terms_by_code.get(legacy_secondary_class)
-        review_flags = set(split_semicolon_list(str(row["review_flags"])))
+        review_flag_list = split_semicolon_list(str(row["review_flags"]))
+        review_flags = set(review_flag_list)
 
         assert_true(
             row["title"] == paper_row["title"],
@@ -988,29 +989,28 @@ def validate_discipline_initial_assignment_preview(
             f"discipline_code_initial_assignment_preview pdf_path mismatch for {paper_id}",
         )
 
+        expected_review_flags = set()
         if len(scientific_object_modules) > 1:
-            assert_true(
-                "multi_module" in review_flags,
-                f"discipline_code_initial_assignment_preview missing multi_module flag for {paper_id}",
-            )
+            expected_review_flags.add("multi_module")
         if str(paper_row["source_limited"]).startswith("yes"):
-            assert_true(
-                "source_limited" in review_flags,
-                f"discipline_code_initial_assignment_preview missing source_limited flag for {paper_id}",
-            )
+            expected_review_flags.add("source_limited")
         if (
             primary_module_for_filing
             and scientific_object_modules
             and primary_module_for_filing not in scientific_object_modules
         ):
-            assert_true(
-                "primary_module_outside_scientific_object_modules" in review_flags,
-                f"discipline_code_initial_assignment_preview missing primary/outside flag for {paper_id}",
-            )
+            expected_review_flags.add("primary_module_outside_scientific_object_modules")
         if legacy_secondary_class and secondary_term is None:
-            assert_true(
-                "secondary_not_in_taxonomy_index" in review_flags,
-                f"discipline_code_initial_assignment_preview missing taxonomy-index flag for {paper_id}",
+            expected_review_flags.add("secondary_not_in_taxonomy_index")
+        if secondary_term is not None and str(secondary_term.get("status", "")).strip() != "active":
+            expected_review_flags.add(
+                "secondary_term_status_"
+                f"{str(secondary_term.get('status', '')).strip() or 'unknown'}"
+            )
+        if secondary_term is not None and str(secondary_term.get("review_status", "")).strip() != "reviewed":
+            expected_review_flags.add(
+                "secondary_term_review_"
+                f"{str(secondary_term.get('review_status', '')).strip() or 'unknown'}"
             )
 
         is_pure_general_method = (
@@ -1023,6 +1023,8 @@ def validate_discipline_initial_assignment_preview(
         pending_reason = str(row["pending_reason"]).strip()
 
         if is_pure_general_method:
+            if legacy_secondary_class and legacy_secondary_class != "01.04":
+                expected_review_flags.add("general_method_secondary_not_01_04")
             assert_true(
                 proposed_status == "non_discipline_general_method",
                 f"discipline_code_initial_assignment_preview pure general-method row must use non_discipline_general_method: {paper_id}",
@@ -1036,6 +1038,7 @@ def validate_discipline_initial_assignment_preview(
                 f"discipline_code_initial_assignment_preview pure general-method row must not carry pending_reason: {paper_id}",
             )
         elif not primary_module_for_filing:
+            expected_review_flags.add("missing_primary_module_for_filing")
             assert_true(
                 proposed_status == "pending_secondary",
                 f"discipline_code_initial_assignment_preview missing primary-module row must use pending_secondary: {paper_id}",
@@ -1049,6 +1052,7 @@ def validate_discipline_initial_assignment_preview(
                 f"discipline_code_initial_assignment_preview missing primary-module row must not carry proposed code fields: {paper_id}",
             )
         elif not PRIMARY_TAXONOMY_2LVL_PATTERN.fullmatch(legacy_secondary_class):
+            expected_review_flags.add("missing_or_uncertain_secondary_class")
             assert_true(
                 proposed_status == "pending_secondary",
                 f"discipline_code_initial_assignment_preview uncertain secondary row must use pending_secondary: {paper_id}",
@@ -1062,6 +1066,7 @@ def validate_discipline_initial_assignment_preview(
                 f"discipline_code_initial_assignment_preview uncertain secondary row must not carry proposed code fields: {paper_id}",
             )
         elif legacy_secondary_class.split(".", 1)[0] != primary_module_for_filing:
+            expected_review_flags.add("secondary_primary_mismatch")
             assert_true(
                 proposed_status == "pending_secondary",
                 f"discipline_code_initial_assignment_preview secondary/primary mismatch row must use pending_secondary: {paper_id}",
@@ -1096,6 +1101,15 @@ def validate_discipline_initial_assignment_preview(
                 f"discipline_code_initial_assignment_preview active proposal must not carry pending_reason: {paper_id}",
             )
             active_rows_by_secondary.setdefault(legacy_secondary_class, []).append(row)
+        assert_true(
+            len(review_flag_list) == len(review_flags),
+            f"discipline_code_initial_assignment_preview review_flags contains duplicates for {paper_id}",
+        )
+        assert_true(
+            review_flags == expected_review_flags,
+            "discipline_code_initial_assignment_preview review_flags mismatch "
+            f"for {paper_id}: {sorted(review_flags)} != {sorted(expected_review_flags)}",
+        )
 
     assert_true(
         seen_paper_ids == set(active_papers),
