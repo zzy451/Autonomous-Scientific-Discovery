@@ -645,6 +645,63 @@ def validate_core_analysis_foreign_keys() -> None:
             f'{table} SQLite table is missing expected foreign key to taxonomy_index(code) for primary_module_for_filing',
         )
 
+def validate_module_sqlite_constraints() -> None:
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        table_sql_rows = {
+            table: conn.execute(
+                f"SELECT sql FROM sqlite_master WHERE type = 'table' AND name = '{table}'"
+            ).fetchone()
+            for table in (
+                'papers',
+                'paper_modules',
+                'workflow_mirror_paper_modules',
+                'paper_general_method_buckets',
+            )
+        }
+    finally:
+        conn.close()
+
+    papers_sql = table_sql_rows['papers'][0] if table_sql_rows['papers'] else ''
+    paper_modules_sql = table_sql_rows['paper_modules'][0] if table_sql_rows['paper_modules'] else ''
+    workflow_modules_sql = table_sql_rows['workflow_mirror_paper_modules'][0] if table_sql_rows['workflow_mirror_paper_modules'] else ''
+    general_method_sql = table_sql_rows['paper_general_method_buckets'][0] if table_sql_rows['paper_general_method_buckets'] else ''
+
+    assert_build_condition(
+        "general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')" in papers_sql,
+        'papers SQLite table is missing expected general_method_bucket CHECK constraint',
+    )
+    for fragment in (
+        "assignment_scope = 'scientific_object_modules'",
+        "module_kind IN ('formal_module', 'general_bucket')",
+        "is_primary_for_filing IN (0, 1)",
+        "confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')",
+        "source IN ('primary_module_for_filing', 'scientific_object_modules')",
+    ):
+        assert_build_condition(
+            fragment in paper_modules_sql,
+            f'paper_modules SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+    for fragment in (
+        "assignment_scope = 'final_modules_or_bucket'",
+        "module_kind IN ('formal_module', 'general_bucket')",
+        "is_primary_for_filing IN (0, 1)",
+        "confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')",
+        "source = 'final_modules_or_bucket'",
+    ):
+        assert_build_condition(
+            fragment in workflow_modules_sql,
+            f'workflow_mirror_paper_modules SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+    for fragment in (
+        "general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'",
+        "active_confirmed_core IN (0, 1)",
+    ):
+        assert_build_condition(
+            fragment in general_method_sql,
+            f'paper_general_method_buckets SQLite table is missing expected CHECK constraint fragment: {fragment}',
+        )
+
 def validate_papers_sqlite_constraints() -> None:
     conn = sqlite3.connect(SQLITE_PATH)
     try:
@@ -1628,7 +1685,7 @@ def build_sqlite(
             pdf_path TEXT, pdf_exists INTEGER NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, is_agent TEXT, inclusion_status TEXT, exclusion_reason TEXT,
             legacy_main_class TEXT, legacy_secondary_class TEXT, legacy_tertiary_class TEXT, secondary_class_source TEXT CHECK (secondary_class_source IN ('legacy', 'normalized', 'manual_override')), secondary_class_confidence TEXT CHECK (secondary_class_confidence IN ('high', 'medium', 'low')), secondary_class_review_status TEXT CHECK (secondary_class_review_status IN ('unreviewed', 'reviewed', 'needs_split', 'needs_merge')), fourth_level_topic TEXT, new_fourth_level TEXT,
             agent_type_json TEXT NOT NULL, research_workflow_role_json TEXT NOT NULL, validation_type_json TEXT NOT NULL, scientific_contribution_type_json TEXT NOT NULL,
-            evidence_strength TEXT, citation_priority TEXT, remarks TEXT, scientific_object_modules_json TEXT NOT NULL, general_method_bucket TEXT NOT NULL,
+            evidence_strength TEXT, citation_priority TEXT, remarks TEXT, scientific_object_modules_json TEXT NOT NULL, general_method_bucket TEXT NOT NULL CHECK (general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')),
             object_coverage_mode TEXT CHECK (object_coverage_mode IS NULL OR object_coverage_mode IN ('single_module', 'multi_module', 'general_method_without_concrete_object_experiments')), primary_module_for_filing TEXT REFERENCES taxonomy_index(code), primary_module_confidence TEXT CHECK (primary_module_confidence IS NULL OR primary_module_confidence IN ('', 'high', 'medium', 'low')), primary_module_assignment_rule TEXT CHECK (primary_module_assignment_rule IS NULL OR primary_module_assignment_rule IN ('', 'main_scientific_object', 'main_validation_object', 'direct_contribution_target', 'substantive_application_object', 'manual_override')), primary_module_override_reason TEXT,
             classification_source_field TEXT, classification_source_confidence TEXT CHECK (classification_source_confidence IS NULL OR classification_source_confidence IN ('high', 'medium', 'low')), classification_parser_rule TEXT CHECK (classification_parser_rule IS NULL OR classification_parser_rule IN ('structured_remark_token', 'legacy_general_method_fallback', 'legacy_main_class_fallback', 'needs_review')),
             first_hand_sources_checked TEXT, source_checked_at TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
@@ -1638,30 +1695,30 @@ def build_sqlite(
         );
         CREATE TABLE paper_modules (
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
-            assignment_scope TEXT NOT NULL,
+            assignment_scope TEXT NOT NULL CHECK (assignment_scope = 'scientific_object_modules'),
             module_code TEXT NOT NULL REFERENCES taxonomy_index(code),
-            module_kind TEXT NOT NULL,
+            module_kind TEXT NOT NULL CHECK (module_kind IN ('formal_module', 'general_bucket')),
             sort_order INTEGER NOT NULL,
-            is_primary_for_filing INTEGER NOT NULL,
-            confidence TEXT,
-            source TEXT NOT NULL,
+            is_primary_for_filing INTEGER NOT NULL CHECK (is_primary_for_filing IN (0, 1)),
+            confidence TEXT CHECK (confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')),
+            source TEXT NOT NULL CHECK (source IN ('primary_module_for_filing', 'scientific_object_modules')),
             PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE workflow_mirror_paper_modules (
             paper_id TEXT NOT NULL REFERENCES papers(paper_id),
-            assignment_scope TEXT NOT NULL,
+            assignment_scope TEXT NOT NULL CHECK (assignment_scope = 'final_modules_or_bucket'),
             module_code TEXT NOT NULL REFERENCES taxonomy_index(code),
-            module_kind TEXT NOT NULL,
+            module_kind TEXT NOT NULL CHECK (module_kind IN ('formal_module', 'general_bucket')),
             sort_order INTEGER NOT NULL,
-            is_primary_for_filing INTEGER NOT NULL,
-            confidence TEXT,
-            source TEXT NOT NULL,
+            is_primary_for_filing INTEGER NOT NULL CHECK (is_primary_for_filing IN (0, 1)),
+            confidence TEXT CHECK (confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')),
+            source TEXT NOT NULL CHECK (source = 'final_modules_or_bucket'),
             PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE paper_general_method_buckets (
             paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
-            general_method_bucket TEXT NOT NULL,
-            active_confirmed_core INTEGER NOT NULL,
+            general_method_bucket TEXT NOT NULL CHECK (general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'),
+            active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
             source_limited TEXT
         );
         CREATE TABLE discipline_code_assignments (
@@ -2450,6 +2507,7 @@ def main() -> None:
     validate_discipline_local_code_registry_outputs(discipline_local_code_registry)
     validate_discipline_sqlite_constraints()
     validate_core_analysis_foreign_keys()
+    validate_module_sqlite_constraints()
     validate_papers_sqlite_constraints()
     validate_reference_owner_foreign_keys()
     validate_auxiliary_analysis_tables(
