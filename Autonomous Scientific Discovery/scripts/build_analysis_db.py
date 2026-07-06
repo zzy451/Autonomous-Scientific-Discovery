@@ -1040,6 +1040,7 @@ def validate_module_sqlite_constraints() -> None:
     for fragment in (
         "assignment_scope = 'scientific_object_modules'",
         "module_kind = 'formal_module'",
+        "module_code <> '01.04'",
         "is_primary_for_filing IN (0, 1)",
         "confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')",
         "source IN ('primary_module_for_filing', 'scientific_object_modules')",
@@ -1057,6 +1058,7 @@ def validate_module_sqlite_constraints() -> None:
         "source = 'final_modules_or_bucket'",
         "is_primary_for_filing = 0",
         "IFNULL(confidence, '') = ''",
+        "(module_code = '01.04' AND module_kind = 'general_bucket') OR (module_code <> '01.04' AND module_kind = 'formal_module')",
     ):
         assert_build_condition(
             fragment in normalized_workflow_modules_sql,
@@ -2312,6 +2314,7 @@ def build_sqlite(
                 (is_primary_for_filing = 1 AND source = 'primary_module_for_filing')
                 OR (is_primary_for_filing = 0 AND source = 'scientific_object_modules')
             ),
+            CHECK (module_code <> '01.04'),
             PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE workflow_mirror_paper_modules (
@@ -2324,6 +2327,10 @@ def build_sqlite(
             confidence TEXT CHECK (confidence IS NULL OR confidence IN ('', 'high', 'medium', 'low')),
             source TEXT NOT NULL CHECK (source = 'final_modules_or_bucket'),
             CHECK (IFNULL(confidence, '') = ''),
+            CHECK (
+                (module_code = '01.04' AND module_kind = 'general_bucket')
+                OR (module_code <> '01.04' AND module_kind = 'formal_module')
+            ),
             PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE paper_general_method_buckets (
