@@ -584,6 +584,33 @@ def validate_discipline_local_code_registry_outputs(
                         OR discipline_display_order NOT LIKE 'GM-PENDING-ASD-%'
                     )
                 )
+                OR (
+                    assignment_status = 'active_code'
+                    AND (
+                        pending_reason IS NOT NULL
+                        OR retired_at IS NOT NULL
+                        OR redirected_to_code IS NOT NULL
+                    )
+                )
+                OR (
+                    assignment_status = 'pending_secondary'
+                    AND (
+                        pending_reason IS NULL
+                        OR trim(pending_reason) = ''
+                        OR retired_at IS NOT NULL
+                        OR redirected_to_code IS NOT NULL
+                    )
+                )
+                OR (
+                    assignment_status = 'non_discipline_general_method'
+                    AND (
+                        pending_reason IS NOT NULL
+                        OR retired_at IS NOT NULL
+                        OR redirected_to_code IS NOT NULL
+                    )
+                )
+                OR (assigned_at NOT GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]')
+                OR (assigned_by IS NULL OR trim(assigned_by) = '')
             '''
         ).fetchone()[0]
     finally:
@@ -666,6 +693,8 @@ def validate_discipline_sqlite_constraints() -> None:
             f'discipline_code_assignments SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
     for fragment in (
+        "assigned_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
+        "trim(assigned_by) <> ''",
         "primary_module_confidence IS NULL OR primary_module_confidence IN ('', 'high', 'medium', 'low')",
         "primary_module_assignment_rule IS NULL OR primary_module_assignment_rule IN ('', 'main_scientific_object', 'main_validation_object', 'direct_contribution_target', 'substantive_application_object', 'manual_override')",
         "secondary_class_source IS NULL OR secondary_class_source IN ('legacy', 'normalized', 'manual_override')",
@@ -678,6 +707,9 @@ def validate_discipline_sqlite_constraints() -> None:
         "discipline_display_order = discipline_local_code",
         "discipline_display_order LIKE '%PENDING-ASD-%'",
         "discipline_display_order LIKE 'GM-PENDING-ASD-%'",
+        "assignment_status <> 'active_code' OR ( pending_reason IS NULL AND retired_at IS NULL AND redirected_to_code IS NULL )",
+        "assignment_status <> 'pending_secondary' OR ( pending_reason IS NOT NULL AND retired_at IS NULL AND redirected_to_code IS NULL )",
+        "assignment_status <> 'non_discipline_general_method' OR ( pending_reason IS NULL AND retired_at IS NULL AND redirected_to_code IS NULL )",
     ):
         assert_build_condition(
             fragment in normalized_registry_sql,
@@ -2146,6 +2178,32 @@ def build_sqlite(
             CHECK (
                 assignment_status <> 'non_discipline_general_method'
                 OR discipline_display_order LIKE 'GM-PENDING-ASD-%'
+            ),
+            CHECK (assigned_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'),
+            CHECK (trim(assigned_by) <> ''),
+            CHECK (
+                assignment_status <> 'active_code'
+                OR (
+                    pending_reason IS NULL
+                    AND retired_at IS NULL
+                    AND redirected_to_code IS NULL
+                )
+            ),
+            CHECK (
+                assignment_status <> 'pending_secondary'
+                OR (
+                    pending_reason IS NOT NULL
+                    AND retired_at IS NULL
+                    AND redirected_to_code IS NULL
+                )
+            ),
+            CHECK (
+                assignment_status <> 'non_discipline_general_method'
+                OR (
+                    pending_reason IS NULL
+                    AND retired_at IS NULL
+                    AND redirected_to_code IS NULL
+                )
             )
         );
         CREATE TABLE pdf_evidence_status (
