@@ -265,20 +265,6 @@
     "active_confirmed_core": true
   },
   {
-    "paper_id": "ASD-0026",
-    "title": "Autonomous microscopy experiments through large language model agents",
-    "pdf_path": "Reference_PDF/04_Materials_Science/Mandal_2025_AILA_Autonomous_Microscopy.pdf",
-    "sha256": "ebac1770ee00ec309deb36c60f75fe8b70c8be8b331e0bce92eb7e693b9765d6",
-    "primary_module_for_filing": "04",
-    "scientific_object_modules": [
-      "04",
-      "09"
-    ],
-    "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_full_text",
-    "active_confirmed_core": false
-  },
-  {
     "paper_id": "ASD-0028",
     "title": "Drugagent: Automating ai-aided drug discovery programming through llm multi-agent collaboration",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Liu_2024_DrugAgent.pdf",
@@ -839,33 +825,6 @@
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
-  },
-  {
-    "paper_id": "ASD-0081",
-    "title": "Crispr-gpt: An llm agent for automated design of gene-editing experiments",
-    "pdf_path": "Reference_PDF/06_Life_Sciences/Huang_2024_CRISPR_GPT.pdf",
-    "sha256": "1a3dada9dc4bd7ed0cf0a2707b8409dac3e2493aa220139874c52aab6d7b350e",
-    "primary_module_for_filing": "06",
-    "scientific_object_modules": [
-      "06"
-    ],
-    "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_full_text",
-    "active_confirmed_core": false
-  },
-  {
-    "paper_id": "ASD-0083",
-    "title": "Robin: A multi-agent system for automating scientific discovery",
-    "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Ghareeb_2026_Robin.pdf",
-    "sha256": "336d4e3f9065f42918cec8053e020d12c8d8c8031eb4c180764a349d1efa1794",
-    "primary_module_for_filing": "07",
-    "scientific_object_modules": [
-      "06",
-      "07"
-    ],
-    "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_full_text",
-    "active_confirmed_core": false
   },
   {
     "paper_id": "ASD-0084",
@@ -3778,19 +3737,6 @@
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
-  },
-  {
-    "paper_id": "ASD-0700",
-    "title": "Reimagining Peer Review Process Through Multi-Agent Mechanism Design",
-    "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_Peer_Review_Mechanism_Design.pdf",
-    "sha256": "d0b79df450bf6b8555ba88d10d920b91e5798dc160d8b7492a869f2c8a298c35",
-    "primary_module_for_filing": "11",
-    "scientific_object_modules": [
-      "11"
-    ],
-    "pdf_status": "archived_pdf",
-    "evidence_status": "first_hand_full_text",
-    "active_confirmed_core": false
   },
   {
     "paper_id": "ASD-0701",

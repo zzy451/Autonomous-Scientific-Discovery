@@ -80,14 +80,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0011",
-    "title": "Chemtoolagent: The impact of tools on language agents for chemistry problem solving",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0012",
     "title": "Large language models for chemistry robotics",
     "note_path": "Notes/03_Chemical_Sciences/Yoshikawa_2023_Chemistry_Robotics_LLMs.md",
@@ -110,14 +102,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0015",
-    "title": "Exploring modularity of agentic systems for drug discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0016",
@@ -160,28 +144,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0021",
-    "title": "A review of large language models and autonomous agents in chemistry",
-    "note_path": "Notes/03_Chemical_Sciences/Ramos_2025_LLMs_Autonomous_Agents_Chemistry.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0022",
     "title": "Chemgraph: An agentic framework for computational chemistry workflows",
     "note_path": "Notes/03_Chemical_Sciences/Pham_2025_ChemGraph.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0023",
-    "title": "Bioplanner: Automatic evaluation of llms on protocol planning in biology, 2023",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0024",
@@ -198,22 +166,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0026",
-    "title": "Autonomous microscopy experiments through large language model agents",
-    "note_path": "Notes/04_Materials_Science/Mandal_2024_AILA_Autonomous_Microscopy.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0027",
-    "title": "Ai agents in chemical research: Gvim–an intelligent research assistant system",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0028",
@@ -304,14 +256,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0039",
-    "title": "Acegen: Reinforcement learning of generative chemical agents for drug discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
     "paper_id": "ASD-0040",
     "title": "Researchagent: Iterative research idea generation over scientific literature with large language models, 2025",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Baek_2025_ResearchAgent.md",
@@ -326,22 +270,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0042",
-    "title": "Knowagent: Knowledge-augmented planning for llm-based agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0043",
-    "title": "From hypothesis to publication: A comprehensive survey of ai-driven research support systems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0044",
@@ -390,14 +318,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0050",
-    "title": "Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers, 20252",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0051",
@@ -520,22 +440,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0066",
-    "title": "Llmsat: A large language model-based goal-oriented agent for autonomous space exploration",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0067",
-    "title": "Sciagent: Tool-augmented language models for scientific reasoning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0068",
     "title": "An agentic framework for autonomous metamaterial modeling and inverse design",
     "note_path": "Notes/04_Materials_Science/Lu_2025_Agentic_Metamaterial_Modeling.md",
@@ -568,30 +472,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0072",
-    "title": "Autosdt: Scaling data-driven discovery tasks toward open co-scientists",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0073",
-    "title": "Can large language models help experimental design for causal discovery?, 20252",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0074",
-    "title": "Paperqa: Retrieval-augmented generative agent for scientific research",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0075",
     "title": "Prim: Principle-inspired material discovery through multi-agent collaboration",
     "note_path": "Notes/04_Materials_Science/Lai_2025_PRiM.md",
@@ -616,14 +496,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0078",
-    "title": "Discoveryworld: A virtual environment for developing and evaluating automated scientific discovery agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0079",
     "title": "DrugAgent: Multi-Agent Large Language Model-Based Reasoning for Drug-Target Interaction Prediction",
     "note_path": "Notes/07_Medical_and_Health_Sciences/Inoue_2024_DrugAgent_DTI.md",
@@ -640,30 +512,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0081",
-    "title": "Crispr-gpt: An llm agent for automated design of gene-editing experiments",
-    "note_path": "Notes/06_Life_Sciences/Qu_2025_CRISPR_GPT.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0082",
-    "title": "Agentic ai for scientific discovery: A survey of progress, challenges, and future directions",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0083",
-    "title": "Robin: A multi-agent system for automating scientific discovery",
-    "note_path": "Notes/07_Medical_and_Health_Sciences/Ghareeb_2025_Robin.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
     "paper_id": "ASD-0084",
     "title": "Automating alloy design and discovery with physics-aware multimodal multiagent ai",
     "note_path": "Notes/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.md",
@@ -678,30 +526,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0086",
-    "title": "Atomagents: Alloy design and discovery through physics-aware multi-modal multi-agent artificial intelligence",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0087",
-    "title": "Txagent: An ai agent for therapeutic reasoning across a universe of tools",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0088",
-    "title": "Empowering biomedical discovery with ai agents",
-    "note_path": "Notes/07_Medical_and_Health_Sciences/Gao_2024_Biomedical_Discovery_AI_Agents.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0089",
@@ -726,14 +550,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0092",
-    "title": "Chemcrow: Augmenting large-language models with chemistry tools",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0093",
@@ -776,108 +592,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0098",
-    "title": "Litllm: A toolkit for scientific literature review",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0099",
-    "title": "Scicode: A research coding benchmark curated by scientists, 2024",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0100",
     "title": "Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Xiang_2025_SciReplicate_Bench.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0101",
-    "title": "The landscape of emerging ai agent architectures for reasoning, planning, and tool calling: A survey",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0102",
-    "title": "From llm reasoning to autonomous ai agents: A comprehensive review",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0103",
-    "title": "Understanding the planning of llm agents: A survey",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0104",
-    "title": "Advancing agentic systems: Dynamic task decomposition, tool integration and evaluation using novel metrics and dataset",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0105",
-    "title": "Tool learning in the wild: Empowering language models as automatic tool agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0106",
-    "title": "Easytool: Enhancing llm-based agents with concise tool instruction",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0107",
-    "title": "Tora: A tool-integrated reasoning agent for mathematical problem solving",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0108",
-    "title": "Tora: A tool-integrated reasoning agent for mathematical problem solving",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0109",
-    "title": "14 examples of how llms can transform materials science and chemistry: a reflection on a large language model hackathon",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0110",
-    "title": "A foundation model for atomistic materials chemistry",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0111",
@@ -968,22 +688,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0122",
-    "title": "Agent Hospital: A simulacrum of hospital with evolvable medical agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0123",
-    "title": "LabUtopia: High-fidelity simulation and hierarchical benchmark for scientific embodied agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0124",
     "title": "A large language model-empowered agent for reliable and robust structural analysis",
     "note_path": "Notes/09_Engineering_and_Industrial_Technology_Sciences/Liu_2025_Structural_Analysis_Agent.md",
@@ -1030,22 +734,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0130",
-    "title": "Large language models are zero-shot hypothesis proposers",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0131",
-    "title": "Towards scientific intelligence: A survey of LLM-based scientific agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0132",
@@ -1128,30 +816,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0142",
-    "title": "CompBioAgent: An LLM-powered agent for single-cell RNA-seq data exploration",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0143",
-    "title": "MAPS: Multi-Agent Personality Shaping for Collaborative Reasoning",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Zhang_2025_MAPS_Collaborative_Reasoning.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0144",
-    "title": "MLE-bench: Evaluating machine learning agents on machine learning engineering",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0145",
     "title": "CycleResearcher: Improving automated research via automated review",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Weng_2025_CycleResearcher.md",
@@ -1174,14 +838,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0148",
-    "title": "AIRUS: a simple workflow for AI-assisted exploration of scientific data",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0149",
@@ -1216,14 +872,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0153",
-    "title": "Development and validation of an autonomous artificial intelligence agent for clinical decision-making in oncology",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0154",
     "title": "Real-time experiment-theory closed-loop interaction for autonomous materials science",
     "note_path": "Notes/04_Materials_Science/Liang_2025_AMASE.md",
@@ -1248,180 +896,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0157",
-    "title": "The ADePT framework for assessing autonomous laboratory robotics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0158",
     "title": "A robotic platform for flow synthesis of organic compounds informed by AI planning",
     "note_path": "Notes/03_Chemical_Sciences/Coley_2019_Flow_Synthesis_AI_Planning.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0159",
-    "title": "Conversational health agents: A personalized llm-powered agent framework",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0160",
-    "title": "Accurate structure prediction of biomolecular interactions with alphafold 3",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0161",
-    "title": "Ai trustworthy challenges in drug discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0162",
-    "title": "Llm as bt-planner: Leveraging llms for behavior tree generation in robot task planning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0163",
-    "title": "Alphagenome: advancing regulatory variant effect prediction with a unified dna sequence model",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0164",
-    "title": "Researchagent: Iterative research idea generation over scientific literature with large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0165",
-    "title": "Molgpt: molecular generation using a transformer-decoder model",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0166",
-    "title": "On the ethical considerations of generative agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0167",
-    "title": "Investigating responsible ai for scientific research: an empirical study",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0168",
-    "title": "Automatikz: Text-guided synthesis of scientific vector graphics with tikz, 2024",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0169",
-    "title": "Superintelligent agents pose catastrophic risks: Can scientist ai offer a safer path?",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0170",
-    "title": "Superintelligent agents pose catastrophic risks: Can scientist ai offer a safer path?, 20252",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0171",
-    "title": "Grounding llms for robot task planning using closed-loop state feedback",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0172",
-    "title": "A survey of monte carlo tree search methods",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0173",
-    "title": "Toward Trustworthy AI Development: Mechanisms for Supporting Verifiable Claims",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0174",
-    "title": "Unveiling phase transitions with machine learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0175",
-    "title": "Grounding large language models in interactive environments with online reinforcement learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0176",
-    "title": "Mle-bench: Evaluating machine learning agents on machine learning engineering, 2025",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0177",
-    "title": "Blockagents: Towards byzantine-robust llm-based multi-agent coordination via blockchain",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0178",
-    "title": "Reconcile: Round-table conference improves reasoning via consensus among diverse llms",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0179",
@@ -1432,76 +912,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0180",
-    "title": "Ai4research: A survey of artificial intelligence for scientific research",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0181",
-    "title": "Llamp: Large language model made powerful for high-fidelity materials knowledge retrieval and distillation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0182",
-    "title": "Reactree: Hierarchical task planning with dynamic tree expansion using llm agent nodes",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0183",
-    "title": "scgpt: toward building a foundation model for single-cell multi-omics using generative ai",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0184",
-    "title": "Open problems in cooperative ai, 2020",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0185",
-    "title": "Nucleotide transformer: building and evaluating robust foundation models for human genomics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0186",
     "title": "MARG: Multi-Agent Review Generation for Scientific Papers",
     "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/DArcy_2024_MARG.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0187",
-    "title": "Enabling synergistic knowledge sharing and reasoning in large language models with collaborative multi-agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0188",
-    "title": "Can we trust ai agents? an experimental study towards trustworthy llm-based multi-agent systems for ai ethics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0189",
@@ -1512,692 +928,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0190",
-    "title": "Fine-tuning a large language model for automating computational fluid dynamics simulations",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0191",
-    "title": "Improving factuality and reasoning in language models through multiagent debate",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0192",
-    "title": "Distributed problem solving and planning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0193",
-    "title": "From local to global: A graph rag approach to query-focused summarization",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0194",
-    "title": "Openfoamgpt 2.0: end-to-end, trustworthy automation for computational fluid dynamics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0195",
-    "title": "Dockingga: enhancing targeted molecule generation using transformer neural network and genetic algorithm with docking simulation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0196",
-    "title": "A survey of self-evolving agents: On path to artificial super intelligence",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0197",
-    "title": "Deep multimodal networks for m-type star classification with paired spectrum and photometric image",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0198",
-    "title": "Science hierarchography: Hierarchical organization of science literature, 20253",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0199",
-    "title": "Llms are vulnerable to malicious prompts disguised as scientific language",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0200",
-    "title": "Rapid and automated alloy design with graph neural network-powered llm-driven multi-agent systems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0201",
-    "title": "Sciagents: Automating scientific discovery through multi-agent intelligent graph reasoning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0202",
-    "title": "Towards an ai co-scientist, 2025",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0203",
-    "title": "Critic: Large language models can self-correct with tool-interactive critiquing",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0204",
-    "title": "Unsupervised identification of topological phase transitions using predictive models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0205",
-    "title": "Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0206",
-    "title": "Can large language models play games? a case study of a self-play approach",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0207",
-    "title": "Ds-agent: Automated data science by empowering large language models with case-based reasoning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0208",
-    "title": "Large language model based multi-agents: A survey of progress and challenges",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0209",
-    "title": "Mdocagent: A multi-modal multi-agent framework for document understanding",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0210",
-    "title": "Large-scale foundation model on single-cell transcriptomics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0211",
-    "title": "Simulating 500 million years of evolution with a language model",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0212",
-    "title": "Control risk for potential misuse of artificial intelligence in science, 2023",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0213",
-    "title": "LEGO: A multi-agent collaborative framework with role-playing and iterative feedback for causality explanation generation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0214",
-    "title": "Metagpt: Meta programming for a multi-agent collaborative framework",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0215",
-    "title": "Molecular design in synthetically accessible chemical space via deep reinforcement learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0216",
-    "title": "V-star: Training verifiers for self-taught reasoners",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0217",
-    "title": "Aitomia: Your intelligent assistant for ai-driven atomistic and quantum chemical simulations",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0218",
-    "title": "Tree-planner: Efficient close-loop task planning with large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0219",
-    "title": "An overview of artificial intelligence ethics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0220",
-    "title": "A survey on hallucination in large language models: Principles, taxonomy, challenges, and open questions",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0221",
-    "title": "Adaptive iterative feedback prompting for obstacle-aware path planning via llms",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0222",
-    "title": "Improving physics reasoning in large language models using mixture of refinement agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0223",
-    "title": "Llmlingua: Compressing prompts for accelerated inference of large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0224",
-    "title": "Technical report: Enhancing llm reasoning with reward-guided tree search",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0225",
-    "title": "Selfevolve: A code evolution framework via large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0226",
-    "title": "Aide: Ai-driven exploration in the space of code, 2025",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0227",
-    "title": "Highly accurate protein structure prediction with alphafold",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0228",
-    "title": "Massnet: billion-scale ai-friendly mass spectral corpus enables robust de novo peptide sequencing",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0229",
-    "title": "Debating with more persuasive llms leads to more truthful answers",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0230",
-    "title": "Online continual learning for interactive instruction following agents, 2024",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0231",
-    "title": "Can llms produce faithful explanations for fact-checking? towards faithful explainable fact-checking via multi-agent debate",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0232",
-    "title": "Mdagents: An adaptive collaboration of llms for medical decision-making",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0233",
-    "title": "Overcoming catastrophic forgetting in neural networks",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0234",
-    "title": "Large language models are zero-shot reasoners",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0235",
-    "title": "Local climate services for all, courtesy of large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0236",
-    "title": "Mycrunchgpt: A llm assisted framework for scientific machine learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0237",
-    "title": "Ds-1000: A natural and reliable benchmark for data science code generation, 2022",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0238",
-    "title": "A survey on enhancing reinforcement learning in complex environments: Insights from human and llm feedback",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0239",
-    "title": "Retrieval-augmented generation for knowledge-intensive nlp tasks",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0240",
-    "title": "Metal: A multi-agent framework for chart generation with test-time scaling",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0241",
-    "title": "Camel: Communicative agents for \"mind\" exploration of large language model society",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0242",
-    "title": "Traineragent: Customizable and efficient model training through llm-powered multi-agent system",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0243",
-    "title": "Agent alignment in evolving social norms, 20242",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0244",
-    "title": "Enhancing chain-of-thought reasoning in large language models through text style diversity and prompt fusion",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0245",
-    "title": "Learning distilled collaboration graph for multi-agent perception",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0246",
-    "title": "Encouraging divergent thinking in large language models through multi-agent debate",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0247",
-    "title": "Self-evolving agents with reflective and memory-augmented abilities",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0248",
-    "title": "Current and emerging deep-learning methods for the simulation of fluid dynamics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0249",
-    "title": "Advances and challenges in foundation agents: From brain-inspired intelligence to evolutionary, collaborative, and safe systems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0250",
-    "title": "Mind’s eye: Grounded language model reasoning through simulation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0251",
-    "title": "Large language models as agents in two-player games",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0252",
-    "title": "A dynamic llm-powered agent network for task-oriented agent collaboration",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0253",
-    "title": "Large language model guided tree-of-thought",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0254",
     "title": "From intention to implementation: automating biomedical research via llms",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Luo_2025_BioResearcher.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0255",
-    "title": "Llm4sr: A survey on large language models for scientific research",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0256",
-    "title": "Llm-mars: Large language model for behavior tree generation and nlp-enhanced dialogue in multi-agent robot systems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0257",
-    "title": "Evolving diverse red-team language models in multi-round multi-agent games",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0258",
-    "title": "Coevolving with the other you: Fine-tuning llm with sequential cooperative multi-agent reinforcement learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0259",
-    "title": "Self-refine: Iterative refinement with self-feedback",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0260",
-    "title": "Clin: A continually learning language agent for rapid task adaptation and generalization, 2023",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0261",
-    "title": "Chartqa: A benchmark for question answering about charts with visual and logical reasoning, 2022",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0262",
-    "title": "A survey of context engineering for large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0263",
-    "title": "Arxivdigestables: Synthesizing scientific literature into tables using language models, 2024",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0264",
-    "title": "Sequence modeling and design from molecular to genome scale with evo",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0265",
-    "title": "Astrollama: Towards specialized foundation models in astronomy",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0266",
-    "title": "Claimcheck: How grounded are llm critiques of scientific papers?, 2025",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0267",
-    "title": "Memgpt: Towards llms as operating systems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0268",
-    "title": "Quantum many-body physics calculations with large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0269",
-    "title": "Language model self-improvement by reinforcement learning contemplation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0270",
-    "title": "Science in the era of chatgpt, large language models and generative ai",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0271",
-    "title": "ChatDev: Communicative agents for software development",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0272",
-    "title": "Making language models better tool learners with execution feedback",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0273",
-    "title": "Agent planning with world knowledge model",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0274",
-    "title": "Autoact: Automatic agent learning from scratch for qa via self-planning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0275",
-    "title": "Universal biological sequence reranking for improved de novo peptide sequencing",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0276",
@@ -2208,108 +944,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0277",
-    "title": "Verification and refinement of natural language explanations through llm-symbolic theorem proving, 2024",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0278",
-    "title": "Msa transformer",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0279",
-    "title": "Conceptagent: Llm-driven precondition grounding and tree search for robust task planning and execution",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0280",
     "title": "An automatic end-to-end chemical synthesis development platform powered by large language models",
     "note_path": "Notes/03_Chemical_Sciences/Ruan_2024_LLM_RDF_Chemical_Synthesis.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0281",
-    "title": "Accelerated end-to-end chemical synthesis development with large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0282",
-    "title": "A meta-reinforcement learning algorithm for causal discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0283",
-    "title": "Generative to agentic ai: Survey, conceptualization, and challenges",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0284",
-    "title": "Llm-based cooperative agents using information relevance and plan validation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0285",
-    "title": "Shortcutsbench: A large-scale real-world benchmark for api-based agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0286",
-    "title": "Reflexion: Language agents with verbal reinforcement learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0287",
-    "title": "Can llms generate novel research ideas? a large-scale human study with 100+ nlp researchers",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0288",
-    "title": "A multi-agent-driven robotic ai chemist enabling autonomous chemical research on demand",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0289",
-    "title": "Trial and error: Exploration-based trajectory optimization of llm agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0290",
@@ -2320,532 +960,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0291",
-    "title": "Adaplanner: Adaptive planning from feedback with language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0292",
-    "title": "A survey of reasoning with foundation models: Concepts, methodologies, and outlook",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0293",
-    "title": "Meta-prompting: Enhancing language models with task-agnostic scaffolding",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0294",
-    "title": "Redefining Work in the Age of AI: Challenges and Pathways to Opportunities",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0295",
-    "title": "Chemmllm: Chemical multimodal large language model",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0296",
-    "title": "MedAgents: Large language models as collaborators for zero-shot medical reasoning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0297",
-    "title": "Chain-of-discussion: A multi-model framework for complex evidence-based question answering",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0298",
-    "title": "Kimi k1. 5: Scaling reinforcement learning with llms",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0299",
-    "title": "Climategpt: Towards ai synthesizing interdisciplinary research on climate change",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0300",
-    "title": "Mujoco: A physics engine for model-based control",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0301",
-    "title": "Multi-agent collaboration mechanisms: A survey of llms",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0302",
-    "title": "Interleaving retrieval with chain-of-thought reasoning for knowledge-intensive multi-step questions",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0303",
-    "title": "Dynamic self-consistency: Leveraging reasoning paths for efficient llm sampling",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0304",
-    "title": "Voyager: An open-ended embodied agent with large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0305",
-    "title": "Grovergpt: A large language model with 8 billion parameters for quantum searching",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0306",
-    "title": "A comprehensive survey in llm (-agent) full stack safety: Data, training and deployment",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0307",
-    "title": "Plan-and-solve prompting: Improving zero-shot chain-of-thought reasoning by large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0308",
-    "title": "Rethinking the bounds of llm reasoning: Are multi-agent discussions the key?",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0309",
-    "title": "A survey of llm-based agents in medicine: How far are we from baymax?",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0310",
-    "title": "Self-consistency improves chain of thought reasoning in language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0311",
-    "title": "Chain-of-table: Evolving tables in the reasoning chain for table understanding, 20245",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0312",
-    "title": "Charxiv: Charting gaps in realistic chart understanding in multimodal llms, 20246",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0313",
-    "title": "Chain-of-thought prompting elicits reasoning in large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0314",
-    "title": "Identification of blue horizontal branch stars with multimodal fusion",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0315",
-    "title": "Alignrag: Leveraging critique learning for evidence-sensitive retrieval-augmented reasoning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0316",
-    "title": "Deep learning in proteomics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0317",
-    "title": "Autogen: Enabling next-gen llm applications via multi-agent conversation, 2023",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0318",
-    "title": "Autogen: Enabling next-gen LLM applications via multi-agent conversation, 2024",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0319",
-    "title": "Self-evolved diverse data sampling for efficient instruction tuning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0320",
-    "title": "Large multimodal agents: A survey",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0321",
-    "title": "How far are ai scientists from changing the world?",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0322",
-    "title": "Examining inter-consistency of large language models collaboration: An in-depth analysis via debate",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0323",
-    "title": "A-mem: Agentic memory for llm agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0324",
-    "title": "Advancing ai-scientist understanding: Making llm think like a physicist with interpretable reasoning, 20252",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0325",
-    "title": "What if llms have different world views: Simulating alien civilizations with llm-based agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0326",
-    "title": "Periodic graph transformers for crystal material property prediction",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0327",
-    "title": "Complete and efficient graph transformers for crystal material property prediction",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0328",
-    "title": "Mattersim: A deep learning atomistic model across elements, temperatures and pressures",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0329",
-    "title": "Poisoning medical knowledge using large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0330",
-    "title": "Rlcd: Reinforcement learning from contrastive distillation for lm alignment",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0331",
-    "title": "Gpt4tools: Teaching large language model to use tools via self-instruction",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0332",
-    "title": "Alphafold2 and its applications in the fields of biology and medicine",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0333",
     "title": "MOOSE-Chem: Large language models for rediscovering unseen chemistry scientific hypotheses",
     "note_path": "Notes/03_Chemical_Sciences/Yang_2024_MOOSE_Chem.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0334",
-    "title": "React: Synergizing reasoning and acting in language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0335",
-    "title": "Studying and improving reasoning in humans and machines",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0336",
-    "title": "Survey on evaluation of llm-based agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0337",
-    "title": "Exchange-of-thought: Enhancing large language model capabilities through cross-model communication",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0338",
-    "title": "A survey on trustworthy llm agents: Threats and countermeasures",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0339",
-    "title": "Self-rewarding language models, 20242",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0340",
-    "title": "Text2chart31: Instruction tuning for chart generation with automatic feedback, 2025",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0341",
-    "title": "Star: Self-taught reasoner bootstrapping reasoning with reasoning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0342",
-    "title": "The good and the bad: Exploring privacy issues in retrieval-augmented generation (rag)",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0343",
-    "title": "A generative model for inorganic materials design",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0344",
-    "title": "Proagent: building proactive cooperative agents with large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0345",
-    "title": "Rest-mcts*: Llm self-training via process reward guided tree search",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0346",
-    "title": "Chemllm: A chemical large language model",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0347",
-    "title": "The evolving role of large language models in scientific innovation: Evaluator, collaborator, and scientist",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0348",
-    "title": "Maps: A multi-agent framework based on big seven personality and socratic guidance for multimodal scientific problem solving",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0349",
-    "title": "AFlow: Automating agentic workflow generation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0350",
-    "title": "Exploring collaboration mechanisms for LLM agents: A social psychology view",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0351",
-    "title": "Scientific large language models: A survey on biological & chemical domains",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0352",
-    "title": "Why prompt design matters and works: A complexity analysis of prompt search space in llms",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0353",
-    "title": "π \\pi -primenovo: an accurate and efficient non-autoregressive deep learning model for de novo peptide sequencing",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0354",
-    "title": "Curriculum learning for biological sequence prediction: The case of de novo peptide sequencing",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0355",
-    "title": "Transformer quantum state: A multipurpose model for quantum many-body problems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0356",
-    "title": "Siren’s song in the ai ocean: A survey on hallucination in large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0357",
@@ -2856,172 +976,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0358",
-    "title": "Expel: Llm agents are experiential learners",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0359",
-    "title": "From automation to autonomy: A survey on large language models in scientific discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0360",
-    "title": "Self-evolution learning for discriminative language model pretraining",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0361",
-    "title": "Evaluation of openai o1: Opportunities and challenges of agi",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0362",
-    "title": "Symbolic learning enables self-evolving agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0363",
-    "title": "Scientists�?first exam: Probing cognitive abilities of mllm via perception, understanding, and reasoning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0364",
-    "title": "Corba: Contagious recursive blocking attacks on multi-agent systems based on large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0365",
-    "title": "Fluid-llm: Learning computational fluid dynamics with spatiotemporal-aware large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0366",
-    "title": "Demonagent: Dynamically encrypted multi-backdoor implantation attack on llm-based agent",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0367",
-    "title": "Advancing biomolecular understanding and design following human instructions",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0368",
-    "title": "Self-Driving Laboratories for Chemistry and Materials Science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0369",
-    "title": "Next-Generation Experimentation with Self-Driving Laboratories",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0370",
     "title": "Self-driving laboratories to autonomously navigate the protein fitness landscape",
     "note_path": "Notes/06_Life_Sciences/Rapp_2024_SAMPLE_Protein_Fitness_Landscape.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0371",
-    "title": "An autonomous laboratory for the accelerated synthesis of inorganic materials",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0372",
-    "title": "Data-Centric Architecture for Self-Driving Laboratories with Autonomous Discovery of New Nanomaterials",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Butakova_2022_Data_Centric_SDL_Nanomaterials.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0373",
-    "title": "ChemOS: An orchestration software to democratize autonomous discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0374",
-    "title": "The rise of self-driving labs in chemical and materials sciences",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0375",
-    "title": "Autonomous Chemical Experiments: Challenges and Perspectives on Establishing a Self-Driving Lab",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0376",
-    "title": "Self-Driving Laboratory for Polymer Electronics",
-    "note_path": "Notes/04_Materials_Science/Vriza_2023_SDL_Polymer_Electronics.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0377",
-    "title": "Autonomous chemical science and engineering enabled by self-driving laboratories",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0378",
-    "title": "Natural Products for Drug Discovery in the 21st Century: Innovations for Novel Drug Discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0379",
@@ -3032,14 +992,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0380",
-    "title": "Towards the sustainable discovery and development of new antibiotics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0381",
     "title": "Autonomous reaction Pareto-front mapping with a self-driving catalysis laboratory",
     "note_path": "Notes/03_Chemical_Sciences/Bennett_2024_FastCat_Pareto_Front.md",
@@ -3048,52 +1000,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0382",
-    "title": "Toward autonomous design and synthesis of novel inorganic materials",
-    "note_path": "Notes/04_Materials_Science/Szymanski_2021_Toward_Autonomous_Design_Inorganic_Materials.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0383",
-    "title": "Universal self-driving laboratory for accelerated discovery of materials and molecules",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Epps_2021_Universal_Self_Driving_Laboratory.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0384",
-    "title": "Chimera: enabling hierarchy based multi-objective optimization for self-driving laboratories",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0385",
     "title": "AlphaFlow: autonomous discovery and optimization of multi-step chemistry using a self-driven fluidic lab guided by reinforcement learning",
     "note_path": "Notes/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0386",
-    "title": "What is a minimal working example for a self-driving laboratory?",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0387",
-    "title": "From Platform to Knowledge Graph: Evolution of Laboratory Automation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0388",
@@ -3120,158 +1032,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0391",
-    "title": "Review of low-cost self-driving laboratories in chemistry and materials science: the “frugal twin�?concept",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0392",
-    "title": "Jaguar: A high‐performance quantum chemistry software program with strengths in life and materials sciences",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0393",
-    "title": "Click Chemistry in Materials Science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0394",
-    "title": "Graph neural networks for materials science and chemistry",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0395",
-    "title": "Recent advances and applications of machine learning in solid-state materials science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0396",
-    "title": "Mars Science Laboratory Mission and Science Investigation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0397",
-    "title": "Modeling nitrogen chemistry in combustion",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0398",
-    "title": "Recent advances and applications of deep learning methods in materials science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0399",
-    "title": "The physics and chemistry of the Schottky barrier height",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0400",
-    "title": "Science and technology roadmap for graphene, related two-dimensional crystals, and hybrid systems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0401",
-    "title": "DScribe: Library of descriptors for machine learning in materials science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0402",
-    "title": "Self-Driving Laboratories for Development of New Functional Materials and Optimizing Known Reactions",
-    "note_path": "Notes/04_Materials_Science/Soldatov_2021_SDL_Functional_Materials_Review.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0403",
-    "title": "Nanocellulose as a natural source for groundbreaking applications in materials science: Today’s state",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0404",
-    "title": "The surface chemistry of cerium oxide",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0405",
-    "title": "Supramolecular self-assemblies as functional nanomaterials",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0406",
-    "title": "A revolutionary paradigm in chemistry and materials science research: self-driving laboratories",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0407",
-    "title": "Data‐Driven Materials Science: Status, Challenges, and Perspectives",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0408",
-    "title": "Social Science Research: Principles, Methods and Practices",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0409",
-    "title": "Autonomous experimentation systems for materials development: A community perspective",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0410",
     "title": "On-the-fly closed-loop materials discovery via Bayesian active learning",
     "note_path": "Notes/04_Materials_Science/Kusne_2020_CAMEO_Materials_Discovery.md",
@@ -3280,52 +1040,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0411",
-    "title": "Autonomy in materials research: a case study in carbon nanotube growth",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0412",
-    "title": "Accelerating the discovery of materials for clean energy in the era of smart automation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0413",
-    "title": "Progress and prospects for accelerating materials science with automated and autonomous workflows",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0414",
-    "title": "Accelerating materials discovery using artificial intelligence, high performance computing and robotics",
-    "note_path": "Notes/04_Materials_Science/PyzerKnapp_2022_Accelerating_Materials_Discovery.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0415",
     "title": "Autonomous polymer synthesis delivered by multi-objective closed-loop optimisation",
     "note_path": "Notes/04_Materials_Science/Knox_2022_Autonomous_Polymer_Synthesis.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0416",
-    "title": "Universal Chemical Synthesis and Discovery with ‘The Chemputer�?",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0417",
@@ -3344,22 +1064,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0419",
-    "title": "New frontiers for the materials genome initiative",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0420",
-    "title": "Emerging materials intelligence ecosystems propelled by machine learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0421",
     "title": "Closed-loop superconducting materials discovery",
     "note_path": "Notes/04_Materials_Science/Pogue_2023_Superconducting_Materials_Discovery.md",
@@ -3376,44 +1080,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0423",
-    "title": "Role of AI in experimental materials science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0424",
-    "title": "A field guide to flow chemistry for synthetic organic chemists",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0425",
     "title": "Efficient Closed-loop Maximization of Carbon Nanotube Growth Rate using Bayesian Optimization",
     "note_path": "Notes/04_Materials_Science/Chang_2020_CNT_Growth_Bayesian_Optimization.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0426",
-    "title": "Towards Robot Scientists for autonomous scientific discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0427",
-    "title": "Autonomous chemistry: Navigating self-driving labs in chemical and material sciences",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0428",
@@ -3432,204 +1104,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0430",
-    "title": "Wearable and implantable biosensors: mechanisms and applications in closed-loop therapeutic systems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0431",
-    "title": "Machine learning for automated experimentation in scanning transmission electron microscopy",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0432",
-    "title": "Olympus: a benchmarking framework for noisy optimization and experiment planning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0433",
-    "title": "Gaussian processes for autonomous data acquisition at large-scale synchrotron and neutron facilities",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0434",
-    "title": "Natural products in drug discovery: advances and opportunities",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0435",
-    "title": "Machine learning for molecular and materials science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0436",
-    "title": "Autonomous laboratories for accelerated materials discovery: a community survey and practical insights",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0437",
-    "title": "The emergence of adaptive laboratory evolution as an efficient tool for biological discovery and industrial biotechnology",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0438",
-    "title": "Accelerating Materials Development via Automation, Machine Learning, and High-Performance Computing",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0439",
-    "title": "Machine learning in materials science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0440",
-    "title": "Chronic inflammation induces telomere dysfunction and accelerates ageing in mice",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0441",
-    "title": "Greener synthesis of chemical compounds and materials",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0442",
-    "title": "Automation and computer-assisted planning for chemical synthesis",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0443",
-    "title": "Glucosinolate structural diversity, identification, chemical synthesis and metabolism in plants",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0444",
-    "title": "Abscisic Acid Synthesis and Response",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0445",
-    "title": "Review on Ammonia as a Potential Fuel: From Synthesis to Economics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0446",
-    "title": "Applications of Continuous-Flow Photochemistry in Organic Synthesis, Material Science, and Water Treatment",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0447",
     "title": "An autonomous portable platform for universal chemical synthesis",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Manzano_2022_Universal_Chemical_Synthesis_Platform.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0448",
-    "title": "Universally autonomous self-healing elastomer with high stretchability",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0449",
-    "title": "Automated extraction of chemical synthesis actions from experimental procedures",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0450",
-    "title": "Bioactive Peptides: Synthesis, Sources, Applications, and Proposed Mechanisms of Action",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0451",
-    "title": "Dynamics of non‐structural carbohydrates in terrestrial plants: a global synthesis",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0452",
-    "title": "Toward autonomous laboratories: Convergence of artificial intelligence and experimental automation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0453",
-    "title": "Green synthesis of silver nanoparticles using Lysiloma acapulcensis exhibit high-antimicrobial activity",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0454",
-    "title": "Targeted inhibition of tumor-specific glutaminase diminishes cell-autonomous tumorigenesis",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0455",
@@ -3640,84 +1120,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0456",
-    "title": "A survey on large language model based autonomous agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0457",
-    "title": "Robotic tools for deep water archaeology: Surveying an ancient shipwreck with an autonomous underwater vehicle",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0458",
-    "title": "On scientific understanding with artificial intelligence",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0459",
-    "title": "Toward “On‐Demand�?Materials Synthesis and Scientific Discovery through Intelligent Robots",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0460",
-    "title": "Nobel Turing Challenge: creating the engine for scientific discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0461",
-    "title": "Magnetic Actuation Methods in Bio/Soft Robotics",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0462",
-    "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0463",
     "title": "AI-driven robotic chemist for autonomous synthesis of organic molecules",
     "note_path": "Notes/03_Chemical_Sciences/Ha_2023_Robotic_Chemist_Organic_Molecules.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0464",
-    "title": "Integrating Scientific Knowledge with Machine Learning for Engineering and Environmental Systems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0465",
-    "title": "Artificial Intelligence to Win the Nobel Prize and Beyond: Creating the Engine for Scientific Discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0466",
@@ -3728,140 +1136,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0467",
-    "title": "A Tutorial On the design, experimentation and application of metaheuristic algorithms to real-World optimization problems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0468",
-    "title": "Closed-loop optimization of nanoparticle synthesis enabled by robotics and machine learning",
-    "note_path": "Notes/04_Materials_Science/Park_2023_Nanoparticle_Synthesis_Perspective.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0469",
-    "title": "Achieving Reproducibility and Closed-Loop Automation in Biological Experimentation with an IoT-Enabled Lab of the Future",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Miles_2018_IoT_Enabled_Lab_of_the_Future.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0470",
-    "title": "Hard real-time closed-loop electrophysiology with the Real-Time eXperiment Interface (RTXI)",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0471",
-    "title": "Connecting Artificial Brains to Robots in a Comprehensive Simulation Framework: The Neurorobotics Platform",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0472",
-    "title": "Dental Robotics: A Disruptive Technology",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0473",
-    "title": "Robotics, microfluidics, nanotechnology and AI in the synthesis and evaluation of liposomes and polymeric drug delivery systems",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0474",
-    "title": "Methods and Sensors for Slip Detection in Robotics: A Survey",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0475",
-    "title": "Unlocking the efficiency of genomics laboratories with robotic liquid-handling",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0476",
-    "title": "High‐Throughput Experimentation and Computational Freeway Lanes for Accelerated Battery Electrolyte and Interface Development Research",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0477",
-    "title": "Research and development in agricultural robotics: A perspective of digital farming",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0478",
     "title": "NIMS-OS: an automation software to implement a closed loop between artificial intelligence and robotic experiments in materials science",
     "note_path": "Notes/04_Materials_Science/Tamura_2023_NIMS_OS.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0479",
-    "title": "G<scp>ryffin</scp>: An algorithm for Bayesian optimization of categorical variables informed by expert knowledge",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0480",
-    "title": "Benchmarking the performance of Bayesian optimization across multiple experimental materials science domains",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0481",
-    "title": "Bayesian optimization with known experimental and design constraints for chemistry applications",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0482",
-    "title": "Bayesian optimization with adaptive surrogate models for automated experimental design",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0483",
-    "title": "Machine learning in materials science: From explainable predictions to autonomous design",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0484",
@@ -3872,52 +1152,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0485",
-    "title": "Two-step machine learning enables optimized nanoparticle synthesis",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0486",
-    "title": "ChatGPT Research Group for Optimizing the Crystallinity of MOFs and COFs",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0487",
     "title": "Autonomous Discovery of Battery Electrolytes with Robotic Experimentation and Machine Learning",
     "note_path": "Notes/04_Materials_Science/Dave_2020_Autonomous_Battery_Electrolytes.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0488",
-    "title": "Autonomous efficient experiment design for materials discovery with Bayesian model averaging",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0489",
-    "title": "A Review on Autonomous Vehicles: Progress, Methods and Challenges",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0490",
-    "title": "Artificial intelligence and machine learning in design of mechanical materials",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0491",
@@ -3928,92 +1168,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0492",
-    "title": "Data-Driven Design and Autonomous Experimentation in Soft and Biological Materials Engineering",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0493",
-    "title": "Physics-informed machine learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0494",
-    "title": "Review of deep learning: concepts, CNN architectures, challenges, applications, future directions",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0495",
-    "title": "Machine learning for perovskite materials design and discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0496",
-    "title": "Deep Learning for Generic Object Detection: A Survey",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0497",
-    "title": "Toward an Architecture for Never-Ending Language Learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0498",
-    "title": "Automated Machine Learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0499",
-    "title": "Genetic algorithms for computational materials discovery accelerated by machine learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0500",
-    "title": "The Role of Machine Learning in the Understanding and Design of Materials",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0501",
     "title": "Functional genomic hypothesis generation and experimentation by a robot scientist",
     "note_path": "Notes/06_Life_Sciences/King_2004_Robot_Scientist.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0502",
-    "title": "The Automation of Science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0503",
@@ -4062,14 +1222,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0509",
-    "title": "ChemOS: Orchestrating autonomous experimentation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0510",
@@ -4208,14 +1360,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0527",
-    "title": "Toward self-driving laboratory 2.0 for chemistry and materials discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0528",
     "title": "AutoSciLab: A Self-Driving Laboratory for Interpretable Scientific Discovery",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Desai_2025_AutoSciLab.md",
@@ -4246,30 +1390,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0532",
-    "title": "CellVoyager: AI CompBio agent generates new insights by autonomously analyzing biological data",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0533",
-    "title": "LIDDIA: Language-based Intelligent Drug Discovery Agent",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0534",
-    "title": "ProtAgents: protein discovery via large language model multi-agent collaborations combining physics and machine learning",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0535",
@@ -4360,14 +1480,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0546",
-    "title": "Accelerating earth science discovery via multi-agent LLM systems",
-    "note_path": "Notes/05_Earth_and_Environmental_Sciences/Pantiukhin_2025_Earth_Science_Discovery_MultiAgent_LLMs.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0547",
     "title": "Closed-loop experimental AI for pixelated metasurface design",
     "note_path": "Notes/04_Materials_Science/Lee_2026_Closed_Loop_Pixelated_Metasurface_Design.md",
@@ -4390,22 +1502,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0550",
-    "title": "Catalyst discovery through AI agent collaboration",
-    "note_path": "Notes/03_Chemical_Sciences/Jiang_2026_Catalyst_Discovery_AI_Agent_Collaboration.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0551",
-    "title": "PANGAEA GPT: A Coordinated Multi-Agent Architecture for Earth System Data Discovery and Analysis",
-    "note_path": "Notes/05_Earth_and_Environmental_Sciences/Pantiukhin_2025_PANGAEA_GPT_Conference_Abstract.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0552",
@@ -4432,14 +1528,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0555",
-    "title": "Autonomous Agentic AI Systems for Pharmaceutical Drug Discovery: A Multi-Agent Framework for Molecular Design and Optimization",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Kodela_2025_Autonomous_Agentic_AI_Drug_Discovery.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0556",
     "title": "DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery",
     "note_path": "Notes/07_Medical_and_Health_Sciences/Hu_2025_DrugPilot.md",
@@ -4464,46 +1552,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0559",
-    "title": "Evaluating open LLMs for agentic analysis orchestration in a typical biomedical lab",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0560",
-    "title": "Evaluating agentic AI for biological discovery in autonomous and copilot settings",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0561",
-    "title": "Toward Full Autonomous Laboratory Instrumentation Control with Large Language Models",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Xie_2025_Autonomous_Lab_Instrumentation_Control.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0562",
-    "title": "Toward a composable, modular laboratory ecosystem for autonomous materials research and development",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Joress_2026_Modular_Lab_Ecosystem.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0563",
-    "title": "Accelerating multimetallic catalyst discovery with robotics and agentic AI",
-    "note_path": "Notes/04_Materials_Science/Peng_2025_Multimetallic_Catalyst_Discovery_Commentary.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0564",
     "title": "An agentic framework for autonomous scientific discovery in cancer pathology",
     "note_path": "Notes/07_Medical_and_Health_Sciences/Trost_2026_SPARK_Cancer_Pathology.md",
@@ -4518,14 +1566,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0566",
-    "title": "Autonomous Laboratory Planning Agent for Solid-State Form Selection and Polymorph Screening",
-    "note_path": "Notes/07_Medical_and_Health_Sciences/AlMahdi_2026_Solid_State_Form_Planning_Agent.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0567",
@@ -4616,28 +1656,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0578",
-    "title": "VISION: a modular AI assistant for natural human-instrument interaction at scientific user facilities",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0579",
     "title": "A Bayesian active learning platform for scalable combination drug screens",
     "note_path": "Notes/07_Medical_and_Health_Sciences/Tosh_2025_BATCHIE_Drug_Screens.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0580",
-    "title": "A Bayesian active learning platform for scalable combination drug screens",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0581",
@@ -4656,30 +1680,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0583",
-    "title": "Autonomous catalysis research with human-AI-robot collaboration",
-    "note_path": "Notes/03_Chemical_Sciences/Orouji_2025_Autonomous_Catalysis_Collaboration.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0584",
-    "title": "Autonomous multi-robot synthesis and optimization of metal halide perovskite nanocrystals",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0585",
-    "title": "IvoryOS: an interoperable web interface for orchestrating Python-based self-driving laboratories",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0586",
     "title": "A virtual platform for automated hybrid organic-enzymatic synthesis planning",
     "note_path": "Notes/03_Chemical_Sciences/Unknown_2025_Hybrid_Organic_Enzymatic_Synthesis_Planning.md",
@@ -4696,36 +1696,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0588",
-    "title": "Autonomous platforms for data-driven organic synthesis",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Gao_2022_Autonomous_Platforms_Organic_Synthesis.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0589",
     "title": "An integrated self-optimizing programmable chemical synthesis and reaction engine",
     "note_path": "Notes/03_Chemical_Sciences/Unknown_2024_Programmable_Chemical_Synthesis_Engine.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0593",
-    "title": "AutoDSL: Automated self-driving laboratory with large language model agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0594",
-    "title": "LabPilot: an agentic copilot for scientific instrument control",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0590",
@@ -4766,14 +1742,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0595",
-    "title": "In vitro continuous protein evolution empowered by machine learning and automation",
-    "note_path": "Notes/06_Life_Sciences/Unknown_2023_InVitro_Continuous_Protein_Evolution_Perspective.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0596",
@@ -4824,28 +1792,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0602",
-    "title": "An all-in-one multipurpose robotic platform for the self-optimization, intensification and scale-up of photocatalysis in flow",
-    "note_path": "Notes/03_Chemical_Sciences/Slattery_2023_RoboChem_Photocatalysis_Preprint.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0603",
     "title": "Reconfigurable system for automated optimization of diverse chemical reactions",
     "note_path": "Notes/03_Chemical_Sciences/Bedard_2018_Reconfigurable_Reaction_Optimization.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0604",
-    "title": "Real-time experiment-theory closed-loop interaction for autonomous materials science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0605",
@@ -4934,30 +1886,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0616",
-    "title": "NIMS-OS: An automation software to implement a closed loop between artificial intelligence and robotic experiments in materials science",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0619",
-    "title": "ChemOS 2.0: An orchestration architecture for chemical self-driving laboratories",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0620",
-    "title": "Enabling Modular Autonomous Feedback-Loops in Materials Science through Hierarchical Experimental Laboratory Automation and Orchestration",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0621",
@@ -5096,14 +2024,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0638",
-    "title": "OpenAg: Democratizing Agricultural Intelligence",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0644",
     "title": "LLM Agents as Social Scientists: A Human-AI Collaborative Platform for Social Science Automation",
     "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Wang_2026_S_Researcher_Social_Science_Automation.md",
@@ -5112,60 +2032,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0639",
-    "title": "AgriAgent: Contract-Driven Planning and Capability-Aware Tool Orchestration in Real-World Agriculture",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0640",
-    "title": "ShizishanGPT: An Agricultural Large Language Model Integrating Tools and Resources",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0641",
-    "title": "AgriGPT: a Large Language Model Ecosystem for Agriculture",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0642",
-    "title": "Multimodal Agricultural Agent Architecture (MA3)",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0643",
-    "title": "AgroAskAI: A Multi-Agentic AI Framework for Supporting Smallholder Farmers",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0645",
     "title": "The Autonomous Sciencecraft Experiment Onboard the EO-1 Spacecraft",
     "note_path": "Notes/10_Aerospace_Marine_and_Transportation_Sciences/Tran_2004_Autonomous_Sciencecraft_EO1.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0646",
-    "title": "The EO-1 Autonomous Science Agent",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0647",
@@ -5248,14 +2120,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0657",
-    "title": "Vibe Researching as Wolf Coming: Can AI Agents with Skills Replace or Augment Social Scientists?",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0658",
     "title": "Read the Paper, Write the Code: Agentic Reproduction of Social-Science Results",
     "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Kohler_2026_Agentic_Reproduction_Social_Science.md",
@@ -5278,14 +2142,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0661",
-    "title": "Robin: A multi-agent system for automating scientific discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0662",
@@ -5472,22 +2328,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0685",
-    "title": "STELLA: Self-Evolving LLM Agent for Biomedical Research",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
-    "paper_id": "ASD-0686",
-    "title": "From Intention To Implementation: Automating Biomedical Research via LLMs",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
     "paper_id": "ASD-0687",
     "title": "Agentic AI for Multi-Stage Physics Experiments at a Large-Scale User Facility Particle Accelerator",
     "note_path": "Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Hellert_2025_Agentic_AI_Particle_Accelerator.md",
@@ -5504,22 +2344,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0689",
-    "title": "A Large Language Model-Empowered Agent for Reliable and Robust Structural Analysis",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0690",
-    "title": "Knowledge-Driven Agentic Scientific Corpus Distillation Framework for Biomedical Large Language Models Training",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0691",
     "title": "OASIS: Onboard Autonomous Science Investigation System for Opportunistic Rover Science",
     "note_path": "Notes/10_Aerospace_Marine_and_Transportation_Sciences/Castano_2007_OASIS_Rover_Science.md",
@@ -5528,28 +2352,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0692",
-    "title": "Essential Autonomous Science Inference for Remote Sensing",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
     "paper_id": "ASD-0693",
     "title": "Enabling Onboard Detection of Events of Scientific Interest for the Europa Clipper Spacecraft",
     "note_path": "Notes/10_Aerospace_Marine_and_Transportation_Sciences/Wagstaff_2019_Europa_Clipper_Onboard_Detection.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0694",
-    "title": "Autonomous surface sampling for the Europa Lander mission concept",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0695",
@@ -5590,14 +2398,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0700",
-    "title": "Reimagining Peer Review Process Through Multi-Agent Mechanism Design",
-    "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_Peer_Review_Mechanism_Design.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0701",
@@ -5736,28 +2536,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0718",
-    "title": "AI Coding Agents Can Reproduce Social Science Findings",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0719",
     "title": "Mission Operations of Earth Observing-1 with Onboard Autonomy",
     "note_path": "Notes/10_Aerospace_Marine_and_Transportation_Sciences/Rabideau_2006_EO1_Mission_Operations_Onboard_Autonomy.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0720",
-    "title": "Lessons Learned from Autonomous Sciencecraft Experiment",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0721",
@@ -5832,28 +2616,12 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0730",
-    "title": "Traxia: A Framework for Verifiable, Agent-Native Scientific Publishing",
-    "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Dogah_2026_Traxia.md",
-    "note_exists": true,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0731",
     "title": "Self-Driving Datasets: From 20 Million Papers to Nuanced Biomedical Knowledge at Scale",
     "note_path": "Notes/06_Life_Sciences/Jones_2026_Self_Driving_Datasets.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0732",
-    "title": "Enhancing Science and Automating Operations Using Onboard Autonomy",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0733",
@@ -5958,14 +2726,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0746",
-    "title": "Enabling Autonomous Rover Science Through Dynamic Planning and Scheduling",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0747",
@@ -6128,14 +2888,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0767",
-    "title": "EGTR-Review: Efficient Evidence-Grounded Scientific Peer Review Generation via Multi-Agent Teacher Distillation",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
     "paper_id": "ASD-0768",
     "title": "When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews",
     "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_When_Reviews_Disagree.md",
@@ -6200,30 +2952,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0776",
-    "title": "TerraBench: Can Agents Reason Over Heterogeneous Earth-System Data?",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0777",
-    "title": "GeoDisaster: Benchmarking Orchestrated Agents for Operational Disaster Geo-Intelligence",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0778",
-    "title": "Agentic publications: redesigning scientific publishing in the age of thinking large language models",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0779",
     "title": "From Text to Simulation: A Multi-Agent LLM Workflow for Automated Chemical Process Design",
     "note_path": "Notes/09_Engineering_and_Industrial_Technology_Sciences/Tian_2026_Text_to_Simulation_Process_Design.md",
@@ -6272,14 +3000,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0785",
-    "title": "Multi-Agent Geospatial Copilots for Remote Sensing Workflows",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0786",
     "title": "AgentReview: Exploring Peer Review Dynamics with LLM Agents",
     "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2024_AgentReview.md",
@@ -6294,14 +3014,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0788",
-    "title": "GeneAgent: self-verification language agent for gene-set analysis using domain databases",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
   },
   {
     "paper_id": "ASD-0789",
@@ -6352,14 +3064,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0795",
-    "title": "OpenAaaS: An Open Agent-as-a-Service Framework for Distributed Materials-Informatics Research",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0796",
     "title": "Bridging Perception and Action: A Lightweight Multimodal Meta-Planner Framework for Robust Earth Observation Agents",
     "note_path": "Notes/05_Earth_and_Environmental_Sciences/Xu_2026_LMMP_Earth_Observation.md",
@@ -6406,14 +3110,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0802",
-    "title": "Exploring Robust Multi-Agent Workflows for Environmental Data Management",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0803",
@@ -6608,14 +3304,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0823",
-    "title": "Bio AI Agent: A Multi-Agent Artificial Intelligence System for Autonomous CAR-T Cell Therapy Development with Integrated Target Discovery, Toxicity Prediction, and Rational Molecular Design",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "excluded"
-  },
-  {
     "paper_id": "ASD-0824",
     "title": "FRAGMENTA: End-to-end Fragmentation-based Generative Model with Agentic Tuning for Drug Lead Optimization",
     "note_path": "Notes/07_Medical_and_Health_Sciences/Suzuki_2025_FRAGMENTA.md",
@@ -6664,38 +3352,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0834",
-    "title": "AiSciVision: A Framework for Specializing Large Multimodal Models in Scientific Image Classification",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0835",
-    "title": "SciDataCopilot: An Agentic Data Preparation Framework for AGI-driven Scientific Discovery",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0836",
-    "title": "Reframing Discovery Trade-Off in Plant Genomics Through Autonomous Agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0837",
-    "title": "VESTA: Visual Exploration with Statistical Tool Agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0838",
     "title": "Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry",
     "note_path": "Notes/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.md",
@@ -6720,30 +3376,6 @@
     "inclusion_status": "to_read"
   },
   {
-    "paper_id": "ASD-0841",
-    "title": "ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0842",
-    "title": "Stargazer: A Scalable Model-Fitting Benchmark Environment for AI Agents under Astrophysical Constraints",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0843",
-    "title": "Plausible but Wrong: A case study on Agentic Failures in Astrophysical Workflows",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
     "paper_id": "ASD-0844",
     "title": "Science Earth: Towards A Planet-Scale Operating System for AI-Native Scientific Discovery",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2026_Science_Earth.md",
@@ -6758,22 +3390,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0846",
-    "title": "SCP: Accelerating Discovery with a Global Web of Autonomous Scientific Agents",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
-  },
-  {
-    "paper_id": "ASD-0847",
-    "title": "Claw AI Lab: An Autonomous Multi-Agent Research Team",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0848",
@@ -6910,14 +3526,6 @@
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
-  },
-  {
-    "paper_id": "ASD-0865",
-    "title": "ALETHEIA: Autonomous Loop for Experimental Theory and HEP Inference Across-data",
-    "note_path": "",
-    "note_exists": false,
-    "active_confirmed_core": false,
-    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0866",
