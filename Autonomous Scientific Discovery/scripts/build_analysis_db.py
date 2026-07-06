@@ -690,8 +690,14 @@ def validate_discipline_sqlite_constraints() -> None:
         "assigned_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
         "retired_at IS NULL OR retired_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
         "trim(assigned_by) <> ''",
+        "trim(assignment_reason) <> ''",
         "assignment_status NOT IN ('active_code', 'retired_code', 'redirected_code') OR pending_reason IS NULL",
         "assignment_status <> 'redirected_code' OR redirected_to_code GLOB '[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9]'",
+        "source_legacy_secondary_class = primary_taxonomy_code_2lvl",
+        "source_primary_module_for_filing = substr(discipline_local_code, 1, 2)",
+        "source_primary_module_for_filing = substr(primary_taxonomy_code_2lvl, 1, 2)",
+        "pending_reason = 'missing_primary_module_for_filing'",
+        "assignment_status <> 'non_discipline_general_method' OR source_primary_module_for_filing IS NULL",
         "substr(discipline_local_code, 1, 2) = substr(primary_taxonomy_code_2lvl, 1, 2)",
         "substr(discipline_local_code, 4, 2) = substr(primary_taxonomy_code_2lvl, 4, 2)",
     ):
@@ -1438,6 +1444,10 @@ def validate_owner_loaded_and_inventory_tables(
                     OR trim(assigned_by) = ''
                 )
                 OR (
+                    assignment_reason IS NULL
+                    OR trim(assignment_reason) = ''
+                )
+                OR (
                     assignment_status IN ('active_code', 'retired_code', 'redirected_code')
                     AND pending_reason IS NOT NULL
                 )
@@ -1452,9 +1462,27 @@ def validate_owner_loaded_and_inventory_tables(
                 OR (
                     assignment_status IN ('active_code', 'retired_code', 'redirected_code')
                     AND (
+                        source_primary_module_for_filing IS NULL
+                        OR source_primary_module_for_filing = ''
+                        OR source_legacy_secondary_class IS NULL
+                        OR source_legacy_secondary_class <> primary_taxonomy_code_2lvl
+                        OR
                         substr(discipline_local_code, 1, 2) <> substr(primary_taxonomy_code_2lvl, 1, 2)
                         OR substr(discipline_local_code, 4, 2) <> substr(primary_taxonomy_code_2lvl, 4, 2)
+                        OR source_primary_module_for_filing <> substr(discipline_local_code, 1, 2)
+                        OR source_primary_module_for_filing <> substr(primary_taxonomy_code_2lvl, 1, 2)
                     )
+                )
+                OR (
+                    assignment_status = 'pending_secondary'
+                    AND (
+                        (pending_reason = 'missing_primary_module_for_filing' AND source_primary_module_for_filing IS NOT NULL)
+                        OR (pending_reason <> 'missing_primary_module_for_filing' AND (source_primary_module_for_filing IS NULL OR source_primary_module_for_filing = ''))
+                    )
+                )
+                OR (
+                    assignment_status = 'non_discipline_general_method'
+                    AND source_primary_module_for_filing IS NOT NULL
                 )
             '''
         ).fetchone()[0]
@@ -2076,7 +2104,7 @@ def build_sqlite(
             assigned_by TEXT NOT NULL CHECK (trim(assigned_by) <> ''),
             retired_at TEXT CHECK (retired_at IS NULL OR retired_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'),
             redirected_to_code TEXT,
-            assignment_reason TEXT NOT NULL,
+            assignment_reason TEXT NOT NULL CHECK (trim(assignment_reason) <> ''),
             pending_reason TEXT,
             source_primary_module_for_filing TEXT REFERENCES taxonomy_index(code),
             source_legacy_secondary_class TEXT,
@@ -2116,9 +2144,27 @@ def build_sqlite(
             CHECK (
                 assignment_status NOT IN ('active_code', 'retired_code', 'redirected_code')
                 OR (
+                    source_primary_module_for_filing IS NOT NULL
+                    AND source_primary_module_for_filing <> ''
+                    AND source_legacy_secondary_class IS NOT NULL
+                    AND source_legacy_secondary_class = primary_taxonomy_code_2lvl
+                    AND
                     substr(discipline_local_code, 1, 2) = substr(primary_taxonomy_code_2lvl, 1, 2)
                     AND substr(discipline_local_code, 4, 2) = substr(primary_taxonomy_code_2lvl, 4, 2)
+                    AND source_primary_module_for_filing = substr(discipline_local_code, 1, 2)
+                    AND source_primary_module_for_filing = substr(primary_taxonomy_code_2lvl, 1, 2)
                 )
+            ),
+            CHECK (
+                assignment_status <> 'pending_secondary'
+                OR (
+                    (pending_reason = 'missing_primary_module_for_filing' AND source_primary_module_for_filing IS NULL)
+                    OR (pending_reason <> 'missing_primary_module_for_filing' AND source_primary_module_for_filing IS NOT NULL AND source_primary_module_for_filing <> '')
+                )
+            ),
+            CHECK (
+                assignment_status <> 'non_discipline_general_method'
+                OR source_primary_module_for_filing IS NULL
             )
         );
         CREATE UNIQUE INDEX discipline_code_assignments_active_code_unique
