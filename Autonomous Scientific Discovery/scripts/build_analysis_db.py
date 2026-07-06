@@ -611,6 +611,13 @@ def validate_discipline_local_code_registry_outputs(
                 )
                 OR (assigned_at NOT GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]')
                 OR (assigned_by IS NULL OR trim(assigned_by) = '')
+                OR (generated_at NOT GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T*')
+                OR (generated_by <> 'export_structured_data.py')
+                OR (
+                    source_commit IS NULL
+                    OR length(source_commit) <> 40
+                    OR source_commit GLOB '*[^0-9a-f]*'
+                )
             '''
         ).fetchone()[0]
     finally:
@@ -695,6 +702,10 @@ def validate_discipline_sqlite_constraints() -> None:
     for fragment in (
         "assigned_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]'",
         "trim(assigned_by) <> ''",
+        "generated_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T*'",
+        "generated_by = 'export_structured_data.py'",
+        "length(source_commit) = 40",
+        "source_commit NOT GLOB '*[^0-9a-f]*'",
         "primary_module_confidence IS NULL OR primary_module_confidence IN ('', 'high', 'medium', 'low')",
         "primary_module_assignment_rule IS NULL OR primary_module_assignment_rule IN ('', 'main_scientific_object', 'main_validation_object', 'direct_contribution_target', 'substantive_application_object', 'manual_override')",
         "secondary_class_source IS NULL OR secondary_class_source IN ('legacy', 'normalized', 'manual_override')",
@@ -2151,9 +2162,12 @@ def build_sqlite(
             pdf_path TEXT,
             active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)),
             is_derived_snapshot INTEGER NOT NULL CHECK (is_derived_snapshot = 1),
-            generated_at TEXT NOT NULL,
-            generated_by TEXT NOT NULL,
-            source_commit TEXT,
+            generated_at TEXT NOT NULL CHECK (generated_at GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T*'),
+            generated_by TEXT NOT NULL CHECK (generated_by = 'export_structured_data.py'),
+            source_commit TEXT NOT NULL CHECK (
+                length(source_commit) = 40
+                AND source_commit NOT GLOB '*[^0-9a-f]*'
+            ),
             worktree_dirty INTEGER NOT NULL CHECK (worktree_dirty IN (0, 1)),
             CHECK (
                 (
