@@ -122,6 +122,7 @@ def main() -> None:
     active_papers = [row for row in papers if bool(row.get("active_confirmed_core"))]
 
     with sqlite3.connect(SQLITE_PATH) as conn:
+        sqlite_papers_count = count_sqlite_table(conn, "papers")
         sqlite_registry_count = count_sqlite_table(conn, "discipline_local_code_registry")
         sqlite_pdf_evidence_count = count_sqlite_table(conn, "pdf_evidence_status")
         sqlite_paper_modules_count = count_sqlite_table(conn, "paper_modules")
@@ -848,6 +849,85 @@ def main() -> None:
         "The frozen severity/build policy is not fully documented in check_policy.md and/or check_data_consistency.py is missing the expected schema-backed owner validation and severity enforcement hooks.",
     )
     add_result(results, "20", status, detail, "Data/check_policy.md + scripts/check_data_consistency.py")
+
+    lifecycle_query_tokens = (
+        "lifecycle-summary",
+        "lifecycle-records",
+    )
+    lifecycle_fields_ok = all(
+        isinstance(row.get("record_status"), str)
+        and isinstance(row.get("inclusion_decision"), str)
+        and isinstance(row.get("duplicate_of"), str)
+        and isinstance(row.get("last_reviewed_at"), str)
+        and isinstance(row.get("last_reviewed_by"), str)
+        for row in papers
+    )
+    lifecycle_semantics_ok = all(
+        (
+            bool(row.get("active_confirmed_core"))
+            and str(row.get("record_status")) == "active_confirmed_core"
+            and str(row.get("inclusion_decision")) == "confirmed_core"
+        )
+        or (
+            not bool(row.get("active_confirmed_core"))
+        )
+        for row in papers
+    )
+    lifecycle_duplicate_format_ok = all(
+        not str(row.get("duplicate_of") or "").strip()
+        or PAPER_ID_PATTERN.fullmatch(str(row.get("duplicate_of") or "").strip()) is not None
+        for row in papers
+    )
+    lifecycle_status_counts: dict[str, int] = {}
+    for row in papers:
+        status_name = str(row.get("record_status") or "").strip()
+        lifecycle_status_counts[status_name] = lifecycle_status_counts.get(status_name, 0) + 1
+    status, detail = check(
+        lifecycle_fields_ok
+        and lifecycle_semantics_ok
+        and lifecycle_duplicate_format_ok
+        and sqlite_papers_count == len(papers)
+        and QUERY_SCRIPT.exists()
+        and all(token in query_script_text for token in lifecycle_query_tokens)
+        and all(token in readme_text for token in lifecycle_query_tokens),
+        (
+            "Derived lifecycle fields are populated across all "
+            f"{len(papers)} papers, mirror into SQLite papers={sqlite_papers_count}, "
+            "and the lifecycle query surfaces are documented and exposed "
+            f"(active={lifecycle_status_counts.get('active_confirmed_core', 0)}, "
+            f"background={lifecycle_status_counts.get('background_only', 0)}, "
+            f"excluded={lifecycle_status_counts.get('excluded', 0)}, "
+            f"duplicate={lifecycle_status_counts.get('duplicate', 0)})."
+        ),
+        "Derived lifecycle fields are missing/inconsistent, SQLite papers drifted from papers.jsonl, or lifecycle query surfaces are not fully exposed and documented.",
+    )
+    add_result(results, "21", status, detail, "Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
+
+    metadata_query_tokens = (
+        "metadata",
+        "discipline-registry-metadata",
+        "snapshot-provenance",
+    )
+    required_metadata_keys = {
+        "papers_exported_at",
+        "discipline_local_code_registry_generated_at",
+        "discipline_local_code_registry_generated_by",
+        "discipline_local_code_registry_source_commit",
+        "discipline_local_code_registry_worktree_dirty",
+        "discipline_local_code_registry_row_count",
+    }
+    status, detail = check(
+        required_metadata_keys.issubset(metadata.keys())
+        and QUERY_SCRIPT.exists()
+        and all(token in query_script_text for token in metadata_query_tokens)
+        and all(token in readme_text for token in metadata_query_tokens),
+        (
+            "SQLite metadata carries the current papers/registry provenance bundle and "
+            "the metadata / discipline-registry-metadata / snapshot-provenance query surfaces are documented and exposed."
+        ),
+        "SQLite metadata provenance keys are incomplete or the metadata/provenance query surfaces are not fully exposed and documented.",
+    )
+    add_result(results, "22", status, detail, "Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")

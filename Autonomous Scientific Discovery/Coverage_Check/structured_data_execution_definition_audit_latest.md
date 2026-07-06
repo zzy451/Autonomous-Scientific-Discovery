@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 20
+- `PASS`: 22
 - `FAIL`: 0
 
 ## Items
@@ -128,3 +128,15 @@ Evidence: `Data/field_ownership_matrix.md`
 check_policy.md defines the frozen ERROR/WARNING/INFO build semantics, and check_data_consistency.py enforces schema-backed owner validation plus the same severity buckets.
 
 Evidence: `Data/check_policy.md + scripts/check_data_consistency.py`
+
+### Item 21 - PASS
+
+Derived lifecycle fields are populated across all 871 papers, mirror into SQLite papers=871, and the lifecycle query surfaces are documented and exposed (active=447, background=371, excluded=22, duplicate=31).
+
+Evidence: `Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md`
+
+### Item 22 - PASS
+
+SQLite metadata carries the current papers/registry provenance bundle and the metadata / discipline-registry-metadata / snapshot-provenance query surfaces are documented and exposed.
+
+Evidence: `Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md`

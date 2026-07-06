@@ -405,6 +405,18 @@ List lightweight audit rows:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" change-log
 ```
 
+Summarize derived lifecycle fields by status:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" lifecycle-summary
+```
+
+List papers with derived lifecycle fields:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" lifecycle-records --record-status duplicate
+```
+
 Operational notes:
 
 - `analysis-baseline` is the fixed canonical record-vs-assignment glossary output for the current active confirmed-core snapshot.
@@ -429,6 +441,8 @@ Operational notes:
 - `paper-assets` and `notes` expose the normalized asset/note inventory tables for missing-file review, export sanity checks, and downstream maintenance audits.
 - `change-log-summary` is the audit summary surface for owner-maintenance activity by `change_type`.
 - `change-log` lists raw audit rows from `Data/change_log.jsonl` after they are loaded into SQLite.
+- `lifecycle-summary` groups the derived lifecycle lane by `record_status` and `inclusion_decision`, including whether rows already carry `last_reviewed_at`.
+- `lifecycle-records` lists the current derived lifecycle fields per paper so duplicate links, review timestamps, and non-core status routing can be inspected directly.
 - `boundary-cases` and `bucket-summary` are audit commands for canonical-vs-mirror inspection, not default canonical classification summaries.
 - If `papers.sqlite` is stale or missing, rerun `build_analysis_db.py` after `export -> check`.
 
