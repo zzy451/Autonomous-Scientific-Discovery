@@ -554,11 +554,47 @@ def validate_discipline_local_code_registry_outputs(
             ORDER BY paper_id
             '''
         ).fetchall()
+        semantic_violations = conn.execute(
+            '''
+            SELECT COUNT(*)
+            FROM discipline_local_code_registry
+            WHERE
+                (
+                    assignment_status = 'active_code'
+                    AND (
+                        discipline_local_rank IS NULL
+                        OR discipline_local_code IS NULL
+                        OR discipline_local_rank <> substr(discipline_local_code, -3)
+                        OR discipline_display_order <> discipline_local_code
+                    )
+                )
+                OR (
+                    assignment_status = 'pending_secondary'
+                    AND (
+                        discipline_local_code IS NOT NULL
+                        OR discipline_local_rank IS NOT NULL
+                        OR discipline_display_order NOT LIKE '%PENDING-ASD-%'
+                    )
+                )
+                OR (
+                    assignment_status = 'non_discipline_general_method'
+                    AND (
+                        discipline_local_code IS NOT NULL
+                        OR discipline_local_rank IS NOT NULL
+                        OR discipline_display_order NOT LIKE 'GM-PENDING-ASD-%'
+                    )
+                )
+            '''
+        ).fetchone()[0]
     finally:
         conn.close()
     assert_build_condition(
         actual_sqlite_rows == expected_sqlite_rows,
         'SQLite discipline_local_code_registry table drifted from expected registry snapshot rows',
+    )
+    assert_build_condition(
+        semantic_violations == 0,
+        'SQLite discipline_local_code_registry violated derived rank/display-order semantics',
     )
 
 def validate_discipline_sqlite_constraints() -> None:
@@ -584,6 +620,8 @@ def validate_discipline_sqlite_constraints() -> None:
 
     assignment_sql = assignment_create_sql[0] if assignment_create_sql else ''
     registry_sql = registry_create_sql[0] if registry_create_sql else ''
+    normalized_assignment_sql = " ".join(assignment_sql.split())
+    normalized_registry_sql = " ".join(registry_sql.split())
     index_sql_by_name = {
         str(name): str(sql or '')
         for name, sql in index_rows
@@ -592,15 +630,15 @@ def validate_discipline_sqlite_constraints() -> None:
     registry_fk_targets = {(str(row[2]), str(row[3]), str(row[4])) for row in registry_fk_rows}
 
     assert_build_condition(
-        "assignment_status IN (" in assignment_sql
-        and "schema_version = 1" in assignment_sql
-        and "redirected_to_code IS NULL" in assignment_sql,
+        "assignment_status IN (" in normalized_assignment_sql
+        and "schema_version = 1" in normalized_assignment_sql
+        and "redirected_to_code IS NULL" in normalized_assignment_sql,
         'discipline_code_assignments SQLite table is missing expected status/schema/redirect guardrail CHECK constraints',
     )
     assert_build_condition(
-        "is_derived_snapshot = 1" in registry_sql
-        and "assignment_status = 'active_code'" in registry_sql
-        and "discipline_local_rank IS NULL" in registry_sql,
+        "is_derived_snapshot = 1" in normalized_registry_sql
+        and "assignment_status = 'active_code'" in normalized_registry_sql
+        and "discipline_local_rank IS NULL" in normalized_registry_sql,
         'discipline_local_code_registry SQLite table is missing expected derived/current-snapshot CHECK constraints',
     )
     assert_build_condition(
@@ -622,9 +660,13 @@ def validate_discipline_sqlite_constraints() -> None:
         "general_method_bucket IS NULL OR general_method_bucket IN ('none', '01.04_general_asd_methods_without_concrete_object_experiments')",
         "active_confirmed_core IN (0, 1)",
         "worktree_dirty IN (0, 1)",
+        "discipline_local_rank = substr(discipline_local_code, -3)",
+        "discipline_display_order = discipline_local_code",
+        "discipline_display_order LIKE '%PENDING-ASD-%'",
+        "discipline_display_order LIKE 'GM-PENDING-ASD-%'",
     ):
         assert_build_condition(
-            fragment in registry_sql,
+            fragment in normalized_registry_sql,
             f'discipline_local_code_registry SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
     assert_build_condition(
@@ -2014,6 +2056,8 @@ def build_sqlite(
                     AND discipline_local_code IS NOT NULL
                     AND discipline_local_rank IS NOT NULL
                     AND primary_taxonomy_code_2lvl IS NOT NULL
+                    AND discipline_local_rank = substr(discipline_local_code, -3)
+                    AND discipline_display_order = discipline_local_code
                 )
                 OR (
                     assignment_status IN ('pending_secondary', 'non_discipline_general_method')
@@ -2021,6 +2065,14 @@ def build_sqlite(
                     AND discipline_local_rank IS NULL
                     AND primary_taxonomy_code_2lvl IS NULL
                 )
+            ),
+            CHECK (
+                assignment_status <> 'pending_secondary'
+                OR discipline_display_order LIKE '%PENDING-ASD-%'
+            ),
+            CHECK (
+                assignment_status <> 'non_discipline_general_method'
+                OR discipline_display_order LIKE 'GM-PENDING-ASD-%'
             )
         );
         CREATE TABLE pdf_evidence_status (
