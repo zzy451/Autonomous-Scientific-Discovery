@@ -170,11 +170,38 @@ def validate_papers_outputs(papers: list[dict[str, object]]) -> None:
             ORDER BY paper_id
             '''
         ).fetchall()
+        general_method_semantic_violations = conn.execute(
+            '''
+            SELECT COUNT(*)
+            FROM papers
+            WHERE
+                (
+                    general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'
+                    AND NOT (
+                        scientific_object_modules_json = '[]'
+                        AND object_coverage_mode = 'general_method_without_concrete_object_experiments'
+                        AND primary_module_for_filing IS NULL
+                    )
+                )
+                OR (
+                    object_coverage_mode = 'general_method_without_concrete_object_experiments'
+                    AND NOT (
+                        general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'
+                        AND scientific_object_modules_json = '[]'
+                        AND primary_module_for_filing IS NULL
+                    )
+                )
+            '''
+        ).fetchone()[0]
     finally:
         conn.close()
     assert_build_condition(
         actual_sqlite_rows == expected_sqlite_rows,
         'SQLite papers table drifted from expected papers.jsonl snapshot rows',
+    )
+    assert_build_condition(
+        general_method_semantic_violations == 0,
+        'SQLite papers table violated pure general-method cross-field semantics',
     )
 
 def build_module_rows(papers: list[dict[str, object]]) -> list[dict[str, object]]:
@@ -801,6 +828,7 @@ def validate_papers_sqlite_constraints() -> None:
         conn.close()
 
     papers_sql = papers_sql_row[0] if papers_sql_row else ''
+    normalized_papers_sql = " ".join(papers_sql.split())
     required_fragments = (
         "pdf_exists IN (0, 1)",
         "note_exists IN (0, 1)",
@@ -814,11 +842,13 @@ def validate_papers_sqlite_constraints() -> None:
         "classification_source_confidence IN ('high', 'medium', 'low')",
         "classification_parser_rule IN ('structured_remark_token', 'legacy_general_method_fallback', 'legacy_main_class_fallback', 'needs_review')",
         "record_status IN ('candidate', 'active_confirmed_core', 'background_only', 'excluded', 'duplicate', 'retired')",
+        "general_method_bucket <> '01.04_general_asd_methods_without_concrete_object_experiments' OR ( scientific_object_modules_json = '[]' AND object_coverage_mode = 'general_method_without_concrete_object_experiments' AND primary_module_for_filing IS NULL )",
+        "object_coverage_mode <> 'general_method_without_concrete_object_experiments' OR ( general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments' AND scientific_object_modules_json = '[]' AND primary_module_for_filing IS NULL )",
         "CHECK (duplicate_of IS NULL OR duplicate_of <> paper_id)",
     )
     for fragment in required_fragments:
         assert_build_condition(
-            fragment in papers_sql,
+            fragment in normalized_papers_sql,
             f'papers SQLite table is missing expected CHECK constraint fragment: {fragment}',
         )
 
@@ -1810,6 +1840,22 @@ def build_sqlite(
             first_hand_sources_checked TEXT, source_checked_at TEXT, progress_title TEXT, pdf_status TEXT, evidence_status TEXT,
             note_status TEXT, master_status TEXT, final_modules_or_bucket_raw TEXT, final_modules_or_bucket_json TEXT NOT NULL, source_limited TEXT, batch TEXT, closed TEXT,
             active_confirmed_core INTEGER NOT NULL CHECK (active_confirmed_core IN (0, 1)), record_status TEXT CHECK (record_status IS NULL OR record_status IN ('candidate', 'active_confirmed_core', 'background_only', 'excluded', 'duplicate', 'retired')), inclusion_decision TEXT, duplicate_of TEXT REFERENCES papers(paper_id) DEFERRABLE INITIALLY DEFERRED, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL,
+            CHECK (
+                general_method_bucket <> '01.04_general_asd_methods_without_concrete_object_experiments'
+                OR (
+                    scientific_object_modules_json = '[]'
+                    AND object_coverage_mode = 'general_method_without_concrete_object_experiments'
+                    AND primary_module_for_filing IS NULL
+                )
+            ),
+            CHECK (
+                object_coverage_mode <> 'general_method_without_concrete_object_experiments'
+                OR (
+                    general_method_bucket = '01.04_general_asd_methods_without_concrete_object_experiments'
+                    AND scientific_object_modules_json = '[]'
+                    AND primary_module_for_filing IS NULL
+                )
+            ),
             CHECK (duplicate_of IS NULL OR duplicate_of <> paper_id)
         );
         CREATE TABLE paper_modules (
