@@ -581,6 +581,45 @@ def validate_discipline_sqlite_constraints() -> None:
         'discipline_local_code_registry SQLite table is missing expected foreign keys to papers, discipline_code_assignments, or taxonomy_index',
     )
 
+def validate_core_analysis_foreign_keys() -> None:
+    conn = sqlite3.connect(SQLITE_PATH)
+    try:
+        tables = (
+            'paper_modules',
+            'workflow_mirror_paper_modules',
+            'paper_general_method_buckets',
+            'pdf_evidence_status',
+            'paper_assets',
+            'notes',
+            'pdf_inventory',
+            'missing_pdf_inventory',
+            'note_inventory',
+        )
+        fk_rows_by_table = {
+            table: conn.execute(f'PRAGMA foreign_key_list({table})').fetchall()
+            for table in tables
+        }
+    finally:
+        conn.close()
+
+    expected_papers_fk_tables = {
+        'paper_modules',
+        'workflow_mirror_paper_modules',
+        'paper_general_method_buckets',
+        'pdf_evidence_status',
+        'paper_assets',
+        'notes',
+        'pdf_inventory',
+        'missing_pdf_inventory',
+        'note_inventory',
+    }
+    for table in expected_papers_fk_tables:
+        fk_targets = {(str(row[2]), str(row[3]), str(row[4])) for row in fk_rows_by_table[table]}
+        assert_build_condition(
+            ('papers', 'paper_id', 'paper_id') in fk_targets,
+            f'{table} SQLite table is missing expected foreign key to papers(paper_id)',
+        )
+
 def validate_auxiliary_analysis_tables(
     papers: list[dict[str, object]],
     pdf_archive_registry: list[dict[str, object]],
@@ -1504,7 +1543,7 @@ def build_sqlite(
             active_confirmed_core INTEGER NOT NULL, record_status TEXT, inclusion_decision TEXT, duplicate_of TEXT, last_reviewed_at TEXT, last_reviewed_by TEXT, exported_at TEXT NOT NULL
         );
         CREATE TABLE paper_modules (
-            paper_id TEXT NOT NULL,
+            paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             assignment_scope TEXT NOT NULL,
             module_code TEXT NOT NULL,
             module_kind TEXT NOT NULL,
@@ -1515,7 +1554,7 @@ def build_sqlite(
             PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE workflow_mirror_paper_modules (
-            paper_id TEXT NOT NULL,
+            paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             assignment_scope TEXT NOT NULL,
             module_code TEXT NOT NULL,
             module_kind TEXT NOT NULL,
@@ -1526,7 +1565,7 @@ def build_sqlite(
             PRIMARY KEY (paper_id, module_code)
         );
         CREATE TABLE paper_general_method_buckets (
-            paper_id TEXT PRIMARY KEY,
+            paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             general_method_bucket TEXT NOT NULL,
             active_confirmed_core INTEGER NOT NULL,
             source_limited TEXT
@@ -1640,7 +1679,7 @@ def build_sqlite(
             )
         );
         CREATE TABLE pdf_evidence_status (
-            paper_id TEXT PRIMARY KEY,
+            paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             title TEXT NOT NULL,
             pdf_path TEXT,
             pdf_exists INTEGER NOT NULL,
@@ -1658,7 +1697,7 @@ def build_sqlite(
         );
         CREATE TABLE paper_assets (
             asset_id TEXT PRIMARY KEY,
-            paper_id TEXT NOT NULL,
+            paper_id TEXT NOT NULL REFERENCES papers(paper_id),
             title TEXT NOT NULL,
             asset_type TEXT NOT NULL,
             path TEXT,
@@ -1673,16 +1712,16 @@ def build_sqlite(
             exported_at TEXT
         );
         CREATE TABLE notes (
-            paper_id TEXT PRIMARY KEY,
+            paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),
             title TEXT NOT NULL,
             note_path TEXT,
             note_exists INTEGER NOT NULL,
             active_confirmed_core INTEGER NOT NULL,
             inclusion_status TEXT
         );
-        CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT, scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL);
-        CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT, access_note TEXT);
-        CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY, title TEXT NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, active_confirmed_core INTEGER NOT NULL, inclusion_status TEXT);
+        CREATE TABLE pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, pdf_path TEXT NOT NULL, sha256 TEXT NOT NULL, primary_module_for_filing TEXT, scientific_object_modules_json TEXT NOT NULL, pdf_status TEXT, evidence_status TEXT, active_confirmed_core INTEGER NOT NULL);
+        CREATE TABLE missing_pdf_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, doi TEXT, url TEXT, pdf_status TEXT, evidence_status TEXT, source_limited TEXT, access_note TEXT);
+        CREATE TABLE note_inventory (paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id), title TEXT NOT NULL, note_path TEXT, note_exists INTEGER NOT NULL, active_confirmed_core INTEGER NOT NULL, inclusion_status TEXT);
         CREATE VIEW active_confirmed_core_papers AS SELECT * FROM papers WHERE active_confirmed_core = 1;
         CREATE VIEW active_missing_local_pdf AS SELECT * FROM papers WHERE active_confirmed_core = 1 AND pdf_exists = 0;
         CREATE VIEW canonical_paper_modules AS
@@ -2316,6 +2355,7 @@ def main() -> None:
     validate_sqlite_module_surfaces(module_rows)
     validate_discipline_local_code_registry_outputs(discipline_local_code_registry)
     validate_discipline_sqlite_constraints()
+    validate_core_analysis_foreign_keys()
     validate_auxiliary_analysis_tables(
         papers,
         pdf_archive_registry,
