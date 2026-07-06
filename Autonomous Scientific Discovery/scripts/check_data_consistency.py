@@ -2258,13 +2258,116 @@ def validate_registry_layer(
             "taxonomy_registry.json exported_at must match papers.jsonl exported_at",
         )
 
-    require_row_fields(paper_registry_path, paper_registry_rows, ("paper_id",))
+    require_row_fields(
+        paper_registry_path,
+        paper_registry_rows,
+        (
+            "paper_id",
+            "title",
+            "authors",
+            "year",
+            "source",
+            "source_locator_raw",
+            "is_agent",
+            "inclusion_status",
+            "exclusion_reason",
+            "note_path",
+            "note_exists",
+            "pdf_path",
+            "pdf_exists",
+            "legacy_main_class",
+            "legacy_secondary_class",
+            "legacy_tertiary_class",
+            "fourth_level_topic",
+            "new_fourth_level",
+            "scientific_object_modules",
+            "general_method_bucket",
+            "object_coverage_mode",
+            "primary_module_for_filing",
+            "classification_display_code",
+            "active_confirmed_core",
+            "first_hand_sources_checked",
+            "pdf_status",
+            "evidence_status",
+            "note_status",
+            "master_status",
+            "source_limited",
+            "batch",
+            "closed",
+            "exported_at",
+        ),
+    )
     assert_unique_registry_key(paper_registry_path, paper_registry_rows, ("paper_id",))
     paper_registry_ids = {row["paper_id"] for row in paper_registry_rows}
     assert_true(
         paper_registry_ids == set(paper_rows_by_id.keys()),
         "paper_registry paper_id coverage does not match papers.jsonl",
     )
+    for row in paper_registry_rows:
+        paper_id = row["paper_id"]
+        paper_row = paper_rows_by_id[paper_id]
+        scientific_object_modules = [str(code) for code in paper_row["scientific_object_modules"]]
+        expected_classification_display_code = ""
+        if str(paper_row["general_method_bucket"]) != "none":
+            expected_classification_display_code = "01.04"
+        elif scientific_object_modules:
+            expected_classification_display_code = ";".join(scientific_object_modules)
+        assert_true(
+            row["title"] == paper_row["title"],
+            f"paper_registry title mismatch for {paper_id}",
+        )
+        assert_true(
+            row["authors"] == paper_row["authors"],
+            f"paper_registry authors mismatch for {paper_id}",
+        )
+        assert_true(
+            row["year"] == paper_row["year"],
+            f"paper_registry year mismatch for {paper_id}",
+        )
+        assert_true(
+            row["source"] == paper_row["source"],
+            f"paper_registry source mismatch for {paper_id}",
+        )
+        assert_true(
+            row["source_locator_raw"] == paper_row["doi_or_url"],
+            f"paper_registry source_locator_raw mismatch for {paper_id}",
+        )
+        for field_name in (
+            "is_agent",
+            "inclusion_status",
+            "exclusion_reason",
+            "note_path",
+            "note_exists",
+            "pdf_path",
+            "pdf_exists",
+            "legacy_main_class",
+            "legacy_secondary_class",
+            "legacy_tertiary_class",
+            "fourth_level_topic",
+            "new_fourth_level",
+            "scientific_object_modules",
+            "general_method_bucket",
+            "object_coverage_mode",
+            "primary_module_for_filing",
+            "active_confirmed_core",
+            "first_hand_sources_checked",
+            "pdf_status",
+            "evidence_status",
+            "note_status",
+            "master_status",
+            "source_limited",
+            "batch",
+            "closed",
+            "exported_at",
+        ):
+            assert_true(
+                row[field_name] == paper_row[field_name],
+                f"paper_registry {field_name} mismatch for {paper_id}",
+            )
+        assert_true(
+            row["classification_display_code"] == expected_classification_display_code,
+            f"paper_registry classification_display_code mismatch for {paper_id}",
+        )
 
     require_row_fields(
         alias_registry_path,
