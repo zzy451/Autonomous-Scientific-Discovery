@@ -2402,7 +2402,16 @@ def validate_registry_layer(
     require_row_fields(
         taxonomy_registry_path,
         taxonomy_registry_rows,
-        ("taxonomy_code", "kind", "labels"),
+        (
+            "taxonomy_code",
+            "kind",
+            "labels",
+            "zh_label",
+            "en_label",
+            "sort_order",
+            "dir_name",
+            "parent_module_code",
+        ),
     )
     assert_unique_registry_key(taxonomy_registry_path, taxonomy_registry_rows, ("taxonomy_code",))
     taxonomy_codes = {row["taxonomy_code"] for row in taxonomy_registry_rows}
@@ -2418,6 +2427,9 @@ def validate_registry_layer(
             f"taxonomy_registry has unknown taxonomy_code: {code!r}",
         )
         expected_kind = "general_bucket" if code == "01.04" else "formal_module"
+        expected_parent_module_code = "01" if code == "01.04" else ""
+        expected_sort_order = 14 if code == "01.04" else int(code) * 10
+        expected_dir_prefix = "01_04_" if code == "01.04" else f"{code}_"
         labels = row["labels"]
         assert_true(
             isinstance(labels, dict) and isinstance(labels.get("display"), str),
@@ -2430,6 +2442,33 @@ def validate_registry_layer(
         assert_true(
             row["kind"] == expected_kind,
             f"taxonomy_registry kind mismatch for {code}: {row['kind']!r}",
+        )
+        assert_true(
+            isinstance(row["zh_label"], str) and bool(str(row["zh_label"]).strip()),
+            f"taxonomy_registry zh_label missing or blank for {code}",
+        )
+        assert_true(
+            row["en_label"] == taxonomy_index["code_to_label"][code],
+            f"taxonomy_registry en_label mismatch for {code}: {row['en_label']!r}",
+        )
+        assert_true(
+            labels["display"] == row["en_label"],
+            f"taxonomy_registry labels.display and en_label disagree for {code}",
+        )
+        assert_true(
+            row["sort_order"] == expected_sort_order,
+            f"taxonomy_registry sort_order mismatch for {code}: {row['sort_order']!r}",
+        )
+        assert_true(
+            isinstance(row["dir_name"], str)
+            and bool(str(row["dir_name"]).strip())
+            and " " not in str(row["dir_name"])
+            and str(row["dir_name"]).startswith(expected_dir_prefix),
+            f"taxonomy_registry dir_name mismatch for {code}: {row['dir_name']!r}",
+        )
+        assert_true(
+            row["parent_module_code"] == expected_parent_module_code,
+            f"taxonomy_registry parent_module_code mismatch for {code}: {row['parent_module_code']!r}",
         )
 
     require_row_fields(
