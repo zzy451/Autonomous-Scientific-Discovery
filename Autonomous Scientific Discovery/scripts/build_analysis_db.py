@@ -694,7 +694,27 @@ def validate_discipline_local_code_registry_outputs(
                     LEFT JOIN discipline_code_assignments d ON r.assignment_id = d.assignment_id
                     WHERE d.assignment_id IS NULL
                        OR d.assignment_status NOT IN ('active_code', 'pending_secondary', 'non_discipline_general_method')
-                ) AS registry_non_current_assignment
+                ) AS registry_non_current_assignment,
+                (
+                    SELECT COUNT(*)
+                    FROM discipline_local_code_registry r
+                    JOIN discipline_code_assignments d ON r.assignment_id = d.assignment_id
+                    WHERE r.paper_id <> d.paper_id
+                ) AS registry_assignment_paper_mismatch,
+                (
+                    SELECT COUNT(*)
+                    FROM discipline_local_code_registry r
+                    JOIN discipline_code_assignments d ON r.assignment_id = d.assignment_id
+                    WHERE r.assignment_status <> d.assignment_status
+                       OR COALESCE(r.discipline_local_code, '') <> COALESCE(d.discipline_local_code, '')
+                       OR COALESCE(r.primary_taxonomy_code_2lvl, '') <> COALESCE(d.primary_taxonomy_code_2lvl, '')
+                       OR COALESCE(r.assigned_at, '') <> COALESCE(d.assigned_at, '')
+                       OR COALESCE(r.assigned_by, '') <> COALESCE(d.assigned_by, '')
+                       OR COALESCE(r.retired_at, '') <> COALESCE(d.retired_at, '')
+                       OR COALESCE(r.redirected_to_code, '') <> COALESCE(d.redirected_to_code, '')
+                       OR COALESCE(r.assignment_reason, '') <> COALESCE(d.assignment_reason, '')
+                       OR COALESCE(r.pending_reason, '') <> COALESCE(d.pending_reason, '')
+                ) AS registry_ledger_field_mismatch
             '''
         ).fetchone()
     finally:
@@ -726,6 +746,14 @@ def validate_discipline_local_code_registry_outputs(
     assert_build_condition(
         snapshot_coverage_counts[6] == 0,
         'SQLite registry rows reference non-current or missing discipline assignments',
+    )
+    assert_build_condition(
+        snapshot_coverage_counts[7] == 0,
+        'SQLite registry assignment_id to paper_id mapping drifted from discipline ledger',
+    )
+    assert_build_condition(
+        snapshot_coverage_counts[8] == 0,
+        'SQLite registry mirrored ledger fields drifted from discipline assignments',
     )
 
 def validate_discipline_sqlite_constraints() -> None:
