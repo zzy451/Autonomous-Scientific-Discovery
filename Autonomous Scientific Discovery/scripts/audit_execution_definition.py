@@ -29,10 +29,16 @@ README = DATA_DIR / "README.md"
 FIELD_DICTIONARY = DATA_DIR / "field_dictionary.md"
 INTEGRITY_REPORT = DATA_DIR / "integrity_check_report.md"
 SQLITE_PATH = DATA_DIR / "papers.sqlite"
+CHANGE_LOG_JSONL = DATA_DIR / "change_log.jsonl"
 PIPELINE_SCRIPT = ROOT / "scripts" / "run_structured_data_pipeline.py"
 QUERY_SCRIPT = ROOT / "scripts" / "query_analysis_db.py"
 EXPORT_SCRIPT = ROOT / "scripts" / "export_structured_data.py"
 BUILD_SCRIPT = ROOT / "scripts" / "build_analysis_db.py"
+APPEND_CHANGE_LOG_SCRIPT = ROOT / "scripts" / "append_change_log.py"
+MANAGE_DISCIPLINE_CODE_ASSIGNMENTS_SCRIPT = ROOT / "scripts" / "manage_discipline_code_assignments.py"
+MANAGE_CLASSIFICATION_CODE_INDEX_SCRIPT = ROOT / "scripts" / "manage_classification_code_index.py"
+MANAGE_PROGRESS_TRACKING_SCRIPT = ROOT / "scripts" / "manage_progress_tracking.py"
+MANAGE_MASTER_PAPER_LIST_SCRIPT = ROOT / "scripts" / "manage_master_paper_list.py"
 MASTER_OWNER = ROOT / "Paper_Lists" / "agent_master_paper_list.md"
 PROGRESS_OWNER = ROOT / "Coverage_Check" / "multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md"
 PLAN_PATH = COVERAGE_DIR / "structured_data_long_term_catalog_and_index_plan_2026-07-05.md"
@@ -100,6 +106,7 @@ def main() -> None:
     classification_assignments = load_jsonl(CLASSIFICATION_ASSIGNMENTS_JSONL)
     preview_rows = load_csv_rows(PREVIEW_CSV)
     classification_index = load_json(CLASSIFICATION_CODE_INDEX)
+    change_log_rows = load_jsonl(CHANGE_LOG_JSONL) if CHANGE_LOG_JSONL.exists() else []
     readme_text = read_text(README)
     field_dictionary_text = read_text(FIELD_DICTIONARY)
     integrity_report_text = read_text(INTEGRITY_REPORT)
@@ -107,6 +114,11 @@ def main() -> None:
     query_script_text = read_text(QUERY_SCRIPT)
     export_script_text = read_text(EXPORT_SCRIPT)
     build_script_text = read_text(BUILD_SCRIPT)
+    append_change_log_script_text = read_text(APPEND_CHANGE_LOG_SCRIPT)
+    manage_discipline_code_assignments_script_text = read_text(MANAGE_DISCIPLINE_CODE_ASSIGNMENTS_SCRIPT)
+    manage_classification_code_index_script_text = read_text(MANAGE_CLASSIFICATION_CODE_INDEX_SCRIPT)
+    manage_progress_tracking_script_text = read_text(MANAGE_PROGRESS_TRACKING_SCRIPT)
+    manage_master_paper_list_script_text = read_text(MANAGE_MASTER_PAPER_LIST_SCRIPT)
     active_papers = [row for row in papers if bool(row.get("active_confirmed_core"))]
 
     with sqlite3.connect(SQLITE_PATH) as conn:
@@ -115,6 +127,7 @@ def main() -> None:
         sqlite_paper_modules_count = count_sqlite_table(conn, "paper_modules")
         sqlite_general_method_buckets_count = count_sqlite_table(conn, "paper_general_method_buckets")
         sqlite_classification_terms_count = count_sqlite_table(conn, "classification_terms")
+        sqlite_change_log_count = count_sqlite_table(conn, "change_log")
         sqlite_table_names = {
             str(row[0])
             for row in conn.execute(
@@ -707,6 +720,86 @@ def main() -> None:
         "Owner fact source write protection is missing from export/build scripts and/or README does not document the guarded owner files clearly.",
     )
     add_result(results, "16", status, detail, "scripts/export_structured_data.py + scripts/build_analysis_db.py + Data/README.md")
+
+    change_log_fields_ok = all(
+        isinstance(row.get("change_id"), str)
+        and isinstance(row.get("paper_id"), str)
+        and isinstance(row.get("changed_at"), str)
+        and isinstance(row.get("changed_by"), str)
+        and isinstance(row.get("change_type"), str)
+        and "old_value" in row
+        and "new_value" in row
+        and isinstance(row.get("reason"), str)
+        for row in change_log_rows
+    )
+    change_log_query_tokens = (
+        "change-log-summary",
+        "change-log",
+    )
+    status, detail = check(
+        CHANGE_LOG_JSONL.exists()
+        and bool(change_log_rows)
+        and change_log_fields_ok
+        and sqlite_change_log_count == len(change_log_rows)
+        and "change_log" in sqlite_table_names
+        and all(token in query_script_text for token in change_log_query_tokens)
+        and all(token in readme_text for token in change_log_query_tokens),
+        (
+            "change_log.jsonl exists as a populated owner audit ledger, mirrors into SQLite "
+            f"change_log={sqlite_change_log_count}, and the change-log query surfaces are documented and exposed."
+        ),
+        "change_log owner audit coverage is incomplete: the ledger is missing/empty, SQLite mirroring drifted, or change-log query surfaces are not fully exposed and documented.",
+    )
+    add_result(results, "17", status, detail, "Data/change_log.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
+
+    owner_helper_scripts = (
+        MANAGE_DISCIPLINE_CODE_ASSIGNMENTS_SCRIPT,
+        MANAGE_CLASSIFICATION_CODE_INDEX_SCRIPT,
+        MANAGE_PROGRESS_TRACKING_SCRIPT,
+        MANAGE_MASTER_PAPER_LIST_SCRIPT,
+        APPEND_CHANGE_LOG_SCRIPT,
+    )
+    owner_helper_readme_tokens = (
+        "scripts/manage_discipline_code_assignments.py",
+        "scripts/manage_classification_code_index.py",
+        "scripts/manage_progress_tracking.py",
+        "scripts/manage_master_paper_list.py",
+        "scripts/append_change_log.py",
+        "Daily export must not write owner fact sources. The corresponding owner-maintenance helpers are explicit commands:",
+    )
+    owner_helper_script_tokens_ok = (
+        all(path.exists() for path in owner_helper_scripts)
+        and all(
+            token in manage_discipline_code_assignments_script_text
+            for token in ("--paper-id", "--target-status", "--assignment-reason", "--change-reason", "--dry-run")
+        )
+        and all(
+            token in manage_classification_code_index_script_text
+            for token in ("sync", "upsert-primary", "upsert-secondary", "--dry-run")
+        )
+        and all(
+            token in manage_progress_tracking_script_text
+            for token in ("--paper-id", "--set", "--reason", "--dry-run")
+        )
+        and all(
+            token in manage_master_paper_list_script_text
+            for token in ("--paper-id", "--set", "--reason", "--dry-run")
+        )
+        and all(
+            token in append_change_log_script_text
+            for token in ("--paper-id", "--change-type", "--reason")
+        )
+    )
+    status, detail = check(
+        owner_helper_script_tokens_ok
+        and all(token in readme_text for token in owner_helper_readme_tokens),
+        (
+            "Explicit owner-maintenance helper commands exist for discipline-code, taxonomy, progress, master, "
+            "and direct change-log updates, and README documents those operational entry points."
+        ),
+        "One or more owner-maintenance helper commands is missing required CLI surface coverage or README does not document the explicit owner-maintenance entry points clearly.",
+    )
+    add_result(results, "18", status, detail, "scripts/manage_*.py + scripts/append_change_log.py + Data/README.md")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")

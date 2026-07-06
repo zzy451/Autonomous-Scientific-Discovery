@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 16
+- `PASS`: 18
 - `FAIL`: 0
 
 ## Items
@@ -104,3 +104,15 @@ Evidence: `scripts/query_analysis_db.py + Data/README.md`
 export_structured_data.py and build_analysis_db.py both carry explicit owner-path write guardrails for discipline_code_assignments.jsonl, classification_code_index.json, and change_log.jsonl, and README documents the same protection.
 
 Evidence: `scripts/export_structured_data.py + scripts/build_analysis_db.py + Data/README.md`
+
+### Item 17 - PASS
+
+change_log.jsonl exists as a populated owner audit ledger, mirrors into SQLite change_log=13, and the change-log query surfaces are documented and exposed.
+
+Evidence: `Data/change_log.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md`
+
+### Item 18 - PASS
+
+Explicit owner-maintenance helper commands exist for discipline-code, taxonomy, progress, master, and direct change-log updates, and README documents those operational entry points.
+
+Evidence: `scripts/manage_*.py + scripts/append_change_log.py + Data/README.md`
