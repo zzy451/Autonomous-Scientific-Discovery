@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 12
+- `PASS`: 14
 - `FAIL`: 0
 
 ## Items
@@ -80,3 +80,15 @@ Evidence: `Data/integrity_check_report.md`
 The owner fact source -> export -> check -> build workflow is documented in README and exposed via a canonical pipeline script with preflight owner summary and optional execution audit.
 
 Evidence: `scripts/run_structured_data_pipeline.py + Data/README.md`
+
+### Item 13 - PASS
+
+SQLite analysis DB contains all named core tables from the long-term plan: classification_terms, discipline_code_assignments, discipline_local_code_registry, notes, paper_assets, paper_general_method_buckets, paper_modules, papers, pdf_evidence_status.
+
+Evidence: `Data/papers.sqlite`
+
+### Item 14 - PASS
+
+README and field_dictionary both document the four fact-source model and explicitly name master, progress, discipline-code ledger, and taxonomy-owner files.
+
+Evidence: `Data/README.md + Data/field_dictionary.md`

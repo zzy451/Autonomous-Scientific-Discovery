@@ -26,6 +26,7 @@ CHECK_POLICY = DATA_DIR / "check_policy.md"
 DISCIPLINE_SCHEMA = DATA_DIR / "schema" / "discipline_code_assignments.schema.json"
 CLASSIFICATION_SCHEMA = DATA_DIR / "schema" / "classification_code_index.schema.json"
 README = DATA_DIR / "README.md"
+FIELD_DICTIONARY = DATA_DIR / "field_dictionary.md"
 INTEGRITY_REPORT = DATA_DIR / "integrity_check_report.md"
 SQLITE_PATH = DATA_DIR / "papers.sqlite"
 PIPELINE_SCRIPT = ROOT / "scripts" / "run_structured_data_pipeline.py"
@@ -97,6 +98,7 @@ def main() -> None:
     preview_rows = load_csv_rows(PREVIEW_CSV)
     classification_index = load_json(CLASSIFICATION_CODE_INDEX)
     readme_text = read_text(README)
+    field_dictionary_text = read_text(FIELD_DICTIONARY)
     integrity_report_text = read_text(INTEGRITY_REPORT)
     pipeline_script_text = read_text(PIPELINE_SCRIPT)
     active_papers = [row for row in papers if bool(row.get("active_confirmed_core"))]
@@ -107,6 +109,12 @@ def main() -> None:
         sqlite_paper_modules_count = count_sqlite_table(conn, "paper_modules")
         sqlite_general_method_buckets_count = count_sqlite_table(conn, "paper_general_method_buckets")
         sqlite_classification_terms_count = count_sqlite_table(conn, "classification_terms")
+        sqlite_table_names = {
+            str(row[0])
+            for row in conn.execute(
+                "SELECT name FROM sqlite_master WHERE type = 'table'"
+            ).fetchall()
+        }
         metadata_rows = conn.execute(
             "SELECT key, value FROM metadata WHERE key IN ("
             "'papers_exported_at',"
@@ -605,6 +613,46 @@ def main() -> None:
         "The canonical workflow is missing README coverage and/or pipeline-script support for owner preflight, ordered export/check/build execution, or optional execution audit.",
     )
     add_result(results, "12", status, detail, "scripts/run_structured_data_pipeline.py + Data/README.md")
+
+    required_sqlite_tables = {
+        "papers",
+        "paper_modules",
+        "paper_general_method_buckets",
+        "discipline_code_assignments",
+        "discipline_local_code_registry",
+        "classification_terms",
+        "pdf_evidence_status",
+        "paper_assets",
+        "notes",
+    }
+    status, detail = check(
+        required_sqlite_tables.issubset(sqlite_table_names),
+        (
+            "SQLite analysis DB contains all named core tables from the long-term plan: "
+            + ", ".join(sorted(required_sqlite_tables))
+            + "."
+        ),
+        "SQLite analysis DB is missing one or more named core tables required by the long-term plan.",
+    )
+    add_result(results, "13", status, detail, "Data/papers.sqlite")
+
+    four_fact_source_tokens = (
+        "Paper_Lists/agent_master_paper_list.md",
+        "Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md",
+        "Data/discipline_code_assignments.jsonl",
+        "Data/classification_code_index.json",
+    )
+    status, detail = check(
+        FIELD_DICTIONARY.exists()
+        and all(token in readme_text for token in four_fact_source_tokens)
+        and all(token in field_dictionary_text for token in four_fact_source_tokens),
+        (
+            "README and field_dictionary both document the four fact-source model "
+            "and explicitly name master, progress, discipline-code ledger, and taxonomy-owner files."
+        ),
+        "README and/or field_dictionary do not fully document the four fact-source model and its owner files.",
+    )
+    add_result(results, "14", status, detail, "Data/README.md + Data/field_dictionary.md")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")
