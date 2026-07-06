@@ -417,6 +417,18 @@ List papers with derived lifecycle fields:
 python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" lifecycle-records --record-status duplicate
 ```
 
+Audit canonical-vs-mirror classification drift cases:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" boundary-cases --real-only
+```
+
+Audit canonical-vs-mirror `01.04` bucket behavior:
+
+```bash
+python "Autonomous Scientific Discovery/scripts/query_analysis_db.py" bucket-summary
+```
+
 Operational notes:
 
 - `analysis-baseline` is the fixed canonical record-vs-assignment glossary output for the current active confirmed-core snapshot.

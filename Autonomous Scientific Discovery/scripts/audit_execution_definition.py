@@ -155,6 +155,20 @@ def main() -> None:
         sqlite_canonical_bucket_0104_active_count = int(
             conn.execute("SELECT active_confirmed_core_count FROM canonical_bucket_0104_summary").fetchone()[0]
         )
+        sqlite_paper_modules_0104_count = int(
+            conn.execute("SELECT COUNT(*) FROM paper_modules WHERE module_code = '01.04'").fetchone()[0]
+        )
+        sqlite_workflow_mirror_0104_count = int(
+            conn.execute("SELECT COUNT(*) FROM workflow_mirror_paper_modules WHERE module_code = '01.04'").fetchone()[0]
+        )
+        sqlite_boundary_summary_count = int(
+            conn.execute("SELECT COUNT(*) FROM classification_boundary_summary").fetchone()[0]
+        )
+        sqlite_boundary_real_drift_count = int(
+            conn.execute(
+                "SELECT COUNT(*) FROM classification_boundary_summary WHERE drift_class <> 'acceptable_mirror'"
+            ).fetchone()[0]
+        )
         sqlite_table_names = {
             str(row[0])
             for row in conn.execute(
@@ -1021,6 +1035,43 @@ def main() -> None:
         "Canonical analysis baseline/object-scope/01.04 surfaces are incomplete: taxonomy/object-scope SQLite copies drifted, summary views mismatch current papers, or the corresponding query surfaces are not fully exposed and documented.",
     )
     add_result(results, "24", status, detail, "Data/taxonomy_index.json + Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
+
+    boundary_query_tokens = (
+        "boundary-cases",
+        "bucket-summary",
+    )
+    papers_formal_0104_count = sum(
+        1
+        for row in papers
+        if "01.04" in {str(value).strip() for value in row.get("scientific_object_modules", [])}
+    )
+    pure_general_method_active_count = sum(
+        1
+        for row in papers
+        if bool(row.get("active_confirmed_core"))
+        and str(row.get("general_method_bucket", "")).strip() != "none"
+        and not row.get("scientific_object_modules")
+    )
+    status, detail = check(
+        papers_formal_0104_count == 0
+        and sqlite_paper_modules_0104_count == 0
+        and sqlite_general_method_buckets_count == sum(
+            1 for row in papers if str(row.get("general_method_bucket", "")).strip() != "none"
+        )
+        and sqlite_workflow_mirror_0104_count == sqlite_canonical_bucket_0104_active_count
+        and sqlite_boundary_summary_count >= sqlite_boundary_real_drift_count >= 0
+        and pure_general_method_active_count == sqlite_canonical_bucket_0104_active_count
+        and all(token in query_script_text for token in boundary_query_tokens)
+        and all(token in readme_text for token in boundary_query_tokens),
+        (
+            "01.04 stays outside formal scientific_object_modules/paper_modules, remains isolated in paper_general_method_buckets, "
+            "and the canonical-vs-mirror boundary audit surfaces are documented and exposed "
+            f"(formal_0104_rows={sqlite_paper_modules_0104_count}, workflow_0104_rows={sqlite_workflow_mirror_0104_count}, "
+            f"boundary_rows={sqlite_boundary_summary_count}, real_drift_rows={sqlite_boundary_real_drift_count})."
+        ),
+        "01.04 boundary separation drifted into formal-module surfaces, general-method isolation no longer matches current papers, or the canonical-vs-mirror boundary audit commands are not fully exposed and documented.",
+    )
+    add_result(results, "25", status, detail, "Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")
