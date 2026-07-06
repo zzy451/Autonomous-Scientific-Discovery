@@ -1971,6 +1971,14 @@ def normalize_extracted_remark_value(raw_value: str) -> str:
     return value
 
 
+def extract_urls_from_text(value: str) -> List[str]:
+    urls = [
+        normalize_extracted_remark_value(match.group(0))
+        for match in re.finditer(r"https?://\S+", value, re.IGNORECASE)
+    ]
+    return list(dict.fromkeys(url for url in urls if url))
+
+
 def is_likely_first_hand_continuation(clause: str) -> bool:
     lowered = clause.strip().lower()
     if not lowered:
@@ -2380,24 +2388,47 @@ def validate_registry_layer(
         ("paper_id", "alias_scheme", "alias_value"),
     )
     valid_alias_schemes = {"doi", "arxiv_id", "url"}
+    actual_alias_rows = set()
     for row in alias_registry_rows:
         paper_id = row["paper_id"]
+        alias_scheme = row["alias_scheme"]
+        alias_value = row["alias_value"]
         assert_true(
             paper_id in paper_rows_by_id,
             f"paper_identifier_aliases references unknown paper_id: {paper_id!r}",
         )
         assert_true(
-            row["alias_scheme"] in valid_alias_schemes,
-            f"paper_identifier_aliases has invalid alias_scheme for {paper_id}: {row['alias_scheme']!r}",
+            alias_scheme in valid_alias_schemes,
+            f"paper_identifier_aliases has invalid alias_scheme for {paper_id}: {alias_scheme!r}",
         )
         assert_true(
-            isinstance(row["alias_value"], str) and bool(row["alias_value"].strip()),
+            isinstance(alias_value, str) and bool(alias_value.strip()),
             f"paper_identifier_aliases has blank alias_value for {paper_id}",
+        )
+        assert_true(
+            alias_value == alias_value.strip(),
+            f"paper_identifier_aliases alias_value must be trimmed for {paper_id}: {alias_value!r}",
         )
         assert_true(
             row["is_primary_key"] is False,
             f"paper_identifier_aliases should not redefine primary keys for {paper_id}",
         )
+        actual_alias_rows.add((paper_id, alias_scheme, alias_value))
+    expected_alias_rows = set()
+    for paper_id, paper_row in paper_rows_by_id.items():
+        doi = str(paper_row.get("doi", "")).strip()
+        arxiv_id = str(paper_row.get("arxiv_id", "")).strip()
+        doi_or_url = str(paper_row.get("doi_or_url", ""))
+        if doi:
+            expected_alias_rows.add((paper_id, "doi", doi))
+        if arxiv_id:
+            expected_alias_rows.add((paper_id, "arxiv_id", arxiv_id))
+        for url in extract_urls_from_text(doi_or_url):
+            expected_alias_rows.add((paper_id, "url", url))
+    assert_true(
+        actual_alias_rows == expected_alias_rows,
+        "paper_identifier_aliases coverage/content drifted from papers.jsonl DOI/arXiv/URL-derived aliases",
+    )
 
     require_row_fields(
         taxonomy_registry_path,
