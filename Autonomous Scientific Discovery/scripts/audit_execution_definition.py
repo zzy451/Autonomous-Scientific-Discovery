@@ -30,6 +30,7 @@ FIELD_DICTIONARY = DATA_DIR / "field_dictionary.md"
 INTEGRITY_REPORT = DATA_DIR / "integrity_check_report.md"
 SQLITE_PATH = DATA_DIR / "papers.sqlite"
 CHANGE_LOG_JSONL = DATA_DIR / "change_log.jsonl"
+TAXONOMY_INDEX_JSON = DATA_DIR / "taxonomy_index.json"
 PDF_MANIFEST_JSON = DATA_DIR / "pdf_manifest.json"
 MISSING_PDF_MANIFEST_JSON = DATA_DIR / "missing_pdf_manifest.json"
 NOTE_MANIFEST_JSON = DATA_DIR / "note_manifest.json"
@@ -115,6 +116,7 @@ def main() -> None:
     asset_manifest_rows = load_jsonl(ASSET_MANIFEST_JSONL)
     preview_rows = load_csv_rows(PREVIEW_CSV)
     classification_index = load_json(CLASSIFICATION_CODE_INDEX)
+    taxonomy_index_payload = load_json(TAXONOMY_INDEX_JSON)
     change_log_rows = load_jsonl(CHANGE_LOG_JSONL) if CHANGE_LOG_JSONL.exists() else []
     pdf_manifest_rows = load_json_value(PDF_MANIFEST_JSON)
     missing_pdf_manifest_rows = load_json_value(MISSING_PDF_MANIFEST_JSON)
@@ -142,10 +144,17 @@ def main() -> None:
         sqlite_pdf_inventory_count = count_sqlite_table(conn, "pdf_inventory")
         sqlite_missing_pdf_inventory_count = count_sqlite_table(conn, "missing_pdf_inventory")
         sqlite_note_inventory_count = count_sqlite_table(conn, "note_inventory")
+        sqlite_analysis_object_scope_registry_count = count_sqlite_table(conn, "analysis_object_scope_registry")
+        sqlite_taxonomy_index_count = count_sqlite_table(conn, "taxonomy_index")
         sqlite_paper_modules_count = count_sqlite_table(conn, "paper_modules")
         sqlite_general_method_buckets_count = count_sqlite_table(conn, "paper_general_method_buckets")
         sqlite_classification_terms_count = count_sqlite_table(conn, "classification_terms")
         sqlite_change_log_count = count_sqlite_table(conn, "change_log")
+        sqlite_active_confirmed_core_papers_count = int(conn.execute("SELECT COUNT(*) FROM active_confirmed_core_papers").fetchone()[0])
+        sqlite_active_missing_local_pdf_count = int(conn.execute("SELECT COUNT(*) FROM active_missing_local_pdf").fetchone()[0])
+        sqlite_canonical_bucket_0104_active_count = int(
+            conn.execute("SELECT active_confirmed_core_count FROM canonical_bucket_0104_summary").fetchone()[0]
+        )
         sqlite_table_names = {
             str(row[0])
             for row in conn.execute(
@@ -976,6 +985,42 @@ def main() -> None:
         "Evidence/asset/note inventory surfaces are missing, drifted from SQLite, or the corresponding maintenance/query commands are not fully exposed and documented.",
     )
     add_result(results, "23", status, detail, "Data/pdf_manifest.json + Data/missing_pdf_manifest.json + Data/note_manifest.json + Data/registry/asset_manifest.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
+
+    canonical_analysis_query_tokens = (
+        "analysis-baseline",
+        "summary",
+        "object-scope-registry",
+        "module-distribution",
+        "object-coverage-summary",
+        "bucket-0104-summary",
+        "general-method-buckets",
+    )
+    active_general_method_count = sum(
+        1
+        for row in papers
+        if bool(row.get("active_confirmed_core")) and str(row.get("general_method_bucket", "")).strip() != "none"
+    )
+    taxonomy_index_map = taxonomy_index_payload.get("code_to_label", {})
+    status, detail = check(
+        isinstance(taxonomy_index_map, dict)
+        and sqlite_taxonomy_index_count == len(taxonomy_index_map)
+        and sqlite_analysis_object_scope_registry_count > 0
+        and sqlite_active_confirmed_core_papers_count == len(active_papers)
+        and sqlite_active_missing_local_pdf_count == sum(
+            1 for row in papers if bool(row.get("active_confirmed_core")) and not bool(row.get("pdf_exists"))
+        )
+        and sqlite_canonical_bucket_0104_active_count == active_general_method_count
+        and all(token in query_script_text for token in canonical_analysis_query_tokens)
+        and all(token in readme_text for token in canonical_analysis_query_tokens),
+        (
+            "Canonical analysis baseline/object-scope/01.04 query surfaces are populated and documented, with "
+            f"taxonomy_index={sqlite_taxonomy_index_count}, object_scope_registry={sqlite_analysis_object_scope_registry_count}, "
+            f"active_core_view={sqlite_active_confirmed_core_papers_count}, active_missing_pdf_view={sqlite_active_missing_local_pdf_count}, "
+            f"canonical_01_04_active={sqlite_canonical_bucket_0104_active_count}."
+        ),
+        "Canonical analysis baseline/object-scope/01.04 surfaces are incomplete: taxonomy/object-scope SQLite copies drifted, summary views mismatch current papers, or the corresponding query surfaces are not fully exposed and documented.",
+    )
+    add_result(results, "24", status, detail, "Data/taxonomy_index.json + Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md")
 
     pass_count = sum(1 for row in results if row["status"] == "PASS")
     fail_count = sum(1 for row in results if row["status"] == "FAIL")

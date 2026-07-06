@@ -4,7 +4,7 @@ Plan: `Coverage_Check\structured_data_long_term_catalog_and_index_plan_2026-07-0
 
 ## Summary
 
-- `PASS`: 23
+- `PASS`: 24
 - `FAIL`: 0
 
 ## Items
@@ -146,3 +146,9 @@ Evidence: `Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md`
 Evidence/asset/note inventory surfaces are populated, mirrored into SQLite, and queryable via the documented missing-pdf/source-limited/coverage-summary/paper-assets/notes commands (assets=1742, notes=871, pdf_inventory=426, missing_pdf_inventory=25).
 
 Evidence: `Data/pdf_manifest.json + Data/missing_pdf_manifest.json + Data/note_manifest.json + Data/registry/asset_manifest.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md`
+
+### Item 24 - PASS
+
+Canonical analysis baseline/object-scope/01.04 query surfaces are populated and documented, with taxonomy_index=12, object_scope_registry=35, active_core_view=447, active_missing_pdf_view=25, canonical_01_04_active=9.
+
+Evidence: `Data/taxonomy_index.json + Data/papers.jsonl + Data/papers.sqlite + scripts/query_analysis_db.py + Data/README.md`
