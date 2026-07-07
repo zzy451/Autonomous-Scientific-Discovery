@@ -278,9 +278,9 @@ def export_source_category_year_lines(conn: sqlite3.Connection, output_dir: Path
         csv_rows,
     )
 
-    fig = plt.figure(figsize=(15.4, 8.6))
-    ax_main = fig.add_axes([0.07, 0.18, 0.56, 0.60])
-    ax_zoom = fig.add_axes([0.69, 0.18, 0.27, 0.60])
+    fig = plt.figure(figsize=(16.2, 8.8))
+    ax_main = fig.add_axes([0.07, 0.18, 0.54, 0.60])
+    ax_zoom = fig.add_axes([0.66, 0.18, 0.31, 0.60])
 
     for label in SOURCE_CATEGORY_LABELS:
         values = [int(row[label]) for row in csv_rows]
@@ -322,9 +322,9 @@ def export_source_category_year_lines(conn: sqlite3.Connection, output_dir: Path
     )
     ax_zoom.set_xlabel("Publication Year")
     ax_zoom.set_ylabel("Number of Publications")
-    ax_zoom.set_xlim(min(years), max(years))
-    ax_zoom.set_xticks(years)
-    ax_zoom.tick_params(axis="x", rotation=45, labelsize=9)
+    ax_zoom.set_xlim(min(years) - 0.2, max(years) + 0.2)
+    ax_zoom.set_xticks(years[::2])
+    ax_zoom.tick_params(axis="x", rotation=35, labelsize=9)
     ax_zoom.grid(axis="y", linestyle="--", alpha=0.8)
     ax_zoom.set_ylim(0, zoom_max)
 
