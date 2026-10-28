@@ -6,9 +6,9 @@
 - 年份：2025
 - 来源 / venue：NeurIPS 2025 Datasets and Benchmarks / OpenReview
 - DOI / arXiv / URL：https://openreview.net/forum?id=4TdmQaGzxk
-- PDF / 本地文件路径：未配置本地 PDF；当前写回以 arXiv abstract 作为一手来源，并参考现有 OpenReview / metadata trail 做定位说明。
+- PDF / 本地文件路径：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/Wang_2025_AI_Researcher.pdf`；2026-10-28 已实际读取本地全文。
 - 论文类型：系统论文 / Agent 论文
-- 当前状态：已读摘要级证据；主列表当前保持 `to_read`
+- 当前状态：已核查本地全文；主列表收录状态为 `to_read`。
 - 阅读日期：2026-06-18
 - 笔记作者：Codex
 
@@ -234,3 +234,12 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 - `note_revision_required`: `yes`
 
 This writeback removes the stale independent `01.04` wording. AI-Researcher is workflow-general in form, but the reported tasks and evaluation remain anchored in concrete AI / computational research objects, so the stable classification should stay inside formal and computational science (`01`).
+
+
+## 2026-10-28 PR 56 条全文复核与归档修正
+
+- 主模块：01；二级：01.02 计算机科学；三级：01.02.13 机器学习。
+- 本轮实际读取本地 PDF。物理第 3 页 Scientist-Bench 的任务定义明确给出 diffusion models、vector quantization、graph neural networks、recommendation systems；第 7 页方法说明代码实现、Advisor 校验和多轮算法改进。
+- 第 3 页原文：“Our benchmark samples span diverse research fields including diffusion models, vector quantization, graph neural networks, and recommendation systems.”
+- 这些是具体计算科学对象的执行与验证，支持现有科学对象模块 01；旧主表与学科归档中的 01.04 残留应更正为 01.02 / 01.02.13。PR 指出应复核有参考价值，但不能机械改为空值。
+- 当前科学对象模块和收录资格保持 01、confirmed core。上述全文证据优先于本笔记早期摘要级来源限制。
