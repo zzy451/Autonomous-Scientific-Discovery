@@ -1888,7 +1888,7 @@
     "sha256": "cccf8f42d5033745f39cb9ff751a6182328c643810013b2c7e50a92996306357",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "03",
+      "01",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -2100,7 +2100,6 @@
     "sha256": "5e43ec6737805fa1f685b9bd73850f220d862019b4eb9eb995f0edf8ca4877c7",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "03",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -2629,7 +2628,6 @@
     "sha256": "3a533de518e0a557e6441a458ad7af40ffb70ae5afb55463ad4c50a70e11a4ce",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
-      "03",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -3049,7 +3047,6 @@
     "primary_module_for_filing": "10",
     "scientific_object_modules": [
       "02",
-      "06",
       "10"
     ],
     "pdf_status": "archived_pdf",
@@ -3129,7 +3126,6 @@
     "sha256": "4a14a2f25dd5b646b1d0875610eb39474339305c4e3e5506f0f9fd6291465ab0",
     "primary_module_for_filing": "08",
     "scientific_object_modules": [
-      "06",
       "08"
     ],
     "pdf_status": "archived_pdf",
@@ -3655,7 +3651,7 @@
   },
   {
     "paper_id": "ASD-0682",
-    "title": "El Agente S��lido: A New Age(nt) for Solid State Simulations",
+    "title": "El Agente S锟斤拷lido: A New Age(nt) for Solid State Simulations",
     "pdf_path": "Reference_PDF/04_Materials_Science/Kumar_2026_El_Agente_Solido.pdf",
     "sha256": "1f8816bcf964983714038cef652eeeaeb3dee89021043d44dc8f6770c2beeda4",
     "primary_module_for_filing": "04",
@@ -4119,7 +4115,6 @@
     "sha256": "aff380317b254c6185ac6578cedc33ff624427566182c68054dde81f9deb43cc",
     "primary_module_for_filing": "05",
     "scientific_object_modules": [
-      "03",
       "05"
     ],
     "pdf_status": "archived_pdf",
@@ -4402,8 +4397,7 @@
     "primary_module_for_filing": "02",
     "scientific_object_modules": [
       "02",
-      "04",
-      "09"
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -6589,7 +6583,7 @@
   },
   {
     "paper_id": "ASD-0971",
-    "title": "Sci$Π$vot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents",
+    "title": "Sci$螤$vot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents",
     "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Sun_2026_Sci_vot_Benchmarking_Principal_Investigator_Judgment_at_Pivotal_Moments_ASD0971.pdf",
     "sha256": "074f78616f2d6f3c3d74cd03cbe3c66fc8be015d8525673d59eee0043de41ce7",
     "primary_module_for_filing": "11",
@@ -6647,7 +6641,7 @@
     "sha256": "b7afdf5cd227db9d779d1dab4ed224facf716b7b35a237e68e886e8eec9f88df",
     "primary_module_for_filing": "01",
     "scientific_object_modules": [
-      "01"
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -6884,7 +6878,7 @@
   },
   {
     "paper_id": "ASD-0995",
-    "title": "Quality-controlled active learning via Gaussian processes for robust structure–property learning in autonomous microscopy",
+    "title": "Quality-controlled active learning via Gaussian processes for robust structure鈥損roperty learning in autonomous microscopy",
     "pdf_path": "Reference_PDF/04_Materials_Science/Chowdhury_2026_Quality_controlled_active_learning_via_Gaussian_processes_for_robust_ASD0995.pdf",
     "sha256": "83884e5ebf7db0310759f6379f7e4b4f6c6ff88a8df426717acb19c0d7011e16",
     "primary_module_for_filing": "04",
@@ -6911,7 +6905,7 @@
   },
   {
     "paper_id": "ASD-0999",
-    "title": "Interpretable self-driving sputtering epitaxy reveals human-usable growth rules for β-Ga2O3 films",
+    "title": "Interpretable self-driving sputtering epitaxy reveals human-usable growth rules for 尾-Ga2O3 films",
     "pdf_path": "Reference_PDF/04_Materials_Science/Wakabayashi_2026_Interpretable_self_driving_sputtering_epitaxy_reveals_human_usable_growth_ASD0999.pdf",
     "sha256": "ad6010001f43a4502d1d578913b254ebbdc69581740c83ca5415463e16131a1a",
     "primary_module_for_filing": "04",
@@ -7203,7 +7197,7 @@
   },
   {
     "paper_id": "ASD-1028",
-    "title": "From seven combination hypotheses to one testable interaction: a gated agentic AI–QSP workflow applied to healthy-ageing interventions",
+    "title": "From seven combination hypotheses to one testable interaction: a gated agentic AI鈥換SP workflow applied to healthy-ageing interventions",
     "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/Goryanin_2026_From_seven_combination_hypotheses_to_one_testable_interaction_a_ASD1028.pdf",
     "sha256": "37ae1f3c6ab598372770b06cece3fb7e9d05a4ad81925858b29e1094849f714f",
     "primary_module_for_filing": "07",
@@ -7692,7 +7686,7 @@
   },
   {
     "paper_id": "ASD-1078",
-    "title": "An AI-Assisted Formalization of the Poincaré Conjecture",
+    "title": "An AI-Assisted Formalization of the Poincar茅 Conjecture",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Zhang_2026_An_AI_Assisted_Formalization_of_the_Poincare_Conjecture_ASD1078.pdf",
     "sha256": "8e369ae9480949349d8fb434af65bac4a3fb377abada6bde6a1a418cf049ace5",
     "primary_module_for_filing": "01",

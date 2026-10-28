@@ -247,7 +247,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=11.07;03.01;07.03.08; fulltext_followup_required=false; 主模块建议11.07：论文直接构造并检索科学主张、证据及推理链。ChemBench的化学知识任务支持03.01，PubMedQA的医学问答支持07.03.08；不能从PubMedQA推出06。01.04不适用，因为存在科学知识对象级实验。 scientific_object_modules=11;03;07; object_coverage_mode=multi_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2609.27297; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=11.07;03.01;07.03.08; fulltext_followup_required=false; 涓绘ā鍧楀缓璁?1.07锛氳鏂囩洿鎺ユ瀯閫犲苟妫€绱㈢瀛︿富寮犮€佽瘉鎹強鎺ㄧ悊閾俱€侰hemBench鐨勫寲瀛︾煡璇嗕换鍔℃敮鎸?3.01锛孭ubMedQA鐨勫尰瀛﹂棶绛旀敮鎸?7.03.08锛涗笉鑳戒粠PubMedQA鎺ㄥ嚭06銆?1.04涓嶉€傜敤锛屽洜涓哄瓨鍦ㄧ瀛︾煡璇嗗璞＄骇瀹為獙銆?scientific_object_modules=11;03;07; object_coverage_mode=multi_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2609.27297; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0874",
@@ -257,7 +257,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=06.01.03; fulltext_followup_required=false; 具体对象为RNA序列及二级结构，建议06.01.03分子生物学。RNA对象上有设计和验证任务，不能归01.04。 scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.00981; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=06.01.03; fulltext_followup_required=false; 鍏蜂綋瀵硅薄涓篟NA搴忓垪鍙婁簩绾х粨鏋勶紝寤鸿06.01.03鍒嗗瓙鐢熺墿瀛︺€俁NA瀵硅薄涓婃湁璁捐鍜岄獙璇佷换鍔★紝涓嶈兘褰?1.04銆?scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.00981; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0875",
@@ -267,7 +267,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=06.01.13; fulltext_followup_required=false; MPRAbox调控DNA序列任务支持06.01.06遗传学；CodonBox涉及编码序列和蛋白fitness，支持06.03.06蛋白质科学。对象级任务排除01.04；研究对象不是科学共同体，非11.07。 主控模块内落点采用06.01.13计算生物学，以承载调控基因组与蛋白适应度两个实验对象簇；对象细节保留在证据日志。 scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.30165; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=06.01.13; fulltext_followup_required=false; MPRAbox璋冩帶DNA搴忓垪浠诲姟鏀寔06.01.06閬椾紶瀛︼紱CodonBox娑夊強缂栫爜搴忓垪鍜岃泲鐧絝itness锛屾敮鎸?6.03.06铔嬬櫧璐ㄧ瀛︺€傚璞＄骇浠诲姟鎺掗櫎01.04锛涚爺绌跺璞′笉鏄瀛﹀叡鍚屼綋锛岄潪11.07銆?涓绘帶妯″潡鍐呰惤鐐归噰鐢?6.01.13璁＄畻鐢熺墿瀛︼紝浠ユ壙杞借皟鎺у熀鍥犵粍涓庤泲鐧介€傚簲搴︿袱涓疄楠屽璞＄皣锛涘璞＄粏鑺備繚鐣欏湪璇佹嵁鏃ュ織銆?scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.30165; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0876",
@@ -277,7 +277,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=01.03; fulltext_followup_required=false; 建议01.03，研究对象是结构因果模型、识别与计算推断。合成故事虽基于真实领域分布，但不是实测农业或其它自然对象；不应按故事包装扩多个领域。01.04不适用，因为有具体形式模型任务；与11.07无关。 scientific_object_modules=01; object_coverage_mode=single_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.08093; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=01.03; fulltext_followup_required=false; 寤鸿01.03锛岀爺绌跺璞℃槸缁撴瀯鍥犳灉妯″瀷銆佽瘑鍒笌璁＄畻鎺ㄦ柇銆傚悎鎴愭晠浜嬭櫧鍩轰簬鐪熷疄棰嗗煙鍒嗗竷锛屼絾涓嶆槸瀹炴祴鍐滀笟鎴栧叾瀹冭嚜鐒跺璞★紱涓嶅簲鎸夋晠浜嬪寘瑁呮墿澶氫釜棰嗗煙銆?1.04涓嶉€傜敤锛屽洜涓烘湁鍏蜂綋褰㈠紡妯″瀷浠诲姟锛涗笌11.07鏃犲叧銆?scientific_object_modules=01; object_coverage_mode=single_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.08093; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0877",
@@ -287,7 +287,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=01.03; fulltext_followup_required=false; 建议01.03，关注数据科学分析程序、建模与验证工作流。Kaggle来源本身不足以支持自然科学模块；不是无具体对象的01.04，也不研究科学共同体或知识生产制度。 scientific_object_modules=01; object_coverage_mode=single_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2610.14115; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=01.03; fulltext_followup_required=false; 寤鸿01.03锛屽叧娉ㄦ暟鎹瀛﹀垎鏋愮▼搴忋€佸缓妯′笌楠岃瘉宸ヤ綔娴併€侹aggle鏉ユ簮鏈韩涓嶈冻浠ユ敮鎸佽嚜鐒剁瀛︽ā鍧楋紱涓嶆槸鏃犲叿浣撳璞＄殑01.04锛屼篃涓嶇爺绌剁瀛﹀叡鍚屼綋鎴栫煡璇嗙敓浜у埗搴︺€?scientific_object_modules=01; object_coverage_mode=single_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2610.14115; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0879",
@@ -297,7 +297,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=11.07; fulltext_followup_required=false; 倾向11.07：审计对象为科研流水线、科学主张和科研质量治理过程。若全文证实协议完全通用且未实际核验科研主张，可改为01.04。计算化学只是部署场景，没有分子/反应实验，不能据此分03。 主控与独立审稿复核§3.1、§3.4、§4.2：多Agent生成、异厂商审计、修订及升级流程满足科研角色；以科学记录和主张审计为实际验证对象，采用11.07。perovskite additive仅部署语境，无添加剂对象结果，暂不加03/04。 scientific_object_modules=11; object_coverage_mode=single_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.28631; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=11.07; fulltext_followup_required=false; 鍊惧悜11.07锛氬璁″璞′负绉戠爺娴佹按绾裤€佺瀛︿富寮犲拰绉戠爺璐ㄩ噺娌荤悊杩囩▼銆傝嫢鍏ㄦ枃璇佸疄鍗忚瀹屽叏閫氱敤涓旀湭瀹為檯鏍搁獙绉戠爺涓诲紶锛屽彲鏀逛负01.04銆傝绠楀寲瀛﹀彧鏄儴缃插満鏅紝娌℃湁鍒嗗瓙/鍙嶅簲瀹為獙锛屼笉鑳芥嵁姝ゅ垎03銆?涓绘帶涓庣嫭绔嬪绋垮鏍嘎?.1銆伮?.4銆伮?.2锛氬Agent鐢熸垚銆佸紓鍘傚晢瀹¤銆佷慨璁㈠強鍗囩骇娴佺▼婊¤冻绉戠爺瑙掕壊锛涗互绉戝璁板綍鍜屼富寮犲璁′负瀹為檯楠岃瘉瀵硅薄锛岄噰鐢?1.07銆俻erovskite additive浠呴儴缃茶澧冿紝鏃犳坊鍔犲墏瀵硅薄缁撴灉锛屾殏涓嶅姞03/04銆?scientific_object_modules=11; object_coverage_mode=single_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.28631; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0880",
@@ -307,7 +307,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=03.02; fulltext_followup_required=false; 对象是分子电子结构与跃迁能，归化学03.02；不因作者机构或计算方法归材料04/计算科学。 scientific_object_modules=03; object_coverage_mode=single_module; primary_module_for_filing=03; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.13357; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=03.02; fulltext_followup_required=false; 瀵硅薄鏄垎瀛愮數瀛愮粨鏋勪笌璺冭縼鑳斤紝褰掑寲瀛?3.02锛涗笉鍥犱綔鑰呮満鏋勬垨璁＄畻鏂规硶褰掓潗鏂?4/璁＄畻绉戝銆?scientific_object_modules=03; object_coverage_mode=single_module; primary_module_for_filing=03; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.13357; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0882",
@@ -317,7 +317,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=04.04; fulltext_followup_required=false; LiCoO2薄膜及其生长/结晶性能为材料对象，归04.04；虽含沉积过程，但未见独立反应化学实验支持03。 scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.18598; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.04; fulltext_followup_required=false; LiCoO2钖勮啘鍙婂叾鐢熼暱/缁撴櫠鎬ц兘涓烘潗鏂欏璞★紝褰?4.04锛涜櫧鍚矇绉繃绋嬶紝浣嗘湭瑙佺嫭绔嬪弽搴斿寲瀛﹀疄楠屾敮鎸?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.18598; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0884",
@@ -327,7 +327,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=04.01; fulltext_followup_required=false; 粉末衍射用于材料结构表征，归04.01；具体晶相案例可按证据细化至04.02，不因XRD属分析化学就归03。 scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.00070; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.01; fulltext_followup_required=false; 绮夋湯琛嶅皠鐢ㄤ簬鏉愭枡缁撴瀯琛ㄥ緛锛屽綊04.01锛涘叿浣撴櫠鐩告渚嬪彲鎸夎瘉鎹粏鍖栬嚦04.02锛屼笉鍥燲RD灞炲垎鏋愬寲瀛﹀氨褰?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.00070; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0886",
@@ -337,7 +337,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=04.02; fulltext_followup_required=false; 核心对象为无机晶体结构和晶体化学，归04.02；化学键规律是解释机制，不是独立分子反应任务。 scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.01209; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.02; fulltext_followup_required=false; 鏍稿績瀵硅薄涓烘棤鏈烘櫠浣撶粨鏋勫拰鏅朵綋鍖栧锛屽綊04.02锛涘寲瀛﹂敭瑙勫緥鏄В閲婃満鍒讹紝涓嶆槸鐙珛鍒嗗瓙鍙嶅簲浠诲姟銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.01209; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0887",
@@ -347,7 +347,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=04.02; fulltext_followup_required=false; 对象是二维五角晶体和材料结构/晶格常数，归04.02；DFT与文本抽取是研究方法，不另归01或03。 scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2608.29665; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.02; fulltext_followup_required=false; 瀵硅薄鏄簩缁翠簲瑙掓櫠浣撳拰鏉愭枡缁撴瀯/鏅舵牸甯告暟锛屽綊04.02锛汥FT涓庢枃鏈娊鍙栨槸鐮旂┒鏂规硶锛屼笉鍙﹀綊01鎴?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2608.29665; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0888",
@@ -357,7 +357,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=03.02; fulltext_followup_required=false; 研究对象为N2/CH2O分子电子结构，归03.02；量子计算设备和采样算法是执行工具，不据此归02或01。 scientific_object_modules=03; object_coverage_mode=single_module; primary_module_for_filing=03; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.39302v2; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=03.02; fulltext_followup_required=false; 鐮旂┒瀵硅薄涓篘2/CH2O鍒嗗瓙鐢靛瓙缁撴瀯锛屽綊03.02锛涢噺瀛愯绠楄澶囧拰閲囨牱绠楁硶鏄墽琛屽伐鍏凤紝涓嶆嵁姝ゅ綊02鎴?1銆?scientific_object_modules=03; object_coverage_mode=single_module; primary_module_for_filing=03; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.39302v2; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0889",
@@ -367,7 +367,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=04.03; fulltext_followup_required=false; MOF/沸石是多孔功能材料，直接研究孔结构和吸附/分离功能，归04.03；吸附质是探针，未以反应或合成为研究对象，不加03。 scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2610.27572; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.03; fulltext_followup_required=false; MOF/娌哥煶鏄瀛斿姛鑳芥潗鏂欙紝鐩存帴鐮旂┒瀛旂粨鏋勫拰鍚搁檮/鍒嗙鍔熻兘锛屽綊04.03锛涘惛闄勮川鏄帰閽堬紝鏈互鍙嶅簲鎴栧悎鎴愪负鐮旂┒瀵硅薄锛屼笉鍔?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2610.27572; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0892",
@@ -377,7 +377,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=06.03.01;07.04.01; fulltext_followup_required=false; 按实际科学对象采用06+07多模块：细胞类型特异性基因、遗传支持和单细胞转录组靶点特征属于06；B7-H3肺癌治疗靶点、OSMRβ溃疡性结肠炎及药物临床试验进展/安全性构成独立的07疾病与药物开发对象，主归档07。它不是仅讨论通用Agent框架的01.04；临床试验与疾病对象不能因出现基因数据而压缩到06。 scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; first_hand_sources_checked=https://pmc.ncbi.nlm.nih.gov/articles/PMC12970349/?report=xml; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=06.03.01;07.04.01; fulltext_followup_required=false; 鎸夊疄闄呯瀛﹀璞￠噰鐢?6+07澶氭ā鍧楋細缁嗚優绫诲瀷鐗瑰紓鎬у熀鍥犮€侀仐浼犳敮鎸佸拰鍗曠粏鑳炶浆褰曠粍闈剁偣鐗瑰緛灞炰簬06锛汢7-H3鑲虹檶娌荤枟闈剁偣銆丱SMR尾婧冪枴鎬х粨鑲犵値鍙婅嵂鐗╀复搴婅瘯楠岃繘灞?瀹夊叏鎬ф瀯鎴愮嫭绔嬬殑07鐤剧梾涓庤嵂鐗╁紑鍙戝璞★紝涓诲綊妗?7銆傚畠涓嶆槸浠呰璁洪€氱敤Agent妗嗘灦鐨?1.04锛涗复搴婅瘯楠屼笌鐤剧梾瀵硅薄涓嶈兘鍥犲嚭鐜板熀鍥犳暟鎹€屽帇缂╁埌06銆?scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; first_hand_sources_checked=https://pmc.ncbi.nlm.nih.gov/articles/PMC12970349/?report=xml; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0899",
@@ -387,7 +387,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=06.03.04; fulltext_followup_required=false; 研究任务以空间转录组数据、组织切片坐标配准和组学分析工具为直接科学对象，采用06.03.04单细胞/空间组学相关研究及06.01.12生物信息学代码。它不是只提出通用Agent benchmark的01.04论文，也没有独立的病人诊断/治疗任务支持07。 scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://www.biorxiv.org/content/10.64898/2026.07.05.736638v1.full; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=06.03.04; fulltext_followup_required=false; 鐮旂┒浠诲姟浠ョ┖闂磋浆褰曠粍鏁版嵁銆佺粍缁囧垏鐗囧潗鏍囬厤鍑嗗拰缁勫鍒嗘瀽宸ュ叿涓虹洿鎺ョ瀛﹀璞★紝閲囩敤06.03.04鍗曠粏鑳?绌洪棿缁勫鐩稿叧鐮旂┒鍙?6.01.12鐢熺墿淇℃伅瀛︿唬鐮併€傚畠涓嶆槸鍙彁鍑洪€氱敤Agent benchmark鐨?1.04璁烘枃锛屼篃娌℃湁鐙珛鐨勭梾浜鸿瘖鏂?娌荤枟浠诲姟鏀寔07銆?scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://www.biorxiv.org/content/10.64898/2026.07.05.736638v1.full; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0901",
@@ -397,7 +397,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberRecheck7_2026-10-22: 七篇专项复核；source_level=fulltext; module_taxonomy_codes=06.03.04; fulltext_followup_required=false; 固定代码06.03.04单细胞生物学。对象为单细胞转录组、SRA数据集与跨实验标准化，支持06；虽抽取disease元数据，但无疾病诊断或治疗任务，不分配07。邻近一般数据库/数据工程论文及01.04通用方法；本文有明确生物数据发现、注释与处理中的多步Agent行动，纳入依据充分。 scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://www.biorxiv.org/content/early/2025/05/06/2025.02.27.640494.source.xml; source_checked_at=2026-10-22;"
+    "access_note": "OctoberRecheck7_2026-10-22: 涓冪瘒涓撻」澶嶆牳锛泂ource_level=fulltext; module_taxonomy_codes=06.03.04; fulltext_followup_required=false; 鍥哄畾浠ｇ爜06.03.04鍗曠粏鑳炵敓鐗╁銆傚璞′负鍗曠粏鑳炶浆褰曠粍銆丼RA鏁版嵁闆嗕笌璺ㄥ疄楠屾爣鍑嗗寲锛屾敮鎸?6锛涜櫧鎶藉彇disease鍏冩暟鎹紝浣嗘棤鐤剧梾璇婃柇鎴栨不鐤椾换鍔★紝涓嶅垎閰?7銆傞偦杩戜竴鑸暟鎹簱/鏁版嵁宸ョ▼璁烘枃鍙?1.04閫氱敤鏂规硶锛涙湰鏂囨湁鏄庣‘鐢熺墿鏁版嵁鍙戠幇銆佹敞閲婁笌澶勭悊涓殑澶氭Agent琛屽姩锛岀撼鍏ヤ緷鎹厖鍒嗐€?scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://www.biorxiv.org/content/early/2025/05/06/2025.02.27.640494.source.xml; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0902",
@@ -407,7 +407,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberRecheck7_2026-10-22: 七篇专项复核；source_level=fulltext; module_taxonomy_codes=06.03.01;07.02.05; fulltext_followup_required=false; 三级代码为06.03.01基因组学（全基因组CRISPR扰动）及07.02.05肿瘤学（黑色素瘤及肿瘤MHC-I表型）。真实肿瘤功能基因组数据支持06与07；不属于01.04通用方法。主要风险是Agent结论强度，而非对象分类。 scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://www.biorxiv.org/content/10.64898/2026.08.17.745330v1.full; source_checked_at=2026-10-22;"
+    "access_note": "OctoberRecheck7_2026-10-22: 涓冪瘒涓撻」澶嶆牳锛泂ource_level=fulltext; module_taxonomy_codes=06.03.01;07.02.05; fulltext_followup_required=false; 涓夌骇浠ｇ爜涓?6.03.01鍩哄洜缁勫锛堝叏鍩哄洜缁凜RISPR鎵板姩锛夊強07.02.05鑲跨槫瀛︼紙榛戣壊绱犵槫鍙婅偪鐦HC-I琛ㄥ瀷锛夈€傜湡瀹炶偪鐦ゅ姛鑳藉熀鍥犵粍鏁版嵁鏀寔06涓?7锛涗笉灞炰簬01.04閫氱敤鏂规硶銆備富瑕侀闄╂槸Agent缁撹寮哄害锛岃€岄潪瀵硅薄鍒嗙被銆?scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://www.biorxiv.org/content/10.64898/2026.08.17.745330v1.full; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0903",
@@ -417,7 +417,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=02.02.13; fulltext_followup_required=false; 邻近 01（科学计算）及 09（模拟软件），但计算程序是研究手段；实际结果针对夸克胶子等离子体、重离子碰撞及核结构，归 02.02.13。 scientific_object_modules=02; object_coverage_mode=single_module; primary_module_for_filing=02; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.27822; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=02.02.13; fulltext_followup_required=false; 閭昏繎 01锛堢瀛﹁绠楋級鍙?09锛堟ā鎷熻蒋浠讹級锛屼絾璁＄畻绋嬪簭鏄爺绌舵墜娈碉紱瀹為檯缁撴灉閽堝澶稿厠鑳跺瓙绛夌瀛愪綋銆侀噸绂诲瓙纰版挒鍙婃牳缁撴瀯锛屽綊 02.02.13銆?scientific_object_modules=02; object_coverage_mode=single_module; primary_module_for_filing=02; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.27822; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0905",
@@ -427,7 +427,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=01.02.17;02.02.06; fulltext_followup_required=false; 01.02.17 因研究科学计算程序及其验证；02.02.06 因实际任务是量子力学/量子算法工作流并检查物理保真。模块并列有对象依据，不因代码工具将其全部归 01。 scientific_object_modules=01;02; object_coverage_mode=multi_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.03105; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=01.02.17;02.02.06; fulltext_followup_required=false; 01.02.17 鍥犵爺绌剁瀛﹁绠楃▼搴忓強鍏堕獙璇侊紱02.02.06 鍥犲疄闄呬换鍔℃槸閲忓瓙鍔涘/閲忓瓙绠楁硶宸ヤ綔娴佸苟妫€鏌ョ墿鐞嗕繚鐪熴€傛ā鍧楀苟鍒楁湁瀵硅薄渚濇嵁锛屼笉鍥犱唬鐮佸伐鍏峰皢鍏跺叏閮ㄥ綊 01銆?scientific_object_modules=01;02; object_coverage_mode=multi_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.03105; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0906",
@@ -437,7 +437,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=01.01.12; fulltext_followup_required=false; 归01.01.12数学/形式数学（沿用原记录的组合数学细分标注）；核心对象是Lean形式证明和开放数学命题。量子光学只在摘要中作为部署/应用领域提及，正文未见可定位的物理对象任务、实验或结果，故不增加02。Lean是证明验证工具，不改变数学对象归属。 scientific_object_modules=01; object_coverage_mode=single_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://ar5iv.labs.arxiv.org/html/2605.22763; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=01.01.12; fulltext_followup_required=false; 褰?1.01.12鏁板/褰㈠紡鏁板锛堟部鐢ㄥ師璁板綍鐨勭粍鍚堟暟瀛︾粏鍒嗘爣娉級锛涙牳蹇冨璞℃槸Lean褰㈠紡璇佹槑鍜屽紑鏀炬暟瀛﹀懡棰樸€傞噺瀛愬厜瀛﹀彧鍦ㄦ憳瑕佷腑浣滀负閮ㄧ讲/搴旂敤棰嗗煙鎻愬強锛屾鏂囨湭瑙佸彲瀹氫綅鐨勭墿鐞嗗璞′换鍔°€佸疄楠屾垨缁撴灉锛屾晠涓嶅鍔?2銆侺ean鏄瘉鏄庨獙璇佸伐鍏凤紝涓嶆敼鍙樻暟瀛﹀璞″綊灞炪€?scientific_object_modules=01; object_coverage_mode=single_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://ar5iv.labs.arxiv.org/html/2605.22763; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0907",
@@ -447,7 +447,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=05.02.02; fulltext_followup_required=false; 05地球环境的气候系统对象明确。容易与01计算/AI能力评测混淆，但代码和Agent是研究工具，最终对象及验证均为ENSO气候模型，故应落05；未发现独立算法能力实验需另加01。类别风险低，核心强度仍由主控决定。 scientific_object_modules=05; object_coverage_mode=single_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2610.10513; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=05.02.02; fulltext_followup_required=false; 05鍦扮悆鐜鐨勬皵鍊欑郴缁熷璞℃槑纭€傚鏄撲笌01璁＄畻/AI鑳藉姏璇勬祴娣锋穯锛屼絾浠ｇ爜鍜孉gent鏄爺绌跺伐鍏凤紝鏈€缁堝璞″強楠岃瘉鍧囦负ENSO姘斿€欐ā鍨嬶紝鏁呭簲钀?5锛涙湭鍙戠幇鐙珛绠楁硶鑳藉姏瀹為獙闇€鍙﹀姞01銆傜被鍒闄╀綆锛屾牳蹇冨己搴︿粛鐢变富鎺у喅瀹氥€?scientific_object_modules=05; object_coverage_mode=single_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2610.10513; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0908",
@@ -457,7 +457,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=05.04.04; fulltext_followup_required=false; 应归05，因为benchmark对象和返回资源是NASA Earth Observation地球科学数据与工具。可能被误放01信息检索；但IR算法只是方法，任务对象及科研使用场景是地球观测数据发现。若主控将科研数据发现视为通用检索能力而非具体科学任务，需复核Agent边界，分类风险低、角色范围风险中。 scientific_object_modules=05; object_coverage_mode=single_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.02387; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=05.04.04; fulltext_followup_required=false; 搴斿綊05锛屽洜涓篵enchmark瀵硅薄鍜岃繑鍥炶祫婧愭槸NASA Earth Observation鍦扮悆绉戝鏁版嵁涓庡伐鍏枫€傚彲鑳借璇斁01淇℃伅妫€绱紱浣咺R绠楁硶鍙槸鏂规硶锛屼换鍔″璞″強绉戠爺浣跨敤鍦烘櫙鏄湴鐞冭娴嬫暟鎹彂鐜般€傝嫢涓绘帶灏嗙鐮旀暟鎹彂鐜拌涓洪€氱敤妫€绱㈣兘鍔涜€岄潪鍏蜂綋绉戝浠诲姟锛岄渶澶嶆牳Agent杈圭晫锛屽垎绫婚闄╀綆銆佽鑹茶寖鍥撮闄╀腑銆?scientific_object_modules=05; object_coverage_mode=single_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.02387; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0910",
@@ -467,7 +467,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=11.07; fulltext_followup_required=false; 研究对象直接是同行评议与学术答辩，归11.07；虽然使用通用文献检索工具，但科研制度角色明确，不归01.04。 scientific_object_modules=11; object_coverage_mode=single_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.28612; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=11.07; fulltext_followup_required=false; 鐮旂┒瀵硅薄鐩存帴鏄悓琛岃瘎璁笌瀛︽湳绛旇京锛屽綊11.07锛涜櫧鐒朵娇鐢ㄩ€氱敤鏂囩尞妫€绱㈠伐鍏凤紝浣嗙鐮斿埗搴﹁鑹叉槑纭紝涓嶅綊01.04銆?scientific_object_modules=11; object_coverage_mode=single_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.28612; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0915",
@@ -477,7 +477,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberRecheck7_2026-10-22: 七篇专项复核；source_level=fulltext; module_taxonomy_codes=01.02.13;02.02;03.02;04.01;11.04; fulltext_followup_required=false; 主控独立核对全文Table 1：P3卷积字典学习算法、P4合成函数获取策略、P8参数化PDE模型、P12高斯过程支持01（正式模块落点01.02.13，其他数学/成像方向保留任务表）；P5/P6/P10/P13/P14有量子和等离子体对象，02.02；P1分子能量计算支持03.02；P2/P15材料原子间势建模支持04.01材料基础（材料计算与信息学属于该二级类），不强推未核清的材料族；P7颜色感知的锥细胞通道假说对应人的视觉感知与心理规律，支持11.04。P11究竟偏化学还是固体材料不影响已经分别由P1和P2/P15成立的03/04覆盖；P9数学量子算法的边界不影响由其他任务确立的01/02。主归档02仅为编目便利，不覆盖其余模块。 scientific_object_modules=01;02;03;04;11; object_coverage_mode=multi_module; primary_module_for_filing=02; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/src/2610.19159v1; source_checked_at=2026-10-22;"
+    "access_note": "OctoberRecheck7_2026-10-22: 涓冪瘒涓撻」澶嶆牳锛泂ource_level=fulltext; module_taxonomy_codes=01.02.13;02.02;03.02;04.01;11.04; fulltext_followup_required=false; 涓绘帶鐙珛鏍稿鍏ㄦ枃Table 1锛歅3鍗风Н瀛楀吀瀛︿範绠楁硶銆丳4鍚堟垚鍑芥暟鑾峰彇绛栫暐銆丳8鍙傛暟鍖朠DE妯″瀷銆丳12楂樻柉杩囩▼鏀寔01锛堟寮忔ā鍧楄惤鐐?1.02.13锛屽叾浠栨暟瀛?鎴愬儚鏂瑰悜淇濈暀浠诲姟琛級锛汸5/P6/P10/P13/P14鏈夐噺瀛愬拰绛夌瀛愪綋瀵硅薄锛?2.02锛汸1鍒嗗瓙鑳介噺璁＄畻鏀寔03.02锛汸2/P15鏉愭枡鍘熷瓙闂村娍寤烘ā鏀寔04.01鏉愭枡鍩虹锛堟潗鏂欒绠椾笌淇℃伅瀛﹀睘浜庤浜岀骇绫伙級锛屼笉寮烘帹鏈牳娓呯殑鏉愭枡鏃忥紱P7棰滆壊鎰熺煡鐨勯敟缁嗚優閫氶亾鍋囪瀵瑰簲浜虹殑瑙嗚鎰熺煡涓庡績鐞嗚寰嬶紝鏀寔11.04銆侾11绌剁珶鍋忓寲瀛﹁繕鏄浐浣撴潗鏂欎笉褰卞搷宸茬粡鍒嗗埆鐢盤1鍜孭2/P15鎴愮珛鐨?3/04瑕嗙洊锛汸9鏁板閲忓瓙绠楁硶鐨勮竟鐣屼笉褰卞搷鐢卞叾浠栦换鍔＄‘绔嬬殑01/02銆備富褰掓。02浠呬负缂栫洰渚垮埄锛屼笉瑕嗙洊鍏朵綑妯″潡銆?scientific_object_modules=01;02;03;04;11; object_coverage_mode=multi_module; primary_module_for_filing=02; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/src/2610.19159v1; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0916",
@@ -487,7 +487,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=05.03.07; fulltext_followup_required=false; 归05地球环境科学，细分代码取05.03.07（环境风险与环境健康）：具体对象是地球系统、气候/天气/水文灾害过程及地学证据。虽然涉及基础设施、风险决策和跨部门影响，但工程系统并非本benchmark核心研究对象，故不因此加09/11。邻近边界风险低。 scientific_object_modules=05; object_coverage_mode=single_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.23525; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=05.03.07; fulltext_followup_required=false; 褰?5鍦扮悆鐜绉戝锛岀粏鍒嗕唬鐮佸彇05.03.07锛堢幆澧冮闄╀笌鐜鍋ュ悍锛夛細鍏蜂綋瀵硅薄鏄湴鐞冪郴缁熴€佹皵鍊?澶╂皵/姘存枃鐏惧杩囩▼鍙婂湴瀛﹁瘉鎹€傝櫧鐒舵秹鍙婂熀纭€璁炬柦銆侀闄╁喅绛栧拰璺ㄩ儴闂ㄥ奖鍝嶏紝浣嗗伐绋嬬郴缁熷苟闈炴湰benchmark鏍稿績鐮旂┒瀵硅薄锛屾晠涓嶅洜姝ゅ姞09/11銆傞偦杩戣竟鐣岄闄╀綆銆?scientific_object_modules=05; object_coverage_mode=single_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.23525; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0917",
@@ -497,7 +497,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=03.02;05.01.02; fulltext_followup_required=false; 依用户特别指定采用03/05双模块。03对象是水溶液化学的物种/反应计算，对应03.02基础化学；05对象是地球化学场景及其介质过程，主文件归05。邻近09的科学计算软件只是工具，不是工程系统对象，因此不归09。分类边界中等，建议主控核对21场景逐项主题。 scientific_object_modules=03;05; object_coverage_mode=multi_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.00436; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=03.02;05.01.02; fulltext_followup_required=false; 渚濈敤鎴风壒鍒寚瀹氶噰鐢?3/05鍙屾ā鍧椼€?3瀵硅薄鏄按婧舵恫鍖栧鐨勭墿绉?鍙嶅簲璁＄畻锛屽搴?3.02鍩虹鍖栧锛?5瀵硅薄鏄湴鐞冨寲瀛﹀満鏅強鍏朵粙璐ㄨ繃绋嬶紝涓绘枃浠跺綊05銆傞偦杩?9鐨勭瀛﹁绠楄蒋浠跺彧鏄伐鍏凤紝涓嶆槸宸ョ▼绯荤粺瀵硅薄锛屽洜姝や笉褰?9銆傚垎绫昏竟鐣屼腑绛夛紝寤鸿涓绘帶鏍稿21鍦烘櫙閫愰」涓婚銆?scientific_object_modules=03;05; object_coverage_mode=multi_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.00436; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0918",
@@ -507,7 +507,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=11.07; fulltext_followup_required=false; 归11.07科学知识生产/同行评审研究对象。容易误归01（Agent/检索系统方法）或某个被评估想法所属自然科学模块；但实验测量的是科学界的构想评审过程，没有某一自然科学对象的独立实验，故01不作为正式对象模块，也不按 idea domain 添加自然科学类。核心强度风险中等：Agent评估而非完整发现流程，但明确承担科研评价工作。 scientific_object_modules=11; object_coverage_mode=single_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2609.22104; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=11.07; fulltext_followup_required=false; 褰?1.07绉戝鐭ヨ瘑鐢熶骇/鍚岃璇勫鐮旂┒瀵硅薄銆傚鏄撹褰?1锛圓gent/妫€绱㈢郴缁熸柟娉曪級鎴栨煇涓璇勪及鎯虫硶鎵€灞炶嚜鐒剁瀛︽ā鍧楋紱浣嗗疄楠屾祴閲忕殑鏄瀛︾晫鐨勬瀯鎯宠瘎瀹¤繃绋嬶紝娌℃湁鏌愪竴鑷劧绉戝瀵硅薄鐨勭嫭绔嬪疄楠岋紝鏁?1涓嶄綔涓烘寮忓璞℃ā鍧楋紝涔熶笉鎸?idea domain 娣诲姞鑷劧绉戝绫汇€傛牳蹇冨己搴﹂闄╀腑绛夛細Agent璇勪及鑰岄潪瀹屾暣鍙戠幇娴佺▼锛屼絾鏄庣‘鎵挎媴绉戠爺璇勪环宸ヤ綔銆?scientific_object_modules=11; object_coverage_mode=single_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2609.22104; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0919",
@@ -517,7 +517,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=05.02.07;06.03.06;07.03.01;11.01; fulltext_followup_required=false; 主控追加核对Appendix A Tables 5–6及14–15：FRED经济数据→11.01，UniProt/STRING蛋白对象→06.03.06，USGS water data→05.02.07，CDC FluView与PLACES→07.03.01。不是01.04；不因采用RL和Python就追加01。Table 5另列127个工程域环境，但具体工程对象尚未核清，暂不追加09。 scientific_object_modules=05;06;07;11; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.28990; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=05.02.07;06.03.06;07.03.01;11.01; fulltext_followup_required=false; 涓绘帶杩藉姞鏍稿Appendix A Tables 5鈥?鍙?4鈥?5锛欶RED缁忔祹鏁版嵁鈫?1.01锛孶niProt/STRING铔嬬櫧瀵硅薄鈫?6.03.06锛孶SGS water data鈫?5.02.07锛孋DC FluView涓嶱LACES鈫?7.03.01銆備笉鏄?1.04锛涗笉鍥犻噰鐢≧L鍜孭ython灏辫拷鍔?1銆俆able 5鍙﹀垪127涓伐绋嬪煙鐜锛屼絾鍏蜂綋宸ョ▼瀵硅薄灏氭湭鏍告竻锛屾殏涓嶈拷鍔?9銆?scientific_object_modules=05;06;07;11; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.28990; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0922",
@@ -527,7 +527,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 原文阅读与笔记整合；source_level=fulltext; module_taxonomy_codes=02.02.06;11.07.08;11.07.09; fulltext_followup_required=false; 02 由量子算法/稿件具体案例支撑；11.07 由科学审稿、主张和证据核验工作流支撑。暂标 02.02.06、11.07.08/09；主展示取 11。专利部分不单独扩至工程/法律模块。 scientific_object_modules=02;11; object_coverage_mode=multi_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.16900; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=02.02.06;11.07.08;11.07.09; fulltext_followup_required=false; 02 鐢遍噺瀛愮畻娉?绋夸欢鍏蜂綋妗堜緥鏀拺锛?1.07 鐢辩瀛﹀绋裤€佷富寮犲拰璇佹嵁鏍搁獙宸ヤ綔娴佹敮鎾戙€傛殏鏍?02.02.06銆?1.07.08/09锛涗富灞曠ず鍙?11銆備笓鍒╅儴鍒嗕笉鍗曠嫭鎵╄嚦宸ョ▼/娉曞緥妯″潡銆?scientific_object_modules=02;11; object_coverage_mode=multi_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.16900; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0987",
@@ -537,7 +537,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=04; primary_module_for_filing=04; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=04.01;04.02; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.22400; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=04; primary_module_for_filing=04; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=04.01;04.02; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.22400; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1007",
@@ -547,7 +547,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=04; primary_module_for_filing=04; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=04.02;04.04; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.06322; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=04; primary_module_for_filing=04; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=04.02;04.04; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.06322; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1012",
@@ -557,7 +557,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.03.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1038/s41746-026-03097-0; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.03.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1038/s41746-026-03097-0; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1014",
@@ -567,7 +567,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.01.04; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1038/s41467-026-77130-x; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.01.04; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1038/s41467-026-77130-x; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1015",
@@ -577,7 +577,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.03.01;07.03.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag722; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.03.01;07.03.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag722; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1016",
@@ -587,7 +587,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=06;07; primary_module_for_filing=06; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=06.03.06;07.04.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.3389/fchem.2026.1914886; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=06;07; primary_module_for_filing=06; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=06.03.06;07.04.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.3389/fchem.2026.1914886; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1031",
@@ -597,7 +597,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.03.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1038/s44401-026-00117-9; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.03.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1038/s44401-026-00117-9; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1032",
@@ -607,7 +607,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=03; primary_module_for_filing=03; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=03.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag541; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=03; primary_module_for_filing=03; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=03.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag541; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1041",
@@ -617,7 +617,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=06;07; primary_module_for_filing=06; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=06.02.07;07.02.06; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.25211; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=06;07; primary_module_for_filing=06; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=06.02.07;07.02.06; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.25211; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1043",
@@ -627,7 +627,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02; primary_module_for_filing=02; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=02.02.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2609.35958; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02; primary_module_for_filing=02; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=02.02.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2609.35958; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1045",
@@ -637,7 +637,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=09; primary_module_for_filing=09; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=09.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.14104; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=09; primary_module_for_filing=09; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=09.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.14104; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1047",
@@ -647,7 +647,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02;09; primary_module_for_filing=02; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=02.02.09;09.08.03; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.05990; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02;09; primary_module_for_filing=02; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=02.02.09;09.08.03; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.05990; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1049",
@@ -657,7 +657,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=03;04; primary_module_for_filing=03; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=03.03;04.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2609.14840; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=03;04; primary_module_for_filing=03; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=03.03;04.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2609.14840; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1050",
@@ -667,7 +667,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02;09; primary_module_for_filing=09; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=09.08.03; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.28877; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02;09; primary_module_for_filing=09; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=09.08.03; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.28877; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1097",
@@ -677,6 +677,6 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=01;11; primary_module_for_filing=01; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=01.02.12;11.07.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.11451; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=01;11; primary_module_for_filing=01; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=01.02.12;11.07.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.11451; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   }
 ]
