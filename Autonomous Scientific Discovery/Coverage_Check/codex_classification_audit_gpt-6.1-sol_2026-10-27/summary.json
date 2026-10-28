@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-10-27T17:31:59.405300+00:00",
+  "core_paper_count": 663,
+  "result_status_counts": {
+    "completed": 663
+  },
+  "evidence_source_counts": {
+    "pdf_full_text": 491,
+    "note_only": 172
+  },
+  "difference_rows": 1743,
+  "difference_type_counts": {
+    "secondary_code_mismatch": 495,
+    "tertiary_code_mismatch": 560,
+    "module_missing_in_audit": 109,
+    "source_or_model_review_required": 327,
+    "module_added_by_audit": 247,
+    "general_method_bucket_mismatch": 5
+  },
+  "manual_review_queue": "manual_review_queue.csv",
+  "classification_differences": "classification_differences.csv",
+  "writeback_performed": false
+}

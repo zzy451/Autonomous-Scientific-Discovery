@@ -1,0 +1,34 @@
+{
+  "run_dir": "/data/survey/Autonomous-Scientific-Discovery-main/Autonomous Scientific Discovery/Coverage_Check/codex_classification_audit_gpt-6.1-sol_2026-10-27",
+  "model": "gpt-6.1-sol",
+  "difference_rows": 1743,
+  "difference_papers": 639,
+  "triage_status_counts": {
+    "semantic_code_manual_review": 86,
+    "legacy_code_cleanup_review": 350,
+    "model_uncertainty_manual_review": 585,
+    "source_limited_manual_review": 463,
+    "taxonomy_gap_manual_review": 144,
+    "module_boundary_manual_review": 115
+  },
+  "duplicate_comparison_rows": 158,
+  "papers_by_triage_status_count": {
+    "legacy_code_cleanup_review + semantic_code_manual_review": 24,
+    "model_uncertainty_manual_review": 155,
+    "source_limited_manual_review": 172,
+    "legacy_code_cleanup_review + taxonomy_gap_manual_review": 84,
+    "legacy_code_cleanup_review + module_boundary_manual_review + taxonomy_gap_manual_review": 24,
+    "module_boundary_manual_review": 12,
+    "legacy_code_cleanup_review + module_boundary_manual_review": 51,
+    "legacy_code_cleanup_review": 91,
+    "taxonomy_gap_manual_review": 2,
+    "semantic_code_manual_review": 13,
+    "legacy_code_cleanup_review + module_boundary_manual_review + semantic_code_manual_review": 4,
+    "legacy_code_cleanup_review + semantic_code_manual_review + taxonomy_gap_manual_review": 2,
+    "semantic_code_manual_review + taxonomy_gap_manual_review": 3,
+    "module_boundary_manual_review + semantic_code_manual_review": 1,
+    "legacy_code_cleanup_review + module_boundary_manual_review + semantic_code_manual_review + taxonomy_gap_manual_review": 1
+  },
+  "writeback_performed": false,
+  "report": "manual_review_triage.csv"
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Codex paper classification audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "paper_id",
+    "classification_bucket",
+    "modules",
+    "object_evidence",
+    "overall_rationale",
+    "needs_human_review",
+    "human_review_reasons",
+    "source_limitations"
+  ],
+  "properties": {
+    "paper_id": {"type": "string", "pattern": "^ASD-[0-9]{4}$"},
+    "classification_bucket": {"type": ["string", "null"], "enum": ["01.04", null]},
+    "modules": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["primary_code", "primary_label", "secondary_code", "secondary_label", "tertiary_code", "tertiary_label", "confidence", "taxonomy_gap_reason"],
+        "properties": {
+          "primary_code": {"type": "string", "pattern": "^(0[1-9]|1[0-1])$"},
+          "primary_label": {"type": "string", "minLength": 1},
+          "secondary_code": {"type": ["string", "null"], "pattern": "^[0-9]{2}\\.[0-9]{2}$"},
+          "secondary_label": {"type": ["string", "null"]},
+          "tertiary_code": {"type": ["string", "null"], "pattern": "^[0-9]{2}\\.[0-9]{2}\\.[0-9]{2}$"},
+          "tertiary_label": {"type": ["string", "null"]},
+          "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+          "taxonomy_gap_reason": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "object_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["primary_code", "concrete_object", "reported_action_or_result", "quote", "location", "evidence_basis"],
+        "properties": {
+          "primary_code": {"type": "string", "pattern": "^(0[1-9]|1[0-1])$"},
+          "concrete_object": {"type": "string", "minLength": 1},
+          "reported_action_or_result": {"type": "string", "minLength": 1},
+          "quote": {"type": "string", "minLength": 1},
+          "location": {"type": "string", "minLength": 1},
+          "evidence_basis": {"type": "string", "enum": ["pdf_full_text", "project_note", "official_abstract_or_page", "metadata_only"]}
+        }
+      }
+    },
+    "overall_rationale": {"type": "string", "minLength": 1},
+    "needs_human_review": {"type": "boolean"},
+    "human_review_reasons": {"type": "array", "items": {"type": "string"}},
+    "source_limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,97 +1,169 @@
 # Agent for Science: Toward Autonomous Scientific Discovery
 
-本仓库整理用于英文综述的 **Agent for Science** 核心文献库。综述关注 Agent 如何参与、推动或承担科学研究过程，并讨论这些系统向 Autonomous Scientific Discovery 发展的路径。
+> A curated, evidence-oriented literature database and classification workflow for research agents that participate in scientific discovery.
 
-当前统计截至 2026 年 10 月 24 日；最近一轮增量检索截至 2026 年 10 月 22 日。2026 年数据为截至检索日的累计，不能与完整年份直接比较。
+<p align="center">
+  <a href="https://github.com/zzy451/Autonomous-Scientific-Discovery/stargazers"><img src="https://img.shields.io/github/stars/zzy451/Autonomous-Scientific-Discovery?style=flat" alt="GitHub stars"></a>
+  <a href="#collection"><img src="https://img.shields.io/badge/core%20papers-663-2563eb" alt="663 core papers"></a>
+</p>
 
-## 研究主题
+<p align="center">
+  <a href="#collection">Collection</a> |
+  <a href="#classification">Classification</a> |
+  <a href="#reproduce-the-codex-classification-audit">Codex audit</a> |
+  <a href="README.zh-CN.md">中文</a> |
+  <a href="MERGE_GUIDE.md">Reviewer handoff</a>
+</p>
 
-本综述不是泛泛的 AI for Science 文献汇编。它研究具有 Agent 特征的系统如何服务科学研究，包括文献调研、知识组织、科学问题提出、假设生成、实验设计、仿真与工具执行、机器人实验、数据分析、结果解释和证据验证等环节。
+This repository supports a literature review on how agentic systems participate in scientific research, and how those systems may develop toward autonomous scientific discovery. It provides a curated paper collection, structured records, a scientific-domain taxonomy, classification policies, and reproducible audit tools.
 
-LLM Agent、经典智能 Agent、规划或符号推理 Agent、多 Agent 系统、具身/机器人实验 Agent，以及由语言模型、检索、工具、仿真器或实验平台组成的混合系统，都可能进入收录范围。
+## Contents
 
-## 核心论文收录标准
+- [Collection](#collection)
+- [Scope and inclusion criteria](#scope-and-inclusion-criteria)
+- [Classification](#classification)
+- [Repository map](#repository-map)
+- [Reproduce the Codex classification audit](#reproduce-the-codex-classification-audit)
+- [Data and evidence](#data-and-evidence)
+- [Merge and reviewer handoff](MERGE_GUIDE.md)
+- [Citation and use](#citation-and-use)
 
-一篇论文只有同时满足以下四项，才纳入核心文献库：
+## Collection
 
-| 标准 | 含义 |
+The current review core contains **663 deduplicated papers** (collection snapshot: 2026-10-24). Structured data also contains records outside the confirmed review core, so the number of rows in `papers.jsonl` is not the core-paper count. Papers are discovered from seed reviews and citation networks, then expanded through relevant journals, related systems and teams, and targeted searches for gaps in domain coverage.
+
+The review focuses on systems that take part in research activity: literature search and synthesis, knowledge organization, question or hypothesis generation, experiment design, simulation and tool execution, robotic experimentation, data analysis, interpretation, and evidence checking.
+
+## Scope and inclusion criteria
+
+A paper enters the review core when it meets all four criteria:
+
+1. **Scientific objective:** it addresses an identifiable scientific question, object, or research task.
+2. **Multi-step activity:** the system performs related actions over a research process rather than a single input-output response.
+3. **Agent behavior:** it demonstrates at least one of planning, tool use, feedback-driven iteration, autonomous decision-making, or multi-agent collaboration.
+4. **Research role:** it has a defined role in a research workflow, such as retrieval, hypothesis generation, experiment design, execution, analysis, interpretation, or validation.
+
+Complete autonomy and a closed experimental loop are useful comparison dimensions, but are not required for inclusion. A predictive model, one-shot LLM response, or automated screening pipeline is not included solely because it uses AI.
+
+## Classification
+
+The primary classification follows the **scientific object studied**, not the model, agent architecture, venue, institution, or technique. A paper may map to multiple disciplines when its experiments, benchmarks, case studies, or results provide evidence for multiple scientific objects. Agent type, research-stage role, autonomy, and validation method are kept as complementary descriptors.
+
+The top-level taxonomy covers formal and computational sciences; physics and astronomy; chemistry; materials; Earth and environmental sciences; life sciences; medicine and health; agriculture and food; engineering; aerospace, marine, and transportation; and social, behavioral, economic, and knowledge-system sciences. A separate `01.04` holding category is reserved for general scientific-agent methods without evidence tied to a specific scientific object.
+
+| Code | Scientific-object domain | Papers* |
+|---|---|---:|
+| 01 | Formal, information, and computational sciences | 88 |
+| 02 | Physics, astronomy, and cosmic sciences | 75 |
+| 03 | Chemical sciences | 113 |
+| 04 | Materials science | 168 |
+| 05 | Earth and environmental sciences | 53 |
+| 06 | Life sciences | 119 |
+| 07 | Medical and health sciences | 117 |
+| 08 | Agriculture, food, forestry, livestock, and fisheries | 7 |
+| 09 | Engineering and industrial technology sciences | 58 |
+| 10 | Aerospace, marine, and transportation sciences | 27 |
+| 11 | Social, behavioral, economic, and knowledge-system sciences | 67 |
+| 01.04 | General scientific-agent methods without a concrete object | 9 |
+
+*Counts are from the 2026-10-24 collection snapshot. Papers can be assigned to multiple domains, so counts overlap and must not be summed to obtain the collection size. The `01.04` method holding category is separate from the scientific-object taxonomy.
+
+Classification decisions follow the project policy and taxonomy:
+
+- [Review scope and classification policy](Autonomous%20Scientific%20Discovery/review_scope_and_classification_policy.md)
+- [Domain classification rules](Autonomous%20Scientific%20Discovery/domain_classification_rules.md)
+- [Scientific-domain taxonomy](Autonomous%20Scientific%20Discovery/science_domain_taxonomy.md)
+- [Machine-readable classification code index](Autonomous%20Scientific%20Discovery/Data/classification_code_index.json)
+
+## Repository map
+
+| Path | Contents |
 |---|---|
-| 明确科研目标 | 面向可识别的科学问题、研究对象或科研任务 |
-| 多步行动过程 | 系统执行多个相互关联的行动步骤，而非一次性输入输出 |
-| Agent 能力 | 至少体现计划生成、工具调用、反馈迭代、自主决策或多 Agent 协作中的一项 |
-| 科研流程角色 | 在科学研究流程中承担明确角色，例如检索、假设、实验设计、执行、分析、解释或验证 |
+| `Autonomous Scientific Discovery/Data/papers.jsonl` | Structured paper records and review status |
+| `Autonomous Scientific Discovery/Data/paper_module_taxonomy_assignments.jsonl` | Scientific-object module and taxonomy assignments |
+| `Autonomous Scientific Discovery/Data/discipline_code_assignments.jsonl` | Controlled discipline-code assignments |
+| `Autonomous Scientific Discovery/Paper_Lists/agent_master_paper_list.md` | Human-readable master paper list |
+| `Autonomous Scientific Discovery/Notes/` | Public paper notes organized by scientific domain |
+| `Autonomous Scientific Discovery/skills/asd-single-paper-classification-workflow/` | Reusable workflow for evidence-based classification of one paper |
+| `Autonomous Scientific Discovery/scripts/` | Data pipeline, consistency checks, and audit utilities |
+| `Autonomous Scientific Discovery/prompts/` | Prompts for structured, evidence-based model review |
+| `Autonomous Scientific Discovery/Coverage_Check/` | Coverage tracking and compact audit reports |
 
-完整闭环和完全自主不是硬性门槛；二者用于比较系统的自主程度和代表性。相反，普通机器学习预测、单次大模型问答、没有 Agent 行动过程的分子生成、自动化或高通量筛选工作，不因使用 AI 而自动纳入。
+## Reproduce the Codex classification audit
 
-## 当前核心库
+The audit runner launches one headless Codex CLI task per confirmed core paper. It fixes the model to `gpt-6.1-sol`, supplies extracted full text when an eligible PDF is available, and compares the independent classification with the existing project assignments. When full text is unavailable, it can use a project note as secondary evidence and flags the result as `note_only`. Existing classification labels are comparison baselines, not instructions for the model's decision.
 
-当前核心库包含 **663 篇**去重论文。其结构化记录位于 [`Autonomous Scientific Discovery/Data/papers.jsonl`](Autonomous%20Scientific%20Discovery/Data/papers.jsonl)。
+The committed audit snapshot covers 663 papers: 491 were assessed with full-text PDF evidence and 172 with notes only. It produced 1,743 difference rows across 639 papers. These are review leads, not automatic corrections; the run did not write changes back to the project data. Notes-only cases still require source-level checking before they can count as full-paper review.
 
-文献检索遵循“来源优先”路径：从相关种子综述及其引文网络出发，扩展 Nature、Science 及其相关期刊入口，再通过前向/后向引用、同系统和同团队工作扩展，最后针对分类缺口进行定向补搜。
+> [!IMPORTANT]
+> The difference count is not an error count. Every proposed change needs human review against the original paper; `note_only` evidence does not establish full-text verification.
 
-## 分类依据
+Browse the [audit summary](Autonomous%20Scientific%20Discovery/Coverage_Check/codex_classification_audit_gpt-6.1-sol_2026-10-27/summary.json), [classification differences](Autonomous%20Scientific%20Discovery/Coverage_Check/codex_classification_audit_gpt-6.1-sol_2026-10-27/classification_differences.csv), and [manual review triage](Autonomous%20Scientific%20Discovery/Coverage_Check/codex_classification_audit_gpt-6.1-sol_2026-10-27/manual_review_triage.csv). The committed snapshot is a review record; reproducing its exact triage requires the original per-paper results, which are retained in the research workspace.
 
-主分类按论文实际研究的 **科学对象** 确定，而不按模型、Agent 架构、期刊、作者单位或技术标签确定。
+### Requirements
 
-- 当论文对具体科学对象给出可识别的实验、验证、benchmark 任务、案例或结果证据时，归入相应领域。
-- 一篇论文可覆盖多个领域或多个小类；以下各行的数量不能相加为 663。
-- Agent 类型、科研流程角色、自主程度、验证方式等为辅助标签。
-- `01.04` 是独立的通用方法存放区，只保留没有任何具体科学对象证据的通用科学 Agent、工作流或评测研究，不属于正式对象类树。
+- Python 3.11 or later
+- Codex CLI installed and authenticated
+- `pdftotext` for extracting local PDF text
+- Network access when obtaining eligible open-access PDFs from arXiv or OpenAlex
 
-### 科学对象一级分类
+### Run
 
-| 代码 | 领域 | 核心论文 | 研究对象与内容 |
-|---|---|---:|---|
-| 01 | 形式、信息与计算科学 | 88 | 数学、计算机科学、信息与复杂系统；包括定理证明、算法、科学计算、知识组织和复杂系统研究 |
-| 02 | 物理学、天文学与宇宙科学 | 75 | 天体、宇宙、量子、凝聚态、光学、流体、粒子及其他物理对象 |
-| 03 | 化学科学 | 113 | 分子、反应、化学键、合成路线、催化、化学性质与化学测量 |
-| 04 | 材料科学 | 168 | 材料组成、结构、相、缺陷、形貌、性能、材料合成与材料发现 |
-| 05 | 地球与环境科学 | 53 | 气候、地球系统、遥感、海洋、大气、水文、环境过程和地质对象 |
-| 06 | 生命科学 | 119 | 细胞、分子、基因组、蛋白质、微生物、免疫、组学和生物制造 |
-| 07 | 医学与健康科学 | 117 | 疾病、临床问题、药物、公共卫生、医学信息与生物医药 |
-| 08 | 农业、食品、林业、畜牧与渔业科学 | 7 | 作物、食品、农业系统、林业、动物生产和渔业对象 |
-| 09 | 工程与工业技术科学 | 58 | 工程系统、制造、器件、工业过程、仪器与工业优化 |
-| 10 | 航空、航天、海洋与交通科学 | 27 | 航天器、空间任务、海洋任务、交通系统和自主探索任务 |
-| 11 | 社会、行为、经济与知识系统科学 | 67 | 社会行为、经济系统、科研评价、知识生产、科学传播与科研治理 |
-| 01.04 | ASD/general 方法存放区 | 9 | 无具体科学对象实验或验证的通用科研 Agent、科学工作流、平台和 benchmark |
+From `Autonomous Scientific Discovery/`:
 
-`03` 化学科学与 `04` 材料科学当前统计至二级类；`06` 生命科学和 `07` 医学与健康科学使用固定三级分类。其余领域遵循同一对象优先与多模块证据规则。
+```bash
+python3.11 scripts/audit_classifications_with_codex.py \
+  --run-dir Coverage_Check/codex_classification_audit \
+  --jobs 4 --reasoning-effort low --timeout 900
+```
 
-## 生命科学（06）细分
+The model is deliberately pinned by the script to `gpt-6.1-sol`. Runs can be resumed; completed per-paper results are skipped unless `--force` is supplied. Use `--limit N` or repeat `--paper-id ASD-####` to run a small subset first. Add `--context-file PATH` or `--context-dir PATH` to provide supplementary context.
 
-生命科学模块共覆盖 119 篇核心论文。父类按论文并集计数，三级类数量之和可能超过其二级类总数。
+The report files are:
 
-| 二级类 | 篇数 | 三级类及数量 |
-|---|---:|---|
-| 06.01 生物学基础 | 36 | 细胞生物学 3；分子生物学 1；生物物理学 1；遗传学 2；系统生物学 3；合成生物学 4；生物信息学 14；计算生物学 8 |
-| 06.02 生物类群科学 | 9 | 微生物学 2；病毒学 1；植物学 1；海洋生物学 1；神经生物学 2；免疫学 3 |
-| 06.03 生物技术相关科学 | 78 | 基因组学 26；蛋白质组学 4；单细胞生物学 24；结构生物学 1；蛋白质科学 18；生物制造 6 |
+- `classification_differences.csv`: module, secondary-code, tertiary-code, and general-method differences.
+- `manual_review_queue.csv`: items that need human review.
+- `manual_review_triage.csv`: review items grouped by source limitations, taxonomy gaps, boundary questions, or code cleanup.
+- `summary.json`: run counts and evidence-source counts.
+- `results/`, `raw/`, and `logs/`: per-paper structured outputs and execution traces. These directories may contain private or large working artifacts and are not included in the public audit snapshot.
 
-当前没有论文映射到以下生命科学三级类：普通生物学、生物化学、发育生物学、进化生物学、生态学、动物学、昆虫学和代谢组学。
+Regenerate the review triage after a run:
 
-## 医学与健康科学（07）细分
+```bash
+python3.11 scripts/triage_classification_differences.py \
+  --run-dir Coverage_Check/codex_classification_audit
+```
 
-医学与健康科学模块共覆盖 117 篇核心论文，与生命科学之间允许因研究对象证据重叠而同时归类。
+```mermaid
+flowchart LR
+    A["Paper PDF and context"] --> B["Codex audit: gpt-6.1-sol"]
+    B --> C["Compare with current labels"]
+    C --> D["Evidence-based human review"]
+    D -->|Confirmed decision| E["Update authoritative owner files"]
+    E --> F["Export, check, and build"]
+    D -->|Needs evidence| G["Keep in review queue"]
+    B -.-> H["No automated owner-file writeback"]
+```
 
-| 二级类 | 篇数 | 三级类及数量 |
-|---|---:|---|
-| 07.01 医学基础 | 15 | 病理学 7；药理学 1；毒理学 1；医学遗传学 5；医学免疫学 1 |
-| 07.02 临床医学 | 20 | 肿瘤学 13；神经病学 4；精神病学 1；心血管病学 3；呼吸病学 1；消化病学 1 |
-| 07.03 公共卫生与健康科学 | 31 | 流行病学 2；营养科学 1；医学信息学 29 |
-| 07.04 药学与生物医药 | 53 | 药物发现 49；生物制药 4 |
+Review every proposed change against `object_evidence` and the cited paper pages before updating owner data files. The audit and triage tools do not write classification decisions back.
 
-## 数据说明
+## Data and evidence
 
-远程仓库仅保留可公开、可复核的结构化数据和必要脚本，便于检索、统计与后续更新。PDF、逐篇阅读笔记、审计材料和工作草稿保留在本地研究环境，不随仓库同步。
+The public repository is intended to keep structured records, text notes, policies, scripts, and compact reports reviewable. PDFs and per-run model logs/caches are not required to use the metadata or classification workflow. PDF availability and source limitations should be treated as evidence state, not as proof that a paper has been fully reviewed.
 
-核心数据和相关结构化文件位于 [`Autonomous Scientific Discovery/Data/`](Autonomous%20Scientific%20Discovery/Data/)。统计口径会随新增文献、证据补全和分类复核而更新。
+The existing repository also tracks reference PDFs with Git LFS. To inspect metadata without downloading the entire PDF library, clone with `GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/zzy451/Autonomous-Scientific-Discovery.git`. Retrieve individual full texts when needed and respect their source licenses.
 
-## 项目交接：单篇论文分类 Skill
+For a new paper, use the [single-paper classification workflow](Autonomous%20Scientific%20Discovery/skills/asd-single-paper-classification-workflow/SKILL.md), consult the taxonomy and policy, record evidence with page or section references, and run the repository consistency checks before publishing data changes.
 
-接手者可使用项目内的 [`asd-single-paper-classification-workflow`](Autonomous%20Scientific%20Discovery/skills/asd-single-paper-classification-workflow/) 对单篇论文完成证据收集、纳入判断、多模块科学对象分类、笔记归档和结构化数据写回。
+## Citation and use
 
-将该目录安装到个人 Codex skills 目录后，可使用 `$asd-single-paper-classification-workflow` 调用。Skill 明确规定了一手证据优先、`01.04` 边界、`03/04`、`05/10`、`06/07`、`01.04/11.07` 边界判断，以及主事实源与派生数据的写回顺序。
+If you use this collection, please cite the repository and the individual papers that support your analysis. The paper records and notes are provided for research and review; copyright in each paper remains with its authors or publishers. Check each source's license before redistributing full text.
 
-GitHub 已同步可交接的文本型分类资产：[`主论文列表`](Autonomous%20Scientific%20Discovery/Paper_Lists/agent_master_paper_list.md)、[`逐篇笔记`](Autonomous%20Scientific%20Discovery/Notes/)、[`标注字段规范`](Autonomous%20Scientific%20Discovery/paper_note_templates_and_prompts/ASD_annotation_schema.md)、[`笔记模板`](Autonomous%20Scientific%20Discovery/paper_note_templates_and_prompts/ASD_single_paper_note_template.md) 和 [`来源/证据进度主表`](Autonomous%20Scientific%20Discovery/Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md)。
-
-本地 `Reference_PDF/` 库不上传 GitHub；接手者可使用官方论文页、arXiv、DOI、补充材料和项目页进行分类。只有需要重建含本地PDF状态的派生数据时，才需要完整本地资产库。
+```bibtex
+@misc{agent_for_science_asd,
+  title        = {Agent for Science: Toward Autonomous Scientific Discovery},
+  author       = {Autonomous Scientific Discovery project},
+  howpublished = {\url{https://github.com/zzy451/Autonomous-Scientific-Discovery}},
+  year         = {2026}
+}
+```
