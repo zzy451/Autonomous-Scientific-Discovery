@@ -64,8 +64,8 @@
 ### 2.1 主科学领域
 
 - 一级类：`04` 材料科学
-- 二级类：`04.04` 材料信息学、材料发现与功能材料
-- 三级类：AI-assisted experimental materials discovery
+- 二级类：`04.02` 材料信息学、材料发现与功能材料
+- 三级类：`04.02.04` 陶瓷材料
 - 四级专题：Materials discovery agents
 - 四级专题是否为新增：否。
 - 归类理由：最终对象是新材料发现、材料性能、结构-性能关系和材料实验流程。
@@ -243,8 +243,8 @@ MatPilot 以人机协同驱动材料实验发现。
 ```text
 是否纳入：是
 主类：04 材料科学
-二级类：04.04 材料信息学、材料发现与功能材料
-三级类：AI-assisted experimental materials discovery
+二级类：04.02 材料信息学、材料发现与功能材料
+三级类：`04.02.04` 陶瓷材料
 四级专题：Materials discovery agents
 Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented Agent; Multi-Agent System; Robot / Embodied Agent; Human-in-the-loop Agent; Hybrid Agent
 科研流程角色：文献检索与阅读; 知识抽取与组织; 科学问题提出; 假设生成; 实验设计; 仿真建模; 工具调用与代码执行; 实验执行; 数据分析; 结果解释; 证据评估与验证

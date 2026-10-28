@@ -57,7 +57,7 @@ Evidence level: arXiv PDF full text + ACL Anthology metadata.
 ### 2.1 主科学领域
 
 - 一级类：`04` 材料科学。
-- 二级类：`04.04` 材料信息学与材料发现 Agent。
+- 二级类：`04.01` 材料信息学与材料发现 Agent。
 - 三级类：目标约束驱动的材料设计假设生成。
 - 四级专题：Materials discovery agents。
 - 四级专题是否为新增：否。
@@ -236,7 +236,7 @@ Evidence level: arXiv PDF full text + ACL Anthology metadata.
 ```text
 是否纳入：是
 主类：04 材料科学
-二级类：04.04
+二级类：04.01
 三级类：目标约束驱动的材料设计假设生成
 四级专题：Materials discovery agents
 Agent 类型：LLM Agent; Multi-Agent System; Retrieval-augmented Agent; Human-in-the-loop Agent; Hybrid Agent

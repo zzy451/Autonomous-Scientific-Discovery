@@ -61,8 +61,8 @@
 - Primary module for filing：`04`
 - Primary module for filing 说明：仅用于归档，不覆盖分类事实。
 - 主展示模块一级类：`04` 材料科学
-- 主展示模块二级类：`04.04` 能源、电子与器件材料 / 无机材料发现
-- 主展示模块三级类：材料合成与材料实现
+- 主展示模块二级类：`04.02` 能源、电子与器件材料 / 无机材料发现
+- 主展示模块三级类：`04.02.03` 无机非金属材料
 - 主展示模块四级专题：self-driving materials laboratory
 - 其他覆盖模块及对应层级路径：无
 - 四级专题是否为新增：否
@@ -251,8 +251,8 @@ general_method_bucket：none
 Primary module for filing：04
 是否进入 01.04 存放区：否
 主展示模块一级类：04
-主展示模块二级类：04.04
-主展示模块三级类：材料合成与材料实现
+主展示模块二级类：04.02
+主展示模块三级类：`04.02.03` 无机非金属材料
 主展示模块四级专题：self-driving materials laboratory
 其他覆盖模块及对应层级路径：无
 module_assignment_evidence：target compounds, oxides, phosphates, robotic synthesis, XRD characterization
