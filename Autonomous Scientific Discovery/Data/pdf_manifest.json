@@ -127,7 +127,8 @@
     "sha256": "98d3f4e096aa8b9742fee95e4f95a93977a772281f79542dc2d1e05d240939eb",
     "primary_module_for_filing": "03",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_html_full_text",
@@ -140,7 +141,8 @@
     "sha256": "53bafd3028e3f8829a3d85220e84dcf0d18934f9b75c092a60de303ff3644bd2",
     "primary_module_for_filing": "01",
     "scientific_object_modules": [
-      "01"
+      "01",
+      "08"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -218,7 +220,8 @@
     "sha256": "dd94d80ec75c9bb84ec3989c910a313ef1a7aec57c772d3dd35ecadd250132a7",
     "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -492,6 +495,7 @@
     "sha256": "ba58becffd6cf468484a1ef0504b53504e1ed69296e560d2f03f0871cdf4420f",
     "primary_module_for_filing": "09",
     "scientific_object_modules": [
+      "02",
       "09"
     ],
     "pdf_status": "archived_pdf",
@@ -689,7 +693,8 @@
     "sha256": "f092c8cbd65da89951ee6496374da9a54963f9035758c25ac6e4625f506df9ad",
     "primary_module_for_filing": "01",
     "scientific_object_modules": [
-      "01"
+      "01",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -756,7 +761,8 @@
     "sha256": "37f09b4eaa39ba431ca47396b95fa2f637cf425a03586c3abf1e26c90a438969",
     "primary_module_for_filing": "03",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -769,7 +775,8 @@
     "sha256": "c93cff995c8add51a28cf8a5193aae8bc4c6b983199ca9ae60a4562e5ac14553",
     "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1208,6 +1215,7 @@
     "sha256": "ef3f88b1af6075baa78fede6bbe972f7fc07d4492493fa7a46542df08cd79420",
     "primary_module_for_filing": "09",
     "scientific_object_modules": [
+      "04",
       "09"
     ],
     "pdf_status": "archived_pdf",
@@ -1221,6 +1229,7 @@
     "sha256": "0a5901aba728c696658ebafe2c762a6b0027f5d87f6cda74e49e699e955b7323",
     "primary_module_for_filing": "09",
     "scientific_object_modules": [
+      "02",
       "09"
     ],
     "pdf_status": "archived_pdf",
@@ -1403,7 +1412,8 @@
     "sha256": "455ed2c03e2862a2ef1aef135bc5e3e15faeda80156f7fa730c9a91fd0baecb6",
     "primary_module_for_filing": "03",
     "scientific_object_modules": [
-      "03"
+      "03",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1522,7 +1532,8 @@
     "sha256": "dd592c2846808a1f74aa738e38caea1b096fa8025fd00a896ecb88b18d161094",
     "primary_module_for_filing": "06",
     "scientific_object_modules": [
-      "06"
+      "06",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1824,6 +1835,7 @@
     "sha256": "4aeb478c4fac0c1a97d91487cd79f848e0b2f14d7b85184b14c24cf96b4ff50e",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
+      "03",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -1876,6 +1888,7 @@
     "sha256": "cccf8f42d5033745f39cb9ff751a6182328c643810013b2c7e50a92996306357",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
+      "03",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -2087,6 +2100,7 @@
     "sha256": "5e43ec6737805fa1f685b9bd73850f220d862019b4eb9eb995f0edf8ca4877c7",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
+      "03",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -2615,6 +2629,7 @@
     "sha256": "3a533de518e0a557e6441a458ad7af40ffb70ae5afb55463ad4c50a70e11a4ce",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
+      "03",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -2914,7 +2929,8 @@
     "sha256": "3facfa4296a483366759f24ca143879a581da2c9bc82ade65472f04a5333f170",
     "primary_module_for_filing": "02",
     "scientific_object_modules": [
-      "02"
+      "02",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -2953,6 +2969,7 @@
     "sha256": "941906fcd95e58bbdfcceb87412927718933eaaad74eb1cc626f12975438d8e5",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
+      "03",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -3031,6 +3048,8 @@
     "sha256": "2a97f79e69918cca7260b2917453624a13876737baf1d8cff98bce438919bb4a",
     "primary_module_for_filing": "10",
     "scientific_object_modules": [
+      "02",
+      "06",
       "10"
     ],
     "pdf_status": "archived_pdf",
@@ -3083,7 +3102,8 @@
     "sha256": "5250cffcd016974f2a79784b653e5a0242f785d8746388250215e7932281077c",
     "primary_module_for_filing": "05",
     "scientific_object_modules": [
-      "05"
+      "05",
+      "06"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text_via_arxiv_fallback",
@@ -3109,6 +3129,7 @@
     "sha256": "4a14a2f25dd5b646b1d0875610eb39474339305c4e3e5506f0f9fd6291465ab0",
     "primary_module_for_filing": "08",
     "scientific_object_modules": [
+      "06",
       "08"
     ],
     "pdf_status": "archived_pdf",
@@ -3639,6 +3660,7 @@
     "sha256": "1f8816bcf964983714038cef652eeeaeb3dee89021043d44dc8f6770c2beeda4",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
+      "03",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -3691,6 +3713,7 @@
     "sha256": "65bd498cb1eb87b50bec62ebbf70ab88250a2cd7cd9594a7568375f526c50c1a",
     "primary_module_for_filing": "09",
     "scientific_object_modules": [
+      "05",
       "09"
     ],
     "pdf_status": "archived_pdf",
@@ -3732,6 +3755,7 @@
     "sha256": "f2a8c3ed82120a3356a592b9203dd769feb0c5a5fd4fd3cf353e3ee547944d8f",
     "primary_module_for_filing": "08",
     "scientific_object_modules": [
+      "03",
       "08"
     ],
     "pdf_status": "archived_pdf",
@@ -4095,6 +4119,7 @@
     "sha256": "aff380317b254c6185ac6578cedc33ff624427566182c68054dde81f9deb43cc",
     "primary_module_for_filing": "05",
     "scientific_object_modules": [
+      "03",
       "05"
     ],
     "pdf_status": "archived_pdf",
@@ -4376,7 +4401,9 @@
     "sha256": "721b95ba565b8c26cd4b683dd4064b9e433502ab697fe97cf3f708f9ec6f0c5e",
     "primary_module_for_filing": "02",
     "scientific_object_modules": [
-      "02"
+      "02",
+      "04",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -6084,7 +6111,8 @@
     "primary_module_for_filing": "01",
     "scientific_object_modules": [
       "01",
-      "06"
+      "06",
+      "08"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -6727,7 +6755,8 @@
     "primary_module_for_filing": "03",
     "scientific_object_modules": [
       "03",
-      "04"
+      "04",
+      "11"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -6740,6 +6769,7 @@
     "sha256": "29d59cc5ebce888ca9248ce276b263f5896f56b5a05ad6ea718d714734776fdd",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
+      "03",
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -7523,6 +7553,7 @@
     "sha256": "48966f8aa36fb15d0b47a18d2c8c50f8337dc9bdbb41cdd72c8770f3ef779f6f",
     "primary_module_for_filing": "02",
     "scientific_object_modules": [
+      "01",
       "02"
     ],
     "pdf_status": "archived_pdf",
@@ -7692,7 +7723,8 @@
     "sha256": "1badcc65fbd4aca6ad380d262b50327189cc12ddefcbe2b835e12bd3bb98ce58",
     "primary_module_for_filing": "01",
     "scientific_object_modules": [
-      "01"
+      "01",
+      "11"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -7720,6 +7752,7 @@
     "primary_module_for_filing": "01",
     "scientific_object_modules": [
       "01",
+      "02",
       "09"
     ],
     "pdf_status": "archived_pdf",

@@ -667,7 +667,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=09; primary_module_for_filing=09; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=09.08.03; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.28877; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02;09; primary_module_for_filing=09; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=09.08.03; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.28877; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 本轮核对原文四门、方法、验证与对象证据后纳入核心；一手全文支持明确科研目标、多步行动、至少一种Agent能力及科研流程角色；具体对象与验证证据已核对，正式笔记保留作者结果和局限。; 笔记为有来源的结构化阅读记录；作者报告结果不等于独立复现."
   },
   {
     "paper_id": "ASD-1097",
