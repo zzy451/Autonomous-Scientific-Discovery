@@ -1,11 +1,15 @@
-# ASD-0361–0640 缺失三级类复核（2026-10-29）
+# ASD-0361–0640 缺三级记录全文复核（2026-10-29）
 
-本段核心库中仍缺 `legacy_tertiary_class` 的记录共 5 篇。
+当前核心库仍缺三级的记录5篇。本轮已实际提取并核对4份本地PDF；ASD-0547本地无PDF。
 
-- 建议现有三级映射：4 篇；
-- `taxonomy_gap`：1 篇（ASD-0547）；
-- 本轮只读，不修改 owner 数据。
+|论文|结论|证据|
+|---|---|---|
+|ASD-0385|04.04.04|本地PDF pp.1,3,6–9：CdSe/CdS core-shell semiconductor quantum dots；光谱峰移与壳层生长验证。|
+|ASD-0478|04.04.02|本地PDF pp.10–11，Section 4/Table 2/Fig.5：multi-component electrolytes maximize lithium metal electrode performance; discharge-time outcomes。|
+|ASD-0528|02.02.09|本地PDF pp.5–6，Exemplar 3: Open-Ended Nanophotonics Problem；可调光学超表面泵浦图案实现自发发射光束转向。|
+|ASD-0547|needs_more_evidence|正式Notes source_limited；当前pdf_path为空，SPIE全文访问受限。|
+|ASD-0632|secondary_boundary_review|本地PDF pp.4–6：Weddell Sea微塑料/表面流速关联；海洋温度系泊数据与GLORYS再分析匹配；ERA5与船载温度对照。|
 
-建议：ASD-0385 与 ASD-0478 的材料实验/合成对象可映射 `04.04.01`；ASD-0528 的本地全文确认物理规律与纳米光子器件设计，可候选 `02.02.14`；ASD-0632 的地球观测数据档案工作流可候选 `05.04.04`。ASD-0547 因 SPIE 全文受限，只保留材料二级分类，暂不强行指定三级。
+3篇高置信建议：0385→04.04.04，0478→04.04.02，0528→02.02.09。0547待补全文；0632需先解决二级边界。不修改owner。
 
-逐条证据位置、置信度和待补页码要求见同名 CSV。
+本报告替代此前候选：此前把04.04.01能源材料用于所有材料实验、把02.02.14高能粒子物理误当光学、把地学档案自动等同05.04.04遥感均不成立。此次已按taxonomy词条原文与PDF内容纠正。
