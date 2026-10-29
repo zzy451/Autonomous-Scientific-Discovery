@@ -1,0 +1,533 @@
+[
+  {
+    "paper_id": "ASD-0121",
+    "title": "Multi-agent system for cosmological parameter analysis",
+    "current_modules": [
+      "02"
+    ],
+    "current_secondary": "02.01",
+    "suggested_tertiary_class": "02.01.05",
+    "confidence": "high",
+    "object_evidence": "cosmological parameter inference; ACT DR6 lensing analysis",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Laverick_2024_Cosmological_Parameter_Analysis.md",
+    "evidence_lines": [
+      47,
+      51,
+      52,
+      72
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0124",
+    "title": "A large language model-empowered agent for reliable and robust structural analysis",
+    "current_modules": [
+      "09"
+    ],
+    "current_secondary": "09.05",
+    "suggested_tertiary_class": "09.05.02",
+    "confidence": "high",
+    "object_evidence": "beam structural analysis and civil/structural engineering problems",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/09_Engineering_and_Industrial_Technology_Sciences/Liu_2025_Structural_Analysis_Agent.md",
+    "evidence_lines": [
+      47,
+      51,
+      52,
+      72
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0125",
+    "title": "Physics-informed LLM-agent for automated modulation design in power electronics systems",
+    "current_modules": [
+      "09"
+    ],
+    "current_secondary": "09.03",
+    "suggested_tertiary_class": "09.03.01",
+    "confidence": "high",
+    "object_evidence": "power electronics / power converter modulation design",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/09_Engineering_and_Industrial_Technology_Sciences/Liu_2024_Modulation_Design_Agent.md",
+    "evidence_lines": [
+      47,
+      51,
+      52,
+      72
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0127",
+    "title": "The AI Cosmologist I: An agentic system for automated data analysis",
+    "current_modules": [
+      "02"
+    ],
+    "current_secondary": "02.01",
+    "suggested_tertiary_class": "02.01.04",
+    "confidence": "medium-high",
+    "object_evidence": "galaxy morphology and cosmological parameter inference",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Moss_2025_AI_Cosmologist_I.md",
+    "evidence_lines": [
+      47,
+      51,
+      52,
+      72
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0128",
+    "title": "MechAgents: Large language model multi-agent collaborations can solve mechanics problems, generate new data, and integrate knowledge",
+    "current_modules": [
+      "04",
+      "09"
+    ],
+    "current_secondary": "09.01",
+    "suggested_tertiary_class": "09.01.02",
+    "confidence": "high",
+    "object_evidence": "mechanics, elasticity and FEM engineering analysis; 04 also supported but primary filing 09",
+    "evidence_source": "first_hand_full_text_via_arxiv_fallback",
+    "note_path": "Notes/09_Engineering_and_Industrial_Technology_Sciences/Ni_2024_MechAgents.md",
+    "evidence_lines": [
+      35,
+      66,
+      77,
+      111
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0129",
+    "title": "OpenFOAMGPT: a RAG-augmented LLM agent for OpenFOAM-based computational fluid dynamics",
+    "current_modules": [
+      "02",
+      "09"
+    ],
+    "current_secondary": "09.01",
+    "suggested_tertiary_class": "09.01.01",
+    "confidence": "high",
+    "object_evidence": "OpenFOAM CFD modeling, case setup and engineering simulation",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/09_Engineering_and_Industrial_Technology_Sciences/Pandey_2025_OpenFOAMGPT.md",
+    "evidence_lines": [
+      32,
+      37,
+      47,
+      49,
+      75
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0132",
+    "title": "Many heads are better than one: Improved scientific idea generation by a LLM-based multi-agent system",
+    "current_modules": [
+      "11"
+    ],
+    "current_secondary": "11.07",
+    "suggested_tertiary_class": "11.07.10",
+    "confidence": "medium-high",
+    "object_evidence": "scientific idea generation and evaluation as knowledge-production process",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Su_2025_VirSci.md",
+    "evidence_lines": [
+      32,
+      47,
+      49,
+      75
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0133",
+    "title": "Interpreting multi-band galaxy observations with large language model-based agents",
+    "current_modules": [
+      "02"
+    ],
+    "current_secondary": "02.01",
+    "suggested_tertiary_class": "02.01.04",
+    "confidence": "high",
+    "object_evidence": "JWST multi-band galaxy observations and astrophysical interpretation",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Sun_2024_Mephisto_Galaxy_Observations.md",
+    "evidence_lines": [
+      34,
+      48,
+      50,
+      80
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0134",
+    "title": "ChemAgent: Self-updating library in large language models improves chemical reasoning",
+    "current_modules": [
+      "03"
+    ],
+    "current_secondary": "03.01",
+    "suggested_tertiary_class": "03.01.04",
+    "confidence": "medium-high",
+    "object_evidence": "ChemAgent chemical reasoning and SciBench chemistry datasets",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/03_Chemical_Sciences/Tang_2025_ChemAgent.md",
+    "evidence_lines": [
+      60,
+      72,
+      179,
+      262
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0135",
+    "title": "A multi-agent framework integrating large language models and generative AI for accelerated metamaterial design",
+    "current_modules": [
+      "04"
+    ],
+    "current_secondary": "04.04",
+    "suggested_tertiary_class": "04.04.05",
+    "confidence": "high",
+    "object_evidence": "freeform metamaterial / metasurface structure-property design",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/04_Materials_Science/Tian_2025_CrossMatAgent_Metamaterial_Design.md",
+    "evidence_lines": [
+      34,
+      65,
+      76,
+      110
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0136",
+    "title": "StarWhisper Telescope: An AI framework for automating end-to-end astronomical observations",
+    "current_modules": [
+      "02"
+    ],
+    "current_secondary": "02.01",
+    "suggested_tertiary_class": "02.01.09",
+    "confidence": "high",
+    "object_evidence": "automated astronomical observation planning and telescope operation",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Wang_2024_StarWhisper_Telescope.md",
+    "evidence_lines": [
+      32,
+      47,
+      49,
+      76
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0139",
+    "title": "Advancing AI-scientist understanding: Making LLM think like a physicist with interpretable reasoning",
+    "current_modules": [
+      "02"
+    ],
+    "current_secondary": "02.02",
+    "suggested_tertiary_class": "02.02.16",
+    "confidence": "medium",
+    "object_evidence": "physics problem solving, modeling and validation benchmarks",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Xu_2025_Interpretable_Physics_Reasoning.md",
+    "evidence_lines": [
+      53,
+      59,
+      161,
+      238
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_with_boundary_note"
+  },
+  {
+    "paper_id": "ASD-0140",
+    "title": "Large language models for automated open-domain scientific hypotheses discovery",
+    "current_modules": [
+      "11"
+    ],
+    "current_secondary": "11.07",
+    "suggested_tertiary_class": "11.07.10",
+    "confidence": "medium-high",
+    "object_evidence": "automated scientific hypothesis discovery / knowledge-production ideation",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yang_2024_Open_Domain_Hypotheses_Discovery.md",
+    "evidence_lines": [
+      22,
+      28,
+      48
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0145",
+    "title": "CycleResearcher: Improving automated research via automated review",
+    "current_modules": [],
+    "current_secondary": "01.04",
+    "suggested_tertiary_class": "01.04.03",
+    "confidence": "high",
+    "object_evidence": "general research-review-refinement workflow automation; no concrete domain object",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Weng_2025_CycleResearcher.md",
+    "evidence_lines": [
+      24,
+      55,
+      61,
+      165,
+      242
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0146",
+    "title": "AIGS: Generating Science from AI-Powered Automated Falsification",
+    "current_modules": [
+      "01"
+    ],
+    "current_secondary": "01.04",
+    "suggested_tertiary_class": "01.02.13",
+    "confidence": "high",
+    "object_evidence": "computational research tasks including data engineering, alignment and language modeling; update stale 01.04 secondary",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Liu_2024_AIGS.md",
+    "evidence_lines": [
+      24,
+      50
+    ],
+    "secondary_update_required": true,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0147",
+    "title": "Nova: An iterative planning and search approach to enhance novelty and diversity of LLM-generated ideas",
+    "current_modules": [
+      "01"
+    ],
+    "current_secondary": "01.04",
+    "suggested_tertiary_class": "01.02.13",
+    "confidence": "high",
+    "object_evidence": "computational research-paper corpus and idea generation evaluation; update stale 01.04 secondary",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Hu_2024_Nova.md",
+    "evidence_lines": [
+      23,
+      48
+    ],
+    "secondary_update_required": true,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0149",
+    "title": "A flexible and affordable self-driving laboratory for automated reaction optimization",
+    "current_modules": [
+      "03",
+      "09"
+    ],
+    "current_secondary": "03.03",
+    "suggested_tertiary_class": "03.03.02",
+    "confidence": "high",
+    "object_evidence": "reaction optimization case studies in self-driving laboratory",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/03_Chemical_Sciences/Pilon_2026_RoboChem_Flex.md",
+    "evidence_lines": [
+      22,
+      24,
+      47,
+      144
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0150",
+    "title": "A dynamic knowledge graph approach to distributed self-driving laboratories",
+    "current_modules": [
+      "03"
+    ],
+    "current_secondary": "03.03",
+    "suggested_tertiary_class": "03.03.02",
+    "confidence": "high",
+    "object_evidence": "aldol condensation reaction optimization in distributed self-driving labs",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/03_Chemical_Sciences/Bai_2024_Distributed_Self_Driving_Labs.md",
+    "evidence_lines": [
+      22,
+      24,
+      47,
+      58,
+      110
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0151",
+    "title": "Self-driving lab discovers principles for steering spontaneous emission beyond conventional Fourier optics",
+    "current_modules": [
+      "02",
+      "04"
+    ],
+    "current_secondary": "04.04",
+    "suggested_tertiary_class": "04.04.05",
+    "confidence": "medium-high",
+    "object_evidence": "spontaneous-emission control / photonic material discovery; 02.02.09 optics evidence also noted",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/04_Materials_Science/Desai_2026_Spontaneous_Emission_SDL.md",
+    "evidence_lines": [
+      47
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0154",
+    "title": "Real-time experiment-theory closed-loop interaction for autonomous materials science",
+    "current_modules": [
+      "04"
+    ],
+    "current_secondary": "04.04",
+    "suggested_tertiary_class": "04.01.01",
+    "confidence": "high",
+    "object_evidence": "Sn-Bi thin-film temperature-composition phase diagram discovery",
+    "evidence_source": "first_hand_full_text_via_arxiv_fallback",
+    "note_path": "Notes/04_Materials_Science/Liang_2025_AMASE.md",
+    "evidence_lines": [
+      22,
+      53,
+      59,
+      161,
+      190,
+      238
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0155",
+    "title": "A multi-agentic framework for real-time, autonomous freeform metasurface design",
+    "current_modules": [
+      "04"
+    ],
+    "current_secondary": "04.04",
+    "suggested_tertiary_class": "04.04.05",
+    "confidence": "high",
+    "object_evidence": "freeform dielectric metasurface and metalens/deflector design",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/04_Materials_Science/Lupoiu_2025_Freeform_Metasurface_Design.md",
+    "evidence_lines": [
+      53,
+      59,
+      161,
+      238
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0156",
+    "title": "Bridging electron microscopy and materials analysis with an autonomous agentic platform",
+    "current_modules": [
+      "04"
+    ],
+    "current_secondary": "04.01",
+    "suggested_tertiary_class": "04.01.03",
+    "confidence": "high",
+    "object_evidence": "electron microscopy materials characterization and structure/property analysis",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/04_Materials_Science/Chen_2026_EMSeek.md",
+    "evidence_lines": [
+      53,
+      59,
+      161,
+      238
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0158",
+    "title": "A robotic platform for flow synthesis of organic compounds informed by AI planning",
+    "current_modules": [
+      "03"
+    ],
+    "current_secondary": "03.03",
+    "suggested_tertiary_class": "03.03.01",
+    "confidence": "high",
+    "object_evidence": "AI-planned robotic organic compound flow synthesis",
+    "evidence_source": "first_hand_abstract_and_metadata",
+    "note_path": "Notes/03_Chemical_Sciences/Coley_2019_Flow_Synthesis_AI_Planning.md",
+    "evidence_lines": [
+      22,
+      53,
+      59,
+      161,
+      190,
+      238
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0179",
+    "title": "Chemist-x: Large language model-empowered agent for reaction condition recommendation in chemical synthesis",
+    "current_modules": [
+      "03"
+    ],
+    "current_secondary": "03.03",
+    "suggested_tertiary_class": "03.03.02",
+    "confidence": "high",
+    "object_evidence": "reaction-condition recommendation and optimization in chemical synthesis",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/03_Chemical_Sciences/Chen_2023_ChemistX_Reaction_Conditions.md",
+    "evidence_lines": [
+      21,
+      22,
+      23,
+      53,
+      59,
+      69,
+      161,
+      177
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  },
+  {
+    "paper_id": "ASD-0186",
+    "title": "MARG: Multi-Agent Review Generation for Scientific Papers",
+    "current_modules": [
+      "11"
+    ],
+    "current_secondary": "11.07",
+    "suggested_tertiary_class": "11.07.09",
+    "confidence": "medium-high",
+    "object_evidence": "scientific paper feedback and peer-review evidence/quality evaluation",
+    "evidence_source": "first_hand_full_text",
+    "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/DArcy_2024_MARG.md",
+    "evidence_lines": [
+      22,
+      53,
+      59,
+      131,
+      198
+    ],
+    "secondary_update_required": false,
+    "decision": "assign_tertiary"
+  }
+]

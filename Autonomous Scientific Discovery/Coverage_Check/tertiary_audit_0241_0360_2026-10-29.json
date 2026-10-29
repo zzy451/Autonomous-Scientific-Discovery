@@ -1,0 +1,34 @@
+[
+  {
+    "paper_id": "ASD-0280",
+    "title": "An automatic end-to-end chemical synthesis development platform powered by large language models",
+    "current_primary_module": "03",
+    "current_secondary_class": "03.03",
+    "current_tertiary_class": "",
+    "suggested_tertiary_class": "03.03.02",
+    "suggested_tertiary_name": "反应设计",
+    "alternative_tertiary_class": "03.03.05",
+    "alternative_tertiary_name": "合成路线规划",
+    "evidence_location": "Notes/03_Chemical_Sciences/Ruan_2024_LLM_RDF_Chemical_Synthesis.md；Nature HTML full text；摘要与方法中 copper/TEMPO oxidation、reaction screening、kinetics、condition optimization、scale-up、purification及多类反应验证",
+    "confidence": "high",
+    "needs_evidence": "no",
+    "decision": "assign_candidate_tertiary",
+    "reason": "论文的具体研究对象是化学反应及合成开发流程；其主要科学任务是反应条件筛选与优化。合成路线规划是可选次级解释，但当前单三级字段建议使用反应设计。"
+  },
+  {
+    "paper_id": "ASD-0333",
+    "title": "MOOSE-Chem: Large language models for rediscovering unseen chemistry scientific hypotheses",
+    "current_primary_module": "03",
+    "current_secondary_class": "03.04",
+    "current_tertiary_class": "",
+    "suggested_tertiary_class": "03.04.01",
+    "suggested_tertiary_name": "分子生成与分子设计",
+    "alternative_tertiary_class": "",
+    "alternative_tertiary_name": "",
+    "evidence_location": "Notes/03_Chemical_Sciences/Yang_2024_MOOSE_Chem.md，arXiv PDF pp.1–2；chemistry-specific benchmark、inspiration retrieval、hypothesis composition、hypothesis ranking、51篇化学论文及专家标注",
+    "confidence": "medium",
+    "needs_evidence": "yes",
+    "decision": "assign_with_taxonomy_note",
+    "reason": "现有03.04三级树没有“化学假设发现/重发现”专门条目。03.04.01是最接近的现有入口，但论文评测对象是化学科学假设而非明确分子生成，因此写回前应记录taxonomy pressure并在后续规则中决定是否保留该映射。"
+  }
+]
