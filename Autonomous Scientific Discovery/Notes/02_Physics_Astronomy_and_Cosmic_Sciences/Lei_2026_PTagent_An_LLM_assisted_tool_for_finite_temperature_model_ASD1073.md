@@ -152,3 +152,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`02.02.14` 粒子物理学；二级：`02.02`。
+- 原文位置：PDF pp.13。
+- 判定：Concrete experiment/task evidence supports 02.02.14 (粒子物理学). s under the approved prescription. 4.3. Model construction from a dimensionally reduced EFT We illustrate the three-dimensional EFT workflow using the xSM implemented in the DRalgo source file xsm_test.m, provided in the PTagent repository. This file is adapted from the official DRalgo xSM example [25] to describe a specific Z2-symmetric model and a well-defined dimensional-reduction setup. In particular, the singlet
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

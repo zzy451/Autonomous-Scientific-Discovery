@@ -273,3 +273,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 推荐引用强度：standard
 是否仍需进一步全文复核：否
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`03.04.02` 小分子性质优化；二级：`03.04`。
+- 原文位置：PDF pp.5,6。
+- 判定：Concrete experiment/task evidence supports 03.04.02 (小分子性质优化). Molecule Optimization ... Physicochemical Properties (LogP, QED, Solubility) ... Protein-Ligand Binding Affinities (DRD2, GSK3-β, JNK3) ... Property Improvement score
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

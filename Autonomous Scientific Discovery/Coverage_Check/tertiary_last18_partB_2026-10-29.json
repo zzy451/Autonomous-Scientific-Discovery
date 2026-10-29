@@ -1,0 +1,122 @@
+[
+  {
+    "paper_id": "ASD-0975",
+    "code": "01.02.12",
+    "confidence": "high",
+    "pages": [
+      3,
+      4
+    ],
+    "quote": "We selected 71 problems of different difficulties from the Formal Conjectures dataset (Firsching et al., 2026; The Formal Conjectures Authors, 2025), spanning from relatively simple problems (e.g. complexity_three_pow), to hard classical theorems with known solutions (e.g. Catalan’s Conjecture), near-frontier and recently solved problems (e.g. Erdős Problem 835 on subset sums, Jacobian Conjecture, Sendov’s Conjecture), as well as unsolved open conjectures (e.g. Square-Freeness of Fermat Numbers). Agents could submit solutions to open problems, which were evaluated via an automated pipeline with three sequential checks: (1) a static keyword blacklist (axiom, sorry, macro, syntax), (2) byte-level string matching ensuring code outside the designated – EDITABLE markers remained 3  Our goal was to observe how autonomous multi-agent collectives collaborate on research with verifiable goals. The exploit contagion and normative counter-response were unintended. 3. Anatomy of the Exploit and Normative Response While the forensic timeline below details the first documented case of this behavior, both the rapid ex- ploit contagion and the emergent whistleblowing response were reliably reproduced across subsequent independent runs. The simulation started at 11:18 UTC with 100 autonomous agents collaborating to solve the shared 71 open problems. At 12:15 UTC, after the collective had correctly solved 37 out of the 71 problems, prover-theta discovered an exploit in the autograd",
+    "reason": "????100?Agent???????????????????????????AI?????????01.02.12????Lean??????????p3???????Catalan?Fermat???????Erd?s????????????????01.01.03???01.01.12??????????71??????????",
+    "source": "Autonomous Scientific Discovery\\Reference_PDF\\01_Formal_Information_and_Computational_Sciences\\Davide_2026_A_Case_Study_on_Emergent_Cheating_and_Whistleblowing_in_ASD0975.pdf",
+    "additional_evidence_codes": [
+      "01.01.03",
+      "01.01.12"
+    ],
+    "requires_secondary_change": true
+  },
+  {
+    "paper_id": "ASD-0983",
+    "code": "04.04.04",
+    "confidence": "high",
+    "pages": [
+      1
+    ],
+    "quote": "cally defensible value can be obtained. We evaluated the workflow on optical transmittance spectra from 203 epitaxial β-Ga2O3 films grown during a previously reported self-driving thin-film growth campaign. The predefined optical analysis script returned Urbach energy, an optical-quality metric, for 183 spectra and failed for 20. The agent retained those 183 values and evaluated 20 exception cases, recovering 16 through bounded parameter adjustments and returning NaN for 4 when the spectral evidence did not support a reliable Urbach tail. The audit records captured spectral features, parameter changes, and rationale for each decision. These results demonstrate autonomous scientific exception handling by an LLM agent while leaving quantitative property extraction to deterministic numerical analysis. 1. Introduction Materials synthesis and processing often involve large multidimensional parameter spaces in which experiments are costly and exhaustive exploration is impractical.⁠1 Self-driving laboratories (SDLs) address this challenge by autonomously closing the loop among materials synthesis, characterization, data analysis, and algorithmic selection of subsequent experiments, using artificial intelligence and machine learning (AI/ML).⁠2⁠–⁠5 By iteratively directing experiments toward informative or promising regions of ",
+    "reason": "203??Ga2O3?????????Urbach????????????183???16???4??????????????????????????????04.04.04?????04.01.03??????????????",
+    "source": "Autonomous Scientific Discovery\\Reference_PDF\\04_Materials_Science\\Wakabayashi_2026_Autonomous_adaptive_spectral_analysis_with_an_LLM_agent_for_ASD0983.pdf",
+    "additional_evidence_codes": [
+      "04.01.03"
+    ]
+  },
+  {
+    "paper_id": "ASD-0984",
+    "code": "03.02.03",
+    "confidence": "high",
+    "pages": [
+      4,
+      13
+    ],
+    "quote": "ections (𝑅p = 2.753%, 𝑅wp = 5.926%). b, Five-phase analysis of an ancient Egyptian cosmetic powder containing gypsum, phosgenite, cerussite, galena and laurionite (𝑅p = 6.600%, 𝑅wp = 13.079%). c, Operando analysis of an O3-type Li(Ni0.8Co0.1Mn0.1)O2 cathode. The voltage–time trace (left), diffraction waterfall (centre; colour indicates scan order) and refined 𝑐axis (right) connect electrochemical cycling to lattice evolution. d, Refinement of the selected Ru–Mn oxide configuration (𝑅p = 1.447%, 𝑅wp = 3.129%). In a,b,d, pale blue symbols and red curves denote observed and calculated intensities; Δ𝐼= 𝐼obs −𝐼calc is the difference profile, and ticks mark calculated Bragg positions. e, Single-phase identification on MP500, RRUFF and opXRD: bars show top-1 accuracy and heat maps show top-1, top-3, top-5 and mean reciprocal rank (MRR@5). f, Multiphase identification on the same sources: bars show sample-wise macro-F1 and heat maps show prediction coverage (Cov.), exact-set recovery (Exact), precision (P), recall (R) and F1. Open and filled bars denote XRD-only and composition-assisted conditions. Gan Jiang is highlighted in red. Higher scores are better. Full values and composition-input protocols are given in Tables 1 and 2. 4 ",
+    "reason": "???????????????????????????????XRD??????????????????????????????????????04.01.03??03.02?03.02.03????",
+    "source": "Autonomous Scientific Discovery\\Reference_PDF\\03_Chemical_Sciences\\Cao_2026_A_self_learning_scientific_agent_for_X_ray_diffraction_ASD0984.pdf",
+    "additional_evidence_codes": [
+      "04.01.03"
+    ]
+  },
+  {
+    "paper_id": "ASD-0986",
+    "code": "04.03.04",
+    "confidence": "high",
+    "pages": [
+      11
+    ],
+    "quote": "in the end-to-end autonomous experiment The complete workflow was evaluated on a PLZT relaxor ferroelectric with a single instruction – determine how local domain structure affects polarization switching dynamics. The context stated that this was a DART-PFM measurement on PLZT with complex domain structure. No spatial criteria, measurement locations, spectroscopy waveform, experimental trajectory, or stopping rule were specified for the agent. The system was initialized from the operator's current instrument configuration. The first 15 × 15 µm scan contained clear polarization-related phase contrast together with topographic scratches and banding in the resonance-frequency channel (Figure 7A). From this scan and the scientific task, the workflow generated three primary spatial coordinates – domain polarization state, domain-wall proximity, and local phase heterogeneity (Figure 7B). An independent acquisition-validity map excluded scratch-like topography and reduced the ",
+    "reason": "p11??PLZT???????????????????????????????????????????????????????????????????????04.03.04?PFM?????04.01.03???",
+    "source": "Autonomous Scientific Discovery\\Reference_PDF\\04_Materials_Science\\Slautin_2026_Hierarchical_automation_of_scanning_probe_microscopy_through_agentic_orchestration_ASD0986.pdf",
+    "additional_evidence_codes": [
+      "04.01.03"
+    ]
+  },
+  {
+    "paper_id": "ASD-1011",
+    "code": "03.03.03",
+    "confidence": "high",
+    "pages": [
+      5
+    ],
+    "quote": "h that a task had started or completed. We collected 32 research tasks from domain experts, with eight tasks in each of four catalysis domains (Fig. 2B, note 4 of the supplementary text, and table S8). Together, these tasks formed a test suite for general catalysis research spanning electrocatalysis, electrochemical materials and testing, photocatalysis and thermal catalysis. Electrocatalysis tasks covered the oxygen evolution, hydrogen evolution, urea oxidation and ethanol oxidation reactions. Electrodes tasks covered cyclic voltammetry, impedance spectroscopy and ion-storage measurements. Photocatalysis tasks addressed H2 and H2O2 production and selective oxidation, whereas thermal-catalysis tasks focused on selective hydrogenation. Rather than repeating a canonical protocol, the suite required different combinations of sample synthesis, structural characterization, reaction testing and product analysis. A representative task asks the agent to improve urea conversion and target-product yield for Ni-based catalysts in alkaline urea oxidation. The agent must design and dispatch an experiment to robotic Laboratory 303 and return the resulting task identifier. To fulfil this request, it must recover six implicit fields: the goal, reaction, material, constraints, workflow and expected output. These fields must then be tra",
+    "reason": "32???????????????????OER/HER/?????????????/?????????????????????????????????03.01??03.03.03???N10?????????????4608?????????",
+    "source": "Autonomous Scientific Discovery\\Reference_PDF\\03_Chemical_Sciences\\Guo_2026_Stress_testing_large_language_model_agents_in_a_robotic_ASD1011.pdf",
+    "requires_secondary_change": true
+  },
+  {
+    "paper_id": "ASD-1063",
+    "code": "05.02.05",
+    "confidence": "high",
+    "pages": [
+      7,
+      9
+    ],
+    "quote": "required by such a multi-step workflow. We selected the China Seas circulation study of Gan et al. [21, 18] the authors identified vertically alternating rotating circulation through a connected sequence of transport stream function, Stokes’ theorem, and vorticity dynamics. This case, therefore, evaluated whether OceanMind could reconstruct a multi-step physical diagnosis rather than generate isolated plots. We applied OceanMind to daily velocity output of CMOMS from 2011 to 2022 to reproduce the China Seas circulation diagnostics presented in Figs. 10, 11, 12, and 14 of Gan et al. [21] (here, Fig. 3a-d). The complete reproduction queries, computational workflows, intermediate results, and evidence-based summaries are provided in Supplementary Sections 3.1 to 3.4. In the winter fields shown in Fig. 3a, the upper-layer stream function ranged from −53.7 to +38.7 Sv, compared to −16.7 to +4.3 Sv in the weaker, predominantly negative middle-layer field and −43.7 to +22.1 Sv in the deep field. Figure 3b shows a winter upper-layer relative-vorticity field with a domain mean of 7.38 × 10−8 s−1 and localized extrema of +6.77 × 10−5 and −8.75 × 10−5 s−1 near the Philippine Sea. Figure 3c presents 30-day-smoothed time-depth climatologies of area-averaged relative vorticity computed from 4,383 daily fields. The South China Sea an",
+    "reason": "2011?2022??????????????????????????????Sv?s^-1????????????????????????05.02.05?",
+    "source": "Autonomous Scientific Discovery\\Reference_PDF\\05_Earth_and_Environmental_Sciences\\Fan_2026_OceanMind_A_multi_agent_AI_system_for_ocean_diagnosis_ASD1063.pdf"
+  },
+  {
+    "paper_id": "ASD-1068",
+    "code": "02.02.16",
+    "confidence": "high",
+    "pages": [
+      5,
+      8
+    ],
+    "quote": "55 sites; 1,024 turns / 10 sites Fig. 2 Workflow of Brilliance for designing a 3.5 GeV synchrotron light source targeting a natural emittance below 30 pm · rad. The agent starts with a linear optics design and proceeds to nonlinear dynamics checks. When these checks fail, it changes strategy to rebuild the linear optics, and ulti- mately meets the nonlinear requirements through nonlinear beam dynamics optimization. The investigation process of Brilliance is summarized in Fig. 2 and the original data of the full process is available at Ref. [26]. Within this scope, Brilliance is responsible for constructing the parameterization, developing the simulation and optimization pro- grams, and selecting the calculations needed to evaluated and improve the candidates. The initial radiation and chromatic-correction studies reaches an apparently promis- ing solution near 17.283 pm·rad that has met the preferred target. However, chromatic correction and short particle-tracking screens exposes poor nonlinear acceptance. Low 5 ",
+    "reason": "?????3.5GeV??????????????????????????????????????????????02.02.16?????????????LLM???????????????????????????",
+    "source": "Autonomous Scientific Discovery\\Reference_PDF\\02_Physics_Astronomy_and_Cosmic_Sciences\\Jinyu_2026_Brilliance_toward_autonomous_computational_research_in_particle_accelerator_physics_ASD1068.pdf"
+  },
+  {
+    "paper_id": "ASD-1073",
+    "code": "02.02.14",
+    "confidence": "high",
+    "pages": [
+      13
+    ],
+    "quote": "s under the approved prescription. 4.3. Model construction from a dimensionally reduced EFT We illustrate the three-dimensional EFT workflow using the xSM implemented in the DRalgo source file xsm_test.m, provided in the PTagent repository. This file is adapted from the official DRalgo xSM example [25] to describe a specific Z2-symmetric model and a well-defined dimensional-reduction setup. In particular, the singlet interactions that are odd under the Z2 symmetry are removed, and the original tutorial’s multiple reduction paths are restricted to a single setup that retains both the Higgs and singlet scalar fields in the three-dimensional theory. The adapted file also specifies the Standard Model hypercharges and employs a consistent mass-basis treatment, including the rotation of interaction tensors required for higher-order effective-potential calculations. Starting from this DRalgo source, PTagent identifies the relevant model information and invokes DRalgo to obtain the matched three-dimensional effective theory. The calculation can be initiated with the following instruction. $ptagent Use xsm_test.m to generate a PhaseTracer model with the default scale policy. Set inputs: mS = 572, lambda_hs = 9.7, lambda_s = 0.96. From the supplied source, PTagent identifies the field content, interactions, and dimensional-reduc",
+    "reason": "????xSM??Higgs?????/??/Yukawa????????????????????????????????????02.02.14??????????????????????",
+    "source": "Autonomous Scientific Discovery\\Reference_PDF\\02_Physics_Astronomy_and_Cosmic_Sciences\\Lei_2026_PTagent_An_LLM_assisted_tool_for_finite_temperature_model_ASD1073.pdf"
+  },
+  {
+    "paper_id": "ASD-1096",
+    "code": "03.02.03",
+    "confidence": "high",
+    "pages": [
+      5,
+      6,
+      9
+    ],
+    "quote": "Analytical Chemistry Physical Chemistry Organic Chemistry Polymer Chemistry Inorganic Chemistry Biochemistry Molecular Biology Cell Biology Structural Biology Biophysics Genetics Immunology Physiology Organic/Polymer Materials Inorganic Materials Composite Materials Metallic Materials Cross 2 disciplines Within-discipline Cross all 3 disciplines Chemistry Biology Materials Figure 2. SEE consists of 1,116 questions spanning 3 disciplines and 17 reported sub-fields. Interdisci- plinary questions are represented by lines connecting two or more sub-fields. Line thickness indicates the number of co-occurring questions across reported sub-fields. Gray lines represent cross-discipline overlap (spanning two disciplines). data contributed by experts. Visual evidence covers common experimental data structures in laboratory research, including bioactivity measurements, Cryo-EM structures, Western blot and gel electrophoresis images, spectra such as infrared spectroscopy, nuclear magnetic resonance (NMR) and mass spectrometry (MS), microscopy images such as SEM, TEM and AFM, X-ray diffraction patterns, and thermal analysis curves. Style. The questions in SEE include choice-based, short-answer, numerical, measurement, and image-processing tasks. Some questions contain explicit option lists, w",
+    "reason": "SEE????p6??????NMR?????????????XRD?????p5?2?p9?5???????????????????benchmark?????????????????????3????????????????/??/??/?????????????",
+    "source": "Autonomous Scientific Discovery\\Reference_PDF\\03_Chemical_Sciences\\Han_2026_Science_Edge_Evaluation_SEE_the_Missing_Step_Toward_Real_ASD1096.pdf"
+  }
+]

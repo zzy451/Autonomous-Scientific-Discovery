@@ -262,3 +262,11 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.03.01` 高分子材料；二级：`04.03`。
+- 原文位置：Reference_PDF/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.pdf; PDF p.1; Autonomous Multi-Agent AI for High-Throughput Polymer Informatics: From Property Prediction to Generative Design Across Synthetic and Bio-Polymers Mahule Roy Institute of Biomedical Engineering University of Oxford Oxford OX1 2JD, UK Adib Bazgir Department of Mechanical and Aerospace Engineering University of Missouri–Columbia Columbia, MO 65211, USA Arthur da Silva Sousa Santos Center for Engineering, Modeling and Applied Social Sciences Federal University of ABC (UFABC) Bang´u, Santo Andr´e - SP, 09280-560, Brazil Yuwen Zhang∗ Department of Mechanical and Aerospace Engineering University of Missouri–Columbia Columbia, MO 65211, USA Abstract We present an integrated multiagent AI ecosystem 。
+- 判定：polymer informatics and synthetic/bio-polymer design
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

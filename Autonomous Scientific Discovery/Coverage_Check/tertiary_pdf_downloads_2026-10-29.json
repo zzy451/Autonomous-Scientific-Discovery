@@ -1,0 +1,42 @@
+[
+  {
+    "paper_id": "ASD-0873",
+    "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/ASD-0873_Large_Knowledge_Model_A_Knowledge_Foundation_for_Agentic_Science_at_Scale.pdf",
+    "pages": 14,
+    "bytes": 602831,
+    "sha256": "c89fba20c04d0c545c8dce812cad42a2184a8a837c15131f45d5db9348ee2f88",
+    "source": "https://arxiv.org/abs/2609.27297"
+  },
+  {
+    "paper_id": "ASD-0987",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0987.pdf",
+    "pages": 72,
+    "bytes": 2200711,
+    "sha256": "c2af460acb5188b0c95f676c24c4e172e71c656dbb30cc5d83f3f4d581dcb1fb",
+    "source": "https://arxiv.org/abs/2608.22400"
+  },
+  {
+    "paper_id": "ASD-1007",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-1007_Agentic_schema-guided_extraction_of_materials_process_knowledge_from_scientific_literature.pdf",
+    "pages": 21,
+    "bytes": 1927533,
+    "sha256": "d4f5f31f9102d6d318e840c0c118a19f861757af491d84b603344c969efd073d",
+    "source": "https://arxiv.org/abs/2610.06322"
+  },
+  {
+    "paper_id": "ASD-1045",
+    "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/ASD-1045_CFD_Forge_A_Physics-Constrained_Agentic_Framework_for_Autonomous_CFD.pdf",
+    "pages": 32,
+    "bytes": 3201324,
+    "sha256": "80f09f3a2e295d2dfa1c7a620438facbde5b1087b966b9d4ffe3942022cc8e97",
+    "source": "https://arxiv.org/abs/2610.14104"
+  },
+  {
+    "paper_id": "ASD-1049",
+    "pdf_path": "Reference_PDF/03_Chemical_Sciences/ASD-1049_El_Agente_Potente_High-Throughput_Agentic_Atomistic_Simulations.pdf",
+    "pages": 64,
+    "bytes": 17942227,
+    "sha256": "e00323c2646b34980bff858b56d5d999d87a27ae27ce47e6f5f9e1ee4f30198c",
+    "source": "https://arxiv.org/abs/2609.14840"
+  }
+]

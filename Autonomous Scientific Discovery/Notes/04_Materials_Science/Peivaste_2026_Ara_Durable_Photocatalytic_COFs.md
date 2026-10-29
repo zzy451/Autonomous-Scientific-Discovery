@@ -235,9 +235,9 @@
 
 ### 9.2 速记版 pipeline
 
-1. 提出 COF candidate  
-2. 调 screening pipeline 算性质与稳定性  
-3. 根据反馈继续提新候选  
+1. 提出 COF candidate
+2. 调 screening pipeline 算性质与稳定性
+3. 根据反馈继续提新候选
 4. 输出更优 photocatalyst materials
 
 ### 9.3 标注字段汇总
@@ -268,3 +268,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.03.05` 多孔材料；二级：`04.03`。
+- 原文位置：Reference_PDF/04_Materials_Science/Peivaste_2026_Ara_Durable_Photocatalytic_COFs.pdf; PDF p.2; Evaluated against random search and Bayesian optimization (BO) over a space consisting of candidates with various nodes, linkers, linkages, and r-groups, screened with a GFN1-xTB fragment pipeline, Ara achieves a 52.7% hit rate (11.5× random, p = 0.006), finds its first hit at iteration 12 versus 25 for random search, and significantly outperforms BO (p = 0.006).。
+- 判定：photocatalytic covalent organic framework materials
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

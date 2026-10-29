@@ -167,3 +167,11 @@ multi_module_object_coverage_note: The old 10-only boundary treated geology as m
 ## 9. 总结
 
 该文稳定归入 `10.02`：它研究的是 rover autonomous targeting，而不是地质测量对象本身。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.03` 深空探测；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2014_ChemCam_Automated_Targeting.pdf; PDF p.1; The first involves automated targeting of ChemCam during or after long drives by finding rock targets in Navigation Camera images.。
+- 判定：MSL ChemCam automated targeting
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

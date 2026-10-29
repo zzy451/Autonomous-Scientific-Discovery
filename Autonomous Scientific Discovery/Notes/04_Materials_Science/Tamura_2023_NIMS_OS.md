@@ -139,3 +139,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.04.02` 电池材料；二级：`04.04`。
+- 原文位置：本地PDF pp.10–11，Section 4/Table 2/Fig.5：multi-component electrolytes maximize lithium metal electrode performance; discharge-time outcomes。。
+- 判定：具体材料案例为锂金属电极电池电解液；04.04.02电池材料匹配，不应归04.04.01能源材料的笼统落点。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

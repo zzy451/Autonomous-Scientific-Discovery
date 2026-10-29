@@ -273,3 +273,11 @@ Agent 类型：LLM Agent; Tool-using Agent; Retrieval-augmented Agent; Hybrid Ag
 推荐引用强度：standard
 是否仍需进一步全文复核：否
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`03.04.02` 小分子性质优化；二级：`03.04`。
+- 原文位置：PDF p.1。
+- 判定：记忆模块服务于分子性质多目标优化。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

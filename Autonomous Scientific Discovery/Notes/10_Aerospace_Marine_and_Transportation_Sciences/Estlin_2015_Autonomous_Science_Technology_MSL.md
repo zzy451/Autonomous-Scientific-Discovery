@@ -217,3 +217,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.03` 深空探测；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2015_Autonomous_Science_Technology_MSL.pdf; PDF p.1; Developing Autonomous Science Technology for the MSL Rover Mission Tara Estlin*, Daniel Gaines*, Benjamin Bornstein*, Steve Schaffer*, Vandi Verma*, Robert C.。
+- 判定：MSL rover autonomous science technology
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

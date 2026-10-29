@@ -284,3 +284,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`03.03.03` 催化化学；二级：`03.03`。
+- 原文位置：Reference_PDF/03_Chemical_Sciences/Unknown_2026_Autonomous_Computational_Catalysis.pdf; PDF p.1; Autonomous computational catalysis through an agentic research system Authors: Honghao Chen 1, Jiangjie Qiu 1, Yi Shen Tew 1, Xiaonan Wang 1* Affiliations: 1.。
+- 判定：autonomous computational catalysis
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

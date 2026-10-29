@@ -237,9 +237,9 @@
 
 ### 9.2 速记版 pipeline
 
-1. 提出 catalyst candidate  
-2. 自动生成并执行 DFT  
-3. review 结果并回传  
+1. 提出 catalyst candidate
+2. 自动生成并执行 DFT
+3. review 结果并回传
 4. 继续搜索更优材料
 
 ### 9.3 标注字段汇总
@@ -270,3 +270,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.04.03` 催化材料；二级：`04.04`。
+- 原文位置：Reference_PDF/04_Materials_Science/Rothfarb_2026_Heterogeneous_Catalyst_Discovery.pdf; PDF p.2; Across two chemical applications, CO adsorption on Cu surface transition metal adatoms and on M- N-C catalysts, reasoning-guided exploration reduces required atomistic simulations by up to 90% relative to heuristic or random selection.。
+- 判定：heterogeneous catalyst discovery with materials catalyst properties
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

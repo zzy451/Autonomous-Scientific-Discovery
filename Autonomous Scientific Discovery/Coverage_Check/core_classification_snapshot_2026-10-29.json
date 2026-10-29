@@ -1,0 +1,105 @@
+{
+  "snapshot_date": "2026-10-29",
+  "core_papers": 663,
+  "formal_domain_papers": 654,
+  "general_method_papers": 9,
+  "primary_tertiary_resolved": 653,
+  "primary_tertiary_pending": 1,
+  "legacy_tertiary_blank": 1,
+  "multi_module_papers": 195,
+  "module_pairs": 925,
+  "module_pairs_with_tertiary": 756,
+  "pending_module_pairs": 87,
+  "local_core_pdfs": 600,
+  "module_pairs_without_tertiary": 169,
+  "modules": [
+    {
+      "module": "01",
+      "papers": 89,
+      "primary_filings": 83,
+      "primary_tertiary_resolved": 83,
+      "module_tertiary_resolved": 83,
+      "module_tertiary_pending": 6
+    },
+    {
+      "module": "02",
+      "papers": 80,
+      "primary_filings": 62,
+      "primary_tertiary_resolved": 62,
+      "module_tertiary_resolved": 63,
+      "module_tertiary_pending": 17
+    },
+    {
+      "module": "03",
+      "papers": 119,
+      "primary_filings": 78,
+      "primary_tertiary_resolved": 78,
+      "module_tertiary_resolved": 78,
+      "module_tertiary_pending": 41
+    },
+    {
+      "module": "04",
+      "papers": 172,
+      "primary_filings": 130,
+      "primary_tertiary_resolved": 129,
+      "module_tertiary_resolved": 132,
+      "module_tertiary_pending": 40
+    },
+    {
+      "module": "05",
+      "papers": 54,
+      "primary_filings": 36,
+      "primary_tertiary_resolved": 36,
+      "module_tertiary_resolved": 37,
+      "module_tertiary_pending": 17
+    },
+    {
+      "module": "06",
+      "papers": 123,
+      "primary_filings": 78,
+      "primary_tertiary_resolved": 78,
+      "module_tertiary_resolved": 123,
+      "module_tertiary_pending": 0
+    },
+    {
+      "module": "07",
+      "papers": 121,
+      "primary_filings": 70,
+      "primary_tertiary_resolved": 70,
+      "module_tertiary_resolved": 121,
+      "module_tertiary_pending": 0
+    },
+    {
+      "module": "08",
+      "papers": 9,
+      "primary_filings": 4,
+      "primary_tertiary_resolved": 4,
+      "module_tertiary_resolved": 4,
+      "module_tertiary_pending": 5
+    },
+    {
+      "module": "09",
+      "papers": 62,
+      "primary_filings": 44,
+      "primary_tertiary_resolved": 44,
+      "module_tertiary_resolved": 44,
+      "module_tertiary_pending": 18
+    },
+    {
+      "module": "10",
+      "papers": 27,
+      "primary_filings": 22,
+      "primary_tertiary_resolved": 22,
+      "module_tertiary_resolved": 22,
+      "module_tertiary_pending": 5
+    },
+    {
+      "module": "11",
+      "papers": 69,
+      "primary_filings": 47,
+      "primary_tertiary_resolved": 47,
+      "module_tertiary_resolved": 49,
+      "module_tertiary_pending": 20
+    }
+  ]
+}

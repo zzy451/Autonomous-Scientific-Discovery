@@ -274,3 +274,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.03` 深空探测；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Castano_2007_OASIS_Rover_Science.pdf; PDF p.12; This module also executes the current rover plan by dispatching commands to the rover’s low-level control software and monitoring relevant state and resource information to identify potential problems or opportunities.。
+- 判定：rover onboard autonomous science investigation
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

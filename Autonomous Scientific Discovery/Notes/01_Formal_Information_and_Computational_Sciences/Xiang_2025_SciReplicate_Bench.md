@@ -129,3 +129,11 @@ source_limited：no
 纳入置信度：high
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.02.04` 软件工程；二级：`01.02`。
+- 原文位置：PDF pp.1,2,4,7,8。
+- 判定：Concrete experiment/task evidence supports 01.02.04 (软件工程). a benchmark of 100 tasks from 36 NLP papers published in 2024; repository-level code generation; Test environment: isolated Python execution environment containing validation cases and automated verification scripts
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

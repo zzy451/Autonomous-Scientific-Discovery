@@ -151,3 +151,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.01.03` 材料表征；二级：`04.01`。
+- 原文位置：PDF p.1。
+- 判定：First-hand evidence supports 04.01.03; valuations on a pre-acquired dataset of band-excitation piezoresponse spectroscopy (BEPS) data from PbTiO3 thin ﬁlms with spatially localized noise show that the proposed method outperforms random sampling, standard active learning, and multitask learning strategies. We further deployed the framework in real-time experiments on a separate PbTiO3 thin-ﬁlm sample with heterogeneous domain structures, demonstrating its
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

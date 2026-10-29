@@ -161,3 +161,11 @@ multi_module_object_coverage_note: Under the relaxed rule, Earth-science event d
 ## 9. 总结
 
 这是一篇以 `10` 为 filing-primary 的稳定 `05;10` 记录：EO-1 自主科学代理的主线是航天 mission-science autonomy，但全文也明确围绕 Earth-science events 展开检测、重规划与后续观测。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.02` 卫星工程；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Sherwood_2006_EO1_Autonomous_Science_Agents.pdf; PDF p.6; SEM Process Alerts and Prioritize Response Observations AGENTS Monitor Sensors Science Alerts ASPEN Schedule Observations on EO-1 Observation Requests Updates to Onboard Plan Science Campaigns EO-1 Flight Dynamics Tracks orbit, overflights, momentum management Scene Acquired Figure 5 - Sensorweb Response。
+- 判定：EO-1 autonomous science agents and sensor web
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

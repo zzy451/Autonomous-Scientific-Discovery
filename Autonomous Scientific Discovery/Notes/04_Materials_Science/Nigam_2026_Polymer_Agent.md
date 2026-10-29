@@ -262,3 +262,11 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.03.01` 高分子材料；二级：`04.03`。
+- 原文位置：Reference_PDF/04_Materials_Science/Nigam_2026_Polymer_Agent.pdf; PDF p.1; We present a closed-loop polymer structure-property predictor integrated in a terminal for early-stage polymer discovery.。
+- 判定：polymer design agent
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

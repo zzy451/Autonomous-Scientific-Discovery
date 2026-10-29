@@ -282,3 +282,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.03` 深空探测；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2007_Mars_Rover_Autonomy.pdf; PDF p.1; In particular, this paper provides an overview of how the OASIS planning and execution system has been tested both through simulation and with actual rover hardware in the JPL Mars Yard.。
+- 判定：Mars rover AI planning/scheduling/execution
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

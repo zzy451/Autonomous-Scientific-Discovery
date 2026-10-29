@@ -289,3 +289,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.05` 航天任务系统；二级：`10.02`。
+- 原文位置：PDF p.1, visual inspection (broken character encoding)。
+- 判定：CASPER planning, SCL robust execution and onboard science event triggers controlling EO-1 spacecraft operations.
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

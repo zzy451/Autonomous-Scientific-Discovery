@@ -237,9 +237,9 @@
 
 ### 9.2 速记版 pipeline
 
-1. 从 bulk crystal 和反应描述出发  
-2. 自动构建 working surface 与机理  
-3. 做 barrier 和 kinetics closure  
+1. 从 bulk crystal 和反应描述出发
+2. 自动构建 working surface 与机理
+3. 做 barrier 和 kinetics closure
 4. 返回更优 catalyst candidates
 
 ### 9.3 标注字段汇总
@@ -270,3 +270,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.04.03` 催化材料；二级：`04.04`。
+- 原文位置：Reference_PDF/04_Materials_Science/Song_2026_CatDT_Heterogeneous_Catalyst_Discovery.pdf; PDF p.2; Every CatDT prediction lies between 0.5 and 2 times the experimental value across measurements spanning four orders of magnitude, on seven gas–solid benchmarks: stepped metals, single-atom catalysts, ordered intermetallics, vacancy-rich two-dimensional sulfides, two-dimensional carbides, and a strong-metal– support-interaction (SMSI) interface.。
+- 判定：heterogeneous catalyst materials and digital twin
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

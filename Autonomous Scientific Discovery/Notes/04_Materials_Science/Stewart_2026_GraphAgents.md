@@ -269,3 +269,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.01.04` 材料计算与材料信息学；二级：`04.01`。
+- 原文位置：Reference_PDF/04_Materials_Science/Stewart_2026_GraphAgents.pdf; PDF p.1; GRAPHAGENTS: KNOWLEDGE GRAPH–GUIDED AGENTIC AI FOR CROSS-DOMAIN MATERIALS DESIGN Isabella A.。
+- 判定：cross-domain materials design/knowledge graph; object material-design computational evidence
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

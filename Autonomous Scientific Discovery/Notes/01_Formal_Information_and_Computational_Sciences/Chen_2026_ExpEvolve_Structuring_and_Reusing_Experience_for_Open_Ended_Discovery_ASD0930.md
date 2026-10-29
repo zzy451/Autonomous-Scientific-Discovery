@@ -151,3 +151,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.01.12` 离散数学与组合数学；二级：`01.01`。
+- 原文位置：PDF p.8, Section 5.1; Table 1 p.9。
+- 判定：First-hand evidence supports 01.01.12; Tasks. We evaluate on 11 open-ended mathematical discovery tasks. Nine tasks are the problems studied by SCS (Gideoni et al., 2026), which are taken from AlphaEvolve (Novikov et al., 2025), including the first and second autocorrelation inequalities, the uncertainty inequality, the Erdős minimum overlap problem, sums and differences of sets, the max–min distance ratio, the Heilbronn problem for triangles, the kissing
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

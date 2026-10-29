@@ -223,9 +223,9 @@
 
 ### 9.2 速记版 pipeline
 
-1. 接收地学查询  
-2. Supervisor 分发给专门 worker  
-3. 调仓库与分析工具  
+1. 接收地学查询
+2. Supervisor 分发给专门 worker
+3. 调仓库与分析工具
 4. 自纠错并生成结果
 
 ### 9.3 标注字段汇总
@@ -247,3 +247,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`05.02.05` 物理海洋学；二级：`05.02`。
+- 原文位置：PDF pp.4–6, PANGAEA-GPT case studies。
+- 判定：Ocean-current/microplastics, in-situ ocean temperatures vs GLORYS, wind and jellyfish coupling; physical oceanography and marine biology. Reject stale genomics mapping.
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

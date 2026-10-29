@@ -168,3 +168,11 @@ first_hand_source_checked：official arXiv PDF checked locally: Reference_PDF/01
 source_limited：no
 confidence：medium
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.02.02` 算法与数据结构；二级：`01.02`。
+- 原文位置：PDF p.1。
+- 判定：组合优化算法构造及运行比较，数学运筹与驾驶另保留覆盖。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

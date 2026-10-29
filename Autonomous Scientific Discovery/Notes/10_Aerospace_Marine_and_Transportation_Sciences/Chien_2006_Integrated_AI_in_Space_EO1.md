@@ -289,3 +289,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.02` 卫星工程；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Chien_2006_Integrated_AI_in_Space_EO1.pdf; PDF p.1; Integrated AI in Space: The Autonomous Sciencecraft on Earth Observing One Steve Chien Jet Propulsion Laboratory, California Institute of Technology 4800 Oak Grove Drive Pasadena, CA 91109-8099 chien@aig.jpl.nasa.gov ai.jpl.nasa.gov Abstract The Earth Observing One spacecraft has been under the control of AI software for several years – experimentally since 2003 and since November 2004 as the primary op- erations system.。
+- 判定：integrated AI in EO-1 spacecraft autonomy
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

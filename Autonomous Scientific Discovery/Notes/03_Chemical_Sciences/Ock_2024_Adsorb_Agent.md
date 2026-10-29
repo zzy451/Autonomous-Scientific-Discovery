@@ -235,9 +235,9 @@
 
 ### 9.2 速记版 pipeline
 
-1. 读入 adsorbate 和 surface  
-2. 提出 binding pattern  
-3. 调工具松弛并算吸附能  
+1. 读入 adsorbate 和 surface
+2. 提出 binding pattern
+3. 调工具松弛并算吸附能
 4. 迭代找到更稳构型
 
 ### 9.3 标注字段汇总
@@ -268,3 +268,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`03.02.10` 表面与界面化学；二级：`03.02`。
+- 原文位置：Reference_PDF/03_Chemical_Sciences/Ock_2024_Adsorb_Agent.pdf; PDF p.23; The calculation is deﬁned as: Open Catalyst Demo The Open Catalyst demo (OC-demo) is an interactive platform that allows users to explore and optimize binding sites for adsorbates on catalyst surfaces.42 It supports 11,427 catalyst materials and 86 adsorbates, with the catalyst crystal structures sourced from the Materi- als Project43 and the Open Quantum Materials Database.44 The OC-demo helps identify the adsorption energy of the selected adsorbate and catalytic surface by generating multi- ple initial conﬁgurations and evaluating them using state-of-the-art graph neural networks, like GemNet-OC and EquiformerV2.。
+- 判定：adsorption configurations and catalyst/chemical surface study
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

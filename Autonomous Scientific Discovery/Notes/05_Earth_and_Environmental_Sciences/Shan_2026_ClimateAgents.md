@@ -246,3 +246,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`05.02.02` 气候科学；二级：`05.02`。
+- 原文位置：PDF p.1。
+- 判定：社会—气候耦合分析的目标对象是气候变化。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

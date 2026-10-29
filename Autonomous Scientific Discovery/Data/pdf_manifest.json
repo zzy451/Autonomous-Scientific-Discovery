@@ -3383,7 +3383,7 @@
     "title": "Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_Mimosa_Framework.pdf",
     "sha256": "97d01129d1e1c2a2bcec6555921b438ba5b0b8f0574155a24bc5160b1e4af268",
-    "primary_module_for_filing": "01",
+    "primary_module_for_filing": "03",
     "scientific_object_modules": [
       "03",
       "05",
@@ -5471,7 +5471,7 @@
     "title": "OmniScientist: Toward a Co-evolving Ecosystem of Human and AI Scientists",
     "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shao_2025_OmniScientist.pdf",
     "sha256": "07f88cf40175c62d758f51780ec46f065ad89886b0fcaca092e1bb6f0a922181",
-    "primary_module_for_filing": "11",
+    "primary_module_for_filing": "01",
     "scientific_object_modules": [
       "01",
       "11"
@@ -5706,6 +5706,21 @@
     "scientific_object_modules": [
       "06",
       "07"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0873",
+    "title": "Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale",
+    "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/ASD-0873_Large_Knowledge_Model_A_Knowledge_Foundation_for_Agentic_Science_at_Scale.pdf",
+    "sha256": "c89fba20c04d0c545c8dce812cad42a2184a8a837c15131f45d5db9348ee2f88",
+    "primary_module_for_filing": "11",
+    "scientific_object_modules": [
+      "03",
+      "07",
+      "11"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -6789,6 +6804,19 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0987",
+    "title": "Diagnosing and narrowing the simulation-to-real gap in powder X-ray diffraction with a wet-dry agentic loop",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0987.pdf",
+    "sha256": "c2af460acb5188b0c95f676c24c4e172e71c656dbb30cc5d83f3f4d581dcb1fb",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0988",
     "title": "PACE-SIMS: Checkpoint-Gated Autonomous SIMS Characterization with AI-Agent Quality Control",
     "pdf_path": "Reference_PDF/04_Materials_Science/Ievlev_2026_PACE_SIMS_Checkpoint_Gated_Autonomous_SIMS_Characterization_with_AI_ASD0988.pdf",
@@ -6994,6 +7022,19 @@
     "primary_module_for_filing": "02",
     "scientific_object_modules": [
       "02",
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-1007",
+    "title": "Agentic schema-guided extraction of materials process knowledge from scientific literature",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-1007_Agentic_schema-guided_extraction_of_materials_process_knowledge_from_scientific_literature.pdf",
+    "sha256": "d4f5f31f9102d6d318e840c0c118a19f861757af491d84b603344c969efd073d",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
       "04"
     ],
     "pdf_status": "archived_pdf",
@@ -7321,6 +7362,19 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-1045",
+    "title": "CFD Forge: A Physics-Constrained Agentic Framework for Autonomous CFD",
+    "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/ASD-1045_CFD_Forge_A_Physics-Constrained_Agentic_Framework_for_Autonomous_CFD.pdf",
+    "sha256": "80f09f3a2e295d2dfa1c7a620438facbde5b1087b966b9d4ffe3942022cc8e97",
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "09"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-1046",
     "title": "AI Agents as a Research Team: A Human-Supervised Case Study in Stellar Spectroscopy",
     "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Gebran_2026_AI_Agents_as_a_Research_Team_A_Human_Supervised_ASD1046.pdf",
@@ -7341,6 +7395,20 @@
     "primary_module_for_filing": "09",
     "scientific_object_modules": [
       "09"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-1049",
+    "title": "El Agente Potente: High-Throughput Agentic Atomistic Simulations",
+    "pdf_path": "Reference_PDF/03_Chemical_Sciences/ASD-1049_El_Agente_Potente_High-Throughput_Agentic_Atomistic_Simulations.pdf",
+    "sha256": "e00323c2646b34980bff858b56d5d999d87a27ae27ce47e6f5f9e1ee4f30198c",
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03",
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",

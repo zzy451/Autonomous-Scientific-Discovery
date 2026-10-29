@@ -232,9 +232,9 @@
 
 ### 9.2 速记版 pipeline
 
-1. 输入社会科学问题  
-2. 规划研究流程  
-3. 跑社会模拟与分析  
+1. 输入社会科学问题
+2. 规划研究流程
+3. 跑社会模拟与分析
 4. 生成报告并迭代
 
 ### 9.3 标注字段汇总
@@ -256,3 +256,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`11.02.02` 社会调查与社会统计；二级：`11.02`。
+- 原文位置：PDF pp.7,8,10,12。
+- 判定：Concrete experiment/task evidence supports 11.02.02 (社会调查与社会统计). S-Researcher autonomously designs a complete simulation protocol ... 100 rounds across three independent replicates; China Education Panel Survey (CEPS); human experiments (N=120)
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

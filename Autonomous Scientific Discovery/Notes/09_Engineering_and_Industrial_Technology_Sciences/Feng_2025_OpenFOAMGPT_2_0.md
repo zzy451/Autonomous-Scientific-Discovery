@@ -268,3 +268,11 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`09.01.01` 工程数学与建模；二级：`09.01`。
+- 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Feng_2025_OpenFOAMGPT_2_0.pdf; PDF p.1; OpenFOAMGPT 2.0: end-to-end, trustworthy automation for computational fluid dynamics Jingsen Feng Department of Engineering University of Exeter Ran Xu Cluster of Excellence SimTech University of Stuttgart Xu Chu Department of Engineering University of Exeter x.chu@exeter.ac.uk Abstract We propose the first multi-agent framework for computational fluid dynamics that enables fully automated, end-to-end simulations directly from natural-language queries.。
+- 判定：computational fluid dynamics automation and simulation
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

@@ -152,3 +152,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`02.02.03` 经典力学；二级：`02.02`。
+- 原文位置：PDF pp.2。
+- 判定：Concrete experiment/task evidence supports 02.02.03 (经典力学). The underlying problem arises in one-dimensional deep-water surface-wave scattering. Linearizing the fluid equations makes infinitesimal waves obey superposition, but finite-amplitude waves satisfy nonlinear free-surface boundary conditions.
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

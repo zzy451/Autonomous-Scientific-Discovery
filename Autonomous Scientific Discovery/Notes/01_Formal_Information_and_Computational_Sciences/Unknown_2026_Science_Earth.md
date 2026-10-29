@@ -261,3 +261,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 推荐引用强度：standard
 是否仍需进一步全文复核：不需要用于当前模块判定
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.01.07` 动力系统与遍历理论；二级：`01.01`。
+- 原文位置：PDF p.5。
+- 判定：实际完成高阶Kuramoto同步研究并修正Ott–Antonsen近似；须由01.04对齐01.01；单细胞实验另有06覆盖，不应删除。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

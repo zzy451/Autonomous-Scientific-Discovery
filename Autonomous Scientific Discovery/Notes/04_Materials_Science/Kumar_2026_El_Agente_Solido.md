@@ -269,3 +269,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.01.04` 材料计算与材料信息学；二级：`04.01`。
+- 原文位置：Reference_PDF/04_Materials_Science/Kumar_2026_El_Agente_Solido.pdf; PDF p.1; Extensive benchmarking and case studies demonstrate that El Agente Sólido reliably executes a wide range of solid-state calculations, highlighting its potential to improve reproducibility and accelerate computational materials discovery.。
+- 判定：solid-state materials simulation
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

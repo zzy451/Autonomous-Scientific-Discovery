@@ -285,3 +285,11 @@ safety_access_status: accessed_no_safety_issue
 final_reason: The concrete objects are chemical-process development workflows and parameters rather than molecular chemistry objects.
 refresh_focus: stabilize 09 and reject 03 drift
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`09.04.02` 过程系统工程；二级：`09.04`。
+- 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Yang_2026_CeProAgents.pdf; PDF p.13; 4.2 CEPROBENCH Construction To rigorously evaluate CEPROAGENTS in autonomous chemical process development, we present CEPROBENCH, an engineering-verifiable benchmark repository.。
+- 判定：chemical process development and process-system engineering
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

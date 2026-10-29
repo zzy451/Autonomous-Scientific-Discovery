@@ -152,3 +152,11 @@ fulltext_followup_required=true
 ### 全文后续要求
 
 当前纳入和分类证据已足够；第7节明确的结果/复现细节仍需继续回查。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.02.12` 人工智能；二级：`01.02`。
+- 原文位置：PDF pp.3,4。
+- 判定：Concrete experiment/task evidence supports 01.02.12 (人工智能). We selected 71 problems of different difficulties from the Formal Conjectures dataset (Firsching et al., 2026; The Formal Conjectures Authors, 2025), spanning from relatively simple problems (e.g. complexity_three_pow), to hard classical theorems with known solutions (e.g. Catalan’s Conjecture), near-frontier and recently solved problems (e.g. Erdős Problem 835 on subset sums, Jacobian Conjecture, Sendov’s Conjecture
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

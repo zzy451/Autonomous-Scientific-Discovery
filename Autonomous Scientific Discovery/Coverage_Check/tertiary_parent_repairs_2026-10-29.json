@@ -1,0 +1,287 @@
+[
+  {
+    "paper_id": "ASD-0004",
+    "secondary": "01.02",
+    "tertiary": "01.02.12"
+  },
+  {
+    "paper_id": "ASD-0005",
+    "secondary": "03.03",
+    "tertiary": "03.03.03"
+  },
+  {
+    "paper_id": "ASD-0009",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0010",
+    "secondary": "03.02",
+    "tertiary": "03.02.11"
+  },
+  {
+    "paper_id": "ASD-0012",
+    "secondary": "03.03",
+    "tertiary": "03.03.01"
+  },
+  {
+    "paper_id": "ASD-0019",
+    "secondary": "01.02",
+    "tertiary": "01.02.12"
+  },
+  {
+    "paper_id": "ASD-0022",
+    "secondary": "03.02",
+    "tertiary": "03.02.11"
+  },
+  {
+    "paper_id": "ASD-0025",
+    "secondary": "03.01",
+    "tertiary": "03.01.04"
+  },
+  {
+    "paper_id": "ASD-0031",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0032",
+    "secondary": "01.02",
+    "tertiary": "01.02.04"
+  },
+  {
+    "paper_id": "ASD-0035",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0036",
+    "secondary": "03.01",
+    "tertiary": "03.01.03"
+  },
+  {
+    "paper_id": "ASD-0038",
+    "secondary": "03.03",
+    "tertiary": "03.03.05"
+  },
+  {
+    "paper_id": "ASD-0045",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0046",
+    "secondary": "04.02",
+    "tertiary": "04.02.05"
+  },
+  {
+    "paper_id": "ASD-0048",
+    "secondary": "01.02",
+    "tertiary": "01.02.13"
+  },
+  {
+    "paper_id": "ASD-0056",
+    "secondary": "03.02",
+    "tertiary": "03.02.09"
+  },
+  {
+    "paper_id": "ASD-0060",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0061",
+    "secondary": "03.02",
+    "tertiary": "03.02.11"
+  },
+  {
+    "paper_id": "ASD-0062",
+    "secondary": "01.03",
+    "tertiary": "01.03.10"
+  },
+  {
+    "paper_id": "ASD-0069",
+    "secondary": "01.02",
+    "tertiary": "01.02.13"
+  },
+  {
+    "paper_id": "ASD-0075",
+    "secondary": "04.03",
+    "tertiary": "04.03.04"
+  },
+  {
+    "paper_id": "ASD-0080",
+    "secondary": "04.03",
+    "tertiary": "04.03.05"
+  },
+  {
+    "paper_id": "ASD-0089",
+    "secondary": "01.02",
+    "tertiary": "01.02.04"
+  },
+  {
+    "paper_id": "ASD-0091",
+    "secondary": "03.01",
+    "tertiary": "03.01.04"
+  },
+  {
+    "paper_id": "ASD-0095",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0096",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0146",
+    "secondary": "01.02",
+    "tertiary": "01.02.13"
+  },
+  {
+    "paper_id": "ASD-0147",
+    "secondary": "01.02",
+    "tertiary": "01.02.13"
+  },
+  {
+    "paper_id": "ASD-0154",
+    "secondary": "04.01",
+    "tertiary": "04.01.01"
+  },
+  {
+    "paper_id": "ASD-0410",
+    "secondary": "04.02",
+    "tertiary": "04.02.03"
+  },
+  {
+    "paper_id": "ASD-0421",
+    "secondary": "04.02",
+    "tertiary": "04.02.03"
+  },
+  {
+    "paper_id": "ASD-0513",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0539",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0565",
+    "secondary": "04.02",
+    "tertiary": "04.02.02"
+  },
+  {
+    "paper_id": "ASD-0571",
+    "secondary": "04.02",
+    "tertiary": "04.02.05"
+  },
+  {
+    "paper_id": "ASD-0582",
+    "secondary": "04.03",
+    "tertiary": "04.03.01"
+  },
+  {
+    "paper_id": "ASD-0598",
+    "secondary": "04.03",
+    "tertiary": "04.03.02"
+  },
+  {
+    "paper_id": "ASD-0631",
+    "secondary": "04.03",
+    "tertiary": "04.03.01"
+  },
+  {
+    "paper_id": "ASD-0806",
+    "secondary": "09.02",
+    "tertiary": "09.02.05"
+  },
+  {
+    "paper_id": "ASD-0810",
+    "secondary": "03.03",
+    "tertiary": "03.03.05"
+  },
+  {
+    "paper_id": "ASD-0830",
+    "secondary": "02.01",
+    "tertiary": "02.01.06"
+  },
+  {
+    "paper_id": "ASD-0840",
+    "secondary": "02.01",
+    "tertiary": "02.01.05"
+  },
+  {
+    "paper_id": "ASD-0862",
+    "secondary": "02.01",
+    "tertiary": "02.01.06"
+  },
+  {
+    "paper_id": "ASD-0863",
+    "secondary": "02.01",
+    "tertiary": "02.01.06"
+  },
+  {
+    "paper_id": "ASD-0864",
+    "secondary": "02.01",
+    "tertiary": "02.01.06"
+  },
+  {
+    "paper_id": "ASD-0887",
+    "secondary": "04.01",
+    "tertiary": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-0909",
+    "secondary": "11.02",
+    "tertiary": "11.02.02"
+  },
+  {
+    "paper_id": "ASD-0924",
+    "secondary": "01.03",
+    "tertiary": "01.03.04"
+  },
+  {
+    "paper_id": "ASD-0928",
+    "secondary": "01.03",
+    "tertiary": "01.03.04"
+  },
+  {
+    "paper_id": "ASD-0929",
+    "secondary": "01.03",
+    "tertiary": "01.03.10"
+  },
+  {
+    "paper_id": "ASD-0934",
+    "secondary": "01.03",
+    "tertiary": "01.03.04"
+  },
+  {
+    "paper_id": "ASD-0939",
+    "secondary": "11.07",
+    "tertiary": "11.07.10"
+  },
+  {
+    "paper_id": "ASD-0946",
+    "secondary": "01.03",
+    "tertiary": "01.03.10"
+  },
+  {
+    "paper_id": "ASD-0947",
+    "secondary": "01.03",
+    "tertiary": "01.03.10"
+  },
+  {
+    "paper_id": "ASD-0954",
+    "secondary": "01.03",
+    "tertiary": "01.03.10"
+  },
+  {
+    "paper_id": "ASD-0958",
+    "secondary": "01.03",
+    "tertiary": "01.03.10"
+  }
+]

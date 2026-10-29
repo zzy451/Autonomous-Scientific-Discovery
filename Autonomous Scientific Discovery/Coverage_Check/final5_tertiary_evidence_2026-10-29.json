@@ -1,0 +1,143 @@
+{
+  "review_date": "2026-10-29",
+  "review_mode": "local_pdf_page_evidence_read_only",
+  "page_number_basis": "PDF physical page index, 1-based",
+  "records": [
+    {
+      "paper_id": "ASD-0871",
+      "primary_tertiary_code": "02.02.02",
+      "primary_tertiary_name": "数学物理学",
+      "confidence": "high",
+      "pdf_pages": [
+        23,
+        24,
+        25
+      ],
+      "section": "5.1 Mathematical Physics; background PINNs; Denario results",
+      "quote": "understand the structure of the solutions to the Burgers equation in fluid dynamics for different values of the viscosity and initial conditions",
+      "reason": "主归档02.02下实际完成的首个数学物理案例直接分析Burgers非线性PDE及PINN解空间；可选为primary三级，不需因多领域框架而留空。",
+      "other_candidates": [
+        {
+          "code": "02.02.16",
+          "name": "计算物理学",
+          "basis": "同案例的PINN数值解空间分析；跨物理案例共同方法落点。"
+        },
+        {
+          "code": "02.02.15",
+          "name": "生物物理学",
+          "basis": "PDF pp.43–45 §5.9 蛋白折叠通路/降维分析。"
+        }
+      ],
+      "limitations": "该选择是多案例下归档便利，不声称全篇仅数学物理。"
+    },
+    {
+      "paper_id": "ASD-0940",
+      "primary_tertiary_code": "01.01.09",
+      "primary_tertiary_name": "统计学",
+      "confidence": "high",
+      "pdf_pages": [
+        6,
+        17,
+        18
+      ],
+      "section": "3.2 demonstration suite; Table 8 symbolic regression results",
+      "quote": "The Cramér–Rao form Var(a_hat)=sigma^2/(N Var log x) predicts empirical exponent-estimation variance across all 8 monomial Feynman laws",
+      "reason": "主归档01.01内有明确参数估计方差/噪声与取样范围验证；以统计学作为primary，比将通用框架直接归空更贴合实际结果。",
+      "other_candidates": [
+        {
+          "code": "01.01.11",
+          "name": "计算数学与数值分析",
+          "basis": "12个symbolic-regression方程与8个单项式Feynman规律的计算验证。"
+        }
+      ],
+      "limitations": "不能按跨学科案例数量推定数学实验是全篇最主要贡献；这里只确定当前归档模块内的主要已报告结果。"
+    },
+    {
+      "paper_id": "ASD-0962",
+      "primary_tertiary_code": "03.02.07",
+      "primary_tertiary_name": "配位化学",
+      "confidence": "medium",
+      "pdf_pages": [
+        6,
+        7,
+        8
+      ],
+      "section": "4.1 tasks; Table 1; 4.2 metrics",
+      "quote": "Molecular Bio-activity (MBO), Nanohelix (NHO), Superconductor (SPO), and Transition Metal Complex (TMC)",
+      "reason": "主归档03.02下TMC是最明确、可辨识的化学对象；Table1分别报告其solution quality，故可按过渡金属配合物基准实验归配位化学。",
+      "other_candidates": [
+        {
+          "code": "03.02.11",
+          "name": "理论与计算化学",
+          "basis": "计算优化评价器上的化学任务及多候选计算验证。"
+        }
+      ],
+      "limitations": "论文没有在主实验段明确交代TMC目标性质/具体配体与金属，需保留medium；不得编造HOMO-LUMO或结合能目标。"
+    },
+    {
+      "paper_id": "ASD-0978",
+      "primary_tertiary_code": "04.02.02",
+      "primary_tertiary_name": "合金材料",
+      "confidence": "high",
+      "pdf_pages": [
+        9,
+        11,
+        12
+      ],
+      "section": "materials-science traces; Appendix materials task prompts",
+      "quote": "Design a high-entropy alloy (HEA) composition for high-temperature applications. Select 5 elements ... predict the likely crystal structure using the VEC criterion.",
+      "reason": "当前04.02结构/无机材料下，HEA成分及晶体结构设计任务明确命中合金材料；保留其他材料任务为多候选，不因process-trace定位取消对象证据。",
+      "other_candidates": [
+        {
+          "code": "04.02.05",
+          "name": "晶体材料",
+          "basis": "HEA任务明确预测晶体结构，但为合金子问题，主三级采用04.02.02。"
+        },
+        {
+          "code": "04.04.04",
+          "name": "半导体材料",
+          "basis": "PDF p.11 GaAs band-gap task，属于另一二级而非04.02 primary。"
+        },
+        {
+          "code": "04.04.02",
+          "name": "电池材料",
+          "basis": "PDF p.11固态锂电解质任务，属于另一二级。"
+        }
+      ],
+      "limitations": "对象证据来自实际benchmark任务/trace设计及分领域结果；并非宣称作者实际合成出新合金。"
+    },
+    {
+      "paper_id": "ASD-1096",
+      "primary_tertiary_code": "03.02.03",
+      "primary_tertiary_name": "分析化学",
+      "confidence": "medium",
+      "pdf_pages": [
+        5,
+        6,
+        8,
+        9
+      ],
+      "section": "SEE taxonomy; Fig3(b,c,f); fine-grained domain results",
+      "quote": "The 1H NMR spectrum ... obtained from a host-guest NMR titration process",
+      "reason": "主归档03.02下有NMR滴定、谱图与实验数据解释的分析化学题目和学科结果（reported accuracy34.5%）；采用分析化学primary并保留物理/有机等多候选。",
+      "other_candidates": [
+        {
+          "code": "03.02.04",
+          "name": "物理化学",
+          "basis": "PDF p.6 Fig3(f)离子凝聚/自组装、静电势、DFT与机械性质解释。"
+        },
+        {
+          "code": "03.02.02",
+          "name": "有机化学",
+          "basis": "PDF pp.6,8有机化学题目及细学科结果37.9%。"
+        },
+        {
+          "code": "03.02.06",
+          "name": "高分子化学",
+          "basis": "PDF p.6 Fig3(f)纤维素液晶膜/PIL与CNC非共价组装。"
+        }
+      ],
+      "limitations": "没有证据表明分析化学题量最多，选择依据为明确展示的代表题及独立学科指标；不是统计主导份额断言。"
+    }
+  ]
+}

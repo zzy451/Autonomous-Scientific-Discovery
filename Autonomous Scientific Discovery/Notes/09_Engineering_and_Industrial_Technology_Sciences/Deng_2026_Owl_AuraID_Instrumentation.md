@@ -287,3 +287,11 @@ Agent 类型：LLM Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`09.03.08` 传感器与仪器科学；二级：`09.03`。
+- 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Deng_2026_Owl_AuraID_Instrumentation.pdf; PDF p.1; Owl·AuraID 1.0: An Intelligent System for Autonomous Scientific Instrumentation and Scientific Data Analysis Han Deng1,2†, Anqi Zou1,3†, Hanling Zhang1,2†, Ben Fei2*, Chengyu Zhang1, Haobo Wang1,3, Xinru Guo1,3, Zhenyu Li1,3, Xuzhu Wang1,3, Peng Yang4, Fujian Zhang4, Weiyu Guo5, Xiaohong Shao4, Zhaoyang Liu5, Shixiang Tang2, Zhihui Wang1,3*, Wanli Ouyang1,2* 1*Shenzhen Loop Area Institute, Shenzhen, China.。
+- 判定：scientific instrumentation and data analysis
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

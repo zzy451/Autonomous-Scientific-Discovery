@@ -272,3 +272,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.02.17` 科学计算与高性能计算；二级：`01.02`。
+- 原文位置：PDF pp.9–13,21–22。
+- 判定：Executed GPU-kernel optimization and PTM-aware protein-degrader case study; 22 complexes investigated, no corrected surviving drug candidate; no wet-lab discovery claim.
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

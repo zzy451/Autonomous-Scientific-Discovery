@@ -151,3 +151,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`03.02.03` 分析化学；二级：`03.02`。
+- 原文位置：PDF pp.4,13。
+- 判定：Concrete experiment/task evidence supports 03.02.03 (分析化学). ections (𝑅p = 2.753%, 𝑅wp = 5.926%). b, Five-phase analysis of an ancient Egyptian cosmetic powder containing gypsum, phosgenite, cerussite, galena and laurionite (𝑅p = 6.600%, 𝑅wp = 13.079%). c, Operando analysis of an O3-type Li(Ni0.8Co0.1Mn0.1)O2 cathode. The voltage–time trace (left), diffraction waterfall (centre; colour indicates scan order) and refined 𝑐axis (right) connect electrochemical cycling to lattice e
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

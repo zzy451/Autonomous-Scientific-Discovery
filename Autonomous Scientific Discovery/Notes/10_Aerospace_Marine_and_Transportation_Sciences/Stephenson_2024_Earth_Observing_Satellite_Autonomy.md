@@ -251,3 +251,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：中高
 推荐引用强度：普通引用
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.02` 卫星工程；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Stephenson_2024_Earth_Observing_Satellite_Autonomy.pdf; PDF p.1; (Preprint) AAS 24-012 REINFORCEMENT LEARNING FOR EARTH-OBSERVING SATELLITE AUTONOMY WITH EVENT-BASED TASK INTERVALS Mark Stephenson* and Hanspeter Schaub† Advances in target scheduling algorithms are necessary to fully utilize the capa- bilities of agile Earth-observing satellites.。
+- 判定：Earth-observing satellite autonomy and event-based task intervals
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

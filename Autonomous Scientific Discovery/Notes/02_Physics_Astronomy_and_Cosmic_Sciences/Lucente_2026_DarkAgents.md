@@ -151,3 +151,11 @@ first_hand_source_checked：official arXiv PDF archived locally and checked: Aut
 source_limited：no
 confidence：high
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`02.02.14` 粒子物理学；二级：`02.02`。
+- 原文位置：PDF p.1。
+- 判定：粒子模型的宇宙学相变及引力波约束，不把LLM本身当对象。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

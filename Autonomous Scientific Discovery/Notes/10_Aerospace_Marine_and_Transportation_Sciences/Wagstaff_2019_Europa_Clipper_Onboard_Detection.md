@@ -168,3 +168,11 @@ multi_module_object_coverage_note: The old 10-only wording is retained as filing
 ## 9. 总结
 
 该文当前以 `05;10` 落地，其中 `10` 保持 filing-primary；它既研究 spacecraft onboard detection and prioritization for mission-science autonomy，也直接围绕 Europa planetary-surface / planetary-environment science events 展开检测与排序，因此不应再被写成仅有 `10.02` 的单侧样本。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.03` 深空探测；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Wagstaff_2019_Europa_Clipper_Onboard_Detection.pdf; PDF p.3; 3 METHODS AND RESULTS We have developed custom data analysis and event detection meth- ods for three instruments on the Europa Clipper spacecraft.。
+- 判定：Europa Clipper spacecraft onboard event detection
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

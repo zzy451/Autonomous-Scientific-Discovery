@@ -249,3 +249,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.04.05` 光电材料；二级：`04.04`。
+- 原文位置：Reference_PDF/04_Materials_Science/Wang_2026_PeroMAS.pdf; PDF p.5; PeroMAS: A Multi-agent System of Perovskite Material Discovery Design a low lead perovskite solar cell with a photoelectric conversion efficiency of not less than 20% and T80 exceeding 1000h.。
+- 判定：perovskite materials discovery
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

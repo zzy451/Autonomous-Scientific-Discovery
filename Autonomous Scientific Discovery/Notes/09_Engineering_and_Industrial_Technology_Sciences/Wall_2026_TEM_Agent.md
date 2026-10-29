@@ -235,9 +235,9 @@
 
 ### 9.2 速记版 pipeline
 
-1. 接收自然语言显微任务  
-2. 连接显微镜、探测器和数据平台  
-3. 编排多步实验与数据调用  
+1. 接收自然语言显微任务
+2. 连接显微镜、探测器和数据平台
+3. 编排多步实验与数据调用
 4. 在人工监督下完成 workflow
 
 ### 9.3 标注字段汇总
@@ -268,3 +268,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Robot / Embodied Age
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`09.03.08` 传感器与仪器科学；二级：`09.03`。
+- 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Wall_2026_TEM_Agent.pdf; PDF p.2; We simultaneously access and control several subsystems of the TEM, a data management platform, and high-performance computing resources through text-based instructions.。
+- 判定：transmission electron microscopy instrumentation
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

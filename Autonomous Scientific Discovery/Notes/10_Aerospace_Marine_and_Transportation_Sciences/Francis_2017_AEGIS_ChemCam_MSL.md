@@ -268,3 +268,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.03` 深空探测；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2017_AEGIS_ChemCam_MSL.pdf; PDF p.1; LA-UR-17-27687 Accepted Manuscript AEGIS autonomous targeting for ChemCam on Mars Science Laboratory: Deployment and results of initial science team use Francis, Raymond; Estlin, Tara; Doran, G.; Johnstone, Stephen E.; Gaines, Daniel; Verma, Vandi; Burl, M.; Frydenvang, Jens; Montano, Suzanne Ruth; Wiens, Roger Craig; Schaffer, S.; Gasnault, Olivier; Deflores, Lauren; Blaney, Diana; Bornstein, Ben Provided by the author(s) and the Los Alamos National Laboratory (2022-11-28).。
+- 判定：ChemCam Mars rover science targeting and deployment
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

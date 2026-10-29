@@ -1,0 +1,198 @@
+[
+  {
+    "paper_id": "ASD-0547",
+    "codes": [],
+    "chosen_primary_code": "",
+    "tertiary_name": "",
+    "confidence": "low",
+    "decision": "retain_pending",
+    "pdf_pages": [],
+    "quote": "",
+    "evidence": "本地PDF物理页 []",
+    "reason": "无本地PDF，现有材料未给出可核验实验细节。",
+    "alternatives": [],
+    "limitations": "不得根据像素超表面标题直接落三级类。"
+  },
+  {
+    "paper_id": "ASD-0644",
+    "codes": [
+      "11.02.02"
+    ],
+    "chosen_primary_code": "11.02.02",
+    "tertiary_name": "社会调查与社会统计",
+    "confidence": "high",
+    "decision": "apply",
+    "pdf_pages": [
+      7,
+      8,
+      10,
+      12
+    ],
+    "quote": "S-Researcher autonomously designs a complete simulation protocol ... 100 rounds across three independent replicates; China Education Panel Survey (CEPS); human experiments (N=120)",
+    "evidence": "本地PDF物理页 [7, 8, 10, 12]",
+    "reason": "实际文化传播仿真、教育调查数据验证和人类公共物品实验均有统计分析；11.02下社会调查与社会统计有直接实验证据，绝非科学社会学。",
+    "alternatives": [
+      "11.02.01 社会学理论：Axelrod文化传播模型；11.05教育类与11.01经济行为覆盖需另外逐项处理。"
+    ],
+    "limitations": ""
+  },
+  {
+    "paper_id": "ASD-0821",
+    "codes": [
+      "03.04.02"
+    ],
+    "chosen_primary_code": "03.04.02",
+    "tertiary_name": "小分子性质优化",
+    "confidence": "high",
+    "decision": "apply",
+    "pdf_pages": [
+      5,
+      6
+    ],
+    "quote": "Molecule Optimization ... Physicochemical Properties (LogP, QED, Solubility) ... Protein-Ligand Binding Affinities (DRD2, GSK3-β, JNK3) ... Property Improvement score",
+    "evidence": "本地PDF物理页 [5, 6]",
+    "reason": "实验明确为已有lead compound的性质改善，较先前03.04.01分子生成与设计更精确。图2另有DRD2/GSK3β设计实例。",
+    "alternatives": [
+      "03.04.05 药物化学",
+      "03.03 合成/反应结果及条件预测为独立覆盖。"
+    ],
+    "limitations": ""
+  },
+  {
+    "paper_id": "ASD-0849",
+    "codes": [
+      "01.01.11"
+    ],
+    "chosen_primary_code": "01.01.11",
+    "tertiary_name": "计算数学与数值分析",
+    "confidence": "high",
+    "decision": "apply",
+    "pdf_pages": [
+      23,
+      24
+    ],
+    "quote": "Table 2: Error Comparison for AllenCahnTwobody equation; STDE 0.008730 0.002620 0.003440 0.002500; Omniscientist 0.006780 0.000579 0.000572 0.001210",
+    "evidence": "本地PDF物理页 [23, 24]",
+    "reason": "实际STDE随机导数估计/高维方程数值解实验，100到100000维误差比较直接支持计算数学。建议纠正主分类而非强行沿11.07科研共同体结构下填充。",
+    "alternatives": [
+      "01.01.06 微分方程",
+      "11.07.08 科学方法论可作人机科研方法补充，但p25 HLE实际题目是CS/AI，不能把协议架构本身当共同体结构实验。"
+    ],
+    "limitations": "建议将原11/11.07主归档调整为01/01.01；若主控暂不跨父类迁移，应在本轮单列待迁移，不能把01.01.11写在11.07下面。"
+  },
+  {
+    "paper_id": "ASD-0869",
+    "codes": [
+      "02.02.03"
+    ],
+    "chosen_primary_code": "02.02.03",
+    "tertiary_name": "经典力学",
+    "confidence": "high",
+    "decision": "apply",
+    "pdf_pages": [
+      5,
+      18,
+      19,
+      21
+    ],
+    "quote": "Table 5: Oscillator 1; Oscillator 2; Physics PO20 ... PO40 ... PO12 ...; Figure 12: Case studies on the two oscillator benchmarks",
+    "evidence": "本地PDF物理页 [5, 18, 19, 21]",
+    "reason": "实际受迫/阻尼非线性振子、位移速度加速度方程及相空间恢复属经典力学，比泛用计算物理02.02.16更精确。",
+    "alternatives": [
+      "02.02.16 计算物理学",
+      "化学反应动力学、细菌种群增长、材料应力应变分别另计跨领域覆盖。"
+    ],
+    "limitations": ""
+  },
+  {
+    "paper_id": "ASD-0870",
+    "codes": [
+      "02.02.03"
+    ],
+    "chosen_primary_code": "02.02.03",
+    "tertiary_name": "经典力学",
+    "confidence": "high",
+    "decision": "apply",
+    "pdf_pages": [
+      6,
+      8
+    ],
+    "quote": "Figure 4: Equations discovered for the PO10 and PO37 physics problems. The variables ... represent acceleration in a non-linear harmonic oscillator, time, position, and velocity, respectively.",
+    "evidence": "本地PDF物理页 [6, 8]",
+    "reason": "有非线性振子方程恢复、与真值/其他方法比较及ID/OOD结果，直接支持经典力学。不能只因算法为符号回归而采用宽泛计算物理。",
+    "alternatives": [
+      "02.02.16 计算物理学",
+      "化学、生物、材料各自有独立分组结果。"
+    ],
+    "limitations": ""
+  },
+  {
+    "paper_id": "ASD-0948",
+    "codes": [
+      "03.04.02"
+    ],
+    "chosen_primary_code": "03.04.02",
+    "tertiary_name": "小分子性质优化",
+    "confidence": "high",
+    "decision": "apply",
+    "pdf_pages": [
+      6,
+      7,
+      33
+    ],
+    "quote": "MBO searches the space of drug-like small molecules, represented as SMILES strings, for the highest predicted bio-activity; quantified by maximizing its predicted pChEMBL value",
+    "evidence": "本地PDF物理页 [6, 7, 33]",
+    "reason": "附录I.3明确小分子SMILES的pChEMBL生物活性最大化，正文表1/2报告独立结果，足够精确落03.04.02。",
+    "alternatives": [
+      "03.02.07 配位化学：p35明确Pd(II)四配体设计、最大极化率且有TMC独立结果。"
+    ],
+    "limitations": ""
+  },
+  {
+    "paper_id": "ASD-0962",
+    "codes": [
+      "03.02.07"
+    ],
+    "chosen_primary_code": "03.02.07",
+    "tertiary_name": "配位化学",
+    "confidence": "high",
+    "decision": "apply",
+    "pdf_pages": [
+      6,
+      7,
+      8
+    ],
+    "quote": "we evaluate TRIAGE-PIEVO on four optimization tasks ... Transition Metal Complex (TMC); Table 1 ... Triage-PiEvo ... TMC 81.50±4.02",
+    "evidence": "本地PDF物理页 [6, 7, 8]",
+    "reason": "TMC过渡金属配合物是明确可辨科学对象，三个模型骨干均有独立SQ和AUOC实验结果；足以落现有03.02下配位化学。",
+    "alternatives": [
+      "03.04.02 小分子性质优化",
+      "04/02 超导与纳米螺旋另计覆盖。"
+    ],
+    "limitations": "本PDF未明确金属种类或具体配体/目标细节，不能借0948的Pd(II)任务定义冒充0962原文；此限制不影响TMC所属配位化学。"
+  },
+  {
+    "paper_id": "ASD-0971",
+    "codes": [
+      "11.07.08"
+    ],
+    "chosen_primary_code": "11.07.08",
+    "tertiary_name": "科学方法论",
+    "confidence": "high",
+    "decision": "apply",
+    "pdf_pages": [
+      3,
+      4,
+      5,
+      8
+    ],
+    "quote": "Its 248 cases from 26 projects pair original LLM plans with human-corrected alternatives reconstructed from completed project histories; Planning; Adapting; Anomaly awareness; Evidence sufficiency",
+    "evidence": "本地PDF物理页 [3, 4, 5, 8]",
+    "reason": "研究和实测对象就是科研计划、异常识别、证据充分性与研究转向的科学判断；248个决策、5模型与13位研究者比较直接支持科学方法论。并非因为benchmark名字带科学而归11.07。",
+    "alternatives": [
+      "11.07.09 科学解释与科学证据理论",
+      "按附录项目实际任务可另保留数学、生物影像、机器人、材料、地球科学覆盖。"
+    ],
+    "limitations": ""
+  }
+]

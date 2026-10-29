@@ -272,3 +272,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.02.13` 机器学习；二级：`01.02`。
+- 原文位置：Reference_PDF/01_Formal_Information_and_Computational_Sciences/Liu_2026_AutoResearchClaw.pdf; PDF p.6; We introduce ARC-Bench, a 25-topic ML benchmark (ML01?ML25) spanning tabular ML, optimization, dimensionality reduction, NLP, AutoML, GP kernels, topic modeling, semi-supervised learning, dynamical systems, anomaly detection, feature selection, causal discovery, and learning-to-rank, together with a 20-topic scientific-domain extension covering 10 high-energy physics (P01?P10), 7 systems biology (B01?B07), and 3 statistics (S01?S03) tasks.。
+- 判定：general autonomous research collaboration; no stable object tertiary
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

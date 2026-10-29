@@ -161,3 +161,11 @@ canonical_local_pdf_path: Reference_PDF/09_Engineering_and_Industrial_Technology
 official_pdf_url: https://arxiv.org/pdf/2605.23273
 canonical_title_confirmed: yes
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`09.02.01` 机械设计；二级：`09.02`。
+- 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Park_2026_TopOptAgents.pdf; PDF p.25; Taken together, the present results indicate that a multi-agent self-refinement framework recovers the success rate of LLM-driven topology optimization on problems where a single-pass baseline model fails to converge to a valid design, and that the same agent set accommodates user-driven revision of the design objective once the workflow terminates.。
+- 判定：topology optimization/mechanical design
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

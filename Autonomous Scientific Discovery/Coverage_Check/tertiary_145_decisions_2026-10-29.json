@@ -1,0 +1,2065 @@
+[
+  {
+    "paper_id": "ASD-0385",
+    "title": "AlphaFlow: autonomous discovery and optimization of multi-step chemistry using a self-driven fluidic lab guided by reinforcement learning",
+    "codes": [
+      "04.04.04"
+    ],
+    "confidence": "high",
+    "evidence": "本地PDF pp.1,3,6–9：CdSe/CdS core-shell semiconductor quantum dots；光谱峰移与壳层生长验证。",
+    "quote": "",
+    "reason": "半导体量子点为直接对象，04.04.04半导体材料匹配；也涉及04.03.02纳米材料，主落点建议半导体。",
+    "source_report": "tertiary_remaining_reaudit_0361_0640_2026-10-29.csv",
+    "chosen_primary_code": "04.04.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0478",
+    "title": "NIMS-OS: an automation software to implement a closed loop between artificial intelligence and robotic experiments in materials science",
+    "codes": [
+      "04.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "本地PDF pp.10–11，Section 4/Table 2/Fig.5：multi-component electrolytes maximize lithium metal electrode performance; discharge-time outcomes。",
+    "quote": "",
+    "reason": "具体材料案例为锂金属电极电池电解液；04.04.02电池材料匹配，不应归04.04.01能源材料的笼统落点。",
+    "source_report": "tertiary_remaining_reaudit_0361_0640_2026-10-29.csv",
+    "chosen_primary_code": "04.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0528",
+    "title": "AutoSciLab: A Self-Driving Laboratory for Interpretable Scientific Discovery",
+    "codes": [
+      "02.02.09"
+    ],
+    "confidence": "high",
+    "evidence": "本地PDF pp.5–6，Exemplar 3: Open-Ended Nanophotonics Problem；可调光学超表面泵浦图案实现自发发射光束转向。",
+    "quote": "",
+    "reason": "纳米光子/光束操控对象直接支持02.02.09光学；02.02.14是高能粒子物理，必须拒绝此前误码。",
+    "source_report": "tertiary_remaining_reaudit_0361_0640_2026-10-29.csv",
+    "chosen_primary_code": "02.02.09",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0547",
+    "title": "Closed-loop experimental AI for pixelated metasurface design",
+    "codes": [],
+    "confidence": "low",
+    "evidence": "正式Notes source_limited；当前pdf_path为空，SPIE全文访问受限。",
+    "quote": "",
+    "reason": "像素超表面可能对应04.04.05光电材料，但缺全文实验细节，不能以标题强行写回。",
+    "source_report": "tertiary_remaining_reaudit_0361_0640_2026-10-29.csv",
+    "chosen_primary_code": "",
+    "decision": "retain_pending"
+  },
+  {
+    "paper_id": "ASD-0632",
+    "title": "A Hierarchical Multi-Agent System for Autonomous Discovery in Geoscientific Data Archives",
+    "codes": [
+      "05.02.05",
+      "06.02.06"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.4–6, PANGAEA-GPT case studies",
+    "quote": "",
+    "reason": "Ocean-current/microplastics, in-situ ocean temperatures vs GLORYS, wind and jellyfish coupling; physical oceanography and marine biology. Reject stale genomics mapping.",
+    "source_report": "tertiary_remaining_reaudit_0361_0640_2026-10-29.csv",
+    "chosen_primary_code": "05.02.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0644",
+    "title": "LLM Agents as Social Scientists: A Human-AI Collaborative Platform for Social Science Automation",
+    "codes": [
+      "11.02.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.7,8,10,12",
+    "quote": "S-Researcher autonomously designs a complete simulation protocol ... 100 rounds across three independent replicates; China Education Panel Survey (CEPS); human experiments (N=120)",
+    "reason": "Concrete experiment/task evidence supports 11.02.02 (社会调查与社会统计). S-Researcher autonomously designs a complete simulation protocol ... 100 rounds across three independent replicates; China Education Panel Survey (CEPS); human experiments (N=120)",
+    "source_report": "tertiary_last18_partA_2026-10-29.json",
+    "chosen_primary_code": "11.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0645",
+    "title": "The Autonomous Sciencecraft Experiment Onboard the EO-1 Spacecraft",
+    "codes": [
+      "10.02.02",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Tran_2004_Autonomous_Sciencecraft_EO1.pdf; PDF p.1; Uploaded in the Fall of 2003, ASE has successfully commanded EO-1 operations and enabled autonomous retargeting to capture dynamic science events.",
+    "quote": "",
+    "reason": "EO-1 spacecraft autonomous science and mission operations",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0647",
+    "title": "Autonomous Small Body Science Operations Using Reinforcement Learning",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Herrmann_2022_Autonomous_Small_Body_Science_Operations.pdf; PDF p.19; The aforementioned experiments demonstrate that reinforcement learning is a viable method for planning and scheduling small body science operations, capable of managing spacecraft resources, maneuvers, and navigation updates while achieving the science objectives of the formulated mission.",
+    "quote": "",
+    "reason": "autonomous small-body mission science and operations",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0648",
+    "title": "Reinforcement Learning For Earth-Observing Satellite Autonomy With Event-Based Task Intervals",
+    "codes": [
+      "10.02.02",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Stephenson_2024_Earth_Observing_Satellite_Autonomy.pdf; PDF p.1; (Preprint) AAS 24-012 REINFORCEMENT LEARNING FOR EARTH-OBSERVING SATELLITE AUTONOMY WITH EVENT-BASED TASK INTERVALS Mark Stephenson* and Hanspeter Schaub† Advances in target scheduling algorithms are necessary to fully utilize the capa- bilities of agile Earth-observing satellites.",
+    "quote": "",
+    "reason": "Earth-observing satellite autonomy and event-based task intervals",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0652",
+    "title": "ResearchTown: Simulator of Human Research Community",
+    "codes": [
+      "11.07.04"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.pdf; PDF p.1; Our experiments reveal three key findings: (1) RESEARCHTOWN can provide a realistic simulation of collaborative research activities, including paper writing and re- view writing; (2) RESEARCHTOWN can maintain robust simulation with multiple researchers and diverse papers; (3) RESEARCHTOWN can gener- ate interdisciplinary research ideas that potentially inspire pioneering research directions.",
+    "quote": "",
+    "reason": "simulator of human research community/knowledge-production ecosystem",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "11.07.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0659",
+    "title": "Autonomous Agents Coordinating Distributed Discovery Through Emergent Artifact Exchange",
+    "codes": [
+      "04.02.04",
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Wang_2026_Artifact_Exchange.pdf; PDF p.1; Across four autonomous investigations, peptide design for the somatostatin receptor SSTR2, lightweight impact-resistant ceramic screening, cross-domain resonance bridging biology, materials, and music, and formal analogy construction between urban morphology and grain-boundary evolution.",
+    "quote": "",
+    "reason": "distributed discovery through artifact exchange; materials filing appears legacy, object-level evidence limited",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.02.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0662",
+    "title": "Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research",
+    "codes": [
+      "03.02.11",
+      "05.04.03",
+      "06.01.12",
+      "11.04.05"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.17,20, §4.1.1 and results table",
+    "quote": "",
+    "reason": "ScienceAgentBench explicitly covers bioinformatics, computational chemistry, GIS, psychology/cognitive neuroscience; evaluation aggregates all 102 tasks, not separate domain success rates.",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "03.02.11",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0664",
+    "title": "Autonomous computational catalysis through an agentic research system",
+    "codes": [
+      "03.03.03"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/03_Chemical_Sciences/Unknown_2026_Autonomous_Computational_Catalysis.pdf; PDF p.1; Autonomous computational catalysis through an agentic research system Authors: Honghao Chen 1, Jiangjie Qiu 1, Yi Shen Tew 1, Xiaonan Wang 1* Affiliations: 1.",
+    "quote": "",
+    "reason": "autonomous computational catalysis",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "03.03.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0665",
+    "title": "TSAgent: An Agentic Workflow for Autonomous Transition State Search",
+    "codes": [
+      "03.03.04"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/03_Chemical_Sciences/Unknown_2026_TSAgent.pdf; PDF p.10; Second, due to the substantial compute cost of DFT-level TS searches, our OC20NEB evaluation is restricted to 100 reactions sampled from the total 600 reactions available.",
+    "quote": "",
+    "reason": "transition-state search and reaction mechanism computation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "03.03.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0668",
+    "title": "Autonomous Multi-Agent AI for High-Throughput Polymer Informatics: From Property Prediction to Generative Design Across Synthetic and Bio-Polymers",
+    "codes": [
+      "04.03.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.pdf; PDF p.1; Autonomous Multi-Agent AI for High-Throughput Polymer Informatics: From Property Prediction to Generative Design Across Synthetic and Bio-Polymers Mahule Roy Institute of Biomedical Engineering University of Oxford Oxford OX1 2JD, UK Adib Bazgir Department of Mechanical and Aerospace Engineering University of Missouri–Columbia Columbia, MO 65211, USA Arthur da Silva Sousa Santos Center for Engineering, Modeling and Applied Social Sciences Federal University of ABC (UFABC) Bang´u, Santo Andr´e - SP, 09280-560, Brazil Yuwen Zhang∗ Department of Mechanical and Aerospace Engineering University of Missouri–Columbia Columbia, MO 65211, USA Abstract We present an integrated multiagent AI ecosystem ",
+    "quote": "",
+    "reason": "polymer informatics and synthetic/bio-polymer design",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.03.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0671",
+    "title": "AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration",
+    "codes": [
+      "01.02.13",
+      "01.01.09",
+      "02.02.14",
+      "06.01.10"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Liu_2026_AutoResearchClaw.pdf; PDF p.6; We introduce ARC-Bench, a 25-topic ML benchmark (ML01?ML25) spanning tabular ML, optimization, dimensionality reduction, NLP, AutoML, GP kernels, topic modeling, semi-supervised learning, dynamical systems, anomaly detection, feature selection, causal discovery, and learning-to-rank, together with a 20-topic scientific-domain extension covering 10 high-energy physics (P01?P10), 7 systems biology (B01?B07), and 3 statistics (S01?S03) tasks.",
+    "quote": "",
+    "reason": "general autonomous research collaboration; no stable object tertiary",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0672",
+    "title": "Polymer-Agent: Large Language Model Agent for Polymer Design",
+    "codes": [
+      "04.03.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Nigam_2026_Polymer_Agent.pdf; PDF p.1; We present a closed-loop polymer structure-property predictor integrated in a terminal for early-stage polymer discovery.",
+    "quote": "",
+    "reason": "polymer design agent",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.03.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0673",
+    "title": "Harnessing AtomisticSkills for Agentic Atomistic Research",
+    "codes": [
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Deng_2026_AtomisticSkills.pdf; PDF p.4; By decomposing the computational workflows reported in each manuscript into their constituent skills (see Methods IV C), we sys- tematically compared the literature-used skills against our library and quantitatively evaluated how effectively AtomisticSkills supports real-world materials research",
+    "quote": "",
+    "reason": "atomistic materials simulation/informatics",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0674",
+    "title": "GraphAgents: Knowledge Graph-Guided Agentic AI for Cross-Domain Materials Design",
+    "codes": [
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Stewart_2026_GraphAgents.pdf; PDF p.1; GRAPHAGENTS: KNOWLEDGE GRAPH–GUIDED AGENTIC AI FOR CROSS-DOMAIN MATERIALS DESIGN Isabella A.",
+    "quote": "",
+    "reason": "cross-domain materials design/knowledge graph; object material-design computational evidence",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0676",
+    "title": "AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle",
+    "codes": [
+      "01.02.17",
+      "06.03.06",
+      "07.04.01"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.9–13,21–22",
+    "quote": "",
+    "reason": "Executed GPU-kernel optimization and PTM-aware protein-degrader case study; 22 complexes investigated, no corrected surviving drug candidate; no wet-lab discovery claim.",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "01.02.17",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0680",
+    "title": "Agentic Fusion of Large Atomic and Language Models to Accelerate Superconductor Discovery",
+    "codes": [
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Liu_2026_ElementsClaw_Superconductors.pdf; PDF p.11; These results establish the generative branch of ElementsClaw as the central prospective discovery step: the agent uses structure generation, Tc prediction and physical stability filters to identify experimentally realizable superconductors beyond the original MPDS/Kagome entries.",
+    "quote": "",
+    "reason": "superconductor discovery and materials-property prediction",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0681",
+    "title": "Agentic LLM Reasoning in a Self-Driving Laboratory for Air-Sensitive Lithium Halide Spinel Conductors",
+    "codes": [
+      "04.04.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Fei_2026_Agentic_LLM_Reasoning_A_Lab.pdf; PDF p.1; Agentic LLM Reasoning in a Self-Driving Laboratory for Air-Sensitive Lithium Halide Spinel Conductors Yuxing Fei 1,2, Bernardus Rendy 1,2,5, Xiaochen Yang 1,2, Junhee Woo 1,3, Xu Huang 1,2, Chang Li 2, Shilong Wang 1,2, David Milsted 2, Yan Zeng 2,4,†, and Gerbrand Ceder 1,2,5,‡ 1Department of Materials Science & Engineering, University of California, Berkeley, Berkeley, California 94720, United States 2Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, California 94720, United States 3Department of Materials Science and Engineering, Korea Advanced Institute of Science and Technology, Daejeon 34141, Republic of Korea 4Department of Chemistry and Biochemistry, Flori",
+    "quote": "",
+    "reason": "lithium-halide spinel conductor materials in self-driving lab",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.04.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0682",
+    "title": "El Agente S锟斤拷lido: A New Age(nt) for Solid State Simulations",
+    "codes": [
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Kumar_2026_El_Agente_Solido.pdf; PDF p.1; Extensive benchmarking and case studies demonstrate that El Agente Sólido reliably executes a wide range of solid-state calculations, highlighting its potential to improve reproducibility and accelerate computational materials discovery.",
+    "quote": "",
+    "reason": "solid-state materials simulation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0683",
+    "title": "PeroMAS: A Multi-agent System of Perovskite Material Discovery",
+    "codes": [
+      "04.04.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Wang_2026_PeroMAS.pdf; PDF p.5; PeroMAS: A Multi-agent System of Perovskite Material Discovery Design a low lead perovskite solar cell with a photoelectric conversion efficiency of not less than 20% and T80 exceeding 1000h.",
+    "quote": "",
+    "reason": "perovskite materials discovery",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.04.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0684",
+    "title": "ChemNavigator: Agentic AI Discovery of Design Rules for Organic Photocatalysts",
+    "codes": [
+      "03.04.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.pdf; PDF p.1; Notably, autonomous agentic reasoning extracted these six validated rules from a molec- ular library where previous ML approaches identified only carbonyl effects.",
+    "quote": "",
+    "reason": "organic photocatalyst design rules/environmental-energy chemistry",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "03.04.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0688",
+    "title": "OpenFOAMGPT 2.0: end-to-end, trustworthy automation for computational fluid dynamics",
+    "codes": [
+      "09.01.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Feng_2025_OpenFOAMGPT_2_0.pdf; PDF p.1; OpenFOAMGPT 2.0: end-to-end, trustworthy automation for computational fluid dynamics Jingsen Feng Department of Engineering University of Exeter Ran Xu Cluster of Excellence SimTech University of Stuttgart Xu Chu Department of Engineering University of Exeter x.chu@exeter.ac.uk Abstract We propose the first multi-agent framework for computational fluid dynamics that enables fully automated, end-to-end simulations directly from natural-language queries.",
+    "quote": "",
+    "reason": "computational fluid dynamics automation and simulation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.01.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0691",
+    "title": "OASIS: Onboard Autonomous Science Investigation System for Opportunistic Rover Science",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Castano_2007_OASIS_Rover_Science.pdf; PDF p.12; This module also executes the current rover plan by dispatching commands to the rover’s low-level control software and monitoring relevant state and resource information to identify potential problems or opportunities.",
+    "quote": "",
+    "reason": "rover onboard autonomous science investigation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0693",
+    "title": "Enabling Onboard Detection of Events of Scientific Interest for the Europa Clipper Spacecraft",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Wagstaff_2019_Europa_Clipper_Onboard_Detection.pdf; PDF p.3; 3 METHODS AND RESULTS We have developed custom data analysis and event detection meth- ods for three instruments on the Europa Clipper spacecraft.",
+    "quote": "",
+    "reason": "Europa Clipper spacecraft onboard event detection",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0695",
+    "title": "FoodPuzzle: Developing Large Language Model Agents as Flavor Scientists",
+    "codes": [
+      "08.05.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/08_Agricultural_Food_Forestry_Animal_and_Fishery_Sciences/Huang_2024_FoodPuzzle.pdf; PDF p.7; Category Model MFP accuracy(%) MPC F1 score Domain-Specific LLMs MolT5 (Edwards et al., 2022) 9.8 0.144 Bio-T5 (Pei et al., 2023) 16.6 0.278 Zero-shot LLaMA3-8B-instruct 15.0 0.292 Gemini1.5 Pro 19.0 0.340 GPT-3.5 Turbo 12.2 0.327 In-context Learning LLaMA3-8B-instruct 31.6 0.349 Gemini1.5 Pro 34.6 0.373 GPT-3.5 Turbo 23.2 0.360 Scientist Agent LLaMA3-8B-instruct 35.5 0.374 Gemini1.5 Pro 34.2 0.333 GPT-3.5 Turbo 26.9 0.374 Table 2: Combined Results for Model Accuracies in Molecule Food Prediction and F1 Scores for Molecule Profile Completion lated to the food item directly from FlavorDB, and this evidence is provided to the Scientist model.",
+    "quote": "",
+    "reason": "flavor chemistry and food formulation/design",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "08.05.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0696",
+    "title": "AEGIS Automated Science Targeting for the MER Opportunity Rover",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2012_AEGIS_Opportunity_Rover.pdf; PDF p.1; AEGIS software was uploaded to the Mars Exploration Rover (MER) mission’s Opportunity rover in December 2009 and has successfully demonstrated automated onboard targeting based on scientist-speciﬁed objectives.",
+    "quote": "",
+    "reason": "Mars rover autonomous science targeting",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0697",
+    "title": "AEGIS autonomous targeting for ChemCam on Mars Science Laboratory: Deployment and results of initial science team use",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2017_AEGIS_ChemCam_MSL.pdf; PDF p.1; LA-UR-17-27687 Accepted Manuscript AEGIS autonomous targeting for ChemCam on Mars Science Laboratory: Deployment and results of initial science team use Francis, Raymond; Estlin, Tara; Doran, G.; Johnstone, Stephen E.; Gaines, Daniel; Verma, Vandi; Burl, M.; Frydenvang, Jens; Montano, Suzanne Ruth; Wiens, Roger Craig; Schaffer, S.; Gasnault, Olivier; Deflores, Lauren; Blaney, Diana; Bornstein, Ben Provided by the author(s) and the Los Alamos National Laboratory (2022-11-28).",
+    "quote": "",
+    "reason": "ChemCam Mars rover science targeting and deployment",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0702",
+    "title": "Rover-Based Autonomous Science by Probabilistic Identification and Evaluation",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.pdf; PDF p.1; J Intell Robot Syst (2013) 72:591–613 DOI 10.1007/s10846-013-9818-6 Rover-Based Autonomous Science by Probabilistic Identification and Evaluation Marc J.",
+    "quote": "",
+    "reason": "rover probabilistic science identification/evaluation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0703",
+    "title": "Autonomous Science Agents and Sensor Webs: EO-1 and Beyond",
+    "codes": [
+      "10.02.02",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Sherwood_2006_EO1_Autonomous_Science_Agents.pdf; PDF p.6; SEM Process Alerts and Prioritize Response Observations AGENTS Monitor Sensors Science Alerts ASPEN Schedule Observations on EO-1 Observation Requests Updates to Onboard Plan Science Campaigns EO-1 Flight Dynamics Tracks orbit, overflights, momentum management Scene Acquired Figure 5 - Sensorweb Response",
+    "quote": "",
+    "reason": "EO-1 autonomous science agents and sensor web",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0709",
+    "title": "Automated Targeting for the MSL Rover ChemCam Spectrometer",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2014_ChemCam_Automated_Targeting.pdf; PDF p.1; The first involves automated targeting of ChemCam during or after long drives by finding rock targets in Navigation Camera images.",
+    "quote": "",
+    "reason": "MSL ChemCam automated targeting",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0710",
+    "title": "AEGIS Autonomous Targeting for the SuperCam Instrument on the Mars 2020 Perseverance Rover",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2024_AEGIS_SuperCam.pdf; PDF p.1; After successful demonstration on the MER Opportunity rover, and extensive use aboard the MSL Curiosity rover, in 2022 AEGIS was deployed to the Mars 2020 Perseverance rover, for targeting the SuperCam remote spectrometer instrument.",
+    "quote": "",
+    "reason": "Mars 2020 SuperCam autonomous targeting",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0711",
+    "title": "Developing Autonomous Science Technology for the MSL Rover Mission",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2015_Autonomous_Science_Technology_MSL.pdf; PDF p.1; Developing Autonomous Science Technology for the MSL Rover Mission Tara Estlin*, Daniel Gaines*, Benjamin Bornstein*, Steve Schaffer*, Vandi Verma*, Robert C.",
+    "quote": "",
+    "reason": "MSL rover autonomous science technology",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0712",
+    "title": "Enabling Autonomous Rover Science Through Dynamic Planning and Scheduling",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2005_Autonomous_Rover_Science_Dynamic_Planning.pdf; PDF p.2; New missions are being designed that will require rovers to A primary objective of our work is to use onboard planning, support more autonomous endeavors such as long-range scheduling, and execution techniques to increase utilization traversals, complex science experiments, and longer mission of rover resources by enabling the rover to appropriately duration.",
+    "quote": "",
+    "reason": "autonomous rover science planning/scheduling",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0713",
+    "title": "Demonstrating Autonomy for Complex Space Missions: A Europa Lander Mission Autonomy Prototype",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Wagner_2024_Europa_Lander_Autonomy_Prototype.pdf; PDF p.14; Experimentation The Europa Lander Autonomy Prototype’s main purpose is as an experimentation platform for the Europa Lander Mission Concept.",
+    "quote": "",
+    "reason": "Europa lander mission autonomy prototype",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0719",
+    "title": "Mission Operations of Earth Observing-1 with Onboard Autonomy",
+    "codes": [
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1, visual inspection (broken character encoding)",
+    "quote": "",
+    "reason": "CASPER planning, SCL robust execution and onboard science event triggers controlling EO-1 spacecraft operations.",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0721",
+    "title": "Integrated AI in Space: The Autonomous Sciencecraft on Earth Observing One",
+    "codes": [
+      "10.02.02",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Chien_2006_Integrated_AI_in_Space_EO1.pdf; PDF p.1; Integrated AI in Space: The Autonomous Sciencecraft on Earth Observing One Steve Chien Jet Propulsion Laboratory, California Institute of Technology 4800 Oak Grove Drive Pasadena, CA 91109-8099 chien@aig.jpl.nasa.gov ai.jpl.nasa.gov Abstract The Earth Observing One spacecraft has been under the control of AI software for several years – experimentally since 2003 and since November 2004 as the primary op- erations system.",
+    "quote": "",
+    "reason": "integrated AI in EO-1 spacecraft autonomy",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0733",
+    "title": "Increased Mars Rover Autonomy using AI Planning, Scheduling and Execution",
+    "codes": [
+      "10.02.03",
+      "10.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2007_Mars_Rover_Autonomy.pdf; PDF p.1; In particular, this paper provides an overview of how the OASIS planning and execution system has been tested both through simulation and with actual rover hardware in the JPL Mars Yard.",
+    "quote": "",
+    "reason": "Mars rover AI planning/scheduling/execution",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0734",
+    "title": "Controlling an organic synthesis robot with machine learning to search for new reactivity",
+    "codes": [
+      "03.03.02"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf; PDF p.1; Here we present an organic synthesis robot that can perform chemical reactions and analysis faster than they can be performed manually, as well as predict the reactivity of possible reagent combinations after conducting a small number of experiments, thus effectively navigating chemical reaction space.",
+    "quote": "",
+    "reason": "organic synthesis robot searches reaction reactivity",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "03.03.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0735",
+    "title": "Artificial Chemist: An Autonomous Quantum Dot Synthesis Bot",
+    "codes": [
+      "04.03.02"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Epps_2020_Artificial_Chemist_Quantum_Dot.pdf; PDF p.1; Colloidal semiconductor nanocrystals are highly complex and sensi- tive materials, where two compositionally identical solutions may have entirely different optoelectronic properties (differently sized nanocrystals).",
+    "quote": "",
+    "reason": "autonomous quantum-dot synthesis/material nanostructure",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.03.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0737",
+    "title": "ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence Verification",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_ScientistOne.pdf; PDF p.1; ScientistOne generalizes to six additional tasks spanning medical imaging, fine-grained recognition, 3D perception, and parameter-constrained language modeling.",
+    "quote": "",
+    "reason": "chain-of-evidence verification general research agent; no concrete object tertiary",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0738",
+    "title": "AutoSOTA: An End-to-End Automated Research System for State-of-the-Art AI Model Discovery",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoSOTA.pdf; PDF p.21; algorithmic optimization.",
+    "quote": "",
+    "reason": "automated AI model discovery benchmark and experiments",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0739",
+    "title": "Autonomous microfluidic experimentation for exploring reaction inference and synthesizing double perovskite nanoplatelets",
+    "codes": [
+      "04.03.02"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Sharma_2026_Double_Perovskite_Nanoplatelets.pdf; PDF p.1; Beyond autonomous multi-element nanoplatelet synthesis and optimization, PoLARIS utilizes dynamic ﬂow experimentation to enable mechanistic inference of precursor reactivity and reaction pathways govern- ing nanoplatelet formation.",
+    "quote": "",
+    "reason": "double-perovskite nanoplatelet synthesis/material discovery",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.03.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0740",
+    "title": "Discovery of tunable and soluble organic emitters for solid-state lasers with a self-driving laboratory",
+    "codes": [
+      "03.04.01",
+      "04.04.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/03_Chemical_Sciences/Park_2026_Organic_Emitters_SelfDriving_Lab.pdf; PDF p.9; From the virtual screening and experimental exploration results, a total of 51 organic laser emitter candidates were successfully identiﬁed, demonstrating a robust and adaptable molecular design strategy that extends beyond BSBCz-like pentamers to structurally diverse families.",
+    "quote": "",
+    "reason": "organic emitter molecular design plus solid-state laser material performance",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "03.04.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0747",
+    "title": "VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis",
+    "codes": [
+      "09.01.02"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf; PDF p.5; We evaluate VFEAgent on a comprehensive suite of engineering problems, categorized into two modes: (1) Standard Forward Analysis, encompass- ing trusses, frames, and plates under diverse boundary con- ditions; and (2) Topology Optimization, focusing on compli- ance minimization subject to volume constraints (e.g., vol- frac ≤0.5).",
+    "quote": "",
+    "reason": "finite-element engineering analysis",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.01.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0749",
+    "title": "Self-Refining Topology Optimization via an LLM-Based Multi-Agent Framework",
+    "codes": [
+      "09.02.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Park_2026_TopOptAgents.pdf; PDF p.25; Taken together, the present results indicate that a multi-agent self-refinement framework recovers the success rate of LLM-driven topology optimization on problems where a single-pass baseline model fails to converge to a valid design, and that the same agent set accommodates user-driven revision of the design objective once the workflow terminates.",
+    "quote": "",
+    "reason": "topology optimization/mechanical design",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.02.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0757",
+    "title": "CADSmith: Multi-Agent CAD Generation with Programmatic Geometric Validation",
+    "codes": [
+      "09.02.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Barkley_2026_CADSmith.pdf; PDF p.1; We present CADSmith, a multi-agent pipeline that generates CadQuery code from natural language.",
+    "quote": "",
+    "reason": "CAD generation and geometric validation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.02.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0758",
+    "title": "Self-Improving CAD Generation Agents with Finite Element Analysis as Feedback",
+    "codes": [
+      "09.02.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Son_2026_CAD_Generation_FEA_Feedback.pdf; PDF p.8; 5.2 Q2: Evaluating feedback for CAD agents We test whether the typed blueprint stage (Section 3.2) improves generation quality versus a baseline that emits CadQuery directly from the prompt.",
+    "quote": "",
+    "reason": "CAD generation with FEA feedback",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.02.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0775",
+    "title": "Owl-AuraID 1.0: An Intelligent System for Autonomous Scientific Instrumentation and Scientific Data Analysis",
+    "codes": [
+      "09.03.08"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Deng_2026_Owl_AuraID_Instrumentation.pdf; PDF p.1; Owl·AuraID 1.0: An Intelligent System for Autonomous Scientific Instrumentation and Scientific Data Analysis Han Deng1,2†, Anqi Zou1,3†, Hanling Zhang1,2†, Ben Fei2*, Chengyu Zhang1, Haobo Wang1,3, Xinru Guo1,3, Zhenyu Li1,3, Xuzhu Wang1,3, Peng Yang4, Fujian Zhang4, Weiyu Guo5, Xiaohong Shao4, Zhaoyang Liu5, Shixiang Tang2, Zhihui Wang1,3*, Wanli Ouyang1,2* 1*Shenzhen Loop Area Institute, Shenzhen, China.",
+    "quote": "",
+    "reason": "scientific instrumentation and data analysis",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.03.08",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0779",
+    "title": "From Text to Simulation: A Multi-Agent LLM Workflow for Automated Chemical Process Design",
+    "codes": [
+      "09.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2026_Text_to_Simulation_Process_Design.pdf; PDF p.7; While the overall process topologies appear similar, the economic performance differs dramatically, demonstrat- ing the value of our chemical process design agent workﬂow.",
+    "quote": "",
+    "reason": "chemical process flowsheet design/simulation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0780",
+    "title": "Context is all you need: Towards autonomous model-based process design using agentic AI in flowsheet simulations",
+    "codes": [
+      "09.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Schaefer_2026_Agentic_Flowsheet_Process_Design.pdf; PDF p.8; commented full-flowsheet examples - specifically, Chemasim implementations of the processes presented by Luyben as mentioned above - to demonstrate the interconnection of multiple unit operations within a complete process model.",
+    "quote": "",
+    "reason": "model-based process design in flowsheet simulation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0781",
+    "title": "Large Language Model Agent for User-friendly Chemical Process Simulations",
+    "codes": [
+      "09.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Liang_2026_User_Friendly_Chemical_Process_Simulations.pdf; PDF p.38; Would you like me to run the simulation or make any additional configurations?",
+    "quote": "",
+    "reason": "chemical process simulation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0782",
+    "title": "CFDagent: A Language-Guided, Zero-Shot Multi-Agent System for Complex Flow Simulation",
+    "codes": [
+      "09.01.01"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Xu_2025_CFDagent.pdf; PDF p.1; The proposed system enables synthesization of flow simulations and photorealistic visualizations for complex 1 arXiv:2507.23693v1 [physics.flu-dyn] 31 Jul 2025",
+    "quote": "",
+    "reason": "CFD flow simulation and engineering modeling",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.01.01",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0787",
+    "title": "SciToolAgent: a knowledge-graph-driven scientific agent for multitool integration",
+    "codes": [
+      "03.03.02",
+      "03.03.01",
+      "04.03.05",
+      "06.03.06"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/03_Chemical_Sciences/Ding_2025_SciToolAgent.pdf; PDF p.2; We further validate SciToolAgent?s effectiveness through case studies across four scenarios: protein design and analysis, chemical reactivity prediction, chemical synthesis and analysis, and metal?organic framework (MOF) material screening.",
+    "quote": "",
+    "reason": "scientific multitool integration filed in chemistry; object-level chemistry evidence insufficient",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "03.03.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0789",
+    "title": "TEM Agent: enhancing transmission electron microscopy with modern AI tools",
+    "codes": [
+      "09.03.08"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Wall_2026_TEM_Agent.pdf; PDF p.2; We simultaneously access and control several subsystems of the TEM, a data management platform, and high-performance computing resources through text-based instructions.",
+    "quote": "",
+    "reason": "transmission electron microscopy instrumentation",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.03.08",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0790",
+    "title": "Hierarchical Multi-agent Large Language Model Reasoning for Autonomous Heterogeneous Catalyst Discovery",
+    "codes": [
+      "04.04.03"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Rothfarb_2026_Heterogeneous_Catalyst_Discovery.pdf; PDF p.2; Across two chemical applications, CO adsorption on Cu surface transition metal adatoms and on M- N-C catalysts, reasoning-guided exploration reduces required atomistic simulations by up to 90% relative to heuristic or random selection.",
+    "quote": "",
+    "reason": "heterogeneous catalyst discovery with materials catalyst properties",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.04.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0791",
+    "title": "Escaping the hydrolysis trap: a react agent for inverse design of durable photocatalytic covalent organic frameworks",
+    "codes": [
+      "04.03.05"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Peivaste_2026_Ara_Durable_Photocatalytic_COFs.pdf; PDF p.2; Evaluated against random search and Bayesian optimization (BO) over a space consisting of candidates with various nodes, linkers, linkages, and r-groups, screened with a GFN1-xTB fragment pipeline, Ara achieves a 52.7% hit rate (11.5× random, p = 0.006), finds its first hit at iteration 12 versus 25 for random search, and significantly outperforms BO (p = 0.006).",
+    "quote": "",
+    "reason": "photocatalytic covalent organic framework materials",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.03.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0792",
+    "title": "Autonomous heterogeneous catalyst discovery with a self-evolving multi-agent digital twin",
+    "codes": [
+      "04.04.03"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Song_2026_CatDT_Heterogeneous_Catalyst_Discovery.pdf; PDF p.2; Every CatDT prediction lies between 0.5 and 2 times the experimental value across measurements spanning four orders of magnitude, on seven gas–solid benchmarks: stepped metals, single-atom catalysts, ordered intermetallics, vacancy-rich two-dimensional sulfides, two-dimensional carbides, and a strong-metal– support-interaction (SMSI) interface.",
+    "quote": "",
+    "reason": "heterogeneous catalyst materials and digital twin",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.04.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0793",
+    "title": "Adsorb-Agent: Autonomous Identification of Stable Adsorption Configurations via Large Language Model Agent",
+    "codes": [
+      "03.02.10"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/03_Chemical_Sciences/Ock_2024_Adsorb_Agent.pdf; PDF p.23; The calculation is deﬁned as: Open Catalyst Demo The Open Catalyst demo (OC-demo) is an interactive platform that allows users to explore and optimize binding sites for adsorbates on catalyst surfaces.42 It supports 11,427 catalyst materials and 86 adsorbates, with the catalyst crystal structures sourced from the Materi- als Project43 and the Open Quantum Materials Database.44 The OC-demo helps identify the adsorption energy of the selected adsorbate and catalytic surface by generating multi- ple initial conﬁgurations and evaluating them using state-of-the-art graph neural networks, like GemNet-OC and EquiformerV2.",
+    "quote": "",
+    "reason": "adsorption configurations and catalyst/chemical surface study",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "03.02.10",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0794",
+    "title": "The HTC-Claw: Automating Discovery through High-Throughput Computational Campaigns",
+    "codes": [
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/04_Materials_Science/Zeng_2026_HTC_Claw.pdf; PDF p.1; Case studies demonstrate that HTC-Claw enables an intelligent, end- to-end workflow from user intent to final reporting in materials exploration 1.",
+    "quote": "",
+    "reason": "high-throughput computational materials campaign",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "04.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0799",
+    "title": "CeProAgents: A Hierarchical Agents System for Automated Chemical Process Development",
+    "codes": [
+      "09.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Yang_2026_CeProAgents.pdf; PDF p.13; 4.2 CEPROBENCH Construction To rigorously evaluate CEPROAGENTS in autonomous chemical process development, we present CEPROBENCH, an engineering-verifiable benchmark repository.",
+    "quote": "",
+    "reason": "chemical process development and process-system engineering",
+    "source_report": "tertiary_remaining_reaudit_0641_0800_2026-10-29.csv",
+    "chosen_primary_code": "09.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0803",
+    "title": "ClimateAgents: A Multi-Agent Research Assistant for Social-Climate Dynamics Analysis",
+    "codes": [
+      "05.02.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "titute of Technology shans@hit.edu.cn Abstract The complex interaction between social behaviors and climate change requires more than traditional data-driven prediction; it demands interpretable and adaptive analytical frameworks capable of integrating heterogeneous sources of knowledge. This study introduces ClimateAgents, a multi-agent research assistant designed to support social-climate analysis through coordinated AI agents. Rather than focusing solely on predictive modeling, the framework assists researchers in ex- ploring so",
+    "reason": "社会—气候耦合分析的目标对象是气候变化。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "05.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0811",
+    "title": "Closed-Loop Molecular Design with Calibrated Deference",
+    "codes": [
+      "04.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "ted CLIO in a closed-loop human–AI campaign to design an aqueous organic redox flow battery (AORFB) negolyte, with CLIO leading proposal and interpretation in close partnership with chemists who synthesized, characterized, and weighed in on design choices. Across 17 candidates over three rounds, CLIO converged on a top phosphonate candidate; characterization confirmed a 130 mV improvement in redox potential over the literature baseline. Characterization then revealed unexpectedly poor electrochemical reversibility—a regression no pr",
+    "reason": "液流电池负极电解液候选的闭环设计，归电池材料。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0818",
+    "title": "MolMem: Memory-Augmented Agentic Reinforcement Learning for Sample-Efficient Molecular Optimization",
+    "codes": [
+      "03.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "500 oracle calls. Our code is avail- able at https://github.com/REAL-Lab-NU/ MolMem. 1 Introduction Molecular optimization is a key step in drug discov- ery that iteratively refines a lead compound to im- prove molecular properties while preserving struc- tural similarity to the original molecule (Plowright et al., 2012; Wesolowski and Brown, 2016; Wang et al., 2025c,b). Since each refinement relies on expensive oracle evaluations (e.g., wet-lab as- *Corresponding Author Figure 1: The Evolution of Molecular Optimization Paradigms. (1) Novice: tri",
+    "reason": "记忆模块服务于分子性质多目标优化。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "03.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0819",
+    "title": "SEISMO: Increasing Sample Efficiency in Molecular Optimization with a Trajectory-Aware LLM Agent",
+    "codes": [
+      "03.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "t. To address this, we introduce SEISMO, an LLM agent that performs strictly online, inference-time molecular optimization, updating after every ora- cle call without the need for population-based or batched learning. SEISMO conditions each pro- posal on the full optimization trajectory, combin- ing natural-language task descriptions with scalar scores and, when available, structured explana- tory feedback. Across the Practical Molecular Optimization benchmark of 23 tasks, SEISMO achieves a 2–3 times higher area under the opti- misation curve tha",
+    "reason": "PMO实际性质优化实验，而非仅提及化学工具。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "03.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0821",
+    "title": "Agentic reinforcement learning empowers next-generation chemical language models for molecular design and synthesis",
+    "codes": [
+      "03.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.5,6",
+    "quote": "Molecule Optimization ... Physicochemical Properties (LogP, QED, Solubility) ... Protein-Ligand Binding Affinities (DRD2, GSK3-β, JNK3) ... Property Improvement score",
+    "reason": "Concrete experiment/task evidence supports 03.04.02 (小分子性质优化). Molecule Optimization ... Physicochemical Properties (LogP, QED, Solubility) ... Protein-Ligand Binding Affinities (DRD2, GSK3-β, JNK3) ... Property Improvement score",
+    "source_report": "tertiary_last18_partA_2026-10-29.json",
+    "chosen_primary_code": "03.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0829",
+    "title": "DarkAgents",
+    "codes": [
+      "02.02.14"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": ", starting from a classically scale-invariant particle-physics model and ending with the fit to the NANOGrav nanohertz gravitational- waves spectrum. DarkAgent-PT provides as output i) the best-fit values of model param- eters, ii) their existing experimental and observational constraints, iii) an audit report of the assumptions and priors entering both i) and ii), of particular relevance for astroparticle physics. Our test runs identify inconsistencies in some fits in the literature and produce novel ones based on the dissipative b",
+    "reason": "粒子模型的宇宙学相变及引力波约束，不把LLM本身当对象。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.14",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0844",
+    "title": "Science Earth: Towards A Planet-Scale Operating System for AI-Native Scientific Discovery",
+    "codes": [
+      "01.01.07"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.5",
+    "quote": "ommit-level provenance for events referenced below is given in Supplementary Table S1. Higher-order Kuramoto synchronization: an OA closure-ratio correction surfaced by cross- tradition comparison (Fig. 3) Between 2020 and 2025, four groups characterised the role of three-body coupling 𝐾3 in higher-order Kuramoto synchronization38,39 from independent angles and reached qualitatively different conclusions: 𝐾3 triggers explosive synchronization40; 𝐾3 contracts the basin of attraction41; 𝐾3 has a non-monotone effect (weak helps, strong",
+    "reason": "实际完成高阶Kuramoto同步研究并修正Ott–Antonsen近似；须由01.04对齐01.01；单细胞实验另有06覆盖，不应删除。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.01.07",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0845",
+    "title": "SciDER: Scientific Data-centric End-to-end Researcher",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": "ench [18] tests multi- step statistical reasoning across 264 tasks. For experimentation and coding, MLE-Bench [5] evaluates ML engineering on 75 Kaggle competitions, while SciCode [12] assesses scientific coding across 80 multi-step problems. To evaluate end-to-end autonomy, AIRS-Bench [19] covers the entire research life- cycle across 20 complex tasks without baseline code. Finally, we use AstroVisBench [20] to assess multimodal reasoning and tool use, testing long-tail API integration and iterative visualization refinement across 8",
+    "reason": "MLE-Bench有可执行机器学习实验与成绩；由01.04对齐01.02，SciCode其他领域覆盖另审。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0849",
+    "title": "OmniScientist: Toward a Co-evolving Ecosystem of Human and AI Scientists",
+    "codes": [
+      "01.01.11"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.23,24",
+    "quote": "Table 2: Error Comparison for AllenCahnTwobody equation; STDE 0.008730 0.002620 0.003440 0.002500; Omniscientist 0.006780 0.000579 0.000572 0.001210",
+    "reason": "Concrete experiment/task evidence supports 01.01.11 (计算数学与数值分析). Table 2: Error Comparison for AllenCahnTwobody equation; STDE 0.008730 0.002620 0.003440 0.002500; Omniscientist 0.006780 0.000579 0.000572 0.001210",
+    "source_report": "tertiary_last18_partA_2026-10-29.json",
+    "chosen_primary_code": "01.01.11",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0850",
+    "title": "OR-Agent: Bridging Evolutionary Search and Structured Research for Automated Algorithm Discovery",
+    "codes": [
+      "01.02.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "cipled mechanism for governing research dynamics. We conduct extensive experiments across classical combinatorial optimization benchmarks as well as simulation-based cooperative driving scenarios. Results demonstrate that OR-Agent outper- forms strong evolutionary baselines while providing a general, extensible, and inspectable frame- work for AI-assisted scientific discovery. All code and experimental data are publicly available at https://github.com/qiliuchn/OR-Agent. 1 Introduction Scientific research is traditionally an iterative and",
+    "reason": "组合优化算法构造及运行比较，数学运筹与驾驶另保留覆盖。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0852",
+    "title": "Autonomous science for an ExoMars Rover-like mission",
+    "codes": [
+      "10.02.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": " January 2009 In common with other Mars exploration missions, human supervision of Europe’s ExoMars Rover will be mostly indirect via orbital relay spacecraft and thus far from imme- diate. The gap between issuing commands and witnessing the results of the consequent rover actions will typically be on the order of several hours or even sols. In addition, Journal of Field Robotics 26(4), 358–390 (2009) C⃝2009 Wiley Periodicals, Inc. Published online in Wiley InterScience (www.interscience.wiley.com). • DOI: 10.1002/rob.20289 ",
+    "reason": "ExoMars火星车科学自主任务，属于深空探测。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "10.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0869",
+    "title": "STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery",
+    "codes": [
+      "02.02.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.5,18,19,21",
+    "quote": "Table 5: Oscillator 1; Oscillator 2; Physics PO20 ... PO40 ... PO12 ...; Figure 12: Case studies on the two oscillator benchmarks",
+    "reason": "Concrete experiment/task evidence supports 02.02.03 (经典力学). Table 5: Oscillator 1; Oscillator 2; Physics PO20 ... PO40 ... PO12 ...; Figure 12: Case studies on the two oscillator benchmarks",
+    "source_report": "tertiary_last18_partA_2026-10-29.json",
+    "chosen_primary_code": "02.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0870",
+    "title": "SR-Scientist: Scientific Equation Discovery With Agentic AI",
+    "codes": [
+      "02.02.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.6,8",
+    "quote": "Figure 4: Equations discovered for the PO10 and PO37 physics problems. The variables ... represent acceleration in a non-linear harmonic oscillator, time, position, and velocity, respectively.",
+    "reason": "Concrete experiment/task evidence supports 02.02.03 (经典力学). Figure 4: Equations discovered for the PO10 and PO37 physics problems. The variables ... represent acceleration in a non-linear harmonic oscillator, time, position, and velocity, respectively.",
+    "source_report": "tertiary_last18_partA_2026-10-29.json",
+    "chosen_primary_code": "02.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0871",
+    "title": "The Denario project: Deep knowledge AI agents for scientific discovery",
+    "codes": [
+      "02.02.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.23,24,25 5.1 Mathematical Physics; background PINNs; Denario results",
+    "quote": "understand the structure of the solutions to the Burgers equation in fluid dynamics for different values of the viscosity and initial conditions",
+    "reason": "主归档02.02下实际完成的首个数学物理案例直接分析Burgers非线性PDE及PINN解空间；可选为primary三级，不需因多领域框架而留空。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0873",
+    "title": "Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale",
+    "codes": [
+      "11.07.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.8",
+    "quote": "a scientific claim requires finding the papers that support or contradict it. We evaluate this with SciFact-Open, an open-domain claim-verification benchmark (Wadden et al., 2022a; 2020), using its 279 claims and all 460 human-annotated positive claim–paper pairs. To account for relevant papers outside the benchmark’s original annotation pool, we pool candidates from the released retriever and LKM and admit a new positive pair only when a DeepSeek judge (deepseek-v4.1-flash; SUPPORT and CONTRADICT thresholds 0.80 and 0.90) and Mult",
+    "reason": "论文之间的主张—证据—矛盾链接构成科学知识网络，且有SciFact及检索评估。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "11.07.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0923",
+    "title": "Training AI Scientists to Replicate Research",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "suring the reliability of existing results and providing a base for further experiments. The act of replication typically illuminates details that were previously underspecified, and thus requires similar hypothesis-driven exploration to open- ended research. In this work, we develop Replica, a scalable task space for paper replication. To provide reward signal, we introduce an auto-generated rubric-based judge that has low noise and agrees with human assessment of replication quality. We post-train Faraday, a 27B-parameter “AI Scienti",
+    "reason": "对机器学习论文复现实验执行进行训练与评估，属于机器学习研究。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0925",
+    "title": "Beyond Execution: Auditing Experimental Fidelity in LLM-Driven Scientific Research",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "h an 8-step workflow, and performs quan- titative, qualitative, and code-level verification. Across 30 long-horizon reproduction runs covering 12 machine learn- ing domains, ABE-Ralph achieves a 93% robust execution rate and identifies five scientific failure modes. In 23 Na- tureBench discovery tasks, ABE-Ralph matches or exceeds state-of-the-art performance on 5 tasks. These results show that reliable evaluation of AI scientists must assess whether the experimental design faithfully tests the intended claim and whether the r",
+    "reason": "30次复现覆盖12个机器学习领域，具具体执行和忠实性验证。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0927",
+    "title": "ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.3",
+    "quote": " refinement loops until rigorous acceptance criteria are satisfied. We evaluate ScientistTwo across 107 diverse research challenges encompassing diverse areas such as optimization, reinforcement learning, large language models (LLMs), and theory (see Fig- ure 1). Specifically, ScientistTwo successfully advances 80.4% of the target problems, delivering an average relative performance gain of 25.2% over the original human state-of-the-art baselines. Furthermore, the autonomously generated manuscripts and executable codebases cons",
+    "reason": "107篇机器学习问题的自主改进与人类SOTA比较。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0930",
+    "title": "ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery",
+    "codes": [
+      "01.01.12"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.8, Section 5.1; Table 1 p.9",
+    "quote": "Tasks. We evaluate on 11 open-ended mathematical discovery tasks. Nine tasks are the problems studied by SCS (Gideoni et al., 2026), which are taken from AlphaEvolve (Novikov et al., 2025), including the first and second autocorrelation inequalities, the uncertainty inequality, the Erdős minimum overlap problem, sums and differences of sets, the max–min distance ratio, the Heilbronn problem for triangles, the kissing number in 11 dimensions, and circle packing. The other two tasks are the Hadamard matrix problem (Wang et al., 2026) and a variant of circle packing that recovers the radii by linear programming. We report the best score at the end of the budget, as the mean and standard deviation over seeds, and the best seed. Full details of the tasks are given in Appendix I.1. Budget. Each run evaluates 200 programs. We consider two configurations with the same budget, i.e., 10 generations of 20 programs as in SCS (Gideoni et al., 2026) and 20 generations of 10 programs, which presents more challenges to accumulating reusable knowledge from experience. Implementation. We compare ExpEv",
+    "reason": "First-hand evidence supports 01.01.12; Tasks. We evaluate on 11 open-ended mathematical discovery tasks. Nine tasks are the problems studied by SCS (Gideoni et al., 2026), which are taken from AlphaEvolve (Novikov et al., 2025), including the first and second autocorrelation inequalities, the uncertainty inequality, the Erdős minimum overlap problem, sums and differences of sets, the max–min distance ratio, the Heilbronn problem for triangles, the kissing",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.01.12",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0938",
+    "title": "Learning to Evaluate Before Improving: Automatic Rubric Induction for Automatic Research Agents",
+    "codes": [
+      "01.02.12"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": " criteria and enables targeted refinement of the research re- port and its supporting artifacts. On ResearchClawBench, Au- toSciRub consistently improves all tested configurations, with an average gain of 2.08 points across three backbone LLMs under the fixed Codex harness and 2.95 points across three agent harnesses using a fixed DeepSeek-V4-Flash backbone. On a randomly sampled 20-task subset of AstaBench E2E Dis- covery, AutoSciRub further achieves an average improvement of 16.8 points across three agent harnesses, while maintain- ing or ",
+    "reason": "研究Agent的可执行rubric诱导及对照实验直接测量AI研究能力。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.12",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0940",
+    "title": "OmniScientist: An Omni-Modal Omni-Discipline AI Scientist",
+    "codes": [
+      "01.01.09"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.6,17,18 3.2 demonstration suite; Table 8 symbolic regression results",
+    "quote": "The Cramér–Rao form Var(a_hat)=sigma^2/(N Var log x) predicts empirical exponent-estimation variance across all 8 monomial Feynman laws",
+    "reason": "主归档01.01内有明确参数估计方差/噪声与取样范围验证；以统计学作为primary，比将通用框架直接归空更贴合实际结果。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.01.09",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0943",
+    "title": "Epi: Towards a Persistent, Self-Improving Agent for Autonomous Research",
+    "codes": [
+      "01.01.12"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": " as detailed in Section 4. These results include an approximately 84-fold narrower interval for the n-queens constant and a more than 3.6-million-fold narrower rigorous interval for the quartic Feigenbaum attractor dimension. Exact certificates establish that the Cohn–Elkies bound is not sharp in dimensions 10 and 11. Épi also proves Tuza’s conjecture for split graphs with an eight-vertex clique part and at most three triangle-active neighborhood types, with arbitrary multiplicities. We release the constructions and supporting certi",
+    "reason": "n皇后、组合构造和Tuza猜想直接支持离散数学；数值区间及动力系统另记数学多标签。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.01.12",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0948",
+    "title": "Collaborative Principle Evolution via Evidence Transfer for Scientific Discovery",
+    "codes": [
+      "03.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.6,7,33",
+    "quote": "MBO searches the space of drug-like small molecules, represented as SMILES strings, for the highest predicted bio-activity; quantified by maximizing its predicted pChEMBL value",
+    "reason": "Concrete experiment/task evidence supports 03.04.02 (小分子性质优化). MBO searches the space of drug-like small molecules, represented as SMILES strings, for the highest predicted bio-activity; quantified by maximizing its predicted pChEMBL value",
+    "source_report": "tertiary_last18_partA_2026-10-29.json",
+    "chosen_primary_code": "03.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0951",
+    "title": "Reward Hacking Challenges Oversight of Autonomous Research Agents",
+    "codes": [
+      "01.02.12"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.6",
+    "quote": "sion through this shared-blind-spot mechanism (§ B). The quality panel. A separate panel gives each reward-hacking method four 1–10 ratings (Metric 2) using fixed anchors and the execution results. Efficacy measures the margin above the pass threshold and reliability across reruns. Generality measures transfer to a new seed, split, or sample. Craft is the panel’s assessment of technical construction and camouflage, such as coherent integration, plausible naming, working fallbacks, and careful tie-breaking. Novelty measures departure from ",
+    "reason": "受控任务测量研究Agent奖励投机和审查逃逸，属于AI行为机制实验。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.12",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0955",
+    "title": "AutoWorldModel-Bench: A State-Centric Benchmark for Automated World-Model Research",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": " 3). 2. We define a six-hour compute-bounded closed-loop protocol in which an agent receives a base world model architecture and must autonomously improve it (Sec. 3.5). 3. We evaluate Codex-5.4 and Claude Opus 4.6 across the 64 (game, base) sessions and analyze where the improvements come from: agents lift the base on 63 of 64 sessions, and the gain is concentrated at long-horizon rollout rather than one-step fit (Secs. 5.1 and 5.4). 4. We classify every agent experiment against its base using a zero-shot judge and find that in 91% of",
+    "reason": "实际改进世界模型架构与训练，在8个游戏环境作持出评估。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0962",
+    "title": "Triage-PiEvo: Evidence Admission for Principle-Evolving Scientific Agents",
+    "codes": [
+      "03.02.07"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.6,7,8",
+    "quote": "we evaluate TRIAGE-PIEVO on four optimization tasks ... Transition Metal Complex (TMC); Table 1 ... Triage-PiEvo ... TMC 81.50±4.02",
+    "reason": "Concrete experiment/task evidence supports 03.02.07 (配位化学). we evaluate TRIAGE-PIEVO on four optimization tasks ... Transition Metal Complex (TMC); Table 1 ... Triage-PiEvo ... TMC 81.50±4.02",
+    "source_report": "tertiary_last18_partA_2026-10-29.json",
+    "chosen_primary_code": "03.02.07",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0963",
+    "title": "EvoSim: Learning to Model, Modeling to Learn",
+    "codes": [
+      "04.04.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": ", and coordinate research. We evaluate EvoSim on two industrial battery modeling tasks. It predicts lithium-metal-plating onset from 25 to 45 °C and 2 C to 6 C with a mean absolute error of 1.79% in state of charge. Dynamic voltage prediction under vehicle driving conditions achieves a root mean square error of 7.62 mV, surpassing the reported accuracy of models developed by human experts. Self-evolution reduces model and physics errors by approximately 36% relative to baseline, demonstrating improved scientific modeling capability",
+    "reason": "电池锂析出及电压仿真校准，明确电池材料应用。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.04.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0965",
+    "title": "Can AI Scientists Change Their Minds? Prior-Evidence Conflict in Synthetic Universes",
+    "codes": [
+      "02.02.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.3",
+    "quote": "plete. Family Famous mechanism Twisted mechanism Spring −k sgn(x)|x|p, p = 1 −k sgn(x)|x|p, p = 1.3 Gravity Fr ∝r−p, p = 2 Fr ∝r−p, p = 2.3 Drag −k∥v∥p−1v, p = 1 −k∥v∥p−1v, p = 1.6 Pendulum −ω2 sin θ −ω2 sin θ(1 + 0.4|θ|) Conservation† audited target invariant class generator under audit Coupling† audited pair-interaction class generator under audit et al., 2026]; AlphaEvolve combines language-model generation with executable evaluators [Novikov et al., 2025]; Gemini case studies explore code-supported scientific problem solving [W",
+    "reason": "扭曲引力定律的轨道数据验证，支持经典力学；其他合成物理环境另标签。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0968",
+    "title": "Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery",
+    "codes": [
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": ", but do not reveal how approximation errors alter a policy that repeatedly acts on model feedback. MADE instead evaluates complete discovery policies under a sequential oracle budget (Malik et al., 2026). Self-driving laboratories address the feedback bottleneck by automating synthesis, handling, and characterization (Burger et al., 2020; Kusne et al., 2020; Szymanski et al., 2023; Rapp et al., 2024; Sheng et al., 2024; Seifrid et al., 2022). They reduce human intervention and experimental latency, but require specialized infra",
+    "reason": "材料代理模型修复与高精度计算反馈的实验支持材料计算。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0969",
+    "title": "Mechanist: AI as a Scientific Instrument for Discovering the Mechanisms of Intelligence",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "echanist, an agentic system that uses AI as a scientific instrument for the autonomous discovery of mechanisms underlying AI. To ground novel mechanism hypotheses, we construct a scientific knowledge graph of 13,000 studies on AI mechanisms, alongside a multidisciplinary database of 43 million papers spanning 26 fields. For reliable experiment execution, we curate a library of 32 foundational methods for mechanism analysis, causal intervention, and validation. Compared with Claude Code and existing AI-scientist systems, Mechanist generates higher-q",
+    "reason": "AI模型内部机制和干预实验，知识图谱仅为研究工具。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0971",
+    "title": "Sci$螤$vot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents",
+    "codes": [
+      "11.07.08"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.3,4,5,8",
+    "quote": "Its 248 cases from 26 projects pair original LLM plans with human-corrected alternatives reconstructed from completed project histories; Planning; Adapting; Anomaly awareness; Evidence sufficiency",
+    "reason": "Concrete experiment/task evidence supports 11.07.08 (科学方法论). Its 248 cases from 26 projects pair original LLM plans with human-corrected alternatives reconstructed from completed project histories; Planning; Adapting; Anomaly awareness; Evidence sufficiency",
+    "source_report": "tertiary_last18_partA_2026-10-29.json",
+    "chosen_primary_code": "11.07.08",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0975",
+    "title": "A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms",
+    "codes": [
+      "01.02.12",
+      "01.01.03",
+      "01.01.12"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.3,4",
+    "quote": "We selected 71 problems of different difficulties from the Formal Conjectures dataset (Firsching et al., 2026; The Formal Conjectures Authors, 2025), spanning from relatively simple problems (e.g. complexity_three_pow), to hard classical theorems with known solutions (e.g. Catalan’s Conjecture), near-frontier and recently solved problems (e.g. Erdős Problem 835 on subset sums, Jacobian Conjecture, Sendov’s Conjecture), as well as unsolved open conjectures (e.g. Square-Freeness of Fermat Numbers). Agents could submit solutions to open problems, which were evaluated via an automated pipeline with three sequential checks: (1) a static keyword blacklist (axiom, sorry, macro, syntax), (2) byte-level string matching ensuring code outside the designated – EDITABLE markers remained 3  Our goal was to observe how autonomous multi-agent collectives collaborate on research with verifiable goals. The exploit contagion and normative counter-response were unintended. 3. Anatomy of the Exploit and Normative Response While the forensic timeline below details the first documented case of this behavior, both the rapid ex- ploit contagion and the emergent whistleblowing response were reliably reproduced across subsequent independent runs. The simulation started at 11:18 UTC with 100 autonomous agents collaborating to solve the shared 71 open problems. At 12:15 UTC, after the collective had correctly solved 37 out of the 71 problems, prover-theta discovered an exploit in the autograd",
+    "reason": "Concrete experiment/task evidence supports 01.02.12 (人工智能). We selected 71 problems of different difficulties from the Formal Conjectures dataset (Firsching et al., 2026; The Formal Conjectures Authors, 2025), spanning from relatively simple problems (e.g. complexity_three_pow), to hard classical theorems with known solutions (e.g. Catalan’s Conjecture), near-frontier and recently solved problems (e.g. Erdős Problem 835 on subset sums, Jacobian Conjecture, Sendov’s Conjecture",
+    "source_report": "tertiary_last18_partB_2026-10-29.json",
+    "chosen_primary_code": "01.02.12",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0977",
+    "title": "AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search",
+    "codes": [
+      "11.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.7",
+    "quote": "e-simulated. For dollar-neutral cross- sectional alphas, negation reverses the signs of returns and Sharpe while leaving turnover unchanged, so the flipped candidate’s metrics are derived exactly rather than re-simulated. A monotone target constraint requires the submitted formula to beat the best ancestor score. After the final pass, the proposer considers every eligible simulation, including eliminated candidates. It submits the winner and freezes the full search as an alpha report. The reviewer receives only the work directory ",
+    "reason": "真实金融alpha检验、Fitness和Sharpe，属于金融学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "11.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0978",
+    "title": "OpenDiscoveryTrace: Process Traces for Evaluating AI Scientist Workflows",
+    "codes": [
+      "04.02.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.9,11,12 materials-science traces; Appendix materials task prompts",
+    "quote": "Design a high-entropy alloy (HEA) composition for high-temperature applications. Select 5 elements ... predict the likely crystal structure using the VEC criterion.",
+    "reason": "当前04.02结构/无机材料下，HEA成分及晶体结构设计任务明确命中合金材料；保留其他材料任务为多候选，不因process-trace定位取消对象证据。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0979",
+    "title": "Autonomous in-silico inorganic materials discovery via multi-agent physics-aware scientific reasoning",
+    "codes": [
+      "04.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.8",
+    "quote": "emical-system-conditioned generative model (MatterGen), the system generates 100 candidate Ca–Mg–Si crystal structures. These hypothetical structures are then evaluated for thermodynamic stability using a surrogate model that predicts energy above the convex hull. Applying a stability threshold of Ehull < 0.10 eV/atom identifies six CaMg2Si2 candidates that satisfy the thermodynamic screening criteria. The six thermodynamically viable structures are subsequently evaluated using a pretrained Crystal Graph Convolutional Neural Network (CGCNN) t",
+    "reason": "MatterGen生成结构并按能量凸包等筛选，实验对象明确晶体。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.02.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0980",
+    "title": "Experiment automation agents: automating materials characterization with vision language model agents",
+    "codes": [
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "0/. npj Computational Materials Article in Press Experiment automation agents: automating materials characterization with vision language model agents ",
+    "reason": "材料表征实验自动化，主体为测量分析闭环。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0981",
+    "title": "A collaborative agent with two lightweight synergistic models for autonomous crystal materials research",
+    "codes": [
+      "04.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": "ligence for advancing materials research capabilities. 1. Introduction The accelerated discovery of crystal materials is critical for energy conversion systems, electronic components, and aerospace structures.1-3 Traditionally, material development has highly depended on iterative trial-and-error experimentation, resulting in cycles spanning 10-20 years.4-8 Although advances in high-throughput screening and machine learning have successfully established vast databases and predictive models, the discovery process remains critically ",
+    "reason": "晶体设计和性质评价的具体闭环任务。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.02.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0982",
+    "title": "Large-language-model-driven adaptive search space definition for autonomous closed-loop materials exploration",
+    "codes": [
+      "04.02.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": "dered an autonomous synthesis platform that can mount three elemental sources and aimed to discover ternary alloys exhibiting a large target property T. The workﬂow begins with the selection of an initial materials space deﬁned by three randomly chosen metallic elements. Within this space, T is measured for a small number of compositions to obtain initial data. Using these data, the next materials space is redeﬁned in a data-driven manner by selecting a new set of three elements. In this study, the space deﬁnition step (shown in blue in F",
+    "reason": "16908个B2结构三元合金的磁性组成优化，比泛晶体标签精确。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.02.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0983",
+    "title": "Autonomous adaptive spectral analysis with an LLM agent for self-driving laboratories",
+    "codes": [
+      "04.04.04",
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.1",
+    "quote": "cally defensible value can be obtained. We evaluated the workflow on optical transmittance spectra from 203 epitaxial β-Ga2O3 films grown during a previously reported self-driving thin-film growth campaign. The predefined optical analysis script returned Urbach energy, an optical-quality metric, for 183 spectra and failed for 20. The agent retained those 183 values and evaluated 20 exception cases, recovering 16 through bounded parameter adjustments and returning NaN for 4 when the spectral evidence did not support a reliable Urbach tail. The audit records captured spectral features, parameter changes, and rationale for each decision. These results demonstrate autonomous scientific exception handling by an LLM agent while leaving quantitative property extraction to deterministic numerical analysis. 1. Introduction Materials synthesis and processing often involve large multidimensional parameter spaces in which experiments are costly and exhaustive exploration is impractical.⁠1 Self-driving laboratories (SDLs) address this challenge by autonomously closing the loop among materials synthesis, characterization, data analysis, and algorithmic selection of subsequent experiments, using artificial intelligence and machine learning (AI/ML).⁠2⁠–⁠5 By iteratively directing experiments toward informative or promising regions of ",
+    "reason": "Concrete experiment/task evidence supports 04.04.04 (半导体材料). cally defensible value can be obtained. We evaluated the workflow on optical transmittance spectra from 203 epitaxial β-Ga2O3 films grown during a previously reported self-driving thin-film growth campaign. The predefined optical analysis script returned Urbach energy, an optical-quality metric, for 183 spectra and failed for 20. The agent retained those 183 values and evaluated 20 exception cases, recovering 16 thro",
+    "source_report": "tertiary_last18_partB_2026-10-29.json",
+    "chosen_primary_code": "04.04.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0984",
+    "title": "A self-learning scientific agent for X-ray diffraction",
+    "codes": [
+      "03.02.03",
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.4,13",
+    "quote": "ections (𝑅p = 2.753%, 𝑅wp = 5.926%). b, Five-phase analysis of an ancient Egyptian cosmetic powder containing gypsum, phosgenite, cerussite, galena and laurionite (𝑅p = 6.600%, 𝑅wp = 13.079%). c, Operando analysis of an O3-type Li(Ni0.8Co0.1Mn0.1)O2 cathode. The voltage–time trace (left), diffraction waterfall (centre; colour indicates scan order) and refined 𝑐axis (right) connect electrochemical cycling to lattice evolution. d, Refinement of the selected Ru–Mn oxide configuration (𝑅p = 1.447%, 𝑅wp = 3.129%). In a,b,d, pale blue symbols and red curves denote observed and calculated intensities; Δ𝐼= 𝐼obs −𝐼calc is the difference profile, and ticks mark calculated Bragg positions. e, Single-phase identification on MP500, RRUFF and opXRD: bars show top-1 accuracy and heat maps show top-1, top-3, top-5 and mean reciprocal rank (MRR@5). f, Multiphase identification on the same sources: bars show sample-wise macro-F1 and heat maps show prediction coverage (Cov.), exact-set recovery (Exact), precision (P), recall (R) and F1. Open and filled bars denote XRD-only and composition-assisted conditions. Gan Jiang is highlighted in red. Higher scores are better. Full values and composition-input protocols are given in Tables 1 and 2. 4 ",
+    "reason": "Concrete experiment/task evidence supports 03.02.03 (分析化学). ections (𝑅p = 2.753%, 𝑅wp = 5.926%). b, Five-phase analysis of an ancient Egyptian cosmetic powder containing gypsum, phosgenite, cerussite, galena and laurionite (𝑅p = 6.600%, 𝑅wp = 13.079%). c, Operando analysis of an O3-type Li(Ni0.8Co0.1Mn0.1)O2 cathode. The voltage–time trace (left), diffraction waterfall (centre; colour indicates scan order) and refined 𝑐axis (right) connect electrochemical cycling to lattice e",
+    "source_report": "tertiary_last18_partB_2026-10-29.json",
+    "chosen_primary_code": "03.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0986",
+    "title": "Hierarchical automation of scanning probe microscopy through agentic orchestration and algorithmic control",
+    "codes": [
+      "04.03.04",
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.11",
+    "quote": "in the end-to-end autonomous experiment The complete workflow was evaluated on a PLZT relaxor ferroelectric with a single instruction – determine how local domain structure affects polarization switching dynamics. The context stated that this was a DART-PFM measurement on PLZT with complex domain structure. No spatial criteria, measurement locations, spectroscopy waveform, experimental trajectory, or stopping rule were specified for the agent. The system was initialized from the operator's current instrument configuration. The first 15 × 15 µm scan contained clear polarization-related phase contrast together with topographic scratches and banding in the resonance-frequency channel (Figure 7A). From this scan and the scientific task, the workflow generated three primary spatial coordinates – domain polarization state, domain-wall proximity, and local phase heterogeneity (Figure 7B). An independent acquisition-validity map excluded scratch-like topography and reduced the ",
+    "reason": "Concrete experiment/task evidence supports 04.03.04 (智能材料). in the end-to-end autonomous experiment The complete workflow was evaluated on a PLZT relaxor ferroelectric with a single instruction – determine how local domain structure affects polarization switching dynamics. The context stated that this was a DART-PFM measurement on PLZT with complex domain structure. No spatial criteria, measurement locations, spectroscopy waveform, experimental trajectory, or stopping rule we",
+    "source_report": "tertiary_last18_partB_2026-10-29.json",
+    "chosen_primary_code": "04.03.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0987",
+    "title": "Diagnosing and narrowing the simulation-to-real gap in powder X-ray diffraction with a wet-dry agentic loop",
+    "codes": [
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "TXT lines 471?480????????????",
+    "quote": "  Powder X-ray diffraction (PXRD) is the routine probe of crystalline matter, yet its analysis is the rate-limiting step as laboratories automate acquisition. Deep-learning analyzers excel on simulated patterns and degrade on measured ones. This simulation-to-real gap is structural, not additive: synthetic denoising gives no measurable lift on real spectra, whereas correcting a small peak-position drift more than doubles median retrieval correlation. Real-spectrum fine-tuning, peak-aligned reranking, and recalibration narrow what remains and restore the coverage synthetic anchors lose. Xtalyst integrates these in an",
+    "reason": "缓存原始全文证实粉末XRD干湿闭环物相分析，材料表征对象明确。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0988",
+    "title": "PACE-SIMS: Checkpoint-Gated Autonomous SIMS Characterization with AI-Agent Quality Control",
+    "codes": [
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": "ys. In standard practice a trained researcher supervises the acquisition across the full experiment workﬂow from selecting species, setting parameters, watching the data arrive, and deciding what to do next. The cost does not end with data acquisition, when reduction, analysis and interpretation of the raw hyperspectral data are themselves time-consuming and associated time requirements frequently exceed the acquisition time. Unlike many other characterization techniques, ToF-SIMS requires active control of the data acquisitio",
+    "reason": "WOx膜ToF-SIMS自动测量及纠错，归材料表征。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0990",
+    "title": "An LLM agent for end-to-end computational materials discovery",
+    "codes": [
+      "04.03.05"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "O, a large language model (LLM) agent system capable of executing the entire screening pipeline for metal-organic frameworks (MOFs). It processes a large body of MOF literature, links relevant publications to their crystal structures, and curates the results into a computation-ready database, which is then screened through a strategy of progressively increasing computational cost. The promising candidates identified for separation under wet flue-gas conditions all originate from unrelated studies. By connecting the heterogeneous stages o",
+    "reason": "MOF材料的湿烟气吸附分离，归多孔材料；须由04.02对齐04.03。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.03.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0991",
+    "title": "ALKEMIE Agent: an autonomous platform for computational materials design",
+    "codes": [
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": "costly, or even infeasible to address through experiments and theory. Consequently, in the field of materials science, computational materials design (CMD) has become an essential route for decoding the structure-property relationship, accelerating the discovery and deployment of novel materials. Over multiple length and time scales, a wide spectrum of methods, including density functional theory (DFT), molecular dynamics (MD), machine-learned interatomic potentials (MLIPs), high- throughput calculations, phase-field modeling, and fi",
+    "reason": "材料计算平台集成结构、声子和MLIP运行与验证。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0992",
+    "title": "ElectrolyteMD-Bench: How Well Do AI Agents Conduct Molecular Dynamics Studies across Electrolyte Solvation Regimes?",
+    "codes": [
+      "03.02.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.3",
+    "quote": " independent, clearly bounded MD tasks. It evaluates agents across three representative electrolyte solvation regimes, covering DE, HCE, and LHCE within a single comparative study. We assess not only the correctness of individual simulations and analyses, but also whether the overall study is scientifically supported by valid methods, sufficient statistical evidence, traceable results, and evidence-consistent conclusions. 3 ELECTROLYTEMD-BENCH DESIGN 3.1 SYSTEMS AND AGENT CONFIGURATIONS Table 1: Compositions of MD systems. System Li+",
+    "reason": "电解液溶剂化、输运及分子动力学直接支持物理化学；电化学可作交叉候选。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "03.02.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0993",
+    "title": "Vibe-FDTR: An agent-oriented framework for reproducible frequency-domain thermoreflectance data analysis",
+    "codes": [
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": "ily derived via Fourier’s law from the applied heat flux and measured temperature differ- ence7,11, thermoreflectance measurements rely on an indirect model fitting procedure30. This nonlinear inverse problem is inherently limited by parameter sensitivities and corre- lations, therefore a single signal or fitting window often provides insufficient identifiability for extracting multiple thermal properties. To obtain reliable results, complementary in- formation from different signals may be required, such as those measured with di",
+    "reason": "FDTR测量材料热学性质，归材料表征。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0994",
+    "title": "AEcroscopyWave: Towards Self-Driving Characterization Platforms for Agentic AI",
+    "codes": [
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.3",
+    "quote": "try self-driving labs (SDL) by Aspuru-Guzik.[53]. Here, we discuss the development of the automated microscopy platform AEcroscopy (short for automated experiments for microscopy) to illustrate our perspective on instrument automation in the era of agentic AI.[33] Specifically, we discuss the evolution of the AEcroscopy system from version 1 to version 2 (i.e., AEcroscopyWave), the version 2 includes a specific distributed agent model that separates planning from execution, a model context protocol (MCP) server for agent-based operati",
+    "reason": "扫描探针显微镜的实际仪器闭环，归材料表征。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0995",
+    "title": "Quality-controlled active learning via Gaussian processes for robust structure鈥損roperty learning in autonomous microscopy",
+    "codes": [
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "valuations on a pre-acquired dataset of band-excitation piezoresponse spectroscopy (BEPS) data from PbTiO3 thin ﬁlms with spatially localized noise show that the proposed method outperforms random sampling, standard active learning, and multitask learning strategies. We further deployed the framework in real-time experiments on a separate PbTiO3 thin-ﬁlm sample with heterogeneous domain structures, demonstrating its effectiveness in autonomous microscopy experiments. Overall, this work supports hybrid autonomy in self-driving labs",
+    "reason": "First-hand evidence supports 04.01.03; valuations on a pre-acquired dataset of band-excitation piezoresponse spectroscopy (BEPS) data from PbTiO3 thin ﬁlms with spatially localized noise show that the proposed method outperforms random sampling, standard active learning, and multitask learning strategies. We further deployed the framework in real-time experiments on a separate PbTiO3 thin-ﬁlm sample with heterogeneous domain structures, demonstrating its ",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0996",
+    "title": "ChemGraph-XANES: an agentic framework for XANES simulation and curation",
+    "codes": [
+      "03.02.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "dependent tasks across the user-configured worker pool. Together, these results show that ChemGraph-XANES provides a constrained and reproducible orchestration layer for computational spectroscopy, supporting consistent execution of representative tasks, documentation-linked parameter selection, and task-parallel generation of structure-linked XANES collections. 1 Introduction Computational X-ray absorption near-edge structure (XANES) has become an important comple- ment to experimental X-ray absorption spectroscopy for interpret",
+    "reason": "TiO2局域配位与氧化态的XANES谱分析，归分析化学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "03.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-0999",
+    "title": "Interpretable self-driving sputtering epitaxy reveals human-usable growth rules for 尾-Ga2O3 films",
+    "codes": [
+      "04.04.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": ", F.B. et al. Interpretable self-driving sputtering epitaxy reveals human-usable growth rules for β-Ga2O3 films. Nat Commun (2026). https://doi.org/ 10.1038/s41467-026-76533-0 Yuki K. Wakabayashi, Yui Ogawa, Franz Benedict Romero, Coleman Wagner, Takuma Otsuka & Yoshitaka Taniyasu We are providing an unedited version of this manuscript to give early access to its findings. Before final publication, the manuscript will undergo further editing. Please note there may be errors present which affect the content, and all legal disclaim",
+    "reason": "βGa2O3半导体薄膜制备与光学品质指标。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.04.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1001",
+    "title": "CompMat-Bench: Benchmarking AI Agents for Computational Materials Science",
+    "codes": [
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "oss agents and trials can make evaluation impractical. We introduce CompMat-Bench, a bench- mark of 94 tasks derived from recently published computational materials studies, each asking agents to complete a step toward achieving the study’s scientific goal. We reproduce the research steps in advance and assess agents on preparing inputs and analyzing outputs for expensive simulations, so expensive simulations can be avoided during evaluation. The reproduced inputs and results serve as ground truth for grading agents with fixed",
+    "reason": "94个计算材料任务的执行和复现评估，归材料计算。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1002",
+    "title": "ERAF4XRD: A multimodal agentic framework for constructing validated experimental X-ray diffraction databases from scientific literature",
+    "codes": [
+      "04.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.5",
+    "quote": "06 7 Oxides CrossRef 22 144 219 64 29.22 3.42 8 Fe or Cu Springer 19 151 147 28 19.05 5.25 273 2525 3150 282 8.95 11.17 The results are organized into six parts: benchmark dataset, reconstruction and auto- mated validation of experimental records, man- ual assessment of the reliability of ERAF4xrd outputs, strategies for successful experimental record reconstruction, analysis of failed cases in XRD figure identification and metadata extrac- tion, and scalability in terms of runtime, cost, resource–accuracy trade-offs, and LLM se",
+    "reason": "XRD图谱的提取及测量元数据重建，归材料表征。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.01.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1003",
+    "title": "Human-agent discovery of reconfigurable in-plane ferroelectric superdomain control",
+    "codes": [
+      "04.03.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.4",
+    "quote": "ponse, with substantial contributions from domain walls.33-37 Previous tip-induced studies in other ferroelectrics also show a strong dependence on scan path and initial state.28, 38, 39 Which microscopic route the film takes between two directions is the subject of a companion study. Here we focus on the workflow development based on the imaging data available to the human or AI agent. We use the image as input and explore which SPM actions can reproducibly switch the film between these states. At the experimental level, we describe the",
+    "reason": "PZT铁电薄膜超畴翻转写入，归智能材料。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.03.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1004",
+    "title": "Crystal-structure design by agentic AI in a language of motifs",
+    "codes": [
+      "04.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": " and seldom reveals new structure types. We present MatEvolve, an agentic-AI framework that designs crystals in an interpretable language of motifs, in which each crystal is written as a motif profile that describes the recurring geometric patterns—the motifs—composing the crystal. The motif profile serves not merely as a description of a material but as the medium for material design: the agent edits the profile with a stated rationale and constructs a crystal from the modified one; the most promising candidates are then validated",
+    "reason": "晶体结构中的基元设计与结构性质优化。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.02.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1005",
+    "title": "LATHE: LAnguage-driven Toolkit for Hypothesis-based crystal Editing",
+    "codes": [
+      "04.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "ctive. Across single-property benchmarks, LATHE attains near-perfect constraint satisfaction on all seven property types while keeping optimized structures close to local energy minima. The LATHE-equipped agent translates over 87.5% of natural-language prompts into valid executable configurations and faithfully completes them. In a band- gap inverse-design case study, the multi-agent loop reaches the target tolerance window in nine of ten independent runs at a typical cost of thirteen hypothesis-evaluation cycles. By bridging nat",
+    "reason": "七类晶体几何约束及带隙逆设计，归晶体材料。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.02.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1006",
+    "title": "Enabling large language model agents for high-fidelity many-body perturbation theory calculations",
+    "codes": [
+      "02.02.08"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.4",
+    "quote": "ough the CLI. To evaluate AI-Donkey’s ability to carry out robust autonomous MBPT workflows, we use silicon GW and GW-BSE calculations as canonical benchmarks. These workflows have well-defined inputs and outputs, while still requiring nontrivial workflow logic, cross-step dependency propagation, and physics-aware parameter choices. They therefore provide a controlled baseline for assessing whether an LLM agent can perform standard MBPT calculations autonomously. We apply this benchmark across a diverse set of LLM agents to test th",
+    "reason": "硅与SiC的GW/GW-BSE/GWPT多体电子声子计算，凝聚态物理比泛计算物理精确。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.08",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1007",
+    "title": "Agentic schema-guided extraction of materials process knowledge from scientific literature",
+    "codes": [
+      "04.04.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "-based eval- uation and refinement before knowledge-graph integration. We evaluate the framework on 176 atomic-layer-deposition papers describing zinc oxide (ZnO) and indium–gallium–zinc oxide (IGZO), together with an expert-annotated full- schema subset. PubChem normalization improves exact-match extraction F1 for every tested model. For ZnO, the best F1 increases from 0.591 for direct normal- ized extraction to 0.805 with agentic refinement, whereas the best IGZO result is 0.344, revealing the greater difficulty of multicompo",
+    "reason": "176篇ZnO/IGZO原子层沉积论文中的工艺与测量知识，归半导体材料；须由04.02对齐04.04。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.04.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1008",
+    "title": "Scaling LLM Agents for Materials Design through Hierarchical Collective Reasoning",
+    "codes": [
+      "04.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "ce defects or restrict synthesis. Although conventional generative models can produce stable, novel crystal structures, translating detailed natural-language design instructions into candidates that reconcile these constraints remains challenging. Here we introduce HiMatGen, a framework that scales large language model (LLM) agents through hierarchical collective reasoning. Built from GPT-5.6 Terra, HiMatGen connects 100 investigators organized into discussion pods across ten scientiﬁc domains with representatives connected with do",
+    "reason": "六固定化学系统的晶体生成和稳定性筛选。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "04.02.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1011",
+    "title": "Stress-testing large language model agents in a robotic chemistry laboratory",
+    "codes": [
+      "03.03.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.5",
+    "quote": "h that a task had started or completed. We collected 32 research tasks from domain experts, with eight tasks in each of four catalysis domains (Fig. 2B, note 4 of the supplementary text, and table S8). Together, these tasks formed a test suite for general catalysis research spanning electrocatalysis, electrochemical materials and testing, photocatalysis and thermal catalysis. Electrocatalysis tasks covered the oxygen evolution, hydrogen evolution, urea oxidation and ethanol oxidation reactions. Electrodes tasks covered cyclic voltammetry, impedance spectroscopy and ion-storage measurements. Photocatalysis tasks addressed H2 and H2O2 production and selective oxidation, whereas thermal-catalysis tasks focused on selective hydrogenation. Rather than repeating a canonical protocol, the suite required different combinations of sample synthesis, structural characterization, reaction testing and product analysis. A representative task asks the agent to improve urea conversion and target-product yield for Ni-based catalysts in alkaline urea oxidation. The agent must design and dispatch an experiment to robotic Laboratory 303 and return the resulting task identifier. To fulfil this request, it must recover six implicit fields: the goal, reaction, material, constraints, workflow and expected output. These fields must then be tra",
+    "reason": "Concrete experiment/task evidence supports 03.03.03 (催化化学). h that a task had started or completed. We collected 32 research tasks from domain experts, with eight tasks in each of four catalysis domains (Fig. 2B, note 4 of the supplementary text, and table S8). Together, these tasks formed a test suite for general catalysis research spanning electrocatalysis, electrochemical materials and testing, photocatalysis and thermal catalysis. Electrocatalysis tasks covered the oxygen",
+    "source_report": "tertiary_last18_partB_2026-10-29.json",
+    "chosen_primary_code": "03.03.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1032",
+    "title": "RelAgent: a multi-agent solution for molecular relationship grounding",
+    "codes": [
+      "03.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "TXT line 35",
+    "quote": "We propose RelAgent, a cooperative multi-agent framework for molecular relationship grounding. RelAgent decomposes the task into three interpretable stages: entity extraction, substructure localization, and ontology-guided relationship reasoning, and then uses verifier agents to rank structurally plausible candidates. This design supports fine-grained reasoning over molecular substructure and substantially improves performance on the MolGround benchmark. RelAgent achieves",
+    "reason": "分子描述到SMILES子结构关系定位、RDF及RDKit校验，归化学信息学；缓存全文而非标题猜测。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "03.01.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1045",
+    "title": "CFD Forge: A Physics-Constrained Agentic Framework for Autonomous CFD",
+    "codes": [
+      "09.01.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": " flow, measure explicit criteria and decide. We demonstrate the framework on a converging–diverging nozzle and a two-dimensional forward-facing step, including geometry and operating changes requested in text. A turbulent cube, run outside the agent loop, shows why the checks matter: the solver completed and the mean drag settled, but the lateral-force oscillations were still growing, so a retrospective assessment withheld acceptance. To test this separation, we replayed 36 recorded simulation states, some with deliberately altere",
+    "reason": "喷管及立方体绕流CFD的确定性物理验收，属于工程力学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "09.01.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1049",
+    "title": "El Agente Potente: High-Throughput Agentic Atomistic Simulations",
+    "codes": [
+      "03.03.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.16, Transition-state search in surface reactions",
+    "quote": "The resulting pathway corresponds to the C→E elementary step reported in DFT studies (68) for phenol deoxygenation on Fe(110). This step is a side reaction of the DHOx(H) pathway in which coadsorbed surface H and OH species combine to form water. The DFT minimum-energy-path calculation reported an activation barrier of 1.41 eV and an endothermic reaction energy of +0.85 eV (68). In comparison, MACE-OC20 predicted an activation barrier of 1.09 eV and a reaction energy of +0.53 eV, underestimating both quantities by approximately 0.32 eV while correctly reproducing the endothermic character of the reaction. MACE- OMAT predicted a higher activation barrier of 1.79 eV, differing from the DFT value by approximately 0.38 eV, but yielded a strongly exothermic reaction energy of −2.28 eV, opposite to the DFT thermodynamics. The comparison therefore reveals substantial model dependence even when the same endpoint structures and transition-state-search protocol are used. MACE-OC20 provides reasonable agreement with the DFT reference for this el",
+    "reason": "Fe(110)表面反应路径与过渡态搜索直接支持反应机理；吸附、分子构象、材料计算另保留多对象覆盖。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "03.03.04",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1051",
+    "title": "Agentic AI for Density-Functional Development: Revisiting r2SCAN",
+    "codes": [
+      "03.02.11"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "he overall best reaching 1.331. Overall, these results show that agentic search can support density-functional development when flexible hypothesis generation is coupled to automated physical verification. I. INTRODUCTION Density-functional theory (DFT)1,2 is widely used in chemistry and materials science3,4. Over the years, DFT has helped build an extensive infrastructure for scien- tific research and innovation: open-source software such as PySCF5,6 and Quantum ESPRESSO7–9, associated libraries such as libxc10, reusable benchmark an",
+    "reason": "r2SCAN交换关联泛函的Agent修正与确定性验证，理论计算化学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "03.02.11",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1054",
+    "title": "Automated Discovery of Physically Interpretable Subgrid Length Scales for Detached Eddy Simulation via Agentic AI",
+    "codes": [
+      "09.01.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "work, DEScover (automated Discovery of DES closures), to explore subgrid length scales for detached eddy simulation (DES). The user provides only a modeling idea: the length scale is the grid width normal to the local vortex axis. Four large language model (LLM) agents then propose, review, implement, and evaluate candidate formulations and generate scripts for CFD simulations. The Discovery Agent infers the vortex axis from various vortex-identification methods. The candidates are tested on four cases spanning canonical and eng",
+    "reason": "脱体涡模拟亚格子闭合与流动实验，工程流体力学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "09.01.02",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1055",
+    "title": "Demonstration of a Structured Agentic Workflow for Applied Quantum Computing Research",
+    "codes": [
+      "03.02.11"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": "e-based quantum diagonalization (SQD) [10], in a larger classical computational pipeline simulating proton transfer, ultimately of interest in battery chemistry. QAOS suggests a minimal model system that is physically meaningful and amenable to simulation with both SQD and multiple classical methods, providing reference benchmarks, and, upon approval of the plan, builds and executes the complete simulation. 2 Assembling a testable quantum protocol QAOS does not attempt to solve the problem in a single agentic session. Instead, it decompose",
+    "reason": "水分子质子转移量子化学模型与电子相关能垒，归理论计算化学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "03.02.11",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1060",
+    "title": "AstroGenesis: A Domain-Specific Multi-Agent AI for Astrophysical Research",
+    "codes": [
+      "02.01.06"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.26",
+    "quote": "0922A, Science 361, 1378 (2018). IceCube Collaboration, Neutrino emission from the direction of the blazar TXS 0506+056 prior to the IceCube- 170922A alert, Science 361, 147 (2018). Padovani et al., Dissecting the region around IceCube-170922A: the blazar TXS 0506+056 as the first cosmic neutrino source, MNRAS 480, 192 (2018). Garrappa et al., Investigation of two Fermi-LAT gamma-ray blazars coincident with high-energy neutrinos detected by IceCube, ApJ 880, 103 (2019). Figure 2. Example of a literature-retrieval response generate",
+    "reason": "耀变体多波段观测及辐射建模，归高能天体物理。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.01.06",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1062",
+    "title": "Vision-Language Agents for Active Perception in Optics Laboratories",
+    "codes": [
+      "02.02.09"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "a testbed. We evaluate agents on three experimental systems that isolate distinct capabili- ties: a Michelson interferometer, a two-mirror cavity, and a four-mirror optical re- lay. The agents observe camera images, directly issue actuator and measurement commands, and retain their interaction history without receiving an engineered scalar objective during control. Across these experiments and matched simula- tions, we find that, given task-specific natural-language guidance, VLMs can es- timate actuator-response relationships, resol",
+    "reason": "Michelson干涉仪与光学腔的真实对准实验，归光学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.09",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1063",
+    "title": "OceanMind: A multi-agent AI system for ocean diagnosis",
+    "codes": [
+      "05.02.05"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.7,9",
+    "quote": "required by such a multi-step workflow. We selected the China Seas circulation study of Gan et al. [21, 18] the authors identified vertically alternating rotating circulation through a connected sequence of transport stream function, Stokes’ theorem, and vorticity dynamics. This case, therefore, evaluated whether OceanMind could reconstruct a multi-step physical diagnosis rather than generate isolated plots. We applied OceanMind to daily velocity output of CMOMS from 2011 to 2022 to reproduce the China Seas circulation diagnostics presented in Figs. 10, 11, 12, and 14 of Gan et al. [21] (here, Fig. 3a-d). The complete reproduction queries, computational workflows, intermediate results, and evidence-based summaries are provided in Supplementary Sections 3.1 to 3.4. In the winter fields shown in Fig. 3a, the upper-layer stream function ranged from −53.7 to +38.7 Sv, compared to −16.7 to +4.3 Sv in the weaker, predominantly negative middle-layer field and −43.7 to +22.1 Sv in the deep field. Figure 3b shows a winter upper-layer relative-vorticity field with a domain mean of 7.38 × 10−8 s−1 and localized extrema of +6.77 × 10−5 and −8.75 × 10−5 s−1 near the Philippine Sea. Figure 3c presents 30-day-smoothed time-depth climatologies of area-averaged relative vorticity computed from 4,383 daily fields. The South China Sea an",
+    "reason": "Concrete experiment/task evidence supports 05.02.05 (物理海洋学). required by such a multi-step workflow. We selected the China Seas circulation study of Gan et al. [21, 18] the authors identified vertically alternating rotating circulation through a connected sequence of transport stream function, Stokes’ theorem, and vorticity dynamics. This case, therefore, evaluated whether OceanMind could reconstruct a multi-step physical diagnosis rather than generate isolated plots. We appli",
+    "source_report": "tertiary_last18_partB_2026-10-29.json",
+    "chosen_primary_code": "05.02.05",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1064",
+    "title": "Agent-assisted experimental strategy transfer across quantum processors",
+    "codes": [
+      "02.02.06"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": "apting experimental procedures to local device conditions and evidence? Nuclear magnetic resonance (NMR) provides an established setting for quantum control and computation19, including experimental polynomial optimization on a four-qubit processor20. Here we evaluate an agent-assisted experimental strategy on five three-qubit NMR processors, using three-qubit Grover target-state preparation as a common experimental task21,22. The processors shared a common experimental interface but differed in Hamiltonian parameters, spectral",
+    "reason": "三量子位NMR处理器量子态及Grover实验，量子力学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.06",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1065",
+    "title": "Agentic Active Learning Meets Visual Embeddings: Finding Anomalies among 370 000 Variable Stars from ASAS-SN",
+    "codes": [
+      "02.01.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "ern surveys. We present an active learning framework for detecting anomalies in samples of periodic variable stars, with the vetting delegated to multimodal large language model agents. The initial ranking comes from isolation forests trained on DINOv2 ViT-g/14 embeddings of phase-folded light curves. The agents iteratively review the light-curve images of the top-ranked candidates and assign relevance scores, which are propagated through the embedding space to prioritize the next targets. A logistic regression step then extends the",
+    "reason": "ASAS-SN周期变星异常发现，恒星与演化。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.01.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1068",
+    "title": "Brilliance: toward autonomous computational research in particle accelerator physics",
+    "codes": [
+      "02.02.16"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.5,8",
+    "quote": "55 sites; 1,024 turns / 10 sites Fig. 2 Workflow of Brilliance for designing a 3.5 GeV synchrotron light source targeting a natural emittance below 30 pm · rad. The agent starts with a linear optics design and proceeds to nonlinear dynamics checks. When these checks fail, it changes strategy to rebuild the linear optics, and ulti- mately meets the nonlinear requirements through nonlinear beam dynamics optimization. The investigation process of Brilliance is summarized in Fig. 2 and the original data of the full process is available at Ref. [26]. Within this scope, Brilliance is responsible for constructing the parameterization, developing the simulation and optimization pro- grams, and selecting the calculations needed to evaluated and improve the candidates. The initial radiation and chromatic-correction studies reaches an apparently promis- ing solution near 17.283 pm·rad that has met the preferred target. However, chromatic correction and short particle-tracking screens exposes poor nonlinear acceptance. Low 5 ",
+    "reason": "Concrete experiment/task evidence supports 02.02.16 (计算物理学). 55 sites; 1,024 turns / 10 sites Fig. 2 Workflow of Brilliance for designing a 3.5 GeV synchrotron light source targeting a natural emittance below 30 pm · rad. The agent starts with a linear optics design and proceeds to nonlinear dynamics checks. When these checks fail, it changes strategy to rebuild the linear optics, and ulti- mately meets the nonlinear requirements through nonlinear beam dynamics optimization. T",
+    "source_report": "tertiary_last18_partB_2026-10-29.json",
+    "chosen_primary_code": "02.02.16",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1069",
+    "title": "Jianmu-Q: Bridging Quantum Field Theory and Quantum Hardware with AI Agents",
+    "codes": [
+      "02.02.14"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "e benchmark the framework on three field theories of increasing complexity: the (1 + 1)-dimensional Nambu–Jona-Lasinio and Schwinger models, and a (2+1)-dimensional Z2 gauge theory. Across these systems, noiseless quantum-circuit simulations converge toward independent exact-diagonalization and tensor-network results, while selected circuits are executed on IBM quantum hardware, demon- strating an end-to-end, validation-guided approach to quantum simulation of field theories. I. INTRODUCTION Many crucial problems in quantum chrom",
+    "reason": "NJL/Schwinger及规范场模型计算，科学对象是量子场论而非量子计算工具。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.14",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1070",
+    "title": "FUSION: a skill-based research agent for publicly obtainable nuclear-physics codes",
+    "codes": [
+      "02.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.2",
+    "quote": "upstream by a weekly job, and connecting to whichever language model the user can reach by API. The nuclear-physics layer contains 26 skills and the literature collection. Twenty skills operate individual physics codes; of the remaining six, one is a fitting front end, one retrieves measured data from the EXFOR library [22], one queries the knowledge base, two maintain the user’s own research notes, and one sets FUSION up. The engine and this nuclear-physics layer are distributed together; the clone transfers about 256 MB and takes",
+    "reason": "20个核反应、核结构和裂变程序的实际运行，归核物理。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1071",
+    "title": "From Earth to Mars and Beyond: AI-Driven Cosmic-Ray Validation and Prediction with CorsikaAgent",
+    "codes": [
+      "02.02.14"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "um spectra at approximately 0◦and 75◦are compared with experimental measurements of the atmospheric muon flux and with commonly used analytic parametrizations. The two interaction- model configurations give similar spectra and describe the principal momentum and zenith-angle dependences of the data. The agent independently reconstructs the same observable through a differ- ent sampling strategy and keeps every steering card, executable, seed, log, and analysis script bound to the result it produced; its output is consistent with",
+    "reason": "宇宙线μ子通量及强子相互作用模型，归粒子物理。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.14",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1072",
+    "title": "HEPLocalAgent 1.0: Running Collider Simulations from Plain-Language Requests on Your Own Computer",
+    "codes": [
+      "02.02.14"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.15",
+    "quote": "onsequently be viewed as an inspectable, validation-gated route for constructing a bounded class of collider-simulation workflows requiring expert approval, not as an autonomous replacement for scientific judgement or an operating-system sandbox. The most important next step is to make the interaction with the user more reliable when the request is incomplete or inconsistent, particularly through explicit clarification and stronger preservation of scientific intent. Within this scope, the results support combining language models wi",
+    "reason": "对撞机截面及事件模拟研究，归粒子物理。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.14",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1073",
+    "title": "PTagent: An LLM-assisted tool for finite-temperature model construction in cosmological phase transitions",
+    "codes": [
+      "02.02.14"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.13",
+    "quote": "s under the approved prescription. 4.3. Model construction from a dimensionally reduced EFT We illustrate the three-dimensional EFT workflow using the xSM implemented in the DRalgo source file xsm_test.m, provided in the PTagent repository. This file is adapted from the official DRalgo xSM example [25] to describe a specific Z2-symmetric model and a well-defined dimensional-reduction setup. In particular, the singlet interactions that are odd under the Z2 symmetry are removed, and the original tutorial’s multiple reduction paths are restricted to a single setup that retains both the Higgs and singlet scalar fields in the three-dimensional theory. The adapted file also specifies the Standard Model hypercharges and employs a consistent mass-basis treatment, including the rotation of interaction tensors required for higher-order effective-potential calculations. Starting from this DRalgo source, PTagent identifies the relevant model information and invokes DRalgo to obtain the matched three-dimensional effective theory. The calculation can be initiated with the following instruction. $ptagent Use xsm_test.m to generate a PhaseTracer model with the default scale policy. Set inputs: mS = 572, lambda_hs = 9.7, lambda_s = 0.96. From the supplied source, PTagent identifies the field content, interactions, and dimensional-reduc",
+    "reason": "Concrete experiment/task evidence supports 02.02.14 (粒子物理学). s under the approved prescription. 4.3. Model construction from a dimensionally reduced EFT We illustrate the three-dimensional EFT workflow using the xSM implemented in the DRalgo source file xsm_test.m, provided in the PTagent repository. This file is adapted from the official DRalgo xSM example [25] to describe a specific Z2-symmetric model and a well-defined dimensional-reduction setup. In particular, the singlet",
+    "source_report": "tertiary_last18_partB_2026-10-29.json",
+    "chosen_primary_code": "02.02.14",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1074",
+    "title": "VALG: An Agentic System for ML Theory Research",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "etween the resulting theorem and the source problem. We evaluate VALG on nine subproblems from five COLT 2026 open problems spanning tensor decomposition, learning complexity, one-bit mean estimation, differential privacy, and online optimization. Two runs produce internally finalized theorem candidates that match the scope of their source briefs and address the original subproblems; the remaining seven yield restricted-method results, special cases, or conditional theorems. For each candidate, we report the problem setup, theor",
+    "reason": "机器学习理论问题和张量分解算法验证，机器学习；数学标签可交叉保留。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "01.02.13",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1096",
+    "title": "Science Edge Evaluation: SEE the Missing Step Toward Real Scientific Discovery",
+    "codes": [
+      "03.02.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.5,6,9",
+    "quote": "Analytical Chemistry Physical Chemistry Organic Chemistry Polymer Chemistry Inorganic Chemistry Biochemistry Molecular Biology Cell Biology Structural Biology Biophysics Genetics Immunology Physiology Organic/Polymer Materials Inorganic Materials Composite Materials Metallic Materials Cross 2 disciplines Within-discipline Cross all 3 disciplines Chemistry Biology Materials Figure 2. SEE consists of 1,116 questions spanning 3 disciplines and 17 reported sub-fields. Interdisci- plinary questions are represented by lines connecting two or more sub-fields. Line thickness indicates the number of co-occurring questions across reported sub-fields. Gray lines represent cross-discipline overlap (spanning two disciplines). data contributed by experts. Visual evidence covers common experimental data structures in laboratory research, including bioactivity measurements, Cryo-EM structures, Western blot and gel electrophoresis images, spectra such as infrared spectroscopy, nuclear magnetic resonance (NMR) and mass spectrometry (MS), microscopy images such as SEM, TEM and AFM, X-ray diffraction patterns, and thermal analysis curves. Style. The questions in SEE include choice-based, short-answer, numerical, measurement, and image-processing tasks. Some questions contain explicit option lists, w",
+    "reason": "Concrete experiment/task evidence supports 03.02.03 (分析化学). Analytical Chemistry Physical Chemistry Organic Chemistry Polymer Chemistry Inorganic Chemistry Biochemistry Molecular Biology Cell Biology Structural Biology Biophysics Genetics Immunology Physiology Organic/Polymer Materials Inorganic Materials Composite Materials Metallic Materials Cross 2 disciplines Within-discipline Cross all 3 disciplines Chemistry Biology Materials Figure 2. SEE consists of 1,116 questions sp",
+    "source_report": "tertiary_last18_partB_2026-10-29.json",
+    "chosen_primary_code": "03.02.03",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1111",
+    "title": "Autonomous Floquet engineering of bosonic codes via reinforcement learning",
+    "codes": [
+      "02.02.06"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": "inforcement learning Check for updates Zheping Wu1, Lingzhen Guo 2,3, Haobin Shi1 & Wei-Wei Zhang 1 Bosonic codes represent a promising route toward quantum error correction in continuous-variable systems, with direct relevance to experimental platforms. However, their preparation and stabilization remain challenging, requiring ultra-precise control of nonlinear interactions to create entangled superpositions, suppress decoherence, and mitigate dynamic errors. Here, we present a Floquet engineering framework in which reinforcement ",
+    "reason": "玻色量子纠错码Floquet控制及态制备，归量子力学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "02.02.06",
+    "decision": "apply"
+  },
+  {
+    "paper_id": "ASD-1120",
+    "title": "MacroRisk-agent: a retrieval-augmented multi-agent framework with deterministic validation gates for auditable stress testing",
+    "codes": [
+      "11.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF p.1",
+    "quote": " coupled multi-agent simulation that models endogenous amplification through fire-sale, margin, and liquidity feedback loops, producing a 52% higher systemic-loss estimate than the one-pass configuration under the cali­ brated experimental setting; and (3) a counterfactual re-simulation framework that validates proposed interven­ tions under identical scenario constraints, achieving 68.6% simulation-defined top-1 decision success rate. We evaluate MacroRisk-Agent as a proof-of-concept on public financial datasets (FRED, Yahoo Finance",
+    "reason": "金融压力、追加保证金与抛售流动性反馈模拟，归金融学。",
+    "source_report": "tertiary_remaining_reaudit_0801_1120_2026-10-29.csv",
+    "chosen_primary_code": "11.01.04",
+    "decision": "apply"
+  }
+]

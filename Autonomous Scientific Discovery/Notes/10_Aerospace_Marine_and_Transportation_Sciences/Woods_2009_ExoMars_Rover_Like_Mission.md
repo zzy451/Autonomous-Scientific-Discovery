@@ -167,3 +167,11 @@ first_hand_source_checked：repository PDF checked locally: Reference_PDF/10_Aer
 source_limited：no
 confidence：medium
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.03` 深空探测；二级：`10.02`。
+- 原文位置：PDF p.2。
+- 判定：ExoMars火星车科学自主任务，属于深空探测。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

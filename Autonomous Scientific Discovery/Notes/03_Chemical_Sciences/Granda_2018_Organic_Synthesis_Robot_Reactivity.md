@@ -271,3 +271,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - `note_revision_required`: `no`
 
 This writeback keeps the reaction-discovery framing explicit: the robot is used to explore organic reaction space and discover new reactivity, not to optimize a materials-property endpoint.
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`03.03.02` 反应设计；二级：`03.03`。
+- 原文位置：Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf; PDF p.1; Here we present an organic synthesis robot that can perform chemical reactions and analysis faster than they can be performed manually, as well as predict the reactivity of possible reagent combinations after conducting a small number of experiments, thus effectively navigating chemical reaction space.。
+- 判定：organic synthesis robot searches reaction reactivity
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

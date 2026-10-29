@@ -7,7 +7,7 @@
     "pdf_status": "publisher_pdf_gated",
     "evidence_status": "first_hand_abstract_plus_official_supporting_info",
     "source_limited": "yes",
-    "access_note": "Source trail: Shanghai AI Lab seed survey[ref 237]; Batch00Reaudit2026-06-21: publisher landing page and official ACS supporting-information page checked; current evidence supports `scientific_object_modules=03;04`, `object_coverage_mode=multi_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; functional-material discovery/optimization supports `04`, photocatalytic organic reactions support `03`; main PDF endpoint remained access-gated in this environment, so keep `source_limited` / full-text follow-up open."
+    "access_note": "Source trail: Shanghai AI Lab seed survey[ref 237]; Batch00Reaudit2026-06-21: publisher landing page and official ACS supporting-information page checked; current evidence supports `scientific_object_modules=03;04`, `object_coverage_mode=multi_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; functional-material discovery/optimization supports `04`, photocatalytic organic reactions support `03`; main PDF endpoint remained access-gated in this environment, so keep `source_limited` / full-text follow-up open. ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 03.03; not a new full-text scientific judgment;"
   },
   {
     "paper_id": "ASD-0112",
@@ -87,7 +87,7 @@
     "pdf_status": "abstract_only_checked",
     "evidence_status": "first_hand_abstract_review_packet",
     "source_limited": "no",
-    "access_note": "Source trail: materials-agent thematic expansion 2026-06-17; title explicitly states autonomous discovery of a concrete alloy class. NoteLanded2026-06-19: keep `04.04`. Batch24Partial1Reaudit2026-06-23: ScienceDirect abstract and DOI landing page rechecked; note synced and landed `scientific_object_modules=04`, `object_coverage_mode=single_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; this row no longer stays in the old Crossref-only conservative-hold state."
+    "access_note": "Source trail: materials-agent thematic expansion 2026-06-17; title explicitly states autonomous discovery of a concrete alloy class. NoteLanded2026-06-19: keep `04.04`. Batch24Partial1Reaudit2026-06-23: ScienceDirect abstract and DOI landing page rechecked; note synced and landed `scientific_object_modules=04`, `object_coverage_mode=single_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; this row no longer stays in the old Crossref-only conservative-hold state. ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 04.02; not a new full-text scientific judgment;"
   },
   {
     "paper_id": "ASD-0569",
@@ -157,7 +157,7 @@
     "pdf_status": "preprint_pdf_checked_no_local_archive",
     "evidence_status": "first_hand_preprint_pdf_review_packet",
     "source_limited": "no",
-    "access_note": "Source trail: battery/electrolyte sibling expansion from ASD-0608 and ASD-0621 2026-06-17; Chemistry of Materials paper presents a closed-loop warm-start Bayesian optimization pipeline on an autonomous polymer-electrolyte platform for solid-state battery materials. NoteLanded2026-06-19: keep `04.04`; current class is stable, while the main remaining risk is full-text validation of autonomy and experiment-detail strength."
+    "access_note": "Source trail: battery/electrolyte sibling expansion from ASD-0608 and ASD-0621 2026-06-17; Chemistry of Materials paper presents a closed-loop warm-start Bayesian optimization pipeline on an autonomous polymer-electrolyte platform for solid-state battery materials. NoteLanded2026-06-19: keep `04.04`; current class is stable, while the main remaining risk is full-text validation of autonomy and experiment-detail strength. ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 04.03; not a new full-text scientific judgment;"
   },
   {
     "paper_id": "ASD-0724",
@@ -238,16 +238,6 @@
     "evidence_status": "first_hand_abstract_and_official_pages",
     "source_limited": "yes",
     "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; this ASE application performs onboard flood detection, monitoring, and responsive observation for Earth-system science, so it is best classified in `05` despite being mission-borne. NoteLanded2026-06-20: formal ASD note added; batch14 review keeps `05 / 05.04` because the final scientific object remains flood monitoring and Earth-observation science rather than spacecraft autonomy as an end in itself. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes."
-  },
-  {
-    "paper_id": "ASD-0873",
-    "title": "Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2609.27297",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=11.07;03.01;07.03.08; fulltext_followup_required=false; 涓绘ā鍧楀缓璁?1.07锛氳鏂囩洿鎺ユ瀯閫犲苟妫€绱㈢瀛︿富寮犮€佽瘉鎹強鎺ㄧ悊閾俱€侰hemBench鐨勫寲瀛︾煡璇嗕换鍔℃敮鎸?3.01锛孭ubMedQA鐨勫尰瀛﹂棶绛旀敮鎸?7.03.08锛涗笉鑳戒粠PubMedQA鎺ㄥ嚭06銆?1.04涓嶉€傜敤锛屽洜涓哄瓨鍦ㄧ瀛︾煡璇嗗璞＄骇瀹為獙銆?scientific_object_modules=11;03;07; object_coverage_mode=multi_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2609.27297; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-0874",
@@ -347,7 +337,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.02; fulltext_followup_required=false; 瀵硅薄鏄簩缁翠簲瑙掓櫠浣撳拰鏉愭枡缁撴瀯/鏅舵牸甯告暟锛屽綊04.02锛汥FT涓庢枃鏈娊鍙栨槸鐮旂┒鏂规硶锛屼笉鍙﹀綊01鎴?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2608.29665; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.02; fulltext_followup_required=false; 瀵硅薄鏄簩缁翠簲瑙掓櫠浣撳拰鏉愭枡缁撴瀯/鏅舵牸甯告暟锛屽綊04.02锛汥FT涓庢枃鏈娊鍙栨槸鐮旂┒鏂规硶锛屼笉鍙﹀綊01鎴?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2608.29665; source_checked_at=2026-10-22; ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 04.01; not a new full-text scientific judgment;"
   },
   {
     "paper_id": "ASD-0888",
@@ -530,26 +520,6 @@
     "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=02.02.06;11.07.08;11.07.09; fulltext_followup_required=false; 02 鐢遍噺瀛愮畻娉?绋夸欢鍏蜂綋妗堜緥鏀拺锛?1.07 鐢辩瀛﹀绋裤€佷富寮犲拰璇佹嵁鏍搁獙宸ヤ綔娴佹敮鎾戙€傛殏鏍?02.02.06銆?1.07.08/09锛涗富灞曠ず鍙?11銆備笓鍒╅儴鍒嗕笉鍗曠嫭鎵╄嚦宸ョ▼/娉曞緥妯″潡銆?scientific_object_modules=02;11; object_coverage_mode=multi_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.16900; source_checked_at=2026-10-22;"
   },
   {
-    "paper_id": "ASD-0987",
-    "title": "Diagnosing and narrowing the simulation-to-real gap in powder X-ray diffraction with a wet-dry agentic loop",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.22400",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=04; primary_module_for_filing=04; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=04.01;04.02; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.22400; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
-    "paper_id": "ASD-1007",
-    "title": "Agentic schema-guided extraction of materials process knowledge from scientific literature",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2610.06322",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=04; primary_module_for_filing=04; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=04.02;04.04; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.06322; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
     "paper_id": "ASD-1012",
     "title": "HealthFlow: automating electronic health record analysis via a strategically self-evolving multi-agent framework",
     "doi": "10.1038/s41746-026-03097-0",
@@ -607,7 +577,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=03; primary_module_for_filing=03; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=03.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag541; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
+    "access_note": "Core176Evidence2026-10-22: ; ; ; ; module_classification_codes=03.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag541; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇. scientific_object_modules=03; primary_module_for_filing=03; general_method_bucket=none; object_coverage_mode=single_module; TertiaryPageAudit2026-10-29: TXT line 35; 分子描述到SMILES子结构关系定位、RDF及RDKit校验，归化学信息学；缓存全文而非标题猜测。; decision_ledger=Coverage_Check/tertiary_145_decisions_2026-10-29.json; first_hand_sources_checked=; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-1041",
@@ -630,16 +600,6 @@
     "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02; primary_module_for_filing=02; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=02.02.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2609.35958; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
-    "paper_id": "ASD-1045",
-    "title": "CFD Forge: A Physics-Constrained Agentic Framework for Autonomous CFD",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2610.14104",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=09; primary_module_for_filing=09; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=09.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.14104; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
     "paper_id": "ASD-1047",
     "title": "OPERA: Operator-residual feedback for reliable autonomous optical experiments with language-model agents",
     "doi": "",
@@ -648,16 +608,6 @@
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
     "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02;09; primary_module_for_filing=02; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=02.02.09;09.08.03; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.05990; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
-    "paper_id": "ASD-1049",
-    "title": "El Agente Potente: High-Throughput Agentic Atomistic Simulations",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2609.14840",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=03;04; primary_module_for_filing=03; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=03.03;04.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2609.14840; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
   },
   {
     "paper_id": "ASD-1050",

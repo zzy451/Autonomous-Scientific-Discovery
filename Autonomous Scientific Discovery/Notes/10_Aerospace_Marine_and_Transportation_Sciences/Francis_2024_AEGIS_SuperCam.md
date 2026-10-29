@@ -211,3 +211,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`10.02.03` 深空探测；二级：`10.02`。
+- 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2024_AEGIS_SuperCam.pdf; PDF p.1; After successful demonstration on the MER Opportunity rover, and extensive use aboard the MSL Curiosity rover, in 2022 AEGIS was deployed to the Mars 2020 Perseverance rover, for targeting the SuperCam remote spectrometer instrument.。
+- 判定：Mars 2020 SuperCam autonomous targeting
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

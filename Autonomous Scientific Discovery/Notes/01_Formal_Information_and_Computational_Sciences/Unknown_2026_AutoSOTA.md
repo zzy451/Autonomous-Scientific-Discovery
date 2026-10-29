@@ -230,3 +230,11 @@ Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
 - `note_revision_required`: `yes`
 
 This writeback keeps the AI model discovery framing explicit and removes stale independent `01.04` wording. AutoSOTA is backed by the local archived PDF full text in R21 and stays inside formal and computational science (`01`) rather than the standalone general-method bucket.
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.02.13` 机器学习；二级：`01.02`。
+- 原文位置：Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoSOTA.pdf; PDF p.21; algorithmic optimization.。
+- 判定：automated AI model discovery benchmark and experiments
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

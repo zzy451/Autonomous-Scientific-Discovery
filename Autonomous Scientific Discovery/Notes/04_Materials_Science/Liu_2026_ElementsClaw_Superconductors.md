@@ -249,3 +249,11 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.01.04` 材料计算与材料信息学；二级：`04.01`。
+- 原文位置：Reference_PDF/04_Materials_Science/Liu_2026_ElementsClaw_Superconductors.pdf; PDF p.11; These results establish the generative branch of ElementsClaw as the central prospective discovery step: the agent uses structure generation, Tc prediction and physical stability filters to identify experimentally realizable superconductors beyond the original MPDS/Kagome entries.。
+- 判定：superconductor discovery and materials-property prediction
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

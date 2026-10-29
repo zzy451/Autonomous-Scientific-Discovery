@@ -4218,7 +4218,7 @@
   {
     "paper_id": "ASD-0528",
     "title": "AutoSciLab: A Self-Driving Laboratory for Interpretable Scientific Discovery",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Desai_2025_AutoSciLab.md",
+    "note_path": "Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Desai_2025_AutoSciLab.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
@@ -5266,7 +5266,7 @@
   {
     "paper_id": "ASD-0659",
     "title": "Autonomous Agents Coordinating Distributed Discovery Through Emergent Artifact Exchange",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Wang_2026_Artifact_Exchange.md",
+    "note_path": "Notes/04_Materials_Science/Wang_2026_Artifact_Exchange.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
@@ -5290,7 +5290,7 @@
   {
     "paper_id": "ASD-0662",
     "title": "Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2026_Mimosa_Framework.md",
+    "note_path": "Notes/03_Chemical_Sciences/Unknown_2026_Mimosa_Framework.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
@@ -5378,7 +5378,7 @@
   {
     "paper_id": "ASD-0673",
     "title": "Harnessing AtomisticSkills for Agentic Atomistic Research",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Deng_2026_AtomisticSkills.md",
+    "note_path": "Notes/04_Materials_Science/Deng_2026_AtomisticSkills.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
@@ -6290,7 +6290,7 @@
   {
     "paper_id": "ASD-0787",
     "title": "SciToolAgent: a knowledge-graph-driven scientific agent for multitool integration",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Ding_2025_SciToolAgent.md",
+    "note_path": "Notes/03_Chemical_Sciences/Ding_2025_SciToolAgent.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
@@ -6786,7 +6786,7 @@
   {
     "paper_id": "ASD-0849",
     "title": "OmniScientist: Toward a Co-evolving Ecosystem of Human and AI Scientists",
-    "note_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shao_2025_OmniScientist.md",
+    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Shao_2025_OmniScientist.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
@@ -6946,7 +6946,7 @@
   {
     "paper_id": "ASD-0869",
     "title": "STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Su_2026_STRIDE_Equation_Discovery.md",
+    "note_path": "Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Su_2026_STRIDE_Equation_Discovery.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
@@ -6954,7 +6954,7 @@
   {
     "paper_id": "ASD-0870",
     "title": "SR-Scientist: Scientific Equation Discovery With Agentic AI",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Xia_2025_SR_Scientist.md",
+    "note_path": "Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Xia_2025_SR_Scientist.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"
@@ -6962,7 +6962,7 @@
   {
     "paper_id": "ASD-0871",
     "title": "The Denario project: Deep knowledge AI agents for scientific discovery",
-    "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Unknown_2025_Denario.md",
+    "note_path": "Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Unknown_2025_Denario.md",
     "note_exists": true,
     "active_confirmed_core": true,
     "inclusion_status": "to_read"

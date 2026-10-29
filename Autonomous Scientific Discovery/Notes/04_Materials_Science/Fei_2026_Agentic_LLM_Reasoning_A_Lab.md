@@ -249,3 +249,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Robot / Embodied Age
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.04.01` 能源材料；二级：`04.04`。
+- 原文位置：Reference_PDF/04_Materials_Science/Fei_2026_Agentic_LLM_Reasoning_A_Lab.pdf; PDF p.1; Agentic LLM Reasoning in a Self-Driving Laboratory for Air-Sensitive Lithium Halide Spinel Conductors Yuxing Fei 1,2, Bernardus Rendy 1,2,5, Xiaochen Yang 1,2, Junhee Woo 1,3, Xu Huang 1,2, Chang Li 2, Shilong Wang 1,2, David Milsted 2, Yan Zeng 2,4,†, and Gerbrand Ceder 1,2,5,‡ 1Department of Materials Science & Engineering, University of California, Berkeley, Berkeley, California 94720, United States 2Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, California 94720, United States 3Department of Materials Science and Engineering, Korea Advanced Institute of Science and Technology, Daejeon 34141, Republic of Korea 4Department of Chemistry and Biochemistry, Flori。
+- 判定：lithium-halide spinel conductor materials in self-driving lab
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

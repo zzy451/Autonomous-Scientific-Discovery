@@ -1,0 +1,124 @@
+[
+  {
+    "paper_id": "ASD-0933",
+    "title": "JANUS: Enhancing Long-Horizon Autonomous Research with Co-Evolving World Models",
+    "decision": "apply",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.7",
+    "quote": "Table 1: Overall performance on MLS-Bench-Lite. Beat Any, Beat Median, and Beat All denote the percentages of tasks that outperform at least one, the median-performing, and all provided human baselines, respectively.",
+    "reason": "Concrete experiment/task evidence supports 01.02.13 (机器学习). Table 1: Overall performance on MLS-Bench-Lite. Beat Any, Beat Median, and Beat All denote the percentages of tasks that outperform at least one, the median-performing, and all provided human baselines, respectively.",
+    "source_report": "tertiary_six_cross_parent_2026-10-29.json",
+    "chosen_primary_code": "01.02.13"
+  },
+  {
+    "paper_id": "ASD-0937",
+    "title": "AppliedScientist: Automated Scientific Revision Through Iterative AI Reviewing",
+    "decision": "apply",
+    "codes": [
+      "01.02.13"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.4",
+    "quote": "We curate 30 ICLR papers spanning five research domains and retain only papers with publicly available source code that can be reproduced on a single GPU within our VRAM budget.",
+    "reason": "Concrete experiment/task evidence supports 01.02.13 (机器学习). We curate 30 ICLR papers spanning five research domains and retain only papers with publicly available source code that can be reproduced on a single GPU within our VRAM budget.",
+    "source_report": "tertiary_six_cross_parent_2026-10-29.json",
+    "chosen_primary_code": "01.02.13"
+  },
+  {
+    "paper_id": "ASD-0949",
+    "title": "TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents",
+    "decision": "apply",
+    "codes": [
+      "01.01.06"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.26?27",
+    "quote": "Table 7: Math_01 governing equation disc.; Math_02 compositional invariants (PDF p.26); Math_03 ode parameter geometry; Math_04 anomalous diffusion cps (PDF p.27).",
+    "reason": "Concrete experiment/task evidence supports 01.01.06 (微分方程). Table 7: Math_01 governing equation disc.; Math_02 compositional invariants (PDF p.26); Math_03 ode parameter geometry; Math_04 anomalous diffusion cps (PDF p.27).",
+    "source_report": "tertiary_six_cross_parent_2026-10-29.json",
+    "chosen_primary_code": "01.01.06"
+  },
+  {
+    "paper_id": "ASD-0985",
+    "title": "Agent-E2MD: Autonomous Translation of Interatomic Potential Equations into Physically Validated Pair Styles for Molecular Dynamics in LAMMPS",
+    "decision": "apply",
+    "codes": [
+      "04.01.04"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.2",
+    "quote": "Single-point calculations show close energy and force agreement between the generated and reference implementations for all seven models. Five crystalline many-body benchmarks additionally recover reference relaxed lattice properties, vacancy formation energies, and elastic constants.",
+    "reason": "Concrete experiment/task evidence supports 04.01.04 (材料计算与材料信息学). Single-point calculations show close energy and force agreement between the generated and reference implementations for all seven models. Five crystalline many-body benchmarks additionally recover reference relaxed lattice properties, vacancy formation energies, and elastic constants.",
+    "source_report": "tertiary_six_cross_parent_2026-10-29.json",
+    "chosen_primary_code": "04.01.04"
+  },
+  {
+    "paper_id": "ASD-1066",
+    "title": "Multi-agent discovery of practical quantum LDPC codes",
+    "decision": "apply",
+    "codes": [
+      "02.02.06"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.1",
+    "quote": "When evaluated under code-capacity depolarizing noise using a common BP?OSD decoding protocol, the discovered codes also exhibit low logical failure rates.",
+    "reason": "First-hand evidence supports 02.02.06; When evaluated under code-capacity depolarizing noise using a common BP?OSD decoding protocol, the discovered codes also exhibit low logical failure rates.",
+    "source_report": "tertiary_six_cross_parent_2026-10-29.json",
+    "chosen_primary_code": "02.02.06"
+  },
+  {
+    "paper_id": "ASD-1067",
+    "title": "How AI Agents Discover Scientific Equations: From Hydrotope Rediscovery to New Water-Wave Amplitudes",
+    "decision": "apply",
+    "codes": [
+      "02.02.03"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.2",
+    "quote": "The underlying problem arises in one-dimensional deep-water surface-wave scattering. Linearizing the fluid equations makes infinitesimal waves obey superposition, but finite-amplitude waves satisfy nonlinear free-surface boundary conditions.",
+    "reason": "Concrete experiment/task evidence supports 02.02.03 (经典力学). The underlying problem arises in one-dimensional deep-water surface-wave scattering. Linearizing the fluid equations makes infinitesimal waves obey superposition, but finite-amplitude waves satisfy nonlinear free-surface boundary conditions.",
+    "source_report": "tertiary_six_cross_parent_2026-10-29.json",
+    "chosen_primary_code": "02.02.03"
+  },
+  {
+    "paper_id": "ASD-0100",
+    "title": "Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers",
+    "decision": "apply",
+    "codes": [
+      "01.02.04",
+      "01.02.15"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.1,2,4,7,8",
+    "quote": "a benchmark of 100 tasks from 36 NLP papers published in 2024; repository-level code generation; Test environment: isolated Python execution environment containing validation cases and automated verification scripts",
+    "reason": "Concrete experiment/task evidence supports 01.02.04 (软件工程). a benchmark of 100 tasks from 36 NLP papers published in 2024; repository-level code generation; Test environment: isolated Python execution environment containing validation cases and automated verification scripts",
+    "source_report": "tertiary_three_semantic_2026-10-29.json",
+    "chosen_primary_code": "01.02.04"
+  },
+  {
+    "paper_id": "ASD-0856",
+    "title": "AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise",
+    "decision": "retain_pending"
+  },
+  {
+    "paper_id": "ASD-0939",
+    "title": "HypoForge: A Self-Improving Multi-Agent Framework for Automated Hypothesis Generation and Testing via Scientific Skill Learning",
+    "decision": "apply",
+    "codes": [
+      "11.07.02",
+      "11.03.01",
+      "11.04.06",
+      "11.01.03",
+      "11.05.02"
+    ],
+    "confidence": "high",
+    "evidence": "PDF pp.5,6",
+    "quote": "Paper Citations (Health) Real 244; Paper Citations (NeurIPS) Real 308; Paper Citations (Radiology) Real 392. Table 1: HypoBench tasks used in our experiments.",
+    "reason": "Concrete experiment/task evidence supports 11.07.02 (文献计量学). Paper Citations (Health) Real 244; Paper Citations (NeurIPS) Real 308; Paper Citations (Radiology) Real 392. Table 1: HypoBench tasks used in our experiments.",
+    "source_report": "tertiary_three_semantic_2026-10-29.json",
+    "chosen_primary_code": "11.07.02"
+  }
+]

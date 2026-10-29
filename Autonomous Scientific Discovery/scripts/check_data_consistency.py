@@ -43,8 +43,8 @@ PROGRESS_PATH = (
 # Authoritative snapshot after the 176-candidate full-text admission review
 # (169 admitted, 6 awaiting role review, 1 excluded; 2026-10-22 batch).
 EXPECTED_ACTIVE_CONFIRMED = 663
-EXPECTED_ACTIVE_LOCAL_PDF = 595
-EXPECTED_ACTIVE_NO_LOCAL_PDF = 68
+EXPECTED_ACTIVE_LOCAL_PDF = 600
+EXPECTED_ACTIVE_NO_LOCAL_PDF = 63
 EXPECTED_NO_LOCAL_IDS = {
     "ASD-0005",
     "ASD-0112",
@@ -70,7 +70,6 @@ EXPECTED_NO_LOCAL_IDS = {
     "ASD-0859",
     "ASD-0860",
     "ASD-0861",
-    "ASD-0873",
     "ASD-0874",
     "ASD-0875",
     "ASD-0876",
@@ -99,8 +98,6 @@ EXPECTED_NO_LOCAL_IDS = {
     "ASD-0918",
     "ASD-0919",
     "ASD-0922",
-    "ASD-0987",
-    "ASD-1007",
     "ASD-1012",
     "ASD-1014",
     "ASD-1015",
@@ -109,9 +106,7 @@ EXPECTED_NO_LOCAL_IDS = {
     "ASD-1032",
     "ASD-1041",
     "ASD-1043",
-    "ASD-1045",
     "ASD-1047",
-    "ASD-1049",
     "ASD-1050",
     "ASD-1097",
 }
@@ -506,7 +501,7 @@ def validate_classification_code_index_owner() -> None:
         for row in master_rows
         if str(row.get("Tertiary class") or "").strip()
         and re.fullmatch(r"[0-9]{2}\.[0-9]{2}\.[0-9]{2}", str(row.get("Tertiary class") or "").strip())
-        and str(row.get("Tertiary class") or "").strip().startswith(("06.", "07."))
+        and not str(row.get("Tertiary class") or "").strip().startswith("01.04.")
     }
     missing_master_tertiary_codes = sorted(master_tertiary_codes - seen_tertiary_codes)
     assert_true(
@@ -693,6 +688,10 @@ def validate_discipline_code_assignments_owner(papers: List[Dict[str, object]]) 
 
         paper_row = paper_rows_by_id[paper_id]
         legacy_tertiary_class = str(paper_row.get("legacy_tertiary_class") or "").strip()
+        if assignment_status in {"redirected_code", "retired_code"}:
+            # Historical placements keep their original taxonomy; only the
+            # current snapshot must mirror today's canonical paper fields.
+            continue
         if primary_taxonomy_code_3lvl is not None:
             assert_true(
                 legacy_tertiary_class == primary_taxonomy_code_3lvl,
@@ -745,7 +744,7 @@ def validate_paper_module_taxonomy_assignments_owner(
         for row in papers
         if bool(row["active_confirmed_core"])
         for module in row["scientific_object_modules"]
-        if module in {"03", "04", "06", "07"}
+        if module in FORMAL_MODULES
     }
 
     seen_ids = set()
@@ -773,7 +772,7 @@ def validate_paper_module_taxonomy_assignments_owner(
             f"paper_module_taxonomy_assignments references unknown paper_id: {paper_id!r}",
         )
         assert_true(
-            module_context in {"03", "04", "06", "07"},
+            module_context in FORMAL_MODULES,
             f"paper_module_taxonomy_assignments {assignment_id} has invalid module_context: {module_context!r}",
         )
         assert_true(
@@ -806,7 +805,7 @@ def validate_paper_module_taxonomy_assignments_owner(
                 pending_reason is None,
                 f"paper_module_taxonomy_assignments {assignment_id} active_mapping rows must not carry pending_reason",
             )
-            if module_context in {"06", "07"}:
+            if tertiary_code is not None or module_context in {"06", "07"}:
                 assert_true(
                     isinstance(tertiary_code, str)
                     and re.fullmatch(r"[0-9]{2}\.[0-9]{2}\.[0-9]{2}", tertiary_code)
@@ -814,10 +813,10 @@ def validate_paper_module_taxonomy_assignments_owner(
                     "paper_module_taxonomy_assignments "
                     f"{assignment_id} active {module_context} rows must carry a matching tertiary_taxonomy_code",
                 )
-            else:
+                controlled_codes = load_json(CLASSIFICATION_CODE_INDEX_PATH)["tertiary_code_to_label"]
                 assert_true(
-                    tertiary_code is None,
-                    f"paper_module_taxonomy_assignments {assignment_id} {module_context} rows must not carry tertiary_taxonomy_code",
+                    tertiary_code in controlled_codes,
+                    f"{assignment_id} references an undefined tertiary code: {tertiary_code!r}",
                 )
         else:
             assert_true(
@@ -844,7 +843,7 @@ def validate_paper_module_taxonomy_assignments_owner(
 
     assert_true(
         seen_pairs == expected_pairs,
-        "paper_module_taxonomy_assignments coverage must exactly match active_confirmed_core paper/module pairs for 03/04/06/07",
+        "paper_module_taxonomy_assignments coverage must exactly match all active_confirmed_core paper/module pairs for 01-11",
     )
 
 

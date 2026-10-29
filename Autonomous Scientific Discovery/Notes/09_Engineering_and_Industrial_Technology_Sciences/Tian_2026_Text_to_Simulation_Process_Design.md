@@ -249,3 +249,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`09.04.02` 过程系统工程；二级：`09.04`。
+- 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2026_Text_to_Simulation_Process_Design.pdf; PDF p.7; While the overall process topologies appear similar, the economic performance differs dramatically, demonstrat- ing the value of our chemical process design agent workﬂow.。
+- 判定：chemical process flowsheet design/simulation
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

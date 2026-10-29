@@ -267,3 +267,11 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.02.13` 机器学习；二级：`01.02`。
+- 原文位置：Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_ScientistOne.pdf; PDF p.1; ScientistOne generalizes to six additional tasks spanning medical imaging, fine-grained recognition, 3D perception, and parameter-constrained language modeling.。
+- 判定：chain-of-evidence verification general research agent; no concrete object tertiary
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

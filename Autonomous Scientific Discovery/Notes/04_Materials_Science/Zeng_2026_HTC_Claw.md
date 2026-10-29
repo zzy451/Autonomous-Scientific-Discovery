@@ -235,10 +235,10 @@
 
 ### 9.2 速记版 pipeline
 
-1. 输入材料科研目标  
-2. 拆解成高通量计算任务  
-3. 调数据库和计算工作流  
-4. 监控并分析结果  
+1. 输入材料科研目标
+2. 拆解成高通量计算任务
+3. 调数据库和计算工作流
+4. 监控并分析结果
 5. 按中间发现继续扩展搜索
 
 ### 9.3 标注字段汇总
@@ -269,3 +269,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.01.04` 材料计算与材料信息学；二级：`04.01`。
+- 原文位置：Reference_PDF/04_Materials_Science/Zeng_2026_HTC_Claw.pdf; PDF p.1; Case studies demonstrate that HTC-Claw enables an intelligent, end- to-end workflow from user intent to final reporting in materials exploration 1.。
+- 判定：high-throughput computational materials campaign
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

@@ -593,7 +593,6 @@ def validate_discipline_local_code_registry_outputs(
                         OR discipline_local_rank IS NOT NULL
                         OR discipline_display_order NOT LIKE '%PENDING-ASD-%'
                         OR primary_taxonomy_code_3lvl IS NOT NULL
-                        OR legacy_tertiary_class IS NOT NULL
                         OR (
                             pending_reason = 'missing_primary_module_for_filing'
                             AND primary_module_for_filing IS NOT NULL
@@ -611,7 +610,6 @@ def validate_discipline_local_code_registry_outputs(
                         OR discipline_local_rank IS NOT NULL
                         OR discipline_display_order NOT LIKE 'GM-PENDING-ASD-%'
                         OR primary_taxonomy_code_3lvl IS NOT NULL
-                        OR legacy_tertiary_class IS NOT NULL
                         OR primary_module_for_filing IS NOT NULL
                         OR general_method_bucket <> '01.04_general_asd_methods_without_concrete_object_experiments'
                         OR scientific_object_modules_json <> '[]'
@@ -2601,7 +2599,8 @@ def build_sqlite(
                     AND discipline_local_rank IS NULL
                     AND primary_taxonomy_code_2lvl IS NULL
                     AND primary_taxonomy_code_3lvl IS NULL
-                    AND legacy_tertiary_class IS NULL
+                    -- Legacy fields preserve historical/admin labels. Only
+                    -- controlled taxonomy fields define a current assignment.
                 )
             ),
             CHECK (

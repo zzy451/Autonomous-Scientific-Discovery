@@ -172,3 +172,11 @@ first_hand_source_checked：official arXiv PDF checked locally: Reference_PDF/01
 source_limited：no
 confidence：medium
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`01.02.13` 机器学习；二级：`01.02`。
+- 原文位置：PDF p.2。
+- 判定：MLE-Bench有可执行机器学习实验与成绩；由01.04对齐01.02，SciCode其他领域覆盖另审。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

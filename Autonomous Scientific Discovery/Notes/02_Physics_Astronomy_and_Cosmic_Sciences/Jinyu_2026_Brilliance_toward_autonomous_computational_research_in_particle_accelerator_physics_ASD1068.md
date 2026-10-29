@@ -152,3 +152,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`02.02.16` 计算物理学；二级：`02.02`。
+- 原文位置：PDF pp.5,8。
+- 判定：Concrete experiment/task evidence supports 02.02.16 (计算物理学). 55 sites; 1,024 turns / 10 sites Fig. 2 Workflow of Brilliance for designing a 3.5 GeV synchrotron light source targeting a natural emittance below 30 pm · rad. The agent starts with a linear optics design and proceeds to nonlinear dynamics checks. When these checks fail, it changes strategy to rebuild the linear optics, and ulti- mately meets the nonlinear requirements through nonlinear beam dynamics optimization. T
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

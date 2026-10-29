@@ -258,3 +258,11 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.04.04` 半导体材料；二级：`04.04`。
+- 原文位置：本地PDF pp.1,3,6–9：CdSe/CdS core-shell semiconductor quantum dots；光谱峰移与壳层生长验证。。
+- 判定：半导体量子点为直接对象，04.04.04半导体材料匹配；也涉及04.03.02纳米材料，主落点建议半导体。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

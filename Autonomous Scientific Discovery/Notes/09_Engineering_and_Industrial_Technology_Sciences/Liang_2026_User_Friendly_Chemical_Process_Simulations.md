@@ -249,3 +249,11 @@ Agent 类型：LLM Agent; Tool-using Agent; Human-in-the-loop Agent; Hybrid Agen
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`09.04.02` 过程系统工程；二级：`09.04`。
+- 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Liang_2026_User_Friendly_Chemical_Process_Simulations.pdf; PDF p.38; Would you like me to run the simulation or make any additional configurations?。
+- 判定：chemical process simulation
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

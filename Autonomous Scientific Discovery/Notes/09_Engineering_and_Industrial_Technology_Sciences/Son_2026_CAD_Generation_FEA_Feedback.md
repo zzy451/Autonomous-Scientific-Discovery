@@ -273,3 +273,11 @@ first_hand_sources_checked：pdf; arxiv
 classification_evidence_source_level：first_hand_full_text
 note_revision_required：no
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`09.02.01` 机械设计；二级：`09.02`。
+- 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Son_2026_CAD_Generation_FEA_Feedback.pdf; PDF p.8; 5.2 Q2: Evaluating feedback for CAD agents We test whether the typed blueprint stage (Section 3.2) improves generation quality versus a baseline that emits CadQuery directly from the prompt.。
+- 判定：CAD generation with FEA feedback
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

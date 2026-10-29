@@ -301,3 +301,11 @@ safety_access_status: accessed_no_safety_issue
 final_reason: Concrete fluid objects support 02, while end-to-end CFD workflow automation justifies 09 as filing primary.
 refresh_focus: retain 02;09 with 09 primary and remove conservative-hold drift
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`09.01.01` 工程数学与建模；二级：`09.01`。
+- 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Xu_2025_CFDagent.pdf; PDF p.1; The proposed system enables synthesization of flow simulations and photorealistic visualizations for complex 1 arXiv:2507.23693v1 [physics.flu-dyn] 31 Jul 2025。
+- 判定：CFD flow simulation and engineering modeling
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

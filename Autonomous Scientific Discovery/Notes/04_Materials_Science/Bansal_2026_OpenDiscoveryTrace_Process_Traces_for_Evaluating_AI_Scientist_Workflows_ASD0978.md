@@ -151,3 +151,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.02.02` 合金材料；二级：`04.02`。
+- 原文位置：PDF pp.9,11,12 materials-science traces; Appendix materials task prompts。
+- 判定：当前04.02结构/无机材料下，HEA成分及晶体结构设计任务明确命中合金材料；保留其他材料任务为多候选，不因process-trace定位取消对象证据。
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

@@ -259,3 +259,11 @@ Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
 纳入置信度：高
 推荐引用强度：普通引用
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`11.07.04` 科研共同体结构；二级：`11.07`。
+- 原文位置：Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.pdf; PDF p.1; Our experiments reveal three key findings: (1) RESEARCHTOWN can provide a realistic simulation of collaborative research activities, including paper writing and re- view writing; (2) RESEARCHTOWN can maintain robust simulation with multiple researchers and diverse papers; (3) RESEARCHTOWN can gener- ate interdisciplinary research ideas that potentially inspire pioneering research directions.。
+- 判定：simulator of human research community/knowledge-production ecosystem
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

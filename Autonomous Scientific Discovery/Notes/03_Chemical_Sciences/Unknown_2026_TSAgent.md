@@ -261,3 +261,11 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：中高
 推荐引用强度：普通引用
 ```
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`03.03.04` 反应机理；二级：`03.03`。
+- 原文位置：Reference_PDF/03_Chemical_Sciences/Unknown_2026_TSAgent.pdf; PDF p.10; Second, due to the substantial compute cost of DFT-level TS searches, our OC20NEB evaluation is restricted to 100 reactions sampled from the total 600 reactions available.。
+- 判定：transition-state search and reaction mechanism computation
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

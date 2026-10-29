@@ -4,7 +4,7 @@ Use this reference after the evidence decision is ready and before editing proje
 
 ## GitHub Portable Checkout
 
-The repository includes the text files required to classify and write back a paper: the master list, current notes, note templates, taxonomy/policy files, mapping ledgers, and the source/progress owner file. It deliberately excludes `Reference_PDF/`; retrieve first-hand evidence from official online pages, preprints, supplements, or project sites when needed.
+The repository includes the text files required to classify and write back a paper: the master list, current notes, note templates, taxonomy/policy files, mapping ledgers, and the source/progress owner file. Archived PDFs are distributed through Git LFS; ensure the actual PDF objects have been fetched, rather than only LFS pointers. Retrieve first-hand evidence from official online pages, preprints, supplements, or project sites when an asset is absent.
 
 Without the PDF asset library, do not regenerate asset-aware derived files or run the full pipeline. Make owner-file edits only, validate identifiers and Markdown, then hand off the pending local-asset refresh. With `Reference_PDF/` restored, use the full local archive workflow and run the pipeline.
 
@@ -14,7 +14,7 @@ Without the PDF asset library, do not regenerate asset-aware derived files or ru
 |---|---|---|
 | `Paper_Lists/agent_master_paper_list.md` | Canonical paper identity, inclusion decision, core classification overlay, legacy fields, and filing module | Main owner for paper and classification facts. |
 | `Notes/XX_.../` | One structured note per core paper | Versioned in GitHub. File by `primary_module_for_filing`; this is a convenience, not the authoritative classification. |
-| `Reference_PDF/XX_.../` | Locally archived primary PDFs | Intentionally excluded from GitHub; optional for portable classification but required by the full asset-aware pipeline. |
+| `Reference_PDF/XX_.../` | Archived primary PDFs | Git LFS assets; optional for portable evidence classification but required locally for the full asset-aware pipeline. |
 | `Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md` | Source/PDF/evidence owner facts | Versioned in GitHub; update only facts actually checked. |
 | `Data/classification_code_index.json` | Taxonomy vocabulary, labels, definitions, and boundaries | Update only when the taxonomy vocabulary itself changes. |
 | `Data/paper_module_taxonomy_assignments.jsonl` | Per-paper, per-module secondary/tertiary taxonomy mapping | Use for every supported module that has a resolved internal taxonomy position. |
@@ -33,7 +33,7 @@ Without the PDF asset library, do not regenerate asset-aware derived files or ru
 | `primary_module_assignment_rule` | `main_scientific_object`, `main_validation_object`, `direct_contribution_target`, `substantive_application_object`, or `manual_override`. |
 | `module_assignment_evidence` | First-hand object evidence for every assigned module; do not write a bare code. |
 | `multi_module_object_coverage_note` | Explain why each additional module has independent evidence. |
-| `tertiary_taxonomy_code` | Deepest active controlled code for that module. Mandatory for every confirmed `06` and `07` assignment; for another module, blank only when its active taxonomy has no complete applicable tertiary tree, with the gap recorded in the decision record. |
+| `tertiary_taxonomy_code` | Deepest active controlled code for that module. Mandatory for every confirmed `06` and `07` assignment; for every module, unresolved tertiary positions must retain a specific evidence or taxonomy-gap reason. Existing trees must be checked in full before declaring a missing category. |
 
 ## Writeback Order
 
@@ -60,3 +60,8 @@ Without the PDF asset library, do not regenerate asset-aware derived files or ru
 - Multi-module papers have evidence for each assigned module.
 - The note name is English and its folder matches `primary_module_for_filing`.
 - The pipeline has no `ERROR` findings caused by the edit.
+
+
+## 2026-10-29 all-domain ledger update
+
+The module ledger now covers every confirmed paper/module pair across 01–11. It accepts validated tertiary codes in every domain, including chemistry and materials. Read Coverage_Check/tertiary_boundary_protocol_2026-10-29.md for task evidence, benchmark, platform and historical redirect boundaries. A blank legacy field, a missing module-level tertiary, and an administrative general-method bucket are different statistics. Never infer scientific completeness from a populated filing code.

@@ -151,3 +151,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 三级分类复核
+
+- 归档分类：`04.04.04` 半导体材料；二级：`04.04`。
+- 原文位置：PDF pp.1。
+- 判定：Concrete experiment/task evidence supports 04.04.04 (半导体材料). cally defensible value can be obtained. We evaluated the workflow on optical transmittance spectra from 203 epitaxial β-Ga2O3 films grown during a previously reported self-driving thin-film growth campaign. The predefined optical analysis script returned Urbach energy, an optical-quality metric, for 183 spectra and failed for 20. The agent retained those 183 values and evaluated 20 exception cases, recovering 16 thro
+- 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。

@@ -33,7 +33,7 @@
     },
     "module_context": {
       "type": "string",
-      "pattern": "^[0-9]{2}$"
+      "enum": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"]
     },
     "secondary_taxonomy_code": {
       "type": ["string", "null"],
