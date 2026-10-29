@@ -31,7 +31,7 @@ For a paper that will enter or change the core library, also read the per-module
 
 A standard clone contains all text-based classification owners, the master list, current notes, note templates, taxonomy mappings, and source/progress facts. Use online first-hand sources when a local PDF is unavailable. Complete the classification decision, update the owner files, and commit the changed text records.
 
-The repository intentionally excludes the `Reference_PDF/` asset library. Do not run the full local-asset pipeline in a clone without that library because it asserts PDF and note-asset availability. Instead, validate the changed owner records, preserve unverified PDF fields, and report that the derived-data refresh is pending an asset-enabled local checkout.
+Archived PDFs are distributed through Git LFS. Check that actual PDF objects have been fetched rather than only pointer files. Do not run the full local-asset pipeline in a clone without the asset library because it asserts PDF and note-asset availability. Instead, validate changed owner records, preserve unverified PDF fields, and report the pending asset-aware refresh.
 
 ### Full local archive mode
 
@@ -47,7 +47,7 @@ When `Reference_PDF/` is available, use the same owner files and then run the ca
 6. Use the independent `01.04` bucket only when no concrete scientific-object evidence supports any `01`-`11` module. `01.04` never appears inside `scientific_object_modules`.
 7. When evidence is weak, inaccessible, or conflicts materially, preserve the uncertainty as `needs_review` or `source_limited`; do not force a definitive classification.
 8. Classify every supported module to the deepest active taxonomy level supported by first-hand object evidence. `06` and `07` have complete fixed tertiary trees and therefore require a tertiary code for every confirmed core assignment. A `06` or `07` record may not stop at its secondary class: unresolved evidence must remain `needs_review` or `source_limited` with the competing tertiary codes and missing discriminator stated.
-9. The project target is three-level classification for every module. For a module whose active taxonomy does not yet provide a complete applicable tertiary tree, retain the resolved secondary code and record the taxonomy gap; never invent a tertiary code from a title or keyword. Apply the same mandatory tertiary rule automatically when a complete tree is formally added.
+9. The project target is three-level classification for every module. As of 2026-10-29, all eleven formal modules have existing tertiary definitions synchronized to the controlled index and are supported in the module ledger. Inspect the full tree before claiming a taxonomy gap. If evidence cannot resolve a position, preserve a specific pending reason and competing codes; never invent a code from a title or keyword. Distinguish primary filing completion from every additional module's internal classification.
 
 ## Classification Procedure
 
