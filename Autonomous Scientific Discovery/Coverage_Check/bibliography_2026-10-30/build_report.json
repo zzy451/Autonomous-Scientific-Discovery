@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-30",
+  "bib_entries": 1051,
+  "core_records": 663,
+  "background_records": 381,
+  "cited_keys": 44,
+  "aliases": {
+    "asd0093": "bran2024",
+    "asd0094": "boiko2023",
+    "asd0455": "burger2020",
+    "asd0501": "king2004",
+    "asd0688": "asd0194",
+    "asd0689": "asd0124"
+  },
+  "metadata_issue_counts": {
+    "abbreviated_author_list": 260,
+    "missing_identifier": 91,
+    "title_needs_metadata_review": 37,
+    "missing_author": 8,
+    "year_not_four_digits": 31
+  },
+  "uncited_entries_printed": false
+}
