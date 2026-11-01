@@ -13,7 +13,7 @@
 | 04 | 04.01 材料基础 | 04.01.03 材料表征 | 已落地 |
 | 06 | 06.02 生物类群科学 | 06.02.02 病毒学 | 已落地 |
 
-- 模块04：SXRD与应力应变数据解读；无证据认成合金，改04.02父级。
+- 模块04：SXRD与应力应变数据解读支持材料表征，不能据此认定为合金材料；原二级04.02已修正为04.01，现行三级为04.01.03。
   - 证据：PDF 第 [6, 32, 33] 页；原文：shows the in-situ SXRD diffraction peak evolution of a material during two loading-unloading-reloading (LUR) cycles
 
 - 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。

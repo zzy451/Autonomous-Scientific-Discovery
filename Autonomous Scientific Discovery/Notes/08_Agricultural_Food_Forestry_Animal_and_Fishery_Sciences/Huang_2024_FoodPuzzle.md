@@ -12,7 +12,7 @@
 | 03 | 03.01 化学总论与化学方法 | 03.01.04 化学信息学 | 已落地 |
 | 08 | 08.05 食品科学 | 08.05.01 食品化学 | 已落地 |
 
-- 模块03：食物风味分子关联及分子谱补全，改原03.03父级。
+- 模块03：食物风味分子关联及分子谱补全属于化学信息学；原二级03.03已修正为03.01，现行三级为03.01.04。
   - 证据：PDF 第 7 页；原文：Table 2 presents the combined results for model accuracies in Molecule Food Prediction (MFP) and F1 scores for Molecule Profile Completion (MPC).
 
 - 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。

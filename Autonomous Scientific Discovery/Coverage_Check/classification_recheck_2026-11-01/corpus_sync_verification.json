@@ -134,7 +134,8 @@
     "已检查全部受影响页的缩略图，并逐页放大检查英文第11–12页、中文第10–11页分类表及全景图；无重叠、裁切、缺字或图表越界。",
     "`ERROR`: 0",
     "`WARNING`: 100",
-    "`INFO`: 416"
+    "`INFO`: 416",
+    "发布后措辞复核：7篇笔记及模块账本说明明确原类别与现行类别；144篇笔记当前表格与账本逐项相符。代码、统计及中英文PDF内容不变。"
   ],
   "document_structure": {
     "sections": 10,
@@ -146,9 +147,9 @@
   },
   "core_source_sha256": {
     "Paper_Lists/agent_master_paper_list.md": "3617b573ace6e3c355509884c831e8f2a4a63af2003138d5a99b570867e1e079",
-    "Data/paper_module_taxonomy_assignments.jsonl": "5a102f952362278f0d6052da2b38bf701f16834d8c8dbb3cf8c63fff6231822a",
-    "Data/papers.jsonl": "ce45634638d2ef9a162ef0f362d0209304e7ed7f041f80cbd29af7a6de651d22",
-    "Data/papers.sqlite": "b745dc5c95124a9ac18ed4ad0e41e5c34aaa88770df0edef5b19ecf70fc66b73",
+    "Data/paper_module_taxonomy_assignments.jsonl": "e4fcb3f60140a85691e16027c7adba2875146968361cb63113fe6e7af61aff64",
+    "Data/papers.jsonl": "c629beddb3e50293a828fbc83963a073436223b26b7bf73dcb05492465c7903c",
+    "Data/papers.sqlite": "4e0ba6026ce23a4bdb73b2e1efc243664b9fd3534d04755b113c948fba721015",
     "Coverage_Check/core_classification_snapshot_2026-11-01.json": "6b9863e11e6d3095a73cf534ade8c400dff5ea9b6199d49e2ab49cfc10b44139"
   },
   "local_pdf_deliverables": [
@@ -169,5 +170,13 @@
     "github": "Classification owners, evidence notes, selected audit reports, derived data, English manuscript sources/figures, frozen inputs and supplementary analysis.",
     "overleaf": "English main/section TeX, bibliography and required figure assets only.",
     "local": "Chinese manuscript, output PDFs, build products, downloaded evidence caches and temporary scripts."
-  }
+  },
+  "core_source_sha256_before_expression_cleanup": {
+    "Paper_Lists/agent_master_paper_list.md": "3617b573ace6e3c355509884c831e8f2a4a63af2003138d5a99b570867e1e079",
+    "Data/paper_module_taxonomy_assignments.jsonl": "5a102f952362278f0d6052da2b38bf701f16834d8c8dbb3cf8c63fff6231822a",
+    "Data/papers.jsonl": "ce45634638d2ef9a162ef0f362d0209304e7ed7f041f80cbd29af7a6de651d22",
+    "Data/papers.sqlite": "b745dc5c95124a9ac18ed4ad0e41e5c34aaa88770df0edef5b19ecf70fc66b73",
+    "Coverage_Check/core_classification_snapshot_2026-11-01.json": "6b9863e11e6d3095a73cf534ade8c400dff5ea9b6199d49e2ab49cfc10b44139"
+  },
+  "expression_cleanup_report": "stale_expression_check.md"
 }

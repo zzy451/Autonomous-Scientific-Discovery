@@ -1,7 +1,7 @@
 {
   "snapshot_date": "2026-11-01",
-  "source_papers_sha256": "ce45634638d2ef9a162ef0f362d0209304e7ed7f041f80cbd29af7a6de651d22",
-  "source_module_assignments_sha256": "5a102f952362278f0d6052da2b38bf701f16834d8c8dbb3cf8c63fff6231822a",
+  "source_papers_sha256": "c629beddb3e50293a828fbc83963a073436223b26b7bf73dcb05492465c7903c",
+  "source_module_assignments_sha256": "e4fcb3f60140a85691e16027c7adba2875146968361cb63113fe6e7af61aff64",
   "scope": "Current confirmed core; one year per unique work and non-exclusive scientific-object modules.",
   "records": [
     {

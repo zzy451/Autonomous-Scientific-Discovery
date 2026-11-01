@@ -40,6 +40,7 @@ desktop.ini
 !/Autonomous Scientific Discovery/Coverage_Check/classification_recheck_2026-11-01/user_boundary_adjudication.jsonl
 !/Autonomous Scientific Discovery/Coverage_Check/classification_recheck_2026-11-01/corpus_sync_report.md
 !/Autonomous Scientific Discovery/Coverage_Check/classification_recheck_2026-11-01/corpus_sync_verification.json
+!/Autonomous Scientific Discovery/Coverage_Check/classification_recheck_2026-11-01/stale_expression_check.md
 /Autonomous Scientific Discovery/Data/**
 !/Autonomous Scientific Discovery/Data/
 !/Autonomous Scientific Discovery/Data/schema/

@@ -12,7 +12,7 @@
 | 04 | 04.01 材料基础 | 04.01.04 材料计算与材料信息学 | 已落地 |
 | 03 | 03.02 基础化学 | 03.02.11 理论与计算化学 | 已落地 |
 
-- 模块03：势函数能量力电荷与轨迹一致性，未研究反应路径机理，改03.03父级。
+- 模块03：任务考察势函数的能量、力、电荷与轨迹一致性，未研究反应路径机理；原二级03.03已修正为03.02，现行三级为03.02.11计算化学。
   - 证据：PDF 第 [2, 29] 页；原文：ReaxFF extends the validation to reactive dynamics with evolving bond-order and charge-equilibration behavior.
 
 - 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。

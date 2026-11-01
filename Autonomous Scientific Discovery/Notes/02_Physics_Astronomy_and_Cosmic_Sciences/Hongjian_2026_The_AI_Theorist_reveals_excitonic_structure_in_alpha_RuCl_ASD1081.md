@@ -12,7 +12,7 @@
 | 04 | 04.01 材料基础 | 04.01.01 材料物理 | 已落地 |
 | 02 | 02.02 物理学 | 02.02.08 凝聚态物理学 | 已落地 |
 
-- 模块04：RuCl3电子结构激子态光谱，改04.04父级。
+- 模块04：RuCl3电子结构与激子态光谱属于材料物理；原二级04.04已修正为04.01，现行三级为04.01.01。
   - 证据：PDF 第 [3, 4, 5] 页；原文：is shaped by the interplay of electron correlations
 
 - 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
