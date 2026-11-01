@@ -1,8 +1,8 @@
 # Agent for Science 英文综述源文件
 
-同步日期：2026-11-01。本目录是 Overleaf 英文正文的 GitHub 快照，正文、参考文献、模板及六幅图与本次 Overleaf 发布包一致。后续正文修改应先整合到 Overleaf 工作副本，再同步此快照。
+同步日期：2026-11-02。本目录是 Overleaf 英文正文的 GitHub 快照，正文、参考文献、模板及六幅图与本次 Overleaf 发布包一致。后续正文修改应先整合到 Overleaf 工作副本，再同步此快照。
 
-当前版本包含 10 个主章节、42 个小节、6 幅图和 15 张表；正文实际引用 56 条文献，统一 BibTeX 库共 1052 条。参考文献单独保存在 `references.bib`，`main.tex` 仅通过 `\bibliography{references}` 调用。英文稿使用 pdfLaTeX/BibTeX 编译，本地最终页数见 `Coverage_Check/core_tag_alignment_2026-11-01/final_verification.json`；不同 TeX 环境的分页可能略有差异。
+当前版本包含 10 个主章节、43 个小节、6 幅图和 15 张表；正文实际引用 56 条文献，统一 BibTeX 库共 1052 条。参考文献单独保存在 `references.bib`，`main.tex` 仅通过 `\bibliography{references}` 调用。英文稿使用 pdfLaTeX/BibTeX 编译，本地最终页数见 `Coverage_Check/core_tag_alignment_2026-11-01/final_verification.json`；不同 TeX 环境的分页可能略有差异。
 
 ## 编译
 
@@ -37,6 +37,7 @@ python scripts/build_landscape_figures.py
 - [同类任务比较、知识形成与迁移边界](analysis/task_comparisons_discovery_and_transfer_2026-11-01.md)：本日后续修订，记录新增10篇正文引文、独立文献库修正及原文定位；扩展同任务对照、输出转化为知识的过程，以及跨器件、数据集和任务测试的实际边界。
 - [自适应决策如何影响科学证据](analysis/adaptive_decisions_and_scientific_evidence_2026-11-01.md)：第8.4节的原文证据及推导条件；分析性质优化与机制辨识、采样分布与推断有效性，以及测量模型和停止决策的科学含义。新增统计方法背景独立于Agent核心库。
 - [六幅正文图片的图文一致性核查](analysis/figure_text_consistency_audit_2026-11-01.md)：逐图核对日期、统计口径、并列维度、反馈路径及人类执行说明，记录图片与正文的对应修正。
+- [十一学科共同问题核查与模型—观测失配专题](analysis/domain_minimum_and_model_observation_2026-11-02.md)：核查第6章各学科的对象、决策、反馈及结论范围，补强四处解释联系；记录第8.5节三个既有案例的选择理由、原文位置与适用边界，核心库保持冻结。
 - [补充信息清单](analysis/gpt_supplement_information_checklist_2026-10-31.md)：保留原始规划属性，不能当作所有条目均已核实的声明。
 
 中文阅读版、完整编译 PDF、临时草稿、备份和本地验收图留在本地，不属于该发布快照。

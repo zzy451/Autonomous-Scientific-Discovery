@@ -66,7 +66,7 @@ def main():
         assert fields.get('doi') or fields.get('url'), key
         if not raw.startswith('@misc'):
             assert re.fullmatch(r'\d{4}', fields.get('year', '')), key
-    assert counts == {'sections': 10, 'subsections': 42, 'tables': 15, 'figures': 6}, counts
+    assert counts == {'sections': 10, 'subsections': 43, 'tables': 15, 'figures': 6}, counts
     en = WORKSPACE / 'Agent_for_Science_Review_Overleaf'; zh = WORKSPACE / 'Agent_for_Science_Review_Chinese'
     local = {}
     if (en / 'main.tex').exists() and (zh / 'main.tex').exists():
