@@ -159,3 +159,16 @@ fulltext_followup_required=false
 - 原文位置：TXT lines 471?480????????????。
 - 判定：缓存原始全文证实粉末XRD干湿闭环物相分析，材料表征对象明确。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`verified_official_pdf_fulltext`。本轮涉及2条差异，其中2条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1398`：`reject_pr`。Measured PXRD phase identification, refinement, and structure validation match the current 04.01.03 materials-characterization category. The PR premise that no applicable tertiary category exists is outdated.
+  - 位置：PDF p.5 reliability gates / bounded replan; pp.1?3 abstract/object; p.6 measured Si example；来源：https://arxiv.org/abs/2608.22400
+
+- 原1664行号 `1399`：`retain_current`。The 72-page PDF establishes reliable PXRD structure/property analysis as the scientific goal; phase identification, refinement, and validation as multiple steps; cross-stage gates and bounded replanning as agent capabilities; and a measured-materials characterization loop as the workflow role. Retain 04.01.03.
+  - 位置：PDF p.5 reliability gates / bounded replan; pp.1?3 abstract/object; p.6 measured Si example；来源：https://arxiv.org/abs/2608.22400
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

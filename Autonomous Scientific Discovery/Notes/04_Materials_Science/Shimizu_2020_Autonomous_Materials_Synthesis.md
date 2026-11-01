@@ -262,3 +262,23 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`publisher_deposited_abstract`。本轮涉及2条差异，其中0条已判定，2条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `484`：`pending_evidence`。官方摘要确认贝叶斯优化+机器人执行Nb掺杂TiO2薄膜电阻最小化，但没有能量材料应用证据，故当前04.04.01依据不足；04.04.04半导体材料是待核候选。摘要同时称highlight our recent experiments，不能仅凭摘要确认本篇属于原始结果还是概述性文章；保留本条，需全文核查论文类型、原始实验和电学对象。
+  - 位置：abstract；来源：https://api.crossref.org/works/10.1063/5.0020370
+
+- 原1664行号 `485`：`pending_evidence`。官方摘要确认贝叶斯优化+机器人执行Nb掺杂TiO2薄膜电阻最小化，但没有能量材料应用证据，故当前04.04.01依据不足；04.04.04半导体材料是待核候选。摘要同时称highlight our recent experiments，不能仅凭摘要确认本篇属于原始结果还是概述性文章；保留本条，需全文核查论文类型、原始实验和电学对象。
+  - 位置：abstract；来源：https://api.crossref.org/works/10.1063/5.0020370
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+
+## 2026-10-30 用户补充PDF归档
+
+- 已核验并归档：`Reference_PDF/04_Materials_Science/ASD-0592_Autonomous_materials_synthesis_by_machine_learning_and_robotics_user_supplied.pdf`，共7页。
+- 来源：用户提供文件`111110_1_online.pdf`；版本：final published article PDF。
+- 本次只补充来源文件，不改变论文分类。

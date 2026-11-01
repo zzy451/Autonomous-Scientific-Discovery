@@ -145,3 +145,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 已取得并阅读官方完整LaTeX源包主文及附录，原先任务表截断缺口已解除。各任务代码/运行日志未逐个独立复现；具体案例引用时仍应回查对应任务规格。
+
+
+## 2026-10-29 PDF补齐归档
+
+- 本地PDF：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/ASD-0915_Into_the_Unknown_Benchmarking_AI_agents_on_open_scientific_research_problems.pdf`，共163页；已核验标题、页面解析和逐页渲染。
+- 下载来源：https://arxiv.org/pdf/2610.19159.pdf
+- 版本：official arXiv preprint PDF; version as downloaded。
+- 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。

@@ -153,3 +153,13 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`verified_official_pdf_fulltext`。本轮涉及1条差异，其中1条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1492`：`retain_current`。The 12-page original PDF reports medical-ontology experiments across five chronic diseases, planning/retrieval/normalization/OWL-script stages, decision-agent orchestration and feedback, and a medical knowledge-organization role. These support medical informatics (07.03.08).
+  - 位置：PDF p.3 Algorithm 1 / decision agent; p.1 five chronic diseases; p.5 evaluation / gold standard；来源：https://doi.org/10.1038/s44401-026-00117-9
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

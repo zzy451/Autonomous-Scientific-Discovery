@@ -268,3 +268,23 @@ Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`metadata_only`。本轮涉及2条差异，其中1条已判定，1条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `556`：`resolved_by_later_writeback`。PR针对旧04.04.02；当前已改为04.03.01高分子材料，旧值不存在。是否同时覆盖储能对象须由557取得全文另核，不因题名含electrolyte自动加领域。
+  - 位置：batch2.json / paper.legacy_tertiary_class；来源：https://doi.org/10.1021/acs.chemmater.5c01209
+
+- 原1664行号 `557`：`pending_evidence`。已重试ACS与ChemRxiv两种官方PDF名及页面，仍403；Crossref仅有标题/元数据，无摘要。OpenAlex摘要仅为二手线索，无法据此确认本篇完整实验、储能覆盖和自主闭环细节。
+  - 位置：Crossref metadata / official PDF attempts；来源：https://doi.org/10.1021/acs.chemmater.5c01209
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+
+## 2026-10-30 用户补充PDF归档
+
+- 已核验并归档：`Reference_PDF/04_Materials_Science/ASD-0631_Autonomous_Discovery_of_Polymer_Electrolyte_Formulations_with_Warm_Start_Batch_Bayesian_Optimization_user_supplied.pdf`，共21页。
+- 来源：用户提供文件`chemrxiv-2025-2cjbg.pdf`；版本：ChemRxiv preprint supplied by user; version not peer-reviewed。
+- 本次只补充来源文件，不改变论文分类。

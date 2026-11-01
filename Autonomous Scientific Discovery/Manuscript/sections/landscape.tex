@@ -1,0 +1,71 @@
+\section{Research Landscape and Comparative Profiles}
+\label{sec:landscape}
+
+The domain snapshot and the comparative framework describe different aspects of the landscape. Figure~\ref{fig:landscape} reports non-exclusive domain coverage alongside the recorded publication-year distribution of the 663 core works. The former uses object assignments, while the latter uses one bibliographic year per unique work. Neither panel measures worldwide research prevalence, adoption, or disciplinary maturity. The 2026 observations belong to an incomplete calendar year within the stated collection cutoff; linked preprint and publication versions are represented by the retained work record.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/domain_landscape_en.pdf}
+\caption{Domain coverage and temporal composition of the assembled corpus. Domain bars count 926 non-exclusive memberships among 654 domain-assigned works; year bars count 663 unique core records. The separate nine-work method bucket is excluded from domain bars and included in the year distribution. The partial 2026 count must not be compared with complete years as a growth-rate estimate.}
+\label{fig:landscape}
+\end{figure}
+
+The historical examples in Figure~\ref{fig:history} establish the presence of symbolic, planning, optimization, learned, and language-based mechanisms at different dates. They do not provide a quantitative historical distribution of paradigms. Existing corpus metadata contain incomplete and heterogeneous technical labels; assigning all records to the six paradigms would require further source-based coding. Accordingly, the workflow and paradigm comparison in Figure~\ref{fig:domain-matrix} uses eleven explicitly selected object--task cases, one per module. Its unit is the illustrated case, not a domain-wide profile. The choices deliberately retain non-LLM systems alongside contemporary language-based workflows.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/domain_workflow_paradigm_en.pdf}
+\caption{Domain, workflow, and paradigm profiles for eleven selected cases. Marked cells indicate the functions and decision mechanisms coded for the illustrated task; unmarked cells indicate no coding in this comparison, not demonstrated absence. Roles can involve people and tools as well as agents. The matrix is selective and cannot establish full-corpus prevalence or coverage completeness.}
+\label{fig:domain-matrix}
+\end{figure}
+
+The matrix records workflow roles in the evaluated investigation, including human and tool participation; it is not an autonomy score. Environment follows the actual evaluation setting. Accordingly, image-data evaluation, laboratory candidate testing, and operational mission control are distinguished in the system profiles below.
+
+Tables~\ref{tab:representatives-a}--\ref{tab:representatives-c} connect selected systems to their scientific objects, mechanisms, feedback, human responsibilities, and endpoints. Detailed comparison within each domain follows in Section~\ref{sec:domains}. The tables and figures support qualitative synthesis; no common scientific-success score is derived from heterogeneous endpoints.
+
+\begin{table}[H]
+\caption{Selected system profiles in modules 01--04. Objects, actions, environment, feedback, human boundaries, and evidence are specified for the evaluated task.}
+\label{tab:representatives-a}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.20\textwidth}XXX@{}}
+\toprule
+Module, system and object & Mechanism, actions and environment & Feedback and human boundary & Scientific endpoint \\
+\midrule
+01 FunSearch; combinatorial constructions~\cite{asd0512} & LLM program proposals; executable evaluation & Program scores; supplied evaluator and skeleton & Evaluated constructions; proof and novelty require appropriate checks \\
+02 k-agents; quantum experiments~\cite{asd0090} & Procedure interpretation, state-machine execution and analysis; quantum hardware & Measurement reports; supplied procedures and apparatus & Calibration and experimental outcomes \\
+03 Reactivity-search robot; chemical combinations~\cite{asd0734} & Learned experiment selection and robotic execution & NMR/IR signals; manual chemical follow-up & Screening signal distinguished from characterized reactions \\
+04 Mobile robotic chemist; photocatalyst mixtures~\cite{burger2020} & Bayesian search and laboratory execution & Hydrogen measurements; defined ingredients and search space & Measured formulation performance \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\caption{Selected system profiles in modules 05--08. A workflow role does not imply autonomous ownership of every decision within it.}
+\label{tab:representatives-b}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.20\textwidth}XXX@{}}
+\toprule
+Module, system and object & Mechanism, actions and environment & Feedback and human boundary & Scientific endpoint \\
+\midrule
+05 Sensorweb; environmental events~\cite{asd0722} & Observation requests and model-based planning; sensors and space assets & Event detections; science-team interests and priorities & Adaptive acquisition, distinct from causal environmental explanation \\
+06 Robot Scientist; yeast gene function~\cite{king2004} & Symbolic model, hypothesis testing and laboratory assays & Growth versus model predictions; supplied knowledge and human preparation & Experimental discrimination of functional hypotheses \\
+07 Virtual Lab; nanobodies~\cite{asd0054} & LLM collaboration and scientific tools; computation and laboratory validation & Computational and binding outcomes; human guidance and biologists & Candidate expression and binding; no clinical efficacy inference \\
+08 RAVA; plant disease images~\cite{asd1133} & Learned recurrent visual policy; computational benchmark & Sequential observations; supplied training data and objective & Diagnostic performance under evaluated image conditions \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\caption{Selected system profiles in modules 09--11. Missing reporting of a decision is not evidence that it was autonomously delegated.}
+\label{tab:representatives-c}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.20\textwidth}XXX@{}}
+\toprule
+Module, system and object & Mechanism, actions and environment & Feedback and human boundary & Scientific endpoint \\
+\midrule
+09 BEAR; mechanical structures~\cite{asd0504} & Bayesian selection, fabrication and testing & Mechanical measurements; supplied design family and objective & Toughness within the tested design setting \\
+10 Sciencecraft; mission operations~\cite{asd0645} & Model-based planning and execution; spacecraft & Onboard events and monitoring; mission goals and resource constraints & On-orbit operation; identify any simulated evaluation separately \\
+11 SciSciGPT; knowledge production~\cite{asd0624} & LLM tool coordination; scholarly databases and code & Retrieved data and analytical outputs; human research collaboration & Scholarly-data analysis; causal claims need separate support \\
+\bottomrule
+\end{tabularx}
+\end{table}

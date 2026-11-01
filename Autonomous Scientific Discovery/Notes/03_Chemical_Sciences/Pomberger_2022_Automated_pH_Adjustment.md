@@ -259,3 +259,16 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`metadata_only`。本轮涉及2条差异，其中1条已判定，1条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `512`：`resolved_by_later_writeback`。PR针对旧03.03.01，当前导出表已写为03.03.02；旧值差异已消失。但本篇究竟最适合反应设计还是物理/分析化学仍留给513来源核对，不将本条关闭视为现值终审。
+  - 位置：batch2.json / paper.legacy_tertiary_class；来源：https://doi.org/10.1016/j.cej.2022.139099
+
+- 原1664行号 `513`：`pending_evidence`。出版社与ChemRxiv官方PDF均403。OpenAlex能复原摘要，描述多缓冲多元质子体系的主动学习闭环pH调整，可作线索，但该聚合来源不能替代本轮一手证据；需全文确认03.03.02与03.02.04/03.02.03边界。
+  - 位置：abstract_inverted_index (aggregated metadata, not first-hand text)；来源：https://doi.org/10.1016/j.cej.2022.139099
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

@@ -6,19 +6,19 @@
   "primary_tertiary_resolved": 653,
   "primary_tertiary_pending": 1,
   "legacy_tertiary_blank": 1,
-  "multi_module_papers": 195,
-  "module_pairs": 925,
-  "module_pairs_with_tertiary": 756,
+  "multi_module_papers": 196,
+  "module_pairs": 926,
+  "module_pairs_with_tertiary": 757,
   "pending_module_pairs": 87,
-  "local_core_pdfs": 600,
+  "local_core_pdfs": 636,
   "module_pairs_without_tertiary": 169,
   "modules": [
     {
       "module": "01",
-      "papers": 89,
+      "papers": 90,
       "primary_filings": 83,
       "primary_tertiary_resolved": 83,
-      "module_tertiary_resolved": 83,
+      "module_tertiary_resolved": 84,
       "module_tertiary_pending": 6
     },
     {

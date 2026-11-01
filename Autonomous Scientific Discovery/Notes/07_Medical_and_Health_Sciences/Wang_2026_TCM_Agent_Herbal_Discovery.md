@@ -304,3 +304,13 @@ source_limited：no
 safety_access_status：official_page_and_visible_publisher_routes_checked; no local PDF and no completed full-text read claimed
 是否仍需全文复核：需要，但不是为了重判主模块 07
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`author_abstract_plus_published_figure_captions`。本轮涉及1条差异，其中1条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `385`：`retain_current`。The author abstract and published figure captions 2, 3, 7, and 8 independently describe multiple workflows, step-by-step problem decomposition, retrieval, and pharmacological mechanism analysis. These support the four Agent gates and pharmacology object. Full-text PDF and page-level validation remain unavailable.
+  - 位置：PubMed author abstract and Fig. 2, Fig. 3, Fig. 7 captions；来源：https://pubmed.ncbi.nlm.nih.gov/42597957/
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

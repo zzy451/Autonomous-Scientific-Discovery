@@ -248,3 +248,16 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`author_abstract`。本轮涉及2条差异，其中2条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `266`：`resolved_by_later_writeback`。The author abstract supports AI route planning and modular robotic flow synthesis. Current 03.03.01 is supported for synthetic chemistry; historical 03.03.05 has been replaced and the current valid tertiary code need not be cleared.
+  - 位置：NLM BioC author abstract；来源：https://pubmed.ncbi.nlm.nih.gov/31395756/
+
+- 原1664行号 `267`：`retain_current`。The author abstract directly reports synthesis planning, in-silico route validation, robotic execution, and synthesis of 15 drug or drug-like substances. These support module 03 and the four minimum Agent gates. Human chemists supply implementation details; this is not a claim of complete autonomy.
+  - 位置：NLM BioC author abstract；来源：https://pubmed.ncbi.nlm.nih.gov/31395756/
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

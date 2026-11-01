@@ -2001,6 +2001,19 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0508",
+    "title": "Autonomous, multiproperty-driven molecular discovery: From predictions to measurements and back",
+    "pdf_path": "Reference_PDF/03_Chemical_Sciences/ASD-0508_Autonomous_multiproperty_driven_molecular_discovery_From_predictions_to_measurements_and_back_user_supplied.pdf",
+    "sha256": "8c7051503bc165c32c59d0425fbf9f749ddbad98f8bb63ead0dbf655f1b93eac",
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0510",
     "title": "A conversational multi-agent AI system for automated plant phenotyping",
     "pdf_path": "Reference_PDF/08_Agricultural_Food_Forestry_Animal_and_Fishery_Sciences/Chen_2026_PhenoAssistant.pdf",
@@ -2545,6 +2558,19 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0569",
+    "title": "Autonomous Nanocrystal Doping by Self-Driving Fluidic Micro-Processors",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0569_Autonomous_Nanocrystal_Doping_by_Self_Driving_Fluidic_Micro_Processors_user_supplied.pdf",
+    "sha256": "2128ccb9089d22f4eae07c0d5a6427f4cde75a976d15ba8f79bac12db1428168",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0570",
     "title": "Knowledge-driven autonomous materials research via collaborative multi-agent and robotic system",
     "pdf_path": "Reference_PDF/04_Materials_Science/Shi_2026_Knowledge_Driven_Autonomous_Materials_Research.pdf",
@@ -2731,6 +2757,19 @@
     "title": "Self-optimizing parallel millifluidic reactor for scaling nanoparticle synthesis",
     "pdf_path": "Reference_PDF/04_Materials_Science/Wang_2020_SelfOptimizing_Millifluidic_Nanoparticles.pdf",
     "sha256": "cce77b8ece8d4d13b803d56a08c02a4995de4b1b030bec3148d94a8e7b2d195c",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0592",
+    "title": "Autonomous materials synthesis by machine learning and robotics",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0592_Autonomous_materials_synthesis_by_machine_learning_and_robotics_user_supplied.pdf",
+    "sha256": "2f786c8b26b901d93497df0fc9084d10bf8ec42785890eb9acb01bf7f113d1ca",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
       "04"
@@ -3085,6 +3124,19 @@
     "title": "Autonomous robotic experimentation system for powder X-ray diffraction",
     "pdf_path": "Reference_PDF/04_Materials_Science/Yotsumoto_2024_Autonomous_PXRD_Experimentation.pdf",
     "sha256": "b60cbe1564710cd0c32ac5242330951731bcd37b5c669ac7d29f6e7df381d586",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0631",
+    "title": "Autonomous Discovery of Polymer Electrolyte Formulations with Warm-Start Batch Bayesian Optimization",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0631_Autonomous_Discovery_of_Polymer_Electrolyte_Formulations_with_Warm_Start_Batch_Bayesian_Optimization_user_supplied.pdf",
+    "sha256": "8c0894f3d7e2702dbd637e31caec4ae10f215d7cc1d81b493f30e761fd829552",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
       "04"
@@ -5727,6 +5779,58 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0874",
+    "title": "Auditing Discovery Claims: A Two-Sided Criterion for Agentic Science, with the Negative Side Decidable",
+    "pdf_path": "Reference_PDF/06_Life_Sciences/ASD-0874_Auditing_Discovery_Claims_A_Two_Sided_Criterion_for_Agentic_Science_with_the_Negative_Side_Decidable.pdf",
+    "sha256": "41483949f0104e38186023ac3b797254832d10dfc6c81b099d03e54de294353a",
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0875",
+    "title": "Science sandboxes measure the scientific capability of AI agents",
+    "pdf_path": "Reference_PDF/06_Life_Sciences/ASD-0875_Science_sandboxes_measure_the_scientific_capability_of_AI_agents.pdf",
+    "sha256": "b3491685df914002adf65a32b001bdcd65c0d17954bb46f716171b6af18bbbd2",
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0876",
+    "title": "CausalDS: Benchmarking Causal Reasoning in Data-Science Agents",
+    "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/ASD-0876_CausalDS_Benchmarking_Causal_Reasoning_in_Data_Science_Agents.pdf",
+    "sha256": "83b730efff2ed3a1268d3cc04f995bba688ba9c46ad5b5b7e55e4ed287ec3063",
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0877",
+    "title": "The Silent Failures in Agentic Data Science",
+    "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/ASD-0877_The_Silent_Failures_in_Agentic_Data_Science.pdf",
+    "sha256": "3d12b3ebc816783a74add674ebb627aba33c80eaf9cd41fb61b9bddbf745952d",
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0878",
     "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Xu_2026_SWEBenchScience.pdf",
@@ -5734,6 +5838,32 @@
     "primary_module_for_filing": "01",
     "scientific_object_modules": [
       "01"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0879",
+    "title": "CrossAudit: A Git-Native, Cross-Vendor Audit Loop for Agentic Science",
+    "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/ASD-0879_CrossAudit_A_Git_Native_Cross_Vendor_Audit_Loop_for_Agentic_Science.pdf",
+    "sha256": "0fb2ffb705b7443efdc787aba1df2cc88cf47b346ad84b608c0f1d89409205cd",
+    "primary_module_for_filing": "11",
+    "scientific_object_modules": [
+      "11"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0880",
+    "title": "Can Autonomous LLM Agents Execute Multireference Quantum Chemistry Calculations?",
+    "pdf_path": "Reference_PDF/03_Chemical_Sciences/ASD-0880_Can_Autonomous_LLM_Agents_Execute_Multireference_Quantum_Chemistry_Calculations.pdf",
+    "sha256": "f5da3df339a5f57d920efb6c078a685d9d4437fe5b6e417b8f3952c3761f5927",
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -5753,6 +5883,19 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0882",
+    "title": "Hypothesis-Driven Autonomous Materials Synthesis with Multimodal LLM Agents",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0882_Hypothesis_Driven_Autonomous_Materials_Synthesis_with_Multimodal_LLM_Agents.pdf",
+    "sha256": "f9ade9166318e6fb176e748ab11e2d26ed15828e0963238a637719845ff1ff9b",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0883",
     "title": "GBClaw: An agentic AI framework for atomistic grain boundary research and mechanistic discovery",
     "pdf_path": "Reference_PDF/04_Materials_Science/Liu_2026_GBClaw_Grain_Boundary_Discovery.pdf",
@@ -5766,10 +5909,75 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0884",
+    "title": "AutoXRD: Autonomous LLM Agents and Comprehensive Evaluation for Powder Diffraction Analysis",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0884_AutoXRD_Autonomous_LLM_Agents_and_Comprehensive_Evaluation_for_Powder_Diffraction_Analysis.pdf",
+    "sha256": "bd702aae38593da248cc7a53bd2524bd60771fde0173acdf6394005b435333de",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0885",
     "title": "An Open-Source Hardware and Software Toolkit to Enable Agentic RHEED-Guided Thin-Film Synthesis",
     "pdf_path": "Reference_PDF/04_Materials_Science/Haque_2026_Agentic_RHEED_Thin_Film_Toolkit.pdf",
     "sha256": "ebaff3fef0a39f77ef160a840045ffae5f522e1c5dfe91a135cd37da7fc4d643",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0886",
+    "title": "Autonomous discovery of new structure-plausibility laws for explainable and rapid crystal diagnosis and screening",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0886_Autonomous_discovery_of_new_structure_plausibility_laws_for_explainable_and_rapid_crystal_diagnosis_and_s.pdf",
+    "sha256": "cf044756c5d71d43ba9fb27069ed43d0f6207f52dfbc360f8116dff7e23bc1a3",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0887",
+    "title": "Evaluating a 4B open-weights local LLM for agentic DFT workflows: a literature reproducibility audit",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0887_Evaluating_a_4B_open_weights_local_LLM_for_agentic_DFT_workflows_a_literature_reproducibility_audit.pdf",
+    "sha256": "0226f95bf261c8577bbc8e59e24e3bdfbc50e003c430524525e37d7e196b0d25",
+    "primary_module_for_filing": "04",
+    "scientific_object_modules": [
+      "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0888",
+    "title": "SQD-Agent: LLM-driven agentic framework for Quantum Chemistry workflows",
+    "pdf_path": "Reference_PDF/03_Chemical_Sciences/ASD-0888_SQD_Agent_LLM_driven_agentic_framework_for_Quantum_Chemistry_workflows.pdf",
+    "sha256": "09cdf61dc4f7e36ab66fc2cc68047a32124d7383a3ab1d109e21d699948dde64",
+    "primary_module_for_filing": "03",
+    "scientific_object_modules": [
+      "03"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0889",
+    "title": "RaspAssistant as an Agentic Framework for Automating Adsorption Simulation Research in Porous Materials",
+    "pdf_path": "Reference_PDF/04_Materials_Science/ASD-0889_RaspAssistant_as_an_Agentic_Framework_for_Automating_Adsorption_Simulation_Research_in_Porous_Materials.pdf",
+    "sha256": "8d418d2a70f9410213073900de54425bfcfbbfb0af88612e5ce3b1c78a14dac8",
     "primary_module_for_filing": "04",
     "scientific_object_modules": [
       "04"
@@ -5862,6 +6070,20 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0899",
+    "title": "Mind the alignment gap: a spatial transcriptomics benchmark for scientific coding agents",
+    "pdf_path": "Reference_PDF/06_Life_Sciences/Chen_2026_Mind_the_alignment_gap_ASD0899.pdf",
+    "sha256": "388e062b2033a73b5bf930c882ac196da992ea4625fae1ab194c6cac9a09cf09",
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "01",
+      "06"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0900",
     "title": "Multi-agentic system for primer design in qPCR and LAMP diagnostics tests",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Lau_2026_Multi_agentic_system_for_primer_design_in_qPCR_and_LAMP_diagnostics_tests.pdf",
@@ -5869,6 +6091,46 @@
     "primary_module_for_filing": "06",
     "scientific_object_modules": [
       "06"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0901",
+    "title": "scBaseCount: An AI agent-curated, standardized, auto-updated single-cell data repository",
+    "pdf_path": "Reference_PDF/06_Life_Sciences/ASD-0901_scBaseCount_An_AI_agent_curated_standardized_auto_updated_single_cell_data_repository_preprint_v2.pdf",
+    "sha256": "6c6eec51145e46e67ee1a53fcdbf420951dba4b71e83d130b7ae84dfcd6b661e",
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0902",
+    "title": "Perturb-ME: Scalable mechanism discovery from phenotype-enriched genome-wide screens",
+    "pdf_path": "Reference_PDF/06_Life_Sciences/Perturb_ME_2026_Genome_wide_CRISPR_ASD0902.pdf",
+    "sha256": "0786d11195e7567f1e7dc9dbb16fa90c9513cd00e7427631c8cc5bd9f0e91307",
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06",
+      "07"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0903",
+    "title": "CLVisc Agent for autonomous relativistic hydrodynamics studies",
+    "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/ASD-0903_CLVisc_Agent_for_autonomous_relativistic_hydrodynamics_studies.pdf",
+    "sha256": "e6f1d92fd54776050ac1a7fdb273117a3f3025e92576a9ef7898288735bde441",
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -5889,10 +6151,50 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0905",
+    "title": "ORBIT-Q: Dual-axis benchmarking of autonomous agents in scientific quantum programming",
+    "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/ASD-0905_ORBIT_Q_Dual_axis_benchmarking_of_autonomous_agents_in_scientific_quantum_programming.pdf",
+    "sha256": "bff7e26f78745a486538a29bd09e1003facf5778458a64294379caec53a897c0",
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01",
+      "02"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0907",
+    "title": "SciExam for ENSO: Can AI Agents Build Climate Models?",
+    "pdf_path": "Reference_PDF/05_Earth_and_Environmental_Sciences/ASD-0907_SciExam_for_ENSO_Can_AI_Agents_Build_Climate_Models.pdf",
+    "sha256": "b7df77c364f87cb3c0bb6f19d24874016171081129baf396bc179fb1abd727a7",
+    "primary_module_for_filing": "05",
+    "scientific_object_modules": [
+      "05"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0909",
     "title": "CABAL: Multi-Agent Simulacra for Tracing the Effects of Collusive Bidding in Peer Review",
     "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Zhou_2026_CABAL.pdf",
     "sha256": "ecad892215396d742fa07d261895b240c2954c76e1dee8096064d7499fcbd566",
+    "primary_module_for_filing": "11",
+    "scientific_object_modules": [
+      "11"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0910",
+    "title": "InternReviewer & InternAdvocate: Objective Reward and Evaluation for Agentic Reinforcement Learning in Peer Review and Rebuttal",
+    "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/ASD-0910_InternReviewer_InternAdvocate_Objective_Reward_and_Evaluation_for_Agentic_Reinforcement_Learning_in_Peer_.pdf",
+    "sha256": "1424de777107dea99699c2cbadd143ae4eb6f85371c9c5281e53cb04aa5f90a2",
     "primary_module_for_filing": "11",
     "scientific_object_modules": [
       "11"
@@ -5958,6 +6260,79 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-0915",
+    "title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
+    "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/ASD-0915_Into_the_Unknown_Benchmarking_AI_agents_on_open_scientific_research_problems.pdf",
+    "sha256": "69baf9bc753f5f57de496d45a74faee9f3afaee13df50e7b8228db1a9aa769fb",
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "11"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0916",
+    "title": "EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards",
+    "pdf_path": "Reference_PDF/05_Earth_and_Environmental_Sciences/ASD-0916_EarthVerse_Benchmarking_Scientific_Agents_Across_Dynamic_Earth_Systems_and_Natural_Hazards.pdf",
+    "sha256": "208d458fad6c5629beef7a7ee18b566eef61564238f1c897e18fe8889f1236b9",
+    "primary_module_for_filing": "05",
+    "scientific_object_modules": [
+      "05"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0917",
+    "title": "PHREEQC-MCQ-200: A Diagnostic Benchmark for Tool-Augmented Scientific Simulator Agents",
+    "pdf_path": "Reference_PDF/05_Earth_and_Environmental_Sciences/ASD-0917_PHREEQC_MCQ_200_A_Diagnostic_Benchmark_for_Tool_Augmented_Scientific_Simulator_Agents.pdf",
+    "sha256": "3db5dc3d8a76f208de973db7914d3f6f141c030f8f6f59c97325e55ee0b5034d",
+    "primary_module_for_filing": "05",
+    "scientific_object_modules": [
+      "03",
+      "05"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0918",
+    "title": "DeepInstructor: An Agentic AI Instructor for Experience-Driven Idea Evaluation",
+    "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/ASD-0918_DeepInstructor_An_Agentic_AI_Instructor_for_Experience_Driven_Idea_Evaluation.pdf",
+    "sha256": "51231d1657e1c6265530273811effcd810f21dd251ba3e682a0b2f7ccf9c97e8",
+    "primary_module_for_filing": "11",
+    "scientific_object_modules": [
+      "11"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-0919",
+    "title": "Scaling Scientific Discovery Environments for Turn-Level Agentic RL",
+    "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/ASD-0919_Scaling_Scientific_Discovery_Environments_for_Turn_Level_Agentic_RL.pdf",
+    "sha256": "8f7713aca39a84a7e1ef7204d4746eacfdf6a990a1a2b5aba7480e04078f7ee7",
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "05",
+      "06",
+      "07",
+      "11"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-0920",
     "title": "Behavior is Not Enough: A Mechanism-Based Evaluation of Social Norm Emergence in LLM Societies",
     "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Muralidharan_2026_Behavior_Not_Enough.pdf",
@@ -5982,6 +6357,20 @@
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": false
+  },
+  {
+    "paper_id": "ASD-0922",
+    "title": "QuantumNovelty: A Skill-Orchestrating Language Agent for Referee-Style Review and Patentability Screening of Quantum Papers and Patents",
+    "pdf_path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/ASD-0922_QuantumNovelty_A_Skill_Orchestrating_Language_Agent_for_Referee_Style_Review_and_Patentability_Screening_.pdf",
+    "sha256": "6c448345589a161a22a67f0a98a6c2a2167f34b6e62319808f4a9d76aad03b83",
+    "primary_module_for_filing": "11",
+    "scientific_object_modules": [
+      "02",
+      "11"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
   },
   {
     "paper_id": "ASD-0923",
@@ -7095,6 +7484,20 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-1016",
+    "title": "DDA: a traceable multi-agent framework for automated structure-based drug design",
+    "pdf_path": "Reference_PDF/06_Life_Sciences/ASD-1016_DDA_a_traceable_multi_agent_framework_for_automated_structure_based_drug_design.pdf",
+    "sha256": "c12d2bc4fc38adc36fb1d4c5e2b9218e1a4a23ee27cb839e50f7fbcc2b00f265",
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06",
+      "07"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-1017",
     "title": "DynaMate: An Autonomous Agent for Protein-Ligand Molecular Dynamics Simulations",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Masschelein_2026_DynaMate_An_Autonomous_Agent_for_Protein_Ligand_Molecular_Dynamics_ASD1017.pdf",
@@ -7281,6 +7684,19 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-1031",
+    "title": "OntoCodex: a multi-agent biomedical ontology enrichment framework",
+    "pdf_path": "Reference_PDF/07_Medical_and_Health_Sciences/OntoCodex_2026_Ontology_enrichment_ASD1031.pdf",
+    "sha256": "86c93e95b93ecad3ddcc1882714d886862c593d81582201eb565c881bdf99b09",
+    "primary_module_for_filing": "07",
+    "scientific_object_modules": [
+      "07"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-1036",
     "title": "Verification Debt in Automated Biological Research Workflows: A Proof-of-Concept",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Gopalan_2026_Verification_Debt_in_Automated_Biological_Research_Workflows_A_Proof_ASD1036.pdf",
@@ -7349,6 +7765,33 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-1041",
+    "title": "NeuroAct: Advancing EEG Analysis and Decoding via Dual-Loop Autonomous Research",
+    "pdf_path": "Reference_PDF/06_Life_Sciences/ASD-1041_NeuroAct_Advancing_EEG_Analysis_and_Decoding_via_Dual_Loop_Autonomous_Research.pdf",
+    "sha256": "ba78cce3fa60e8df0217a90824663d53cf6b287aa574ed4930e017d6201cea0e",
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06",
+      "07"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-1043",
+    "title": "Solver Agent: an Agentic AI Framework for Theoretical Physics Computations Applied to F-theory Uplifts of O3-planes and S-folds",
+    "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/ASD-1043_Solver_Agent_an_Agentic_AI_Framework_for_Theoretical_Physics_Computations_Applied_to_F_theory_Uplifts_of_.pdf",
+    "sha256": "06d8f5b1ed87433f5ddf9475250773a7e46883eb25dcc6f57cf3743b1274b52b",
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-1044",
     "title": "VortexChat: An agentic framework for autonomous multi-objective integrated photonic design",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Chong_2026_VortexChat_An_agentic_framework_for_autonomous_multi_objective_integrated_ASD1044.pdf",
@@ -7388,6 +7831,20 @@
     "active_confirmed_core": true
   },
   {
+    "paper_id": "ASD-1047",
+    "title": "OPERA: Operator-residual feedback for reliable autonomous optical experiments with language-model agents",
+    "pdf_path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/ASD-1047_OPERA_Operator_residual_feedback_for_reliable_autonomous_optical_experiments_with_language_model_agents.pdf",
+    "sha256": "3e49760b98b43248c156aed3eb82924f99102289ddf308e3e545fe029cc32ce0",
+    "primary_module_for_filing": "02",
+    "scientific_object_modules": [
+      "02",
+      "09"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
     "paper_id": "ASD-1048",
     "title": "Photonics-GCCE: group collaborative-competitive evolution multi-agent framework for universal and autonomous optical design",
     "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Xu_2026_Photonics_GCCE_group_collaborative_competitive_evolution_multi_agent_framework_ASD1048.pdf",
@@ -7409,6 +7866,20 @@
     "scientific_object_modules": [
       "03",
       "04"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-1050",
+    "title": "HALO: A Physics-Aware LLM Agent Framework for Nanophotonic Design",
+    "pdf_path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/ASD-1050_HALO_A_Physics_Aware_LLM_Agent_Framework_for_Nanophotonic_Design.pdf",
+    "sha256": "8e3e78f0638d246bf6fd443dcb6fa957106da46a842edfa7befc5b9d13593363",
+    "primary_module_for_filing": "09",
+    "scientific_object_modules": [
+      "02",
+      "09"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -8003,6 +8474,20 @@
       "03",
       "04",
       "06"
+    ],
+    "pdf_status": "archived_pdf",
+    "evidence_status": "first_hand_full_text",
+    "active_confirmed_core": true
+  },
+  {
+    "paper_id": "ASD-1097",
+    "title": "SAIL: Scientific Agentic Intelligence via a Science-Aware Loop",
+    "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/SAIL_2026_Science_aware_improvement_loop_ASD1097.pdf",
+    "sha256": "06b5ef371426f6a5907de7fff707ea28e4c566ffe233fa8da949d564b66a46c7",
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01",
+      "11"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",

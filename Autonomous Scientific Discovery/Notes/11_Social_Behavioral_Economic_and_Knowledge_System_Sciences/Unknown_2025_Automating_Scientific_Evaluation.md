@@ -295,3 +295,19 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`target_publisher_metadata_only`。本轮涉及3条差异，其中1条已判定，2条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1023`：`reject_pr`。Reject the obsolete-codebook deletion rationale: the current authoritative taxonomy explicitly defines this code. This only settles code validity, not the unavailable target-paper full text.
+  - 位置：publisher API target-paper title metadata; no methods/results delivered；来源：https://www.sciencedirect.com/science/article/pii/S240589632503157X/pdfft?isDTMRedir=true&download=true
+
+- 原1664行号 `1024`：`pending_evidence`。The PR compared old 11.07.08, while current export is 11.07.01 (scientometrics). Both terms exist in the current taxonomy. Target full text is unavailable; peer-review title alone cannot decide scientometrics versus scientific methodology, or justify deletion. Keep this tertiary boundary pending.
+  - 位置：publisher API target-paper title metadata; no methods/results delivered；来源：https://www.sciencedirect.com/science/article/pii/S240589632503157X/pdfft?isDTMRedir=true&download=true
+
+- 原1664行号 `1025`：`pending_evidence`。Publisher PDF and full-text requests did not return readable target-paper methods/results. Target title metadata alone cannot verify connected agent steps or actual scientific validation. Related EO-1 papers must not substitute for this target. Keep current classification and core status provisionally; full source review remains open.
+  - 位置：publisher API target-paper title metadata; no methods/results delivered；来源：https://www.sciencedirect.com/science/article/pii/S240589632503157X/pdfft?isDTMRedir=true&download=true
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

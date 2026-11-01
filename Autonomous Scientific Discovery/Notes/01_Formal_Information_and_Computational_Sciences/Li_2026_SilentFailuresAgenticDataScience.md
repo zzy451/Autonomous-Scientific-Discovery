@@ -140,3 +140,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+
+## 2026-10-29 PDF补齐归档
+
+- 本地PDF：`Reference_PDF/01_Formal_Information_and_Computational_Sciences/ASD-0877_The_Silent_Failures_in_Agentic_Data_Science.pdf`，共19页；已核验标题、页面解析和逐页渲染。
+- 下载来源：https://arxiv.org/pdf/2610.14115
+- 版本：official arXiv preprint PDF; version as downloaded。
+- 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。

@@ -285,3 +285,22 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`author_manuscript_full_text_html`。本轮涉及4条差异，其中4条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `457`：`reject_pr`。已读取PMC作者稿全文：直接优化随机杂聚物共混配方，并对葡萄糖氧化酶热稳定性/保留活性做真实实验。04.03.01高分子材料与06.03.06蛋白质科学均有独立对象证据；不能退回06.01或删除现有三级代码。闭环GA选择-交叉-变异、自动混合/水浴/酶活性测量、下一轮候选的流程满足Agent门槛。
+  - 位置：Introduction final paragraphs; Results / An autonomous formulation optimization platform for evaluating RHPBs; Figure 2；来源：https://pmc.ncbi.nlm.nih.gov/articles/PMC12377483/
+
+- 原1664行号 `458`：`reject_pr`。已读取PMC作者稿全文：直接优化随机杂聚物共混配方，并对葡萄糖氧化酶热稳定性/保留活性做真实实验。04.03.01高分子材料与06.03.06蛋白质科学均有独立对象证据；不能退回06.01或删除现有三级代码。闭环GA选择-交叉-变异、自动混合/水浴/酶活性测量、下一轮候选的流程满足Agent门槛。
+  - 位置：Introduction final paragraphs; Results / An autonomous formulation optimization platform for evaluating RHPBs; Figure 2；来源：https://pmc.ncbi.nlm.nih.gov/articles/PMC12377483/
+
+- 原1664行号 `459`：`reject_pr`。已读取PMC作者稿全文：直接优化随机杂聚物共混配方，并对葡萄糖氧化酶热稳定性/保留活性做真实实验。04.03.01高分子材料与06.03.06蛋白质科学均有独立对象证据；不能退回06.01或删除现有三级代码。闭环GA选择-交叉-变异、自动混合/水浴/酶活性测量、下一轮候选的流程满足Agent门槛。
+  - 位置：Introduction final paragraphs; Results / An autonomous formulation optimization platform for evaluating RHPBs; Figure 2；来源：https://pmc.ncbi.nlm.nih.gov/articles/PMC12377483/
+
+- 原1664行号 `460`：`reject_pr`。已读取PMC作者稿全文：直接优化随机杂聚物共混配方，并对葡萄糖氧化酶热稳定性/保留活性做真实实验。04.03.01高分子材料与06.03.06蛋白质科学均有独立对象证据；不能退回06.01或删除现有三级代码。闭环GA选择-交叉-变异、自动混合/水浴/酶活性测量、下一轮候选的流程满足Agent门槛。
+  - 位置：Introduction final paragraphs; Results / An autonomous formulation optimization platform for evaluating RHPBs; Figure 2；来源：https://pmc.ncbi.nlm.nih.gov/articles/PMC12377483/
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

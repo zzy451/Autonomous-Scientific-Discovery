@@ -1,0 +1,53 @@
+\section{Introduction}
+\label{sec:introduction}
+
+\subsection{From scientific prediction to scientific action}
+
+Scientific research connects question formulation, information gathering, experimental design, tool operation, analysis, and validation. Scientific agents organize multiple actions within this process, including decisions about what to investigate next. Their contribution consequently depends on both the actions delegated and the evidence produced: a plausible plan, a completed workflow, and a supported scientific conclusion are distinct outcomes.
+
+We use \emph{Agent for Science} for systems with an identifiable role in this action process, including bounded tasks as well as investigations spanning several stages. The scope covers classical and contemporary decision mechanisms under common eligibility criteria, defined in Section~\ref{sec:methods}. Section~\ref{sec:framework} distinguishes these mechanisms from execution environment, organizational structure, and autonomy.
+
+\subsection{Historical lineages and coexistence of agent paradigms}
+
+The development of scientific agents comprises interacting lineages rather than successive replacement of one architecture by another. Symbolic and knowledge-based reasoning provide explicit representations of hypotheses and constraints. Robot Scientist used a Prolog model of a biological pathway to support gene-function investigations, while Sciencecraft coupled model-based planning with onboard analysis and execution under spacecraft constraints~\cite{king2004,asd0645}. These cases establish concrete historical implementations; they do not identify the origins of either paradigm.
+
+Optimization, active selection, and feedback control provide additional routes to scientific action. Learned reactivity selection supports exploration of chemical experiments~\cite{asd0734,asd0428}; Bayesian search and experimental optimization connect measured outcomes to subsequent material formulations or mechanical designs~\cite{burger2020,asd0504}. Their scientific contribution depends on the defined objective, admissible interventions, and experimental evidence. Natural-language interaction is not a prerequisite for this form of adaptive investigation.
+
+LLM-based systems extend access to scientific language, software, and heterogeneous tools: Coscientist integrates search, code execution, and experimental automation, while ChemCrow connects an LLM to specialist chemistry tools~\cite{boiko2023,bran2024}. They can also incorporate established mechanisms: k-agents translates experimental procedures into an execution structure with state transitions informed by measurement analysis~\cite{asd0090}. Learning-based policies continue to address bounded interaction tasks, as illustrated by active visual observation in RAVA~\cite{asd1133}. Figure~\ref{fig:history} summarizes selected anchors. Earlier mechanisms remain relevant, and hybrid designs require task-specific evaluation rather than an assumption of generational superiority.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/historical_paradigms_en.pdf}
+\caption{Selected historical examples of complementary scientific-agent mechanisms. Dates identify the illustrated studies rather than the origins of paradigms or their prevalence. The rows overlap in time and do not imply technological replacement.}
+\label{fig:history}
+\end{figure}
+
+\subsection{Why organize the literature by scientific object?}
+
+The meaning of a successful agent action depends on what is being studied. A formally checked proof, a reaction yield, a material's measured performance, a biological assay, and a clinical endpoint support different kinds of conclusions. Likewise, generating executable code may be a scientific result when the research object is a program or algorithm, but only an intermediate action when that code analyzes a biological sample. Grouping papers solely by a common LLM, tool interface, or agent architecture can obscure these distinctions.
+
+We therefore use the \emph{scientific research object} as the main index: the entity, phenomenon, formal structure, or engineered system directly investigated by an evaluated task. Agent mechanisms and workflow roles form complementary comparison axes. This organization allows different agent designs addressing a similar object to be considered together and permits a single system to appear in several domains when separate task-level evidence supports those assignments. It also separates demonstrated coverage from claims of general applicability: access to tools from several fields is not equivalent to having evaluated scientific tasks in all of them.
+
+The classification spans eleven broad modules, from formal and computational sciences to natural, life, medical, agricultural, engineering, and social sciences. Defined second- and third-level categories support comparisons within narrower topics. The hierarchy is an organizing framework constructed for this review, informed by library-classification principles; it is not proposed as a universal partition of science. Category availability also does not imply equal evidence density or equally mature agent capabilities across fields.
+
+\subsection{Position relative to existing reviews}
+
+Existing reviews already connect scientific agents with research workflows, autonomy, and domain applications. In particular, \emph{From AI for Science to Agentic Science} explicitly presents a domain-oriented review and relates scientific processes, autonomy, and agent mechanisms~\cite{wei2025}. Domain-based organization is therefore an established perspective, rather than a novelty claim of the present review.
+
+Feng and colleagues' Primer, \emph{Agentic AI systems for scientific discovery}, is a particularly close methodological reference~\cite{feng2026}. It focuses on LLM-based agents and discusses system construction and execution, scientific outputs, workflow applications, reproducibility, and limitations. It explicitly distinguishes output utility from the scientific conclusions supported by evidence, tabulates representative applications and outcomes, and examines baselines, resource budgets, and human involvement. These issues are shared concerns of the present review. Neither attention to evidence nor the existence of a system-level comparison table constitutes a sufficient distinction.
+
+Our emphasis is to make the scientific-object hierarchy operational for comparisons within specific research topics. For studies investigating sufficiently similar objects and tasks, the relevant questions concern which decisions are delegated, what tools and feedback are available, what outcome is measured, and under which validation and resource conditions a claim holds. Where those conditions differ, the differences constrain the synthesis rather than justify a direct ranking. The intended contribution is thus a traceable connection between domain assignments and the interpretation of scientific evidence, extending across multiple agent paradigms. Its value must come from the comparisons it enables, rather than from corpus size alone or an assumption that previous reviews omit these dimensions.
+
+\subsection{Review questions and analytical scope}
+
+The current core library contains 663 distinct works. We use it to address six questions that separate research objects, workflow roles, decision mechanisms, autonomy, scientific evidence, and transfer:
+\begin{enumerate}
+    \item \textbf{RQ1: Domains and objects.} Which scientific domains and research objects have been investigated using agents?
+    \item \textbf{RQ2: Research roles.} Which roles and connected actions do agents undertake within scientific workflows?
+    \item \textbf{RQ3: Decision paradigms.} How do symbolic, planning, optimization, learning-based, LLM-based, and hybrid mechanisms implement these activities?
+    \item \textbf{RQ4: Autonomy and collaboration.} How are consequential decisions allocated between agents and people across execution environments?
+    \item \textbf{RQ5: Scientific evidence.} What evidence supports operational success, task correctness, scientific validation, and discovery claims?
+    \item \textbf{RQ6: Cross-domain comparison.} Which mechanisms, constraints, and transfer opportunities recur across domains, and which require domain-specific validation?
+\end{enumerate}
+
+The review combines a hierarchical map of research objects with an analysis of agent actions and their supporting evidence. The map identifies where studies belong; the comparative synthesis asks what can reasonably be concluded from their reported tasks and results. Neither inclusion in the corpus nor assignment to a scientific domain certifies autonomous discovery, independent replication, or superiority over human researchers. The following section specifies the collection boundary, eligibility criteria, classification rules, and evidence protocol underlying this analysis.

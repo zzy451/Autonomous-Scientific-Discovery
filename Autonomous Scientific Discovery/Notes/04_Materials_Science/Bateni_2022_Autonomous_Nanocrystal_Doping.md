@@ -268,3 +268,23 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`publisher_deposited_abstract`。本轮涉及2条差异，其中2条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `448`：`reject_pr`。已直接读取出版社deposit摘要：LHP纳米晶为具体材料对象，存在五轮目标掺杂闭环。现行taxonomy明确定义04.03.02纳米材料，PR声称04.03无三级条目的前提已失效。足以关闭本条分类质疑；不声称全文逐页审阅。
+  - 位置：abstract；来源：https://api.crossref.org/works/10.1002/aisy.202200017
+
+- 原1664行号 `449`：`reject_pr`。已直接读取出版社deposit摘要：LHP纳米晶为具体材料对象，存在五轮目标掺杂闭环。现行taxonomy明确定义04.03.02纳米材料，PR声称04.03无三级条目的前提已失效。足以关闭本条分类质疑；不声称全文逐页审阅。
+  - 位置：abstract；来源：https://api.crossref.org/works/10.1002/aisy.202200017
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+
+## 2026-10-30 用户补充PDF归档
+
+- 已核验并归档：`Reference_PDF/04_Materials_Science/ASD-0569_Autonomous_Nanocrystal_Doping_by_Self_Driving_Fluidic_Micro_Processors_user_supplied.pdf`，共13页。
+- 来源：用户提供文件`Advanced Intelligent Systems - 2022 - Bateni - Autonomous Nanocrystal Doping by Self‐Driving Fluidic Micro‐Processors.pdf`；版本：final published article PDF。
+- 本次只补充来源文件，不改变论文分类。

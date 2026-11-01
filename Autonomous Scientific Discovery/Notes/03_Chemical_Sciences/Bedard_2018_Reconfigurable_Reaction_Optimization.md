@@ -253,3 +253,16 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`publisher_deposited_editor_summary`。本轮涉及2条差异，其中2条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `501`：`resolved_by_later_writeback`。当前导出表已由旧03.03.01更正为03.03.02反应设计。本条针对旧值，出版社摘要确认对多种具体反应的条件反馈优化，支持当前代码。
+  - 位置：abstract / A self-optimizing reactor；来源：https://api.crossref.org/works/10.1126/science.aat0650
+
+- 原1664行号 `502`：`reject_pr`。现已独立取得出版社编辑摘要，明确集成分析反馈、温度/浓度搜索及交叉偶联/还原胺化等具体实验对象；分类与闭环Agent判断的来源缺口已补足，不声称全文页码核查。
+  - 位置：abstract / A self-optimizing reactor；来源：https://api.crossref.org/works/10.1126/science.aat0650
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

@@ -1,5 +1,6 @@
 {
   "date": "2026-10-30",
+  "bibliography_audit_date": "2026-10-31",
   "bib_entries": 1051,
   "core_records": 663,
   "background_records": 381,
@@ -13,11 +14,11 @@
     "asd0689": "asd0124"
   },
   "metadata_issue_counts": {
-    "abbreviated_author_list": 260,
-    "missing_identifier": 91,
-    "title_needs_metadata_review": 37,
-    "missing_author": 8,
-    "year_not_four_digits": 31
+    "abbreviated_author_list": 13,
+    "missing_identifier": 12,
+    "year_not_four_digits": 2,
+    "missing_author": 2
   },
-  "uncited_entries_printed": false
+  "uncited_entries_printed": false,
+  "manuscript_snapshot_date": "2026-11-01"
 }

@@ -14,6 +14,10 @@ desktop.ini
 /LLM Survey/
 /Scientific Discovery by Agents/
 /codex_agents_sdk_demo/
+/Agent_for_Science_Review_Overleaf/
+/Agent_for_Science_Review_Chinese/
+/output/
+/tmp/
 /Autonomous Scientific Discovery/Notes/**
 !/Autonomous Scientific Discovery/Notes/
 !/Autonomous Scientific Discovery/Notes/**/*.md
@@ -109,3 +113,23 @@ Reference_PDF/**/*.pdf
 !Autonomous Scientific Discovery/Reference_PDF/
 !Autonomous Scientific Discovery/Reference_PDF/**/
 !Autonomous Scientific Discovery/Reference_PDF/**/*.pdf
+
+# Unprocessed uploads remain local; manuscript figure assets are published.
+/Autonomous Scientific Discovery/Reference_PDF/_Manual_Inbox/
+!Autonomous Scientific Discovery/Manuscript/figures/*.pdf
+!Autonomous Scientific Discovery/Manuscript/Definitions/*.pdf
+
+# Audited bibliography inputs required for regeneration.
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_2026-10-30/
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_2026-10-30/references_handwritten_original.tex
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_2026-10-30/online_overrides.json
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_2026-10-30/online_metadata/
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_2026-10-30/online_metadata/extra_sources.json
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_full_audit_2026-10-31/
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_full_audit_2026-10-31/verified_overrides.json
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_full_audit_2026-10-31/bibliography_full_audit_report_2026-10-31.md
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_full_audit_2026-10-31/final_entry_audit.csv
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_full_audit_2026-10-31/field_changes.csv
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_full_audit_2026-10-31/unresolved_entries.csv
+!/Autonomous Scientific Discovery/Coverage_Check/manuscript_evidence_audit_2026-10-30/
+!/Autonomous Scientific Discovery/Coverage_Check/manuscript_evidence_audit_2026-10-30/audited_bibliography_overrides.json

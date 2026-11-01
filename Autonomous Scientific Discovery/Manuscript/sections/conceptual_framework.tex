@@ -1,0 +1,135 @@
+\section{Conceptual Framework for Scientific Agency}
+\label{sec:framework}
+
+We define a scientific agent as a system that organizes multiple related actions toward an identifiable scientific objective and exercises at least one of planning, tool use, feedback-based revision, autonomous decision-making, or collaboration within that process. Agency is defined by the system's research behavior rather than by a specific model architecture. An LLM, a physical robot, multiple agents, and uninterrupted execution are consequently optional attributes. The four eligibility conditions in Section~\ref{sec:methods} apply across these implementations.
+
+\begin{table}[H]
+\caption{Operational boundaries of scientific agency. Eligibility requires the conjunction of a scientific goal, connected actions, an agent capability, and an explicit workflow role.}
+\label{tab:agent-boundaries}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.23\textwidth}XX@{}}
+\toprule
+System or property & Evidence relevant to inclusion & Boundary condition \\
+\midrule
+Predictive or generative model & Embedded in an evaluated, connected research action process & A single prediction or generated answer is insufficient \\
+Fixed automation & Documented planning, tool use, revision, decisions, or collaboration toward a research goal & Preprogrammed execution alone does not establish an agent capability; a repeatable protocol does not disqualify a larger agent system \\
+Agent-based simulation & Scientific objective and a qualifying multi-step action process with evaluated object-specific results & Simulated entities being called agents is insufficient \\
+Human-guided system & Qualifying agent actions are documented; human responsibilities are recorded when reported & Human goal setting or approval does not preclude eligibility; unreported responsibilities remain unspecified \\
+LLM, robot, or multi-agent architecture & Its actual actions satisfy the same four conditions & None of these architectural properties is necessary or sufficient \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Figure~\ref{fig:conceptual} separates the scientific object from the mechanism used to investigate it. The object determines where a task belongs; workflow roles specify the research contribution; paradigms describe how decisions are implemented; environment and organization describe the conditions of action. Autonomy records the allocation of decisions, while scientific evidence determines the scope of the supported claim. These dimensions can vary independently and should not be collapsed into a single maturity score.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/conceptual_framework_en.pdf}
+\caption{Analytical dimensions of Agent for Science. Domain and object anchor the comparison; research roles, decision paradigms, environment, and organization describe implementation. Decision ownership and claim-specific evidence constrain interpretation. The diagram is an analytical framework, not a measured distribution.}
+\label{fig:conceptual}
+\end{figure}
+
+\subsection{Decision paradigms}
+
+We distinguish six decision paradigms in Table~\ref{tab:paradigms}. Labels are non-exclusive: symbolic constraints, model-based planning, probabilistic selection, learned policies, and language-model reasoning can operate within one system. ``Hybrid'' denotes an explicitly described coupling of distinct decision mechanisms; it is not inferred from the presence of several software tools. Embodiment describes where actions are executed, whereas a multi-agent configuration describes how responsibilities are distributed. Neither constitutes a decision paradigm on its own.
+
+\begin{table}[H]
+\caption{Decision paradigms used in scientific agents. Examples establish mechanisms in selected systems and do not estimate their prevalence.}
+\label{tab:paradigms}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}XXX@{}}
+\toprule
+Paradigm & Decision mechanism & Relevant research function & Scientific limitation \\
+\midrule
+Symbolic / knowledge-based & Explicit rules, relations, inference, or constraints & Hypothesis representation and consistency checking; Prolog biological model in Robot Scientist~\cite{king2004} & Validity depends on the supplied knowledge and representation \\
+Planning / model-based & Goals and state or resource models define action sequences & Observation scheduling and replanning; Sciencecraft~\cite{asd0645} & Model incompleteness and unobserved conditions restrict feasible plans \\
+Optimization / probabilistic & Surrogates, uncertainty, and acquisition or search rules select candidates & Measured formulation and mechanical-design search~\cite{burger2020,asd0504} & Improvement is conditional on the objective, search space, and measurement process \\
+Learning-based & Policies or selection functions learned from data or interaction & Active visual observation; PPO-based RAVA~\cite{asd1133} & Transfer depends on training coverage and evaluation conditions \\
+LLM-based & Language-conditioned proposals, reasoning, coding, or tool selection & Chemistry tool use and research workflow coordination~\cite{bran2024,asd0018} & Plausibility and successful calls require independent task checks \\
+Hybrid & Documented integration of distinct decision mechanisms & Language-based procedure interpretation with state-machine execution in quantum experiments~\cite{asd0090} & Added components introduce interface and attribution problems; superiority requires matched evaluation \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Table~\ref{tab:paradigms} defines decision mechanisms. Their complementarity and the conditions for testing hybrid designs are examined in Section~\ref{sec:synthesis}.
+
+\subsection{Research roles, execution environments, and organization}
+
+The research workflow is described through six roles: knowledge acquisition; question and hypothesis generation; research planning and design; experimentation and execution; data analysis and interpretation; and validation and communication. These roles identify activities rather than a compulsory linear pipeline. An agent can contribute to one bounded role through multiple related actions, and a scientific investigation can revisit earlier roles when results contradict assumptions. Figure~\ref{fig:workflow} locates these revisions and the accompanying human decision boundaries. Section~\ref{sec:workflow-delegation} synthesizes the activities actually delegated across the domain cases.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/research_workflow_en.pdf}
+\caption{Research roles and revision in an agent-supported investigation. Arrows indicate possible information and control dependencies, not a requirement that every included system complete all stages. Validation can redirect the question, design, execution, or interpretation. Human responsibility is recorded at each consequential decision.}
+\label{fig:workflow}
+\end{figure}
+
+\begin{table}[H]
+\caption{Execution environments and organization are separate descriptors. Environment labels may overlap; organization is recorded for the evaluated task and can include both multiple agents and human collaboration.}
+\label{tab:environment-organization}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.29\textwidth}X@{}}
+\toprule
+Descriptor & Operational meaning \\
+\midrule
+Digital / knowledge & Retrieval, databases, documents, and scholarly records \\
+Computational / simulation & Code, mathematical evaluators, numerical solvers, and simulated experiments \\
+Laboratory / robotic & Physical sample handling, instruments, assays, and laboratory execution \\
+Field / observational & In situ sensing or observation of environmental and biological systems \\
+Space / autonomous exploration & Mission operations and scientific acquisition under platform and communication constraints \\
+Clinical / operational & Patient-related or operational settings; retrospective clinical-data analysis is distinguished from deployment \\
+\midrule
+Single-agent & One agent coordinates the evaluated action process \\
+Multi-agent & Multiple agents have identifiable roles or interactions \\
+Human--agent collaboration & People contribute specified decisions, interpretation, authorization, or intervention \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+A medical objective does not establish deployment in a clinical environment, and satellite data use does not establish autonomous spacecraft operation. Environment assignment follows the actual evaluation setting. Similarly, a collection of role prompts is evidence of a multi-agent organization only to the extent that the reported process specifies their participation. These distinctions prevent implementation labels from substituting for evaluated research behavior.
+
+\subsection{Autonomy as decision ownership}
+
+We characterize autonomy by the decisions delegated within a task, including decisions fixed during system construction. Table~\ref{tab:responsibilities} identifies six responsibilities that should be extracted separately. For each, the record distinguishes an agent decision, a human decision, a predefined constraint, and an unreported allocation. Absence of a reported intervention is not evidence that the decision was delegated. Scientific responsibility also includes acceptance of an interpretation or result after automated execution has ended.
+
+\begin{table}[H]
+\caption{Agent actions, human responsibilities, and autonomy evidence. The questions define a reporting schema; they are not complete annotations for all 663 works.}
+\label{tab:responsibilities}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.16\textwidth}XXX@{}}
+\toprule
+Decision & Possible agent contribution & Human or predefined boundary & Evidence required \\
+\midrule
+Goal definition & Propose or refine a question & Research objective, acceptable scope, significance & Origin and revisions of the research brief \\
+Hypothesis formation & Generate, prioritize, or revise hypotheses & Prior knowledge, admissible alternatives, interpretation & Candidate history and selection rationale \\
+Experiment selection & Choose intervention, candidate, or observation & Search space, instruments, resources, constraints & Selection rule and information available at the decision \\
+Execution authorization & Schedule or issue an action & Approval, physical access, operating permissions & Approval events and enforced action limits \\
+Failure recovery & Diagnose, retry, replan, or terminate & Manual repair, escalation, reset conditions & Error logs, interventions, and unsuccessful attempts \\
+Result interpretation & Analyze evidence and draft conclusions & Scientific acceptance and external evaluation & Claim-specific checks and ownership of final acceptance \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The domain comparisons in Section~\ref{sec:domains} apply these responsibilities to reported systems; Section~\ref{sec:synthesis} examines how their allocation changes across the research lifecycle. Autonomy, task correctness, and scientific novelty remain separate attributes.
+
+\subsection{Claim-specific evidence and scientific discovery}
+
+We distinguish four types of claims: operational success, task-level correctness, scientific validation, and scientific discovery. They are related assessment dimensions rather than a universal sequence of evidence quality. A proof can directly validate a mathematical result, while a physical experiment can remain inconclusive. Scientific discovery additionally requires a substantiated novelty claim and evidence appropriate to the object; a system-generated statement of novelty is insufficient. Independent reproduction is recorded separately from repeated evaluation by the original team.
+
+\begin{table}[H]
+\caption{Scientific outcome types and supporting evidence. A reported endpoint is interpreted within the proposition it can establish.}
+\label{tab:claim-evidence}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}XXX@{}}
+\toprule
+Claim type & Question assessed & Appropriate evidence & Remaining inference \\
+\midrule
+Operational success & Did the specified process execute? & Logs, completed protocols, instrument or solver outputs & Scientific correctness requires further checks \\
+Task-level correctness & Did the output meet the task specification? & Tests, reference answers, verified quantities, expert checks & Task success alone does not establish novelty or generalization \\
+Scientific validation & Does the result support the scientific proposition? & Formal verification, calibrated measurement, controlled experiment, justified inference, or external empirical comparison & Scope, uncertainty, and alternative explanations remain explicit \\
+Scientific discovery & Is a scientifically supported result new? & Object-appropriate validation plus prior-work comparison and a bounded novelty claim & Independent reproduction and broader applicability are additional questions \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Chemistry illustrates the need for endpoint-specific interpretation. Executing a published synthesis supports protocol implementation; improved screening efficiency concerns decisions under a stated budget; a new reaction pathway requires evidence for the transformation and its novelty; a new compound requires synthesis and appropriate structural characterization. These outcomes can overlap but do not entail one another. Digitized synthesis and reactivity-seeking studies address different parts of this comparison~\cite{asd0600,asd0734,asd0428}. Equivalent distinctions apply to computational prediction, experimentally characterized candidates, and externally validated outcomes in the other domains.

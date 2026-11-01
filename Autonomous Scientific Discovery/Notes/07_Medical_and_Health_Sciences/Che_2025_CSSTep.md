@@ -279,3 +279,16 @@ Agent 类型：Multi-Agent System; Reinforcement Learning Agent; Hybrid Agent
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`bibliographic_metadata_or_unverified_mirrored_abstract_only`。本轮涉及2条差异，其中0条已判定，2条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `177`：`pending_evidence`。The current owner tertiary code differs from the historical PR code, but no substantive first-hand source was retrieved to independently verify the replacement. Do not close this row solely from a mechanical code change.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1016/j.ces.2025.122048
+
+- 原1664行号 `178`：`pending_evidence`。Official PDF and publisher retrieval attempts did not yield a substantive first-hand abstract or full text. Metadata and project notes cannot independently verify the molecular optimization experiments and four Agent gates.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1016/j.ces.2025.122048
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

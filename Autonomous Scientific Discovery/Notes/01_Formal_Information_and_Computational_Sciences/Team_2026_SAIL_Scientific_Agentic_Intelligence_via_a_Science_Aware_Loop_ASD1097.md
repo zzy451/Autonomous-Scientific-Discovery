@@ -151,3 +151,22 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`verified_official_pdf_fulltext`。本轮涉及4条差异，其中2条已判定，2条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1637`：`pending_evidence`。The complete PDF confirms model training and scientific-assistance benchmarks. Whether general literature retrieval/synthesis, repository reproduction, and research workflows independently establish scientific methodology (11.07.08) remains unresolved. Benchmark names alone justify neither retaining nor deleting module 11. Do not write back an automatic change.
+  - 位置：PDF p.1 abstract; p.4 failure diagnosis; pp.11?14 evaluation/discussion；来源：https://arxiv.org/abs/2610.11451
+
+- 原1664行号 `1638`：`reject_pr`。The original PDF studies training and improvement of the SAIL AI model. The current 01.02 computer-science category applies; the PR deletion relies on an outdated absence of taxonomy entries.
+  - 位置：PDF p.1 abstract; p.4 failure diagnosis; pp.11?14 evaluation/discussion；来源：https://arxiv.org/abs/2610.11451
+
+- 原1664行号 `1639`：`reject_pr`。SAIL training, failure-guided task construction, and comparative model evaluation directly support the current artificial-intelligence category (01.02.12). Do not clear the code.
+  - 位置：PDF p.1 abstract; p.4 failure diagnosis; pp.11?14 evaluation/discussion；来源：https://arxiv.org/abs/2610.11451
+
+- 原1664行号 `1640`：`pending_evidence`。The original PDF establishes an AI research-model goal, diagnosis/task construction/training/evaluation stages, planning/revision/tool-interaction capabilities, and a scientific-assistant workflow role. Module 01 is substantiated, but the combined 01+11 assignment remains unresolved because the scientific-object boundary for module 11 still needs a decision.
+  - 位置：PDF p.1 abstract; p.4 failure diagnosis; pp.11?14 evaluation/discussion；来源：https://arxiv.org/abs/2610.11451
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

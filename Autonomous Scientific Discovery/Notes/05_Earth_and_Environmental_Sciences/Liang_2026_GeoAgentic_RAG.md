@@ -283,3 +283,19 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`metadata_only`。本轮涉及3条差异，其中0条已判定，3条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `770`：`pending_evidence`。ScienceDirect、HKU全文和DOAJ均403，DOI返回JS跳转页而非正文。现有笔记与OpenAlex聚合摘要指向向量/栅格GIS推理，05.04.03地理信息科学可能比当前05.04.04遥感更贴切；但没有一手任务明细，不能接受删除05.04，也不能终审GIS/遥感边界与Agent实验。
+  - 位置：aggregated abstract and official source access attempts；来源：https://doi.org/10.1016/j.jag.2026.105195
+
+- 原1664行号 `771`：`pending_evidence`。ScienceDirect、HKU全文和DOAJ均403，DOI返回JS跳转页而非正文。现有笔记与OpenAlex聚合摘要指向向量/栅格GIS推理，05.04.03地理信息科学可能比当前05.04.04遥感更贴切；但没有一手任务明细，不能接受删除05.04，也不能终审GIS/遥感边界与Agent实验。
+  - 位置：aggregated abstract and official source access attempts；来源：https://doi.org/10.1016/j.jag.2026.105195
+
+- 原1664行号 `772`：`pending_evidence`。ScienceDirect、HKU全文和DOAJ均403，DOI返回JS跳转页而非正文。现有笔记与OpenAlex聚合摘要指向向量/栅格GIS推理，05.04.03地理信息科学可能比当前05.04.04遥感更贴切；但没有一手任务明细，不能接受删除05.04，也不能终审GIS/遥感边界与Agent实验。
+  - 位置：aggregated abstract and official source access attempts；来源：https://doi.org/10.1016/j.jag.2026.105195
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

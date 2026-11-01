@@ -188,3 +188,19 @@ Agent 类型：Robot / Embodied Agent; Planning Agent; Tool-using Agent; Hybrid 
 纳入置信度：medium_high_source_limited
 推荐引用强度：core_with_source_limit_note
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`publisher_deposited_abstract`。本轮涉及3条差异，其中3条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `760`：`reject_pr`。出版社deposit摘要明确加勒比珊瑚礁生物多样性热点的AUV声学+视觉自主寻测与自验证，是海洋生物学06.02.06的直接实例；一般生态学06.01.09较宽，不应替换已适配的海洋对象子类。一手摘要已直接验证该分类问题和具身Agent流程，全文访问缺口不影响此窄结论。
+  - 位置：abstract；来源：https://api.crossref.org/works/10.1126/scirobotics.adx9939
+
+- 原1664行号 `761`：`reject_pr`。出版社deposit摘要明确加勒比珊瑚礁生物多样性热点的AUV声学+视觉自主寻测与自验证，是海洋生物学06.02.06的直接实例；一般生态学06.01.09较宽，不应替换已适配的海洋对象子类。一手摘要已直接验证该分类问题和具身Agent流程，全文访问缺口不影响此窄结论。
+  - 位置：abstract；来源：https://api.crossref.org/works/10.1126/scirobotics.adx9939
+
+- 原1664行号 `762`：`reject_pr`。出版社deposit摘要明确加勒比珊瑚礁生物多样性热点的AUV声学+视觉自主寻测与自验证，是海洋生物学06.02.06的直接实例；一般生态学06.01.09较宽，不应替换已适配的海洋对象子类。一手摘要已直接验证该分类问题和具身Agent流程，全文访问缺口不影响此窄结论。
+  - 位置：abstract；来源：https://api.crossref.org/works/10.1126/scirobotics.adx9939
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

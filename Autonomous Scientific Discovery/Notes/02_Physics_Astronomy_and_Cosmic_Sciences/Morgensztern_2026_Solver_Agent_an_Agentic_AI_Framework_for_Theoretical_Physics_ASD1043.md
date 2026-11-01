@@ -153,3 +153,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 PDF补齐归档
+
+- 本地PDF：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/ASD-1043_Solver_Agent_an_Agentic_AI_Framework_for_Theoretical_Physics_Computations_Applied_to_F_theory_Uplifts_of_.pdf`，共111页；已核验标题、页面解析和逐页渲染。
+- 下载来源：https://arxiv.org/pdf/2609.35958.pdf
+- 版本：official arXiv preprint PDF; version as downloaded。
+- 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。

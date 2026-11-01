@@ -1,0 +1,51 @@
+\section{Cross-Domain Synthesis}
+\label{sec:synthesis}
+
+The domain cases reveal recurring relations among actions, feedback, responsibility, and evidence. This section synthesizes those relations using the definitions in Section~\ref{sec:framework} and the comparison fields in Table~\ref{tab:extraction}. The scope of the conclusions remains subject to the source and coding limitations in Section~\ref{sec:methods}.
+
+\subsection{Shared Research Workflow and Patterns of Delegation}
+\label{sec:workflow-delegation}
+
+The eleven domain analyses support a common description of research participation: evidence acquisition; problem formulation and hypothesis development; research design; experimental, computational, or observational execution; analysis and validation; and writing and communication. These phases operationalize the research roles in Figure~\ref{fig:workflow}. They describe the activities represented across the cases, rather than a sequence completed by every system. An investigation may begin with a supplied question, dataset, or observation trigger, and an agent may undertake only a bounded part of the process. Table~\ref{tab:workflow-delegation} summarizes what is delegated and which conditions delimit that delegation.
+
+\begin{table}[H]
+\caption{Research phases, delegated activities, and their boundaries in the representative cases. The entries synthesize the domain analyses; they are neither full-corpus frequencies nor a requirement that each system perform every phase.}
+\label{tab:workflow-delegation}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.19\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Research phase & Activities delegated to agents & Human input or condition of delegation \\
+\midrule
+Evidence acquisition & Retrieve literature or records, query databases, extract and organize relevant information & Source access, research scope, and assessment of relevance and reliability \\
+Problem and hypothesis development & Generate or compare candidates, identify possible explanations, and revise proposals & Supplied objectives and prior knowledge; evaluation of significance, novelty, and testability \\
+Research design & Select candidates or observations, choose tools and parameters, and arrange dependent actions & Search space, admissible interventions, available resources, and evaluation criteria \\
+Execution & Run code or solvers, issue instrument commands, perform robotic operations, or acquire observations & Platform preparation, operating permissions, physical constraints, and recovery beyond available actions \\
+Analysis and validation & Process outputs, calculate metrics, compare results, detect errors, and propose follow-up work & Appropriate quantities and assumptions, experimental controls, and claim-specific verification \\
+Writing and communication & Produce figures, summarize results, draft reports or manuscripts, and generate critiques & Traceability of statements, interpretation of limitations, and acceptance of scientific conclusions \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Delegation of information processing and proposal generation is distinct from delegation of the research objective. Agent Laboratory begins from a human-provided research idea, whereas SciSciGPT supports scholarly-data investigation in collaboration with researchers~\cite{asd0018,asd0624}. Such systems can search, organize evidence, and develop alternatives within an investigation whose direction is supplied or jointly negotiated. The ``discussion'' phase is therefore best understood as problem refinement, comparison of hypotheses, and assessment of testability. Dialogue among agents provides a way to generate and examine proposals; the existence of dialogue does not establish the novelty or validity of the resulting hypothesis.
+
+The design--execution relationship is shared across domains even though the operations differ. Executing a proposed program and evaluating its output, selecting and measuring a material formulation, and scheduling a new observation all connect a candidate action to an assessable result~\cite{asd0512,burger2020,asd0722}. The execution phase therefore covers computational tests, simulations, physical experiments, and observational acquisition, as appropriate to the research object. These activities share a workflow role but retain different controls and standards of evidence. A simulation result is conditional on its model, and a retrospective data evaluation does not become a prospective experiment merely because an agent selects the queried intervention.
+
+A further form of participation is control over subsequent actions. Feedback can determine which candidate is tested next, whether calibration is retried, or whether a mission plan is revised~\cite{burger2020,asd0090,asd0645}. These are consequential decisions within specified objectives and operating conditions. They differ from following an unchanged sequence, while remaining distinct from choosing the overarching scientific question or establishing an adequate validation standard. The recurring inner process is therefore design, execute, analyze, and revise; adverse results can also require returning to the hypothesis or research objective. Analysis and validation must consequently remain explicit throughout the workflow, including before a report is written.
+
+Cross-domain differences arise in how observations become usable feedback. Executable scores, spectra, biological assays, images, telemetry, and social-simulation outputs differ in uncertainty and in the alternatives they can distinguish. Tools must preserve relevant state information, units, action constraints, and failure conditions when connecting a proposal to execution. For social and knowledge-system studies, simulated agents can themselves be part of the investigated model; their dialogue must be distinguished from research assistance provided to the investigator. Across these settings, the shared workflow supports comparison of participation without implying equivalent scientific evidence or complete delegation of all phases.
+
+\subsection{Validation Endpoints and Evaluator Reliability}
+
+The cases distinguish three recurring sources of overextension: treating completed execution as a correct result, extending an intermediate endpoint to a broader scientific outcome, and using internally consistent assessment as independent confirmation. The domain analyses identify concrete instances, including the mismatch between a requested stress component and executable output, retrospective perturbation evaluation versus prospective experimentation, and molecular binding versus clinical benefit. Their significance lies in the proposition being evaluated, rather than in a universal ordering of computational and physical research.
+
+Evaluator reliability is itself part of the evidence. ChemCrow's authors found that a GPT-4 evaluator did not reliably discriminate incorrect GPT-4 responses from tool-assisted performance~\cite{bran2024}. Automated review, benchmark scoring, and experimental analysis therefore require checks appropriate to their intended use. In particular, agreement between an agent and its evaluator may reflect shared assumptions or errors. Comparison should identify which result is checked independently, under what conditions, and with what remaining uncertainty.
+
+\subsection{Autonomy Across the Research Lifecycle}
+
+Participation has both a breadth and a decision component. Breadth concerns the research phases in Table~\ref{tab:workflow-delegation} to which the system contributes. The decision component concerns what it is authorized to choose within those phases. A system that drafts outputs across many phases may have limited authority over the next experiment; a bounded experimental optimizer may make repeated selection decisions without writing a paper. Workflow coverage alone therefore does not determine autonomy.
+
+Three dimensions connect these observations to the responsibilities in Table~\ref{tab:responsibilities}. Operational authority describes the operations the agent can perform or select, including tool use and permitted recovery actions. Adaptive control describes how it can alter the investigation in response to results, including experiment selection, replanning, and termination. Scientific judgment concerns problem selection, hypothesis revision, interpretation, and determination of whether the evidence is sufficient. These are complementary descriptors rather than three successive levels or a universal autonomy score. Generating a proposal and making the decision to adopt it must be distinguished.
+
+The checked cases show a recurring arrangement in which researchers supply objectives, prior knowledge, platforms, or evaluation conditions, while agents execute connected tasks and sometimes select subsequent actions within that specification. Human contributions can also include preparation before a run, authorization or repair during it, and characterization or result acceptance afterwards. This arrangement explains how sustained automatic operation can coexist with substantial scientific dependence on people. Its recurrence in representative cases does not establish its prevalence in the full corpus. Comparisons should report the decisions delegated, their constraints, and the resulting scientific evidence; unreported responsibility remains unspecified. Appropriate human checks can improve research quality, so intervention frequency by itself cannot establish the quality or scientific scope of autonomous participation.
+
+\input{sections/paradigms_and_transfer}

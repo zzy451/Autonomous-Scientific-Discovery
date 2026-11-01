@@ -161,3 +161,16 @@ fulltext_followup_required=false
 - 原文位置：TXT line 35。
 - 判定：分子描述到SMILES子结构关系定位、RDF及RDKit校验，归化学信息学；缓存全文而非标题猜测。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`cached_first_hand_fulltext_html_extraction`。本轮涉及2条差异，其中2条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1493`：`reject_pr`。Actual MolGround experiments concern molecular SMILES substructure localization and relationship grounding, with RDKit chemical-validity checks. These support cheminformatics (03.01.04); clearing the code is unwarranted.
+  - 位置：Original cached fulltext TXT L31,L35,L139; Tables 1?2 L207?217; Methods4.4 L221；来源：https://doi.org/10.1093/bioinformatics/btag541
+
+- 原1664行号 `1494`：`retain_current`。The cached original full text establishes molecular-relationship grounding as the goal, entity extraction/localization/ontology reasoning as multiple stages, verifier and RDKit capabilities, and chemical-structure information analysis as the workflow role. Evaluation uses 1,055 human-annotated molecules and about 4,500 QA pairs, supporting 03.01.04.
+  - 位置：Original cached fulltext TXT L31,L35,L139; Tables 1?2 L207?217; Methods4.4 L221；来源：https://doi.org/10.1093/bioinformatics/btag541
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

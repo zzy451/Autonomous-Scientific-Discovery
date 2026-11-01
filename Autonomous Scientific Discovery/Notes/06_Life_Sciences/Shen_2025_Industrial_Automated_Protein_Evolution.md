@@ -258,3 +258,26 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：中高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`official_publisher_abstract`。本轮涉及2条差异，其中2条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+- 正式修正：`06.03.07` → `06.03.06 蛋白质科学`；稳定二级归档编号不变。LldR、LmrA、CapT7的蛋白功能演化是直接实验对象。
+
+- 原1664行号 `486`：`accept_change`。采纳06.03.07→06.03.06。官方摘要的直接终点为LldR乳酸敏感性、LmrA算子选择性、CapT7蛋白功能演化；industrial-grade描述平台规模与可靠性，不等于生物制造科学对象。
+  - 位置：Abstract；来源：https://www.nature.com/articles/s44286-025-00303-w
+
+- 原1664行号 `487`：`retain_current`。现已独立读取Nature官方摘要，明确OrthoRep连续进化、遗传回路、约一个月低人工介入自动化以及多个蛋白功能实验。足以确认06生物研究和Agent流程；论文全文仍未取得，具体实验页码不作已核声明。
+  - 位置：Abstract；来源：https://www.nature.com/articles/s44286-025-00303-w
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+
+## 2026-10-29 补充材料与主文区分
+
+本轮取得19页Supplementary Information，首页图像已确认文件类型。该文件不计作主文补齐，主表PDF字段仍为空，正文仍需人工下载。
+
+- 补充文件：`Reference_PDF/06_Life_Sciences/ASD-0617_Industrial_Automated_Protein_Evolution_Supplementary.pdf`。
+- 补充材料来源：https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs44286-025-00303-w/MediaObjects/44286_2025_303_MOESM1_ESM.pdf
+- 主文PDF入口：https://www.nature.com/articles/s44286-025-00303-w.pdf

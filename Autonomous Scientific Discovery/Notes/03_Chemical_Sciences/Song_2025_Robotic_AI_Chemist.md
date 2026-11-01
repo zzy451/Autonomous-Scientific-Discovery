@@ -216,3 +216,25 @@ Round-5 access note: the current risk is specifically an access-limited full-tex
 Frozen round-5 note: keep `03;04`, keep `primary_module_for_filing=03`, and keep `source_limited=yes` with an explicit `access_limited` full-text qualifier.
 
 在当前可访问的一手来源下，这篇论文已经足够稳定地进入 confirmed core。它不是单纯的通用自动化平台，而是一个 hierarchical multi-agent robotic AI chemist，且摘要明确给出了 chemical reactions 与 functional materials 两类对象级任务。因此，当前最稳的落点是 `03;04` 多模块，`primary_module_for_filing=03`，并把“主文全文受限、仍需后续 full-text refinement”明确记为 source-limited 风险。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`author_institutional_abstract`。本轮涉及5条差异，其中4条已判定，1条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `7`：`resolved_by_later_writeback`。The author institutional abstract reports photocatalytic organic reactions. Current module 03 secondary code is already 03.03; the historical 03.04 mismatch is resolved.
+  - 位置：Author institutional repository, Abstract；来源：https://research.birmingham.ac.uk/en/publications/a-multi-agent-driven-robotic-ai-chemist-enabling-autonomous-chemi/
+
+- 原1664行号 `8`：`resolved_by_later_writeback`。The author abstract directly supports synthesis and photocatalytic organic reactions. Current filing secondary code 03.03 resolves the historical mismatch.
+  - 位置：Author institutional repository, Abstract；来源：https://research.birmingham.ac.uk/en/publications/a-multi-agent-driven-robotic-ai-chemist-enabling-autonomous-chemi/
+
+- 原1664行号 `9`：`resolved_by_later_writeback`。Historical 03.04.02 has been replaced by current 03.03.03. The reported photocatalytic organic reaction supports catalytic chemistry; missing tertiary definitions in the old audit do not justify clearing a valid current code.
+  - 位置：Author institutional repository, Abstract；来源：https://research.birmingham.ac.uk/en/publications/a-multi-agent-driven-robotic-ai-chemist-enabling-autonomous-chemi/
+
+- 原1664行号 `10`：`pending_evidence`。The directly read author abstract says functional materials, but does not establish that the existing 04.03 family assignment is wrong. Retain owner classification and require the task-level full text before deciding 04.03 versus 04.01.
+  - 位置：Author institutional repository, Abstract；来源：https://research.birmingham.ac.uk/en/publications/a-multi-agent-driven-robotic-ai-chemist-enabling-autonomous-chemi/
+
+- 原1664行号 `11`：`retain_current`。The author institutional abstract independently supports all four Agent gates and chemical plus functional-material experiments. Close the note-only source objection at abstract level only. Material identities and quantitative full-text results remain unverified.
+  - 位置：Author institutional repository, Abstract；来源：https://research.birmingham.ac.uk/en/publications/a-multi-agent-driven-robotic-ai-chemist-enabling-autonomous-chemi/
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

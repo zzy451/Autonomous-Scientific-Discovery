@@ -276,3 +276,16 @@ Agent 类型：Planning Agent; Hybrid Agent
 纳入置信度：中
 推荐引用强度：普通引用
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`bibliographic_metadata_or_unverified_mirrored_abstract_only`。本轮涉及2条差异，其中0条已判定，2条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `414`：`pending_evidence`。The current owner tertiary field has changed since the historical PR. However, a first-hand substantive source was not retrieved. A changed field alone cannot validate the scientific classification or justify closing this row.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1117/12.3091089
+
+- 原1664行号 `415`：`pending_evidence`。Official SPIE HTML returned empty content and the PDF request timed out. The title alone cannot establish four Agent gates or experimentally evaluated scientific objects. Keep pending evidence.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1117/12.3091089
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

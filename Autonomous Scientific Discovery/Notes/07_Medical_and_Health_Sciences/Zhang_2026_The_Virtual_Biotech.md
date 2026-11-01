@@ -143,3 +143,13 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`target_preprint_fulltext`。本轮涉及1条差异，其中1条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1117`：`retain_current`。PMC-hosted bioRxiv v1 full text directly describes a CSO receiving queries, delegating specialized agents and integrating outputs; clinical-trialist agents use a three-tier ClinicalTrials.gov/PubMed/announcement evidence cascade. Multi-omic and single-cell target-feature analysis plus lung-cancer strategy and ulcerative-colitis trial analysis support 06+07. The final Science abstract was also retrieved directly via Crossref and corroborates these applications. Full-text quotations are explicitly preprint-version evidence, not final-Science full text.
+  - 位置：bioRxiv preprint v1, Abstract; PMC12970349；来源：https://www.science.org/doi/pdf/10.1126/science.aeg6779
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

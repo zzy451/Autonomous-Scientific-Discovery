@@ -241,3 +241,19 @@ closeout: Keep the note filed under module 10 for convenience only. Do not fabri
 ## 9. 总结
 
 这篇论文本轮稳定落在 `10`，不扩展到 `05`。分类依据是公开 ResearchGate full-text 页面、官方 JPL OASIS 页面和 DOI landing page；本轮 mirror PDF 下载尝试因安全原因停止，未新增本地 PDF，这一点需要在 note 中保持可见。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`official_project_and_target_metadata`。本轮涉及3条差异，其中2条已判定，1条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1020`：`reject_pr`。Reject the obsolete-codebook deletion rationale: the current authoritative taxonomy explicitly defines this code. This only settles code validity, not the unavailable target-paper full text.
+  - 位置：JPL OASIS project description; project-level only, not target-paper experiment；来源：https://arc.aiaa.org/doi/pdf/10.2514/6.2008-3241
+
+- 原1664行号 `1021`：`reject_pr`。Reject the obsolete-codebook deletion rationale: the current authoritative taxonomy explicitly defines this code. This only settles code validity, not the unavailable target-paper full text.
+  - 位置：JPL OASIS project description; project-level only, not target-paper experiment；来源：https://arc.aiaa.org/doi/pdf/10.2514/6.2008-3241
+
+- 原1664行号 `1022`：`pending_evidence`。Official JPL OASIS project page verifies science-data evaluation, prioritization and autonomous reaction, but is project-level evidence, not this target paper or its validation. Official PDF inaccessible; target-paper source review remains open.
+  - 位置：JPL OASIS project description; project-level only, not target-paper experiment；来源：https://arc.aiaa.org/doi/pdf/10.2514/6.2008-3241
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

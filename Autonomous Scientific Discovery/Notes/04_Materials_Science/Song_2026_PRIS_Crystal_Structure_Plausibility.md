@@ -139,3 +139,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+
+## 2026-10-29 PDF补齐归档
+
+- 本地PDF：`Reference_PDF/04_Materials_Science/ASD-0886_Autonomous_discovery_of_new_structure_plausibility_laws_for_explainable_and_rapid_crystal_diagnosis_and_s.pdf`，共27页；已核验标题、页面解析和逐页渲染。
+- 下载来源：https://arxiv.org/pdf/2609.01209
+- 版本：official arXiv preprint PDF; version as downloaded。
+- 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。

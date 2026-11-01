@@ -1,0 +1,41 @@
+{
+  "unique_core_works": 663,
+  "memberships": 926,
+  "coverage_counts": {
+    "01": 90,
+    "02": 80,
+    "03": 119,
+    "04": 172,
+    "05": 54,
+    "06": 123,
+    "07": 121,
+    "08": 9,
+    "09": 62,
+    "10": 27,
+    "11": 69
+  },
+  "bibliographic_years": {
+    "2004": 2,
+    "2005": 2,
+    "2006": 6,
+    "2007": 3,
+    "2008": 1,
+    "2009": 1,
+    "2012": 1,
+    "2013": 1,
+    "2014": 3,
+    "2015": 1,
+    "2017": 1,
+    "2018": 3,
+    "2019": 5,
+    "2020": 12,
+    "2021": 7,
+    "2022": 9,
+    "2023": 15,
+    "2024": 60,
+    "2025": 154,
+    "2026": 376
+  },
+  "case_count": 11,
+  "case_scope": "Eleven purposively selected object-task cases; coded entries establish selected demonstrated functions, not exhaustive capabilities or corpus prevalence. Unmarked cells mean not coded in this comparison."
+}

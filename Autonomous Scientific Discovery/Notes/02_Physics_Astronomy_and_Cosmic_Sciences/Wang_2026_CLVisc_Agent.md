@@ -139,3 +139,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+
+## 2026-10-29 PDF补齐归档
+
+- 本地PDF：`Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/ASD-0903_CLVisc_Agent_for_autonomous_relativistic_hydrodynamics_studies.pdf`，共15页；已核验标题、页面解析和逐页渲染。
+- 下载来源：https://arxiv.org/pdf/2607.27822
+- 版本：official arXiv preprint PDF; version as downloaded。
+- 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。

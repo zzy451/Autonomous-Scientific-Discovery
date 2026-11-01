@@ -132,3 +132,24 @@ Agent 类型：Planning Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：core
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`author_abstract_final_version`。本轮涉及2条差异，其中2条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+- 版本核对：正式发表摘要为294个此前未报道分子、9个优胜分子；早期镜像的312/6不得与最终版本混用。
+
+- 原1664行号 `337`：`reject_pr`。Reject deletion of current valid 03.04.02 small-molecule property optimization. The final author abstract explicitly reports optimization of dye-like molecule absorption wavelength, lipophilicity, and photooxidative stability.
+  - 位置：NLM BioC author abstract, final Science article；来源：https://pubmed.ncbi.nlm.nih.gov/38127734/
+
+- 原1664行号 `338`：`retain_current`。The final published author abstract supports automatic design-make-test-analyze iterations and prediction-model learning, satisfying the four Agent gates at abstract level. Use final-paper counts of 294 unreported molecules and nine top-performing molecules, rather than early mirrored counts of 312 and six.
+  - 位置：NLM BioC author abstract, final Science article；来源：https://pubmed.ncbi.nlm.nih.gov/38127734/
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+
+## 2026-10-30 用户补充PDF归档
+
+- 已核验并归档：`Reference_PDF/03_Chemical_Sciences/ASD-0508_Autonomous_multiproperty_driven_molecular_discovery_From_predictions_to_measurements_and_back_user_supplied.pdf`，共18页。
+- 来源：用户提供文件`chemrxiv-2023-r7b01.pdf`；版本：ChemRxiv preprint supplied by user; version not peer-reviewed。
+- 本次只补充来源文件，不改变论文分类。

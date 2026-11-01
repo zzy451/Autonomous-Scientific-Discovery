@@ -151,3 +151,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 PDF补齐归档
+
+- 本地PDF：`Reference_PDF/06_Life_Sciences/ASD-1016_DDA_a_traceable_multi_agent_framework_for_automated_structure_based_drug_design.pdf`，共21页；已核验标题、页面解析和逐页渲染。
+- 下载来源：https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2026.1914886/pdf
+- 版本：official publisher article PDF。
+- 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。

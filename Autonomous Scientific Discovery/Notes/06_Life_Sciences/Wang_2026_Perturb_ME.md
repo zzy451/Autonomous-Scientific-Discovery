@@ -143,3 +143,22 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`verified_official_pdf_fulltext`。本轮涉及4条差异，其中4条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1141`：`reject_pr`。Genome-wide CRISPR screening with matched RNA and guide measurements directly supports genomics (06.03.01); reverting to 06.01 would lose the actual research-object specificity.
+  - 位置：PDF p.2; p.5 hypothesis tournament; p.21 Extended Data Table 1；来源：https://doi.org/10.64898/2026.08.17.745330
+
+- 原1664行号 `1142`：`reject_pr`。The current taxonomy defines 06.03.01 genomics, and the genome-wide perturbation experiments support it. Clearing this code is unwarranted.
+  - 位置：PDF p.2; p.5 hypothesis tournament; p.21 Extended Data Table 1；来源：https://doi.org/10.64898/2026.08.17.745330
+
+- 原1664行号 `1143`：`reject_pr`。The experiments concern MHC-I regulation in A375 melanoma cells and resistance to checkpoint immunotherapy. This is concrete oncology evidence supporting 07.02.05.
+  - 位置：PDF p.2; p.5 hypothesis tournament; p.21 Extended Data Table 1；来源：https://doi.org/10.64898/2026.08.17.745330
+
+- 原1664行号 `1144`：`retain_current`。The complete PDF establishes the scientific goal of explaining MHC-I regulation, multiple steps from module inputs through literature cross-checking to mechanistic hypotheses, Co-Scientist hypothesis-tournament capabilities, and a mechanistic interpretation/hypothesis-generation role. Retain modules 06 and 07. The agent is not credited with performing the entire wet-laboratory workflow.
+  - 位置：PDF p.2; p.5 hypothesis tournament; p.21 Extended Data Table 1；来源：https://doi.org/10.64898/2026.08.17.745330
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

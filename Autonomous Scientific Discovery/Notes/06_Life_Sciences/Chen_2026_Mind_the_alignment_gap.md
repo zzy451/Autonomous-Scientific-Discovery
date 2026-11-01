@@ -142,3 +142,20 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`target_pdf_fulltext`。本轮涉及3条差异，其中3条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+- 正式修正：科学对象模块为`01;06`；新增`01.02.12 人工智能`，保留`06.03.04`和生物主归档。PDF第3–4页的Basic/PA/FPP对照及失败行为分析构成独立计算实验。
+
+- 原1664行号 `1134`：`accept_change`。The verified 16-page original bioRxiv PDF experimentally varies Basic/Package-aware/Full+prior agent conditions (p.3 section 2.1), measures 0.43/0.42/0.36 mean performance and paired comparisons (p.4 section 3.1), and systematically analyzes tool-use/failure behavior. Agent behavior is an independent computational research object, supporting added 01.02.12 artificial intelligence; retain the biological spatial-transcriptomics object under 06.03.04.
+  - 位置：PDF p.3, section 2.1 Agent setup；来源：https://www.biorxiv.org/content/10.64898/2026.07.05.736638v1.full.pdf
+
+- 原1664行号 `1135`：`reject_pr`。The original PDF explicitly studies spatial transcriptomics tissue-slice alignment; current taxonomy 06.03.04 single-cell biology exists. Reject deletion based on an obsolete absence of tertiary terms. This biological classification can coexist with the independently tested 01 agent-performance object.
+  - 位置：PDF p.3, section 2.1 Agent setup；来源：https://www.biorxiv.org/content/10.64898/2026.07.05.736638v1.full.pdf
+
+- 原1664行号 `1136`：`accept_change`。The verified 16-page original bioRxiv PDF experimentally varies Basic/Package-aware/Full+prior agent conditions (p.3 section 2.1), measures 0.43/0.42/0.36 mean performance and paired comparisons (p.4 section 3.1), and systematically analyzes tool-use/failure behavior. Agent behavior is an independent computational research object, supporting added 01.02.12 artificial intelligence; retain the biological spatial-transcriptomics object under 06.03.04.
+  - 位置：PDF p.3, section 2.1 Agent setup；来源：https://www.biorxiv.org/content/10.64898/2026.07.05.736638v1.full.pdf
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

@@ -1,0 +1,65 @@
+\section{Challenges and Future Research Directions}
+\label{sec:future}
+
+The preceding comparisons identify challenges at the interfaces among scientific objectives, decision mechanisms, experimental environments, and evidence. They motivate a research agenda organized around scientific validity and reproducibility rather than the number of delegated steps. Table~\ref{tab:future} connects eight challenges to concrete evaluation questions. These directions are analytical proposals informed by the cases, not a claim that every system shares the same deficiency.
+
+\subsection{Scientific goal formation and reasoning}
+
+\paragraph{Scientific goal formation.}
+Many evaluated workflows begin from a supplied question, evaluator, or search space~\cite{asd0018,asd0512,burger2020}. Generating a fluent research idea extends the artifact but does not establish its scientific significance, feasibility, or distinction from prior work. Future evaluations should examine whether an agent can identify an unresolved question, justify its value against existing evidence, and revise it when resources or results invalidate the original premise. Appropriate controls separate question selection from subsequent execution so that success on a supplied task is not attributed to autonomous problem discovery.
+
+\paragraph{Scientific reasoning.}
+Scientific inference requires identifying which observations discriminate among hypotheses, which assumptions support an extrapolation, and what alternative explanations remain. The task and evaluation errors discussed in Section~\ref{sec:domains} motivate checks of units, requested quantities, data separation, uncertainty, and sensitivity to changed assumptions. Validation should examine intermediate decisions as well as final outputs, so that unsupported premises can be detected before they determine later actions. Formal tools, domain models, and experimental controls can provide complementary checks; verbal self-critique alone requires validation against those checks.
+
+\subsection{Sustained autonomy and integration with the physical world}
+
+\paragraph{Long-horizon autonomy.}
+Multi-stage research creates dependencies between early assumptions and later actions. Errors can persist through memory, code, sample handling, or resource allocation even when each individual tool call completes. Mission planning and quantum-experiment state transitions illustrate the value of explicit constraints and monitored execution~\cite{asd0645,asd0090}. Future studies should report the duration and scope of uninterrupted operation together with intervention frequency, recovery attempts, resource use, termination conditions, and scientific outcomes. These records would distinguish sustained valid progress from continued execution.
+
+\paragraph{Physical-world integration.}
+Connecting an abstract plan to a laboratory, field site, or mission requires calibrated state estimates and admissible operations. Protocol translation, robotic materials search, and fabrication-based optimization demonstrate different approaches~\cite{asd0600,burger2020,asd0504}. Transfer must address sample identity, preparation history, instrument status, measurement uncertainty, and the consequences of irreversible actions. Evaluations should include changed apparatus or conditions where feasible and identify when human repair or reconfiguration is required. Successful simulation remains evidence conditional on its model until the relevant physical claim is tested.
+
+\subsection{Scientific memory and cross-domain transfer}
+
+\paragraph{Scientific memory.}
+Memory can retain procedures, prior outcomes, and unsuccessful attempts, but reuse also propagates obsolete assumptions or context-specific errors. HealthFlow's reflective-memory mechanism provides one concrete implementation of experience reuse~\cite{asd0002}; its existence does not establish unrestricted transfer. A scientific memory record should preserve provenance, version, experimental conditions, uncertainty, and the circumstances in which a procedure failed. Research should test retrieval relevance, invalidation after a tool or environment changes, and the effect of memory on independent outcomes rather than only on repeated task scores.
+
+\paragraph{Cross-domain transfer.}
+The transfer boundaries in Section~\ref{sec:synthesis} suggest evaluations that vary scientific objects, tools, and measurement conditions separately, while recording adaptation cost and human input. Gains on tasks sharing interfaces or datasets should not be generalized to domains requiring different mechanisms or evidence. Negative transfer is a substantive outcome and should be retained alongside successful adaptation.
+
+\subsection{Collaboration, reproducibility, and cumulative evidence}
+
+\paragraph{Human--agent collaboration.}
+Human participation can provide research direction, domain knowledge, authorization, failure recovery, or result acceptance~\cite{asd0001,asd0054,asd0624}. Its value should be evaluated through the quality and cost of the resulting research process. Comparisons need to specify expertise, interaction time, information available to each participant, and which decisions change under assistance. Minimizing the number of interventions is not equivalent to improving scientific quality. Studies of alternative responsibility allocations should examine errors detected, hypotheses revised, and independently supported outcomes.
+
+\paragraph{Reproducibility.}
+Scientific-agent results can depend on model versions, stochastic sampling, prompts, tools, database states, generated code, and measurement conditions. A report should preserve the evidence needed to reconstruct the evaluated investigation, including unsuccessful runs and intervention requirements. Reproduction studies should independently check both the requested scientific quantity and evaluator competence, including potential dependence between generation and assessment mechanisms. Repeated execution by the original team, reproduction by another team, and external validation of a scientific result should be reported as distinct achievements.
+
+\begin{table}[H]
+\caption{Cross-domain challenges and concrete evaluation targets. These questions specify a research agenda rather than measured deficiencies across the entire corpus.}
+\label{tab:future}
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.21\textwidth}XX@{}}
+\toprule
+Challenge & Required research advance & Evaluation target \\
+\midrule
+Scientific goal formation & Evidence-based selection of significant and feasible questions & Prior-work grounding, expert assessment, downstream validity \\
+Long-horizon autonomy & Valid progress under dependencies and resource constraints & Interventions, recovery, budgets, termination, scientific outcomes \\
+Scientific reasoning & Linking evidence to claims under explicit assumptions & Correct quantities, uncertainty, alternatives, changed assumptions \\
+Physical-world integration & Grounding plans in calibrated experimental states & Sample traceability, operating limits, changed conditions \\
+Scientific memory & Reuse with context, provenance, and invalidation & Retrieval relevance, obsolete knowledge, external outcomes \\
+Cross-domain transfer & Adaptation of procedures with new scientific checks & New objects and tools, adaptation cost, negative transfer \\
+Human--agent collaboration & Appropriate allocation of scientific responsibility & Expertise, interaction cost, error detection, accepted results \\
+Reproducibility & Reconstructable processes and independent verification & Versioned artifacts, failed runs, independent reproduction \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+These directions imply three related research transitions. First, evaluation can extend from execution of supplied tasks to the formulation and testing of scientifically consequential questions. Second, system design can investigate complementary mechanisms and responsibility allocations within hybrid scientific systems; whether integration improves results remains an empirical question. Third, isolated demonstrations can be connected through reusable procedures, independently assessed evidence, and explicit applicability conditions to cumulative scientific knowledge. Figure~\ref{fig:ecosystem} depicts this proposed organization. Its emphasis is on traceable relations between goals, action, memory, and validation rather than maximal autonomy as an end in itself.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/future_ecosystem_en.pdf}
+\caption{Proposed research ecosystem for scientific agents. Human objectives, complementary decision mechanisms, research environments, provenance-aware memory, and independent validation jointly support cumulative results. Arrows describe desired information and verification relations; the figure is a research agenda, not a deployed universal architecture.}
+\label{fig:ecosystem}
+\end{figure}

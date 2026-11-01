@@ -294,3 +294,19 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`target_official_abstract`。本轮涉及3条差异，其中3条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1039`：`reject_pr`。Reject the obsolete-codebook deletion rationale: the current authoritative taxonomy explicitly defines this code. This only settles code validity, not the unavailable target-paper full text.
+  - 位置：official NASA target-paper abstract, record 20210008310；来源：https://ntrs.nasa.gov/citations/20210008310
+
+- 原1664行号 `1040`：`reject_pr`。Reject the obsolete-codebook deletion rationale: the current authoritative taxonomy explicitly defines this code. This only settles code validity, not the unavailable target-paper full text.
+  - 位置：official NASA target-paper abstract, record 20210008310；来源：https://ntrs.nasa.gov/citations/20210008310
+
+- 原1664行号 `1041`：`retain_current`。Official NASA target-paper abstract independently verifies the scientific purpose (ChemCam geochemistry), connected image-analysis to target-selection steps, autonomous decision capability and deployment within MSL science operations. This is sufficient for the narrow 10.02.03 classification decision, not a claim of full-text or page-level verification.
+  - 位置：official NASA target-paper abstract, record 20210008310；来源：https://ntrs.nasa.gov/citations/20210008310
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

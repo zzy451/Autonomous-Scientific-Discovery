@@ -277,3 +277,19 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`bibliographic_metadata_or_unverified_mirrored_abstract_only`。本轮涉及3条差异，其中0条已判定，3条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `407`：`pending_evidence`。The mirrored OpenAlex abstract describes oncology biomarker hypotheses and biomedical retrieval, but no substantive IEEE or author original was retrieved. This does not independently justify changing current 07.02 to 07.01.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1109/ICOSST69113.2025.11315415
+
+- 原1664行号 `408`：`pending_evidence`。The mirrored abstract indicates oncology biomarker topics, but no substantive first-hand source was retrieved. Do not mechanically clear current 07.02.05 or claim the secondary-to-tertiary boundary was verified.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1109/ICOSST69113.2025.11315415
+
+- 原1664行号 `409`：`pending_evidence`。The mirrored abstract describes EuropePMC, UniProt, ClinicalTrials.gov, structured hypothesis generation, and evaluation. However, first-hand IEEE or author text was not retrieved, so the source-review objection remains open.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1109/ICOSST69113.2025.11315415
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

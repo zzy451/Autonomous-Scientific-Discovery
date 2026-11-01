@@ -1,0 +1,92 @@
+\section{Agents Across Scientific Domains}
+\label{sec:domains}
+
+This section compares representative systems through their research objects, workflow roles, decision mechanisms, interaction and feedback, human responsibilities, and scientific outcomes. Tables~\ref{tab:representatives-a}--\ref{tab:representatives-c} provide a compact reference; the analyses below explain differences within each domain. Object-specific evidence determines whether a work appears in more than one domain, following Section~\ref{sec:methods}.
+
+\subsection{Formal, Information, and Computational Sciences}
+
+Formal and computational investigations provide executable artifacts and relatively explicit evaluation procedures. FunSearch uses a language model to propose programs, executes them against a researcher-specified evaluator, and retains selected programs to guide subsequent generation~\cite{asd0512}. Its cap-set application concerns a concrete combinatorial object. Researchers supply the evaluator, initial program, and program skeleton, while the system evolves a critical function. The resulting scientific evidence concerns the constructions obtained through these programs and depends on the evaluator's correspondence to the mathematical question.
+
+Research-workflow systems delegate a broader set of activities. The AI Scientist connects idea development, code-based experiments, manuscript production, and automated reviewing in machine-learning settings~\cite{asd0069}. Agent Laboratory organizes literature review, experimentation, and reporting around a human-provided research idea, with feedback permitted throughout the workflow~\cite{asd0018}. These systems extend language-based coordination across retrieval, coding, and assessment, whereas FunSearch concentrates on proposal generation coupled to external evaluation and selection.
+
+The comparison therefore concerns both the scope of delegated work and the authority of its evaluator. Executable tests assess specified program behavior; experimental baselines assess comparative performance; report assessment examines a different output. A longer automated workflow does not make these checks equivalent. Research-question ownership, evaluator design, and acceptance of the final result remain distinct responsibilities.
+
+\subsection{Physics, Astronomy, and Cosmic Sciences}
+
+Physical-science agents connect research objectives to calibration, measurement, and inference. In the self-driving quantum laboratory k-agents, language-based procedure interpretation is coupled to state-machine execution on superconducting quantum hardware~\cite{asd0090}. Measurement reports determine transitions between experimental states, including calibration retries and explicit failure outcomes. The apparatus and supplied experimental procedures constrain the admissible actions; evaluation concerns physical outcomes as well as successful execution.
+
+Astronomical systems place decisions elsewhere in the workflow. StarWhisper Telescope links observation planning, telescope operation, image processing, transient detection, and follow-up observation proposals~\cite{asd0136}. A multi-agent cosmological-analysis system instead coordinates retrieval, coding, execution, and parameter inference from observations; an administrator or human checks code before execution~\cite{asd0121}. These examples distinguish acquisition of time-sensitive observations from inference under specified likelihood and parameter assumptions.
+
+Their common use of planning and tools does not supply a common validity criterion. Calibration depends on measurements and instrument behavior; observation selection depends on acquisition opportunities and data quality; physical inference requires scrutiny of model assumptions, uncertainties, and numerical validity. The relevant autonomy profile must preserve the human-provided experimental knowledge and approval decisions in each setting.
+
+\subsection{Chemical Sciences}
+
+Chemical agents connect written procedures, experimental selection, and analytical measurements. The synthesis-literature digitization system translates descriptions into machine-executable protocols, permits expert correction, and combines corrected procedures with simulated execution before synthesis~\cite{asd0600}. Its contribution is the implementation of specified chemistry through reproducible operations, rather than an inference of new chemical behavior from protocol completion.
+
+Reactivity-seeking systems delegate the choice of subsequent experiments. The organic-synthesis robot uses learned predictions and spectral changes to explore reaction space, while a chemist manually follows up predictions associated with the reported reaction discoveries~\cite{asd0734}. Reactify combines robotic execution and analytical feedback with a neural reactivity-selection model, learning from expert-labelled spectra and retraining as further reactions are observed~\cite{asd0428}. Here, feedback changes experimental priorities, rather than only checking a prescribed procedure.
+
+Protocol execution and learned selection thus address complementary research roles. Human expertise enters through corrections, training labels, chemical follow-up, and characterization, even when a search run requires fewer interventions. A reactivity score supports screening; evidence for a transformation and its products requires appropriate characterization. This separates the experimentally supported contribution from the four possible chemical outcome claims defined in Section~\ref{sec:framework}.
+
+\subsection{Materials Science}
+
+Materials agents investigate composition--structure--property relationships through computational planning and measured optimization. MAPPS combines workflow planning, tool-code generation, and a scientific mediator for crystal generation, structure prediction, and property-constrained candidate generation; scientist feedback enters through the mediator~\cite{asd0001}. Its computational environment supports adaptation of the investigation, while candidate assessment remains separate from synthesis and physical characterization.
+
+Experimental optimizers obtain feedback from material measurements. The mobile robotic chemist uses Bayesian search within a researcher-defined photocatalyst-mixture space, selecting subsequent experiments from measured hydrogen-production outcomes~\cite{burger2020}. Otto couples Bayesian optimization to aqueous-electrolyte measurements, including electrochemical stability~\cite{asd0487}. Researchers define ingredients, feasible operations, and objectives before the automated selection process.
+
+These cases contrast language-based computational coordination with probabilistic selection in laboratory experiments. Crystal assessment, photocatalytic activity, and electrolyte stability are object-specific endpoints; electrolyte stability alone does not establish full-cell lifetime or energy density. The comparison must retain the search constraints, measurement or calculation used for selection, and the location of scientist input. Architectural breadth is not a substitute for comparable objectives, budgets, and validation.
+
+\subsection{Earth and Environmental Sciences}
+
+Observation acquisition is a central agent role in Earth and environmental research. The Autonomous Earth-Observing Sensorweb connects event detection to observation requests, planning, and follow-up acquisition~\cite{asd0722}. Science teams specify interests and priorities before detections trigger requests and replanning. The agent mechanism allocates sensing resources as new information becomes available; its scientific contribution depends on the environmental observations acquired.
+
+OASIS evaluates geological targets against scientist-specified preferences and resource constraints, connecting target priority to rover planning and follow-up actions. Its integrated opportunistic-science loop was demonstrated with the FIDO rover in the JPL Mars Yard~\cite{asd0691}. OpenEarth-Agent instead combines planning, coding, checking, and tool creation in benchmarked Earth-observation data-processing workflows~\cite{asd0650}. These cases distinguish model-based acquisition planning from language-based coordination of available data and computational tools.
+
+Operational acquisition, ground-tested reactive observation, and benchmarked analysis establish different outcomes. Improved target selection or task execution requires separate evidence before supporting an improved interpretation of environmental processes. Environmental and mission-operation objects can both justify domain assignments when separately evaluated; satellite data use alone does not establish mission autonomy.
+
+\subsection{Life Sciences}
+
+Biological agents participate in hypothesis testing, perturbation selection, and data analysis. Robot Scientist uses a symbolic biological model to connect functional-genomic hypotheses with experiment design and yeast growth assays~\cite{king2004}. Measured growth discriminates among model predictions, while experimental preparation and plate handling still involve people. Its scientific contribution is grounded in the relationship between a constrained biological hypothesis and a physical test.
+
+BioDiscoveryAgent combines biological knowledge, previous outcomes, and tools to choose genetic-perturbation experiments~\cite{asd0020}. Its evaluation retrieves outcomes from previously collected perturbation datasets, rather than reporting a new prospective experimental campaign. CellAgent uses hierarchical agent decisions, execution checks, and iterative evaluation to select analysis tools and settings for supplied single-cell data~\cite{asd0138}. These language-based systems address experimental design and analytical coordination under different access to biological evidence.
+
+The comparison separates physical hypothesis testing, retrospective experiment-selection evaluation, and analytical workflow optimization. A completed analysis can identify a pattern without establishing a causal mechanism, and a promising perturbation choice can remain untested prospectively. Biological interpretation therefore depends on the claim, its supporting experiment or dataset, and scientist involvement in preparing, selecting, and interpreting results.
+
+\subsection{Medical and Health Sciences}
+
+Medical agents support tasks ranging from electronic-health-record analysis to therapeutic-candidate design. HealthFlow combines planning, execution, evaluation, and reflective memory for healthcare research~\cite{asd0002}. Evaluation differs across tasks: ensemble LLM scoring is used for EHRFlowBench, human task-completion assessment for MedAgentBoard, and answer correctness for medical-reasoning benchmarks. These endpoints concern analytical and research-task performance, with the evaluator forming part of the conditions under which the result holds.
+
+Tippy organizes agents around the design--make--test--analyze cycle and demonstrates platform integration through constructed use cases, including analytical feedback such as HPLC retention time~\cite{asd0008}. Virtual Lab combines a human researcher, specialist agents, and scientific tools to design SARS-CoV-2 nanobody candidates that undergo experimental assessment~\cite{asd0054}. Human researchers guide the collaboration and human biologists perform validation.
+
+The selected systems use language-based coordination but establish different contributions: retrospective analytical performance, platform integration, and experimentally assessed candidate expression or binding. Laboratory evidence does not establish clinical efficacy, and a medical research objective does not establish deployment in clinical decision-making. Interpretation must retain the intended population or assay, human oversight, and any evaluation beyond the development setting.
+
+\subsection{Agricultural, Food, Forestry, Animal, and Fishery Sciences}
+
+The current agricultural subset includes food hypotheses, plant phenotyping, and disease analysis. FoodPuzzle evaluates food--molecule relationship predictions against existing database evidence~\cite{asd0695}. PhenoAssistant supports conversational multi-agent phenotype extraction, visualization, and analysis, but its tool-selection evaluation measures the reasonableness of tool chains rather than the correctness of their outputs~\cite{asd0510}. These cases distinguish grounded hypothesis assessment from the validation of an analytical result.
+
+Aleks supports iterative data-driven research in a plant-disease setting. Its authors report that manual verification detected code conflating training and test performance, and that another run contained transient data leakage~\cite{asd0634}. RAVA implements a different mechanism: a recurrent policy trained with proximal policy optimization selects informative visual observations for plant-disease diagnosis~\cite{asd1133}. Its image-dataset evaluation supports sequential visual inference, rather than prospective intervention in a field environment.
+
+The comparison spans LLM-based tool coordination and learned visual policies while retaining dataset composition, training objectives, and human code verification as important conditions. Tool-chain plausibility, diagnostic performance, and database grounding require different checks. Agronomic utility or reproducible biological findings need evidence corresponding to those claims. The sparse collection does not establish equivalent representation of every subfield named in this module.
+
+\subsection{Engineering and Industrial Technology Sciences}
+
+Engineering agents translate design objectives into physical tests or numerical investigations. BEAR, a Bayesian experimental autonomous researcher, connects fabrication, testing, model updates, and subsequent design selection using measured structural toughness~\cite{asd0504}. The tested structure family and objective are supplied by researchers, defining the scope of the measured optimization result.
+
+Foam-Agent uses LLM-based coordination for mesh preparation, input generation, execution, debugging, and visualization in computational fluid dynamics~\cite{asd0047}. It reports execution success over 110 cases, with selected examples additionally comparing generated configurations and velocity fields against expert-prepared simulations. MechAgents coordinates problem formulation, coding, execution, and correction in mechanics~\cite{asd0128}. In one elasticity example, code executed successfully but extracted von Mises stress instead of the requested shear-stress component; a subsequent human instruction corrected the error.
+
+These studies distinguish an executable configuration, task-specific correctness, and experimentally measured performance. Boundary conditions, constitutive assumptions, convergence, and physical tests determine which engineering conclusions are supported. Numerical solvers provide an execution environment; their successful invocation cannot establish the adequacy of the problem specification. Physical and computational systems therefore require comparison through the delegated design decisions and their corresponding validation.
+
+\subsection{Aerospace, Marine, and Transportation Sciences}
+
+Mission systems provide longstanding examples of model-based planning under explicit temporal and resource constraints. The Autonomous Sciencecraft Experiment combines science analysis, planning and scheduling, and robust execution to adapt EO-1 observations~\cite{asd0645}. Its software was already commanding the spacecraft in orbit, although the conference demonstration also included a simulated science-response scenario. The distinction matters when attributing evidence to operational or simulated behavior.
+
+Related rover studies describe OASIS planning, scheduling, execution, and plan modification in response to opportunities and execution conditions~\cite{asd0712,asd0733}. Evaluation includes simulation and terrestrial prototype hardware in the JPL Mars Yard; the 2005 implementation also describes components communicating with the rover from offboard workstations. These reports concern a related system lineage, rather than independent demonstrations of unrelated architectures.
+
+Operators or onboard analysis provide goals, while planners and execution monitors allocate activities within permitted actions. Replanning establishes responsiveness under those models; autonomous question formation and additional scientific return require separate evidence. The selected spacecraft and rover studies support mission-science comparisons without implying equivalent evidence for every marine and transportation subfield.
+
+\subsection{Social, Behavioral, Economic, and Knowledge-System Sciences}
+
+Scientific communities and institutions can themselves be research objects. SciSciGPT uses language-based tool coordination to retrieve and analyze scholarly records in collaboration with researchers~\cite{asd0624}. Its construction of an inter-university collaboration network through database queries and iterative visualization illustrates empirical knowledge-production analysis. Here, the scientific evidence depends on data provenance and the adequacy of the analytical procedure.
+
+ResearchTown models reading, idea generation, writing, and reviewing within a research community, evaluating reconstruction of masked papers and reviews against real reference outputs using text-similarity metrics~\cite{asd0652}. AgentReview uses interacting language-model agents and prompt-defined reviewer and chair characteristics to study peer-review dynamics; the reported simulated outcomes were not directly compared with actual peer-review decisions~\cite{asd0786}. Human specification of assumptions is therefore consequential for interpreting the generated interactions.
+
+Scholarly-data analysis, reconstruction similarity, and exploration of behavioral assumptions address different propositions. Multiple interacting agents describe an organizational design; they do not independently validate the modeled institution. External empirical evidence is required to connect simulated behavior to human mechanisms. These knowledge-system examples form a specific part of the broader social, behavioral, and economic module.

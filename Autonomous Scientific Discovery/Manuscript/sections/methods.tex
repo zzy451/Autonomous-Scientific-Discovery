@@ -1,0 +1,107 @@
+\section{Literature Selection and Classification Methods}
+\label{sec:methods}
+
+\subsection{Review design, collection provenance, and temporal boundary}
+
+This review uses structured literature mapping and qualitative evidence synthesis. Collection began from the reference network of the Shanghai AI Laboratory seed survey, \emph{From AI for Science to Agentic Science}~\cite{wei2025}, and was expanded through high-impact journal entry points, including Nature, Science, and related journals. Backward and forward citation tracing, related-work expansion, and targeted keyword searches were used to supplement coverage of scientific objects and agent tasks. These routes constitute the provenance of the working corpus; they are not a claim that every database or publication venue was searched with an identical query.
+
+The latest broad collection round ended on 22 October 2026. The 663-work corpus used for this draft is taken from the classification snapshot maintained through 29 October 2026. Subsequent evidence checks and preparation of this text do not extend the literature-search cutoff. Preprints and formally published research are eligible under the same content-based criteria, with their source and publication status retained. References used for historical context or comparison with other reviews serve a different purpose from the core research corpus and are not automatically added to its count.
+
+The collection is an evolving, source-based map rather than an exhaustive systematic census. Historical searches were not conducted under one prospectively registered protocol, and the available records do not establish a complete denominator for retrieved and screened items. Accordingly, we do not derive a screening-flow diagram from the final corpus size, estimate recall, or interpret the 663 works as the complete population of Agent for Science research. The present methods make the inclusion and classification logic explicit while preserving these limits on search reproducibility.
+
+\subsection{Operational eligibility criteria}
+
+A work is eligible when its investigated system satisfies all four conditions below:
+\begin{enumerate}
+    \item \textbf{Scientific goal.} It addresses an identifiable research question or a task with a clear role in scientific investigation.
+    \item \textbf{Connected actions.} It carries out multiple related actions toward that goal, rather than only a single prediction, classification, summary, or answer.
+    \item \textbf{Agent capability.} The action process includes at least one of planning, tool use, feedback-driven iteration, autonomous decision-making, or multi-agent collaboration.
+    \item \textbf{Workflow role.} Its contribution to the scientific workflow is explicit, for example in information gathering, hypothesis generation, experiment design or execution, analysis, interpretation, or validation.
+\end{enumerate}
+
+Eligibility depends on the documented system behavior rather than the use of the words ``agent'', ``autonomous'', or ``scientist'' in a title. An LLM is neither required nor sufficient. Conventional prediction, generation, optimization, simulation, or high-throughput screening is not included merely because it uses AI or automation; the system must also meet the four conditions. Similarly, an agent-based simulation is assessed by its research goal and action process, rather than admitted solely because its simulated entities are called agents. Complete closure of the scientific discovery cycle is not required. Human-guided and partially autonomous systems remain eligible, with their division of responsibility treated as an analytical attribute.
+
+Benchmark-oriented research can provide evidence about an eligible scientific agent, and evaluated benchmark tasks can establish domain coverage. A benchmark name or the presence of scientific terminology alone does not meet the eligibility criteria. The distinction is between evaluating an agent's scientific task performance and evaluating a generic model on isolated questions without a qualifying action process.
+
+\subsection{Units of analysis and version handling}
+
+The corpus count refers to distinct research works, rather than files, agent instances, experiments, or domain memberships. Persistent identifiers, bibliographic metadata, and version relationships are used to reconcile preprints and journal versions. Linked versions are treated as one work for counting purposes, while evidence is attributed to the version actually checked. A later publication is not assumed to preserve every claim or experiment from an earlier version. Substantively distinct follow-up studies can remain separate works even when they reuse a system name.
+
+A work can contain several systems, experiments, or scientific objects. Domain-level synthesis therefore uses a more specific evidence unit: an identifiable object--task--result relationship within that work. The 663-work total must not be interpreted as 663 independently reproduced discoveries, nor as a count of systems with identical levels of evidence.
+
+\subsection{Scientific-object hierarchy}
+
+The main classification follows the object investigated, rather than the model architecture, tool used, publication venue, or institutional affiliation. The hierarchy is a project-specific synthesis informed by the classification principles identified in the project taxonomy~\cite{projecttaxonomy,projectpolicy,projectboundaries}. These include the Chinese Library Classification and, for international comparison, the Library of Congress Classification, Dewey Decimal Classification, and Universal Decimal Classification~\cite{lcc,ddc,udc}. The cited web resources document those systems; they do not constitute a validation of the project's category boundaries. It is not a direct crosswalk to their official codes. Table~\ref{tab:domains} summarizes the eleven top-level modules; their second- and third-level definitions are maintained in the accompanying project taxonomy~\cite{projecttaxonomy,projectpolicy,projectboundaries}.
+
+\begin{table}[t]
+\caption{Top-level scientific-object modules. Examples illustrate the object boundary, rather than enumerate all subcategories.}
+\label{tab:domains}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.06\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Code & Module & Illustrative research objects \\
+\midrule
+01 & Formal, information, and computational sciences & Theorems, proofs, algorithms, programs, information structures, and computational systems \\
+02 & Physics, astronomy, and cosmic sciences & Physical laws and systems, particles, astronomical objects, and cosmic phenomena \\
+03 & Chemical sciences & Molecules, reactions, synthesis routes, chemical mechanisms, and catalysis \\
+04 & Materials science & Material compositions, structures, processing--property relations, and functional materials \\
+05 & Earth and environmental sciences & Geological, atmospheric, hydrological, ecological, and environmental processes \\
+06 & Life sciences & Genes, proteins, cells, organisms, and biological mechanisms \\
+07 & Medical and health sciences & Disease, diagnosis, treatment, drug development, and population health \\
+08 & Agricultural, food, forestry, animal, and fishery sciences & Crops, agricultural production, food systems, forests, livestock, and fisheries \\
+09 & Engineering and industrial technology sciences & Engineered components, processes, manufacturing, and industrial systems \\
+10 & Aerospace, marine, and transportation sciences & Vehicles, mission systems, navigation, and operational autonomy \\
+11 & Social, behavioral, economic, and knowledge-system sciences & Human and social processes, economic systems, and scientific knowledge production \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Each assignment requires an identifiable experiment, validation task, benchmark task, case study, or reported result concerning the relevant object. Background motivation, proposed future applications, and the availability of a domain-specific tool do not independently justify a module. A paper using code to study molecular reactions is consequently classified by its chemical object; code use alone does not add a computational-science assignment. The latter becomes appropriate when programs, algorithms, or computational capabilities are themselves evaluated research objects.
+
+Within each supported module, classification proceeds to the most specific existing second- or third-level definition justified by the evidence. A narrow application label is not automatically a new formal category. Where a third-level assignment cannot be justified, the supported broader class is retained and the finer mapping remains unresolved. The existence of tertiary categories in the taxonomy is therefore distinguished from completion of tertiary coding for every corpus record.
+
+\subsection{Multi-domain coverage, benchmarks, and boundary decisions}
+
+Module assignments are non-exclusive. A single work can enter several modules when each is supported by concrete object-specific evidence, even if a particular evaluated domain is not the paper's central methodological contribution. One primary assignment can be used for filing and presentation, but it does not limit the work's evidenced scientific coverage. A work is counted once in the unique corpus total and once in each supported module; module totals therefore cannot be summed to obtain the number of unique works.
+
+Benchmark tasks are valid domain evidence when their inputs, requested outputs, and reported evaluation concern a recognizable scientific object. For example, a mathematical problem-solving benchmark can support a formal-science assignment for an eligible agent evaluated on those tasks. It supports a claim about the mathematical task actually tested, rather than automatically establishing new mathematical discovery. Conversely, generic API-call success, infrastructure configuration, or an undifferentiated overall score does not establish coverage of every field named in a benchmark. For a mixed benchmark, domain assignments require identifiable task composition and relevant evaluation evidence.
+
+Adjacent domains are resolved by the object and endpoint of each evaluated task. Reaction conditions and molecular transformations support chemistry, whereas material composition and measured material performance support materials science. Burger et al.'s photocatalyst search illustrates why a system called a ``robotic chemist'' can be analyzed through a materials-performance object~\cite{burger2020}. Biological mechanism or gene-function analysis supports life sciences; disease-specific diagnosis, treatment, or therapeutic endpoints can additionally support medicine. Environmental observations and mission operation are similarly distinguished: studying an environmental phenomenon and deciding how a spacecraft should execute its mission are different research tasks. When both are separately evaluated, both domains can be retained.
+
+General research-agent methods without evidence for any concrete scientific object are recorded in a separate general-method bucket, using the project's identifier \texttt{01.04}. This bucket is an administrative exception outside the eleven-module domain tree, despite its legacy numeric form. It is not a default assignment for every general-purpose framework. Research whose actual object is peer review, reproducibility, scientific evaluation, or knowledge production can instead belong to the knowledge-system branch of module~11, including its \texttt{11.07} category.
+
+\subsection{Evidence extraction and comparative synthesis}
+
+Original research reports and associated first-hand materials take precedence over secondary summaries. Full text supports detailed judgments where available; official abstracts or publication pages support narrower statements. Reading notes index source evidence but do not independently validate results. Unavailable details remain unreported or unverified.
+
+Table~\ref{tab:extraction} specifies the object--action--evidence record used throughout the review. It connects each task to implementation, delegated decisions, outcomes, comparison conditions, and source locations. Detailed coding of every field has not been completed for all 663 works; the schema defines the requirements for a comparison rather than asserting complete annotation.
+
+\begin{table}[t]
+\caption{Evidence fields for comparison within sufficiently similar scientific objects and tasks. Missing information remains explicit.}
+\label{tab:extraction}
+\small
+\begin{tabularx}{\textwidth}{@{}p{0.28\textwidth}X@{}}
+\toprule
+Field & Information required for interpretation \\
+\midrule
+Scientific object and task & Investigated entity or phenomenon, research question, task definition, module and subcategory \\
+Decision and organization & Documented decision mechanisms, roles, and single-agent, multi-agent or human collaboration \\
+Agent actions and feedback & Planning, selection, execution, correction, observations, and their effect on subsequent actions \\
+Tools and environment & Databases, evaluators, simulators, instruments, operational constraints, and actual evaluation setting \\
+Human responsibilities & Goal setting, hypothesis formation, experiment selection, authorization, failure recovery, and result acceptance \\
+Outcome and validation & Claim, endpoint, metric, evaluation unit, scientific checks, and independent reproduction when reported \\
+Comparison conditions & Baselines, sample or task sets, model and tool versions, budgets, repeated runs, and uncertainty \\
+Traceability and limitations & Checked source version and result location; reproducibility information, missing detail, and unresolved assumptions \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The distinction between execution and evidence for scientific conclusions also informs Feng et al.'s analysis~\cite{feng2026}. Section~\ref{sec:framework} defines the decision-responsibility and claim-evidence categories used here. Validation settings are recorded according to the scientific proposition: formal verification, benchmarks, simulation, experiments, and clinical or field evaluation do not constitute a universal quality ranking. Repetition by the original team and independent reproduction are distinguished.
+
+Quantitative comparison requires compatible objects, task definitions, metrics, sample or problem sets, budgets, and validation conditions. Otherwise, the synthesis remains qualitative and explains the mismatches. Scores from unrelated endpoints are not pooled, and missing reports of intervention are not interpreted as its absence. The synthesis analyzes checked reports; it does not independently replicate their experiments.
+
+\subsection{Methodological limitations}
+
+The source and citation routes can favor well-connected, highly visible, English-language, or readily indexed work. Fast-moving preprints, inconsistent use of the term agent, and changing model or service versions introduce further uncertainty. Broad modules accommodate diverse scientific traditions, but some boundaries require judgment and finer-grained assignments remain incomplete. Continuing classification audits improve individual records without establishing that every coding decision has been independently adjudicated. We do not report an inter-rater agreement statistic unsupported by such a study.
+
+Consequently, corpus frequencies describe the collected literature, not the prevalence of agents throughout science. They should not be interpreted as adoption rates, comparative disciplinary readiness, or evidence that a sparsely represented topic lacks relevant research. The classification and evidence protocol support a review that can be revised as sources and object-level comparisons improve; conclusions must remain proportionate to the evidence actually available.

@@ -13,6 +13,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 TEX=ROOT.parent/'Agent_for_Science_Review_Overleaf'
+if not TEX.exists():TEX=ROOT/'Manuscript'
 OUT=ROOT/'Coverage_Check/bibliography_2026-10-30'
 
 def clean(s):
@@ -99,7 +100,7 @@ def main():
         if key in online and canonical!=key:
             records[canonical].update({k:v for k,v in e.items() if v})
         issues=[]
-        if not e.get('author'):issues.append('missing_author')
+        if not e.get('author') and not e.get('editor'):issues.append('missing_author')
         elif 'others' in e['author']:issues.append('abbreviated_author_list')
         if not e.get('doi') and not e.get('url'):issues.append('missing_identifier')
         if not re.fullmatch(r'\d{4}',e['year']):issues.append('year_not_four_digits')
@@ -124,6 +125,54 @@ def main():
     ]
     for key,title,url,org in standards:
         add(key,dict(type='misc',author='{'+org+'}',title=title,url=url,note='Online classification-system resource; accessed 30 October 2026'))
+    # Full-library audit metadata is applied before version-specific PDF decisions.
+    full_audit_path=OUT.parent/'bibliography_full_audit_2026-10-31/verified_overrides.json'
+    if full_audit_path.exists():
+        for key,fields in json.loads(full_audit_path.read_text(encoding='utf-8')).items():
+            if key not in records:raise ValueError('Unknown full-audit citation: '+key)
+            for field,value in fields.items():
+                if field.startswith('_'):continue
+                if field=='author_names':
+                    records[key]['author']=' and '.join(n if n.startswith('{') and n.endswith('}') else esc(n) for n in value)
+                elif value is None:records[key].pop(field,None)
+                else:records[key][field]=value
+    # Audited versions override automatic API metadata (e.g. issue year versus
+    # first-online year, and the authors of the PDF actually read).
+    audited_path=OUT.parent/'manuscript_evidence_audit_2026-10-30/audited_bibliography_overrides.json'
+    if audited_path.exists():
+        for key,fields in json.loads(audited_path.read_text(encoding='utf-8')).items():
+            if key not in records:raise ValueError('Unknown audited citation: '+key)
+            for field,value in fields.items():
+                if field.startswith('_'):continue
+                if field=='author_names':records[key]['author']=' and '.join(n if n.startswith('{') and n.endswith('}') else esc(n) for n in value)
+                elif value is None:records[key].pop(field,None)
+                else:records[key][field]=value
+    # Enrichment may discover a shared DOI after initial insertion. Reconcile it
+    # before emitting entries so aliases cannot leave duplicate bibliography items.
+    final_identities={};merged={}
+    for key,e in records.items():
+        ident=identity(e)
+        if ident in final_identities:
+            canonical=final_identities[ident];aliases[key]=canonical
+            for field,value in e.items():
+                if value and not merged[canonical].get(field):merged[canonical][field]=value
+        else:final_identities[ident]=key;merged[key]=e
+    records=merged
+    def final_alias(key):
+        seen=set()
+        while key in aliases and key not in seen:
+            seen.add(key);key=aliases[key]
+        return key
+    aliases={key:final_alias(value) for key,value in aliases.items()}
+    for row in inventory:
+        row['citation_key']=final_alias(row['citation_key'])
+        e=records[row['citation_key']];issues=[]
+        if not e.get('author') and not e.get('editor'):issues.append('missing_author')
+        elif re.search(r'\band others\b',e.get('author','')):issues.append('abbreviated_author_list')
+        if not e.get('doi') and not e.get('url'):issues.append('missing_identifier')
+        if not re.fullmatch(r'\d{4}',e.get('year','')):issues.append('year_not_four_digits')
+        if '\ufffd' in e['title'] or re.search('[\u3400-\u9fff\ue000-\uf8ff]',e['title']):issues.append('title_needs_metadata_review')
+        row.update(title=e['title'],metadata_issues=';'.join(issues))
     text='% Unified bibliography: core research, background works, surveys, and classification sources.\n% Generated from local metadata; consult the provenance inventory for incomplete records.\n% Only cited entries appear in the manuscript. Do not add nocite{*}.\n\n'
     for key,e in records.items():
         text+='@'+e['type']+'{'+key+',\n'
@@ -132,8 +181,12 @@ def main():
             if name=='author':v=value
             elif name in {'url','doi','eprint','archivePrefix'}:v=value
             else:v=esc(value)
+            if name=='note' and e.get('url') and not e.get('doi') and not e.get('eprint'):
+                v+=r'. Available at: \url{'+e['url']+'}'
             if name=='title':v='{'+v+'}'
             text+='  '+name+' = {'+v+'},\n'
+        if not e.get('note') and e.get('url') and not e.get('doi') and not e.get('eprint'):
+            text+=r'  note = {Available at: \url{'+e['url']+'}},\n'
         text+='}\n\n'
     (TEX/'references.bib').write_text(text,encoding='utf-8')
     # Existing aliases are replaced in source, rather than generating duplicate bibliography entries.
@@ -154,7 +207,7 @@ def main():
     assert not cited-keys,sorted(cited-keys)
     with (OUT/'paper_citation_keys.csv').open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(inventory[0]));w.writeheader();w.writerows(inventory)
-    result=dict(date='2026-10-30',bib_entries=len(records),core_records=sum(x['record_status']=='active_confirmed_core' for x in inventory),background_records=sum(x['record_status']=='background_only' for x in inventory),cited_keys=len(cited),aliases=aliases,metadata_issue_counts=dict(collections.Counter(i for x in inventory for i in x['metadata_issues'].split(';') if i)),uncited_entries_printed=False)
+    result=dict(date='2026-10-30',bibliography_audit_date='2026-10-31' if full_audit_path.exists() else None,bib_entries=len(records),core_records=sum(x['record_status']=='active_confirmed_core' for x in inventory),background_records=sum(x['record_status']=='background_only' for x in inventory),cited_keys=len(cited),aliases=aliases,metadata_issue_counts=dict(collections.Counter(i for x in inventory for i in x['metadata_issues'].split(';') if i)),uncited_entries_printed=False)
     (OUT/'build_report.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in result.items() if k!='aliases'},ensure_ascii=True,indent=2))
 

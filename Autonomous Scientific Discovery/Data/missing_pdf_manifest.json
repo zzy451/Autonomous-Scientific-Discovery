@@ -7,7 +7,7 @@
     "pdf_status": "publisher_pdf_gated",
     "evidence_status": "first_hand_abstract_plus_official_supporting_info",
     "source_limited": "yes",
-    "access_note": "Source trail: Shanghai AI Lab seed survey[ref 237]; Batch00Reaudit2026-06-21: publisher landing page and official ACS supporting-information page checked; current evidence supports `scientific_object_modules=03;04`, `object_coverage_mode=multi_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; functional-material discovery/optimization supports `04`, photocatalytic organic reactions support `03`; main PDF endpoint remained access-gated in this environment, so keep `source_limited` / full-text follow-up open. ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 03.03; not a new full-text scientific judgment;"
+    "access_note": "Source trail: Shanghai AI Lab seed survey[ref 237]; Batch00Reaudit2026-06-21: publisher landing page and official ACS supporting-information page checked; current evidence supports `scientific_object_modules=03;04`, `object_coverage_mode=multi_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; functional-material discovery/optimization supports `04`, photocatalytic organic reactions support `03`; main PDF endpoint remained access-gated in this environment, so keep `source_limited` / full-text follow-up open. ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 03.03; not a new full-text scientific judgment;; PR82Recheck2026-10-29: closed_rows=4; pending_rows=1; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://research.birmingham.ac.uk/en/publications/a-multi-agent-driven-robotic-ai-chemist-enabling-autonomous-chemi/; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0112",
@@ -17,7 +17,7 @@
     "pdf_status": "publisher_access_limited",
     "evidence_status": "first_hand_abstract_metadata_and_xml",
     "source_limited": "yes",
-    "access_note": "Source trail: Shanghai AI Lab seed survey[ref 34]; ExpansionBatch2026-06-16; classification may move to 07 if therapeutic validation dominates. NoteLanded2026-06-18: formal ASD note added. CarryForward06Closeout2026-06-22: checked the official DOI landing, Elsevier Linkinghub / ScienceDirect record, official Elsevier XML coredata, and the HKUST publication-portal abstract page. Phase6FollowupR5Harmonization2026-07-02: authoritative state is now `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; the current accessible first-hand evidence directly stabilizes drug molecules and chemical-space optimization as the landed core, while old `07` COVID-related target-linked drug-design wording is retained only as a future source-limited lead pending stronger full-text evidence; no local PDF archived."
+    "access_note": "Source trail: Shanghai AI Lab seed survey[ref 34]; ExpansionBatch2026-06-16; classification may move to 07 if therapeutic validation dominates. NoteLanded2026-06-18: formal ASD note added. CarryForward06Closeout2026-06-22: checked the official DOI landing, Elsevier Linkinghub / ScienceDirect record, official Elsevier XML coredata, and the HKUST publication-portal abstract page. Phase6FollowupR5Harmonization2026-07-02: authoritative state is now `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; the current accessible first-hand evidence directly stabilizes drug molecules and chemical-space optimization as the landed core, while old `07` COVID-related target-linked drug-design wording is retained only as a future source-limited lead pending stronger full-text evidence; no local PDF archived.; PR82Recheck2026-10-29: closed_rows=0; pending_rows=2; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0158",
@@ -27,7 +27,7 @@
     "pdf_status": "publisher_pdf_access_limited",
     "evidence_status": "first_hand_abstract_and_metadata",
     "source_limited": "yes",
-    "access_note": "HighImpactTrail: Science search; ExpansionBatch2026-06-16; older foundational high-impact case. CarryForward16Closeout2026-06-22: rechecked Crossref / Science publisher abstract; kept stable `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local PDF was archived because the Science PDF endpoint returned `403`, so this row remains explicitly source-limited but classification-stable."
+    "access_note": "HighImpactTrail: Science search; ExpansionBatch2026-06-16; older foundational high-impact case. CarryForward16Closeout2026-06-22: rechecked Crossref / Science publisher abstract; kept stable `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local PDF was archived because the Science PDF endpoint returned `403`, so this row remains explicitly source-limited but classification-stable.; PR82Recheck2026-10-29: closed_rows=2; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://pubmed.ncbi.nlm.nih.gov/31395756/; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0381",
@@ -37,17 +37,7 @@
     "pdf_status": "publisher_pdf_access_limited",
     "evidence_status": "first_hand_html_full_text_and_supplementary",
     "source_limited": "no",
-    "access_note": "HighImpactTrail: OpenAlex query `self-driving laboratory autonomous discovery`; High-impact/citation-expansion pass 2026-06-16. CarryForward16Closeout2026-06-22: rechecked publisher preview / DOI metadata and kept stable `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local PDF was archived because full text remained unavailable in this environment, so this row remains explicitly source-limited but classification-stable. Phase6FollowupR6Closeout2026-07-03: publisher HTML full text and open supplementary PDF are now accessible first-hand sources; current authoritative state remains `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local main-paper PDF archived, but the row is no longer treated as `source_limited` because publisher HTML full text plus open supplementary evidence now suffice for the landed chemistry-object reading."
-  },
-  {
-    "paper_id": "ASD-0508",
-    "title": "Autonomous, multiproperty-driven molecular discovery: From predictions to measurements and back",
-    "doi": "10.1126/science.adi1407",
-    "url": "https://doi.org/10.1126/science.adi1407",
-    "pdf_status": "publisher_full_text_checked",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Source trail: High-impact follow-up queue 2026-06-16; Science molecular-discovery closed loop. Round2NoteLanded2026-06-19: formal note keeps `03.04`; the stable scientific object is multiproperty molecular discovery rather than a materials-device optimization object. Batch15Partial1Reaudit2026-06-22: note refreshed from first-hand source review; keep `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`."
+    "access_note": "HighImpactTrail: OpenAlex query `self-driving laboratory autonomous discovery`; High-impact/citation-expansion pass 2026-06-16. CarryForward16Closeout2026-06-22: rechecked publisher preview / DOI metadata and kept stable `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local PDF was archived because full text remained unavailable in this environment, so this row remains explicitly source-limited but classification-stable. Phase6FollowupR6Closeout2026-07-03: publisher HTML full text and open supplementary PDF are now accessible first-hand sources; current authoritative state remains `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; no local main-paper PDF archived, but the row is no longer treated as `source_limited` because publisher HTML full text plus open supplementary evidence now suffice for the landed chemistry-object reading.; PR82Recheck2026-10-29: closed_rows=2; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://www.nature.com/articles/s44286-024-00033-5; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0536",
@@ -57,7 +47,7 @@
     "pdf_status": "pmc_gold_oa_pdf_route_access_challenged",
     "evidence_status": "pmc_full_text_page_verified_pdf_download_pending",
     "source_limited": "no",
-    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly indicates multi-agent discovery workflow for pharmacology and herbal medicine. NoteLanded2026-06-19: official abstract keeps stable `07.04`, while the main residual risk is core-strength rather than class assignment. Batch16Partial4Reaudit2026-06-23: official JPA publisher abstract and ScienceDirect landing snippet rechecked; keep `scientific_object_modules=07`, `object_coverage_mode=single_module`, `primary_module_for_filing=07`, and `general_method_bucket=none`; this earlier pass stayed `source_limited=yes` because full text / local PDF were not retrieved then. Phase6FollowupR19Real2026-07-05: official JPA article page, ScienceDirect route, and visible publisher HTML/PDF entry points were rechecked; the stable `07` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read."
+    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly indicates multi-agent discovery workflow for pharmacology and herbal medicine. NoteLanded2026-06-19: official abstract keeps stable `07.04`, while the main residual risk is core-strength rather than class assignment. Batch16Partial4Reaudit2026-06-23: official JPA publisher abstract and ScienceDirect landing snippet rechecked; keep `scientific_object_modules=07`, `object_coverage_mode=single_module`, `primary_module_for_filing=07`, and `general_method_bucket=none`; this earlier pass stayed `source_limited=yes` because full text / local PDF were not retrieved then. Phase6FollowupR19Real2026-07-05: official JPA article page, ScienceDirect route, and visible publisher HTML/PDF entry points were rechecked; the stable `07` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read.; PR82Recheck2026-10-29: closed_rows=1; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://pubmed.ncbi.nlm.nih.gov/42597957/; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0544",
@@ -67,7 +57,7 @@
     "pdf_status": "publisher_page_checked_visible_pdf_route",
     "evidence_status": "first_hand_abstract_and_official_pages",
     "source_limited": "no",
-    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly combines literature review and hypothesis generation for biomarker discovery. NoteLanded2026-06-19: recovered abstract evidence supports stable `07.01` because the concrete object is cancer biomarker discovery rather than a domain-general review tool. Batch16Partial8Reaudit2026-06-23: DOI redirect to IEEE Xplore was rechecked and the official landing returned a WAF challenge, so that earlier pass remained conservative and source-limited even though the title already anchored a concrete cancer biomarker-discovery object. Phase6FollowupR19Real2026-07-05: official IEEE document page and visible publisher PDF route were rechecked; the stable `07` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read."
+    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly combines literature review and hypothesis generation for biomarker discovery. NoteLanded2026-06-19: recovered abstract evidence supports stable `07.01` because the concrete object is cancer biomarker discovery rather than a domain-general review tool. Batch16Partial8Reaudit2026-06-23: DOI redirect to IEEE Xplore was rechecked and the official landing returned a WAF challenge, so that earlier pass remained conservative and source-limited even though the title already anchored a concrete cancer biomarker-discovery object. Phase6FollowupR19Real2026-07-05: official IEEE document page and visible publisher PDF route were rechecked; the stable `07` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read.; PR82Recheck2026-10-29: closed_rows=0; pending_rows=3; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0547",
@@ -77,7 +67,7 @@
     "pdf_status": "safety_skip",
     "evidence_status": "doi_metadata_safety_skip_closeout",
     "source_limited": "yes",
-    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly indicates closed-loop experimental AI for metasurface design. Round2Note2026-06-19: weak-evidence note added; keep `04.04` for now because the visible object is pixelated metasurface design, but this remains a mandatory `04 / 09` and evidence-strength follow-up sample. RelaxedRound2P1N2026-06-21: scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=Crossref DOI record `10.1117/12.3091089` + DOI resolver / official SPIE landing; evidence=the stable object is pixelated metasurface / engineered nanostructure design, and the currently accessible first-hand metadata does not show an independent engineering-system or process object strong enough to add `09`. Batch16Partial8Reaudit2026-06-23: DOI/title-level metadata and the prior SPIE landing boundary were rechecked; no local PDF was found and the downstream SPIE page remained not safely accessible in this environment, so this closeout keeps `scientific_object_modules=04` only and does not add `09`."
+    "access_note": "Source trail: Crossref thematic expansion 2026-06-17; title explicitly indicates closed-loop experimental AI for metasurface design. Round2Note2026-06-19: weak-evidence note added; keep `04.04` for now because the visible object is pixelated metasurface design, but this remains a mandatory `04 / 09` and evidence-strength follow-up sample. RelaxedRound2P1N2026-06-21: scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=Crossref DOI record `10.1117/12.3091089` + DOI resolver / official SPIE landing; evidence=the stable object is pixelated metasurface / engineered nanostructure design, and the currently accessible first-hand metadata does not show an independent engineering-system or process object strong enough to add `09`. Batch16Partial8Reaudit2026-06-23: DOI/title-level metadata and the prior SPIE landing boundary were rechecked; no local PDF was found and the downstream SPIE page remained not safely accessible in this environment, so this closeout keeps `scientific_object_modules=04` only and does not add `09`.; PR82Recheck2026-10-29: closed_rows=0; pending_rows=2; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0565",
@@ -87,17 +77,7 @@
     "pdf_status": "abstract_only_checked",
     "evidence_status": "first_hand_abstract_review_packet",
     "source_limited": "no",
-    "access_note": "Source trail: materials-agent thematic expansion 2026-06-17; title explicitly states autonomous discovery of a concrete alloy class. NoteLanded2026-06-19: keep `04.04`. Batch24Partial1Reaudit2026-06-23: ScienceDirect abstract and DOI landing page rechecked; note synced and landed `scientific_object_modules=04`, `object_coverage_mode=single_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; this row no longer stays in the old Crossref-only conservative-hold state. ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 04.02; not a new full-text scientific judgment;"
-  },
-  {
-    "paper_id": "ASD-0569",
-    "title": "Autonomous Nanocrystal Doping by Self-Driving Fluidic Micro-Processors",
-    "doi": "10.1002/aisy.202200017",
-    "url": "https://doi.org/10.1002/aisy.202200017",
-    "pdf_status": "source_limited_no_local_pdf",
-    "evidence_status": "source_limited_review_packet",
-    "source_limited": "yes",
-    "access_note": "Source trail: Nature/SDL citation expansion 2026-06-17; title explicitly indicates a self-driving fluidic platform for nanocrystal doping under a concrete materials object. NoteLanded2026-06-19: keep `04.03`; official abstract supports a concrete nanocrystal-doping materials object despite the multistage chemistry framing. Batch23Partial1Reaudit2026-06-23: source-limited page-level evidence rechecked; note synced and landed `scientific_object_modules=04`, `object_coverage_mode=single_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; keep the materials-object reading."
+    "access_note": "Source trail: materials-agent thematic expansion 2026-06-17; title explicitly states autonomous discovery of a concrete alloy class. NoteLanded2026-06-19: keep `04.04`. Batch24Partial1Reaudit2026-06-23: ScienceDirect abstract and DOI landing page rechecked; note synced and landed `scientific_object_modules=04`, `object_coverage_mode=single_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; this row no longer stays in the old Crossref-only conservative-hold state. ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 04.02; not a new full-text scientific judgment;; PR82Recheck2026-10-29: closed_rows=0; pending_rows=4; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0572",
@@ -107,17 +87,7 @@
     "pdf_status": "abstract_only_checked",
     "evidence_status": "first_hand_abstract_review_packet",
     "source_limited": "yes",
-    "access_note": "Source trail: high-impact / citation expansion 2026-06-17; metadata upgraded 2026-06-17 from DOI landing, PubMed abstract, and related first-hand metadata pages. Round2Note2026-06-19: canonical title / DOI / authors normalized from Crossref. Batch24Partial1Reaudit2026-06-23: PubMed abstract, ScienceDirect highlights/progress summary, and ChemRxiv stable preprint page rechecked; note synced and landed `scientific_object_modules=04;06`, `object_coverage_mode=multi_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; polymer-blend formulation and materials-performance optimization remain the primary object, while protein-stabilization validation adds independent life-science coverage. Phase6FollowupR5Harmonization2026-07-02: keep `scientific_object_modules=04;06`, but harmonize to `source_limited=yes` / `access_limited` because no local full-text PDF was verified in the current environment."
-  },
-  {
-    "paper_id": "ASD-0592",
-    "title": "Autonomous materials synthesis by machine learning and robotics",
-    "doi": "10.1063/5.0020370",
-    "url": "https://doi.org/10.1063/5.0020370",
-    "pdf_status": "publisher_pdf_checked_no_local_archive",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Source trail: materials citation expansion 2026-06-17; title and source explicitly indicate autonomous materials synthesis by machine learning and robotics. NoteLanded2026-06-19: keep `04.04`; stable object is thin-film materials property optimization rather than generic workflow infrastructure. Batch17Partial1 2026-06-22: AIP official PDF rechecked; note synced; keep `scientific_object_modules=04`, `primary_module_for_filing=04`, `general_method_bucket=none`."
+    "access_note": "Source trail: high-impact / citation expansion 2026-06-17; metadata upgraded 2026-06-17 from DOI landing, PubMed abstract, and related first-hand metadata pages. Round2Note2026-06-19: canonical title / DOI / authors normalized from Crossref. Batch24Partial1Reaudit2026-06-23: PubMed abstract, ScienceDirect highlights/progress summary, and ChemRxiv stable preprint page rechecked; note synced and landed `scientific_object_modules=04;06`, `object_coverage_mode=multi_module`, `primary_module_for_filing=04`, `general_method_bucket=none`; polymer-blend formulation and materials-performance optimization remain the primary object, while protein-stabilization validation adds independent life-science coverage. Phase6FollowupR5Harmonization2026-07-02: keep `scientific_object_modules=04;06`, but harmonize to `source_limited=yes` / `access_limited` because no local full-text PDF was verified in the current environment.; PR82Recheck2026-10-29: closed_rows=4; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://pmc.ncbi.nlm.nih.gov/articles/PMC12377483/; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0617",
@@ -127,7 +97,7 @@
     "pdf_status": "source_limited_no_local_pdf",
     "evidence_status": "source_limited_review_packet",
     "source_limited": "yes",
-    "access_note": "Source trail: Nature-family protein-evolution branch 2026-06-17; forward/citation expansion from `Self-driving laboratories to autonomously navigate the protein fitness landscape`; industrial automated laboratory for programmable protein evolution under a concrete protein-engineering object. NoteLanded2026-06-19: keep `06.03`; the stable object is programmable protein evolution, while the main remaining risk is evidence completeness rather than top-level classification. Batch23Partial1Reaudit2026-06-23: source-limited publisher page/abstract evidence rechecked; note synced and landed `scientific_object_modules=06`, `object_coverage_mode=single_module`, `primary_module_for_filing=06`, `general_method_bucket=none`; keep the programmable protein-evolution reading."
+    "access_note": "Source trail: Nature-family protein-evolution branch 2026-06-17; forward/citation expansion from `Self-driving laboratories to autonomously navigate the protein fitness landscape`; industrial automated laboratory for programmable protein evolution under a concrete protein-engineering object. NoteLanded2026-06-19: keep `06.03`; the stable object is programmable protein evolution, while the main remaining risk is evidence completeness rather than top-level classification. Batch23Partial1Reaudit2026-06-23: source-limited publisher page/abstract evidence rechecked; note synced and landed `scientific_object_modules=06`, `object_coverage_mode=single_module`, `primary_module_for_filing=06`, `general_method_bucket=none`; keep the programmable protein-evolution reading.; PR82Recheck2026-10-29: closed_rows=2; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://www.nature.com/articles/s44286-025-00303-w; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0603",
@@ -137,7 +107,7 @@
     "pdf_status": "abstract_only_checked",
     "evidence_status": "first_hand_abstract_review_packet",
     "source_limited": "yes",
-    "access_note": "Source trail: Science chemistry-automation anchor 2026-06-17; Science article presents a reconfigurable automated system for optimizing diverse chemical reactions through iterative experimental control. NoteLanded2026-06-19: keep `03.03`; despite broad platform language, the stable scientific object remains concrete reaction optimization across multiple chemistry families. Batch23Partial1Reaudit2026-06-23: source-limited Science metadata/abstract evidence rechecked; note synced and landed `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; keep the chemistry-object reading."
+    "access_note": "Source trail: Science chemistry-automation anchor 2026-06-17; Science article presents a reconfigurable automated system for optimizing diverse chemical reactions through iterative experimental control. NoteLanded2026-06-19: keep `03.03`; despite broad platform language, the stable scientific object remains concrete reaction optimization across multiple chemistry families. Batch23Partial1Reaudit2026-06-23: source-limited Science metadata/abstract evidence rechecked; note synced and landed `scientific_object_modules=03`, `object_coverage_mode=single_module`, `primary_module_for_filing=03`, `general_method_bucket=none`; keep the chemistry-object reading.; PR82Recheck2026-10-29: closed_rows=2; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://api.crossref.org/works/10.1126/science.aat0650; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0609",
@@ -147,17 +117,7 @@
     "pdf_status": "preprint_pdf_checked_no_local_archive",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Source trail: Lapkin chemistry-automation branch 2026-06-17; robotic workflows plus active machine learning for closed-loop pH adjustment optimization in chemical systems. Round2NoteLanded2026-06-19: formal note keeps top-level `03`; the main remaining risk is evidence completeness and second-level refinement, not a `03 / 09` top-level move. RelaxedRound2P1L2026-06-21: scientific_object_modules=03; object_coverage_mode=single_module; primary_module_for_filing=03; general_method_bucket=none; first_hand_sources_checked=ChemRxiv full-text PDF + ScienceDirect publisher page/abstract; evidence=the closed-loop robotic workflow is validated on buffered chemical systems including acetate, citrate, KH2PO4, and ammonium compositions, while industrial/process-control language remains application motivation rather than an independent engineering-system experiment, so `09` is not added. Batch18Reaudit2026-06-22: note wording refreshed against first-hand ChemRxiv full text plus publisher metadata; `03.03` remains stable and the earlier `03 / 09` pressure is closed conservatively in favor of concrete chemical-system optimization."
-  },
-  {
-    "paper_id": "ASD-0631",
-    "title": "Autonomous Discovery of Polymer Electrolyte Formulations with Warm-Start Batch Bayesian Optimization",
-    "doi": "10.1021/acs.chemmater.5c01209",
-    "url": "https://doi.org/10.1021/acs.chemmater.5c01209",
-    "pdf_status": "preprint_pdf_checked_no_local_archive",
-    "evidence_status": "first_hand_preprint_pdf_review_packet",
-    "source_limited": "no",
-    "access_note": "Source trail: battery/electrolyte sibling expansion from ASD-0608 and ASD-0621 2026-06-17; Chemistry of Materials paper presents a closed-loop warm-start Bayesian optimization pipeline on an autonomous polymer-electrolyte platform for solid-state battery materials. NoteLanded2026-06-19: keep `04.04`; current class is stable, while the main remaining risk is full-text validation of autonomy and experiment-detail strength. ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 04.03; not a new full-text scientific judgment;"
+    "access_note": "Source trail: Lapkin chemistry-automation branch 2026-06-17; robotic workflows plus active machine learning for closed-loop pH adjustment optimization in chemical systems. Round2NoteLanded2026-06-19: formal note keeps top-level `03`; the main remaining risk is evidence completeness and second-level refinement, not a `03 / 09` top-level move. RelaxedRound2P1L2026-06-21: scientific_object_modules=03; object_coverage_mode=single_module; primary_module_for_filing=03; general_method_bucket=none; first_hand_sources_checked=ChemRxiv full-text PDF + ScienceDirect publisher page/abstract; evidence=the closed-loop robotic workflow is validated on buffered chemical systems including acetate, citrate, KH2PO4, and ammonium compositions, while industrial/process-control language remains application motivation rather than an independent engineering-system experiment, so `09` is not added. Batch18Reaudit2026-06-22: note wording refreshed against first-hand ChemRxiv full text plus publisher metadata; `03.03` remains stable and the earlier `03 / 09` pressure is closed conservatively in favor of concrete chemical-system optimization.; PR82Recheck2026-10-29: closed_rows=1; pending_rows=1; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0724",
@@ -167,7 +127,7 @@
     "pdf_status": "source_limited_no_local_pdf",
     "evidence_status": "first_hand_abstract_and_doi_metadata",
     "source_limited": "yes",
-    "access_note": "Source trail: Science-family marine-observation sibling expansion 2026-06-19; the system autonomously searches for, localizes, and maps coral-reef biodiversity hotspots through multimodal environmental interaction and adaptive decision-making, so the scientific object is marine biodiversity rather than generic underwater robotics. Round4Audit2026-06-18: secondary class tightened from invalid 06.04 to 06.02 because the object is marine biodiversity rather than a missing biotechnology subtype. Formal note added 2026-06-19; retained in 06.02 rather than 05 because the final object is biodiversity hotspots, not ocean-process science. Batch30Partial3Reaudit2026-06-24: official DOI metadata abstract plus author metadata support a landed `06` closeout with `source_limited=yes`; corrected legacy author lead from `Brennan C. Phillips et al.` to `Seth McCammon et al.` and keep the biodiversity-object reading rather than `05` or `01.04`."
+    "access_note": "Source trail: Science-family marine-observation sibling expansion 2026-06-19; the system autonomously searches for, localizes, and maps coral-reef biodiversity hotspots through multimodal environmental interaction and adaptive decision-making, so the scientific object is marine biodiversity rather than generic underwater robotics. Round4Audit2026-06-18: secondary class tightened from invalid 06.04 to 06.02 because the object is marine biodiversity rather than a missing biotechnology subtype. Formal note added 2026-06-19; retained in 06.02 rather than 05 because the final object is biodiversity hotspots, not ocean-process science. Batch30Partial3Reaudit2026-06-24: official DOI metadata abstract plus author metadata support a landed `06` closeout with `source_limited=yes`; corrected legacy author lead from `Brennan C. Phillips et al.` to `Seth McCammon et al.` and keep the biodiversity-object reading rather than `05` or `01.04`.; PR82Recheck2026-10-29: closed_rows=3; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://api.crossref.org/works/10.1126/scirobotics.adx9939; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0727",
@@ -177,7 +137,7 @@
     "pdf_status": "source_limited_no_local_pdf",
     "evidence_status": "source_limited_review_packet",
     "source_limited": "yes",
-    "access_note": "Source trail: OpenEarth-Agent / Earth-Agent geospatial sibling expansion 2026-06-19; NoteLanded2026-06-20: formal ASD note added from DOI / abstract evidence. MetadataCorrection2026-06-20: authors corrected from incomplete metadata. Class kept at `05.04`; the main risk remains limited `05 / 01.04` framing pressure rather than a real top-level mismatch. Batch25Partial1Reaudit2026-06-23: closed; official abstract evidence keeps this in module 05; note/master closed as source_limited rather than 01.04."
+    "access_note": "Source trail: OpenEarth-Agent / Earth-Agent geospatial sibling expansion 2026-06-19; NoteLanded2026-06-20: formal ASD note added from DOI / abstract evidence. MetadataCorrection2026-06-20: authors corrected from incomplete metadata. Class kept at `05.04`; the main risk remains limited `05 / 01.04` framing pressure rather than a real top-level mismatch. Batch25Partial1Reaudit2026-06-23: closed; official abstract evidence keeps this in module 05; note/master closed as source_limited rather than 01.04.; PR82Recheck2026-10-29: closed_rows=0; pending_rows=3; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0854",
@@ -187,7 +147,7 @@
     "pdf_status": "safety_skip",
     "evidence_status": "first_hand_public_full_text_and_official_project_page",
     "source_limited": "no",
-    "access_note": "Source trail: mission-science rover lineage expansion 2026-06-18; the paper describes mission-science autonomy that integrates onboard analysis, planning, and adaptive scientific follow-up for a Mars rover, making it a class-10 core Agent paper. NoteLanded2026-06-20: formal note added; batch13 review keeps `10 / 10.02` because the scientific object remains Mars-rover mission-science autonomy rather than an Earth-observation or generic workflow object. Batch30Partial3Reaudit2026-06-24: public full-text conference page plus official JPL OASIS page support a landed `10` closeout; corrected the author line to `Tara Estlin; Rebecca Castano; Daniel Gaines; Benjamin Bornstein; Michele Judd; Robert C. Anderson`. A mirror PDF archive attempt was `not accessed due to safety` because the mirror TLS certificate had expired, so no local PDF path was added and the safety skip remains visible."
+    "access_note": "Source trail: mission-science rover lineage expansion 2026-06-18; the paper describes mission-science autonomy that integrates onboard analysis, planning, and adaptive scientific follow-up for a Mars rover, making it a class-10 core Agent paper. NoteLanded2026-06-20: formal note added; batch13 review keeps `10 / 10.02` because the scientific object remains Mars-rover mission-science autonomy rather than an Earth-observation or generic workflow object. Batch30Partial3Reaudit2026-06-24: public full-text conference page plus official JPL OASIS page support a landed `10` closeout; corrected the author line to `Tara Estlin; Rebecca Castano; Daniel Gaines; Benjamin Bornstein; Michele Judd; Robert C. Anderson`. A mirror PDF archive attempt was `not accessed due to safety` because the mirror TLS certificate had expired, so no local PDF path was added and the safety skip remains visible.; PR82Recheck2026-10-29: closed_rows=2; pending_rows=1; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://arc.aiaa.org/doi/pdf/10.2514/6.2008-3241; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0855",
@@ -197,7 +157,7 @@
     "pdf_status": "publisher_page_checked_visible_pdf_route",
     "evidence_status": "first_hand_abstract_and_official_pages",
     "source_limited": "no",
-    "access_note": "Source trail: Nature/Science knowledge-production sibling expansion 2026-06-18; the IFAC paper presents a multi-agent framework explicitly for transparent and trustworthy scientific evaluation, so the object is scientific peer review itself and it belongs in `11.07`. NoteLanded2026-06-18: formal ASD note added. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only and that earlier pass remained `source_limited=yes` because no legal PDF had been directly accessed. Phase6FollowupR19Real2026-07-05: the official ScienceDirect page, complimentary-access abstract visibility, and visible publisher `View PDF` route were rechecked; the stable `11.07` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read."
+    "access_note": "Source trail: Nature/Science knowledge-production sibling expansion 2026-06-18; the IFAC paper presents a multi-agent framework explicitly for transparent and trustworthy scientific evaluation, so the object is scientific peer review itself and it belongs in `11.07`. NoteLanded2026-06-18: formal ASD note added. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only and that earlier pass remained `source_limited=yes` because no legal PDF had been directly accessed. Phase6FollowupR19Real2026-07-05: the official ScienceDirect page, complimentary-access abstract visibility, and visible publisher `View PDF` route were rechecked; the stable `11.07` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read.; PR82Recheck2026-10-29: closed_rows=1; pending_rows=2; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0858",
@@ -207,7 +167,7 @@
     "pdf_status": "official_result_snippet_visible_pdf_route",
     "evidence_status": "first_hand_abstract_and_official_pages",
     "source_limited": "no",
-    "access_note": "Source trail: Science Robotics 2017 AEGIS -> mission-ops sibling expansion 2026-06-18; this paper integrates AEGIS autonomous science into Mars Science Laboratory mission operations under real mission constraints, making it a clean class-10 mission-science Agent record rather than a generic autonomy paper. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `10 / 10.02` because the core object is rover mission operations and autonomous science execution rather than an Earth-environment monitoring target. Batch29Partial1Reaudit2026-06-24: closed; first-hand NASA NTRS record only and that earlier pass remained `source_limited=yes` because no downloadable PDF had been accessed. Phase6FollowupR19Real2026-07-05: the official AIAA result snippet and visible publisher PDF route were rechecked; the stable `10` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read."
+    "access_note": "Source trail: Science Robotics 2017 AEGIS -> mission-ops sibling expansion 2026-06-18; this paper integrates AEGIS autonomous science into Mars Science Laboratory mission operations under real mission constraints, making it a clean class-10 mission-science Agent record rather than a generic autonomy paper. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `10 / 10.02` because the core object is rover mission operations and autonomous science execution rather than an Earth-environment monitoring target. Batch29Partial1Reaudit2026-06-24: closed; first-hand NASA NTRS record only and that earlier pass remained `source_limited=yes` because no downloadable PDF had been accessed. Phase6FollowupR19Real2026-07-05: the official AIAA result snippet and visible publisher PDF route were rechecked; the stable `10` landing is preserved and the old source-limited ceiling is cleared truthfully without claiming a local archived PDF or a completed full-text read.; PR82Recheck2026-10-29: closed_rows=3; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://ntrs.nasa.gov/citations/20210008310; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0859",
@@ -217,7 +177,7 @@
     "pdf_status": "source_limited_no_local_pdf",
     "evidence_status": "first_hand_abstract_and_official_pages",
     "source_limited": "yes",
-    "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; the ASE pipeline detects volcanic activity onboard, replans observations, and acquires responsive Earth-observation science data, so the scientific object is volcanic Earth-system monitoring and it fits class `05` rather than `10`. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `05 / 05.04` because the final scientific object is active-volcanism monitoring rather than spacecraft autonomy as an end in itself. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes."
+    "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; the ASE pipeline detects volcanic activity onboard, replans observations, and acquires responsive Earth-observation science data, so the scientific object is volcanic Earth-system monitoring and it fits class `05` rather than `10`. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `05 / 05.04` because the final scientific object is active-volcanism monitoring rather than spacecraft autonomy as an end in itself. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes.; PR82Recheck2026-10-29: closed_rows=2; pending_rows=1; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0860",
@@ -227,7 +187,7 @@
     "pdf_status": "source_limited_no_local_pdf",
     "evidence_status": "first_hand_abstract_and_official_pages",
     "source_limited": "yes",
-    "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; the paper centers onboard detection and follow-up of cryospheric change using Hyperion on EO-1, so the primary object is Earth-system / cryosphere science rather than spacecraft engineering. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `05 / 05.04` because the scientific object remains cryospheric Earth-system change rather than mission-autonomy infrastructure. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes."
+    "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; the paper centers onboard detection and follow-up of cryospheric change using Hyperion on EO-1, so the primary object is Earth-system / cryosphere science rather than spacecraft engineering. NoteLanded2026-06-20: formal ASD note added; batch13 review keeps `05 / 05.04` because the scientific object remains cryospheric Earth-system change rather than mission-autonomy infrastructure. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes.; PR82Recheck2026-10-29: closed_rows=2; pending_rows=1; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0861",
@@ -237,127 +197,7 @@
     "pdf_status": "source_limited_no_local_pdf",
     "evidence_status": "first_hand_abstract_and_official_pages",
     "source_limited": "yes",
-    "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; this ASE application performs onboard flood detection, monitoring, and responsive observation for Earth-system science, so it is best classified in `05` despite being mission-borne. NoteLanded2026-06-20: formal ASD note added; batch14 review keeps `05 / 05.04` because the final scientific object remains flood monitoring and Earth-observation science rather than spacecraft autonomy as an end in itself. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes."
-  },
-  {
-    "paper_id": "ASD-0874",
-    "title": "Auditing Discovery Claims: A Two-Sided Criterion for Agentic Science, with the Negative Side Decidable",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.00981",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=06.01.03; fulltext_followup_required=false; 鍏蜂綋瀵硅薄涓篟NA搴忓垪鍙婁簩绾х粨鏋勶紝寤鸿06.01.03鍒嗗瓙鐢熺墿瀛︺€俁NA瀵硅薄涓婃湁璁捐鍜岄獙璇佷换鍔★紝涓嶈兘褰?1.04銆?scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.00981; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0875",
-    "title": "Science sandboxes measure the scientific capability of AI agents",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.30165",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=06.01.13; fulltext_followup_required=false; MPRAbox璋冩帶DNA搴忓垪浠诲姟鏀寔06.01.06閬椾紶瀛︼紱CodonBox娑夊強缂栫爜搴忓垪鍜岃泲鐧絝itness锛屾敮鎸?6.03.06铔嬬櫧璐ㄧ瀛︺€傚璞＄骇浠诲姟鎺掗櫎01.04锛涚爺绌跺璞′笉鏄瀛﹀叡鍚屼綋锛岄潪11.07銆?涓绘帶妯″潡鍐呰惤鐐归噰鐢?6.01.13璁＄畻鐢熺墿瀛︼紝浠ユ壙杞借皟鎺у熀鍥犵粍涓庤泲鐧介€傚簲搴︿袱涓疄楠屽璞＄皣锛涘璞＄粏鑺備繚鐣欏湪璇佹嵁鏃ュ織銆?scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.30165; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0876",
-    "title": "CausalDS: Benchmarking Causal Reasoning in Data-Science Agents",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2607.08093",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=01.03; fulltext_followup_required=false; 寤鸿01.03锛岀爺绌跺璞℃槸缁撴瀯鍥犳灉妯″瀷銆佽瘑鍒笌璁＄畻鎺ㄦ柇銆傚悎鎴愭晠浜嬭櫧鍩轰簬鐪熷疄棰嗗煙鍒嗗竷锛屼絾涓嶆槸瀹炴祴鍐滀笟鎴栧叾瀹冭嚜鐒跺璞★紱涓嶅簲鎸夋晠浜嬪寘瑁呮墿澶氫釜棰嗗煙銆?1.04涓嶉€傜敤锛屽洜涓烘湁鍏蜂綋褰㈠紡妯″瀷浠诲姟锛涗笌11.07鏃犲叧銆?scientific_object_modules=01; object_coverage_mode=single_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.08093; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0877",
-    "title": "The Silent Failures in Agentic Data Science",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2610.14115",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=01.03; fulltext_followup_required=false; 寤鸿01.03锛屽叧娉ㄦ暟鎹瀛﹀垎鏋愮▼搴忋€佸缓妯′笌楠岃瘉宸ヤ綔娴併€侹aggle鏉ユ簮鏈韩涓嶈冻浠ユ敮鎸佽嚜鐒剁瀛︽ā鍧楋紱涓嶆槸鏃犲叿浣撳璞＄殑01.04锛屼篃涓嶇爺绌剁瀛﹀叡鍚屼綋鎴栫煡璇嗙敓浜у埗搴︺€?scientific_object_modules=01; object_coverage_mode=single_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2610.14115; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0879",
-    "title": "CrossAudit: A Git-Native, Cross-Vendor Audit Loop for Agentic Science",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.28631",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=11.07; fulltext_followup_required=false; 鍊惧悜11.07锛氬璁″璞′负绉戠爺娴佹按绾裤€佺瀛︿富寮犲拰绉戠爺璐ㄩ噺娌荤悊杩囩▼銆傝嫢鍏ㄦ枃璇佸疄鍗忚瀹屽叏閫氱敤涓旀湭瀹為檯鏍搁獙绉戠爺涓诲紶锛屽彲鏀逛负01.04銆傝绠楀寲瀛﹀彧鏄儴缃插満鏅紝娌℃湁鍒嗗瓙/鍙嶅簲瀹為獙锛屼笉鑳芥嵁姝ゅ垎03銆?涓绘帶涓庣嫭绔嬪绋垮鏍嘎?.1銆伮?.4銆伮?.2锛氬Agent鐢熸垚銆佸紓鍘傚晢瀹¤銆佷慨璁㈠強鍗囩骇娴佺▼婊¤冻绉戠爺瑙掕壊锛涗互绉戝璁板綍鍜屼富寮犲璁′负瀹為檯楠岃瘉瀵硅薄锛岄噰鐢?1.07銆俻erovskite additive浠呴儴缃茶澧冿紝鏃犳坊鍔犲墏瀵硅薄缁撴灉锛屾殏涓嶅姞03/04銆?scientific_object_modules=11; object_coverage_mode=single_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.28631; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0880",
-    "title": "Can Autonomous LLM Agents Execute Multireference Quantum Chemistry Calculations?",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2609.13357",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=03.02; fulltext_followup_required=false; 瀵硅薄鏄垎瀛愮數瀛愮粨鏋勪笌璺冭縼鑳斤紝褰掑寲瀛?3.02锛涗笉鍥犱綔鑰呮満鏋勬垨璁＄畻鏂规硶褰掓潗鏂?4/璁＄畻绉戝銆?scientific_object_modules=03; object_coverage_mode=single_module; primary_module_for_filing=03; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.13357; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0882",
-    "title": "Hypothesis-Driven Autonomous Materials Synthesis with Multimodal LLM Agents",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2609.18598",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.04; fulltext_followup_required=false; LiCoO2钖勮啘鍙婂叾鐢熼暱/缁撴櫠鎬ц兘涓烘潗鏂欏璞★紝褰?4.04锛涜櫧鍚矇绉繃绋嬶紝浣嗘湭瑙佺嫭绔嬪弽搴斿寲瀛﹀疄楠屾敮鎸?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.18598; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0884",
-    "title": "AutoXRD: Autonomous LLM Agents and Comprehensive Evaluation for Powder Diffraction Analysis",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2609.00070",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.01; fulltext_followup_required=false; 绮夋湯琛嶅皠鐢ㄤ簬鏉愭枡缁撴瀯琛ㄥ緛锛屽綊04.01锛涘叿浣撴櫠鐩告渚嬪彲鎸夎瘉鎹粏鍖栬嚦04.02锛屼笉鍥燲RD灞炲垎鏋愬寲瀛﹀氨褰?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.00070; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0886",
-    "title": "Autonomous discovery of new structure-plausibility laws for explainable and rapid crystal diagnosis and screening",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2609.01209",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.02; fulltext_followup_required=false; 鏍稿績瀵硅薄涓烘棤鏈烘櫠浣撶粨鏋勫拰鏅朵綋鍖栧锛屽綊04.02锛涘寲瀛﹂敭瑙勫緥鏄В閲婃満鍒讹紝涓嶆槸鐙珛鍒嗗瓙鍙嶅簲浠诲姟銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.01209; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0887",
-    "title": "Evaluating a 4B open-weights local LLM for agentic DFT workflows: a literature reproducibility audit",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.29665",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.02; fulltext_followup_required=false; 瀵硅薄鏄簩缁翠簲瑙掓櫠浣撳拰鏉愭枡缁撴瀯/鏅舵牸甯告暟锛屽綊04.02锛汥FT涓庢枃鏈娊鍙栨槸鐮旂┒鏂规硶锛屼笉鍙﹀綊01鎴?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2608.29665; source_checked_at=2026-10-22; ParentCodeRepair2026-10-29: retained prior tertiary decision; align secondary parent to 04.01; not a new full-text scientific judgment;"
-  },
-  {
-    "paper_id": "ASD-0888",
-    "title": "SQD-Agent: LLM-driven agentic framework for Quantum Chemistry workflows",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2609.39302",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=03.02; fulltext_followup_required=false; 鐮旂┒瀵硅薄涓篘2/CH2O鍒嗗瓙鐢靛瓙缁撴瀯锛屽綊03.02锛涢噺瀛愯绠楄澶囧拰閲囨牱绠楁硶鏄墽琛屽伐鍏凤紝涓嶆嵁姝ゅ綊02鎴?1銆?scientific_object_modules=03; object_coverage_mode=single_module; primary_module_for_filing=03; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2609.39302v2; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0889",
-    "title": "RaspAssistant as an Agentic Framework for Automating Adsorption Simulation Research in Porous Materials",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2610.27572",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=04.03; fulltext_followup_required=false; MOF/娌哥煶鏄瀛斿姛鑳芥潗鏂欙紝鐩存帴鐮旂┒瀛旂粨鏋勫拰鍚搁檮/鍒嗙鍔熻兘锛屽綊04.03锛涘惛闄勮川鏄帰閽堬紝鏈互鍙嶅簲鎴栧悎鎴愪负鐮旂┒瀵硅薄锛屼笉鍔?3銆?scientific_object_modules=04; object_coverage_mode=single_module; primary_module_for_filing=04; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/html/2610.27572; source_checked_at=2026-10-22;"
+    "access_note": "Source trail: EO-1 ASE application-paper cluster from Nature/Science mission-science lineage 2026-06-18; this ASE application performs onboard flood detection, monitoring, and responsive observation for Earth-system science, so it is best classified in `05` despite being mission-borne. NoteLanded2026-06-20: formal ASD note added; batch14 review keeps `05 / 05.04` because the final scientific object remains flood monitoring and Earth-observation science rather than spacecraft autonomy as an end in itself. Batch29Partial1Reaudit2026-06-24: closed; first-hand ScienceDirect article page only; no legal PDF directly accessible supports scientific_object_modules=05; primary_module_for_filing=05; general_method_bucket=none; source_limited=yes.; PR82Recheck2026-10-29: closed_rows=2; pending_rows=1; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json;"
   },
   {
     "paper_id": "ASD-0892",
@@ -367,57 +207,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=06.03.01;07.04.01; fulltext_followup_required=false; 鎸夊疄闄呯瀛﹀璞￠噰鐢?6+07澶氭ā鍧楋細缁嗚優绫诲瀷鐗瑰紓鎬у熀鍥犮€侀仐浼犳敮鎸佸拰鍗曠粏鑳炶浆褰曠粍闈剁偣鐗瑰緛灞炰簬06锛汢7-H3鑲虹檶娌荤枟闈剁偣銆丱SMR尾婧冪枴鎬х粨鑲犵値鍙婅嵂鐗╀复搴婅瘯楠岃繘灞?瀹夊叏鎬ф瀯鎴愮嫭绔嬬殑07鐤剧梾涓庤嵂鐗╁紑鍙戝璞★紝涓诲綊妗?7銆傚畠涓嶆槸浠呰璁洪€氱敤Agent妗嗘灦鐨?1.04锛涗复搴婅瘯楠屼笌鐤剧梾瀵硅薄涓嶈兘鍥犲嚭鐜板熀鍥犳暟鎹€屽帇缂╁埌06銆?scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; first_hand_sources_checked=https://pmc.ncbi.nlm.nih.gov/articles/PMC12970349/?report=xml; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0899",
-    "title": "Mind the alignment gap: a spatial transcriptomics benchmark for scientific coding agents",
-    "doi": "10.64898/2026.07.05.736638",
-    "url": "https://doi.org/10.64898/2026.07.05.736638",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=06.03.04; fulltext_followup_required=false; 鐮旂┒浠诲姟浠ョ┖闂磋浆褰曠粍鏁版嵁銆佺粍缁囧垏鐗囧潗鏍囬厤鍑嗗拰缁勫鍒嗘瀽宸ュ叿涓虹洿鎺ョ瀛﹀璞★紝閲囩敤06.03.04鍗曠粏鑳?绌洪棿缁勫鐩稿叧鐮旂┒鍙?6.01.12鐢熺墿淇℃伅瀛︿唬鐮併€傚畠涓嶆槸鍙彁鍑洪€氱敤Agent benchmark鐨?1.04璁烘枃锛屼篃娌℃湁鐙珛鐨勭梾浜鸿瘖鏂?娌荤枟浠诲姟鏀寔07銆?scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://www.biorxiv.org/content/10.64898/2026.07.05.736638v1.full; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0901",
-    "title": "scBaseCount: An AI agent-curated, standardized, auto-updated single-cell data repository",
-    "doi": "10.1016/j.cell.2026.08.025",
-    "url": "https://doi.org/10.1016/j.cell.2026.08.025",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberRecheck7_2026-10-22: 涓冪瘒涓撻」澶嶆牳锛泂ource_level=fulltext; module_taxonomy_codes=06.03.04; fulltext_followup_required=false; 鍥哄畾浠ｇ爜06.03.04鍗曠粏鑳炵敓鐗╁銆傚璞′负鍗曠粏鑳炶浆褰曠粍銆丼RA鏁版嵁闆嗕笌璺ㄥ疄楠屾爣鍑嗗寲锛屾敮鎸?6锛涜櫧鎶藉彇disease鍏冩暟鎹紝浣嗘棤鐤剧梾璇婃柇鎴栨不鐤椾换鍔★紝涓嶅垎閰?7銆傞偦杩戜竴鑸暟鎹簱/鏁版嵁宸ョ▼璁烘枃鍙?1.04閫氱敤鏂规硶锛涙湰鏂囨湁鏄庣‘鐢熺墿鏁版嵁鍙戠幇銆佹敞閲婁笌澶勭悊涓殑澶氭Agent琛屽姩锛岀撼鍏ヤ緷鎹厖鍒嗐€?scientific_object_modules=06; object_coverage_mode=single_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://www.biorxiv.org/content/early/2025/05/06/2025.02.27.640494.source.xml; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0902",
-    "title": "Perturb-ME: Scalable mechanism discovery from phenotype-enriched genome-wide screens",
-    "doi": "10.64898/2026.08.17.745330",
-    "url": "https://doi.org/10.64898/2026.08.17.745330",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberRecheck7_2026-10-22: 涓冪瘒涓撻」澶嶆牳锛泂ource_level=fulltext; module_taxonomy_codes=06.03.01;07.02.05; fulltext_followup_required=false; 涓夌骇浠ｇ爜涓?6.03.01鍩哄洜缁勫锛堝叏鍩哄洜缁凜RISPR鎵板姩锛夊強07.02.05鑲跨槫瀛︼紙榛戣壊绱犵槫鍙婅偪鐦HC-I琛ㄥ瀷锛夈€傜湡瀹炶偪鐦ゅ姛鑳藉熀鍥犵粍鏁版嵁鏀寔06涓?7锛涗笉灞炰簬01.04閫氱敤鏂规硶銆備富瑕侀闄╂槸Agent缁撹寮哄害锛岃€岄潪瀵硅薄鍒嗙被銆?scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=06; general_method_bucket=none; first_hand_sources_checked=https://www.biorxiv.org/content/10.64898/2026.08.17.745330v1.full; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0903",
-    "title": "CLVisc Agent for autonomous relativistic hydrodynamics studies",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2607.27822",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=02.02.13; fulltext_followup_required=false; 閭昏繎 01锛堢瀛﹁绠楋級鍙?09锛堟ā鎷熻蒋浠讹級锛屼絾璁＄畻绋嬪簭鏄爺绌舵墜娈碉紱瀹為檯缁撴灉閽堝澶稿厠鑳跺瓙绛夌瀛愪綋銆侀噸绂诲瓙纰版挒鍙婃牳缁撴瀯锛屽綊 02.02.13銆?scientific_object_modules=02; object_coverage_mode=single_module; primary_module_for_filing=02; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.27822; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0905",
-    "title": "ORBIT-Q: Dual-axis benchmarking of autonomous agents in scientific quantum programming",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2607.03105",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=01.02.17;02.02.06; fulltext_followup_required=false; 01.02.17 鍥犵爺绌剁瀛﹁绠楃▼搴忓強鍏堕獙璇侊紱02.02.06 鍥犲疄闄呬换鍔℃槸閲忓瓙鍔涘/閲忓瓙绠楁硶宸ヤ綔娴佸苟妫€鏌ョ墿鐞嗕繚鐪熴€傛ā鍧楀苟鍒楁湁瀵硅薄渚濇嵁锛屼笉鍥犱唬鐮佸伐鍏峰皢鍏跺叏閮ㄥ綊 01銆?scientific_object_modules=01;02; object_coverage_mode=multi_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.03105; source_checked_at=2026-10-22;"
+    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=06.03.01;07.04.01; fulltext_followup_required=false; 鎸夊疄闄呯瀛﹀璞￠噰鐢?6+07澶氭ā鍧楋細缁嗚優绫诲瀷鐗瑰紓鎬у熀鍥犮€侀仐浼犳敮鎸佸拰鍗曠粏鑳炶浆褰曠粍闈剁偣鐗瑰緛灞炰簬06锛汢7-H3鑲虹檶娌荤枟闈剁偣銆丱SMR尾婧冪枴鎬х粨鑲犵値鍙婅嵂鐗╀复搴婅瘯楠岃繘灞?瀹夊叏鎬ф瀯鎴愮嫭绔嬬殑07鐤剧梾涓庤嵂鐗╁紑鍙戝璞★紝涓诲綊妗?7銆傚畠涓嶆槸浠呰璁洪€氱敤Agent妗嗘灦鐨?1.04锛涗复搴婅瘯楠屼笌鐤剧梾瀵硅薄涓嶈兘鍥犲嚭鐜板熀鍥犳暟鎹€屽帇缂╁埌06銆?scientific_object_modules=06;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; first_hand_sources_checked=https://pmc.ncbi.nlm.nih.gov/articles/PMC12970349/?report=xml; source_checked_at=2026-10-22;; PR82Recheck2026-10-29: closed_rows=1; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://www.science.org/doi/pdf/10.1126/science.aeg6779; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-0906",
@@ -430,16 +220,6 @@
     "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=01.01.12; fulltext_followup_required=false; 褰?1.01.12鏁板/褰㈠紡鏁板锛堟部鐢ㄥ師璁板綍鐨勭粍鍚堟暟瀛︾粏鍒嗘爣娉級锛涙牳蹇冨璞℃槸Lean褰㈠紡璇佹槑鍜屽紑鏀炬暟瀛﹀懡棰樸€傞噺瀛愬厜瀛﹀彧鍦ㄦ憳瑕佷腑浣滀负閮ㄧ讲/搴旂敤棰嗗煙鎻愬強锛屾鏂囨湭瑙佸彲瀹氫綅鐨勭墿鐞嗗璞′换鍔°€佸疄楠屾垨缁撴灉锛屾晠涓嶅鍔?2銆侺ean鏄瘉鏄庨獙璇佸伐鍏凤紝涓嶆敼鍙樻暟瀛﹀璞″綊灞炪€?scientific_object_modules=01; object_coverage_mode=single_module; primary_module_for_filing=01; general_method_bucket=none; first_hand_sources_checked=https://ar5iv.labs.arxiv.org/html/2605.22763; source_checked_at=2026-10-22;"
   },
   {
-    "paper_id": "ASD-0907",
-    "title": "SciExam for ENSO: Can AI Agents Build Climate Models?",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2610.10513",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=05.02.02; fulltext_followup_required=false; 05鍦扮悆鐜鐨勬皵鍊欑郴缁熷璞℃槑纭€傚鏄撲笌01璁＄畻/AI鑳藉姏璇勬祴娣锋穯锛屼絾浠ｇ爜鍜孉gent鏄爺绌跺伐鍏凤紝鏈€缁堝璞″強楠岃瘉鍧囦负ENSO姘斿€欐ā鍨嬶紝鏁呭簲钀?5锛涙湭鍙戠幇鐙珛绠楁硶鑳藉姏瀹為獙闇€鍙﹀姞01銆傜被鍒闄╀綆锛屾牳蹇冨己搴︿粛鐢变富鎺у喅瀹氥€?scientific_object_modules=05; object_coverage_mode=single_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2610.10513; source_checked_at=2026-10-22;"
-  },
-  {
     "paper_id": "ASD-0908",
     "title": "Bringing Agentic Search to Earth Observation Data Discovery",
     "doi": "",
@@ -448,76 +228,6 @@
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
     "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=05.04.04; fulltext_followup_required=false; 搴斿綊05锛屽洜涓篵enchmark瀵硅薄鍜岃繑鍥炶祫婧愭槸NASA Earth Observation鍦扮悆绉戝鏁版嵁涓庡伐鍏枫€傚彲鑳借璇斁01淇℃伅妫€绱紱浣咺R绠楁硶鍙槸鏂规硶锛屼换鍔″璞″強绉戠爺浣跨敤鍦烘櫙鏄湴鐞冭娴嬫暟鎹彂鐜般€傝嫢涓绘帶灏嗙鐮旀暟鎹彂鐜拌涓洪€氱敤妫€绱㈣兘鍔涜€岄潪鍏蜂綋绉戝浠诲姟锛岄渶澶嶆牳Agent杈圭晫锛屽垎绫婚闄╀綆銆佽鑹茶寖鍥撮闄╀腑銆?scientific_object_modules=05; object_coverage_mode=single_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.02387; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0910",
-    "title": "InternReviewer & InternAdvocate: Objective Reward and Evaluation for Agentic Reinforcement Learning in Peer Review and Rebuttal",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.28612",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=11.07; fulltext_followup_required=false; 鐮旂┒瀵硅薄鐩存帴鏄悓琛岃瘎璁笌瀛︽湳绛旇京锛屽綊11.07锛涜櫧鐒朵娇鐢ㄩ€氱敤鏂囩尞妫€绱㈠伐鍏凤紝浣嗙鐮斿埗搴﹁鑹叉槑纭紝涓嶅綊01.04銆?scientific_object_modules=11; object_coverage_mode=single_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.28612; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0915",
-    "title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2610.19159",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberRecheck7_2026-10-22: 涓冪瘒涓撻」澶嶆牳锛泂ource_level=fulltext; module_taxonomy_codes=01.02.13;02.02;03.02;04.01;11.04; fulltext_followup_required=false; 涓绘帶鐙珛鏍稿鍏ㄦ枃Table 1锛歅3鍗风Н瀛楀吀瀛︿範绠楁硶銆丳4鍚堟垚鍑芥暟鑾峰彇绛栫暐銆丳8鍙傛暟鍖朠DE妯″瀷銆丳12楂樻柉杩囩▼鏀寔01锛堟寮忔ā鍧楄惤鐐?1.02.13锛屽叾浠栨暟瀛?鎴愬儚鏂瑰悜淇濈暀浠诲姟琛級锛汸5/P6/P10/P13/P14鏈夐噺瀛愬拰绛夌瀛愪綋瀵硅薄锛?2.02锛汸1鍒嗗瓙鑳介噺璁＄畻鏀寔03.02锛汸2/P15鏉愭枡鍘熷瓙闂村娍寤烘ā鏀寔04.01鏉愭枡鍩虹锛堟潗鏂欒绠椾笌淇℃伅瀛﹀睘浜庤浜岀骇绫伙級锛屼笉寮烘帹鏈牳娓呯殑鏉愭枡鏃忥紱P7棰滆壊鎰熺煡鐨勯敟缁嗚優閫氶亾鍋囪瀵瑰簲浜虹殑瑙嗚鎰熺煡涓庡績鐞嗚寰嬶紝鏀寔11.04銆侾11绌剁珶鍋忓寲瀛﹁繕鏄浐浣撴潗鏂欎笉褰卞搷宸茬粡鍒嗗埆鐢盤1鍜孭2/P15鎴愮珛鐨?3/04瑕嗙洊锛汸9鏁板閲忓瓙绠楁硶鐨勮竟鐣屼笉褰卞搷鐢卞叾浠栦换鍔＄‘绔嬬殑01/02銆備富褰掓。02浠呬负缂栫洰渚垮埄锛屼笉瑕嗙洊鍏朵綑妯″潡銆?scientific_object_modules=01;02;03;04;11; object_coverage_mode=multi_module; primary_module_for_filing=02; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/src/2610.19159v1; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0916",
-    "title": "EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.23525",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=05.03.07; fulltext_followup_required=false; 褰?5鍦扮悆鐜绉戝锛岀粏鍒嗕唬鐮佸彇05.03.07锛堢幆澧冮闄╀笌鐜鍋ュ悍锛夛細鍏蜂綋瀵硅薄鏄湴鐞冪郴缁熴€佹皵鍊?澶╂皵/姘存枃鐏惧杩囩▼鍙婂湴瀛﹁瘉鎹€傝櫧鐒舵秹鍙婂熀纭€璁炬柦銆侀闄╁喅绛栧拰璺ㄩ儴闂ㄥ奖鍝嶏紝浣嗗伐绋嬬郴缁熷苟闈炴湰benchmark鏍稿績鐮旂┒瀵硅薄锛屾晠涓嶅洜姝ゅ姞09/11銆傞偦杩戣竟鐣岄闄╀綆銆?scientific_object_modules=05; object_coverage_mode=single_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.23525; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0917",
-    "title": "PHREEQC-MCQ-200: A Diagnostic Benchmark for Tool-Augmented Scientific Simulator Agents",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2607.00436",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=03.02;05.01.02; fulltext_followup_required=false; 渚濈敤鎴风壒鍒寚瀹氶噰鐢?3/05鍙屾ā鍧椼€?3瀵硅薄鏄按婧舵恫鍖栧鐨勭墿绉?鍙嶅簲璁＄畻锛屽搴?3.02鍩虹鍖栧锛?5瀵硅薄鏄湴鐞冨寲瀛﹀満鏅強鍏朵粙璐ㄨ繃绋嬶紝涓绘枃浠跺綊05銆傞偦杩?9鐨勭瀛﹁绠楄蒋浠跺彧鏄伐鍏凤紝涓嶆槸宸ョ▼绯荤粺瀵硅薄锛屽洜姝や笉褰?9銆傚垎绫昏竟鐣屼腑绛夛紝寤鸿涓绘帶鏍稿21鍦烘櫙閫愰」涓婚銆?scientific_object_modules=03;05; object_coverage_mode=multi_module; primary_module_for_filing=05; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.00436; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0918",
-    "title": "DeepInstructor: An Agentic AI Instructor for Experience-Driven Idea Evaluation",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2609.22104",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=11.07; fulltext_followup_required=false; 褰?1.07绉戝鐭ヨ瘑鐢熶骇/鍚岃璇勫鐮旂┒瀵硅薄銆傚鏄撹褰?1锛圓gent/妫€绱㈢郴缁熸柟娉曪級鎴栨煇涓璇勪及鎯虫硶鎵€灞炶嚜鐒剁瀛︽ā鍧楋紱浣嗗疄楠屾祴閲忕殑鏄瀛︾晫鐨勬瀯鎯宠瘎瀹¤繃绋嬶紝娌℃湁鏌愪竴鑷劧绉戝瀵硅薄鐨勭嫭绔嬪疄楠岋紝鏁?1涓嶄綔涓烘寮忓璞℃ā鍧楋紝涔熶笉鎸?idea domain 娣诲姞鑷劧绉戝绫汇€傛牳蹇冨己搴﹂闄╀腑绛夛細Agent璇勪及鑰岄潪瀹屾暣鍙戠幇娴佺▼锛屼絾鏄庣‘鎵挎媴绉戠爺璇勪环宸ヤ綔銆?scientific_object_modules=11; object_coverage_mode=single_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2609.22104; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0919",
-    "title": "Scaling Scientific Discovery Environments for Turn-Level Agentic RL",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2607.28990",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=05.02.07;06.03.06;07.03.01;11.01; fulltext_followup_required=false; 涓绘帶杩藉姞鏍稿Appendix A Tables 5鈥?鍙?4鈥?5锛欶RED缁忔祹鏁版嵁鈫?1.01锛孶niProt/STRING铔嬬櫧瀵硅薄鈫?6.03.06锛孶SGS water data鈫?5.02.07锛孋DC FluView涓嶱LACES鈫?7.03.01銆備笉鏄?1.04锛涗笉鍥犻噰鐢≧L鍜孭ython灏辫拷鍔?1銆俆able 5鍙﹀垪127涓伐绋嬪煙鐜锛屼絾鍏蜂綋宸ョ▼瀵硅薄灏氭湭鏍告竻锛屾殏涓嶈拷鍔?9銆?scientific_object_modules=05;06;07;11; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2607.28990; source_checked_at=2026-10-22;"
-  },
-  {
-    "paper_id": "ASD-0922",
-    "title": "QuantumNovelty: A Skill-Orchestrating Language Agent for Referee-Style Review and Patentability Screening of Quantum Papers and Patents",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.16900",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "OctoberNotes2026-10-22: 鍘熸枃闃呰涓庣瑪璁版暣鍚堬紱source_level=fulltext; module_taxonomy_codes=02.02.06;11.07.08;11.07.09; fulltext_followup_required=false; 02 鐢遍噺瀛愮畻娉?绋夸欢鍏蜂綋妗堜緥鏀拺锛?1.07 鐢辩瀛﹀绋裤€佷富寮犲拰璇佹嵁鏍搁獙宸ヤ綔娴佹敮鎾戙€傛殏鏍?02.02.06銆?1.07.08/09锛涗富灞曠ず鍙?11銆備笓鍒╅儴鍒嗕笉鍗曠嫭鎵╄嚦宸ョ▼/娉曞緥妯″潡銆?scientific_object_modules=02;11; object_coverage_mode=multi_module; primary_module_for_filing=11; general_method_bucket=none; first_hand_sources_checked=https://arxiv.org/abs/2608.16900; source_checked_at=2026-10-22;"
   },
   {
     "paper_id": "ASD-1012",
@@ -547,27 +257,7 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.03.01;07.03.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag722; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
-    "paper_id": "ASD-1016",
-    "title": "DDA: a traceable multi-agent framework for automated structure-based drug design",
-    "doi": "10.3389/fchem.2026.1914886",
-    "url": "https://doi.org/10.3389/fchem.2026.1914886",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=06;07; primary_module_for_filing=06; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=06.03.06;07.04.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.3389/fchem.2026.1914886; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
-    "paper_id": "ASD-1031",
-    "title": "OntoCodex: a multi-agent biomedical ontology enrichment framework",
-    "doi": "10.1038/s44401-026-00117-9",
-    "url": "https://doi.org/10.1038/s44401-026-00117-9",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.03.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1038/s44401-026-00117-9; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
+    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=07; primary_module_for_filing=07; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=07.03.01;07.03.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag722; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇.; PR82Recheck2026-10-29: closed_rows=1; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag722; source_checked_at=2026-10-29;"
   },
   {
     "paper_id": "ASD-1032",
@@ -577,56 +267,6 @@
     "pdf_status": "full_text_html_available_pdf_not_archived",
     "evidence_status": "first_hand_full_text",
     "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: ; ; ; ; module_classification_codes=03.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag541; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇. scientific_object_modules=03; primary_module_for_filing=03; general_method_bucket=none; object_coverage_mode=single_module; TertiaryPageAudit2026-10-29: TXT line 35; 分子描述到SMILES子结构关系定位、RDF及RDKit校验，归化学信息学；缓存全文而非标题猜测。; decision_ledger=Coverage_Check/tertiary_145_decisions_2026-10-29.json; first_hand_sources_checked=; source_checked_at=2026-10-29;"
-  },
-  {
-    "paper_id": "ASD-1041",
-    "title": "NeuroAct: Advancing EEG Analysis and Decoding via Dual-Loop Autonomous Research",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2610.25211",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=06;07; primary_module_for_filing=06; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=06.02.07;07.02.06; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.25211; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
-    "paper_id": "ASD-1043",
-    "title": "Solver Agent: an Agentic AI Framework for Theoretical Physics Computations Applied to F-theory Uplifts of O3-planes and S-folds",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2609.35958",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02; primary_module_for_filing=02; general_method_bucket=none; object_coverage_mode=single_module; module_classification_codes=02.02.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2609.35958; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
-    "paper_id": "ASD-1047",
-    "title": "OPERA: Operator-residual feedback for reliable autonomous optical experiments with language-model agents",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.05990",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02;09; primary_module_for_filing=02; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=02.02.09;09.08.03; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.05990; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
-    "paper_id": "ASD-1050",
-    "title": "HALO: A Physics-Aware LLM Agent Framework for Nanophotonic Design",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2608.28877",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=02;09; primary_module_for_filing=09; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=09.08.03; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2608.28877; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
-  },
-  {
-    "paper_id": "ASD-1097",
-    "title": "SAIL: Scientific Agentic Intelligence via a Science-Aware Loop",
-    "doi": "",
-    "url": "https://arxiv.org/abs/2610.11451",
-    "pdf_status": "full_text_html_available_pdf_not_archived",
-    "evidence_status": "first_hand_full_text",
-    "source_limited": "no",
-    "access_note": "Core176Evidence2026-10-22: scientific_object_modules=01;11; primary_module_for_filing=01; general_method_bucket=none; object_coverage_mode=multi_module; module_classification_codes=01.02.12;11.07.08; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://arxiv.org/abs/2610.11451; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇."
+    "access_note": "Core176Evidence2026-10-22: ; ; ; ; module_classification_codes=03.01; object_classification_status=confirmed_full_text; classification_provisional=no; source_checked_at=2026-10-22; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag541; evidence_pack=Coverage_Check/october176_core/reviewed_packs.json; 鏈疆鏍稿鍘熸枃鍥涢棬銆佹柟娉曘€侀獙璇佷笌瀵硅薄璇佹嵁鍚庣撼鍏ユ牳蹇冿紱涓€鎵嬪叏鏂囨敮鎸佹槑纭鐮旂洰鏍囥€佸姝ヨ鍔ㄣ€佽嚦灏戜竴绉岮gent鑳藉姏鍙婄鐮旀祦绋嬭鑹诧紱鍏蜂綋瀵硅薄涓庨獙璇佽瘉鎹凡鏍稿锛屾寮忕瑪璁颁繚鐣欎綔鑰呯粨鏋滃拰灞€闄愩€? 绗旇涓烘湁鏉ユ簮鐨勭粨鏋勫寲闃呰璁板綍锛涗綔鑰呮姤鍛婄粨鏋滀笉绛変簬鐙珛澶嶇幇. scientific_object_modules=03; primary_module_for_filing=03; general_method_bucket=none; object_coverage_mode=single_module; TertiaryPageAudit2026-10-29: TXT line 35; 分子描述到SMILES子结构关系定位、RDF及RDKit校验，归化学信息学；缓存全文而非标题猜测。; decision_ledger=Coverage_Check/tertiary_145_decisions_2026-10-29.json; first_hand_sources_checked=; source_checked_at=2026-10-29;; PR82Recheck2026-10-29: closed_rows=2; pending_rows=0; review_ledger=Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json; first_hand_sources_checked=https://doi.org/10.1093/bioinformatics/btag541; source_checked_at=2026-10-29;"
   }
 ]

@@ -42,7 +42,7 @@ LLM Agent、经典智能 Agent、规划或符号推理 Agent、多 Agent 系统�
 
 | 代码 | 领域 | 核心论文 | 研究对象与内容 |
 |---|---|---:|---|
-| 01 | 形式、信息与计算科学 | 89 | 数学、计算机科学、信息与复杂系统；包括定理证明、算法、科学计算、知识组织和复杂系统研究 |
+| 01 | 形式、信息与计算科学 | 90 | 数学、计算机科学、信息与复杂系统；包括定理证明、算法、科学计算、知识组织和复杂系统研究 |
 | 02 | 物理学、天文学与宇宙科学 | 80 | 天体、宇宙、量子、凝聚态、光学、流体、粒子及其他物理对象 |
 | 03 | 化学科学 | 119 | 分子、反应、化学键、合成路线、催化、化学性质与化学测量 |
 | 04 | 材料科学 | 172 | 材料组成、结构、相、缺陷、形貌、性能、材料合成与材料发现 |
@@ -55,7 +55,7 @@ LLM Agent、经典智能 Agent、规划或符号推理 Agent、多 Agent 系统�
 | 11 | 社会、行为、经济与知识系统科学 | 69 | 社会行为、经济系统、科研评价、知识生产、科学传播与科研治理 |
 | 01.04 | ASD/general 方法存放区 | 9 | 无具体科学对象实验或验证的通用科研 Agent、科学工作流、平台和 benchmark |
 
-全部11个领域均采用已有三级树。654篇有正式科学对象，其中653篇已有主归档三级、1篇待核；9篇独立通用方法论文不计正式科学三级。195篇跨模块论文形成925个非互斥映射，其中756个已有三级、169个仍待细分。详见[最新分类统计](Autonomous%20Scientific%20Discovery/Coverage_Check/core_classification_snapshot_2026-10-29.md)。
+全部11个领域均采用已有三级树。654篇有正式科学对象，其中653篇已有主归档三级、1篇待核；9篇独立通用方法论文不计正式科学三级。196篇跨模块论文形成926个非互斥映射，其中757个已有三级、169个仍待细分。详见[最新分类统计](Autonomous%20Scientific%20Discovery/Coverage_Check/core_classification_snapshot_2026-10-29.md)。
 
 ## 生命科学（06）细分
 
@@ -93,3 +93,7 @@ LLM Agent、经典智能 Agent、规划或符号推理 Agent、多 Agent 系统�
 GitHub 已同步可交接的文本型分类资产：[`主论文列表`](Autonomous%20Scientific%20Discovery/Paper_Lists/agent_master_paper_list.md)、[`逐篇笔记`](Autonomous%20Scientific%20Discovery/Notes/)、[`标注字段规范`](Autonomous%20Scientific%20Discovery/paper_note_templates_and_prompts/ASD_annotation_schema.md)、[`笔记模板`](Autonomous%20Scientific%20Discovery/paper_note_templates_and_prompts/ASD_single_paper_note_template.md) 和 [`来源/证据进度主表`](Autonomous%20Scientific%20Discovery/Coverage_Check/multi_module_note_pdf_full_reaudit_progress_451_2026-06-21.md)。
 
 `Reference_PDF/` 已使用Git LFS同步归档PDF。接手者需获取实际LFS对象；缺失全文可使用官方论文页、arXiv、DOI、补充材料或项目页补证。重建含本地资产状态的派生数据前，先确认PDF实际存在且不是LFS指针。
+
+## 综述正文与补充分析
+
+英文综述源文件、编译所需模板和图表、图表生成脚本及整理后的补充分析见 [`Manuscript/`](Autonomous%20Scientific%20Discovery/Manuscript/)。该目录保存与 Overleaf 同步的正式快照；中文阅读版和本地编译产物不纳入远程仓库。

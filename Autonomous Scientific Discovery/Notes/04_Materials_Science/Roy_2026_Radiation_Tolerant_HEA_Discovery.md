@@ -268,3 +268,22 @@ Agent 类型：Hybrid Agent
 纳入置信度：中高
 推荐引用强度：standard
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`bibliographic_metadata_or_unverified_mirrored_abstract_only`。本轮涉及4条差异，其中0条已判定，4条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `440`：`pending_evidence`。Current owner mapping is 04.02, but neither a substantive official abstract nor full text was retrieved. The title identifies an alloy but does not independently verify the actual evaluated scientific task. Keep pending rather than close solely from owner-code change.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1016/j.scriptamat.2026.117286
+
+- 原1664行号 `441`：`pending_evidence`。The legacy owner secondary mapping has changed to 04.02, but the substantive first-hand evidence needed to verify this classification was not retrieved. Keep this duplicate-ledger mismatch pending.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1016/j.scriptamat.2026.117286
+
+- 原1664行号 `442`：`pending_evidence`。Current tertiary mapping has changed to 04.02.02, but source verification is missing. Do not clear a valid current tertiary code based on an old audit that lacked definitions, and do not claim the replacement independently verified from title alone.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1016/j.scriptamat.2026.117286
+
+- 原1664行号 `443`：`pending_evidence`。Publisher PDF and HTML requests were blocked, API responses did not supply substantive paper text, and OpenAlex had no abstract. Agentic wording in the title cannot establish four Agent gates or validation. Keep the source-review row open.
+  - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1016/j.scriptamat.2026.117286
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

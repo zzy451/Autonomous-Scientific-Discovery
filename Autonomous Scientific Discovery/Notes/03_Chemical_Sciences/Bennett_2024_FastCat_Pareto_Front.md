@@ -252,3 +252,16 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 一手来源：publisher HTML full text; open supplementary PDF; no local main-paper PDF archived
 source_limited：no
 ```
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`publisher_abstract`。本轮涉及2条差异，其中2条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `286`：`reject_pr`。Reject blanket tertiary deletion. Current taxonomy defines 03.03.03 catalytic chemistry, and the publisher abstract explicitly reports rhodium-catalyzed hydroformylation and ligand evaluation.
+  - 位置：Publisher Abstract, subscription preview；来源：https://www.nature.com/articles/s44286-024-00033-5
+
+- 原1664行号 `287`：`retain_current`。The publisher abstract independently supports the catalytic reaction object and four Agent gates. Close this source-review objection at abstract level; subscription full text was not independently verified.
+  - 位置：Publisher Abstract, subscription preview；来源：https://www.nature.com/articles/s44286-024-00033-5
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

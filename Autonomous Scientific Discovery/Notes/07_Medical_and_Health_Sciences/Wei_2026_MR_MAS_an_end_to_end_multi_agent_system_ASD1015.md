@@ -151,3 +151,13 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`cached_first_hand_fulltext_html_extraction`。本轮涉及1条差异，其中1条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1457`：`retain_current`。The cached original full text, independently of the project note, establishes an MR causal-analysis goal, planning/GWAS retrieval/estimation/interpretation stages, shared memory and tool/code-repair capabilities, and a disease causal-inference workflow role. Table 1 includes CAD, T2D, and ischemic stroke traits, supporting epidemiology (07.03.01). Current PDF requests return 403, but original full-text evidence is available.
+  - 位置：Original cached fulltext TXT L55, L79?81, L133; Results 3.1 L173?187 / Table 1 L183；来源：https://doi.org/10.1093/bioinformatics/btag722
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。

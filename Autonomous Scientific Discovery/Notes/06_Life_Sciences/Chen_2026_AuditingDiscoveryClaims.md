@@ -140,3 +140,11 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+
+## 2026-10-29 PDF补齐归档
+
+- 本地PDF：`Reference_PDF/06_Life_Sciences/ASD-0874_Auditing_Discovery_Claims_A_Two_Sided_Criterion_for_Agentic_Science_with_the_Negative_Side_Decidable.pdf`，共51页；已核验标题、页面解析和逐页渲染。
+- 下载来源：https://arxiv.org/pdf/2608.00981
+- 版本：official arXiv preprint PDF; version as downloaded。
+- 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。

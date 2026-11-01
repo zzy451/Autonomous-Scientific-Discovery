@@ -142,3 +142,22 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 已阅读同一工作的bioRxiv v2全文，足以核实Agent流程和06.03.04分类；Cell最终正文仍未取得，今后引用出版版的实现或结果细节需再核对。预印本2.3亿细胞与Cell摘要5.02亿细胞分别记录，不混用。
+
+
+## 2026-10-29 PR剩余差异复核
+
+- 来源深度：`target_preprint_fulltext`。本轮涉及1条差异，其中1条已判定，0条待核。摘要或图注支持的判定不代表全文已逐页核验。
+
+- 原1664行号 `1140`：`retain_current`。Directly retrieved bioRxiv v2 JATS full text verifies hierarchical ReAct SRAgent, asynchronous retrieval tools, continuous discovery of 10X single-cell projects and metadata curation into a database, linked to standardized RNA-seq processing. This settles the narrow agent/classification question under 06.03.04. Final Cell full text remains unverified: 230 million cells and 30,387 entries are v2-specific values and must not be presented as final-publication scale.
+  - 位置：bioRxiv v2 Results, Automated single-cell data discovery and annotation using SRAgent；来源：https://doi.org/10.1016/j.cell.2026.08.025
+
+逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+
+## 2026-10-29 PDF补齐归档
+
+- 本地PDF：`Reference_PDF/06_Life_Sciences/ASD-0901_scBaseCount_An_AI_agent_curated_standardized_auto_updated_single_cell_data_repository_preprint_v2.pdf`，共14页；已核验标题、页面解析和逐页渲染。
+- 下载来源：https://www.biorxiv.org/content/10.1101/2025.02.27.640494v2.full.pdf
+- 版本：bioRxiv preprint v2, 2025-05-06; not the Cell 2026 version of record。
+- 此次取得的是2025年5月6日bioRxiv v2，不是2026年Cell正式发表版本；实验规模及数据应按对应版本引用。
+- 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。
