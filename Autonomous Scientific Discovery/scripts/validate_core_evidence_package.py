@@ -81,6 +81,12 @@ def main():
             equations = r'\\begin\{equation\}\s*(.*?)\s*\\end\{equation\}'
             assert re.findall(equations, et, re.S) == re.findall(equations, zt, re.S), ('equation', f.name)
             assert len(re.findall(r'\\subsection\{', et)) == len(re.findall(r'\\subsection\{', zt))
+        figure_names = sorted(re.findall(r'\\includegraphics\[[^\]]*\]\{figures/([^}]+)\}', source))
+        assert len(figure_names) == counts['figures']
+        for name in figure_names:
+            assert (en / 'figures' / name).read_bytes() == (MANUSCRIPT / 'figures' / name).read_bytes(), name
+            translated = name.replace('_en.pdf', '_zh.pdf')
+            assert (zh / 'figures' / translated).exists(), translated
         assert (en / 'references.bib').read_bytes() == (zh / 'references.bib').read_bytes() == (MANUSCRIPT / 'references.bib').read_bytes()
         for folder in (en, zh):
             main_text = (folder / 'main.tex').read_text(encoding='utf-8')
@@ -93,6 +99,7 @@ def main():
         local = {'english_pdf_pages': len(fitz.open(en / 'build/main.pdf')), 'chinese_pdf_pages': len(fitz.open(zh / 'build/main.pdf')),
                  'english_pdf_sha256': sha(en / 'build/main.pdf'), 'chinese_pdf_sha256': sha(zh / 'build/main.pdf'),
                  'matched_citation_order_labels_tables_figures_and_subsections': True,
+                 'matched_english_figure_assets_and_bilingual_figure_names': True,
                  'unresolved_citations_overfull_boxes_missing_characters': 0}
     report = {'core_works': len(core), 'core_bib_entries': len(subset), 'module_memberships': 935,
               'member_ids_manifest_matrix_bridge_match': True, 'core_master_reference_years_match': True,

@@ -41,16 +41,18 @@ for lang in (['en','zh'] if zhroot is not None else ['en']):
     names = (['形式与计算','物理与天文','化学','材料','地球与环境','生命','医学与健康','农业与食品等','工程与工业','航天海洋交通','社会与知识系统'] if zh else
              ['Formal / computational','Physics / astronomy','Chemistry','Materials','Earth / environment','Life sciences','Medical / health','Agriculture / food, etc.','Engineering / industrial','Aerospace / marine / transport','Social / knowledge systems'])
     vals=[m['papers'] for m in modules]
-    axs[0].barh(range(11),vals,color=[orange if i==7 else teal for i in range(11)],height=.65)
+    axs[0].barh(range(11),vals,color=teal,height=.65)
     axs[0].set_yticks(range(11),[f'{i+1:02d}  {n}' for i,n in enumerate(names)])
     axs[0].invert_yaxis();axs[0].set_xlim(0,192)
     axs[0].set_xlabel('非互斥领域归属数' if zh else 'Non-exclusive domain memberships')
     axs[0].set_title('A  学科覆盖' if zh else 'A  Domain coverage',loc='left',weight='bold',color=blue)
     for i,v in enumerate(vals):axs[0].text(v+2,i,str(v),va='center',fontsize=9)
-    ordered=sorted(years,key=int)
-    axs[1].bar(range(len(ordered)),[years[y] for y in ordered],color=[orange if y=='2026' else blue for y in ordered])
-    ticks=[i for i,y in enumerate(ordered) if y in ['2004','2010','2015','2020','2023','2026']]
-    axs[1].set_xticks(ticks,[ordered[i]+('*' if ordered[i]=='2026' else '') for i in ticks],rotation=45,ha='right')
+    # Include zero-count calendar years instead of compressing gaps in time.
+    ordered=list(range(min(map(int,years)),max(map(int,years))+1))
+    assert sum(years[str(y)] for y in ordered) == len(core)
+    axs[1].bar(ordered,[years[str(y)] for y in ordered],color=[orange if y==2026 else blue for y in ordered])
+    ticks=[y for y in [2004,2010,2015,2020,2023,2026] if y in ordered]
+    axs[1].set_xticks(ticks,[str(y)+('*' if y==2026 else '') for y in ticks],rotation=45,ha='right')
     axs[1].set_title('B  文献记录年份' if zh else 'B  Recorded publication years',loc='left',weight='bold',color=blue)
     axs[1].set_ylabel('去重核心工作数' if zh else 'Unique core works')
     for ax in axs:
@@ -70,7 +72,7 @@ for lang in (['en','zh'] if zhroot is not None else ['en']):
           ['Knowledge','Hypothesis','Design','Execution','Analysis','Validation','Symbolic','Planning','Optimization','Learning','LLM','Hybrid'])
     fig,ax=plt.subplots(figsize=(12,6.5))
     ax.imshow(matrix,aspect='auto',cmap=ListedColormap(['#F0F3F5',teal,blue]),vmin=0,vmax=2)
-    ax.set_yticks(range(len(cases)),[c['module']+'  '+c['name'] for c in cases],fontsize=10)
+    ax.set_yticks(range(len(cases)),[c['module']+'  '+c['name']+(' *' if c['id']=='ASD-0054' else '') for c in cases],fontsize=10)
     ax.set_xticks(range(12),cols,rotation=45,ha='right',fontsize=9)
     ax.set_xticks(np.arange(-.5,12,1),minor=True);ax.set_yticks(np.arange(-.5,len(cases),1),minor=True)
     ax.grid(which='minor',color='white',linewidth=2);ax.tick_params(which='minor',bottom=False,left=False)
@@ -78,11 +80,15 @@ for lang in (['en','zh'] if zhroot is not None else ['en']):
     for i in range(len(cases)):
         for j in range(12):
             if matrix[i,j]:ax.text(j,i,'●',ha='center',va='center',color='white',fontsize=9)
-    ax.text(2.5,-1.3,'所选科研角色' if zh else 'Selected research roles',ha='center',weight='bold',color=teal)
+    ax.text(2.5,-1.3,'研究流程角色（人类、工具与智能体）' if zh else 'Investigation roles (people, tools, agents)',ha='center',weight='bold',color=teal,fontsize=10)
     ax.text(8.5,-1.3,'所选决策机制' if zh else 'Selected decision mechanisms',ha='center',weight='bold',color=blue)
     for sp in ax.spines.values():sp.set_visible(False)
-    fig.text(.5,.025,'标记表示已编码；空白不表示能力不存在。案例选择不用于估计全库比例。' if zh else
-             'Marked = coded for the illustrated task. Unmarked = not coded, not absent. Selection is not a prevalence estimate.',ha='center',fontsize=9,color=ink)
+    fig.text(.5,.085,'标记表示研究流程中的已编码角色或机制，不表示智能体自主承担；空白表示未编码。' if zh else
+             'Marked = coded role or mechanism, not autonomous ownership. Blank = not coded, not absent.',ha='center',fontsize=9,color=ink)
+    fig.text(.5,.055,'* Virtual Lab：全部脚本运行及生物学实验验证均由研究者执行。' if zh else
+             '* Virtual Lab: researchers executed all scripts and biological validation experiments.',ha='center',fontsize=9,color=ink)
+    fig.text(.5,.025,'所选案例不能用于估计全领域或全库比例。' if zh else
+             'Selected cases do not estimate domain-wide or corpus-wide prevalence.',ha='center',fontsize=9,color=ink)
     fig.subplots_adjust(left=.27,right=.98,top=.88,bottom=.21)
     fig.savefig(out/f'domain_workflow_paradigm_{lang}.pdf');plt.close(fig)
 

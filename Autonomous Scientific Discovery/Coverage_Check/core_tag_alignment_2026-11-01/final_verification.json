@@ -18,9 +18,10 @@
   "local_bilingual_checks": {
     "english_pdf_pages": 37,
     "chinese_pdf_pages": 33,
-    "english_pdf_sha256": "4f9ef1b772153a8d760ae1b2631b301c2c058088b2badcf6a7f8678c5eac2fc5",
-    "chinese_pdf_sha256": "4b1a006d97e6f8184e4417f7b4e95cdb4562009877e5a78f479ca55d57101b43",
+    "english_pdf_sha256": "8b1781b00ca160d0f6d19f2a75287618bb93e490db2a7a2f2973348e753edacd",
+    "chinese_pdf_sha256": "c93603c07bae840062968437297b63b0b4a57e5f4ea86f319c1de1b956b6a9f4",
     "matched_citation_order_labels_tables_figures_and_subsections": true,
+    "matched_english_figure_assets_and_bilingual_figure_names": true,
     "unresolved_citations_overfull_boxes_missing_characters": 0
   },
   "visual_qa": "Final full-document contact sheets and detail pages inspected; no clipping, overlap, missing glyphs, or broken tables observed."
