@@ -14,5 +14,33 @@
     "url": "https://arxiv.org/abs/2412.09429v4",
     "note": "Version 4, 5 June 2025; first preprint posted in 2024",
     "_evidence": "reviewer_versions.json: archived PDF page 1, arXiv:2412.09429v4; journal-style for-review layout is not publication evidence"
+  },
+  "asd1081": {
+    "title": "The AI Theorist reveals excitonic structure in α-RuCl₃",
+    "_evidence": "Archived arXiv:2610.02417 PDF title page; repaired literal TeX escaping in manuscript bibliography. Unicode source prevents double escaping during regeneration."
+  },
+  "asd0063": {
+    "url": "https://arxiv.org/abs/2506.13131v1",
+    "note": "Version 1, 16 June 2025",
+    "_evidence": "Archived PDF title page; version used for the 2026-11-01 task, discovery-process and transfer synthesis."
+  },
+  "asd0828": {
+    "url": "https://arxiv.org/abs/2602.00953v2",
+    "note": "Version 2, 10 May 2026",
+    "_evidence": "Archived PDF title page; version used for the 2026-11-01 task, discovery-process and transfer synthesis."
+  },
+  "asd1064": {
+    "url": "https://arxiv.org/abs/2610.21047v1",
+    "note": "Version 1, 15 October 2026",
+    "_evidence": "Archived PDF title page; version used for the 2026-11-01 task, discovery-process and transfer synthesis."
+  },
+  "asd1009": {
+    "url": "https://arxiv.org/abs/2608.05266v1",
+    "note": "Version 1, 5 August 2026",
+    "_evidence": "Archived PDF title page; version used for the 2026-11-01 task, discovery-process and transfer synthesis."
+  },
+  "asd1029": {
+    "journal": "medRxiv",
+    "_evidence": "Archived PDF title page, version posted 16 October 2026, DOI 10.64898/2026.10.13.26365373; not used as new body evidence."
   }
 }

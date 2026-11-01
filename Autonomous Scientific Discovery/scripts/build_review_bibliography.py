@@ -24,7 +24,7 @@ def esc(s):
     # Protect literal TeX metacharacters; encode Western accents for classic BibTeX.
     s=s.replace('\\','\\textbackslash{}')
     s=re.sub(r'([&%#$ _{}])',lambda m:'\\'+m[0] if m[0]!=' ' else ' ',s)
-    special={'–':'--','—':'---','’':"'",'‘':"'",'“':'``','”':"''",'−':'-','×':r'$\times$','α':r'$\alpha$','β':r'$\beta$','γ':r'$\gamma$','δ':r'$\delta$','ε':r'$\epsilon$','λ':r'$\lambda$','μ':r'$\mu$','π':r'$\pi$','₂':'2','₃':'3','ł':r'{\l}','Ł':r'{\L}','ø':r'{\o}','Ø':r'{\O}','æ':r'{\ae}','œ':r'{\oe}','ß':r'{\ss}'}
+    special={'–':'--','—':'---','’':"'",'‘':"'",'“':'``','”':"''",'−':'-','×':r'$\times$','α':r'$\alpha$','β':r'$\beta$','γ':r'$\gamma$','δ':r'$\delta$','ε':r'$\epsilon$','λ':r'$\lambda$','μ':r'$\mu$','π':r'$\pi$','₂':r'$_2$','₃':r'$_3$','ł':r'{\l}','Ł':r'{\L}','ø':r'{\o}','Ø':r'{\O}','æ':r'{\ae}','œ':r'{\oe}','ß':r'{\ss}'}
     for a,b in special.items():s=s.replace(a,b)
     accents={'\u0301':"'",'\u0300':'`','\u0302':'^','\u0308':'"','\u0303':'~','\u030c':'v','\u0306':'u','\u0304':'=','\u0327':'c','\u030a':'r','\u0307':'.','\u0328':'k'}
     chars=list(unicodedata.normalize('NFD',s));result='';i=0

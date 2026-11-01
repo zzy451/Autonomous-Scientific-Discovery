@@ -2,7 +2,7 @@
 
 同步日期：2026-11-01。本目录是 Overleaf 英文正文的 GitHub 快照，正文、参考文献、模板及六幅图与本次 Overleaf 发布包一致。后续正文修改应先整合到 Overleaf 工作副本，再同步此快照。
 
-当前版本包含 10 个主章节、41 个小节、6 幅图和 15 张表；正文实际引用 44 条文献，统一 BibTeX 库共 1051 条。英文稿在本地使用 pdfLaTeX/BibTeX 编译为 33 页；不同 TeX 环境的分页可能略有差异。
+当前版本包含 10 个主章节、41 个小节、6 幅图和 15 张表；正文实际引用 54 条文献，统一 BibTeX 库共 1051 条。参考文献单独保存在 `references.bib`，`main.tex` 仅通过 `\bibliography{references}` 调用。英文稿在本地使用 pdfLaTeX/BibTeX 编译为 36 页；不同 TeX 环境的分页可能略有差异。
 
 ## 编译
 
@@ -34,6 +34,7 @@ python scripts/build_landscape_figures.py
 - [第7.1—7.3节跨学科修订记录](analysis/section7_cross_domain_revision_2026-11-01.md)：将知识、数据、反馈与验证的论证扩展至计算、物理天文、地球环境、生命医学、工程、任务系统及社会研究。
 - [学科覆盖差异的深化分析](analysis/domain_coverage_imbalance_deepened_2026-10-31.md)：对应正文第 7 节，分析各学科的对象、模态、可观测性、干预及验证条件。
 - [科研决策、学科条件与科学增量](analysis/decision_delegation_and_scientific_gains_2026-11-01.md)：对应第8.1–8.3节，记录决策分工、全部11个学科的约束与委托关系，以及含明确基线和终点的比较证据；替代原流程阶段说明。
+- [同类任务比较、知识形成与迁移边界](analysis/task_comparisons_discovery_and_transfer_2026-11-01.md)：本日后续修订，记录新增10篇正文引文、独立文献库修正及原文定位；扩展同任务对照、输出转化为知识的过程，以及跨器件、数据集和任务测试的实际边界。
 - [补充信息清单](analysis/gpt_supplement_information_checklist_2026-10-31.md)：保留原始规划属性，不能当作所有条目均已核实的声明。
 
 中文阅读版、完整编译 PDF、临时草稿、备份和本地验收图留在本地，不属于该发布快照。

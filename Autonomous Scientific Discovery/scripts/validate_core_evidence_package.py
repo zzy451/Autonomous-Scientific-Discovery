@@ -47,12 +47,28 @@ def main():
         counts.update({'sections': len(re.findall(r'\\section\{', text)),
                        'subsections': len(re.findall(r'\\subsection\{', text)),
                        'tables': text.count(r'\begin{table}'), 'figures': text.count(r'\begin{figure}')})
+    source += (MANUSCRIPT / 'main.tex').read_text(encoding='utf-8')
     keys = {k.strip() for group in cite_sequence(source) for k in group.split(',')}
-    assert len(keys) == 44
+    assert len(keys) == 54
+    bib_text = (MANUSCRIPT / 'references.bib').read_text(encoding='utf-8')
+    bib_keys = re.findall(r'(?m)^@\w+\{([^,\n]+),', bib_text)
+    assert len(bib_keys) == len(set(bib_keys)), 'Duplicate bibliography keys'
+    bibliography = parse_bib(bib_text)
+    assert keys <= set(bibliography), ('Unresolved citation keys', keys - set(bibliography))
+    assert not re.search(r'\\bibitem|\\begin\{thebibliography\}', source), 'Inline references'
+    assert re.findall(r'\\bibliography\{([^}]+)\}', source) == ['references']
+    assert not re.search(r'\\nocite\s*\{\s*\*\s*\}', source)
+    for key in keys:
+        raw, fields = bibliography[key]
+        assert fields.get('title') and (fields.get('author') or fields.get('editor')), key
+        assert fields.get('doi') or fields.get('url'), key
+        if not raw.startswith('@misc'):
+            assert re.fullmatch(r'\d{4}', fields.get('year', '')), key
     assert counts == {'sections': 10, 'subsections': 41, 'tables': 15, 'figures': 6}, counts
     en = WORKSPACE / 'Agent_for_Science_Review_Overleaf'; zh = WORKSPACE / 'Agent_for_Science_Review_Chinese'
     local = {}
     if (en / 'main.tex').exists() and (zh / 'main.tex').exists():
+        assert (en / 'main.tex').read_bytes() == (MANUSCRIPT / 'main.tex').read_bytes()
         for f in (en / 'sections').glob('*.tex'):
             assert f.read_bytes() == (MANUSCRIPT / 'sections' / f.name).read_bytes(), f.name
             z = zh / 'sections' / (f.stem + '_zh.tex')
@@ -63,17 +79,23 @@ def main():
             assert len(re.findall(r'\\subsection\{', et)) == len(re.findall(r'\\subsection\{', zt))
         assert (en / 'references.bib').read_bytes() == (zh / 'references.bib').read_bytes() == (MANUSCRIPT / 'references.bib').read_bytes()
         for folder in (en, zh):
+            main_text = (folder / 'main.tex').read_text(encoding='utf-8')
+            assert re.findall(r'\\bibliography\{([^}]+)\}', main_text) == ['references']
+            assert not re.search(r'\\bibitem|\\begin\{thebibliography\}', main_text)
             log = (folder / 'build/main.log').read_text(encoding='utf-8', errors='replace')
             assert not re.search(r'undefined citations|Citation .* undefined|There were undefined references|Overfull \\hbox|Missing character:', log)
             assert len(re.findall(r'\\bibitem', (folder / 'build/main.bbl').read_text(encoding='utf-8'))) == len(keys)
         import fitz
         local = {'english_pdf_pages': len(fitz.open(en / 'build/main.pdf')), 'chinese_pdf_pages': len(fitz.open(zh / 'build/main.pdf')),
+                 'english_pdf_sha256': sha(en / 'build/main.pdf'), 'chinese_pdf_sha256': sha(zh / 'build/main.pdf'),
                  'matched_citation_order_labels_tables_figures_and_subsections': True,
                  'unresolved_citations_overfull_boxes_missing_characters': 0}
     report = {'core_works': len(core), 'core_bib_entries': len(subset), 'module_memberships': 935,
               'member_ids_manifest_matrix_bridge_match': True, 'core_master_reference_years_match': True,
               'frozen_source_hashes_and_year_figure_match': True, 'manuscript_structure': dict(counts),
-              'cited_keys': len(keys), 'local_bilingual_checks': local,
+              'cited_keys': len(keys), 'unified_bib_entries': len(bibliography),
+              'standalone_bibliography': True, 'duplicate_or_unresolved_citation_keys': 0,
+              'local_bilingual_checks': local,
               'visual_qa': 'Final full-document contact sheets and detail pages inspected; no clipping, overlap, missing glyphs, or broken tables observed.'}
     write_json(OUT / 'final_verification.json', report)
     print(json.dumps(report, ensure_ascii=False, indent=2))
