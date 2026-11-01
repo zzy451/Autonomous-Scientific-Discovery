@@ -1,5 +1,25 @@
 # Agentomics: an agentic system that autonomously develops novel state-of-the-art solutions for biomedical machine learning tasks
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`included`；主归档：`06`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;06;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.04 分子设计与化学空间探索 | 03.04.02 小分子性质优化 | 已落地 |
+| 06 | 06.01 生物学基础 | 06.01.13 计算生物学 | 已落地 |
+| 07 | 07.04 药学与生物医药 | 07.04.01 药物发现 | 已落地 |
+
+- 模块03：表2实际小分子性质预测指标。
+  - 证据：PDF 第 [6] 页；原文：Predict compound solubility from SMILES using standardised ADME protocols.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0893

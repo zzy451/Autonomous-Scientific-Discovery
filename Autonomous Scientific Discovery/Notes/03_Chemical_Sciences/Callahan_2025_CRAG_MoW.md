@@ -1,5 +1,24 @@
 # Callahan et al. 2025 - Agentic Mixture-of-Workflows for Multi-Modal Chemical Search
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`03`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.01 化学总论与化学方法 | 03.01.04 化学信息学 | 已落地 |
+| 04 | 04.03 软物质与功能材料 | 04.03.01 高分子材料 | 已落地 |
+
+- 模块04：聚醚检索和热性质具体案例。
+  - 证据：PDF 第 [90] 页；原文：I am looking for aromatic polyethers with structures and functions similar to the following compound:
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-06-21 archive sync
 
 - Canonical archived PDF: `Reference_PDF/03_Chemical_Sciences/Callahan_2025_CRAG_MoW.pdf`

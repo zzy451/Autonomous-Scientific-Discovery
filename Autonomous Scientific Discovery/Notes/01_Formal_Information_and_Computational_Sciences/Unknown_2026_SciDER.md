@@ -1,5 +1,29 @@
 # Unknown 2026 - SciDER: Scientific Data-centric End-to-end Researcher
 
+## 当前分类（2026-11-01 补证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 当前对象模块：`01;02;11`。
+- 本节为当前结论，取代后文不一致的历史分类；每个模块保留一个有证据支持的代表落点。
+
+| 模块 | 二级 | 三级 | 当前状态 |
+|---|---|---|---|
+| 01 | 01.02 计算机科学 | 01.02.13 机器学习 | 已确定 |
+| 02 | 02.01 天文学与天体物理学 | 02.01.09 天文仪器与观测方法 | 已确定 |
+| 11 | 11.05 教育学与学习科学 | 11.05.04 学习分析 | 已确定 |
+
+### 模块11补证
+
+- 原缺项原因：前轮将生成论文中的结果与独立执行日志一并作为门槛，忽略正文的完整执行声明。
+- 本轮结论：正文明确声明已完成方法设计、模型实现到定量评估的全流程；Fig.5报告ASSISTments 2009–2010少样本知识追踪的held-out结果，含三随机种子均值/标准差及ECE、Brier、AUC。对象是学生学习状态与知识追踪，可补11.05.04学习分析。
+- 来源：local PDF；位置：p.8；原文：SciDER executed the entire research pipeline from method design and model implementation to quantitative evaluation.
+- 来源：local PDF；位置：p.9, Fig.5；原文：Table 1: Held-out test performance on ASSISTments 2009–2010 few-shot episodes.；ECE=0.032、Brier=0.237；深度模型3 seeds。
+- 解释范围：依据为作者报告的执行与结果；未独立复现，公开仓库未检得该教育案例的完整执行日志。
+
+- [本轮补证报告](../../Coverage_Check/classification_recheck_2026-11-01/completion_report.md)。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：SciDER: Scientific Data-centric End-to-end Researcher
 - 作者：Ke Lin et al.

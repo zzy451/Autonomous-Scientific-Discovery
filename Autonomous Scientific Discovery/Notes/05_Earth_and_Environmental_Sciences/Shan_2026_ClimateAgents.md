@@ -1,5 +1,24 @@
 # Shan 2026 - ClimateAgents: A Multi-Agent Research Assistant for Social-Climate Dynamics Analysis
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`05`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`05;11`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 05 | 05.02 大气、海洋与水文科学 | 05.02.02 气候科学 | 已落地 |
+| 11 | 11.03 政治学与公共管理 | 11.03.02 公共政策 | 已落地 |
+
+- 模块11：实际清洁燃料可及性城乡差异碳排放的政策分析。
+  - 证据：PDF 第 [7, 8, 9] 页；原文：Policy Design: Reducing variability in access could lead to more equitable and impactful environmental strategies.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：ClimateAgents: A Multi-Agent Research Assistant for Social-Climate Dynamics Analysis
 - 作者：Shan Shan

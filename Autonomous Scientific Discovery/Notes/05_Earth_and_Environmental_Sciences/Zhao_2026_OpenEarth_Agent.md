@@ -1,5 +1,30 @@
 # Zhao et al. 2026 - OpenEarth-Agent: From Tool Calling to Tool Creation for Open-Environment Earth Observation
 
+## 当前分类（2026-11-01 补证复核）
+
+- 当前纳入状态：`to_read`；主归档：`05`。
+- 当前对象模块：`05;08;11`。
+- 本节为当前结论，取代后文不一致的历史分类；每个模块保留一个有证据支持的代表落点。
+
+| 模块 | 二级 | 三级 | 当前状态 |
+|---|---|---|---|
+| 05 | 05.04 地理科学与空间信息 | 05.04.04 遥感科学 | 已确定 |
+| 08 | 08.01 农学 | 08.01.08 农业气象学 | 已确定 |
+| 11 | 11.02 社会学与人口研究 | 11.02.04 城市研究 | 已确定 |
+
+### 模块08补证
+
+- 原缺项原因：此前仅查看自建OpenEarth-Bench的农业占比，未展开论文实际评估的外部Earth-Bench任务。
+- 本轮结论：论文pp.10–11明确执行Earth-Bench跨基准评估并报告Table 3；该官方题库任务12以澳大利亚Murray–Darling作物热胁迫为对象，计算2023年1月LST>310 K且覆盖面积超过30%的天数。农业气象条件与作物胁迫支持08.01.08农业气象学。
+- 来源：local PDF；位置：pp.10–11, §5.2, Table 3；原文：we conduct experiments on the cross-domain benchmark Earth-Bench
+- 来源：https://raw.githubusercontent.com/opendatalab/Earth-Agent/ca1dfaef750654331308a434966d307f1728fd90/benchmark/question.json；位置：key 12; evaluation[1].question；原文：Based on thermal Band 31 and Band 32 data over the Murray–Darling Basin in Australia during January 2023, calculate how many days had more than 30% of the area with LST above 310 K, indicating heat stress on crops.
+- 来源：https://huggingface.co/datasets/Sssunset/Earth-Bench/tree/49ce6b784c038b63b0817cbfa8211eb053b47e37/question12；位置：question12/2023_01_01_0050_BT_31.tif；原文：question12；数据快照最后修改2025-10-16，早于OpenEarth-Agent；该目录含138个影像文件。
+- 解释范围：依据为实际执行的外部Earth-Bench，不是尚未开放的自建OpenEarth-Bench；没有逐题预测，不能宣称任务12被单独正确完成。任务2文案年份与影像年份不一致，未以其为主证据。
+
+- [本轮补证报告](../../Coverage_Check/classification_recheck_2026-11-01/completion_report.md)。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：OpenEarth-Agent: From Tool Calling to Tool Creation for Open-Environment Earth Observation
 - 作者：Sijie Zhao; Feng Liu; Xueliang Zhang; Hao Chen; Xinyu Gu; Zhe Jiang; Fenghua Ling; Ben Fei; Wenlong Zhang; Junjue Wang; Weihao Xuan; Pengfeng Xiao; Naoto Yokoya; Lei Bai

@@ -1,5 +1,24 @@
 # Sun et al. 2026 - TeLLAgent: a dual-agent framework for reliable scientific discovery with tool-enhanced LLMs
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`04`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.04 分子设计与化学空间探索 | 03.04.01 分子生成与分子设计 | 已落地 |
+| 04 | 04.04 能源、电子与器件材料 | 04.04.05 光电材料 | 已落地 |
+
+- 模块03：有机太阳能电池供体分子生成筛选。
+  - 证据：PDF 第 6 页；原文：TeLLAgent for autonomous donor material discovery
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-07-05 Phase6NoteRevisionR22 harmonization
 
 - `paper_id`: `ASD-0525`

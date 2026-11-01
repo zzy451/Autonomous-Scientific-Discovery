@@ -1,5 +1,31 @@
 # OptScientist: Automated Discovery of Optimization Laws
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;02;11`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 01 | 01.01 数学 | 01.01.10 运筹学与优化 | 已落地 |
+| 02 | 02.02 物理学 | 02.02.16 计算物理学 | 已落地 |
+| 11 | 11.04 心理学与认知科学 | 11.04.06 行为科学 | 已落地 |
+
+- 模块02：99个物理来源问题生成观测和恢复定律。
+  - 证据：PDF 第 [8, 9, 10] 页；原文：OptScientist recovers diverse physical structures, including linear interactions, quadratic energy terms, inverse-square laws, heat-transfer terms and algebraically equivalent rational forms.
+
+- 模块11：CPC18人类风险选择发现行为规律；另有央行货币政策。
+  - 证据：PDF 第 [10, 11, 12] 页；原文：We next applied OptScientist to human decisions under risk and ambiguity
+
+- 模块01：对象是优化规律，离散变量不等于组合数学。
+  - 证据：PDF 第 [1, 8, 10] 页；原文：discovering compact symbolic optimization laws directly from data
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-1083

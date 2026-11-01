@@ -4236,8 +4236,8 @@
     "title": "Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems",
     "note_path": "Notes/01_Formal_Information_and_Computational_Sciences/Yue_2025_Hierarchical_AI_Scientist_Systems.md",
     "note_exists": true,
-    "active_confirmed_core": true,
-    "inclusion_status": "to_read"
+    "active_confirmed_core": false,
+    "inclusion_status": "background_only"
   },
   {
     "paper_id": "ASD-0531",

@@ -1,5 +1,50 @@
 # OmniScientist: An Omni-Modal Omni-Discipline AI Scientist
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;02;03;04;05;06;07;08;09;10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.02 基础化学 | 03.02.03 分析化学 | 已落地 |
+| 04 | 04.01 材料基础 | 04.01.04 材料计算与材料信息学 | 已落地 |
+| 06 | 06.01 生物学基础 | 06.01.02 细胞生物学 | 已落地 |
+| 07 | 07.01 医学基础 | 07.01.04 病理学 | 已落地 |
+| 01 | 01.01 数学 | 01.01.09 统计学 | 已落地 |
+| 02 | 02.01 天文学与天体物理学 | 02.01.04 星系与星系演化 | 已落地 |
+| 05 | 05.01 地球科学基础 | 05.01.03 地球物理学 | 已落地 |
+| 08 | 08.01 农学 | 08.01.01 作物学 | 已落地 |
+| 09 | 09.02 机械与制造工程 | 09.02.01 机械设计 | 已落地 |
+| 10 | 10.04 交通运输科学 | 10.04.01 交通工程 | 已落地 |
+
+- 模块03：RRUFF Raman跨激发波长优势带排序，改03.01父级。
+  - 证据：PDF 第 [4, 8, 13] 页；原文：rank order holds at 0.77 when the dominant band persists, 0.23 when it swaps (n=218)
+
+- 模块04：实际超导材料族及泛化误差研究。
+  - 证据：PDF 第 [4, 8, 17] 页；原文：compositions falling into chemical families in the raw columns
+
+- 模块02：实际星系跨巡天形态验证。
+  - 证据：PDF 第 [4, 8, 17] 页；原文：VLM morphology accuracy 83.8% (DECaLS) vs 81.0% (SDSS);
+
+- 模块05：1500条三分量地震记录实际审计及控制。
+  - 证据：PDF 第 [15, 17, 18] 页；原文：21.7% of noise-labelled STEAD traces carry coherent transient bursts;
+
+- 模块08：223份作物表型扫描叶片时序分析。
+  - 证据：PDF 第 [4, 8, 17] 页；原文：Maize initiates leaves sequentially where tomato is bursty
+
+- 模块09：实际1500机械零件点云11类形态与AMI结果。
+  - 证据：PDF 第 [8, 17] 页；原文：Scale-invariant shape descriptors cluster 1,500 CAD parts into
+
+- 模块10：209条交通轨迹案例完成执行有评分。
+  - 证据：PDF 第 [2, 4, 13] 页；原文：Traffic / transportation NGSIM (U.S. DOT FHWA, 2016)
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0940

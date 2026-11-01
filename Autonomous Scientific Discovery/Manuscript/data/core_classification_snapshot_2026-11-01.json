@@ -1,0 +1,122 @@
+{
+  "snapshot_date": "2026-11-01",
+  "snapshot_revision": "chemcrow_user_boundary_adjudication",
+  "core_papers": 662,
+  "formal_domain_papers": 660,
+  "general_method_papers": 2,
+  "primary_secondary_missing_papers": 0,
+  "primary_tertiary_resolved": 659,
+  "primary_tertiary_pending": 1,
+  "multi_module_papers": 198,
+  "module_pairs": 935,
+  "module_pairs_with_tertiary": 931,
+  "pending_module_pairs": 2,
+  "module_pairs_without_secondary": 2,
+  "module_pairs_without_tertiary": 4,
+  "papers_with_any_secondary_missing": 2,
+  "papers_with_any_tertiary_missing": 3,
+  "formal_papers_complete_all_modules": 657,
+  "local_core_pdfs": 635,
+  "needs_review_papers": 29,
+  "modules": [
+    {
+      "module": "01",
+      "papers": 94,
+      "primary_filings": 85,
+      "primary_tertiary_resolved": 85,
+      "module_secondary_pending": 0,
+      "module_tertiary_resolved": 94,
+      "module_tertiary_pending": 0
+    },
+    {
+      "module": "02",
+      "papers": 82,
+      "primary_filings": 62,
+      "primary_tertiary_resolved": 62,
+      "module_secondary_pending": 1,
+      "module_tertiary_resolved": 81,
+      "module_tertiary_pending": 1
+    },
+    {
+      "module": "03",
+      "papers": 119,
+      "primary_filings": 78,
+      "primary_tertiary_resolved": 78,
+      "module_secondary_pending": 0,
+      "module_tertiary_resolved": 119,
+      "module_tertiary_pending": 0
+    },
+    {
+      "module": "04",
+      "papers": 172,
+      "primary_filings": 130,
+      "primary_tertiary_resolved": 129,
+      "module_secondary_pending": 0,
+      "module_tertiary_resolved": 171,
+      "module_tertiary_pending": 1
+    },
+    {
+      "module": "05",
+      "papers": 52,
+      "primary_filings": 36,
+      "primary_tertiary_resolved": 36,
+      "module_secondary_pending": 1,
+      "module_tertiary_resolved": 51,
+      "module_tertiary_pending": 1
+    },
+    {
+      "module": "06",
+      "papers": 126,
+      "primary_filings": 80,
+      "primary_tertiary_resolved": 80,
+      "module_secondary_pending": 0,
+      "module_tertiary_resolved": 126,
+      "module_tertiary_pending": 0
+    },
+    {
+      "module": "07",
+      "papers": 124,
+      "primary_filings": 70,
+      "primary_tertiary_resolved": 70,
+      "module_secondary_pending": 0,
+      "module_tertiary_resolved": 124,
+      "module_tertiary_pending": 0
+    },
+    {
+      "module": "08",
+      "papers": 9,
+      "primary_filings": 4,
+      "primary_tertiary_resolved": 4,
+      "module_secondary_pending": 0,
+      "module_tertiary_resolved": 9,
+      "module_tertiary_pending": 0
+    },
+    {
+      "module": "09",
+      "papers": 62,
+      "primary_filings": 45,
+      "primary_tertiary_resolved": 45,
+      "module_secondary_pending": 0,
+      "module_tertiary_resolved": 62,
+      "module_tertiary_pending": 0
+    },
+    {
+      "module": "10",
+      "papers": 27,
+      "primary_filings": 22,
+      "primary_tertiary_resolved": 22,
+      "module_secondary_pending": 0,
+      "module_tertiary_resolved": 27,
+      "module_tertiary_pending": 0
+    },
+    {
+      "module": "11",
+      "papers": 68,
+      "primary_filings": 48,
+      "primary_tertiary_resolved": 48,
+      "module_secondary_pending": 0,
+      "module_tertiary_resolved": 67,
+      "module_tertiary_pending": 1
+    }
+  ]
+}

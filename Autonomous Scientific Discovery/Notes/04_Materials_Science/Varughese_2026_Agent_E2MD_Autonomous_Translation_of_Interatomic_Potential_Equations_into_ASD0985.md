@@ -1,5 +1,24 @@
 # Agent-E2MD: Autonomous Translation of Interatomic Potential Equations into Physically Validated Pair Styles for Molecular Dynamics in LAMMPS
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`04`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 04 | 04.01 材料基础 | 04.01.04 材料计算与材料信息学 | 已落地 |
+| 03 | 03.02 基础化学 | 03.02.11 理论与计算化学 | 已落地 |
+
+- 模块03：势函数能量力电荷与轨迹一致性，未研究反应路径机理，改03.03父级。
+  - 证据：PDF 第 [2, 29] 页；原文：ReaxFF extends the validation to reactive dynamics with evolving bond-order and charge-equilibration behavior.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0985

@@ -1,5 +1,24 @@
 # Rothfarb et al. 2026 - Hierarchical Multi-agent Large Language Model Reasoning for Autonomous Heterogeneous Catalyst Discovery
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`04`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.03 合成、反应与催化 | 03.03.03 催化化学 | 已落地 |
+| 04 | 04.04 能源、电子与器件材料 | 04.04.03 催化材料 | 已落地 |
+
+- 模块03：实际Cu及单原子催化剂吸附能筛选。
+  - 证据：PDF 第 [5, 6, 7] 页；原文：MASTER identifies targeted binding energies within only a few iterations, whereas trial and error selection requires an order of magnitude more trials.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Hierarchical Multi-agent Large Language Model Reasoning for Autonomous Heterogeneous Catalyst Discovery
 - 作者：Samuel Rothfarb; Megan C. Davis; Ivana Matanovic; Baikun Li; Edward F. Holby; Wilton J. M. Kort-Kamp

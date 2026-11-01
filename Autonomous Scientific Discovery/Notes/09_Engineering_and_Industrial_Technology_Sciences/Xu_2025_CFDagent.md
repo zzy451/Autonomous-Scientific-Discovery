@@ -1,5 +1,24 @@
 # Xu et al. 2025 - CFDagent: A Language-Guided, Zero-Shot Multi-Agent System for Complex Flow Simulation
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`09`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 02 | 02.02 物理学 | 02.02.03 经典力学 | 已落地 |
+| 09 | 09.01 工程基础 | 09.01.01 工程数学与建模 | 已落地 |
+
+- 模块02：球绕流阻升力及涡脱落仿真。
+  - 证据：PDF 第 [1, 5] 页；原文：We validate CFDagent by reproducing canonical sphere flows at Reynolds numbers of 100 and 300 using three distinct inputs:
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-07-05 Phase6NoteRevisionR25 harmonization
 
 - Frozen landing decision: scientific_object_modules=02;09; object_coverage_mode=multi_module; primary_module_for_filing=09; general_method_bucket=none; source_limited=no.

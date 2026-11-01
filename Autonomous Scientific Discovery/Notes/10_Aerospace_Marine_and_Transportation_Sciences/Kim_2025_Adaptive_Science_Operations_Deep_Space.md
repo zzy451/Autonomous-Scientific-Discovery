@@ -1,5 +1,24 @@
 # Kim et al. 2025 - Adaptive Science Operations in Deep Space Missions Using Offline Belief State Planning
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`10`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 02 | 02.01 天文学与天体物理学 | 02.01.07 行星科学 | 已落地 |
+| 10 | 10.02 航天科学 | 10.02.03 深空探测 | 已落地 |
+
+- 模块02：Enceladus深空行星探测案例。
+  - 证据：PDF 第 1-7 页；原文：We use the Enceladus Orbilander’s proposed Life Detection Suite (LDS) as a case study, demonstrating how Bayesian network structure and reward shaping influence system performance.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Adaptive Science Operations in Deep Space Missions Using Offline Belief State Planning
 - 作者：Grace Ra Kim; Hailey Warner; Duncan Eddy; Evan Astle; Zachary Booth; Edward Balaban; Mykel J. Kochenderfer

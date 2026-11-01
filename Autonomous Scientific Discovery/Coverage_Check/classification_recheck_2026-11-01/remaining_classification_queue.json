@@ -1,0 +1,60 @@
+[
+  {
+    "paper_id": "ASD-0547",
+    "title": "Closed-loop experimental AI for pixelated metasurface design",
+    "modules_pending": [
+      "04"
+    ],
+    "secondary_missing_modules": [],
+    "current_secondary_codes": {
+      "04": "04.04"
+    },
+    "reasons": {
+      "04": "重新访问Crossref、DOI落地页、SPIE全文/摘要及会议入口，Crossref仍仅有题名和出版元数据，SPIE返回Incapsula页面，OpenAlex没有摘要或开放全文位置。保留04.04，不能仅凭metasurface题名推定光电或半导体材料三级。"
+    },
+    "next_action": "仍需正文、完整官方摘要或作者公开版本，明确被制备/测量的材料与目标性能。",
+    "source_pdf": null,
+    "latest_evidence_ledger": "completion_decisions.jsonl"
+  },
+  {
+    "paper_id": "ASD-0919",
+    "title": "Scaling Scientific Discovery Environments for Turn-Level Agentic RL",
+    "modules_pending": [
+      "05",
+      "11"
+    ],
+    "secondary_missing_modules": [
+      "05"
+    ],
+    "current_secondary_codes": {
+      "05": null,
+      "11": "11.01"
+    },
+    "reasons": {
+      "05": "本轮另查官方HTML、LaTeX源包及附属文件入口，仍只有219个Earth science环境与USGS来源计数。唯一公开具体轨迹属于CDC FluView；没有USGS任务的变量、假设与结果，不能从机构名称推断水文学或空间信息分类。",
+      "11": "新增检查官方源包后，仍未见FRED序列标识、经济假设及对应结果。保留11.01经济学；不能仅因采用统计方法或FRED数据就细分为计量经济学、金融学或劳动经济学。"
+    },
+    "next_action": "需公开地学任务目录或一条可辨识对象的实际轨迹。；需实际经济任务问题、变量/序列及运行结果。",
+    "source_pdf": "Reference_PDF/07_Medical_and_Health_Sciences/ASD-0919_Scaling_Scientific_Discovery_Environments_for_Turn_Level_Agentic_RL.pdf",
+    "latest_evidence_ledger": "completion_decisions.jsonl"
+  },
+  {
+    "paper_id": "ASD-0925",
+    "title": "Beyond Execution: Auditing Experimental Fidelity in LLM-Driven Scientific Research",
+    "modules_pending": [
+      "02"
+    ],
+    "secondary_missing_modules": [
+      "02"
+    ],
+    "current_secondary_codes": {
+      "02": null
+    },
+    "reasons": {
+      "02": "官方仓库新增检得FHN/KS偏微分方程预测计划及Physical Modeling聚合结果，但该计划生成日期07-21晚于聚合结果截止日期07-10，无法证明计划被执行或对应正文4项Scientific Simulation。正文称30项复现含computational physics，附录具体清单却均为ML；本轮存在两种审查意见，主控按来源链尚未闭合保留待核。02.02.16计算物理学仅列候选。"
+    },
+    "next_action": "需正文4项任务ID与执行记录的对应；不得写成FHN/KS已执行或达到SOTA。",
+    "source_pdf": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Yu_2026_Beyond_Execution_Auditing_Experimental_Fidelity_in_LLM_Driven_Scientific_ASD0925.pdf",
+    "latest_evidence_ledger": "completion_decisions.jsonl"
+  }
+]

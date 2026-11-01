@@ -1,4 +1,22 @@
 # Naumov 2025 - DORA AI Scientist
+
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`11`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`11`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 11 | 11.07 科学系统与知识生产研究 | 11.07.08 科学方法论 | 已落地 |
+
+- 分桶/纳入：实际比较科学文章生成质量，以Nature Reviews为正控、伪造文章为负控，并人工核验引用；不把外部PandaOmics的疾病分析自动算DORA实验。
+  - 证据：PDF 第 [68] 页；原文：To assess the quality of writing produced by several AI writing assistants, we generated ten review articles using DORA and 3 other AI writing assistants
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
 ## 2026-07-05 Phase6NoteRevisionR22 harmonization
 
 - Frozen landing decision: keep independent `01.04` with `object_coverage_mode=general_method_without_concrete_object_experiments`, `primary_module_for_filing=01`, `general_method_bucket=01.04`, and `source_limited=no`.

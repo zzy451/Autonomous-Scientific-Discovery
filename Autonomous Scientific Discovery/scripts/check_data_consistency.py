@@ -42,8 +42,9 @@ PROGRESS_PATH = (
 )
 # Authoritative snapshot after the 176-candidate full-text admission review
 # (169 admitted, 6 awaiting role review, 1 excluded; 2026-10-22 batch).
-EXPECTED_ACTIVE_CONFIRMED = 663
-EXPECTED_ACTIVE_LOCAL_PDF = 636
+# 2026-11-01: ASD-0530 is a conceptual Perspective, now background_only.
+EXPECTED_ACTIVE_CONFIRMED = 662
+EXPECTED_ACTIVE_LOCAL_PDF = 635
 EXPECTED_ACTIVE_NO_LOCAL_PDF = 27
 EXPECTED_NO_LOCAL_IDS = {
     "ASD-0005",

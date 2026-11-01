@@ -1,5 +1,24 @@
 # El Agente Potente: High-Throughput Agentic Atomistic Simulations
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`03`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.03 合成、反应与催化 | 03.03.04 反应机理 | 已落地 |
+| 04 | 04.01 材料基础 | 04.01.04 材料计算与材料信息学 | 已落地 |
+
+- 模块04：钙钛矿候选生成、稳定性筛选及性质计算。
+  - 证据：PDF 第 [7, 8] 页；原文：Computational materials discovery often relies on high-throughput calculations
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-1049

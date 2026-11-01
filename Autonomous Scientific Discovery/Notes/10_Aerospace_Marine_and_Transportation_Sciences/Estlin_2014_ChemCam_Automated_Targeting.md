@@ -1,5 +1,24 @@
 # Estlin et al. 2014 - Automated Targeting for the MSL Rover ChemCam Spectrometer
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`10`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`05;10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 05 | 05.01 地球科学基础 | 05.01.01 地质学 | 已落地 |
+| 10 | 10.02 航天科学 | 10.02.03 深空探测 | 已落地 |
+
+- 模块05：MSL岩石和脉体纹理图像识别。
+  - 证据：PDF 第 5-6 页；原文：This picture shows an example classification result for identifying veins in an RMI image
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Automated Targeting for the MSL Rover ChemCam Spectrometer
 - 作者：Tara Estlin; Gary Doran; Benjamin Bornstein; Reena Francis; Daniel Gaines; Michael Burl; S. Johnstone; Vijesh Verma

@@ -1,5 +1,32 @@
 # Beyond Execution: Auditing Experimental Fidelity in LLM-Driven Scientific Research
 
+## 当前分类（2026-11-01 补证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 当前对象模块：`01;02;06;11`。
+- 本节为当前结论，取代后文不一致的历史分类；每个模块保留一个有证据支持的代表落点。
+
+| 模块 | 二级 | 三级 | 当前状态 |
+|---|---|---|---|
+| 01 | 01.02 计算机科学 | 01.02.13 机器学习 | 已确定 |
+| 02 | 待核 | 待核 | 证据/边界待核 |
+| 06 | 06.01 生物学基础 | 06.01.12 生物信息学 | 已确定 |
+| 11 | 11.07 科学系统与知识生产研究 | 11.07.08 科学方法论 | 已确定 |
+
+### 模块02补证
+
+- 原缺项原因：正文仅有computational physics和Scientific Simulation标签，缺具体任务对应链。
+- 本轮结论：官方仓库新增检得FHN/KS偏微分方程预测计划及Physical Modeling聚合结果，但该计划生成日期07-21晚于聚合结果截止日期07-10，无法证明计划被执行或对应正文4项Scientific Simulation。正文称30项复现含computational physics，附录具体清单却均为ML；本轮存在两种审查意见，主控按来源链尚未闭合保留待核。02.02.16计算物理学仅列候选。
+- 来源：local PDF；位置：p.5；原文：We construct a benchmark consisting of 30 distinct reproduction tasks derived from classic ML, computational physics, and bio-informatics domains
+- 来源：local PDF；位置：p.8, Table 4；原文：Scientific Simulation；4项任务，1项达到SOTA；没有对象清单。
+- 来源：https://raw.githubusercontent.com/Flavorfish/AutoRepro/67ada1c0cfc3aa3b0304b1bf1a83786daf18ee27/data/naturebench_plans/nb_s42256-022-00464-w.yaml；位置：datasets; generation_metadata；原文：generated_at: '2026-07-21T10:07:51.867368'；fhn、ks_l22仅能确认任务计划定义。
+- 来源：https://raw.githubusercontent.com/Flavorfish/AutoRepro/67ada1c0cfc3aa3b0304b1bf1a83786daf18ee27/NATUREBENCH_INTEGRATION.md；位置：实验结果汇总；原文：截至 2026-07-10；Physical Modeling聚合3次，未绑定具体计划。
+- 解释范围：需正文4项任务ID与执行记录的对应；不得写成FHN/KS已执行或达到SOTA。
+
+- [本轮补证报告](../../Coverage_Check/classification_recheck_2026-11-01/completion_report.md)。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0925

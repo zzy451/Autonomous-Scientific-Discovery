@@ -1,5 +1,30 @@
 # Villaescusa-Navarro et al. 2025 - The Denario project: Deep knowledge AI agents for scientific discovery
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`02`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;03;04;06;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.04 分子设计与化学空间探索 | 03.04.03 超分子化学 | 已落地 |
+| 04 | 04.03 软物质与功能材料 | 04.03.02 纳米材料 | 已落地 |
+| 06 | 06.03 生物技术相关科学 | 06.03.04 单细胞生物学 | 已落地 |
+| 07 | 07.03 公共卫生与健康科学 | 07.03.08 医学信息学 | 已落地 |
+| 02 | 02.02 物理学 | 02.02.02 数学物理学 | 已落地 |
+
+- 模块03：实际肽自组装轨迹及聚集稳定分裂。
+  - 证据：PDF 第 [30, 32] 页；原文：To investigate this, we tasked Denario with analyzing a 1200 ns all-atom molecular dynamics (MD) trajectory containing 30 copies of a known self-assembling pentapeptide: KYFIL.
+
+- 模块04：91条功能化石墨烯纳米通道轨迹扩散密度氢键分析。
+  - 证据：PDF 第 [49, 53] 页；原文：aqueous NaCl solutions (0-5 mol/kg) confined between graphene sheets functionalized with -COOH
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：The Denario project: Deep knowledge AI agents for scientific discovery
 - 作者：Francisco Villaescusa-Navarro et al.

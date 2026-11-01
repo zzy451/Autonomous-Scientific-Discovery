@@ -1,5 +1,24 @@
 # OPERA: Operator-residual feedback for reliable autonomous optical experiments with language-model agents
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`02`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 02 | 02.02 物理学 | 02.02.09 光学 | 已落地 |
+| 09 | 09.01 工程基础 | 09.01.03 测量与测试技术 | 已落地 |
+
+- 模块09：三维干涉测量从数字孪生转入三台物理仪器。
+  - 证据：PDF 第 [2] 页；原文：We implemented OPERA in beam shaping, structured-light three-dimensional reconstruction and interferometry.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-1047

@@ -1,5 +1,36 @@
 # Into the Unknown: Benchmarking AI agents on open scientific research problems
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`included`；主归档：`02`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;02;03;04;11`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.02 基础化学 | 03.02.11 理论与计算化学 | 已落地 |
+| 04 | 04.01 材料基础 | 04.01.04 材料计算与材料信息学 | 已落地 |
+| 01 | 01.02 计算机科学 | 01.02.13 机器学习 | 已落地 |
+| 02 | 02.02 物理学 | 02.02.16 计算物理学 | 已落地 |
+| 11 | 11.07 科学系统与知识生产研究 | 11.07.08 科学方法论 | 已落地 |
+
+- 模块03：HIP-NN分子能量构象失效及不确定性研究。
+  - 证据：PDF 第 [4, 7] 页；原文：identify failure motifs and calibrate uncertainty estimates that transfer across conformations.
+
+- 模块04：实际材料原子间势描述符研究。
+  - 证据：PDF 第 [4, 7] 页；原文：Replace SNAP bispectrum components with a learned descriptor and test its accuracy, data efficiency, and cross-material transfer.
+
+- 模块01：实际高斯过程字典学习PINN研究与执行提交。
+  - 证据：PDF 第 [4, 7] 页；原文：Apply exact large-scale Gaussian processes to a new domain using a domain-specific kernel or sparsity construction.
+
+- 模块11：独立研究自动科研评分与作者专家判断一致性。
+  - 证据：PDF 第 [15] 页；原文：To test whether our grading pipeline provides a reliable estimate of the quality of AI-written papers, we conduct a meta-verification study that collects expert judgments on these papers and compares them with the judgments of our pipeline.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0915

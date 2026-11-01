@@ -1,5 +1,33 @@
 # Na and Park 2026 - Machine Collective Intelligence for Explainable Scientific Discovery
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`02`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;03;04;06;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.02 基础化学 | 03.02.06 高分子化学 | 已落地 |
+| 04 | 04.02 结构材料与无机材料 | 04.02.02 合金材料 | 已落地 |
+| 06 | 06.01 生物学基础 | 06.01.05 生物物理学 | 已落地 |
+| 02 | 02.02 物理学 | 02.02.16 计算物理学 | 已落地 |
+| 09 | 09.04 化学工程与过程工程 | 09.04.03 反应工程 | 已落地 |
+
+- 模块03：实际聚合物混合自由能符号回归，改03.03父级。
+  - 证据：PDF 第 [4, 5] 页；原文：FHST [39] (Flory–Huggins equation for polymer mixing)
+
+- 模块04：实际合金疲劳极限关系。
+  - 证据：PDF 第 [4, 5] 页；原文：SFL [41] (Fatigue limit of alloy compositions)
+
+- 模块09：实际甲烷转化反应器变量预测C2产率。
+  - 证据：PDF 第 [4, 5] 页；原文：NOMC [42] (Chemical reactor for non-oxidative methane conversion)
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Machine Collective Intelligence for Explainable Scientific Discovery
 - 作者：Gyoung S. Na; Chanyoung Park

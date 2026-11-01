@@ -11,18 +11,16 @@ from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 from matplotlib.colors import ListedColormap
 
 root = Path(__file__).resolve().parents[1]
-project = root.parent / 'Autonomous Scientific Discovery'
-if not (project / 'Data/papers.jsonl').exists():
-    project = root.parent
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--chinese-output', type=Path, help='Optional Chinese manuscript directory.')
 args = parser.parse_args()
 zhroot = args.chinese_output
-snapshot = json.loads((project/'Coverage_Check/core_classification_snapshot_2026-10-29.json').read_text(encoding='utf-8-sig'))
-records = [json.loads(l) for l in (project/'Data/papers.jsonl').read_text(encoding='utf-8-sig').splitlines()]
+# Reproduce the manuscript's dated corpus independently of later library audits.
+snapshot = json.loads((root/'data/core_classification_snapshot_2026-11-01.json').read_text(encoding='utf-8-sig'))
+records = json.loads((root/'data/corpus_landscape_records_2026-11-01.json').read_text(encoding='utf-8-sig'))['records']
 core = [r for r in records if r.get('active_confirmed_core')]
 profiles = json.loads((root/'data/illustrative_domain_profiles.json').read_text(encoding='utf-8'))
-assert len(core) == snapshot['core_papers'] == 663
+assert len(core) == snapshot['core_papers'] == 662
 counts = Counter(m for r in core for m in r.get('scientific_object_modules', []))
 assert all(counts[m['module']] == m['papers'] for m in snapshot['modules'])
 years = Counter(str(r['year']) for r in core)

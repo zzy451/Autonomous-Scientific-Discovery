@@ -1,5 +1,23 @@
 # Baek et al. 2025 - ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：``。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`无；独立01.04主题分桶`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 01.04 | 通用方法主题分桶 | 不计正式科学三级 | 暂维持，详见下方证据 |
+
+- 分桶/纳入：通用研究想法质量评价，未执行案例对象实验；ReviewingAgents反馈本身不构成科学系统独立对象。
+  - 证据：PDF 第 [6] 页；原文：and manual human evaluation to validate different models on our experimental benchmark.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models
 - 作者：Jinheon Baek, Sujay Kumar Jauhar, Silviu Cucerzan, Sung Ju Hwang

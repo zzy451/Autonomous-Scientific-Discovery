@@ -1,5 +1,27 @@
 # Feng et al. 2025 - OpenFOAMGPT 2.0: end-to-end, trustworthy automation for computational fluid dynamics
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`09`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 02 | 02.02 物理学 | 02.02.03 经典力学 | 已落地 |
+| 09 | 09.01 工程基础 | 09.01.01 工程数学与建模 | 已落地 |
+
+- 模块05：人工二维圆形孔隙结构的渗透率及排驱模拟，地下水和油气仅作应用背景；保留09工程覆盖；02流体物理对象见本轮补充。
+  - 证据：PDF 第 6-8 页；原文：We selected a 2D packed circular geometry
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+- 补充02：Poiseuille速度剖面与解析解实际比较，八组压力梯度模拟得到Darcy到非Darcy转变；经典流体物理对象明确，不能因撤回05而漏计02。
+  - PDF第5—6页：Comparison between numerical results and analytical solution for single-phase Poiseuille flow;
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：OpenFOAMGPT 2.0: end-to-end, trustworthy automation for computational fluid dynamics
 - 作者：Jingsen Feng; Ran Xu; Xu Chu

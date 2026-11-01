@@ -1,5 +1,24 @@
 # Yue 2025 - Foam-Agent: Towards Automated Intelligent CFD Workflows
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`09`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 02 | 02.02 物理学 | 02.02.16 计算物理学 | 已落地 |
+| 09 | 09.01 工程基础 | 09.01.01 工程数学与建模 | 已落地 |
+
+- 模块02：多流体物理场仿真评测。
+  - 证据：PDF 第 [5] 页；原文：containing 110 OpenFOAM simulation cases across 11 distinct physics scenarios
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Foam-Agent: Towards Automated Intelligent CFD Workflows
 - 作者：Ling Yue, Nithin Somasekharan, Tingwen Zhang, Yadi Cao, Zhangze Chen, Shimin Di, Shaowu Pan

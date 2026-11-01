@@ -1,5 +1,23 @@
 # Takagi 2023 - Towards Autonomous Hypothesis Verification via Language Models with Minimal Guidance
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 01 | 01.02 计算机科学 | 01.02.13 机器学习 | 已落地 |
+
+- 分桶/纳入：实际50次假设代码执行，具体研究LLM冗余回答；toy规模不取消机器学习对象。
+  - 证据：PDF 第 [2] 页；原文：We tested this using a toy research problem of machine learning
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Towards Autonomous Hypothesis Verification via Language Models with Minimal Guidance
 - 作者：Shiro Takagi, Ryutaro Yamauchi, Wataru Kumagai

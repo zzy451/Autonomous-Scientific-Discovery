@@ -1,5 +1,41 @@
 # Xia et al. 2025 - SR-SCIENTIST: Scientific Equation Discovery With Agentic AI
 
+## 当前分类（2026-11-01 补证复核）
+
+- 当前纳入状态：`to_read`；主归档：`02`。
+- 当前对象模块：`02;03;04;06`。
+- 本节为当前结论，取代后文不一致的历史分类；每个模块保留一个有证据支持的代表落点。
+
+| 模块 | 二级 | 三级 | 当前状态 |
+|---|---|---|---|
+| 02 | 02.02 物理学 | 02.02.03 经典力学 | 已确定 |
+| 03 | 03.02 基础化学 | 03.02.04 物理化学 | 已确定 |
+| 04 | 04.01 材料基础 | 04.01.01 材料物理 | 已确定 |
+| 06 | 06.01 生物学基础 | 06.01.13 计算生物学 | 已确定 |
+
+### 模块03补证
+
+- 原缺项原因：前轮只有领域数量与独立RL训练集变量描述，未核对实际测试集入口及其正式方程表。
+- 本轮结论：本文p.5实际评估LSR-Synth，官方推理预处理加载lsr_synth_chem_react。基准官方模块将对象定义为反应动力学的浓度变化速率、时间与浓度；基准作者论文Table 4公开CKR17、CKR22等反应速率方程。该对象支持03.02.04物理化学，不据动力学方程推定反应路径或机理实证。
+- 来源：local PDF；位置：pp.5–6, §4.1, Table 1；原文：We evaluate our methods on the synthetic part of the LLM-SRBench
+- 来源：https://raw.githubusercontent.com/GAIR-NLP/SR-Scientist/00a44a11ff4bfd6e67cdfe8e6cc1ef5f5144b505/utils/data_preprocessing.py；位置：inference preprocessing；原文：for dataset_identifier in ['matsci','chem_react','bio_pop_growth','phys_osc']:
+- 来源：https://raw.githubusercontent.com/deep-symbolic-mathematics/llm-srbench/6fdbe409b75ea749c0a93c69b6861637d804dec4/bench/datamodules.py；位置：ChemReactKineticsDataModule；原文：Rate of change of concentration in chemistry reaction kinetics
+- 来源：https://arxiv.org/pdf/2504.10415；位置：benchmark paper, physical pp.14,24, Fig.9 and Table 4；原文：Chemistry: Reaction rate with respect to Time and Concentration；CKR17: −kA(t) + kf A(t)^0.33；CKR22: −kA(t)exp(−kst) + kqA(t)log(γt+1)。
+- 解释范围：为合成方程任务的ID/OOD测试，不是新反应的湿实验发现；没有读取受限HF parquet；不以本文p.15独立RL训练示例替代测试证据。
+
+### 模块04补证
+
+- 原缺项原因：缺少正式测试集的材料对象定义及方程，前轮未将训练和测试证据区分核实。
+- 本轮结论：本文实际测试LSR-Synth；官方推理入口加载matsci测试部分。基准作者论文Fig.9明确材料对象为应力随应变及温度变化，Table 4公开MatSci5、MatSci12等本构式，支持04.01.01材料物理。任务的物理语义已可识别，不必要求具体材料商品名。
+- 来源：local PDF；位置：pp.5–6, §4.1, Table 1；原文：material science
+- 来源：https://raw.githubusercontent.com/GAIR-NLP/SR-Scientist/00a44a11ff4bfd6e67cdfe8e6cc1ef5f5144b505/utils/data_preprocessing.py；位置：inference preprocessing；原文：for dataset_identifier in ['matsci','chem_react','bio_pop_growth','phys_osc']:
+- 来源：https://arxiv.org/pdf/2504.10415；位置：benchmark paper, physical pp.14,27, Fig.9 and Table 4；原文：Material Science: Stress with respect to Strain and Temperature；MatSci5: E0ε² + η(T−T0)log(ε+1)；MatSci12: Kε^N exp(−Q/(RT)) + ε³η(T−T0)。
+- 解释范围：仅支持合成材料本构方程任务；不声称真实材料测量或实验室材料发现。
+
+- [本轮补证报告](../../Coverage_Check/classification_recheck_2026-11-01/completion_report.md)。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：SR-SCIENTIST: Scientific Equation Discovery With Agentic AI
 - 作者：Shijie Xia; Yuhan Sun; Pengfei Liu

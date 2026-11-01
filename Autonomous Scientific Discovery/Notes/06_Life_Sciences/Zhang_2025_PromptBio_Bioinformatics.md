@@ -1,5 +1,24 @@
 # Zhang et al. 2025 - PromptBio: A Multi-Agent AI Platform for Bioinformatics Data Analysis
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`06`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`06;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 06 | 06.03 生物技术相关科学 | 06.03.01 基因组学 | 已落地 |
+| 07 | 07.02 临床医学 | 07.02.10 呼吸病学 | 已落地 |
+
+- 分桶/纳入：实际CF RNAseq/16S、变异调用和卵巢癌蛋白组分析；旧无具体对象理由撤回。
+  - 证据：PDF 第 [15] 页；原文：With ToolsGenie, we processed RNA-seq data to identify genes that are differentially expressed in CF patients, revealing important pathways related to disease and host response.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：PromptBio: A Multi-Agent AI Platform for Bioinformatics Data Analysis
 - 作者：Zhang et al.

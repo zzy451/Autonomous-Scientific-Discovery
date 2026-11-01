@@ -1,0 +1,275 @@
+[
+  {
+    "source": "https://api.crossref.org/works/10.1117/12.3091089",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0547"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "6e692143e8139b60702c352990a901f37a9f3b85bde25e2e2471c82e57e9a406",
+    "bytes": 2051,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/crossref0547.txt"
+  },
+  {
+    "source": "https://archive.ics.uci.edu/api/dataset?id=236",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-1093"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "8958b04dc43d16c1866ff856f3f81e5f7bc04245de33e90e8a739e50cd8e10f9",
+    "bytes": 3378,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/uci_seeds.txt"
+  },
+  {
+    "source": "https://archive.ics.uci.edu/api/dataset?id=602",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-1093"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "17e69b11f23e6c898cc8413ca1adb595503fcee430aae34d5c90ee377e71e58e",
+    "bytes": 6584,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/uci_dry_bean.txt"
+  },
+  {
+    "source": "https://arxiv.org/pdf/2504.10415",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0870"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "5ad550be674b1ce31b4b28d2412d0241a2d34d7d953ae1d7ac7e27f9baf189d4",
+    "bytes": 5082718,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/0870_benchmark_paper.pdf"
+  },
+  {
+    "source": "https://arxiv.org/src/2607.28990v1",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0919"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "baa14af220465b4d30a18e9539efbb77dd36dfae7e6a72546deab799cdfe72f6",
+    "bytes": 4315120,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/0919_source.tar"
+  },
+  {
+    "source": "https://datasets-server.huggingface.co/rows?dataset=jablonkagroup/ChemBench&config=analytical_chemistry&split=train&offset=0&length=1",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0873"
+    ],
+    "verification": "read_by_read_only_reviewer",
+    "local_evidence_path": null,
+    "controller_retrieval_limitation": "502 Server Error: Bad Gateway for url: https://datasets-server.huggingface.co/rows?dataset=jablonkagroup/ChemBench&config=analytical_chemistry&split=train&offset=0&length=1"
+  },
+  {
+    "source": "https://doi.org/10.1117/12.3091089",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0547"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "b4c81662ab5bea72633dd129267c7ec506aa7beb64581acdb750925576d56b8f",
+    "bytes": 219,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/spie_doi.txt"
+  },
+  {
+    "source": "https://huggingface.co/datasets/Sssunset/Earth-Bench/tree/49ce6b784c038b63b0817cbfa8211eb053b47e37/question12",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0650"
+    ],
+    "verification": "read_by_read_only_reviewer",
+    "local_evidence_path": null
+  },
+  {
+    "source": "https://huggingface.co/datasets/jablonkagroup/ChemBench/resolve/6e1d25748952393f44e35b8e85bbe567246a6430/README.md",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0873"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "9e6d2c4ef64f93196760fec45033cf8a29aa4987b362466c134f42b7bf3a110e",
+    "bytes": 21036,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/0873_chemb_metadata.txt"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/Flavorfish/AutoRepro/67ada1c0cfc3aa3b0304b1bf1a83786daf18ee27/NATUREBENCH_INTEGRATION.md",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0925"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "1765cbc2ea68196e4e73fb304e1f21d7e50312da51ed29a1bae4d6443d62e8fa",
+    "bytes": 18955,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/0925_integration.txt"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/Flavorfish/AutoRepro/67ada1c0cfc3aa3b0304b1bf1a83786daf18ee27/data/naturebench_plans/nb_s42256-022-00464-w.yaml",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0925"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "c4b5c5e83c0ff5fd778cae94e8b22dd1b3331a1cd0610c716f39ae59ccd7b238",
+    "bytes": 5426,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/0925_plan.txt"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/GAIR-NLP/SR-Scientist/00a44a11ff4bfd6e67cdfe8e6cc1ef5f5144b505/utils/data_preprocessing.py",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0870"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "83dc70ee9e03920c67db3056d272b1b45a53fffaec8e354c151a6c8a0d69e48b",
+    "bytes": 1673,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/0870_inference.txt"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/deep-symbolic-mathematics/llm-srbench/6fdbe409b75ea749c0a93c69b6861637d804dec4/bench/datamodules.py",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0870"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "7fa084c78976cb1c87efff558980ce72e000a3463cf022ed2a95affee6823b18",
+    "bytes": 5742,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/0870_benchmark_module.txt"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/opendatalab/Earth-Agent/ca1dfaef750654331308a434966d307f1728fd90/benchmark/question.json",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0650"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "c9cc3269aab7666c6cd44b8af81c580c562c695a94251868c029f8c107989bc2",
+    "bytes": 4097198,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/0650_earth_questions.txt"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/sjtu-sai-agents/X-Master/658698387d28d2063bb76a3d7c2fa491b2e82c94/logs/example.jsonl",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0111"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "52511ac724c5e3f92188f21d7ec5a0d8f3ab13bf47a98e1204689ecfdb5c7739",
+    "bytes": 173380,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/xmaster_logs.jsonl"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/ur-whitelab/chemcrow-runs/500104ed9a5d479a8dc4128afc463625ade5a409/chromaphore-rf-369.ipynb",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0093"
+    ],
+    "verification": "retrieved_by_controller",
+    "sha256": "200a7d4129cd23df1314637ad50c0741e7121b1f9f30bbe1a7dcbc4efd79cf3e",
+    "bytes": 13768,
+    "local_evidence_path": "tmp/classification_completion_2026-11-01/sources/0093_notebook.txt"
+  },
+  {
+    "source": "Reference_PDF/03_Chemical_Sciences/Bran_2024_ChemCrow.pdf",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0093"
+    ],
+    "verification": "local_primary_pdf",
+    "sha256": "28be4990cf5fc5fa50b379684a9d4c31c3a0ad36aeab1759d324ee428b29de16",
+    "bytes": 16226282
+  },
+  {
+    "source": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Chai_2025_SciMaster.pdf",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0111"
+    ],
+    "verification": "local_primary_pdf",
+    "sha256": "9bfc193d6a51901f003cf32a9b37b7daf5ae823348f85505b9ad617c8e16f32f",
+    "bytes": 1842584
+  },
+  {
+    "source": "Reference_PDF/05_Earth_and_Environmental_Sciences/Zhao_2026_OpenEarth_Agent.pdf",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0650"
+    ],
+    "verification": "local_primary_pdf",
+    "sha256": "35a7fdb351a748fe94ae5196bce59571279b5f8fb6db073254b87b890f2b4e44",
+    "bytes": 3286615
+  },
+  {
+    "source": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_SciDER.pdf",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0845"
+    ],
+    "verification": "local_primary_pdf",
+    "sha256": "ec569151e737114cabad0873e54ed18044baf88afff8e18f118e8fca68a8d14a",
+    "bytes": 4537237
+  },
+  {
+    "source": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xia_2025_SR_Scientist.pdf",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0870"
+    ],
+    "verification": "local_primary_pdf",
+    "sha256": "b7acf9b0f94197ddc39f8ccfbb99c007f98d529b201f854a7f89ae7707fa0735",
+    "bytes": 2607435
+  },
+  {
+    "source": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/ASD-0873_Large_Knowledge_Model_A_Knowledge_Foundation_for_Agentic_Science_at_Scale.pdf",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0873"
+    ],
+    "verification": "local_primary_pdf",
+    "sha256": "c89fba20c04d0c545c8dce812cad42a2184a8a837c15131f45d5db9348ee2f88",
+    "bytes": 602831
+  },
+  {
+    "source": "Reference_PDF/07_Medical_and_Health_Sciences/ASD-0919_Scaling_Scientific_Discovery_Environments_for_Turn_Level_Agentic_RL.pdf",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0919"
+    ],
+    "verification": "local_primary_pdf",
+    "sha256": "8f7713aca39a84a7e1ef7204d4746eacfdf6a990a1a2b5aba7480e04078f7ee7",
+    "bytes": 4910072
+  },
+  {
+    "source": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Yu_2026_Beyond_Execution_Auditing_Experimental_Fidelity_in_LLM_Driven_Scientific_ASD0925.pdf",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-0925"
+    ],
+    "verification": "local_primary_pdf",
+    "sha256": "7fa2c4da60ba8a672658feb2e77ea15519826137b3b32c090a1293a2c04a70b9",
+    "bytes": 1980864
+  },
+  {
+    "source": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Ning_2026_WhatWorkedBench_Benchmarking_Experimental_Understanding_in_AI_Agents_ASD1093.pdf",
+    "checked_on": "2026-11-01",
+    "papers": [
+      "ASD-1093"
+    ],
+    "verification": "local_primary_pdf",
+    "sha256": "bfff5ce9507772f337e838d06d817323d19da854ab78b73e30c4dd8239fd4fc2",
+    "bytes": 662534
+  },
+  {
+    "source": "https://huggingface.co/datasets/jablonkagroup/ChemBench/resolve/6e1d25748952393f44e35b8e85bbe567246a6430/analytical_chemistry/train-00000-of-00001.parquet",
+    "papers": [
+      "ASD-0873"
+    ],
+    "checked_on": "2026-11-01",
+    "verification": "downloaded_not_parsed_by_controller",
+    "sha256": "a1b2937e5e99bb16f4a7767964ed78232706e33cc2eedfbe3ab39e00525f8e76",
+    "bytes": 40088
+  }
+]

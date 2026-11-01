@@ -1,5 +1,24 @@
 # Zhou et al. 2026 - ToolMol: Evolutionary Agentic Framework for Multi-objective Drug Discovery
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`07`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.04 分子设计与化学空间探索 | 03.04.02 小分子性质优化 | 已落地 |
+| 07 | 07.04 药学与生物医药 | 07.04.01 药物发现 | 已落地 |
+
+- 模块03：实际三靶点配体联合优化及自由能。
+  - 证据：PDF 第 [5, 7] 页；原文：We evaluate the effectiveness of ToolMol on the multi- objective task of optimizing for protein-ligand binding affin- ity while preserving drug-likeness and synthetic accessibil- ity.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-07-05 Phase6NoteRevisionR25 harmonization
 
 - Frozen landing decision: scientific_object_modules=03;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; source_limited=no.

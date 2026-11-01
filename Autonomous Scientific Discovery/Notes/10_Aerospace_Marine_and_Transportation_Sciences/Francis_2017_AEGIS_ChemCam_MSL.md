@@ -1,5 +1,24 @@
 # Francis et al. 2017 - AEGIS autonomous targeting for ChemCam on Mars Science Laboratory: Deployment and results of initial science team use
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`10`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`05;10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 05 | 05.01 地球科学基础 | 05.01.02 地球化学 | 已落地 |
+| 10 | 10.02 航天科学 | 10.02.03 深空探测 | 已落地 |
+
+- 模块05：49个基岩目标的Cl/Si/P成分测量。
+  - 证据：PDF 第 7-8 页；原文：showed the highest concentration of chlorine ever measured by ChemCam
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：AEGIS autonomous targeting for ChemCam on Mars Science Laboratory: Deployment and results of initial science team use
 - 作者：Raymond Francis; Tara Estlin; Gary Doran; Sancia Johnstone; Daniel Gaines; Vijesh Verma; Michael Burl; Jens Frydenvang; Sofia Montano; Roger C. Wiens; Steven Schaffer; Olivier Gasnault; Laura DeFlores; Diana Blaney; Benjamin Bornstein

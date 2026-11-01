@@ -1,5 +1,24 @@
 # Kumar 2026 - El Agente Sólido: A New Age(nt) for Solid State Simulations
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`04`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 04 | 04.01 材料基础 | 04.01.04 材料计算与材料信息学 | 已落地 |
+| 03 | 03.03 合成、反应与催化 | 03.03.03 催化化学 | 已落地 |
+
+- 模块03：OER自由能与过电位计算。
+  - 证据：PDF 第 8 页；原文：This example demonstrates the agent’s ability to perform a full first-principles electrochemical catalysis workflow
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：El Agente Sólido: A New Age(nt) for Solid State Simulations
 - 作者：Sai Govind Hari Kumar; Yunheng Zou; Andrew Wang; Jesus Valdes-Hernandez; Tsz Wai Ko; Nathan Yue; Olivia Leng; Hanyong Xu; Chris Crebolder; Alan Aspuru-Guzik; Varinia Bernales

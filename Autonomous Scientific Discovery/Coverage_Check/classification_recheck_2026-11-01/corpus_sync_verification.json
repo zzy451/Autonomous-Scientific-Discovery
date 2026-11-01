@@ -1,0 +1,173 @@
+{
+  "snapshot_date": "2026-11-01",
+  "decision": "ASD-0093 retains chemistry and materials, resolves materials to 04.04.05; other pending papers unchanged",
+  "snapshot": {
+    "snapshot_date": "2026-11-01",
+    "snapshot_revision": "chemcrow_user_boundary_adjudication",
+    "core_papers": 662,
+    "formal_domain_papers": 660,
+    "general_method_papers": 2,
+    "primary_secondary_missing_papers": 0,
+    "primary_tertiary_resolved": 659,
+    "primary_tertiary_pending": 1,
+    "multi_module_papers": 198,
+    "module_pairs": 935,
+    "module_pairs_with_tertiary": 931,
+    "pending_module_pairs": 2,
+    "module_pairs_without_secondary": 2,
+    "module_pairs_without_tertiary": 4,
+    "papers_with_any_secondary_missing": 2,
+    "papers_with_any_tertiary_missing": 3,
+    "formal_papers_complete_all_modules": 657,
+    "local_core_pdfs": 635,
+    "needs_review_papers": 29,
+    "modules": [
+      {
+        "module": "01",
+        "papers": 94,
+        "primary_filings": 85,
+        "primary_tertiary_resolved": 85,
+        "module_secondary_pending": 0,
+        "module_tertiary_resolved": 94,
+        "module_tertiary_pending": 0
+      },
+      {
+        "module": "02",
+        "papers": 82,
+        "primary_filings": 62,
+        "primary_tertiary_resolved": 62,
+        "module_secondary_pending": 1,
+        "module_tertiary_resolved": 81,
+        "module_tertiary_pending": 1
+      },
+      {
+        "module": "03",
+        "papers": 119,
+        "primary_filings": 78,
+        "primary_tertiary_resolved": 78,
+        "module_secondary_pending": 0,
+        "module_tertiary_resolved": 119,
+        "module_tertiary_pending": 0
+      },
+      {
+        "module": "04",
+        "papers": 172,
+        "primary_filings": 130,
+        "primary_tertiary_resolved": 129,
+        "module_secondary_pending": 0,
+        "module_tertiary_resolved": 171,
+        "module_tertiary_pending": 1
+      },
+      {
+        "module": "05",
+        "papers": 52,
+        "primary_filings": 36,
+        "primary_tertiary_resolved": 36,
+        "module_secondary_pending": 1,
+        "module_tertiary_resolved": 51,
+        "module_tertiary_pending": 1
+      },
+      {
+        "module": "06",
+        "papers": 126,
+        "primary_filings": 80,
+        "primary_tertiary_resolved": 80,
+        "module_secondary_pending": 0,
+        "module_tertiary_resolved": 126,
+        "module_tertiary_pending": 0
+      },
+      {
+        "module": "07",
+        "papers": 124,
+        "primary_filings": 70,
+        "primary_tertiary_resolved": 70,
+        "module_secondary_pending": 0,
+        "module_tertiary_resolved": 124,
+        "module_tertiary_pending": 0
+      },
+      {
+        "module": "08",
+        "papers": 9,
+        "primary_filings": 4,
+        "primary_tertiary_resolved": 4,
+        "module_secondary_pending": 0,
+        "module_tertiary_resolved": 9,
+        "module_tertiary_pending": 0
+      },
+      {
+        "module": "09",
+        "papers": 62,
+        "primary_filings": 45,
+        "primary_tertiary_resolved": 45,
+        "module_secondary_pending": 0,
+        "module_tertiary_resolved": 62,
+        "module_tertiary_pending": 0
+      },
+      {
+        "module": "10",
+        "papers": 27,
+        "primary_filings": 22,
+        "primary_tertiary_resolved": 22,
+        "module_secondary_pending": 0,
+        "module_tertiary_resolved": 27,
+        "module_tertiary_pending": 0
+      },
+      {
+        "module": "11",
+        "papers": 68,
+        "primary_filings": 48,
+        "primary_tertiary_resolved": 48,
+        "module_secondary_pending": 0,
+        "module_tertiary_resolved": 67,
+        "module_tertiary_pending": 1
+      }
+    ]
+  },
+  "validation": [
+    "中英文逐节标题层级、label、交叉引用及引文顺序一致；参考文献库字节一致。",
+    "正文11行分类表、总数及最新owner派生快照一致；活跃正文无旧663/654/926/757口径。",
+    "en：编译成功，32页；引文、交叉引用及字形检查通过；Overfull项0。",
+    "zh：编译成功，28页；引文、交叉引用及字形检查通过；Overfull项0。",
+    "GitHub英文正文、参考文献及六幅图与Overleaf工作副本逐文件字节一致。",
+    "图形来源统计与当前核心库一致；年份按去重工作统计，领域按非互斥归属统计。",
+    "对比本次人工裁决前后，模块owner仅ASD-0093/04改变；主列表仅ASD-0093一行改变，其余待核条目保持原状。",
+    "已检查全部受影响页的缩略图，并逐页放大检查英文第11–12页、中文第10–11页分类表及全景图；无重叠、裁切、缺字或图表越界。",
+    "`ERROR`: 0",
+    "`WARNING`: 100",
+    "`INFO`: 416"
+  ],
+  "document_structure": {
+    "sections": 10,
+    "subsections": 42,
+    "figures": 6,
+    "tables": 14,
+    "cited_references": 44,
+    "bibliography_records": 1051
+  },
+  "core_source_sha256": {
+    "Paper_Lists/agent_master_paper_list.md": "3617b573ace6e3c355509884c831e8f2a4a63af2003138d5a99b570867e1e079",
+    "Data/paper_module_taxonomy_assignments.jsonl": "5a102f952362278f0d6052da2b38bf701f16834d8c8dbb3cf8c63fff6231822a",
+    "Data/papers.jsonl": "ce45634638d2ef9a162ef0f362d0209304e7ed7f041f80cbd29af7a6de651d22",
+    "Data/papers.sqlite": "b745dc5c95124a9ac18ed4ad0e41e5c34aaa88770df0edef5b19ecf70fc66b73",
+    "Coverage_Check/core_classification_snapshot_2026-11-01.json": "6b9863e11e6d3095a73cf534ade8c400dff5ea9b6199d49e2ab49cfc10b44139"
+  },
+  "local_pdf_deliverables": [
+    {
+      "language": "en",
+      "file": "output\\pdf\\Agent_for_Science_Review_2026-11-01.pdf",
+      "pages": 32,
+      "sha256": "c84cd5650eb73ea19e261cf17469c95dccc28208c14cb3d3c495439dd178b1d7"
+    },
+    {
+      "language": "zh",
+      "file": "output\\pdf\\Agent_for_Science_Review_Chinese_2026-11-01.pdf",
+      "pages": 28,
+      "sha256": "121a8b0f5b1e8c6cdc75846e54b65b71c22c74c527eb2a2de3552fb9986b232a"
+    }
+  ],
+  "publication_scope": {
+    "github": "Classification owners, evidence notes, selected audit reports, derived data, English manuscript sources/figures, frozen inputs and supplementary analysis.",
+    "overleaf": "English main/section TeX, bibliography and required figure assets only.",
+    "local": "Chinese manuscript, output PDFs, build products, downloaded evidence caches and temporary scripts."
+  }
+}

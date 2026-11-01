@@ -1,4 +1,22 @@
 # Rabby 2025 - Iterative Hypothesis Generation for Scientific Discovery with Monte Carlo Nash Equilibrium Self-Refining Trees
+
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：``。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`无；独立01.04主题分桶`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 01.04 | 通用方法主题分桶 | 不计正式科学三级 | 暂维持，详见下方证据 |
+
+- 分桶/纳入：暂维持01.04并保留肽案例复核：有具体序列及AlphaFold图和实验声称，但缺测量方法数据；不能写全文无对象报告。
+  - 证据：PDF 第 [4] 页；原文：Experimental validation confirms that the modified peptide outperforms the original sequence
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
 ## 2026-07-05 Phase6NoteRevisionR22 harmonization
 
 - Frozen landing decision: keep independent `01.04` with `object_coverage_mode=general_method_without_concrete_object_experiments`, `primary_module_for_filing=01`, `general_method_bucket=01.04`, and `source_limited=no`.

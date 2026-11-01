@@ -1,4 +1,32 @@
 # InternAgent Team 2025 - InternAgent
+
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;03;06;09;10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.03 合成、反应与催化 | 03.03.02 反应设计 | 已落地 |
+| 06 | 06.03 生物技术相关科学 | 06.03.01 基因组学 | 已落地 |
+| 01 | 01.02 计算机科学 | 01.02.12 人工智能 | 已落地 |
+| 09 | 09.03 电气、电子与信息工程 | 09.03.02 电力系统 | 已落地 |
+| 10 | 10.04 交通运输科学 | 10.04.05 智能交通系统 | 已落地 |
+
+- 模块03：Suzuki-Miyaura反应产率任务。
+  - 证据：PDF 第 [10] 页；原文：We conduct experiments on the widely-used Suzuki-Miyaura reaction dataset
+
+- 模块09：IEEE 39-Bus电力潮流与变压器温度任务。
+  - 证据：PDF 第 [10] 页；原文：We conduct experiments on the IEEE 39-Bus
+
+- 模块10：ONCE点云自动驾驶评测。
+  - 证据：PDF 第 [11] 页；原文：3D Point Cloud Autonomous Driving (AutoPCDet).
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
 ## 2026-07-05 Phase6NoteRevisionR22 harmonization
 
 - Frozen landing decision: `scientific_object_modules=01;03;06;09;10`, `object_coverage_mode=multi_module`, `primary_module_for_filing=01`, `general_method_bucket=none`, `source_limited=no`.

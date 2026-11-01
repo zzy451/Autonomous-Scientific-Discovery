@@ -1,5 +1,24 @@
 ﻿# Pilon et al. 2026 - A flexible and affordable self-driving laboratory for automated reaction optimization
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`03`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.03 合成、反应与催化 | 03.03.02 反应设计 | 已落地 |
+| 09 | 09.04 化学工程与过程工程 | 09.04.03 反应工程 | 已落地 |
+
+- 模块09：连续流光反应工程。
+  - 证据：PDF 第 [2] 页；原文：The RoboChem-Flex self-driving platform uses a slug-flow regime
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **Paper Info**
 - paper_id: `ASD-0149`
 - Title: `A flexible and affordable self-driving laboratory for automated reaction optimization`

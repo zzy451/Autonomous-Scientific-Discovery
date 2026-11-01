@@ -1,5 +1,29 @@
 # Su et al. 2026 - STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`02`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;03;04;06`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.03 合成、反应与催化 | 03.03.04 反应机理 | 已落地 |
+| 04 | 04.01 材料基础 | 04.01.04 材料计算与材料信息学 | 已落地 |
+| 06 | 06.02 生物类群科学 | 06.02.01 微生物学 | 已落地 |
+| 02 | 02.02 物理学 | 02.02.03 经典力学 | 已落地 |
+
+- 模块03：具体反应浓度速率方程及恢复外推结果。
+  - 证据：PDF 第 [5, 19, 22] 页；原文：Domain Equation ID Equation Chemistry CRK22
+
+- 模块04：实际材料应力应变温度外推。
+  - 证据：PDF 第 [5, 19, 22] 页；原文：Figure 13: Case study on Stress-Strain. The left panel compares predictions across multiple temperatures
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery
 - 作者：Jiarui Su; Songjun Tu; Bei Sun; Xiaojun Liang

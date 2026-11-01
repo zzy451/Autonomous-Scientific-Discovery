@@ -1,5 +1,38 @@
 # Scaling Scientific Discovery Environments for Turn-Level Agentic RL
 
+## 当前分类（2026-11-01 补证复核）
+
+- 当前纳入状态：`included`；主归档：`07`。
+- 当前对象模块：`05;06;07;11`。
+- 本节为当前结论，取代后文不一致的历史分类；每个模块保留一个有证据支持的代表落点。
+
+| 模块 | 二级 | 三级 | 当前状态 |
+|---|---|---|---|
+| 05 | 待核 | 待核 | 证据/边界待核 |
+| 06 | 06.03 生物技术相关科学 | 06.03.06 蛋白质科学 | 已确定 |
+| 07 | 07.03 公共卫生与健康科学 | 07.03.01 流行病学 | 已确定 |
+| 11 | 11.01 经济学 | 待核 | 证据/边界待核 |
+
+### 模块05补证
+
+- 原缺项原因：只有地学环境总量及USGS来源，没有具体任务变量与结果。
+- 本轮结论：本轮另查官方HTML、LaTeX源包及附属文件入口，仍只有219个Earth science环境与USGS来源计数。唯一公开具体轨迹属于CDC FluView；没有USGS任务的变量、假设与结果，不能从机构名称推断水文学或空间信息分类。
+- 来源：local PDF；位置：pp.12–13,17–18；原文：These counts are snapshot metadata for the environment corpus.
+- 来源：https://arxiv.org/src/2607.28990v1；位置：acl_latex.tex, lines 570–589；原文：USGS；源包仅含正文、参考文献、样式和框架图，无逐任务目录。
+- 解释范围：需公开地学任务目录或一条可辨识对象的实际轨迹。
+
+### 模块11补证
+
+- 原缺项原因：经济环境数量及FRED来源只能支持经济学二级，缺具体经济问题。
+- 本轮结论：新增检查官方源包后，仍未见FRED序列标识、经济假设及对应结果。保留11.01经济学；不能仅因采用统计方法或FRED数据就细分为计量经济学、金融学或劳动经济学。
+- 来源：local PDF；位置：pp.12–13,17–18；原文：These counts are snapshot metadata for the environment corpus.
+- 来源：https://arxiv.org/src/2607.28990v1；位置：acl_latex.tex, lines 570–589；原文：FRED；452个Economics环境为汇总元数据，未披露实际问题与变量。
+- 解释范围：需实际经济任务问题、变量/序列及运行结果。
+
+- [本轮补证报告](../../Coverage_Check/classification_recheck_2026-11-01/completion_report.md)。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0919

@@ -1,5 +1,24 @@
 # Autonomous Quantum Transport Measurements of 2D Semiconductors by an AI Agent
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`included`；主归档：`02`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 04 | 04.04 能源、电子与器件材料 | 04.04.04 半导体材料 | 已落地 |
+| 02 | 02.02 物理学 | 02.02.08 凝聚态物理学 | 已落地 |
+
+- 模块04：MoS2器件实际量子输运测量及相图。
+  - 证据：PDF 第 [1, 3, 4] 页；原文：We demonstrate this AI workflow on multiple monolayer and bilayer
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0904

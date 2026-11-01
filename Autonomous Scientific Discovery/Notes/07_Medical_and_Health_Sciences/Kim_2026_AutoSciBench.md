@@ -1,5 +1,25 @@
 # AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`included`；主归档：`07`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`04;06;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 04 | 04.01 材料基础 | 04.01.03 材料表征 | 已落地 |
+| 06 | 06.03 生物技术相关科学 | 06.03.01 基因组学 | 已落地 |
+| 07 | 07.02 临床医学 | 07.02.09 心血管病学 | 已落地 |
+
+- 模块04：实际材料BET表征任务并有薄膜带隙任务。
+  - 证据：PDF 第 [6, 7, 24] 页；原文：The question asks the solver to determine the specific surface area of a porous solid from a nitrogen adsorption isotherm using the multi-point BET method.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0913

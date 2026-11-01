@@ -1,5 +1,33 @@
 # Du et al. 2025 - Accelerating Scientific Discovery with Autonomous Goal-evolving Agents
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`07`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04;06;07;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.04 分子设计与化学空间探索 | 03.04.02 小分子性质优化 | 已落地 |
+| 04 | 04.02 结构材料与无机材料 | 04.02.05 晶体材料 | 已落地 |
+| 06 | 06.01 生物学基础 | 06.01.11 合成生物学 | 已落地 |
+| 07 | 07.04 药学与生物医药 | 07.04.05 生物制药 | 已落地 |
+| 09 | 09.04 化学工程与过程工程 | 09.04.02 过程系统工程 | 已落地 |
+
+- 模块03：抗菌小分子生成优化与湿实验。
+  - 证据：PDF 第 [4, 5, 6] 页；原文：To address this challenge, we demonstrate the ability of SAGA to design new antibiotics using E. coli as a proof of concept.
+
+- 模块04：实际超硬永磁晶体计算与DFT。
+  - 证据：PDF 第 [12, 14, 22] 页；原文：leading to substantial enhancement of mechanical properties in the proposed crystalline materials
+
+- 模块09：实际乙醇水分离流程优化与成本纯度回收。
+  - 证据：PDF 第 [14, 15, 20, 22] 页；原文：We use SAGA for the design of chemical process, more speciﬁcally separation process ﬂowsheets
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-07-05 Phase6NoteRevisionR25 harmonization
 
 - Frozen landing decision: scientific_object_modules=03;04;06;07;09; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; source_limited=no.

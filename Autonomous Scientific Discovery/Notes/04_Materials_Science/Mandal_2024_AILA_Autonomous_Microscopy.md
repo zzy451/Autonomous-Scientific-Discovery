@@ -1,5 +1,24 @@
 # Mandal et al. 2024 - Autonomous Microscopy Experiments through Large Language Model Agents
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`04`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`04;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 04 | 04.01 材料基础 | 04.01.03 材料表征 | 已落地 |
+| 09 | 09.03 电气、电子与信息工程 | 09.03.08 传感器与仪器科学 | 已落地 |
+
+- 模块09：AFM仪器控制与测量。
+  - 证据：PDF 第 6 页；原文：AFMBench task demands physical execution on AFM hardware
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Autonomous Microscopy Experiments through Large Language Model Agents
 - 作者：Mandal et al.

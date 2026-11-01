@@ -1,5 +1,24 @@
 # Lin et al. 2025 - A high-throughput experimentation platform for data-driven discovery in electrochemistry
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`03`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.02 基础化学 | 03.02.08 电化学 | 已落地 |
+| 04 | 04.04 能源、电子与器件材料 | 04.04.02 电池材料 | 已落地 |
+
+- 模块04：锌电池电解液添加剂筛选及验证。
+  - 证据：PDF 第 [2] 页；原文：aqueous zinc metal batteries (AZMBs)
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-07-05 Phase6NoteRevisionR22 harmonization
 
 - `paper_id`: `ASD-0519`

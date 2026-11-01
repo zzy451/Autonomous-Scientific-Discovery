@@ -1,5 +1,29 @@
 # NexusAgent Team 2026 - S1-NexusAgent: a Self-Evolving Agent Framework for Multidisciplinary Scientific Research
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`06`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04;06;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.04 分子设计与化学空间探索 | 03.04.05 药物化学 | 已落地 |
+| 04 | 04.01 材料基础 | 04.01.04 材料计算与材料信息学 | 已落地 |
+| 06 | 06.01 生物学基础 | 06.01.06 遗传学 | 已落地 |
+| 07 | 07.01 医学基础 | 07.01.08 医学遗传学 | 已落地 |
+
+- 模块03：实际小分子药物候选筛选任务。
+  - 证据：PDF 第 26 页；原文：Using RDKit, the agent computed key drug-likeness parameters for both compounds:
+
+- 模块04：p15-16 MatSciBench实际分列材料结构性能过程失效结果，并执行公式与符号计算；材料计算成立，Nernst温度题不支持电池材料设计。
+  - 证据：PDF 第 16,27-29 页；原文：the formula calculation in materials properties and the analysis of failure mechanisms are significantly improved
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：S1-NexusAgent: a Self-Evolving Agent Framework for Multidisciplinary Scientific Research
 - 作者：NexusAgent Team

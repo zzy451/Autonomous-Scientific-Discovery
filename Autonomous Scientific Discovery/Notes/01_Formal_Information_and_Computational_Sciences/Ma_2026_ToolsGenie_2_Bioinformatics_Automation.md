@@ -1,4 +1,23 @@
 # Ma et al. 2026 - ToolsGenie 2.0: A Scalable and Extensible Multi-Agent System for Bioinformatics Automation
+
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`06`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`06;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 06 | 06.03 生物技术相关科学 | 06.03.01 基因组学 | 已落地 |
+| 07 | 07.04 药学与生物医药 | 07.04.01 药物发现 | 已落地 |
+
+- 分桶/纳入：实际BWA/GATK/DESeq2等任务及单一化合物ADMET输出，具组学与药物发现对象。
+  - 证据：PDF 第 [10] 页；原文：Predicting ADMET properties is a challenging task requiring specialized computational models, extensive chemical databases, and domain-specific algorithms
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
 ## 2026-07-05 Phase6NoteRevisionR22 harmonization
 
 - Frozen landing decision: keep independent `01.04` with `object_coverage_mode=general_method_without_concrete_object_experiments`, `primary_module_for_filing=01`, `general_method_bucket=01.04`, and `source_limited=yes`.

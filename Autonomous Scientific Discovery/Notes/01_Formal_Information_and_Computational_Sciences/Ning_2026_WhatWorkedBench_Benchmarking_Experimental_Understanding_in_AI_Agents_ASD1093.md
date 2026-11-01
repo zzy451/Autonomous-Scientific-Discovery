@@ -1,5 +1,33 @@
 # WhatWorkedBench: Benchmarking Experimental Understanding in AI Agents
 
+## 当前分类（2026-11-01 补证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 当前对象模块：`01;02;05;07;08;09`。
+- 本节为当前结论，取代后文不一致的历史分类；每个模块保留一个有证据支持的代表落点。
+
+| 模块 | 二级 | 三级 | 当前状态 |
+|---|---|---|---|
+| 01 | 01.02 计算机科学 | 01.02.13 机器学习 | 已确定 |
+| 02 | 02.01 天文学与天体物理学 | 02.01.02 太阳物理学 | 已确定 |
+| 05 | 05.02 大气、海洋与水文科学 | 05.02.02 气候科学 | 已确定 |
+| 07 | 07.02 临床医学 | 07.02.05 肿瘤学 | 已确定 |
+| 08 | 08.01 农学 | 08.01.07 种子科学与育种 | 已确定 |
+| 09 | 09.05 土木、建筑与水利工程 | 09.05.05 建筑学 | 已确定 |
+
+### 模块08补证
+
+- 原缺项原因：前轮缺少原始数据集标签的品种语义，未裁定作物学与种子科学边界。
+- 本轮结论：论文实际执行并冷回放全部native目录任务；UCI原始元数据明确Dry Bean为7个登记品种的种子形态分类，Seeds为Kama/Rosa/Canadian三品种小麦籽粒几何特征。论文以原始类别计算K-means聚类NMI。按更具体的种子形态/品种类别对象归08.01.07种子科学与育种。
+- 来源：local PDF；位置：pp.4–6,15–16；原文：K-means fits the feature representation for each mask, and the original class labels enter the external NMI calculation.
+- 来源：https://archive.ics.uci.edu/api/dataset?id=602；位置：data.additional_info.summary；原文：A computer vision system was developed to distinguish seven different registered varieties of dry beans with similar features in order to obtain uniform seed classification.
+- 来源：https://archive.ics.uci.edu/api/dataset?id=236；位置：data.additional_info.summary；原文：The examined group comprised kernels belonging to three different varieties of wheat: Kama, Rosa and Canadian
+- 解释范围：仅指种子形态与品种类别benchmark，不代表种子活力、遗传改良或育种效果验证；两项不属于正文108-episode核心Agent子集，归属依据为已执行native benchmark任务。
+
+- [本轮补证报告](../../Coverage_Check/classification_recheck_2026-11-01/completion_report.md)。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-1093

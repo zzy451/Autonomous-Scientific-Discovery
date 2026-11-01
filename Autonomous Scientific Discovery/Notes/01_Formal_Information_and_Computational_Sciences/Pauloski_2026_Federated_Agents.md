@@ -1,4 +1,30 @@
 # Pauloski et al. 2025 - Empowering Scientific Workflows with Federated Agents
+
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;02;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 04 | 04.03 软物质与功能材料 | 04.03.05 多孔材料 | 已落地 |
+| 01 | 01.02 计算机科学 | 01.02.06 操作系统与分布式系统 | 已落地 |
+| 02 | 02.01 天文学与天体物理学 | 02.01.09 天文仪器与观测方法 | 已落地 |
+
+- 模块04：MOF结构与CO2吸附模拟。
+  - 证据：PDF 第 [8] 页；原文：CO2 adsorption properties of the most promising structures are simulated and recorded in a database
+
+- 模块02：望远镜积分视场单元图像校准。
+  - 证据：PDF 第 [9] 页；原文：the agent uses previously calibrated images to inform the search for new parameters
+
+- 模块01：实际测试Aurora分布式运行时、消息延迟吞吐内存及1500多Agent去中心化训练，操作系统与分布式系统比旧知识迁移码准确。
+  - 证据：PDF 第 [5, 7, 10] 页；原文：more than 1500 autonomous agents working collaboratively
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
 ## 2026-07-05 Phase6NoteRevisionR22 harmonization
 
 - Frozen landing decision: `scientific_object_modules=01;02;04`, `object_coverage_mode=multi_module`, `primary_module_for_filing=01`, `general_method_bucket=none`, `source_limited=no`.

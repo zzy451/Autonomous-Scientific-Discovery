@@ -1,5 +1,30 @@
 # Chai et al. 2025 - SciMaster
 
+## 当前分类（2026-11-01 补证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 当前对象模块：`01;02;06;07`。
+- 本节为当前结论，取代后文不一致的历史分类；每个模块保留一个有证据支持的代表落点。
+
+| 模块 | 二级 | 三级 | 当前状态 |
+|---|---|---|---|
+| 01 | 01.01 数学 | 01.01.04 几何学与拓扑学 | 已确定 |
+| 02 | 02.02 物理学 | 02.02.09 光学 | 已确定 |
+| 06 | 06.01 生物学基础 | 06.01.06 遗传学 | 已确定 |
+| 07 | 07.04 药学与生物医药 | 07.04.01 药物发现 | 已确定 |
+
+### 模块06补证
+
+- 原缺项原因：前轮只核对正文HLE/TRQA的聚合结果，未展开官方逐题执行日志。
+- 本轮结论：官方X-Master日志记录LIG1扰动对肌强直性营养不良背景下CTG重复序列体细胞不稳定性的具体题目、工具执行及最终答案。重复序列遗传稳定性支持06.01.06遗传学；疾病背景或蛋白名称不替代其基础遗传机制对象。
+- 来源：local PDF；位置：pp.7–8；原文：including the identification of therapeutic targets, and biomedical mechanisms.
+- 来源：https://raw.githubusercontent.com/sjtu-sai-agents/X-Master/658698387d28d2063bb76a3d7c2fa491b2e82c94/logs/example.jsonl；位置：physical line 2; id=67018145e8c125b41caa9ee3；原文：What is the impact of knocking out LIG1 on CTG somatic instability in the context of Myotonic dystrophy?；gt=D；4次代码工具行动；最终<answer>D. No impact</answer>。
+- 解释范围：这是基础遗传学问答任务的Agent执行证据，不是Agent实施了基因敲除实验，也不独立验证题中生物学结论。
+
+- [本轮补证报告](../../Coverage_Check/classification_recheck_2026-11-01/completion_report.md)。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：SciMaster: Towards general-purpose scientific AI agents, Part I. X-Master as foundation: Can we lead on Humanity's Last Exam?
 - 作者：Chai et al.

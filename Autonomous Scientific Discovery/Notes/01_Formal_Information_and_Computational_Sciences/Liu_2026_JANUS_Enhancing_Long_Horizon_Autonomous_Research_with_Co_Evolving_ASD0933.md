@@ -1,5 +1,25 @@
 # JANUS: Enhancing Long-Horizon Autonomous Research with Co-Evolving World Models
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;06;08`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 06 | 06.01 生物学基础 | 06.01.06 遗传学 | 已落地 |
+| 01 | 01.02 计算机科学 | 01.02.13 机器学习 | 已落地 |
+| 08 | 08.01 农学 | 08.01.01 作物学 | 已落地 |
+
+- 模块08：4269玉米杂交种185环境的八项农艺性状实际预测。
+  - 证据：PDF 第 [8, 15, 17] 页；原文：For genotype-to-phenotype (G2P) prediction, the input for a maize hybrid consists of its SNP dosage sequence together with the environmental conditions under which it is grown.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0933

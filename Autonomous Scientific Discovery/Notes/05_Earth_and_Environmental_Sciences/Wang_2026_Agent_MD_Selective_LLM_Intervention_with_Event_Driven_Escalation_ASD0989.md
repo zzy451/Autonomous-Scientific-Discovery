@@ -1,5 +1,24 @@
 # Agent-MD: Selective LLM Intervention with Event-Driven Escalation for Stateful GCMC--MD Campaigns
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`05`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`04;05`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 04 | 04.02 结构材料与无机材料 | 04.02.03 无机非金属材料 | 已落地 |
+| 05 | 05.01 地球科学基础 | 05.01.04 矿物学 | 已落地 |
+
+- 模块04：五种蒙脱石GCMC-MD脱附、含水量和层间距。
+  - 证据：PDF 第 [7, 9, 10] 页；原文：two clay sheets, one interlayer region, and two external-surface regions
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0989

@@ -1,5 +1,24 @@
 # Weng et al. 2025 - CycleResearcher: Improving Automated Research via Automated Review
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;11`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 01 | 01.02 计算机科学 | 01.02.13 机器学习 | 已落地 |
+| 11 | 11.07 科学系统与知识生产研究 | 11.07.08 科学方法论 | 已落地 |
+
+- 分桶/纳入：真实神经网络实验由规划Agent和GPT-o1执行，单A100六小时；另有实际论文评审评价。不能用RL训练中的虚构结果否定附录真实实验。
+  - 证据：PDF 第 [28] 页；原文：The model then conducted detailed experimental planning, generating six different experimental groups.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：CycleResearcher: Improving Automated Research via Automated Review
 - 作者：Yixuan Weng et al.

@@ -1,5 +1,24 @@
 # Sharma et al. 2026 - Autonomous microfluidic experimentation for exploring reaction inference and synthesizing double perovskite nanoplatelets
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`04`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.03 合成、反应与催化 | 03.03.04 反应机理 | 已落地 |
+| 04 | 04.03 软物质与功能材料 | 04.03.02 纳米材料 | 已落地 |
+
+- 模块03：Cs和In-HCl受控动态流实验验证形成路径及缺陷。
+  - 证据：PDF 第 6-7 页；原文：experimentation provided continuous, time-resolved spectroscopic evidence that causally connected key synthesis parameters to NPL formation pathways
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-06-22 final adjudication sync
 
 ```text

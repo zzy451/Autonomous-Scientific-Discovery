@@ -1,5 +1,27 @@
 # Andy: A Mathematical Agent for Rigorous Proof and Autonomous Research
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`09`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 09 | 09.01 工程基础 | 09.01.04 控制科学 | 已落地 |
+| 01 | 01.01 数学 | 01.01.07 动力系统与遍历理论 | 已落地 |
+
+- 模块09：混合控制和时滞网络同步，定理加数值验证；建议主归档09。
+  - 证据：PDF 第 [7, 15, 16] 页；原文：The control-theoretic contribution is the recovery-window design.
+
+- 模块01：数学动力系统对象可新增01；撤回离散数学码，主归档09。
+  - 证据：PDF 第 [7, 9, 15] 页；原文：This case study considers a class of leader-follower heterogeneous networks with switching communication topologies, time-varying delays, and impulse execution delays.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0976

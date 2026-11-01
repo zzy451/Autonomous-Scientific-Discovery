@@ -1,5 +1,24 @@
 # Unknown 2026 - OR-Agent: Bridging Evolutionary Search and Structured Research for Automated Algorithm Discovery
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 01 | 01.02 计算机科学 | 01.02.02 算法与数据结构 | 已落地 |
+| 10 | 10.04 交通运输科学 | 10.04.05 智能交通系统 | 已落地 |
+
+- 模块10：SUMO实际多车协调、拥堵换道碰撞优化。
+  - 证据：PDF 第 [10, 12, 30] 页；原文：Under con- strained runtime, OR-Agent achieves a score of 48.00, significantly surpassing the highest baseline score (16.10)
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：OR-Agent: Bridging Evolutionary Search and Structured Research for Automated Algorithm Discovery
 - 作者：Qi Liu; Ruochen Hao; Can Li; Wanjing Ma

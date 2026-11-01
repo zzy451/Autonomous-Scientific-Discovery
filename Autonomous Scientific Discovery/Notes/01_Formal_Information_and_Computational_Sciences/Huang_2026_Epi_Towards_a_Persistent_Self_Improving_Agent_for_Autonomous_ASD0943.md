@@ -1,5 +1,28 @@
 # Epi: Towards a Persistent, Self-Improving Agent for Autonomous Research
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;09;10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 01 | 01.01 数学 | 01.01.12 离散数学与组合数学 | 已落地 |
+| 09 | 09.04 化学工程与过程工程 | 09.04.02 过程系统工程 | 已落地 |
+| 10 | 10.04 交通运输科学 | 10.04.02 运输规划与管理 | 已落地 |
+
+- 模块09：工业水使用网络全局优化与严格证书。
+  - 证据：PDF 第 [11, 22] 页；原文：The waterund36 instance in MINLPLib minimizes the cost of a water-using network under nonlinear flow and concentration constraints
+
+- 模块10：车辆路径规划持出实例实际解及证书。
+  - 证据：PDF 第 [15, 23] 页；原文：Vehicle routing: faster execution (he2020). Both systems beat the reference values by 5% to 17%.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0943

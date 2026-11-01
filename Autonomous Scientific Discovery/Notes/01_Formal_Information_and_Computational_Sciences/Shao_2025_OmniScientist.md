@@ -1,5 +1,24 @@
 # Shao 2025 - OmniScientist: Toward a Co-evolving Ecosystem of Human and AI Scientists
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`01`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;11`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 01 | 01.01 数学 | 01.01.11 计算数学与数值分析 | 已落地 |
+| 11 | 11.07 科学系统与知识生产研究 | 11.07.03 科学知识网络 | 已落地 |
+
+- 模块11：实际OpenAlex知识图谱修正和检索准确率评价。
+  - 证据：PDF 第 [6, 7] 页；原文：Metric Original OpenAlex Refined Database Metadata Completeness Score 0.965 1.000 Metadata Correctness Score 0.951 0.997 Retrieval Accuracy (QA Benchmark) 0.700 0.880
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：OmniScientist: Toward a Co-evolving Ecosystem of Human and AI Scientists
 - 作者：Chenyang Shao et al.

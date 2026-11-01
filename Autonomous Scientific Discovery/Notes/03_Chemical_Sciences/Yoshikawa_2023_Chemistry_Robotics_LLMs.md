@@ -1,5 +1,24 @@
 # Yoshikawa 2023 - Large Language Models for Chemistry Robotics
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`03`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;09`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.03 合成、反应与催化 | 03.03.01 合成化学 | 已落地 |
+| 09 | 09.02 机械与制造工程 | 09.02.04 工业机器人 | 已落地 |
+
+- 模块09：真实化学机器人运动规划与倾倒测试。
+  - 证据：PDF 第 [21] 页；原文：Success rate comparison of 7 and 8-DoF robot
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Large language models for chemistry robotics
 - 作者：Naruki Yoshikawa, Marta Skreta, Kourosh Darvish, Sebastian Arellano-Rubach, Zhi Ji, Lasse Bjorn Kristensen, Andrew Zou Li, Yuchi Zhao, Haoping Xu, Artur Kuramshin, Alan Aspuru-Guzik, Florian Shkurti, Animesh Garg

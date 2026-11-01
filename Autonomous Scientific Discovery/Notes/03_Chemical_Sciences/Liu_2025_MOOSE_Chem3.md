@@ -1,4 +1,23 @@
 # Liu 2025 - MOOSE-Chem3
+
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`03`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.04 分子设计与化学空间探索 | 03.04.01 分子生成与分子设计 | 已落地 |
+| 04 | 04.04 能源、电子与器件材料 | 04.04.01 能源材料 | 已落地 |
+
+- 模块04：聚合物热电材料Seebeck反馈。
+  - 证据：PDF 第 [16] 页；原文：The Seebeck coefficient (Se) of polymer thermoelectric materials
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
 ## 2026-06-21 archive sync
 
 - Canonical PDF path: `Reference_PDF/03_Chemical_Sciences/Liu_2025_MOOSE_Chem3.pdf`

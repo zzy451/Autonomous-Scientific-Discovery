@@ -1,5 +1,24 @@
 # QuantumNovelty: A Skill-Orchestrating Language Agent for Referee-Style Review and Patentability Screening of Quantum Papers and Patents
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`included`；主归档：`11`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`02;11`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 02 | 02.02 物理学 | 02.02.06 量子力学 | 已落地 |
+| 11 | 11.07 科学系统与知识生产研究 | 11.07.08 科学方法论 | 已落地 |
+
+- 模块02：实际两比特Hamiltonian候选电路SPSA优化。
+  - 证据：PDF 第 [16] 页；原文：We drove the ansatz-discovery loop to a small archive of candidate circuits for a two-qubit Hamiltonian and scored each with the bundled state-vector evaluator
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0922

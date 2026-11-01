@@ -1,5 +1,25 @@
 # Jones et al. 2026 - Self-Driving Datasets: From 20 Million Papers to Nuanced Biomedical Knowledge at Scale
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`06`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;06;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.01 化学总论与化学方法 | 03.01.04 化学信息学 | 已落地 |
+| 06 | 06.01 生物学基础 | 06.01.12 生物信息学 | 已落地 |
+| 07 | 07.03 公共卫生与健康科学 | 07.03.08 医学信息学 | 已落地 |
+
+- 模块03：PubMed实际抽取反应并清洗916948条记录。
+  - 证据：PDF 第 24-25 页；原文：We apply Starling to chemical reaction mining across the full PubMed corpus, producing structured reaction records
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-07-05 Phase6NoteRevisionR25 harmonization
 
 - Frozen landing decision: scientific_object_modules=03;06;07; object_coverage_mode=multi_module; primary_module_for_filing=06; general_method_bucket=none; source_limited=no.

@@ -23,7 +23,7 @@ python scripts/build_framework_figures.py
 python scripts/build_landscape_figures.py
 ```
 
-脚本默认只生成英文图。全景图读取相邻项目的 `Data/papers.jsonl` 和 `Coverage_Check/core_classification_snapshot_2026-10-29.json`，并校验 663 篇核心工作及领域归属数。案例图的数据位于 `data/illustrative_domain_profiles.json`；所选 11 个案例用于定性比较，不能据此估计全库频率。可用 `--chinese-output <本地中文稿目录>` 额外生成中文图，中文字体需要 Microsoft YaHei。
+脚本默认只生成英文图。全景图读取本目录 `data/corpus_landscape_records_2026-11-01.json` 和 `data/core_classification_snapshot_2026-11-01.json` 中的冻结输入，并校验 662 篇核心工作及 935 项非互斥领域归属。正文、图表和当前核心库统一采用2026-11-01分类快照；检索截止日期仍为2026-10-22。旧的2026-10-29冻结文件保留为历史输入，不再驱动当前图形。案例图的数据位于 `data/illustrative_domain_profiles.json`；所选 11 个案例用于定性比较，不能据此估计全库频率。可用 `--chinese-output <本地中文稿目录>` 额外生成中文图，中文字体需要 Microsoft YaHei。
 
 ## 补充分析
 

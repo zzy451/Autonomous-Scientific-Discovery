@@ -1,5 +1,24 @@
 # Rabideau et al. 2006 - Mission Operations of Earth Observing-1 with Onboard Autonomy
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`10`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`05;10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 05 | 05.04 地理科学与空间信息 | 05.04.04 遥感科学 | 已落地 |
+| 10 | 10.02 航天科学 | 10.02.05 航天任务系统 | 已落地 |
+
+- 模块05：EO-1云洪水结冰火山活动探测触发观测；PDF编码损坏，据渲染图核读。
+  - 证据：PDF 第 1,4-5 页；原文：These algorithms process the image to detect the presence of unique features in the image, such as clouds, flooding, ice formation, or volcanic activity.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-06-24 Batch25Partial1 final adjudication writeback
 
 - `scientific_object_modules`: `05;10`

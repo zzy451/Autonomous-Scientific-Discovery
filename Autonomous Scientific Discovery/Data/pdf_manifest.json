@@ -61,8 +61,10 @@
     "title": "DORA AI Scientist: Multi-agent Virtual Research Team for Scientific Exploration Discovery and Automated Report Generation",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.pdf",
     "sha256": "b0dd40e2293f08909dae741431aafe2b4d556de7225701cab75a51b721943762",
-    "primary_module_for_filing": "",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "11",
+    "scientific_object_modules": [
+      "11"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -87,8 +89,8 @@
     "sha256": "340318daa1428494f8c03f4976888100bade721ea80f7e1751b86e34aa6a1280",
     "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "07",
-      "03"
+      "03",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -247,8 +249,8 @@
     "sha256": "f2d58b6734d650f3b30634ee9c4820eddf1bac43fc93ccfffd10c54cbaeda921",
     "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "07",
-      "03"
+      "03",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -559,8 +561,10 @@
     "title": "Towards autonomous hypothesis verification via language models with minimal guidance",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Takagi_2023_Autonomous_Hypothesis_Verification.pdf",
     "sha256": "b9d4e04d964fa1e69fd08f46a077e0d04537acd4c80d61bc8e6dc4cf123b9946",
-    "primary_module_for_filing": "",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1028,8 +1032,13 @@
     "title": "SciMaster: Towards general-purpose scientific AI agents, Part I. X-Master as foundation: Can we lead on Humanity's Last Exam?",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Chai_2025_SciMaster.pdf",
     "sha256": "9bfc193d6a51901f003cf32a9b37b7daf5ae823348f85505b9ad617c8e16f32f",
-    "primary_module_for_filing": "",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01",
+      "02",
+      "06",
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -1041,8 +1050,8 @@
     "sha256": "77b929add69e3b1489c175896fec2634bae63ce90423c512ed3edda6984b3e63",
     "primary_module_for_filing": "07",
     "scientific_object_modules": [
-      "07",
-      "03"
+      "03",
+      "07"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -1373,8 +1382,11 @@
     "title": "CycleResearcher: Improving automated research via automated review",
     "pdf_path": "Reference_PDF/01_04_General_Method_Bucket/Weng_2025_CycleResearcher.pdf",
     "sha256": "c3e552ca0a156d7508e882d9714807bc96cf32b0da6a8fafce85fa02c2aee9f7",
-    "primary_module_for_filing": "",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "01",
+    "scientific_object_modules": [
+      "01",
+      "11"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
     "active_confirmed_core": true
@@ -2277,7 +2289,7 @@
     "scientific_object_modules": [],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
-    "active_confirmed_core": true
+    "active_confirmed_core": false
   },
   {
     "paper_id": "ASD-0531",
@@ -2366,8 +2378,11 @@
     "title": "PromptBio: A Multi-Agent AI Platform for Bioinformatics Data Analysis",
     "pdf_path": "Reference_PDF/06_Life_Sciences/Zhang_2025_PromptBio_Bioinformatics.pdf",
     "sha256": "0ac694cdfa5de62dc08db338d8233b1fac806398b7966aaffc0d92af06dfd7cb",
-    "primary_module_for_filing": "",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06",
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "official_promptbio_pages_checked",
     "active_confirmed_core": true
@@ -2458,8 +2473,11 @@
     "title": "ToolsGenie 2.0: A Scalable and Extensible Multi-Agent System for Bioinformatics Automation",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Ma_2026_ToolsGenie_2_Bioinformatics_Automation.pdf",
     "sha256": "38959be9cd96c03d38c3e3b78e0218dc30ddf5c01ee15ad47aaf678499ccc6cc",
-    "primary_module_for_filing": "",
-    "scientific_object_modules": [],
+    "primary_module_for_filing": "06",
+    "scientific_object_modules": [
+      "06",
+      "07"
+    ],
     "pdf_status": "archived_pdf",
     "evidence_status": "official_pages_checked_safety_skip_closeout",
     "active_confirmed_core": true
@@ -3766,7 +3784,7 @@
     "sha256": "65bd498cb1eb87b50bec62ebbf70ab88250a2cd7cd9594a7568375f526c50c1a",
     "primary_module_for_filing": "09",
     "scientific_object_modules": [
-      "05",
+      "02",
       "09"
     ],
     "pdf_status": "archived_pdf",
@@ -3902,7 +3920,6 @@
     "sha256": "526e92f4015ab49fe4eebd04b5f55052e6551521241ddeda64d5b2ed26c5b533",
     "primary_module_for_filing": "10",
     "scientific_object_modules": [
-      "05",
       "10"
     ],
     "pdf_status": "archived_pdf",
@@ -7048,8 +7065,9 @@
     "title": "Andy: A Mathematical Agent for Rigorous Proof and Autonomous Research",
     "pdf_path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Zian_2026_Andy_A_Mathematical_Agent_for_Rigorous_Proof_and_Autonomous_ASD0976.pdf",
     "sha256": "b7afdf5cd227db9d779d1dab4ed224facf716b7b35a237e68e886e8eec9f88df",
-    "primary_module_for_filing": "01",
+    "primary_module_for_filing": "09",
     "scientific_object_modules": [
+      "01",
       "09"
     ],
     "pdf_status": "archived_pdf",
@@ -7158,8 +7176,7 @@
     "primary_module_for_filing": "03",
     "scientific_object_modules": [
       "03",
-      "04",
-      "11"
+      "04"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -7225,8 +7242,8 @@
     "sha256": "018fcd0d7e6ab10e1ba2abaccec09cadc31125f9bfde4f2430e711cabd9f7e48",
     "primary_module_for_filing": "05",
     "scientific_object_modules": [
-      "05",
-      "04"
+      "04",
+      "05"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -8261,8 +8278,7 @@
     "sha256": "1badcc65fbd4aca6ad380d262b50327189cc12ddefcbe2b835e12bd3bb98ce58",
     "primary_module_for_filing": "01",
     "scientific_object_modules": [
-      "01",
-      "11"
+      "01"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",
@@ -8444,8 +8460,7 @@
     "sha256": "f1e4954c2de02ba477ad3f18a1475fe1362aebe30a5e66feb0ccae4618fe3b37",
     "primary_module_for_filing": "01",
     "scientific_object_modules": [
-      "01",
-      "11"
+      "01"
     ],
     "pdf_status": "archived_pdf",
     "evidence_status": "first_hand_full_text",

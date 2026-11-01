@@ -1,5 +1,24 @@
 # Chien et al. 2006 - Integrated AI in Space: The Autonomous Sciencecraft on Earth Observing One
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`10`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`05;10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 05 | 05.04 地理科学与空间信息 | 05.04.04 遥感科学 | 已落地 |
+| 10 | 10.02 航天科学 | 10.02.02 卫星工程 | 已落地 |
+
+- 模块05：Mt Erebus热异常探测及重成像。
+  - 证据：PDF 第 2 页；原文：ASE enables rapid re-imaging of the volcanic event
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-06-24 Batch25Partial1 final adjudication writeback
 
 - `scientific_object_modules`: `05;10`

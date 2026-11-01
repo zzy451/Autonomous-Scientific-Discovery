@@ -1,5 +1,27 @@
 # Lee and Kim 2026 - Closed-loop experimental AI for pixelated metasurface design
 
+## 当前分类（2026-11-01 补证复核）
+
+- 当前纳入状态：`to_read`；主归档：`04`。
+- 当前对象模块：`04`。
+- 本节为当前结论，取代后文不一致的历史分类；每个模块保留一个有证据支持的代表落点。
+
+| 模块 | 二级 | 三级 | 当前状态 |
+|---|---|---|---|
+| 04 | 04.04 能源、电子与器件材料 | 待核 | 证据/边界待核 |
+
+### 模块04补证
+
+- 原缺项原因：没有本地全文；SPIE页面访问受阻，元数据不足以细分器件材料。
+- 本轮结论：重新访问Crossref、DOI落地页、SPIE全文/摘要及会议入口，Crossref仍仅有题名和出版元数据，SPIE返回Incapsula页面，OpenAlex没有摘要或开放全文位置。保留04.04，不能仅凭metasurface题名推定光电或半导体材料三级。
+- 来源：https://api.crossref.org/works/10.1117/12.3091089；位置：message.title; resource.primary.URL；原文：Closed-loop experimental AI for pixelated metasurface design
+- 来源：https://doi.org/10.1117/12.3091089；位置：resolved SPIE endpoint；原文：Incapsula；HTTP 200实际为访问拦截HTML，不是可读论文。
+- 解释范围：仍需正文、完整官方摘要或作者公开版本，明确被制备/测量的材料与目标性能。
+
+- [本轮补证报告](../../Coverage_Check/classification_recheck_2026-11-01/completion_report.md)。
+
+## 既有笔记与历史审计记录
+
 ## 2026-06-23 Batch16 partial-8 closeout
 
 This round formally closes the record as source-limited `04` only.

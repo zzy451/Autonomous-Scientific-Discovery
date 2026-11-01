@@ -5,27 +5,27 @@ Status: `passed`
 ## Summary
 
 - `ERROR`: 0
-- `WARNING`: 105
-- `INFO`: 422
+- `WARNING`: 100
+- `INFO`: 416
 
 ## Summary By Category
 
 - `evidence`: 72
-- `discipline_code`: 9
-- `taxonomy`: 33
+- `discipline_code`: 2
+- `taxonomy`: 28
 - `derived_snapshot`: 1
-- `audit`: 412
+- `audit`: 413
 
 ## Summary By Finding Code
 
-- `BACKGROUND_ONLY_RECORD`: 381
+- `BACKGROUND_ONLY_RECORD`: 382
 - `DUPLICATE_RECORD`: 31
 - `MISSING_LOCAL_PDF`: 27
 - `MISSING_LOCAL_PDF_WITH_ALTERNATE_SOURCE`: 27
 - `SECONDARY_TERM_NEEDS_REVIEW`: 25
 - `SOURCE_LIMITED`: 18
-- `NON_DISCIPLINE_GENERAL_METHOD`: 9
-- `PRIMARY_MODULE_CONFIDENCE_LOW`: 7
+- `NON_DISCIPLINE_GENERAL_METHOD`: 2
+- `PRIMARY_MODULE_CONFIDENCE_LOW`: 2
 - `DERIVED_SNAPSHOT_WORKTREE_DIRTY`: 1
 - `SECONDARY_CLASS_CONFIDENCE_LOW_SUMMARY`: 1
 
@@ -259,25 +259,10 @@ Status: `passed`
 - `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0540` | Primary filing module remains low-confidence and should stay visible in review backlog.
   Field: `primary_module_confidence`
   Owner file: `Paper_Lists/agent_master_paper_list.md`
-- `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0613` | Primary filing module remains low-confidence and should stay visible in review backlog.
-  Field: `primary_module_confidence`
-  Owner file: `Paper_Lists/agent_master_paper_list.md`
-- `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0621` | Primary filing module remains low-confidence and should stay visible in review backlog.
-  Field: `primary_module_confidence`
-  Owner file: `Paper_Lists/agent_master_paper_list.md`
-- `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0627` | Primary filing module remains low-confidence and should stay visible in review backlog.
-  Field: `primary_module_confidence`
-  Owner file: `Paper_Lists/agent_master_paper_list.md`
 - `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0678` | Primary filing module remains low-confidence and should stay visible in review backlog.
   Field: `primary_module_confidence`
   Owner file: `Paper_Lists/agent_master_paper_list.md`
-- `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0750` | Primary filing module remains low-confidence and should stay visible in review backlog.
-  Field: `primary_module_confidence`
-  Owner file: `Paper_Lists/agent_master_paper_list.md`
-- `PRIMARY_MODULE_CONFIDENCE_LOW` | `ASD-0976` | Primary filing module remains low-confidence and should stay visible in review backlog.
-  Field: `primary_module_confidence`
-  Owner file: `Paper_Lists/agent_master_paper_list.md`
-- `SECONDARY_CLASS_CONFIDENCE_LOW_SUMMARY` | Low secondary-class confidence remains widespread: 598 papers total, 301 active confirmed-core. Review taxonomy secondary terms and legacy secondary-class mappings before treating the current 2-level layer as fully stabilized.
+- `SECONDARY_CLASS_CONFIDENCE_LOW_SUMMARY` | Low secondary-class confidence remains widespread: 596 papers total, 298 active confirmed-core. Review taxonomy secondary terms and legacy secondary-class mappings before treating the current 2-level layer as fully stabilized.
   Field: `secondary_class_confidence`
   Owner file: `Data/classification_code_index.json`
 - `SECONDARY_TERM_NEEDS_REVIEW` | `01.01` | Secondary taxonomy term remains provisional (status=needs_review, review_status=unreviewed).
@@ -360,31 +345,10 @@ Status: `passed`
 
 ### discipline_code
 
-- `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0006 / DCA-000006` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
-  Field: `assignment_status`
-  Owner file: `Data/discipline_code_assignments.jsonl`
 - `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0040 / DCA-000033` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
   Field: `assignment_status`
   Owner file: `Data/discipline_code_assignments.jsonl`
-- `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0053 / DCA-000043` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
-  Field: `assignment_status`
-  Owner file: `Data/discipline_code_assignments.jsonl`
 - `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0059 / DCA-000049` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
-  Field: `assignment_status`
-  Owner file: `Data/discipline_code_assignments.jsonl`
-- `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0111 / DCA-000076` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
-  Field: `assignment_status`
-  Owner file: `Data/discipline_code_assignments.jsonl`
-- `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0145 / DCA-000103` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
-  Field: `assignment_status`
-  Owner file: `Data/discipline_code_assignments.jsonl`
-- `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0530 / DCA-000173` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
-  Field: `assignment_status`
-  Owner file: `Data/discipline_code_assignments.jsonl`
-- `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0541 / DCA-000181` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
-  Field: `assignment_status`
-  Owner file: `Data/discipline_code_assignments.jsonl`
-- `NON_DISCIPLINE_GENERAL_METHOD` | `ASD-0553 / DCA-000190` | Record is intentionally kept outside normal discipline shelving as pure general-method-only.
   Field: `assignment_status`
   Owner file: `Data/discipline_code_assignments.jsonl`
 
@@ -1399,6 +1363,9 @@ Status: `passed`
   Field: `record_status`
   Owner file: `Paper_Lists/agent_master_paper_list.md`
 - `BACKGROUND_ONLY_RECORD` | `ASD-0527` | Record is intentionally kept as background_only in the current lifecycle layer.
+  Field: `record_status`
+  Owner file: `Paper_Lists/agent_master_paper_list.md`
+- `BACKGROUND_ONLY_RECORD` | `ASD-0530` | Record is intentionally kept as background_only in the current lifecycle layer.
   Field: `record_status`
   Owner file: `Paper_Lists/agent_master_paper_list.md`
 - `DUPLICATE_RECORD` | `ASD-0532` | Record is intentionally marked as duplicate of ASD-0097.

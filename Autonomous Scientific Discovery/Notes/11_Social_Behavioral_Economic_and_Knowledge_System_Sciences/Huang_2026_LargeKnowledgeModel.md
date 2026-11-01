@@ -1,5 +1,30 @@
 # Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale
 
+## 当前分类（2026-11-01 补证复核）
+
+- 当前纳入状态：`included`；主归档：`11`。
+- 当前对象模块：`03;07;11`。
+- 本节为当前结论，取代后文不一致的历史分类；每个模块保留一个有证据支持的代表落点。
+
+| 模块 | 二级 | 三级 | 当前状态 |
+|---|---|---|---|
+| 03 | 03.02 基础化学 | 03.02.03 分析化学 | 已确定 |
+| 07 | 07.03 公共卫生与健康科学 | 07.03.08 医学信息学 | 已确定 |
+| 11 | 11.07 科学系统与知识生产研究 | 11.07.03 科学知识网络 | 已确定 |
+
+### 模块03补证
+
+- 原缺项原因：ChemBench总分支持化学，但前轮未展开题库配置和具体问题，03.01只是宽泛暂存。
+- 本轮结论：本文p.9评估ChemBench全量2785题并报告结果；官方题库九配置总数恰为2785，其中analytical_chemistry含152题，实际可核验NMR光谱信号判别题。按每模块一个代表位置，修正二级03.01为03.02基础化学，并补03.02.03分析化学。知识图谱架构本身不作为化学信息学分类证据。
+- 来源：local PDF；位置：p.9, §5.3 and Table 3；原文：For question answering, GPT-5.4 is fixed as the answering model on ChemBench (n=2,785)；无检索64.78，LKM 74.08；只变更检索来源。
+- 来源：https://huggingface.co/datasets/jablonkagroup/ChemBench/resolve/6e1d25748952393f44e35b8e85bbe567246a6430/README.md；位置：dataset_info, nine configurations；原文：analytical_chemistry；题数152+1000+149+92+83+429+165+40+675=2785。
+- 来源：https://datasets-server.huggingface.co/rows?dataset=jablonkagroup/ChemBench&config=analytical_chemistry&split=train&offset=0&length=1；位置：UUID 3d4326c7-0aaa-ed9e-ab64-9b140eccd056；原文：How many distinct signals are observed for the aldehyde \ce{(CH3)3CCH2CHO} in 1H NMR and 13C NMR spectra?；关键词nuclear magnetic resonance、NMR、analytical-chemistry；正确选项3个氢谱信号/4个碳谱信号。
+- 解释范围：没有逐题运行UUID，不能宣称该NMR题被单独答对。HF题库存储分片名train不代表LKM用该题训练；本文明确用于QA评估。
+
+- [本轮补证报告](../../Coverage_Check/classification_recheck_2026-11-01/completion_report.md)。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 
 - ID：ASD-0873

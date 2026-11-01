@@ -1,5 +1,23 @@
 # Yue et al. 2025 - Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`background_only`；主归档：``。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`无；独立01.04主题分桶`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 01.04 | 通用方法主题分桶 | 不计正式科学三级 | 背景文献，不计核心库 |
+
+- 分桶/纳入：正式后继文是概念性Perspective，未报告已实现Agent系统及实验。Crossref关联原10.20944/preprints202507.1951.v1与10.3389/frai.2026.1820375。
+  - 证据：PDF 第 [1] 页；原文：TYPE Perspective
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Autonomous Scientific Discovery Through Hierarchical AI Scientist Systems
 - 作者：Yue et al.

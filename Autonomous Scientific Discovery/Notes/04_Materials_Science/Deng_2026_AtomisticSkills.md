@@ -1,5 +1,25 @@
 # Deng 2026 - Harnessing AtomisticSkills for Agentic Atomistic Research
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`04`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;04;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.03 合成、反应与催化 | 03.03.03 催化化学 | 已落地 |
+| 04 | 04.01 材料基础 | 04.01.04 材料计算与材料信息学 | 已落地 |
+| 07 | 07.04 药学与生物医药 | 07.04.01 药物发现 | 已落地 |
+
+- 模块03：OER中间体与催化活性筛选。
+  - 证据：PDF 第 11 页；原文：Agentic workflow for screening Fe-oxide surfaces for oxygen evolution reaction (OER) with htvs remote job manager.
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Harnessing AtomisticSkills for Agentic Atomistic Research
 - 作者：Bowen Deng; Bohan Li; Matthew Cox; Hoje Chun; Juno Nam; Artur Lyssenko; Sathya Edamadaka; Jurgis Ruza; Xiaochen Du; Nofit Segal; Jesus Diaz Sanchez; Mingrou Xie; Ty Perez; Yu Yao; Miguel Steiner; Sauradeep Majumdar; Charles B. Musgrave III; Anirban Chandra; Abhirup Patra; Detlef Hohl; Connor W. Coley; Ju Li; Rafael Gomez-Bombarelli

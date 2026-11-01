@@ -1,5 +1,24 @@
 # Low 2024 - Evolution-guided Bayesian optimization for constrained multi-objective optimization in self-driving labs
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`04`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`01;04`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 04 | 04.03 软物质与功能材料 | 04.03.02 纳米材料 | 已落地 |
+| 01 | 01.01 数学 | 01.01.10 运筹学与优化 | 已落地 |
+
+- 模块01：已执行MW7数学多目标优化基准。
+  - 证据：PDF 第 [5] 页；原文：EGBO on various synthetic datasets, starting with MW7
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-06-22 archive sync
 
 - Canonical PDF path: `Reference_PDF/04_Materials_Science/Low_2024_Evolution_Guided_BO_SDL.pdf`

@@ -1,5 +1,23 @@
 # Gallant et al. 2013 - Rover-Based Autonomous Science by Probabilistic Identification and Evaluation
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`10`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`10`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 10 | 10.02 航天科学 | 10.02.03 深空探测 | 已落地 |
+
+- 模块05：实物实验是花盆球碗，随机岩场仅评价导航与任务收益，p18将自然特征实验列未来工作；撤回05，保留自主探索任务模块。
+  - 证据：PDF 第 9-12,18 页；原文：The 30 features were comprised of six small brown pots, six small green pots
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：Rover-Based Autonomous Science by Probabilistic Identification and Evaluation
 - 作者：Marc J. Gallant; Alex Ellery; Joshua A. Marshall

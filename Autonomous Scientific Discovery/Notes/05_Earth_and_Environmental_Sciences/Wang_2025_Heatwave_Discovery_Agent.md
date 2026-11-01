@@ -1,5 +1,26 @@
 # Wang et al. 2025 - AI Driven Discovery of Bio Ecological Mediation in Cascading Heatwave Risks
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`05`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`05;06;07;11`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 06 | 06.02 生物类群科学 | 06.02.01 微生物学 | 已落地 |
+| 07 | 07.03 公共卫生与健康科学 | 07.03.01 流行病学 | 已落地 |
+| 05 | 05.02 大气、海洋与水文科学 | 05.02.02 气候科学 | 已落地 |
+| 11 | 11.01 经济学 | 11.01.07 环境经济学 | 已落地 |
+
+- 模块11：p6定量报告265条physical-to-economic关联，p8包含渔旅经济损失链；按对象结果原则归环境经济学。仅为文献图谱风险传播分析，不称经济预测验证。
+  - 证据：PDF 第 6-9 页；原文：the magnitude of thermal energy does not directly translate into economic destruction but necessitates a biological substrate
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 **论文信息**
 - 标题：AI Driven Discovery of Bio Ecological Mediation in Cascading Heatwave Risks
 - 作者：Yiquan Wang; Tin-Yeh Huang; Qingyun Gao; Yuhan Chang; Jialin Zhang

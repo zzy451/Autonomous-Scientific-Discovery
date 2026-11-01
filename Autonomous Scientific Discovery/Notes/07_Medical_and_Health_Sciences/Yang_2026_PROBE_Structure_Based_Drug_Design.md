@@ -1,5 +1,24 @@
 # Yang et al. 2026 - Probe Before You Edit: Probing-Guided Molecular Optimization for LLM Agents in Structure-Based Drug Design
 
+## 当前分类（2026-11-01 实证复核）
+
+- 当前纳入状态：`to_read`；主归档：`07`。
+- 本块为当前有效结论；后文既有分类、来源限制与审计判断均保留为历史记录，与本块不一致者由本块取代。
+- 当前对象模块：`03;07`。
+- 代表分类每个模块保留一个落点，不表示穷尽全文全部细类。
+
+| 模块 | 二级 | 三级 | 本轮结论 |
+|---|---|---|---|
+| 03 | 03.04 分子设计与化学空间探索 | 03.04.02 小分子性质优化 | 已落地 |
+| 07 | 07.04 药学与生物医药 | 07.04.01 药物发现 | 已落地 |
+
+- 模块03：实际配体编辑改善亲和性QED及可合成性。
+  - 证据：PDF 第 [7, 8] 页；原文：PROBE is the only method with most of its steps achieving improvements on both affinity and druggability
+
+- 完整裁决：`Coverage_Check/classification_recheck_2026-11-01/`。
+
+## 既有笔记与历史审计记录
+
 ## 2026-07-05 Phase6NoteRevisionR25 harmonization
 
 - Frozen landing decision: scientific_object_modules=03;07; object_coverage_mode=multi_module; primary_module_for_filing=07; general_method_bucket=none; source_limited=no.
