@@ -2,7 +2,7 @@
 
 同步日期：2026-11-01。本目录是 Overleaf 英文正文的 GitHub 快照，正文、参考文献、模板及六幅图与本次 Overleaf 发布包一致。后续正文修改应先整合到 Overleaf 工作副本，再同步此快照。
 
-当前版本包含 10 个主章节、43 个小节、6 幅图和 15 张表；正文实际引用 45 条文献，统一 BibTeX 库共 1051 条。英文稿在本地使用 pdfLaTeX/BibTeX 编译为 34 页；不同 TeX 环境的分页可能略有差异。
+当前版本包含 10 个主章节、41 个小节、6 幅图和 15 张表；正文实际引用 44 条文献，统一 BibTeX 库共 1051 条。英文稿在本地使用 pdfLaTeX/BibTeX 编译为 33 页；不同 TeX 环境的分页可能略有差异。
 
 ## 编译
 
@@ -29,11 +29,11 @@ python scripts/build_landscape_figures.py
 
 - [核心库与编码覆盖入口](../Coverage_Check/core_tag_alignment_2026-11-01/README.md)：662篇清单、核心BibTeX、引用桥、逐篇覆盖矩阵、笔记来源索引与待核队列；区分字段有值、词表符合、笔记对齐和独立原文核查。
 - [检索来源附录](../Coverage_Check/core_tag_alignment_2026-11-01/search_provenance_appendix.md)：整理45项可恢复历史检索记录及无法重建的边界，不反推完整筛选分母。
-- [本轮正文原文核查](../Coverage_Check/core_tag_alignment_2026-11-01/manuscript_source_checks.md)：六项案例的原文位置、短引文和推断限制，支持失败恢复、多智能体协调、责任与成本分析。
+- [此前正文原文核查](../Coverage_Check/core_tag_alignment_2026-11-01/manuscript_source_checks.md)：保留六项案例的原文位置与推断限制；第8节当前论证与证据以本轮修订索引为准。
 
 - [第7.1—7.3节跨学科修订记录](analysis/section7_cross_domain_revision_2026-11-01.md)：将知识、数据、反馈与验证的论证扩展至计算、物理天文、地球环境、生命医学、工程、任务系统及社会研究。
 - [学科覆盖差异的深化分析](analysis/domain_coverage_imbalance_deepened_2026-10-31.md)：对应正文第 7 节，分析各学科的对象、模态、可观测性、干预及验证条件。
-- [共同科研流程与智能体参与](analysis/shared_research_workflow_and_agent_participation_2026-11-01.md)：对应第 8.1、8.3 节及结论，区分阶段覆盖、操作权限、自适应控制和科学判断。
+- [科研决策、学科条件与科学增量](analysis/decision_delegation_and_scientific_gains_2026-11-01.md)：对应第8.1–8.3节，记录决策分工、全部11个学科的约束与委托关系，以及含明确基线和终点的比较证据；替代原流程阶段说明。
 - [补充信息清单](analysis/gpt_supplement_information_checklist_2026-10-31.md)：保留原始规划属性，不能当作所有条目均已核实的声明。
 
 中文阅读版、完整编译 PDF、临时草稿、备份和本地验收图留在本地，不属于该发布快照。

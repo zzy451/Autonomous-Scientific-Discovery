@@ -7,13 +7,13 @@
   "frozen_source_hashes_and_year_figure_match": true,
   "manuscript_structure": {
     "sections": 10,
-    "subsections": 43,
+    "subsections": 41,
     "tables": 15,
     "figures": 6
   },
-  "cited_keys": 45,
+  "cited_keys": 44,
   "local_bilingual_checks": {
-    "english_pdf_pages": 34,
+    "english_pdf_pages": 33,
     "chinese_pdf_pages": 30,
     "matched_citation_order_labels_tables_figures_and_subsections": true,
     "unresolved_citations_overfull_boxes_missing_characters": 0

@@ -48,8 +48,8 @@ def main():
                        'subsections': len(re.findall(r'\\subsection\{', text)),
                        'tables': text.count(r'\begin{table}'), 'figures': text.count(r'\begin{figure}')})
     keys = {k.strip() for group in cite_sequence(source) for k in group.split(',')}
-    assert len(keys) == 45
-    assert counts == {'sections': 10, 'subsections': 43, 'tables': 15, 'figures': 6}, counts
+    assert len(keys) == 44
+    assert counts == {'sections': 10, 'subsections': 41, 'tables': 15, 'figures': 6}, counts
     en = WORKSPACE / 'Agent_for_Science_Review_Overleaf'; zh = WORKSPACE / 'Agent_for_Science_Review_Chinese'
     local = {}
     if (en / 'main.tex').exists() and (zh / 'main.tex').exists():
@@ -65,7 +65,7 @@ def main():
         for folder in (en, zh):
             log = (folder / 'build/main.log').read_text(encoding='utf-8', errors='replace')
             assert not re.search(r'undefined citations|Citation .* undefined|There were undefined references|Overfull \\hbox|Missing character:', log)
-            assert len(re.findall(r'\\bibitem', (folder / 'build/main.bbl').read_text(encoding='utf-8'))) == 45
+            assert len(re.findall(r'\\bibitem', (folder / 'build/main.bbl').read_text(encoding='utf-8'))) == len(keys)
         import fitz
         local = {'english_pdf_pages': len(fitz.open(en / 'build/main.pdf')), 'chinese_pdf_pages': len(fitz.open(zh / 'build/main.pdf')),
                  'matched_citation_order_labels_tables_figures_and_subsections': True,
