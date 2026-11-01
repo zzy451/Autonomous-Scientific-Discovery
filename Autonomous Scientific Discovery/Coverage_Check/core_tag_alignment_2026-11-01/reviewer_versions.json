@@ -1,0 +1,378 @@
+{
+  "review_date": "2026-11-01",
+  "reviewer": "boundary_review",
+  "owner_files_modified": false,
+  "artifact_kind": "review_only",
+  "scope": {
+    "initial": "只读核对13条主表与BibTeX年份差异、4条主表空DOI/URL；不重分类，不新增检索，不扩其他元数据。",
+    "supplement": "经主控后续明确授权，仅保存本审阅产物，补核ASD-0723及ASD-0786首页作者、ASD-0054 venue，并对ASD-0035做针对性原始来源查询。建议供主控决定写回；审阅者不修改owner文件。"
+  },
+  "rule": {
+    "path": "Autonomous Scientific Discovery/paper_note_templates_and_prompts/ASD_annotation_schema.md",
+    "section": 12,
+    "quote": "如果一篇论文有多个版本，以最终引用版本的年份为准。",
+    "interpretation": "已有明确指定的修订版采用该版年份；当前引用正式期刊卷期版时采用卷期年。不能统一回退到首次预印本或首次在线年份。",
+    "existing_generator_rule": "scripts/build_review_bibliography.py在全库审计之后应用manuscript_evidence_audit_2026-10-30中的指定版本覆盖；不能仅改生成后的BibTeX而丢失再生成依据。"
+  },
+  "path_root": "Autonomous Scientific Discovery/",
+  "audit_sources": {
+    "A": "Coverage_Check/manuscript_evidence_audit_2026-10-30/audited_bibliography_overrides.json",
+    "B": "Coverage_Check/bibliography_full_audit_2026-10-31/adjudicated_metadata.json",
+    "C": "Coverage_Check/bibliography_full_audit_2026-10-31/issue_year_pdf_evidence.json",
+    "D": "Coverage_Check/bibliography_full_audit_2026-10-31/local_pdf_decisions.json",
+    "E": "Coverage_Check/bibliography_full_audit_2026-10-31/final_entry_audit.csv",
+    "F": "Manuscript/references.bib"
+  },
+  "summary": {
+    "master_year_updates_supported": 10,
+    "retain_master_year_and_correct_bib_year": 3,
+    "year_conflict_held_without_writeback": 0,
+    "blank_source_urls_supported": 4,
+    "additional_author_corrections_supported": 2,
+    "additional_venue_corrections_supported": 2,
+    "new_targeted_source_queries": 1,
+    "targeted_query_id": "ASD-0035",
+    "owner_files_modified": 0
+  },
+  "year_decisions": [
+    {
+      "id": "ASD-0020",
+      "confidence": "H",
+      "master_year": {"from": 2024, "to": 2025},
+      "bib_year": {"keep": 2025},
+      "selected_version": "ICLR 2025 / arXiv:2405.17631v3",
+      "evidence": {
+        "path": "Reference_PDF/06_Life_Sciences/Roohani_2024_BioDiscoveryAgent.pdf",
+        "page": 1,
+        "quotes": [
+          "Published as a conference paper at ICLR 2025",
+          "arXiv:2405.17631v3  [cs.AI]  9 Mar 2025"
+        ]
+      },
+      "audit": "A/asd0020",
+      "boundary": "2024为首次预印本年，不能覆盖已指定的2025会议修订版。"
+    },
+    {
+      "id": "ASD-0035",
+      "confidence": "H",
+      "master_year": {"keep": 2025},
+      "bib_year": {"from": 2024, "to": 2025},
+      "selected_version": "Advanced Materials正式卷期版，37(22)，2413523，10.1002/adma.202413523",
+      "evidence": {
+        "source_type": "targeted_original_crossref_record",
+        "source_url": "https://api.crossref.org/works/10.1002%2Fadma.202413523",
+        "checked_at": "2026-11-01",
+        "published_online": {"date-parts": [[2024, 12, 18]]},
+        "published_print": {"date-parts": [[2025, 6]]},
+        "published": {"date-parts": [[2024, 12, 18]]},
+        "issued": {"date-parts": [[2024, 12, 18]]},
+        "container_title": "Advanced Materials",
+        "volume": "37",
+        "issue": "22",
+        "article_number": "2413523",
+        "doi": "10.1002/adma.202413523",
+        "publisher_resource": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202413523"
+      },
+      "local_version_evidence": {
+        "path": "Reference_PDF/04_Materials_Science/Ghafarollahi_2025_SciAgents.pdf",
+        "page": 1,
+        "quote": "arXiv:2409.05556v1  [cs.AI]  9 Sep 2024",
+        "qualification": "本地PDF是预印本v1，不能拿其2024年份证明正式期刊卷期年。"
+      },
+      "audit": "B/asd0035；旧扁平缓存year=2024缺少日期类型，现由原始Crossref published-print字段补核。",
+      "boundary": "正式卷期版采用2025；2024为首次在线及预印本年份。不得把通用published/issued字段误当成正式卷期年。",
+      "previous_review_status": "初次只读结果因现有缓存缺正式卷期日期而pending；本次经授权的针对性查询已解除。",
+      "additional_evidence_needed": false
+    },
+    {
+      "id": "ASD-0040",
+      "confidence": "H",
+      "master_year": {"keep": 2025},
+      "bib_year": {"from": 2024, "to": 2025},
+      "selected_version": "arXiv:2404.07738v2",
+      "evidence": {
+        "path": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Baek_2025_ResearchAgent.pdf",
+        "page": 1,
+        "quote": "arXiv:2404.07738v2  [cs.CL]  9 Feb 2025"
+      },
+      "audit": "B/asd0040目前沿用首次发表年2024，未体现本地v2。",
+      "boundary": "以当前实际阅读并保留的v2为引用对象时，主表2025正确；不应机械改成BibTeX中的2024。版本身份应在指定版本审计中固定。"
+    },
+    {
+      "id": "ASD-0047",
+      "confidence": "H",
+      "master_year": {"from": 2025, "to": 2026},
+      "bib_year": {"keep": 2026},
+      "selected_version": "arXiv:2505.04997v2",
+      "evidence": {
+        "path": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Yue_2025_Foam_Agent.pdf",
+        "page": 1,
+        "quote": "arXiv:2505.04997v2  [cs.AI]  5 Mar 2026"
+      },
+      "audit": "A/asd0047",
+      "boundary": "2025为首次预印本年；已指定并实际归档的是2026年v2。"
+    },
+    {
+      "id": "ASD-0054",
+      "confidence": "H",
+      "master_year": {"from": 2024, "to": 2025},
+      "bib_year": {"keep": 2025},
+      "selected_version": "Nature正式期刊版",
+      "evidence": {
+        "path": "Reference_PDF/07_Medical_and_Health_Sciences/Swanson_2025_Virtual_Lab_Nanobodies.pdf",
+        "page": 1,
+        "quotes": [
+          "716  |  Nature  |  Vol 646  |  16 October 2025",
+          "https://doi.org/10.1038/s41586-025-09442-9"
+        ]
+      },
+      "audit": "A/asd0054及B/asd0054",
+      "boundary": "2024为早期预印本口径；当前PDF和BibTeX均选择2025 Nature版。"
+    },
+    {
+      "id": "ASD-0136",
+      "confidence": "H",
+      "master_year": {"from": 2024, "to": 2025},
+      "bib_year": {"keep": 2025},
+      "selected_version": "arXiv:2412.06412v3",
+      "evidence": {
+        "path": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Wang_2024_StarWhisper_Telescope.pdf",
+        "page": 1,
+        "quote": "arXiv:2412.06412v3  [astro-ph.IM]  19 Oct 2025"
+      },
+      "audit": "A/asd0136",
+      "boundary": "既有指定版本覆盖首次发表年，不根据文件名中的2024决定年份。"
+    },
+    {
+      "id": "ASD-0137",
+      "confidence": "H",
+      "master_year": {"from": 2025, "to": 2026},
+      "bib_year": {"keep": 2026},
+      "selected_version": "Nature Biomedical Engineering正式卷期版",
+      "evidence": {
+        "path": "Reference_PDF/06_Life_Sciences/Wang_2025_PrimeGen_Primer_Design.pdf",
+        "page": 1,
+        "quotes": [
+          "Nature Biomedical Engineering | Volume 10 | February 2026 | 338–353",
+          "Published online: 30 July 2025"
+        ]
+      },
+      "audit": "A/asd0137及C/asd0137",
+      "boundary": "2025是首次在线日期，2026是当前引用的正式卷期年。"
+    },
+    {
+      "id": "ASD-0254",
+      "confidence": "H",
+      "master_year": {"keep": 2025},
+      "bib_year": {"from": 2024, "to": 2025},
+      "selected_version": "arXiv:2412.09429v4",
+      "evidence": {
+        "path": "Reference_PDF/07_Medical_and_Health_Sciences/Luo_2025_BioResearcher.pdf",
+        "page": 1,
+        "quotes": [
+          "arXiv:2412.09429v4  [cs.MA]  5 Jun 2025",
+          "From Intention to Implementation: Automating Biomedical Research via LLMs. Sci China Inf Sci, for review"
+        ]
+      },
+      "audit": "B/asd0254目前沿用首次预印本年2024；现有笔记指定该本地PDF为权威归档全文。",
+      "boundary": "按实际使用的v4应为2025。首页的Science China排版与for review不能证明已经正式发表。",
+      "do_not_write": "不将笔记中的10.1007/s11432-024-4485-0追加到本轮来源字段；该字段非空且缺本轮独立版本确认。"
+    },
+    {
+      "id": "ASD-0609",
+      "confidence": "H_cached_official_metadata",
+      "master_year": {"from": 2022, "to": 2023},
+      "bib_year": {"keep": 2023},
+      "selected_version": "Chemical Engineering Journal正式期刊版",
+      "evidence": {
+        "path": "Coverage_Check/bibliography_full_audit_2026-10-31/adjudicated_metadata.json",
+        "record": "asd0609",
+        "source_url": "https://api.crossref.org/works/10.1016%2Fj.cej.2022.139099",
+        "fields": {"year": "2023", "volume": "451", "pages": "139099", "doi": "10.1016/j.cej.2022.139099"},
+        "pdf_page": null
+      },
+      "boundary": "沿用已有官方DOI元数据确认的2023正式版；DOI字符串中的2022不能替代出版年份。",
+      "limitation": "无本地归档PDF。已有记录明确preprint_pdf_checked_no_local_archive，不能声称本次检查过正式版首页。"
+    },
+    {
+      "id": "ASD-0624",
+      "confidence": "H",
+      "master_year": {"from": 2025, "to": 2026},
+      "bib_year": {"keep": 2026},
+      "selected_version": "Nature Computational Science正式卷期版",
+      "evidence": {
+        "path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shao_2025_SciSciGPT.pdf",
+        "page": 1,
+        "quotes": [
+          "Nature Computational Science | Volume 6 | March 2026 | 301–315",
+          "Published online: 9 December 2025"
+        ]
+      },
+      "audit": "A/asd0624",
+      "boundary": "采用2026卷期年，保留2025为首次在线日期的说明。"
+    },
+    {
+      "id": "ASD-0652",
+      "confidence": "H",
+      "master_year": {"from": 2024, "to": 2025},
+      "bib_year": {"keep": 2025},
+      "selected_version": "arXiv:2412.17767v2 / ICML 2025 manuscript",
+      "evidence": {
+        "path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.pdf",
+        "page": 1,
+        "quotes": [
+          "arXiv:2412.17767v2  [cs.CL]  6 Jun 2025",
+          "Learning, Vancouver, Canada. PMLR 267, 2025. Copyright 2025"
+        ]
+      },
+      "audit": "A/asd0652",
+      "boundary": "当前指定v2和会议稿均为2025，2024仅为首次预印本年。"
+    },
+    {
+      "id": "ASD-0723",
+      "confidence": "H",
+      "master_year": {"from": 2025, "to": 2026},
+      "bib_year": {"keep": 2026},
+      "selected_version": "Nature Communications正式卷期版",
+      "evidence": {
+        "path": "Reference_PDF/06_Life_Sciences/Chen_2025_CASSIA_Cell_Annotation.pdf",
+        "page": 1,
+        "quote": "Nature Communications|   (2026) 17:389"
+      },
+      "audit": "A/asd0723及C/asd0723",
+      "boundary": "2025 DOI年或元数据首发年不能覆盖首页明确的2026正式卷期年。"
+    },
+    {
+      "id": "ASD-0786",
+      "confidence": "H",
+      "master_year": {"from": 2024, "to": 2026},
+      "bib_year": {"keep": 2026},
+      "selected_version": "arXiv:2406.12708v3",
+      "evidence": {
+        "path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2024_AgentReview.pdf",
+        "page": 1,
+        "quote": "arXiv:2406.12708v3  [cs.CL]  10 May 2026"
+      },
+      "audit": "A/asd0786",
+      "boundary": "已有明确裁定选择2026年v3；不得混入EMNLP 2024版年份或其10.18653/v1/2024.emnlp-main.70 DOI。"
+    }
+  ],
+  "blank_source_decisions": [
+    {
+      "id": "ASD-0014",
+      "confidence": "H",
+      "write_master_doi_or_url": "https://doi.org/10.1101/2025.04.03.646459",
+      "year": {"keep": 2025},
+      "evidence": {
+        "path": "Reference_PDF/06_Life_Sciences/Wang_2025_SpatialAgent.pdf",
+        "page": 1,
+        "quotes": ["this version posted April 6, 2025.", "https://doi.org/10.1101/2025.04.03.646459"]
+      },
+      "audit": "B/asd0014",
+      "boundary": "补bioRxiv基础DOI，不附加v1到DOI字符串。"
+    },
+    {
+      "id": "ASD-0025",
+      "confidence": "H",
+      "write_master_doi_or_url": "https://arxiv.org/abs/2405.00972",
+      "year": {"keep": 2024},
+      "evidence": {
+        "path": "Reference_PDF/03_Chemical_Sciences/McNaughton_2024_CACTUS.pdf",
+        "page": 1,
+        "quote": "arXiv:2405.00972v1  [cs.CL]  2 May 2024"
+      },
+      "audit": "D/asd0025",
+      "boundary": "首页正文日期为May 3, 2024，arXiv侧栏为2 May 2024；不影响年份。无需自行生成DOI。"
+    },
+    {
+      "id": "ASD-0049",
+      "confidence": "H",
+      "write_master_doi_or_url": "https://doi.org/10.1101/2024.05.22.595240",
+      "year": {"keep": 2024},
+      "evidence": {
+        "path": "Reference_PDF/06_Life_Sciences/Xin_2024_BIA.pdf",
+        "page": 1,
+        "quotes": ["this version posted June 7, 2024.", "https://doi.org/10.1101/2024.05.22.595240"]
+      },
+      "audit": "B/asd0049",
+      "boundary": "采用首页bioRxiv DOI，不据其日期字段推断不同出版版本。"
+    },
+    {
+      "id": "ASD-0054",
+      "confidence": "H",
+      "write_master_doi_or_url": "https://doi.org/10.1038/s41586-025-09442-9",
+      "year": {"from": 2024, "to": 2025},
+      "evidence": {
+        "path": "Reference_PDF/07_Medical_and_Health_Sciences/Swanson_2025_Virtual_Lab_Nanobodies.pdf",
+        "page": 1,
+        "quote": "https://doi.org/10.1038/s41586-025-09442-9"
+      },
+      "boundary": "与当前归档及BibTeX一致，选择Nature版，不补早期bioRxiv链接。"
+    }
+  ],
+  "additional_alignment_decisions": [
+    {
+      "id": "ASD-0723",
+      "confidence": "H",
+      "master_author": {
+        "from": "Yifei Chen; Yixuan Zhang; Yubin Zhuang; et al.",
+        "to": "Elliot Xie; Lingxin Cheng; Jack Shireman; Yujia Cai; Jihua Liu; Chitrasen Mohanty; Mahua Dey; Christina Kendziorski"
+      },
+      "author_names": ["Elliot Xie", "Lingxin Cheng", "Jack Shireman", "Yujia Cai", "Jihua Liu", "Chitrasen Mohanty", "Mahua Dey", "Christina Kendziorski"],
+      "master_venue": {"keep": "Nature Communications"},
+      "bib_author": "已与首页一致，无需改动",
+      "evidence": {
+        "path": "Reference_PDF/06_Life_Sciences/Chen_2025_CASSIA_Cell_Annotation.pdf",
+        "page": 1,
+        "quote_with_affiliation_markers": "Elliot Xie 1, Lingxin Cheng1, Jack Shireman 2, Yujia Cai 1, Jihua Liu1, Chitrasen Mohanty 1, Mahua Dey 2 & Christina Kendziorski 1"
+      },
+      "boundary": "首页作者、DOI及标题共同确认身份。文件名Chen_2025是历史命名错误，不能用于覆盖原文作者；本审阅不重命名文件。"
+    },
+    {
+      "id": "ASD-0786",
+      "confidence": "H",
+      "master_author": {
+        "from": "Unknown",
+        "to": "Yiqiao Jin; Qinlin Zhao; Yiyang Wang; Hao Chen; Kaijie Zhu; Yijia Xiao; Jindong Wang"
+      },
+      "author_names": ["Yiqiao Jin", "Qinlin Zhao", "Yiyang Wang", "Hao Chen", "Kaijie Zhu", "Yijia Xiao", "Jindong Wang"],
+      "master_venue": {"from": "EMNLP 2024", "to": "arXiv"},
+      "bib_author": "已与首页一致，无需改动",
+      "evidence": {
+        "path": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2024_AgentReview.pdf",
+        "page": 1,
+        "quotes_with_affiliation_markers": [
+          "Yiqiao Jin1∗, Qinlin Zhao2∗, Yiyang Wang1, Hao Chen3, Kaijie Zhu4, Yijia Xiao5, Jindong Wang6",
+          "arXiv:2406.12708v3  [cs.CL]  10 May 2026"
+        ]
+      },
+      "audit": "A/asd0786已明确排除会议版DOI、booktitle及卷期页码，选arXiv v3。",
+      "boundary": "作者和venue建议与当前选定2026 v3一致。EMNLP 2024正式会议版是另一可选引用版本；本轮不切换版本，也不把其DOI追加到所选v3。"
+    },
+    {
+      "id": "ASD-0054",
+      "confidence": "H",
+      "master_venue": {"from": "bioRxiv", "to": "Nature"},
+      "master_author": {"keep": "Swanson et al."},
+      "evidence": {
+        "path": "Reference_PDF/07_Medical_and_Health_Sciences/Swanson_2025_Virtual_Lab_Nanobodies.pdf",
+        "page": 1,
+        "quotes": [
+          "716  |  Nature  |  Vol 646  |  16 October 2025",
+          "The Virtual Lab of AI agents designs new SARS-CoV-2 nanobodies",
+          "https://doi.org/10.1038/s41586-025-09442-9"
+        ]
+      },
+      "boundary": "正文首页刊名、卷日期和DOI均指向Nature正式版。主表bioRxiv venue应随所选版本统一；不据此扩改标题或其他未授权字段。"
+    }
+  ],
+  "do_not_write_or_claim": [
+    "不修改科学分类、纳入状态、主归档或文件路径。",
+    "不改作者以外的其他未授权元数据；历史文件名不作为年份或作者证据。",
+    "ASD-0254首页标注for review，不能据Science China排版或旧笔记DOI宣称已核对正式出版版。",
+    "ASD-0609没有本地PDF，不声称本次读取了正式版首页；年份证据来自既有官方元数据缓存。",
+    "ASD-0786当前选定2026 arXiv v3，不能同时混用EMNLP 2024的年份、venue、DOI及页码。",
+    "ASD-0035本地归档仍是2024预印本；正式版2025年份由本次针对性原始Crossref published-print字段确认，不能称为已读正式版PDF。",
+    "ASD-0040、ASD-0254及ASD-0035应反向修正BibTeX年份，不机械把主表年覆盖为旧BibTeX年。"
+  ]
+}

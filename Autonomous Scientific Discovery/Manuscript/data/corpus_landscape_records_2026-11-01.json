@@ -1,6 +1,6 @@
 {
   "snapshot_date": "2026-11-01",
-  "source_papers_sha256": "c629beddb3e50293a828fbc83963a073436223b26b7bf73dcb05492465c7903c",
+  "source_papers_sha256": "cc7219ad06c9c8babbe0437fb70b739c7bd53ea0c684c7a04b1543b6b6f914ff",
   "source_module_assignments_sha256": "e4fcb3f60140a85691e16027c7adba2875146968361cb63113fe6e7af61aff64",
   "scope": "Current confirmed core; one year per unique work and non-exclusive scientific-object modules.",
   "records": [
@@ -151,7 +151,7 @@
     },
     {
       "paper_id": "ASD-0020",
-      "year": "2024",
+      "year": "2025",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "06",
@@ -312,7 +312,7 @@
     },
     {
       "paper_id": "ASD-0047",
-      "year": "2025",
+      "year": "2026",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "02",
@@ -361,7 +361,7 @@
     },
     {
       "paper_id": "ASD-0054",
-      "year": "2024",
+      "year": "2025",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "07",
@@ -810,7 +810,7 @@
     },
     {
       "paper_id": "ASD-0136",
-      "year": "2024",
+      "year": "2025",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "02"
@@ -818,7 +818,7 @@
     },
     {
       "paper_id": "ASD-0137",
-      "year": "2025",
+      "year": "2026",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "06",
@@ -1899,7 +1899,7 @@
     },
     {
       "paper_id": "ASD-0609",
-      "year": "2022",
+      "year": "2023",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "03"
@@ -1981,7 +1981,7 @@
     },
     {
       "paper_id": "ASD-0624",
-      "year": "2025",
+      "year": "2026",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "11"
@@ -2156,7 +2156,7 @@
     },
     {
       "paper_id": "ASD-0652",
-      "year": "2024",
+      "year": "2025",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "11"
@@ -2674,7 +2674,7 @@
     },
     {
       "paper_id": "ASD-0723",
-      "year": "2025",
+      "year": "2026",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "06"
@@ -3125,7 +3125,7 @@
     },
     {
       "paper_id": "ASD-0786",
-      "year": "2024",
+      "year": "2026",
       "active_confirmed_core": true,
       "scientific_object_modules": [
         "11"
@@ -5571,5 +5571,8 @@
         "08"
       ]
     }
-  ]
+  ],
+  "snapshot_revision": "auxiliary_tag_and_cited_version_alignment",
+  "source_papers_text_lf_sha256": "cc7219ad06c9c8babbe0437fb70b739c7bd53ea0c684c7a04b1543b6b6f914ff",
+  "source_module_assignments_text_lf_sha256": "9f3c563fa207ad0b6706aae1a7011aaf358a554a5cd776581fdd31435fca2350"
 }

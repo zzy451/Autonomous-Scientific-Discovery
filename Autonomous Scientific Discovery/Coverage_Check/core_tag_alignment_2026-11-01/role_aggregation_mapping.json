@@ -1,0 +1,33 @@
+{
+  "source_schema": "paper_note_templates_and_prompts\\ASD_annotation_schema.md",
+  "mapping": {
+    "knowledge": [
+      "literature_search_and_reading",
+      "knowledge_extraction_and_organization"
+    ],
+    "hypothesis": [
+      "scientific_question_formulation",
+      "hypothesis_generation"
+    ],
+    "design": [
+      "experimental_design"
+    ],
+    "execution": [
+      "simulation_modeling",
+      "tool_use_and_code_execution",
+      "experiment_execution"
+    ],
+    "analysis": [
+      "data_analysis",
+      "result_interpretation"
+    ],
+    "validation_and_communication": [
+      "evidence_assessment_and_validation",
+      "paper_writing"
+    ]
+  },
+  "end_to_end_research_automation": "Kept as an integrative descriptor; never expands automatically into six role observations.",
+  "decision_paradigms": "Six analytical mechanisms are coded only in the eleven selected cases, not inferred from agent_type.",
+  "organization": "Multi-Agent System and Human-in-the-loop Agent are existing type tags; they do not establish topology or decision ownership.",
+  "note_fields": "autonomy and cross_attributes remain note-owned descriptions in this inventory; raw summaries are indexed without automatic scientific validation."
+}

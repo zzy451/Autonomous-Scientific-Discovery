@@ -1,0 +1,3115 @@
+{
+  "scope": "Search F: social behavior, economics, knowledge production, peer review/scientific evaluation and scientific-agent benchmarks. General end-to-end ASD systems are routed to Search A unless they specifically benchmark knowledge production or social/economic behavior.",
+  "baseline": {
+    "Data/papers.jsonl_rows": 922,
+    "prior_controller_candidates": 50,
+    "prior_Search_F_candidates": 15,
+    "openalex_queries": 12,
+    "openalex_result_rows": 556,
+    "deduplicated_openalex_records": 420,
+    "official_arxiv_ids": 243,
+    "official_arxiv_confirmed": 243,
+    "openalex_unique_records": 420,
+    "arxiv_date_fields": "Official arXiv API published/updated timestamps manually checked for all listed arXiv candidates; screening records retain official latest updated timestamps."
+  },
+  "searches": [
+    {
+      "database": "OpenAlex Works API",
+      "query": "LLM agents peer review rebuttal benchmark 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 46,
+      "returned": 46,
+      "known": 0,
+      "new": 46,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "agentic peer review scholarly evaluation arXiv 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 9,
+      "new": 41,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "scientific knowledge production agents citation novelty benchmark 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 8,
+      "new": 42,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "agentic research idea evaluation benchmark scientific 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 14,
+      "new": 36,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "LLM agents scientific peer review experiment 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 14,
+      "new": 36,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "science of science agent simulation scholarly communication 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 12,
+      "new": 38,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "research agent benchmark scientific coding reproduction 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 16,
+      "new": 34,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "scientific discovery agent benchmark peer reviewed datasets 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 26,
+      "new": 24,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "LLM generative agents science policy research community 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 9,
+      "new": 41,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "benchmark scientific agents knowledge attribution citation checking 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 20,
+      "new": 30,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "scientific agent conference review reviewer bidding multiagent 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 10,
+      "returned": 10,
+      "known": 3,
+      "new": 7,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "OpenAlex Works API",
+      "query": "research agents dataset curation systematic review scientific workflow 2026",
+      "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 50,
+      "returned": 50,
+      "known": 18,
+      "new": 32,
+      "failed": 0,
+      "status": 200
+    },
+    {
+      "database": "Official arXiv API",
+      "query": "ID-list verification of all arXiv identifiers surfaced by the 12 OpenAlex queries; official title and latest updated timestamp recorded; abstracts screened.",
+      "date_filter": "Discovery window only; arXiv official record is date authority",
+      "searched_at": "2026-10-22",
+      "raw": 243,
+      "known": 10,
+      "new": 233,
+      "failed": 0,
+      "status": "all confirmed"
+    },
+    {
+      "database": "Project Data/papers.jsonl",
+      "query": "Deduplicate official records by arXiv ID, DOI, URL and normalized title; full-library baseline",
+      "date_filter": "all years",
+      "searched_at": "2026-10-22",
+      "raw": 922,
+      "known": 428,
+      "new": -185,
+      "failed": 0,
+      "status": "complete"
+    },
+    {
+      "database": "Crossref / cached publisher metadata",
+      "query": "Screened specified journal records; DOI corrected for papal conclave to 10.1016/j.chaos.2026.118411.",
+      "date_filter": "2026-08-01 to 2026-10-22",
+      "searched_at": "2026-10-22",
+      "raw": 6,
+      "known": 0,
+      "new": 4,
+      "failed": 0,
+      "status": "complete; 2 KnSys abstracts unavailable; papal abstract unavailable"
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Sci$?$vot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents",
+      "authors": "Youran Sun; Xingyu Ren; Chugang Yi; Kejia Zhang; Di Wu; Yingkang Cao; Allen Zhou; Jianping Ye; Suying Liu; Jiaxuan Guo; Jianda Du; Weicheng Ye; Kecheng Liu; Hefan Zhang; Haixin Wang; 肖杰; Eric Yang; Haizhao Yang",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2610.21082",
+      "arxiv_id": "2610.21082",
+      "url": "https://arxiv.org/abs/2610.21082",
+      "first_public_date": "2026-10-15",
+      "version_or_publication_date": "latest arXiv update 2026-10-15",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2610.21082",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "Large language model (LLM) agents can keep scientific experiments running for months with little human supervision, but reliable autonomous research also requires scientific judgment. Evaluating scientific judgment is difficult because research decisions are open-ended and depend on project context. We construct Sci$Π$vot, a 248-case benchmark of scientific judgment based on human corrections. The benchmark draws on records from six months of research in which senior researchers ran LLM agents on 26 projects across six scientific fields and repeatedly intervened to correct the agents' research judgments. In each case, an agent chooses between the original LLM plan and the human-corrected alternative, using only the project record available before the correction as context. We compare LLM and human performance and examine the effects of reasoning effort, access to the project record, and reconsideration. At medium reasoning effort with the project record, models systematically prefer the original LLM plan over the human-corrected alternative. Four of five frontier models perform below chance on the selected cases. The highest accuracy in the project condition across the tested models and reasoning effort settings is 63.5%, compared with 73.4% for fresh researchers. At medium effort, every model achieves lower accuracy with the project record than without it, and reconsideration does not consistently improve overall accuracy. Even with a human-corrected alternative available, frontier models struggle with the selected research decisions, while Sci$Π$vot supports systematic evaluation of scientific judgment for LLM agents.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Benchmark tests PI decisions at pivotal moments using human corrections from 26 projects across six science fields; agent judgment on scientific research process is the object.",
+      "proposed_modules": [
+        "11.07"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2610.21082",
+      "confidence": "high",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "MBA: Multimodal Benchmark and Agents for Real-World Business Ideation",
+      "authors": "Hojun Choi; Jaeyo Shin; Suin Lee; Hyunjung Shim",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2608.11616",
+      "arxiv_id": "2608.11616",
+      "url": "https://arxiv.org/abs/2608.11616",
+      "first_public_date": "2026-08-12",
+      "version_or_publication_date": "latest arXiv update 2026-08-13",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2608.11616",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "Agentic systems powered by large language models (LLMs) have opened new opportunities for business ideation. Yet existing approaches remain confined to a text-only paradigm, despite the inherently multimodal nature of real-world contexts. We thus introduce MBA-Bench, the first multimodal benchmark for training and evaluating business ideation agents, comprising 30K samples across six domains, each domain characterized by distinct visual cues not fully conveyed by text alone. Concretely, we automatically caption images and employ GPT-4o to generate five reference ideas for each of three business questions through retrieval query generation, market evidence retrieval, and evidence-augmented synthesis. Following prior work, we evaluate agents across six business-oriented criteria using MLLM-as-a-Judge. To consider settings where criteria are hidden or disclosed, we present MBA-b and MBA-k for blind and known, respectively. We train both with two novel reward objectives---creativity and feasibility---while MBA-k further optimizes the six disclosed criteria for eight in total. Both are trained via LoRA-based supervised fine-tuning followed by group relative policy optimization with these setting-specific rewards. For extensive experiments on MBA-Bench, we set up two baselines accommodating either captions only or multimodal inputs, with the latter nearing closed-source performance on several metrics. MBA-b and MBA-k outperform caption baselines by 63.9% and 77.1%, and multimodal baselines by 25.6% and 35.8%, respectively.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Benchmark and trained agents perform evidence-grounded multimodal business ideation across six market domains; business opportunity generation is the concrete economic object.",
+      "proposed_modules": [
+        "11.01"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2608.11616",
+      "confidence": "medium",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "WhatWorkedBench: Benchmarking Experimental Understanding in AI Agents",
+      "authors": "Jingjie Ning; Xueqi Li; Yibo Kong; Dongting Li",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2609.27490",
+      "arxiv_id": "2609.27490",
+      "url": "https://arxiv.org/abs/2609.27490",
+      "first_public_date": "2026-09-23",
+      "version_or_publication_date": "latest arXiv update 2026-09-28",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2609.27490",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "AI research agents must predict the effects of computational changes after budgeted experiments. WhatWorkedBench evaluates this experimental understanding through a delivered response surface of configuration scores. Agents inspect workflow code and buy measurements; exhaustive CPU references score conditional component effects, mean pair interactions, configuration choice, and delivery. The catalog spans 36 task conditions, 30 sources, 8 workflow families, and 1248 indexed configuration records, with 4,206 numerical controls. At eight purchased measurements plus two free anchors, pair-effect ridge selects an exact optimum on 15 of 22 sources; 13 of these cases have at least one conditional-effect error exceeding 10% of the task utility range. Shared-estimator comparisons measure acquisition and reconstruction on common observations. In a prospective typed study on 12 four-factor sources, DeepSeek Flash submits 12/12 direct tables and gains 0.147 recovery over a Gaussian process (GP) fitted to the same observations. Pro delivers 11/12 artifacts, with an all-attempt GP difference of -0.001 and a delivered-only difference of +0.063. On six prespecified new agent-evaluation sources, Flash and Pro gains are 0.149 and 0.074. In eight typed six-factor episodes, seven final tables satisfy verified code equivalences. Four fresh agents pass all six registered rules through named estimators and deliver consistent tables at 0.682 recovery versus 0.710 for separate direct-table runs. WhatWorkedBench links acquisition, inference, program structure, and delivery.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Benchmark studies experimental-effect understanding by research agents across diverse computational workflows; scientific tasks are cross-domain, task-level mapping required.",
+      "proposed_modules": [
+        "01.04"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2609.27490",
+      "confidence": "medium",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "IdeaScientist: Orchestrating Agents for Grounded Scientific Ideation",
+      "authors": "Jiarui Liu; Ren-jie Tao; Yiwei Liao; Chuanyang Jin; Kai Sun; Xiao Yang; Xinyuan Zhang; Xilun Chen; Zhuangqun Huang; Lechen Zhang; Yongjin Yang; Yinghui He; Weihao Xuan; Rakesh Wanga; Anuj Kumar; Mona Diab; Wen-tau Yih; Xin Luna Dong",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2610.04074",
+      "arxiv_id": "2610.04074",
+      "url": "https://arxiv.org/abs/2610.04074",
+      "first_public_date": "2026-10-02",
+      "version_or_publication_date": "latest arXiv update 2026-10-09",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2610.04074",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "Despite rapid progress in automating scientific research, generating promising and well grounded research solutions remains a central challenge. We isolate research ideation as a standalone task and build our solution on the intuition that a challenge in one field can often be addressed by a mechanism that solved an analogous challenge in another. Accordingly, we introduce IdeaScientist, which decomposes ideation into gap finding, innovation, and report writing, and trains each role with reinforcement learning. These roles identify limitations in related work, draw solution intuitions from analogous problem settings, and develop those intuitions into complete research proposals. To facilitate discovery of insights across domains, we construct the Svalbard Idea Vault, a corpus of 2.77M decomposed research ideas for retrieval, training, and temporally controlled evaluation. Our evaluation restricts access to literature available before a cutoff date and assesses how closely proposed directions align with those later explored in 15K papers authored by human researchers. On Qwen3.6-27B, IdeaScientist outperforms the strongest open-source autoresearch baseline by 14.0%, driven mainly by gains in novelty. On this 27B open backbone, IdeaScientist even outperforms Claude Code SDK with Claude-4.8-Opus and Codex SDK with GPT-5.4, by up to 5.9%.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Multi-role agents generate grounded scientific research proposals by gap finding, cross-domain analogy and synthesis; benchmark compares proposals with later human research.",
+      "proposed_modules": [
+        "11.07"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2610.04074",
+      "confidence": "medium",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "Benchmarking large language model agent societies against human behavioural distributions",
+      "authors": "Raad Bin Tareaf",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2608.28182",
+      "arxiv_id": "2608.28182",
+      "url": "https://arxiv.org/abs/2608.28182",
+      "first_public_date": "2026-08-28",
+      "version_or_publication_date": "latest arXiv update 2026-08-28",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2608.28182",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "Populations of large language model agents are increasingly used as experimental societies. Three doubts shadow every such result: whether the agents behave like the humans they stand in for, whether a finding survives changes to the apparatus that leave the rules untouched, and whether apparent social dynamics are interaction at all rather than the reproduction of experiments the models have read. This article introduces SILICA, an open instrument that tests all three. Five environments carry published human anchors, each paired with perturbations that re-render the same rules and with variants whose payoffs point away from the memorised result. Twelve open-weight models were run through it on a single consumer graphics card. Agreement with human data is confined to starting points: first-round public-goods contributions fall inside the equivalence margin for eight of eleven models, while no model matches end-state contributions or the human corridor of cooperation. Merely swapping the order in which two actions are listed costs one model 58 points of cooperation. Presenting responders with a fixed schedule of offers shows that only one model, the sole reasoning-trained one, places its acceptance threshold where the incentive requires; two move theirs part of the way, two move them the wrong way, and three never acquire one. Conventions form through a shared prior over the names rather than through negotiation, though negotiation reappears once that prior is disrupted. On the certification ladder defined here, current silicon societies support exploratory claims and no more.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "SILICA benchmark compares multi-round LLM-agent society behavior with human behavioral distributions and tests robustness to presentation/payoff changes.",
+      "proposed_modules": [
+        "11.04"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2608.28182",
+      "confidence": "high",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "Science Edge Evaluation: SEE the Missing Step Toward Real Scientific Discovery",
+      "authors": "Taolin Han; Yuchen Zhang; Jinghang Wang; Yun Wu; Wai Yuet Chiu; Zhaohai Li; Yifei Zhang; Jinxin Wang; Yuhao Zhou; Chen Zhao; Jiajia Li; Jiaxin Li; Qile Jin; Kewei Sun; Shuang Wu; Weiqi Zhai; Renquan Lv; Junchao Li; Ruodan Chen; Qingteng Chen; Zhibo Yang; Hu Wei; Lin Qu; Shuai Bai; Bing Zhao",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2608.06931",
+      "arxiv_id": "2608.06931",
+      "url": "https://arxiv.org/abs/2608.06931",
+      "first_public_date": "2026-08-07",
+      "version_or_publication_date": "latest arXiv update 2026-08-07",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2608.06931",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "Large language models (LLMs) are increasingly involved in scientific discovery, yet it remains unclear whether they can support complex real laboratory science. Here we introduce Science Edge Evaluation (SEE), a multimodal benchmark of expert-curated questions grounded in peer-reviewed literature and experimental practice in chemistry, biology, and materials science. Evaluation of 19 multimodal large language models (MLLMs) shows that even the best-performing model reaches only 48.7% accuracy. Moreover, general-purpose models outperform science-specialized models on average. In the visual-agent evaluation, the use of tools increases the best accuracy to 52.7%. Tool use can expand the information available to models, but more information does not necessarily lead to reliable scientific reasoning. The key challenge is whether models can manage tool-derived information within the boundaries of the original experimental evidence. Together, these findings reveal that current MLLMs still cannot reliably make justified and evidence-bounded inferences from experimental results, which is an essential capability in real scientific discovery. Bridging this gap requires MLLMs to transition from explaining established scientific concepts to deriving novel and evidence-based insights from experimental data.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Benchmark tests evidence-bounded multimodal reasoning against chemistry, biology and materials experimental literature; general multi-domain benchmark, tool-using visual-agent evaluation.",
+      "proposed_modules": [
+        "01.04"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2608.06931",
+      "confidence": "medium",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "SAIL: Scientific Agentic Intelligence via a Science-Aware Loop",
+      "authors": "SAIL Model Team; Boyuan Sun; Bryan Dai; Che Liu; Chi Liu; Derek Li; Hongming Piao; Mengzhuo Chen; Xidong Wang; Yan Shu; Yinda Chen; Ziyang Zeng",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2610.11451",
+      "arxiv_id": "2610.11451",
+      "url": "https://arxiv.org/abs/2610.11451",
+      "first_public_date": "2026-10-08",
+      "version_or_publication_date": "latest arXiv update 2026-10-10",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2610.11451",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "We introduce SAIL, an open model with 35B total and 3B active parameters for literature research, scientific coding, and multi-step research workflows. SAIL is developed through a science-aware improvement loop: agents built on frontier AI models analyze its task failures and construct training tasks that address the underlying capability gaps. The diagnosis examines search and evidence selection in literature tasks, scientific assumptions and reasoning in coding, and planning and revision in longer investigations. The agents draw on paper collections and scientific code repositories to build problems, interaction trajectories, and executable tasks with the required environments and tools. We repeat this loop over multiple development cycles and train SAIL through supervised fine-tuning, specialist training, multi-teacher on-policy distillation, and agentic reinforcement learning. SAIL achieves competitive performance across scientific research tasks with substantially fewer parameters than leading open-weight models.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Science-aware loop develops/evaluates a general scientific agent across literature, coding and research workflows; specific object experiments are not established by abstract.",
+      "proposed_modules": [
+        "01.04"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2610.11451",
+      "confidence": "medium",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "K-Bench: measuring model performance on real scientific agent requests",
+      "authors": "Aubrey Brueckner; Darshil Patel; Yuhuan He; Timothy Kassis",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2608.21601",
+      "arxiv_id": "2608.21601",
+      "url": "https://arxiv.org/abs/2608.21601",
+      "first_public_date": "2026-08-21",
+      "version_or_publication_date": "latest arXiv update 2026-09-02",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2608.21601",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "Benchmarks for scientific artificial intelligence are mostly written to be scored: multiple-choice questions, curated agent tasks with reference solutions, or simulators with a known generative structure. Real scientific requests arrive differently. They are underspecified, they carry attachments, and they lack ground truth. We report K-Bench 01, an evaluation built from first-turn requests sampled from live user traffic on K-Dense Web and run end to end by nine frontier models in identical sandboxes, yielding 1,602 completed agent runs. Three blinded language-model judges scored every run against an eight-dimension rubric. On a rubric whose 8-anchor is defined as work a domain scientist would accept with minor edits, no model clears the line under all three judges. gpt-5.6-sol has the highest pooled mean, 8.04, but its 95% interval [7.80, 8.23] spans the threshold, and two of the three judges rank claude-opus-5 first instead. We therefore report the ordering of systems as the reproducible quantity, the absolute level as an attribute of the instrument, and the top of the table as unresolved. Across all 39,934 scored judgments -- the eight dimension scores plus a holistic overall for each assessment, excluding not-applicable cells -- 47.6% fall below the 8-point threshold. Difficulty is not uniform across the rubric: scientific accuracy averages 6.22 against 7.33 for communication, on identical denominators and in the same direction within every one of the nine models. The single leading failure tag is overclaiming, on 31.4% of assessments. We argue that the informative quantity for scientific agents is not a leaderboard position but the joint distribution of what was delivered, what was claimed, and what artifacts were produced.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Evaluates end-to-end agents on sampled real scientific user requests in sandboxes; cross-domain benchmark without a single scientific-object domain.",
+      "proposed_modules": [
+        "01.04"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2608.21601",
+      "confidence": "medium",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents",
+      "authors": "Zhibo Yang; Chen Zhang; Yuewei Zhang; Hao Wang",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2609.05079",
+      "arxiv_id": "2609.05079",
+      "url": "https://arxiv.org/abs/2609.05079",
+      "first_public_date": "2026-09-04",
+      "version_or_publication_date": "latest arXiv update 2026-09-08",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2609.05079",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "Autonomous coding agents are increasingly proposed as AI-scientist systems that conduct analyses and write research reports, but executing a prescribed analysis is not the same as making a discovery. Existing benchmarks are configured for reproduction: tasks, data, and rubrics are built around a hidden target study, and recovery of its result is rewarded. We present TruthInsightBench, a benchmark configured for discovery. Its 40 blind tasks, drawn from 40 peer-reviewed studies across 10 scientific domains, expose only a neutral scientific objective and frozen data; source conclusions, expected values, and analysis paths are withheld, leaving the agent to determine what claim the data support. A fixed LLM-based judge scores the evidentiary maturity of an agent's own claims along six dimensions, operationalized as 29 artifact-grounded items, with automated, deterministic aggregation and no per-instance human grading, so evaluation can be repeated automatically as agents evolve. On one frozen base model, four coding agents form a narrow plateau (58.4-60.3 of 100) with no statistically reliable pairwise separation: they execute and document analyses competently, with comparatively strong evidence auditability and novelty, but largely lack the discriminating acts that establish a trustworthy claim (controls, robustness, falsifiability, and cross-dataset generalization). The bottleneck is scientific judgment rather than coding, and genuine discovery remains out of reach. TruthInsightBench makes this gap a measurable target; data and scoring code are at https://github.com/TruthInsight-stack/TruthInsightBench.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Benchmark evaluates multi-step coding agents on open-ended discovery claims across 40 tasks and 10 scientific domains; cross-domain method benchmark, no single object module.",
+      "proposed_modules": [
+        "01.04"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2609.05079",
+      "confidence": "high",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "Exploring Causal Mechanisms with Generative Agent-Based Models",
+      "authors": "Xuan Liu; Haoyang Shang; Tanya Bhat; Haojian Jin",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2609.35819",
+      "arxiv_id": "2609.35819",
+      "url": "https://arxiv.org/abs/2609.35819",
+      "first_public_date": "2026-09-21",
+      "version_or_publication_date": "latest arXiv update 2026-09-21",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2609.35819",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "In this paper, we explore using generative agent-based models for a classical ABM application: testing how individual-level behavioral rules produce collective phenomena. We introduce RePair, a method that calibrates simulation worlds, operationalizes candidate mechanisms as natural-language rules, estimates their effects through matched interventions, and examines behavioral traces. We assess the method by testing it in four simulation worlds grounded in established social-science models and empirical studies. Our results reveal that (1) natural-language rules can produce measurable collective effects; (2) rule comparisons can converge as configurations accumulate; and (3) behavioral traces connect collective effects to agents' actions and interactions, helping researchers evaluate the proposed causal process. Together, these findings show the feasibility of using generative agent-based models to explore causal mechanisms and provide practical guidance for producing reliable, interpretable explanations.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Generative-agent ABM method operationalizes behavioral rules and matched interventions across four established social-science worlds to study collective causal mechanisms.",
+      "proposed_modules": [
+        "11.04"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2609.35819",
+      "confidence": "high",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "OpenDiscoveryTrace: Process Traces for Evaluating AI Scientist Workflows",
+      "authors": "Aayam Bansal; Balaji, Keertan",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2609.09203",
+      "arxiv_id": "2609.09203",
+      "url": "https://arxiv.org/abs/2609.09203",
+      "first_public_date": "2026-09-05",
+      "version_or_publication_date": "latest arXiv update 2026-09-05",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2609.09203",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "Existing benchmarks for autonomous AI scientists evaluate only final outputs---generated code, hypotheses, or papers---yet discard the reasoning process by which those outputs were obtained. This makes it impossible to audit scientific methodology, diagnose failure modes, or distinguish systematic reasoning from fortunate guessing. We present \\textbf{OpenDiscoveryTrace}, a public dataset of 558 complete AI scientific agent trajectories that captures how models reason, not just what they produce. Each trajectory records a structured 9-field-per-step trace---including thoughts, tool calls, observations, errors, revision triggers, and self-reported confidence---as models execute 124 scientific tasks spanning drug discovery, materials science, genomics, and scientific literature analysis. The dataset covers seven models: three frontier models (GPT-5.4, Claude Opus 4.6, and Gemini 3.1 Pro; 124 trajectories each, fully balanced across domains and difficulty levels) and four open-weight models (Qwen2.5-7B, Mistral-7B-v0.3, Phi-3.5-mini, and Qwen2.5-1.5B; 30 each), plus 60 live-retrieval variant trajectories. Pilot analysis on 363 LLM-judged trajectories reveals that process traces expose behavioral differences invisible to output-only evaluation: all three frontier models achieve comparable success rates (84--89%), yet Claude Opus 4.6 produces 30$\\times$ more errors than GPT-5.4 (2.5 vs. 0.08 per trajectory, $p &lt; 0.0001$, Cliff's $δ= 0.613$), with qualitatively different error profiles---66.7% tool misuse for Claude versus 83.6% reasoning errors for GPT-5.4. We define five benchmark tasks with baselines from logistic regression, random forests, LSTMs, and Transformer models. The dataset, trace schema, agent harness, and benchmark definitions are publicly available under CC ",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Dataset captures tool-using agent trajectories on tasks spanning drug discovery, materials, genomics and scientific literature; cross-domain process-evaluation resource.",
+      "proposed_modules": [
+        "01.04"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2609.09203",
+      "confidence": "medium",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "A Society of Researchers: Designing Institutions for Populations of Autonomous Research Agents",
+      "authors": "Ali Asaria; Deep Gandhi; Tony Salomone",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2610.10468",
+      "arxiv_id": "2610.10468",
+      "url": "https://arxiv.org/abs/2610.10468",
+      "first_public_date": "2026-10-07",
+      "version_or_publication_date": "latest arXiv update 2026-10-07",
+      "date_evidence_url": "https://export.arxiv.org/api/query?id_list=2610.10468",
+      "source_trail": [
+        "OpenAlex discovery query in round-2 cache",
+        "Official arXiv API record; title and abstract checked",
+        "Deduplicated against Data/papers.jsonl (922 baseline rows), 50 controller candidates, and 15 prior Search F candidates"
+      ],
+      "abstract_or_evidence": "Deployments of research agents are moving to populations of thousands that share one pool of compute, while most current systems organize one project at a time or leave the population unorganized. We argue that such a population will acquire an organization whether or not its designers provide one, so designers should provide it explicitly, and that the multi-agent systems community holds the tools to do so. We propose a society of agents, a population of persistent agents under explicit institutions, and develop it for science as a society of researchers built on six principles. Principal investigators compete for compute through requests for proposals, independent review, and grants; a human governor, the mayor, allocates resources and assigns no tasks. In a running society of ten thousand researchers, asked only to improve the pretraining of language models, one lab reported a way to reach the same quality with about 30% less compute, a result the labs that tested it do not yet agree on. We close with six open problems for the agents community.",
+      "why_agent": "Agent(s) conduct iterative decisions, tool-mediated research, behavioral interaction, or are evaluated as research-system actors; see abstract evidence.",
+      "concrete_objects_and_experiments": "Designs institutions for populations of persistent autonomous research agents; reports a running 10,000-agent society and resource allocation, with result caveats.",
+      "proposed_modules": [
+        "11.07"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": "https://arxiv.org/pdf/2610.10468",
+      "confidence": "medium",
+      "uncertainties": "Abstract-level screen; full text and exact secondary taxonomy assignment remain for controller review."
+    },
+    {
+      "title": "Forecasting the future of American mass shootings with Bayesian agent-based model calibration",
+      "authors": "Andrew M. Dickson; Mira Bhatt; Tiffany Yu; Mohammad R. K. Mofrad",
+      "year": 2026,
+      "venue": "PNAS Nexus",
+      "doi": "10.1093/pnasnexus/pgag294",
+      "url": "https://doi.org/10.1093/pnasnexus/pgag294",
+      "first_public_date": "2026-08-29",
+      "abstract_or_evidence": "High-throughput ABM combines potential perpetrator emergence, firearm access and target population; Bayesian calibration against historical events; reports predictive distributions and counterfactual policy simulation.",
+      "why_agent": "Heterogeneous behavioral actors interact through explicit mechanisms over time; the ABM is a research model of human behavior.",
+      "proposed_modules": [
+        "11.04"
+      ],
+      "confidence": "high",
+      "source_trail": [
+        "Crossref harvest cached metadata and abstract",
+        "Deduplicated against 922 Data/papers.jsonl rows"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": null,
+      "uncertainties": "Abstract-level screening only; verify full text and precise secondary classification."
+    },
+    {
+      "title": "Network structure versus financial soundness in systemic risk: evidence from an improved agent-based model simulation of Chinese banks",
+      "authors": "Ya Tan; Zhigang Wang; Yichao Dong; Yiming Ding",
+      "year": 2026,
+      "venue": "Journal of Complex Networks",
+      "doi": "10.1093/comnet/cnag029",
+      "url": "https://doi.org/10.1093/comnet/cnag029",
+      "first_public_date": "2026-08-27",
+      "abstract_or_evidence": "ABM with heterogeneous bank risk profiles and interbank matching, calibrated/evaluated on 400 Chinese banks; simulates systemic-risk contagion and compares network structure with financial soundness.",
+      "why_agent": "Bank agents form an interbank network and transmit risk through simulated interactions.",
+      "proposed_modules": [
+        "11.01"
+      ],
+      "confidence": "high",
+      "source_trail": [
+        "Crossref harvest cached metadata and abstract",
+        "Deduplicated against 922 Data/papers.jsonl rows"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": null,
+      "uncertainties": "Abstract-level screening only; verify full text and precise secondary classification."
+    },
+    {
+      "title": "Agent-based modeling for blockchain-based Ponzi scheme evolution and dynamics",
+      "authors": "Haodong Wang; Junhuan Zhang",
+      "year": 2026,
+      "venue": "IMA Journal of Management Mathematics",
+      "doi": "10.1093/imaman/dpag040",
+      "url": "https://doi.org/10.1093/imaman/dpag040",
+      "first_public_date": "2026-10-09",
+      "abstract_or_evidence": "Investor agents are risk-averse, neutral or risk-seeking; model calibrated with PlusToken transaction data; studies scheme evolution, collapse, token concentration and investor loss.",
+      "why_agent": "Explicit heterogeneous economic actors optimize based on past trades and interact in simulated financial schemes.",
+      "proposed_modules": [
+        "11.01"
+      ],
+      "confidence": "high",
+      "source_trail": [
+        "Crossref harvest cached metadata and abstract",
+        "Deduplicated against 922 Data/papers.jsonl rows"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": null,
+      "uncertainties": "Abstract-level screening only; verify full text and precise secondary classification."
+    },
+    {
+      "title": "When cardinals strategize: An agent-based model of influence and ideology for the papal conclave",
+      "authors": "Nuno Crokidakis",
+      "year": 2026,
+      "venue": "Chaos, Solitons & Fractals",
+      "doi": "10.1016/j.chaos.2026.118411",
+      "url": "https://doi.org/10.1016/j.chaos.2026.118411",
+      "first_public_date": "2026-08",
+      "abstract_or_evidence": "Crossref record confirms title, author and publication month; abstract absent in record. Models strategic influence/ideology among cardinals in conclave.",
+      "why_agent": "Agent-based model of group decision dynamics; abstract-level evidence is limited to the official title.",
+      "proposed_modules": [
+        "11.04"
+      ],
+      "confidence": "medium",
+      "source_trail": [
+        "Crossref API DOI record (corrected DOI supplied by controller)",
+        "Deduplicated against 922 Data/papers.jsonl rows"
+      ],
+      "existing_paper_id": null,
+      "novelty_type": "new_2026_incremental",
+      "pdf_url": null,
+      "uncertainties": "Abstract-level screening only; verify full text and precise secondary classification."
+    }
+  ],
+  "screening_records": [
+    {
+      "arxiv_id": "2609.01895",
+      "title": "Beyond Human-Likeness: Mapping the Scientific Critique Profiles of LLMs and Human Reviewers",
+      "doi": "10.48550/arxiv.2609.01895",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-01T21:51:07Z",
+      "official_url": "https://arxiv.org/abs/2609.01895"
+    },
+    {
+      "arxiv_id": "2609.09628",
+      "title": "Who Are They to Each Other? Multi-Agent Reasoning for Speaker Relationship Inference",
+      "doi": "10.48550/arxiv.2609.09628",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-09T02:40:02Z",
+      "official_url": "https://arxiv.org/abs/2609.09628"
+    },
+    {
+      "arxiv_id": "2608.25826",
+      "title": "Unfolding Scientific Papers into Multi-Turn Generation Trajectories for Continued Pre-Training",
+      "doi": "10.48550/arxiv.2608.25826",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-07T09:17:08Z",
+      "official_url": "https://arxiv.org/abs/2608.25826"
+    },
+    {
+      "arxiv_id": "2608.18167",
+      "title": "Adversarial Review: Structured Disagreement for Grounded Agentic Code Review",
+      "doi": "10.48550/arxiv.2608.18167",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-16T21:58:17Z",
+      "official_url": "https://arxiv.org/abs/2608.18167"
+    },
+    {
+      "arxiv_id": "2608.20488",
+      "title": "Metag: A dataset to build agentic meta-reviewing capabilities",
+      "doi": "10.48550/arxiv.2608.20488",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-08-24T21:53:47Z",
+      "official_url": "https://arxiv.org/abs/2608.20488"
+    },
+    {
+      "arxiv_id": "2609.23894",
+      "title": "Connecting the Dots in Agentic AI Security: A Cross-Dimensional Threat Taxonomy, Evaluation Maturity, and Open Challenges",
+      "doi": "10.48550/arxiv.2609.23894",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-20T22:00:52Z",
+      "official_url": "https://arxiv.org/abs/2609.23894"
+    },
+    {
+      "arxiv_id": "2609.31219",
+      "title": "Research with AI Agents: How Agentic Systems Are Changing Scientific Work",
+      "doi": "10.48550/arxiv.2609.31219",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-25T13:01:02Z",
+      "official_url": "https://arxiv.org/abs/2609.31219"
+    },
+    {
+      "arxiv_id": "2610.05461",
+      "title": "AI Safety via Debate is Compromised by Cognitive Biases",
+      "doi": "10.48550/arxiv.2610.05461",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-04T19:11:18Z",
+      "official_url": "https://arxiv.org/abs/2610.05461"
+    },
+    {
+      "arxiv_id": "2610.09824",
+      "title": "Homogenization in Multi-Agent Systems",
+      "doi": "10.48550/arxiv.2610.09824",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-07T10:49:29Z",
+      "official_url": "https://arxiv.org/abs/2610.09824"
+    },
+    {
+      "arxiv_id": "2610.07625",
+      "title": "Stateless Language Agents: Scaling Long-Horizon Automated Research",
+      "doi": "10.48550/arxiv.2610.07625",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-06T02:17:32Z",
+      "official_url": "https://arxiv.org/abs/2610.07625"
+    },
+    {
+      "arxiv_id": "2608.13545",
+      "title": "LittleLearner: Language Models Under Pedagogically Controlled Knowledge Exposure",
+      "doi": "10.48550/arxiv.2608.13545",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-07T10:06:13Z",
+      "official_url": "https://arxiv.org/abs/2608.13545"
+    },
+    {
+      "arxiv_id": "2610.18240",
+      "title": "Beyond Answer Sharing: TrueMAD for Targeted Peer Engagement in Multi-Agent Debate",
+      "doi": "10.48550/arxiv.2610.18240",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-13T12:08:38Z",
+      "official_url": "https://arxiv.org/abs/2610.18240"
+    },
+    {
+      "arxiv_id": "2609.39863",
+      "title": "FIGS: Evaluating Multi-Turn Sycophancy Without Penalizing Empathy",
+      "doi": "10.48550/arxiv.2609.39863",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-30T14:46:13Z",
+      "official_url": "https://arxiv.org/abs/2609.39863"
+    },
+    {
+      "arxiv_id": "2609.08062",
+      "title": "ResidualAuth: What Authorization State Must Language Agents Preserve under Revocable Delegation?",
+      "doi": "10.48550/arxiv.2609.08062",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-30T14:07:13Z",
+      "official_url": "https://arxiv.org/abs/2609.08062"
+    },
+    {
+      "arxiv_id": "2610.21042",
+      "title": "ReviewPilot: A Multi-Agent System for Screening and Data Extraction in Systematic Reviews",
+      "doi": "10.48550/arxiv.2610.21042",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-15T00:34:38Z",
+      "official_url": "https://arxiv.org/abs/2610.21042"
+    },
+    {
+      "arxiv_id": "2610.21082",
+      "title": "Sci$Π$vot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents",
+      "doi": "10.48550/arxiv.2610.21082",
+      "disposition": "candidate",
+      "proposed_module": "11.07",
+      "official_updated": "2026-10-15T01:34:44Z",
+      "official_url": "https://arxiv.org/abs/2610.21082"
+    },
+    {
+      "arxiv_id": "2610.00084",
+      "title": "Scientific Agents: Evaluating Profession-Specific System Prompts on Scientific Tasks",
+      "doi": "10.48550/arxiv.2610.00084",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-07T00:21:09Z",
+      "official_url": "https://arxiv.org/abs/2610.00084"
+    },
+    {
+      "arxiv_id": "2609.39325",
+      "title": "WorkGenesis: Building the Worlds That Teach Agents to Work",
+      "doi": "10.48550/arxiv.2609.39325",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-30T09:00:34Z",
+      "official_url": "https://arxiv.org/abs/2609.39325"
+    },
+    {
+      "arxiv_id": "2609.33357",
+      "title": "DISCERN: Can AI Agents Work Like Scientists and Guide Discovery?",
+      "doi": "10.48550/arxiv.2609.33357",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-27T08:29:32Z",
+      "official_url": "https://arxiv.org/abs/2609.33357"
+    },
+    {
+      "arxiv_id": "2608.11341",
+      "title": "Apodex Discovery: Reality Benchmarks and Environments for Evaluating and Building Discoverative Artificial Intelligence",
+      "doi": "10.48550/arxiv.2608.11341",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-11T18:48:40Z",
+      "official_url": "https://arxiv.org/abs/2608.11341"
+    },
+    {
+      "arxiv_id": "2608.03581",
+      "title": "AI-Assisted Peer Review Across Research Communities: From Reviewer AI Policies to LLM Review Quality",
+      "doi": "10.48550/arxiv.2608.03581",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-08-04T12:34:47Z",
+      "official_url": "https://arxiv.org/abs/2608.03581"
+    },
+    {
+      "arxiv_id": "2608.10153",
+      "title": "The CASE Framework: A Multi-Disciplinary Control Architecture for Governing Enterprise Agentic AI",
+      "doi": "10.48550/arxiv.2608.10153",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-10T19:10:31Z",
+      "official_url": "https://arxiv.org/abs/2608.10153"
+    },
+    {
+      "arxiv_id": "2608.19816",
+      "title": "Understanding as an Explicit and Assessable Component of Frontier AI Safety Decisions",
+      "doi": "10.48550/arxiv.2608.19816",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-21T10:28:50Z",
+      "official_url": "https://arxiv.org/abs/2608.19816"
+    },
+    {
+      "arxiv_id": "2608.25660",
+      "title": "Think-Probe-Respond: Improving Large Language Models as Judges of Research Idea Novelty",
+      "doi": "10.48550/arxiv.2608.25660",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-26T11:42:12Z",
+      "official_url": "https://arxiv.org/abs/2608.25660"
+    },
+    {
+      "arxiv_id": "2608.23058",
+      "title": "LLM-based Agents for Forecasting and Prediction: Methods, Training, Evaluation, and Applications",
+      "doi": "10.48550/arxiv.2608.23058",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-24T10:02:39Z",
+      "official_url": "https://arxiv.org/abs/2608.23058"
+    },
+    {
+      "arxiv_id": "2608.14354",
+      "title": "ScienceFlow: A long-horizon agent for ML research, scientific discovery and beyond",
+      "doi": "10.48550/arxiv.2608.14354",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-23T15:49:25Z",
+      "official_url": "https://arxiv.org/abs/2608.14354"
+    },
+    {
+      "arxiv_id": "2609.12105",
+      "title": "Language Is an Insufficient Substrate for Quantitative Reasoning, and Consequential Domains Need Large Quantitative Models",
+      "doi": "10.48550/arxiv.2609.12105",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-10T18:33:18Z",
+      "official_url": "https://arxiv.org/abs/2609.12105"
+    },
+    {
+      "arxiv_id": "2609.05788",
+      "title": "More Than Mimicking Reviewers: Evaluating LLMs for Pre-Submission Peer Review",
+      "doi": "10.48550/arxiv.2609.05788",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-05T00:50:56Z",
+      "official_url": "https://arxiv.org/abs/2609.05788"
+    },
+    {
+      "arxiv_id": "2608.20777",
+      "title": "Tree-of-Concerns: Hierarchical Multi-Agent Debate for Unstated-Limitation Extraction in Scientific Critique",
+      "doi": "10.48550/arxiv.2608.20777",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-21T07:46:58Z",
+      "official_url": "https://arxiv.org/abs/2608.20777"
+    },
+    {
+      "arxiv_id": "2609.06366",
+      "title": "AutoKD: Autonomous Knowledge Discovery",
+      "doi": "10.48550/arxiv.2609.06366",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-06T03:48:29Z",
+      "official_url": "https://arxiv.org/abs/2609.06366"
+    },
+    {
+      "arxiv_id": "2609.19420",
+      "title": "Use and Effects of LLMs in Peer Review: A Randomized Experiment and Survey at ICML 2026",
+      "doi": "10.48550/arxiv.2609.19420",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-16T20:54:46Z",
+      "official_url": "https://arxiv.org/abs/2609.19420"
+    },
+    {
+      "arxiv_id": "2609.03192",
+      "title": "Where Reliability Lives: Experimental Localisation of Behavioural Properties in an Agent System",
+      "doi": "10.48550/arxiv.2609.03192",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-02T22:21:02Z",
+      "official_url": "https://arxiv.org/abs/2609.03192"
+    },
+    {
+      "arxiv_id": "2608.22381",
+      "title": "GRAFT: Graph-Distilled Generative Retrieval for Facet-Aware Scientific Literature Exploration",
+      "doi": "10.48550/arxiv.2608.22381",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-23T12:07:00Z",
+      "official_url": "https://arxiv.org/abs/2608.22381"
+    },
+    {
+      "arxiv_id": "2609.13437",
+      "title": "LabAgent: Customize Any Research Hubs for Scientific Discoveries Using AI Agents",
+      "doi": "10.48550/arxiv.2609.13437",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-11T18:53:18Z",
+      "official_url": "https://arxiv.org/abs/2609.13437"
+    },
+    {
+      "arxiv_id": "2610.01618",
+      "title": "Agents Are Systems, Not Models: Rethinking Agentic Evaluation",
+      "doi": "10.48550/arxiv.2610.01618",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-01T12:55:07Z",
+      "official_url": "https://arxiv.org/abs/2610.01618"
+    },
+    {
+      "arxiv_id": "2609.31562",
+      "title": "Agentic Economies for Autonomous Scientific Discovery",
+      "doi": "10.48550/arxiv.2609.31562",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-09-25T17:28:53Z",
+      "official_url": "https://arxiv.org/abs/2609.31562"
+    },
+    {
+      "arxiv_id": "2610.05140",
+      "title": "AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents",
+      "doi": "10.48550/arxiv.2610.05140",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-04T11:40:11Z",
+      "official_url": "https://arxiv.org/abs/2610.05140"
+    },
+    {
+      "arxiv_id": "2609.34496",
+      "title": "MASTraceBench: Diagnosing Collaboration Gains through Proposal Trajectories in LLM-Based Multi-Agent Systems",
+      "doi": "10.48550/arxiv.2609.34496",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-28T07:44:26Z",
+      "official_url": "https://arxiv.org/abs/2609.34496"
+    },
+    {
+      "arxiv_id": "2610.11260",
+      "title": "LLM Agents as Resilience Engineers for Scientific Applications",
+      "doi": "10.48550/arxiv.2610.11260",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-08T05:13:53Z",
+      "official_url": "https://arxiv.org/abs/2610.11260"
+    },
+    {
+      "arxiv_id": "2610.18820",
+      "title": "Read the Room Before Your Model Generates",
+      "doi": "10.48550/arxiv.2610.18820",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-19T04:32:34Z",
+      "official_url": "https://arxiv.org/abs/2610.18820"
+    },
+    {
+      "arxiv_id": "2609.07713",
+      "title": "The Emerging AI Paper-Review Arms Race: Adversarial Co-Evolution in Scholarly Publishing",
+      "doi": "10.48550/arxiv.2609.07713",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-07T16:25:54Z",
+      "official_url": "https://arxiv.org/abs/2609.07713"
+    },
+    {
+      "arxiv_id": "2609.08155",
+      "title": "SciFigure2Code: An AI-Reconstructed Benchmark for Scientific Figure-to-Code",
+      "doi": "10.48550/arxiv.2609.08155",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-08T02:39:02Z",
+      "official_url": "https://arxiv.org/abs/2609.08155"
+    },
+    {
+      "arxiv_id": "2608.02986",
+      "title": "Internalising the Identity Primitive: Cryptographic Individuality for an Autonomous Agent on a Public Blockchain",
+      "doi": "10.48550/arxiv.2608.02986",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-04T00:47:13Z",
+      "official_url": "https://arxiv.org/abs/2608.02986"
+    },
+    {
+      "arxiv_id": "2608.08975",
+      "title": "How Can Rhetoric Reward-Hack AI Reviewers? Dissecting Rhetorical Sensitivity in AI-Based Peer Review",
+      "doi": "10.48550/arxiv.2608.08975",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-08-10T00:42:51Z",
+      "official_url": "https://arxiv.org/abs/2608.08975"
+    },
+    {
+      "arxiv_id": "2608.11616",
+      "title": "MBA: Multimodal Benchmark and Agents for Real-World Business Ideation",
+      "doi": "10.48550/arxiv.2608.11616",
+      "disposition": "candidate",
+      "proposed_module": "11.01",
+      "official_updated": "2026-08-13T02:06:46Z",
+      "official_url": "https://arxiv.org/abs/2608.11616"
+    },
+    {
+      "arxiv_id": "2608.12788",
+      "title": "ARAC: Benchmarking Auto-Research's Alignment and Completeness on End-to-End Researchs",
+      "doi": "10.48550/arxiv.2608.12788",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-13T03:48:07Z",
+      "official_url": "https://arxiv.org/abs/2608.12788"
+    },
+    {
+      "arxiv_id": "2609.03425",
+      "title": "The Civilization Framework: Sovereign-Anchored Communication Between Personal Multi-Agent Systems",
+      "doi": "10.48550/arxiv.2609.03425",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-03T06:31:56Z",
+      "official_url": "https://arxiv.org/abs/2609.03425"
+    },
+    {
+      "arxiv_id": "2609.33864",
+      "title": "Paying for Publication with Peer Review Design and Simulation of a Fee-Free, Credit-Based Open Access Journal for Information Technology",
+      "doi": "10.48550/arxiv.2609.33864",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-27T19:32:46Z",
+      "official_url": "https://arxiv.org/abs/2609.33864"
+    },
+    {
+      "arxiv_id": "2609.28579",
+      "title": "AstroGenesis: A Domain-Specific Multi-Agent AI for Astrophysical Research",
+      "doi": "10.48550/arxiv.2609.28579",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-23T12:52:42Z",
+      "official_url": "https://arxiv.org/abs/2609.28579"
+    },
+    {
+      "arxiv_id": "2609.27490",
+      "title": "WhatWorkedBench: Benchmarking Experimental Understanding in AI Agents",
+      "doi": "10.48550/arxiv.2609.27490",
+      "disposition": "candidate",
+      "proposed_module": "01.04",
+      "official_updated": "2026-09-28T04:23:45Z",
+      "official_url": "https://arxiv.org/abs/2609.27490"
+    },
+    {
+      "arxiv_id": "2610.02202",
+      "title": "ScholarCatalyst: A Benchmark for Retrieving Papers That Inspire New Research",
+      "doi": "10.48550/arxiv.2610.02202",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-01T17:59:47Z",
+      "official_url": "https://arxiv.org/abs/2610.02202"
+    },
+    {
+      "arxiv_id": "2609.22882",
+      "title": "The Law of Stop: Interruptibility, Injunctions, and the Governance of Agentic AI",
+      "doi": "10.48550/arxiv.2609.22882",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-04T12:00:15Z",
+      "official_url": "https://arxiv.org/abs/2609.22882"
+    },
+    {
+      "arxiv_id": "2610.05398",
+      "title": "MMPostTrainBench: Benchmarking Autonomous Research for Multimodal Post-Training",
+      "doi": "10.48550/arxiv.2610.05398",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-04T17:32:58Z",
+      "official_url": "https://arxiv.org/abs/2610.05398"
+    },
+    {
+      "arxiv_id": "2610.18449",
+      "title": "Autonomous Science Bench: Evaluating AI Agents for Autonomous Scientific Discovery",
+      "doi": "10.48550/arxiv.2610.18449",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-13T14:18:56Z",
+      "official_url": "https://arxiv.org/abs/2610.18449"
+    },
+    {
+      "arxiv_id": "2610.04074",
+      "title": "IdeaScientist: Orchestrating Agents for Grounded Scientific Ideation",
+      "doi": "10.48550/arxiv.2610.04074",
+      "disposition": "candidate",
+      "proposed_module": "11.07",
+      "official_updated": "2026-10-09T18:44:38Z",
+      "official_url": "https://arxiv.org/abs/2610.04074"
+    },
+    {
+      "arxiv_id": "2610.11087",
+      "title": "Beyond Imitation: A Framework and Benchmark for LLM-Assisted Peer Review",
+      "doi": "10.48550/arxiv.2610.11087",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-10-08T01:57:31Z",
+      "official_url": "https://arxiv.org/abs/2610.11087"
+    },
+    {
+      "arxiv_id": "2609.23735",
+      "title": "ScholarStack: Layered Research Asset Orchestration and Cross-Task Reuse for Scientific Agents",
+      "doi": "10.48550/arxiv.2609.23735",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-12T13:49:45Z",
+      "official_url": "https://arxiv.org/abs/2609.23735"
+    },
+    {
+      "arxiv_id": "2610.08364",
+      "title": "Transect: Retaining Observability for Long-Horizon LLM Agent Evaluations",
+      "doi": "10.48550/arxiv.2610.08364",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-08T13:06:16Z",
+      "official_url": "https://arxiv.org/abs/2610.08364"
+    },
+    {
+      "arxiv_id": "2608.03569",
+      "title": "Adversarial Fast-Moving Real-World Domains as Test Beds for Benchmarking AI Scientist Capabilities",
+      "doi": "10.48550/arxiv.2608.03569",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-04T12:30:13Z",
+      "official_url": "https://arxiv.org/abs/2608.03569"
+    },
+    {
+      "arxiv_id": "2609.01588",
+      "title": "Designing Proactive Thought Partners for Writing",
+      "doi": "10.48550/arxiv.2609.01588",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-01T17:54:32Z",
+      "official_url": "https://arxiv.org/abs/2609.01588"
+    },
+    {
+      "arxiv_id": "2608.28945",
+      "title": "Automated Researchers Can Mitigate Well-characterized Alignment Failures",
+      "doi": "10.48550/arxiv.2608.28945",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-02T02:07:11Z",
+      "official_url": "https://arxiv.org/abs/2608.28945"
+    },
+    {
+      "arxiv_id": "2609.07611",
+      "title": "AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era",
+      "doi": "10.48550/arxiv.2609.07611",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-09-07T15:19:13Z",
+      "official_url": "https://arxiv.org/abs/2609.07611"
+    },
+    {
+      "arxiv_id": "2608.26596",
+      "title": "Not Just Reason, Not Just Scan: Reinforcement Learning for Proactive Scientific Error Verification over Academic Paper",
+      "doi": "10.48550/arxiv.2608.26596",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-27T04:24:29Z",
+      "official_url": "https://arxiv.org/abs/2608.26596"
+    },
+    {
+      "arxiv_id": "2608.16645",
+      "title": "Reconstruction: A Blind Benchmark for Recovering Research Ideas from Pre-Publication Bibliographies",
+      "doi": "10.48550/arxiv.2608.16645",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-24T20:33:03Z",
+      "official_url": "https://arxiv.org/abs/2608.16645"
+    },
+    {
+      "arxiv_id": "2608.28122",
+      "title": "Agentic Artifact Creation: Systems, Evaluation, Principles, and Opportunities",
+      "doi": "10.48550/arxiv.2608.28122",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-28T09:35:14Z",
+      "official_url": "https://arxiv.org/abs/2608.28122"
+    },
+    {
+      "arxiv_id": "2609.13760",
+      "title": "Positioning manuscripts in the scientific landscape with agentic AI",
+      "doi": "10.48550/arxiv.2609.13760",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-12T07:10:14Z",
+      "official_url": "https://arxiv.org/abs/2609.13760"
+    },
+    {
+      "arxiv_id": "2609.11234",
+      "title": "NovGauge: A Fine-Grained Benchmark for Diagnosing LLMs' Capability in Paper Novelty Assessment",
+      "doi": "10.48550/arxiv.2609.11234",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-10T08:34:56Z",
+      "official_url": "https://arxiv.org/abs/2609.11234"
+    },
+    {
+      "arxiv_id": "2609.38374",
+      "title": "Doc2LoRA Provides Decodable Representations of Scientific Ideas",
+      "doi": "10.48550/arxiv.2609.38374",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-29T18:34:09Z",
+      "official_url": "https://arxiv.org/abs/2609.38374"
+    },
+    {
+      "arxiv_id": "2610.05355",
+      "title": "Rethinking Inline Citation Verification in Scholarly Communication",
+      "doi": "10.48550/arxiv.2610.05355",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-04T16:23:12Z",
+      "official_url": "https://arxiv.org/abs/2610.05355"
+    },
+    {
+      "arxiv_id": "2610.04246",
+      "title": "Benchmarking Psychological Dynamics in Generative Agents",
+      "doi": "10.48550/arxiv.2610.04246",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-03T03:08:42Z",
+      "official_url": "https://arxiv.org/abs/2610.04246"
+    },
+    {
+      "arxiv_id": "2610.06778",
+      "title": "IdeaLens: Detecting AI Ideas in Long-form Writing",
+      "doi": "10.48550/arxiv.2610.06778",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-05T17:43:33Z",
+      "official_url": "https://arxiv.org/abs/2610.06778"
+    },
+    {
+      "arxiv_id": "2610.19159",
+      "title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
+      "doi": "10.48550/arxiv.2610.19159",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-13T20:25:59Z",
+      "official_url": "https://arxiv.org/abs/2610.19159"
+    },
+    {
+      "arxiv_id": "2610.19433",
+      "title": "EvoProbe: Evaluation-Driven Benchmark Evolution for LLM Agents",
+      "doi": "10.48550/arxiv.2610.19433",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-14T02:27:06Z",
+      "official_url": "https://arxiv.org/abs/2610.19433"
+    },
+    {
+      "arxiv_id": "2608.12888",
+      "title": "When Your Agent Opens the Chat App: Agent-Controlled Search over Raw Chat Logs Rivals Structured Memory",
+      "doi": "10.48550/arxiv.2608.12888",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-16T14:18:40Z",
+      "official_url": "https://arxiv.org/abs/2608.12888"
+    },
+    {
+      "arxiv_id": "2610.00636",
+      "title": "CompMat-Bench: Benchmarking AI Agents for Computational Materials Science",
+      "doi": "10.48550/arxiv.2610.00636",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-15T15:11:29Z",
+      "official_url": "https://arxiv.org/abs/2610.00636"
+    },
+    {
+      "arxiv_id": "2610.21109",
+      "title": "Kolab: Benchmarking Human-Agent Collaboration in Long-Horizon Workflows",
+      "doi": "10.48550/arxiv.2610.21109",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-15T02:13:36Z",
+      "official_url": "https://arxiv.org/abs/2610.21109"
+    },
+    {
+      "arxiv_id": "2610.21424",
+      "title": "Do Agents Need a New Kind of Paper? SPRA: Structured Paper Representation for Agents",
+      "doi": "10.48550/arxiv.2610.21424",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-19T08:27:16Z",
+      "official_url": "https://arxiv.org/abs/2610.21424"
+    },
+    {
+      "arxiv_id": "2609.05531",
+      "title": "When Agent Governance Helps",
+      "doi": "10.48550/arxiv.2609.05531",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-02T01:16:39Z",
+      "official_url": "https://arxiv.org/abs/2609.05531"
+    },
+    {
+      "arxiv_id": "2609.01870",
+      "title": "ArcticSwarm: Deferring Early Consensus in Long-Horizon Multi-Agent Research",
+      "doi": "10.48550/arxiv.2609.01870",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-01T21:08:40Z",
+      "official_url": "https://arxiv.org/abs/2609.01870"
+    },
+    {
+      "arxiv_id": "2609.11117",
+      "title": "Overview of the NLPCC 2026 Shared Task 11: Agent-Based Experiment Reproduction from Scientific Papers",
+      "doi": "10.48550/arxiv.2609.11117",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-10T05:50:24Z",
+      "official_url": "https://arxiv.org/abs/2609.11117"
+    },
+    {
+      "arxiv_id": "2609.12582",
+      "title": "NovaFabric: Tamper-Evident, Replayable Evidence for Autonomous AI Agent Runs",
+      "doi": "10.48550/arxiv.2609.12582",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-11T08:35:43Z",
+      "official_url": "https://arxiv.org/abs/2609.12582"
+    },
+    {
+      "arxiv_id": "2608.21503",
+      "title": "BeTaL-GBI: Admission-Aware Benchmark Tuning and Full-Stack Verification of Geometric Belief Interfaces",
+      "doi": "10.48550/arxiv.2608.21503",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-21T16:52:38Z",
+      "official_url": "https://arxiv.org/abs/2608.21503"
+    },
+    {
+      "arxiv_id": "2608.02775",
+      "title": "Towards a new paradigm of scientific discovery with socialized artificial intelligence",
+      "doi": "10.48550/arxiv.2608.02775",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-03T18:18:39Z",
+      "official_url": "https://arxiv.org/abs/2608.02775"
+    },
+    {
+      "arxiv_id": "2608.31076",
+      "title": "Learning to Evaluate Before Improving: Automatic Rubric Induction for Automatic Research Agents",
+      "doi": "10.48550/arxiv.2608.31076",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-31T16:48:51Z",
+      "official_url": "https://arxiv.org/abs/2608.31076"
+    },
+    {
+      "arxiv_id": "2609.35900",
+      "title": "Reconstructing Implicit Scientific Knowledge: Evaluating LLM Agents through End-to-End Reproduction of Astronomy",
+      "doi": "10.48550/arxiv.2609.35900",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-28T01:44:09Z",
+      "official_url": "https://arxiv.org/abs/2609.35900"
+    },
+    {
+      "arxiv_id": "2609.38445",
+      "title": "AIM: Agentic Idea Management for Automated Research",
+      "doi": "10.48550/arxiv.2609.38445",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-29T19:37:43Z",
+      "official_url": "https://arxiv.org/abs/2609.38445"
+    },
+    {
+      "arxiv_id": "2609.09076",
+      "title": "ActReview: Rebuttal-Guided Training Data and Rubric Rewards for Actionable Peer Review Generation",
+      "doi": "10.48550/arxiv.2609.09076",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-08T17:30:16Z",
+      "official_url": "https://arxiv.org/abs/2609.09076"
+    },
+    {
+      "arxiv_id": "2610.05197",
+      "title": "From Scientific Observations to Mechanisms: Benchmarking Hypothesis Generation by AI Scientists",
+      "doi": "10.48550/arxiv.2610.05197",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-04T13:10:47Z",
+      "official_url": "https://arxiv.org/abs/2610.05197"
+    },
+    {
+      "arxiv_id": "2610.03639",
+      "title": "Do Large Language Models Know Colombian Law? A Reliability Benchmark for the Colombian Legal System",
+      "doi": "10.48550/arxiv.2610.03639",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-02T17:27:41Z",
+      "official_url": "https://arxiv.org/abs/2610.03639"
+    },
+    {
+      "arxiv_id": "2609.23490",
+      "title": "BabelArena: A Large-Scale Multilingual Benchmark for LLM Agents",
+      "doi": "10.48550/arxiv.2609.23490",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-20T09:25:38Z",
+      "official_url": "https://arxiv.org/abs/2609.23490"
+    },
+    {
+      "arxiv_id": "2609.30489",
+      "title": "BioEVAL: A global, multi-institutional benchmark of large language and multimodal models for bioengineering",
+      "doi": "10.48550/arxiv.2609.30489",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-24T19:26:39Z",
+      "official_url": "https://arxiv.org/abs/2609.30489"
+    },
+    {
+      "arxiv_id": "2609.25421",
+      "title": "Beyond Natural Language: An Agent-Native Language for Autonomous Science",
+      "doi": "10.48550/arxiv.2609.25421",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-21T21:19:46Z",
+      "official_url": "https://arxiv.org/abs/2609.25421"
+    },
+    {
+      "arxiv_id": "2609.23264",
+      "title": "Judging a Review by its Cover: A Reliability Analysis of LLM-based Peer Review Evaluation Metrics",
+      "doi": "10.48550/arxiv.2609.23264",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-20T00:49:57Z",
+      "official_url": "https://arxiv.org/abs/2609.23264"
+    },
+    {
+      "arxiv_id": "2609.22104",
+      "title": "DeepInstructor: An Agentic AI Instructor for Experience-Driven Idea Evaluation",
+      "doi": "10.48550/arxiv.2609.22104",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-08-14T01:52:00Z",
+      "official_url": "https://arxiv.org/abs/2609.22104"
+    },
+    {
+      "arxiv_id": "2609.15973",
+      "title": "Discovery Foundation Models: Toward Open-Ended Discovery Intelligence",
+      "doi": "10.48550/arxiv.2609.15973",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-14T17:56:00Z",
+      "official_url": "https://arxiv.org/abs/2609.15973"
+    },
+    {
+      "arxiv_id": "2609.35290",
+      "title": "EvoIn: Bridging Evolution and Internalization for Agent Fine-Tuning",
+      "doi": "10.48550/arxiv.2609.35290",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-28T14:36:01Z",
+      "official_url": "https://arxiv.org/abs/2609.35290"
+    },
+    {
+      "arxiv_id": "2609.35719",
+      "title": "AI Agent Swarms as Researchers: Progress, Challenges, and Open Questions",
+      "doi": "10.48550/arxiv.2609.35719",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-28T17:47:30Z",
+      "official_url": "https://arxiv.org/abs/2609.35719"
+    },
+    {
+      "arxiv_id": "2610.11877",
+      "title": "How Is Automated Research Evaluated? A Survey of Benchmarks and Evaluation Practices",
+      "doi": "10.48550/arxiv.2610.11877",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-08T12:50:23Z",
+      "official_url": "https://arxiv.org/abs/2610.11877"
+    },
+    {
+      "arxiv_id": "2610.21046",
+      "title": "PremiseCheck: Efficient Fact-Checking of Human and AI Peer Reviews",
+      "doi": "10.48550/arxiv.2610.21046",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-10-15T00:42:49Z",
+      "official_url": "https://arxiv.org/abs/2610.21046"
+    },
+    {
+      "arxiv_id": "2608.15624",
+      "title": "Can Retrievers Find the Same Paper from Different Aspects? A Multi-Aspect Full-Paper Scientific Retrieval Benchmark",
+      "doi": "10.48550/arxiv.2608.15624",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-16T08:41:23Z",
+      "official_url": "https://arxiv.org/abs/2608.15624"
+    },
+    {
+      "arxiv_id": "2608.20318",
+      "title": "AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement",
+      "doi": "10.48550/arxiv.2608.20318",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-20T17:56:59Z",
+      "official_url": "https://arxiv.org/abs/2608.20318"
+    },
+    {
+      "arxiv_id": "2608.23653",
+      "title": "Beyond Executable Models: The Pufibara Agent Harness and the Modelica Agent Workflow Benchmark for Physical System Modeling",
+      "doi": "10.48550/arxiv.2608.23653",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-24T11:50:07Z",
+      "official_url": "https://arxiv.org/abs/2608.23653"
+    },
+    {
+      "arxiv_id": "2609.09852",
+      "title": "$S^3$-Bench: Evaluating Speech Interaction Models as Scientific Voice Assistants",
+      "doi": "10.48550/arxiv.2609.09852",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-09T08:06:28Z",
+      "official_url": "https://arxiv.org/abs/2609.09852"
+    },
+    {
+      "arxiv_id": "2608.23525",
+      "title": "EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards",
+      "doi": "10.48550/arxiv.2608.23525",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-08-24T17:29:16Z",
+      "official_url": "https://arxiv.org/abs/2608.23525"
+    },
+    {
+      "arxiv_id": "2608.26753",
+      "title": "Beyond Execution: Auditing Experimental Fidelity in LLM-Driven Scientific Research",
+      "doi": "10.48550/arxiv.2608.26753",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-27T07:49:29Z",
+      "official_url": "https://arxiv.org/abs/2608.26753"
+    },
+    {
+      "arxiv_id": "2609.19376",
+      "title": "Rosetta: Automating First-Principles Performance Modeling Using Multi-Agent LLMs",
+      "doi": "10.48550/arxiv.2609.19376",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-16T19:55:14Z",
+      "official_url": "https://arxiv.org/abs/2609.19376"
+    },
+    {
+      "arxiv_id": "2608.00548",
+      "title": "DrawAI: Agentic Benchmark and Workflow for Making Raster Images Editable",
+      "doi": "10.48550/arxiv.2608.00548",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-01T09:05:06Z",
+      "official_url": "https://arxiv.org/abs/2608.00548"
+    },
+    {
+      "arxiv_id": "2608.06312",
+      "title": "Benchmarking and Enhancing LLMs for Rule-Intensive Review of National Standard Documents",
+      "doi": "10.48550/arxiv.2608.06312",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-06T17:27:23Z",
+      "official_url": "https://arxiv.org/abs/2608.06312"
+    },
+    {
+      "arxiv_id": "2608.27475",
+      "title": "Hypothesize, Evaluate, Refine: A Scientific Agent for PDE Discovery with Unknown Spatial Coefficient Fields",
+      "doi": "10.48550/arxiv.2608.27475",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-19T17:53:30Z",
+      "official_url": "https://arxiv.org/abs/2608.27475"
+    },
+    {
+      "arxiv_id": "2609.07791",
+      "title": "LLM Agents as Computational Typologists",
+      "doi": "10.48550/arxiv.2609.07791",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-07T17:35:31Z",
+      "official_url": "https://arxiv.org/abs/2609.07791"
+    },
+    {
+      "arxiv_id": "2609.13261",
+      "title": "From Process Loss to Assembly Bonus: Human-Grounded Diagnosis of Multi-Agent LLM Collaboration",
+      "doi": "10.48550/arxiv.2609.13261",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-06T17:58:09Z",
+      "official_url": "https://arxiv.org/abs/2609.13261"
+    },
+    {
+      "arxiv_id": "2609.32413",
+      "title": "IChart2Code: Benchmarking Multimodal Large Language Models for Interactive Chart Code Generation",
+      "doi": "10.48550/arxiv.2609.32413",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-26T09:40:57Z",
+      "official_url": "https://arxiv.org/abs/2609.32413"
+    },
+    {
+      "arxiv_id": "2610.03631",
+      "title": "NeutronGym: Physics-Graded Neutron Instrument Design for LLM Agents",
+      "doi": "10.48550/arxiv.2610.03631",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-02T17:23:52Z",
+      "official_url": "https://arxiv.org/abs/2610.03631"
+    },
+    {
+      "arxiv_id": "2609.19134",
+      "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+      "doi": "10.48550/arxiv.2609.19134",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-16T17:55:47Z",
+      "official_url": "https://arxiv.org/abs/2609.19134"
+    },
+    {
+      "arxiv_id": "2609.25287",
+      "title": "Can LLMs identify and repair ruptures? Comparison between clinician practices and LLM behaviors",
+      "doi": "10.48550/arxiv.2609.25287",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-21T18:27:32Z",
+      "official_url": "https://arxiv.org/abs/2609.25287"
+    },
+    {
+      "arxiv_id": "2610.00531",
+      "title": "Science or Slop?: Benchmarking and Mitigating Scientific Slop in AI-Generated Papers",
+      "doi": "10.48550/arxiv.2610.00531",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-30T18:16:42Z",
+      "official_url": "https://arxiv.org/abs/2610.00531"
+    },
+    {
+      "arxiv_id": "2610.11573",
+      "title": "Memory Type Varies: Empowering LLM Agents for Long-Term Memory with Diverse Strategies",
+      "doi": "10.48550/arxiv.2610.11573",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-08T09:28:31Z",
+      "official_url": "https://arxiv.org/abs/2610.11573"
+    },
+    {
+      "arxiv_id": "2610.07967",
+      "title": "DecepEval: A Benchmark for Evaluating Deception in LLM Agents",
+      "doi": "10.48550/arxiv.2610.07967",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-06T08:33:43Z",
+      "official_url": "https://arxiv.org/abs/2610.07967"
+    },
+    {
+      "arxiv_id": "2610.21767",
+      "title": "From Research Goals to Scientific Closure: Evaluating Agents Through Evidence-Supported Physics Research",
+      "doi": "10.48550/arxiv.2610.21767",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-15T12:23:22Z",
+      "official_url": "https://arxiv.org/abs/2610.21767"
+    },
+    {
+      "arxiv_id": "2608.28182",
+      "title": "Benchmarking large language model agent societies against human behavioural distributions",
+      "doi": "10.48550/arxiv.2608.28182",
+      "disposition": "candidate",
+      "proposed_module": "11.04",
+      "official_updated": "2026-08-28T10:50:32Z",
+      "official_url": "https://arxiv.org/abs/2608.28182"
+    },
+    {
+      "arxiv_id": "2608.06931",
+      "title": "Science Edge Evaluation: SEE the Missing Step Toward Real Scientific Discovery",
+      "doi": "10.48550/arxiv.2608.06931",
+      "disposition": "candidate",
+      "proposed_module": "01.04",
+      "official_updated": "2026-08-07T08:06:31Z",
+      "official_url": "https://arxiv.org/abs/2608.06931"
+    },
+    {
+      "arxiv_id": "2608.08131",
+      "title": "Compositional Threat Analysis of Latent Compromise in LLM Agent Systems: The Order 66 Scenario",
+      "doi": "10.48550/arxiv.2608.08131",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-08T13:35:35Z",
+      "official_url": "https://arxiv.org/abs/2608.08131"
+    },
+    {
+      "arxiv_id": "2608.11295",
+      "title": "Backdoor Decontamination Dynamics in LLM Agents",
+      "doi": "10.48550/arxiv.2608.11295",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-11T17:54:26Z",
+      "official_url": "https://arxiv.org/abs/2608.11295"
+    },
+    {
+      "arxiv_id": "2608.07437",
+      "title": "Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing",
+      "doi": "10.48550/arxiv.2608.07437",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-07T17:22:00Z",
+      "official_url": "https://arxiv.org/abs/2608.07437"
+    },
+    {
+      "arxiv_id": "2608.16951",
+      "title": "The Little Scientist: LLM Agent-Driven Discovery via the Scientific Method",
+      "doi": "10.48550/arxiv.2608.16951",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-16T01:32:45Z",
+      "official_url": "https://arxiv.org/abs/2608.16951"
+    },
+    {
+      "arxiv_id": "2608.19621",
+      "title": "Mitigating Identity Essentialism in LLM Agents with Longitudinal Life Trajectories",
+      "doi": "10.48550/arxiv.2608.19621",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-22T15:16:08Z",
+      "official_url": "https://arxiv.org/abs/2608.19621"
+    },
+    {
+      "arxiv_id": "2609.19182",
+      "title": "What Do We Expect from LLMs? Mapping the Design of LLM Benchmarks",
+      "doi": "10.48550/arxiv.2609.19182",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-15T13:43:16Z",
+      "official_url": "https://arxiv.org/abs/2609.19182"
+    },
+    {
+      "arxiv_id": "2608.19799",
+      "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
+      "doi": "10.48550/arxiv.2608.19799",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-09-01T15:45:57Z",
+      "official_url": "https://arxiv.org/abs/2608.19799"
+    },
+    {
+      "arxiv_id": "2609.21103",
+      "title": "NetInspector: Measuring and Improving LLM Capabilities for Reliable Intent-Based Networking Policy Generation",
+      "doi": "10.48550/arxiv.2609.21103",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-17T21:26:44Z",
+      "official_url": "https://arxiv.org/abs/2609.21103"
+    },
+    {
+      "arxiv_id": "2609.34890",
+      "title": "KITA AI: A Multi-Agent LLM System for Pluralistic Policy Deliberation",
+      "doi": "10.48550/arxiv.2609.34890",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-28T10:59:17Z",
+      "official_url": "https://arxiv.org/abs/2609.34890"
+    },
+    {
+      "arxiv_id": "2610.04672",
+      "title": "MASBench: Benchmarking LLM-based Multi-Agent Collaboration under Partial Observability",
+      "doi": "10.48550/arxiv.2610.04672",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-03T17:40:24Z",
+      "official_url": "https://arxiv.org/abs/2610.04672"
+    },
+    {
+      "arxiv_id": "2609.35706",
+      "title": "Reinforcing Agentic Creativity in Scientific Ideation with Night Science",
+      "doi": "10.48550/arxiv.2609.35706",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-28T17:43:52Z",
+      "official_url": "https://arxiv.org/abs/2609.35706"
+    },
+    {
+      "arxiv_id": "2609.35515",
+      "title": "MechBench: Can AI Scientific Agents Discover Mechanisms Beyond Phenomenal Laws?",
+      "doi": "10.48550/arxiv.2609.35515",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-28T16:08:19Z",
+      "official_url": "https://arxiv.org/abs/2609.35515"
+    },
+    {
+      "arxiv_id": "2609.29718",
+      "title": "PPTBench: Can Coding Agents Reconstruct the Visual World through Structured, Editable Slides",
+      "doi": "10.48550/arxiv.2609.29718",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-28T17:27:13Z",
+      "official_url": "https://arxiv.org/abs/2609.29718"
+    },
+    {
+      "arxiv_id": "2610.11451",
+      "title": "SAIL: Scientific Agentic Intelligence via a Science-Aware Loop",
+      "doi": "10.48550/arxiv.2610.11451",
+      "disposition": "candidate",
+      "proposed_module": "01.04",
+      "official_updated": "2026-10-10T03:10:01Z",
+      "official_url": "https://arxiv.org/abs/2610.11451"
+    },
+    {
+      "arxiv_id": "2610.17827",
+      "title": "Benchmarking and Training Reward Models for Cross-Source Evidence Grounding in Search Agents",
+      "doi": "10.48550/arxiv.2610.17827",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-13T06:48:56Z",
+      "official_url": "https://arxiv.org/abs/2610.17827"
+    },
+    {
+      "arxiv_id": "2609.30389",
+      "title": "Perspectives on Sustainable Computational Science and Engineering",
+      "doi": "10.48550/arxiv.2609.30389",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-24T18:01:13Z",
+      "official_url": "https://arxiv.org/abs/2609.30389"
+    },
+    {
+      "arxiv_id": "2610.22138",
+      "title": "Believed but Not Said: Measuring Hidden Belief Collapse in Multi-Agent LLM Discussions",
+      "doi": "10.48550/arxiv.2610.22138",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-15T16:12:07Z",
+      "official_url": "https://arxiv.org/abs/2610.22138"
+    },
+    {
+      "arxiv_id": "2608.14527",
+      "title": "Validating LLM-Modernized Scientific Software Through Differential Fault Injection",
+      "doi": "10.48550/arxiv.2608.14527",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-14T17:45:55Z",
+      "official_url": "https://arxiv.org/abs/2608.14527"
+    },
+    {
+      "arxiv_id": "2608.25152",
+      "title": "Belief Cascades Drive Persuasion in LLM Agent Networks",
+      "doi": "10.48550/arxiv.2608.25152",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-25T21:01:19Z",
+      "official_url": "https://arxiv.org/abs/2608.25152"
+    },
+    {
+      "arxiv_id": "2609.18460",
+      "title": "Collective Loss of Control in LLM Agent Systems: An Epidemic Account of Mutation, Contagion, and Recovery",
+      "doi": "10.48550/arxiv.2609.18460",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-16T10:55:13Z",
+      "official_url": "https://arxiv.org/abs/2609.18460"
+    },
+    {
+      "arxiv_id": "2608.24252",
+      "title": "SA-Bench: Evaluating Semantic Alignment in LLM-Based Paper Reproduction",
+      "doi": "10.48550/arxiv.2608.24252",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-25T08:48:48Z",
+      "official_url": "https://arxiv.org/abs/2608.24252"
+    },
+    {
+      "arxiv_id": "2608.03585",
+      "title": "From Social Coding to Agentic Coding: Productivity and Relational Reconfiguration in Open-Source Communities",
+      "doi": "10.48550/arxiv.2608.03585",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-04T12:41:32Z",
+      "official_url": "https://arxiv.org/abs/2608.03585"
+    },
+    {
+      "arxiv_id": "2608.11415",
+      "title": "TRACES: A Benchmark for Epistemic Reliability in Scientific Reasoning by LLMs",
+      "doi": "10.48550/arxiv.2608.11415",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-11T20:30:32Z",
+      "official_url": "https://arxiv.org/abs/2608.11415"
+    },
+    {
+      "arxiv_id": "2608.03451",
+      "title": "DataSpace: Benchmarking Data Agents for Verifiable Analytics over Heterogeneous Workspaces",
+      "doi": "10.48550/arxiv.2608.03451",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-04T10:48:11Z",
+      "official_url": "https://arxiv.org/abs/2608.03451"
+    },
+    {
+      "arxiv_id": "2608.14667",
+      "title": "Position: AI Agents in Scientific Teams Should Be Studied as Human-Agent Systems",
+      "doi": "10.48550/arxiv.2608.14667",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-02T05:27:36Z",
+      "official_url": "https://arxiv.org/abs/2608.14667"
+    },
+    {
+      "arxiv_id": "2609.06174",
+      "title": "Exploiting LLM Agents for Trustworthy AutoResearch in Wireless Communications",
+      "doi": "10.48550/arxiv.2609.06174",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-05T16:30:06Z",
+      "official_url": "https://arxiv.org/abs/2609.06174"
+    },
+    {
+      "arxiv_id": "2609.05774",
+      "title": "Inference-Time Graph Engineering for Multi-Agent LLM Workflows",
+      "doi": "10.48550/arxiv.2609.05774",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-04T23:32:11Z",
+      "official_url": "https://arxiv.org/abs/2609.05774"
+    },
+    {
+      "arxiv_id": "2609.33658",
+      "title": "AgentBoundary: Counterfactual Evaluation of Safety in Tool-Using LLM Agents",
+      "doi": "10.48550/arxiv.2609.33658",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-27T15:19:52Z",
+      "official_url": "https://arxiv.org/abs/2609.33658"
+    },
+    {
+      "arxiv_id": "2609.32960",
+      "title": "Environmental Impact of Generative and Agentic AI: An in-Depth Analysis and Green Solutions",
+      "doi": "10.48550/arxiv.2609.32960",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-26T21:45:56Z",
+      "official_url": "https://arxiv.org/abs/2609.32960"
+    },
+    {
+      "arxiv_id": "2609.19913",
+      "title": "Digital Twins for Opinion Dynamics: A Generative LLM Framework for Social Networks",
+      "doi": "10.48550/arxiv.2609.19913",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-17T08:53:47Z",
+      "official_url": "https://arxiv.org/abs/2609.19913"
+    },
+    {
+      "arxiv_id": "2610.08927",
+      "title": "Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station",
+      "doi": "10.48550/arxiv.2610.08927",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-06T18:00:39Z",
+      "official_url": "https://arxiv.org/abs/2610.08927"
+    },
+    {
+      "arxiv_id": "2609.34064",
+      "title": "Learning Perturbation Robust Policies for LLM Agents with Stable Optimization",
+      "doi": "10.48550/arxiv.2609.34064",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-28T00:43:16Z",
+      "official_url": "https://arxiv.org/abs/2609.34064"
+    },
+    {
+      "arxiv_id": "2609.35182",
+      "title": "Research-Native by Construction: Minimal Nodes, Re-verifiable Workflows, and Compounding Memory for Long-Horizon Scientific Agents",
+      "doi": "10.48550/arxiv.2609.35182",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-28T13:47:05Z",
+      "official_url": "https://arxiv.org/abs/2609.35182"
+    },
+    {
+      "arxiv_id": "2609.31060",
+      "title": "The Crowd in the Machine: A Crisis-Informatics Reading of the 2026 Autonomous Agent Incidents",
+      "doi": "10.48550/arxiv.2609.31060",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-25T09:59:47Z",
+      "official_url": "https://arxiv.org/abs/2609.31060"
+    },
+    {
+      "arxiv_id": "2609.27900",
+      "title": "Delegated Misalignment: How Multi-Agent Structures Amplify LLM Safety Risks",
+      "doi": "10.48550/arxiv.2609.27900",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-26T03:49:37Z",
+      "official_url": "https://arxiv.org/abs/2609.27900"
+    },
+    {
+      "arxiv_id": "2609.38392",
+      "title": "MetaPersona: Task-Grounded Synthetic Populations from Empirical Social Science",
+      "doi": "10.48550/arxiv.2609.38392",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-29T18:50:21Z",
+      "official_url": "https://arxiv.org/abs/2609.38392"
+    },
+    {
+      "arxiv_id": "2610.04749",
+      "title": "Agentic discovery of blood biomarker from distilled private health records",
+      "doi": "10.48550/arxiv.2610.04749",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-03T20:30:38Z",
+      "official_url": "https://arxiv.org/abs/2610.04749"
+    },
+    {
+      "arxiv_id": "2608.27394",
+      "title": "RATIO: A Benchmark for Retrieval Across Typed Ideation Operations in Scientific Literature",
+      "doi": "10.48550/arxiv.2608.27394",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-13T19:23:07Z",
+      "official_url": "https://arxiv.org/abs/2608.27394"
+    },
+    {
+      "arxiv_id": "2609.05227",
+      "title": "CABAL: Multi-Agent Simulacra for Tracing the Effects of Collusive Bidding in Peer Review",
+      "doi": "10.48550/arxiv.2609.05227",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-16T07:15:49Z",
+      "official_url": "https://arxiv.org/abs/2609.05227"
+    },
+    {
+      "arxiv_id": "2610.19005",
+      "title": "CyberArena: Benchmarking AI Agents in Live Symmetric Attack-and-Defense Combat",
+      "doi": "10.48550/arxiv.2610.19005",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-19T07:26:03Z",
+      "official_url": "https://arxiv.org/abs/2610.19005"
+    },
+    {
+      "arxiv_id": "2608.10262",
+      "title": "Not a Monolith: Lab-Level Divergence in the Cooperative Equilibria of Chinese Frontier LLM Agents",
+      "doi": "10.48550/arxiv.2608.10262",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-10T21:54:13Z",
+      "official_url": "https://arxiv.org/abs/2608.10262"
+    },
+    {
+      "arxiv_id": "2609.00595",
+      "title": "SoK: When Safe Agents Fail Together: The Security of Multi Agent LLM Systems",
+      "doi": "10.48550/arxiv.2609.00595",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-01T02:34:44Z",
+      "official_url": "https://arxiv.org/abs/2609.00595"
+    },
+    {
+      "arxiv_id": "2608.08497",
+      "title": "SocialFiVis: A Visual Analytics Sandbox for LLM-Grounded Multi-Agent Simulation in Social Finance",
+      "doi": "10.48550/arxiv.2608.08497",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-09T05:30:55Z",
+      "official_url": "https://arxiv.org/abs/2608.08497"
+    },
+    {
+      "arxiv_id": "2608.25952",
+      "title": "Spatial-Knowledge-Graph-Grounded LLM Agents for Neighborhood Livability Evaluation",
+      "doi": "10.48550/arxiv.2608.25952",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-29T14:12:55Z",
+      "official_url": "https://arxiv.org/abs/2608.25952"
+    },
+    {
+      "arxiv_id": "2608.24291",
+      "title": "ReproAgent: Contract-Guided Paper-to-Code Reproduction",
+      "doi": "10.48550/arxiv.2608.24291",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-25T09:19:00Z",
+      "official_url": "https://arxiv.org/abs/2608.24291"
+    },
+    {
+      "arxiv_id": "2609.16466",
+      "title": "Scaling LLM Agents for Materials Design through Hierarchical Collective Reasoning",
+      "doi": "10.48550/arxiv.2609.16466",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-15T00:35:58Z",
+      "official_url": "https://arxiv.org/abs/2609.16466"
+    },
+    {
+      "arxiv_id": "2609.34428",
+      "title": "AgentHop: A Diagnostic Benchmark for Agentic Multi-Hop Scientific Question Answering",
+      "doi": "10.48550/arxiv.2609.34428",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-28T06:45:01Z",
+      "official_url": "https://arxiv.org/abs/2609.34428"
+    },
+    {
+      "arxiv_id": "2609.35308",
+      "title": "Epistemic Policy Divergence in Multi-Turn LLM Contamination: A Protocol-Gradient Investigation",
+      "doi": "10.48550/arxiv.2609.35308",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-09T08:20:00Z",
+      "official_url": "https://arxiv.org/abs/2609.35308"
+    },
+    {
+      "arxiv_id": "2610.07763",
+      "title": "ST-Bench: A Spatial-Temporal Benchmark for Multi-Agent System Generation on Scientific Research Tasks",
+      "doi": "10.48550/arxiv.2610.07763",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-06T04:59:49Z",
+      "official_url": "https://arxiv.org/abs/2610.07763"
+    },
+    {
+      "arxiv_id": "2609.35928",
+      "title": "Prompted Identity Degrades Cooperation in Multi-Agent LLM Systems",
+      "doi": "10.48550/arxiv.2609.35928",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-28T14:02:07Z",
+      "official_url": "https://arxiv.org/abs/2609.35928"
+    },
+    {
+      "arxiv_id": "2609.39882",
+      "title": "LLM Persona Unlearning",
+      "doi": "10.48550/arxiv.2609.39882",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-10T12:46:01Z",
+      "official_url": "https://arxiv.org/abs/2609.39882"
+    },
+    {
+      "arxiv_id": "2610.19810",
+      "title": "ReproBAIT: Can coding agents build their own biological AI tools?",
+      "doi": "10.48550/arxiv.2610.19810",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-14T08:50:11Z",
+      "official_url": "https://arxiv.org/abs/2610.19810"
+    },
+    {
+      "arxiv_id": "2609.04742",
+      "title": "FUSION: a skill-based research agent for publicly obtainable nuclear-physics codes",
+      "doi": "10.48550/arxiv.2609.04742",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-04T05:21:12Z",
+      "official_url": "https://arxiv.org/abs/2609.04742"
+    },
+    {
+      "arxiv_id": "2609.35606",
+      "title": "TCSAlgBench: Benchmarking Automated Proving for Research-Level Theoretical Computer Science",
+      "doi": "10.48550/arxiv.2609.35606",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-28T16:52:40Z",
+      "official_url": "https://arxiv.org/abs/2609.35606"
+    },
+    {
+      "arxiv_id": "2609.36161",
+      "title": "From Dead Code and Static Requirements to Working Engines: Software Revival with Coding Agents",
+      "doi": "10.48550/arxiv.2609.36161",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-28T19:30:12Z",
+      "official_url": "https://arxiv.org/abs/2609.36161"
+    },
+    {
+      "arxiv_id": "2609.04298",
+      "title": "Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation",
+      "doi": "10.48550/arxiv.2609.04298",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-10T02:39:50Z",
+      "official_url": "https://arxiv.org/abs/2609.04298"
+    },
+    {
+      "arxiv_id": "2610.03591",
+      "title": "HazardWeaver: Scientific Route Selection for Hazard Analysis Agents",
+      "doi": "10.48550/arxiv.2610.03591",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-02T16:59:19Z",
+      "official_url": "https://arxiv.org/abs/2610.03591"
+    },
+    {
+      "arxiv_id": "2609.07598",
+      "title": "Mapping the Emerging Social Science of Large Language Models",
+      "doi": "10.48550/arxiv.2609.07598",
+      "disposition": "excluded_after_screen",
+      "reason": "Topically relevant, but abstract indicates survey/static model evaluation/dataset or scope boundary rather than a demonstrated qualifying research Agent; retained as screened exclusion for audit.",
+      "official_updated": "2026-09-07T15:08:15Z",
+      "official_url": "https://arxiv.org/abs/2609.07598"
+    },
+    {
+      "arxiv_id": "2609.11428",
+      "title": "Wavering Oracles: Selective Updating and Correlated Failures in LLMs and Their Implications for Scientific Workflows",
+      "doi": "10.48550/arxiv.2609.11428",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-10T12:00:56Z",
+      "official_url": "https://arxiv.org/abs/2609.11428"
+    },
+    {
+      "arxiv_id": "2609.00621",
+      "title": "Control-Data Flow Separation: Stable Prompt Optimization in Multi-Agent LLMs",
+      "doi": "10.48550/arxiv.2609.00621",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-01T03:04:08Z",
+      "official_url": "https://arxiv.org/abs/2609.00621"
+    },
+    {
+      "arxiv_id": "2608.09574",
+      "title": "The Politician, the Liar, and the Obedient Worker: Emerging Behavior of LLM Agents in Hierarchical Games",
+      "doi": "10.48550/arxiv.2608.09574",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-10T13:08:52Z",
+      "official_url": "https://arxiv.org/abs/2608.09574"
+    },
+    {
+      "arxiv_id": "2608.09857",
+      "title": "Agentic Harnesses: LLM-Driven Verification Layers for Robot Autonomy",
+      "doi": "10.48550/arxiv.2608.09857",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-10T17:15:55Z",
+      "official_url": "https://arxiv.org/abs/2608.09857"
+    },
+    {
+      "arxiv_id": "2608.23104",
+      "title": "Molecular LLM Agents: From Architectural Design to Scientific Autonomy",
+      "doi": "10.48550/arxiv.2608.23104",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-25T05:05:03Z",
+      "official_url": "https://arxiv.org/abs/2608.23104"
+    },
+    {
+      "arxiv_id": "2608.26557",
+      "title": "DeepRepro: State-Aware Subplanning for Paper-to-Code Reproduction in Evolving Repositories",
+      "doi": "10.48550/arxiv.2608.26557",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-27T02:54:30Z",
+      "official_url": "https://arxiv.org/abs/2608.26557"
+    },
+    {
+      "arxiv_id": "2608.02464",
+      "title": "Real-Time Detection and Repair of LLM Agent Failures",
+      "doi": "10.48550/arxiv.2608.02464",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-03T16:34:46Z",
+      "official_url": "https://arxiv.org/abs/2608.02464"
+    },
+    {
+      "arxiv_id": "2609.02067",
+      "title": "ToolGate: An Executable Acceptance Pipeline for Tool-Dependent Scientific Benchmark Construction",
+      "doi": "10.48550/arxiv.2609.02067",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-02T03:49:37Z",
+      "official_url": "https://arxiv.org/abs/2609.02067"
+    },
+    {
+      "arxiv_id": "2608.21601",
+      "title": "K-Bench: measuring model performance on real scientific agent requests",
+      "doi": "10.48550/arxiv.2608.21601",
+      "disposition": "candidate",
+      "proposed_module": "01.04",
+      "official_updated": "2026-09-02T18:04:26Z",
+      "official_url": "https://arxiv.org/abs/2608.21601"
+    },
+    {
+      "arxiv_id": "2609.05079",
+      "title": "TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents",
+      "doi": "10.48550/arxiv.2609.05079",
+      "disposition": "candidate",
+      "proposed_module": "01.04",
+      "official_updated": "2026-09-08T03:39:25Z",
+      "official_url": "https://arxiv.org/abs/2609.05079"
+    },
+    {
+      "arxiv_id": "2609.35819",
+      "title": "Exploring Causal Mechanisms with Generative Agent-Based Models",
+      "doi": "10.48550/arxiv.2609.35819",
+      "disposition": "candidate",
+      "proposed_module": "11.04",
+      "official_updated": "2026-09-21T16:34:58Z",
+      "official_url": "https://arxiv.org/abs/2609.35819"
+    },
+    {
+      "arxiv_id": "2609.05141",
+      "title": "SciDocBench: A Workflow-Centered Benchmark and Data Pipeline for Scientific Document Understanding",
+      "doi": "10.48550/arxiv.2609.05141",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-28T05:50:49Z",
+      "official_url": "https://arxiv.org/abs/2609.05141"
+    },
+    {
+      "arxiv_id": "2609.33061",
+      "title": "LLM sequential decision making under uncertainty in biochemical domains",
+      "doi": "10.48550/arxiv.2609.33061",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-27T00:49:09Z",
+      "official_url": "https://arxiv.org/abs/2609.33061"
+    },
+    {
+      "arxiv_id": "2608.25286",
+      "title": "BixBench3: Benchmarking AI agents on research-study-scale computational biology tasks",
+      "doi": "10.48550/arxiv.2608.25286",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-22T16:27:18Z",
+      "official_url": "https://arxiv.org/abs/2608.25286"
+    },
+    {
+      "arxiv_id": "2608.03392",
+      "title": "Self-Evolving Coding Agents",
+      "doi": "10.48550/arxiv.2608.03392",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-24T08:10:33Z",
+      "official_url": "https://arxiv.org/abs/2608.03392"
+    },
+    {
+      "arxiv_id": "2609.33763",
+      "title": "SecProbe: Adaptive Evaluation of Coding Agents on Cybersecurity Vulnerabilities",
+      "doi": "10.48550/arxiv.2609.33763",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-27T17:01:35Z",
+      "official_url": "https://arxiv.org/abs/2609.33763"
+    },
+    {
+      "arxiv_id": "2610.09374",
+      "title": "DUDA-Bench: Benchmarking LLM Agents on Multimodal Data-Driven Urban Diagnosis",
+      "doi": "10.48550/arxiv.2610.09374",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-07T03:29:27Z",
+      "official_url": "https://arxiv.org/abs/2610.09374"
+    },
+    {
+      "arxiv_id": "2609.11243",
+      "title": "Sci-MMR: Benchmarking Multi-Step Evidence-Grounded Scientific Reasoning in Multimodal Agents",
+      "doi": "10.48550/arxiv.2609.11243",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-22T15:30:12Z",
+      "official_url": "https://arxiv.org/abs/2609.11243"
+    },
+    {
+      "arxiv_id": "2609.27349",
+      "title": "MolDesignBench: Evaluating LLM-based Agent for Scenario-grounded Molecular Design",
+      "doi": "10.48550/arxiv.2609.27349",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-23T04:39:56Z",
+      "official_url": "https://arxiv.org/abs/2609.27349"
+    },
+    {
+      "arxiv_id": "2609.18844",
+      "title": "ReFigBench: Benchmarking Scientific Figure Reconstruction as Editable PowerPoint Artifacts",
+      "doi": "10.48550/arxiv.2609.18844",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-16T15:51:51Z",
+      "official_url": "https://arxiv.org/abs/2609.18844"
+    },
+    {
+      "arxiv_id": "2609.22712",
+      "title": "Trustworthy Agentic AI: Failure Modes, Mitigation Strategies, and a Lifecycle Framework for Autonomous LLM Systems",
+      "doi": "10.48550/arxiv.2609.22712",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-19T02:47:37Z",
+      "official_url": "https://arxiv.org/abs/2609.22712"
+    },
+    {
+      "arxiv_id": "2609.07447",
+      "title": "An LLM-Associated Register Shift in Korean Journal Abstracts: A Morphology-Aware Excess-Vocabulary Study, 2018-2026",
+      "doi": "10.48550/arxiv.2609.07447",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-07T12:56:32Z",
+      "official_url": "https://arxiv.org/abs/2609.07447"
+    },
+    {
+      "arxiv_id": "2609.09203",
+      "title": "OpenDiscoveryTrace: Process Traces for Evaluating AI Scientist Workflows",
+      "doi": "10.48550/arxiv.2609.09203",
+      "disposition": "candidate",
+      "proposed_module": "01.04",
+      "official_updated": "2026-09-05T12:16:47Z",
+      "official_url": "https://arxiv.org/abs/2609.09203"
+    },
+    {
+      "arxiv_id": "2609.05802",
+      "title": "AtomCite: Verification and Correction of Supplied Page-Level Citations in Multi-Page Documents",
+      "doi": "10.48550/arxiv.2609.05802",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-05T01:31:50Z",
+      "official_url": "https://arxiv.org/abs/2609.05802"
+    },
+    {
+      "arxiv_id": "2608.14055",
+      "title": "HERMES: a multi-agent framework for structured knowledge extraction from ultra-long documents in geoscience",
+      "doi": "10.48550/arxiv.2608.14055",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-14T07:59:58Z",
+      "official_url": "https://arxiv.org/abs/2608.14055"
+    },
+    {
+      "arxiv_id": "2609.15164",
+      "title": "CITECHOICE: A Causal Audit of How Document Presentation Redistributes Citation Credit in Agentic Search",
+      "doi": "10.48550/arxiv.2609.15164",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-14T07:47:47Z",
+      "official_url": "https://arxiv.org/abs/2609.15164"
+    },
+    {
+      "arxiv_id": "2609.34537",
+      "title": "The Marathon of Scientific Reasoning: Robustness of Scientific Agents to Perturbations in Multi-Turn Interactions",
+      "doi": "10.48550/arxiv.2609.34537",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-28T08:04:00Z",
+      "official_url": "https://arxiv.org/abs/2609.34537"
+    },
+    {
+      "arxiv_id": "2608.25663",
+      "title": "Data Citation for Large Language Models: A Challenge",
+      "doi": "10.48550/arxiv.2608.25663",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-26T11:44:55Z",
+      "official_url": "https://arxiv.org/abs/2608.25663"
+    },
+    {
+      "arxiv_id": "2608.19625",
+      "title": "Scientific Data Skills: Enabling Agent-Ready Scientific Data Services at Scale",
+      "doi": "10.48550/arxiv.2608.19625",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-07T03:17:11Z",
+      "official_url": "https://arxiv.org/abs/2608.19625"
+    },
+    {
+      "arxiv_id": "2609.34714",
+      "title": "Loyal Agents: Training LLM Agents to Protect Principal Interests Under Strategic Information Asymmetry",
+      "doi": "10.48550/arxiv.2609.34714",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-28T09:23:27Z",
+      "official_url": "https://arxiv.org/abs/2609.34714"
+    },
+    {
+      "arxiv_id": "2608.06961",
+      "title": "CAi Copilot: Reducing Operational Workload in Molecular Design through Intent-Driven Agentic Workflows",
+      "doi": "10.48550/arxiv.2608.06961",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-07T08:36:59Z",
+      "official_url": "https://arxiv.org/abs/2608.06961"
+    },
+    {
+      "arxiv_id": "2610.06248",
+      "title": "From Papers to Mechanisms: An Evidence-Grounded Knowledge Substrate for Scientific Language Models",
+      "doi": "10.48550/arxiv.2610.06248",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-05T12:47:15Z",
+      "official_url": "https://arxiv.org/abs/2610.06248"
+    },
+    {
+      "arxiv_id": "2610.13361",
+      "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+      "doi": "10.48550/arxiv.2610.13361",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-09T10:35:27Z",
+      "official_url": "https://arxiv.org/abs/2610.13361"
+    },
+    {
+      "arxiv_id": "2610.06964",
+      "title": "Principles that Guide, Actions that Inform: Agent Evolution via Knowledge Abstraction",
+      "doi": "10.48550/arxiv.2610.06964",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-03T17:29:38Z",
+      "official_url": "https://arxiv.org/abs/2610.06964"
+    },
+    {
+      "arxiv_id": "2609.20782",
+      "title": "The Data Hospital: A Workflow-Based Concept for Explainable Research Data Quality Assistance",
+      "doi": "10.48550/arxiv.2609.20782",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-17T17:50:30Z",
+      "official_url": "https://arxiv.org/abs/2609.20782"
+    },
+    {
+      "arxiv_id": "2608.13505",
+      "title": "Intern-S2-Preview: Scientific Agentic Foundation Model",
+      "doi": "10.48550/arxiv.2608.13505",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-13T17:31:28Z",
+      "official_url": "https://arxiv.org/abs/2608.13505"
+    },
+    {
+      "arxiv_id": "2608.12125",
+      "title": "Do LLMs Take Care of Their Own? Similarity Signals Can Induce Cooperation",
+      "doi": "10.48550/arxiv.2608.12125",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-12T14:47:15Z",
+      "official_url": "https://arxiv.org/abs/2608.12125"
+    },
+    {
+      "arxiv_id": "2608.03501",
+      "title": "Can LLM design high-quality experiments? A Comprehensive and Systematic Benchmark on Autonomous Experimental Design",
+      "doi": "10.48550/arxiv.2608.03501",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-04T11:43:22Z",
+      "official_url": "https://arxiv.org/abs/2608.03501"
+    },
+    {
+      "arxiv_id": "2608.04626",
+      "title": "Blockchain Empowered Trustworthy Agent Networks: Foundations, Taxonomy, and Future Directions",
+      "doi": "10.48550/arxiv.2608.04626",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-05T09:32:35Z",
+      "official_url": "https://arxiv.org/abs/2608.04626"
+    },
+    {
+      "arxiv_id": "2608.14747",
+      "title": "WANDR: A Benchmark for Wide and Deep Research",
+      "doi": "10.48550/arxiv.2608.14747",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-14T00:18:53Z",
+      "official_url": "https://arxiv.org/abs/2608.14747"
+    },
+    {
+      "arxiv_id": "2609.35028",
+      "title": "VEX-Bench: Benchmarking Verification Complexity of LLM-Generated Misinformation",
+      "doi": "10.48550/arxiv.2609.35028",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-28T12:26:51Z",
+      "official_url": "https://arxiv.org/abs/2609.35028"
+    },
+    {
+      "arxiv_id": "2609.40324",
+      "title": "Cogentic: Multi-Agent Orchestration for Automated Proof Discovery",
+      "doi": "10.48550/arxiv.2609.40324",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-01T21:13:54Z",
+      "official_url": "https://arxiv.org/abs/2609.40324"
+    },
+    {
+      "arxiv_id": "2610.13647",
+      "title": "A-SAW: The Agentic Software Architecture Workflow",
+      "doi": "10.48550/arxiv.2610.13647",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-09T14:25:24Z",
+      "official_url": "https://arxiv.org/abs/2610.13647"
+    },
+    {
+      "arxiv_id": "2610.14393",
+      "title": "SciCurateBench: Curating Experimental Data from Heterogeneous Scientific Literature with Verbal-Action Agents",
+      "doi": "10.48550/arxiv.2610.14393",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-09T23:32:35Z",
+      "official_url": "https://arxiv.org/abs/2610.14393"
+    },
+    {
+      "arxiv_id": "2610.22201",
+      "title": "Decentralized LLM Workflows via Sequential Auctions",
+      "doi": "10.48550/arxiv.2610.22201",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-15T16:52:16Z",
+      "official_url": "https://arxiv.org/abs/2610.22201"
+    },
+    {
+      "arxiv_id": "2608.11022",
+      "title": "Workflow Cards: Structured Summaries of Workflow Executions Using Provenance Data",
+      "doi": "10.48550/arxiv.2608.11022",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-11T15:02:11Z",
+      "official_url": "https://arxiv.org/abs/2608.11022"
+    },
+    {
+      "arxiv_id": "2608.07370",
+      "title": "LitTraceQA: A Benchmark for Multi-Stage Grounding and Verification in Scientific Question Answering",
+      "doi": "10.48550/arxiv.2608.07370",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-15T19:16:30Z",
+      "official_url": "https://arxiv.org/abs/2608.07370"
+    },
+    {
+      "arxiv_id": "2608.24306",
+      "title": "Who is the Agent to Blame? Localizing Faithfulness and Citation Mistakes in Agentic Deep Research",
+      "doi": "10.48550/arxiv.2608.24306",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-25T09:34:18Z",
+      "official_url": "https://arxiv.org/abs/2608.24306"
+    },
+    {
+      "arxiv_id": "2609.09156",
+      "title": "ReCite: Agentic Reasoning for Faithful Citation",
+      "doi": "10.48550/arxiv.2609.09156",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-08T17:59:50Z",
+      "official_url": "https://arxiv.org/abs/2609.09156"
+    },
+    {
+      "arxiv_id": "2609.34492",
+      "title": "PowerBench: A Benchmark for Agentic Retrieval and Reasoning in Power Systems",
+      "doi": "10.48550/arxiv.2609.34492",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-28T07:41:50Z",
+      "official_url": "https://arxiv.org/abs/2609.34492"
+    },
+    {
+      "arxiv_id": "2609.37151",
+      "title": "FlowMAS: Learning Multi-Agent Workflow Topology via Information-guided Generative Flow Network",
+      "doi": "10.48550/arxiv.2609.37151",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-29T09:43:26Z",
+      "official_url": "https://arxiv.org/abs/2609.37151"
+    },
+    {
+      "arxiv_id": "2610.15750",
+      "title": "Google Earth AI Geospatial Reasoning Agent: Capabilities and a Systematic Evaluation",
+      "doi": "10.48550/arxiv.2610.15750",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-11T16:31:29Z",
+      "official_url": "https://arxiv.org/abs/2610.15750"
+    },
+    {
+      "arxiv_id": "2610.16621",
+      "title": "AgentCue: Statistical Summaries for Guiding Decentralized Multi-Agent Self-Organization",
+      "doi": "10.48550/arxiv.2610.16621",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-12T11:38:15Z",
+      "official_url": "https://arxiv.org/abs/2610.16621"
+    },
+    {
+      "arxiv_id": "2610.10468",
+      "title": "A Society of Researchers: Designing Institutions for Populations of Autonomous Research Agents",
+      "doi": "10.48550/arxiv.2610.10468",
+      "disposition": "candidate",
+      "proposed_module": "11.07",
+      "official_updated": "2026-10-07T17:30:45Z",
+      "official_url": "https://arxiv.org/abs/2610.10468"
+    },
+    {
+      "arxiv_id": "2610.00327",
+      "title": "Actions with Receipts: Jointly Binding Claims, Evidence, and Execution for Replayable Tool-Agent Auditing",
+      "doi": "10.48550/arxiv.2610.00327",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-16T12:28:48Z",
+      "official_url": "https://arxiv.org/abs/2610.00327"
+    },
+    {
+      "arxiv_id": "2608.23047",
+      "title": "Beyond Verdicts: A Graph-Based Analysis of Human and LLM Reasoning in Scientific Fact-Checking",
+      "doi": "10.48550/arxiv.2608.23047",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-24T09:53:30Z",
+      "official_url": "https://arxiv.org/abs/2608.23047"
+    },
+    {
+      "arxiv_id": "2608.04703",
+      "title": "IslamicTurathBench: A Multi-Task, Multi-Discipline Benchmark for Evaluating Large Language Models on the Islamic Scholarly Tradition (turath)",
+      "doi": "10.48550/arxiv.2608.04703",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-08-05T11:12:48Z",
+      "official_url": "https://arxiv.org/abs/2608.04703"
+    },
+    {
+      "arxiv_id": "2608.25553",
+      "title": "When Stale Constraints Go Unchecked: Budgeted Verification Failures in Inherited Agent Memory",
+      "doi": "10.48550/arxiv.2608.25553",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-08-28T16:13:37Z",
+      "official_url": "https://arxiv.org/abs/2608.25553"
+    },
+    {
+      "arxiv_id": "2609.00065",
+      "title": "Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents",
+      "doi": "10.48550/arxiv.2609.00065",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-02T21:50:40Z",
+      "official_url": "https://arxiv.org/abs/2609.00065"
+    },
+    {
+      "arxiv_id": "2610.10140",
+      "title": "Progress and Prospect of AI in ARPES Workflow",
+      "doi": "10.48550/arxiv.2610.10140",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-07T14:18:50Z",
+      "official_url": "https://arxiv.org/abs/2610.10140"
+    },
+    {
+      "arxiv_id": "2609.24921",
+      "title": "BackTrend: Evaluating Scientific Weak-Signal Prediction via Backward Reconstruction",
+      "doi": "10.48550/arxiv.2609.24921",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-09-21T17:18:19Z",
+      "official_url": "https://arxiv.org/abs/2609.24921"
+    },
+    {
+      "arxiv_id": "2608.04270",
+      "title": "CURATE: Leveraging LLM Agents to Compose, Catalog, and Deploy Reproducible Workflows",
+      "doi": "10.48550/arxiv.2608.04270",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-09-29T03:20:04Z",
+      "official_url": "https://arxiv.org/abs/2608.04270"
+    },
+    {
+      "arxiv_id": "2610.08102",
+      "title": "DSV-Mem: Evaluating Multimodal Memory in Professional Workflows for MLLM Agents",
+      "doi": "10.48550/arxiv.2610.08102",
+      "disposition": "excluded_after_screen",
+      "reason": "OpenAlex topical false positive or outside Search F scope after official-record check.",
+      "official_updated": "2026-10-06T10:30:14Z",
+      "official_url": "https://arxiv.org/abs/2610.08102"
+    },
+    {
+      "arxiv_id": "2610.00960",
+      "title": "Video-Index: A Curated Meta-Benchmark for Video Understanding",
+      "doi": "10.48550/arxiv.2610.00960",
+      "disposition": "excluded_after_screen",
+      "reason": "Scientific-agent or benchmark hit, but outside Search F social/knowledge-production remit or insufficient concrete object/agent evidence in abstract; routed to domain/general-search owner.",
+      "official_updated": "2026-10-01T02:46:10Z",
+      "official_url": "https://arxiv.org/abs/2610.00960"
+    }
+  ],
+  "journal_screening": [
+    {
+      "title": "Forecasting the future of American mass shootings with Bayesian agent-based model calibration",
+      "authors": "Andrew M. Dickson; Mira Bhatt; Tiffany Yu; Mohammad R. K. Mofrad",
+      "year": 2026,
+      "venue": "PNAS Nexus",
+      "doi": "10.1093/pnasnexus/pgag294",
+      "url": "https://doi.org/10.1093/pnasnexus/pgag294",
+      "first_public_date": "2026-08-29",
+      "abstract_or_evidence": "High-throughput ABM combines potential perpetrator emergence, firearm access and target population; Bayesian calibration against historical events; reports predictive distributions and counterfactual policy simulation.",
+      "why_agent": "Heterogeneous behavioral actors interact through explicit mechanisms over time; the ABM is a research model of human behavior.",
+      "proposed_modules": [
+        "11.04"
+      ],
+      "disposition": "candidate",
+      "confidence": "high",
+      "source": "Crossref harvest cached metadata and abstract"
+    },
+    {
+      "title": "Network structure versus financial soundness in systemic risk: evidence from an improved agent-based model simulation of Chinese banks",
+      "authors": "Ya Tan; Zhigang Wang; Yichao Dong; Yiming Ding",
+      "year": 2026,
+      "venue": "Journal of Complex Networks",
+      "doi": "10.1093/comnet/cnag029",
+      "url": "https://doi.org/10.1093/comnet/cnag029",
+      "first_public_date": "2026-08-27",
+      "abstract_or_evidence": "ABM with heterogeneous bank risk profiles and interbank matching, calibrated/evaluated on 400 Chinese banks; simulates systemic-risk contagion and compares network structure with financial soundness.",
+      "why_agent": "Bank agents form an interbank network and transmit risk through simulated interactions.",
+      "proposed_modules": [
+        "11.01"
+      ],
+      "disposition": "candidate",
+      "confidence": "high",
+      "source": "Crossref harvest cached metadata and abstract"
+    },
+    {
+      "title": "Agent-based modeling for blockchain-based Ponzi scheme evolution and dynamics",
+      "authors": "Haodong Wang; Junhuan Zhang",
+      "year": 2026,
+      "venue": "IMA Journal of Management Mathematics",
+      "doi": "10.1093/imaman/dpag040",
+      "url": "https://doi.org/10.1093/imaman/dpag040",
+      "first_public_date": "2026-10-09",
+      "abstract_or_evidence": "Investor agents are risk-averse, neutral or risk-seeking; model calibrated with PlusToken transaction data; studies scheme evolution, collapse, token concentration and investor loss.",
+      "why_agent": "Explicit heterogeneous economic actors optimize based on past trades and interact in simulated financial schemes.",
+      "proposed_modules": [
+        "11.01"
+      ],
+      "disposition": "candidate",
+      "confidence": "high",
+      "source": "Crossref harvest cached metadata and abstract"
+    },
+    {
+      "title": "When cardinals strategize: An agent-based model of influence and ideology for the papal conclave",
+      "authors": "Nuno Crokidakis",
+      "year": 2026,
+      "venue": "Chaos, Solitons & Fractals",
+      "doi": "10.1016/j.chaos.2026.118411",
+      "url": "https://doi.org/10.1016/j.chaos.2026.118411",
+      "first_public_date": "2026-08",
+      "abstract_or_evidence": "Crossref record confirms title, author and publication month; abstract absent in record. Models strategic influence/ideology among cardinals in conclave.",
+      "why_agent": "Agent-based model of group decision dynamics; abstract-level evidence is limited to the official title.",
+      "proposed_modules": [
+        "11.04"
+      ],
+      "disposition": "candidate_needs_abstract_review",
+      "confidence": "medium",
+      "source": "Crossref API DOI record (corrected DOI supplied by controller)"
+    },
+    {
+      "title": "Mechanism-centric cross-domain retrieval for scientific discovery: LLM agents for structural isomorphism beyond semantic similarity",
+      "authors": "Huajun Zhou; Guozhu Jia",
+      "year": 2026,
+      "venue": "Knowledge-Based Systems",
+      "doi": "10.1016/j.knosys.2026.116667",
+      "url": "https://doi.org/10.1016/j.knosys.2026.116667",
+      "first_public_date": "2026-10",
+      "abstract_or_evidence": "Cached Crossref metadata contains title/authors/month but no abstract.",
+      "disposition": "needs_abstract_review",
+      "source": "Crossref cached harvest"
+    },
+    {
+      "title": "SurveyAgent-HKA: A multi-agent framework for scientific survey generation with LLMs and human knowledge augmentation",
+      "authors": "Tong Bao; Mir Tafseer Nayeem; Yi Zhao; Davood Rafiei; Chengzhi Zhang",
+      "year": 2026,
+      "venue": "Knowledge-Based Systems",
+      "doi": "10.1016/j.knosys.2026.117011",
+      "url": "https://doi.org/10.1016/j.knosys.2026.117011",
+      "first_public_date": "2026-10",
+      "abstract_or_evidence": "Cached Crossref metadata contains title/authors/month but no abstract.",
+      "disposition": "needs_abstract_review",
+      "source": "Crossref cached harvest"
+    }
+  ],
+  "duplicates": [
+    {
+      "arxiv_id": "2609.31562",
+      "title": "Agentic Economies for Autonomous Scientific Discovery",
+      "doi": "10.48550/arxiv.2609.31562",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-09-25T17:28:53Z",
+      "official_url": "https://arxiv.org/abs/2609.31562"
+    },
+    {
+      "arxiv_id": "2610.05140",
+      "title": "AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents",
+      "doi": "10.48550/arxiv.2610.05140",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-04T11:40:11Z",
+      "official_url": "https://arxiv.org/abs/2610.05140"
+    },
+    {
+      "arxiv_id": "2610.18449",
+      "title": "Autonomous Science Bench: Evaluating AI Agents for Autonomous Scientific Discovery",
+      "doi": "10.48550/arxiv.2610.18449",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-13T14:18:56Z",
+      "official_url": "https://arxiv.org/abs/2610.18449"
+    },
+    {
+      "arxiv_id": "2609.07611",
+      "title": "AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era",
+      "doi": "10.48550/arxiv.2609.07611",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-09-07T15:19:13Z",
+      "official_url": "https://arxiv.org/abs/2609.07611"
+    },
+    {
+      "arxiv_id": "2610.04246",
+      "title": "Benchmarking Psychological Dynamics in Generative Agents",
+      "doi": "10.48550/arxiv.2610.04246",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-03T03:08:42Z",
+      "official_url": "https://arxiv.org/abs/2610.04246"
+    },
+    {
+      "arxiv_id": "2610.19159",
+      "title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
+      "doi": "10.48550/arxiv.2610.19159",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-13T20:25:59Z",
+      "official_url": "https://arxiv.org/abs/2610.19159"
+    },
+    {
+      "arxiv_id": "2609.22104",
+      "title": "DeepInstructor: An Agentic AI Instructor for Experience-Driven Idea Evaluation",
+      "doi": "10.48550/arxiv.2609.22104",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-08-14T01:52:00Z",
+      "official_url": "https://arxiv.org/abs/2609.22104"
+    },
+    {
+      "arxiv_id": "2608.23525",
+      "title": "EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards",
+      "doi": "10.48550/arxiv.2608.23525",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-08-24T17:29:16Z",
+      "official_url": "https://arxiv.org/abs/2608.23525"
+    },
+    {
+      "arxiv_id": "2608.19799",
+      "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
+      "doi": "10.48550/arxiv.2608.19799",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-09-01T15:45:57Z",
+      "official_url": "https://arxiv.org/abs/2608.19799"
+    },
+    {
+      "arxiv_id": "2609.05227",
+      "title": "CABAL: Multi-Agent Simulacra for Tracing the Effects of Collusive Bidding in Peer Review",
+      "doi": "10.48550/arxiv.2609.05227",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-16T07:15:49Z",
+      "official_url": "https://arxiv.org/abs/2609.05227"
+    }
+  ],
+  "version_updates": [
+    {
+      "arxiv_id": "2609.31562",
+      "title": "Agentic Economies for Autonomous Scientific Discovery",
+      "doi": "10.48550/arxiv.2609.31562",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-09-25T17:28:53Z",
+      "official_url": "https://arxiv.org/abs/2609.31562",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    },
+    {
+      "arxiv_id": "2610.05140",
+      "title": "AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents",
+      "doi": "10.48550/arxiv.2610.05140",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-04T11:40:11Z",
+      "official_url": "https://arxiv.org/abs/2610.05140",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    },
+    {
+      "arxiv_id": "2610.18449",
+      "title": "Autonomous Science Bench: Evaluating AI Agents for Autonomous Scientific Discovery",
+      "doi": "10.48550/arxiv.2610.18449",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-13T14:18:56Z",
+      "official_url": "https://arxiv.org/abs/2610.18449",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    },
+    {
+      "arxiv_id": "2609.07611",
+      "title": "AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era",
+      "doi": "10.48550/arxiv.2609.07611",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-09-07T15:19:13Z",
+      "official_url": "https://arxiv.org/abs/2609.07611",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    },
+    {
+      "arxiv_id": "2610.04246",
+      "title": "Benchmarking Psychological Dynamics in Generative Agents",
+      "doi": "10.48550/arxiv.2610.04246",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-03T03:08:42Z",
+      "official_url": "https://arxiv.org/abs/2610.04246",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    },
+    {
+      "arxiv_id": "2610.19159",
+      "title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
+      "doi": "10.48550/arxiv.2610.19159",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-13T20:25:59Z",
+      "official_url": "https://arxiv.org/abs/2610.19159",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    },
+    {
+      "arxiv_id": "2609.22104",
+      "title": "DeepInstructor: An Agentic AI Instructor for Experience-Driven Idea Evaluation",
+      "doi": "10.48550/arxiv.2609.22104",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-08-14T01:52:00Z",
+      "official_url": "https://arxiv.org/abs/2609.22104",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    },
+    {
+      "arxiv_id": "2608.23525",
+      "title": "EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards",
+      "doi": "10.48550/arxiv.2608.23525",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-08-24T17:29:16Z",
+      "official_url": "https://arxiv.org/abs/2608.23525",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    },
+    {
+      "arxiv_id": "2608.19799",
+      "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
+      "doi": "10.48550/arxiv.2608.19799",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-09-01T15:45:57Z",
+      "official_url": "https://arxiv.org/abs/2608.19799",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    },
+    {
+      "arxiv_id": "2609.05227",
+      "title": "CABAL: Multi-Agent Simulacra for Tracing the Effects of Collusive Bidding in Peer Review",
+      "doi": "10.48550/arxiv.2609.05227",
+      "disposition": "duplicate",
+      "duplicate_basis": "already_in_master",
+      "official_updated": "2026-10-16T07:15:49Z",
+      "official_url": "https://arxiv.org/abs/2609.05227",
+      "note": "Official arXiv version timestamp falls in current discovery window; no substantive version-delta/full-text comparison was made."
+    }
+  ],
+  "limitations": [
+    "OpenAlex full-text relevance search has false positives; every arXiv identifier surfaced was checked against the official arXiv API, but relevant candidates were screened at abstract level, not full text.",
+    "A record can be official and still be a non-agent paper; static LLM evaluations and papers without autonomous multi-step behavior are retained as exclusions.",
+    "Crossref metadata for the two Knowledge-Based Systems records and papal conclave lacks abstracts; their status remains provisional.",
+    "Secondary submodule codes 11.01/11.04/11.07 are provisional topic assignments consistent with project module 11; exact local secondary taxonomy is legacy and requires controller confirmation.",
+    "No changes were made to master list, notes, or Data."
+  ],
+  "screening_totals": {
+    "official_arxiv_records_screened": 243,
+    "new_potential_candidates": 12,
+    "duplicates": 10,
+    "excluded_after_screen": 221,
+    "journal_candidates_or_pending": 6
+  }
+}

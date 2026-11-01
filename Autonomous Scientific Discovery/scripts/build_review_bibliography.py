@@ -147,6 +147,16 @@ def main():
                 if field=='author_names':records[key]['author']=' and '.join(n if n.startswith('{') and n.endswith('}') else esc(n) for n in value)
                 elif value is None:records[key].pop(field,None)
                 else:records[key][field]=value
+    # Current version reconciliation is separate from the dated historical audits.
+    # Keep it last so rebuilding cannot restore a first-preprint/online year.
+    alignment_path=OUT.parent/'core_tag_alignment_2026-11-01/bibliography_version_overrides.json'
+    if alignment_path.exists():
+        for key,fields in json.loads(alignment_path.read_text(encoding='utf-8')).items():
+            if key not in records:raise ValueError('Unknown aligned citation: '+key)
+            for field,value in fields.items():
+                if field.startswith('_'):continue
+                if value is None:records[key].pop(field,None)
+                else:records[key][field]=value
     # Enrichment may discover a shared DOI after initial insertion. Reconcile it
     # before emitting entries so aliases cannot leave duplicate bibliography items.
     final_identities={};merged={}

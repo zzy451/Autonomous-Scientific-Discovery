@@ -134,6 +134,24 @@ Reference_PDF/**/*.pdf
 !Autonomous Scientific Discovery/Manuscript/Definitions/*.pdf
 
 # Audited bibliography inputs required for regeneration.
+# Current evidence package and its explicit regeneration dependencies.
+!/Autonomous Scientific Discovery/Coverage_Check/core_tag_alignment_2026-11-01/
+!/Autonomous Scientific Discovery/Coverage_Check/core_tag_alignment_2026-11-01/**
+!/Autonomous Scientific Discovery/Coverage_Check/bibliography_2026-10-30/paper_citation_keys.csv
+!/Autonomous Scientific Discovery/Coverage_Check/october_round2_A_general.json
+!/Autonomous Scientific Discovery/Coverage_Check/october_round2_B_chem_materials.json
+!/Autonomous Scientific Discovery/Coverage_Check/october_round2_C_life_health.json
+!/Autonomous Scientific Discovery/Coverage_Check/october_round2_D_formal_physics.json
+!/Autonomous Scientific Discovery/Coverage_Check/october_round2_E_earth_agri_engineering.json
+!/Autonomous Scientific Discovery/Coverage_Check/october_round2_f_knowledge.json
+!/Autonomous Scientific Discovery/Coverage_Check/october_round2_literature_expansion_report_2026-10-22.md
+!/Autonomous Scientific Discovery/Paper_Lists/october_round2_search_control_2026-10-22.md
+!/Autonomous Scientific Discovery/scripts/build_core_evidence_package.py
+!/Autonomous Scientific Discovery/scripts/apply_core_tag_alignment.py
+!/Autonomous Scientific Discovery/scripts/refresh_manuscript_corpus_snapshot.py
+!/Autonomous Scientific Discovery/scripts/validate_core_evidence_package.py
+!/Autonomous Scientific Discovery/scripts/manage_master_paper_list.py
+!/Autonomous Scientific Discovery/scripts/append_change_log.py
 !/Autonomous Scientific Discovery/Coverage_Check/bibliography_2026-10-30/
 !/Autonomous Scientific Discovery/Coverage_Check/bibliography_2026-10-30/references_handwritten_original.tex
 !/Autonomous Scientific Discovery/Coverage_Check/bibliography_2026-10-30/online_overrides.json

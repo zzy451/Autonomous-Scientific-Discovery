@@ -1,0 +1,60 @@
+{
+  "snapshot_date": "2026-11-01",
+  "core_works": 662,
+  "formal_domain_works": 660,
+  "module_memberships": 935,
+  "secondary_coded_memberships": 933,
+  "tertiary_coded_memberships": 931,
+  "notes": 662,
+  "local_pdfs": 635,
+  "directly_cited_core_works": 36,
+  "manuscript_citation_keys": 44,
+  "bibliography_entries": 1051,
+  "purposive_cases": 11,
+  "recoverable_search_records": 45,
+  "tag_coverage": {
+    "agent_type": {
+      "owner_populated": 538,
+      "all_tokens_in_schema": 438,
+      "note_aligned_this_round": 0
+    },
+    "research_workflow_role": {
+      "owner_populated": 538,
+      "all_tokens_in_schema": 117,
+      "note_aligned_this_round": 0
+    },
+    "validation_type": {
+      "owner_populated": 552,
+      "all_tokens_in_schema": 219,
+      "note_aligned_this_round": 0
+    },
+    "scientific_contribution_type": {
+      "owner_populated": 556,
+      "all_tokens_in_schema": 114,
+      "note_aligned_this_round": 0
+    }
+  },
+  "note_summary_coverage": {
+    "agent_type": 431,
+    "research_workflow_role": 431,
+    "autonomy": 418,
+    "validation_type": 438,
+    "cross_attributes": 393,
+    "scientific_contribution_type": 403
+  },
+  "primary_source_rechecked_for_all_four_tags_this_round": 0,
+  "interpretation": "Occupancy, vocabulary conformance, note alignment, and original-source verification are different measures. No full-corpus paradigm, organization-topology, contribution-attribution, or human-decision prevalence is estimated.",
+  "source_hashes": {
+    "Autonomous Scientific Discovery\\paper_note_templates_and_prompts\\ASD_annotation_schema.md": "3d30c72163d8a919a4130baf548afe3bd514deda9e39585c81da79245058d4da",
+    "Autonomous Scientific Discovery\\Paper_Lists\\agent_master_paper_list.md": "3617b573ace6e3c355509884c831e8f2a4a63af2003138d5a99b570867e1e079",
+    "Autonomous Scientific Discovery\\Data\\papers.jsonl": "c629beddb3e50293a828fbc83963a073436223b26b7bf73dcb05492465c7903c",
+    "Autonomous Scientific Discovery\\Data\\paper_module_taxonomy_assignments.jsonl": "e4fcb3f60140a85691e16027c7adba2875146968361cb63113fe6e7af61aff64",
+    "Agent_for_Science_Review_Overleaf\\references.bib": "4b31fb8f7ad11e95770534d25b4af95ad91cddb320491078c26eb184035e1e09",
+    "Autonomous Scientific Discovery\\Coverage_Check\\october_round2_A_general.json": "7bd7d97172bef8113c385307fb351b51cfb34dcfa71f8845f125ae0eafbf73a5",
+    "Autonomous Scientific Discovery\\Coverage_Check\\october_round2_B_chem_materials.json": "a24675e2df9b01211bb6f38ff0dadb0d17b7864079812d594b3950cf989e69ca",
+    "Autonomous Scientific Discovery\\Coverage_Check\\october_round2_C_life_health.json": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+    "Autonomous Scientific Discovery\\Coverage_Check\\october_round2_D_formal_physics.json": "19653ce39bc93ca9c34aacf35c63922d8739a6199844a9c7ded3bc0c1e0dfab6",
+    "Autonomous Scientific Discovery\\Coverage_Check\\october_round2_E_earth_agri_engineering.json": "c9494418abc4229af0745fe25908f8ac52d4ba2b86b488264521b1b320694bd0",
+    "Autonomous Scientific Discovery\\Coverage_Check\\october_round2_f_knowledge.json": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3"
+  }
+}

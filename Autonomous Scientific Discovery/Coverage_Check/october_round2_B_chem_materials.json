@@ -1,0 +1,1244 @@
+{
+  "candidates": [
+    {
+      "title": "Autonomous in-silico inorganic materials discovery via multi-agent physics-aware scientific reasoning",
+      "authors": [
+        "Alireza Ghafarollahi",
+        "Markus J. Buehler"
+      ],
+      "year": 2026,
+      "venue": "npj Computational Materials",
+      "url": "https://www.nature.com/articles/s41524-026-02205-8",
+      "doi": "10.1038/s41524-026-02205-8",
+      "arxiv_id": null,
+      "first_public_date": "2026-07-08",
+      "publication_date": "2026-07-08",
+      "abstract": "SparksMatter generates ideas, designs and executes experimental workflows, evaluates and refines results, and proposes inorganic materials. Case studies cover thermoelectrics, semiconductors and perovskite oxide design; the abstract reports candidate generation and blinded evaluation against frontier models.",
+      "agent_evidence": "Publisher abstract explicitly describes multi-agent planning, workflow design/execution, continuous evaluation/refinement and research-gap critique.",
+      "object_evidence": "Case studies cover thermoelectric, semiconductor and perovskite oxide materials design.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02",
+        "04.04"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Nature publisher article/abstract; first published 2026-07-08",
+        "Crossref DOI metadata",
+        "Author/lab seed expansion from SciAgents records"
+      ],
+      "source_level": "first_hand_publisher_abstract",
+      "uncertainties": "Full-text review should verify which workflows were executed versus proposed and resolve 04.02/04.04."
+    },
+    {
+      "title": "Experiment automation agents: automating materials characterization with vision language model agents",
+      "authors": [
+        "Ming Du",
+        "Yanqi Luo",
+        "Srutarshi Banerjee",
+        "Michael Wojcik",
+        "Jelena Popovic",
+        "Mathew J. Cherukara"
+      ],
+      "year": 2026,
+      "venue": "npj Computational Materials",
+      "url": "https://www.nature.com/articles/s41524-026-02213-8",
+      "doi": "10.1038/s41524-026-02213-8",
+      "arxiv_id": null,
+      "first_public_date": "2026-07-31",
+      "publication_date": "2026-07-31",
+      "abstract": "Experiment Automation Agents uses vision-language reasoning and tool actions in microscopy workflows. Demonstrations at an Advanced Photon Source imaging beamline include zone-plate focusing, natural-language feature search and interactive data acquisition.",
+      "agent_evidence": "Explicit agent system performs multi-step instrument workflows through multimodal reasoning and tool actions.",
+      "object_evidence": "Materials microscopy and imaging-beamline characterization.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01"
+      ],
+      "primary_module": "04.01",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Nature publisher abstract and DOI metadata, 2026-07-31"
+      ],
+      "source_level": "first_hand_publisher_abstract",
+      "uncertainties": "Full text should confirm sample identities and exact concrete imaging tasks."
+    },
+    {
+      "title": "A collaborative agent with two lightweight synergistic models for autonomous crystal materials research",
+      "authors": [
+        "Tongyu Shi",
+        "Yutang Li",
+        "Zhanyuan Li",
+        "Qian Liu",
+        "Jie Zhou",
+        "Wenhe Xu",
+        "Yang Li",
+        "Dawei Dai",
+        "Rui He",
+        "Wenhua Zhou",
+        "Jiahong Wang",
+        "Xue-Feng Yu"
+      ],
+      "year": 2026,
+      "venue": "Nature Machine Intelligence",
+      "url": "https://www.nature.com/articles/s42256-026-01298-6",
+      "doi": "10.1038/s42256-026-01298-6",
+      "arxiv_id": null,
+      "first_public_date": "2026-09-10",
+      "publication_date": "2026-09-10",
+      "abstract": "MatBrain is a collaborative crystal-materials agent with an analytical model and an executive model orchestrating tool-based actions. Demonstrations include structure generation, property prediction and synthesis planning; catalyst design generated 30,000 candidates and identified 38 promising materials within 48 hours.",
+      "agent_evidence": "Publisher abstract distinguishes analytical and executive models; the latter orchestrates tool actions across research tasks.",
+      "object_evidence": "Crystal materials and catalyst design with a candidate-generation and computational-screening campaign.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Nature publisher abstract/DOI metadata, 2026-09-10",
+        "Crossref record"
+      ],
+      "source_level": "first_hand_publisher_abstract",
+      "uncertainties": "Full text needed to establish experimental versus computational validation."
+    },
+    {
+      "title": "Large-language-model-driven adaptive search space definition for autonomous closed-loop materials exploration",
+      "authors": [
+        "Yuma Iwasaki",
+        "Ryo Toyama",
+        "Ryo Tamura",
+        "Shoichi Matsuda",
+        "Yuya Sakuraba",
+        "Masato Kotsugi",
+        "Yasuhiko Igarashi",
+        "Keitaro Sodeyama"
+      ],
+      "year": 2026,
+      "venue": "Communications Materials",
+      "url": "https://www.nature.com/articles/s43246-026-01304-9",
+      "doi": "10.1038/s43246-026-01304-9",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-25",
+      "publication_date": "2026-08-25",
+      "abstract": "An LLM outer loop adaptively redefines the materials search space during operation while a Bayesian-optimization inner loop selects candidates. Reports more efficient exploration in expanded search spaces; the abstract says the framework could be integrated with self-driving platforms.",
+      "agent_evidence": "LLM proposes updated search spaces and BO selects candidates in an iterative materials-exploration process.",
+      "object_evidence": "Adaptive search and candidate selection for materials exploration.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Nature publisher abstract/DOI metadata, 2026-08-25"
+      ],
+      "source_level": "first_hand_publisher_abstract",
+      "uncertainties": "Verify whether experiments or only computational evaluations were run and whether this meets the Agent threshold."
+    },
+    {
+      "title": "Autonomous adaptive spectral analysis with an LLM agent for self-driving laboratories",
+      "authors": [
+        "Yuki K. Wakabayashi",
+        "Yui Ogawa"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.25619",
+      "doi": null,
+      "arxiv_id": "2610.25619",
+      "first_public_date": "2026-10-19",
+      "publication_date": null,
+      "abstract": "An LLM agent supervises deterministic spectral analysis, checks results and diagnostics, accepts valid results, retries recoverable failures with bounded parameter changes and returns NaN when evidence is insufficient. On 203 beta-Ga2O3 film spectra it recovered 16 of 20 analysis failures and rejected four.",
+      "agent_evidence": "Adaptive agent evaluates intermediate analysis evidence and autonomously retries or rejects outputs.",
+      "object_evidence": "Optical spectra and Urbach-energy measurement for beta-Ga2O3 epitaxial films.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.04"
+      ],
+      "primary_module": "04.04",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-10-19",
+        "Sibling expansion from Wakabayashi/Ogawa sputtering-epitaxy study (2026-08-13)"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Verify relation to earlier growth campaign and standalone scientific contribution."
+    },
+    {
+      "title": "A self-learning scientific agent for X-ray diffraction",
+      "authors": [
+        "Bin Cao",
+        "Huichi Zhou",
+        "Runyu Yang",
+        "Jingsong Li",
+        "Shuchen Sun"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.07862",
+      "doi": null,
+      "arxiv_id": "2610.07862",
+      "first_public_date": "2026-10-06",
+      "publication_date": null,
+      "abstract": "Gan Jiang is a powder-XRD agent that diagnoses failures, revises skill instructions/code and validates revisions before reuse. Examples include a multi-phase cosmetic, lattice evolution in an operating battery and an oxide catalyst; it also reports DeltaXRDbench results.",
+      "agent_evidence": "Agent improves executable skills through failure diagnosis, code/instruction revision and validation.",
+      "object_evidence": "Powder diffraction, battery lattice evolution and oxide-catalyst structure analysis.",
+      "modules": [
+        "04",
+        "03"
+      ],
+      "codes": [
+        "04.01",
+        "04.02",
+        "03.02"
+      ],
+      "primary_module": "04.01",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-10-06",
+        "DeltaXRDbench named in abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Verify 03.02 chemistry case and multi-module coverage in full text."
+    },
+    {
+      "title": "Agent-E2MD: Autonomous Translation of Interatomic Potential Equations into Physically Validated Pair Styles for Molecular Dynamics in LAMMPS",
+      "authors": [
+        "Bilvin Varughese",
+        "Orcun Yildiz",
+        "Aditya Koneru",
+        "Henry Chan",
+        "Tom Peterka"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.26657",
+      "doi": null,
+      "arxiv_id": "2609.26657",
+      "first_public_date": "2026-09-22",
+      "publication_date": null,
+      "abstract": "A knowledge-guided agent translates interatomic models into executable LAMMPS pair styles through architecture selection, code generation, autonomous build-test-fix cycles, simulation and physical validation. Tests seven material-potential pairs and validates energies, forces, crystal properties, defects, elastic constants and dynamics.",
+      "agent_evidence": "Explicit multi-step code/tool workflow with autonomous build-test-fix iteration, simulation and physical validation.",
+      "object_evidence": "Atomistic materials including Ar, Ag, Bi, Si, Ni, C/H/N/O and Al; crystalline properties and reactive dynamics.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01",
+        "04.02"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-09-22"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Review whether all material validations support both 04.01 and 04.02; 04.02 is primary."
+    },
+    {
+      "title": "Hierarchical automation of scanning probe microscopy through agentic orchestration and algorithmic control",
+      "authors": [
+        "Boris N. Slautin",
+        "Sheryl L. Sanchez",
+        "Aidan Swanger",
+        "Yu Liu",
+        "Gerd Duscher"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.04015",
+      "doi": null,
+      "arxiv_id": "2609.04015",
+      "first_public_date": "2026-09-03",
+      "publication_date": null,
+      "abstract": "Agentic components interpret scientific intent, construct experiment representations, evaluate evidence and select actions, while deterministic tools run microscopy and analysis. In piezoresponse force microscopy the system studies local domain structure and polarization switching, adapts waveforms and terminates when added measurements stop providing evidence.",
+      "agent_evidence": "Agents interpret objectives, evaluate accumulating evidence and select high-level actions in a physical experiment.",
+      "object_evidence": "Piezoresponse microscopy, local polarization switching and domain-wall proximity.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.03"
+      ],
+      "primary_module": "04.03",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-09-03",
+        "Citation/sibling expansion from scanning-probe and ferroelectric materials work"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Full text should confirm sample composition and validation details."
+    },
+    {
+      "title": "Diagnosing and narrowing the simulation-to-real gap in powder X-ray diffraction with a wet-dry agentic loop",
+      "authors": [
+        "Shaoguang Wang",
+        "Weiyu Guo",
+        "Ben Fei",
+        "Xiaohong Shao",
+        "Zhihui Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.22400",
+      "doi": null,
+      "arxiv_id": "2608.22400",
+      "first_public_date": "2026-08-23",
+      "publication_date": null,
+      "abstract": "Xtalyst orchestrates phase identification, refinement and property prediction. A diffractometer recommend-rescan-reanalyze loop changed a blinded silicon-standard decision and the resolved minor phase in a multi-metal alloy; held-out computational analyses evaluate the modules.",
+      "agent_evidence": "Agent-orchestrated workflow makes recommendations and reanalyzes measured diffraction evidence in a repeated wet-dry loop.",
+      "object_evidence": "Powder diffraction, silicon standard and multi-metal alloy phase analysis.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01",
+        "04.02"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-08-23",
+        "Xtalyst system described in the official abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Review full text to resolve the deterministic/agent role split and module coverage."
+    },
+    {
+      "title": "PACE-SIMS: Checkpoint-Gated Autonomous SIMS Characterization with AI-Agent Quality Control",
+      "authors": [
+        "Anton V. Ievlev",
+        "Heather Hare",
+        "Yiyang Li",
+        "Sergei V. Kalinin"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.12277",
+      "doi": null,
+      "arxiv_id": "2608.12277",
+      "first_public_date": "2026-08-12",
+      "publication_date": null,
+      "abstract": "An AI agent plans and executes SIMS characterization with human-approved checkpoints, assessing measurements and correcting, retrying or escalating as needed. A blind study of 18O-enriched WOx films used 35 measurements over 8.1 hours; the agent corrected three issues and identified an unanticipated source excursion.",
+      "agent_evidence": "Agent plans and executes experiments, checks intermediate measurements and takes corrective action or escalates.",
+      "object_evidence": "ToF-SIMS characterization and isotope composition analysis in tungsten oxide thin films.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01",
+        "04.04"
+      ],
+      "primary_module": "04.01",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v2 abstract/submission metadata; v1 first appeared 2026-08-12",
+        "Official PACE-SIMS study abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Check exact film composition and whether an energy-material assignment 04.04 is warranted."
+    },
+    {
+      "title": "Agent-MD: Selective LLM Intervention with Event-Driven Escalation for Stateful GCMC-MD Campaigns",
+      "authors": [
+        "Yijie Wang",
+        "Zhen-Yu Yin",
+        "Zhenheng Tang",
+        "Xiaowen Chu"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.07637",
+      "doi": null,
+      "arxiv_id": "2608.07637",
+      "first_public_date": "2026-08-07",
+      "publication_date": null,
+      "abstract": "Combines an LLM reasoning agent and a persistent campaign agent for stateful GCMC-MD. Demonstrated on water desorption across five montmorillonite systems and three humidity states; state, sampling, continuation and incidents are tracked across 120 cycles, revealing composition-dependent hydration.",
+      "agent_evidence": "Agent constructs campaigns and reviews events; persistent execution, state tracking and analysis form a multi-step research workflow.",
+      "object_evidence": "Molecular dynamics of montmorillonite-water interlayer behavior and composition-dependent hydration.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-08-07"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "A 05 Earth-science assignment is not supported by the current abstract; confirm the scientific framing."
+    },
+    {
+      "title": "An LLM agent for end-to-end computational materials discovery",
+      "authors": [
+        "Yuntong Chen",
+        "Ju Huang",
+        "Yu Liu",
+        "Dan Zhao",
+        "Mingqi Sun"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.20434",
+      "doi": null,
+      "arxiv_id": "2608.20434",
+      "first_public_date": "2026-08-20",
+      "publication_date": null,
+      "abstract": "MAESTRO agents review MOF literature, link studies to crystal structures, curate a computation-ready database and progressively screen candidates for wet flue-gas separation.",
+      "agent_evidence": "Agents coordinate literature retrieval, structure linking, curation and staged computational screening in a multi-step workflow.",
+      "object_evidence": "Metal-organic frameworks and candidate adsorbents for wet flue-gas separation.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02",
+        "04.03",
+        "04.04"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-08-20"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Review full text to determine whether 04.03 and 04.04 are independently supported by object-level studies."
+    },
+    {
+      "title": "ALKEMIE Agent: an autonomous platform for computational materials design",
+      "authors": [
+        "Hongfu Huang",
+        "Yuzhe Li",
+        "Ao Xu",
+        "Bo Liu",
+        "Wang Changrui"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.15776",
+      "doi": null,
+      "arxiv_id": "2608.15776",
+      "first_public_date": "2026-08-16",
+      "publication_date": null,
+      "abstract": "Describes a materials computation platform integrating RAG, registered skills, provenance, structure modeling, bounded task execution, tool-call iteration and error diagnosis. Applications include structure modeling, phonons, interatomic-potential training, LAMMPS, AIMC and active-learning screening.",
+      "agent_evidence": "Explicit tool-call iteration, bounded task execution and error diagnosis across multi-step materials computation.",
+      "object_evidence": "Computational materials design applications are named but the abstract does not specify material systems.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01",
+        "04.02"
+      ],
+      "primary_module": "04.01",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-08-16",
+        "Official project/code page follow-up recommended"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Verify concrete object-level studies and reported results before inclusion or module assignment."
+    },
+    {
+      "title": "ElectrolyteMD-Bench: How Well Do AI Agents Conduct Molecular Dynamics Studies across Electrolyte Solvation Regimes?",
+      "authors": [
+        "Shukai Wu",
+        "Shuo Niu",
+        "Zhaoming Xu",
+        "Yan Luo",
+        "Wentao Lin"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.31743",
+      "doi": null,
+      "arxiv_id": "2609.31743",
+      "first_public_date": "2026-09-23",
+      "publication_date": null,
+      "abstract": "Agents conduct electrolyte-MD system construction, equilibration, sampling, property analysis and interpretation, deciding whether to correct errors, continue or stop. Across eight configurations and 24 runs, none of eight studies met all scientific requirements despite valid trajectories.",
+      "agent_evidence": "Evaluates multi-step research agents with tool use, feedback and stopping decisions across simulation and analysis.",
+      "object_evidence": "Battery-electrolyte solvation, ionic association, dynamics and transport.",
+      "modules": [
+        "04",
+        "03"
+      ],
+      "codes": [
+        "04.04",
+        "03.02"
+      ],
+      "primary_module": "04.04",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-09-23"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Full text should confirm whether named molecular systems support both chemistry and energy-material classification."
+    },
+    {
+      "title": "Vibe-FDTR: An agent-oriented framework for reproducible frequency-domain thermoreflectance data analysis",
+      "authors": [
+        "Fuwei Yang",
+        "Weiheng Li",
+        "Bai Song"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2607.28200",
+      "doi": null,
+      "arxiv_id": "2607.28200",
+      "first_public_date": "2026-07-30",
+      "publication_date": null,
+      "abstract": "LLM agents use domain-specific code and skills for multi-step frequency-domain thermoreflectance analysis. Real-data tasks use gold-coated graphite samples; the abstract reports 98.9% agent success and optional autonomous sensitivity and uncertainty planning.",
+      "agent_evidence": "Agents map natural-language goals to verifiable analysis steps, use domain tools and can plan sensitivity/uncertainty analyses.",
+      "object_evidence": "Thermal-property metrology from FDTR measurements of gold-coated graphite.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01"
+      ],
+      "primary_module": "04.01",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-07-30",
+        "Backfill layer 2026-07-08 to 2026-07-31"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Verify measured property and materials-science contribution in full text."
+    },
+    {
+      "title": "AEcroscopyWave: Towards Self-Driving Characterization Platforms for Agentic AI",
+      "authors": [
+        "Yongtao Liu",
+        "Jawad Chowdhury",
+        "Ganesh Narasimha",
+        "Ralph Bulanadi",
+        "Liam Collins"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2607.22975",
+      "doi": null,
+      "arxiv_id": "2607.22975",
+      "first_public_date": "2026-07-25",
+      "publication_date": null,
+      "abstract": "Describes a custom platform unifying scanning-probe microscope and peripheral-instrument control for human and AI-agent use; agent-facing capabilities are demonstrated through test cases.",
+      "agent_evidence": "Instrument APIs allow agents to compose control across multiple characterization steps, but autonomous task behavior is unclear from the abstract.",
+      "object_evidence": "Scanning-probe characterization of electronic materials.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01"
+      ],
+      "primary_module": "04.01",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata, 2026-07-25",
+        "Sibling expansion from Chowdhury/Liu active-learning microscopy paper (2026-08-21)"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Verify concrete scientific tasks and multi-step actions; current abstract is platform-focused."
+    },
+    {
+      "title": "Quality-controlled active learning via Gaussian processes for robust structure-property learning in autonomous microscopy",
+      "authors": [
+        "Jawad Chowdhury",
+        "Ganesh Narasimha",
+        "Jan-Chi Yang",
+        "Hiroshi Funakubo",
+        "Yoshitaka Ehara",
+        "Yongtao Liu",
+        "Rama Vasudevan"
+      ],
+      "year": 2026,
+      "venue": "npj Computational Materials",
+      "url": "https://www.nature.com/articles/s41524-026-02248-x",
+      "doi": "10.1038/s41524-026-02248-x",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-21",
+      "publication_date": "2026-08-21",
+      "abstract": "Active learning with a physics-informed data-quality filter was tested on PbTiO3 band-excitation piezoresponse spectroscopy data and in real-time autonomous microscopy on a separate heterogeneous-domain sample.",
+      "agent_evidence": "Autonomous acquisition and adaptive decisions are described, but no explicit agent architecture is stated in the abstract.",
+      "object_evidence": "Ferroelectric domains in PbTiO3 thin films measured by piezoresponse spectroscopy.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.03"
+      ],
+      "primary_module": "04.03",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Nature publisher abstract/DOI metadata, 2026-08-21",
+        "Sibling expansion: author overlap with AEcroscopyWave preprint"
+      ],
+      "source_level": "first_hand_publisher_abstract",
+      "uncertainties": "Boundary question: classical active-learning controller versus scientific Agent; verify planning/tool interaction in full text."
+    },
+    {
+      "title": "ChemGraph-XANES: an agentic framework for XANES simulation and curation",
+      "authors": [
+        "Vitor F. Grizzi",
+        "Thang Duc Pham",
+        "Luke N. Pretzie",
+        "Jiayi Xu",
+        "Murat Keceli",
+        "Cong Liu"
+      ],
+      "year": 2026,
+      "venue": "RSC Advances",
+      "url": "https://pubs.rsc.org/en/content/articlelanding/2026/ra/d6ra06166d",
+      "doi": "10.1039/d6ra06166d",
+      "arxiv_id": null,
+      "first_public_date": null,
+      "publication_date": "2026 (exact date unresolved)",
+      "abstract": "Crossref abstract describes an LLM agent combining documentation-grounded parameter retrieval, schema-constrained tool execution, deterministic FDMNES input generation, Parsl execution and provenance-aware curation.",
+      "agent_evidence": "Multi-stage agent retrieves domain parameters, prepares simulation inputs and calls simulation and curation tools.",
+      "object_evidence": "X-ray absorption near-edge structure simulation and data curation for atomic/material electronic-structure studies.",
+      "modules": [
+        "03",
+        "04"
+      ],
+      "codes": [
+        "03.02",
+        "04.01"
+      ],
+      "primary_module": "04.01",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "RSC/Crossref DOI record and abstract",
+        "Publisher HTML request returned HTTP 403",
+        "RSC peer-review history indicates 2026 online revisions"
+      ],
+      "source_level": "first_hand_publisher_abstract",
+      "uncertainties": "Exact first publication date and concrete evaluated sample objects remain unverified; resolve 03.02/04.01."
+    },
+    {
+      "title": "Autonomous global-minimum search of Pd6Mo7 nanoclusters from deep reinforcement learning",
+      "authors": [
+        "Shahzad Ahmad",
+        "Moeed Bin Qamar",
+        "Muhammad Umar Farooq",
+        "Fuyi Chen"
+      ],
+      "year": 2026,
+      "venue": "Next Materials",
+      "url": "https://doi.org/10.1016/j.nxmate.2026.103127",
+      "doi": "10.1016/j.nxmate.2026.103127",
+      "arxiv_id": null,
+      "first_public_date": null,
+      "publication_date": "2026-10 (Crossref record)",
+      "abstract": "Crossref metadata describes deep-reinforcement-learning search for the global minimum of Pd6Mo7 nanoclusters; abstract not recovered in this pass.",
+      "agent_evidence": "Sequential RL may perform autonomous structure exploration, but its action space and feedback are not yet verified.",
+      "object_evidence": "Palladium-molybdenum nanocluster structures and computational energy minima.",
+      "modules": [
+        "03",
+        "04"
+      ],
+      "codes": [
+        "03.04",
+        "04.02"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Crossref DOI title/date record, 2026-10",
+        "Publisher abstract not retrieved"
+      ],
+      "source_level": "metadata_only",
+      "uncertainties": "Confirm agent behavior, date and material/chemical classification from publisher full text."
+    },
+    {
+      "title": "Toward autonomous experimentation: Bayesian optimization over problem formulation space for accelerated alloy development",
+      "authors": [
+        "Joseph Wagner",
+        "Danial Khatamsaz",
+        "Brent Vela",
+        "Raymundo Arroyoave",
+        "Douglas L. Allaire"
+      ],
+      "year": 2026,
+      "venue": "Materials & Design",
+      "url": "https://doi.org/10.1016/j.matdes.2026.116585",
+      "doi": "10.1016/j.matdes.2026.116585",
+      "arxiv_id": null,
+      "first_public_date": null,
+      "publication_date": "2026-09 (Crossref record)",
+      "abstract": "Crossref title/references indicate Bayesian optimization over problem-formulation space applied to alloy development; abstract not available in cached source.",
+      "agent_evidence": "Autonomous BO may iteratively choose alloy experiments, but no agent architecture has been verified.",
+      "object_evidence": "Alloy design and experimentation.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Crossref DOI title/date metadata (2026-09)",
+        "Publisher abstract not retrieved"
+      ],
+      "source_level": "metadata_only",
+      "uncertainties": "Do not promote on title alone; confirm whether this is an autonomous Agent or conventional optimization."
+    },
+    {
+      "title": "Interpretable self-driving sputtering epitaxy reveals human-usable growth rules for beta-Ga2O3 films",
+      "authors": [
+        "Yuki K. Wakabayashi",
+        "Yui Ogawa",
+        "Franz Benedict Romero",
+        "Coleman Wagner",
+        "Takuma Otsuka",
+        "Yoshitaka Taniyasu"
+      ],
+      "year": 2026,
+      "venue": "Nature Communications",
+      "url": "https://www.nature.com/articles/s41467-026-76533-0",
+      "doi": "10.1038/s41467-026-76533-0",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-13",
+      "publication_date": "2026-08-13",
+      "abstract": "A self-driving sputtering system uses Bayesian optimization and automated optical Urbach-energy measurements to identify beta-Ga2O3 growth conditions, transfer them across substrates and validate interpretable rules through human re-optimization.",
+      "agent_evidence": "Autonomous experiment selection, execution and feedback are clear, but the abstract describes Bayesian optimization rather than an explicit agent architecture.",
+      "object_evidence": "Sputtered beta-Ga2O3 thin-film heteroepitaxy and homoepitaxy, microscopy validated.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.04"
+      ],
+      "primary_module": "04.04",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Nature Communications publisher abstract/DOI record, 2026-08-13",
+        "Sibling/citation expansion from Wakabayashi/Ogawa spectral-analysis agent preprint"
+      ],
+      "source_level": "first_hand_publisher_abstract",
+      "uncertainties": "Boundary review: whether self-driving Bayesian optimization without a distinct agent qualifies under the project definition."
+    },
+    {
+      "title": "Managing autonomous materials labs with multi-agent AI and its implications for the science of science",
+      "authors": [
+        "A. Gilad Kusne",
+        "Austin McDannald"
+      ],
+      "year": 2026,
+      "venue": "Communications Materials",
+      "url": "https://www.nature.com/articles/s43246-026-01219-5",
+      "doi": "10.1038/s43246-026-01219-5",
+      "arxiv_id": null,
+      "first_public_date": "2026-07-08",
+      "publication_date": "2026-07-08",
+      "abstract": "Perspective proposes that agent-based AI may manage next-generation materials laboratories and discusses potential implementation scenarios and sandbox evaluation.",
+      "agent_evidence": "Agentic implementation scenarios are proposed but no implemented multi-step agent is reported.",
+      "object_evidence": "Materials lab management is conceptual; abstract indicates no concrete materials-object experiment or case study.",
+      "modules": [],
+      "codes": [],
+      "primary_module": null,
+      "suggested_status": "background_only",
+      "source_trail": [
+        "Nature publisher abstract and DOI metadata, 2026-07-08"
+      ],
+      "source_level": "first_hand_publisher_abstract",
+      "uncertainties": "Background paper only on current evidence; not a core object-level Agent study."
+    },
+    {
+      "title": "CompMat-Bench: Benchmarking AI Agents for Computational Materials Science",
+      "authors": [
+        "Chenmu Zhang",
+        "Levi Felix",
+        "Jun-Jie Zhang",
+        "Xingfu Li",
+        "Xuelian Jiang"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.00636",
+      "doi": null,
+      "arxiv_id": "2610.00636",
+      "first_public_date": "2026-09-30",
+      "publication_date": null,
+      "abstract": "A benchmark of 94 tasks derived from published computational-materials studies asks agents to complete steps toward scientific goals. It assesses preparation of simulation inputs and analysis of outputs using reproduced results, supporting both individual tasks and multi-task workflows under differing guidance.",
+      "agent_evidence": "Directly evaluates tool-using agents on multi-step materials-research tasks and workflows; includes fixed-rule grading and scientific result evidence.",
+      "object_evidence": "Tasks derived from concrete computational materials studies and scientific goals.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01",
+        "04.02"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v2 abstract/submission metadata (2026-09-30)",
+        "Benchmark source and reproduced task protocol described in abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Inspect task list to determine support for 04.01 versus 04.02 and whether object-level coverage spans subfields."
+    },
+    {
+      "title": "ERAF4XRD: A multimodal agentic framework for constructing validated experimental X-ray diffraction databases from scientific literature",
+      "authors": [
+        "Afnan Mostafa",
+        "William Ratcliff",
+        "Simon J. L. Billinge",
+        "Niaz Abdolrahim"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.18583",
+      "doi": null,
+      "arxiv_id": "2609.18583",
+      "first_public_date": "2026-09-16",
+      "publication_date": null,
+      "abstract": "ERAF4XRD is an automated multimodal multi-agent framework that screens papers, identifies diffraction figures, links metadata to experimental data and validates records against source evidence. A 273-publication benchmark included 3,150 candidate figures; the paper reports up to 98.7% figure-identification accuracy and independent manual validation of extracted records.",
+      "agent_evidence": "Multi-agent planning/extraction/validation across literature, figures and metadata constitutes a multi-step scientific data-reconstruction workflow.",
+      "object_evidence": "Experimental X-ray diffraction records and crystalline-material measurements.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01",
+        "04.02"
+      ],
+      "primary_module": "04.01",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata (2026-09-16)",
+        "ERAF4XRD benchmark described in official abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Review material systems in the benchmark to assess broader 04.02 coverage."
+    },
+    {
+      "title": "Human-agent discovery of reconfigurable in-plane ferroelectric superdomain control",
+      "authors": [
+        "Yu Liu",
+        "Boris Slautin",
+        "Ching-Che Lin",
+        "Jaegyu Kim",
+        "Lane W. Martin"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.06887",
+      "doi": null,
+      "arxiv_id": "2609.06887",
+      "first_public_date": "2026-09-07",
+      "publication_date": null,
+      "abstract": "SPARC shares a scanning-probe microscope, notebook and persistent memories between a coding agent and human operator. In supervised and agent-controlled campaigns, it discovers a lattice of alternating-polarity bias pulses to reconfigure in-plane superdomains in a (111)-oriented PbZr0.2Ti0.8O3 film and tests mechanisms for directional selection.",
+      "agent_evidence": "A coding agent analyzes prior measurements, learns reusable instrument/analysis checks and controls a subsequent experimental campaign with a human.",
+      "object_evidence": "Ferroelectric domain reconfiguration and polarization in a concrete PbZr0.2Ti0.8O3 thin film.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.03"
+      ],
+      "primary_module": "04.03",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata (2026-09-07)",
+        "Sibling expansion from Slautin et al. hierarchical scanning-probe agent (2026-09-03)"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Check full text for exact campaign autonomy and amount of direct agent-controlled writing/measurement."
+    },
+    {
+      "title": "Crystal-structure design by agentic AI in a language of motifs",
+      "authors": [
+        "Dinh-Khiet Le",
+        "Minh-Quyet Ha",
+        "Hong-Phuc Vu-Dinh",
+        "Viet-Cuong Nguyen",
+        "Huan Tran"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.15900",
+      "doi": null,
+      "arxiv_id": "2608.15900",
+      "first_public_date": "2026-08-16",
+      "publication_date": null,
+      "abstract": "MatEvolve lets an agent edit interpretable crystal motif profiles with explicit rationales, construct the resulting crystals and validate promising candidates by first-principles calculations. It designs rare-earth-lean permanent-magnet compounds and reports novel metastable prototypes and magnets.",
+      "agent_evidence": "Agent iteratively modifies a structured design representation, constructs candidates and uses first-principles calculations for validation.",
+      "object_evidence": "Crystal structures and rare-earth-lean permanent-magnet compounds.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02",
+        "04.04"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata (2026-08-16)",
+        "MatEvolve framework and magnet case in abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Full text should clarify number and breadth of material systems supporting 04.04."
+    },
+    {
+      "title": "LATHE: Language-driven Toolkit for Hypothesis-based Crystal Editing",
+      "authors": [
+        "Qianyu Zheng",
+        "Shuyi Jia",
+        "Victor Fung"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.02671",
+      "doi": null,
+      "arxiv_id": "2610.02671",
+      "first_public_date": "2026-10-02",
+      "publication_date": null,
+      "abstract": "LATHE exposes differentiable crystal-geometry edits through an MCP server in a closed-loop multi-agent system that translates hypotheses into constrained structural changes. It benchmarks seven property classes and reports natural-language hypothesis execution and near-perfect constraint satisfaction; example design tasks include band-gap objectives.",
+      "agent_evidence": "MCP tool use, multi-agent hypothesis translation, iterative structure editing and validation provide multi-step autonomous design behavior.",
+      "object_evidence": "Concrete crystal structures and material design properties including lattice and band gap.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02",
+        "04.04"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata (2026-10-02)",
+        "LATHE MCP interface and design benchmarks in abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Check which benchmark or design tasks provide concrete material results for possible 04.04 assignment."
+    },
+    {
+      "title": "Enabling large language model agents for high-fidelity many-body perturbation theory calculations",
+      "authors": [
+        "Benran Zhang",
+        "Byeongchan Lee",
+        "Zien Zhu",
+        "Chih-En Hsu",
+        "Zhenfa Zheng"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.20779",
+      "doi": null,
+      "arxiv_id": "2610.20779",
+      "first_public_date": "2026-10-14",
+      "publication_date": null,
+      "abstract": "Evaluates LLM agents on multi-stage GW, GW-BSE and GWPT workflow benchmarks, then develops AI-Donkey, combining expert-curated knowledge with deterministic execution to enable high-fidelity calculations and analysis of materials excited-state properties.",
+      "agent_evidence": "Agents use software tools for complex, interdependent multi-stage calculations; framework provides knowledge, consistency checks and deterministic execution.",
+      "object_evidence": "Many-body perturbation theory and excited-state/electron interaction calculations for materials.",
+      "modules": [
+        "04",
+        "02"
+      ],
+      "codes": [
+        "04.01",
+        "04.04",
+        "02.02"
+      ],
+      "primary_module": "04.04",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata (2026-10-14)",
+        "AI-Donkey calculation workflow and benchmarks in official abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "The full abstract mentions multiple material examples; confirm exact object coverage and whether 02 physics module is warranted in full text."
+    },
+    {
+      "title": "SciKGExtract: Agentic schema-guided extraction of materials process knowledge from scientific literature",
+      "authors": [
+        "Sameer Sadruddin",
+        "Jennifer D'Souza"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.06322",
+      "doi": null,
+      "arxiv_id": "2610.06322",
+      "first_public_date": "2026-10-05",
+      "publication_date": null,
+      "abstract": "A schema-guided framework combines LLM extraction, chemical normalization, and agent-based evaluation/refinement before integrating materials process knowledge into a graph. It evaluates 176 ALD papers on ZnO and IGZO and reports improvements in extraction F1 from agentic refinement.",
+      "agent_evidence": "Agent evaluation and refinement iteratively correct extracted scientific measurements and process descriptions before knowledge-graph integration.",
+      "object_evidence": "ALD synthesis procedures and measurements for ZnO and indium-gallium-zinc oxide.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02",
+        "04.04"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata (2026-10-05)",
+        "176-paper ALD benchmark described in abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Review whether the study contributes to materials process research itself or primarily builds scientific-information infrastructure."
+    },
+    {
+      "title": "Scaling LLM Agents for Materials Design through Hierarchical Collective Reasoning",
+      "authors": [
+        "Jaehwan Choi",
+        "Yousung Jung"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.16466",
+      "doi": null,
+      "arxiv_id": "2609.16466",
+      "first_public_date": "2026-09-15",
+      "publication_date": null,
+      "abstract": "HiMatGen coordinates 100 investigators in discussion pods across ten scientific domains with tool-enabled representatives that investigate proposals, exchange evidence and revise crystal designs. Across six chemical systems it produces more final and stable/novel candidates than single-agent and generative-model comparisons.",
+      "agent_evidence": "Hierarchical multi-agent tool use, division of labor, evidence exchange, disagreement resolution and iterative design revision.",
+      "object_evidence": "Crystal and chemical-system design with stability, novelty and functional-property constraints.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.02"
+      ],
+      "primary_module": "04.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata (2026-09-15)",
+        "HiMatGen evaluations on six systems described in official abstract"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Full text needed to identify named crystal/material systems and any energy/electronic object coverage."
+    },
+    {
+      "title": "Agentic self-driving microscopy benchmarks support qualification but do not necessarily generalize to unseen tasks",
+      "authors": [
+        "Nathan S. Johnson",
+        "Ian Abshire"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.05266",
+      "doi": null,
+      "arxiv_id": "2608.05266",
+      "first_public_date": "2026-08-05",
+      "publication_date": null,
+      "abstract": "Develops a benchmark and trace-logging framework for microscopy agents, comparing agent topologies, LLMs, RAG and operational constraints over 53 microscopy tests, 105 configurations and 1,949 runs. It studies the limits of benchmark prediction on unseen tasks.",
+      "agent_evidence": "Explicit one-, two- and three-agent microscopy controllers are evaluated on repeated tool-mediated scientific tasks.",
+      "object_evidence": "Microscopy characterization tasks; specific material systems are not identified in the abstract.",
+      "modules": [
+        "04"
+      ],
+      "codes": [
+        "04.01"
+      ],
+      "primary_module": "04.01",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "arXiv v1 abstract/submission metadata (2026-08-05)"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Verify whether benchmark tasks involve concrete materials objects; otherwise it may be a general tool benchmark."
+    },
+    {
+      "title": "Science Done on a Machine by a Machine: AI Agents in Computational Chemistry",
+      "authors": [
+        "Pavlo O. Dral",
+        "Hassan Nawaz",
+        "Arif Ullah"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint (survey/perspective)",
+      "url": "https://arxiv.org/abs/2608.18508",
+      "doi": null,
+      "arxiv_id": "2608.18508",
+      "first_public_date": "2026-08-19",
+      "publication_date": null,
+      "abstract": "A survey of computational-chemistry agent systems, arguing that delegation is moving from single calculations to in-silico experiments and manuscript writing. It proposes reporting standards, study-reproduction evaluation, comparisons with general coding agents and teaching recommendations.",
+      "agent_evidence": "Reviews and discusses external chemistry agents but does not itself report an implemented multi-step scientific Agent performing research actions.",
+      "object_evidence": "Computational chemistry is the application domain discussed; this is a survey rather than a chemistry-object experiment or agent evaluation study.",
+      "modules": [],
+      "codes": [],
+      "primary_module": null,
+      "suggested_status": "background_only",
+      "source_trail": [
+        "Official arXiv abstract/submission metadata, v1 first public 2026-08-19; updated 2026-10-05",
+        "Handoff from october_round2_A_general.json arxiv_screening"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Use as a citation-discovery and scope source; reconsider only if full text contains original agent evaluation beyond the abstract."
+    },
+    {
+      "title": "Stress-testing large language model agents in a robotic chemistry laboratory",
+      "authors": [
+        "Lulu Guo",
+        "Yingkai Sun",
+        "Xiaobo Li",
+        "Luyao Ge",
+        "Ziming Wang",
+        "Haitao Zheng",
+        "Jingyu Li",
+        "Huijuan Zhang",
+        "Bingxu Chen",
+        "Daobin Liu",
+        "Yuebo Liu",
+        "Jie Li",
+        "Xiaohui Li",
+        "Linjiang Chen",
+        "Yi Luo",
+        "Jun Jiang"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2607.23045",
+      "doi": null,
+      "arxiv_id": "2607.23045",
+      "first_public_date": "2026-07-25",
+      "publication_date": null,
+      "abstract": "Uses a robotic chemistry laboratory as a physical testbed for scientific agency. Forty-five modular workstations are exposed as machine-readable skills across 4,608 trials. Only 3.3% of trials yielded expert-assessed executable workflows; the paper measures operation length, adaptation to experimental feedback and lack of workflow-level replanning across five rounds.",
+      "agent_evidence": "Directly tests LLM agents generating multi-operation executable laboratory workflows, acting on tool skills and adapting to experimental evidence; scientific-action reliability is the explicit research goal.",
+      "object_evidence": "Robotic chemistry laboratory actions and experimental workflow execution; the abstract does not specify reaction or material systems, so classify by chemistry methods/laboratory experimentation rather than a narrower reaction object.",
+      "modules": [
+        "03"
+      ],
+      "codes": [
+        "03.01"
+      ],
+      "primary_module": "03.01",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Official arXiv abstract/submission metadata, first public 2026-07-25",
+        "Handoff from october_round2_A_general.json arxiv_screening"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Full text should identify benchmark chemical protocols and determine if 03.03 synthesis/reaction coverage is supported in addition to 03.01 methods."
+    },
+    {
+      "title": "AI for Science with GPT-6 Astra: Thermal Design and Electrothermal Analysis of 2D CFET",
+      "authors": [
+        "Min-Hui Kim",
+        "Khushi Sharma",
+        "Sarah Zhang",
+        "Ye Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.17123",
+      "doi": null,
+      "arxiv_id": "2609.17123",
+      "first_public_date": "2026-09-15",
+      "publication_date": null,
+      "abstract": "An AI-agent workflow proposes source-interconnect and substrate heat-removal geometries for a 2D CFET inverter, tests them using a supplied electrothermal model and evaluates temperature gains against electrical costs. It reports a 1.67 K reduction under fixed metal-volume and power constraints, sensitivity analysis, and diagnosis of a failed reproduction.",
+      "agent_evidence": "The workflow uses a design agent and coordinating agent to propose structures, run constrained model evaluations, quantify trade-offs and diagnose reproduction discrepancies.",
+      "object_evidence": "Two-dimensional CFET semiconductor device and inverter electrothermal design. Results support materials/device-science and electronics-engineering coverage.",
+      "modules": [
+        "04",
+        "09"
+      ],
+      "codes": [
+        "04.04.04",
+        "09.03.05",
+        "09.08.02"
+      ],
+      "primary_module": "09.08.02",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Official arXiv abstract/submission metadata, first public 2026-09-15",
+        "Handoff from october_round2_A_general.json arxiv_screening"
+      ],
+      "source_level": "first_hand_arxiv_abstract",
+      "uncertainties": "Full text should verify whether the 2D semiconductor material is a research object beyond device-design modeling; 09 semiconductor-device engineering is the direct assignment, with 04.04.04 as supported cross-module coverage."
+    }
+  ],
+  "search_log": [
+    {
+      "source": "922-record project baseline and previous October 50-record tranche",
+      "method": "Deduplicated by DOI, arXiv ID and normalized title against Data/papers.jsonl and october_search_B_chem_materials.json before recording new items.",
+      "rawhits": 972,
+      "duplicates": 0,
+      "new_records": 31,
+      "failures": []
+    },
+    {
+      "source": "Nature / Science family and relevant journal Crossref harvests",
+      "method": "Screened the main controller source harvests (170 initial raw discoveries and 313 expanded title-matched records); followed high-priority DOI records to publisher abstracts, checked authors, dates, DOI and object-level results.",
+      "rawhits": 483,
+      "duplicates": 0,
+      "new_records": 9,
+      "failures": [
+        "RSC article HTML returned HTTP 403; used Crossref abstract and review metadata, leaving publication date uncertain for ChemGraph-XANES.",
+        "Some Elsevier publisher abstracts were not recovered, so nanocluster and alloy papers remain needs_review."
+      ]
+    },
+    {
+      "source": "arXiv category and query searches",
+      "method": "Searched chemistry, materials science, self-driving laboratory, autonomous exploration, XRD and microscopy entry points. Three successful category/query responses returned 231 entries in total (100 + 100 + 31); screened recent records from 2026-07-08 onward.",
+      "rawhits": 231,
+      "duplicates": 0,
+      "new_records": 22,
+      "failures": [
+        "Additional arXiv API queries returned intermittent 429 or empty responses."
+      ]
+    },
+    {
+      "source": "arXiv official abstract-page verification",
+      "method": "Fetched and checked title, authors, submission date and abstract on 25 targeted official /abs/ pages; expanded from system, author and measurement-platform siblings.",
+      "rawhits": 25,
+      "duplicates": 0,
+      "new_records": 22,
+      "failures": [
+        "No full PDFs were downloaded in this search pass; records remain abstract-level pending follow-up."
+      ]
+    },
+    {
+      "source": "cross-source/dataset duplicate audit",
+      "method": "Checked all 31 new records against all 922 baseline records, the earlier ASD-0873 to ASD-0922 tranche, and each other by DOI, arXiv ID and normalized title.",
+      "rawhits": 31,
+      "duplicates": 0,
+      "new_records": 31,
+      "failures": []
+    },
+    {
+      "source": "A-group official arXiv domain handoff",
+      "method": "Screened three supplied official arXiv abstracts, then deduplicated each by arXiv ID against the 922-record baseline, previous B round, and current B output.",
+      "rawhits": 3,
+      "duplicates": 0,
+      "new_records": 3,
+      "failures": []
+    }
+  ],
+  "limitations": {
+    "date_scope": "Main window 2026-08-01 through 2026-10-22; backfill 2026-07-08 through 2026-07-31 separately flagged in candidate source_trail.",
+    "counts": {
+      "baseline_records_checked": 922,
+      "previous_round_ids_checked": "ASD-0873-ASD-0922",
+      "raw_crossref_records": 483,
+      "raw_arxiv_query_entries": 231,
+      "targeted_arxiv_abstract_pages": 25,
+      "new_records": 34,
+      "candidate": 23,
+      "needs_review": 9,
+      "background_only": 2,
+      "duplicates": 0
+    },
+    "screening_boundary": "Agent inclusion requires a scientific goal, multi-step action, at least one Agent capability and a research-workflow role. Conventional optimization without explicit planning/tool/feedback evidence remains needs_review.",
+    "source_limitations": "Search API responses were noisy and some endpoints were rate-limited. Broad publisher harvest entries are raw discovery leads, not all eligible papers. Exact first-public date is unresolved for ChemGraph-XANES; two Elsevier records lack abstracts; no full-text review was performed."
+  }
+}

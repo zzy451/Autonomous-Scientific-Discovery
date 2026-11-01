@@ -1,0 +1,1308 @@
+{
+  "scope": "Search D: formal mathematics and physical sciences Agent papers. General scientific coding/tooling goes to Search A. Main window 2026-08-01 through 2026-10-22; July 8-31 remains gap-fill only.",
+  "baseline": {
+    "Data/papers.jsonl_rows": 922,
+    "arxiv_ids_in_baseline": 425,
+    "prior_controller_candidates": 50,
+    "prior_controller_candidates_included_in_baseline_rows": "yes; the latest ASD-0873?ASD-0922 are within the 922 rows",
+    "search_dedup_raw_API_rows": 1984,
+    "unique_ids_in_API_rows": 1977,
+    "known_against_baseline": 3,
+    "new_ids_against_baseline": 1974,
+    "note": "Date-filtered API queries overlap; use per-query unique/known/new values in searches. Search API math query is partial after HTTP 429."
+  },
+  "searches": [
+    {
+      "database": "arXiv Atom API",
+      "query_group": "physics_astronomy_quantum",
+      "query": "(cat:astro-ph.* OR cat:physics.* OR cat:quant-ph OR cat:nucl-ex OR cat:nucl-th OR cat:hep-ex OR cat:hep-lat OR cat:hep-ph OR cat:hep-th) AND (all:agent OR all:agentic OR all:autonomous) AND submittedDate:[202608010000 TO 202610222359]",
+      "totalResults": 384,
+      "raw_records_returned": 384,
+      "pages": 2,
+      "failed": [],
+      "unique_arxiv_ids_returned": 384,
+      "known_against_922_baseline": 3,
+      "new_against_922_baseline": 381
+    },
+    {
+      "database": "arXiv Atom API",
+      "query_group": "math_agent_terms",
+      "query": "cat:math.* AND (all:agent OR all:agentic OR all:theorem OR all:proof) AND submittedDate:[202608010000 TO 202610222359]",
+      "totalResults": 6530,
+      "raw_records_returned": 1600,
+      "pages": 8,
+      "failed": [
+        "HTTP 429: "
+      ],
+      "unique_arxiv_ids_returned": 1600,
+      "known_against_922_baseline": 0,
+      "new_against_922_baseline": 1600
+    },
+    {
+      "database": "arXiv official search website (secondary query)",
+      "query": "scientific discovery agent",
+      "reported_totalResults": 678,
+      "page_size": 50,
+      "pages_fetched": 1,
+      "raw_records_returned": 50,
+      "unique_ids": 50,
+      "known_against_922_baseline": 1,
+      "new_ids": 49,
+      "coverage": "first page only; not exhaustive; used to seed related-case discovery"
+    }
+  ],
+  "citation_expansion": [
+    {
+      "seed_arxiv_id": "2610.18938",
+      "seed_title": "Beyond Equation Search: Conjecture-Guided Discovery with SCOPE and ClosureBench",
+      "source": "https://arxiv.org/html/2610.18938",
+      "expansion_route": "first-hand reference list, then exact arXiv identifier checks",
+      "references_checked": [
+        "2606.25039 LLM-aces: closed-loop discovery of dynamical systems with LLM-guided adaptive search",
+        "2605.24043 LLM-Autoscilab: closed-loop scientific discovery via active experimentation with LLMs",
+        "2305.01582 PySR / symbolic regression"
+      ],
+      "result": "the cited LLM-aces/LLM-Autoscilab preprints predate the August window; no newly in-window source found from this citation branch."
+    },
+    {
+      "seed_arxiv_id": "2610.02417",
+      "seed_title": "The AI Theorist reveals excitonic structure in alpha-RuCl3",
+      "source": "https://arxiv.org/html/2610.02417",
+      "expansion_route": "first-hand reference list and related autonomous-discovery works",
+      "references_checked": [
+        "Co-Scientist (2026)",
+        "Mathematical discoveries from program search with large language models (2024)",
+        "AI-Descartes (2023)",
+        "Virtual Biotech (2026)",
+        "A multi-agent system for automating scientific discovery (2026)"
+      ],
+      "result": "these references are older or general neighboring systems; review only as context. The seed itself is object-specific and remains a candidate."
+    },
+    {
+      "seed_arxiv_id": "2610.08927",
+      "seed_title": "Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station",
+      "source": "https://arxiv.org/html/2610.08927",
+      "expansion_route": "first-hand references and same-author project lineage",
+      "references_checked": [
+        "The Station: An open-world environment for AI-driven discovery, arXiv:2511.06309",
+        "The AI Scientist-v2, arXiv:2504.08066",
+        "Agent Laboratory (2025)",
+        "Co-Scientist (2026)"
+      ],
+      "result": "all located sibling/citation works predate the current window or are already known; Station retained as a needs_review boundary item because tasks are not tied to a specific physical research object."
+    },
+    {
+      "seed_arxiv_id": "2610.19864",
+      "seed_title": "Euler: Towards Human-Centered Multi-Agent Mathematical Discovery",
+      "source": "https://arxiv.org/html/2610.19864",
+      "expansion_route": "first-hand bibliography; same-author code/project sibling",
+      "references_checked": [
+        "Automated Conjecture Resolution with Formal Verification, arXiv:2604.03789",
+        "Euler software snapshot 0.3.0.dev0, same project/revision history"
+      ],
+      "result": "the formal-verification preprint predates the window; the software snapshot is the same system and not a distinct paper. No additional new sibling counted."
+    }
+  ],
+  "candidates": [
+    {
+      "title": "Solver Agent: an Agentic AI Framework for Theoretical Physics Computations Applied to F-theory Uplifts of O3-planes and S-folds",
+      "authors": [
+        "Eliott Morgensztern",
+        "Cesar Fierro Cota",
+        "Alessandro Mininno"
+      ],
+      "publication_date": "2026-09-28",
+      "arxiv_id": "2609.35958",
+      "url": "https://arxiv.org/abs/2609.35958",
+      "primary_category": "hep-th",
+      "abstract_evidence": "We introduce Solver Agent, an AI framework based on large language models for calculations and proofs in mathematics and theoretical physics. The solution process is tracked through a persistent ledger that records assumptions, derivations, and computations. A central agent delegates tasks to specialized sub-agents, while independent agents verify both intermediate steps and the final result. This setup improves the traceability, reproducibility, and verification of computer-assisted calculations. Applying Solver Agent, we study global F-theory uplifts of Type IIB orientifolds and their S-fold generalizations. We establish sufficient conditions for Weierstrass models over projective threefolds with terminal $\\mathbb{Z}_k$ quotient singularities ($k\\in\\{2,3,4,6\\}$) to give $\\mathbb{Q}$-factorial projective elliptically fibered Calabi-Yau fourfolds with isolated Gorenstein terminal quotient singularities. These geometries realize O3-planes and S-folds, where local D3-brane probes of the latter yield four-dimensional $\\mathcal{N}=3$ superconformal field theories. Using stringy invariants, we derive fixed-point contributions to Hodge data and Euler characteristics, and show that these Euler corrections determine the localized D3-brane charges required for tadpole cancellation. We illustrate these results using toric hypersurface constructions, where a single three-dimensional polytope determines both the Type IIB Calabi-Yau threefold and the F-theory base; here, the orientifold double cover naturally forms a bisection of an alternative genus-one-fibered uplift with discrete $\\mathbb{Z}_2$ gauge symmetry. Finally, we provide methods for toric computations and four-form flux analysis in four-dimensional $\\mathcal{N}=1$ compactifications with non-abelian gauge sectors.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agent framework performs specialized theoretical-physics computations for F-theory and S-folds.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "VortexChat: An agentic framework for autonomous multi-objective integrated photonic design",
+      "authors": [
+        "Faqian Chong",
+        "Yulun Wu",
+        "Shilong Li",
+        "Andrew Forbes",
+        "Hongsheng Chen",
+        "Song Han"
+      ],
+      "publication_date": "2026-08-21",
+      "arxiv_id": "2608.20688",
+      "url": "https://arxiv.org/abs/2608.20688",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "The advancement of modern integrated photonics is frequently bottlenecked by device design workflows that rely heavily on manual simulation and expert intuition. While inverse design offers an alternative, it remains constrained by expert supervision and a lack of end-to-end automation. To address these issues, we present VortexChat, an agentic framework for the autonomous, end-to-end inverse design of integrated photonic devices directly from natural language specifications. VortexChat couples a large language model (LLM) decision agent with topology generation, gradient-based refinement, and full-wave electromagnetic simulation. This closed-loop architecture enables the system to iteratively decompose design objectives, orchestrate computational tools, and update strategies based on feedback with minimal human intervention. Constrained by the absolute metrics of the Vortex100 Benchmark, VortexChat autonomously generates devices that strictly meet all predefined performance thresholds without any human-in-the-loop. As an experimental demonstration, we fabricated a broadband terahertz perfect vortex beam multiplexer, autonomously designed by VortexChat, with measurements confirming high-efficiency operation, high mode purity and low inter-channel crosstalk in agreement with full-wave simulations. These results demonstrate that an LLM agent can assume key aspects of expert decision-making in photonic inverse design while maintaining physical fidelity and fabrication feasibility, providing a scalable route towards autonomous design of complex integrated photonic systems.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agentic multi-objective design targets integrated photonic devices.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "CFD Forge: A Physics-Constrained Agentic Framework for Autonomous CFD",
+      "authors": [
+        "Aakash Shailesh Oza",
+        "Ryan F. Johnson",
+        "Amir Barati Farimani"
+      ],
+      "publication_date": "2026-10-08",
+      "arxiv_id": "2610.14104",
+      "url": "https://arxiv.org/abs/2610.14104",
+      "primary_category": "physics.flu-dyn",
+      "abstract_evidence": "Setting up, running, and assessing a computational fluid dynamics (CFD) simulation requires substantial manual effort, from meshing and solver setup to diagnosis and interpretation, and repeating it across design variants slows engineering iteration. We present CFD Forge, an agentic framework built around OpenFOAM that carries an engineering request through case construction, meshing, solver execution, diagnostics, and reporting. A large language model interprets the request, reads the simulation evidence, identifies likely causes of problems, and proposes actions from a closed set. Automation is only useful if its results can be trusted, so acceptance is not left to the model: deterministic checks, registered for each type of flow, measure explicit criteria and decide. We demonstrate the framework on a converging-diverging nozzle and a two-dimensional forward-facing step, including geometry and operating changes requested in text. A turbulent cube, run outside the agent loop, shows why the checks matter: the solver completed and the mean drag settled, but the lateral-force oscillations were still growing, so a retrospective assessment withheld acceptance. To test this separation, we replayed 36 recorded simulation states, some with deliberately altered diagnostics, through the same model in two setups. Judging from the evidence without the check results, the model accepted 12 of the 13 detectable faults in all three repeats; with CFD Forge's checks deciding, none was accepted. The two setups also differ in prompting, and a fixed rule reached the same verdicts, so the model's value lies in the open-ended work rather than the verdict. Case files, recorded model calls, and decisions are retained for audit. A model that does the work, paired with checks that decide what is",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Physics-constrained Agentic workflow carries out autonomous computational fluid dynamics.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "AI Agents as a Research Team: A Human-Supervised Case Study in Stellar Spectroscopy",
+      "authors": [
+        "Marwan Gebran",
+        "Ian Bentley"
+      ],
+      "publication_date": "2026-10-04",
+      "arxiv_id": "2610.05424",
+      "url": "https://arxiv.org/abs/2610.05424",
+      "primary_category": "astro-ph.SR",
+      "abstract_evidence": "We present a qualitative case study of a human-supervised team of specialized AI agents supporting an astronomy research project. The Bot Spectroscopist team, described in the project record as operating through Grok Bot powered by xAI Grok, divided work among orchestration, numerical implementation, data curation, spectroscopy critique, literature search, figure preparation, manuscript editing, and review. Human decisions determined scientific scope, model changes, and manuscript inclusion. The scientific application is CondGen, a deterministic label-to-spectrum network extending our previous work to five individual elemental abundances. The reported baseline assessment achieved a mean absolute error (MAE) of 0.003681 in continuum-normalized flux on 21,657 synthetic test spectra. Existing binned diagnostics show that reconstruction error varies with effective temperature and abundance. The bots also flagged a non-monotonic cool-star magnesium response for further investigation; a matched SYNSPEC abundance sweep is needed to assess its physical fidelity. Building on a pre-existing spectral database, notebooks, and research program, the authors estimate that the reported analysis, diagnostics, figure preparation, and initial manuscript drafting were assembled in less than a week through human prompting and exchanges among agents. No comparison with a human team starting from the same resources was performed, so this elapsed-time account does not establish a productivity or labor saving. The study illustrates task delegation, artifact exchange, critique, and correction under human supervision.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02.01"
+      ],
+      "rationale": "Multi-Agent research team conducts stellar spectroscopy as a concrete astrophysical research task.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "OPERA: Operator-residual feedback for reliable autonomous optical experiments with language-model agents",
+      "authors": [
+        "Ning Xu",
+        "Xiang Zheng",
+        "Fuqiang Zhong",
+        "Huadong Wang",
+        "Xiaolong Wu",
+        "Zhiyuan Liu",
+        "Hui Ning"
+      ],
+      "publication_date": "2026-08-06",
+      "arxiv_id": "2608.05990",
+      "url": "https://arxiv.org/abs/2608.05990",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "Autonomous agents choose actions using scores that may not reflect experimental success. We developed OPERA, an operator-residual framework for optical experiments. It represents experimental actions as optical operators and evaluates their outcomes using physically interpretable residuals. Operators specify executable changes to measurement, control or reconstruction, while residuals report departures from specified physical conditions. The agent uses both to select, combine or generate operators, and physical performance is evaluated independently against a withheld reference. Across three optical tasks, score-only feedback produced score increases without physical improvement in 23.6--39.0\\% of decisions, compared with 0.9--1.9\\% for operator-residual feedback. Operator-residual feedback increased the probability of reaching and maintaining task targets and reduced experimental budgets. Protocols selected in digital twins were transferred to three optical instruments, and repeated experiments showed a lower projection budget in structured-light reconstruction. Together, operators and residuals guide autonomous decisions using measurable physical evidence.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Language-model agents run optical experiments with operator-residual feedback.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Photonics-GCCE: group collaborative-competitive evolution multi-agent framework for universal and autonomous optical design",
+      "authors": [
+        "Weijie Xu",
+        "Ming Wang",
+        "Ruicheng Ma",
+        "Zeyong Wei",
+        "Di Zhang",
+        "Jian Chen",
+        "Zining Wang",
+        "Sijun Hu",
+        "Linyuan Dou",
+        "Haoyu Li",
+        "Haigang Liang",
+        "Yijie Luo",
+        "Shuqiao Li",
+        "Qinghua Song",
+        "Huihui Zhu",
+        "Hongfei Jiao",
+        "Chao Liu",
+        "Ali Momeni",
+        "Zhanshan Wang",
+        "Yuzhi Shi",
+        "Romain Fleury",
+        "Cheng-Wei Qiu",
+        "Xinbin Cheng"
+      ],
+      "publication_date": "2026-09-23",
+      "arxiv_id": "2609.28045",
+      "url": "https://arxiv.org/abs/2609.28045",
+      "primary_category": "physics.optics",
+      "abstract_evidence": "Large language model (LLM)-empowered photonic agents connect natural-language intents to executable solvers, showing significant advantages over conventional optical design approaches. However, current multi-agent frameworks operate within a collaborative paradigm without extrinsic selective pressure, which could inherit shared blind spots, converge prematurely, and fail to accumulate transferable experience for intricate tasks. Here, we introduce a group photonics collaboration-compete evolution (GCCE) framework and its LLM instantiation, termed Photonics-GCCE. Two independent agent groups pursue the same design target and undergo structured competitive evaluation across refractive-index fidelity, fabrication sensitivity, algorithmic adequacy, and physical consistency. Each group comprises a leader and three specialist agents dedicated to materials, optimization, and code validation. Agents refine their skills through competitive evaluation across design rounds. Benchmarking across six device categories against single-agent and multi-agent baselines shows that Photonics-GCCE elevates composite scores into the high 90s, improves fabrication robustness by 15 to 17 points, and reduces solver iterations to roughly 40 rounds. A representative quasi?BIC demonstration achieves a practically fabricable design with a quality factor of 13120. Our results demonstrate Photonics-GCCE as a general-purpose and closed-loop framework for autonomous optical design, capable of producing high-performance, fabrication-ready devices across diverse nanophotonic tasks.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Multi-Agent collaborative-competitive optical design targets photonics.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "El Agente Potente: High-Throughput Agentic Atomistic Simulations",
+      "authors": [
+        "Tsz Wai Ko",
+        "Jiaru Bai",
+        "Thomas Swanick",
+        "Yeonghun Kang",
+        "Changhyeok Choi",
+        "Angelina Qihong Jiang",
+        "Aiwei Yin",
+        "Varinia Bernales",
+        "Alán Aspuru-Guzik"
+      ],
+      "publication_date": "2026-09-13",
+      "arxiv_id": "2609.14840",
+      "url": "https://arxiv.org/abs/2609.14840",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "Foundational machine-learning interatomic potentials (MLIPs) are transforming atomistic simulations by achieving near-ab initio accuracy across large chemical spaces at a fraction of the computational cost. A central challenge in using these tools for high-throughput property calculations is translating high-level scientific intent into adaptive simulation campaigns without compromising workflow rigour. We introduce El Agente Potente, an agentic system that combines typed execution graphs with a complementary coding mode for MLIPs-driven atomistic simulations. Typed execution graphs provide structured and provenance-aware execution for standardized workflows, with large language models (LLMs) restricted to planning and routing while deterministic Python components perform scientific computation and validation. Complementing this structured execution, a coding agent constructs customized workflows for tasks requiring greater procedural flexibility while invoking existing Potente functions for supported calculations. We demonstrate El Agente Potente across computational materials discovery, molecular energy-landscape exploration, adsorption, and catalytic reaction workflows, together with systematic benchmarks of reproducibility and LLM token cost. These results establish typed execution graphs and code-based workflow construction as complementary mechanisms for agentic scientific computing, combining controlled, auditable execution with the flexibility required for customized atomistic simulations",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "04",
+        "02"
+      ],
+      "rationale": "Agentic high-throughput atomistic simulation; material systems are primary and physical modeling is secondary.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "HALO: A Physics-Aware LLM Agent Framework for Nanophotonic Design",
+      "authors": [
+        "Yubo Zhang",
+        "Jinlin Xiang",
+        "Zijun Zhao",
+        "Yang Zhao",
+        "Eli Shlizerman",
+        "Arka Majumdar"
+      ],
+      "publication_date": "2026-08-28",
+      "arxiv_id": "2608.28877",
+      "url": "https://arxiv.org/abs/2608.28877",
+      "primary_category": "physics.optics",
+      "abstract_evidence": "Language models have recently been applied to nanophotonic design, but it remains unclear whether they can reliably translate optical objectives into simulation-ready designs, execute electromagnetic analysis, and revise decisions from numerical feedback. We introduce HALO, a physics-aware framework that couples language-model planners with typed design specifications, electromagnetic simulation, diagnostic evaluation, and optional reuse of prior failure trajectories in an iterative design loop. We further introduce HALO-Bench, a 52-task benchmark spanning lab-derived, paper-derived, and open-ended nanophotonic design tasks under a shared evaluation protocol. We compare three planner configurations: a Fixed Structured Workflow, an Autonomous Structured Agent using the same simulation interface, and an Autonomous Coding Agent that directly writes and executes simulation code. The Fixed Structured Workflow is the most token-efficient and exhibits no observed code- or path-level failures, while autonomous coding can achieve higher task success with stronger models at the cost of additional operational failures. We also study reuse of prior failed trajectories. On targeted multi-round tasks, retrieved failure feedback reduces both iterations to first success and total token use. These results clarify the tradeoffs between explicit interfaces, autonomous execution, and reusable design experience in scientific agents.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Physics-aware LLM Agent framework targets nanophotonic design.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Agentic AI for Density-Functional Development: Revisiting r2SCAN",
+      "authors": [
+        "Santosh Adhikari",
+        "Kelsey A. Parker",
+        "Etinosa Osaro",
+        "Swagata Roy",
+        "Dario Rocca"
+      ],
+      "publication_date": "2026-09-16",
+      "arxiv_id": "2609.19419",
+      "url": "https://arxiv.org/abs/2609.19419",
+      "primary_category": "physics.chem-ph",
+      "abstract_evidence": "We demonstrate physics-constrained agentic development of a meta-generalized gradient approximation (meta-GGA) functional using a large language model (LLM) to assist the search and optimization of a band-gap-oriented revision of r2SCAN. No real bonded systems were fitted, preserving r2SCAN's nonempirical philosophy. Across the finalist set, band gaps and several molecular subsets improve relative to r2SCAN; the top finalist, r2SCAN+, reduces the band-gap MAE on a benchmark comprising 24 solids from 1.26 to 0.96 eV and the aggregate MAE on 329 molecular properties from 4.79 to 4.42 kcal/mol. We first curated 78 exchange and 90 correlation candidate correction terms from r2SCAN's dimensionless ingredients, spanning polynomial terms through third degree, exponentials, exponentially damped products, and ratios. Allowing each candidate to combine one to three correction terms from the exchange catalog, the correlation catalog, or both yields about 8 x 10^5 distinct forms, making exhaustive high-throughput screening impractical. We defined the search criteria for the LLM agent using r2SCAN's exact constraints, physical norms, and the targeted iso-orbital derivative response. The agent then combined these criteria with its pretrained knowledge and accumulated search feedback to propose and refine sparse forms, prioritizing terms tied to the iso-orbital response; a second LLM critic screened proposals before deterministic verification. Compared with uniform random search, the workflow learned from prior evaluations, incurred far fewer downstream rejections (0.6% versus 24.6%), and located stronger high-response candidates: 51 agentic candidates exceeded the best random-search response of 1.263, with the overall best reaching 1.331. These results show that agentic search can su",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agentic development of a density-functional approximation is a concrete computational-physics research task.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "SolutionsX: supergravity theories/solutions as code, with an agentic workflow for machine-verifiable physics",
+      "authors": [
+        "Vasil Dimitrov"
+      ],
+      "publication_date": "2026-09-07",
+      "arxiv_id": "2609.07826",
+      "url": "https://arxiv.org/abs/2609.07826",
+      "primary_category": "hep-th",
+      "abstract_evidence": "A supergravity solution in the literature is an artifact that cannot be verified without re-deriving it: conventions might not be clearly stated, papers have typos, algebra is tedious. SolutionsX is a Mathematica package that turns an xAct environment, whatever physics it may describe, into a stored, machine-verifiable record: code that replays in a fresh kernel, carries its own verification, and can later be fetched for re-use or extension. The shipped examples are supergravity theories and their solutions, but the scope is anything xAct reaches: abstract tensors, differential forms, spinors in any dimension. We follow one published solution through the entire workflow, benchmark the package's component engine against xAct's, and report on three blind runs of an agentic workflow in which an AI coding agent, given the package and a small toolkit, correctly codified a recent paper in under three hours. A database of such records is useful to researchers today and gives agents worked examples to learn from. The package acts as an internal verifier during the thought process of an agent: a claim is checked in the kernel before it is made.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agentic, machine-verifiable workflow computes supergravity theories and solutions.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Agentic TCAD Calibration Workflow for Oxide Semiconductor Transistors",
+      "authors": [
+        "Gyujun Jeong",
+        "Junmo Lee",
+        "Sungwon Cho",
+        "Woohyun Hwang",
+        "Kwangyou Seo",
+        "Suhwan Lim",
+        "Wanki Kim",
+        "Daewon Ha",
+        "Rishi Ranade",
+        "Kihang Youn",
+        "Ram Cherukuri",
+        "Yiyi Wang",
+        "Asif Khan",
+        "Shimeng Yu"
+      ],
+      "publication_date": "2026-09-10",
+      "arxiv_id": "2609.12184",
+      "url": "https://arxiv.org/abs/2609.12184",
+      "primary_category": "physics.ins-det",
+      "abstract_evidence": "Experimental TCAD calibration is essential for predictive technology modeling of emerging oxide semiconductor transistors. However, it remains time-consuming and expert dependent because of model ambiguity. Multiple physical models and parameter sets can reproduce the same measured transfer characteristics, while local fitting alone cannot uniquely identify the underlying device physics. We present the first demonstration of an agentic TCAD calibration workflow for a fabricated bottom-gate In--W--O (BG-IWO) transistor. Starting from the measured transfer curve and device information, the workflow uses measurement--TCAD residuals and local sensitivity tests to select bounded parameter corrections or evaluate additional physical models, and accept only updates that improve device metrics. The LLM agent orchestrates the workflow, while Sentaurus governs the device physics. For the 2\\%-W reference device, five agent-suggested updates yield a fixed calibrated model, reducing the multi-metric device objective $J$ by 14.3$\\times$. Maximum $V_{\\mathrm{th}}$/$I_{\\mathrm{on}}$ errors are 36.1~mV/0.022 decade for varying-drain-bias tests and 46.2~mV/0.062 decade for varying-channel-length tests, demonstrating model transferability across bias and geometry rather than a local parameter fit. W-composition tests provide process-sensitive insight. This agentic workflow provides a faster route to model development for emerging device technologies.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "04",
+        "02"
+      ],
+      "rationale": "Agentic calibration of semiconductor TCAD models targets oxide semiconductor devices.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Automated Discovery of Physically Interpretable Subgrid Length Scales for Detached Eddy Simulation via Agentic AI",
+      "authors": [
+        "Jiawei Chen",
+        "Xiang I. A. Yang",
+        "Ping He"
+      ],
+      "publication_date": "2026-10-21",
+      "arxiv_id": "2610.29850",
+      "url": "https://arxiv.org/abs/2610.29850",
+      "primary_category": "physics.flu-dyn",
+      "abstract_evidence": "Traditional turbulence-model development relies heavily on expert knowledge and is time-consuming. This study develops an agentic AI framework, DEScover (automated Discovery of DES closures), to explore subgrid length scales for detached eddy simulation (DES). The user provides only a modeling idea: the length scale is the grid width normal to the local vortex axis. Four large language model (LLM) agents then propose, review, implement, and evaluate candidate formulations and generate scripts for CFD simulations. The Discovery Agent infers the vortex axis from various vortex-identification methods. The candidates are tested on four cases spanning canonical and engineering flows: a flat plate, a backward-facing step, a free shear layer, and an iced airfoil. For all test cases, the best candidate consistently outperforms the standard length scale based on the maximum cell size. Its accuracy is similar to, or slightly better than, that of the expert-designed shear-layer-adapted length scale. Each agentic discovery run takes about 25 minutes on average, excluding the CFD simulations. These results show that LLM-based reasoning can significantly accelerate the discovery of physically interpretable turbulence models and reduce reliance on manual expert formulation.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agentic discovery of physically interpretable subgrid scales for detached-eddy simulation.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Demonstration of a Structured Agentic Workflow for Applied Quantum Computing Research",
+      "authors": [
+        "Dikshant Dulal",
+        "Maxence Grandadam",
+        "Maciej Koch-Janusz",
+        "Mykola Maksymenko"
+      ],
+      "publication_date": "2026-10-04",
+      "arxiv_id": "2610.05304",
+      "url": "https://arxiv.org/abs/2610.05304",
+      "primary_category": "quant-ph",
+      "abstract_evidence": "Quantum hardware advances now make it practical to explore quantum approaches to scientific problems. Applied quantum computing research sits at the intersection of domain knowledge, algorithms, theoretical physics, device physics, and quantum and classical computational methods. The breadth of expertise required and the inherent project complexity challenge not only any individual researcher, but also generic AI systems. Here, we introduce the Quantum Agentic Operating System (QAOS), a structured agentic research system designed to address this challenge for quantum and computational R&D projects. QAOS is built around a nonlinear workflow graph of heterogeneous multi-agent nodes, with a controlled flow of context and computational resources. It decomposes a complex research project into sandboxed multi-agent tasks executed under constraints from the project graph, task-relevant methodologies, and necessary verification steps. We demonstrate QAOS on a quantum chemistry prototyping task, in which it is asked to set up a minimal model for a proton-transfer problem and to implement its solution using sample-based quantum diagonalization (SQD), together with classical reference methods such as FCI (exact diagonalization) and density functional theory (DFT). We compare the QAOS solution to those obtained with baseline agents (Claude Sonnet 5 with the Claude Code harness). In contrast to QAOS, the baseline agents silently ignore explicit instructions, and the runs show large variability.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Structured agentic workflow is applied to quantum-computing research.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "LaMET-Agent: An Agent Framework for Large-Momentum Effective Theory Analysis",
+      "authors": [
+        "Jinchen He",
+        "Xiangyu Jiang",
+        "Fei Yao",
+        "Dian-Jun Zhao"
+      ],
+      "publication_date": "2026-09-26",
+      "arxiv_id": "2609.32225",
+      "url": "https://arxiv.org/abs/2609.32225",
+      "primary_category": "hep-lat",
+      "abstract_evidence": "Large-momentum effective theory (LaMET) provides a first-principles framework for computing the $x$ dependence of light-cone parton distributions from lattice QCD. Over the past decade, theoretical and numerical advances have established a mature multi-stage workflow for systematic calculation of parton physics, although its implementation still requires expert judgment and substantial repeated effort. We present lamet-agent, an open-source large language model (LLM) agent framework that organizes this workflow into an executable, reproducible, and inspectable analysis pipeline. The present release supports collinear quark distributions and implements correlator analysis, renormalization, Fourier transformation, perturbative matching, continuum, physical pion mass and infinite-momentum extrapolations, and automated result review. We validate it on four end-to-end analyses: pion parton distribution functions in the gauge-invariant and Coulomb-gauge formulations, and pion and kaon distribution amplitudes, obtaining results consistent with the published calculations. Extensions to transverse-momentum-dependent distributions, generalized transverse-momentum-dependent distributions, and gluonic distribution functions are planned for subsequent releases.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agent framework performs large-momentum effective theory analysis in lattice/high-energy physics.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "SeisEvo: Evolution of Seismic Data Reconstruction Algorithms by Agents",
+      "authors": [
+        "Yingjie Xu",
+        "Siwei Yu",
+        "Jianwei Ma"
+      ],
+      "publication_date": "2026-08-18",
+      "arxiv_id": "2608.18272",
+      "url": "https://arxiv.org/abs/2608.18272",
+      "primary_category": "physics.geo-ph",
+      "abstract_evidence": "Classical seismic data reconstruction relies on manually designed structural priors and iterative operators, whose coupled design space is far larger than manual trial and error can explore systematically. Deep-learning methods encode the reconstruction rules in learned weights rather than in an explicit operator that can be inspected and modified. We propose SeisEvo (Seismic Algorithm Evolution), which does not optimize a single reconstruction result but searches for the algorithm that produces it. Starting from a classical reconstruction algorithm, an LLM-driven multi-agent search modifies only the components that the user has opened for editing, without prescribing the mechanism to be discovered. Candidates that violate the physical constraints of the task are rejected outright, and the remaining ones are scored by execution. The output is neither an agent system nor a neural network, but a standalone white-box algorithm that requires no agent or neural network at inference time. For interpolation without added noise, the search discovered a residual-gated, phase-aligned dip-consistency projection; Evo-POCS improves the SNR over classic POCS by 3.49 dB on average across missing ratios from 30% to 70%. For simultaneous interpolation and denoising, it discovered a reliability-grouped singular-value shrinkage; Evo-MSSA improves the average reconstruction SNR by more than 7 dB over classic MSSA and by more than 3 dB over a stronger rank-reduction baseline. Both operators retain their gains on data not used during the search. To the best of our knowledge, this is the first study to formulate the design of a seismic reconstruction operator as a constrained, LLM-driven program evolution task. Agentic algorithm evolution can thus complement deep learning in discovering expli",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02.01"
+      ],
+      "rationale": "Agents evolve seismic-data reconstruction algorithms for geophysical science.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "CosmoAgent: AI Agent for Theoretical Cosmology",
+      "authors": [
+        "Stephon Alexander",
+        "Loukas Gouskos",
+        "Savvas M. Koushiappas",
+        "Cooper Niu",
+        "Wenrong Sun"
+      ],
+      "publication_date": "2026-10-12",
+      "arxiv_id": "2610.16536",
+      "url": "https://arxiv.org/abs/2610.16536",
+      "primary_category": "astro-ph.CO",
+      "abstract_evidence": "We present CosmoAgent, an agentic AI framework using large language models (LLMs) to search for dark-energy and modified-gravity models. We define a covariant grammar that allows LLM agents to explore the space of modified-gravity Lagrangians. An in-house computational pipeline derives the equations of motion, solves the background dynamics, and evaluates the likelihood using late-time expansion data, including the DES 5-year type Ia supernova sample and the DESI Data Release 2 BAO measurements. Theories are ranked by the Akaike Information Criterion (AIC) to balance simplicity and likelihood. We benchmarked 8 frontier LLMs from ChatGPT, Claude, Gemini, Kimi, DeepSeek, and Qwen, and all LLMs are able to find theories with a lower nominal AIC than flat $Λ$CDM, with a best improvement of $Δ$AIC = -3.328. Seven recover quadratic quintessence. Exploratory searches also return induced-gravity and scalar-Gauss-Bonnet structures. The modest AIC improvements do not establish an observational preference for these models over flat $Λ$CDM. The code is publicly available at wsunamoutlook-prog/AI-Modified-Gravity.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02.01"
+      ],
+      "rationale": "AI Agent addresses theoretical cosmology.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Automated Many-Body Simulations of Strongly Correlated Systems Using a Correlation-Aware Agentic Framework",
+      "authors": [
+        "Tenghui Li",
+        "Chong Sun"
+      ],
+      "publication_date": "2026-10-01",
+      "arxiv_id": "2610.00943",
+      "url": "https://arxiv.org/abs/2610.00943",
+      "primary_category": "physics.comp-ph",
+      "abstract_evidence": "We present CAFES, a correlation-aware agentic framework for electronic-structure simulations of strongly correlated systems. CAFES addresses two challenges: the fragmented software landscape for many-body calculations and the difficulty of selecting appropriate methods across diverse correlation regimes. It combines correlation diagnostics, adaptive method selection, and large language model (LLM) assistance for molecular, crystalline, and model-Hamiltonian systems. A study-task architecture separates study-level planning from task-level execution, while a curated scientific knowledge layer provides reusable guidance for method selection, workflow design, and result interpretation. We demonstrate CAFES through three research-level studies: calculating the low-lying electronic states of lutein using DMRG-CASSCF, probing phase competition in the extended honeycomb Hubbard model using DMET, and generating a quantum-chemical dataset with CCSD labels. These calculations demonstrate the potential of agentic workflows for strongly correlated electronic-structure problems, a regime that has received limited attention in existing agentic computational frameworks.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agentic framework automates many-body simulations of strongly correlated systems.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "AstroGenesis: A Domain-Specific Multi-Agent AI for Astrophysical Research",
+      "authors": [
+        "N. Sahakyan",
+        "M. Khachatryan",
+        "A. Mahabal",
+        "D. Pasham",
+        "A. Khachatryan",
+        "V. Markosyan",
+        "N. Unkovskii",
+        "V. Vardanyan",
+        "D. Bégué",
+        "P. Giommi",
+        "G. Harutyunyan",
+        "D. Israyelyan",
+        "A. Tramacere",
+        "A. Casotto",
+        "Y. Wang",
+        "D. Li"
+      ],
+      "publication_date": "2026-09-23",
+      "arxiv_id": "2609.28579",
+      "url": "https://arxiv.org/abs/2609.28579",
+      "primary_category": "astro-ph.IM",
+      "abstract_evidence": "Modern astrophysical research requires the integration of rapidly expanding scientific literature, heterogeneous observational data, and increasingly complex physical models. We introduce AstroGenesis (https://astrogenai.com), a domain-specific multi-agent AI framework that integrates literature retrieval, multiwavelength data access and analysis, theoretical modeling, and research ideation within a unified research environment.The current implementation focuses on blazar research, with specialized agents coordinated by a Supervisor Agent and Planner/Replanner architecture. These agents provide capabilities for retrieving and synthesizing literature, accessing and analyzing multiwavelength observations, performing physical modeling, and identifying research directions. A central component is the Theoretical Modeling Agent, which uses pretrained neural-network surrogate models to enable efficient broadband and multimessenger modeling through natural-language interaction. The framework provides natural-language access to science-ready multiwavelength observational data and retrieval-grounded literature through a multi-stage retrieval and ranking pipeline. The literature-retrieval system was evaluated using two benchmarks: a single-paper benchmark, in which each question targets one publication, and a multi-paper benchmark, in which questions may require evidence from several publications. At least one relevant publication was retrieved among the top five results for 76.6% of the single-paper questions and 79.2% of the multi-paper questions. Representative workflows demonstrate how literature, observational data, physical modeling, and hypothesis generation can be combined within traceable analyses. The framework is extensible to additional astrophysical domains, with the ",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02.01"
+      ],
+      "rationale": "Domain-specific Multi-Agent system for astrophysical research.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Agentic AI for operating scientific instruments for nanoscale characterization",
+      "authors": [
+        "Zahra Ayar",
+        "Marcos Penedo",
+        "Mahdi Mehdikhani",
+        "Nahid Hosseini",
+        "Prabhu Prasad Swain",
+        "Georg E. Fantner"
+      ],
+      "publication_date": "2026-08-25",
+      "arxiv_id": "2608.26198",
+      "url": "https://arxiv.org/abs/2608.26198",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "Operating a scientific instrument such as an atomic force microscope (AFM) requires continuous expert decision-making. A trained user defines the experimental intent, translates it into instrument commands, assesses incoming data, adjusts imaging parameters, and post-processes the final image. Existing automation usually addresses only parts of this workflow through hard-coded routines, task-specific controllers, or trained machine-learning models. Here we present an agentic-AI framework that operates the executable part of the AFM workflow using a general-purpose, tool-augmented large language model connected to instrument functions through the Model Context Protocol (MCP). The framework consists of 3 MCP-based agents: AFM Messenger converts natural-language instructions into checked instrument commands; AFM Pilot assesses image quality through a large language model (LLM) and, if necessary, adapts imaging parameters; and AFM Doctor diagnoses image artifacts and applies transparent post-processing from a pre-approved tool set. Because the language model performs image assessment rather than a fixed scalar objective or external optimizer, the same strategy can be applied across sample types and imaging modes without specific retraining. Safe hardware operation is enforced through an ambiguity check layer before execution. Benchmarking against fine-tuned and off-the-shelf tool-using models shows that this guarded execution layer, rather than model capability alone, reduces wrong-command execution to zero. In live experiments on different samples, AFM Pilot matched expert operators in image quality, iteration count, and tuning time, with no significant difference. These results demonstrate a safe route to agentic operation of scientific instruments, where experimental int",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agentic operation of scientific instruments for nanoscale characterization.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Vision-Language Agents for Active Perception in Optics Laboratories",
+      "authors": [
+        "Ryan Lopez",
+        "Sachin Vaidya",
+        "Seou Choi",
+        "Serena Landers",
+        "Marin Soljačić"
+      ],
+      "publication_date": "2026-09-26",
+      "arxiv_id": "2609.32918",
+      "url": "https://arxiv.org/abs/2609.32918",
+      "primary_category": "physics.optics",
+      "abstract_evidence": "Vision-language models (VLMs) are increasingly being used in scientific workflows, but their ability as agents to directly control laboratory experiments from visual feedback remains underexplored. This capability is important because many laboratory tasks do not naturally provide dense, pre-defined numerical objectives: informative signals can be sparse, intermittent, or visually ambiguous. A more general laboratory agent should instead be able to interpret visual observations, take actions to acquire useful feedback, and adapt its behavior based on the consequences of those actions. We study whether general-purpose VLMs can perform this kind of closed-loop scientific control using experimental optics as a testbed. We evaluate agents on three experimental systems that isolate distinct capabilities: a Michelson interferometer, a two-mirror cavity, and a four-mirror optical relay. The agents observe camera images, directly issue actuator and measurement commands, and retain their interaction history without receiving an engineered scalar objective during control. Across these experiments and matched simulations, we find that, given task-specific natural-language guidance, VLMs can estimate actuator-response relationships, resolve ambiguous observations through intervention, and actively create informative visual feedback when signals are sparse. These results suggest that pretrained multimodal models can serve as important decision-making agents within the experimental loop. Our work also establishes optics as a physically grounded testbed for visual reasoning and active perception in scientific agents.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Vision-language agents perform active perception in optics laboratories.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "OceanMind: A multi-agent AI system for ocean diagnosis",
+      "authors": [
+        "Fan Zhang",
+        "Weicong Cheng",
+        "Yuheng Chen",
+        "Hiuseut Kung",
+        "Ying Zhang",
+        "Aixi Han",
+        "Quanjia Zhong",
+        "Can Yang",
+        "Jianping Gan"
+      ],
+      "publication_date": "2026-09-30",
+      "arxiv_id": "2610.03780",
+      "url": "https://arxiv.org/abs/2610.03780",
+      "primary_category": "physics.ao-ph",
+      "abstract_evidence": "Time-dependent, three-dimensional (3D) oceanic multi-variables define coherent states of the evolving ocean to facilitate ocean diagnosis and advance ocean science to better inform environmental and hazard management. However, extracting quantitative evidence from these variables requires substantial and complex analytical effort. We introduce OceanMind, a multi-agent AI system that directly couples large language models (LLMs) with comprehensive time-dependent 3D ocean states for swift and effective diagnosis. OceanMind organizes the analytical process into four coordinated complexity stages: Query Routing, Skill-based Planning, Tool Execution, and Evidence-based Summary Generation. Specialized agents interpret user requests, construct and execute multi-step computational workflows, and synthesize quantitative evidence. To ensure reliable workflow construction, 63 reusable ocean-specific analysis skills serve as procedural manuals that guide the LLM agent in selecting data, conducting diagnostics, and applying analytical tools. With reflection and replanning mechanisms that use execution feedback to repair invalid plans, OceanMind ensures reliable analysis workflows across diverse needs. On a benchmark of 240 computational-workflow queries spanning the four stages, OceanMind outperformed general ReAct agents with the same registered tool pool, achieving relative improvements of 41.2% in effectiveness and 21.5% in efficiency. Beyond the benchmark, OceanMind reproduced published oceanic diagnostics, validated hypotheses, and supported environmental decision-making over global oceans. Overall, OceanMind advances LLMs by integrating them with time-dependent 3D ocean analysis, enabling scientific interpretation and enhancing formulation of environmental policies based on qu",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02.01"
+      ],
+      "rationale": "Multi-Agent AI performs ocean diagnosis on an environmental-science object.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Agent-assisted experimental strategy transfer across quantum processors",
+      "authors": [
+        "Shi-Yao Hou",
+        "Zipeng Wu",
+        "Chao Zhang",
+        "Guanru Feng",
+        "Keren Li",
+        "Jingen Xiang"
+      ],
+      "publication_date": "2026-10-15",
+      "arxiv_id": "2610.21047",
+      "url": "https://arxiv.org/abs/2610.21047",
+      "primary_category": "quant-ph",
+      "abstract_evidence": "Progress in quantum hardware requires a growing volume of experiments across diverse devices, straining the capacity of human experts. Automation remains challenging because device differences and drift can render workflows developed on one processor unsuitable for another. Here we present an agent-assisted experimental strategy for conducting experiments across three-qubit nuclear magnetic resonance processors. Developed on one processor and applied sequentially to four others, the strategy uses an agent to assess experimental evidence, select subsequent measurements and adapt procedures, with operators providing instrument preparation and physical intervention. Using three-qubit Grover state preparation as a common task, each deployment combined device-specific calibration, control-pulse optimization and measurement. The experimental strategy was refined through sequential deployment, and all four processors ultimately produced outputs dominated by their respective marked states. The marked-state populations of the reconstructed dominant eigenstates ranged from \\(0.910\\) to \\(0.959\\), with relative deviations below \\(3.8\\%\\) from the ideal value of 0.945. These results demonstrate that an agent-assisted experimental strategy can be reused and refined across processors to realize a common quantum task, providing a basis for scaling experimental practice beyond individual devices.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agent-assisted experimental-strategy transfer across quantum processors.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Agentic Active Learning Meets Visual Embeddings: Finding Anomalies among 370 000 Variable Stars from ASAS-SN",
+      "authors": [
+        "Milan Pesta",
+        "Yuan-Sen Ting"
+      ],
+      "publication_date": "2026-08-24",
+      "arxiv_id": "2608.23688",
+      "url": "https://arxiv.org/abs/2608.23688",
+      "primary_category": "astro-ph.SR",
+      "abstract_evidence": "Unusual light-curve morphologies can point to rare physical configurations or new phenomena, but automatic searches for anomalies are often dominated by artifacts. Separating genuine anomalies from false positives has traditionally required manual vetting, which does not scale to modern surveys. We present an active learning framework for detecting anomalies in samples of periodic variable stars, with the vetting delegated to multimodal large language model agents. The initial ranking comes from isolation forests trained on DINOv2 ViT-g/14 embeddings of phase-folded light curves. The agents iteratively review the light-curve images of the top-ranked candidates and assign relevance scores, which are propagated through the embedding space to prioritize the next targets. A logistic regression step then extends the search beyond label propagation, and a multi-agent consensus review filters false positives. Using Gemini~3 Flash agents, we applied the pipeline to $373\\,646$ periodic variables from ASAS-SN Sky Patrol V2.0. Across $51$ iterations, the agents labeled ${\\sim}1\\%$ of the sample in roughly $3$ hours at a cost of ${\\approx}$ $$40$, yielding our final catalog of $24$ anomalies ($18$ newly reported) and $153$ potentially interesting objects. The anomalies include eclipsing binaries with extremely deep primary eclipses, high-amplitude contact binaries and pulsators, and a symbiotic nova in outburst for over two decades. At the same labeling budget, the initial ranking would have recovered only $30\\%$ of our catalog, while reaching its lowest-ranked anomaly would have required ${\\sim}70$ times the budget. These results demonstrate the feasibility of agentic active learning for anomaly detection in existing and upcoming photometric surveys.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02.01"
+      ],
+      "rationale": "Agentic active learning searches 370,000 variable stars for anomalies.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Multi-agent discovery of practical quantum LDPC codes",
+      "authors": [
+        "Dongheng Qian",
+        "Tianyi Li"
+      ],
+      "publication_date": "2026-08-10",
+      "arxiv_id": "2608.08996",
+      "url": "https://arxiv.org/abs/2608.08996",
+      "primary_category": "quant-ph",
+      "abstract_evidence": "Quantum low-density parity-check (qLDPC) codes can encode multiple logical qubits using sparse parity checks, yet searching for useful finite-length instances remains a challenging design problem because code performance must be optimized while satisfying practical constraints. Motivated by recent advances in artificial-intelligence agents for scientific discovery, we develop a multi-agent framework for discovering practical qLDPC codes. The framework combines specialist proposal and review, persistent scientific memory, long-horizon evolution of executable programs, and deterministic construction and evaluation within a closed-loop search. These programs instantiate coset-orbit balanced-product codes, providing a search space that includes bicycle and lifted-product constructions as well as non-normal subgroup actions. To incorporate practical constraints, we restrict the search to binary CSS codes with block length $n\\leq400$ and overall weight $w\\leq10$. Within this regime, the framework discovers codes with leading or competitive rate--distance performance in every weight class considered, with representative instances including $[[288,16,18]]$ at $w=7$, $[[288,18,18]]$ at $w=9$, and $[[234,28,18]]$ at $w=10$. The search also uncovers structurally distinct, high-performing constructions, including a $[[336,12,\\leq24]]$ candidate and a $[[368,18,16]]$ code, both of which are genuine balanced-product constructions with non-normal subgroup actions. When evaluated under code-capacity depolarizing noise using a common BP-OSD decoding protocol, the discovered codes also exhibit low logical failure rates. Together, these results provide hardware-relevant finite-length candidates for further experimental evaluation and show how structured agentic search can contribute to sc",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Multi-Agent discovery of practical quantum LDPC codes.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "How AI Agents Discover Scientific Equations: From Hydrotope Rediscovery to New Water-Wave Amplitudes",
+      "authors": [
+        "Zihan Zhou",
+        "Digvijay Wadekar",
+        "Matias Zaldarriaga"
+      ],
+      "publication_date": "2026-09-30",
+      "arxiv_id": "2610.00435",
+      "url": "https://arxiv.org/abs/2610.00435",
+      "primary_category": "hep-th",
+      "abstract_evidence": "We study how AI agents discover and validate scientific formulas using a controlled case study of the hydrotope, a recently discovered geometric formula that combines the different polynomial pieces of nonlinear surface-wave scattering into one global expression. This problem is deceptively difficult: simple formulas can hold within individual frequency regions, but the global result must identify their boundaries and combine exponentially many potentially active terms. We reconstruct how the formula was originally discovered through human--agent collaboration and analyze 18 single-prompt rediscovery runs under no hint and two forms of human guidance: a false hint representing an incorrect prior and a true hint representing domain-informed insight. Only four recover the formula across all kinematic chambers (i.e., regions in which a single polynomial form applies), while most unsuccessful runs find correct chamber polynomials but fail to combine them or test their full domain. Conventional and LLM-assisted symbolic regression and standard machine-learning regressors likewise fail to recover the global formula in our experiments. Guided by these failure modes, we test a PI$+$two-student workflow in which a coordinating lead agent assigns complementary analytic and numerical tasks to two research agents and independently evaluates their results. The PI$+$two-student team successfully rediscovers the complete hydrotope formula, while the same workflow applied to the harder three negative wavenumber problem discovers a new independent verified analytic expression for the six-point amplitude $A_6$.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "AI Agents discover scientific equations and new water-wave amplitudes.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Brilliance: toward autonomous computational research in particle accelerator physics",
+      "authors": [
+        "Jinyu Wan",
+        "Yu Zhao",
+        "Wei Bao",
+        "Ying Li",
+        "Hao Zhong",
+        "Xiaohan Lu",
+        "Yi Jiao"
+      ],
+      "publication_date": "2026-10-11",
+      "arxiv_id": "2610.15615",
+      "url": "https://arxiv.org/abs/2610.15615",
+      "primary_category": "physics.acc-ph",
+      "abstract_evidence": "Computational research in physics requires continuous interplay between simulation and scientific interpretation, demanding substantial specialist effort. Here we introduce Brilliance, a research agent that combines large language models, reusable physics knowledge and numerical simulation to conduct adaptive investigations in accelerator physics. Given a single user prompt, Brilliance designs a fourth-generation synchrotron light source that meets coupled emittance and nonlinear-acceptance requirements. Further exploration yields a design combining sub-10-pm emittance with a large dynamic aperture under realistic engineering constraints, suggesting a route towards hard-X-ray diffraction-limited operation, although the momentum-acceptance target remains unmet. Brilliance also calibrates a model of an operating light source against measured responses, accurately inferring its lattice and calibration errors. Across these studies, Brilliance autonomously revises its computational strategies in response to numerical evidence. These results demonstrate a route towards delegating sustained scientific investigations to agents equipped with domain expertise and numerical tools.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Autonomous computational research discovers accelerator commissioning algorithms.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Jianmu-Q: Bridging Quantum Field Theory and Quantum Hardware with AI Agents",
+      "authors": [
+        "Xiaolin Wang",
+        "Xingyu Guo",
+        "Jinyang Li",
+        "Tianyin Li",
+        "Enke Wang",
+        "Lingxiao Wang",
+        "Hongxi Xing"
+      ],
+      "publication_date": "2026-10-15",
+      "arxiv_id": "2610.21942",
+      "url": "https://arxiv.org/abs/2610.21942",
+      "primary_category": "hep-lat",
+      "abstract_evidence": "Quantum computing offers a promising approach to non-perturbative simulations of quantum field theories, particularly for real-time dynamics and systems affected by the sign problem. Yet translating continuum field theories into quantum computations remains a challenging interdisciplinary task. Here we introduce \\texttt{Jianmu-Q}, a multi-agent framework that transforms natural-language descriptions of quantum field theories into quantum simulation workflows. Specialized agents handle theoretical formulation, lattice discretization, qubit mapping, and circuit design, while physical consistency checks and independent numerical calculations provide validation throughout the workflow. We benchmark the framework on three field theories of increasing complexity: the $(1+1)$-dimensional Nambu--Jona-Lasinio and Schwinger models, and a $(2+1)$-dimensional $\\mathbb{Z}_2$ gauge theory. Across these systems, noiseless quantum-circuit simulations converge toward independent exact-diagonalization and tensor-network results, while selected circuits are executed on IBM quantum hardware, demonstrating an end-to-end, validation-guided approach to quantum simulation of field theories.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "AI Agents bridge quantum field theory and quantum hardware.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "FUSION: a skill-based research agent for publicly obtainable nuclear-physics codes",
+      "authors": [
+        "Jin Lei"
+      ],
+      "publication_date": "2026-09-04",
+      "arxiv_id": "2609.04742",
+      "url": "https://arxiv.org/abs/2609.04742",
+      "primary_category": "nucl-th",
+      "abstract_evidence": "Running an unfamiliar nuclear-physics code is rarely difficult because of the physics alone. One must find and build the program, learn its input conventions, and decide whether a plausible output is actually correct. A general-purpose coding agent helps with the first two tasks but may make the last one harder: it can write an input file that runs with the wrong physical convention. FUSION addresses this problem with code-specific skills. A skill obtains the code from its public source, starts from a verified input, runs and parses the calculation, records known failure modes, and must reproduce a stated benchmark to a stated tolerance before reporting a result. The current release covers twenty codes, spanning optical models and reactions, nuclear structure, fission and statistical models, astrophysics and R-matrix analysis, and heavy-ion transport. It also includes an offline, searchable collection of 61 167 pages derived from the nucl-th literature. User notes and credentials remain outside the public repository. FUSION is available under the MIT license at https://github.com/jinleiphys/FUSION; documentation is at https://vibeinscience.com. Here I describe the design, the checks behind the current release, and one complete calculation from input to comparison with measured data.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Skill-based research Agent uses publicly available nuclear-physics codes.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "From Earth to Mars and Beyond: AI-Driven Cosmic-Ray Validation and Prediction with CorsikaAgent",
+      "authors": [
+        "Zhuo Chen",
+        "Zhizheng Zhao",
+        "Jinhong Shen",
+        "Leyun Gao",
+        "Cheng-en Liu",
+        "Qite Li",
+        "Zijian Wang",
+        "Qiang Li"
+      ],
+      "publication_date": "2026-10-12",
+      "arxiv_id": "2610.16607",
+      "url": "https://arxiv.org/abs/2610.16607",
+      "primary_category": "hep-ph",
+      "abstract_evidence": "We calculate the sea-level cosmic-ray muon flux with CORSIKA and develop CorsikaAgent, an auditable large-language-model-based system for configuring, executing, and validating air-shower simulations, and for predicting particle fluxes in unexplored environments. The physics calculation uses proton primaries described by the solar-minimum spectrum of Papini et al., with UrQMD at low interaction energies and either Sibyll 2.3e or QGSJET-III at high energies. The predicted momentum spectra at approximately 0 and 75 degrees are compared with experimental measurements of the atmospheric muon flux and with commonly used analytic parametrizations. The two interaction-model configurations give similar spectra and describe the principal momentum and zenith-angle dependences of the data. The agent independently reconstructs the same observable through a different sampling strategy and keeps every steering card, executable, seed, log, and analysis script bound to the result it produced; its output is consistent with the direct calculation at the level resolved by the present comparison. Transferred to Mars, the workflow reproduces the CORSIKA 8 benchmark, and transferred to Venus it produces the first prediction of the surface muon flux, an environment for which no measurement exists. The agent thus extends the workflow from auditable reproduction to first-principles prediction: it autonomously reconfigures the simulation(atmosphere, magnetic field, electric field)for new environments, while the proton-only primary model, limited high-momentum statistics, and an incomplete systematic-uncertainty treatment bound the physical precision that can currently be claimed.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "CorsikaAgent applies AI-driven validation and prediction to cosmic rays.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "HEPLocalAgent 1.0: Running Collider Simulations from Plain-Language Requests on Your Own Computer",
+      "authors": [
+        "Aadarsh Singh",
+        "Sudhir K. Vempati"
+      ],
+      "publication_date": "2026-08-28",
+      "arxiv_id": "2608.28244",
+      "url": "https://arxiv.org/abs/2608.28244",
+      "primary_category": "hep-ph",
+      "abstract_evidence": "We present HEPLocalAgent, an open source local interface that builds a bounded class of collider simulation workflows from natural language requests. A locally served language model proposes a typed workflow representation, and deterministic software then restores recognized user stated quantities, builds the HEP tool inputs, validates the supported workflow, and presents the artifacts for approval before execution. In a same response comparison on 47 evaluable model request cases, the first structured proposal gave 7 unmodified artifacts satisfying the external benchmark scorer, against 19 after the full deterministic pipeline. Under the fixed representation normalization defined by the benchmark, the counts were 11 and 43. The direction of improvement is unchanged. The gap between the two views arises because the released builder and the benchmark scorers disagree on three bookkeeping conventions, namely launch form, two fixed control lines, and the output directory name, not on physics content. Four of seven approved workflows ran to completion on the managed local software stack, with cross sections consistent between repeats. In a separate challenge set, 57 of 96 problematic requests still reached the approval stage after part of the request was dropped, defaulted, or reinterpreted. No tested unsafe payload was retained in an executable artifact before the approval gate, but this does not establish operating system level containment. The deterministic backend supports MadGraph, Pythia8, Delphes, and a restricted MadAnalysis 5 plan. Reliable natural language routing to the MadAnalysis stage was not demonstrated in the tested examples. Version 1 should therefore be seen as an inspectable, validation gated workflow constructor requiring expert approval rather than an ",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Agent runs collider simulations from natural-language requests.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "PTagent: An LLM-assisted tool for finite-temperature model construction in cosmological phase transitions",
+      "authors": [
+        "Lei Wu",
+        "Yang Xiao",
+        "Jin Min Yang",
+        "Yang Zhang"
+      ],
+      "publication_date": "2026-10-15",
+      "arxiv_id": "2610.21118",
+      "url": "https://arxiv.org/abs/2610.21118",
+      "primary_category": "hep-ph",
+      "abstract_evidence": "Cosmological phase-transition calculations require well-defined finite-temperature numerical models, whose construction involves assembling model information under consistent theoretical prescriptions. In this work we present \\texttt{PTagent}, a large language model (LLM) agent-based framework for constructing such models from SARAH model files, research papers, and DRalgo sources. The LLM agent interprets and organizes model information and identifies unresolved physical choices, while dedicated backends perform the model-dependent calculations. After review and approval of the resulting physical model specification, the backends generate the corresponding CosmoTransitions-style or PhaseTracer-style numerical potentials. By separating model interpretation from numerical implementation, PTagent provides an inspectable and reproducible approach to finite-temperature model construction for cosmological phase-transition studies.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "LLM-assisted Agent constructs finite-temperature models for cosmological phase transitions.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Andy: A Mathematical Agent for Rigorous Proof and Autonomous Research",
+      "authors": [
+        "Zi'an Wang"
+      ],
+      "publication_date": "2026-08-15",
+      "arxiv_id": "2608.15052",
+      "url": "https://arxiv.org/abs/2608.15052",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "Andy is an autonomous mathematical research agent that turns a mathematical problem into a traceable proof. It solves or verifies a submitted problem, formulates a literature-grounded new problem through a research-value gate, and carries it through proof construction and final verification. It organizes proof steps in an executable DAG, verifies each step independently and binds the result to a certificate, retains verified work whose interfaces remain unchanged during local repair, and records the full path from problem formulation to final proof. The system separates proof generation from correctness evaluation and can acquire, retain, retrieve, and reuse knowledge from existing results. Starting from a self-triggered impulsive consensus result, Andy formulates a global exponential leader-follower synchronization problem for delayed heterogeneous networks with switching communication topologies. The proposed hybrid control combines self-triggered impulses with execution delay and continuous feedback over a recovery window. After each delayed impulse, the feedback cancels the delayed error channel until the pre-impulse history leaves the active delay interval. Sufficient conditions for global exponential synchronization are established, Zeno behavior is excluded for both timing sequences, and a numerical example illustrates the result.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "Mathematical Agent supports rigorous proof and autonomous research.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "VALG: An Agentic System for ML Theory Research",
+      "authors": [
+        "Dechen Zhang",
+        "Xuan Tang",
+        "Xinxiang Yin",
+        "Xingwu Chen",
+        "Jian Qian",
+        "Difan Zou"
+      ],
+      "publication_date": "2026-08-13",
+      "arxiv_id": "2608.13060",
+      "url": "https://arxiv.org/abs/2608.13060",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "Machine learning theory studies learning procedures through mathematical setups in which the data model, training protocol, oracle access, loss, metric, and randomness define the phenomenon that a theorem is meant to explain. Solving an open problem therefore requires the problem formulation, theorem target, and proof mechanism to be developed in concert. Researchers formulate hypotheses, test them through preliminary theoretical or empirical analysis, and refine both assumptions and proofs. We investigate whether this process can be organized as an autonomous agentic workflow for ML theory research. We develop VALG, an agentic system that combines multi-level Verification, Adaptive formulation of Learning-theory problems, and Graph-structured proof development. Within each source-relative theorem branch, VALG maintains a fixed mathematical specification, checks the theorem-level composition of a typed proof-dependency graph, and constructs and reviews local proofs in dependency order. When a proof attempt fails, VALG identifies whether the obstruction lies in a derivation, the proof structure, or the theorem formulation and routes the next attempt accordingly. Formulation-level obstructions initiate an explicitly related variant or relaxation, preserving the mathematical relation between the resulting theorem and the source problem. We evaluate VALG on nine subproblems from five COLT 2026 open problems. Two runs produce internally finalized theorem candidates that match the scope of their source briefs; the remaining seven yield restricted-method results, special cases, or conditional theorems. These case studies show how VALG keeps source-scope matches, relaxations, conditional results, and blocked attempts mathematically distinct. VALG is open source at https://githu",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "Agentic system conducts machine-learning theory research; place in general mathematical/theoretical sciences.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "ProofLoom: Proof-Obligation-Driven Theory Construction for Autoformalizing Research-Level Stochastic Optimization",
+      "authors": [
+        "Feiming Wang",
+        "Daibo Li",
+        "Kun Yuan"
+      ],
+      "publication_date": "2026-09-28",
+      "arxiv_id": "2609.34960",
+      "url": "https://arxiv.org/abs/2609.34960",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "Formalizing research-level stochastic optimization in Lean requires both an algorithm model and domain theory connecting foundational libraries to convergence proofs. Revising a model to restore provability can change the mathematical claim. We introduce ProofLoom, a fully automated LLM-agent system for Proof-Obligation-Driven Theory Construction. Given a published algorithm, target theorem, and source proof, ProofLoom autonomously constructs the Lean model and supporting theory. Open proof obligations drive the development of definitions, interfaces, lemmas, and proof plans. Signature contracts record evidence and obligations for model revisions; an independent Judge rejects unsupported assumptions and weakened conclusions. Planner expands the published argument into intermediate claims, and Audit checks whether the Lean proof follows it. Across tasks, SOptLib accumulates verified mathematics and construction experience: reusable results are extracted, generalized, and verified, while modeling decisions and failed proof routes are recorded. Later tasks retrieve these results and records and contribute new developments, forming a cycle of construction, accumulation, and reuse. On fifteen textbook and research-paper tasks, ProofLoom obtains mean human ratings of 6.3/7 and 6.4/7, compared with 4.9/7 and 5.0/7 for the strongest of six baselines. Across 33 developments, it produces 490,693 lines of algorithm-local Lean code with no sorry. The formalizations also expose 28 incorrect formulas, proof gaps, and algorithm-analysis mismatches in published sources across 22 developments, each with checked evidence.",
+      "suggested_status": "needs_review",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "Proof-obligation-driven theory construction for research-level stochastic optimization; review whether agent conducts iterative research or primarily performs autoformalization.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "FormaTheoria: Constructing Large-Scale Lean Theories from Mathematical Literature $-$ Toward the Formalization of the Classification of Finite Simple Groups",
+      "authors": [
+        "Tianjiao Nie",
+        "Ao Zhang",
+        "Yusen Tang",
+        "Damiano Testa",
+        "Shing-Tung Yau",
+        "Peng Li",
+        "Yuan Zhou"
+      ],
+      "publication_date": "2026-08-11",
+      "arxiv_id": "2608.10894",
+      "url": "https://arxiv.org/abs/2608.10894",
+      "primary_category": "cs.LO",
+      "abstract_evidence": "Large-scale formalization of advanced mathematics requires more than translating individual statements: it must reconstruct a coherent theory distributed across heterogeneous sources. This process raises four challenges: discovering implicit dependencies, correcting source defects, preserving semantic fidelity, and reconciling cross-source misalignments. We present FormaTheoria, an end-to-end, AI-assisted workflow that coordinates source acquisition, formalization, proof construction, recursive dependency discovery, independent review, and reconciliation, while preserving provenance and protecting approved declarations. A shared agent framework supports long-horizon execution through tool use, context compaction, review-gated termination, section-level source context, and dependency-aware batch parallelization. Applying FormaTheoria to major components of the Classification of Finite Simple Groups (CFSG), we construct a machine-checked Lean development extending through the Bender--Suzuki theorem and encompassing the Feit--Thompson Odd Order Theorem, Glauberman's $Z^*$ theorem, and the Brauer--Suzuki theorem. This development verifies an extensive body of deeply interdependent finite-group theory while providing a foundation for continuing the CFSG formalization. An empirical analysis of the code and recorded construction process supports the practical relevance of the identified challenges and illustrates the roles of the corresponding workflow components. Together, these results demonstrate how AI-assisted workflows can reconstruct mathematically significant formal theories from distributed literature by combining language-model agents with formal verification, structured review, and explicit dependency management.",
+      "suggested_status": "needs_review",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "Constructs Lean theories from mathematical literature; review autonomous Agent action and research contribution against inclusion boundary.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "FLARE: Verifying MILP Reformulations with LLM-Based Theorem Proving",
+      "authors": [
+        "Henry Robbins",
+        "Connor Lawless",
+        "Madeleine Udell",
+        "Ellen Vitercik"
+      ],
+      "publication_date": "2026-08-25",
+      "arxiv_id": "2608.25220",
+      "url": "https://arxiv.org/abs/2608.25220",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "Mixed-Integer Linear Programming (MILP) is a fundamental tool for combinatorial optimization with extensive real-world applications. A central challenge is designing computationally efficient MILP formulations. Large Language Models (LLMs) offer new opportunities to automate the modeling process, from deriving formulations to strengthening them. Reliable automation requires robust methods for verifying that proposed formulations preserve the underlying optimization problem. However, existing approaches evaluate formulations numerically and fail to reason about general problem instances. We resolve this limitation by introducing a constructive definition of MILP reformulation that can be formalized in Lean and machine-checked. We develop FLARE (Formulation-Level Automated Reformulation Evaluation), a method that uses an LLM-based agent and the Lean proof assistant to verify proposed reformulations against a reference formulation. To evaluate our approach, we introduce FormulationBench, a challenging dataset of 20 problems and 109 formulations. FLARE outperforms existing methods, with 100% accuracy on the NP-hard subset of FormulationBench. Furthermore, FLARE produces a machine-checkable certificate for every reformulation it accepts. For cases where formal guarantees are not necessary, we introduce FLARE-NL, a fast and cheap LLM proxy that matches FLARE's accuracy but produces no certificate. These methods enable reliable verification in automated optimization modeling.",
+      "suggested_status": "exclude",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "LLM-based theorem-proving verification tool; no clear autonomous scientific research workflow in the retrieved abstract.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "An AI-Assisted Formalization of the Poincaré Conjecture",
+      "authors": [
+        "Zhiyuan Zhang",
+        "Axel Delaval",
+        "Leheng Chen",
+        "Jinxuan Chen",
+        "Jie Xu",
+        "Yuxuan Liao",
+        "Jiedong Jiang",
+        "Chunlei Liu",
+        "Bin Dong"
+      ],
+      "publication_date": "2026-10-06",
+      "arxiv_id": "2610.08329",
+      "url": "https://arxiv.org/abs/2610.08329",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "We present an AI-assisted Lean 4 formalization of the Poincaré conjecture. The project began with limited reusable formal infrastructure for the geometric analysis behind the proof. To organize this work, we combined a proof blueprint prepared by mathematicians with explicit milestone statements. These milestones enabled parallel agent work and gave mathematicians clear points to locate blockers and provide effective mathematical guidance. Our analysis identifies the human interventions and organizational choices behind this workflow. The project provides a starting point toward reusable infrastructure for future formalization projects; such infrastructure, once developed, could eventually reduce the cost of verifying mathematical results in geometric analysis.",
+      "suggested_status": "needs_review",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "AI-assisted formalization of the Poincare conjecture; retrieved record does not establish a multi-step autonomous Agent system.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "AI Discovery in Combinatorics: From Problems to Solutions and Back to Bigger Problems",
+      "authors": [
+        "Eugenio Cainelli",
+        "Lorenzo Luccioli",
+        "Alessandro Iraci",
+        "Giovanni Paolini"
+      ],
+      "publication_date": "2026-10-12",
+      "arxiv_id": "2610.16555",
+      "url": "https://arxiv.org/abs/2610.16555",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "We introduce $qt$Bench, a benchmark of 29 open problems in algebraic combinatorics. These problems ask for a simple combinatorial algorithm that explains given polynomial coefficients or identities. To help AI agents search for such algorithms, we provide a scaffold for playing with combinatorial objects, countering cheating attempts, and testing candidate solutions. To explore how far frontier AI systems can go on these problems, we collaborated with OpenAI, whose researchers obtained proposed solutions to several of them. This highlights bigger meta-problems: is AI discovery at scale ethical? How should these results be released? How should proof digestion be organized? We discuss these questions and give our views.",
+      "suggested_status": "needs_review",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "Combinatorics discovery work; review abstract/full text to confirm Agent actions and discovery contribution.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Euler: Towards Human-Centered Multi-Agent Mathematical Discovery",
+      "authors": [
+        "Qiuyu Chen, Qi Wang, Liang Xu, Xin Jin, Baao Xie, Wenjun Zeng"
+      ],
+      "publication_date": "2026-10-14",
+      "arxiv_id": "2610.19864",
+      "url": "https://arxiv.org/abs/2610.19864",
+      "primary_category": "Artificial Intelligence",
+      "abstract_evidence": "Mathematical research drives scientific… ▽ More Mathematical research drives scientific discovery, and recent advances in AI for mathematics have shown that language-model agents can solve challenging problems and develop substantial mathematical proofs. Yet much of today's AI-for-mathematics work centers on obtaining a final answer. This emphasis leaves the exploration behind a result difficult for researchers to understand, while long-running investigations face fragmented context and the risk of unsupported claims propagating across reasoning steps. We present Euler, a human-centered mathematical research system built around a shared, structured representation of the research process. Euler organizes mathematical statements, assumptions, proof dependencies, alternative approaches, failed attempts, and verification evidence into connected research graphs. This representation allows researchers to trace how results are developed and supplies agents with persistent, task-relevant knowledge for planning, collaboration, and verification across sessions. Researchers can also select a graph node linked to a saved team state, revisit the agents' earlier reasoning, and explore alternative directions through continued interaction. We illustrate Euler's capabilities through three mathematical research case studies and describe the implemented system and its software validation. △ Less",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "Euler provides persistent research graphs, planning, collaboration and verification across mathematical research case studies.",
+      "source_verified": "official arXiv search page and arXiv abstract page",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "The AI Theorist reveals excitonic structure in $α$-RuCl$_3$",
+      "authors": [
+        "Hongjian Zhou, Xianfan Nie, Sean Wu, Tarun Patel, Jinge Wu, Andrew Liu, Adam Wei Tsen, David A. Clifton"
+      ],
+      "publication_date": "2026-10-01",
+      "arxiv_id": "2610.02417",
+      "url": "https://arxiv.org/abs/2610.02417",
+      "primary_category": "Materials Science",
+      "abstract_evidence": "…experimental instrumentation and automation generate increasingly rich datasets, but turning experimental observations into microscopic understanding remains a bottleneck in scientific… ▽ More Advances in experimental instrumentation and automation generate increasingly rich datasets, but turning experimental observations into microscopic understanding remains a bottleneck in scientific discovery. To accelerate this process, we introduce AI Theorist, a system of artificial intelligence (AI) agents for autonomous discovery of physical models through hypothesis generation, first-principles calculations and evidence-driven refinement. We apply the framework to $α$-RuCl$_3$, a leading candidate material for realizing a Kitaev quantum spin liquid, to investigate its electronic structure through optical spectra. AI Theorist develops a new interpretation of the optical and photocurrent observations, identifying distinct excitonic states with contrasting optical selection rules and real-space distributions. To our knowledge, this is the first demonstration of an AI system autonomously developing a physical model to explain previously unpublished experimental observations in a quantum material, utilizing first-principles electronic-structure and many-body calculations. Our results establish a route to autonomous theoretical discovery in materials science, in which AI agents use first-principles calculations to turn experimental observations into physical models and testable predictions. △ Less",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02",
+        "04"
+      ],
+      "rationale": "AI Theorist uses agents, first-principles and many-body calculations, hypothesis refinement, and experimental evidence to develop an excitonic model for alpha-RuCl3.",
+      "source_verified": "official arXiv search page and arXiv abstract page",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station",
+      "authors": [
+        "Wenyu Du, Stephen Chung"
+      ],
+      "publication_date": "2026-10-06",
+      "arxiv_id": "2610.08927",
+      "url": "https://arxiv.org/abs/2610.08927",
+      "primary_category": "Multiagent Systems",
+      "abstract_evidence": "Recent AI systems have made rapid progress in scientific… ▽ More Recent AI systems have made rapid progress in scientific discovery when given well-defined metrics, but whether they can autonomously undertake open-ended scientific discovery remains unclear. We investigate AI's ability to tackle open-ended tasks in Station, an open-world environment in which multiple agents simulate a scientific ecosystem. To tackle challenges specific to open-ended tasks, we propose augmenting Station with two mechanisms: a Supervisor mechanism and periodic Meta Reflection, which encourage persistent exploration even when intermediate metrics are lacking. We construct open-ended tasks from three recent oral papers presented at ICLR. We give agents the main research question studied in each paper while withholding the paper's results and disabling web access. We then measure how many of the original findings-partitioned into individual criteria-agents rediscover. We find that Station rediscovers 62.7% of the criteria on average, compared with 15.4% for Codex Multiagent-v2 and 14.4-20.6% for AI Scientist-v2. Ablation and behavioral analyses indicate that adding the two mechanisms together improves research coverage and continuity. We further evaluate Station on two open-ended tasks without oracle papers and find that some of the discoveries made by the agents closely match discoveries reported by researchers after the knowledge cutoff date. Together, these results indicate that a suitable environment can enable agents to autonomously make meaningful progress in open-ended scientific discovery. △ Less",
+      "suggested_status": "needs_review",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01",
+        "02"
+      ],
+      "rationale": "Station studies open-ended rediscovery of research results with multiple agents, but its tasks are general-purpose research cases rather than a clearly owned physical object.",
+      "source_verified": "official arXiv search page and arXiv abstract page",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Beyond Equation Search: Conjecture-Guided Discovery with SCOPE and ClosureBench",
+      "authors": [
+        "Yuxiao Hu, Qian Li, Ding Wang, Siheng Chen, Linfeng Zhang, Jinyue Yan, Yuntian Chen"
+      ],
+      "publication_date": "2026-10-13",
+      "arxiv_id": "2610.18938",
+      "url": "https://arxiv.org/abs/2610.18938",
+      "primary_category": "Machine Learning",
+      "abstract_evidence": "Most symbolic regression methods optimize candidate equations, but improving an equation's fit does not establish whether its underlying scientific conjecture should be retained, revised, or rejected. A conjecture may admit multiple mathematical realizations, and similarly accurate equations may imply different explanations. This motivates a shift from r… ▽ More Most symbolic regression methods optimize candidate equations, but improving an equation's fit does not establish whether its underlying scientific conjecture should be retained, revised, or rejected. A conjecture may admit multiple mathematical realizations, and similarly accurate equations may imply different explanations. This motivates a shift from refining individual expressions to developing and testing the conjectures that guide them. We introduce SCOPE, a framework that sustains multiple conjecture-driven research trajectories. Multiple scientist agents independently pursue conjectures through equation modeling, question formulation, and active experimentation, then exchange evidence to revise their conjectures and research directions. Their findings are consolidated into a scientific report linking models, conclusions, and evidence. Existing equation-discovery benchmarks primarily assess recovered expressions, leaving the evidence and scientific conclusions established through the investigation underexamined. We therefore introduce ClosureBench, an interactive benchmark of 60 closure-discovery tasks across five scientific domains. ClosureBench focuses on closure-discovery tasks to give equation discovery a concrete scientific purpose. Each task embeds an unknown algebraic relation in a known PDE system, where agents control experimental conditions in OpenFOAM to acquire new data for equation discovery. ",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "02",
+        "01"
+      ],
+      "rationale": "SCOPE uses multiple scientist agents, active experiments and conjecture revision for equation discovery across scientific domains, including PDE closure.",
+      "source_verified": "official arXiv search page and arXiv abstract page",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "OptScientist: Automated Discovery of Optimization Laws",
+      "authors": [
+        "Ma ZhenYao, Yue Liang, Jian-Qiao Zhu"
+      ],
+      "publication_date": "2026-10-20",
+      "arxiv_id": "2610.28562",
+      "url": "https://arxiv.org/abs/2610.28562",
+      "primary_category": "Optimization and Control",
+      "abstract_evidence": "Many scientific phenomena are best understood as outcomes of underlying optimization problems, yet automated… ▽ More Many scientific phenomena are best understood as outcomes of underlying optimization problems, yet automated scientific discovery has largely focused on recovering equations that describe observed input-output patterns. We introduce OptScientist, a novel automated framework for discovering compact symbolic optimization laws directly from data. OptScientist comprises (i) a model that infers symbolic optimization problems by first learning to represent data as an optimization problem and then extracting its symbolic form, and (ii) an LLM agentic system embedding the model in a discovery process that integrates theoretical priors from scientific literature, discovers candidate laws, abstracts their underlying mechanisms, and suggests new data to collect. We first evaluate OptScientist on OptFeynman, a novel benchmark of 99 physics-derived optimization problems, where OptScientist recovers ground-truth laws for over 80% of the problems and remains robust to noisy contextual information, while substantially outperforming machine-learning, symbolic, and LLM-based model-discovery baselines. On human risky choice and central-bank monetary policy, OptScientist discovers compact symbolic optimization laws that achieve held-out predictive performance competitive with leading baselines, while using few parameters and substantially fewer tokens than LLM baselines. Overall, OptScientist extends automated scientific discovery to uncovering optimization laws that generate observed phenomena, enabling automated theory building across the physical, biological, behavioral, and social sciences. △ Less",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01",
+        "02"
+      ],
+      "rationale": "OptScientist combines an LLM agentic discovery loop with symbolic optimization-law discovery; physics benchmark and empirical scientific cases support object-directed research.",
+      "source_verified": "official arXiv search page and arXiv abstract page",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Can Autonomous LLM Agents Execute Multireference Quantum Chemistry Calculations?",
+      "authors": [
+        "Victor Chang Lee",
+        "James M. Rondinelli"
+      ],
+      "publication_date": "2026-09-11",
+      "arxiv_id": "2609.13357",
+      "url": "https://arxiv.org/abs/2609.13357",
+      "primary_category": "physics.chem-ph",
+      "abstract_evidence": "Multireference electronic-structure calculations remain difficult to automate because critical workflow decisions, including active-space selection, state averaging, convergence recovery, and state identification, traditionally rely on expert judgment. Here, we investigate whether an autonomous large language model (LLM) agent can perform these tasks without human intervention. The agent selects active spaces using literature-grounded analogies or explicitly documented chemical reasoning, generates and submits ORCA calculations, analyzes outputs, and records all decisions in an auditable reasoning log. Benchmarking against 558 vertical transition energies (VTEs) from QUESTDB shows that an unguided baseline agent achieves 24.9% coverage with a mean absolute error (MAE) of 0.373 eV. Introducing a structured decision ladder increases coverage to 44.1% while reducing the MAE to 0.339 eV. The largest gains are observed for double and Rydberg excitations, demonstrating that expert-informed procedural guidance substantially improves active-space construction and state identification. When provided with complete workflow information, the agent successfully reproduces published QUEST calculations with an MAE of only 23 meV, resolving 75% of target configurations within seven attempts. These results demonstrate that contemporary LLM agents can autonomously execute and reproduce complex multireference quantum-chemical workflows, while highlighting the importance of structured reasoning frameworks for achieving reliable high-throughput and high-fidelity electronic-structure calculations.",
+      "suggested_status": "duplicate",
+      "duplicate_of": "ASD-0880",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Already present as ASD-0880; do not count as new.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "SciExam for ENSO: Can AI Agents Build Climate Models?",
+      "authors": [
+        "Yinling Zhang",
+        "Langchen Liu",
+        "Dongbin Xiu",
+        "Xueyan Zou",
+        "Xu Kuang",
+        "Mengdi Wang",
+        "Shilong Liu"
+      ],
+      "publication_date": "2026-10-07",
+      "arxiv_id": "2610.10513",
+      "url": "https://arxiv.org/abs/2610.10513",
+      "primary_category": "cs.AI",
+      "abstract_evidence": "Language-model agents are increasingly asked to carry out open-ended scientific research, yet their results are usually graded against a known answer, a rubric, or a language-model reviewer, none of which can tell whether a new scientific model is valid. The AI Science Exam for El Nino-Southern Oscillation (SciExam for ENSO) is a benchmark in which agents build low-order stochastic models of ENSO, the dominant mode of interannual climate variability, from real observations. Within a six-hour budget, agents process the observations, write their own diagnostics, which are then frozen, and develop a model using only these diagnostics as feedback. Hidden graders then test whether the model reproduces ENSO's statistics, recovers unobserved variables, and forecasts held-out years, and score a published model in the same way. Across twelve agent systems, six produce models that score higher than the published model, mainly through better reconstruction and forecasting. The simplified forms of the stronger models are each compatible with one of the two competing explanations of ENSO's warm-cold asymmetry, an open debate that the task never mentions. Controlled runs of the top system under varied information suggest that its scores do not come from recalling the dated observational record and that the information it receives shapes how it builds its model. SciExam for ENSO can thus evaluate agent research where no answer is known, and the results suggest that agents can already build competitive models whose structures bear on questions that scientists still debate.",
+      "suggested_status": "duplicate",
+      "duplicate_of": "ASD-0907",
+      "scientific_object_modules": [
+        "02.01"
+      ],
+      "rationale": "Already present as ASD-0907; do not count as new.",
+      "source_verified": "arXiv Atom API record",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "Large-Scale Autonomous Discovery of Kissing Number Constructions",
+      "authors": [
+        "Shuxing Yang",
+        "Rui Zhao",
+        "Junyao Wu",
+        "Yize Wang",
+        "Fujia Chen",
+        "Kaihao Zhu",
+        "Wenhao Li",
+        "Zichen Li",
+        "Yaqi Li",
+        "Shenzhan Hong",
+        "Yuang Pan",
+        "Junjie Yang",
+        "Taowen Deng",
+        "Jincheng Mi",
+        "Hongsheng Chen",
+        "Yihao Yang"
+      ],
+      "publication_date": "2026-09-28",
+      "arxiv_id": "2609.35051",
+      "url": "https://arxiv.org/abs/2609.35051",
+      "abstract_evidence": "The kissing-number problem is a classical problem in discrete geometry whose exact solution is known in only a few dimensions. Recent artificial-intelligence approaches have begun to discover improved configurations through large-scale numerical and combinatorial search, but converting such searches into general mathematical constructions and rigorous proofs remains challenging. Here we use Qiushi Engine, an autonomous multi-agent research system, to investigate kissing numbers and obtain new lower bounds in nineteen dimensions: $25$, $27$, $32$--$39$, $43$, $45$, and $49$--$55$. The resulting constructions arise from distinct structural mechanisms, including coordinated motions of contact layers, labelled direction reuse, joint support exchanges, signed-code replacements, cross-shell lattice constructions, low-overlap lattice isometries, and spherical-design moment certificates. They yield sharp capacities for parameterized signed-code models, deterministic image-union guarantees, and exact section and projection counts controlled by embedded root systems and anchor-graph statistics. These methods yield, among others, $K(25)\\ge197580$, $K(27)\\ge201567$, $K(38)\\ge591900$, $K(43)\\ge2553792$, $K(45)\\ge7380090$, and $K(55)\\ge53301140$. The autonomous system carried out the construction searches, mathematical analysis and computational verification, while each final result was reduced to explicit mathematical arguments and independently checkable finite certificates. Our results illustrate how autonomous research systems can move beyond optimization within fixed formulations to discover new mathematical representations and constructions at scale.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "Formal mathematical research Agent: Qiushi Engine multi-agent autonomous research discovers kissing-number constructions and lower bounds with checkable certificates.",
+      "source_verified": "first-hand abstract record from Search A official arXiv screening; DOI/id cross-checked against baseline",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "CausalSmith: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
+      "authors": [
+        "Jiyuan Tan",
+        "Vasilis Syrgkanis"
+      ],
+      "publication_date": "2026-07-24",
+      "arxiv_id": "2607.22511",
+      "url": "https://arxiv.org/abs/2607.22511",
+      "abstract_evidence": "Automating theoretical research requires generating candidate results and evaluating them reliably. Models keep getting better at the first, while the second remains hard. A common approach asks one large language model (LLM) to review what another produced, yet such reviewers are empirically unreliable: they may accept fabricated papers and catch the fabrication at close to chance rates~\\citep{badscientist2025}. We present \\textsc{CausalSmith}, a framework for automated theoretical research in causal inference built on the Lean proof assistant, where a proof is checked by a program rather than read by a referee. \\textsc{CausalSmith} rests on \\textsc{Causalean}, a foundational Lean library for causal inference holding 8,179 machine-checked definitions and theorems, developed with language-model assistance under human design and review. Around it, we build a self-improving agentic pipeline that selects research topics, proposes results, formalizes statements, constructs proofs, and presents the resulting artifacts for human inspection. Moreover, the pipeline pairs Lean verification with a statement audit that compares each formal theorem against the informal claim behind it. We evaluate the system using artifacts produced by completed autonomous research runs. The source code, formal library, and run records are available at https://github.com/Jiyuan-Tan/CausalSmith.",
+      "suggested_status": "candidate",
+      "duplicate_of": "",
+      "scientific_object_modules": [
+        "01"
+      ],
+      "rationale": "Formal mathematical research Agent: CausalSmith selects topics, proposes theoretical causal results, formalizes and proves them in Lean; July date gap-fill.",
+      "source_verified": "first-hand abstract record from Search A official arXiv screening; DOI/id cross-checked against baseline",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "July gap-fill (2026-07-24)"
+    },
+    {
+      "title": "GBClaw: An agentic AI framework for atomistic grain boundary research and mechanistic discovery",
+      "authors": [
+        "Yazhuo Liu",
+        "Kunqing Ding",
+        "Xiaoguo Gong",
+        "Zifeng Wang",
+        "Yichen Yang",
+        "Yifeng Che",
+        "Wen Chen",
+        "Josh Kacher",
+        "Olivier Pierron",
+        "Shigenobu Ogata",
+        "Ting Zhu"
+      ],
+      "publication_date": "2026-10-20",
+      "arxiv_id": "2610.28629",
+      "url": "https://arxiv.org/abs/2610.28629",
+      "abstract_evidence": "Agentic artificial intelligence (AI) systems hold immense potential for automating complex workflows in materials discovery and design, but extending them to domain-intensive mechanistic investigations remains challenging. Here, we present GBClaw, an agentic AI framework for investigating the structure and deformation of general grain boundaries (GBs). Although general GBs constitute the vast majority of real-world interfaces in polycrystalline materials, they remain understudied because their structural complexity and interfacial mismatch complicate experimental and modeling research. GBClaw integrates large language models (LLMs) into a modular architecture comprising an orchestrator, specialized agents, domain-specific tools, simulation interfaces, and hierarchical memory. Through dynamic replanning and iterative workflow refinement, the framework effectively connects systematic simulations with targeted mechanistic analysis. Applied to 14 general asymmetric tilt GBs in nickel, GBClaw characterized interfacial defect structures and identified diverse deformation modes across these incommensurate boundaries. Comparing boundary sliding with and without secondary GB misfit dislocations revealed substantial differences in shear strength, underscoring the critical role of defect hierarchies in sliding resistance. Furthermore, researcher-guided follow-up calculations traced an anomalously high shear resistance to metastable boundary structures. This work demonstrates that combining agentic AI with domain expertise bridges high-throughput computational screening with deep physical understanding of complex material interfaces.",
+      "suggested_status": "duplicate",
+      "duplicate_of": "ASD-0883",
+      "scientific_object_modules": [
+        "04",
+        "02"
+      ],
+      "rationale": "Found in D retrieval and already present in the 922-row baseline. Not counted as new.",
+      "source_verified": "arXiv API record/cache and baseline paper ID verified",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    },
+    {
+      "title": "SQD-Agent: LLM-driven agentic framework for Quantum Chemistry workflows",
+      "authors": [
+        "Kislaya Tiwari",
+        "Anupama Ray"
+      ],
+      "publication_date": "2026-09-30",
+      "arxiv_id": "2609.39302",
+      "url": "https://arxiv.org/abs/2609.39302",
+      "abstract_evidence": "Quantum algorithms and quantum hardware are advancing towards a promising paradigm for scientific applications. However, translating domain-specific problems into executable hybrid quantum-classical workflows remains a significant barrier for application researchers due to the required expertise in quantum algorithms, nuances in quantum programming, and hardware-aware system integration. At the same time, AI and primarily LLM based agents are increasingly capable of interpreting natural-language intent, reasoning over complex workflows, and translating high-level objectives into executable code and building computational pipelines. In this work, we introduce SQD Agent, an LLM-based agentic framework that translates natural-language user intent into executable workflows for Quantum Chemistry applications where algorithms from the Sample-Based Quantum Diagonalization (SQD) family are used. By automating this translation, SQD Agent reduces the level of human expertise and configuration overhead required, thereby simplifying experimentation in hybrid quantum-classical settings for application researchers new to quantum. SQD Agent adopts a modular and extensible architecture that supports seamless integration of heterogeneous quantum backends, classical solvers, and workflow components, ensuring adaptability to rapidly evolving quantum ecosystems. The framework further incorporates interactive capabilities for on-demand profiling, bottleneck analysis, resource optimization, intelligent result caching, and convergence visualization. Key features include quantum chemistry experiments, error mitigation on real quantum hardware, together with analysis of candidate mitigation schemes in terms of their potential error-recovery behavior and computational budget, helping users understand their practical trade-offs and decide which strategies to explore in subsequent experiments.",
+      "suggested_status": "duplicate",
+      "duplicate_of": "ASD-0888",
+      "scientific_object_modules": [
+        "02"
+      ],
+      "rationale": "Found in D retrieval and already present in the 922-row baseline. Not counted as new.",
+      "source_verified": "arXiv API record/cache and baseline paper ID verified",
+      "screening_stage": "title_abstract_first_screen",
+      "date_window": "main 2026-08-01..2026-10-22"
+    }
+  ],
+  "limits": "The complete physics/astronomy/quantum API result set was retrieved (384/384). The math-wide agent/theorem/proof API query reported 6,530 results; 1,600 records across 8 pages were returned before HTTP 429, so the mathematical result set is partial. Selected candidates were checked against all 922 Data rows by arXiv ID and normalized title. The prior controller 50 are within the last 50 rows of that same 922 baseline. The official web search query reported 678 total and only its 50-record first page was screened as a secondary cross-check. No assertion that all broad math or web-search results were screened. Search A controller summary contributes two supplemental first-hand abstract leads: 2609.35051 is in the main window; 2607.22511 is 2026-07-24 and kept as separate July gap-fill.",
+  "screening_summary": {
+    "curated_records": 49,
+    "candidate": 39,
+    "needs_review": 5,
+    "duplicate": 4,
+    "excluded": 1,
+    "exclusion_note": "Broad title/abstract hits referring to agent-based society papers, generic autonomous systems, reviews, benchmark-only evaluations, and ordinary multi-agent control were routed out of the curated positives. Baseline duplicates include SQD-Agent ASD-0888, multireference quantum chemistry ASD-0880, SciExam ASD-0907, and GBClaw ASD-0883."
+  }
+}

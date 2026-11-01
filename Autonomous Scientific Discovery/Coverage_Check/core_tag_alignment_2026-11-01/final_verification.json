@@ -1,0 +1,22 @@
+{
+  "core_works": 662,
+  "core_bib_entries": 662,
+  "module_memberships": 935,
+  "member_ids_manifest_matrix_bridge_match": true,
+  "core_master_reference_years_match": true,
+  "frozen_source_hashes_and_year_figure_match": true,
+  "manuscript_structure": {
+    "sections": 10,
+    "subsections": 43,
+    "tables": 15,
+    "figures": 6
+  },
+  "cited_keys": 45,
+  "local_bilingual_checks": {
+    "english_pdf_pages": 34,
+    "chinese_pdf_pages": 30,
+    "matched_citation_order_labels_tables_figures_and_subsections": true,
+    "unresolved_citations_overfull_boxes_missing_characters": 0
+  },
+  "visual_qa": "Final full-document contact sheets and detail pages inspected; no clipping, overlap, missing glyphs, or broken tables observed."
+}

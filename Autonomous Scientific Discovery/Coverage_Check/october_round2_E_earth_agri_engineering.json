@@ -1,0 +1,527 @@
+{
+  "search_role": "E",
+  "scope": [
+    "05 地球与环境科学",
+    "08 农业、食品、林业、畜牧与渔业科学",
+    "09 工程与工业技术科学",
+    "10 航空、航天、海洋与交通科学"
+  ],
+  "main_window": "2026-08-01/2026-10-22",
+  "backfill_window": "2026-07-08/2026-07-31",
+  "baseline_records": 922,
+  "baseline_dedup_keys": [
+    "DOI",
+    "arXiv ID",
+    "normalized title"
+  ],
+  "candidates": [
+    {
+      "title": "Towards autonomous urban drainage modelling: evaluating AI agent architectures for automated SWMM calibration",
+      "authors": "Jian Wang; Shuming Liu; Guangtao Fu; Dragan Savic",
+      "year": 2026,
+      "venue": "npj Clean Water",
+      "url": "https://www.nature.com/articles/s41545-026-00638-8",
+      "doi": "10.1038/s41545-026-00638-8",
+      "arxiv_id": "",
+      "first_public_date": "2026-09-14",
+      "publication_date": "2026-09-14",
+      "abstract": "Urban drainage model calibration requires data preparation, parameter screening, simulation, validation and interpretation. In a controlled Storm Water Management Model (SWMM) calibration case study, the paper compares skill-based, tool-based, and multi-agent organisations of the same procedures. All completed the workflow and produced calibrated models of equivalent accuracy; architectures differed in reliability and cost. On-demand instructions supported longer request sequences but required a more capable model; fixed interfaces were less costly for single tasks but became unreliable on extended tasks; multi-agent division remained reliable, with costs depending on the model.",
+      "agent_evidence": "LLM agents plan and execute a multistep SWMM calibration workflow comprising data preparation, parameter screening, simulation, validation and interpretation; the paper experimentally compares tool/skill/multi-agent workflow organisations.",
+      "object_evidence": "Controlled SWMM urban drainage calibration case study; output is calibrated drainage model, with accuracy, reliability and cost comparisons across three agent organisations.",
+      "modules": [
+        "05",
+        "09"
+      ],
+      "codes": [
+        "05.03.03",
+        "09.05.07"
+      ],
+      "primary_module": "09",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Main-controller journal Crossref title harvest (313 raw noisy records; this DOI surfaced in the E-domain source pass).",
+        "Publisher page https://www.nature.com/articles/s41545-026-00638-8: title, author metadata, online date and abstract/description checked 2026-10-22."
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Controlled calibration case study and agent workflow comparison meet a plausible engineering-research role; primary object is urban drainage/water infrastructure.05 module is conditional on the case study reporting water-environment/hydrologic object results beyond engineering model calibration; primary filing 09.",
+      "existing_paper_id": null,
+      "duplicate_status": "new_not_in_922_baseline"
+    },
+    {
+      "title": "Multi-agent AI for end-to-end air quality analysis and decision support",
+      "authors": "Chendong Ma; Maohao Ran; Jun Song; Meng Gao",
+      "year": 2026,
+      "venue": "npj Clean Air",
+      "url": "https://www.nature.com/articles/s44407-026-00102-4",
+      "doi": "10.1038/s44407-026-00102-4",
+      "arxiv_id": "",
+      "first_public_date": "2026-09-15",
+      "publication_date": "2026-09-15",
+      "abstract": "Neuro-Air is a hierarchical multi-agent LLM framework that couples real-time air-pollution data retrieval with a persistent code-execution sandbox. A coordinating agent directs five domain-specialized workers. Across 317 real-world cases it runs the pipeline from heterogeneous data ingestion to structured output. In a matched ablation across five additional backbones, multi-agent configuration obtains pooled 88.4% accuracy on a common 90-task programmatically verified subset, using ground truth recomputed from source data. Expert review identifies cases suitable for autonomous analysis and cases requiring human judgment.",
+      "agent_evidence": "A coordinator delegates to five specialist agents and executes a multi-step data retrieval, code execution, and synthesis pipeline; reports a five-backbone matched ablation and expert review.",
+      "object_evidence": "Urban air pollution and air-quality analysis using real-world cases; 317 cases, verified 90-task subset and recomputed source-data ground truth.",
+      "modules": [
+        "05"
+      ],
+      "codes": [
+        "05.03.04"
+      ],
+      "primary_module": "05",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Main-controller journal Crossref title harvest (313 raw noisy records).",
+        "Publisher page https://www.nature.com/articles/s44407-026-00102-4: title, authors, online date and abstract/description checked 2026-10-22."
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "The application is framed partly as urban atmospheric management/decision support. Concrete air-pollution analysis cases and source-verified tasks support 05.03.04; confirm whether final review treats this as scientific analysis Agent or operational decision support.",
+      "existing_paper_id": null,
+      "duplicate_status": "new_not_in_922_baseline"
+    },
+    {
+      "title": "An LLM-agent interface for end-to-end probabilistic seismic hazard and risk analysis",
+      "authors": "Sreenath Vemula; Pierre Jehel; Fabrice Cotton; Filippo Gatti",
+      "year": 2026,
+      "venue": "npj Natural Hazards",
+      "url": "https://www.nature.com/articles/s44304-026-00262-z",
+      "doi": "10.1038/s44304-026-00262-z",
+      "arxiv_id": "",
+      "first_public_date": "2026-08-26",
+      "publication_date": "2026-08-26",
+      "abstract": "An agentic interface exposes the end-to-end probabilistic seismic hazard and risk chain through an open-source MCP server wrapping OpenQuake and the 2020 European Seismic Hazard and Risk Models. The LLM chooses which tools to call and in what order, reads outputs and revises its plan; OpenQuake/custom code calculate hazard, damage and loss, retaining provenance. Against ESHM20 at 73 cities, reproduced 475-year spectral accelerations match published values within a 5% median deviation and within 28% at 97% of cities. The interface also supports conditional spectra, deterministic scenarios, surface hazard, building loss, retrofit comparison and record selection.",
+      "agent_evidence": "LLM orchestrator selects tool calls/order, reads calculated results and revises plans across the seismic hazard/risk chain; MCP exposes 24 typed endpoints.",
+      "object_evidence": "Probabilistic earthquake hazard, ground-motion, building damage and loss; benchmarked 475-year spectral accelerations against ESHM20 at 73 cities, with provenance and building/retrofit analyses.",
+      "modules": [
+        "05",
+        "09"
+      ],
+      "codes": [
+        "05.01.03",
+        "09.05.01"
+      ],
+      "primary_module": "05",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Main-controller journal Crossref title harvest (313 raw noisy records).",
+        "Publisher page https://www.nature.com/articles/s44304-026-00262-z: title, authors, online date and abstract/description checked 2026-10-22."
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Earthquake hazard is geophysics (05.01.03); building damage, loss and retrofit comparison support civil/structural engineering (09.05.01) if the reported object-level analyses are retained. Main classification review needed for scope of these city-scale validations.",
+      "existing_paper_id": null,
+      "duplicate_status": "new_not_in_922_baseline"
+    },
+    {
+      "title": "LeakAgent: a multi-agent system for leak detection using multi-modal large language model coordination in water distribution network",
+      "authors": "Tianwei Mu; Feiyu Duan; Dan Xue; Mingzhe Yuan; Wenhong Wang; Manhong Huang; Hui Yang; Jun Li; Mashallah Rezakazemi",
+      "year": 2026,
+      "venue": "Communications AI & Computing",
+      "url": "https://www.nature.com/articles/s44488-026-00024-w",
+      "doi": "10.1038/s44488-026-00024-w",
+      "arxiv_id": "",
+      "first_public_date": "2026-10-06",
+      "publication_date": "2026-10-06",
+      "abstract": "A language-coordinated multi-agent system integrates hydraulic modelling, network partitioning, sensor planning and leak analysis. A pressure-sensitivity field informs zoning and sensor placement; a dual-branch graph model jointly detects leak presence and affected partition; coordinator detects and repairs execution faults. Across five water distribution networks (191–920 nodes), the system reports about 96% accuracy at 20% leak magnitude, robustness to demand/sensor noise and transfer without manual retuning.",
+      "agent_evidence": "LLM-coordinated MAS links hydraulic simulation, zoning, sensor planning and analysis; coordinator detects/repairs execution faults, satisfying multistep/tool coordination.",
+      "object_evidence": "Water-distribution engineering networks; five network experiments compare leak detection/localization and robustness/transfer.",
+      "modules": [
+        "09"
+      ],
+      "codes": [
+        "09.05.07"
+      ],
+      "primary_module": "09",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Main-controller journal Crossref title harvest (313 raw noisy records).",
+        "Publisher page https://www.nature.com/articles/s44488-026-00024-w: title, author metadata, online date and abstract/description checked 2026-10-22."
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Boundary concern: applied leak/fault diagnosis may be routine infrastructure operation rather than a scientific-research Agent role. Included only as a needs_review boundary case pending full-text check of whether workflow performs research-grade hydraulic/sensor-design experiments.",
+      "existing_paper_id": null,
+      "duplicate_status": "new_not_in_922_baseline"
+    },
+    {
+      "title": "A RAG-enhanced multi-agent LLM/VLM framework for auditable and region-aware structural health monitoring of a historic masonry structure",
+      "authors": "Kemal Hacıefendioğlu; Volkan Kahya; Tunahan Aslan",
+      "year": 2026,
+      "venue": "Scientific Reports",
+      "url": "https://www.nature.com/articles/s41598-026-57424-2",
+      "doi": "10.1038/s41598-026-57424-2",
+      "arxiv_id": "",
+      "first_public_date": "2026-10-15",
+      "publication_date": "2026-10-15",
+      "abstract": "Proof-of-concept SHM on one historic masonry minaret. A manager-orchestrator coordinates signal analysis, visual analysis and cross-modal fusion. Vibration data from four sensors are processed; an autoencoder is trained on healthy measurements 1–12 and evaluated on measurements 13–20; relation-based autoencoders localize anomalies. A VLM analyzes linked inspection images; three RAG-supported agents reconcile signal and image evidence into global and zone-level risk assessments. The study compares with-RAG and without-RAG modes in one deployment.",
+      "agent_evidence": "Manager and three specialist/fusion agents coordinate signal processing, image evidence, retrieval and risk synthesis; reports with/without-RAG comparison.",
+      "object_evidence": "Four-sensor vibration and inspection image analysis on one historic masonry minaret; train/test measurement split and zone-level risk maps.",
+      "modules": [
+        "09"
+      ],
+      "codes": [
+        "09.05.02"
+      ],
+      "primary_module": "09",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Main-controller journal Crossref title harvest (313 raw noisy records).",
+        "Publisher page https://www.nature.com/articles/s41598-026-57424-2: title, authors, online date and abstract/description checked 2026-10-22."
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Boundary concern: structural health monitoring is an engineering case study but may be operational diagnosis rather than scientific discovery; only one structure is evaluated. Main risk is Agent-scope/core strength, not object classification.",
+      "existing_paper_id": null,
+      "duplicate_status": "new_not_in_922_baseline"
+    },
+    {
+      "paper_id": "2608.24954",
+      "title": "AFDBench: A Reasoning-First AI Scientist for NationalWeather Service Forecast Discussions",
+      "authors": "Manmeet Singh; Somnath Luitel; Prabhjot Singh; Manraaj Banga; Naveen Sudharsan; Josh Durkee",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.24954",
+      "doi": "10.48550/arXiv.2608.24954",
+      "arxiv_id": "2608.24954",
+      "first_public_date": "2026-08-25",
+      "publication_date": null,
+      "abstract": "Large language models (LLMs) hallucinate numerical values when generating high-stakes meteorological text, posing risks for weather communication. We present AFDBench, an AI meteorologist that generates professional Area Forecast Discussions (AFDs) by reasoning through structured AI weather forecast data from Google’s WeatherNext 2. AFDBench is a benchmark of 7,732 expert-written discussions from 13 National Weather Service (NWS) offices paired with real AI weather forecast inputs, with Met-Align, Style-Align, and Input-Grounding metrics. Zero-shot LLMs have low Style-Align (~0.33) and moderate Input-Grounding (~0.88). On 1,033 held-out samples from two unseen NWS offices, GRPO nearly doubles Style-Align from 0.318 to 0.619 and improves Input-Grounding from 0.881 to 0.940.",
+      "agent_evidence": "虽然面向气象文本，官方摘要描述的是一个天气讨论生成模型与RL调优benchmark；没有证明多步Agent行动、工具使用、规划或科研流程角色。其核心是预报沟通文本生成，不按“AI scientist”题名纳入。若按对象记背景关联则为05.02.01。",
+      "object_evidence": "NWS area forecast discussions/structured weather forecasts；benchmark text-generation task。",
+      "modules": [
+        "05"
+      ],
+      "codes": [
+        "05.02.01"
+      ],
+      "primary_module": "05",
+      "suggested_status": "excluded",
+      "source_trail": [
+        "Main controller 专业域handoff `october_round2_A_general.json` arxiv_screening; no additional broad query.",
+        "Official arXiv abstract page accessed 2026-10-22: https://arxiv.org/abs/2608.24954"
+      ],
+      "source_level": "official_arxiv_abstract",
+      "uncertainties": "未满足Agent能力/科研角色证据；若讨论AI天气文本生成可作为边界背景，但不纳入。",
+      "existing_paper_id": null,
+      "duplicate_status": "new_not_in_922_baseline",
+      "evidence_log": [
+        {
+          "claim": "工作目标为生成NWS Area Forecast Discussions并评估天气数据忠实度。",
+          "location": "arXiv abstract",
+          "evidence": "摘要称AI meteorologist从WeatherNext 2结构化预报数据生成AFDs。",
+          "confidence": "high"
+        },
+        {
+          "claim": "研究给出天气文本生成benchmark与真实数据输入。",
+          "location": "arXiv abstract",
+          "evidence": "7,732份NWS讨论，来自13个office并配对AI weather forecast inputs。",
+          "confidence": "high"
+        },
+        {
+          "claim": "摘要没有显示工具使用或多步Agent行动。",
+          "location": "arXiv abstract",
+          "evidence": "系统描述为LLM生成+GRPO训练，无规划、外部工具调用或反馈迭代式科研流程。",
+          "confidence": "high"
+        },
+        {
+          "claim": "结果测量预报文本属性而非新天气科学发现。",
+          "location": "arXiv abstract",
+          "evidence": "Met-Align、Style-Align、Input-Grounding及NWS heldout样本评价。",
+          "confidence": "high"
+        },
+        {
+          "claim": "应排除于Agent综述。",
+          "location": "arXiv abstract",
+          "evidence": "标题所称AI Scientist不足以证明Agent最低能力和科研角色。",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "paper_id": "2609.00814",
+      "title": "RingMoClaw: An Experience-Inspired Multi-Agent Framework for Self-Evolving Research in Remote Sensing",
+      "authors": "Kaiyue Kang; Qixuan He; Peijin Wang; Yingchao Feng; Chao Ren; Kangxin Wang; Wenhui Diao; Yixiao Wang; Liangjin Zhao; Kaiwen Wei; Nayu Liu; Xian Sun",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.00814",
+      "doi": "10.48550/arXiv.2609.00814",
+      "arxiv_id": "2609.00814",
+      "first_public_date": "2026-09-01",
+      "publication_date": null,
+      "abstract": "Remote-sensing visual models require extensive trial and error in model design, data processing and performance diagnosis. RingMoClaw is a multi-agent framework with research and quality-control branches and a dynamic experience bus, forming an optimization process across strategy generation, experiment execution, independent review and experience accumulation. Experiments cover four remote-sensing tasks: object detection, scene classification, semantic segmentation and change detection. Against corresponding baselines it improves object-detection mAP50 by 1.84% and gives consistent gains across the other tasks, while reducing evolution steps by over 40% relative to research automation frameworks.",
+      "agent_evidence": "明确研究目标为持续改进遥感视觉模型；多Agent执行策略生成、实验、独立复核和反馈经验积累，承担模型研究/性能优化科研角色。",
+      "object_evidence": "遥感视觉解释，四类影像下游任务。",
+      "modules": [
+        "05"
+      ],
+      "codes": [
+        "05.04.04"
+      ],
+      "primary_module": "05",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Main controller 专业域handoff `october_round2_A_general.json` arxiv_screening; no additional broad query.",
+        "Official arXiv abstract page accessed 2026-10-22: https://arxiv.org/abs/2609.00814"
+      ],
+      "source_level": "official_arxiv_abstract",
+      "uncertainties": "遥感任务适配明确；模块建议05.04.04。正式全文可进一步核查四任务数据集与自主迭代协议。",
+      "existing_paper_id": null,
+      "duplicate_status": "new_not_in_922_baseline",
+      "evidence_log": [
+        {
+          "claim": "目标是遥感视觉模型持续研究改进。",
+          "location": "arXiv abstract",
+          "evidence": "摘要指出模型改进当前依赖模型设计、数据处理和性能诊断的试错，并提出自演化research framework。",
+          "confidence": "high"
+        },
+        {
+          "claim": "流程包含策略生成、实验、独立复核和经验累积。",
+          "location": "arXiv abstract",
+          "evidence": "research branch、quality-control branch及experience bus组成闭环优化过程。",
+          "confidence": "high"
+        },
+        {
+          "claim": "存在分阶段诊断和反馈。",
+          "location": "arXiv abstract",
+          "evidence": "异构Critic提供阶段诊断与反馈，内部实验经验与外部知识指导策略演化。",
+          "confidence": "high"
+        },
+        {
+          "claim": "对象覆盖四个遥感下游任务。",
+          "location": "arXiv abstract",
+          "evidence": "object detection、scene classification、semantic segmentation、change detection。",
+          "confidence": "high"
+        },
+        {
+          "claim": "相对基线存在量化效果。",
+          "location": "arXiv abstract",
+          "evidence": "目标检测mAP50提高1.84%，其他三任务一致提升，演化步数较已有研究自动化框架减少40%以上。",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "paper_id": "2609.31683",
+      "title": "Autonomous Research Project Management as an Agent Skill: A Case Study in Exact Spectral Spatial Regression",
+      "authors": "Alexander Chen; Jeffrey Meng; Bram Hoex; Tong Xie",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.31683",
+      "doi": "10.48550/arXiv.2609.31683",
+      "arxiv_id": "2609.31683",
+      "first_public_date": "2026-09-16",
+      "publication_date": null,
+      "abstract": "Presents an end-to-end demonstration of autonomous ML research by an agent skill. It evaluates an FFT-based Kernel Ridge Regression solver for regular spatial grids using 2005 monthly NOAA Kaplan SST v2 anomaly fields on a 36 × 72 grid. The research was executed on CPU-only Apple M2 Pro (reported solver time 78.7 seconds; peak RSS 1.57 GB). Across 74 sub-agent sessions, the system routed failed hypothesis review gates to literature retrieval, fixed bootstrap indexing bugs, and completed work with four discrete human steering events.",
+      "agent_evidence": "摘要明确自主科研工作流、多阶段假设审查、检索反馈、修复代码、求解器实验与少量人工引导；科研角色为FFT-KRR空间回归方法评估。",
+      "object_evidence": "FFT-KRR规则网格科学计算；NOAA Kaplan SST monthly anomaly fields。",
+      "modules": [
+        "01",
+        "05"
+      ],
+      "codes": [
+        "01.02.17",
+        "05.02.02"
+      ],
+      "primary_module": "01",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Main controller 专业域handoff `october_round2_A_general.json` arxiv_screening; no additional broad query.",
+        "Official arXiv abstract page accessed 2026-10-22: https://arxiv.org/abs/2609.31683"
+      ],
+      "source_level": "official_arxiv_abstract",
+      "uncertainties": "05.02.02为数据对象多模块判定；若主控认为SST仅作算法benchmark且无气候科学问题结果，可仅保留01.02.17。",
+      "existing_paper_id": null,
+      "duplicate_status": "new_not_in_922_baseline",
+      "evidence_log": [
+        {
+          "claim": "研究任务是FFT-KRR求解器在规则空间网格上的科学计算评估。",
+          "location": "arXiv abstract",
+          "evidence": "摘要指明评估FFT-based Kernel Ridge Regression solver。",
+          "confidence": "high"
+        },
+        {
+          "claim": "实验使用具体海温异常对象。",
+          "location": "arXiv abstract",
+          "evidence": "使用2005年月度NOAA Kaplan SST v2 anomaly fields，网格36×72。",
+          "confidence": "high"
+        },
+        {
+          "claim": "Agent承担跨阶段自主研究执行。",
+          "location": "arXiv abstract",
+          "evidence": "DeepSeek V4 Flash通过agent skill suite协调，完成求解器实验。",
+          "confidence": "high"
+        },
+        {
+          "claim": "研究有假设审查失败后的反馈迭代。",
+          "location": "arXiv abstract",
+          "evidence": "74个sub-agent sessions；两次hypothesis review失败后回到文献检索，且修复bootstrap索引bug。",
+          "confidence": "high"
+        },
+        {
+          "claim": "摘要报告计算效率和人工干预量。",
+          "location": "arXiv abstract",
+          "evidence": "Apple M2 Pro CPU-only，solver 78.7秒、峰值RSS 1.57GB，四次人类引导。",
+          "confidence": "high"
+        },
+        {
+          "claim": "方法与气候应用双模块存在边界。",
+          "location": "arXiv abstract",
+          "evidence": "主要贡献是空间回归求解器测试（01.02.17）；SST anomaly fields作为具体气候对象数据实验支持05.02.02，但结果没有解释气候过程。",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "paper_id": "2609.17123",
+      "title": "AI for Science with GPT-6 Astra: Thermal Design and Electrothermal Analysis of 2D CFET",
+      "authors": "Min-Hui Kim; Khushi Sharma; Sarah Zhang; Ye Wang",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.17123",
+      "doi": "10.48550/arXiv.2609.17123",
+      "arxiv_id": "2609.17123",
+      "first_public_date": "2026-09-15",
+      "publication_date": null,
+      "abstract": "Thermal optimization of 2D CFET inverters tests structural design proposals against electrical cost. An AI-agent workflow within a supplied electrothermal model selects a redistributed source-interconnect geometry and proposes substrate-directed heat removal. The combined design reduces peak temperature rise by 1.67 K at fixed metal volume and 20 μW; metal-resistance sensitivity yields ~0.6 K cooling with 2% nFET on-current loss. Effective contact-length scaling shows lower temperature may accompany higher thermal resistance when current falls; reproduction identifies agreeing implementations and a 104.95 K failure for diagnosis.",
+      "agent_evidence": "一手摘要支持AI scientist/agent协同提出器件热设计方案，在共享电热模型中多轮测试、敏感性分析和复现，承担器件工程科研设计与验证角色。",
+      "object_evidence": "二维CFET器件结构/电热模型和温度-电流权衡。",
+      "modules": [
+        "09"
+      ],
+      "codes": [
+        "09.08.02"
+      ],
+      "primary_module": "09",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Main controller 专业域handoff `october_round2_A_general.json` arxiv_screening; no additional broad query.",
+        "Official arXiv abstract page accessed 2026-10-22: https://arxiv.org/abs/2609.17123"
+      ],
+      "source_level": "official_arxiv_abstract",
+      "uncertainties": "器件级热设计适合09.08.02；虽为2D材料器件，但实验重点为CFET工程设计/电热权衡，04模块证据不足。",
+      "existing_paper_id": null,
+      "duplicate_status": "new_not_in_922_baseline",
+      "evidence_log": [
+        {
+          "claim": "科研目标是二维CFET器件热优化。",
+          "location": "arXiv abstract",
+          "evidence": "摘要对thermal design proposals以电气代价共同评估。",
+          "confidence": "high"
+        },
+        {
+          "claim": "Agent提出具体器件结构设计。",
+          "location": "arXiv abstract",
+          "evidence": "Agent选择source-interconnect redistribution；协调Agent提出substrate-directed heat-removal path。",
+          "confidence": "high"
+        },
+        {
+          "claim": "方案通过电热模型和共同约束进行比较。",
+          "location": "arXiv abstract",
+          "evidence": "combined design在固定metal volume和20 μW下测试。",
+          "confidence": "high"
+        },
+        {
+          "claim": "报告热性能/电性能权衡。",
+          "location": "arXiv abstract",
+          "evidence": "峰值温升降低1.67 K；金属电阻敏感性约0.6 K冷却伴随2% nFET on-current损失。",
+          "confidence": "high"
+        },
+        {
+          "claim": "包含再现和异常结果诊断。",
+          "location": "arXiv abstract",
+          "evidence": "reproduction找出实现间一致性并保留104.95 K失败供诊断。",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "search_log": [
+    {
+      "source": "OpenAlex Works API",
+      "date": "2026-10-22",
+      "queries": [
+        "agentic crop breeding research plant science",
+        "AI agents agriculture experiment crop discovery",
+        "LLM agents agricultural science research",
+        "agentic engineering design scientific discovery",
+        "AI agent autonomous engineering experiment discovery",
+        "agent scientific discovery robotics laboratory engineering",
+        "agentic aerospace research scientific discovery",
+        "AI agent satellite earth observation scientific research",
+        "autonomous ocean science research agent",
+        "agentic transportation research traffic science agent",
+        "scientific agent geoscience agriculture engineering 2026"
+      ],
+      "raw_result_count": 0,
+      "known_count": 0,
+      "new_count": 0,
+      "failed_or_limited": "全部查询HTTP 429（free daily quota exhausted）；未把限流当作无结果。"
+    },
+    {
+      "source": "Crossref REST API",
+      "date": "2026-10-22",
+      "queries": [
+        "agentic crop breeding",
+        "AI agent agriculture science",
+        "LLM agent plant science experiment",
+        "autonomous scientific agent engineering design",
+        "agentic engineering discovery experiment",
+        "AI scientist engineering materials manufacturing",
+        "agentic aerospace science",
+        "AI agent satellite earth observation research",
+        "autonomous ocean science agent",
+        "agentic transportation research",
+        "agentic geoscience research",
+        "AI agent food science discovery"
+      ],
+      "raw_result_count": 300,
+      "known_count": 0,
+      "new_count": 5,
+      "failed_or_limited": "10/12查询返回HTTP 200，每查询取30条；agentic transportation query被429限制；时间过滤未显著提升相关性，候选需出版商复核。"
+    },
+    {
+      "source": "主控期刊Crossref题名收割及Nature/Nature-family publisher pages",
+      "date": "2026-10-22",
+      "queries": [
+        "主控提供round2_journals/harvest.json (reported 170 records) and harvest_expanded.json (reported 313 noisy raw records); screened DOI leads in earth/environment, agriculture and engineering. Directly queried publisher pages for s41545-026-00638-8; s44407-026-00102-4; s44304-026-00262-z; s43247-026-03962-6; s41598-026-63267-8; s41598-026-67160-2; s44488-026-00024-w; s41598-026-57424-2."
+      ],
+      "raw_result_count": 8,
+      "known_count": 0,
+      "new_count": 5,
+      "failed_or_limited": "主控提及的cache path在当前可见树中不存在；只使用其给出的DOI线索并直接访问publisher pages。5个候选完整摘要页HTTP 200；wildfire perspective排除；另有dairy ABM与RAVA按 Agent科研角色边界筛除。"
+    },
+    {
+      "source": "A general arXiv professional-domain handoff",
+      "date": "2026-10-22",
+      "queries": [
+        "No new search; screened supplied arxiv_screening records: 2608.24954 AFDBench; 2609.00814 RingMoClaw; 2609.31683 Exact Spectral Spatial Regression; added B feedback 2609.17123 thermalCFET after official abstract check."
+      ],
+      "raw_result_count": 4,
+      "known_count": 0,
+      "new_count": 4,
+      "failed_or_limited": "No broad queries opened. All four official arXiv abs pages returned HTTP 200 and exposed title/authors/submission date/abstract. Existing 922-row baseline and current E output checked for IDs/title."
+    }
+  ],
+  "screened_out": [
+    {
+      "title": "Mitigation of the coordination crisis in wildfire management using a multi-agent AI system",
+      "doi": "10.1038/s43247-026-03962-6",
+      "reason": "Publisher abstract identifies this as a perspective/governance framework proposal, not an evaluated autonomous scientific-research Agent."
+    },
+    {
+      "title": "Agent-based modeling of low-emission fertilizer adoption for dairy farm decarbonisation using empirical farm data",
+      "doi": "10.1038/s41598-026-63267-8",
+      "reason": "Agent-based model agents represent farms/adoption behavior; the model is the research instrument, not an autonomous Agent conducting science."
+    },
+    {
+      "title": "RAVA: a robust recurrent active vision agent for plant disease diagnosis under severe environmental noise",
+      "doi": "10.1038/s41598-026-67160-2",
+      "reason": "Active-vision classifier operates sequential image glimpses, but the publisher abstract evidences crop disease diagnosis/model benchmark rather than a scientific-research Agent workflow; screened out under the no-routine-diagnosis boundary."
+    },
+    {
+      "title": "AI Agents and Agentic AI in plant breeding: new frontiers, opportunities and challenges",
+      "doi": "10.3389/fgene.2026.1958764",
+      "reason": "Review/article survey rather than primary Agent experiment; not added as a candidate."
+    },
+    {
+      "title": "A multi-agent multi-modal LLM with Monte Carlo tree search for interpretable plant disease classification",
+      "doi": "10.3389/fpls.2026.1937679",
+      "reason": "Plant disease classification system; no sufficient evidence of an Agent undertaking a scientific research workflow, so exclude/monitor rather than force into module 08."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "asd0035": {
+    "year": "2025",
+    "_evidence": "reviewer_versions.json: DOI 10.1002/adma.202413523, Crossref published-print 2025-06, distinct from first-online 2024-12-18"
+  },
+  "asd0040": {
+    "year": "2025",
+    "url": "https://arxiv.org/abs/2404.07738v2",
+    "note": "Version 2, 9 February 2025; first preprint posted in 2024",
+    "_evidence": "reviewer_versions.json: archived PDF page 1, arXiv:2404.07738v2"
+  },
+  "asd0254": {
+    "year": "2025",
+    "url": "https://arxiv.org/abs/2412.09429v4",
+    "note": "Version 4, 5 June 2025; first preprint posted in 2024",
+    "_evidence": "reviewer_versions.json: archived PDF page 1, arXiv:2412.09429v4; journal-style for-review layout is not publication evidence"
+  }
+}

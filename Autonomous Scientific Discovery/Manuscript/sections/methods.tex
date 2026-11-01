@@ -21,6 +21,8 @@ A work is eligible when its investigated system satisfies all four conditions be
 
 Eligibility depends on the documented system behavior rather than the use of the words ``agent'', ``autonomous'', or ``scientist'' in a title. An LLM is neither required nor sufficient. Conventional prediction, generation, optimization, simulation, or high-throughput screening is not included merely because it uses AI or automation; the system must also meet the four conditions. Similarly, an agent-based simulation is assessed by its research goal and action process, rather than admitted solely because its simulated entities are called agents. Complete closure of the scientific discovery cycle is not required. Human-guided and partially autonomous systems remain eligible, with their division of responsibility treated as an analytical attribute.
 
+Tool invocation alone does not establish agency. Relevant evidence concerns whether the system organizes, selects, sequences, parameterizes, monitors, or revises connected actions in relation to its goal, represented state, or feedback. This interpretation applies to classical and language-based systems alike; a complete feedback loop is not a prerequisite for every eligible task.
+
 Benchmark-oriented research can provide evidence about an eligible scientific agent, and evaluated benchmark tasks can establish domain coverage. A benchmark name or the presence of scientific terminology alone does not meet the eligibility criteria. The distinction is between evaluating an agent's scientific task performance and evaluating a generic model on isolated questions without a qualifying action process.
 
 \subsection{Units of analysis and version handling}
@@ -99,6 +101,30 @@ Traceability and limitations & Checked source version and result location; repro
 The distinction between execution and evidence for scientific conclusions also informs Feng et al.'s analysis~\cite{feng2026}. Section~\ref{sec:framework} defines the decision-responsibility and claim-evidence categories used here. Validation settings are recorded according to the scientific proposition: formal verification, benchmarks, simulation, experiments, and clinical or field evaluation do not constitute a universal quality ranking. Repetition by the original team and independent reproduction are distinguished.
 
 Quantitative comparison requires compatible objects, task definitions, metrics, sample or problem sets, budgets, and validation conditions. Otherwise, the synthesis remains qualitative and explains the mismatches. Scores from unrelated endpoints are not pooled, and missing reports of intervention are not interpreted as its absence. The synthesis analyzes checked reports; it does not independently replicate their experiments.
+
+\subsection{Coding coverage and reproducible corpus entry}
+
+The accompanying project repository provides a dated 662-work manifest, a core-only BibTeX subset, a Paper-ID--citation-key bridge, and a record-level coding matrix under \nolinkurl{Coverage_Check/core_tag_alignment_2026-11-01/}. The manifest separates corpus membership from citation in the manuscript and links classification records to notes, checked sources, and version decisions. Bibliographic years follow the selected cited version: a revised preprint year and a formal issue year are distinguished from first posting or first online publication. Recoverable search records retain their original queries, dates, source pointers, and failures; historical gaps remain explicit.
+
+Table~\ref{tab:coding-coverage} reports recorded coverage after alignment with the existing annotation schema. A populated field, vocabulary conformity, note-supported alignment, and independent primary-source verification are different properties. This round aligned 522 auxiliary-tag fields using existing notes; these changes are not presented as a new full-text audit of all tags. The existing 13 workflow tags are aggregated into six research roles for synthesis, with the mapping supplied in the package. The integrative end-to-end automation tag is retained separately and never expanded automatically into observations of every role. Autonomy and cross-attribute summaries remain indexed from notes, without treating the lack of dedicated master-table columns as absence of those attributes.
+
+\begin{table}[H]
+\caption{Recorded auxiliary coding among 662 core works. Vocabulary conformity means that all tokens in a populated field match the existing schema; it does not establish scientific correctness. Note alignment counts fields changed in this round.}
+\label{tab:coding-coverage}
+\small
+\begin{tabularx}{\textwidth}{@{}Xrrr@{}}
+\toprule
+Existing field & Populated & Vocabulary conformant & Note aligned \\
+\midrule
+Agent type & 648 & 581 & 143 \\
+Research workflow role & 652 & 261 & 144 \\
+Validation type & 649 & 326 & 107 \\
+Scientific contribution type & 660 & 242 & 128 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Legacy extensions, generic templates, and ambiguous labels remain visible in the review queue. The six decision paradigms, detailed collaboration structures, human decision ownership, and causal attribution of scientific contributions have not been coded across the entire corpus. Their discussion uses the selected cases and explicitly checked reports; the eleven-case matrix cannot supply a 662-work prevalence estimate. Validation method, independence of checking, and applicability beyond the tested setting are also separate evidence questions.
 
 \subsection{Methodological limitations}
 

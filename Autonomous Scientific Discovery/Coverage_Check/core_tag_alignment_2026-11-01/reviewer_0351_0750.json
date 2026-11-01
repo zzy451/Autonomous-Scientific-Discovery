@@ -1,0 +1,1908 @@
+{
+  "scope": "active_confirmed_core ASD-0351–ASD-0750",
+  "reviewed_at": "2026-11-01",
+  "read_only_owner_review": true,
+  "summary": {
+    "core_records_reviewed": 223,
+    "strict_empty_records": [
+      "ASD-0385",
+      "ASD-0389",
+      "ASD-0418",
+      "ASD-0466"
+    ],
+    "strict_empty_fields": 12,
+    "garbled_four_tag_fields_found": 0,
+    "proposed_changes": 16,
+    "agent_type_note_mismatch_count": 8,
+    "agent_type_note_mismatch_ids": [
+      "ASD-0519",
+      "ASD-0520",
+      "ASD-0548",
+      "ASD-0565",
+      "ASD-0618",
+      "ASD-0624",
+      "ASD-0630",
+      "ASD-0631"
+    ],
+    "evidence_log_present_count": 223,
+    "legacy_outside_schema_record_counts": {
+      "research_workflow_role": 185,
+      "validation_type": 108,
+      "scientific_contribution_type": 214
+    },
+    "legacy_value_policy": "旧英文扩展值不是乱码，不强行归一；本产物只给确定别名建议与需补证据清单。",
+    "source_level_note": "所有建议源于既有笔记；N1表示笔记记录已核全文，N2表示摘要/补充材料受限。均未在本次重读原文，不宣称独立全文验证。"
+  },
+  "records": [
+    {
+      "paper_id": "ASD-0385",
+      "changes": [
+        {
+          "field": "agent_type",
+          "old_value": [],
+          "new_value": [
+            "Planning Agent",
+            "Tool-using Agent",
+            "Robot / Embodied Agent",
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.md",
+          "evidence_lines": [
+            38,
+            40,
+            107,
+            108,
+            111,
+            113,
+            269
+          ],
+          "evidence_log_lines": [
+            38,
+            40
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记Evidence Log记录已核Nature Communications全文；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        },
+        {
+          "field": "research_workflow_role",
+          "old_value": [],
+          "new_value": [
+            "experimental_design",
+            "tool_use_and_code_execution",
+            "experiment_execution",
+            "data_analysis",
+            "result_interpretation",
+            "evidence_assessment_and_validation"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.md",
+          "evidence_lines": [
+            38,
+            40,
+            41,
+            122,
+            124,
+            125,
+            126,
+            127,
+            128,
+            270
+          ],
+          "evidence_log_lines": [
+            38,
+            40,
+            41
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记Evidence Log记录已核Nature Communications全文；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        },
+        {
+          "field": "validation_type",
+          "old_value": [],
+          "new_value": [
+            "robotic_experiment",
+            "wet_lab_experiment"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.md",
+          "evidence_lines": [
+            41,
+            192,
+            193,
+            272
+          ],
+          "evidence_log_lines": [
+            41
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记Evidence Log记录已核Nature Communications全文；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        },
+        {
+          "field": "scientific_contribution_type",
+          "old_value": [
+            "survey_reference"
+          ],
+          "new_value": [
+            "experimental_discovery",
+            "system_platform"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.md",
+          "evidence_lines": [
+            40,
+            41,
+            213,
+            274
+          ],
+          "evidence_log_lines": [
+            40,
+            41
+          ],
+          "reason": "现值survey_reference是错误占位；改用笔记明确、符合schema的科学贡献标签。 笔记Evidence Log记录已核Nature Communications全文；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        }
+      ],
+      "unresolved": [
+        {
+          "field": "research_workflow_role",
+          "not_adopted": [
+            "hypothesis_generation",
+            "end_to_end_research_automation"
+          ],
+          "evidence_lines": [
+            121,
+            130,
+            270
+          ],
+          "reason": "假设生成在详细项仅“部分是”；多步合成闭环尚不足以直接扩展为端到端科研全流程。",
+          "evidence_path": "Notes/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.md"
+        },
+        {
+          "field": "scientific_contribution_type",
+          "not_adopted": [
+            "experimental_optimization"
+          ],
+          "evidence_lines": [
+            213,
+            274
+          ],
+          "reason": "不在当前schema枚举内，不机械转成experimental_discovery。",
+          "evidence_path": "Notes/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0389",
+      "changes": [
+        {
+          "field": "agent_type",
+          "old_value": [],
+          "new_value": [
+            "Planning Agent",
+            "Tool-using Agent",
+            "Robot / Embodied Agent",
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Li_2020_MAOSIC_Chiral_Perovskite.md",
+          "evidence_lines": [
+            19,
+            21,
+            83,
+            84,
+            87,
+            89,
+            240
+          ],
+          "evidence_log_lines": [
+            19,
+            21
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记Evidence Log记录已核publisher PDF；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        },
+        {
+          "field": "research_workflow_role",
+          "old_value": [],
+          "new_value": [
+            "experimental_design",
+            "tool_use_and_code_execution",
+            "experiment_execution",
+            "data_analysis",
+            "result_interpretation",
+            "evidence_assessment_and_validation"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Li_2020_MAOSIC_Chiral_Perovskite.md",
+          "evidence_lines": [
+            19,
+            21,
+            22,
+            98,
+            100,
+            101,
+            102,
+            103,
+            104,
+            241
+          ],
+          "evidence_log_lines": [
+            19,
+            21,
+            22
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记Evidence Log记录已核publisher PDF；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        },
+        {
+          "field": "validation_type",
+          "old_value": [],
+          "new_value": [
+            "robotic_experiment",
+            "wet_lab_experiment"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Li_2020_MAOSIC_Chiral_Perovskite.md",
+          "evidence_lines": [
+            22,
+            168,
+            169,
+            243
+          ],
+          "evidence_log_lines": [
+            22
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记Evidence Log记录已核publisher PDF；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        },
+        {
+          "field": "scientific_contribution_type",
+          "old_value": [
+            "survey_reference"
+          ],
+          "new_value": [
+            "experimental_discovery",
+            "system_platform"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Li_2020_MAOSIC_Chiral_Perovskite.md",
+          "evidence_lines": [
+            19,
+            22,
+            189,
+            245
+          ],
+          "evidence_log_lines": [
+            19,
+            22
+          ],
+          "reason": "现值survey_reference是错误占位；改用笔记明确、符合schema的科学贡献标签。 笔记Evidence Log记录已核publisher PDF；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        }
+      ],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "not_adopted": [
+            "Human-in-the-loop Agent"
+          ],
+          "evidence_lines": [
+            88,
+            158,
+            240
+          ],
+          "reason": "详细标签虽为是，具体依据仅remote users参与；尚缺人类反馈进入闭环决策的说明。",
+          "evidence_path": "Notes/04_Materials_Science/Li_2020_MAOSIC_Chiral_Perovskite.md"
+        },
+        {
+          "field": "research_workflow_role",
+          "not_adopted": [
+            "hypothesis_generation",
+            "end_to_end_research_automation"
+          ],
+          "evidence_lines": [
+            97,
+            106,
+            241
+          ],
+          "reason": "假设生成详细项仅“部分是”；合成、表征、参数优化不直接等于端到端科研全流程。",
+          "evidence_path": "Notes/04_Materials_Science/Li_2020_MAOSIC_Chiral_Perovskite.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0418",
+      "changes": [
+        {
+          "field": "agent_type",
+          "old_value": [],
+          "new_value": [
+            "Planning Agent",
+            "Tool-using Agent",
+            "Robot / Embodied Agent",
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/03_Chemical_Sciences/Christensen_2021_Data_Science_Driven_Autonomous_Process_Optimization.md",
+          "evidence_lines": [
+            20,
+            22,
+            23,
+            86,
+            87,
+            88,
+            89,
+            205
+          ],
+          "evidence_log_lines": [
+            20,
+            22,
+            23
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记Evidence Log记录已核DOI页面及ChemRxiv全文；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        },
+        {
+          "field": "research_workflow_role",
+          "old_value": [],
+          "new_value": [
+            "experimental_design",
+            "tool_use_and_code_execution",
+            "experiment_execution",
+            "data_analysis",
+            "result_interpretation",
+            "evidence_assessment_and_validation"
+          ],
+          "evidence_path": "Notes/03_Chemical_Sciences/Christensen_2021_Data_Science_Driven_Autonomous_Process_Optimization.md",
+          "evidence_lines": [
+            22,
+            23,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            206
+          ],
+          "evidence_log_lines": [
+            22,
+            23
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记Evidence Log记录已核DOI页面及ChemRxiv全文；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        },
+        {
+          "field": "validation_type",
+          "old_value": [],
+          "new_value": [
+            "robotic_experiment",
+            "wet_lab_experiment"
+          ],
+          "evidence_path": "Notes/03_Chemical_Sciences/Christensen_2021_Data_Science_Driven_Autonomous_Process_Optimization.md",
+          "evidence_lines": [
+            23,
+            144,
+            145,
+            208
+          ],
+          "evidence_log_lines": [
+            23
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记Evidence Log记录已核DOI页面及ChemRxiv全文；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        },
+        {
+          "field": "scientific_contribution_type",
+          "old_value": [
+            "survey_reference"
+          ],
+          "new_value": [
+            "system_platform"
+          ],
+          "evidence_path": "Notes/03_Chemical_Sciences/Christensen_2021_Data_Science_Driven_Autonomous_Process_Optimization.md",
+          "evidence_lines": [
+            20,
+            22,
+            160,
+            210
+          ],
+          "evidence_log_lines": [
+            20,
+            22
+          ],
+          "reason": "现值survey_reference是错误占位；改用笔记明确、符合schema的科学贡献标签。 笔记Evidence Log记录已核DOI页面及ChemRxiv全文；本次仅复用笔记，未重读原文。",
+          "source_level": "local_note_only",
+          "review_grade": "N1"
+        }
+      ],
+      "unresolved": [
+        {
+          "field": "validation_type",
+          "not_adopted": [
+            "real_world_deployment"
+          ],
+          "evidence_lines": [
+            23,
+            128,
+            144,
+            145,
+            146,
+            208
+          ],
+          "reason": "具体证据是实验室机器人与HPLC-UV闭环；未见额外真实场景部署证据。",
+          "evidence_path": "Notes/03_Chemical_Sciences/Christensen_2021_Data_Science_Driven_Autonomous_Process_Optimization.md"
+        },
+        {
+          "field": "scientific_contribution_type",
+          "not_adopted": [
+            "experimental_optimization"
+          ],
+          "evidence_lines": [
+            160,
+            210
+          ],
+          "reason": "不在当前schema枚举内；仅复用已明确列出的system_platform。",
+          "evidence_path": "Notes/03_Chemical_Sciences/Christensen_2021_Data_Science_Driven_Autonomous_Process_Optimization.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0466",
+      "changes": [
+        {
+          "field": "agent_type",
+          "old_value": [],
+          "new_value": [
+            "Tool-using Agent",
+            "Robot / Embodied Agent",
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md",
+          "evidence_lines": [
+            42,
+            43,
+            44,
+            51,
+            114,
+            117,
+            119
+          ],
+          "evidence_log_lines": [
+            42,
+            43,
+            44,
+            51
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记仅坐实官方摘要和补充材料；主文仍受限，保留source_limited=yes。",
+          "source_level": "local_note_only",
+          "review_grade": "N2"
+        },
+        {
+          "field": "research_workflow_role",
+          "old_value": [],
+          "new_value": [
+            "experimental_design",
+            "tool_use_and_code_execution",
+            "experiment_execution",
+            "data_analysis",
+            "result_interpretation",
+            "evidence_assessment_and_validation"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md",
+          "evidence_lines": [
+            42,
+            43,
+            51,
+            52,
+            128,
+            130,
+            131,
+            132,
+            133,
+            134
+          ],
+          "evidence_log_lines": [
+            42,
+            43,
+            51,
+            52
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记仅坐实官方摘要和补充材料；主文仍受限，保留source_limited=yes。",
+          "source_level": "local_note_only",
+          "review_grade": "N2"
+        },
+        {
+          "field": "validation_type",
+          "old_value": [],
+          "new_value": [
+            "robotic_experiment"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md",
+          "evidence_lines": [
+            42,
+            43,
+            51,
+            52,
+            198
+          ],
+          "evidence_log_lines": [
+            42,
+            43,
+            51,
+            52
+          ],
+          "reason": "现字段为空，复用笔记明确的保守标签子集。 笔记仅坐实官方摘要和补充材料；主文仍受限，保留source_limited=yes。",
+          "source_level": "local_note_only",
+          "review_grade": "N2"
+        },
+        {
+          "field": "scientific_contribution_type",
+          "old_value": [
+            "survey_reference"
+          ],
+          "new_value": [
+            "system_platform"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md",
+          "evidence_lines": [
+            42,
+            43,
+            51,
+            219,
+            275
+          ],
+          "evidence_log_lines": [
+            42,
+            43,
+            51
+          ],
+          "reason": "现值survey_reference是错误占位；改用笔记明确、符合schema的科学贡献标签。 笔记仅坐实官方摘要和补充材料；主文仍受限，保留source_limited=yes。",
+          "source_level": "local_note_only",
+          "review_grade": "N2"
+        }
+      ],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "not_adopted": [
+            "Planning Agent",
+            "Human-in-the-loop Agent"
+          ],
+          "evidence_lines": [
+            113,
+            118,
+            270
+          ],
+          "reason": "详细项仅“部分是”，不得从汇总强填确定标签。",
+          "evidence_path": "Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md"
+        },
+        {
+          "field": "research_workflow_role",
+          "not_adopted": [
+            "hypothesis_generation",
+            "end_to_end_research_automation"
+          ],
+          "evidence_lines": [
+            127,
+            136,
+            271
+          ],
+          "reason": "详细项仅“部分是”，保留未决。",
+          "evidence_path": "Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md"
+        },
+        {
+          "field": "validation_type",
+          "not_adopted": [
+            "wet_lab_experiment"
+          ],
+          "evidence_lines": [
+            42,
+            52,
+            199,
+            273
+          ],
+          "reason": "具体实验为CVD生长与Raman；不因实体实验或模板勾选便推作湿实验。",
+          "evidence_path": "Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md"
+        },
+        {
+          "field": "scientific_contribution_type",
+          "not_adopted": [
+            "experimental_optimization"
+          ],
+          "evidence_lines": [
+            219,
+            275
+          ],
+          "reason": "不在当前schema枚举内；仅复用system_platform。",
+          "evidence_path": "Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0519",
+      "changes": [],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "owner_value": [
+            "Planning Agent",
+            "Hybrid Agent"
+          ],
+          "note_value": [
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/03_Chemical_Sciences/Lin_2025_High_Throughput_Electrochemistry_Discovery.md",
+          "evidence_lines": [
+            252
+          ],
+          "reason": "已确认owner与笔记汇总不一致；尚未重新核对具体架构证据，不直接覆盖既有非空值。",
+          "source_level": "local_note_only"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0520",
+      "changes": [],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "owner_value": [
+            "Planning Agent",
+            "Hybrid Agent"
+          ],
+          "note_value": [
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Niu_2025_Bayesian_Catalyst_Discovery_Iridium.md",
+          "evidence_lines": [
+            237
+          ],
+          "reason": "已确认owner与笔记汇总不一致；尚未重新核对具体架构证据，不直接覆盖既有非空值。",
+          "source_level": "local_note_only"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0548",
+      "changes": [],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "owner_value": [
+            "LLM Agent",
+            "Multi-Agent System",
+            "Hybrid Agent"
+          ],
+          "note_value": [
+            "LLM Agent",
+            "Tool-using Agent",
+            "Retrieval-augmented Agent",
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/07_Medical_and_Health_Sciences/Roberts_2026_OpenScientist_Biomedical_Discovery.md",
+          "evidence_lines": [
+            269
+          ],
+          "reason": "已确认owner与笔记汇总不一致；尚未重新核对具体架构证据，不直接覆盖既有非空值。",
+          "source_level": "local_note_only"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0565",
+      "changes": [],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "owner_value": [
+            "LLM Agent",
+            "Hybrid Agent"
+          ],
+          "note_value": [
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Roy_2026_Radiation_Tolerant_HEA_Discovery.md",
+          "evidence_lines": [
+            260
+          ],
+          "reason": "已确认owner与笔记汇总不一致；尚未重新核对具体架构证据，不直接覆盖既有非空值。",
+          "source_level": "local_note_only"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0618",
+      "changes": [],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "owner_value": [
+            "LLM Agent",
+            "Tool-using Agent",
+            "Robot / Embodied Agent",
+            "Hybrid Agent"
+          ],
+          "note_value": [
+            "Planning Agent",
+            "Tool-using Agent",
+            "Robot / Embodied Agent",
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/06_Life_Sciences/Unknown_2025_Protein_Language_Models_Automatic_Biofoundry.md",
+          "evidence_lines": [
+            254
+          ],
+          "reason": "已确认owner与笔记汇总不一致；尚未重新核对具体架构证据，不直接覆盖既有非空值。",
+          "source_level": "local_note_only"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0624",
+      "changes": [],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "owner_value": [
+            "LLM Agent",
+            "Multi-Agent System",
+            "Hybrid Agent"
+          ],
+          "note_value": [
+            "LLM Agent",
+            "Planning Agent",
+            "Tool-using Agent",
+            "Retrieval-augmented Agent",
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Shao_2025_SciSciGPT.md",
+          "evidence_lines": [
+            239
+          ],
+          "reason": "已确认owner与笔记汇总不一致；尚未重新核对具体架构证据，不直接覆盖既有非空值。",
+          "source_level": "local_note_only"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0630",
+      "changes": [],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "owner_value": [
+            "Robot / Embodied Agent",
+            "Planning Agent",
+            "Hybrid Agent"
+          ],
+          "note_value": [
+            "Tool-using Agent",
+            "Robot / Embodied Agent",
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Yotsumoto_2024_Autonomous_PXRD_Experimentation.md",
+          "evidence_lines": [
+            239
+          ],
+          "reason": "已确认owner与笔记汇总不一致；尚未重新核对具体架构证据，不直接覆盖既有非空值。",
+          "source_level": "local_note_only"
+        }
+      ]
+    },
+    {
+      "paper_id": "ASD-0631",
+      "changes": [],
+      "unresolved": [
+        {
+          "field": "agent_type",
+          "owner_value": [
+            "Planning Agent",
+            "Robot / Embodied Agent",
+            "Hybrid Agent"
+          ],
+          "note_value": [
+            "Planning Agent",
+            "Tool-using Agent",
+            "Hybrid Agent"
+          ],
+          "evidence_path": "Notes/04_Materials_Science/Ruza_2025_Polymer_Electrolyte_WarmStart_BO.md",
+          "evidence_lines": [
+            260
+          ],
+          "reason": "已确认owner与笔记汇总不一致；尚未重新核对具体架构证据，不直接覆盖既有非空值。",
+          "source_level": "local_note_only"
+        }
+      ]
+    }
+  ],
+  "existing_autonomy_and_cross_attribute_availability": {
+    "papers_jsonl_has_fields": false,
+    "scope": "仅检查已有记录可用性，未新增owner字段或推断能力标签。",
+    "details": {
+      "autonomy_inline": {
+        "available_count": 207,
+        "available_ids": [
+          "ASD-0357",
+          "ASD-0370",
+          "ASD-0379",
+          "ASD-0381",
+          "ASD-0385",
+          "ASD-0388",
+          "ASD-0389",
+          "ASD-0390",
+          "ASD-0410",
+          "ASD-0415",
+          "ASD-0417",
+          "ASD-0418",
+          "ASD-0421",
+          "ASD-0422",
+          "ASD-0425",
+          "ASD-0428",
+          "ASD-0429",
+          "ASD-0447",
+          "ASD-0455",
+          "ASD-0463",
+          "ASD-0466",
+          "ASD-0478",
+          "ASD-0484",
+          "ASD-0487",
+          "ASD-0491",
+          "ASD-0501",
+          "ASD-0503",
+          "ASD-0504",
+          "ASD-0505",
+          "ASD-0506",
+          "ASD-0507",
+          "ASD-0508",
+          "ASD-0510",
+          "ASD-0511",
+          "ASD-0512",
+          "ASD-0513",
+          "ASD-0514",
+          "ASD-0515",
+          "ASD-0516",
+          "ASD-0517",
+          "ASD-0518",
+          "ASD-0519",
+          "ASD-0520",
+          "ASD-0521",
+          "ASD-0522",
+          "ASD-0526",
+          "ASD-0531",
+          "ASD-0535",
+          "ASD-0536",
+          "ASD-0538",
+          "ASD-0539",
+          "ASD-0540",
+          "ASD-0541",
+          "ASD-0542",
+          "ASD-0543",
+          "ASD-0544",
+          "ASD-0545",
+          "ASD-0547",
+          "ASD-0548",
+          "ASD-0549",
+          "ASD-0552",
+          "ASD-0553",
+          "ASD-0554",
+          "ASD-0556",
+          "ASD-0557",
+          "ASD-0558",
+          "ASD-0564",
+          "ASD-0565",
+          "ASD-0567",
+          "ASD-0568",
+          "ASD-0569",
+          "ASD-0570",
+          "ASD-0571",
+          "ASD-0572",
+          "ASD-0573",
+          "ASD-0574",
+          "ASD-0575",
+          "ASD-0576",
+          "ASD-0577",
+          "ASD-0579",
+          "ASD-0581",
+          "ASD-0582",
+          "ASD-0586",
+          "ASD-0587",
+          "ASD-0589",
+          "ASD-0590",
+          "ASD-0591",
+          "ASD-0592",
+          "ASD-0617",
+          "ASD-0618",
+          "ASD-0597",
+          "ASD-0598",
+          "ASD-0599",
+          "ASD-0600",
+          "ASD-0601",
+          "ASD-0603",
+          "ASD-0605",
+          "ASD-0606",
+          "ASD-0607",
+          "ASD-0608",
+          "ASD-0609",
+          "ASD-0610",
+          "ASD-0611",
+          "ASD-0612",
+          "ASD-0613",
+          "ASD-0614",
+          "ASD-0615",
+          "ASD-0621",
+          "ASD-0622",
+          "ASD-0623",
+          "ASD-0624",
+          "ASD-0625",
+          "ASD-0626",
+          "ASD-0627",
+          "ASD-0628",
+          "ASD-0629",
+          "ASD-0630",
+          "ASD-0631",
+          "ASD-0632",
+          "ASD-0633",
+          "ASD-0634",
+          "ASD-0635",
+          "ASD-0636",
+          "ASD-0637",
+          "ASD-0644",
+          "ASD-0645",
+          "ASD-0647",
+          "ASD-0648",
+          "ASD-0649",
+          "ASD-0650",
+          "ASD-0651",
+          "ASD-0652",
+          "ASD-0653",
+          "ASD-0654",
+          "ASD-0655",
+          "ASD-0656",
+          "ASD-0658",
+          "ASD-0659",
+          "ASD-0660",
+          "ASD-0662",
+          "ASD-0663",
+          "ASD-0664",
+          "ASD-0665",
+          "ASD-0666",
+          "ASD-0667",
+          "ASD-0668",
+          "ASD-0669",
+          "ASD-0670",
+          "ASD-0671",
+          "ASD-0672",
+          "ASD-0673",
+          "ASD-0674",
+          "ASD-0675",
+          "ASD-0676",
+          "ASD-0677",
+          "ASD-0678",
+          "ASD-0679",
+          "ASD-0680",
+          "ASD-0681",
+          "ASD-0682",
+          "ASD-0683",
+          "ASD-0684",
+          "ASD-0687",
+          "ASD-0688",
+          "ASD-0691",
+          "ASD-0695",
+          "ASD-0696",
+          "ASD-0697",
+          "ASD-0698",
+          "ASD-0699",
+          "ASD-0706",
+          "ASD-0707",
+          "ASD-0708",
+          "ASD-0710",
+          "ASD-0711",
+          "ASD-0712",
+          "ASD-0713",
+          "ASD-0714",
+          "ASD-0715",
+          "ASD-0716",
+          "ASD-0717",
+          "ASD-0719",
+          "ASD-0721",
+          "ASD-0722",
+          "ASD-0723",
+          "ASD-0725",
+          "ASD-0726",
+          "ASD-0727",
+          "ASD-0728",
+          "ASD-0729",
+          "ASD-0731",
+          "ASD-0733",
+          "ASD-0734",
+          "ASD-0735",
+          "ASD-0736",
+          "ASD-0737",
+          "ASD-0738",
+          "ASD-0739",
+          "ASD-0740",
+          "ASD-0741",
+          "ASD-0742",
+          "ASD-0743",
+          "ASD-0744",
+          "ASD-0747",
+          "ASD-0748",
+          "ASD-0749",
+          "ASD-0750"
+        ],
+        "missing_count": 16,
+        "missing_ids": [
+          "ASD-0523",
+          "ASD-0524",
+          "ASD-0525",
+          "ASD-0528",
+          "ASD-0529",
+          "ASD-0537",
+          "ASD-0596",
+          "ASD-0693",
+          "ASD-0701",
+          "ASD-0702",
+          "ASD-0703",
+          "ASD-0704",
+          "ASD-0705",
+          "ASD-0709",
+          "ASD-0724",
+          "ASD-0745"
+        ]
+      },
+      "cross_inline": {
+        "available_count": 207,
+        "available_ids": [
+          "ASD-0357",
+          "ASD-0370",
+          "ASD-0379",
+          "ASD-0381",
+          "ASD-0385",
+          "ASD-0388",
+          "ASD-0389",
+          "ASD-0390",
+          "ASD-0410",
+          "ASD-0415",
+          "ASD-0417",
+          "ASD-0418",
+          "ASD-0421",
+          "ASD-0422",
+          "ASD-0425",
+          "ASD-0428",
+          "ASD-0429",
+          "ASD-0447",
+          "ASD-0455",
+          "ASD-0463",
+          "ASD-0466",
+          "ASD-0478",
+          "ASD-0484",
+          "ASD-0487",
+          "ASD-0491",
+          "ASD-0501",
+          "ASD-0503",
+          "ASD-0504",
+          "ASD-0505",
+          "ASD-0506",
+          "ASD-0507",
+          "ASD-0508",
+          "ASD-0510",
+          "ASD-0511",
+          "ASD-0512",
+          "ASD-0513",
+          "ASD-0514",
+          "ASD-0515",
+          "ASD-0516",
+          "ASD-0517",
+          "ASD-0518",
+          "ASD-0519",
+          "ASD-0520",
+          "ASD-0521",
+          "ASD-0522",
+          "ASD-0526",
+          "ASD-0531",
+          "ASD-0535",
+          "ASD-0536",
+          "ASD-0538",
+          "ASD-0539",
+          "ASD-0540",
+          "ASD-0541",
+          "ASD-0542",
+          "ASD-0543",
+          "ASD-0544",
+          "ASD-0545",
+          "ASD-0547",
+          "ASD-0548",
+          "ASD-0549",
+          "ASD-0552",
+          "ASD-0553",
+          "ASD-0554",
+          "ASD-0556",
+          "ASD-0557",
+          "ASD-0558",
+          "ASD-0564",
+          "ASD-0565",
+          "ASD-0567",
+          "ASD-0568",
+          "ASD-0569",
+          "ASD-0570",
+          "ASD-0571",
+          "ASD-0572",
+          "ASD-0573",
+          "ASD-0574",
+          "ASD-0575",
+          "ASD-0576",
+          "ASD-0577",
+          "ASD-0579",
+          "ASD-0581",
+          "ASD-0582",
+          "ASD-0586",
+          "ASD-0587",
+          "ASD-0589",
+          "ASD-0590",
+          "ASD-0591",
+          "ASD-0592",
+          "ASD-0617",
+          "ASD-0618",
+          "ASD-0597",
+          "ASD-0598",
+          "ASD-0599",
+          "ASD-0600",
+          "ASD-0601",
+          "ASD-0603",
+          "ASD-0605",
+          "ASD-0606",
+          "ASD-0607",
+          "ASD-0608",
+          "ASD-0609",
+          "ASD-0610",
+          "ASD-0611",
+          "ASD-0612",
+          "ASD-0613",
+          "ASD-0614",
+          "ASD-0615",
+          "ASD-0621",
+          "ASD-0622",
+          "ASD-0623",
+          "ASD-0624",
+          "ASD-0625",
+          "ASD-0626",
+          "ASD-0627",
+          "ASD-0628",
+          "ASD-0629",
+          "ASD-0630",
+          "ASD-0631",
+          "ASD-0632",
+          "ASD-0633",
+          "ASD-0634",
+          "ASD-0635",
+          "ASD-0636",
+          "ASD-0637",
+          "ASD-0644",
+          "ASD-0645",
+          "ASD-0647",
+          "ASD-0648",
+          "ASD-0649",
+          "ASD-0650",
+          "ASD-0651",
+          "ASD-0652",
+          "ASD-0653",
+          "ASD-0654",
+          "ASD-0655",
+          "ASD-0656",
+          "ASD-0658",
+          "ASD-0659",
+          "ASD-0660",
+          "ASD-0662",
+          "ASD-0663",
+          "ASD-0664",
+          "ASD-0665",
+          "ASD-0666",
+          "ASD-0667",
+          "ASD-0668",
+          "ASD-0669",
+          "ASD-0670",
+          "ASD-0671",
+          "ASD-0672",
+          "ASD-0673",
+          "ASD-0674",
+          "ASD-0675",
+          "ASD-0676",
+          "ASD-0677",
+          "ASD-0678",
+          "ASD-0679",
+          "ASD-0680",
+          "ASD-0681",
+          "ASD-0682",
+          "ASD-0683",
+          "ASD-0684",
+          "ASD-0687",
+          "ASD-0688",
+          "ASD-0691",
+          "ASD-0695",
+          "ASD-0696",
+          "ASD-0697",
+          "ASD-0698",
+          "ASD-0699",
+          "ASD-0706",
+          "ASD-0707",
+          "ASD-0708",
+          "ASD-0710",
+          "ASD-0711",
+          "ASD-0712",
+          "ASD-0713",
+          "ASD-0714",
+          "ASD-0715",
+          "ASD-0716",
+          "ASD-0717",
+          "ASD-0719",
+          "ASD-0721",
+          "ASD-0722",
+          "ASD-0723",
+          "ASD-0725",
+          "ASD-0726",
+          "ASD-0727",
+          "ASD-0728",
+          "ASD-0729",
+          "ASD-0731",
+          "ASD-0733",
+          "ASD-0734",
+          "ASD-0735",
+          "ASD-0736",
+          "ASD-0737",
+          "ASD-0738",
+          "ASD-0739",
+          "ASD-0740",
+          "ASD-0741",
+          "ASD-0742",
+          "ASD-0743",
+          "ASD-0744",
+          "ASD-0747",
+          "ASD-0748",
+          "ASD-0749",
+          "ASD-0750"
+        ],
+        "missing_count": 16,
+        "missing_ids": [
+          "ASD-0523",
+          "ASD-0524",
+          "ASD-0525",
+          "ASD-0528",
+          "ASD-0529",
+          "ASD-0537",
+          "ASD-0596",
+          "ASD-0693",
+          "ASD-0701",
+          "ASD-0702",
+          "ASD-0703",
+          "ASD-0704",
+          "ASD-0705",
+          "ASD-0709",
+          "ASD-0724",
+          "ASD-0745"
+        ]
+      },
+      "autonomy_any": {
+        "available_count": 217,
+        "available_ids": [
+          "ASD-0357",
+          "ASD-0370",
+          "ASD-0379",
+          "ASD-0381",
+          "ASD-0385",
+          "ASD-0388",
+          "ASD-0389",
+          "ASD-0390",
+          "ASD-0410",
+          "ASD-0415",
+          "ASD-0417",
+          "ASD-0418",
+          "ASD-0421",
+          "ASD-0422",
+          "ASD-0425",
+          "ASD-0428",
+          "ASD-0429",
+          "ASD-0447",
+          "ASD-0455",
+          "ASD-0463",
+          "ASD-0466",
+          "ASD-0478",
+          "ASD-0484",
+          "ASD-0487",
+          "ASD-0491",
+          "ASD-0501",
+          "ASD-0503",
+          "ASD-0504",
+          "ASD-0505",
+          "ASD-0506",
+          "ASD-0507",
+          "ASD-0508",
+          "ASD-0510",
+          "ASD-0511",
+          "ASD-0512",
+          "ASD-0513",
+          "ASD-0514",
+          "ASD-0515",
+          "ASD-0516",
+          "ASD-0517",
+          "ASD-0518",
+          "ASD-0519",
+          "ASD-0520",
+          "ASD-0521",
+          "ASD-0522",
+          "ASD-0526",
+          "ASD-0528",
+          "ASD-0529",
+          "ASD-0531",
+          "ASD-0535",
+          "ASD-0536",
+          "ASD-0537",
+          "ASD-0538",
+          "ASD-0539",
+          "ASD-0540",
+          "ASD-0541",
+          "ASD-0542",
+          "ASD-0543",
+          "ASD-0544",
+          "ASD-0545",
+          "ASD-0547",
+          "ASD-0548",
+          "ASD-0549",
+          "ASD-0552",
+          "ASD-0553",
+          "ASD-0554",
+          "ASD-0556",
+          "ASD-0557",
+          "ASD-0558",
+          "ASD-0564",
+          "ASD-0565",
+          "ASD-0567",
+          "ASD-0568",
+          "ASD-0569",
+          "ASD-0570",
+          "ASD-0571",
+          "ASD-0572",
+          "ASD-0573",
+          "ASD-0574",
+          "ASD-0575",
+          "ASD-0576",
+          "ASD-0577",
+          "ASD-0579",
+          "ASD-0581",
+          "ASD-0582",
+          "ASD-0586",
+          "ASD-0587",
+          "ASD-0589",
+          "ASD-0590",
+          "ASD-0591",
+          "ASD-0592",
+          "ASD-0617",
+          "ASD-0618",
+          "ASD-0597",
+          "ASD-0598",
+          "ASD-0599",
+          "ASD-0600",
+          "ASD-0601",
+          "ASD-0603",
+          "ASD-0605",
+          "ASD-0606",
+          "ASD-0607",
+          "ASD-0608",
+          "ASD-0609",
+          "ASD-0610",
+          "ASD-0611",
+          "ASD-0612",
+          "ASD-0613",
+          "ASD-0614",
+          "ASD-0615",
+          "ASD-0621",
+          "ASD-0622",
+          "ASD-0623",
+          "ASD-0624",
+          "ASD-0625",
+          "ASD-0626",
+          "ASD-0627",
+          "ASD-0628",
+          "ASD-0629",
+          "ASD-0630",
+          "ASD-0631",
+          "ASD-0632",
+          "ASD-0633",
+          "ASD-0634",
+          "ASD-0635",
+          "ASD-0636",
+          "ASD-0637",
+          "ASD-0644",
+          "ASD-0645",
+          "ASD-0647",
+          "ASD-0648",
+          "ASD-0649",
+          "ASD-0650",
+          "ASD-0651",
+          "ASD-0652",
+          "ASD-0653",
+          "ASD-0654",
+          "ASD-0655",
+          "ASD-0656",
+          "ASD-0658",
+          "ASD-0659",
+          "ASD-0660",
+          "ASD-0662",
+          "ASD-0663",
+          "ASD-0664",
+          "ASD-0665",
+          "ASD-0666",
+          "ASD-0667",
+          "ASD-0668",
+          "ASD-0669",
+          "ASD-0670",
+          "ASD-0671",
+          "ASD-0672",
+          "ASD-0673",
+          "ASD-0674",
+          "ASD-0675",
+          "ASD-0676",
+          "ASD-0677",
+          "ASD-0678",
+          "ASD-0679",
+          "ASD-0680",
+          "ASD-0681",
+          "ASD-0682",
+          "ASD-0683",
+          "ASD-0684",
+          "ASD-0687",
+          "ASD-0688",
+          "ASD-0691",
+          "ASD-0693",
+          "ASD-0695",
+          "ASD-0696",
+          "ASD-0697",
+          "ASD-0698",
+          "ASD-0699",
+          "ASD-0701",
+          "ASD-0702",
+          "ASD-0703",
+          "ASD-0704",
+          "ASD-0705",
+          "ASD-0706",
+          "ASD-0707",
+          "ASD-0708",
+          "ASD-0709",
+          "ASD-0710",
+          "ASD-0711",
+          "ASD-0712",
+          "ASD-0713",
+          "ASD-0714",
+          "ASD-0715",
+          "ASD-0716",
+          "ASD-0717",
+          "ASD-0719",
+          "ASD-0721",
+          "ASD-0722",
+          "ASD-0723",
+          "ASD-0725",
+          "ASD-0726",
+          "ASD-0727",
+          "ASD-0728",
+          "ASD-0729",
+          "ASD-0731",
+          "ASD-0733",
+          "ASD-0734",
+          "ASD-0735",
+          "ASD-0736",
+          "ASD-0737",
+          "ASD-0738",
+          "ASD-0739",
+          "ASD-0740",
+          "ASD-0741",
+          "ASD-0742",
+          "ASD-0743",
+          "ASD-0744",
+          "ASD-0747",
+          "ASD-0748",
+          "ASD-0749",
+          "ASD-0750"
+        ],
+        "missing_count": 6,
+        "missing_ids": [
+          "ASD-0523",
+          "ASD-0524",
+          "ASD-0525",
+          "ASD-0596",
+          "ASD-0724",
+          "ASD-0745"
+        ]
+      },
+      "cross_any": {
+        "available_count": 207,
+        "available_ids": [
+          "ASD-0357",
+          "ASD-0370",
+          "ASD-0379",
+          "ASD-0381",
+          "ASD-0385",
+          "ASD-0388",
+          "ASD-0389",
+          "ASD-0390",
+          "ASD-0410",
+          "ASD-0415",
+          "ASD-0417",
+          "ASD-0418",
+          "ASD-0421",
+          "ASD-0422",
+          "ASD-0425",
+          "ASD-0428",
+          "ASD-0429",
+          "ASD-0447",
+          "ASD-0455",
+          "ASD-0463",
+          "ASD-0466",
+          "ASD-0478",
+          "ASD-0484",
+          "ASD-0487",
+          "ASD-0491",
+          "ASD-0501",
+          "ASD-0503",
+          "ASD-0504",
+          "ASD-0505",
+          "ASD-0506",
+          "ASD-0507",
+          "ASD-0508",
+          "ASD-0510",
+          "ASD-0511",
+          "ASD-0512",
+          "ASD-0513",
+          "ASD-0514",
+          "ASD-0515",
+          "ASD-0516",
+          "ASD-0517",
+          "ASD-0518",
+          "ASD-0519",
+          "ASD-0520",
+          "ASD-0521",
+          "ASD-0522",
+          "ASD-0526",
+          "ASD-0531",
+          "ASD-0535",
+          "ASD-0536",
+          "ASD-0538",
+          "ASD-0539",
+          "ASD-0540",
+          "ASD-0541",
+          "ASD-0542",
+          "ASD-0543",
+          "ASD-0544",
+          "ASD-0545",
+          "ASD-0547",
+          "ASD-0548",
+          "ASD-0549",
+          "ASD-0552",
+          "ASD-0553",
+          "ASD-0554",
+          "ASD-0556",
+          "ASD-0557",
+          "ASD-0558",
+          "ASD-0564",
+          "ASD-0565",
+          "ASD-0567",
+          "ASD-0568",
+          "ASD-0569",
+          "ASD-0570",
+          "ASD-0571",
+          "ASD-0572",
+          "ASD-0573",
+          "ASD-0574",
+          "ASD-0575",
+          "ASD-0576",
+          "ASD-0577",
+          "ASD-0579",
+          "ASD-0581",
+          "ASD-0582",
+          "ASD-0586",
+          "ASD-0587",
+          "ASD-0589",
+          "ASD-0590",
+          "ASD-0591",
+          "ASD-0592",
+          "ASD-0617",
+          "ASD-0618",
+          "ASD-0597",
+          "ASD-0598",
+          "ASD-0599",
+          "ASD-0600",
+          "ASD-0601",
+          "ASD-0603",
+          "ASD-0605",
+          "ASD-0606",
+          "ASD-0607",
+          "ASD-0608",
+          "ASD-0609",
+          "ASD-0610",
+          "ASD-0611",
+          "ASD-0612",
+          "ASD-0613",
+          "ASD-0614",
+          "ASD-0615",
+          "ASD-0621",
+          "ASD-0622",
+          "ASD-0623",
+          "ASD-0624",
+          "ASD-0625",
+          "ASD-0626",
+          "ASD-0627",
+          "ASD-0628",
+          "ASD-0629",
+          "ASD-0630",
+          "ASD-0631",
+          "ASD-0632",
+          "ASD-0633",
+          "ASD-0634",
+          "ASD-0635",
+          "ASD-0636",
+          "ASD-0637",
+          "ASD-0644",
+          "ASD-0645",
+          "ASD-0647",
+          "ASD-0648",
+          "ASD-0649",
+          "ASD-0650",
+          "ASD-0651",
+          "ASD-0652",
+          "ASD-0653",
+          "ASD-0654",
+          "ASD-0655",
+          "ASD-0656",
+          "ASD-0658",
+          "ASD-0659",
+          "ASD-0660",
+          "ASD-0662",
+          "ASD-0663",
+          "ASD-0664",
+          "ASD-0665",
+          "ASD-0666",
+          "ASD-0667",
+          "ASD-0668",
+          "ASD-0669",
+          "ASD-0670",
+          "ASD-0671",
+          "ASD-0672",
+          "ASD-0673",
+          "ASD-0674",
+          "ASD-0675",
+          "ASD-0676",
+          "ASD-0677",
+          "ASD-0678",
+          "ASD-0679",
+          "ASD-0680",
+          "ASD-0681",
+          "ASD-0682",
+          "ASD-0683",
+          "ASD-0684",
+          "ASD-0687",
+          "ASD-0688",
+          "ASD-0691",
+          "ASD-0695",
+          "ASD-0696",
+          "ASD-0697",
+          "ASD-0698",
+          "ASD-0699",
+          "ASD-0706",
+          "ASD-0707",
+          "ASD-0708",
+          "ASD-0710",
+          "ASD-0711",
+          "ASD-0712",
+          "ASD-0713",
+          "ASD-0714",
+          "ASD-0715",
+          "ASD-0716",
+          "ASD-0717",
+          "ASD-0719",
+          "ASD-0721",
+          "ASD-0722",
+          "ASD-0723",
+          "ASD-0725",
+          "ASD-0726",
+          "ASD-0727",
+          "ASD-0728",
+          "ASD-0729",
+          "ASD-0731",
+          "ASD-0733",
+          "ASD-0734",
+          "ASD-0735",
+          "ASD-0736",
+          "ASD-0737",
+          "ASD-0738",
+          "ASD-0739",
+          "ASD-0740",
+          "ASD-0741",
+          "ASD-0742",
+          "ASD-0743",
+          "ASD-0744",
+          "ASD-0747",
+          "ASD-0748",
+          "ASD-0749",
+          "ASD-0750"
+        ],
+        "missing_count": 16,
+        "missing_ids": [
+          "ASD-0523",
+          "ASD-0524",
+          "ASD-0525",
+          "ASD-0528",
+          "ASD-0529",
+          "ASD-0537",
+          "ASD-0596",
+          "ASD-0693",
+          "ASD-0701",
+          "ASD-0702",
+          "ASD-0703",
+          "ASD-0704",
+          "ASD-0705",
+          "ASD-0709",
+          "ASD-0724",
+          "ASD-0745"
+        ]
+      }
+    }
+  },
+  "lossless_alias_suggestions": [
+    {
+      "field": "research_workflow_role",
+      "from": "manuscript_drafting",
+      "to": "paper_writing",
+      "paper_ids": [
+        "ASD-0654",
+        "ASD-0698",
+        "ASD-0706"
+      ],
+      "reason": "撰写manuscript与paper writing是明确同义写法。",
+      "action": "alias_suggestion_only",
+      "owner_modified": false
+    },
+    {
+      "field": "validation_type",
+      "from": "wet_lab",
+      "to": "wet_lab_experiment",
+      "paper_ids": [
+        "ASD-0501",
+        "ASD-0518",
+        "ASD-0521"
+      ],
+      "reason": "同一湿实验验证类型的简称。",
+      "action": "alias_suggestion_only",
+      "owner_modified": false
+    },
+    {
+      "field": "validation_type",
+      "from": "wet_lab_validation",
+      "to": "wet_lab_experiment",
+      "paper_ids": [
+        "ASD-0678",
+        "ASD-0680",
+        "ASD-0681",
+        "ASD-0683"
+      ],
+      "reason": "同一湿实验验证类型的后缀差异。",
+      "action": "alias_suggestion_only",
+      "owner_modified": false
+    },
+    {
+      "field": "validation_type",
+      "from": "field_deployment",
+      "to": "real_world_deployment",
+      "paper_ids": [
+        "ASD-0724"
+      ],
+      "reason": "真实现场部署是real-world deployment的明确同义粒度。",
+      "action": "alias_suggestion_only",
+      "owner_modified": false
+    }
+  ],
+  "needs_evidence_checks": [
+    {
+      "field": "research_workflow_role",
+      "values": [
+        "workflow_orchestration",
+        "optimization",
+        "materials_design",
+        "molecular_design",
+        "peer_review",
+        "automated_review",
+        "report_generation",
+        "instrument_operation",
+        "model_building",
+        "model_building_and_parameter_estimation",
+        "pathology_analysis",
+        "structure_reconstruction",
+        "screening",
+        "physics_discovery",
+        "scientific_discourse",
+        "generative_design",
+        "design"
+      ],
+      "reason": "与schema角色存在一对多关系，需具体任务证据；不可按字符串直接改成某一角色。"
+    },
+    {
+      "field": "research_workflow_role",
+      "values": [
+        "feedback_iteration",
+        "autonomous_decision_making",
+        "planning"
+      ],
+      "reason": "这些在schema中属于自主能力，不因当前混入workflow就自动建立新字段或删除既有记录。"
+    },
+    {
+      "field": "validation_type",
+      "values": [
+        "closed_loop_experiment",
+        "computational_validation",
+        "mission_operation",
+        "case_study",
+        "high_throughput_experiment",
+        "human_experiment",
+        "statistical_validation",
+        "laboratory_validation",
+        "hardware_field_test",
+        "retrospective_validation",
+        "omics_validation"
+      ],
+      "reason": "需区分机器人/湿实验/仿真/计算/专家评价/真实部署等，不存在统一无损目标。"
+    },
+    {
+      "field": "scientific_contribution_type",
+      "values": [
+        "experimental_optimization",
+        "materials_discovery",
+        "mission_science_planning",
+        "knowledge_discovery",
+        "drug_discovery",
+        "general_scientific_research",
+        "analysis",
+        "peer_review_automation",
+        "measurement_and_analysis",
+        "reproducibility_analysis",
+        "bioinformatics_discovery"
+      ],
+      "reason": "科学对象或流程旧值不能无损改成hypothesis/design/prediction/explanation/experimental_discovery/system_platform等；需逐篇核验证据。"
+    }
+  ],
+  "template_patterns_not_safe_to_copy": [
+    {
+      "pattern": "详细项为部分是、未明确、证据偏弱，汇总却列成肯定标签",
+      "examples": [
+        "ASD-0385 hypothesis_generation",
+        "ASD-0389 hypothesis_generation",
+        "ASD-0466 Planning Agent/Human-in-the-loop Agent/hypothesis_generation"
+      ]
+    },
+    {
+      "pattern": "远程用户或平台接口被泛化为Human-in-the-loop Agent",
+      "examples": [
+        "ASD-0389 note lines 88,158,240"
+      ]
+    },
+    {
+      "pattern": "实验室实体闭环被泛化为real_world_deployment",
+      "examples": [
+        "ASD-0418 note lines 146,208"
+      ]
+    },
+    {
+      "pattern": "所有实体实验一律勾选wet_lab_experiment",
+      "examples": [
+        "ASD-0466 note line 199 versus CVD/Raman evidence"
+      ]
+    },
+    {
+      "pattern": "多步合成和参数优化直接被扩大为端到端科研全流程",
+      "examples": [
+        "ASD-0385 note lines 130,270",
+        "ASD-0389 note lines 106,241"
+      ]
+    }
+  ]
+}

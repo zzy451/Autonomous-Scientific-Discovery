@@ -1,0 +1,757 @@
+{
+  "search_cutoff": "2026-10-22",
+  "records": [
+    {
+      "source_path": "Coverage_Check\\october_round2_A_general.json",
+      "source_sha256": "7bd7d97172bef8113c385307fb351b51cfb34dcfa71f8845f125ae0eafbf73a5",
+      "json_location": "search_log[0]",
+      "record": {
+        "source": "OpenAlex Works API",
+        "query": "10 general A queries: agentic science; scientific discovery agent; AI scientist/autonomous research; self-driving laboratory; autonomous discovery; robotic scientist; scientific research agent; related follow-ups",
+        "window": "2026-08-01..2026-10-22",
+        "raw_hits": 500,
+        "unique_hits": 349,
+        "duplicates_removed": 151,
+        "existing_library_matches": 8,
+        "note": "The earlier run reports ten broad topical queries with 50 returned per query. Relevance totals are capped discovery results, not a comprehensive candidate count."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_A_general.json",
+      "source_sha256": "7bd7d97172bef8113c385307fb351b51cfb34dcfa71f8845f125ae0eafbf73a5",
+      "json_location": "search_log[1]",
+      "record": {
+        "source": "OpenAlex Works API",
+        "query": "four July 8-31 A backfill queries",
+        "window": "2026-07-08..2026-07-31",
+        "raw_hits": null,
+        "unique_hits": 169,
+        "duplicates_removed": null,
+        "existing_library_matches": 3,
+        "note": "Earlier run reports 169 deduplicated hits and 166 remaining for coarse screening; exact raw/per-query counts and source records were not preserved in the workspace cache. This subset cannot be re-screened and is not claimed complete."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_A_general.json",
+      "source_sha256": "7bd7d97172bef8113c385307fb351b51cfb34dcfa71f8845f125ae0eafbf73a5",
+      "json_location": "search_log[2]",
+      "record": {
+        "source": "arXiv Atom API",
+        "query": "all:\"AI scientist\"",
+        "window": "2026-08-01..2026-10-22",
+        "raw_hits": 40,
+        "unique_hits": 40,
+        "duplicates_removed": 0,
+        "existing_library_matches": null,
+        "note": "Earlier run retrieved 40 results and verified that start=40 returned zero; no pagination remainder. Full query-wide library match count is unavailable."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_A_general.json",
+      "source_sha256": "7bd7d97172bef8113c385307fb351b51cfb34dcfa71f8845f125ae0eafbf73a5",
+      "json_location": "search_log[3]",
+      "record": {
+        "source": "arXiv Atom API",
+        "query": "all:\"autonomous research\" AND all:agent AND submittedDate:[202607080000 TO 202610222359]",
+        "window": "2026-07-08..2026-10-22",
+        "raw_hits": 50,
+        "unique_hits": 50,
+        "duplicates_removed": 0,
+        "existing_library_matches": null,
+        "note": "Fresh query returned totalResults=50 and 50 records; below max_results=100. Screened titles/abstracts and checked selected candidates by arXiv ID lookup. Full query-wide library match count is unavailable."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_A_general.json",
+      "source_sha256": "7bd7d97172bef8113c385307fb351b51cfb34dcfa71f8845f125ae0eafbf73a5",
+      "json_location": "search_log[4]",
+      "record": {
+        "source": "arXiv Atom API",
+        "query": "all:\"scientific research agent\"",
+        "window": "2026-08-01..2026-10-22",
+        "raw_hits": 2,
+        "unique_hits": 2,
+        "duplicates_removed": 0,
+        "existing_library_matches": null,
+        "note": "Earlier search summary reports two records; candidate-level overlap is possible with other arXiv searches."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_A_general.json",
+      "source_sha256": "7bd7d97172bef8113c385307fb351b51cfb34dcfa71f8845f125ae0eafbf73a5",
+      "json_location": "search_log[5]",
+      "record": {
+        "source": "arXiv Atom API",
+        "query": "all:\"autonomous research\" AND all:agent (unbounded discovery pass)",
+        "window": "all dates; screen limited to relevant window",
+        "raw_hits": 116,
+        "unique_hits": 116,
+        "duplicates_removed": 0,
+        "existing_library_matches": null,
+        "note": "Fresh broad query returned totalResults=116; first page listed 100 by date. The bounded date query above retrieved all 50 in-window results; this broad query was a cross-check, not the source of the candidate count."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_A_general.json",
+      "source_sha256": "7bd7d97172bef8113c385307fb351b51cfb34dcfa71f8845f125ae0eafbf73a5",
+      "json_location": "search_log[6]",
+      "record": {
+        "source": "Semantic Scholar API",
+        "query": "four general-A topic queries",
+        "window": "2026-08-01..2026-10-22",
+        "raw_hits": 0,
+        "unique_hits": 0,
+        "duplicates_removed": 0,
+        "existing_library_matches": 0,
+        "note": "All four requests returned HTTP 429; no records available from this source."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_A_general.json",
+      "source_sha256": "7bd7d97172bef8113c385307fb351b51cfb34dcfa71f8845f125ae0eafbf73a5",
+      "json_location": "search_log[7]",
+      "record": {
+        "source": "arXiv Atom API",
+        "query": "all:IdeaTrail and all:SDABench supplemental lead checks",
+        "window": "2026-07-08..2026-07-31",
+        "raw_hits": 2,
+        "unique_hits": 2,
+        "duplicates_removed": 0,
+        "existing_library_matches": null,
+        "note": "Direct title queries found IdeaTrail (2607.10144) and SDABench (2607.11079); abstract pages verified metadata. Both held for Agent inclusion review; SDABench also needs domain-owner handoff if retained."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_B_chem_materials.json",
+      "source_sha256": "a24675e2df9b01211bb6f38ff0dadb0d17b7864079812d594b3950cf989e69ca",
+      "json_location": "search_log[0]",
+      "record": {
+        "source": "922-record project baseline and previous October 50-record tranche",
+        "method": "Deduplicated by DOI, arXiv ID and normalized title against Data/papers.jsonl and october_search_B_chem_materials.json before recording new items.",
+        "rawhits": 972,
+        "duplicates": 0,
+        "new_records": 31,
+        "failures": []
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_B_chem_materials.json",
+      "source_sha256": "a24675e2df9b01211bb6f38ff0dadb0d17b7864079812d594b3950cf989e69ca",
+      "json_location": "search_log[1]",
+      "record": {
+        "source": "Nature / Science family and relevant journal Crossref harvests",
+        "method": "Screened the main controller source harvests (170 initial raw discoveries and 313 expanded title-matched records); followed high-priority DOI records to publisher abstracts, checked authors, dates, DOI and object-level results.",
+        "rawhits": 483,
+        "duplicates": 0,
+        "new_records": 9,
+        "failures": [
+          "RSC article HTML returned HTTP 403; used Crossref abstract and review metadata, leaving publication date uncertain for ChemGraph-XANES.",
+          "Some Elsevier publisher abstracts were not recovered, so nanocluster and alloy papers remain needs_review."
+        ]
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_B_chem_materials.json",
+      "source_sha256": "a24675e2df9b01211bb6f38ff0dadb0d17b7864079812d594b3950cf989e69ca",
+      "json_location": "search_log[2]",
+      "record": {
+        "source": "arXiv category and query searches",
+        "method": "Searched chemistry, materials science, self-driving laboratory, autonomous exploration, XRD and microscopy entry points. Three successful category/query responses returned 231 entries in total (100 + 100 + 31); screened recent records from 2026-07-08 onward.",
+        "rawhits": 231,
+        "duplicates": 0,
+        "new_records": 22,
+        "failures": [
+          "Additional arXiv API queries returned intermittent 429 or empty responses."
+        ]
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_B_chem_materials.json",
+      "source_sha256": "a24675e2df9b01211bb6f38ff0dadb0d17b7864079812d594b3950cf989e69ca",
+      "json_location": "search_log[3]",
+      "record": {
+        "source": "arXiv official abstract-page verification",
+        "method": "Fetched and checked title, authors, submission date and abstract on 25 targeted official /abs/ pages; expanded from system, author and measurement-platform siblings.",
+        "rawhits": 25,
+        "duplicates": 0,
+        "new_records": 22,
+        "failures": [
+          "No full PDFs were downloaded in this search pass; records remain abstract-level pending follow-up."
+        ]
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_B_chem_materials.json",
+      "source_sha256": "a24675e2df9b01211bb6f38ff0dadb0d17b7864079812d594b3950cf989e69ca",
+      "json_location": "search_log[4]",
+      "record": {
+        "source": "cross-source/dataset duplicate audit",
+        "method": "Checked all 31 new records against all 922 baseline records, the earlier ASD-0873 to ASD-0922 tranche, and each other by DOI, arXiv ID and normalized title.",
+        "rawhits": 31,
+        "duplicates": 0,
+        "new_records": 31,
+        "failures": []
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_B_chem_materials.json",
+      "source_sha256": "a24675e2df9b01211bb6f38ff0dadb0d17b7864079812d594b3950cf989e69ca",
+      "json_location": "search_log[5]",
+      "record": {
+        "source": "A-group official arXiv domain handoff",
+        "method": "Screened three supplied official arXiv abstracts, then deduplicated each by arXiv ID against the 922-record baseline, previous B round, and current B output.",
+        "rawhits": 3,
+        "duplicates": 0,
+        "new_records": 3,
+        "failures": []
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_C_life_health.json",
+      "source_sha256": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+      "json_location": "search_log[0]",
+      "record": {
+        "date": "2026-10-22",
+        "window": "2026-08-01..2026-10-22 main; 2026-07-08..2026-07-31 supplemental",
+        "lane": "preparation/dedup",
+        "source": "Autonomous Scientific Discovery/Data/papers.jsonl (922 records), master list, prior 50-paper expansion files including october_search_C_life_health.json",
+        "rawhits": 922,
+        "known_hits": 12,
+        "new_hits": 0,
+        "failures": [],
+        "note": "922 baseline JSONL rows counted. Prior C round contained 12 candidates; exact DOI/title matches were tagged existing_version_update or known in round1. Do not infer all were included."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_C_life_health.json",
+      "source_sha256": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+      "json_location": "search_log[1]",
+      "record": {
+        "date": "2026-10-22",
+        "window": "2026-08-01..2026-10-22",
+        "lane": "biomedical literature index",
+        "source": "Europe PMC REST broad title/abstract families covering agent/agentic/autonomous + biology/biomedical/clinical/drug/protein/genomics/omics/cell",
+        "rawhits": 1375,
+        "known_hits": 176,
+        "new_hits": 1199,
+        "failures": [
+          "One family query returned the 1000-result page cap; raw-hit total is overlapping and truncated, not unique coverage.",
+          "Two Europe PMC endpoints had intermittent connection resets during earlier requests; no failed request counted as success."
+        ],
+        "note": "1199 DOI/title-deduplicated index records were scanned for Agent-style terms in titles. 171 title candidates remained before precision cleanup; broad token \"agent\" yielded substantial pharmacological/ABM/clinical-service noise."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_C_life_health.json",
+      "source_sha256": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+      "json_location": "search_log[2]",
+      "record": {
+        "date": "2026-10-22",
+        "window": "2026-08-01..2026-10-22",
+        "lane": "abstract resolution",
+        "source": "Crossref works DOI abstracts for C-topic title shortlist",
+        "rawhits": 171,
+        "known_hits": 12,
+        "new_hits": 159,
+        "failures": [
+          "Crossref requests returned no abstract for several DOI records; journal abstracts were followed up at publisher pages where available.",
+          "No abstract resolved for some clinical delivery and prediction titles; kept in excluded/needs_review screening notes."
+        ],
+        "note": "Retrieved DOI-level Crossref abstracts for 171 title shortlist records; exact DOI/title overlap with baseline and prior 50 was identified."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_C_life_health.json",
+      "source_sha256": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+      "json_location": "search_log[3]",
+      "record": {
+        "date": "2026-10-22",
+        "window": "2026-08-01..2026-10-22",
+        "lane": "journal family entry points",
+        "source": "Nature/Science/Cell and Oxford Biomedical journal harvest caches .tmp_asd_pdfs/round2_journals/harvest.json, harvest_expanded.json, harvest_10_1093_agent.json",
+        "rawhits": 483,
+        "known_hits": 23,
+        "new_hits": 460,
+        "failures": [
+          "Harvest was noisy and query-index limited; cache article counts are discovery hits, not qualifying papers.",
+          "Some Oxford abstracts were absent from cached harvest and needed DOI-specific follow-up."
+        ],
+        "note": "Main + expanded journal harvest raw_discovery lengths 170+313; relevant DOI abstracts read for HealthFlow, MedKGent, OntoCodex, glioblastoma discovery, ALLocate, MR-MAS, RelAgent and ABM false positives."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_C_life_health.json",
+      "source_sha256": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+      "json_location": "search_log[4]",
+      "record": {
+        "date": "2026-10-22",
+        "window": "2026-08-01..2026-10-22",
+        "lane": "citation/sibling expansion",
+        "source": "Biomni/Virtual Biotech, protein/tool Agent, oncology/EHR research and single-cell/spatial omics candidate clusters surfaced by journal and author/systems citation graph; direct DOI and same-author/project links",
+        "rawhits": 34,
+        "known_hits": 7,
+        "new_hits": 27,
+        "failures": [
+          "Forward citation crawl was limited by API rate limits and the current session; record precise citation paths only where confirmed.",
+          "No claim of exhaustive conference proceedings search."
+        ],
+        "note": "Included direct sibling and linked workflow leads from Biomni/Virtual Biotech, LungChat, T-REX, PromptBio, SRAgent, and EHR/clinical research Agent branches; exact citations remain source-trail-specific per candidate."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_C_life_health.json",
+      "source_sha256": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+      "json_location": "search_log[5]",
+      "record": {
+        "date": "2026-10-22",
+        "window": "2026-07-08..2026-07-31 supplemental",
+        "lane": "post-07/08 gap review",
+        "source": "Oxford Bioinformatics indexed records, Europe PMC date-bound search and DOI/title expansion",
+        "rawhits": 8,
+        "known_hits": 1,
+        "new_hits": 7,
+        "failures": [],
+        "note": "RelAgent btag541 and July-30 genomic-curation preprint surfaced; latter’s first public posting is Aug 02 and is filed in main window with DOI-encoded July 30 noted. RelAgent is kept needs_review as a borderline molecular-grounding benchmark. Previously listed July C candidates were deduped."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_C_life_health.json",
+      "source_sha256": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+      "json_location": "search_log[6]",
+      "record": {
+        "date": "2026-10-22",
+        "window": "screening",
+        "lane": "four-gate decision",
+        "source": "Publisher abstracts, bioRxiv/medRxiv indexed abstracts, taxonomy and project inclusion rules",
+        "rawhits": 31,
+        "known_hits": 5,
+        "new_hits": 22,
+        "failures": [],
+        "note": "New additions are candidate/needs_review only; publisher abstracts are not treated as full-text verification. Ordinary clinical diagnosis, administrative care delivery, biological agent-based simulations, models without a research-Agent workflow, and reviews/perspectives are separated."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_C_life_health.json",
+      "source_sha256": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+      "json_location": "search_log[7]",
+      "record": {
+        "date": "2026-10-22",
+        "window": "2026-08-01..2026-10-22",
+        "lane": "delegated preprint screen reconciliation",
+        "source": "C preprint sub-agent handoff reconciled against .tmp_asd_pdfs/october_round2_C_epmc_raw.json, baseline Data/papers.jsonl, prior C expansion, and round2 C candidate package",
+        "rawhits": 2,
+        "known_hits": 0,
+        "new_hits": 2,
+        "failures": [],
+        "note": "Two handoff discoveries absent from the 29-record C package were verified by Europe PMC records: Verification Debt (10.64898/2026.09.29.755250; first posted 2026-10-05) and hvantk (10.64898/2026.10.19.760196; first posted 2026-10-21). Both meet abstract-level research-Agent/domain relevance and were added as candidates; no master/full-text writeback."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_C_life_health.json",
+      "source_sha256": "01c7c151590060e6aab225550a57afc6dd5f4d0a155feb2c4667c41f43273f47",
+      "json_location": "search_log[8]",
+      "record": {
+        "date": "2026-10-22",
+        "window": "2026-08-01..2026-10-22",
+        "lane": "specialized A-to-C domain handoff",
+        "source": "Official abstracts in Autonomous Scientific Discovery/Coverage_Check/october_round2_A_general.json arxiv_screening; six records explicitly handed off by controller",
+        "rawhits": 6,
+        "known_hits": 0,
+        "new_hits": 6,
+        "failures": [],
+        "note": "Screened Auto-MD-bench 2610.25069, DrugTargetWorld 2610.09558, medical-imaging agentic baseline 2608.23336, NeuroAct 2610.25211, TCMScience 2610.24601, and immune world model 2609.14709. All six abstracts support domain-relevant research-agent actions and concrete medical/biological objects; added as candidates with fixed taxonomy codes, pending independent source review/full-text follow-up."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_D_formal_physics.json",
+      "source_sha256": "19653ce39bc93ca9c34aacf35c63922d8739a6199844a9c7ded3bc0c1e0dfab6",
+      "json_location": "searches[0]",
+      "record": {
+        "database": "arXiv Atom API",
+        "query_group": "physics_astronomy_quantum",
+        "query": "(cat:astro-ph.* OR cat:physics.* OR cat:quant-ph OR cat:nucl-ex OR cat:nucl-th OR cat:hep-ex OR cat:hep-lat OR cat:hep-ph OR cat:hep-th) AND (all:agent OR all:agentic OR all:autonomous) AND submittedDate:[202608010000 TO 202610222359]",
+        "totalResults": 384,
+        "raw_records_returned": 384,
+        "pages": 2,
+        "failed": [],
+        "unique_arxiv_ids_returned": 384,
+        "known_against_922_baseline": 3,
+        "new_against_922_baseline": 381
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_D_formal_physics.json",
+      "source_sha256": "19653ce39bc93ca9c34aacf35c63922d8739a6199844a9c7ded3bc0c1e0dfab6",
+      "json_location": "searches[1]",
+      "record": {
+        "database": "arXiv Atom API",
+        "query_group": "math_agent_terms",
+        "query": "cat:math.* AND (all:agent OR all:agentic OR all:theorem OR all:proof) AND submittedDate:[202608010000 TO 202610222359]",
+        "totalResults": 6530,
+        "raw_records_returned": 1600,
+        "pages": 8,
+        "failed": [
+          "HTTP 429: "
+        ],
+        "unique_arxiv_ids_returned": 1600,
+        "known_against_922_baseline": 0,
+        "new_against_922_baseline": 1600
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_D_formal_physics.json",
+      "source_sha256": "19653ce39bc93ca9c34aacf35c63922d8739a6199844a9c7ded3bc0c1e0dfab6",
+      "json_location": "searches[2]",
+      "record": {
+        "database": "arXiv official search website (secondary query)",
+        "query": "scientific discovery agent",
+        "reported_totalResults": 678,
+        "page_size": 50,
+        "pages_fetched": 1,
+        "raw_records_returned": 50,
+        "unique_ids": 50,
+        "known_against_922_baseline": 1,
+        "new_ids": 49,
+        "coverage": "first page only; not exhaustive; used to seed related-case discovery"
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_E_earth_agri_engineering.json",
+      "source_sha256": "c9494418abc4229af0745fe25908f8ac52d4ba2b86b488264521b1b320694bd0",
+      "json_location": "search_log[0]",
+      "record": {
+        "source": "OpenAlex Works API",
+        "date": "2026-10-22",
+        "queries": [
+          "agentic crop breeding research plant science",
+          "AI agents agriculture experiment crop discovery",
+          "LLM agents agricultural science research",
+          "agentic engineering design scientific discovery",
+          "AI agent autonomous engineering experiment discovery",
+          "agent scientific discovery robotics laboratory engineering",
+          "agentic aerospace research scientific discovery",
+          "AI agent satellite earth observation scientific research",
+          "autonomous ocean science research agent",
+          "agentic transportation research traffic science agent",
+          "scientific agent geoscience agriculture engineering 2026"
+        ],
+        "raw_result_count": 0,
+        "known_count": 0,
+        "new_count": 0,
+        "failed_or_limited": "全部查询HTTP 429（free daily quota exhausted）；未把限流当作无结果。"
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_E_earth_agri_engineering.json",
+      "source_sha256": "c9494418abc4229af0745fe25908f8ac52d4ba2b86b488264521b1b320694bd0",
+      "json_location": "search_log[1]",
+      "record": {
+        "source": "Crossref REST API",
+        "date": "2026-10-22",
+        "queries": [
+          "agentic crop breeding",
+          "AI agent agriculture science",
+          "LLM agent plant science experiment",
+          "autonomous scientific agent engineering design",
+          "agentic engineering discovery experiment",
+          "AI scientist engineering materials manufacturing",
+          "agentic aerospace science",
+          "AI agent satellite earth observation research",
+          "autonomous ocean science agent",
+          "agentic transportation research",
+          "agentic geoscience research",
+          "AI agent food science discovery"
+        ],
+        "raw_result_count": 300,
+        "known_count": 0,
+        "new_count": 5,
+        "failed_or_limited": "10/12查询返回HTTP 200，每查询取30条；agentic transportation query被429限制；时间过滤未显著提升相关性，候选需出版商复核。"
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_E_earth_agri_engineering.json",
+      "source_sha256": "c9494418abc4229af0745fe25908f8ac52d4ba2b86b488264521b1b320694bd0",
+      "json_location": "search_log[2]",
+      "record": {
+        "source": "主控期刊Crossref题名收割及Nature/Nature-family publisher pages",
+        "date": "2026-10-22",
+        "queries": [
+          "主控提供round2_journals/harvest.json (reported 170 records) and harvest_expanded.json (reported 313 noisy raw records); screened DOI leads in earth/environment, agriculture and engineering. Directly queried publisher pages for s41545-026-00638-8; s44407-026-00102-4; s44304-026-00262-z; s43247-026-03962-6; s41598-026-63267-8; s41598-026-67160-2; s44488-026-00024-w; s41598-026-57424-2."
+        ],
+        "raw_result_count": 8,
+        "known_count": 0,
+        "new_count": 5,
+        "failed_or_limited": "主控提及的cache path在当前可见树中不存在；只使用其给出的DOI线索并直接访问publisher pages。5个候选完整摘要页HTTP 200；wildfire perspective排除；另有dairy ABM与RAVA按 Agent科研角色边界筛除。"
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_E_earth_agri_engineering.json",
+      "source_sha256": "c9494418abc4229af0745fe25908f8ac52d4ba2b86b488264521b1b320694bd0",
+      "json_location": "search_log[3]",
+      "record": {
+        "source": "A general arXiv professional-domain handoff",
+        "date": "2026-10-22",
+        "queries": [
+          "No new search; screened supplied arxiv_screening records: 2608.24954 AFDBench; 2609.00814 RingMoClaw; 2609.31683 Exact Spectral Spatial Regression; added B feedback 2609.17123 thermalCFET after official abstract check."
+        ],
+        "raw_result_count": 4,
+        "known_count": 0,
+        "new_count": 4,
+        "failed_or_limited": "No broad queries opened. All four official arXiv abs pages returned HTTP 200 and exposed title/authors/submission date/abstract. Existing 922-row baseline and current E output checked for IDs/title."
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[0]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "LLM agents peer review rebuttal benchmark 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 46,
+        "returned": 46,
+        "known": 0,
+        "new": 46,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[1]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "agentic peer review scholarly evaluation arXiv 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 9,
+        "new": 41,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[2]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "scientific knowledge production agents citation novelty benchmark 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 8,
+        "new": 42,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[3]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "agentic research idea evaluation benchmark scientific 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 14,
+        "new": 36,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[4]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "LLM agents scientific peer review experiment 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 14,
+        "new": 36,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[5]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "science of science agent simulation scholarly communication 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 12,
+        "new": 38,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[6]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "research agent benchmark scientific coding reproduction 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 16,
+        "new": 34,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[7]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "scientific discovery agent benchmark peer reviewed datasets 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 26,
+        "new": 24,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[8]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "LLM generative agents science policy research community 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 9,
+        "new": 41,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[9]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "benchmark scientific agents knowledge attribution citation checking 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 20,
+        "new": 30,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[10]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "scientific agent conference review reviewer bidding multiagent 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 10,
+        "returned": 10,
+        "known": 3,
+        "new": 7,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[11]",
+      "record": {
+        "database": "OpenAlex Works API",
+        "query": "research agents dataset curation systematic review scientific workflow 2026",
+        "date_filter": "from_publication_date:2026-08-01,to_publication_date:2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 50,
+        "returned": 50,
+        "known": 18,
+        "new": 32,
+        "failed": 0,
+        "status": 200
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[12]",
+      "record": {
+        "database": "Official arXiv API",
+        "query": "ID-list verification of all arXiv identifiers surfaced by the 12 OpenAlex queries; official title and latest updated timestamp recorded; abstracts screened.",
+        "date_filter": "Discovery window only; arXiv official record is date authority",
+        "searched_at": "2026-10-22",
+        "raw": 243,
+        "known": 10,
+        "new": 233,
+        "failed": 0,
+        "status": "all confirmed"
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[13]",
+      "record": {
+        "database": "Project Data/papers.jsonl",
+        "query": "Deduplicate official records by arXiv ID, DOI, URL and normalized title; full-library baseline",
+        "date_filter": "all years",
+        "searched_at": "2026-10-22",
+        "raw": 922,
+        "known": 428,
+        "new": -185,
+        "failed": 0,
+        "status": "complete"
+      }
+    },
+    {
+      "source_path": "Coverage_Check\\october_round2_f_knowledge.json",
+      "source_sha256": "7952ca6f1a11d5e73af5d68de5c9fecccd8af3c77003eb9e8ea247f413b7feb3",
+      "json_location": "searches[14]",
+      "record": {
+        "database": "Crossref / cached publisher metadata",
+        "query": "Screened specified journal records; DOI corrected for papal conclave to 10.1016/j.chaos.2026.118411.",
+        "date_filter": "2026-08-01 to 2026-10-22",
+        "searched_at": "2026-10-22",
+        "raw": 6,
+        "known": 0,
+        "new": 4,
+        "failed": 0,
+        "status": "complete; 2 KnSys abstracts unavailable; papal abstract unavailable"
+      }
+    }
+  ],
+  "limitation": "Recoverable historical records only; overlapping query hits and capped returns are not a screening denominator."
+}

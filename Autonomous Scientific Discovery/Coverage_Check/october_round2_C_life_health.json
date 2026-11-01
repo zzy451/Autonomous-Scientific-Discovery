@@ -1,0 +1,1190 @@
+{
+  "candidates": [
+    {
+      "title": "HealthFlow: automating electronic health record analysis via a strategically self-evolving multi-agent framework",
+      "authors": "Yinghao Zhu; Zixiang Wang; Yifan Qi; Lei Gu; Dehao Sui; Haoran Hu; Xichen Zhang; Ziyi He; Yasha Wang; Junjun He; Liantao Ma; Lequan Yu",
+      "year": 2026,
+      "venue": "npj Digital Medicine",
+      "url": "https://doi.org/10.1038/s41746-026-03097-0",
+      "doi": "10.1038/s41746-026-03097-0",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-17",
+      "publication_date": "2026-08-17",
+      "abstract": "EHRs are a rich source of real-world clinical data, but turning them into valid analyses remains slow and expert-intensive. HealthFlow converts prior EHR analyses into structured, governed experience for planning under dataset-specific and methodological constraints. EHRFlowBench contains analysis tasks derived from 51,280 peer-reviewed papers. Across EHRFlowBench and four established benchmarks, HealthFlow outperforms baselines in generating valid clinical artifacts and completing complex EHR analysis pipelines.",
+      "agent_evidence": "Multi-agent framework plans and executes complex EHR analysis pipelines by reusing structured prior analytic experience under dataset/method constraints; explicit research-analysis role and benchmarked workflow completion. Abstract supports multi-step planning and agent collaboration.",
+      "object_evidence": "EHR analyses and health data-science tasks derived from 51,280 papers; evaluates validity of clinical analytic artifacts, not simple patient Q&A.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.03.08"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Nature portfolio DOI landing/abstract (published 2026-08-17)",
+        "Europe PMC/Crossref title-index record",
+        "Nature portfolio harvest in .tmp_asd_pdfs/round2_journals/harvest_expanded.json"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Need full-text verification of agent role division, tool execution details, and whether benchmark tasks involve concrete clinical objects sufficient for any second module; current 07.03.08 is conservative."
+    },
+    {
+      "title": "From quantitative features to imaging signs: agentic AI-driven autonomous discovery in glioblastoma",
+      "authors": "Qian Li; Yan Liu; Biao Jiang; Fei Dong",
+      "year": 2026,
+      "venue": "npj Digital Medicine",
+      "url": "https://doi.org/10.1038/s41746-026-03331-9",
+      "doi": "10.1038/s41746-026-03331-9",
+      "arxiv_id": null,
+      "first_public_date": "2026-10-07",
+      "publication_date": "2026-10-07",
+      "abstract": "An agentic AI pipeline autonomously performs descriptive statistical profiling, translates quantitative morphological features into semantic imaging signs, and visualizes results. In 106 supratentorial glioblastoma cases it proposed eight signs; radiologists independently validated the cauliflower sign in an external cohort of 50 glioblastomas and 50 metastases, with mean AUC 0.75 for tumor differentiation.",
+      "agent_evidence": "Explicit agentic autonomous multi-step radiomics-to-sign discovery pipeline with analysis, semantic hypothesis formation, and visualization; scientific discovery role followed by independent specialist validation.",
+      "object_evidence": "Concrete glioblastoma radiomics and tumor differentiation; development and external validation cohorts include glioblastoma and metastases.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.02.05"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Nature portfolio article/abstract; DOI metadata publication date 2026-10-07",
+        "Nature portfolio journal harvest cache (.tmp_asd_pdfs/round2_journals/harvest.json)"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Abstract does not clarify degree of autonomous decision-making versus scripted pipeline; inspect Methods and radiologist validation design before promotion."
+    },
+    {
+      "title": "An AI-powered self-driving microscope for low-cost acute leukemia detection",
+      "authors": "Ethan S. Yan; Shenghuan Sun; Zhanghan Yin; Ali Kamali; Jacob Van Cleave; Irem S. Isgor; Brenda Fried; Cesar Colorado-Jimenez; Deepika Dilip; Jeeyeon Baik; Allyne Manzo; Sean Paulsen; Siddharth Singi; Scott Drapeau; Ozgur Can Eren; Joanne K. Chun; Aijazuddin Syed; Anthony Cardillo; Melissa Pulitzer; Maly Fenelus; David Kim; Jamal Benhamida; Dianna Ng; Orly Ardon; Mikhael Roshal; Ahmet Dogan; Chad Vanderbilt; Khawaja H. Bilal; Gregory M. Goldgof",
+      "year": 2026,
+      "venue": "Nature Communications",
+      "url": "https://doi.org/10.1038/s41467-026-77130-x",
+      "doi": "10.1038/s41467-026-77130-x",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-27",
+      "publication_date": "2026-08-27",
+      "abstract": "ALLocate is an AI-powered microscope plugin described as enabling self-driving microscopy for leukemia detection. It is evaluated for region-of-interest identification, cell detection, and slide-level diagnosis using more than 11,000 annotated regions, 130,000 annotated cells, and independent cohorts including 165 physical bone-marrow-smear slides; reported slide-level accuracy is 88%.",
+      "agent_evidence": "The abstract establishes automated instrument-linked microscopy and sequential image-analysis stages, but does not specify autonomous planning, feedback, or experiment-selection actions. The self-driving label alone is insufficient to confirm Agent inclusion.",
+      "object_evidence": "Acute leukemia bone-marrow smear imaging and slide-level diagnosis are concrete medical objects with multi-institutional validation.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.01.04"
+      ],
+      "primary_module": "07",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Nature Communications publisher abstract and DOI metadata (2026-08-27)",
+        "Nature portfolio harvest cache"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Boundary case: may be automated clinical imaging/detection rather than a research Agent. Full text must verify adaptive microscope control and scientific workflow role; do not infer Agent status from self-driving terminology."
+    },
+    {
+      "title": "MR-MAS: an end-to-end multi-agent system for autonomous Mendelian randomization analysis",
+      "authors": "Wendi Wei; Yuling Fan; Lin Li; Thuc Duy Le; Xiaomei Li; Debo Cheng; Zaiwen Feng",
+      "year": 2026,
+      "venue": "Bioinformatics",
+      "url": "https://doi.org/10.1093/bioinformatics/btag722",
+      "doi": "10.1093/bioinformatics/btag722",
+      "arxiv_id": null,
+      "first_public_date": "2026-10-01",
+      "publication_date": "2026-10",
+      "abstract": "MR-MAS uses a multi-agent architecture and external tools to unify data acquisition, causal-effect estimation, interpretation, and manuscript preparation. A structured Mendelian Randomization Knowledge Base supports method implementation and targeted repair of analysis code. Tests report stable execution, reproduction of literature-supported causal signals, consistent estimates across repeated runs/backends, and trait-retrieval evaluations.",
+      "agent_evidence": "Explicit end-to-end multi-agent research workflow with data/tool acquisition, statistical method execution, interpretation, targeted code repair, and reporting; four minimum Agent criteria are supported by abstract.",
+      "object_evidence": "Mendelian-randomization causal analysis of disease-related mechanisms and literature-supported causal signals.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.03.01",
+        "07.03.08"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Oxford Academic/Bioinformatics record DOI btag722; date indexed 2026-10",
+        "Crossref and Europe PMC search result",
+        "Round2 Oxford journal harvest cache"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Check whether benchmark and case studies identify specific diseases or only general MR test data; retain 07.03.01 epidemiology and 07.03.08 medical informatics unless full text supports disease modules."
+    },
+    {
+      "title": "DDA: a traceable multi-agent framework for automated structure-based drug design",
+      "authors": "Yu Y; Tian S; Wang G; Li Y",
+      "year": 2026,
+      "venue": "Frontiers in Chemistry",
+      "url": "https://doi.org/10.3389/fchem.2026.1914886",
+      "doi": "10.3389/fchem.2026.1914886",
+      "arxiv_id": null,
+      "first_public_date": "2026-09-01",
+      "publication_date": "2026-09-01",
+      "abstract": "Drug Discovery Agent (DDA) transforms natural-language drug-discovery goals into workflows. Role-specific agents and a unified tool-calling protocol connect bioinformatics, molecular modeling, and docking from target preparation and molecular generation through multi-objective evaluation, candidate prioritization, and trajectory tracking.",
+      "agent_evidence": "Explicit multi-agent workflow, tool calls, multi-stage execution, and traceability in the molecular design/research process.",
+      "object_evidence": "Protein structures, small-molecule candidates, molecular docking, binding properties and drug-design targets are specific object-level tasks.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.06",
+        "07.04.01"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Frontiers article and abstract, DOI 10.3389/fchem.2026.1914886",
+        "Crossref abstract retrieval in October round-2 C cache"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Confirm reported validation cases and whether biochemical targets/compounds are evaluated beyond computational workflow examples."
+    },
+    {
+      "title": "DynaMate: An Autonomous Agent for Protein-Ligand Molecular Dynamics Simulations",
+      "authors": "Christophe Masschelein; Simon Guilbert; Jean Goumaz; Benjamin Naida; Oliver Rothlisberger; Philippe Schwaller",
+      "year": 2026,
+      "venue": "Research Square preprint",
+      "url": "https://doi.org/10.21203/rs.3.rs-10243410/v1",
+      "doi": "10.21203/rs.3.rs-10243410/v1",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-27",
+      "publication_date": null,
+      "abstract": "DynaMate is a modular multi-agent framework that autonomously designs and executes complete molecular-dynamics workflows for protein and protein-ligand systems, including MM/PB(GB)SA binding-free-energy calculations. It combines dynamic tool use, web search, literature query, and self-correction. Evaluation spans 15 benchmark systems and 827 diverse protein/protein-ligand systems, with a reported 67% successful MD execution rate.",
+      "agent_evidence": "Explicit agent framework plans/executes multi-step MD tasks, uses tools and literature retrieval, self-corrects, and has a defined computational-science role.",
+      "object_evidence": "Protein structures and protein-ligand molecular systems; benchmarked binding-affinity calculations with drug-discovery/protein-engineering relevance.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.06",
+        "07.04.01"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Research Square DOI/preprint record, version v1 (2026-08-27)",
+        "Crossref abstract indexed in Europe PMC search results"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Full-text verification needed for molecular benchmark identities, affinity validation and distinction between tool harness and autonomous decisions."
+    },
+    {
+      "title": "GENIE: a multi-agent system for closed-loop autonomous microscopy",
+      "authors": "W. Nieves Vasquez; J. Lin; A. Azukas; E. Yang; C. Hu; M. Ta; L. Carlini",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.10.12.758370",
+      "doi": "10.64898/2026.10.12.758370",
+      "arxiv_id": null,
+      "first_public_date": "2026-10-13",
+      "publication_date": null,
+      "abstract": "GENIE is an autonomous multi-agent system that turns plain-language goals into microscopy measurements and statistically tested answers, executing each action through deterministic code. The authors position it as joining acquisition control, image analysis, and natural-language instrument operation into one experimental loop.",
+      "agent_evidence": "Abstract clearly identifies multi-agent coordination, goal-to-measurement planning, instrument actions, analysis, and statistical answer generation as a scientific experimental workflow.",
+      "object_evidence": "Microscopy of biological cellular structures/processes; concrete imaging and acquisition experiments.",
+      "modules": [
+        "06"
+      ],
+      "codes": [
+        "06.03.04"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "bioRxiv v1 DOI record 10.64898/2026.10.12.758370; first posted 2026-10-13",
+        "Europe PMC/Crossref abstract query; October C preprint discovery"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Need full text for biological specimens, experimental outcomes, feedback loop and reproducibility evidence; abstract is brief."
+    },
+    {
+      "title": "A Conversational Multi-Agent AI System for Integrated Multi-Omics Analysis and Biomedical Discovery",
+      "authors": "Pranav Rajdeo; Shintaro Asanuma; Martin Kouril; Peng Lu; Jun Chen; Anil Chadha; Venkatesh B. S. Prasath; Bruce J. Aronow; Nathan Salomonis",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.08.08.743577",
+      "doi": "10.64898/2026.08.08.743577",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-14",
+      "publication_date": null,
+      "abstract": "LungChat is a hierarchical conversational multi-agent system whose supervisor decomposes questions into parallel tool-grounded tasks spanning single-cell and spatial analyses, literature and clinical-trial synthesis, and drug repurposing. It applies cell-type-aware direction-aware repurposing to distinguish perturbations that reverse disease transcriptional programs. Case studies include agent-prioritized saracatinib for idiopathic pulmonary fibrosis, supported by drug-connectivity screening, and other pulmonary-disease analyses.",
+      "agent_evidence": "Supervisor task decomposition, parallel tool-grounded specialist work, literature/trial synthesis and multi-step omics analysis establish an explicit biomedical research role.",
+      "object_evidence": "Single-cell/spatial lung omics, pulmonary disease mechanisms and IPF therapeutic hypothesis case study; object-level outputs support 06 and respiratory medicine.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.04",
+        "07.02.10"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "bioRxiv v1 DOI 10.64898/2026.08.08.743577; indexed 2026-08-14",
+        "Crossref abstract metadata and Europe PMC preprint result"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Full text needed to inspect case-study evidence, validation of prioritized therapeutics and whether external experimental support exists."
+    },
+    {
+      "title": "PromptBio: An Agentic Platform for End-to-End Computational Biomedical Research",
+      "authors": "Ming Zhang; Wei Gu; Bo Han; Wen Guo; Jun Chen; Xun Zhou; Yang Leng; Yu Ma; Kai Li; Shishir H; Wang W; Huang A; et al.",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.09.02.748774",
+      "doi": "10.64898/2026.09.02.748774",
+      "arxiv_id": null,
+      "first_public_date": "2026-09-06",
+      "publication_date": null,
+      "abstract": "PromptBio uses PromptGenie to translate research aims into inspectable plans, execute analyses, and adapt subsequent steps as evidence and results emerge, with human oversight and traceable workflows. The platform is evaluated on end-to-end bioinformatics and biomedical deep-research benchmarks, representative omics/ML skills, and a hypothesis-driven regulatory-genomics case study.",
+      "agent_evidence": "Explicit plan generation, multi-step tool/analysis execution, adaptation to intermediate evidence, and research workflow role are described.",
+      "object_evidence": "Omics and machine-learning workflows plus a regulatory-genomics case study give concrete biology/genomics objects.",
+      "modules": [
+        "06"
+      ],
+      "codes": [
+        "06.03.01"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "bioRxiv v1 DOI 10.64898/2026.09.02.748774; indexed 2026-09-06",
+        "Crossref abstract cache in round-2 C search"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Abstract only; verify that the genomics case study produces object-level results and that agents perform actions beyond an interface to fixed skills."
+    },
+    {
+      "title": "TRACEDD: A Tool-grounded Reasoning and Agentic Coordination for Explainable Drug Design",
+      "authors": "S. R. Vangala; V. V. Kasturi; N. Bung; A. Roy",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.09.12.751167",
+      "doi": "10.64898/2026.09.12.751167",
+      "arxiv_id": null,
+      "first_public_date": "2026-09-18",
+      "publication_date": null,
+      "abstract": "TRACEDD establishes a tool-first multi-agent architecture with a Reason–Act–Observe loop and specialized agents for target validation, druggability, molecular generation, lead optimization, ADMET, literature integration, and retrosynthesis. It demonstrates an end-to-end workflow from target validation to synthesis planning and adapts to missing experimental structures.",
+      "agent_evidence": "Specialist coordination, validated tool use, adaptive reasoning/action/observation and end-to-end drug-discovery workflow directly meet the Agent criteria.",
+      "object_evidence": "Drug targets, molecular structures, generated/optimized compounds, ADMET properties, and synthesis planning are concrete molecular/drug objects.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.06",
+        "07.04.01"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "bioRxiv v1 DOI 10.64898/2026.09.12.751167; first indexed 2026-09-18",
+        "Europe PMC/Crossref abstract metadata"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Need full text for actual compound cases, tool validation and reported experimental versus in-silico outcomes."
+    },
+    {
+      "title": "Agentic campaign control for high-throughput de novo binder design",
+      "authors": "Minseon Jeon; Juhyeon Song; Jihye Kim; Ellen Zhong",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.09.22.753604",
+      "doi": "10.64898/2026.09.22.753604",
+      "arxiv_id": null,
+      "first_public_date": "2026-09-23",
+      "publication_date": null,
+      "abstract": "T-REX orchestrates multiple protein-generative models and structure evaluators for de novo binder design. Across a design campaign, LLM agents reason over accumulating outcomes and choose whether to rescue candidates, explore new settings, or exploit productive routes; a deterministic controller validates and schedules actions. Across seven targets the system adaptively allocates compute and yields more structurally distinct hits than baselines.",
+      "agent_evidence": "Outcome-feedback-driven campaign decisions and tool orchestration over multiple design/evaluation stages; explicit Agent role in adaptive protein research.",
+      "object_evidence": "De novo protein binders for seven targets, measured by structurally distinct design hits.",
+      "modules": [
+        "06"
+      ],
+      "codes": [
+        "06.03.06"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "bioRxiv v1 DOI 10.64898/2026.09.22.753604; indexed 2026-09-23",
+        "Crossref abstract retrieval; October C preprint sweep"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Abstract reports structural hits but does not establish experimental binding validation; full text should separate design benchmark outcomes from wet-lab results."
+    },
+    {
+      "title": "Reliable and Efficient Agentic Protein Design with Toolset Harnessing",
+      "authors": "James Butcher; Jun Chen; Andrew Hunt; Christian M. Haas; Wei Dai; Swetha Sharma; Rishi Mitra; Sandeep Salike; Jonathan Koob; Akihiko Muraishi; Ziyang Li; et al.",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.10.19.759896",
+      "doi": "10.64898/2026.10.19.759896",
+      "arxiv_id": null,
+      "first_public_date": "2026-10-20",
+      "publication_date": null,
+      "abstract": "Chaperone integrates RFdiffusion3 with sequence design, structure prediction, and evaluation tools. The agent-friendly interface supports iteration and parallel execution; the work reports nine biomolecular design tasks and a two-week binder-design campaign yielding nanomolar cortisol binders, plus nanoparticle and protein-complex linker designs.",
+      "agent_evidence": "Iterative multi-tool design and parallel execution support an Agent workflow; protein-design campaign demonstrates a scientific role, though the exact agent autonomy needs full-text confirmation.",
+      "object_evidence": "Protein binders, nanomaterials and protein-complex linkers; abstract reports nanomolar cortisol binders.",
+      "modules": [
+        "06"
+      ],
+      "codes": [
+        "06.03.06"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "bioRxiv v1 DOI 10.64898/2026.10.19.759896; posted 2026-10-20",
+        "Europe PMC DOI/abstract retrieval in C preprint sweep"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Review full text to distinguish agentic choices from the tool harness and verify whether experimental binder affinity is directly measured."
+    },
+    {
+      "title": "Detailed curation of biological samples and experimental designs for genomics using LLM-supported agentic workflows",
+      "authors": "Pavlidis P; Mancarci BO; Maximo A; Yan C; Schwartz RA",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.07.30.741874",
+      "doi": "10.64898/2026.07.30.741874",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-02",
+      "publication_date": null,
+      "abstract": "An automated pipeline generates ontology-anchored sample and experimental-design annotations for Gemma reprocessed transcriptomic studies. It benchmarks a Gemma curation agent against human curation, reports near-human performance at lower cost/higher speed, and examines triage for human review.",
+      "agent_evidence": "Agent performs multiple structured annotation and human-review triage steps for biological datasets; comparative human curation evaluation supports a research-data curation role.",
+      "object_evidence": "Genomics/transcriptomics sample and experiment metadata for biological studies in Gemma.",
+      "modules": [
+        "06"
+      ],
+      "codes": [
+        "06.03.01"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "bioRxiv v1 DOI 10.64898/2026.07.30.741874; first posted 2026-08-02",
+        "Europe PMC DOI-specific abstract lookup; 7/8-after supplement sweep"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "First posting falls within window though DOI encodes July 30. Abstract lacks planning/tool call details; full text should establish action chain and clarify exact curation benchmark."
+    },
+    {
+      "title": "From Prompt to Pipeline: A Comparative Evaluation of Large Language Model Coding Agents for Reproducible Bioinformatics Pipeline Construction",
+      "authors": "Patrick R. Munn; John K. Grenier",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.09.11.751004",
+      "doi": "10.64898/2026.09.11.751004",
+      "arxiv_id": null,
+      "first_public_date": "2026-09-17",
+      "publication_date": null,
+      "abstract": "Biomni, Claude Code, and Codex coding agents were tasked with constructing a Nextflow CUT&Tag analysis pipeline and evaluated against a hand-coded reference. The agents generated pipeline stages and reports but missed requested outputs and produced discrepancies requiring domain-expert review.",
+      "agent_evidence": "Coding agents act across multiple stages of a sequencing-analysis pipeline, using code-generation/execution tools to implement a research workflow; outputs are assessed against an expert reference.",
+      "object_evidence": "CUT&Tag genomics and reproducible sequencing-analysis pipeline construction.",
+      "modules": [
+        "06"
+      ],
+      "codes": [
+        "06.03.01"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "bioRxiv v1 DOI 10.64898/2026.09.11.751004; first posted 2026-09-17",
+        "Europe PMC DOI-specific abstract search; preprint round-2 sweep"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Full text needed for whether agents execute/analyze real biological sequencing data or only construct a pipeline; preserve expert-review failure evidence."
+    },
+    {
+      "title": "ACCREDIT: A Quality-Aware Agentic Engine for Cell-resolved Cross-modal Image Registration with Dynamic Iterative Tuning",
+      "authors": "Lei Zhou; Fang Zhao; Tao Ren; S. M. Goodyear; Chao Tang; Bo Li; Tao Zhang; Yi Chen; R. C. Sears; Gordon B. Mills; Alex Kardosh; Z. Xia",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.08.08.743602",
+      "doi": "10.64898/2026.08.08.743602",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-14",
+      "publication_date": null,
+      "abstract": "ACCREDIT scores registration quality, rejects poor alignments, and uses an LLM rescue Agent to diagnose failures and select recovery strategies. It is evaluated on Xenium, CODEX, cell-boundary, and IHC-to-H&E registration tasks.",
+      "agent_evidence": "Feedback-based quality checks followed by an Agent-selected recovery strategy provide iterative autonomous action in a spatial-omics image-analysis workflow.",
+      "object_evidence": "Cell-resolved spatial omics platforms (Xenium/CODEX) and pathology cross-modal registration tasks.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.04",
+        "07.01.04"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "bioRxiv v1 DOI 10.64898/2026.08.08.743602; posted/indexed 2026-08-14",
+        "Europe PMC abstract and Crossref DOI search"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Need full text to establish whether H&E/IHC tasks yield independent object-level pathology results sufficient for 07.01.04; 06.03.04 spatial omics is clearer."
+    },
+    {
+      "title": "Human-Guided Agentic AI for End-to-End EHR Research: Sequential Antibody-Drug Conjugate Pathways in Breast Cancer",
+      "authors": "A. Loaiza-Bonilla; C. Colovos; D. Kim; J. M. Grichnik; K. Singh; P. Tarantino",
+      "year": 2026,
+      "venue": "medRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.10.13.26365479",
+      "doi": "10.64898/2026.10.13.26365479",
+      "arxiv_id": null,
+      "first_public_date": "2026-10-14",
+      "publication_date": null,
+      "abstract": "A human-guided multi-agent workflow uses EHR cohorts to construct cohorts, execute statistical analyses, check data quality, retrieve literature, and prepare reports on sequential antibody-drug conjugate pathways in breast cancer. It reports 106 patients and cautions that orders do not establish drug administration or progression.",
+      "agent_evidence": "Multi-agent research workflow spans cohort construction, statistics, QC, literature retrieval and report synthesis, with human adjudication; clear clinical research role.",
+      "object_evidence": "Sequential ADC orders in a 106-patient breast-cancer cohort; note the authors explicitly caution orders do not establish treatment administration or progression.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.02.05",
+        "07.03.08"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "medRxiv DOI 10.64898/2026.10.13.26365479; first posted 2026-10-14",
+        "Europe PMC DOI-specific abstract from preprint sweep"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Review cohort design and agent/human decision boundary; do not infer administered therapies or causal pathways from order records."
+    },
+    {
+      "title": "From seven combination hypotheses to one testable interaction: a gated agentic AI–QSP workflow applied to healthy-ageing interventions",
+      "authors": "I. Goryanin et al.",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.09.29.755460",
+      "doi": "10.64898/2026.09.29.755460",
+      "arxiv_id": null,
+      "first_public_date": "2026-10-01",
+      "publication_date": null,
+      "abstract": "A gated LLM-agent and quantitative-systems-pharmacology workflow models healthy-ageing interventions, generates and prunes seven nutritional-combination hypotheses, performs identifiability and virtual-trial analysis, and derives an assay-hardened trial design.",
+      "agent_evidence": "Agent-led hypothesis generation plus model-guided pruning, simulation, identifiability analysis and experimental-design proposal form a multi-step scientific workflow.",
+      "object_evidence": "Healthy-ageing intervention combinations and a testable interaction/trial design; nutrition is a possible specific object, but drug code not assumed.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.03.04"
+      ],
+      "primary_module": "07",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "bioRxiv v1 DOI 10.64898/2026.09.29.755460; first posted 2026-10-01",
+        "Europe PMC DOI-specific abstract; preprint reviewer discovery"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Abstract withholds agent identity/source and details of nutritional object/assay; verify evidence and scope before inclusion or 07.03.04 assignment."
+    },
+    {
+      "title": "inClinico Agent for clinical trial endpoint prediction and prospective evaluation",
+      "authors": "J. Chen et al.",
+      "year": 2026,
+      "venue": "medRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.10.13.26365373",
+      "doi": "10.64898/2026.10.13.26365373",
+      "arxiv_id": null,
+      "first_public_date": "2026-10-15",
+      "publication_date": null,
+      "abstract": "A clinical-trial success prediction system combines LLMs, deterministic scoring engines, retrieval tools, and clinical skills. It reports retrospective prediction performance and a prospective benchmark involving 3,311 ongoing trials.",
+      "agent_evidence": "Tool integration and retrieval are explicit, but abstract does not establish autonomous multi-step actions or the system’s research-process role beyond prediction.",
+      "object_evidence": "Drug-development trial endpoints and prospective clinical-trial benchmark.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.04.01"
+      ],
+      "primary_module": "07",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "medRxiv DOI 10.64898/2026.10.13.26365373; posted 2026-10-15",
+        "Europe PMC DOI-specific abstract in preprint discovery"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Distinguish an Agent research workflow from a prediction platform with tool/LLM components; benchmark evidence alone does not satisfy the Agent-action gate."
+    },
+    {
+      "title": "MedKGent: a large language model agent framework for constructing temporally evolving medical knowledge graph",
+      "authors": "Duzhen Zhang; Zixiao Wang; Zhong-Zhi Li; Yahan Yu; Shuncheng Jia; Jiahua Dong; Haotian Xu; Xing Wu; Yingying Zhang; Tielin Zhang; Jie Yang; Xiuying Chen; Le Song",
+      "year": 2026,
+      "venue": "npj Digital Medicine",
+      "url": "https://doi.org/10.1038/s41746-026-03058-7",
+      "doi": "10.1038/s41746-026-03058-7",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-04",
+      "publication_date": "2026-08-04",
+      "abstract": "MedKGent uses extractor and constructor agents to process more than 10 million PubMed abstracts, identify knowledge triples, score confidence, and incrementally build a temporal medical knowledge graph. The graph contains 156,275 entities and 2,971,384 triples; automated and expert assessments report triple-validity rates near 90%, and downstream tests improve retrieval-augmented generation across medical QA benchmarks.",
+      "agent_evidence": "Two specialized agents perform staged extraction, confidence scoring and graph construction across a large literature corpus; evidence supports an information-curation workflow, though autonomous scientific investigation is less direct.",
+      "object_evidence": "Medical literature and structured disease/medical knowledge; object-level ontology/graph construction and expert validity assessments.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.03.08"
+      ],
+      "primary_module": "07",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Nature portfolio publisher page and full abstract, DOI 10.1038/s41746-026-03058-7 (2026-08-04)",
+        "Direct Nature HTML fetch returned full abstract and introduction",
+        "Crossref round2 journal harvest"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Potentially a knowledge-graph construction/infrastructure paper with downstream medical QA, rather than an Agent serving a scientific research task. Verify project inclusion boundary and whether object evidence warrants 07.03.08."
+    },
+    {
+      "title": "OntoCodex: a multi-agent biomedical ontology enrichment framework",
+      "authors": "Jingna Feng; Yue Yu; Aaron Dong; Xinyue Hu; Shuteng Niu; Pengze Li; Yifang Dang; Ahmed Abdelhameed; Jiang Bian; Xiaoqian Jiang; Cui Tao",
+      "year": 2026,
+      "venue": "npj Digital Medicine",
+      "url": "https://doi.org/10.1038/s44401-026-00117-9",
+      "doi": "10.1038/s44401-026-00117-9",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-05",
+      "publication_date": "2026-08-05",
+      "abstract": "OntoCodex coordinates five agents for ontology parsing, task decisions, knowledge retrieval, terminology normalization, and script generation, with feedback and OWL integration. It enriches concepts across stroke, COPD, atrial fibrillation, osteoporosis, and Parkinson disease, comparing concept extraction/mapping with baseline ChatGPT and reporting successful automatic script execution.",
+      "agent_evidence": "Five-agent, staged retrieval/normalization/script workflow with feedback and a clearly described ontology-enrichment task; research role is biomedical knowledge representation, but possible infrastructure boundary.",
+      "object_evidence": "Concepts and clinical terminology across five named disease areas; automated ontology enrichment and mapping results.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.03.08"
+      ],
+      "primary_module": "07",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Nature publisher page, DOI 10.1038/s44401-026-00117-9 (2026-08-05); abstract text retrieved directly",
+        "Crossref publisher metadata",
+        "round2 expanded Nature journal harvest"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Need decide whether terminology ontology enrichment counts as clinical research workflow or primarily knowledge-infrastructure. Full text may reveal concrete disease-specific results and validation."
+    },
+    {
+      "title": "RelAgent: a multi-agent solution for molecular relationship grounding",
+      "authors": "Rubing Chen; Jiaxin Wu; Chen Jason Zhang; Xiao-Yong Wei; Qing Li",
+      "year": 2026,
+      "venue": "Bioinformatics",
+      "url": "https://doi.org/10.1093/bioinformatics/btag541",
+      "doi": "10.1093/bioinformatics/btag541",
+      "arxiv_id": null,
+      "first_public_date": "2026-07-23",
+      "publication_date": "2026-07-23",
+      "abstract": "RelAgent decomposes molecular relationship grounding into entity extraction, substructure localization, ontology-guided relation reasoning, and verifier-agent ranking; it improves performance on the MolGround benchmark.",
+      "agent_evidence": "Multi-agent staged extraction and verifier roles are explicit, but this may be task automation for language-to-structure grounding rather than an agent-led scientific research workflow.",
+      "object_evidence": "Molecular structures, substructure relationships, and molecular editing benchmark tasks.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.06",
+        "07.04.01"
+      ],
+      "primary_module": "06",
+      "suggested_status": "needs_review",
+      "source_trail": [
+        "Oxford Academic/Bioinformatics DOI record btag541; publication date 2026-07-23",
+        "Oxford journal harvest/cache abstract",
+        "7/8-after boundary sweep"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "The paper appeared before the main Aug-Oct window but after July-8 cutoff. Review whether benchmarked molecular grounding meets project’s research-role requirement; do not use “agent” only as system-name evidence."
+    },
+    {
+      "title": "Informing agent-based models with spatial data using convolutional autoencoders",
+      "authors": "Bi-rong Wang; Chen-Yi Liao; Erik H. J. Danen; Elsa Neubert; Federica Eduati",
+      "year": 2026,
+      "venue": "Bioinformatics",
+      "url": "https://doi.org/10.1093/bioinformatics/btag444",
+      "doi": "10.1093/bioinformatics/btag444",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-01",
+      "publication_date": "2026-08-01",
+      "abstract": "An optimization framework uses convolutional autoencoders to fit agent-based tumor models to imaging data across synthetic data, 3D tumoroid–T-cell co-culture microscopy, and melanoma histopathology; estimated parameters reproduce spatial features.",
+      "agent_evidence": "Here “agent-based model” means the biological simulation’s modeled entities, not a research Agent that plans/uses tools/iterates. No research Agent action is identified.",
+      "object_evidence": "Tumor spatial dynamics and immune-cell co-culture, melanoma imagery and spatial-model parameter inference.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.04",
+        "07.02.05"
+      ],
+      "primary_module": "06",
+      "suggested_status": "excluded",
+      "source_trail": [
+        "Oxford Academic/Bioinformatics abstract, DOI btag444, dated 2026-08-01",
+        "Oxford main journal harvest cache"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Not a research-Agent paper under four gates; retain in exclusion log to avoid future false positive from agent-based terminology."
+    },
+    {
+      "title": "Agent-based modeling identifies multiple paths for inflammation resolution",
+      "authors": "Hermès Desgrez-Dautet; David Bernard; Béatrice Cousin; Paul Monsarrat; Sylvain Cussat-Blanc",
+      "year": 2026,
+      "venue": "Bioinformatics",
+      "url": "https://doi.org/10.1093/bioinformatics/btag533",
+      "doi": "10.1093/bioinformatics/btag533",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-01",
+      "publication_date": "2026-08-01",
+      "abstract": "A spatial agent-based model simulates sterile inflammation using immune-cell behaviors and 300,000 Latin-hypercube parameter simulations; analysis identifies multiple dynamical regimes compatible with inflammation resolution.",
+      "agent_evidence": "“Agent” refers to simulated immune cells within a conventional agent-based biological model; there is no autonomous research Agent workflow.",
+      "object_evidence": "Immune-cell interaction, sterile inflammation and simulated resolution paths.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.02.08",
+        "07.01.09"
+      ],
+      "primary_module": "06",
+      "suggested_status": "excluded",
+      "source_trail": [
+        "Oxford Academic/Bioinformatics abstract, DOI btag533, dated 2026-08-01",
+        "Oxford journal harvest"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Exclude from Agent review because it models biological agents, not scientific research Agents."
+    },
+    {
+      "title": "An open benchmark and language models for AI in aging biology",
+      "authors": "A. Zhavoronkov et al.",
+      "year": 2026,
+      "venue": "Cell",
+      "url": "https://doi.org/10.1016/j.cell.2026.08.026",
+      "doi": "10.1016/j.cell.2026.08.026",
+      "arxiv_id": null,
+      "first_public_date": "2026-09-01",
+      "publication_date": "2026-09-01",
+      "abstract": "Paper presents an AI benchmark and language models for aging biology; no research-Agent action is established by the indexed record available in this search.",
+      "agent_evidence": "No evidence of multi-step tool use, planning, feedback, or collaborative Agent role in the retrieved abstract. Included only as a high-impact journal raw hit for source completeness.",
+      "object_evidence": "Aging biology benchmark/models may concern biological objects, but no Agent research role is established.",
+      "modules": [],
+      "codes": [],
+      "primary_module": null,
+      "suggested_status": "excluded",
+      "source_trail": [
+        "Cell DOI search / Europe PMC title-agent broad query; Cell aging benchmark paper surfaced in raw hits",
+        "Crossref DOI metadata"
+      ],
+      "source_level": "metadata_abstract",
+      "uncertainties": "If full text reveals explicit research-Agent experiments, re-screen; current discovery signal alone is insufficient."
+    },
+    {
+      "title": "Autonomous biomedical research with an artificial intelligence agent",
+      "authors": "K. Huang et al.",
+      "year": 2026,
+      "venue": "Science",
+      "url": "https://doi.org/10.1126/science.adz4351",
+      "doi": "10.1126/science.adz4351",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-20",
+      "publication_date": "2026-08-20",
+      "abstract": "Biomni autonomously executes diverse biomedical research tasks through retrieval-augmented planning, code execution, tool selection, and workflow composition; benchmarks include gene prioritization, drug repurposing, rare disease, microbiome and molecular cloning, with protein and wet-lab case studies.",
+      "agent_evidence": "Meets four Agent gates in the publication abstract; agent-mined tools/protocols and autonomous workflow composition are explicit.",
+      "object_evidence": "Biomedical causal genetics, molecular cloning, microbiome, protein stability and wet-lab orchestration case studies.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.01",
+        "06.03.06",
+        "07.03.08"
+      ],
+      "primary_module": "06",
+      "suggested_status": "existing_version_update",
+      "source_trail": [
+        "Science DOI/publisher abstract (2026-08-20)",
+        "Europe PMC indexed record",
+        "Existing master entry ASD-0118 and 2025 preprint DOI 10.1101/2025.05.30.656746",
+        "Searcher-1 journal-family review"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Already present as ASD-0118 preprint; merge publication DOI/date/venue into that lineage, do not add duplicate. Published full text not reread this round."
+    },
+    {
+      "title": "The Virtual Biotech: A multi-agent AI framework for therapeutic discovery and development",
+      "authors": "H. G. Zhang; P. Eckmann; J. Miao; A. B. Mahon; J. Zou",
+      "year": 2026,
+      "venue": "Science",
+      "url": "https://doi.org/10.1126/science.aeg6779",
+      "doi": "10.1126/science.aeg6779",
+      "arxiv_id": null,
+      "first_public_date": "2026-09-17",
+      "publication_date": "2026-09-17",
+      "abstract": "An organization of AI agents models drug-development functions across target discovery, safety, modality selection, and clinical development; analyzes 55,984 trials, a lung-cancer strategy, and a failed ulcerative-colitis trial.",
+      "agent_evidence": "Multi-agent role-divided biomedical research; tool/evidence integration and three drug-development decision case studies. Already recorded in prior 50-paper round.",
+      "object_evidence": "Clinical trial outcomes, target-level drug development and disease-specific therapeutic analyses.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.01",
+        "07.04.01",
+        "07.02.05",
+        "07.02.11"
+      ],
+      "primary_module": "07",
+      "suggested_status": "existing_version_update",
+      "source_trail": [
+        "Science DOI/publisher abstract, 2026-09-17",
+        "Europe PMC title/date query",
+        "Prior C round candidate record DOI 10.1126/science.aeg6779"
+      ],
+      "source_level": "publisher_abstract",
+      "uncertainties": "Prior 50-paper packet already contains this paper/preprint lineage; reconcile there and do not add as new."
+    },
+    {
+      "title": "Perturb-ME: Scalable mechanism discovery from phenotype-enriched genome-wide screens",
+      "authors": "Hanchen Wang et al.",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.08.17.745330",
+      "doi": "10.64898/2026.08.17.745330",
+      "arxiv_id": null,
+      "first_public_date": "2026-08-18",
+      "publication_date": null,
+      "abstract": "Perturb-ME combines genome-wide CRISPR screening, phenotype enrichment and multimodal single-cell measurements in melanoma MHC-I assays; an AI co-scientist interprets the resulting model and literature to generate competing mechanisms.",
+      "agent_evidence": "Existing version in prior 50-paper package and recheck evidence bundle; full text specifies data-fed literature cross-reference and hypothesis tournament.",
+      "object_evidence": "Melanoma MHC-I perturbation screen and gene-regulatory mechanisms.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.01",
+        "07.02.05"
+      ],
+      "primary_module": "06",
+      "suggested_status": "existing_version_update",
+      "source_trail": [
+        "bioRxiv v1 full HTML downloaded in prior task",
+        "Prior 50-paper candidate pack",
+        "DOI 10.64898/2026.08.17.745330"
+      ],
+      "source_level": "full_text_html",
+      "uncertainties": "Duplicate of the current batch’s completed source recheck; do not duplicate."
+    },
+    {
+      "title": "scBaseCount: An AI agent-curated, standardized, auto-updated single-cell data repository",
+      "authors": "Nicholas D. Youngblut et al.",
+      "year": 2026,
+      "venue": "Cell",
+      "url": "https://doi.org/10.1016/j.cell.2026.08.025",
+      "doi": "10.1016/j.cell.2026.08.025",
+      "arxiv_id": null,
+      "first_public_date": "2026-09-01",
+      "publication_date": "2026-09-01",
+      "abstract": "Cell paper reports an AI-agent curated, standardized single-cell repository; earlier same-lineage bioRxiv full text specifies LangGraph ReAct SRAgent, NCBI/SRA tool use and scRecounter.",
+      "agent_evidence": "Same author lineage and full-text preprint workflow verified in recheck7_life.json; do not duplicate this record in new round.",
+      "object_evidence": "Single-cell transcriptomics and SRA datasets.",
+      "modules": [
+        "06"
+      ],
+      "codes": [
+        "06.03.04"
+      ],
+      "primary_module": "06",
+      "suggested_status": "existing_version_update",
+      "source_trail": [
+        "Cell DOI / earlier bioRxiv DOI 10.1101/2025.02.27.640494",
+        "Current C source recheck file recheck7_life.json"
+      ],
+      "source_level": "related_preprint_full_text_xml",
+      "uncertainties": "Already handled in parallel note-source recheck; merge only through existing paper lineage."
+    },
+    {
+      "title": "HealthFlow/EHR analysis and clinical-service search noise",
+      "authors": null,
+      "year": 2026,
+      "venue": "mixed",
+      "url": null,
+      "doi": null,
+      "arxiv_id": null,
+      "first_public_date": null,
+      "publication_date": null,
+      "abstract": "Raw-hit cluster included clinical delivery, diagnosis, EHR decision support and system reviews. Only HealthFlow was retained as an EHR research-analysis workflow candidate; routine diagnosis/decision support papers were not promoted.",
+      "agent_evidence": "Screened by the four-gate policy; exclude when systems only answer patient questions, predict diagnoses, or automate care delivery without a defined research role.",
+      "object_evidence": "Potential EHR/clinical data objects, but object relevance alone does not establish a scientific research Agent.",
+      "modules": [],
+      "codes": [],
+      "primary_module": null,
+      "suggested_status": "excluded",
+      "source_trail": [
+        "Europe PMC broad August–October query families",
+        "Nature / Science / Cell DOI and title harvest",
+        "Prior C round exact title/DOI dedup against papers.jsonl and october_search_C_life_health.json"
+      ],
+      "source_level": "screening_log",
+      "uncertainties": "Individual near-neighbor excluded titles and reasons are recorded in search log; query outputs are noisy/non-exhaustive."
+    },
+    {
+      "title": "Verification Debt in Automated Biological Research Workflows: A Proof-of-Concept",
+      "authors": "Shreya Gopalan; Sundaraparipurnan Narayanan",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.09.29.755250",
+      "doi": "10.64898/2026.09.29.755250",
+      "arxiv_id": null,
+      "first_public_date": "2026-10-05",
+      "publication_date": null,
+      "abstract": "Recent biological research has shown significant interest and progress towards adoption of agentic AI systems. Domain specific agentic platforms with access to large collections of biological tools with code generation and/or querying capabilities, such as Biomni (illustrative case in point), are representative of the capability to orchestrate automated research workflows. Such platforms enable collaborative AI workspace for drug discovery, genomics, bioinformatics, literature research, and experimental planning for biologists and researchers. When such platforms are used for the aforementioned workflows, individually validating every agentic decision and the research process by which it was reached becomes challenging due to the scale of decisions involved and oftentimes, insufficient disclosure of assumptions and methodological choices, limited traceability of evidence, and interpretive judgments embedded throughout the workflow, giving rise to verification debt. Verification debt in agentic environments could result in unexpected failures and consequences in downstream experiments. This study focuses on empirical qualitative characterization of verification debt in agentic (prompt to outcomes) workflows. Biomni was chosen the testing AI agentic platform in this study mainly due to the descriptive traces it provides to track every agentic step. Verification debt is examined through two complementary angles: the individual agentic decision steps that carry claims and evidence, and the underlying research process by which the agent arrives at and reports them. This study attempts to characterize verification debt with 10 test cases (covering proteomics, genomics and drug discovery) with varying degree of biological nuance across three identical and independent runs. Verification debt is represented through 9 decision-step metrics and 13 research-process metrics, and also propose the VERIFY framework for evaluating scientific verifiability and validity in agentic workflows.",
+      "agent_evidence": "Uses Biomni as an operative biomedical research agent in 10 proteomics, genomics, and drug-discovery cases across repeated runs; analyzes step-level claims/evidence and research-process traces and proposes VERIFY metrics/framework.",
+      "object_evidence": "Concrete proteomics, genomics, and drug-discovery test cases; the paper evaluates verifiability of biomedical research workflows.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.01",
+        "07.04.01"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Europe PMC preprint record 10.64898/2026.09.29.755250 (first posted 2026-10-05)",
+        "Round-2 C delegated preprint lane cache: .tmp_asd_pdfs/october_round2_C_epmc_raw.json"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "Abstract-level only; verify full-text case design and whether VERIFY results are sufficiently grounded in biological outputs."
+    },
+    {
+      "title": "hvantk: an agentic multi-omics framework for variant annotation and analysis",
+      "authors": "Enrique Audain; Yasset Perez-Riverol; Marc-Phillip Hitz",
+      "year": 2026,
+      "venue": "bioRxiv preprint",
+      "url": "https://doi.org/10.64898/2026.10.19.760196",
+      "doi": "10.64898/2026.10.19.760196",
+      "arxiv_id": null,
+      "first_public_date": "2026-10-21",
+      "publication_date": null,
+      "abstract": "Large-scale genetic variant analysis involves multiple computational steps, data formats, gene and variant annotation sources and compute requirements. Some of the steps like joint calling for large cohorts are run on large compute clusters, while gene/variant classification algorithms can be run in a desktop computer. At the same time, variant annotations such as gene expression and gene constraints metrics from gnomAD are provided in different formats, by resources that frequently change their versions. Here, we present hvantk, a framework that provides a common data model for large-scale annotation and analysis of genetic variants, by extending popular data formats such as Hail MatrixTable and AnnData. hvantk agentically integrates 21 public multi-omic data providers as plugins that a developer, bioinformatician or an AI agent can author without modifying the framework's core, drives analysis workflows using agent skills, and scales from single desktop computers to high-performance computing clusters. We used hvantk for reanalysing three case-control cohorts, comprising congenital heart disease (CHD), developmental and epileptic encephalopathy (Epi25) and schizophrenia (SCHEMA). Re-ranking of gene-based burden testing results using multi-omic annotations improved the recovery of curated disease genes from 26% to 49% in CHD, 40% to 48% in Epi25 and 51% to 54% in SCHEMA, among the top decile re-ranked genes. Expression at bulk and single-cell levels were the features contributing the most over a baseline of burden, gene constraint and publication count.",
+      "agent_evidence": "The framework agentically integrates 21 multi-omic providers, drives analysis workflows using agent skills, and is applied to reanalyze three disease case-control cohorts with gene-burden ranking.",
+      "object_evidence": "Genetic variants, multi-omic annotations, and curated disease genes in congenital heart disease, developmental and epileptic encephalopathy, and schizophrenia cohorts.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.01",
+        "07.03.01"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "Europe PMC preprint record 10.64898/2026.10.19.760196 (first posted 2026-10-21)",
+        "Round-2 C delegated preprint lane cache: .tmp_asd_pdfs/october_round2_C_epmc_raw.json"
+      ],
+      "source_level": "preprint_abstract",
+      "uncertainties": "The abstract supports agent-driven workflow execution but leaves the human/AI division and adaptation behavior unclear; verify full text before core promotion."
+    },
+    {
+      "title": "Auto-MD-bench: Evaluating Autoresearch Agents for Real-World Medical Tasks",
+      "authors": "Shenqi Zhou; Qiran Zou; Wenhao Zhao; Zhenyu Liao; Dianbo Liu",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.25069",
+      "doi": null,
+      "arxiv_id": "2610.25069",
+      "first_public_date": "2026-10-18",
+      "publication_date": null,
+      "abstract": "Autonomous agents are increasingly capable of developing machine learning (ML) models end to end. In medical practice, however, strong performance on the target metric does not fully characterize how good the models are in real-world use cases. For example, medical ML models should also provide well-calibrated risk estimates and remain robust across patient populations. Yet autonomous model development is typically guided by task objectives that emphasize simple predictive discrimination (e.g. AUROC). This raises a key question: are these objectives sufficient to guide agents toward models that meet the broader requirements of real-world medical use? In this study, we introduce Auto-MD-bench, a benchmark of 15 real-world medical tasks from 10 clinical datasets, spanning survival analysis, classification and sequential prediction, with external validation across cohorts, hospitals and time periods. We evaluate four agents: AIDE, AI Scientist v2, Codex, and Autoresearch. The strongest agents achieve competitive primary scores, yet their predicted risks are less calibrated than those of the simple baseline models, which could lead to severe medical accidents. Moreover, models with nearly identical primary scores can exhibit markedly different calibration, while performance varies substantially across population shifts. These findings show that primary task performance alone is insufficient to assess autonomous clinical modeling and multiple different metrics widely used in healthcare practice need to be taken into consideration.",
+      "agent_evidence": "Evaluates four autonomous research/model-development agents across complete medical ML task workflows, with external cohort/hospital/time validation and calibration/robustness criteria.",
+      "object_evidence": "15 real-world medical tasks across 10 clinical datasets, including survival, classification, and sequential prediction.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.03.08"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv abstract record 2610.25069 (first posted 2026-10-18)",
+        "A-lane screening cache: Autonomous Scientific Discovery/Coverage_Check/october_round2_A_general.json; explicit C-domain handoff"
+      ],
+      "source_level": "arxiv_abstract",
+      "uncertainties": "Abstract-level benchmark paper; confirm test-task particulars and the distinction between research-model development and intended clinical decision support."
+    },
+    {
+      "title": "DrugTargetWorld: A Synthetic Biobank for Training and Benchmarking AI Scientists",
+      "authors": "Samuel Margolis; Paul Schmiedmayer; Alan Huang; Ethan Chen; Ishan Bhattacharjee; Atman Shah; Ben Viggiano; Fang Cao; Shriya Reddy; Roger Xia; Jack O'Sullivan; Daniel Katz; Matthew Wheeler; Euan Ashley; Bruna Gomes",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.09558",
+      "doi": null,
+      "arxiv_id": "2610.09558",
+      "first_public_date": "2026-10-07",
+      "publication_date": null,
+      "abstract": "Drug target discovery requires distinguishing molecules that causally drive disease from those that are merely associated with it. Training and evaluating AI agents to perform this workflow end-to-end is difficult because real world biobanks lack known causal ground truth and participant-level data is access controlled. We introduce DrugTargetWorld, a framework that procedurally generates simulated biobanks, or \"worlds,\" with known but concealed causal structure. Each world contains genotypes, proteins, health records, outcomes, and synthetic magnetic resonance imaging (MRI) for 54,000 participants. Agents must construct a disease phenotype, identify causal driver proteins, infer the beneficial direction of modulation, and optionally conduct virtual 'wet lab' experiments. We evaluated nine agents in 540 episodes across 20 cardiovascular worlds and three experimental budgets. Opus 5 and GPT-5.6 Sol achieved the highest mean composite scores, 39.98 and 35.38 of 100, respectively, and both recovered 64% of causal drivers on average. However, no agent reliably distinguished misleading non-causal proteins, and performance remained limited by the integrative judgments required to connect phenotype construction, causal evidence, and intervention decisions. By making each world's causal structure known to the evaluator but hidden from the agent, DrugTargetWorld turns end-to-end drug target discovery into a scalable training and evaluation problem with verifiable reward.",
+      "agent_evidence": "Agents construct disease phenotypes, identify causal driver proteins, infer intervention direction, and may run virtual experiments in end-to-end drug-target discovery episodes.",
+      "object_evidence": "Synthetic biobank worlds encode genotypes, proteins, health records, outcomes, and MRI for cardiovascular disease target discovery.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.01",
+        "07.04.01"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv abstract record 2610.09558 (first posted 2026-10-07)",
+        "A-lane screening cache: Autonomous Scientific Discovery/Coverage_Check/october_round2_A_general.json; explicit C-domain handoff"
+      ],
+      "source_level": "arxiv_abstract",
+      "uncertainties": "The worlds are simulated, but the evaluated agents perform explicit biomedical discovery actions against known causal structure; verify the simulator and scoring details in full text."
+    },
+    {
+      "title": "Can Coding Agents Build Robust Baselines? A Skill-Based Approach for Automating the Medical Imaging Model-Development Pipeline",
+      "authors": "Eugenia Moris; José Ignacio Orlando",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.23336",
+      "doi": null,
+      "arxiv_id": "2608.23336",
+      "first_public_date": "2026-08-24",
+      "publication_date": null,
+      "abstract": "Developing competitive deep learning baselines for medical imaging remains a highly iterative process requiring literature review, implementation, experimentation, and expert refinement. Existing automation approaches typically optimize isolated components, such as architecture search or hyperparameter tuning, rather than the complete baseline development process. We present an agentic AI Scientist workflow that combines literature-guided reasoning, automated code generation, and hypothesis-driven experimentation to generate competitive baseline models for medical imaging challenges. The framework is evaluated on four public benchmarks spanning segmentation, classification, and detection. Across all tasks, the Experimentation Pipeline consistently improves validation performance, achieving competitive leaderboard results, including 6th place on both PUMA tracks (15 teams) and 31st place on MILK10k (125 teams). On MIDOG25, the resulting model also demonstrates strong domain generalization across scanners, tumor types, and species. Using the same workflow across all challenges without task-specific redesign, we demonstrate that skill-based, literature-guided agentic workflows can substantially reduce the engineering effort required to develop competitive medical imaging baselines.",
+      "agent_evidence": "An agentic AI Scientist conducts literature-guided reasoning, code generation, and hypothesis-driven experimentation to build and refine medical-imaging baselines.",
+      "object_evidence": "Medical imaging challenge data for segmentation, classification, and detection, including tumor/pathology imaging and cross-scanner/species generalization.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.01.04"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv abstract record 2608.23336 (first posted 2026-08-24)",
+        "A-lane screening cache: Autonomous Scientific Discovery/Coverage_Check/october_round2_A_general.json; explicit C-domain handoff"
+      ],
+      "source_level": "arxiv_abstract",
+      "uncertainties": "Abstract supports a research workflow; check benchmark tasks and validation evidence before core promotion."
+    },
+    {
+      "title": "NeuroAct: Advancing EEG Analysis and Decoding via Dual-Loop Autonomous Research",
+      "authors": "Wei Xiong; Jiangtong Li; Han Zhao; Linxiao Yang; Jie Li; Changjun Jiang",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.25211",
+      "doi": null,
+      "arxiv_id": "2610.25211",
+      "first_public_date": "2026-10-18",
+      "publication_date": null,
+      "abstract": "EEG analysis and decoding underpin brain-computer interfaces, cognitive assessment, and sleep monitoring. Fixed pipelines and reward-driven search do not explicitly determine how signal structure, representations, predictor behavior, and training dynamics contribute to performance or generalization gaps, leaving intervention choice underdetermined. We introduce NeuroAct, an autonomous research agent framework for EEG analysis and decoding. NeuroAct implements dual-loop autonomous research across EEG foundation models, task-specific predictors, and model combinations. In an inner loop, research, development, and review roles use evidence on signal structure, representations, predictor behavior, and training dynamics to test hypotheses, select analyses or interventions, and refine candidates using performance, stability, and cost feedback. An outer loop distills outcomes into conditional, testable recommendations with task and model conditions, then validates and revises them on subsequent tasks.We evaluate four settings: (A) EEG General Analysis, (B) Cross-task Model Optimization, (C) Single-task Open Research, and (D) Collaborative Prediction. In Setting A, NeuroAct's 80.88 macro-average exceeds BrainAgent's 63.13 by 17.75 points. In Setting B, NeuroAct raises EEGPT's mean balanced accuracy (BA) by 7.34 points and HBN Pearson's (r) from 0.6894 to 0.7362; in Setting C, it improves ADFTD BA by 16.33 points; and in Setting D, it raises Workload BA from 79.69% to 85.02%. Experience reuse raises BCIC-IV-2a BA from 34.66% to 50.81% while reducing LLM tokens by 64.02%, indicating recommendations improve cross-task performance. NeuroAct enables evidence-guided EEG research improved by cross-task experience.",
+      "agent_evidence": "Explicit autonomous EEG research framework with inner-loop role coordination, evidence-guided hypotheses/interventions, feedback-based candidate refinement, and outer-loop reusable recommendations.",
+      "object_evidence": "EEG signal structure, representations, predictors, model combinations, and brain-computer/cognitive/sleep task settings.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.01.03"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv abstract record 2610.25211 (first posted 2026-10-18)",
+        "A-lane screening cache: Autonomous Scientific Discovery/Coverage_Check/october_round2_A_general.json; explicit C-domain handoff"
+      ],
+      "source_level": "arxiv_abstract",
+      "uncertainties": "Abstract gives strong action evidence; verify dataset/task provenance and full evaluation design."
+    },
+    {
+      "title": "TCMScience: An Autonomous Scientist for Traditional Chinese Medicine",
+      "authors": "Yanlan Kang; Ruiqi Liu; Xinpei Gu; Tzu-Yi Lei; Shuai Xu; Xukun Zhang; William Cheng-Chung Chu",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2610.24601",
+      "doi": null,
+      "arxiv_id": "2610.24601",
+      "first_public_date": "2026-10-17",
+      "publication_date": null,
+      "abstract": "Traditional Chinese medicine (TCM) research connects classical texts, medicinal entities, molecular assays, computational predictions, and clinical studies. An autonomous research agent must preserve the inferential boundaries between these evidence types while coordinating analysis across heterogeneous resources. We introduce TCMScience, a scientific knowledge-discovery agent that separates language-model proposals from execution and release authority. Its architecture combines a trusted kernel, a scientific compiler, and claim-support contracts: plans are compiled into typed operations, execution is bounded by explicit permissions, and candidate findings are checked against source provenance, study design, and claim scope before release. The full capability registry contains 117 public-source connectors with 444 typed operations across 29 domains and 150 native tools across 12 domains; the TCM data hub catalogs 136 databases, 76 dataset specifications, and 84,294 formula-source records. These resources support model-independent workflows through browser and local execution interfaces. In a network-pharmacology analysis of Gegen Qinlian Tang, replacing the whole-proteome background with the assayed-protein background changed the number of significant pathways from 66 to zero; incorporating inactive screening records identified nine pathways, including drug-metabolism signals retained as mechanistic hypotheses. A governance ablation over 121 constructed erroneous outputs spanning 26 classes released 121 errors without governance, 57 with the domain layer, seven with the kernel, and zero with both layers. All 10 compliant controls were retained. These results establish complementary control of known failure modes and show how explicit evidence contracts change the conclusions an agent is permitted to report.",
+      "agent_evidence": "Autonomous scientist plans and executes bounded knowledge-discovery operations, checks claims against source provenance/study design, and performs a biomedical pathway analysis with governance ablations.",
+      "object_evidence": "Traditional Chinese medicine formula and medicinal entities, pathway/mechanism hypotheses, assay-background choices, and source-grounded biomedical evidence.",
+      "modules": [
+        "07"
+      ],
+      "codes": [
+        "07.04.01"
+      ],
+      "primary_module": "07",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv abstract record 2610.24601 (first posted 2026-10-17)",
+        "A-lane screening cache: Autonomous Scientific Discovery/Coverage_Check/october_round2_A_general.json; explicit C-domain handoff"
+      ],
+      "source_level": "arxiv_abstract",
+      "uncertainties": "The abstract shows a concrete network-pharmacology analysis but much of the evaluation concerns governance; confirm actual biomedical object-level analysis in full text."
+    },
+    {
+      "title": "An immune world model for multiscale forecasting and therapeutic hypothesis generation",
+      "authors": "Taoyong Cui; Xi Wang; Zonghang Li; Jinchao Ding; Lingsen You; Yuzhi Xu; Wanghan Xu; Fang Wu; Kejun Ying; Wanli Ouyang; Pheng Ann Heng; Ling Yang; Zhenfei Yin; Yingcheng Wu",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2609.14709",
+      "doi": null,
+      "arxiv_id": "2609.14709",
+      "first_public_date": "2026-09-13",
+      "publication_date": null,
+      "abstract": "Immune therapies act across cell-intrinsic programs, tissue ecosystems, and patient-specific immune states, yet most predictors address these scales separately. We used a governed evolutionary AI Scientist to construct the Immune World Model, an action-conditioned model that learns how interventions move immune states across cellular, tissue, and individual levels. The Immune World Model--building Scientist searched candidate architectures and workflows, and the resulting world model was frozen before independent confirmation. The frozen model generalized to unseen interventions and biological contexts, recovered intervention-specific cellular programs, integrated cell and tissue information to improve ecosystem and patient-response prediction, and forecast unseen perturbation combinations. Immune World Model--guided analysis then combined measured perturbations with cross-axis inference to nominate IL-36$γ$ plus SIRP$α$ inhibition as a complementary-axis therapeutic hypothesis, whereas a governed self-correction audit rejected every screened cytokine pair. The Immune World Model provides a framework for multiscale immune simulation that connects AI Scientist-driven model construction, intervention forecasting, and the generation of prospectively testable therapeutic hypotheses.",
+      "agent_evidence": "A governed AI Scientist searches architectures/workflows to construct a biological world model; the resulting model forecasts interventions and supports a therapeutic hypothesis tested through a self-correction audit.",
+      "object_evidence": "Immune-cell programs and states, tissue ecosystems, patient response, perturbation combinations, and IL-36?/SIRP? inhibition hypothesis.",
+      "modules": [
+        "06",
+        "07"
+      ],
+      "codes": [
+        "06.03.04",
+        "07.04.01"
+      ],
+      "primary_module": "06",
+      "suggested_status": "candidate",
+      "source_trail": [
+        "arXiv abstract record 2609.14709 (first posted 2026-09-13)",
+        "A-lane screening cache: Autonomous Scientific Discovery/Coverage_Check/october_round2_A_general.json; explicit C-domain handoff"
+      ],
+      "source_level": "arxiv_abstract",
+      "uncertainties": "Strong action-conditioned biological discovery evidence at abstract level; validate intervention datasets and the independent-confirmation protocol in full text."
+    }
+  ],
+  "search_log": [
+    {
+      "date": "2026-10-22",
+      "window": "2026-08-01..2026-10-22 main; 2026-07-08..2026-07-31 supplemental",
+      "lane": "preparation/dedup",
+      "source": "Autonomous Scientific Discovery/Data/papers.jsonl (922 records), master list, prior 50-paper expansion files including october_search_C_life_health.json",
+      "rawhits": 922,
+      "known_hits": 12,
+      "new_hits": 0,
+      "failures": [],
+      "note": "922 baseline JSONL rows counted. Prior C round contained 12 candidates; exact DOI/title matches were tagged existing_version_update or known in round1. Do not infer all were included."
+    },
+    {
+      "date": "2026-10-22",
+      "window": "2026-08-01..2026-10-22",
+      "lane": "biomedical literature index",
+      "source": "Europe PMC REST broad title/abstract families covering agent/agentic/autonomous + biology/biomedical/clinical/drug/protein/genomics/omics/cell",
+      "rawhits": 1375,
+      "known_hits": 176,
+      "new_hits": 1199,
+      "failures": [
+        "One family query returned the 1000-result page cap; raw-hit total is overlapping and truncated, not unique coverage.",
+        "Two Europe PMC endpoints had intermittent connection resets during earlier requests; no failed request counted as success."
+      ],
+      "note": "1199 DOI/title-deduplicated index records were scanned for Agent-style terms in titles. 171 title candidates remained before precision cleanup; broad token \"agent\" yielded substantial pharmacological/ABM/clinical-service noise."
+    },
+    {
+      "date": "2026-10-22",
+      "window": "2026-08-01..2026-10-22",
+      "lane": "abstract resolution",
+      "source": "Crossref works DOI abstracts for C-topic title shortlist",
+      "rawhits": 171,
+      "known_hits": 12,
+      "new_hits": 159,
+      "failures": [
+        "Crossref requests returned no abstract for several DOI records; journal abstracts were followed up at publisher pages where available.",
+        "No abstract resolved for some clinical delivery and prediction titles; kept in excluded/needs_review screening notes."
+      ],
+      "note": "Retrieved DOI-level Crossref abstracts for 171 title shortlist records; exact DOI/title overlap with baseline and prior 50 was identified."
+    },
+    {
+      "date": "2026-10-22",
+      "window": "2026-08-01..2026-10-22",
+      "lane": "journal family entry points",
+      "source": "Nature/Science/Cell and Oxford Biomedical journal harvest caches .tmp_asd_pdfs/round2_journals/harvest.json, harvest_expanded.json, harvest_10_1093_agent.json",
+      "rawhits": 483,
+      "known_hits": 23,
+      "new_hits": 460,
+      "failures": [
+        "Harvest was noisy and query-index limited; cache article counts are discovery hits, not qualifying papers.",
+        "Some Oxford abstracts were absent from cached harvest and needed DOI-specific follow-up."
+      ],
+      "note": "Main + expanded journal harvest raw_discovery lengths 170+313; relevant DOI abstracts read for HealthFlow, MedKGent, OntoCodex, glioblastoma discovery, ALLocate, MR-MAS, RelAgent and ABM false positives."
+    },
+    {
+      "date": "2026-10-22",
+      "window": "2026-08-01..2026-10-22",
+      "lane": "citation/sibling expansion",
+      "source": "Biomni/Virtual Biotech, protein/tool Agent, oncology/EHR research and single-cell/spatial omics candidate clusters surfaced by journal and author/systems citation graph; direct DOI and same-author/project links",
+      "rawhits": 34,
+      "known_hits": 7,
+      "new_hits": 27,
+      "failures": [
+        "Forward citation crawl was limited by API rate limits and the current session; record precise citation paths only where confirmed.",
+        "No claim of exhaustive conference proceedings search."
+      ],
+      "note": "Included direct sibling and linked workflow leads from Biomni/Virtual Biotech, LungChat, T-REX, PromptBio, SRAgent, and EHR/clinical research Agent branches; exact citations remain source-trail-specific per candidate."
+    },
+    {
+      "date": "2026-10-22",
+      "window": "2026-07-08..2026-07-31 supplemental",
+      "lane": "post-07/08 gap review",
+      "source": "Oxford Bioinformatics indexed records, Europe PMC date-bound search and DOI/title expansion",
+      "rawhits": 8,
+      "known_hits": 1,
+      "new_hits": 7,
+      "failures": [],
+      "note": "RelAgent btag541 and July-30 genomic-curation preprint surfaced; latter’s first public posting is Aug 02 and is filed in main window with DOI-encoded July 30 noted. RelAgent is kept needs_review as a borderline molecular-grounding benchmark. Previously listed July C candidates were deduped."
+    },
+    {
+      "date": "2026-10-22",
+      "window": "screening",
+      "lane": "four-gate decision",
+      "source": "Publisher abstracts, bioRxiv/medRxiv indexed abstracts, taxonomy and project inclusion rules",
+      "rawhits": 31,
+      "known_hits": 5,
+      "new_hits": 22,
+      "failures": [],
+      "note": "New additions are candidate/needs_review only; publisher abstracts are not treated as full-text verification. Ordinary clinical diagnosis, administrative care delivery, biological agent-based simulations, models without a research-Agent workflow, and reviews/perspectives are separated."
+    },
+    {
+      "date": "2026-10-22",
+      "window": "2026-08-01..2026-10-22",
+      "lane": "delegated preprint screen reconciliation",
+      "source": "C preprint sub-agent handoff reconciled against .tmp_asd_pdfs/october_round2_C_epmc_raw.json, baseline Data/papers.jsonl, prior C expansion, and round2 C candidate package",
+      "rawhits": 2,
+      "known_hits": 0,
+      "new_hits": 2,
+      "failures": [],
+      "note": "Two handoff discoveries absent from the 29-record C package were verified by Europe PMC records: Verification Debt (10.64898/2026.09.29.755250; first posted 2026-10-05) and hvantk (10.64898/2026.10.19.760196; first posted 2026-10-21). Both meet abstract-level research-Agent/domain relevance and were added as candidates; no master/full-text writeback."
+    },
+    {
+      "date": "2026-10-22",
+      "window": "2026-08-01..2026-10-22",
+      "lane": "specialized A-to-C domain handoff",
+      "source": "Official abstracts in Autonomous Scientific Discovery/Coverage_Check/october_round2_A_general.json arxiv_screening; six records explicitly handed off by controller",
+      "rawhits": 6,
+      "known_hits": 0,
+      "new_hits": 6,
+      "failures": [],
+      "note": "Screened Auto-MD-bench 2610.25069, DrugTargetWorld 2610.09558, medical-imaging agentic baseline 2608.23336, NeuroAct 2610.25211, TCMScience 2610.24601, and immune world model 2609.14709. All six abstracts support domain-relevant research-agent actions and concrete medical/biological objects; added as candidates with fixed taxonomy codes, pending independent source review/full-text follow-up."
+    }
+  ]
+}

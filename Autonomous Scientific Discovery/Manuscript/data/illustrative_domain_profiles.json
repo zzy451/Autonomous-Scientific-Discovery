@@ -1,18 +1,274 @@
 {
   "scope": "Eleven purposively selected object-task cases; coded entries establish selected demonstrated functions, not exhaustive capabilities or corpus prevalence. Unmarked cells mean not coded in this comparison.",
-  "role_order": ["knowledge", "hypothesis", "design", "execution", "analysis", "validation"],
-  "paradigm_order": ["symbolic", "planning", "optimization", "learning", "llm", "hybrid"],
+  "role_order": [
+    "knowledge",
+    "hypothesis",
+    "design",
+    "execution",
+    "analysis",
+    "validation"
+  ],
+  "paradigm_order": [
+    "symbolic",
+    "planning",
+    "optimization",
+    "learning",
+    "llm",
+    "hybrid"
+  ],
   "cases": [
-    {"module":"01","id":"ASD-0512","key":"asd0512","name":"FunSearch","object":"Combinatorial constructions","roles":["design","execution","analysis"],"paradigms":["llm"],"environments":["computational"],"feedback":"Executable program scores","human":"Supplied evaluator and program skeleton","endpoint":"Evaluated mathematical constructions","source":"Current domain synthesis; archived PDF program-search method and cap-set application"},
-    {"module":"02","id":"ASD-0090","key":"asd0090","name":"k-agents","object":"Superconducting quantum experiments","roles":["design","execution","analysis"],"paradigms":["planning","llm","hybrid"],"environments":["computational","laboratory"],"feedback":"Measurement-based state transitions","human":"Supplied procedures and apparatus","endpoint":"Hardware calibration and experimental outcomes","source":"Archived PDF pp.1-3: translation, state machines, calibration retries; existing checked domain comparison"},
-    {"module":"03","id":"ASD-0734","key":"asd0734","name":"Reactivity-search robot","object":"Chemical reaction combinations","roles":["design","execution","analysis"],"paradigms":["learning"],"environments":["laboratory"],"feedback":"NMR and IR reaction signals","human":"Manual chemical follow-up","endpoint":"Reactivity screening; characterized follow-up","source":"Archived PDF p.1 abstract: learning, spectroscopy, manual chemist follow-up"},
-    {"module":"04","id":"ASD-0455","key":"burger2020","name":"Mobile robotic chemist","object":"Photocatalyst formulations","roles":["design","execution","analysis"],"paradigms":["optimization"],"environments":["laboratory"],"feedback":"Measured hydrogen production","human":"Defined ingredients and search space","endpoint":"Measured formulation performance","source":"Archived Nature PDF p.1 batched Bayesian search; existing checked domain comparison"},
-    {"module":"05","id":"ASD-0722","key":"asd0722","name":"Sensorweb","object":"Environmental event observations","roles":["design","execution","analysis"],"paradigms":["planning"],"environments":["field","space"],"feedback":"Event detections and observation requests","human":"Science interests and priorities","endpoint":"Adaptive acquisition","source":"Existing checked domain synthesis; official PDF p.2 acquisition and planning workflow"},
-    {"module":"06","id":"ASD-0501","key":"king2004","name":"Robot Scientist","object":"Yeast gene function","roles":["hypothesis","design","execution","analysis"],"paradigms":["symbolic"],"environments":["computational","laboratory"],"feedback":"Growth assays versus model predictions","human":"Biological model, preparation and plate handling","endpoint":"Experimental discrimination of hypotheses","source":"Archived PDF pp.2-3 Prolog pathway model and hypothesis-testing process; existing checked domain synthesis"},
-    {"module":"07","id":"ASD-0054","key":"asd0054","name":"Virtual Lab","object":"SARS-CoV-2 nanobody candidates","roles":["knowledge","hypothesis","design","execution","analysis","validation"],"paradigms":["llm"],"environments":["computational","laboratory"],"feedback":"Computational assessment and binding experiments","human":"Research guidance and biological validation; not all roles autonomous","endpoint":"Expression and binding; no clinical claim","source":"Existing checked domain synthesis; archived PDF p.5 experimental nanobody validation"},
-    {"module":"08","id":"ASD-1133","key":"asd1133","name":"RAVA","object":"Plant disease images","roles":["execution","analysis"],"paradigms":["learning"],"environments":["computational"],"feedback":"Sequential visual observations","human":"Dataset, training objective and labels","endpoint":"Image diagnosis and robustness tests","source":"Archived PDF p.1: recurrent active vision, PPO, PlantVillage and PlantDoc evaluation; image benchmark not prospective field deployment"},
-    {"module":"09","id":"ASD-0504","key":"asd0504","name":"BEAR","object":"Fabricated mechanical structures","roles":["design","execution","analysis"],"paradigms":["optimization"],"environments":["laboratory"],"feedback":"Mechanical measurements","human":"Design family and objective","endpoint":"Measured structural toughness","source":"Archived PDF p.1 Bayesian experimental researcher; existing checked domain synthesis"},
-    {"module":"10","id":"ASD-0645","key":"asd0645","name":"Sciencecraft","object":"Spacecraft science operations","roles":["design","execution","analysis"],"paradigms":["planning"],"environments":["space"],"feedback":"Onboard events and execution monitoring","human":"Mission goals and constraints","endpoint":"On-orbit operation; distinguish simulated demonstration","source":"Archived official proceedings p.1 CASPER, science team, spacecraft constraint model; existing checked deployment comparison"},
-    {"module":"11","id":"ASD-0624","key":"asd0624","name":"SciSciGPT","object":"Scientific knowledge production","roles":["knowledge","design","execution","analysis"],"paradigms":["llm"],"environments":["digital","computational"],"feedback":"Database results and analytical outputs","human":"Human-AI research collaboration","endpoint":"Scholarly-data analysis","source":"Archived PDF p.1 scope; existing checked comparison of collaboration-network retrieval and visualization"}
+    {
+      "module": "01",
+      "id": "ASD-0512",
+      "key": "asd0512",
+      "name": "FunSearch",
+      "object": "Combinatorial constructions",
+      "roles": [
+        "design",
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "llm"
+      ],
+      "environments": [
+        "computational"
+      ],
+      "feedback": "Executable program scores",
+      "human": "Supplied evaluator and program skeleton",
+      "endpoint": "Evaluated mathematical constructions",
+      "source": "Current domain synthesis; archived PDF program-search method and cap-set application"
+    },
+    {
+      "module": "02",
+      "id": "ASD-0090",
+      "key": "asd0090",
+      "name": "k-agents",
+      "object": "Superconducting quantum experiments",
+      "roles": [
+        "design",
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "planning",
+        "llm",
+        "hybrid"
+      ],
+      "environments": [
+        "computational",
+        "laboratory"
+      ],
+      "feedback": "Measurement-based state transitions",
+      "human": "Supplied procedures and apparatus",
+      "endpoint": "Hardware calibration and experimental outcomes",
+      "source": "Archived PDF pp.1-3: translation, state machines, calibration retries; existing checked domain comparison"
+    },
+    {
+      "module": "03",
+      "id": "ASD-0734",
+      "key": "asd0734",
+      "name": "Reactivity-search robot",
+      "object": "Chemical reaction combinations",
+      "roles": [
+        "design",
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "learning"
+      ],
+      "environments": [
+        "laboratory"
+      ],
+      "feedback": "NMR and IR reaction signals",
+      "human": "Manual chemical follow-up",
+      "endpoint": "Reactivity screening; characterized follow-up",
+      "source": "Archived PDF p.1 abstract: learning, spectroscopy, manual chemist follow-up"
+    },
+    {
+      "module": "04",
+      "id": "ASD-0455",
+      "key": "burger2020",
+      "name": "Mobile robotic chemist",
+      "object": "Photocatalyst formulations",
+      "roles": [
+        "design",
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "optimization"
+      ],
+      "environments": [
+        "laboratory"
+      ],
+      "feedback": "Measured hydrogen production",
+      "human": "Defined ingredients and search space",
+      "endpoint": "Measured formulation performance",
+      "source": "Archived Nature PDF p.1 batched Bayesian search; existing checked domain comparison"
+    },
+    {
+      "module": "05",
+      "id": "ASD-0722",
+      "key": "asd0722",
+      "name": "Sensorweb",
+      "object": "Environmental event observations",
+      "roles": [
+        "design",
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "planning"
+      ],
+      "environments": [
+        "field",
+        "space"
+      ],
+      "feedback": "Event detections and observation requests",
+      "human": "Science interests and priorities",
+      "endpoint": "Adaptive acquisition",
+      "source": "Existing checked domain synthesis; official PDF p.2 acquisition and planning workflow"
+    },
+    {
+      "module": "06",
+      "id": "ASD-0501",
+      "key": "king2004",
+      "name": "Robot Scientist",
+      "object": "Yeast gene function",
+      "roles": [
+        "hypothesis",
+        "design",
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "symbolic"
+      ],
+      "environments": [
+        "computational",
+        "laboratory"
+      ],
+      "feedback": "Growth assays versus model predictions",
+      "human": "Biological model, preparation and plate handling",
+      "endpoint": "Experimental discrimination of hypotheses",
+      "source": "Archived PDF pp.2-3 Prolog pathway model and hypothesis-testing process; existing checked domain synthesis"
+    },
+    {
+      "module": "07",
+      "id": "ASD-0054",
+      "key": "asd0054",
+      "name": "Virtual Lab",
+      "object": "SARS-CoV-2 nanobody candidates",
+      "roles": [
+        "knowledge",
+        "hypothesis",
+        "design",
+        "execution",
+        "analysis",
+        "validation"
+      ],
+      "paradigms": [
+        "llm"
+      ],
+      "environments": [
+        "computational",
+        "laboratory"
+      ],
+      "feedback": "Computational assessment and binding experiments",
+      "human": "Human agenda and instructions; all scripts run by researchers; human biological validation",
+      "endpoint": "Expression and binding; no clinical claim",
+      "source": "Archived Nature PDF p.6: all scripts run by human researcher; human expression and binding experiments. Roles refer to the evaluated human-agent investigation, not autonomous agent ownership."
+    },
+    {
+      "module": "08",
+      "id": "ASD-1133",
+      "key": "asd1133",
+      "name": "RAVA",
+      "object": "Plant disease images",
+      "roles": [
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "learning"
+      ],
+      "environments": [
+        "computational"
+      ],
+      "feedback": "Sequential visual observations",
+      "human": "Dataset, training objective and labels",
+      "endpoint": "Image diagnosis and robustness tests",
+      "source": "Archived PDF p.1: recurrent active vision, PPO, PlantVillage and PlantDoc evaluation; image benchmark not prospective field deployment"
+    },
+    {
+      "module": "09",
+      "id": "ASD-0504",
+      "key": "asd0504",
+      "name": "BEAR",
+      "object": "Fabricated mechanical structures",
+      "roles": [
+        "design",
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "optimization"
+      ],
+      "environments": [
+        "laboratory"
+      ],
+      "feedback": "Mechanical measurements",
+      "human": "Design family and objective",
+      "endpoint": "Measured structural toughness",
+      "source": "Archived PDF p.1 Bayesian experimental researcher; existing checked domain synthesis"
+    },
+    {
+      "module": "10",
+      "id": "ASD-0645",
+      "key": "asd0645",
+      "name": "Sciencecraft",
+      "object": "Spacecraft science operations",
+      "roles": [
+        "design",
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "planning"
+      ],
+      "environments": [
+        "space"
+      ],
+      "feedback": "Onboard events and execution monitoring",
+      "human": "Mission goals and constraints",
+      "endpoint": "On-orbit operation; distinguish simulated demonstration",
+      "source": "Archived official proceedings p.1 CASPER, science team, spacecraft constraint model; existing checked deployment comparison"
+    },
+    {
+      "module": "11",
+      "id": "ASD-0624",
+      "key": "asd0624",
+      "name": "SciSciGPT",
+      "object": "Scientific knowledge production",
+      "roles": [
+        "knowledge",
+        "design",
+        "execution",
+        "analysis"
+      ],
+      "paradigms": [
+        "llm"
+      ],
+      "environments": [
+        "digital",
+        "computational"
+      ],
+      "feedback": "Database results and analytical outputs",
+      "human": "Human-AI research collaboration",
+      "endpoint": "Scholarly-data analysis",
+      "source": "Archived PDF p.1 scope; existing checked comparison of collaboration-network retrieval and visualization"
+    }
   ]
 }
