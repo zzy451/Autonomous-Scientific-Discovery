@@ -27,6 +27,7 @@ python scripts/build_landscape_figures.py
 
 ## 补充分析
 
+- [第7.1—7.3节跨学科修订记录](analysis/section7_cross_domain_revision_2026-11-01.md)：将知识、数据、反馈与验证的论证扩展至计算、物理天文、地球环境、生命医学、工程、任务系统及社会研究。
 - [学科覆盖差异的深化分析](analysis/domain_coverage_imbalance_deepened_2026-10-31.md)：对应正文第 7 节，分析各学科的对象、模态、可观测性、干预及验证条件。
 - [共同科研流程与智能体参与](analysis/shared_research_workflow_and_agent_participation_2026-11-01.md)：对应第 8.1、8.3 节及结论，区分阶段覆盖、操作权限、自适应控制和科学判断。
 - [补充信息清单](analysis/gpt_supplement_information_checklist_2026-10-31.md)：保留原始规划属性，不能当作所有条目均已核实的声明。
