@@ -49,11 +49,13 @@ def main():
                        'tables': text.count(r'\begin{table}'), 'figures': text.count(r'\begin{figure}')})
     source += (MANUSCRIPT / 'main.tex').read_text(encoding='utf-8')
     keys = {k.strip() for group in cite_sequence(source) for k in group.split(',')}
-    assert len(keys) == 54
+    coverage = load(OUT / 'coverage_summary.json')
+    assert len(keys) == coverage['manuscript_citation_keys']
     bib_text = (MANUSCRIPT / 'references.bib').read_text(encoding='utf-8')
     bib_keys = re.findall(r'(?m)^@\w+\{([^,\n]+),', bib_text)
     assert len(bib_keys) == len(set(bib_keys)), 'Duplicate bibliography keys'
     bibliography = parse_bib(bib_text)
+    assert len(bibliography) == coverage['bibliography_entries']
     assert keys <= set(bibliography), ('Unresolved citation keys', keys - set(bibliography))
     assert not re.search(r'\\bibitem|\\begin\{thebibliography\}', source), 'Inline references'
     assert re.findall(r'\\bibliography\{([^}]+)\}', source) == ['references']
@@ -64,7 +66,7 @@ def main():
         assert fields.get('doi') or fields.get('url'), key
         if not raw.startswith('@misc'):
             assert re.fullmatch(r'\d{4}', fields.get('year', '')), key
-    assert counts == {'sections': 10, 'subsections': 41, 'tables': 15, 'figures': 6}, counts
+    assert counts == {'sections': 10, 'subsections': 42, 'tables': 15, 'figures': 6}, counts
     en = WORKSPACE / 'Agent_for_Science_Review_Overleaf'; zh = WORKSPACE / 'Agent_for_Science_Review_Chinese'
     local = {}
     if (en / 'main.tex').exists() and (zh / 'main.tex').exists():
@@ -76,6 +78,8 @@ def main():
             assert cite_sequence(et) == cite_sequence(zt), ('citation order', f.name)
             for pattern in (r'\\label\{([^}]+)\}', r'\\begin\{(table|figure)\}'):
                 assert re.findall(pattern, et) == re.findall(pattern, zt), f.name
+            equations = r'\\begin\{equation\}\s*(.*?)\s*\\end\{equation\}'
+            assert re.findall(equations, et, re.S) == re.findall(equations, zt, re.S), ('equation', f.name)
             assert len(re.findall(r'\\subsection\{', et)) == len(re.findall(r'\\subsection\{', zt))
         assert (en / 'references.bib').read_bytes() == (zh / 'references.bib').read_bytes() == (MANUSCRIPT / 'references.bib').read_bytes()
         for folder in (en, zh):

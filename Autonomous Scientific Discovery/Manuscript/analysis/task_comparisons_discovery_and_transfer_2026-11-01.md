@@ -2,6 +2,8 @@
 
 日期：2026-11-01。接续[科研决策、学科条件与科学增量](decision_delegation_and_scientific_gains_2026-11-01.md)。本轮先检查独立参考文献库，再扩展第6节具体学科案例、第8节综合及摘要和结论。未修改核心库成员、分类、既有副标签或逐篇笔记。
 
+版本状态：本文件记录本日前一轮54条引用及41个小节的修订。后续新增第8.4节及方法文献见[自适应决策与科学证据修订索引](adaptive_decisions_and_scientific_evidence_2026-11-01.md)；当前引用和编译结果以该索引及最终核验文件为准。
+
 ## 引用处理
 
 - 英文、中文与GitHub正文镜像共用内容相同的独立 `references.bib`；`main.tex`只以 `\bibliography{references}` 调用，不含 `\bibitem` 或 `thebibliography`。

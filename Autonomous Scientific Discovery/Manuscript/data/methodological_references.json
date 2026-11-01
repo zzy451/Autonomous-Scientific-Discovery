@@ -1,0 +1,18 @@
+{
+  "hadad2021": {
+    "type": "article",
+    "title": "Confidence intervals for policy evaluation in adaptive experiments",
+    "author": "Hadad, Vitor and Hirshberg, David A. and Zhan, Ruohan and Wager, Stefan and Athey, Susan",
+    "year": "2021",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "volume": "118",
+    "number": "15",
+    "pages": "e2014602118",
+    "doi": "10.1073/pnas.2014602118",
+    "url": "https://doi.org/10.1073/pnas.2014602118",
+    "_role": "Statistical-method background; outside the Agent core corpus and its publication counts.",
+    "_metadata_source": "https://api.crossref.org/works/10.1073/pnas.2014602118",
+    "_fulltext_source": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8054003/fullTextXML",
+    "_checked": "2026-11-01"
+  }
+}

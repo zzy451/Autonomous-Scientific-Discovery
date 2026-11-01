@@ -7,19 +7,19 @@
   "frozen_source_hashes_and_year_figure_match": true,
   "manuscript_structure": {
     "sections": 10,
-    "subsections": 41,
+    "subsections": 42,
     "tables": 15,
     "figures": 6
   },
-  "cited_keys": 54,
-  "unified_bib_entries": 1051,
+  "cited_keys": 56,
+  "unified_bib_entries": 1052,
   "standalone_bibliography": true,
   "duplicate_or_unresolved_citation_keys": 0,
   "local_bilingual_checks": {
-    "english_pdf_pages": 36,
-    "chinese_pdf_pages": 32,
-    "english_pdf_sha256": "d12990a67958b18ba5b7ca98054f5c6ee366d1c899b6ca4acf6e51bf9045f8ea",
-    "chinese_pdf_sha256": "a7bb254422b84bd44634b81f241d4dd33c38d505951c63170663d36c981ecdbb",
+    "english_pdf_pages": 37,
+    "chinese_pdf_pages": 33,
+    "english_pdf_sha256": "4f9ef1b772153a8d760ae1b2631b301c2c058088b2badcf6a7f8678c5eac2fc5",
+    "chinese_pdf_sha256": "4b1a006d97e6f8184e4417f7b4e95cdb4562009877e5a78f479ca55d57101b43",
     "matched_citation_order_labels_tables_figures_and_subsections": true,
     "unresolved_citations_overfull_boxes_missing_characters": 0
   },

@@ -113,6 +113,11 @@ def main():
             for field in ['title','year','journal','volume','number','pages','doi','url','eprint','archivePrefix']:
                 if m.get(field):records[key][field]=m[field]
             records[key]['author']=' and '.join(esc(n) for n in m['author_names'])
+    # Methodological background is kept separately from Agent corpus membership.
+    methodological_path=ROOT/'Manuscript/data/methodological_references.json'
+    if methodological_path.exists():
+        for key,fields in json.loads(methodological_path.read_text(encoding='utf-8')).items():
+            add(key,{k:v for k,v in fields.items() if not k.startswith('_')})
     repo='https://github.com/zzy451/Autonomous-Scientific-Discovery'
     docs=[('projecttaxonomy','Scientific-domain taxonomy','science_domain_taxonomy.md'),('projectpolicy','Review scope and classification policy','review_scope_and_classification_policy.md'),('projectboundaries','Scientific-domain classification boundary rules','domain_classification_rules.md')]
     for key,title,path in docs:
