@@ -18,8 +18,8 @@
   "local_bilingual_checks": {
     "english_pdf_pages": 40,
     "chinese_pdf_pages": 35,
-    "english_pdf_sha256": "a5abf0120f8e50e48c5e4169a98f62890d6472e8a421a620e50dd763d9b1e7d1",
-    "chinese_pdf_sha256": "82e49fe940d1f9708a4d58d9bacf30670140756f96be8a16b638cbe13f63faee",
+    "english_pdf_sha256": "de0f726274682a24c6c2d398cdbb86c339c4e91e49405cc0e46049e4ddecb09e",
+    "chinese_pdf_sha256": "d33651002eb8755f78da18898de06c13865baa31216e1e694bd30ae143bf5c72",
     "matched_citation_order_labels_tables_figures_and_subsections": true,
     "matched_english_figure_assets_and_bilingual_figure_names": true,
     "unresolved_citations_overfull_boxes_missing_characters": 0

@@ -38,6 +38,7 @@ python scripts/build_landscape_figures.py
 - [自适应决策如何影响科学证据](analysis/adaptive_decisions_and_scientific_evidence_2026-11-01.md)：第8.4节的原文证据及推导条件；分析性质优化与机制辨识、采样分布与推断有效性，以及测量模型和停止决策的科学含义。新增统计方法背景独立于Agent核心库。
 - [六幅正文图片的图文一致性核查](analysis/figure_text_consistency_audit_2026-11-01.md)：逐图核对日期、统计口径、并列维度、反馈路径及人类执行说明，记录图片与正文的对应修正。
 - [十一学科共同问题核查与模型—观测失配专题](analysis/domain_minimum_and_model_observation_2026-11-02.md)：核查第6章各学科的对象、决策、反馈及结论范围，补强四处解释联系；记录第8.5节三个既有案例的选择理由、原文位置与适用边界，核心库保持冻结。
+- [第7—8章的科学综合与收敛修订](analysis/scientific_synthesis_convergence_2026-11-02.md)：合并重复学科描述，将研究条件推导到行动选择、停止和验证；进一步比较数学见证、可执行规程、经验规则及解释性预测的后续科学用途。摘要、引言与结论同步改写。
 - [补充信息清单](analysis/gpt_supplement_information_checklist_2026-10-31.md)：保留原始规划属性，不能当作所有条目均已核实的声明。
 
 中文阅读版、完整编译 PDF、临时草稿、备份和本地验收图留在本地，不属于该发布快照。
