@@ -195,3 +195,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.26?27。
 - 判定：Concrete experiment/task evidence supports 01.01.06 (微分方程). Table 7: Math_01 governing equation disc.; Math_02 compositional invariants (PDF p.26); Math_03 ode parameter geometry; Math_04 anomalous diffusion cps (PDF p.27).
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 基准包含40项来自同行评审研究的盲测任务，属预定义基准 | “TruthInsightBench包含来自10个科学领域、40篇同行评审研究的40项盲测任务” · L65 |
+| 验证强度 | V1 基准/内部评测 | 评价报告与原始证据及科学结论的对应关系，属基准评测 | “结果是基准评测，不等同于独立完成并发表新发现” · L141 |
+| 系统自主性 | L1 任务助手 | Agent执行人委派的分析任务，人决定研究流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

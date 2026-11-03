@@ -181,3 +181,17 @@ recommended_pdf_url: https://arxiv.org/pdf/2605.28978
 - 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Zhang_2026_VFEAgent_Finite_Element_Analysis.pdf; PDF p.5; We evaluate VFEAgent on a comprehensive suite of engineering problems, categorized into two modes: (1) Standard Forward Analysis, encompass- ing trusses, frames, and plates under diverse boundary con- ditions; and (2) Topology Optimization, focusing on compli- ance minimization subject to volume constraints (e.g., vol- frac ≤0.5).。
 - 判定：finite-element engineering analysis
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 从新工程图像和描述自动生成FEA仿真 | “various engineering mechanics scenarios” · L45 |
+| 验证强度 | V2 计算/仿真/回顾性 | 工程力学场景的仿真验证 | “simulation_validation” · L129 |
+| 系统自主性 | L1 任务助手 | 系统执行人委派的有限元建模任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

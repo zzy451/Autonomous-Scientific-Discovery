@@ -153,3 +153,17 @@ Agent 类型：Planning Agent; Hybrid Agent
 - 已核验并归档：`Reference_PDF/03_Chemical_Sciences/ASD-0508_Autonomous_multiproperty_driven_molecular_discovery_From_predictions_to_measurements_and_back_user_supplied.pdf`，共18页。
 - 来源：用户提供文件`chemrxiv-2023-r7b01.pdf`；版本：ChemRxiv preprint supplied by user; version not peer-reviewed。
 - 本次只补充来源文件，不改变论文分类。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 多属性驱动分子发现，产出需合成测量验证的新分子 | “dye-like molecules，多属性分子发现” · L20 |
+| 验证强度 | V3 物理实验 | 自动实现数百个未报道分子，并发现高性能分子 | “自动实现数百个未报道分子，并进一步发现 top-performing molecules” · L73 |
+| 系统自主性 | L2 闭环执行者 | 预测、合成、测量和模型回训之间形成闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

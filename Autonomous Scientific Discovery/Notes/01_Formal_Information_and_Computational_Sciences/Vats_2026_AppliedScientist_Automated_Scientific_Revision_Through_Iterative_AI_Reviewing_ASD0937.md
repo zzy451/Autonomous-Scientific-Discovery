@@ -159,3 +159,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.4。
 - 判定：Concrete experiment/task evidence supports 01.02.13 (机器学习). We curate 30 ICLR papers spanning five research domains and retain only papers with publicly available source code that can be reproduced on a single GPU within our VRAM budget.
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 对25篇拒稿和5篇边缘接收的ICLR论文进行迭代修订，论文已存在 | “25 rejected and 5 borderline-accepted ICLR papers” · L42 |
+| 验证强度 | V1 基准/内部评测 | 使用AI reviewer和Stanford Reviewer评分修订效果 | “Stanford Reviewer as an independent evaluator” · L21 |
+| 系统自主性 | L2 闭环执行者 | 系统读取评审意见并自主修订论文代码，形成反馈闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

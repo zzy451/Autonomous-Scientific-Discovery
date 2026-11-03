@@ -257,3 +257,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 在配方空间中自主搜索无铅钙钛矿纳米晶材料并优化PLQY，产生需实验检验的新材料 | “在含 ZnI2 添加剂的 Cu 基无铅钙钛矿纳米晶合成空间中自主搜索最优条件” · L28 |
+| 验证强度 | V3 物理实验 | 76次流动实验内找到高性能Cs3Cu2I5纳米晶并提升PLQY至约61% | “76 次流动实验内达到高性能 `Cs3Cu2I5` NC” · L189 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成droplet-based flow chemistry到ENN-driven BO到下一轮合成条件选择的闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

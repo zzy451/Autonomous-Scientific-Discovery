@@ -290,3 +290,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2005_Autonomous_Rover_Science_Dynamic_Planning.pdf; PDF p.2; New missions are being designed that will require rovers to A primary objective of our work is to use onboard planning, support more autonomous endeavors such as long-range scheduling, and execution techniques to increase utilization traversals, complex science experiments, and longer mission of rover resources by enabling the rover to appropriately duration.。
 - 判定：autonomous rover science planning/scheduling
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | rover基于science alerts动态重规划科学任务 | “science alerts 与 rover mission tasks” · L201 |
+| 验证强度 | V2 计算/仿真/回顾性 | 仿真与真实rover hardware上完成验证 | “系统在模拟和真实 rover hardware 上完成自主运行与机会科学处理” · L205 |
+| 系统自主性 | L2 闭环执行者 | 系统基于onboard data analysis自主调整活动并重规划 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

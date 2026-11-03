@@ -147,3 +147,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - 原文位置：本地PDF pp.10–11，Section 4/Table 2/Fig.5：multi-component electrolytes maximize lithium metal electrode performance; discharge-time outcomes。。
 - 判定：具体材料案例为锂金属电极电池电解液；04.04.02电池材料匹配，不应归04.04.01能源材料的笼统落点。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 材料实验闭环场景，新电解液探索答案可实验检验 | “new-electrolyte exploration / materials experimentation case” · L32 |
+| 验证强度 | V3 物理实验 | 材料场景闭环验证 | “具体材料探索场景中完成闭环验证” · L82 |
+| 系统自主性 | L2 闭环执行者 | AI-robot闭环自主迭代 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

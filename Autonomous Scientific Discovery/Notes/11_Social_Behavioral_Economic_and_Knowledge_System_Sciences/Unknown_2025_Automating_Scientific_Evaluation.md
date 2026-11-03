@@ -311,3 +311,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
   - 位置：publisher API target-paper title metadata; no methods/results delivered；来源：https://www.sciencedirect.com/science/article/pii/S240589632503157X/pdfft?isDTMRedir=true&download=true
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 同行评审任务有评审标准可对照 | “围绕稿件审查、意见生成、比较与编辑整合” · L218 |
+| 验证强度 | V1 基准/内部评测 | 基准测试，完整实验细节暂缺 | “有任务级验证线索，但全文细节暂缺” · L228 |
+| 系统自主性 | L2 闭环执行者 | 多agent协作完成评审流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

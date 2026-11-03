@@ -289,3 +289,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：PDF p.1。
 - 判定：PMO实际性质优化实验，而非仅提及化学工具。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 样本高效的分子优化，结果可由oracle评估器验证 | “Practical Molecular Optimization benchmark；23 tasks” · L201 |
+| 验证强度 | V1 基准/内部评测 | 仅通过benchmark oracle验证，无外部实验 | “报告 2-3x AUC 提升，且常在 50 oracle calls 内接近最优” · L205 |
+| 系统自主性 | L2 闭环执行者 | 系统根据完整轨迹和反馈在线更新优化策略 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

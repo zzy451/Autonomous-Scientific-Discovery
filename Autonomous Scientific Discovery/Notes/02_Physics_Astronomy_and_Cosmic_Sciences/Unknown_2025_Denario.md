@@ -301,3 +301,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 - 原文位置：PDF pp.23,24,25 5.1 Mathematical Physics; background PINNs; Denario results。
 - 判定：主归档02.02下实际完成的首个数学物理案例直接分析Burgers非线性PDE及PINN解空间；可选为primary三级，不需因多领域框架而留空。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在多学科数据上执行新分析任务，答案可由计算核对 | “Section 5 的多学科 end-to-end research examples” · L217 |
+| 验证强度 | V2 计算/仿真/回顾性 | 有专家评估支撑，但不是所有例子都有强实验验证 | “专家评估：是” · L213 |
+| 系统自主性 | L1 任务助手 | 系统执行research assistant workflow但质量受任务选择影响 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

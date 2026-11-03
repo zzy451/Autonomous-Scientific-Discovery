@@ -151,3 +151,17 @@ first_hand_source_checked：official arXiv PDF archived locally and checked: Aut
 source_limited：no
 confidence：high
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 本体整理任务有规则与标准可核对 | “agents 在本体整理与维护上显著缓解知识生产瓶颈” · L102 |
+| 验证强度 | V1 基准/内部评测 | 专家评估知识生产效率，无独立科学发现验证 | “主要验证的是知识生产效率与质量，不等价于直接生命科学发现” · L112 |
+| 系统自主性 | L2 闭环执行者 | 系统自主执行多步本体整理与维护工作流 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

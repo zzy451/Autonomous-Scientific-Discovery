@@ -153,3 +153,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 生物问题答案可由数据库和工具核对，非开放发现 | “10 high-level biological questions with varying degrees of biological nuance” · L38 |
+| 验证强度 | V1 基准/内部评测 | 工作流一致性和验证指标分析，无独立湿实验 | “sample size was too small and this analysis is not exhaustive” · L26 |
+| 系统自主性 | L2 闭环执行者 | Biomni自主选择工具和步骤完成生物研究问题 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

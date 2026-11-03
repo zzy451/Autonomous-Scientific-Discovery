@@ -160,3 +160,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.26。
 - 判定：耀变体多波段观测及辐射建模，归高能天体物理。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | Blazar文献检索和分析任务有参考标准 | “The benchmarking results for a single paper retrieval” · L24 |
+| 验证强度 | V1 基准/内部评测 | 文献检索Hit@5准确率评估，未产生新天体物理发现 | “单篇及多篇检索Hit@5分别为76.6%和79.2%” · L105 |
+| 系统自主性 | L2 闭环执行者 | Supervisor和专业Agent协调处理多波段观测到建模流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

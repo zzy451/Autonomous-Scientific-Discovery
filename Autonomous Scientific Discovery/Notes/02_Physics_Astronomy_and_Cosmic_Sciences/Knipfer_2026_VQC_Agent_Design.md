@@ -273,3 +273,17 @@ first_hand_sources_checked：pdf; arxiv
 classification_evidence_source_level：first_hand_full_text
 note_revision_required：no
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | VQC架构搜索，答案可由量子仿真训练验证 | “自动提出、训练、验证并改进 VQC” · L189 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过量子仿真验证，test RMSE轨迹持续改进 | “test RMSE 与架构演化轨迹” · L191 |
+| 系统自主性 | L2 闭环执行者 | 代理在闭环中自主搜索和改进量子线路设计 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -153,3 +153,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 设计需实物验证的光子器件 | “integrated photonic devices” · L38 |
+| 验证强度 | V3 物理实验 | 制作太赫兹器件并测量验证性能指标 | “fabricated a broadband terahertz” · L25 |
+| 系统自主性 | L2 闭环执行者 | 依据仿真反馈自主更新拓扑和优化策略 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

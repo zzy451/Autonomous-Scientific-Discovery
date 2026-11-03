@@ -255,3 +255,17 @@ Agent 类型：LLM Agent; Retrieval-augmented Agent; Hybrid Agent
 - 原文位置：Reference_PDF/08_Agricultural_Food_Forestry_Animal_and_Fishery_Sciences/Huang_2024_FoodPuzzle.pdf; PDF p.7; Category Model MFP accuracy(%) MPC F1 score Domain-Specific LLMs MolT5 (Edwards et al., 2022) 9.8 0.144 Bio-T5 (Pei et al., 2023) 16.6 0.278 Zero-shot LLaMA3-8B-instruct 15.0 0.292 Gemini1.5 Pro 19.0 0.340 GPT-3.5 Turbo 12.2 0.327 In-context Learning LLaMA3-8B-instruct 31.6 0.349 Gemini1.5 Pro 34.6 0.373 GPT-3.5 Turbo 23.2 0.360 Scientist Agent LLaMA3-8B-instruct 35.5 0.374 Gemini1.5 Pro 34.2 0.333 GPT-3.5 Turbo 26.9 0.374 Table 2: Combined Results for Model Accuracies in Molecule Food Prediction and F1 Scores for Molecule Profile Completion lated to the food item directly from FlavorDB, and this evidence is provided to the Scientist model.。
 - 判定：flavor chemistry and food formulation/design
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在FoodPuzzle benchmark上评测flavor science相关任务 | “FoodPuzzle benchmark 与 grounded retrieval-based hypothesis generation” · L174 |
+| 验证强度 | V1 基准/内部评测 | 主要通过benchmark验证，缺少对真实世界结论的检验 | “FoodPuzzle benchmark 与 grounded retrieval-based hypothesis generation” · L174 |
+| 系统自主性 | L1 任务助手 | 系统执行人委派的检索、生成、分析等子任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

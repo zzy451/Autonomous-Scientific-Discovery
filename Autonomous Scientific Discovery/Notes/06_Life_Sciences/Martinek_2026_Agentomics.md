@@ -164,3 +164,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在20个预定义生物医学机器学习基准数据集上训练模型并与人类SOTA对比，属固定基准评测 | “20个基准按Protein Engineering N=6、Drug Discovery N=9、Regulatory Genomics N=5划分” · L50 |
+| 验证强度 | V1 基准/内部评测 | 在固定测试集上报告模型性能指标（ACC/AUPRC/MAE等），与人类leaderboard比较，属基准评测 | “作者计算ACC/AUPRC/AUROC或MAE/Pearson/Spearman等适配指标” · L114 |
+| 系统自主性 | L2 闭环执行者 |  | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

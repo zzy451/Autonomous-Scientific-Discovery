@@ -159,3 +159,17 @@ fulltext_followup_required=false
 - 下载来源：https://www.frontiersin.org/journals/chemistry/articles/10.3389/fchem.2026.1914886/pdf
 - 版本：official publisher article PDF。
 - 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 结构基础药物设计，候选可由计算对接和评分验证 | “在CrossDocked2020的固定100个靶点上评估” · L29 |
+| 验证强度 | V2 计算/仿真/回顾性 | CrossDocked2020计算基准并与分子生成基线比较候选质量 | “CrossDocked2020计算基准” · L101 |
+| 系统自主性 | L2 闭环执行者 | 从靶点准备和分子生成推进到多目标评价候选排序，并记录执行轨迹 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -218,3 +218,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 多个未满足的生物医学研究目标，答案可由数据分析计算 | “8 个 unmet biomedical research objectives” · L149 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算验证和任务级评测，但无湿实验闭环 | “经过任务级评测” · L156 |
+| 系统自主性 | L1 任务助手 | 系统执行文献、设计与协议任务，人决定研究目标 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

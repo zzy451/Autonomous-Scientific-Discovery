@@ -288,3 +288,17 @@ master_update_required: yes
 source_status: archived local PDF at Autonomous Scientific Discovery/Reference_PDF/05_Earth_and_Environmental_Sciences/Wang_2026_ClimAgent.pdf; successful official archive source was https://arxiv.org/pdf/2604.16922v2; official HTML full text checked at https://arxiv.org/html/2604.16922v2; non-versioned https://arxiv.org/pdf/2604.16922 returned 404; withdrawn v3 landing still exists; cited repo broken/404; public repo only placeholder and not substantive
 final_reason: This crosses the direct-landing threshold because official arXiv HTML full text and the archived official v2 PDF provide strong first-hand source support for clear concrete climate/Earth-science task evidence in 05; the withdrawn v3 lineage and repo breakage add reproducibility pressure but do not overturn the classification landing.
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在ClimaBench的220个开放问题上评测，属于预定义基准任务 | “ClimaBench，`220` 个开放问题” · L201 |
+| 验证强度 | V1 基准/内部评测 | 主要依赖benchmark和专家评估，无真实物理实验 | “有 benchmark 和专家评估支撑” · L212 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成任务分解、工具选择、代码执行、分析与报告生成的多步流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：有 · “arXiv 页面明确标记 withdrawn”
+- 复核状态：待专家复核：需全文复核；有争议记录

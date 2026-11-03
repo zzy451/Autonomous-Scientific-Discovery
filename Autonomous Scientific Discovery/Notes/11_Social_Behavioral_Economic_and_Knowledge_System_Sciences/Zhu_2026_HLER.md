@@ -261,3 +261,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Ag
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在给定数据集上生成可行的经济学研究问题并执行计量分析 | “生成 feasible research questions、执行 econometric analysis” · L190 |
+| 验证强度 | V1 基准/内部评测 | 通过基准评测和专家评估验证系统表现 | “question feasibility、econometric execution quality” · L192 |
+| 系统自主性 | L2 闭环执行者 | 系统在人设定数据集内自主生成问题并执行完整分析闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

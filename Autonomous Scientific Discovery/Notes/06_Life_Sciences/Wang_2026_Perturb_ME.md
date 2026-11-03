@@ -162,3 +162,17 @@ fulltext_followup_required=false
   - 位置：PDF p.2; p.5 hypothesis tournament; p.21 Extended Data Table 1；来源：https://doi.org/10.64898/2026.08.17.745330
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 表型富集CRISPR筛选测序数据，模型识别调控模块和程序，恢复已知IFNγ–MHC-I轴，答案可由数据和文献核对 | “模型含221个扰动因子和1,998个响应基因，并恢复已知IFNγ–MHC-I轴” · L65 |
+| 验证强度 | V2 计算/仿真/回顾性 | 测序277,152个细胞并构建统计模型，Co-Scientist提出机制假说供研究者检验，不是独立实验验证 | “Agent提出的机制假说是研究者可继续检验的解释” · L93 |
+| 系统自主性 | L1 任务助手 |  | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -297,3 +297,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
   - 位置：publisher API target-paper title metadata; no methods/results delivered；来源：https://www.sciencedirect.com/science/article/pii/S0034425705002543/pdfft?isDTMRedir=true&download=true
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 火山热异常监测可由已有方法识别 | “article page 支持其在 EO-1 上执行真实火山监测响应” · L208 |
+| 验证强度 | V2 计算/仿真/回顾性 | 真实EO-1应用但完整细节需全文 | “完整实验配置和误差分析仍需全文支持” · L231 |
+| 系统自主性 | L2 闭环执行者 | 卫星自主分析并重规划火山观测 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

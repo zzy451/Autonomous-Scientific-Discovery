@@ -216,3 +216,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在给定化学反应中优化合成条件，答案可由实验检验 | “copper/TEMPO aerobic alcohol oxidation” · L21 |
+| 验证强度 | V3 物理实验 | 真实机器人湿实验覆盖核心合成开发任务 | “真实实验平台验证” · L155 |
+| 系统自主性 | L2 闭环执行者 | 系统在人设定目标内自主完成文献到放大和纯化的闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

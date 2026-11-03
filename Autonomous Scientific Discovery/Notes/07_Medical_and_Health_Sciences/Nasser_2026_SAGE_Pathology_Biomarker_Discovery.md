@@ -151,3 +151,17 @@ first_hand_source_checked：official arXiv PDF archived locally and checked: Aut
 source_limited：no
 confidence：high
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 病理biomarker候选可由计算与队列数据核对 | “围绕病理队列、biomarker significance 与临床相关终点进行验证” · L34 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算验证与回顾性队列，无前瞻实验 | “主要仍是 in silico 与回顾性队列层验证，缺少更强临床外部验证” · L112 |
+| 系统自主性 | L2 闭环执行者 | 系统自主生成、筛选并验证biomarker假设 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

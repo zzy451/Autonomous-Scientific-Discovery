@@ -244,3 +244,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在BRAF V600E melanoma、TP53 pan-cancer等benchmark studies上评测 | “BRAF V600E melanoma, TP53 pan-cancer, PBMC 3k single-cell immune profiling benchmark studies” · L172 |
+| 验证强度 | V1 基准/内部评测 | 有工程与benchmark级验证 | “有工程与 benchmark 级验证” · L180 |
+| 系统自主性 | L1 任务助手 | 多Agent workflow框架执行translational bioinformatics分析 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

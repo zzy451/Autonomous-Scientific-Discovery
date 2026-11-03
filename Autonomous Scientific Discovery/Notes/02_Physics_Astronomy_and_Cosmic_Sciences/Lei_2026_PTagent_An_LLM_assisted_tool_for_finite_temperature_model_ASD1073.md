@@ -160,3 +160,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.13。
 - 判定：Concrete experiment/task evidence supports 02.02.14 (粒子物理学). s under the approved prescription. 4.3. Model construction from a dimensionally reduced EFT We illustrate the three-dimensional EFT workflow using the xSM implemented in the DRalgo source file xsm_test.m, provided in the PTagent repository. This file is adapted from the official DRalgo xSM example [25] to describe a specific Z2-symmetric model and a well-defined dimensional-reduction setup. In particular, the singlet
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 从模型文件构建有限温数值势并生成CosmoTransitions格式输出，答案可由数值工具核对 | “CosmoTransitions-style or PhaseTracer-style numerical potentials” · L42 |
+| 验证强度 | V2 计算/仿真/回顾性 | 模型规格审阅和后端数值势生成，属计算验证 | “After review and approval” · L42 |
+| 系统自主性 | L1 任务助手 | Agent整理模型信息，后端执行计算，人审阅批准规格 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

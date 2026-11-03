@@ -290,3 +290,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Human-in-the-loop Ag
 纳入置信度：high
 推荐引用强度：standard_to_core_pending_full_text
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 生物数据分析产生新见解，可由专家验证 | “scRNA-seq studies / CellBench” · L206 |
+| 验证强度 | V2 计算/仿真/回顾性 | benchmark和专家评价，无湿实验闭环 | “benchmark、案例与专家评价支持” · L217 |
+| 系统自主性 | L2 闭环执行者 | 系统自主生成并执行多步分析迭代 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

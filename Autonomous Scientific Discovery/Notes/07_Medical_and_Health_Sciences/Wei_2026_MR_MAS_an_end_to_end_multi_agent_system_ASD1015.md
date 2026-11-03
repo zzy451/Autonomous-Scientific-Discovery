@@ -161,3 +161,17 @@ fulltext_followup_required=false
   - 位置：Original cached fulltext TXT L55, L79?81, L133; Results 3.1 L173?187 / Table 1 L183；来源：https://doi.org/10.1093/bioinformatics/btag722
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 孟德尔随机化分析，答案可由遗传数据和统计检验验证 | “系统能稳定完成多阶段流程并复现若干已发表MR结果” · L105 |
+| 验证强度 | V2 计算/仿真/回顾性 | 评价包括分析一致性、性状检索鲁棒性、工作流效率及若干已知MR分析复现 | “复现若干已发表MR结果” · L105 |
+| 系统自主性 | L2 闭环执行者 | 多Agent流程覆盖研究计划GWAS数据准备因果效应估计结果解释和稿件起草 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -183,3 +183,17 @@ fulltext_followup_required=false
 - 下载来源：https://arxiv.org/pdf/2607.28990v1
 - 版本：official arXiv preprint PDF; version as downloaded。
 - 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在开放科学数据上进行假设驱动分析，要求形成统计发现并用可执行代码支撑，答案可由hidden evidence graph和verifier验证 | “环境包含假设、数据、hidden evidence graph、代码沙盒和自动verifier” · L59 |
+| 验证强度 | V2 计算/仿真/回顾性 | 按轮次奖励可验证证据的动作，使用自动verifier检验假设支持和过程正确性 | “DiscoPO按轮次奖励产生可验证证据的动作” · L60 |
+| 系统自主性 | L2 闭环执行者 |  | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -171,3 +171,17 @@ fulltext_followup_required=true
 ### 全文后续要求
 
 当前纳入和分类证据已足够；第7节明确的结果/复现细节仍需继续回查。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O5 开放数学 | 预训练改进目标事先未知需计算验证 | “improve the pretraining of language models” · L61 |
+| 验证强度 | V2 计算/仿真/回顾性 | 实验室报告结果但存在分歧 | “a result the labs that tested it do not yet agree on” · L55 |
+| 系统自主性 | L3 自主研究者 | PI自主提出研究问题并推动实验 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：low；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：低置信度；需全文复核

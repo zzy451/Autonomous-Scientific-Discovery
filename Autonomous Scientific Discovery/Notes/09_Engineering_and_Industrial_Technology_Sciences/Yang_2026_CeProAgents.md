@@ -293,3 +293,17 @@ refresh_focus: stabilize 09 and reject 03 drift
 - 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Yang_2026_CeProAgents.pdf; PDF p.13; 4.2 CEPROBENCH Construction To rigorously evaluate CEPROAGENTS in autonomous chemical process development, we present CEPROBENCH, an engineering-verifiable benchmark repository.。
 - 判定：chemical process development and process-system engineering
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在chemical engineering competencies benchmark上评测化工过程开发能力 | “chemical engineering competencies benchmark” · L197 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过benchmark和仿真验证，结合外部工程仿真器完成参数优化 | “能够覆盖 chemical process lifecycle 的多个关键子任务，并完成参数闭环优化” · L201 |
+| 系统自主性 | L2 闭环执行者 | 系统通过层级agent cohort协作完成知识检索、流程概念设计和参数优化闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

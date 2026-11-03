@@ -276,3 +276,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/04_Materials_Science/Peivaste_2026_Ara_Durable_Photocatalytic_COFs.pdf; PDF p.2; Evaluated against random search and Bayesian optimization (BO) over a space consisting of candidates with various nodes, linkers, linkages, and r-groups, screened with a GFN1-xTB fragment pipeline, Ara achieves a 52.7% hit rate (11.5× random, p = 0.006), finds its first hit at iteration 12 versus 25 for random search, and significantly outperforms BO (p = 0.006).。
 - 判定：photocatalytic covalent organic framework materials
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在COF设计空间中寻找满足带隙、能带边和稳定性目标的材料，可由计算验证 | “durable photocatalytic inverse design” · L188 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过计算screening pipeline验证，包含xTB和DFT gap proxy | “Ara hit rate 52.7%，约为 random 的 11.5 倍” · L191 |
+| 系统自主性 | L2 闭环执行者 | 系统根据反馈迭代提出新COF候选并调用screening pipeline | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -243,3 +243,17 @@ This writeback removes the stale independent `01.04` wording. AI-Researcher is w
 - 第 3 页原文：“Our benchmark samples span diverse research fields including diffusion models, vector quantization, graph neural networks, and recommendation systems.”
 - 这些是具体计算科学对象的执行与验证，支持现有科学对象模块 01；旧主表与学科归档中的 01.04 残留应更正为 01.02 / 01.02.13。PR 指出应复核有参考价值，但不能机械改为空值。
 - 当前科学对象模块和收录资格保持 01、confirmed core。上述全文证据优先于本笔记早期摘要级来源限制。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在预定义科研基准上评测 | “Scientist-Bench” · L27 |
+| 验证强度 | V1 基准/内部评测 | 基准评测加审阅式质量评价 | “reviewer-style quality evaluation” · L36 |
+| 系统自主性 | L1 任务助手 | 系统执行多步科研工作流子任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

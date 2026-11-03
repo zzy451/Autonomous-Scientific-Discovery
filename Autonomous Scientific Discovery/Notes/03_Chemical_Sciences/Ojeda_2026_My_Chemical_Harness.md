@@ -293,3 +293,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：普通引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在可执行合成路径约束下进行分子设计，可由合成可行性工具验证 | “sEH proxy task；TDC 13 oracle tasks” · L210 |
+| 验证强度 | V1 基准/内部评测 | 通过benchmark oracle评分验证，无湿实验合成确认 | “在多个任务上显示 reflective LLM controller 具有更强搜索能力” · L214 |
+| 系统自主性 | L2 闭环执行者 | LLM控制搜索策略，本地化学工具执行验证，形成迭代闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -194,3 +194,17 @@ multi_module_object_coverage_note: The old 10-only boundary treated geology as m
 - 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2014_ChemCam_Automated_Targeting.pdf; PDF p.1; The first involves automated targeting of ChemCam during or after long drives by finding rock targets in Navigation Camera images.。
 - 判定：MSL ChemCam automated targeting
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 漫游车在火星表面机载识别科学目标并自动触发ChemCam观测，答案可核对 | “支持无地面延迟的 onboard target selection” · L168 |
+| 验证强度 | V3 物理实验 | MSL Curiosity火星任务中实际部署并运行 | “mission workflow integration” · L167 |
+| 系统自主性 | L2 闭环执行者 | 系统在车载图像中检测特征并自动生成follow-up observation，无需等待地面通信 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

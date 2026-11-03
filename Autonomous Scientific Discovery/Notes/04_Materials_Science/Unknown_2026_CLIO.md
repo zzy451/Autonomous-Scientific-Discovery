@@ -294,3 +294,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：PDF p.1。
 - 判定：液流电池负极电解液候选的闭环设计，归电池材料。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 水系有机液流电池负极分子设计，产生需实验表征的新材料候选 | “17 candidates、3 rounds 与实验 characterization” · L202 |
+| 验证强度 | V3 物理实验 | 有实验characterization覆盖核心候选 | “17 candidates、3 rounds 与实验 characterization” · L202 |
+| 系统自主性 | L2 闭环执行者 | 系统在人设定目标内自主完成多轮分子候选生成和筛选 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

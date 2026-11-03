@@ -261,3 +261,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
   - 位置：NLM BioC author abstract；来源：https://pubmed.ncbi.nlm.nih.gov/31395756/
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 有机化合物合成产生需物理检验的化学产物 | “15 个 drug or drug-like substances” · L176 |
+| 验证强度 | V3 物理实验 | 机器人流动合成平台的湿实验验证 | “机器人实验：是” · L168 |
+| 系统自主性 | L2 闭环执行者 | AI规划与机器人执行的自主合成闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

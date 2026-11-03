@@ -272,3 +272,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在5个biological targets上识别hit molecules，答案可由计算筛选验证 | “在 5 个 biological targets 上产出 hit molecules” · L195 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算验证与benchmark支撑，包括仿真和高通量计算 | “仿真验证：是” · L181 |
+| 系统自主性 | L1 任务助手 | 从自然语言需求自动构建hit identification pipelines，执行委派任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

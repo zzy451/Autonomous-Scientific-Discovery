@@ -276,3 +276,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/03_Chemical_Sciences/Ock_2024_Adsorb_Agent.pdf; PDF p.23; The calculation is deﬁned as: Open Catalyst Demo The Open Catalyst demo (OC-demo) is an interactive platform that allows users to explore and optimize binding sites for adsorbates on catalyst surfaces.42 It supports 11,427 catalyst materials and 86 adsorbates, with the catalyst crystal structures sourced from the Materi- als Project43 and the Open Quantum Materials Database.44 The OC-demo helps identify the adsorption energy of the selected adsorbate and catalytic surface by generating multi- ple initial conﬁgurations and evaluating them using state-of-the-art graph neural networks, like GemNet-OC and EquiformerV2.。
 - 判定：adsorption configurations and catalyst/chemical surface study
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在给定催化表面上定位低能吸附构型，答案可由能量计算验证 | “adsorption-configuration search” · L188 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过计算验证在20个systems上的吸附能预测 | “overall SR 83.7%，LEDR 35.0%” · L191 |
+| 系统自主性 | L2 闭环执行者 | 系统通过placement、relaxation和energy evaluation循环自主缩小搜索空间 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

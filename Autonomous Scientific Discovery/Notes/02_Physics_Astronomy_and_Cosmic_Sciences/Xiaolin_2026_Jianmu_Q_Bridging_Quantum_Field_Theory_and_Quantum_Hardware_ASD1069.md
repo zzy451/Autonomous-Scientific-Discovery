@@ -160,3 +160,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.1。
 - 判定：NJL/Schwinger及规范场模型计算，科学对象是量子场论而非量子计算工具。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 将QFT理论转换为量子电路并在有限格点验证，答案可由ED/TN和无噪声模拟核对 | “exact-diagonalization and tensor-network results” · L25 |
+| 验证强度 | V2 计算/仿真/回顾性 | 物理一致性检查、ED、TN和无噪声电路多重计算验证，硬件执行未报告核心结论验证 | “noiseless quantum-circuit simulations converge toward independent exact-diagonalization” · L25 |
+| 系统自主性 | L1 任务助手 | Agent各阶段传递结构化输入，人给定理论和可观测量 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

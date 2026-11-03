@@ -280,3 +280,17 @@ safety_access_status：accessed_no_safety_issue
 纳入置信度：高
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 产生需要生物实验验证的药物分子候选 | “molecular screening、optimization” · L200 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过docking ADMET MD等计算层评估 | “主要停留在 docking、ADMET、MD” · L225 |
+| 系统自主性 | L2 闭环执行者 | 系统通过层级技能架构自主执行筛选优化闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

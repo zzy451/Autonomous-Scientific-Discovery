@@ -278,3 +278,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 设计新SARS-CoV-2 nanobody候选物，需湿实验检验 | “92 个 designed nanobodies” · L202 |
+| 验证强度 | V3 物理实验 | 有湿实验验证结合谱和功能性 | “湿实验：是” · L195 |
+| 系统自主性 | L2 闭环执行者 | 在人给定目标内自主提出工具、设计workflow并生成候选 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

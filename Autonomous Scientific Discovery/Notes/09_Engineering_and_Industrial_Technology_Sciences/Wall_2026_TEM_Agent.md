@@ -276,3 +276,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Robot / Embodied Age
 - 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Wall_2026_TEM_Agent.pdf; PDF p.2; We simultaneously access and control several subsystems of the TEM, a data management platform, and high-performance computing resources through text-based instructions.。
 - 判定：transmission electron microscopy instrumentation
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | TEM仪器控制和实验编排，答案可由设施级验证 | “显微仪器控制、实验编排、历史数据查询” · L188 |
+| 验证强度 | V2 计算/仿真/回顾性 | 真实TEM设施部署，串联many-step workflows | “系统能在真实 TEM 设施中串联 many-step workflows” · L191 |
+| 系统自主性 | L2 闭环执行者 | 系统自主编排多步显微实验，但保留human-in-the-loop | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

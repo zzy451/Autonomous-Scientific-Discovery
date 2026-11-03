@@ -285,3 +285,17 @@ safety_access_status: accessed_no_safety_issue
 final_reason: The core object is cell-level phenotypic profiling under chemical perturbation, so 06 dominates.
 refresh_focus: stabilize as 06 only and reject drift to 07
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在Cell Painting数据上执行表型分析任务，有参考方法和评分标准 | “chemical perturbation 下的 Cell Painting 数据” · L197 |
+| 验证强度 | V1 基准/内部评测 | 通过benchmark和expert-style评价验证表型解释质量，无独立实验验证 | “机制相关解释质量、表型泛化与案例分析表现” · L200 |
+| 系统自主性 | L1 任务助手 | 系统执行表型分析和解释任务，更偏analysis assistant | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

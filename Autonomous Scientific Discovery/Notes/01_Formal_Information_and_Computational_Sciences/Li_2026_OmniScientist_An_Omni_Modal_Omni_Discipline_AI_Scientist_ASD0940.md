@@ -204,3 +204,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.6,17,18 3.2 demonstration suite; Table 8 symbolic regression results。
 - 判定：主归档01.01内有明确参数估计方差/噪声与取样范围验证；以统计学作为primary，比将通用框架直接归空更贴合实际结果。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 系统从原始多模态证据发现数据标签错误和胸片纹理特征，答案可由数据核对 | “correct dataset labels” · L85 |
+| 验证强度 | V2 计算/仿真/回顾性 | Agent观察影像并提出可测量假设，论文展示案例但未报告独立验证 | “Reading the radiographs directly, it observed” · L85 |
+| 系统自主性 | L2 闭环执行者 | 系统自主解析证据、生成问题、安排实验并形成报告 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

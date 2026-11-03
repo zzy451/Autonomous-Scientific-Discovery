@@ -297,3 +297,17 @@ Agent 类型：Tool-using Agent; Multi-Agent System; Human-in-the-loop Agent; Hy
 纳入置信度：高
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 跨领域科研workflow的系统性能benchmark | “materials discovery、astronomy、decentralized learning” · L225 |
+| 验证强度 | V2 计算/仿真/回顾性 | 系统性能和workflow执行验证 | “通过 full-text 中的 microbenchmark 与 case studies 验证” · L236 |
+| 系统自主性 | L1 任务助手 | 作为middleware执行workflow，不自主提出科学问题 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

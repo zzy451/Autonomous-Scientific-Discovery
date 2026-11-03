@@ -114,3 +114,17 @@ first_hand_sources_checked: arXiv abstract page; ar5iv HTML full text
 pdf_path: Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Kostunin_2025_Gamma_Astronomy_Agents.pdf
 pdf_version: official arXiv PDF
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 天文观测支持和数据分析任务 | “CTA 相关 observatory support 与 astronomy data-analysis workflow” · L75 |
+| 验证强度 | V2 计算/仿真/回顾性 | 原型系统验证，非强discovery结果 | “prototype / simulation-style task coverage” · L74 |
+| 系统自主性 | L1 任务助手 | 系统支持观测和分析任务，人决定流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

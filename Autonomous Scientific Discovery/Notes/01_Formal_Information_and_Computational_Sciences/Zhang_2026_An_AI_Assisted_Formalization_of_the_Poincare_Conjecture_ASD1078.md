@@ -152,3 +152,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 形式化庞加莱猜想已知证明，答案可由Lean 4证明助手机器检验 | “Lean 4 formalization of the Poincaré conjecture” · L36 |
+| 验证强度 | V2 计算/仿真/回顾性 | Lean证明助手核验形式正确性，项目需数学家介入 | “mathematicians reviewed the final theorem” · L22 |
+| 系统自主性 | L1 任务助手 | Agent并行推进里程碑，数学家准备蓝图并定位阻碍 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

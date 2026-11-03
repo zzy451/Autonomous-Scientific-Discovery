@@ -159,3 +159,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.8, Section 5.1; Table 1 p.9。
 - 判定：First-hand evidence supports 01.01.12; Tasks. We evaluate on 11 open-ended mathematical discovery tasks. Nine tasks are the problems studied by SCS (Gideoni et al., 2026), which are taken from AlphaEvolve (Novikov et al., 2025), including the first and second autocorrelation inequalities, the uncertainty inequality, the Erdős minimum overlap problem, sums and differences of sets, the max–min distance ratio, the Heilbronn problem for triangles, the kissing
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在11项开放式数学发现任务上评估，其中九项来自既有问题集 | “11 open-ended mathematical discovery tasks” · L160 |
+| 验证强度 | V1 基准/内部评测 | 以程序得分和样本效率作为评价指标，属基准评测 | “improves the final performance over SCS” · L25 |
+| 系统自主性 | L2 闭环执行者 | 系统从程序演化中抽取经验并用于后续搜索，形成迭代闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核
