@@ -1,0 +1,111 @@
+﻿paper_id,title,year,scientific_object_modules,decision_class,decision_class_zh,confidence,provisional,needs_fulltext_review,rationale_zh,legacy_agent_type_raw,legacy_note_agent_type,note_path,evidence_note_line,evidence_quote,source_basis,primary_source_excerpt,primary_source_locator,pdf_path,source_url,reviewer,controller_reviewed,controller_review_reason,corpus_snapshot,classification_date
+ASD-0005,A Multiagent-Driven Robotic AI Chemist Enabling Autonomous Chemical Research On Demand,2025,"[""03"", ""04""]",D5,LLM 驱动型,low,True,True,Task Manager及Experiment Designer协调下一实验；LLM机制尚未完全确认，暂归语言驱动并待全文。,Multi-Agent System; Robot / Embodied Agent,,Notes/03_Chemical_Sciences/Song_2025_Robotic_AI_Chemist.md,174,2. 任务分解 / 规划：Task Manager 统筹，Literature Reader 与 Experiment Designer 协同,note,,,,https://doi.org/10.1021/jacs.4c17738,A,False,,2026-11-01,2026-11-03
+ASD-0062,Empowering scientific workflows with federated agents,2025,"[""01"", ""02"", ""04""]",D2,规划/模型驱动型,low,True,True,ACADEMY是跨资源Agent中间件，可承载LLM和传统控制等异质应用，无唯一科研决策机制；依六类单标签要求暂按有状态工作流推进近似D2，保留低置信和复核。,Multi-Agent System; Tool-using Agent; Hybrid Agent,Tool-using Agent; Multi-Agent System; Human-in-the-loop Agent; Hybrid Agent; stateful/federated agents,Notes/01_Formal_Information_and_Computational_Sciences/Pauloski_2026_Federated_Agents.md,197,5. 决策或迭代：control loops 根据状态和消息推进下一步动作,note_and_pdf,"a user or another agent. This definition incorporates both the modern notion of intelligent LLM agents [11] and the more traditional definitions of agents [16]–[19]. While imprecise, it presents a powerful conceptual model for distributed computing. The agent concept originates from the actor model, a concurrent computing paradigm in which actors encapsulate a local state and com",Reference_PDF/01_Formal_Information_and_Computational_Sciences/Pauloski_2025_Federated_Agents.pdf; PDF p.2,Reference_PDF/01_Formal_Information_and_Computational_Sciences/Pauloski_2025_Federated_Agents.pdf,https://arxiv.org/abs/2505.05428,A,True,原文证明该论文横跨多种Agent实现；唯一标签只是一种论文层面近似，不能视为中间件内所有Agent都使用D2。,2026-11-01,2026-11-03
+ASD-0388,Crystallography companion agent for high-throughput materials discovery,2021,"[""04""]",D3,优化/概率决策型,low,True,True,XCA以概率晶相推断辅助研究者判断，暂在六类中取D3概率决策辅助；原文主要展示预测/分析，没有充分证明自主选择下一科研动作，保留低置信与复核。,Tool-using Agent; Human-in-the-loop Agent; Hybrid Agent,Tool-using Agent; Human-in-the-loop Agent; Hybrid Agent,Notes/04_Materials_Science/Maffettone_2021_Crystallography_Companion_Agent.md,27,论文提出一个 crystallography companion agent，用于高通量材料发现中的 XRD 图谱实时分析、相识别与概率相图输出。系统围绕具体材料体系开展验证，目标是帮助研究者更快解释晶相与相空间，但其自治程度更像 companion / copilot，而不是最强闭环材料发现主体。,note_and_pdf,"experiments, and thus provides real-time, probabilistic analysis for the researcher. This creation of an AI tool that translates XRD measurements to probabilistic phase mapsis a necessary innovation to enable autonomous materials experimentation. We successfully applied XCA to solve three separate materials challenges: detecting subtle symmetry transi",Reference_PDF/04_Materials_Science/Maffettone_2021_Crystallography_Companion_Agent.pdf; PDF p.3,Reference_PDF/04_Materials_Science/Maffettone_2021_Crystallography_Companion_Agent.pdf,https://doi.org/10.1038/s43588-021-00059-2,A,True,本轮PDF确认概率分析而非自主实验selector；不能把分类器直接写成完整实验优化控制器。,2026-11-01,2026-11-03
+ASD-0466,Discovery of Wall-Selective Carbon Nanotube Growth Conditions <i>via</i> Automated Experimentation,2014,"[""04""]",D3,优化/概率决策型,low,True,True,adaptive rapid experimentation迭代选择CNT生长条件并定位优区，暂归实验优化；现有笔记自主决策证据偏弱，需全文机制复核。,Tool-using Agent; Robot / Embodied Agent; Hybrid Agent,Planning Agent; Tool-using Agent; Robot / Embodied Agent; Human-in-the-loop Agent; Hybrid Agent,Notes/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity.md,175,2. 任务分解 / 规划：adaptive rapid experimentation 选择实验条件,note,,,Reference_PDF/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity_Supplementary.pdf,https://doi.org/10.1021/nn503347a,A,False,,2026-11-01,2026-11-03
+ASD-0519,A high-throughput experimentation platform for data-driven discovery in electrochemistry,2025,"[""03"", ""04""]",D3,优化/概率决策型,low,True,True,平台据电化学结果继续筛选候选，暂按目标驱动筛选优化归类；笔记明确自主规划及闭环偏弱，需全文确定控制机制。,Planning Agent; Hybrid Agent,Hybrid Agent,Notes/03_Chemical_Sciences/Lin_2025_High_Throughput_Electrochemistry_Discovery.md,168,5. 决策或迭代：根据实验结果继续筛选或比较候选。,note,,,Reference_PDF/03_Chemical_Sciences/Lin_2025_High_Throughput_Electrochemistry_Discovery.pdf,https://doi.org/10.1126/sciadv.adu4391,A,False,,2026-11-01,2026-11-03
+ASD-0543,Machine Learning Copilot Agent: An LLM-Guided Workflow for Prognostic Gene Discovery,2025,"[""06"", ""07""]",D5,LLM 驱动型,low,True,True,仅能确认LLM-guided预后基因workflow及copilot资源，具体规划与决策未全文确认，暂归语言驱动待复核。,LLM Agent; Tool-using Agent; Hybrid Agent,LLM Agent; Tool-using Agent; Hybrid Agent,Notes/06_Life_Sciences/Patel_2025_ML_Copilot_Prognostic_Gene_Discovery.md,38,| 方法流程 | workflow / copilot framing 成立 | 标题；官方 docs / package / repo | 可确认这是面向 prognostic gene discovery 的 LLM-guided workflow，而不是静态单次模型输出 | 中 |,note,,,Reference_PDF/06_Life_Sciences/Patel_2025_ML_Copilot_Prognostic_Gene_Discovery.pdf,https://doi.org/10.2139/ssrn.5343855,A,False,,2026-11-01,2026-11-03
+ASD-0565,Agentic AI for autonomous discovery of radiation-tolerant CoCrFeMnNi high entropy alloys,2026,"[""04""]",D3,优化/概率决策型,low,True,True,可见摘要仅支持持续筛选和优化耐辐射合金，LLM及规划器未明确，暂按材料目标优化主机制近似并待全文。,LLM Agent; Hybrid Agent,Hybrid Agent,Notes/04_Materials_Science/Roy_2026_Radiation_Tolerant_HEA_Discovery.md,160,5. 决策或迭代：继续筛选 / 优化合金候选,note,,,,https://doi.org/10.1016/j.scriptamat.2026.117286,A,False,,2026-11-01,2026-11-03
+ASD-0724,Autonomous seeking and mapping coral reef biodiversity hotspots with a multimodal AUV,2026,"[""06""]",D2,规划/模型驱动型,low,True,True,AUV依据多模态观测自主安排搜索、接近和定位，最佳近似为状态驱动行动规划；笔记仅摘要级且决策模块不可见，需全文复核。,Robot / Embodied Agent; Planning Agent; Hybrid Agent,Robot / Embodied Agent; Planning Agent; Tool-using Agent; Hybrid Agent,Notes/06_Life_Sciences/Phillips_2026_Coral_Reef_Biodiversity_Hotspots_AUV.md,121,2. 自主决定搜索与接近策略,note,,,,https://doi.org/10.1126/scirobotics.adx9939,B,False,,2026-11-01,2026-11-03
+ASD-0751,Beyond AI as Assistants: Toward Autonomous Discovery in Cosmology,2026,"[""02""]",D5,LLM 驱动型,low,True,True,论文并列CMBEvolve的LLM代码生成加树搜索与CosmoEvolve的PI/student语言模型研究团队，无统一单一主系统；以两者共有的LLM科研提案作论文级D5近似，非假定系统内耦合。,LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent,LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; Hybrid Agent,Notes/02_Physics_Astronomy_and_Cosmic_Sciences/Xu_2026_Autonomous_Discovery_Cosmology.md,44,论文认为，AI agents 正在推动 AI 从工具走向自主科学发现。作者讨论了两个面向 cosmology 的 agentic systems：`CMBEvolve` 针对有明确量化目标的任务，通过 LLM-guided code evolution 与 tree search 持续改进；`CosmoEvolve` 则模拟一个由 PI agent 和 student scientist agents 组成的虚拟研究实验室，用于开放式科学工作流。作为初步演示，前者被应用于 weak-lensing maps 的 out-of-distribution detection，后者被用于 ACT DR6 数据的自主分析，并报告发现了非平凡的 pair- and scale-dependent behaviour 与 analysis-grade diagnostics。,note_and_pdf,"Recent studies have started to explore AI agents for cosmology and scientific discovery 1,2,3,
+with early demonstrations on realistic cosmological tasks such as weak-lensing analyses 4. In-
+spired by the work on self-evolving agents 5, we discuss two complementary agentic AI systems
+that can be applied to scientific discovery in cosmology: one for quantitative tasks with ex-
+plicit evaluation metrics, and one for more open-ended scientific workflows. We present our
+preliminary results on cosmological applications of our algorithms.
+2
+Multi-agent systems for scientific discovery
+We review the fundamental concepts of AI agents for autonomous scientific discovery. Formally,
+an agent A can be modelled as the tuple A = (L, C, τ), where L is the LLM backbone, C is
+the context information received, and τ is the tools available for a single agent. Agents solve
+problems through multi-agent collaboration. Given a research problem and a dataset D, the
+agentic system initiates a high-level goal G, and then follows a policy π to generate a sequence of
+actions {a0, . . . , aN} that execute a collection of sub-procedures aimed at advancing the system
+towards the solution. The policy may be viewed as a conditional probability distribution over
+actions given the high-level goal G, the available tools T , and the context Ct−1 before the decision
+step t, such that
+at ∼π(· | G, T , Ct−1).
+(1)
+Autonomous scientific discovery may be formulated as the problem of finding a solution that
+maximizes the expected utility of a discovery trajectory. Let
+Ξ0:N = (C0, a0, O1, C1, . . . , aN, ON+1, CN+1)
+denote the trajectory generated by the agentic system, where Ot represents the observation, tool
+output, or experimental result obtained during the discovery process. The system seeks a policy
+π∗, such that
+π∗= arg maxπ EΞ0:N∼π[U(Ξ0:N; G, D)] .
+(2)
+Here, U is a task-dependent utility function over the discovery trajectory.
+In quantitative
+settings, it may be defined by explicit metrics, such as parameter recovery or agreement with
+data.
+In more open-ended settings, it may instead reflect broader scientific value, such as
+generating hypotheses, identifying unexpected patterns, or proposing interpretable explanations.
+3
+Methodology
+We consider the two settings for agentic scientific discovery introduced in Sec. 2: closed tasks
+with explicit quantitative objectives, and open-ended scientific workflows with only partially
+specified goals.
+3.1
+CMBEvolve: automated algorithm discovery through LLM-guided tree search
+For tasks with explicit quantitative metrics, we use an algorithmic evolution approach to find
+the optimal solution. We present CMBEvolve a, a package for automated scientific code evolution
+through LLM-guided tree search. Given a task for which the candidate solutions can be evaluated
+by a score s, we represent the search process as a rooted tree T = (V, E), where V is the set
+of nodes and E the parent-child edges.
+Each node belongs to one of the four types: task,
+idea generation and selection, code generation, and code mutation. Each node stores search
+statistics used by the selection rules, including best score S∗and visit count N, together with
+the corresponding generated content and execution outputs. After code evaluation, the score
+assigned to a node is backpropagated from that node to the root, updating the statistics of all
+ancestor nodes. The general workflow of CMBEvolve is illustrated in Fig. 1(a).
+aWill be made available publicly","Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xu_2026_Autonomous_Discovery_Cosmology.pdf, PDF p.2",Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xu_2026_Autonomous_Discovery_Cosmology.pdf,https://arxiv.org/abs/2605.14791,B,False,,2026-11-01,2026-11-03
+ASD-0766,"ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents",2026,"[""11""]",D5,LLM 驱动型,low,True,True,rubric引导的工具整合LLM agents生成并改进实质性审稿意见；笔记主要是泛化流程，暂定D5需全文核对。,LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent,LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent,Notes/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ReviewGrounder.md,44,"论文围绕“rubric-guided、tool-integrated scientific peer-review agents”提出题为《ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents》的 Agent 系统，核心是把多步科研行动组织成可迭代工作流，并以 ReviewBench 与 review substantiveness evaluation 作为主要验证。当前可得证据已经足以支持其 Agent 纳入判断与对象优先归类，但仍应区分“平台泛化叙事”和“最终科学对象”之间的关系。",note,,,Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ReviewGrounder.pdf,https://arxiv.org/abs/2604.14261,B,False,,2026-11-01,2026-11-03
+ASD-0838,Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry,2026,"[""03""]",D3,优化/概率决策型,low,True,True,全文是连续流SDL多机制实例综述，未确立单一原创focal系统；按所述实验条件性能优化作论文级D3近似，RL和LLM实例并列，非系统内融合。,Hybrid Agent; Tool-using Agent; Planning Agent,Hybrid Agent; Tool-using Agent; Planning Agent,Notes/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.md,63,从当前可获得的一手替代证据看，这项工作围绕 autonomous self-driving lab 与 continuous-flow chemistry，利用 AI/ML 对在线监测与多模态传感数据做实时分析，自动调整实验条件并形成闭环探索，以加速分子、催化和材料相关化学空间中的发现。虽然项目说明也提到 chemical engineering principles，但被优化和执行的直接对象仍是反应、合成路径和连续流化学过程。,note_and_pdf," 
+On the other hand, the mixing or processing of the starting materials can be done on this 
+platform. With this integration of automated chemistry labs (SDL), the laboratory of the future 
+will be fully automated, becoming a plug-and-play chemistry environment. Scalable synthesis 
+will combine AI/ML for planning and robotics for implementation and production.61,82–94 
+ 
+More workflows will be tied to reinforcement learning (RL), a subset of ML. The RL can be 
+implemented by taking the current state of the system, inferring which changes (some 
+trial-and-error allowed) have occurred, and designing a response. It is compatible with 
+multi-step processes as it makes decisions with each step and predicts a future response. In 
+telescoping reactions or in planning multi-step and tandem protocols, RL will be beneficial for a 
+closed-loop SDL experimentation.  It can learn to be efficient with materials and time, with each 
+termination or failure yielding more data. In a recent workshop sponsored by the U.S. 
+Department of Energy and Oak Ridge National Laboratory, the future of self-driving 
+autonomous laboratories and the many aspects of SDL were mapped for future needs and 
+implementation.95 
+ 
+Recently, deep reinforcement learning (DRL) was used as an effective self-optimization strategy 
+for imine synthesis in flow. Imine is a vital pharmaceutical and heterocyclic building block.96 The 
+reactor’s mathematical model continuously used experimental data to train the agent and 
+recommend self-optimization strategies for hyperparameter tuning. 
+ 
+Examples of the compatible continuous-flow SDLs include Robochem, Fast-Cat, AFION 
+(autonomous fluidic identification and optimization nanochemistry), Smart Dope, and 
+AlphaFlow (Figure 8).79,92,97 This will enable interoperability with solid-state chemistry, 
+nanomaterials, photochemical and electrochemical catalysis, and other in-situ or ex-situ, 
+real-time or non-real-time characterization methods. 
+ 
+AI/ML in reaction engineering and microfluidics can enable new reactor designs and analytical 
+methods based on sound engineering principles. These advances promise to further enhance 
+the reconfigurability, scalability, and autonomy of fluidic SDLs. The opportunities for 
+AI/ML-driven flow chemistry within SDLs will also train a new generation of scientists and 
+engineers who are molecular and macromolecular synthesis optimization at the get-go.98 
+ 
+Examples for AI/ML integration in high-throughput experimentation with flow chemistry 
+include: ML-Enabled flow chemistry for multi-metrics reaction optimization,99 AI-aided selection 
+of reaction components,100 autonomous discovery of multi-step chemistry,97 a continuous-flow 
+platform with Bayesian optimization for autonomous and selective azidation,101 ML for 
+hydrodynamics and reactions in multiphase reactors,102 AI workflow for catalyst design and 
+Optimization,103  high-throughput experiments for heterogeneous catalyst design,104 
+Bayesian optimization of automated robotic flow system,105 Deep Learning for fast-flow peptide 
+synthesis,106 sustainable oxidation of Allyl Alcohol,107 automated microfluidics for polymerization 
+design,36 combinatorial microfluidics,108 and autonomous polymer chemistry.109 
+ 
+","Reference_PDF/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.pdf, PDF p.20",Reference_PDF/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.pdf,https://doi.org/10.26434/chemrxiv.15000295,B,False,,2026-11-01,2026-11-03
+ASD-0874,"Auditing Discovery Claims: A Two-Sided Criterion for Agentic Science, with the Negative Side Decidable",2026,"[""06""]",D3,优化/概率决策型,low,True,True,作者自己的RNA算子被描述为带更好成功判据的随机搜索，暂按D3；论文同时审计多个LLM及人工算子，无唯一系统，单标签仅为论文层面近似。,Tool-using Agent,,Notes/06_Life_Sciences/Chen_2026_AuditingDiscoveryClaims.md,41,Agent通过搜索生成程序、调用RNA结构预测器并依据外部反馈评估，执行多步科学序列设计与能力审计。,note_and_pdf,"and the honest description of our operator is a stochastic search with a better success predicate and no better guidance. That is the instrument working on its author. 1 Introduction Self-improving agents claiming new scientific or design capabilities are proliferating, but the field adjudicates the claim with soft statistics: a reward-model score, a held-out delta, an MDL g",Reference_PDF/06_Life_Sciences/ASD-0874_Auditing_Discovery_Claims_A_Two_Sided_Criterion_for_Agentic_Science_with_the_Negative_Side_Decidable.pdf; PDF p.2,Reference_PDF/06_Life_Sciences/ASD-0874_Auditing_Discovery_Claims_A_Two_Sided_Criterion_for_Agentic_Science_with_the_Negative_Side_Decidable.pdf,https://arxiv.org/abs/2608.00981,C,True,直接读PDF pp.1–4确认作者主动描述为stochastic search；保留低置信与异质系统范围限制。,2026-11-01,2026-11-03
+ASD-0877,The Silent Failures in Agentic Data Science,2026,"[""01""]",D5,LLM 驱动型,low,True,True,论文评估ReAct、AIDE、MLEvolve等独立数据科学系统，LLM生成代码与建模是共同主干；D5仅概括共同机制，不能代表各系统搜索器完全相同。,,,Notes/01_Formal_Information_and_Computational_Sciences/Li_2026_SilentFailuresAgenticDataScience.md,41,研究执行任务设定、建模、编程、验证与分析的数据科学Agent流程，评估其多步操作及方法学正确性。,note_and_pdf,code and strong predictive performance. ReAct AIDE MLEvolve 0 20 40 60 80 100 Pipelines with ≥ 1 failure mode (%) 100% n=220 99% n=211 100% n=65 99% n=220 95% n=185 98% n=203 99% n=219 97% n=219 68% n=219 Qwen-4B Qwen-27B Gemini-3.7 Figure 1: Percentage of pipelines with at least one failure mode per agent- model configuration. In this p,Reference_PDF/01_Formal_Information_and_Computational_Sciences/ASD-0877_The_Silent_Failures_in_Agentic_Data_Science.pdf; PDF p.2,Reference_PDF/01_Formal_Information_and_Computational_Sciences/ASD-0877_The_Silent_Failures_in_Agentic_Data_Science.pdf,https://arxiv.org/abs/2610.14115,C,True,本轮PDF确认是多个系统的比较分析；按用户单标签要求保留低置信论文级概括。,2026-11-01,2026-11-03
+ASD-0967,An immune world model for multiscale forecasting and therapeutic hypothesis generation,2026,"[""06"", ""07""]",D5,LLM 驱动型,medium,True,True,语言Scientist团队提出架构、工作流和分析方案，预设性能门槛决定接受/回滚；尚未见区别于普通门控的独立进化候选选择控制器，保守暂归D5并保留机制复核。,澶欰gent/绉戠爺宸ヤ綔娴丄gent,,Notes/06_Life_Sciences/Taoyong_2026_An_immune_world_model_for_multiscale_forecasting_and_therapeutic_ASD0967.md,77,Agent Genesis通过治理的工作流搜索生成免疫分析系统；Scientist工作流选择建模方法，工具执行数据分析，评估阶段比较预测及扰动假设。,note_and_pdf,"trainer, critic, memory, trimmer, and Tool Cosmas. The planner proposed architectural or workflow changes; the harness designer instan- tiated comparable execution and evaluation environments; the trainer fitted trainable compo- nents; the critic diagnosed failures; memory retained prior proposals and evidence; the trimmer removed unnecessary components; and Tool Cosmas controlled a",Reference_PDF/06_Life_Sciences/Taoyong_2026_An_immune_world_model_for_multiscale_forecasting_and_therapeutic_ASD0967.pdf; PDF p.17,Reference_PDF/06_Life_Sciences/Taoyong_2026_An_immune_world_model_for_multiscale_forecasting_and_therapeutic_ASD0967.pdf,https://arxiv.org/abs/2609.14709,C,True,交叉审阅有分歧。主控核对PDF pp.17–18，按与Mimosa相同边界：lineage命名、性能阈值及接受/回滚本身不足证明D6。,2026-11-01,2026-11-03
+ASD-1014,An AI-powered self-driving microscope for low-cost acute leukemia detection,2026,"[""07""]",D2,规划/模型驱动型,low,True,True,现有笔记仅支持自动视野定位、细胞检测与诊断阶段推进，未证明学得的显微行为策略；在六类限制下暂按显式流程控制近似D2，需全文确认而非把监督预测器当D4。,LLM Agent; Tool-using Agent,,Notes/07_Medical_and_Health_Sciences/Yan_2026_An_AI_powered_self_driving_microscope_for_low_cost_ASD1014.md,77,ALLocate把低成本显微镜插件、自动视野定位与细胞检测模型组合成自驱诊断流程，从骨髓涂片图像采集到玻片级急性白血病判断。,note,,,,https://doi.org/10.1038/s41467-026-77130-x,C,True,交叉审阅纠正预测模型与行动policy混淆，D4改D2暂定；无本轮直接全文证据。,2026-11-01,2026-11-03

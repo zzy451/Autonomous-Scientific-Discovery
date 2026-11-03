@@ -1,0 +1,676 @@
+{
+  "unique_records": 662,
+  "csv_jsonl_ids_identical": true,
+  "six_class_single_assignment": true,
+  "xlsx_rows": 662,
+  "xlsx_review_queue_rows": 15,
+  "primary_excerpt_checks": {
+    "matched": 83
+  },
+  "primary_excerpt_details": [
+    {
+      "paper_id": "ASD-0006",
+      "status": "matched",
+      "matched_pages": [
+        7
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Naumov_2025_DORA_AI_Scientist.pdf; PDF p.7"
+    },
+    {
+      "paper_id": "ASD-0012",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Yoshikawa_2023_Chemistry_Robotics_LLMs.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0016",
+      "status": "matched",
+      "matched_pages": [
+        1
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Szymanski_2023_A_Lab.pdf; PDF p.1"
+    },
+    {
+      "paper_id": "ASD-0036",
+      "status": "matched",
+      "matched_pages": [
+        7
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Darvish_2024_Organa.pdf; PDF p.7"
+    },
+    {
+      "paper_id": "ASD-0037",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Dai_2024_Autonomous_Mobile_Robots.pdf; PDF p.3"
+    },
+    {
+      "paper_id": "ASD-0056",
+      "status": "matched",
+      "matched_pages": [
+        7
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/StriethKalthoff_2024_Organic_Laser_Emitters.pdf, PDF p.7 (also read pp.1-3,5-6)"
+    },
+    {
+      "paper_id": "ASD-0062",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Pauloski_2025_Federated_Agents.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0063",
+      "status": "matched",
+      "matched_pages": [
+        1
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Novikov_2025_AlphaEvolve.pdf; PDF p.1"
+    },
+    {
+      "paper_id": "ASD-0065",
+      "status": "matched",
+      "matched_pages": [
+        7
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Ni_2024_MatPilot.pdf; PDF p.7"
+    },
+    {
+      "paper_id": "ASD-0084",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Ghafarollahi_2025_AtomAgents_Alloy.pdf, PDF p.3 (read pp.1-3)"
+    },
+    {
+      "paper_id": "ASD-0150",
+      "status": "matched",
+      "matched_pages": [
+        7
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Bai_2024_Distributed_Self_Driving_Labs.pdf, PDF p.7 (also read relevant parts pp.2-6)"
+    },
+    {
+      "paper_id": "ASD-0154",
+      "status": "matched",
+      "matched_pages": [
+        7
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Liang_2025_AMASE.pdf, PDF p.7 (also read relevant passages pp.1-3)"
+    },
+    {
+      "paper_id": "ASD-0385",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Volk_2023_AlphaFlow_Nanoparticle_Growth.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0388",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Maffettone_2021_Crystallography_Companion_Agent.pdf; PDF p.3"
+    },
+    {
+      "paper_id": "ASD-0422",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Sheng_2024_Molecular_Electrochemistry_Automation.pdf, PDF pp.3-4"
+    },
+    {
+      "paper_id": "ASD-0428",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Caramelli_2021_Reactivity_Seeking_NN.pdf, PDF p.4 (also read passages pp.1-3)"
+    },
+    {
+      "paper_id": "ASD-0455",
+      "status": "matched",
+      "matched_pages": [
+        1
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Burger_2020_Mobile_Robotic_Chemist.pdf; PDF p.1"
+    },
+    {
+      "paper_id": "ASD-0463",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Ha_2023_Robotic_Chemist_Organic_Molecules.pdf, PDF p.2 (also read passages pp.1,3-4)"
+    },
+    {
+      "paper_id": "ASD-0478",
+      "status": "matched",
+      "matched_pages": [
+        2,
+        4
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Tamura_2023_NIMS_OS.pdf, PDF pp.2-4"
+    },
+    {
+      "paper_id": "ASD-0501",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/06_Life_Sciences/King_2004_Robot_Scientist.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0505",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Szymanski_2023_ARROWS3_SolidState_Synthesis.pdf, PDF p.2 (also read relevant passages pp.1,4)"
+    },
+    {
+      "paper_id": "ASD-0510",
+      "status": "matched",
+      "matched_pages": [
+        11
+      ],
+      "locator": "Reference_PDF/08_Agricultural_Food_Forestry_Animal_and_Fishery_Sciences/Chen_2026_PhenoAssistant.pdf, PDF p.11 (also read p.1 and a baseline passage p.7)"
+    },
+    {
+      "paper_id": "ASD-0512",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/RomeraParedes_2024_FunSearch_Mathematical_Discoveries.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0518",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/06_Life_Sciences/Singh_2025_Autonomous_Enzyme_Engineering.pdf, PDF p.2 (also read p.1 and comparison passage p.6)"
+    },
+    {
+      "paper_id": "ASD-0526",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tacke_2025_CSGA_Constitutive_Model_Discovery.pdf, PDF p.3 (also read p.1 and related work p.2)"
+    },
+    {
+      "paper_id": "ASD-0528",
+      "status": "matched",
+      "matched_pages": [
+        1
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Desai_2025_AutoSciLab.pdf, PDF pp.1-2"
+    },
+    {
+      "paper_id": "ASD-0571",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Gomes_2019_CRYSTAL_Crystal_Structure_Mapping.pdf, PDF p.2 (also read p.1)"
+    },
+    {
+      "paper_id": "ASD-0612",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Chen_2024_Navigating_Phase_Diagram_Complexity.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0634",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/08_Agricultural_Food_Forestry_Animal_and_Fishery_Sciences/Jin_2025_Aleks.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0636",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_EGTR_Review.pdf; PDF p.4"
+    },
+    {
+      "paper_id": "ASD-0647",
+      "status": "matched",
+      "matched_pages": [
+        1
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Herrmann_2022_Autonomous_Small_Body_Science_Operations.pdf; PDF p.1"
+    },
+    {
+      "paper_id": "ASD-0648",
+      "status": "matched",
+      "matched_pages": [
+        1
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Stephenson_2024_Earth_Observing_Satellite_Autonomy.pdf; PDF p.1"
+    },
+    {
+      "paper_id": "ASD-0656",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Biswas_2026_AAAI_AI_Review_Pilot.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0662",
+      "status": "matched",
+      "matched_pages": [
+        10
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_Mimosa_Framework.pdf; PDF p.10"
+    },
+    {
+      "paper_id": "ASD-0693",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Wagstaff_2019_Europa_Clipper_Onboard_Detection.pdf, PDF p.4, section 3.2.1"
+    },
+    {
+      "paper_id": "ASD-0696",
+      "status": "matched",
+      "matched_pages": [
+        8
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2012_AEGIS_Opportunity_Rover.pdf; PDF p.8"
+    },
+    {
+      "paper_id": "ASD-0697",
+      "status": "matched",
+      "matched_pages": [
+        9
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2017_AEGIS_ChemCam_MSL.pdf, PDF p.9"
+    },
+    {
+      "paper_id": "ASD-0698",
+      "status": "matched",
+      "matched_pages": [
+        5
+      ],
+      "locator": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_APRES.pdf; PDF p.5"
+    },
+    {
+      "paper_id": "ASD-0699",
+      "status": "matched",
+      "matched_pages": [
+        5
+      ],
+      "locator": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2026_ARA.pdf; PDF p.5"
+    },
+    {
+      "paper_id": "ASD-0702",
+      "status": "matched",
+      "matched_pages": [
+        17
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.pdf, PDF p.17"
+    },
+    {
+      "paper_id": "ASD-0709",
+      "status": "matched",
+      "matched_pages": [
+        6
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2014_ChemCam_Automated_Targeting.pdf, PDF p.6"
+    },
+    {
+      "paper_id": "ASD-0710",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2024_AEGIS_SuperCam.pdf, PDF p.4"
+    },
+    {
+      "paper_id": "ASD-0711",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Estlin_2015_Autonomous_Science_Technology_MSL.pdf, PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0736",
+      "status": "matched",
+      "matched_pages": [
+        5
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Wang_2025_AI_Researcher.pdf; PDF p.5"
+    },
+    {
+      "paper_id": "ASD-0738",
+      "status": "matched",
+      "matched_pages": [
+        17
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_AutoSOTA.pdf; PDF p.17"
+    },
+    {
+      "paper_id": "ASD-0751",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Xu_2026_Autonomous_Discovery_Cosmology.pdf, PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0759",
+      "status": "matched",
+      "matched_pages": [
+        9
+      ],
+      "locator": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Miao_2025_PhysMaster.pdf, PDF p.9"
+    },
+    {
+      "paper_id": "ASD-0760",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Arlt_2025_AI_Mandel_Quantum_Physics.pdf, PDF p.4"
+    },
+    {
+      "paper_id": "ASD-0762",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Sha_2025_QCopilot_Quantum_Sensor.pdf, PDF p.4"
+    },
+    {
+      "paper_id": "ASD-0779",
+      "status": "matched",
+      "matched_pages": [
+        5
+      ],
+      "locator": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2026_Text_to_Simulation_Process_Design.pdf, PDF p.5"
+    },
+    {
+      "paper_id": "ASD-0787",
+      "status": "matched",
+      "matched_pages": [
+        9
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Ding_2025_SciToolAgent.pdf, PDF p.9"
+    },
+    {
+      "paper_id": "ASD-0805",
+      "status": "matched",
+      "matched_pages": [
+        14
+      ],
+      "locator": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Du_2026_TurboAgent.pdf, PDF p.14"
+    },
+    {
+      "paper_id": "ASD-0806",
+      "status": "matched",
+      "matched_pages": [
+        13
+      ],
+      "locator": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Saraev_2026_Optofluidic_Assembly.pdf, PDF p.13"
+    },
+    {
+      "paper_id": "ASD-0807",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Cui_2024_Power_Electronics_Control_Design.pdf, PDF p.4"
+    },
+    {
+      "paper_id": "ASD-0808",
+      "status": "matched",
+      "matched_pages": [
+        5
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Li_2026_InvDesMobility.pdf, PDF p.5"
+    },
+    {
+      "paper_id": "ASD-0810",
+      "status": "matched",
+      "matched_pages": [
+        5
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Ojeda_2026_My_Chemical_Harness.pdf, PDF p.5"
+    },
+    {
+      "paper_id": "ASD-0811",
+      "status": "matched",
+      "matched_pages": [
+        1
+      ],
+      "locator": "Reference_PDF/04_Materials_Science/Unknown_2026_CLIO.pdf, PDF p.1"
+    },
+    {
+      "paper_id": "ASD-0820",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/07_Medical_and_Health_Sciences/Li_2026_MolReAct_Lead_Optimization.pdf; PDF p.4"
+    },
+    {
+      "paper_id": "ASD-0822",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/07_Medical_and_Health_Sciences/Baker_2026_CIWM_CRC_Drug_Response.pdf, PDF p.4"
+    },
+    {
+      "paper_id": "ASD-0824",
+      "status": "matched",
+      "matched_pages": [
+        5
+      ],
+      "locator": "Reference_PDF/07_Medical_and_Health_Sciences/Suzuki_2025_FRAGMENTA.pdf, PDF p.5"
+    },
+    {
+      "paper_id": "ASD-0826",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "Reference_PDF/07_Medical_and_Health_Sciences/Zhou_2026_ToolMol.pdf, PDF p.3"
+    },
+    {
+      "paper_id": "ASD-0838",
+      "status": "matched",
+      "matched_pages": [
+        20
+      ],
+      "locator": "Reference_PDF/03_Chemical_Sciences/Advincula_2026_Autonomous_Flow_Chemistry.pdf, PDF p.20"
+    },
+    {
+      "paper_id": "ASD-0850",
+      "status": "matched",
+      "matched_pages": [
+        6
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_OR_Agent.pdf, PDF p.6"
+    },
+    {
+      "paper_id": "ASD-0851",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "Reference_PDF/05_Earth_and_Environmental_Sciences/Luo_2025_GeoEvolve.pdf, PDF p.3"
+    },
+    {
+      "paper_id": "ASD-0852",
+      "status": "matched",
+      "matched_pages": [
+        9
+      ],
+      "locator": "Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Woods_2009_ExoMars_Rover_Like_Mission.pdf, PDF p.9"
+    },
+    {
+      "paper_id": "ASD-0856",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Unknown_2025_AutoDiscovery.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0857",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Na_2026_Machine_Collective_Intelligence.pdf, PDF p.3"
+    },
+    {
+      "paper_id": "ASD-0866",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "Reference_PDF/07_Medical_and_Health_Sciences/Unknown_2025_SAGA.pdf, PDF p.3"
+    },
+    {
+      "paper_id": "ASD-0868",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Yang_2026_KeplerAgent_Equation_Discovery.pdf; PDF p.4"
+    },
+    {
+      "paper_id": "ASD-0874",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/06_Life_Sciences/ASD-0874_Auditing_Discovery_Claims_A_Two_Sided_Criterion_for_Agentic_Science_with_the_Negative_Side_Decidable.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0875",
+      "status": "matched",
+      "locator": ".tmp_asd_pdfs/2608.30165.html，Performance of frontier agents in a single-round test with no prior knowledge"
+    },
+    {
+      "paper_id": "ASD-0877",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/ASD-0877_The_Silent_Failures_in_Agentic_Data_Science.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-0900",
+      "status": "matched",
+      "matched_pages": [
+        4
+      ],
+      "locator": "Reference_PDF/06_Life_Sciences/Lau_2026_Multi_agentic_system_for_primer_design_in_qPCR_and_LAMP_diagnostics_tests.pdf; PDF p.4"
+    },
+    {
+      "paper_id": "ASD-0919",
+      "status": "matched",
+      "matched_pages": [
+        1
+      ],
+      "locator": "Reference_PDF/07_Medical_and_Health_Sciences/ASD-0919_Scaling_Scientific_Discovery_Environments_for_Turn_Level_Agentic_RL.pdf; PDF p.1"
+    },
+    {
+      "paper_id": "ASD-0933",
+      "status": "matched",
+      "matched_pages": [
+        6
+      ],
+      "locator": "本地JANUS PDF p.6，§3.3 Eq.10–12"
+    },
+    {
+      "paper_id": "ASD-0967",
+      "status": "matched",
+      "matched_pages": [
+        17
+      ],
+      "locator": "Reference_PDF/06_Life_Sciences/Taoyong_2026_An_immune_world_model_for_multiscale_forecasting_and_therapeutic_ASD0967.pdf; PDF p.17"
+    },
+    {
+      "paper_id": "ASD-1004",
+      "status": "matched",
+      "matched_pages": [
+        5
+      ],
+      "locator": "本地MatEvolve PDF p.4语言模型配置；p.5 Experiment 2 ERS selection"
+    },
+    {
+      "paper_id": "ASD-1048",
+      "status": "matched",
+      "matched_pages": [
+        8
+      ],
+      "locator": "Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Xu_2026_Photonics_GCCE_group_collaborative_competitive_evolution_multi_agent_framework_ASD1048.pdf; PDF p.8"
+    },
+    {
+      "paper_id": "ASD-1067",
+      "status": "matched",
+      "matched_pages": [
+        1,
+        20
+      ],
+      "locator": "本地Hydrotope PDF p.1 Abstract；p.3 Fig.1及主系统与SR对照区分"
+    },
+    {
+      "paper_id": "ASD-1083",
+      "status": "matched",
+      "matched_pages": [
+        7
+      ],
+      "locator": "Reference_PDF/01_Formal_Information_and_Computational_Sciences/Ma_2026_OptScientist_Automated_Discovery_of_Optimization_Laws_ASD1083.pdf; PDF p.7"
+    },
+    {
+      "paper_id": "ASD-1105",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "本地Search to Research PDF p.3 Autonomous Research and Experimentation"
+    },
+    {
+      "paper_id": "ASD-1111",
+      "status": "matched",
+      "matched_pages": [
+        2
+      ],
+      "locator": "Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Wu_2026_Autonomous_Floquet_engineering_of_bosonic_codes_via_reinforcement_learning_ASD1111.pdf; PDF p.2"
+    },
+    {
+      "paper_id": "ASD-1126",
+      "status": "matched",
+      "matched_pages": [
+        3
+      ],
+      "locator": "本地CeramicAgent PDF p.3 online query-guided reasoning；p.4 Methods"
+    }
+  ],
+  "issues": []
+}

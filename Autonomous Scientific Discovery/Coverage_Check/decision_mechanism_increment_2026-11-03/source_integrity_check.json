@@ -1,0 +1,18 @@
+{
+  "hashed_sources": 668,
+  "hash_changes": [],
+  "existing_files_inventoried": 4263,
+  "metadata_changes": [],
+  "new_files_outside_increment": [
+    "Manuscript/analysis/object_time_map_2026-11-03/core_scientific_objects_by_period_zh.pdf",
+    "Manuscript/analysis/object_time_map_2026-11-03/core_scientific_objects_by_period_zh.png",
+    "Manuscript/analysis/object_time_map_2026-11-03/core_scientific_objects_by_period_zh.svg",
+    "Manuscript/analysis/object_time_map_2026-11-03/core_scientific_objects_by_period_zh_preview.png",
+    "Manuscript/analysis/object_time_map_2026-11-03/draw_core_object_time_map.py",
+    "Manuscript/analysis/object_time_map_2026-11-03/figure_audit.json",
+    "Manuscript/analysis/object_time_map_2026-11-03/general_method_bucket.csv",
+    "Manuscript/analysis/object_time_map_2026-11-03/plotted_work_domain_index.csv",
+    "Manuscript/analysis/object_time_map_2026-11-03/README.md",
+    "Manuscript/analysis/object_time_map_2026-11-03/source_label_mapping.json"
+  ]
+}

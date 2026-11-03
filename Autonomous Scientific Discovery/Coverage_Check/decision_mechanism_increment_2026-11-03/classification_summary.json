@@ -1,0 +1,84 @@
+{
+  "papers": 662,
+  "unique_papers": 662,
+  "classes": {
+    "D1": {
+      "name": "符号/知识推理型",
+      "count": 4,
+      "percent": 0.6
+    },
+    "D2": {
+      "name": "规划/模型驱动型",
+      "count": 27,
+      "percent": 4.08
+    },
+    "D3": {
+      "name": "优化/概率决策型",
+      "count": 96,
+      "percent": 14.5
+    },
+    "D4": {
+      "name": "学习策略型",
+      "count": 7,
+      "percent": 1.06
+    },
+    "D5": {
+      "name": "LLM 驱动型",
+      "count": 500,
+      "percent": 75.53
+    },
+    "D6": {
+      "name": "混合机制型",
+      "count": 28,
+      "percent": 4.23
+    }
+  },
+  "confidence_counts": {
+    "high": 522,
+    "medium": 126,
+    "low": 14
+  },
+  "provisional_count": 15,
+  "needs_fulltext_review_count": 15,
+  "source_basis_counts": {
+    "note": 579,
+    "note_and_pdf": 82,
+    "note_and_cached_fulltext": 1
+  },
+  "controller_reviewed_count": 37,
+  "reviewer_counts": {
+    "A": 221,
+    "B": 221,
+    "C": 220
+  },
+  "source_integrity": {
+    "hashed_sources": 668,
+    "hash_changes": [],
+    "existing_files_inventoried": 4263,
+    "metadata_changes": [],
+    "new_files_outside_increment": [
+      "Manuscript/analysis/object_time_map_2026-11-03/core_scientific_objects_by_period_zh.pdf",
+      "Manuscript/analysis/object_time_map_2026-11-03/core_scientific_objects_by_period_zh.png",
+      "Manuscript/analysis/object_time_map_2026-11-03/core_scientific_objects_by_period_zh.svg",
+      "Manuscript/analysis/object_time_map_2026-11-03/core_scientific_objects_by_period_zh_preview.png",
+      "Manuscript/analysis/object_time_map_2026-11-03/draw_core_object_time_map.py",
+      "Manuscript/analysis/object_time_map_2026-11-03/figure_audit.json",
+      "Manuscript/analysis/object_time_map_2026-11-03/general_method_bucket.csv",
+      "Manuscript/analysis/object_time_map_2026-11-03/plotted_work_domain_index.csv",
+      "Manuscript/analysis/object_time_map_2026-11-03/README.md",
+      "Manuscript/analysis/object_time_map_2026-11-03/source_label_mapping.json"
+    ]
+  },
+  "models": {
+    "reviewer_A": "gpt-6.1-sol/high",
+    "reviewer_B": "gpt-6.1-sol/high",
+    "reviewer_C": "gpt-6.1-sol/high"
+  },
+  "corpus_snapshot": "2026-11-01",
+  "classification_date": "2026-11-03",
+  "independent_cross_reviewed_count": 76,
+  "independent_cross_review_files": [
+    "scratch/A/cross_review.jsonl",
+    "scratch/C/cross_review_A_D6.jsonl"
+  ]
+}
