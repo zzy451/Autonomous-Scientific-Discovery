@@ -55,21 +55,19 @@ def cells(pts):
 
 def height(cell, V, L):
     """The surface through the scatter: Gaussian-kernel (Nadaraya-Watson) mean openness over (V, L), each
-    (V, L, O) point weighted by its papers; far from the data it settles onto the plain at BASE."""
+    (V, L, O) point weighted by its papers; far from the data it settles onto the plain at BASE; empty columns and empty levels sit at BASE."""
     num = np.full(np.shape(V), W0 * BASE, float); den = np.full(np.shape(V), W0, float)
     for (v, l, o), c in cell.items():
         w = c * np.exp(-(V - v) ** 2 / (2 * SIG_S ** 2) - (L - l) ** 2 / (2 * SIG_L ** 2))
         num += w * o; den += w
     z = num / den
-    used = {l for _, l, _ in cell}
-    for e in set(range(4)) - used:                              # an autonomy level with no papers sits at 0,
-        dl = np.asarray(L, float) - e                           # and so does the side of it with no data
-        if all(l > e for l in used):
-            dl = np.clip(dl, 0, None)
-        elif all(l < e for l in used):
-            dl = np.clip(-dl, 0, None)
-        d = np.clip(np.abs(dl) / 0.7, 0, 1)
-        z = BASE + (z - BASE) * d * d * (3 - 2 * d)
+    # openness is undefined where there are no papers, so the height is kept only on the support of the
+    # data: a smooth indicator that is 1 on every occupied (V, L) column and falls monotonically to ~0 one
+    # class away, so empty columns, empty levels (L0) and the plain beyond V0-V4 all sit at 0
+    sup = np.zeros(np.shape(V), float)
+    for v, l in {(v, l) for v, l, _ in cell}:
+        sup += np.exp(-(np.asarray(V, float) - v) ** 2 / (2 * 0.5 ** 2) - (np.asarray(L, float) - l) ** 2 / (2 * 0.42 ** 2))
+    z = BASE + (z - BASE) * np.clip(sup, 0, 1) ** 2
     return z, den - W0
 
 
@@ -85,7 +83,7 @@ def quantiles(cell, L, x, qs=(0.25, 0.5, 0.75)):
     for k, xv in enumerate(x):
         w = np.array([c * np.exp(-(xv - v) ** 2 / (2 * SIG_S ** 2)) for v, o, c in row])
         wsum[k] = w.sum()
-        if w.sum() < 0.3:
+        if min(abs(xv - v) for v, _, _ in row) > 0.5:         # no band over columns without papers
             continue
         pdf = sum(wi * np.exp(-(og - o) ** 2 / (2 * QSIG ** 2)) for wi, (v, o, c) in zip(w, row))
         cdf = np.cumsum(pdf); cdf /= cdf[-1]
@@ -161,15 +159,15 @@ def surface_axes(ax, pts, small=False, cut=False, quant=False):
     ax.view_init(elev=24, azim=-45)
 
 
-FOOT = ("散点 = 三维坐标系中每个 (V, L, O) 组合，点面积 ∝ 论文数，颜色 = 自主性等级；山体 = 穿过全部散点的高斯光滑曲面"
-        "（按论文数加权的高斯核回归，σ_V = 0.55、σ_L = 0.22 级），海拔为该处论文的平均开放度 O；\n虚线 = 散点到曲面的偏离；白色等高线为 O1–O6；"
+FOOT = ("散点 = 三维坐标系中每个 (V, L, O) 组合，点面积 ∝ 论文数，颜色 = 自主性等级；\n山体 = 穿过全部散点的高斯光滑曲面"
+        "（按论文数加权的高斯核回归，σ_V = 0.55、σ_L = 0.22 级），海拔为该处论文的平均开放度 O（不是篇数），没有论文的位置为 0；虚线 = 散点到曲面的偏离；白色等高线为 O1–O6；"
         "远离数据处曲面回落到平原；红色虚线以右为强验证（V3–V4）· 快照 2026-11-01")
 FOOT_CUT = ("山体 = 穿过全部 (V, L, O) 散点的高斯光滑曲面（按论文数加权的高斯核回归，σ_V = 0.55、σ_L = 0.22 级），海拔为该处论文的平均开放度 O，"
-            "没有论文的自主性等级（L0）为 0；\n四条彩色线 = 山体表面上 L0–L3 处的等自主性线；线上数字 = 该 (V, L) 组合的论文数"
+            "没有论文的位置（含 L0 整条线）海拔为 0；\n四条彩色线 = 山体表面上 L0–L3 处的等自主性线；线上数字 = 该 (V, L) 组合的论文数"
             "（空心点 = 0 篇）；红色虚线以右为强验证（V3–V4）· 快照 2026-11-01")
 FOOT_Q = ("山体与彩色实线 = 按论文数加权的平均开放度（高斯核回归，σ_V = 0.55、σ_L = 0.22 级）；色带 = 同一自主性等级下开放度的 25%–75% 分位区间，"
           "虚线 = 中位数（每篇论文的 O 按 σ = 0.35 级平滑后取加权分位）；\n线上数字 = 该 (V, L) 组合的论文数（空心点 = 0 篇）；"
-          "L0 没有论文，海拔为 0；红色虚线以右为强验证（V3–V4）· 快照 2026-11-01")
+          "没有论文的位置（含 L0）海拔为 0；色带只画在有论文的位置；红色虚线以右为强验证（V3–V4）· 快照 2026-11-01")
 
 
 def colorbar(fig, rect, fs=8):

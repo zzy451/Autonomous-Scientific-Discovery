@@ -61,8 +61,9 @@ TREE = [
                   "L0–L3 (right) and problem openness O1–O6 (up). Point area is proportional to papers and colour gives "
                   "the autonomy level. The mountain is the Gaussian-smooth surface through all the points, a paper-"
                   "weighted Gaussian-kernel regression of openness over (V, L) (σ = 0.55 class steps along V and 0.22 "
-                  "along L, so each autonomy level keeps its own mean). The colour bar gives altitude, and L0, which "
-                  "has no papers, sits at 0. The line view draws the L0–L3 lines on the surface and labels each (V, L) "
+                  "along L, so each autonomy level keeps its own mean). The colour bar gives altitude. Height is mean "
+                  "openness, not a count, so wherever there are no papers (every empty (V, L) column, all of L0 and the "
+                  "plain beyond V0–V4) it sits at 0. The line view draws the L0–L3 lines on the surface and labels each (V, L) "
                   "column with its paper count, hollow dots marking 0. Because a mean surface hides the spread, the "
                   "quantile view adds each level's 25–75% openness band and median. The floor right of the dashed "
                   "line is strong verification (V3–V4).",
