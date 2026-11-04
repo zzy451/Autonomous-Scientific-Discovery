@@ -1,13 +1,14 @@
-"""The proposal's three-way classification as one continuous mountain, cut by four autonomy planes.
+"""The proposal's three-way classification as one continuous mountain fitted through the 3D scatter.
 
-The mountain is a single surface over the base plane verification V0-V4 (front) x autonomy L0-L3 (right).
-Its altitude is problem openness: at each (V, L) the highest openness O1-O6 actually reached, joined by a
-shape-preserving (PCHIP) interpolation so it never overshoots the data; colour on the surface is the
-Gaussian-smoothed paper density. Four coloured planes cut the mountain along the right-hand axis at L0-L3;
-where a cut meets a verification class the paper count of that (V, L) column is printed.
+Every (V, L, O) combination is a point in the three-axis space (verification V0-V4 front, autonomy L0-L3
+right, openness O1-O6 up), weighted by its papers. The mountain is the Gaussian-smooth surface through all
+the points: a paper-weighted Gaussian-kernel (Nadaraya-Watson) regression of openness over (V, L), settling
+onto the plain far from the data. The cut view slices that surface with four coloured planes at L0-L3 along
+the right-hand axis and prints the paper count of each (V, L) column where a cut meets a verification class.
 Data: ov_coding/increment/classification_results_662.jsonl. White background only.
 
-  fig_ovl_surface          : all 662 papers
+  fig_ovl_surface          : all 662 papers, surface with its scatter
+  fig_ovl_surface_cut      : the same surface cut at L0-L3
   fig_ovl_surface_fNN      : one per field 01-11 (a cross-field paper counts in every field it has)
   fig_ovl_surface_fields   : all papers plus the 11 fields as small multiples
   derived/ovl_cube_counts.csv : every (O, V, L) count, all papers and each field
@@ -18,8 +19,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap, LightSource, to_rgb
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-from scipy.interpolate import RegularGridInterpolator
-from scipy.ndimage import gaussian_filter
 import style as S
 
 INC = S.ROOT / "ov_coding" / "increment" / "classification_results_662.jsonl"
@@ -33,7 +32,6 @@ FZH = {"01": "形式与计算科学", "02": "物理与天文", "03": "化学", "
 BASE = 0.4                                                  # altitude of the plain (below O1)
 VX, LY = (-1.0, 5.0), (-1.0, 4.0)
 RES = 24                                                    # surface samples per class step
-DENS = LinearSegmentedColormap.from_list("d", ["#f7f4ee", "#e6dccb", "#c9b79a", "#9c8463", "#5e4b34"])
 plt.rcParams.update({"font.family": ["Arial Unicode MS", "Arial"], "font.size": 9})
 
 
@@ -43,56 +41,70 @@ def load():
             for r in rows if r["coded"]]
 
 
-def surface(pts):
-    """Altitude (highest O reached) and paper count on the (V, L) lattice, then the continuous surface."""
-    hi, n = C.defaultdict(lambda: BASE), C.Counter()
-    for o, v, L, _ in pts:
-        hi[(v, L)] = max(hi[(v, L)], o); n[(v, L)] += 1
-    lv, ll = np.arange(-1, 6), np.arange(-1, 5)                     # one class of plain around the data
-    Z = np.array([[hi[(v, L)] for L in ll] for v in lv], float)
+SIG_S, W0 = 0.55, 0.5          # surface kernel width (class steps); weight of the plain, in papers
+ALT = LinearSegmentedColormap.from_list("alt", ["#f3efe6", "#d9cdb0", "#a9b08f", "#6f9184", "#3f6b78", "#2b4a63"])
+
+
+def cells(pts):
+    return C.Counter((v, L, o) for o, v, L, _ in pts)
+
+
+def height(cell, V, L):
+    """The surface through the scatter: Gaussian-kernel (Nadaraya-Watson) mean openness over (V, L), each
+    (V, L, O) point weighted by its papers; far from the data it settles onto the plain at BASE."""
+    num = np.full(np.shape(V), W0 * BASE, float); den = np.full(np.shape(V), W0, float)
+    for (v, l, o), c in cell.items():
+        w = c * np.exp(-((V - v) ** 2 + (L - l) ** 2) / (2 * SIG_S ** 2))
+        num += w * o; den += w
+    return num / den, den - W0
+
+
+def surface_axes(ax, pts, small=False, cut=False):
+    cell = cells(pts)
     gv = np.linspace(*VX, int((VX[1] - VX[0]) * RES) + 1)
     gl = np.linspace(*LY, int((LY[1] - LY[0]) * RES) + 1)
     VV, LL = np.meshgrid(gv, gl, indexing="ij")
-    zz = RegularGridInterpolator((lv, ll), Z, method="pchip")(np.stack([VV, LL], -1))
-    D = np.zeros_like(VV)
-    for (v, L), c in n.items():
-        D[np.abs(gv - v).argmin(), np.abs(gl - L).argmin()] += c
-    s = 0.4 * RES
-    D = gaussian_filter(D, s, mode="constant") * 2 * np.pi * s * s          # peak ~ papers in the column
-    return VV, LL, zz, D, hi, n, RegularGridInterpolator((lv, ll), Z, method="pchip")
-
-
-def surface_axes(ax, pts, small=False):
-    VV, LL, zz, D, hi, n, f = surface(pts)
-    top = max(n.values())
-    w = np.sqrt(np.clip(D, 0, None) / top)
-    ls = LightSource(azdeg=300, altdeg=35)
-    rgb = DENS(np.clip(w, 0, 1))[:, :, :3]
-    rgb = ls.shade_rgb(rgb, zz * 3, blend_mode="soft", fraction=0.8)
-    fc = np.dstack([rgb, np.full(zz.shape, 0.78)])
+    zz, wt = height(cell, VV, LL)
+    ls = LightSource(azdeg=300, altdeg=38)
+    rgb = ALT(np.clip((zz - BASE) / (6.2 - BASE), 0, 1))[:, :, :3]
+    rgb = ls.shade_rgb(rgb, zz * 2.5, blend_mode="soft", fraction=0.9)
+    fc = np.dstack([rgb, np.full(zz.shape, 0.62 if cut else 0.88)])
     ax.plot_surface(VV, LL, zz, facecolors=fc, rstride=2, cstride=2, linewidth=0, antialiased=True, shade=False,
                     zorder=1)
-    gv = VV[:, 0]
-    for L in (3, 2, 1, 0):                                          # far cut first
-        col = to_rgb(L_COL[L])
-        z = f(np.stack([gv, np.full_like(gv, L)], -1))
-        nL = sum(c for (v, l), c in n.items() if l == L)
-        # the cutting plane, and the mountain's section on it
-        ax.add_collection3d(Poly3DCollection([[(VX[0], L, BASE), (VX[1], L, BASE), (VX[1], L, 6.8), (VX[0], L, 6.8)]],
-                                             facecolor=(*col, 0.05), edgecolor=(*col, 0.5), linewidth=0.5), zs=None)
-        sec = list(zip(gv, [L] * len(gv), z)) + [(gv[-1], L, BASE), (gv[0], L, BASE)]
-        ax.add_collection3d(Poly3DCollection([sec], facecolor=(*col, 0.2), edgecolor="none"), zs=None)
-        ax.plot(gv, [L] * len(gv), z, color=L_COL[L], lw=1.2 if small else 2.4, zorder=6)
-        # numbers where the cut meets each verification class
-        for v in range(5):
-            c = n.get((v, L), 0)
-            if not c:
-                continue
-            zt = hi[(v, L)]
-            ax.scatter([v], [L], [zt], s=5 if small else 16, c=L_COL[L], edgecolors="white", linewidths=0.7,
-                       depthshade=False, zorder=20)
-            ax.text(v, L, zt + (0.28 if small else 0.32), str(c), fontsize=5.5 if small else 8.5, color=INK,
-                    ha="center", fontweight="bold", zorder=21)
+    ax.contour(VV, LL, zz, levels=np.arange(1, 7), colors="white", linewidths=0.4, alpha=0.7, zorder=2)
+    top = max(cell.values())
+    if not cut:
+        # the scatter the surface is fitted through: one point per (V, L, O), area proportional to papers
+        for (v, l, o), c in sorted(cell.items(), key=lambda t: t[0][1]):
+            zs, _ = height(cell, np.array(v, float), np.array(l, float))
+            ax.plot([v, v], [l, l], [o, float(zs)], color=INK, lw=0.4, alpha=0.5, ls=":", zorder=9)
+            ax.scatter([v], [l], [o], s=(4 if small else 8) + (90 if small else 420) * c / top, c=L_COL[l],
+                       edgecolors="white", linewidths=0.6, alpha=0.95, depthshade=False, zorder=10)
+            if c >= (20 if small else 8):
+                ax.text(v, l, o + (0.25 if small else 0.3), str(c), fontsize=5.5 if small else 8, color=INK,
+                        ha="center", fontweight="bold", zorder=21)
+    else:
+        col_n = C.Counter()
+        for (v, l, o), c in cell.items():
+            col_n[(v, l)] += c
+        for L in (3, 2, 1, 0):                                      # far cut first
+            col = to_rgb(L_COL[L])
+            z, _ = height(cell, gv, np.full_like(gv, L))
+            ax.add_collection3d(Poly3DCollection([[(VX[0], L, BASE), (VX[1], L, BASE), (VX[1], L, 6.8),
+                                                   (VX[0], L, 6.8)]], facecolor=(*col, 0.05),
+                                                 edgecolor=(*col, 0.5), linewidth=0.5), zs=None)
+            sec = list(zip(gv, [L] * len(gv), z)) + [(gv[-1], L, BASE), (gv[0], L, BASE)]
+            ax.add_collection3d(Poly3DCollection([sec], facecolor=(*col, 0.22), edgecolor="none"), zs=None)
+            ax.plot(gv, [L] * len(gv), z, color=L_COL[L], lw=1.2 if small else 2.4, zorder=6)
+            for v in range(5):
+                c = col_n.get((v, L), 0)
+                if not c:
+                    continue
+                zt, _ = height(cell, np.array(v, float), np.array(L, float))
+                ax.scatter([v], [L], [float(zt)], s=5 if small else 16, c=L_COL[L], edgecolors="white",
+                           linewidths=0.7, depthshade=False, zorder=20)
+                ax.text(v, L, float(zt) + (0.28 if small else 0.32), str(c), fontsize=5.5 if small else 8.5,
+                        color=INK, ha="center", fontweight="bold", zorder=21)
     # strong-verification zone on the plain
     ax.plot([2.5, 2.5], [LY[0], LY[1]], [BASE, BASE], color=ACC, lw=0.7, ls="--", zorder=2)
     if not small:
@@ -110,22 +122,25 @@ def surface_axes(ax, pts, small=False):
     ax.view_init(elev=24, azim=-57)
 
 
-FOOT = ("山体 = (V, L) 平面上的连续曲面：海拔为该处实际达到的最高问题开放度 O，用保形插值（PCHIP）连续化，不超出数据；"
-        "山体颜色由浅到深 = 平滑后的论文密度。\n四个颜色平面沿右轴在 L0–L3 处切开山体，切线即该自主性等级的山脊；"
-        "交点数字 = 该 (V, L) 组合的论文数；红色虚线以右为强验证（V3–V4）· 快照 2026-11-01")
+FOOT = ("散点 = 三维坐标系中每个 (V, L, O) 组合，点面积 ∝ 论文数，颜色 = 自主性等级；山体 = 穿过全部散点的高斯光滑曲面"
+        "（按论文数加权的高斯核回归，σ = 0.55 级），海拔为问题开放度 O；\n虚线 = 散点到曲面的偏离；白色等高线为 O1–O6；"
+        "远离数据处曲面回落到平原；红色虚线以右为强验证（V3–V4）· 快照 2026-11-01")
+FOOT_CUT = ("山体 = 穿过全部 (V, L, O) 散点的高斯光滑曲面（按论文数加权的高斯核回归，σ = 0.55 级），海拔为问题开放度 O；\n"
+            "四个颜色平面沿右轴在 L0–L3 处切开山体；交点数字 = 该 (V, L) 组合的论文数；红色虚线以右为强验证（V3–V4）"
+            "· 快照 2026-11-01")
 
 
-def figure(pts, name, title, sub):
+def figure(pts, name, title, sub, cut=False):
     fig = plt.figure(figsize=(10.5, 8.6), facecolor="white")
     ax = fig.add_axes([0.0, 0.07, 1.0, 0.84], projection="3d", computed_zorder=False)
-    surface_axes(ax, pts)
+    surface_axes(ax, pts, cut=cut)
     ax.set_xlabel("验证强度 V", labelpad=14); ax.set_ylabel("系统自主性 L", labelpad=8)
     ax.set_zlabel("问题开放度 O（海拔）", labelpad=18)
     n_s = sum(v >= 3 for _, v, _, _ in pts)
     fig.text(0.06, 0.955, title, fontsize=16, fontweight="bold", color=INK)
     fig.text(0.06, 0.925, f"{sub}　·　{len(pts)} 篇，强验证（V3–V4）{n_s} 篇（{100 * n_s / len(pts):.0f}%）",
              fontsize=9, color=MUTED)
-    fig.text(0.06, 0.02, FOOT, fontsize=7.2, color=MUTED, linespacing=1.6)
+    fig.text(0.06, 0.02, FOOT_CUT if cut else FOOT, fontsize=7.2, color=MUTED, linespacing=1.6)
     for k, L in enumerate((3, 2, 1, 0)):
         nL = sum(L == l for _, _, l, _ in pts)
         st = sum(L == l and v >= 3 for _, v, l, _ in pts)
@@ -145,8 +160,8 @@ def fields_sheet(pts, fields):
                      fontweight="bold", pad=-12)
     fig.subplots_adjust(left=0.0, right=1.0, top=0.9, bottom=0.05, wspace=0.0, hspace=0.06)
     fig.text(0.03, 0.955, "问题开放度 × 验证强度 × 系统自主性：按学科的山体", fontsize=15, fontweight="bold", color=INK)
-    fig.text(0.03, 0.928, "山体海拔 = 各 (V, L) 实际达到的最高开放度 O；颜色深浅 = 论文密度；四个颜色平面在 L0–L3 处切开山体，"
-             "交点数字为该 (V, L) 组合的论文数；跨学科论文在每个所属学科各计一次。", fontsize=9, color=MUTED)
+    fig.text(0.03, 0.928, "散点 = 各 (V, L, O) 组合（面积 ∝ 论文数，颜色 = 自主性）；山体 = 穿过全部散点的高斯光滑曲面，海拔为开放度 O；"
+             "数字为较大组合的论文数；跨学科论文在每个所属学科各计一次。", fontsize=9, color=MUTED)
     fig.text(0.03, 0.02, f"{len(pts)} 篇核心论文，{sum(len(s) for _, s in sets[1:])} 个论文—学科归属 · 快照 2026-11-01",
              fontsize=8, color=MUTED)
     for k, L in enumerate((0, 1, 2, 3)):
@@ -173,6 +188,7 @@ def write_counts(pts, fields):
 if __name__ == "__main__":
     pts = load()
     figure(pts, "fig_ovl_surface", "问题开放度 × 验证强度 × 系统自主性", "全部核心论文")
+    figure(pts, "fig_ovl_surface_cut", "问题开放度 × 验证强度 × 系统自主性：自主性切面", "全部核心论文", cut=True)
     if "--all" in sys.argv:
         fields = {c["paper_id"]: set(c["fields"]) for c in S.papercards()}
         for f in S.FIELDS:

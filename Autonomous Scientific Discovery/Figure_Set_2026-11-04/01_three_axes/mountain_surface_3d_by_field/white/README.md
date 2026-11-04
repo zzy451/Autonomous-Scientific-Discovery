@@ -20,7 +20,7 @@ White background.
 - `ovl_cube_counts.csv`
 
 ## Caption
-The same mountain and cuts for each field 01–11, one figure per field. A cross-field paper counts in every field it belongs to (935 paper–field assignments).
+The same surface and scatter for each field 01–11, one figure per field. A cross-field paper counts in every field it belongs to (935 paper–field assignments).
 
 ## Regenerate
 ```bash

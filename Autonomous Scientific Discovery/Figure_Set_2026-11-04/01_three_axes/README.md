@@ -16,5 +16,5 @@ L3 has only 12 papers. V is self-reported in the papers; L0–L3 is operationali
 ## Presentation forms
 
 - `curtains_3d/`: Autonomy curtains (3D) (1 version)
-- `mountain_surface_3d/`: One mountain, four autonomy cuts: openness × verification × autonomy (3D) (1 version)
+- `mountain_surface_3d/`: One mountain through the 3D scatter: openness × verification × autonomy (1 version)
 - `mountain_surface_3d_by_field/`: The mountain for each field (3D) (1 version)
