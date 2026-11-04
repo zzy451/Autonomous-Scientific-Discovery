@@ -6,7 +6,7 @@ Figures for *From Computable Tasks to Open Science: A Chronicle of AI Problem So
 
 | Content | Forms | Verdict on the proposal claim |
 |---|---|---|
-| `01_three_axes/` The three axes: openness × verification × autonomy | `curtains_3d`, `mountain_3d`, `mountain_3d_by_field` | Axes separate cleanly; the opposition holds only from L2 to L3 |
+| `01_three_axes/` The three axes: openness × verification × autonomy | `curtains_3d`, `mountain_surface_3d`, `mountain_surface_3d_by_field` | Axes separate cleanly; the opposition holds only from L2 to L3 |
 | `02_cross_domain_structure/` Cross-domain structure | `atlas_ring`, `wormhole_45`, `chord`, `upset`, `pair_matrix` | Descriptive |
 | `03_problem_leaderboard/` Problem leaderboard | `poster`, `interactive_html` | Hard material, every row linked |
 | `04_growth/` Growth of scientific agents | `tree_rings`, `strata_overview` | Supported |
@@ -29,9 +29,9 @@ Figures for *From Computable Tasks to Open Science: A Chronicle of AI Problem So
 01_three_axes/
   curtains_3d/
     white/
-  mountain_3d/
+  mountain_surface_3d/
     white/
-  mountain_3d_by_field/
+  mountain_surface_3d_by_field/
     white/
 02_cross_domain_structure/
   atlas_ring/

@@ -42,7 +42,7 @@ TREE = [
          analysis="Strong verification (V3–V4) by autonomy is 1% at L1 (2/179), 31% at L2 (144/471) and 25% at L3 "
                   "(3/12; 95% CI 9–53%). It falls from L2 to L3, as the proposal says, but task assistants (L1) are "
                   "the least verified, so over the whole corpus autonomy and verification are positively related "
-                  "(Spearman ρ = 0.37). In the mountain cross-sections, 662 papers occupy 33 of the 120 (O, V, L) cells. The largest is "
+                  "(Spearman ρ = 0.37). On the mountain, 662 papers occupy 33 of the 120 (O, V, L) cells. The largest is "
                   "O3·V2·L2 (178), and the strong cells are O4·V3·L2 (81) and O3·V3·L2 (54); O2 benchmark problems "
                   "almost never reach strong verification (1/185). By field, the strong share runs from 0% (social and "
                   "knowledge systems) and 6% (formal and computational) to 36% (chemistry), 40% (materials) and 44% "
@@ -56,23 +56,23 @@ TREE = [
                   "with strong verification (V3–V4); a dashed line joins the ★ points across walls.",
                   "fig_axes3d.py (matplotlib mplot3d), from ov_coding/increment/classification_results_662.jsonl.",
                   ["fig_axes3d.py"], ["fig_axes3d_curtains"], "python3 fig_axes3d.py"),
-             form("mountain_3d", "Mountain cross-sections: openness × verification × autonomy (3D)",
-                  "The proposal's three-way classification as a mountain cut along its right-hand axis. Each "
-                  "autonomy level (L0–L3, the axis with the fewest classes) is one translucent wall. On a wall, the "
-                  "horizontal axis is verification strength V0–V4 and the altitude is problem openness O1–O6. The "
-                  "wall's papers are smoothed into strata (darker bands mean 0.5, 2, 5, 10, 20, 40, 80 and 160 papers), "
-                  "and the ridge line is the highest openness actually reached at each verification strength. Peaks "
-                  "carry the paper count of their (O, V, L) cell, and the floor right of the dashed line is strong "
-                  "verification (V3–V4). The sheet repeats the cut for all papers and for each of the 11 fields.",
-                  "fig_ovl_mountain.py (matplotlib mplot3d; Gaussian smoothing σ = 0.36 class steps; monotone PCHIP "
-                  "ridge); every count is in derived/ovl_cube_counts.csv.",
-                  ["fig_ovl_mountain.py"], ["fig_ovl_mountain", "fig_ovl_mountain_fields"],
-                  "python3 fig_ovl_mountain.py --all", extra=["derived/ovl_cube_counts.csv"]),
-             form("mountain_3d_by_field", "Mountain cross-sections for each field (3D)",
-                  "The same mountain cut for each field 01–11, one figure per field. A cross-field paper counts in "
-                  "every field it belongs to (935 paper–field assignments).",
-                  "fig_ovl_mountain.py.", ["fig_ovl_mountain.py"], [f"fig_ovl_mountain_f{i:02d}" for i in range(1, 12)],
-                  "python3 fig_ovl_mountain.py --all", extra=["derived/ovl_cube_counts.csv"]),
+             form("mountain_surface_3d", "One mountain, four autonomy cuts: openness × verification × autonomy (3D)",
+                  "The proposal's three-way classification as one continuous mountain. The surface spans verification "
+                  "V0–V4 (front) × autonomy L0–L3 (right); its altitude is problem openness, the highest O1–O6 actually "
+                  "reached at each (V, L), joined by shape-preserving PCHIP interpolation so it never overshoots the "
+                  "data. Surface colour is the Gaussian-smoothed paper density. Four coloured planes cut the mountain "
+                  "along the right-hand axis at L0–L3; each cut is that level's ridge, and the number where a cut meets "
+                  "a verification class is the paper count of that (V, L) combination. The floor right of the dashed "
+                  "line is strong verification (V3–V4). The sheet repeats the mountain for all papers and each field.",
+                  "fig_ovl_surface.py (matplotlib mplot3d; scipy PCHIP on the (V, L) lattice; density σ = 0.4 class "
+                  "steps); every count is in derived/ovl_cube_counts.csv.",
+                  ["fig_ovl_surface.py"], ["fig_ovl_surface", "fig_ovl_surface_fields"],
+                  "python3 fig_ovl_surface.py --all", extra=["derived/ovl_cube_counts.csv"]),
+             form("mountain_surface_3d_by_field", "The mountain for each field (3D)",
+                  "The same mountain and cuts for each field 01–11, one figure per field. A cross-field paper counts "
+                  "in every field it belongs to (935 paper–field assignments).",
+                  "fig_ovl_surface.py.", ["fig_ovl_surface.py"], [f"fig_ovl_surface_f{i:02d}" for i in range(1, 12)],
+                  "python3 fig_ovl_surface.py --all", extra=["derived/ovl_cube_counts.csv"]),
          ]),
     dict(folder="02_cross_domain_structure", title="Cross-domain structure",
          claim="Each paper's scientific-object classification is archived and may span several fields, under a "

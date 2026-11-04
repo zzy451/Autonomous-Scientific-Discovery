@@ -1,4 +1,4 @@
-"""Autonomy x verification in 3D (the three-way O x V x L classification is fig_ovl_mountain.py),
+"""Autonomy x verification in 3D (the three-way O x V x L classification is fig_ovl_surface.py),
 from the coded increment (ov_coding/increment/classification_results_662.jsonl). Light background only.
 
   fig_axes3d_curtains : one translucent wall per autonomy level; on each, the share of that level's papers
