@@ -1,0 +1,52 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;background:#F4F1EA;color:#1F2A36;font-family:"HFSans",sans-serif;overflow:hidden;}
+#root .tag{position:absolute;left:150px;top:96px;font:700 28px "HFSans";letter-spacing:4px;color:#8A6A2F;}
+#root .h{position:absolute;left:150px;top:140px;right:150px;font:900 64px/1.25 "HFSerif";color:#1F2A36;}
+#root .abs{position:absolute;}
+#root .prog{position:absolute;left:0;top:0;width:1920px;height:6px;background:#8A6A2F;}
+#root .mono{font-family:"JetBrains Mono",monospace;}
+
+#s01-k{left:150px;top:250px;font:700 30px "HFSans";letter-spacing:8px;color:#8A6A2F;}
+#s01-t1{left:150px;top:310px;font:900 104px/1.15 "HFSerif";}
+#s01-t2{left:150px;top:440px;font:900 104px/1.15 "HFSerif";color:#2E4057;}
+#s01-rule{left:150px;top:600px;width:900px;height:4px;background:#1F2A36;}
+#s01-en{left:150px;top:630px;font:400 30px "HFSans";color:#546A86;}
+#s01-by{left:150px;top:680px;font:400 28px "HFSans";color:#546A86;}
+#s01-q{left:150px;top:800px;font:700 48px "HFSerif";color:#B23A3A;}
+</style>
+  <div id="root" data-composition-id="s01" data-width="1920" data-height="1080">
+
+<div id="s01-k" class="abs">研究提案解读</div>
+<div id="s01-t1" class="abs">从可计算任务到开放科学</div>
+<div id="s01-t2" class="abs">人工智能解题编年史</div>
+<div id="s01-rule" class="abs"></div>
+<div id="s01-en" class="abs">From Computable Tasks to Open Science: A Chronicle of AI Problem Solving</div>
+<div id="s01-by" class="abs">Zhe Zhao · 2026 年 9 月</div>
+<div id="s01-q" class="abs">AI 究竟真正解决了哪些科学问题？</div>
+
+    <div id="s01-prog" class="prog"></div>
+    <div id="s01-out" class="abs" style="inset:0;background:#F4F1EA;opacity:0"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const C = [0.5, 1.65, 8.6], END = 17.37;
+    const IN = (s, t, y = 24) => tl.fromTo(s, {opacity:0, y}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, t);
+    const NUM = (s, to, t, d = 1.2, suf = "") => { const o = {v:0};
+      tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out",
+        onUpdate:() => { document.querySelector(s).textContent = Math.round(o.v) + suf; }}, t); };
+    const GROW = (s, t, d = 0.9, origin = "left center") => tl.fromTo(s, {scaleX:0, transformOrigin:origin}, {scaleX:1, duration:d, ease:"power3.inOut"}, t);
+
+ IN("#s01-t2",C[1]+0.8,40); GROW("#s01-rule",C[1]+1.6,1.2);
+IN("#s01-en",C[1]+2.4); IN("#s01-by",C[1]+2.8); IN("#s01-q",C[2]+2.5);
+
+    tl.fromTo("#s01-prog", {scaleX:0, transformOrigin:"left center"}, {scaleX:1, duration:END, ease:"none"}, 0);
+    tl.fromTo("#s01-out", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.in"}, END - 0.4);
+    window.__timelines["s01"] = tl;
+  </script>
+</template>

@@ -1,0 +1,57 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;background:#F4F1EA;color:#1F2A36;font-family:"HFSans",sans-serif;overflow:hidden;}
+#root .tag{position:absolute;left:150px;top:96px;font:700 28px "HFSans";letter-spacing:4px;color:#8A6A2F;}
+#root .h{position:absolute;left:150px;top:140px;right:150px;font:900 64px/1.25 "HFSerif";color:#1F2A36;}
+#root .abs{position:absolute;}
+#root .prog{position:absolute;left:0;top:0;width:1920px;height:6px;background:#8A6A2F;}
+#root .mono{font-family:"JetBrains Mono",monospace;}
+
+#root .big{top:300px;font:900 150px/1 "HFSerif";}
+#root .bl{top:470px;font:700 32px "HFSans";color:#546A86;}
+#s10-a{left:150px;color:#546A86;} #s10-al{left:150px;}
+#s10-b{left:720px;color:#2E4057;} #s10-bl{left:720px;}
+#s10-c{left:1230px;color:#B23A3A;} #s10-cl{left:1230px;}
+#root .ar{top:330px;font:900 80px "HFSerif";color:#546A86;}
+#s10-src{left:150px;top:590px;width:1620px;font:400 30px/1.7 "HFSans";color:#1F2A36;}
+#s10-f{left:150px;top:780px;width:1620px;font:700 30px/1.8 "HFSans";color:#2E4057;}
+</style>
+  <div id="root" data-composition-id="s10" data-width="1920" data-height="1080">
+
+<div class="tag" id="s10-tag">03 · 已完成</div>
+<div class="h" id="s10-h">调研的基础工作已经完成</div>
+<div class="abs big" id="s10-a">0</div><div class="abs bl" id="s10-al">条记录</div>
+<div class="abs ar" id="s10-r1" style="left:560px">→</div>
+<div class="abs big" id="s10-b">0</div><div class="abs bl" id="s10-bl">个案例完成三轴编码</div>
+<div class="abs ar" id="s10-r2" style="left:1070px">→</div>
+<div class="abs big" id="s10-c">0</div><div class="abs bl" id="s10-cl">个领域</div>
+<div id="s10-src" class="abs">来源：陶哲轩 · AI 对埃尔德什问题的贡献表（至 2026.6）<br>Wu, Fu, Cong &amp; Wang · Awesome-Agentic-Labs　·　1956–2026 里程碑合集</div>
+<div id="s10-f" class="abs">博弈 · 感知与语言 · 计算与算法 · 数学 · 物理与天文 · 地球与气候 · 化学 · 材料 · 生物与蛋白质 · 医学 · 工程与控制 · 科研过程本身</div>
+
+    <div id="s10-prog" class="prog"></div>
+    <div id="s10-out" class="abs" style="inset:0;background:#F4F1EA;opacity:0"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const C = [0.5, 16.1], END = 27.74;
+    const IN = (s, t, y = 24) => tl.fromTo(s, {opacity:0, y}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, t);
+    const NUM = (s, to, t, d = 1.2, suf = "") => { const o = {v:0};
+      tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out",
+        onUpdate:() => { document.querySelector(s).textContent = Math.round(o.v) + suf; }}, t); };
+    const GROW = (s, t, d = 0.9, origin = "left center") => tl.fromTo(s, {scaleX:0, transformOrigin:origin}, {scaleX:1, duration:d, ease:"power3.inOut"}, t);
+
+IN("#s10-tag",0.2); IN("#s10-h",0.4);
+IN("#s10-a",C[0]+5); NUM("#s10-a",974,C[0]+5,1.6); IN("#s10-al",C[0]+5.4); IN("#s10-src",C[0]+7.5);
+IN("#s10-r1",C[1],0); IN("#s10-b",C[1]+0.3); NUM("#s10-b",84,C[1]+0.3); IN("#s10-bl",C[1]+0.6);
+IN("#s10-r2",C[1]+4,0); IN("#s10-c",C[1]+4.3); NUM("#s10-c",12,C[1]+4.3,0.8); IN("#s10-cl",C[1]+4.6); IN("#s10-f",C[1]+5);
+
+    tl.fromTo("#s10-prog", {scaleX:0, transformOrigin:"left center"}, {scaleX:1, duration:END, ease:"none"}, 0);
+    tl.fromTo("#s10-out", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.in"}, END - 0.4);
+    window.__timelines["s10"] = tl;
+  </script>
+</template>

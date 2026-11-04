@@ -1,0 +1,74 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;background:#F4F1EA;color:#1F2A36;font-family:"HFSans",sans-serif;overflow:hidden;}
+#root .tag{position:absolute;left:150px;top:96px;font:700 28px "HFSans";letter-spacing:4px;color:#8A6A2F;}
+#root .h{position:absolute;left:150px;top:140px;right:150px;font:900 64px/1.25 "HFSerif";color:#1F2A36;}
+#root .abs{position:absolute;}
+#root .prog{position:absolute;left:0;top:0;width:1920px;height:6px;background:#8A6A2F;}
+#root .mono{font-family:"JetBrains Mono",monospace;}
+
+#s05-yax{left:340px;top:250px;width:4px;height:600px;background:#1F2A36;}
+#s05-xax{left:340px;top:846px;width:1000px;height:4px;background:#1F2A36;}
+#root .ol{left:90px;width:230px;white-space:nowrap;text-align:right;font:700 30px "HFSans";color:#2E4057;}
+#root .vl{top:868px;width:200px;margin-left:-100px;text-align:center;font:700 30px "HFSans";color:#2E4057;}
+#s05-yt{left:150px;top:200px;font:900 36px "HFSerif";}
+#s05-xt{left:1360px;top:830px;font:900 36px "HFSerif";}
+#s05-desc{left:1100px;top:250px;width:680px;font:400 30px/1.6 "HFSans";color:#546A86;}
+#s05-auto{left:1100px;top:520px;width:680px;padding:22px 28px;border:3px solid #8A9BB0;font:700 30px/1.5 "HFSans";color:#8A9BB0;}
+#s05-dot{left:924px;top:384px;width:32px;height:32px;border-radius:50%;background:#B23A3A;}
+#s05-gx{left:938px;top:416px;width:4px;height:430px;border-left:3px dashed #B23A3A;}
+#s05-gy{left:344px;top:398px;width:580px;height:4px;border-top:3px dashed #B23A3A;}
+#s05-dl{left:720px;top:320px;font:900 40px "HFSerif";color:#B23A3A;}
+</style>
+  <div id="root" data-composition-id="s05" data-width="1920" data-height="1080">
+
+<div class="tag" id="s05-tag">02 · 意义</div>
+<div id="s05-yt" class="abs">问题开放度</div>
+<div id="s05-yax" class="abs"></div><div id="s05-xax" class="abs"></div>
+<div class="abs ol" id="s05-o1" style="top:780px">O1 规则世界</div>
+<div class="abs ol" id="s05-o2" style="top:680px">O2 既定基准</div>
+<div class="abs ol" id="s05-o3" style="top:580px">O3 新实例</div>
+<div class="abs ol" id="s05-o4" style="top:480px">O4 需物理检验</div>
+<div class="abs ol" id="s05-o5" style="top:380px">O5 开放数学</div>
+<div class="abs ol" id="s05-o6" style="top:280px">O6 开放科学</div>
+<div id="s05-xt" class="abs">验证强度</div>
+<div class="abs vl" id="s05-v0" style="left:440px">V0 声明</div>
+<div class="abs vl" id="s05-v1" style="left:640px">V1</div>
+<div class="abs vl" id="s05-v2" style="left:790px">V2</div>
+<div class="abs vl" id="s05-v3" style="left:940px">V3</div>
+<div class="abs vl" id="s05-v4" style="left:1140px">V4 证明/复现</div>
+<div id="s05-desc" class="abs">开放度：从问题陈述读出<br>验证强度：形式化证明、物理实验<br>或第三方复现，才算强验证</div>
+<div id="s05-auto" class="abs">第三条轴 · 系统自主性 L0–L3<br>保留，但不再代替“解决程度”</div>
+<div id="s05-gx" class="abs"></div><div id="s05-gy" class="abs"></div>
+<div id="s05-dot" class="abs"></div><div id="s05-dl" class="abs">(V3, O5)</div>
+
+    <div id="s05-prog" class="prog"></div>
+    <div id="s05-out" class="abs" style="inset:0;background:#F4F1EA;opacity:0"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const C = [0.5, 4.8, 16.34, 25.87, 31.02], END = 35.97;
+    const IN = (s, t, y = 24) => tl.fromTo(s, {opacity:0, y}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, t);
+    const NUM = (s, to, t, d = 1.2, suf = "") => { const o = {v:0};
+      tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out",
+        onUpdate:() => { document.querySelector(s).textContent = Math.round(o.v) + suf; }}, t); };
+    const GROW = (s, t, d = 0.9, origin = "left center") => tl.fromTo(s, {scaleX:0, transformOrigin:origin}, {scaleX:1, duration:d, ease:"power3.inOut"}, t);
+
+IN("#s05-tag",0.2);
+tl.fromTo("#s05-yax",{scaleY:0,transformOrigin:"center bottom"},{scaleY:1,duration:1,ease:"power3.inOut"},C[1]);
+IN("#s05-yt",C[1]+0.5); ["o1","o2","o3","o4","o5","o6"].forEach((k,i)=>IN("#s05-"+k,C[1]+2.5+i*1.2,0));
+GROW("#s05-xax",C[2]); IN("#s05-xt",C[2]+0.6); ["v0","v1","v2","v3","v4"].forEach((k,i)=>IN("#s05-"+k,C[2]+2+i*1.1,0));
+IN("#s05-desc",C[2]+5); IN("#s05-auto",C[3]);
+tl.fromTo("#s05-gx",{scaleY:0,transformOrigin:"center bottom"},{scaleY:1,duration:0.6},C[4]);
+GROW("#s05-gy",C[4]); tl.fromTo("#s05-dot",{scale:0},{scale:1,duration:0.5,ease:"back.out(3)"},C[4]+0.7); IN("#s05-dl",C[4]+1);
+
+    tl.fromTo("#s05-prog", {scaleX:0, transformOrigin:"left center"}, {scaleX:1, duration:END, ease:"none"}, 0);
+    tl.fromTo("#s05-out", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.in"}, END - 0.4);
+    window.__timelines["s05"] = tl;
+  </script>
+</template>

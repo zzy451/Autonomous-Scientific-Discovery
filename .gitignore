@@ -132,6 +132,7 @@ Reference_PDF/**/*.pdf
 /Autonomous Scientific Discovery/Reference_PDF/_Manual_Inbox/
 !Autonomous Scientific Discovery/Manuscript/figures/*.pdf
 !Autonomous Scientific Discovery/Manuscript/Definitions/*.pdf
+!Autonomous Scientific Discovery/Figure_Set_2026-11-04/**/*.pdf
 
 # Audited bibliography inputs required for regeneration.
 # Current evidence package and its explicit regeneration dependencies.

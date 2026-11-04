@@ -1,0 +1,61 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;background:#F4F1EA;color:#1F2A36;font-family:"HFSans",sans-serif;overflow:hidden;}
+#root .tag{position:absolute;left:150px;top:96px;font:700 28px "HFSans";letter-spacing:4px;color:#8A6A2F;}
+#root .h{position:absolute;left:150px;top:140px;right:150px;font:900 64px/1.25 "HFSerif";color:#1F2A36;}
+#root .abs{position:absolute;}
+#root .prog{position:absolute;left:0;top:0;width:1920px;height:6px;background:#8A6A2F;}
+#root .mono{font-family:"JetBrains Mono",monospace;}
+
+#s09-vp{left:50px;top:150px;width:1820px;height:788px;overflow:hidden;}
+#s09-cam{position:absolute;left:0;top:0;width:1820px;height:788px;}
+#s09-img{position:absolute;left:0;top:0;width:1820px;height:788px;}
+#root .hl{position:absolute;border:5px solid #B23A3A;}
+#s09-hx{left:0;top:665px;width:1820px;height:60px;}
+#s09-hy{left:0;top:180px;width:200px;height:400px;}
+#s09-ht{left:300px;top:85px;width:1520px;height:50px;}
+#s09-cap{left:150px;top:70px;font:900 46px "HFSerif";}
+</style>
+  <div id="root" data-composition-id="s09" data-width="1920" data-height="1080">
+
+<div id="s09-cap" class="abs">主图 · AI 已解决问题的前沿版图</div>
+<div id="s09-vp" class="abs" data-layout-allow-overflow>
+  <div id="s09-cam">
+    <img id="s09-img" src="assets/fig1.png" alt="The expanding frontier of AI-solved problems">
+    <div class="hl" id="s09-hx"></div><div class="hl" id="s09-hy"></div><div class="hl" id="s09-ht"></div>
+  </div>
+</div>
+
+    <div id="s09-prog" class="prog"></div>
+    <div id="s09-out" class="abs" style="inset:0;background:#F4F1EA;opacity:0"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const C = [0.5, 5.19, 9.12, 17.47, 20.15], END = 34.55;
+    const IN = (s, t, y = 24) => tl.fromTo(s, {opacity:0, y}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, t);
+    const NUM = (s, to, t, d = 1.2, suf = "") => { const o = {v:0};
+      tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out",
+        onUpdate:() => { document.querySelector(s).textContent = Math.round(o.v) + suf; }}, t); };
+    const GROW = (s, t, d = 0.9, origin = "left center") => tl.fromTo(s, {scaleX:0, transformOrigin:origin}, {scaleX:1, duration:d, ease:"power3.inOut"}, t);
+
+IN("#s09-cap",0.2); tl.fromTo("#s09-vp",{opacity:0},{opacity:1,duration:1.2,ease:"power2.out"},0.4);
+const HL=(s,a,b)=>{tl.fromTo(s,{opacity:0},{opacity:1,duration:0.3},a); tl.to(s,{opacity:0,duration:0.3},b);};
+const CAM=(sc,x0,y0,t,d)=>tl.to("#s09-cam",{scale:sc,x:-x0*sc,y:-y0*sc,transformOrigin:"0px 0px",duration:d,ease:"power2.inOut"},t);
+HL("#s09-hx",C[1]+0.3,C[1]+2.2); HL("#s09-hy",C[1]+2.3,C[2]);
+CAM(1.6,380,120,C[2]+0.5,1.6);
+CAM(1,0,0,C[3],1.0);
+CAM(2.2,280,40,C[4],1.8);
+tl.fromTo("#s09-ht",{opacity:0},{opacity:1,duration:0.4},C[4]+1.8);
+tl.to("#s09-cam",{x:-993*2.2,duration:8.2,ease:"none"},C[4]+3);
+CAM(1,0,0,END-2.6,1.4);
+
+    tl.fromTo("#s09-prog", {scaleX:0, transformOrigin:"left center"}, {scaleX:1, duration:END, ease:"none"}, 0);
+    tl.fromTo("#s09-out", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.in"}, END - 0.4);
+    window.__timelines["s09"] = tl;
+  </script>
+</template>
