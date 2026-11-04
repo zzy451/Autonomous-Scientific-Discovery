@@ -270,3 +270,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/04_Materials_Science/Nigam_2026_Autonomous_Polymer_Informatics.pdf; PDF p.1; Autonomous Multi-Agent AI for High-Throughput Polymer Informatics: From Property Prediction to Generative Design Across Synthetic and Bio-Polymers Mahule Roy Institute of Biomedical Engineering University of Oxford Oxford OX1 2JD, UK Adib Bazgir Department of Mechanical and Aerospace Engineering University of Missouri–Columbia Columbia, MO 65211, USA Arthur da Silva Sousa Santos Center for Engineering, Modeling and Applied Social Sciences Federal University of ABC (UFABC) Bang´u, Santo Andr´e - SP, 09280-560, Brazil Yuwen Zhang∗ Department of Mechanical and Aerospace Engineering University of Missouri–Columbia Columbia, MO 65211, USA Abstract We present an integrated multiagent AI ecosystem 。
 - 判定：polymer informatics and synthetic/bio-polymer design
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在固定聚合物数据集上执行性质预测和筛选 | “1,251 polymers held-out test” · L189 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过计算仿真和基准评测验证 | “仿真验证：是” · L179 |
+| 系统自主性 | L2 闭环执行者 | 系统自主串联预测生成和筛选闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

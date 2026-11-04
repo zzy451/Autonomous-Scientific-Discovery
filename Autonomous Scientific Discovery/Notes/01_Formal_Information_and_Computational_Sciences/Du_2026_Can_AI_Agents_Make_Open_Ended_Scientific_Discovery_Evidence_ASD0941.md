@@ -151,3 +151,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 从三篇ICLR论文构造任务，隐藏结果但问题由人给定 | “three recent oral papers presented at ICLR” · L42 |
+| 验证强度 | V1 基准/内部评测 | 评估Agent是否恢复论文发现，属基准评测和消融分析 | “how many of the original findings” · L36 |
+| 系统自主性 | L2 闭环执行者 | 多Agent在开放环境中持续探索并由Supervisor监督形成闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

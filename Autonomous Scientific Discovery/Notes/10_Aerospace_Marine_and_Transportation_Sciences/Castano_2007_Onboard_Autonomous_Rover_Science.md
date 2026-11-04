@@ -162,3 +162,17 @@ first_hand_source_checked：official JPL PDF checked locally: Reference_PDF/10_A
 source_limited：no
 confidence：high
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | rover遍历中目标选择可由任务标准评估 | “系统实现 closed-loop opportunistic detection and reaction” · L112 |
+| 验证强度 | V2 计算/仿真/回顾性 | 硬件演示与仿真验证 | “文章重点仍是 autonomy capability demonstration” · L123 |
+| 系统自主性 | L2 闭环执行者 | rover自主发现、排序并跟进科学目标 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

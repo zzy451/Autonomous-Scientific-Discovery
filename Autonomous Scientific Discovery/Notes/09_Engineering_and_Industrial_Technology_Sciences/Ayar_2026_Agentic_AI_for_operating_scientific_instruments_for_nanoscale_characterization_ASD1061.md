@@ -152,3 +152,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | AFM成像参数调优在预定义图像质量指标下评估 | “image quality, iteration count, and tuning time” · L25 |
+| 验证强度 | V1 基准/内部评测 | 与专家操作比较图像质量等指标，未报告核心科学发现的物理检验 | “matched expert operators in image quality” · L25 |
+| 系统自主性 | L2 闭环执行者 | Agent自主评估图像并调整参数闭环，人定义实验意图 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

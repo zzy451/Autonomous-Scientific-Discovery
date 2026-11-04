@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 - 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Schaefer_2026_Agentic_Flowsheet_Process_Design.pdf; PDF p.8; commented full-flowsheet examples - specifically, Chemasim implementations of the processes presented by Luyben as mentioned above - to demonstrate the interconnection of multiple unit operations within a complete process model.。
 - 判定：model-based process design in flowsheet simulation
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 流程图仿真建模，答案可由rigorous simulation验证 | “从 process reasoning 到 rigorous simulation” · L179 |
+| 验证强度 | V2 计算/仿真/回顾性 | 仿真验证，agent输出与mass-balance estimates一致 | “rigorous simulation 与 mass-balance estimates 一致” · L182 |
+| 系统自主性 | L2 闭环执行者 | 双agent框架自主完成从过程推理到模型实现 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

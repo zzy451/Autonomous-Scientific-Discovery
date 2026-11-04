@@ -266,3 +266,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：普通引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在toy ML research problem上生成并验证假设，属固定实验设置 | “toy machine learning research problem，50 trials” · L194 |
+| 验证强度 | V1 基准/内部评测 | 验证为初步能力测试，toy benchmark加主观评估 | “toy benchmark + subjective evaluation” · L208 |
+| 系统自主性 | L1 任务助手 | 生成假设和验证代码，但研究问题由人给定，错误修复最多一次 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：low；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：低置信度；需全文复核

@@ -163,3 +163,17 @@ fulltext_followup_required=false
   - 位置：PDF p.3 Algorithm 1 / decision agent; p.1 five chronic diseases; p.5 evaluation / gold standard；来源：https://doi.org/10.1038/s44401-026-00117-9
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 从医学语料抽取概念并映射到既有本体 | “including stroke, chronic obstructive pulmonary disease” · L21 |
+| 验证强度 | V2 计算/仿真/回顾性 | 人工标注金标准比较和OWL结构验证 | “manual review of MedlinePlus content” · L24 |
+| 系统自主性 | L1 任务助手 | 协调五Agent完成抽取映射和脚本生成 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

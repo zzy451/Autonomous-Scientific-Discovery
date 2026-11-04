@@ -172,3 +172,16 @@ A self-driving metasurface discovery system that belongs primarily in materials 
 - Kept `source_limited: no`
 - Restored a fuller structured note while preserving the corrected multi-module reasoning
 
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O6 开放科学 | 发现超越传统傅里叶光学的自发辐射调控新原理 | “discovers principles for steering spontaneous emission” · L1 |
+| 验证强度 | V3 物理实验 | 闭环实验验证发现的物理原理 | “direct closed-loop experimental evidence” · L43 |
+| 系统自主性 | L2 闭环执行者 | 自主驱动实验室在实时反馈下优化并发现原理 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

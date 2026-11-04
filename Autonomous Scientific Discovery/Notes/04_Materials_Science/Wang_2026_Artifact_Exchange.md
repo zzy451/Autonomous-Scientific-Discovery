@@ -260,3 +260,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 - 原文位置：Reference_PDF/04_Materials_Science/Wang_2026_Artifact_Exchange.pdf; PDF p.1; Across four autonomous investigations, peptide design for the somatostatin receptor SSTR2, lightweight impact-resistant ceramic screening, cross-domain resonance bridging biology, materials, and music, and formal analogy construction between urban morphology and grain-boundary evolution.。
 - 判定：distributed discovery through artifact exchange; materials filing appears legacy, object-level evidence limited
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 产生需要物理实验检验的新肽、陶瓷和材料候选 | “SSTR2 肽设计、轻质抗冲击陶瓷筛选” · L52 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过计算验证和案例演示但未报告湿实验 | “计算验证：是” · L174 |
+| 系统自主性 | L2 闭环执行者 | 系统在人设定目标内自主规划多步artifact交换闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -271,3 +271,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：中-高
 推荐引用强度：核心引用；full-text follow-up open
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 空间生物学数据分析和tissue niche annotation等可计算验证的任务 | “空间数据分析、tissue niche annotation” · L200 |
+| 验证强度 | V1 基准/内部评测 | 摘要称与人类科学家比较，但细节待全文 | “abstract+metadata + official repository” · L213 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成实验设计、数据分析和假设生成流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：双编码不一致（验证强度）；需全文复核

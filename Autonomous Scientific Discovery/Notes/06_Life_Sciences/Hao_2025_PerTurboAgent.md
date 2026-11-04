@@ -250,3 +250,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：中
 推荐引用强度：普通引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 设计Perturb-seq实验选择候选基因，答案可由genome-scale数据验证 | “识别扰动后影响 gene expression 的 genes” · L179 |
+| 验证强度 | V2 计算/仿真/回顾性 | 基于genome-scale data benchmark验证 | “genome-scale data benchmark” · L189 |
+| 系统自主性 | L2 闭环执行者 | 系统自主分析数据、预测未观测扰动并优先选择下一轮实验 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

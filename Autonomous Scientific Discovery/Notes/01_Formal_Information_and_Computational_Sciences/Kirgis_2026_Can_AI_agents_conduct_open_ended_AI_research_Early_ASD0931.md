@@ -151,3 +151,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O6 开放科学 | Agent接收未发表论文的开放式研究问题并独立完成研究，答案事先未知 | “central, open-ended research question of a high-quality unpublished paper” · L21 |
+| 验证强度 | V1 基准/内部评测 | 由原论文作者评估Agent产出质量，无独立实验验证或正式发表 | “原创论文作者检查Agent产出” · L24 |
+| 系统自主性 | L2 闭环执行者 | Agent获得六天和数千美元资源在人给定问题内自主研究，但未达到自主提出问题 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -280,3 +280,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 - 原文位置：Reference_PDF/01_Formal_Information_and_Computational_Sciences/Liu_2026_AutoResearchClaw.pdf; PDF p.6; We introduce ARC-Bench, a 25-topic ML benchmark (ML01?ML25) spanning tabular ML, optimization, dimensionality reduction, NLP, AutoML, GP kernels, topic modeling, semi-supervised learning, dynamical systems, anomaly detection, feature selection, causal discovery, and learning-to-rank, together with a 20-topic scientific-domain extension covering 10 high-energy physics (P01?P10), 7 systems biology (B01?B07), and 3 statistics (S01?S03) tasks.。
 - 判定：general autonomous research collaboration; no stable object tertiary
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在ARC-Bench等预定义基准任务上评测自强化科研能力 | “ARC-Bench；HEP-ph extension；systems-biology extension” · L190 |
+| 验证强度 | V1 基准/内部评测 | 主要通过benchmark和部分专家评估验证，无真实物理或生物实验 | “是” · L43 |
+| 系统自主性 | L2 闭环执行者 | 系统结合多Agent辩论、自修复执行和跨轮次演化，在人给定任务内自主迭代 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

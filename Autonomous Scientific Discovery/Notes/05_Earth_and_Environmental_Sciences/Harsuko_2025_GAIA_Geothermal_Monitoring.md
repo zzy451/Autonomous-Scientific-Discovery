@@ -285,3 +285,17 @@ safety_access_status: accessed_no_safety_issue
 final_reason: Digital-twin tooling serves stable geothermal/geophysical objects, so 05 is the right top-level module.
 refresh_focus: stabilize as 05 and reject 09 drift
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 地热储层监测和断裂反演，结果可由地球物理分析工具验证 | “fracture inversion、phase picking、event location” · L198 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过RAG benchmark和地球物理子流程计算验证 | “在 RAG 评估中有明显提升” · L201 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成从地热场开发到储层监测的多步分析闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

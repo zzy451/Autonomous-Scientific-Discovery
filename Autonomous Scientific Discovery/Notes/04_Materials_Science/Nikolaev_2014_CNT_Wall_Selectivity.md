@@ -295,3 +295,17 @@ first_hand_source_summary: official ACS collection abstract checked; official AC
 confirmed_local_supporting_pdf: Reference_PDF/04_Materials_Science/Nikolaev_2014_CNT_Wall_Selectivity_Supplementary.pdf
 final_reason: Concrete object evidence supports a stable materials-science filing around CNT wall-selective growth conditions and automated CVD experimentation, but accessible first-hand evidence still leaves Agent strength somewhat borderline, so do not force-close as a high-confidence landing.
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | CNT选择性生长条件发现，结果可实验测量 | “CNT CVD growth conditions” · L206 |
+| 验证强度 | V2 计算/仿真/回顾性 | 摘要层面证据，主PDF未读 | “基于真实 CVD 生长和在线 Raman characterization” · L52 |
+| 系统自主性 | L2 闭环执行者 | 自动实验与在线表征结合，摘要显示自主搜索 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

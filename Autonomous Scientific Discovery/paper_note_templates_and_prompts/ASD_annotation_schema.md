@@ -234,3 +234,20 @@ Bran_2024_Augmenting_Large_Language_Models_with_Chemistry_Tools.md
 - `local_note_only` 或 `notes_only` 不能支撑高置信多模块新增；最多作为待全文复核线索。
 - 如果原文证据支持多个对象模块，而 note 仍写作单模块或单主类，应把 `note_revision_required` 标为 `yes`。
 - 若原文证据不足以确认模块，但 note 暗示可能跨模块，应记录为 `source_limited`，并在审计报告中进入 full-text follow-up queue。
+
+## 14. Problem Openness · Verification Strength · System Autonomy
+
+三条独立的轴，定义以赵哲提案为准，完整判据、边界规则与评判流程见 `Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`。每篇恰好一个等级；写入 papercard 第 10 节。
+
+| 字段 | 取值 | 判据摘要 |
+|---|---|---|
+| `problem_openness` | `O1` 规则世界 · `O2` 既定基准 · `O3` 新实例 · `O4` 需物理检验 · `O5` 开放数学 · `O6` 开放科学 | 从问题陈述读出；取论文实际尝试并报告了结果的最高开放度问题 |
+| `verification_strength` | `V0` 声明 · `V1` 基准/内部评测 · `V2` 计算/仿真/回顾性 · `V3` 物理实验 · `V4` 证明/复现 | 只看该问题结果的证据；V3（作者完成、覆盖核心结论的物理/前瞻实验）与 V4（机器可检验形式化证明或第三方复现）为强验证 |
+| `system_autonomy` | `L0` 工具 · `L1` 任务助手 · `L2` 闭环执行者 · `L3` 自主研究者 | 系统承担了研究流程的哪一部分；保留为第三条轴，但不代替“解决程度” |
+| `openness_quote` / `verification_quote` + `*_line` | 本笔记逐字片段 + 1-based 行号 | 脚本逐字核对；不符即重新编码 |
+
+执行规则：
+
+- 三条轴相互独立，一条轴的高低不能推出另一条轴。
+- 笔记中“仍需外部验证 / 缺少复现”是缺失的证据，不能据此提高 V。
+- 证据不足时给最佳判断，置信度记 `low` 并标记需全文复核；不新增等级。

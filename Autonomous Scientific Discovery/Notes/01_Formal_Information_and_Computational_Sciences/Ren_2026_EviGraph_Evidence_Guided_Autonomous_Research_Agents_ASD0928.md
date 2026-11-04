@@ -151,3 +151,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在ARC-Bench-ML和NanoResearch-20基准上评估，任务预先定义 | “Experiments on ARC-Bench-ML and NanoResearch-20” · L42 |
+| 验证强度 | V1 基准/内部评测 | 使用Claim Support Rate和Experimental Data Consistency等指标评分 | “improves Claim Support Rate by 40.19% over the strongest baseline” · L42 |
+| 系统自主性 | L2 闭环执行者 | Agent自主执行研究并检查证据链，在人给定目标内迭代多步 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

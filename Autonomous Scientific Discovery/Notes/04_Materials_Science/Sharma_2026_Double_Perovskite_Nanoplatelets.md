@@ -311,3 +311,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - 原文位置：Reference_PDF/04_Materials_Science/Sharma_2026_Double_Perovskite_Nanoplatelets.pdf; PDF p.1; Beyond autonomous multi-element nanoplatelet synthesis and optimization, PoLARIS utilizes dynamic ﬂow experimentation to enable mechanistic inference of precursor reactivity and reaction pathways govern- ing nanoplatelet formation.。
 - 判定：double-perovskite nanoplatelet synthesis/material discovery
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 自主合成需实验检验的双钙钛矿纳米材料 | “double perovskite nanoplatelets” · L40 |
+| 验证强度 | V3 物理实验 | 微流控湿实验闭环加XRD和TEM表征验证 | “autonomous microfluidics” · L59 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成实验选择到结果反馈的闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

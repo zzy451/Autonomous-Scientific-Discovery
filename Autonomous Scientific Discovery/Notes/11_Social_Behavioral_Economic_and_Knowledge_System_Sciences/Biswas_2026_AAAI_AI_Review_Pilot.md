@@ -221,3 +221,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent; Multi-Agent System
 纳入置信度：高
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在AAAI-26全量主会投稿上评测同行评审系统 | “AAAI-26 全量主会投稿真实部署、survey 与 benchmark” · L148 |
+| 验证强度 | V1 基准/内部评测 | 通过真实会议部署和调研数据评估系统表现 | “AAAI-26 全量主会投稿真实部署、survey 与 benchmark” · L148 |
+| 系统自主性 | L1 任务助手 | 系统辅助评审但人决定最终评审流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

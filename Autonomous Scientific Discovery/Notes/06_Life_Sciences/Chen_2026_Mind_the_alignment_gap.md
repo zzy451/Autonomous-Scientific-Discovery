@@ -159,3 +159,17 @@ fulltext_followup_required=false
   - 位置：PDF p.3, section 2.1 Agent setup；来源：https://www.biorxiv.org/content/10.64898/2026.07.05.736638v1.full.pdf
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在从SABench转换的40项空间转录组配准任务上评测Agent，属预定义基准 | “从SABench 295项选40项” · L27 |
+| 验证强度 | V1 基准/内部评测 | 使用隐藏评分器评估Agent提交的配准坐标，报告准确率和95% CI，属基准测试 | “Full + prior平均得分低于Basic（0.36 vs 0.43；差值95% CI [-0.11,-0.03]）” · L36 |
+| 系统自主性 | L1 任务助手 |  | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

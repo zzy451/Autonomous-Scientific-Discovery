@@ -1,0 +1,57 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;background:#F4F1EA;color:#1F2A36;font-family:"HFSans",sans-serif;overflow:hidden;}
+#root .tag{position:absolute;left:150px;top:96px;font:700 28px "HFSans";letter-spacing:4px;color:#8A6A2F;}
+#root .h{position:absolute;left:150px;top:140px;right:150px;font:900 64px/1.25 "HFSerif";color:#1F2A36;}
+#root .abs{position:absolute;}
+#root .prog{position:absolute;left:0;top:0;width:1920px;height:6px;background:#8A6A2F;}
+#root .mono{font-family:"JetBrains Mono",monospace;}
+
+#root .k{top:300px;width:520px;}
+#root .k b{display:block;font:900 110px/1.1 "HFSerif";color:#2E4057;}
+#root .k span{display:block;font:700 32px "HFSans";color:#546A86;margin-top:10px;}
+#s12-k1{left:150px;} #s12-k2{left:700px;} #s12-k3{left:1250px;}
+#s12-q{left:150px;top:560px;width:1620px;font:400 32px/1.6 "HFSans";}
+#s12-from{left:150px;top:760px;font:900 54px "HFSerif";color:#8A9BB0;}
+#s12-strike{left:150px;top:796px;width:330px;height:5px;background:#B23A3A;}
+#s12-arr{left:540px;top:752px;font:900 60px "HFSerif";color:#1F2A36;}
+#s12-to{left:660px;top:760px;font:900 54px "HFSerif";color:#B23A3A;}
+</style>
+  <div id="root" data-composition-id="s12" data-width="1920" data-height="1080">
+
+<div class="tag" id="s12-tag">04 · 请求</div>
+<div class="h" id="s12-h">请求：每个领域一位研究者</div>
+<div class="abs k" id="s12-k1"><b>1 位</b><span>研究者 / 每个领域</span></div>
+<div class="abs k" id="s12-k2"><b>15–20</b><span>个案例</span></div>
+<div class="abs k" id="s12-k3"><b>½ 天</b><span>每人大约半天</span></div>
+<div id="s12-q" class="abs">判定验证等级与 AI 的实际贡献，并回答：本领域在 O6 层级，是否存在强验证案例？</div>
+<div id="s12-from" class="abs">文献汇编</div><div id="s12-strike" class="abs"></div>
+<div id="s12-arr" class="abs">→</div>
+<div id="s12-to" class="abs">可以被引用的判断</div>
+
+    <div id="s12-prog" class="prog"></div>
+    <div id="s12-out" class="abs" style="inset:0;background:#F4F1EA;opacity:0"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const C = [0.5, 15.87, 17.65], END = 26.08;
+    const IN = (s, t, y = 24) => tl.fromTo(s, {opacity:0, y}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, t);
+    const NUM = (s, to, t, d = 1.2, suf = "") => { const o = {v:0};
+      tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out",
+        onUpdate:() => { document.querySelector(s).textContent = Math.round(o.v) + suf; }}, t); };
+    const GROW = (s, t, d = 0.9, origin = "left center") => tl.fromTo(s, {scaleX:0, transformOrigin:origin}, {scaleX:1, duration:d, ease:"power3.inOut"}, t);
+
+IN("#s12-tag",0.2); IN("#s12-h",0.4);
+IN("#s12-k1",C[0]+4); IN("#s12-k2",C[0]+7); IN("#s12-q",C[0]+9); IN("#s12-k3",C[1]);
+IN("#s12-from",C[2]+1); GROW("#s12-strike",C[2]+3.5,0.5); IN("#s12-arr",C[2]+4.5,0); IN("#s12-to",C[2]+5);
+
+    tl.fromTo("#s12-prog", {scaleX:0, transformOrigin:"left center"}, {scaleX:1, duration:END, ease:"none"}, 0);
+    tl.fromTo("#s12-out", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.in"}, END - 0.4);
+    window.__timelines["s12"] = tl;
+  </script>
+</template>

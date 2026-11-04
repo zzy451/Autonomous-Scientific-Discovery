@@ -292,3 +292,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：medium_high
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | LLM引导的预后基因发现workflow，在患者生存终点上可验证 | “survival-associated genes；selected prognostic features” · L211 |
+| 验证强度 | V2 计算/仿真/回顾性 | 临床数据支持，患者队列与生存终点字段验证 | “临床数据：是” · L205 |
+| 系统自主性 | L1 任务助手 | LLM引导workflow执行预后基因发现任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

@@ -1,0 +1,58 @@
+{
+  "corpus_snapshot": "2026-11-01",
+  "classification_date": "2026-11-04",
+  "papers": 662,
+  "coded_primary": 662,
+  "coded_second": 29,
+  "coded_both": 29,
+  "invalid_records": 0,
+  "primary_coder": "Claude Sonnet 5.5 (claude-sonnet-5-5, via Claude Code on H20)",
+  "second_coder": "Codex gpt-6.1-sol (high effort, on H20)",
+  "distribution": {
+    "openness": {
+      "O1": 1,
+      "O2": 185,
+      "O3": 333,
+      "O4": 106,
+      "O5": 22,
+      "O6": 15
+    },
+    "verification": {
+      "V0": 1,
+      "V1": 196,
+      "V2": 316,
+      "V3": 147,
+      "V4": 2
+    },
+    "autonomy": {
+      "L1": 179,
+      "L2": 471,
+      "L3": 12
+    }
+  },
+  "confidence": {
+    "high": 513,
+    "medium": 137,
+    "low": 12
+  },
+  "needs_fulltext_review": 109,
+  "contested": 1,
+  "agreement": {
+    "openness": {
+      "exact": 0.586,
+      "within_one": 0.931,
+      "weighted_kappa": 0.527
+    },
+    "verification": {
+      "exact": 0.724,
+      "within_one": 0.966,
+      "weighted_kappa": 0.626
+    },
+    "autonomy": {
+      "exact": 0.724,
+      "within_one": 1.0,
+      "weighted_kappa": 0.543
+    }
+  },
+  "expert_review_queue": 126
+}

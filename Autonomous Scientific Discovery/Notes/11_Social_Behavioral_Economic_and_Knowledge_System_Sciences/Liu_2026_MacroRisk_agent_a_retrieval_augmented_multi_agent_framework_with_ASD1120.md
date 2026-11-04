@@ -159,3 +159,17 @@ fulltext_followup_required=true
 - 原文位置：PDF p.1。
 - 判定：金融压力、追加保证金与抛售流动性反馈模拟，归金融学。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 压力测试情景可由确定性模拟验证 | “stress testing” · L6 |
+| 验证强度 | V2 计算/仿真/回顾性 | 确定性仿真和结构验证门检查 | “deterministic validation gates” · L1 |
+| 系统自主性 | L2 闭环执行者 | 多Agent协调生成情景并迭代修订 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -101,3 +101,17 @@ Agent 类型：LLM Agent; Planning Agent; Retrieval-augmented Agent; Multi-Agent
 纳入置信度：高
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 设计AML药物候选和肝纤维化靶点，需实验检验 | “AML drug repurposing 候选与相关验证” · L59 |
+| 验证强度 | V3 物理实验 | 有湿实验和in-vitro验证 | “experimentally_validated” · L62 |
+| 系统自主性 | L2 闭环执行者 | 多agent自主执行假设生成、辩论、筛选和验证设计 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

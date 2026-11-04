@@ -311,3 +311,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/03_Chemical_Sciences/Unknown_2026_Autonomous_Computational_Catalysis.pdf; PDF p.1; Autonomous computational catalysis through an agentic research system Authors: Honghao Chen 1, Jiangjie Qiu 1, Yi Shen Tew 1, Xiaonan Wang 1* Affiliations: 1.。
 - 判定：autonomous computational catalysis
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在催化和材料对象上执行新的计算分析实例 | “CO adsorption；HER descriptor screening” · L53 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过计算验证和案例研究但无湿实验 | “仿真验证：是” · L211 |
+| 系统自主性 | L2 闭环执行者 | 系统在人给定目标内自主规划催化建模闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

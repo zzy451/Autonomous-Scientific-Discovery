@@ -297,3 +297,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 - 原文位置：Reference_PDF/04_Materials_Science/Song_2026_CatDT_Heterogeneous_Catalyst_Discovery.pdf; PDF p.2; Every CatDT prediction lies between 0.5 and 2 times the experimental value across measurements spanning four orders of magnitude, on seven gas–solid benchmarks: stepped metals, single-atom catalysts, ordered intermetallics, vacancy-rich two-dimensional sulfides, two-dimensional carbides, and a strong-metal– support-interaction (SMSI) interface.。
 - 判定：heterogeneous catalyst materials and digital twin
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 自动构建催化剂数字孪生并发现催化材料，结果可由计算验证 | “benchmark predictions 位于实验值 0.5-2x 范围内” · L212 |
+| 验证强度 | V2 计算/仿真/回顾性 | 在七个gas-solid benchmarks上通过计算预测验证，与实验值对比 | “benchmark predictions 位于实验值 0.5-2x 范围内” · L212 |
+| 系统自主性 | L2 闭环执行者 | 系统从bulk crystal出发自主完成surface reconstruction到kinetics的闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

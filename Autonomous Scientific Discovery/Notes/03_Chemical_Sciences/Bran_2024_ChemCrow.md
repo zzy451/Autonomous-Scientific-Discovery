@@ -97,3 +97,17 @@
 - 列出 ChemCrow 工具集合。
 - 细化有机合成、材料设计、药物发现任务分别如何支撑 `03;04;07`。
 - 补充具体任务和评价指标表述，用于正文展开而非重新裁定分类。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 化学、材料和药物发现benchmark任务 | “benchmark / chemistry, materials-design, and drug-discovery task evaluation” · L85 |
+| 验证强度 | V1 基准/内部评测 | benchmark和计算验证 | “benchmark / computationally validated” · L87 |
+| 系统自主性 | L1 任务助手 | 工具增强LLM执行化学任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

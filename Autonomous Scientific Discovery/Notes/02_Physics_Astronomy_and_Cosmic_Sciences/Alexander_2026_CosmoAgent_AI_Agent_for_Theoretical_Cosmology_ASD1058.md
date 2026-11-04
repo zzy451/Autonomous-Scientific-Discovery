@@ -152,3 +152,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 搜索修正引力理论并用晚期宇宙观测数据计算似然，答案可由数值求解和统计检验核对 | “DES 5-year type Ia supernova sample and the DESI Data Release 2 BAO” · L23 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算理论背景动力学并与观测数据拟合，无新的物理实验 | “solves the background dynamics, and evaluate” · L26 |
+| 系统自主性 | L2 闭环执行者 | Agent在协变语法约束内自主生成理论候选并迭代筛选 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

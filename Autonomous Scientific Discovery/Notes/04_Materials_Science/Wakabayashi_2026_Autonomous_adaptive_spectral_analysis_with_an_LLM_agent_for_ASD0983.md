@@ -159,3 +159,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.1。
 - 判定：Concrete experiment/task evidence supports 04.04.04 (半导体材料). cally defensible value can be obtained. We evaluated the workflow on optical transmittance spectra from 203 epitaxial β-Ga2O3 films grown during a previously reported self-driving thin-film growth campaign. The predefined optical analysis script returned Urbach energy, an optical-quality metric, for 183 spectra and failed for 20. The agent retained those 183 values and evaluated 20 exception cases, recovering 16 thro
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 光谱分析结果可通过拟合和物理模型计算验证 | “203条光谱中原脚本得到183个Urbach能量、20个失败” · L101 |
+| 验证强度 | V2 计算/仿真/回顾性 | 既有数据集上的异常处理和审计记录验证 | “Agent保留183个有效结果，对20个异常项恢复16个” · L101 |
+| 系统自主性 | L1 任务助手 | Agent在预定义脚本基础上处理异常，有限自主权 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

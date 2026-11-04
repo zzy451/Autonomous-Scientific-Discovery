@@ -179,3 +179,17 @@ fulltext_followup_required=true
 - 原文位置：PDF pp.3,4。
 - 判定：Concrete experiment/task evidence supports 01.02.12 (人工智能). We selected 71 problems of different difficulties from the Formal Conjectures dataset (Firsching et al., 2026; The Formal Conjectures Authors, 2025), spanning from relatively simple problems (e.g. complexity_three_pow), to hard classical theorems with known solutions (e.g. Catalan’s Conjecture), near-frontier and recently solved problems (e.g. Erdős Problem 835 on subset sums, Jacobian Conjecture, Sendov’s Conjecture
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O1 规则世界 | 形式数学证明任务在封闭定理证明环境中进行 | “形式化数学猜想” · L54 |
+| 验证强度 | V1 基准/内部评测 | 自动定理证明任务和多Agent模拟，属基准环境评测 | “自动定理证明任务和多Agent模拟” · L121 |
+| 系统自主性 | L2 闭环执行者 | Agent在共享环境中自主证明并传播策略，形成闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

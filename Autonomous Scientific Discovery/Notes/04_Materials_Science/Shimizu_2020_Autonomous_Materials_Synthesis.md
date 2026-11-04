@@ -282,3 +282,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - 已核验并归档：`Reference_PDF/04_Materials_Science/ASD-0592_Autonomous_materials_synthesis_by_machine_learning_and_robotics_user_supplied.pdf`，共7页。
 - 来源：用户提供文件`111110_1_online.pdf`；版本：final published article PDF。
 - 本次只补充来源文件，不改变论文分类。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 系统优化薄膜材料沉积产生需物理测量的材料对象 | “Nb-doped TiO2 thin films” · L21 |
+| 验证强度 | V3 物理实验 | 真实机器人沉积与物性测量实验验证 | “两套条件下于第 14 与第 18 次实验收敛” · L188 |
+| 系统自主性 | L2 闭环执行者 | 在人设定电阻优化目标内系统自主闭环实验 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

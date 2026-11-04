@@ -281,3 +281,17 @@ note_revision_required：no
 - 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Son_2026_CAD_Generation_FEA_Feedback.pdf; PDF p.8; 5.2 Q2: Evaluating feedback for CAD agents We test whether the typed blueprint stage (Section 3.2) improves generation quality versus a baseline that emits CadQuery directly from the prompt.。
 - 判定：CAD generation with FEA feedback
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 生成满足工程约束的CAD设计，答案可由FEA和渲染器验证 | “从工程 brief 生成完整 multi-part STEP assemblies” · L189 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过FEA仿真验证，但首轮无strict-passing artifact | “首轮没有 strict-passing artifact” · L192 |
+| 系统自主性 | L2 闭环执行者 | 系统接收FEA反馈并反复修复设计，形成自改进闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

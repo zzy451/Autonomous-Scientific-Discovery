@@ -180,3 +180,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.6,7,33。
 - 判定：Concrete experiment/task evidence supports 03.04.02 (小分子性质优化). MBO searches the space of drug-like small molecules, represented as SMILES strings, for the highest predicted bio-activity; quantified by maximizing its predicted pChEMBL value
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 六项科学发现任务均在固定数据集和评价器下优化，属答案可由已知方法计算的新实例 | “六项科学发现任务上与匹配评价设置比较” · L122 |
+| 验证强度 | V1 基准/内部评测 | 匹配评价设置比较不同方法在固定任务上的表现，属基准评测 | “以上结果为作者报告，本轮没有独立复现实验” · L132 |
+| 系统自主性 | L2 闭环执行者 | 并行分支在人设定目标内自主演化原则并共享证据，属闭环执行 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

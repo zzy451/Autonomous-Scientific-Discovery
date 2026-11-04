@@ -288,3 +288,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - 已核验并归档：`Reference_PDF/04_Materials_Science/ASD-0569_Autonomous_Nanocrystal_Doping_by_Self_Driving_Fluidic_Micro_Processors_user_supplied.pdf`，共13页。
 - 来源：用户提供文件`Advanced Intelligent Systems - 2022 - Bateni - Autonomous Nanocrystal Doping by Self‐Driving Fluidic Micro‐Processors.pdf`；版本：final published article PDF。
 - 本次只补充来源文件，不改变论文分类。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 纳米晶掺杂优化，产生需实验验证的新材料对象 | “完成五轮不同 target doping levels 的 closed-loop campaigns” · L200 |
+| 验证强度 | V3 物理实验 | 真实流体实验与闭环campaign验证 | “湿实验：是” · L189 |
+| 系统自主性 | L2 闭环执行者 | Self-driving fluidic micro-processor自主导航参数空间并执行闭环campaigns | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

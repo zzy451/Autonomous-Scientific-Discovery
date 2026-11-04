@@ -139,3 +139,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在320个CRISPR screen基准上评估靶点排序能力；NK/T细胞案例虽有实验验证但核心评测是已知筛选数据上的候选重排 | “320个专家整理CRISPR screen benchmark” · L89 |
+| 验证强度 | V3 物理实验 | NK细胞案例中MUC1、PDPN、LRRC15经primary human NK tumor-killing实验验证，T细胞杀伤任务有前瞻测试，覆盖核心科学结论 | “primary human NK tumor-killing实验逐个验证三者” · L89 |
+| 系统自主性 | L2 闭环执行者 |  | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

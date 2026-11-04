@@ -255,3 +255,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 - 原文位置：PDF pp.4–6, PANGAEA-GPT case studies。
 - 判定：Ocean-current/microplastics, in-situ ocean temperatures vs GLORYS, wind and jellyfish coupling; physical oceanography and marine biology. Reject stale genomics mapping.
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在100条自然语言地学queries的benchmark上评测数据发现能力 | “`100` 条 geoscience queries，覆盖六个地学领域” · L176 |
+| 验证强度 | V1 基准/内部评测 | 通过benchmark任务完成质量和部分专家评估验证 | “系统可在部分场景中无人工完成错误修复” · L180 |
+| 系统自主性 | L1 任务助手 | 系统自主完成数据发现与分析任务，但更多是查询处理而非完整科学发现闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

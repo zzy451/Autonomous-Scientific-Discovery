@@ -114,3 +114,17 @@ first_hand_sources_checked: arXiv abstract page; ar5iv HTML full text
 pdf_path: Reference_PDF/02_Physics_Astronomy_and_Cosmic_Sciences/Moss_2025_AI_Cosmologist_I.pdf
 pdf_version: official arXiv PDF
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 已知数据集上的星系形态与宇宙学参数推断，答案可由数据分析计算 | “galaxy morphology；cosmological parameter inference” · L75 |
+| 验证强度 | V1 基准/内部评测 | 案例研究与计算评估，无新天文发现的物理检验 | “case-study / computational evaluation” · L74 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成从想法生成到实验执行、结果分析的完整数据分析闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

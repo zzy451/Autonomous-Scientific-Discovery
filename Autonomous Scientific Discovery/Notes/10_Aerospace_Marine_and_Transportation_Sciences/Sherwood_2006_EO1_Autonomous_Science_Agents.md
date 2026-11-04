@@ -188,3 +188,17 @@ multi_module_object_coverage_note: Under the relaxed rule, Earth-science event d
 - 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Sherwood_2006_EO1_Autonomous_Science_Agents.pdf; PDF p.6; SEM Process Alerts and Prioritize Response Observations AGENTS Monitor Sensors Science Alerts ASPEN Schedule Observations on EO-1 Observation Requests Updates to Onboard Plan Science Campaigns EO-1 Flight Dynamics Tracks orbit, overflights, momentum management Scene Acquired Figure 5 - Sensorweb Response。
 - 判定：EO-1 autonomous science agents and sensor web
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 卫星在轨检测Earth-science events并自主重规划观测 | “EO-1 与 autonomous sensor-web use cases” · L162 |
+| 验证强度 | V3 物理实验 | 真实在轨部署验证 | “real-world deployment” · L161 |
+| 系统自主性 | L2 闭环执行者 | 系统在轨自主完成事件检测、规划与重规划 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

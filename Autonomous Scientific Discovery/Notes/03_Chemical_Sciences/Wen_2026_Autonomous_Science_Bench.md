@@ -160,3 +160,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | Agent在有限预算内逐轮选择实验设计并从lab service获取测量结果，目标是在候选池中发现满足阈值的设计，答案可由完整测量验证 | “Agent挑选实验batch并提交lab service，服务返回测量后Agent重拟合模型” · L45 |
+| 验证强度 | V2 计算/仿真/回顾性 | 六项campaign基于已发表实验的测量数据，discovery gate评价已测候选，learning gate评价held-out排序，属计算验证 | “六项campaign基于已发表实验” · L46 |
+| 系统自主性 | L2 闭环执行者 |  | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

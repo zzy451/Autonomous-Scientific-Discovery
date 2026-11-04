@@ -182,3 +182,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.5,6,9。
 - 判定：Concrete experiment/task evidence supports 03.02.03 (分析化学). Analytical Chemistry Physical Chemistry Organic Chemistry Polymer Chemistry Inorganic Chemistry Biochemistry Molecular Biology Cell Biology Structural Biology Biophysics Genetics Immunology Physiology Organic/Polymer Materials Inorganic Materials Composite Materials Metallic Materials Cross 2 disciplines Within-discipline Cross all 3 disciplines Chemistry Biology Materials Figure 2. SEE consists of 1,116 questions sp
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 化学、生物和材料实验问题基准有标准答案 | “1,116 questions” · L183 |
+| 验证强度 | V1 基准/内部评测 | 专家标注答案评估Agent准确率 | “视觉工具Agent最佳准确率达到52.7%” · L44 |
+| 系统自主性 | L1 任务助手 | Agent分析实验图像和证据，人设定任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -186,3 +186,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.1。
 - 判定：30次复现覆盖12个机器学习领域，具具体执行和忠实性验证。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 基准包含30项复现任务，要求Agent实现论文方法并复现实验，属预定义基准 | “30 distinct reproduction tasks derived from classic ML” · L69 |
+| 验证强度 | V1 基准/内部评测 | 使用八步工作流及三重验证检查复现质量，但验证停留在代码和指标对齐层面 | “checks quantitative metric alignment, qualitative semantic logic, and structural code fidelity” · L65 |
+| 系统自主性 | L2 闭环执行者 | Agent自主阅读论文、规划并执行实验复现的多步闭环，人只设定任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

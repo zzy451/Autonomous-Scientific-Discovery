@@ -160,3 +160,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.5,8。
 - 判定：Concrete experiment/task evidence supports 02.02.16 (计算物理学). 55 sites; 1,024 turns / 10 sites Fig. 2 Workflow of Brilliance for designing a 3.5 GeV synchrotron light source targeting a natural emittance below 30 pm · rad. The agent starts with a linear optics design and proceeds to nonlinear dynamics checks. When these checks fail, it changes strategy to rebuild the linear optics, and ulti- mately meets the nonlinear requirements through nonlinear beam dynamics optimization. T
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 设计同步辐射光源晶格方案，产生需真实加速器建造和束流测量检验的物理对象 | “designs a fourth-generation synchrotron light source” · L21 |
+| 验证强度 | V2 计算/仿真/回顾性 | JuTrack数值模拟和HEPS实测数据校准，未建造新光源 | “HEPS实测响应数据” · L25 |
+| 系统自主性 | L2 闭环执行者 | Agent构建数值研究并根据诊断修订后续计算闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

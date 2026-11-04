@@ -258,3 +258,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Human-in-the-loop Ag
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在HEP专有工具链上执行BSM验证流程，答案可由模拟核对 | “BSM Monte Carlo validation pipeline” · L182 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算型workflow demonstration，未报告物理实验 | “仿真验证：是” · L172 |
+| 系统自主性 | L2 闭环执行者 | 系统编排多步HEP工作流，从模型生成到下游分析自主执行 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

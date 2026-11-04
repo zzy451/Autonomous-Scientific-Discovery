@@ -273,3 +273,17 @@ first_hand_sources_checked：pdf; arxiv
 classification_evidence_source_level：first_hand_full_text
 note_revision_required：no
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在20个代表性frame problems上评测跨平台结构分析能力，属于预定义基准 | “20 个 representative frame problems” · L188 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过十次重复试验中的仿真验证，三个平台准确率均超90% | “ETABS、SAP2000、OpenSees 三个平台上的准确率均超过 90%” · L192 |
+| 系统自主性 | L1 任务助手 | 系统自动解析输入、转换为多平台脚本并执行，但主要是工程workflow acceleration | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

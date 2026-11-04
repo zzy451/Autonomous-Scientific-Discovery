@@ -159,3 +159,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.5。
 - 判定：Concrete experiment/task evidence supports 03.03.03 (催化化学). h that a task had started or completed. We collected 32 research tasks from domain experts, with eight tasks in each of four catalysis domains (Fig. 2B, note 4 of the supplementary text, and table S8). Together, these tasks formed a test suite for general catalysis research spanning electrocatalysis, electrochemical materials and testing, photocatalysis and thermal catalysis. Electrocatalysis tasks covered the oxygen
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 机器人化学实验室任务，答案可由实验室约束和专家评估检验 | “4,608次试验，按实验室约束检查生成流程是否可执行” · L23 |
+| 验证强度 | V2 计算/仿真/回顾性 | 真实机器人实验室任务和专家评估的试验标签 | “专家评估的试验标签” · L101 |
+| 系统自主性 | L2 闭环执行者 | Agent需在设备参数样品和容器约束下形成连贯计划，并根据连续实验轮次调整行动 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

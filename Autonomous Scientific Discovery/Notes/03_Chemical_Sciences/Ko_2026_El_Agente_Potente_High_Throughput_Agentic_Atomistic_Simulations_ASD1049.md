@@ -179,3 +179,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.16, Transition-state search in surface reactions。
 - 判定：Fe(110)表面反应路径与过渡态搜索直接支持反应机理；吸附、分子构象、材料计算另保留多对象覆盖。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 材料和分子性质由MLIP和DFT计算验证 | “Exploration of perovskite materials a and lithium superionic conductors b” · L42 |
+| 验证强度 | V2 计算/仿真/回顾性 | MLIP模拟和量子化学计算验证，无实验合成 | “Low-energy conformer search and validation with quantum chemistry” · L45 |
+| 系统自主性 | L2 闭环执行者 | Agent路由任务并自主执行原子模拟工作流 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

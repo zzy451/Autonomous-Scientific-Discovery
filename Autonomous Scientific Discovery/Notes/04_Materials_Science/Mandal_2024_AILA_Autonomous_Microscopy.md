@@ -283,3 +283,17 @@ Agent 类型：LLM Agent；Planning Agent；Tool-using Agent；Multi-Agent Syste
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | AFM实验从设计到分析的完整流程，成功与否可直接核对 | “complete scientific workflow from experimental design to results analysis” · L41 |
+| 验证强度 | V3 物理实验 | 五个真实AFM实验，包括校准特征检测机械性质测量等 | “five real-world experiments” · L41 |
+| 系统自主性 | L2 闭环执行者 | LLM planner协调专门化agents，动态路由和工具调用自动化实验 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

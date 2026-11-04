@@ -160,3 +160,17 @@ PaperRepro 提出一套两阶段多 Agent 流程，用于自动评估社会科�
 ## 9. 总结
 
 PaperRepro 是稳定的 `11.07` 记录，主对象是 scientific reproducibility assessment，而不是领域无关科研 Agent 平台。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在REPRO-Bench基准上评估复现性 | “REPRO-Bench / REPRO-Bench-S” · L142 |
+| 验证强度 | V1 基准/内部评测 | 通过benchmark evaluation验证，相对基线有提升 | “benchmark evaluation” · L141 |
+| 系统自主性 | L2 闭环执行者 | 系统自主执行复现实验并在必要时修改代码 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

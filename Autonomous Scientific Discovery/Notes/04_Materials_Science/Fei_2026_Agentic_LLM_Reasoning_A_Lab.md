@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Robot / Embodied Age
 - 原文位置：Reference_PDF/04_Materials_Science/Fei_2026_Agentic_LLM_Reasoning_A_Lab.pdf; PDF p.1; Agentic LLM Reasoning in a Self-Driving Laboratory for Air-Sensitive Lithium Halide Spinel Conductors Yuxing Fei 1,2, Bernardus Rendy 1,2,5, Xiaochen Yang 1,2, Junhee Woo 1,3, Xu Huang 1,2, Chang Li 2, Shilong Wang 1,2, David Milsted 2, Yan Zeng 2,4,†, and Gerbrand Ceder 1,2,5,‡ 1Department of Materials Science & Engineering, University of California, Berkeley, Berkeley, California 94720, United States 2Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, California 94720, United States 3Department of Materials Science and Engineering, Korea Advanced Institute of Science and Technology, Daejeon 34141, Republic of Korea 4Department of Chemistry and Biochemistry, Flori。
 - 判定：lithium-halide spinel conductor materials in self-driving lab
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 发现需要合成表征的空气敏感导体材料 | “352 个样品” · L176 |
+| 验证强度 | V3 物理实验 | 通过机器人闭环合成和表征验证352个样品 | “机器人实验：是” · L168 |
+| 系统自主性 | L2 闭环执行者 | 系统自主组织演绎归纳推理并执行实验设计 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

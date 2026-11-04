@@ -104,3 +104,17 @@ boundary_type：direct_landing
 confidence：high
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 根据界面性质要求自主搜索和优化formulation，产出需实验验证的新配方 | “interfacial formulations; surface wettability targets” · L64 |
+| 验证强度 | V3 物理实验 | 真实闭环实验，实现autonomous closed-loop formulation discovery | “实现 autonomous closed-loop formulation discovery” · L65 |
+| 系统自主性 | L2 闭环执行者 | 从用户目标出发自动提出测试并更新formulation候选 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

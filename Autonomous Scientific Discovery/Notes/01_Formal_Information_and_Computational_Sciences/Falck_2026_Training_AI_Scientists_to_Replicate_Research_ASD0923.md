@@ -178,3 +178,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.1。
 - 判定：对机器学习论文复现实验执行进行训练与评估，属于机器学习研究。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在Replica任务集的242个训练和68个测试任务上评测论文复现能力 | “242242 training tasks and 6868 test tasks” · L41 |
+| 验证强度 | V1 基准/内部评测 | 通过rubric-based judge和人工评审校验复现质量，无独立实验验证 | “用人工评审校验 rubric judge” · L43 |
+| 系统自主性 | L2 闭环执行者 | Faraday在给定容器和算力预算内自主规划并调用编码工具运行实验 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

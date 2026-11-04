@@ -270,3 +270,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 - 原文位置：Reference_PDF/03_Chemical_Sciences/Peivaste_2026_ChemNavigator.pdf; PDF p.1; Notably, autonomous agentic reasoning extracted these six validated rules from a molec- ular library where previous ML approaches identified only carbonyl effects.。
 - 判定：organic photocatalyst design rules/environmental-energy chemistry
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O5 开放数学 | 自主发现事先未知的化学设计规则 | “识别并验证 6 条 design rules” · L193 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过统计验证和计算确认设计规则显著性 | “规则显著性、效应大小、化学解释性” · L192 |
+| 系统自主性 | L2 闭环执行者 | 系统自主提出假设设计实验执行验证闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

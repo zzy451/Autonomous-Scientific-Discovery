@@ -260,3 +260,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Retrieval-augmented Agent; Hybrid Ag
 - 原文位置：Reference_PDF/03_Chemical_Sciences/Ding_2025_SciToolAgent.pdf; PDF p.2; We further validate SciToolAgent?s effectiveness through case studies across four scenarios: protein design and analysis, chemical reactivity prediction, chemical synthesis and analysis, and metal?organic framework (MOF) material screening.。
 - 判定：scientific multitool integration filed in chemistry; object-level chemistry evidence insufficient
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 跨生物/化学/材料的531任务benchmark评测 | “531-task benchmark” · L186 |
+| 验证强度 | V1 基准/内部评测 | benchmark评测，多领域工具集成 | “531-task benchmark 与跨生物/化学/材料案例” · L186 |
+| 系统自主性 | L1 任务助手 | 系统执行多步科研任务，依赖知识图谱和工具调用 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

@@ -139,3 +139,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：high
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O6 开放科学 | 自动生成并验证基因功能假设，关于未知机制的科学发现 | “Functional genomic hypothesis generation and experimentation” · L12 |
+| 验证强度 | V3 物理实验 | 真实生物实验支撑自动化假设-测试循环 | “用真实 biological experiments 支撑自动化 hypothesis-test cycle” · L82 |
+| 系统自主性 | L3 自主研究者 | 系统自主提出假设、设计实验、执行并解释结果，形成重复循环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

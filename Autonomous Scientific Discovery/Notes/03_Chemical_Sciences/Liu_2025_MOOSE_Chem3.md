@@ -277,3 +277,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在文献已知假设集上的排序任务，有隐藏ground truth | “124 个带 experimentally reported outcomes 的 hypotheses” · L205 |
+| 验证强度 | V2 计算/仿真/回顾性 | simulator与真实实验趋势对比验证 | “方法经实验数据和 benchmark 验证” · L216 |
+| 系统自主性 | L2 闭环执行者 | 通过实验反馈自主迭代选择下一假设 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核
