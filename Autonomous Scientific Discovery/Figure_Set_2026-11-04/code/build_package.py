@@ -21,6 +21,19 @@ VISUAL_REFS = [
 ]
 VIDEO = ROOT / "video"            # proposal explainer video and its HyperFrames source, copied as-is
 VIDEO_DIR = "16_proposal_explainer_video"
+FOUR_DIR = "17_five_dimension_views"    # one paper, five dimensions (O, V, L, T, field C): four views x six fields + report
+FOUR_PDF = ROOT / "report" / "OVL_Four_Views.pdf"
+FOUR_FIELDS = ["03", "04", "06", "07", "01", "11"]
+FOUR_VIEWS = [  # folder, source pattern, script, how the four dimensions are placed
+    ("ridges", "out/modes/mode5_ridges_f{f}.png", "fig_ovl_modes.py",
+     "T = one row per year, O = horizontal axis, V = red fill for V3–V4, L = colour of the tick under each paper"),
+    ("relief", "out/styles/shortlist/C3_relief_f{f}.png", "fig_ovl_styles_C.py",
+     "O × V = oblique shaded relief of paper density, red coastline between V2 and V3, L = composition bars on the summit labels; no T"),
+    ("parallel", "out/styles/shortlist/B8_parallel_f{f}.png", "fig_ovl_styles_B.py",
+     "T → O → V → L as four parallel axes, one path per paper, red = strong verification"),
+    ("rings", "out/styles/shortlist/D4_rings_f{f}.png", "fig_ovl_styles_D.py",
+     "O = one ring per level, V = red arc for strong, L = thin outer sub-ring, T = cumulative mini rings at 2019, 2023, 2026"),
+]
 SNAP = "662 core papers · snapshot 2026-11-01 · decision mechanisms 2026-11-03 · repository commit 60f8bad"
 
 
@@ -60,6 +73,9 @@ def readme_root():
     if VIDEO.exists():
         lines.append(f"| `{VIDEO_DIR}/` Proposal explainer video | 1080p and 480p MP4, HyperFrames source | "
                      "Walkthrough of the proposal, 14 scenes, Mandarin narration |")
+    if FOUR_PDF.exists():
+        lines.append(f"| `{FOUR_DIR}/` One paper, five dimensions (O, V, L, T, field C) | "
+                     + ", ".join(f"`{v[0]}`" for v in FOUR_VIEWS) + " | Four views × six fields, with `OVL_Four_Views.pdf` |")
     lines += ["\n## Tree\n", "```"]
     for c in TREE:
         lines.append(f"{c['folder']}/")
@@ -69,6 +85,8 @@ def readme_root():
                 lines.append("    " + "/".join(parts) + "/")
     if VIDEO.exists():
         lines += [f"{VIDEO_DIR}/", "  source/"]
+    if FOUR_PDF.exists():
+        lines += [f"{FOUR_DIR}/"] + [f"  {v[0]}/" for v in FOUR_VIEWS]
     lines += ["```\n", "## Rebuild\n",
               "`code/` holds the runnable copy: MD5-pinned source data, derived tables, all scripts and this builder. "
               "Requirements: Python 3 with matplotlib ≥3.10, numpy and scipy; XeLaTeX for the report.\n",
@@ -262,6 +280,8 @@ def package(report_pdf):
                 (ld / "README.md").write_text(readme_leaf(c, f, parts, ver), encoding="utf-8")
     if VIDEO.exists():
         shutil.copytree(VIDEO, PKG / VIDEO_DIR, ignore=shutil.ignore_patterns(".DS_Store"))
+    if FOUR_PDF.exists():
+        four_views(PKG / FOUR_DIR)
     zpath = DIST / "Agent4Science_FigureSet.zip"
     if zpath.exists():
         zpath.unlink()
@@ -270,6 +290,31 @@ def package(report_pdf):
             if p.is_file():
                 z.write(p, p.relative_to(DIST))
     return zpath
+
+
+def four_views(d):
+    """Copy the five-dimension views (built by build_ovl_views_report.py) with a README per folder."""
+    from fig_ovl_surface import FZH
+    d.mkdir()
+    shutil.copy2(FOUR_PDF, d / FOUR_PDF.name)
+    top = ["# One paper, five dimensions: openness O × verification V × autonomy L × time T × field C\n",
+           "Each core paper carries five coordinates. The four views place O, V, L and T on different visual channels; "
+           f"field C is faceting: every view is drawn once per field, here six fields ({', '.join(FZH[f] for f in FOUR_FIELDS)}). `{FOUR_PDF.name}` collects all 24 "
+           "figures with how to read each view. Strong verification = V3–V4 (red); a *blank* is an openness level "
+           "with papers but no strong case, and a level with no papers is marked 无论文 instead.\n",
+           "| View | Where O, V, L and T go (C = one figure per field) | Script |", "|---|---|---|"]
+    for folder, pat, script, how in FOUR_VIEWS:
+        top.append(f"| `{folder}/` | {how} | `{script}` |")
+        vd = d / folder; vd.mkdir()
+        for f in FOUR_FIELDS:
+            shutil.copy2(ROOT / pat.format(f=f), vd / Path(pat.format(f=f)).name)
+        shutil.copy2(ROOT / script, vd / script)
+        (vd / "README.md").write_text(f"# {folder}\n\n{how}.\n\nOne PNG per field: "
+                                      + ", ".join(f"`{Path(pat.format(f=f)).name}` ({FZH[f]})" for f in FOUR_FIELDS)
+                                      + f".\n\nRebuild all four views and the report: `python3 build_ovl_views_report.py`"
+                                      f" (script for this view: `{script}`).\n", encoding="utf-8")
+    top.append("\nRebuild: `cd code && python3 build_ovl_views_report.py`.\n")
+    (d / "README.md").write_text("\n".join(top), encoding="utf-8")
 
 
 if __name__ == "__main__":

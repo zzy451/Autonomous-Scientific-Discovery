@@ -22,6 +22,7 @@ Figures for *From Computable Tasks to Open Science: A Chronicle of AI Problem So
 | `14_where_experts_are_needed/` Where domain scientists are needed | `nightingale_rose` | Queue sized from the corpus |
 | `15_three_month_plan/` The three-month plan | `hourglass` | Stage 1 done; stages 2–3 planned |
 | `16_proposal_explainer_video/` Proposal explainer video | 1080p and 480p MP4, HyperFrames source | Walkthrough of the proposal, 14 scenes, Mandarin narration |
+| `17_five_dimension_views/` One paper, five dimensions (O, V, L, T, field C) | `ridges`, `relief`, `parallel`, `rings` | Four views × six fields, with `OVL_Four_Views.pdf` |
 
 ## Tree
 
@@ -101,6 +102,11 @@ Figures for *From Computable Tasks to Open Science: A Chronicle of AI Problem So
     white/
 16_proposal_explainer_video/
   source/
+17_five_dimension_views/
+  ridges/
+  relief/
+  parallel/
+  rings/
 ```
 
 ## Rebuild
