@@ -13,6 +13,7 @@
 | `classification_results_662.jsonl` / `.csv` | 每篇最终标签：O、V、L，各自中文理由、O/V 逐字引文及笔记行号、置信度、是否需全文复核、争议记录、复核原因 |
 | `expert_review_queue.csv` | 进入专家复核的论文（低置信度、需全文复核、有争议、编码者不一致） |
 | `classification_summary.json` | 分布、置信度、一致率 |
+| `ovl_cube_counts.csv` | 每个 (O, V, L) 组合的论文数：全部 662 篇及 11 个学科各一份（含 0 计数，共 1,440 行） |
 | `claims_analysis.json` | 用三轴标签重检提案 §2 的结论（见下） |
 | `coder_sonnet.jsonl`、`coder_codex.jsonl` | 原始编码（Sonnet 全量；Codex 仅 b01 抽样，用于一致率） |
 | `pilot_sonnet.jsonl`、`pilot_haiku.jsonl` | 30 篇分层试点的双编码 |
@@ -54,7 +55,8 @@
 | 文件 | 内容 |
 |---|---|
 | `fig_axes3d_curtains.png` | 自主性 × 验证强度三维帘幕：每个 L 级一面墙，曲线为达到各 V 级及以上的占比，★ 为强验证（V3–V4）占比 |
-| `fig_axes3d_lattice.png` | 开放度 × 验证强度 × 自主性三维气泡格：面积 ∝ 论文数，红色为强验证 |
+| `fig_axes3d_cube.png` | 三维分类立方：x = 开放度 O1–O6，y = 验证强度 V0–V4，z = 自主性 L0–L3；每个 (O, V, L) 组合一个气泡并标注论文数，颜色为 V 级，暖色为强验证 |
+| `fig_axes3d_cube_fields.png` | 同一立方按 11 个学科分面（另含全部），学科面板共用同一气泡比例 |
 | `fig_frontier.png` | 提案主图的语料版本：纵轴开放度 O1–O6，各领域有强验证的最高开放度随时期扩展 |
 | `art_periodic.png` | 定位空白：领域 × 开放度格子，“?” 为尝试过但没有强验证的格子 |
 | `fig_thinning.png` | 证据随时间变薄：各时期的验证强度构成与强验证占比（Wilson 95% 区间） |

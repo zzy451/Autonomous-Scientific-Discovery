@@ -42,9 +42,11 @@ TREE = [
          analysis="Strong verification (V3–V4) by autonomy is 1% at L1 (2/179), 31% at L2 (144/471) and 25% at L3 "
                   "(3/12; 95% CI 9–53%). It falls from L2 to L3, as the proposal says, but task assistants (L1) are "
                   "the least verified, so over the whole corpus autonomy and verification are positively related "
-                  "(Spearman ρ = 0.37). In the lattice, strong verification concentrates at L2 on O3–O4 problems "
-                  "(new instances and objects that need physical tests); O2 benchmark problems almost never reach it "
-                  "(1/185).",
+                  "(Spearman ρ = 0.37). In the cube, 662 papers occupy 33 of the 120 (O, V, L) cells. The largest is "
+                  "O3·V2·L2 (178), and the strong cells are O4·V3·L2 (81) and O3·V3·L2 (54); O2 benchmark problems "
+                  "almost never reach strong verification (1/185). By field, the strong share runs from 0% (social and "
+                  "knowledge systems) and 6% (formal and computational) to 36% (chemistry), 40% (materials) and 44% "
+                  "(aerospace, marine and transport).",
          limits="L3 has only 12 papers. V is self-reported in the papers; L0–L3 is operationalised in RUBRIC.md and "
                 "awaits confirmation against Wei et al.",
          forms=[
@@ -54,11 +56,20 @@ TREE = [
                   "with strong verification (V3–V4); a dashed line joins the ★ points across walls.",
                   "fig_axes3d.py (matplotlib mplot3d), from ov_coding/increment/classification_results_662.jsonl.",
                   ["fig_axes3d.py"], ["fig_axes3d_curtains"], "python3 fig_axes3d.py"),
-             form("lattice_3d", "Openness × verification × autonomy lattice (3D)",
-                  "Every (V, L, O) cell as a bubble, with area proportional to papers; cells with strong verification "
-                  "(V3–V4) are in the accent colour. This is the proposal's main figure with autonomy added as the "
-                  "depth axis.",
-                  "fig_axes3d.py.", ["fig_axes3d.py"], ["fig_axes3d_lattice"], "python3 fig_axes3d.py"),
+             form("cube_3d", "Openness × verification × autonomy cube (3D)",
+                  "The proposal's three-way classification as one 3D space: x = problem openness O1–O6, y = verification "
+                  "strength V0–V4, z = system autonomy L0–L3. Every occupied (O, V, L) cell is a bubble with its paper "
+                  "count; area is proportional to papers and colour gives the V level (warm = strong, V3–V4). Tick "
+                  "labels carry each level's total, and drop lines mark the O × V position on the floor. The sheet "
+                  "repeats the cube for all papers and for each of the 11 fields, on one shared bubble scale.",
+                  "fig_axes3d.py (matplotlib mplot3d); every count is in derived/ovl_cube_counts.csv.",
+                  ["fig_axes3d.py"], ["fig_axes3d_cube", "fig_axes3d_cube_fields"], "python3 fig_axes3d.py",
+                  extra=["derived/ovl_cube_counts.csv"]),
+             form("cube_3d_by_field", "The cube for each field (3D)",
+                  "The same O × V × L cube for each field 01–11, one figure per field. A cross-field paper counts in "
+                  "every field it belongs to (935 paper–field assignments).",
+                  "fig_axes3d.py.", ["fig_axes3d.py"], [f"fig_axes3d_cube_f{i:02d}" for i in range(1, 12)],
+                  "python3 fig_axes3d.py", extra=["derived/ovl_cube_counts.csv"]),
          ]),
     dict(folder="02_cross_domain_structure", title="Cross-domain structure",
          claim="Each paper's scientific-object classification is archived and may span several fields, under a "

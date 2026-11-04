@@ -19,6 +19,8 @@ VISUAL_REFS = [
     ("Review rose", "F. Nightingale's coxcomb diagrams (1858)"),
     ("Ledger mosaic", "Tsevis's mosaic covers for Science"),
 ]
+VIDEO = ROOT / "video"            # proposal explainer video and its HyperFrames source, copied as-is
+VIDEO_DIR = "16_proposal_explainer_video"
 SNAP = "662 core papers · snapshot 2026-11-01 · decision mechanisms 2026-11-03 · repository commit 60f8bad"
 
 
@@ -55,6 +57,9 @@ def readme_root():
     for c in TREE:
         lines.append(f"| `{c['folder']}/` {c['title']} | " + ", ".join(f"`{f['folder']}`" for f in c["forms"])
                      + f" | {c['verdict']} |")
+    if VIDEO.exists():
+        lines.append(f"| `{VIDEO_DIR}/` Proposal explainer video | 1080p and 480p MP4, HyperFrames source | "
+                     "Walkthrough of the proposal, 14 scenes, Mandarin narration |")
     lines += ["\n## Tree\n", "```"]
     for c in TREE:
         lines.append(f"{c['folder']}/")
@@ -62,6 +67,8 @@ def readme_root():
             lines.append(f"  {f['folder']}/")
             for parts, _ in leaves(f):
                 lines.append("    " + "/".join(parts) + "/")
+    if VIDEO.exists():
+        lines += [f"{VIDEO_DIR}/", "  source/"]
     lines += ["```\n", "## Rebuild\n",
               "`code/` holds the runnable copy: MD5-pinned source data, derived tables, all scripts and this builder. "
               "Requirements: Python 3 with matplotlib ≥3.10, numpy and scipy; XeLaTeX for the report.\n",
@@ -253,6 +260,8 @@ def package(report_pdf):
                 for e in ver.get("extra", []):
                     shutil.copy2(ROOT / e, ld / Path(e).name)
                 (ld / "README.md").write_text(readme_leaf(c, f, parts, ver), encoding="utf-8")
+    if VIDEO.exists():
+        shutil.copytree(VIDEO, PKG / VIDEO_DIR, ignore=shutil.ignore_patterns(".DS_Store"))
     zpath = DIST / "Agent4Science_FigureSet.zip"
     if zpath.exists():
         zpath.unlink()
