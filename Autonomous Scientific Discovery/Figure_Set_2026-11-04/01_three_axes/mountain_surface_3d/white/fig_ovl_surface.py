@@ -147,7 +147,7 @@ def surface_axes(ax, pts, small=False, cut=False, quant=False):
     # strong-verification zone on the plain
     ax.plot([2.5, 2.5], [LY[0], LY[1]], [BASE, BASE], color=ACC, lw=0.7, ls="--", zorder=2)
     if not small:
-        ax.text(3.75, LY[1], BASE, "强验证区 V3–V4", fontsize=7.5, color=ACC, ha="center", zorder=30)
+        ax.text(3.75, LY[0] + 0.3, BASE, "强验证区 V3–V4", fontsize=7.5, color=ACC, ha="center", zorder=30)
     fs = 5.2 if small else 8
     ax.set_xticks(range(5), [f"V{k}" for k in range(5)] if small else V_TICK, fontsize=fs)
     ax.set_yticks(range(4), [f"L{k}" for k in range(4)], fontsize=fs)
@@ -158,7 +158,7 @@ def surface_axes(ax, pts, small=False, cut=False, quant=False):
         a.pane.set_facecolor((0.99, 0.988, 0.982, 1)); a.pane.set_edgecolor("#e4dfd6")
         a._axinfo["grid"].update(color="#ece8e1", linewidth=0.4)
     ax.set_box_aspect((1.45, 1.2, 0.95))
-    ax.view_init(elev=24, azim=-57)
+    ax.view_init(elev=24, azim=-45)
 
 
 FOOT = ("散点 = 三维坐标系中每个 (V, L, O) 组合，点面积 ∝ 论文数，颜色 = 自主性等级；山体 = 穿过全部散点的高斯光滑曲面"
