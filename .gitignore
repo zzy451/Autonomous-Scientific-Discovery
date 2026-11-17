@@ -165,3 +165,6 @@ Reference_PDF/**/*.pdf
 !/Autonomous Scientific Discovery/Coverage_Check/bibliography_full_audit_2026-10-31/unresolved_entries.csv
 !/Autonomous Scientific Discovery/Coverage_Check/manuscript_evidence_audit_2026-10-30/
 !/Autonomous Scientific Discovery/Coverage_Check/manuscript_evidence_audit_2026-10-30/audited_bibliography_overrides.json
+
+# Fig.10 3D archipelago: the submission PDF is tracked (via LFS)
+!Figures/Fig10_Scientific_Knowledge_Archipelago_3D_v1/**/*.pdf
