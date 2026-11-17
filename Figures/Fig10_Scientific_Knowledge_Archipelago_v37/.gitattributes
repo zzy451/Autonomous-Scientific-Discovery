@@ -1,0 +1,8 @@
+# Preserve exact vendor, data and reference bytes for the reproducibility manifest.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Preserve upstream/source snapshots without reformatting them.
+vendor/** -whitespace
+src/** -whitespace
+reference/** -whitespace
+# The upstream public-domain notice uses a seven-equals Markdown underline.
+vendor/licenses/js-priority-queue-Public-Domain.txt conflict-marker-size=32

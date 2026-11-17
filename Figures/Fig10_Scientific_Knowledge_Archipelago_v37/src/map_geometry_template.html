@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Figure 10 — Scientific Knowledge Archipelago — English v37</title>
+<style>
+  html, body { margin:0; background:#eef2ef; }
+  body { font-family: Arial, Helvetica, sans-serif; }
+  #frame { width: 1800px; margin: 0 auto; padding: 24px 28px 22px; box-sizing:border-box; background:#eef2ef; }
+  h1 { margin:0; color:#102532; font-size:48px; letter-spacing:.02em; }
+  .subtitle { margin-top:10px; color:#49616c; font-size:22px; }
+  #map-wrap { margin-top:16px; position:relative; border:1px solid #c3d1d0; background:#dbe8ec; }
+  svg { display:block; width:100%; height:auto; }
+  .field { stroke:#d4e3e0; stroke-width:.45px; stroke-linejoin:round; }
+  .domain-cell { stroke:#d4e3e0; stroke-width:.32px; stroke-linejoin:round; }
+  .field.sea { fill:#bdd7df; }
+  /* Coastline and territory strokes are intentionally omitted in this
+     scientific-domain map; color fields carry the boundary encoding. */
+  .coast { display:none; }
+  .river { display:none; }
+  .slope { display:none !important; }
+  .border { display:none; }
+  .domain { font-size:16.5px; font-weight:700; fill:#1b2e38; stroke:none; }
+  .count { font-size:12px; fill:#304953; stroke:none; }
+  .theme { font-size:10.1px; fill:#354b51; stroke:none; }
+  .theme-dot { fill:none; stroke:#657174; stroke-width:0.9px; opacity:0.92; }
+  .shared-route, .shared-label { display:none; }
+  .shared-sea { fill:#A9D5DE; fill-opacity:.88; stroke:#5C8C99; stroke-width:1.1px; }
+  .shared-sea-label { font-size:10px; font-weight:700; fill:#285563; stroke:none; }
+  path.shared-sea-coast { display:none; }
+  .titlebox { fill:rgba(244,247,243,.92); stroke:#9fb4b4; stroke-width:1.2px; }
+
+  #geometry-panel{position:absolute;right:18px;top:18px;width:395px;max-height:calc(100% - 36px);overflow:auto;padding:14px 16px;border:1px solid #6d969c;border-radius:12px;background:rgba(244,247,243,.97);box-shadow:0 4px 18px rgba(40,70,78,.22);color:#20343b;font-size:12px;z-index:3}
+  #geometry-panel h3{margin:0 0 6px;font-size:17px;color:#19343c}
+  #geometry-panel h4{margin:12px 0 5px;padding-top:8px;border-top:1px solid #c4d2d0;color:#2b5966;font-size:13px}
+  #geometry-panel label{display:flex;gap:7px;align-items:center;margin:6px 0;cursor:pointer}
+  #geometry-panel input{accent-color:#477d91}
+  #geometry-panel button{margin:5px 5px 2px 0;padding:6px 9px;border:1px solid #6c9297;border-radius:6px;background:#e5f0ec;color:#244650;cursor:pointer}
+  #geometry-panel input[type=range]{width:132px;vertical-align:middle;accent-color:#477d91}
+  #geometry-panel input[type=color]{width:28px;height:22px;padding:0;border:1px solid #79949a;vertical-align:middle}
+  #geometry-panel .param{display:flex;justify-content:space-between;align-items:center;margin:6px 0;gap:6px}
+  #geometry-panel details{margin-top:8px;border-top:1px solid #c4d2d0;padding-top:7px}
+  #geometry-panel summary{cursor:pointer;color:#2d5b68;font-weight:700}
+  #geometry-panel .row{display:grid;grid-template-columns:132px 52px 52px 60px;gap:4px;align-items:center;margin:4px 0}
+  #geometry-panel .sea-row{display:grid;grid-template-columns:130px 45px 45px 48px 48px 48px;gap:4px;align-items:center;margin:4px 0}
+  #geometry-panel .row input,#geometry-panel .sea-row input{width:100%;box-sizing:border-box;padding:3px 4px;border:1px solid #aac0c2;border-radius:4px;font-size:11px}
+  #geometry-panel .head{color:#5b7073;font-size:10px;margin:5px 0 1px}
+  #geometry-panel .meta{margin-top:8px;color:#5b7073;font-size:11px;line-height:1.38}
+  #geometry-panel .audit-pass{color:#176c4a;font-weight:700}
+  #geometry-panel .audit-warn{color:#9a5c17;font-weight:700}
+  #geometry-panel .audit-fail{color:#a33434;font-weight:700}
+  #svg .layer-terrain{pointer-events:none}
+  #svg .editable-sea{cursor:grab}
+  #svg .editable-sea:active{cursor:grabbing}
+
+
+  #svg .layer-theme-terrain{pointer-events:none}
+  #svg .theme-contour{fill:none;stroke:#405b61;stroke-width:0.50px;stroke-linecap:round;stroke-linejoin:round;opacity:.40}
+  #svg .theme-contour.strong{stroke:#2c4d54;stroke-width:0.76px;stroke-linecap:round;opacity:.52}
+
+</style>
+</head>
+<body>
+<div id="frame">
+  <h1>Figure 10. Scientific Knowledge Archipelago</h1>
+  <div class="subtitle">Formal tertiary categories: four most frequent categories per field</div>
+  <div id="map-wrap">
+<div id="geometry-panel">
+  <h3>方案 B.1：几何编辑器</h3>
+  <div class="meta">拖动地图上的共享海域数字可移动水域；下面的数值可以精确修改板块中心、面积权重、水域大小、长宽比和旋转角。修改后会立即重新生成 Voronoi 板块并运行成员接界审计。</div>
+  <h4>图层与全局形状</h4>
+  <label><input type="checkbox" data-layer="terrain" checked> 原生地形、坡线与网格</label>
+<label><input type="checkbox" data-layer="themeTerrain" checked> 主题峰群与等高线</label>
+  <label><input type="checkbox" data-layer="domains" checked> 11 个领域板块</label>
+  <label><input type="checkbox" data-layer="seas" checked> 共享水域与共同记录数</label>
+  <label><input type="checkbox" data-layer="labels" checked> 领域名称与数量</label>
+  <div class="param"><span>板块边界粗糙度</span><input type="range" data-global="boundaryJitter" min="0" max="1" step="0.01"><output data-out="boundaryJitter"></output></div>
+  <div class="param"><span>面积响应指数</span><input type="range" data-global="areaExponent" min="0.15" max="0.60" step="0.01"><output data-out="areaExponent"></output></div>
+  <div class="param"><span>原生山地斑块数</span><input type="range" data-global="mountainCount" min="10" max="100" step="1"><output data-out="mountainCount"></output></div>
+  <div class="param"><span>原生山地影响半径</span><input type="range" data-global="mountainRadius" min="0.02" max="0.10" step="0.005"><output data-out="mountainRadius"></output></div>
+  <div class="param"><span>水域面积比例</span><input type="range" data-global="seaCellsPerRecord" min="0.20" max="1.20" step="0.01"><output data-out="seaCellsPerRecord"></output></div>
+  <h4>板块中心与面积</h4>
+  <div class="head">领域　　X中心　Y中心　面积倍率</div>
+  <div id="domain-editor"></div>
+  <h4>共享水域几何</h4>
+  <div class="head">成员组合　 X　　Y　　大小　长宽　角度</div>
+  <div id="sea-editor"></div>
+  <div id="audit-status" class="meta">正在等待地图生成…</div>
+  <button id="reset-geometry">恢复 B 默认几何</button>
+  <button id="download-svg">导出当前 SVG</button>
+  <button id="download-params">导出参数 JSON</button>
+  <div class="meta">导出的参数包含板块中心、面积权重和全部 11 个水域的成员组合、锚点、大小、长宽比、旋转角。只有通过审计的配置才建议用于论文图。</div>
+</div>
+<svg id="svg" viewBox="-500 -500 1000 1000" aria-label="Scientific Knowledge Archipelago"></svg></div>
+</div>
+<script src="d3.v4.min.js"></script>
+<script>
+  // Freeze the upstream procedural map so the exported figure and the
+  // editable HTML reproduce the same terrain and label layout.
+  (function(){
+    var seed = 20261115; window.__resetFig10Seed=function(){seed=20261115;};
+    Math.random = function(){
+      seed = (1664525 * seed + 1013904223) >>> 0;
+      return seed / 4294967296;
+    };
+  })();
+</script>
+<script src="fantasy_maps_map.js"></script>
+<script>
+function renderFigure(config){
+  config=config||{};
+  if(window.__resetFig10Seed) window.__resetFig10Seed();
+  var svg0=d3.select('#svg'); svg0.selectAll('*').remove();
+  var names = ["Formal and Computational Sciences","Physics and Astronomy","Chemistry","Materials Science","Earth and Environmental Sciences","Life Sciences","Medicine and Health","Agriculture and Food","Engineering and Manufacturing","Aerospace and Transportation","Society and Knowledge"];
+  var counts = [130, 193, 213, 254, 160, 392, 307, 48, 146, 50, 77];
+  var themes = [["Machine Learning","Differential Equations","Artificial Intelligence","Discrete Mathematics and Combinatorics"],["Galaxies and Galaxy Evolution","Computational Physics","Particle Physics","Classical Mechanics"],["Theoretical and Computational Chemistry","Small-Molecule Property Optimization","Reaction Design","Medicinal Chemistry"],["Computational Materials Science and Materials Informatics","Optoelectronic Materials","Materials Characterization","Crystalline Materials"],["Remote Sensing","Meteorology","Climate Science","Geophysics"],["Protein Science","Genomics","Single-Cell Biology","Structural Biology"],["Drug Discovery","Medical Informatics","Pathology","Anatomy"],["Crop Science","Soil Science","Plant Protection","Agricultural Meteorology"],["Engineering Mathematics and Modeling","Mechanical Design","Engineering Mechanics","Process Systems Engineering"],["Deep-Space Exploration","Intelligent Transportation Systems","Satellite Engineering","Aerodynamics"],["Scientific Methodology","Scientific Explanation and Evidence Theory","Scientific Knowledge Networks","Disciplinary Evolution and Interdisciplinary Discovery Mechanisms"]];
+  var fieldTitleLines=[["Formal and","Computational Sciences"],["Physics and","Astronomy"],["Chemistry"],["Materials","Science"],["Earth and","Environmental Sciences"],["Life Sciences"],["Medicine and","Health"],["Agriculture","and Food"],["Engineering and","Manufacturing"],["Aerospace and","Transportation"],["Society and","Knowledge"]];
+  var formalTertiaryCodes=[["01.02.13","01.01.06","01.02.12","01.01.12"],["02.01.04","02.02.16","02.02.14","02.02.03"],["03.02.11","03.04.02","03.03.02","03.04.05"],["04.01.04","04.04.05","04.01.03","04.02.05"],["05.04.04","05.02.01","05.02.02","05.01.03"],["06.03.06","06.03.01","06.03.04","06.03.05"],["07.04.01","07.03.08","07.01.04","07.01.01"],["08.01.01","08.01.03","08.01.06","08.01.08"],["09.01.01","09.02.01","09.01.02","09.04.02"],["10.02.03","10.04.05","10.02.02","10.01.02"],["11.07.08","11.07.09","11.07.03","11.07.10"]];
+  var displayRecordCounts=[130,193,214,257,161,392,310,50,147,50,77];
+  var colors = ["#6F9FCE", "#81A8C7", "#62B2A6", "#A8C46A", "#D7B66A", "#D99762", "#C97D8E", "#AA83C9", "#7B8FD2", "#7FA9B4", "#9B9EA9"];
+  var routes = [{"a": 5, "b": 6, "n": 118}, {"a": 2, "b": 3, "n": 60}, {"a": 2, "b": 6, "n": 50}, {"a": 0, "b": 1, "n": 30}, {"a": 2, "b": 5, "n": 29}, {"a": 1, "b": 8, "n": 26}, {"a": 0, "b": 8, "n": 24}, {"a": 3, "b": 5, "n": 22}, {"a": 3, "b": 8, "n": 19}];
+  var svg = d3.select('#svg');
+  var params = {extent: defaultExtent, generator: generateCoast, npts: config.npts || 16384, mountainCount: config.mountainCount || 50, mountainRadius: config.mountainRadius || .05, ncities: 11, nterrs: 11,
+                fontsizes:{region:42, city:24, town:18}};
+  var render = {params:params};
+  // Use the repository's native terrain generator, erosion and city placement.
+  render.h = params.generator(params);
+  placeCities(render);
+  // Reorder the domain seeds to a data-informed layout. The central cluster
+  // joins life/medical/chemistry/materials; the lower-left triangle joins
+  // formal/physics/engineering; earth/aviation sit on the right; social
+  // knowledge stays near formal/computational science.
+  var defaultCenters = [[-0.4, 0], [-0.48, -0.18], [0, 0.34], [-0.22, 0.28], [0.42, 0.3], [0.22, 0.22], [-0.02, 0.1], [0.42, -0.22], [-0.22, -0.11], [0.48, 0.04], [-0.52, 0.22]];
+  var desiredCenters = (config.centers || defaultCenters).map(function(p){return [ +p[0], +p[1] ];});
+  render.cities = desiredCenters.map(function(p){
+    return d3.scan(render.h.mesh.vxs, function(a,b){
+      var da=(a[0]-p[0])*(a[0]-p[0])+(a[1]-p[1])*(a[1]-p[1]);
+      var db=(b[0]-p[0])*(b[0]-p[0])+(b[1]-p[1])*(b[1]-p[1]); return da-db;
+    });
+  });
+  render.rivers = getRivers(render.h, 0.009);
+  render.coasts = contour(render.h, 0);
+  render.terr = getTerritories(render);
+  render.borders = getBorders(render);
+  // Display partition: a weighted Voronoi assignment whose weight is the
+  // observed record count of the corresponding domain. The native map engine
+  // still supplies the mesh and terrain, while this display layer makes the
+  // visual area respond monotonically to corpus size.
+  var positivePoints = render.h.mesh.vxs.filter(function(p, ii){ return render.h[ii] > 0; });
+  var continentHull = d3.polygonHull(positivePoints);
+  function insideContinent(p) {
+    return continentHull && d3.polygonContains(continentHull, p);
+  }
+  var areaExponent = config.areaExponent===undefined ? .35 : +config.areaExponent;
+  var domainWeights = config.domainWeights || counts.map(function(){return 1;});
+  var displayWeights = counts.map(function(x,i){return Math.pow(x,areaExponent)*(domainWeights[i]||1);});
+  function weightedDomainIndex(p) {
+    var best=-1, bestScore=Infinity;
+    for (var ci0=0; ci0<render.cities.length; ci0++) {
+      var cp = render.h.mesh.vxs[render.cities[ci0]];
+      var dx=p[0]-cp[0], dy=p[1]-cp[1];
+      var jitter=Math.abs(Math.sin((p[0]*73.17+p[1]*91.31+ci0*17.3))*43758.5453)%1;
+      var score=(dx*dx+dy*dy)/(displayWeights[ci0] || 1e-6) * (1 + (config.boundaryJitter||0)*0.35*(jitter-.5));
+      if (score < bestScore) { bestScore=score; best=ci0; }
+    }
+    return best;
+  }
+  // Calibrate the weights against the actual Voronoi cell areas. This removes
+  // the strong edge/seed-position bias of a single weighted pass and makes
+  // the final plate areas track the corpus counts monotonically.
+  var areaCells = render.h.mesh.vor.polygons(render.h.mesh.pts);
+  for (var pass=0; pass<12; pass++) {
+    var areaNow=new Array(render.cities.length).fill(0), totalArea=0;
+    areaCells.forEach(function(poly){
+      if (!poly || !poly.length) return;
+      var cx0=d3.mean(poly,function(p){return p[0]}), cy0=d3.mean(poly,function(p){return p[1]});
+      if (!insideContinent([cx0,cy0])) return;
+      var ar=Math.abs(d3.polygonArea(poly));
+      var ci0=weightedDomainIndex([cx0,cy0]);
+      if (ci0>=0) { areaNow[ci0]+=ar; totalArea+=ar; }
+    });
+    for (var wi=0; wi<displayWeights.length; wi++) {
+      var target=totalArea*(Math.pow(counts[wi],areaExponent)*(domainWeights[wi]||1)/d3.sum(counts.map(function(x,ii){return Math.pow(x,areaExponent)*(domainWeights[ii]||1);}))); 
+      if (areaNow[wi]>1e-9) displayWeights[wi]*=Math.pow(target/areaNow[wi],.55);
+    }
+  }
+  var displayTerr = new Array(render.h.mesh.vxs.length);
+  for (var vi=0; vi<render.h.mesh.vxs.length; vi++) {
+    var vp = render.h.mesh.vxs[vi];
+    // Internal low-elevation cells remain part of the knowledge continent;
+    // only cells outside the outer hull stay neutral background.
+    displayTerr[vi] = insideContinent(vp) ? weightedDomainIndex(vp) : undefined;
+  }
+  var displayCenters = render.cities.map(function(city, ci0){
+    var sx=0, sy=0, n=0;
+    for (var vi=0; vi<displayTerr.length; vi++) {
+      if (displayTerr[vi] !== ci0) continue;
+      sx += render.h.mesh.vxs[vi][0]; sy += render.h.mesh.vxs[vi][1]; n++;
+    }
+    if (!n) return render.h.mesh.vxs[city];
+    return [sx/n, sy/n];
+  });
+  function pairBoundaryPoint(a,b) {
+    var sx=0, sy=0, n=0;
+    render.h.mesh.edges.forEach(function(e){
+      var u=e[0], v=e[1];
+      if (!insideContinent(render.h.mesh.vxs[u]) || !insideContinent(render.h.mesh.vxs[v])) return;
+      var tu=displayTerr[u], tv=displayTerr[v];
+      if (!((tu===a && tv===b) || (tu===b && tv===a))) return;
+      sx += (render.h.mesh.vxs[u][0]+render.h.mesh.vxs[v][0])*.5;
+      sy += (render.h.mesh.vxs[u][1]+render.h.mesh.vxs[v][1])*.5;
+      n++;
+    });
+    if (n) return [sx/n,sy/n];
+    return [(displayCenters[a][0]+displayCenters[b][0])*.5,
+            (displayCenters[a][1]+displayCenters[b][1])*.5];
+  }
+  function sharedSeaCenter(s) {
+    if (s.anchor) return [Math.max(-.49,Math.min(.49,+s.anchor[0])), Math.max(-.49,Math.min(.49,+s.anchor[1]))];
+    if (s.m.length===2) return pairBoundaryPoint(s.m[0],s.m[1]);
+    var pts=[];
+    for (var ai=0; ai<s.m.length; ai++) for (var bi=ai+1; bi<s.m.length; bi++)
+      pts.push(pairBoundaryPoint(s.m[ai],s.m[bi]));
+    return [d3.mean(pts,function(p){return p[0]}),d3.mean(pts,function(p){return p[1]})];
+  }
+  // Shared seas are generated through the native Fantasy Maps elevation
+  // pipeline: each selected exact multi-domain combination creates a local
+  // depression in a positive land height field, and cells with h < 0 become
+  // the shared sea. This keeps the coastlines irregular and mesh-native.
+  var defaultSharedSeas = [{"m": [5, 6], "n": 100, "anchor": [0.15699554979799146, -0.15402088509052414], "size": 1, "stretch": 1, "angle": null}, {"m": [2, 3], "n": 39, "anchor": [-0.1216170571336692, 0.38], "size": 1, "stretch": 1, "angle": null}, {"m": [2, 6], "n": 35, "anchor": [0, 0.19220098985271647], "size": 1, "stretch": 1, "angle": null}, {"m": [3, 8], "n": 14, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [4, 9], "n": 14, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [1, 8], "n": 13, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [0, 1], "n": 12, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [0, 8], "n": 11, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [0, 10], "n": 11, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [0, 1, 8], "n": 6, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [2, 3, 5], "n": 5, "anchor": [0.03, 0.3], "size": 1, "stretch": 1, "angle": null}];
+  var sharedSeas = (config.sharedSeas || defaultSharedSeas).map(function(s){return {m:s.m.slice(),n:+s.n,anchor:s.anchor ? [+s.anchor[0],+s.anchor[1]] : null,size:s.size===undefined?1:+s.size,stretch:s.stretch===undefined?1:+s.stretch,angle:s.angle===undefined?0:+s.angle};});
+  var seaColors={2:'#DCEFF1',3:'#A8D4DD',4:'#6D9FAC'};
+  function seedPoint(i) { return displayCenters[i]; }
+  var cells = render.h.mesh.vor.polygons(render.h.mesh.pts);
+  var cellCenters = cells.map(function(poly){
+    return [d3.mean(poly,function(p){return p[0]}),d3.mean(poly,function(p){return p[1]})];
+  });
+  var cellNearest = cells.map(function(poly){
+    var p=cellCenters[arguments[1]];
+    return d3.scan(render.h.mesh.vxs,function(a,b){
+      var da=(a[0]-p[0])*(a[0]-p[0])+(a[1]-p[1])*(a[1]-p[1]);
+      var db=(b[0]-p[0])*(b[0]-p[0])+(b[1]-p[1])*(b[1]-p[1]); return da-db;
+    });
+  });
+  var seaInfo = sharedSeas.map(function(s){
+    var pts=s.m.map(seedPoint), c=sharedSeaCenter(s), dx=0, dy=0;
+    if (pts.length===2) { dx=pts[1][0]-pts[0][0]; dy=pts[1][1]-pts[0][1]; }
+    var norm=Math.sqrt(dx*dx+dy*dy)||1;
+    var angle=s.angle===undefined || s.angle===null ? Math.atan2(dy,dx) : s.angle;
+    var ux=Math.cos(angle),uy=Math.sin(angle),vx=-uy,vy=ux;
+    var size=s.size===undefined?1:s.size, stretch=Math.max(.35,s.stretch===undefined?1:s.stretch);
+    var baseMajor=(s.m.length===2 ? .0105*Math.sqrt(s.n) : .025*Math.sqrt(s.n))*size;
+    return {s:s,c:c,ux:ux,uy:uy,vx:vx,vy:vy,angle:angle,
+      major:baseMajor, minor:baseMajor/stretch};
+  });
+  // Build Voronoi-cell adjacency so different shared seas can receive a
+  // one-cell land buffer and never visually merge.
+  var cellNeighbors=cells.map(function(){return [];});
+  var edgeCells={};
+  cells.forEach(function(poly,ci){
+    for (var ei=0;ei<poly.length;ei++) {
+      var p0=poly[ei], p1=poly[(ei+1)%poly.length];
+      var a=(Math.round(p0[0]*1e5)+','+Math.round(p0[1]*1e5));
+      var b=(Math.round(p1[0]*1e5)+','+Math.round(p1[1]*1e5));
+      var key=a<b ? a+'|'+b : b+'|'+a;
+      if (!edgeCells[key]) edgeCells[key]=[];
+      edgeCells[key].push(ci);
+    }
+  });
+  Object.keys(edgeCells).forEach(function(key){
+    var es=edgeCells[key];
+    if (es.length===2) { cellNeighbors[es[0]].push(es[1]); cellNeighbors[es[1]].push(es[0]); }
+  });
+  // Assign every Voronoi cell to at most one exact shared-domain sea. Pair
+  // seas are restricted to their two member domains; higher-order seas are
+  // restricted to the full member set.
+  var sharedSeaOwner=new Array(cells.length).fill(-1);
+  var seaCellFactor=config.seaCellsPerRecord===undefined ? .55 : Math.max(.10,+config.seaCellsPerRecord);
+  var seaOrder=d3.range(sharedSeas.length).sort(function(a,b){
+    return sharedSeas[b].m.length-sharedSeas[a].m.length || sharedSeas[b].n-sharedSeas[a].n;
+  });
+  var seaBlocked=new Array(cells.length).fill(false);
+  var seaAllocationDebug=[];
+  function cellDomain(ci){
+    var nearVertex=cellNearest[ci], p=cellCenters[ci];
+    return nearVertex===undefined ? weightedDomainIndex(p) : displayTerr[nearVertex];
+  }
+  function seaCellScore(ci,info){
+    var p=cellCenters[ci], rx=p[0]-info.c[0], ry=p[1]-info.c[1];
+    var along=(rx*info.ux+ry*info.uy)/(info.major||1e-6);
+    var across=(rx*info.vx+ry*info.vy)/(info.minor||1e-6);
+    return along*along+across*across;
+  }
+  function canTakeSeaCell(ci,si){
+    if (seaBlocked[ci] || sharedSeaOwner[ci]>=0) return false;
+    var d=cellDomain(ci), s=sharedSeas[si];
+    if (d===undefined || s.m.indexOf(d)<0) return false;
+    for (var ni=0;ni<cellNeighbors[ci].length;ni++) {
+      var nj=cellNeighbors[ci][ni];
+      if (sharedSeaOwner[nj]>=0 && sharedSeaOwner[nj]!==si) return false;
+    }
+    return true;
+  }
+  function memberCoverage(selected,si){
+    var present={}; selected.forEach(function(ci){var d=cellDomain(ci);if(d!==undefined)present[d]=true;});
+    return sharedSeas[si].m.every(function(m){return !!present[m];});
+  }
+  seaOrder.forEach(function(si){
+    var s=sharedSeas[si], info=seaInfo[si], seedCandidates=[];
+    cells.forEach(function(poly,ci){
+      if (!poly || !insideContinent(cellCenters[ci])) return;
+      var d=cellDomain(ci); if (d===undefined || s.m.indexOf(d)<0) return;
+      var nearby={}; nearby[d]=true;
+      cellNeighbors[ci].forEach(function(nj){var nd=cellDomain(nj);if(nd!==undefined)nearby[nd]=true;});
+      var touching=s.m.filter(function(m){return !!nearby[m];}).length;
+      var isPair=s.m.length===2 && touching===2;
+      var isTriple=s.m.length>2 && touching>=2;
+      if (isPair || isTriple) seedCandidates.push({ci:ci,score:seaCellScore(ci,info)-touching*.35,touching:touching});
+    });
+    seedCandidates.sort(function(a,b){return b.touching-a.touching || a.score-b.score;});
+    var localSize=s.size===undefined?1:+s.size;
+    var target=Math.max(s.m.length*3,Math.round(s.n*seaCellFactor*localSize));
+    var selected=[];
+    // Start from one actual member-interface cell and grow a connected region.
+    var seed=seedCandidates.find(function(c){return canTakeSeaCell(c.ci,si);});
+    var required={};
+    var frontier=[];
+    if(seed){
+      selected.push(seed.ci);
+      cellNeighbors[seed.ci].forEach(function(nj){var nd=cellDomain(nj);if(nd!==undefined&&s.m.indexOf(nd)>=0&&!seaBlocked[nj]&&sharedSeaOwner[nj]<0){frontier.push(nj);required[nj]=true;}});
+    }
+    while(frontier.length && selected.length<target){
+      frontier.sort(function(a,b){return (required[a]? -1000:0)+seaCellScore(a,info)-((required[b]? -1000:0)+seaCellScore(b,info));});
+      var ci=frontier.shift();
+      if(selected.indexOf(ci)>=0 || !canTakeSeaCell(ci,si)) continue;
+      selected.push(ci);
+      cellNeighbors[ci].forEach(function(nj){
+        if(selected.indexOf(nj)>=0 || frontier.indexOf(nj)>=0) return;
+        var nd=cellDomain(nj); if(nd!==undefined && s.m.indexOf(nd)>=0 && !seaBlocked[nj] && sharedSeaOwner[nj]<0) frontier.push(nj);
+      });
+    }
+    function connectToMember(member){
+      if(selected.some(function(ci){return cellDomain(ci)===member;})) return [];
+      var queue=selected.slice(), parent={}, seen={}; queue.forEach(function(ci){seen[ci]=true;});
+      var hit=null;
+      while(queue.length && hit===null){
+        var cur=queue.shift();
+        for(var qi=0;qi<cellNeighbors[cur].length;qi++){
+          var nj=cellNeighbors[cur][qi];
+          if(seen[nj] || seaBlocked[nj] || sharedSeaOwner[nj]>=0) continue;
+          var nd=cellDomain(nj); if(nd===undefined || s.m.indexOf(nd)<0) continue;
+          seen[nj]=true; parent[nj]=cur;
+          if(nd===member){hit=nj;break;}
+          queue.push(nj);
+        }
+      }
+      if(hit===null) return [];
+      var path=[], cur=hit; while(cur!==undefined){path.push(cur);if(selected.indexOf(cur)>=0)break;cur=parent[cur];}
+      return path.reverse();
+    }
+    s.m.forEach(function(member){
+      var path=connectToMember(member);
+      path.forEach(function(ci){if(selected.indexOf(ci)<0 && canTakeSeaCell(ci,si))selected.push(ci);});
+    });
+    // If the initial component has not yet touched all members, continue from
+    // the nearest interface cells while preserving the same connected region.
+    if(!memberCoverage(selected,si)){
+      var rescue=seedCandidates.map(function(c){return c.ci;}).filter(function(ci){return selected.indexOf(ci)<0 && canTakeSeaCell(ci,si);});
+      rescue.forEach(function(ci){if(selected.length<target+Math.max(4,s.m.length*2) && selected.length && cellNeighbors[ci].some(function(nj){return selected.indexOf(nj)>=0;})){selected.push(ci);}});
+    }
+    selected.forEach(function(ci){
+      sharedSeaOwner[ci]=si;
+      cellNeighbors[ci].forEach(function(nj){if(sharedSeaOwner[nj]!==si)seaBlocked[nj]=true;});
+    });
+    var selectedDomains={}; selected.forEach(function(ci){var dd=cellDomain(ci);if(dd!==undefined)selectedDomains[dd]=(selectedDomains[dd]||0)+1;});
+    seaAllocationDebug.push({sea_index:si,records:s.n,seed_candidates:seedCandidates.length,seed:seed?seed.ci:null,seed_domain:seed?cellDomain(seed.ci):null,seed_neighbors:seed?cellNeighbors[seed.ci].map(function(nj){return cellDomain(nj);}):[],target:target,selected:selected.length,coverage:memberCoverage(selected,si),selected_domains:selectedDomains});
+  });
+  // The allocator already reserves a one-cell land buffer while assigning
+  // water cells; this remains as a defensive check for future extensions.
+  var seaConflict=new Array(cells.length).fill(false);
+  sharedSeaOwner.forEach(function(owner,ci){
+    if(owner<0)return;
+    cellNeighbors[ci].forEach(function(nj){
+      if(sharedSeaOwner[nj]>=0 && sharedSeaOwner[nj]!==owner){seaConflict[ci]=true;seaConflict[nj]=true;}
+    });
+  });
+  sharedSeaOwner=sharedSeaOwner.map(function(owner,ci){return seaConflict[ci]?-1:owner;});
+  // Keep only exact combinations whose selected native cells include every
+  // declared member domain. Invalid combinations remain in the CSV appendix
+  // but are not drawn as misleading shared seas.
+  function seaCellsConnected(si){
+    var ids=[]; sharedSeaOwner.forEach(function(owner,ci){if(owner===si)ids.push(ci);});
+    if(!ids.length)return false;
+    var seen={}, stack=[ids[0]], count=0; seen[ids[0]]=true;
+    while(stack.length){var ci=stack.pop();count++;cellNeighbors[ci].forEach(function(nj){if(sharedSeaOwner[nj]===si&&!seen[nj]){seen[nj]=true;stack.push(nj);}});}
+    return count===ids.length;
+  }
+  var seaValid=sharedSeas.map(function(s,si){
+    var present={};
+    sharedSeaOwner.forEach(function(owner,ci){
+      if (owner!==si) return;
+      var v=cellNearest[ci]; if (v!==undefined && displayTerr[v]!==undefined) present[displayTerr[v]]=true;
+    });
+    return s.m.every(function(m){return !!present[m];}) && seaCellsConnected(si);
+  });
+  sharedSeaOwner=sharedSeaOwner.map(function(owner){return owner>=0 && seaValid[owner] ? owner : -1;});
+  var landHeight = map(render.h, function(x){ return Math.max(.18, x+.22); });
+  var sharedHeight = map(landHeight, function(x){ return x; });
+  var sharedSeaMask=new Array(render.h.mesh.vxs.length).fill(false);
+  sharedSeaOwner.forEach(function(si,ci){
+    if (si<0) return;
+    var p=cellCenters[ci], k=d3.scan(render.h.mesh.vxs,function(a,b){
+      var da=(a[0]-p[0])*(a[0]-p[0])+(a[1]-p[1])*(a[1]-p[1]);
+      var db=(b[0]-p[0])*(b[0]-p[0])+(b[1]-p[1])*(b[1]-p[1]); return da-db;
+    });
+    if (k!==undefined) { sharedHeight[k]=-.12; sharedSeaMask[k]=true; }
+  });
+  var seaLabelCenters=seaInfo.map(function(info,si){
+    var sx=0,sy=0,n=0;
+    sharedSeaOwner.forEach(function(owner,ci){
+      if (owner!==si) return;
+      sx+=cellCenters[ci][0]; sy+=cellCenters[ci][1]; n++;
+    });
+    return n ? [sx/n,sy/n] : info.c;
+  });
+  // Use the repository's native Voronoi polygons directly. Each land cell is
+  // assigned to the count-weighted display territory; shared sea cells are
+  // colored from the native h < 0 mask.
+  var cellPaths = svg.selectAll('polygon.domain-cell').data(cells);
+  cellPaths = cellPaths.enter().append('polygon').classed('domain-cell', true).merge(cellPaths);
+  cellPaths.attr('points', function(poly){ return poly.map(function(p){ return (1000*p[0])+','+(1000*p[1]); }).join(' '); })
+    .attr('data-sea-index', function(poly){var ii=cells.indexOf(poly);return ii>=0?sharedSeaOwner[ii]:-1;})
+    .style('fill', function(poly){
+      if (!poly || !poly.length) return '#bdd7df';
+      var cx = d3.mean(poly, function(p){return p[0]}), cy = d3.mean(poly, function(p){return p[1]});
+      if (!insideContinent([cx,cy])) return '#bdd7df';
+      var cellIndex = cells.indexOf(poly);
+      if (cellIndex>=0 && sharedSeaOwner[cellIndex]>=0)
+        return seaColors[sharedSeas[sharedSeaOwner[cellIndex]].m.length];
+      var nearVertex = cellNearest[cellIndex];
+      var ci = nearVertex===undefined ? weightedDomainIndex([cx,cy]) : displayTerr[nearVertex];
+      if (ci === undefined || ci < 0) return '#bdd7df';
+      return colors[ci % colors.length];
+    })
+    .style('fill-opacity', .36);
+  // The native low-elevation cells define the sea fill. Their contour stroke
+  // is intentionally hidden so the sea is read as a filled region only.
+
+  // Display-only correction for the 形式与计算 plate: keep its geometry and
+  // shared-sea anchors unchanged, but move the title and topic peaks below
+  // the upper shared-water cells.
+  var labelCenters=displayCenters.map(function(p){return [p[0],p[1]];});
+  labelCenters[0][1]+=0.065;
+  labelCenters[3][1]+=0.080;
+  // Keep the social-knowledge title and its three themes inside the grey plate.
+  labelCenters[10][0]-=0.160;
+  labelCenters[10][1]+=0.210;
+  // Integrated knowledge-terrain layer. It reuses the existing Fantasy Maps
+  // Voronoi cells, so the Fig.10 domain colors and shared seas stay intact.
+  var themeTerrainLayer = svg.append('g').attr('class','layer-theme-terrain');
+  var themeOffsets = [[[-0.06,-0.04],[0.02,-0.075],[-0.045,0.03],[0.06,0.02]],[[-0.065,-0.035],[0.015,-0.075],[-0.045,0.045],[0.065,0.025]],[[-0.07,-0.015],[0.03,-0.06],[-0.01,0.03],[0.065,0.075]],[[-0.065,-0.055],[0.015,-0.02],[-0.05,0.055],[0.075,0.07]],[[-0.055,-0.05],[0.03,-0.075],[-0.04,0.035],[0.045,0.055]],[[-0.065,-0.055],[0.025,-0.075],[-0.04,0.035],[0.055,0.055]],[[-0.07,-0.03],[0.025,-0.07],[-0.045,0.025],[0.07,0.075]],[[-0.065,-0.015],[0.035,-0.07],[-0.05,0.045],[0.07,0.025]],[[-0.07,-0.04],[0.015,-0.075],[-0.05,0.035],[0.07,0.065]],[[-0.04,-0.035],[0.025,-0.065],[-0.025,0.035],[0.04,0.075]],[[-0.045,-0.04],[0.04,-0.02],[-0.025,0.045],[0.045,0.075]]];
+  var themeRecordCounts = [[36,26,13,9],[36,28,24,17],[35,26,22,22],[91,24,20,19],[31,31,28,15],[113,108,57,46],[87,76,34,29],[35,4,4,4],[40,19,13,9],[19,13,4,4],[17,15,13,10]];
+  var themePeakWeights = themeRecordCounts.map(function(a){return a.map(function(n){return Math.log1p(n)/Math.log1p(113);});});
+  var themePeaks = [];
+  var cellIndexByRef = new Map();
+  cells.forEach(function(poly,ci){cellIndexByRef.set(poly,ci);});
+  var cellTree = d3.quadtree().x(function(d){return d.p[0];}).y(function(d){return d.p[1];})
+    .addAll(cellCenters.map(function(p,ci){return {p:p,index:ci};}));
+  function nearestCellIndex(p){var q=cellTree.find(p[0],p[1]);return q ? q.index : -1;}
+  function isValidThemePoint(p,di){
+    if(!insideContinent(p))return false;
+    var ni=nearestCellIndex(p);
+    var visibleDi=ni>=0 && agricultureVisualMask && agricultureVisualMask[ni]?7:(ni>=0 && engineeringTopMask && engineeringTopMask[ni]?8:weightedDomainIndex(p));
+    if(visibleDi!==di)return false;
+    return ni<0 || sharedSeaOwner[ni]<0;
+  }
+  for (var di=0;di<render.cities.length;di++) {
+    var baseCenter=labelCenters[di], candidates=[];
+    for (var ci0=0;ci0<cellCenters.length;ci0++) {
+      if (cellDomain(ci0)!==di || sharedSeaOwner[ci0]>=0) continue;
+      candidates.push(cellCenters[ci0]);
+    }
+    var picked=[];
+    (themeOffsets[di]||themeOffsets[0]).forEach(function(off){
+      var tx=baseCenter[0]+off[0], ty=baseCenter[1]+off[1], best=null, bestScore=Infinity;
+      candidates.forEach(function(p){
+        var tooClose=false;
+        picked.forEach(function(q){var dx=p[0]-q[0],dy=p[1]-q[1];if(dx*dx+dy*dy<.0007)tooClose=true;});
+        if(tooClose)return;
+        var dx=p[0]-tx,dy=p[1]-ty,score=dx*dx+dy*dy;
+        if(score<bestScore){bestScore=score;best=p;}
+      });
+      if(!best && candidates.length) best=candidates[0];
+      if(best){picked.push(best);}
+    });
+    themePeaks.push(picked);
+  }
+  function hexRgb(s){var h=s.replace('#','');if(h.length===3)h=h.split('').map(function(x){return x+x;}).join('');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+  function mixHex(a,b,t){var x=hexRgb(a),y=hexRgb(b),u=Math.max(0,Math.min(1,t));return 'rgb('+Math.round(x[0]*(1-u)+y[0]*u)+','+Math.round(x[1]*(1-u)+y[1]*u)+','+Math.round(x[2]*(1-u)+y[2]*u)+')';}
+  function localThemeHeight(p,di){
+    var peaks=themePeaks[di]||[], h=0;
+    peaks.forEach(function(q,j){
+      // Broader Gaussian fields reproduce the v3 peak-to-foothill transition.
+      var amp=themePeakWeights[di][j];
+      var localMax=Math.max.apply(null,themeRecordCounts[di]),scale=Math.sqrt(themeRecordCounts[di][j]/localMax);
+      var sx=.029+.033*scale, sy=.025+.027*scale, dx=(p[0]-q[0])/sx, dy=(p[1]-q[1])/sy;
+      h=Math.max(h,amp*Math.exp(-.5*(dx*dx+dy*dy)));
+    });
+    // A tiny deterministic micro-relief avoids flat, identical cells while
+    // leaving the thematic height field dominant.
+    h += .018*(Math.sin(p[0]*731.7+p[1]*391.3)+Math.cos(p[0]*421.1-p[1]*613.7))*.5;
+    return Math.max(0,Math.min(1,h));
+  }
+  function terrainCellColor(base,p,di){
+    var h=localThemeHeight(p,di), eps=.0035;
+    var gx=(localThemeHeight([p[0]+eps,p[1]],di)-localThemeHeight([p[0]-eps,p[1]],di))/(2*eps);
+    var gy=(localThemeHeight([p[0],p[1]+eps],di)-localThemeHeight([p[0],p[1]-eps],di))/(2*eps);
+    var light=Math.max(-.12,Math.min(.12,(-.70*gx-.55*gy)*.45));
+    var shaded=mixHex(base,'#30484f',.06+.84*h);
+    if(light>0) shaded=mixHex(shaded,'#f3e2df',light);
+    if(light<0) shaded=mixHex(shaded,'#253b43',-light);
+    return shaded;
+  }
+  // Display-only medicine-health extension: recolour the small upper
+  // green/neutral fragment as the same medicine-health territory hue.
+  // Shared-sea cells keep priority and are never recoloured by this patch.
+  var medicinePatchPolygon=[[.02,-.50],[.15,-.50],[.18,-.40],[.16,-.33],[.10,-.28],[.02,-.27],[-.01,-.33],[.00,-.42]];
+  function isMedicineVisualPatch(p){return !isEngineeringVisualRestore(p) && d3.polygonContains(medicinePatchPolygon,p);}
+  var adjacentPatchLeft=[[-.24,-.50],[.00,-.50],[.02,-.40],[-.005,-.32],[-.20,-.30]];
+  var adjacentPatchRight=[[.16,-.50],[.40,-.50],[.42,-.35],[.33,-.27],[.15,-.38]];
+  // v37: the upper life-science repaint must not override engineering.
+  // Use the existing per-cell ownership, not a newly guessed boundary.
+  function isEngineeringVisualRestore(p){
+    var ci=nearestCellIndex(p);
+    return ci>=0 && cellDomain(ci)===8 && d3.polygonContains(adjacentPatchLeft,p);
+  }
+  function legacyAdjacentVisualPatchDomain(p){
+    if(isEngineeringVisualRestore(p))return -1;
+    if(d3.polygonContains(adjacentPatchLeft,p))return 5;
+    if(d3.polygonContains(adjacentPatchRight,p))return 5;
+    return -1;
+  }
+  
+  // v37: find the complete isolated life-colored component above engineering.
+  // A connected-cell flood fill follows its existing irregular outline rather
+  // than imposing another rectangular repaint region.
+  function legacyVisibleCellDomain(ci){
+    var p=cellCenters[ci], adj=legacyAdjacentVisualPatchDomain(p);
+    if(adj>=0)return adj;
+    if(isMedicineVisualPatch(p))return 6;
+    return cellDomain(ci);
+  }
+  var engineeringTopMask=new Array(cells.length).fill(false);
+  var topSeed=-1, topSeedDistance=Infinity;
+  cells.forEach(function(poly,ci){
+    if(!poly || sharedSeaOwner[ci]>=0)return;
+    var p=cellCenters[ci];
+    if(p[0]<-.28 || p[0]>.04 || p[1]>-.42 || legacyVisibleCellDomain(ci)!==5)return;
+    var dx=p[0]+.10, dy=p[1]+.48, d=dx*dx+dy*dy;
+    if(d<topSeedDistance){topSeedDistance=d;topSeed=ci;}
+  });
+  if(topSeed>=0){
+    var topQueue=[topSeed];engineeringTopMask[topSeed]=true;
+    for(var qi=0;qi<topQueue.length;qi++){
+      cellNeighbors[topQueue[qi]].forEach(function(ci){
+        if(engineeringTopMask[ci] || !cells[ci] || sharedSeaOwner[ci]>=0)return;
+        if(legacyVisibleCellDomain(ci)!==5)return;
+        engineeringTopMask[ci]=true;topQueue.push(ci);
+      });
+    }
+  }
+  
+  // v37: restore the whole native agriculture plate, then add a small
+  // upper-left buffer only where the previous visible color was life science.
+  // Keep all shared-sea cells and all existing peak centers intact.
+  var agricultureVisualMask=new Array(cells.length).fill(false);
+  var agricultureEligible=new Array(cells.length).fill(false), agriQueue=[];
+  var agricultureRestored=[], agricultureAdded=[];
+  cells.forEach(function(poly,ci){
+    if(!poly || sharedSeaOwner[ci]>=0)return;
+    var p=cellCenters[ci], nativeDi=cellDomain(ci);
+    if(nativeDi===7){
+      agricultureVisualMask[ci]=true;agriQueue.push(ci);
+      if(legacyVisibleCellDomain(ci)===5)agricultureRestored.push(ci);
+      return;
+    }
+    if(legacyVisibleCellDomain(ci)!==5)return;
+    var shifts=[[.020,0],[0,.018],[.020,.018]];
+    agricultureEligible[ci]=shifts.some(function(off){
+      var ni=nearestCellIndex([p[0]+off[0],p[1]+off[1]]);
+      return ni>=0 && sharedSeaOwner[ni]<0 && cellDomain(ni)===7;
+    });
+  });
+  for(var aq=0;aq<agriQueue.length;aq++){
+    cellNeighbors[agriQueue[aq]].forEach(function(ci){
+      if(agricultureVisualMask[ci] || !agricultureEligible[ci])return;
+      agricultureVisualMask[ci]=true;agricultureAdded.push(ci);agriQueue.push(ci);
+    });
+  }
+  window.__agricultureVisualAudit={restored_cells:agricultureRestored.length,
+    added_upper_left_cells:agricultureAdded.length, total_cells:agriQueue.length,
+    restored_indices:agricultureRestored, added_indices:agricultureAdded,
+    extension_map_units:{left:.020,up:.018}};
+  
+  function adjacentVisualPatchDomain(p){
+    var ci=nearestCellIndex(p);
+    if(ci>=0 && agricultureVisualMask[ci])return 7;
+    if(ci>=0 && engineeringTopMask[ci])return 8;
+    return legacyAdjacentVisualPatchDomain(p);
+  }
+  window.__engineeringTopExtensionCells=engineeringTopMask.map(function(v,i){return v?i:-1;}).filter(function(i){return i>=0;});
+  
+  // Preserve the original Fig.10 palette. Relief is hue-preserving.
+  cellPaths.style('fill',function(poly){
+    var ci=cellIndexByRef.get(poly); if(ci===undefined)return '#bdd7df';
+    if(sharedSeaOwner[ci]>=0)return seaColors[sharedSeas[sharedSeaOwner[ci]].m.length];
+    var p=cellCenters[ci], adjacentDi=adjacentVisualPatchDomain(p);
+    if(adjacentDi>=0)return colors[adjacentDi];
+    if(isMedicineVisualPatch(p))return colors[6];
+    var di=cellDomain(ci); if(di===undefined)return '#bdd7df';
+    return colors[di % colors.length];
+  }).style('fill-opacity',.36);
+  var reliefCellLayer=themeTerrainLayer.append('g').attr('class','theme-relief-cells');
+  // v37: darken dense peak areas and add directional, hue-preserving
+  // hillshade. This is a display change; localThemeHeight is unchanged.
+  cells.forEach(function(poly,ci){
+    if(!poly || sharedSeaOwner[ci]>=0) return;
+    var p=cellCenters[ci], adjacentDi=adjacentVisualPatchDomain(p), patch=isMedicineVisualPatch(p), di=cellDomain(ci);
+    var anyPatch=(adjacentDi>=0 && adjacentDi!==8 && adjacentDi!==7)||patch;
+    if(di===undefined || anyPatch) return;
+    var targetDi=(adjacentDi===8 || adjacentDi===7)?adjacentDi:di, h=localThemeHeight(p,targetDi), eps=.010;
+    var gx=(localThemeHeight([p[0]+eps,p[1]],targetDi)-localThemeHeight([p[0]-eps,p[1]],targetDi))/(2*eps);
+    var gy=(localThemeHeight([p[0],p[1]+eps],targetDi)-localThemeHeight([p[0],p[1]-eps],targetDi))/(2*eps);
+    var slope=Math.sqrt(gx*gx+gy*gy);
+    var light=Math.max(-.30,Math.min(.30,(-.70*gx-.55*gy)*.065/(1+.15*slope)));
+    var points=poly.map(function(q){return (1000*q[0])+','+(1000*q[1]);}).join(' ');
+    if(h>.012){
+      var pigment=Math.min(.90,.045+.86*Math.pow(h,.90));
+      reliefCellLayer.append('polygon').attr('points',points)
+        .attr('fill',colors[targetDi % colors.length]).attr('fill-opacity',pigment);
+      // Retain each field's hue while strengthening the summit-to-valley value range.
+      reliefCellLayer.append('polygon').attr('points',points)
+        .attr('fill',mixHex(colors[targetDi % colors.length],'#263f4a',.52))
+        .attr('fill-opacity',.27*Math.pow(h,1.35));
+      if(light<-.010) reliefCellLayer.append('polygon').attr('points',points)
+        .attr('fill',mixHex(colors[targetDi % colors.length],'#233c48',.64))
+        .attr('fill-opacity',Math.min(.31,-light*1.45)*Math.min(1,h*3.0));
+      if(light>.010) reliefCellLayer.append('polygon').attr('points',points)
+        .attr('fill','#fffdf4').attr('fill-opacity',Math.min(.23,light*1.10)*Math.min(1,h*3.0));
+    }
+  });
+  // Irregular height-field contours, replacing the regular ellipse rings.
+  // Marching squares keeps the lines data-driven and follows each domain's
+  // local peak, ridge and slope field.
+  function contourSegments(di,level){
+    var nx=128, ny=96, x0=-.50, x1=.50, y0=-.50, y1=.50, dx=(x1-x0)/nx, dy=(y1-y0)/ny;
+    var vals=new Array(ny+1), ok=new Array(ny+1), paths='';
+    for(var j=0;j<=ny;j++){
+      vals[j]=new Array(nx+1); ok[j]=new Array(nx+1);
+      for(var i=0;i<=nx;i++){
+        var p=[x0+i*dx,y0+j*dy];
+        ok[j][i]=isValidThemePoint(p,di);
+        vals[j][i]=localThemeHeight(p,di);
+      }
+    }
+    var edgePairs={1:[[3,0]],2:[[0,1]],3:[[3,1]],4:[[1,2]],5:[[3,2],[0,1]],6:[[0,2]],7:[[3,2]],8:[[2,3]],9:[[0,2],[3,1]],10:[[0,1],[2,3]],11:[[1,2]],12:[[1,3]],13:[[0,1]],14:[[3,0]]};
+    function edgePoint(e,xx,yy,v){
+      var a,b,t;
+      if(e===0){a=[xx,yy];b=[xx+dx,yy];t=(level-v[0])/(v[1]-v[0]||1e-9);}
+      else if(e===1){a=[xx+dx,yy];b=[xx+dx,yy+dy];t=(level-v[1])/(v[2]-v[1]||1e-9);}
+      else if(e===2){a=[xx+dx,yy+dy];b=[xx,yy+dy];t=(level-v[2])/(v[3]-v[2]||1e-9);}
+      else {a=[xx,yy+dy];b=[xx,yy];t=(level-v[3])/(v[0]-v[3]||1e-9);}
+      t=Math.max(0,Math.min(1,t)); return [a[0]+t*(b[0]-a[0]),a[1]+t*(b[1]-a[1])];
+    }
+    for(var j2=0;j2<ny;j2++) for(var i2=0;i2<nx;i2++){
+      var xx=x0+i2*dx, yy=y0+j2*dy;
+      var centerOk=isValidThemePoint([xx+dx*.5,yy+dy*.5],di) &&
+        isValidThemePoint([xx+dx*.5,yy],di) && isValidThemePoint([xx+dx,yy+dy*.5],di) &&
+        isValidThemePoint([xx+dx*.5,yy+dy],di) && isValidThemePoint([xx,yy+dy*.5],di);
+      if(!(ok[j2][i2]&&ok[j2][i2+1]&&ok[j2+1][i2+1]&&ok[j2+1][i2]&&centerOk))continue;
+      var vv=[vals[j2][i2],vals[j2][i2+1],vals[j2+1][i2+1],vals[j2+1][i2]];
+      var bits=(vv[0]>level?1:0)|(vv[1]>level?2:0)|(vv[2]>level?4:0)|(vv[3]>level?8:0), pairs=edgePairs[bits];
+      if(!pairs)continue;
+      pairs.forEach(function(pair){var a=edgePoint(pair[0],xx,yy,vv),b=edgePoint(pair[1],xx,yy,vv);paths+='M'+(1000*a[0])+','+(1000*a[1])+'L'+(1000*b[0])+','+(1000*b[1]);});
+    }
+    return paths;
+  }
+  var contourClipDefs=svg.append('defs');
+  for(var cdi=0;cdi<render.cities.length;cdi++){
+    var cp=contourClipDefs.append('clipPath').attr('id','theme-contour-clip-'+cdi), pd='';
+    cells.forEach(function(poly,ci){
+      if(!poly || (agricultureVisualMask[ci]?7:(engineeringTopMask[ci]?8:cellDomain(ci)))!==cdi || !(sharedSeaOwner[ci]<0))return;
+      pd+='M'+poly.map(function(q){return (1000*q[0])+','+(1000*q[1]);}).join('L')+'Z';
+    });
+    cp.append('path').attr('d',pd);
+  }
+  [.10,.20,.30,.42,.54,.66,.78].forEach(function(level,ri){
+    for(var di3=0;di3<render.cities.length;di3++){
+      var d=contourSegments(di3,level);
+      if(d)themeTerrainLayer.append('path').attr('class','theme-contour '+(ri>=5?'strong':'')).attr('d',d).attr('clip-path','url(#theme-contour-clip-'+di3+')');
+    }
+  });
+  window.__themePeaks=themePeaks;
+
+
+  var seaLayer = svg.append('g').attr('class','shared-sea-labels');
+  sharedSeas.forEach(function(s,si){
+    if (!seaValid[si]) return;
+    var cx=seaLabelCenters[si][0], cy=seaLabelCenters[si][1];
+    seaLayer.append('text').attr('class','shared-sea-label').attr('x',1000*cx).attr('y',1000*cy+4)
+      .attr('text-anchor','middle').text(s.n);
+  });
+  window.__seaAudit = sharedSeas.map(function(s,si){
+    var c=seaLabelCenters[sharedSeas.indexOf(s)];
+    return {members:s.m.slice(), member_names:s.m.map(function(m){return names[m];}), shared_records:s.n, valid:seaValid[si], connected:seaCellsConnected(si), center:[c[0],c[1]], cell_count:sharedSeaOwner.filter(function(o){return o===si;}).length, size:s.size, stretch:s.stretch, angle:s.angle};
+  });
+  window.__sharedSeaOwner = sharedSeaOwner;
+  window.__sharedSeaCellCenters = cellCenters;
+  window.__displayTerr = displayTerr;
+  window.__cellNearest = cellNearest; window.__cellCenters = cellCenters; window.__cellNeighbors = cellNeighbors; window.__cellDomain = cellDomain; window.__seaAllocationDebug = seaAllocationDebug;
+  // Procedural rivers are omitted because they do not encode an observed
+  // bibliometric relation in the corpus.
+  visualizeSlopes(svg, render);
+  // Hide native slope hatches inside the h < 0 shared-sea cells; these were
+  // the short dashed marks that made the sea areas look striped.
+  svg.selectAll('line.slope').style('display', function(){
+    var x=(+this.getAttribute('x1') + +this.getAttribute('x2'))/2000;
+    var y=(+this.getAttribute('y1') + +this.getAttribute('y2'))/2000;
+    var k=d3.scan(render.h.mesh.vxs, function(a,b){
+      var da=(a[0]-x)*(a[0]-x)+(a[1]-y)*(a[1]-y);
+      var db=(b[0]-x)*(b[0]-x)+(b[1]-y)*(b[1]-y); return da-db;
+    });
+    return k!==undefined && sharedSeaMask[k] ? 'none' : null;
+  });
+  // Remove all native short slope hatches; the thematic relief and contours are the only terrain marks.
+  svg.selectAll('line.slope').style('display','none');
+  // Domain boundaries are encoded by adjacent color fields. The upstream
+  // dashed territory paths are deliberately omitted here.
+  // The upstream city rings are useful for a fantasy map, but they compete
+  // with the scientific domain labels here, so the domain labels are the only
+  // retained point markers.
+  // Cross-domain co-membership remains available in the exported CSV files;
+  // no connecting lines are drawn because they read as geographic rivers.
+  // Replace the repository's random fantasy labels with the 11 scientific
+  // domains and three theme markers per domain.
+  var themeLabelItems=[];
+  for (var i=0;i<render.cities.length;i++) {
+    var city = render.cities[i];
+    var center = labelCenters[i];
+    var g = svg.append('g').attr('class','domain-group');
+    var titleLines=fieldTitleLines[i],titleBaseline=1000*center[1]+2-(titleLines.length-1)*9;
+    var title=g.append('text').attr('class','domain').attr('x',1000*center[0]).attr('y',titleBaseline).attr('text-anchor','middle');
+    titleLines.forEach(function(line,k){title.append('tspan').attr('x',1000*center[0]).attr('dy',k?18:0).text(line);});
+    var titleBox=title.node().getBBox(),titleShift=titleBox.x< -494? -494-titleBox.x:(titleBox.x+titleBox.width>494?494-titleBox.x-titleBox.width:0);
+    if(titleShift){title.attr('x',1000*center[0]+titleShift);title.selectAll('tspan').attr('x',1000*center[0]+titleShift);}
+    g.append('text').attr('class','count').attr('x',1000*center[0]).attr('y',1000*center[1]+34).attr('text-anchor','middle').text(displayRecordCounts[i]+' records');
+    for (var j=0;j<themes[i].length;j++) {
+      var peak=(themePeaks[i]&&themePeaks[i][j]) || [center[0],center[1]];
+      var tx=peak[0], ty=peak[1];
+      g.append('circle').attr('class','theme-dot').attr('cx',1000*tx).attr('cy',1000*ty).attr('r',2.4);
+      var themeText=g.append('text').attr('class','theme').attr('data-tertiary-code',formalTertiaryCodes[i][j]).attr('data-field-code',String(i+1).padStart(2,'0')).attr('data-record-count',themeRecordCounts[i][j]);
+      themeLabelItems.push({element:themeText,di:i,code:formalTertiaryCodes[i][j],name:themes[i][j],n:themeRecordCounts[i][j],x:1000*tx,y:1000*ty});
+    }
+  }
+  
+
+  // Wrap by measured word width and place English labels without collisions.
+  var reservedLabelBoxes=[];
+  function paddedBox(bb,pad){return {x:bb.x-pad,y:bb.y-pad,width:bb.width+2*pad,height:bb.height+2*pad};}
+  svg.selectAll('text.domain,text.count,text.shared-sea-label').each(function(){reservedLabelBoxes.push(paddedBox(this.getBBox(),3));});
+  svg.selectAll('circle.theme-dot').each(function(){reservedLabelBoxes.push(paddedBox(this.getBBox(),1.8));});
+  function overlapArea(a,b){return Math.max(0,Math.min(a.x+a.width,b.x+b.width)-Math.max(a.x,b.x))*Math.max(0,Math.min(a.y+a.height,b.y+b.height)-Math.max(a.y,b.y));}
+  function visibleDomainForLabel(x,y){
+    var p=[x/1000,y/1000],ci=nearestCellIndex(p);
+    if(ci<0 || sharedSeaOwner[ci]>=0)return -1;
+    var patchDi=adjacentVisualPatchDomain(p);
+    return patchDi>=0?patchDi:(isMedicineVisualPatch(p)?6:cellDomain(ci));
+  }
+  var measureCanvas=document.createElement('canvas'),measureContext=measureCanvas.getContext('2d');
+  function englishLines(name,maxWidth,fontSize){
+    measureContext.font=fontSize+'px Arial';
+    var words=name.split(/\s+/),lines=[],line='';
+    words.forEach(function(word){var next=line?line+' '+word:word;
+      if(line && measureContext.measureText(next).width>maxWidth){lines.push(line);line=word;}else line=next;
+    });
+    if(line)lines.push(line);return lines;
+  }
+  function paintLabel(text,chunks,fontSize){
+    text.selectAll('*').remove();text.attr('x',0).attr('y',0).attr('text-anchor','start').attr('font-size',fontSize).style('font-size',fontSize+'px');
+    chunks.forEach(function(chunk,k){text.append('tspan').attr('class','tertiary-name-line').attr('x',0).attr('dy',k?11:0).text(chunk);});
+    text.append('tspan').attr('class','tertiary-quantity').attr('x',0).attr('dy',11).attr('font-size',8.6).text(text.attr('data-record-count')+' records');
+    return text.node().getBBox();
+  }
+  // Local label offsets keep the two narrow lower-left territories legible.
+  // They move annotation boxes only; mountain centers and terrain are unchanged.
+  var localLabelPreferences={
+    '11.07.10':{dx:-110.65,dy:18,maxWidth:106,fontSize:10.1},
+    '11.07.03':{dx:-58,dy:6,maxWidth:106,fontSize:10.1},
+    '11.07.08':{dx:-26.3,dy:-56.55,maxWidth:106,fontSize:10.1},
+    '01.02.12':{dx:-68,dy:17,maxWidth:106,fontSize:10.1},
+    '01.01.12':{dx:-22,dy:9,maxWidth:92,fontSize:9.6}
+  };
+  themeLabelItems.sort(function(a,b){return (b.name.length+.05*b.n)-(a.name.length+.05*a.n);}).forEach(function(item){
+    var text=item.element,best=null;
+    [10.1,9.6].forEach(function(fontSize){
+      [106,120,92,136].forEach(function(maxWidth){
+        var chunks=englishLines(item.name,maxWidth,fontSize),origin=paintLabel(text,chunks,fontSize);
+        var w=origin.width,h=origin.height,candidates=[];
+        [0,-16,16,-32,32,-48,48].forEach(function(dx){[0,12,26,44,62,80].forEach(function(dy){
+          candidates.push({x:item.x-w/2+dx,y:item.y-8-h-dy,preference:0});
+          candidates.push({x:item.x-w/2+dx,y:item.y+8+dy,preference:1});
+        });});
+        [0,12,26,42].forEach(function(dx){[0,-15,15,-30,30,-46,46,-62,62].forEach(function(dy){
+          candidates.push({x:item.x+8+dx,y:item.y-h/2+dy,preference:2});
+          candidates.push({x:item.x-8-w-dx,y:item.y-h/2+dy,preference:2});
+        });});
+        var preferred=localLabelPreferences[item.code];
+        if(preferred && preferred.maxWidth===maxWidth && preferred.fontSize===fontSize)
+          candidates.push({x:item.x+preferred.dx,y:item.y+preferred.dy,preference:-3000});
+        candidates.forEach(function(c){
+          var box={x:c.x,y:c.y,width:w,height:h},overlap=0;
+          reservedLabelBoxes.forEach(function(r){overlap+=overlapArea(paddedBox(box,1.5),r);});
+          var outside=box.x< -495 || box.x+w>495 || box.y< -495 || box.y+h>495;
+          var mismatch=0;
+          [[.15,.25],[.5,.5],[.85,.25],[.15,.85],[.85,.85]].forEach(function(q){
+            if(visibleDomainForLabel(box.x+q[0]*w,box.y+q[1]*h)!==item.di)mismatch++;
+          });
+          var ex=Math.max(box.x-item.x,0,item.x-box.x-w),ey=Math.max(box.y-item.y,0,item.y-box.y-h);
+          var centerDistance=Math.hypot(box.x+w/2-item.x,box.y+h/2-item.y);
+          var cost=overlap*100000+(outside?1e9:0)+mismatch*125+Math.hypot(ex,ey)*2+centerDistance*.15+
+            c.preference+chunks.length*3+(10.1-fontSize)*25+Math.abs(maxWidth-106)*.03;
+          if(!best || cost<best.cost)best={cost:cost,chunks:chunks,fontSize:fontSize,x:box.x-origin.x,y:box.y-origin.y,overlap:overlap,mismatch:mismatch};
+        });
+      });
+    });
+    paintLabel(text,best.chunks,best.fontSize);
+    text.attr('x',best.x).attr('y',best.y);text.selectAll('tspan').attr('x',best.x);
+    reservedLabelBoxes.push(paddedBox(text.node().getBBox(),2.5));
+    item.layout={font_size:best.fontSize,overlap_penalty:best.overlap,other_domain_samples:best.mismatch};
+  });
+  window.__tertiaryDisplayAudit=themeLabelItems.map(function(item){
+    var bb=item.element.node().getBBox();
+    return {field_code:String(item.di+1).padStart(2,'0'),tertiary_code:item.code,name:item.name,
+      all_records:item.n,peak:[item.x/1000,item.y/1000],layout:item.layout,label_box:{x:bb.x,y:bb.y,width:bb.width,height:bb.height}};
+  });
+  window.__textLayoutAudit=svg.selectAll('text.domain,text.count,text.shared-sea-label,text.theme').nodes().map(function(el){
+    var bb=el.getBBox();return {kind:el.getAttribute('class'),text:el.textContent,code:el.getAttribute('data-tertiary-code'),box:{x:bb.x,y:bb.y,width:bb.width,height:bb.height}};
+  });
+
+  // Fit and export is handled by the Playwright capture script.
+  window.__render = render; window.__fig10Ready = true;
+}
+  window.renderFigure=renderFigure;
+  renderFigure(window.__fig10Config||{});
+</script>
+
+<script>
+(function(){
+  var names = ["Formal and Computational Sciences","Physics and Astronomy","Chemistry","Materials Science","Earth and Environmental Sciences","Life Sciences","Medicine and Health","Agriculture and Food","Engineering and Manufacturing","Aerospace and Transportation","Society and Knowledge"];
+  var counts = [130, 193, 213, 254, 160, 392, 307, 48, 146, 50, 77];
+  var initial = {"centers": [[-0.4, 0], [-0.48, -0.18], [0, 0.34], [-0.22, 0.28], [0.42, 0.3], [0.22, 0.22], [-0.02, 0.1], [0.42, -0.22], [-0.22, -0.11], [0.48, 0.04], [-0.52, 0.22]], "domainWeights": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], "boundaryJitter": 0, "areaExponent": 0.35, "mountainCount": 50, "mountainRadius": 0.05, "seaCellsPerRecord": 0.55, "npts": 16384, "sharedSeas": [{"m": [5, 6], "n": 100, "anchor": [0.15699554979799146, -0.15402088509052414], "size": 1, "stretch": 1, "angle": null}, {"m": [2, 3], "n": 39, "anchor": [-0.1216170571336692, 0.38], "size": 1, "stretch": 1, "angle": null}, {"m": [2, 6], "n": 35, "anchor": [0, 0.19220098985271647], "size": 1, "stretch": 1, "angle": null}, {"m": [3, 8], "n": 14, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [4, 9], "n": 14, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [1, 8], "n": 13, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [0, 1], "n": 12, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [0, 8], "n": 11, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [0, 10], "n": 11, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [0, 1, 8], "n": 6, "anchor": null, "size": 1, "stretch": 1, "angle": null}, {"m": [2, 3, 5], "n": 5, "anchor": [0.03, 0.3], "size": 1, "stretch": 1, "angle": null}]};
+  var cfg = JSON.parse(JSON.stringify(initial));
+  var root = document.getElementById('svg');
+  var panel = document.getElementById('geometry-panel');
+  var renderTimer = null;
+  var layers = {terrain:true, themeTerrain:true, domains:true, seas:true, labels:true};
+  function num(v, fallback){var x=Number(v); return Number.isFinite(x)?x:fallback;}
+  function output(name, value){var o=document.querySelector('[data-out="'+name+'"]');if(o)o.value=Number(value).toFixed(2);}
+  function renderNow(){
+    window.__fig10Config = cfg;
+    window.renderFigure(cfg);
+    bindLayers(); bindSeaDrag(); updateAudit();
+  }
+  function schedule(){clearTimeout(renderTimer);renderTimer=setTimeout(renderNow,160);}
+  function bindLayers(){
+    var terrain=root.querySelector('.layer-terrain');
+    if(terrain) terrain.style.display=layers.terrain?'':'none';
+    var themeTerrain=root.querySelector('.layer-theme-terrain');
+    if(themeTerrain) themeTerrain.style.display=layers.themeTerrain?'':'none';
+    root.querySelectorAll('.domain-cell:not(.sea-cell)').forEach(function(e){e.style.display=layers.domains?'':'none';});
+    root.querySelectorAll('.sea-cell,.shared-sea-label').forEach(function(e){e.style.display=layers.seas?'':'none';});
+    root.querySelectorAll('.domain,.count').forEach(function(e){e.style.display=layers.labels?'':'none';});
+    document.querySelectorAll('#geometry-panel input[data-layer]').forEach(function(input){
+      input.checked=layers[input.dataset.layer];
+      input.onchange=function(){layers[input.dataset.layer]=input.checked;bindLayers();};
+    });
+  }
+  function bindSeaDrag(){
+    root.querySelectorAll('.shared-sea-label').forEach(function(label){
+      var i=Number(label.getAttribute('data-sea-index')), dragging=false, sx=0, sy=0;
+      function point(ev){var q=root.createSVGPoint();q.x=ev.clientX;q.y=ev.clientY;return q.matrixTransform(root.getScreenCTM().inverse());}
+      label.classList.add('editable-sea');
+      label.onpointerdown=function(ev){dragging=true;var p=point(ev);sx=p.x/1000;sy=p.y/1000;label.setPointerCapture(ev.pointerId);ev.preventDefault();};
+      label.onpointermove=function(ev){if(!dragging)return;var p=point(ev);var dx=p.x/1000-sx,dy=p.y/1000-sy;sx=p.x/1000;sy=p.y/1000;var s=cfg.sharedSeas[i];if(!s.anchor){var base=(window.__seaAudit[i]&&window.__seaAudit[i].center)||[0,0];s.anchor=[base[0],base[1]];}s.anchor[0]=Math.max(-.49,Math.min(.49,s.anchor[0]+dx));s.anchor[1]=Math.max(-.49,Math.min(.49,s.anchor[1]+dy));updateSeaInputs(i);schedule();};
+      label.onpointerup=function(){dragging=false;};
+    });
+  }
+  function domainRows(){
+    var box=document.getElementById('domain-editor'); box.innerHTML='';
+    names.forEach(function(name,i){
+      var c=cfg.centers[i], w=cfg.domainWeights[i];
+      var row=document.createElement('div');row.className='row';row.innerHTML='<span>'+name+'</span><input data-c="'+i+'" data-k="x" type="number" step="0.01" value="'+c[0].toFixed(2)+'"><input data-c="'+i+'" data-k="y" type="number" step="0.01" value="'+c[1].toFixed(2)+'"><input data-c="'+i+'" data-k="w" type="number" step="0.05" min="0.25" max="4" value="'+w.toFixed(2)+'">';box.appendChild(row);
+    });
+    box.querySelectorAll('input').forEach(function(inp){inp.onchange=function(){var i=Number(inp.dataset.c), k=inp.dataset.k;if(k==='w')cfg.domainWeights[i]=num(inp.value,1);else cfg.centers[i][k==='x'?0:1]=num(inp.value,cfg.centers[i][k==='x'?0:1]);schedule();};});
+  }
+  function seaLabel(s){return s.m.map(function(i){return names[i].replace('与','/');}).join(' + ');}
+  function seaRows(){
+    var box=document.getElementById('sea-editor'); box.innerHTML='';
+    cfg.sharedSeas.forEach(function(s,i){
+      var base=(s.anchor || ((window.__seaAudit[i]||{}).center) || [0,0]);
+      var angle=(s.angle===null||s.angle===undefined)?0:s.angle;
+      var row=document.createElement('div');row.className='sea-row';row.innerHTML='<span title="'+seaLabel(s)+'">'+s.n+'：'+s.m.join('+')+'</span><input data-s="'+i+'" data-k="x" type="number" step="0.01" value="'+base[0].toFixed(2)+'"><input data-s="'+i+'" data-k="y" type="number" step="0.01" value="'+base[1].toFixed(2)+'"><input data-s="'+i+'" data-k="size" type="number" step="0.05" min="0.25" max="3" value="'+s.size.toFixed(2)+'"><input data-s="'+i+'" data-k="stretch" type="number" step="0.05" min="0.35" max="4" value="'+s.stretch.toFixed(2)+'"><input data-s="'+i+'" data-k="angle" type="number" step="0.05" value="'+angle.toFixed(2)+'" title="角度以弧度表示；默认自动沿两个成员板块中心连线">';box.appendChild(row);
+    });
+    box.querySelectorAll('input').forEach(function(inp){inp.onchange=function(){var i=Number(inp.dataset.s),k=inp.dataset.k,s=cfg.sharedSeas[i],base=(s.anchor||((window.__seaAudit[i]||{}).center)||[0,0]);if(k==='x'){if(!s.anchor)s.anchor=[base[0],base[1]];s.anchor[0]=num(inp.value,s.anchor[0]);}else if(k==='y'){if(!s.anchor)s.anchor=[base[0],base[1]];s.anchor[1]=num(inp.value,s.anchor[1]);}else s[k]=num(inp.value,s[k]);schedule();};});
+  }
+  function updateSeaInputs(i){var s=cfg.sharedSeas[i],base=(s.anchor||((window.__seaAudit[i]||{}).center)||[0,0]);document.querySelectorAll('#sea-editor input[data-s="'+i+'"]').forEach(function(inp){if(inp.dataset.k==='x')inp.value=base[0].toFixed(2);if(inp.dataset.k==='y')inp.value=base[1].toFixed(2);});}
+  function updateAudit(){
+    var box=document.getElementById('audit-status'), a=window.__seaAudit||[], ok=a.filter(function(x){return x.valid;}).length, total=a.length;
+    var bad=a.filter(function(x){return !x.valid;}).map(function(x){return x.shared_records;});
+    box.className='meta '+(ok===total?'audit-pass':'audit-warn');
+    box.innerHTML='成员接界审计：<strong>'+ok+'/'+total+'</strong> 通过。'+(bad.length?' 未通过水域记录数：'+bad.join('、')+'；请调整相邻板块中心或该水域锚点。':' 当前 11 个水域均有正确成员板块接触，且不同水域保留网格缓冲。');
+  }
+  document.querySelectorAll('#geometry-panel input[data-global]').forEach(function(inp){
+    var k=inp.dataset.global, v=cfg[k]; inp.value=v; output(k,v); inp.oninput=function(){cfg[k]=num(inp.value,v);output(k,cfg[k]);schedule();};
+  });
+  document.getElementById('reset-geometry').onclick=function(){cfg=JSON.parse(JSON.stringify(initial));domainRows();seaRows();document.querySelectorAll('#geometry-panel input[data-global]').forEach(function(inp){inp.value=cfg[inp.dataset.global];output(inp.dataset.global,cfg[inp.dataset.global]);});renderNow();};
+  document.getElementById('download-svg').onclick=function(){var clone=root.cloneNode(true);clone.setAttribute('xmlns','http://www.w3.org/2000/svg');var blob=new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n',clone.outerHTML],{type:'image/svg+xml'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Fig10_Hybrid_FantasyMaps_B1_current.svg';a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},500);};
+  document.getElementById('download-params').onclick=function(){var payload={version:'B.1',parameters:cfg,sea_audit:window.__seaAudit||[],audit_summary:{valid:(window.__seaAudit||[]).filter(function(x){return x.valid;}).length,total:(window.__seaAudit||[]).length}};var blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Fig10_Hybrid_FantasyMaps_B1_parameters.json';a.click();setTimeout(function(){URL.revokeObjectURL(a.href);},500);};
+  window.__fig10Config = cfg;
+  domainRows(); seaRows(); renderNow(); window.__geometryEditorReady=true;
+})();
+</script>
+
+</body>
+</html>

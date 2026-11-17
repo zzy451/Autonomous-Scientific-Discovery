@@ -1,0 +1,45 @@
+field_code,rank,tertiary_code,name_zh,name_en,all_records,research_papers
+01,1,01.02.13,机器学习,Machine Learning,36,36
+01,2,01.01.06,微分方程,Differential Equations,26,21
+01,3,01.02.12,人工智能,Artificial Intelligence,13,11
+01,4,01.01.12,离散数学与组合数学,Discrete Mathematics and Combinatorics,9,9
+02,1,02.01.04,星系与星系演化,Galaxies and Galaxy Evolution,36,15
+02,2,02.02.16,计算物理学,Computational Physics,28,23
+02,3,02.02.14,粒子物理学,Particle Physics,24,21
+02,4,02.02.03,经典力学,Classical Mechanics,17,13
+03,1,03.02.11,理论与计算化学,Theoretical and Computational Chemistry,35,22
+03,2,03.04.02,小分子性质优化,Small-Molecule Property Optimization,26,24
+03,3,03.03.02,反应设计,Reaction Design,22,21
+03,4,03.04.05,药物化学,Medicinal Chemistry,22,9
+04,1,04.01.04,材料计算与材料信息学,Computational Materials Science and Materials Informatics,91,70
+04,2,04.04.05,光电材料,Optoelectronic Materials,24,24
+04,3,04.01.03,材料表征,Materials Characterization,20,20
+04,4,04.02.05,晶体材料,Crystalline Materials,19,18
+05,1,05.04.04,遥感科学,Remote Sensing,31,30
+05,2,05.02.01,气象学,Meteorology,31,20
+05,3,05.02.02,气候科学,Climate Science,28,19
+05,4,05.01.03,地球物理学,Geophysics,15,13
+06,1,06.03.06,蛋白质科学,Protein Science,113,66
+06,2,06.03.01,基因组学,Genomics,108,53
+06,3,06.03.04,单细胞生物学,Single-Cell Biology,57,39
+06,4,06.03.05,结构生物学,Structural Biology,46,14
+07,1,07.04.01,药物发现,Drug Discovery,87,71
+07,2,07.03.08,医学信息学,Medical Informatics,76,35
+07,3,07.01.04,病理学,Pathology,34,29
+07,4,07.01.01,解剖学,Anatomy,29,5
+08,1,08.01.01,作物学,Crop Science,35,23
+08,2,08.01.03,土壤学,Soil Science,4,4
+08,3,08.01.06,植物保护,Plant Protection,4,4
+08,4,08.01.08,农业气象学,Agricultural Meteorology,4,4
+09,1,09.01.01,工程数学与建模,Engineering Mathematics and Modeling,40,29
+09,2,09.02.01,机械设计,Mechanical Design,19,19
+09,3,09.01.02,工程力学,Engineering Mechanics,13,9
+09,4,09.04.02,过程系统工程,Process Systems Engineering,9,9
+10,1,10.02.03,深空探测,Deep-Space Exploration,19,19
+10,2,10.04.05,智能交通系统,Intelligent Transportation Systems,13,6
+10,3,10.02.02,卫星工程,Satellite Engineering,4,4
+10,4,10.01.02,空气动力学,Aerodynamics,4,2
+11,1,11.07.08,科学方法论,Scientific Methodology,17,17
+11,2,11.07.09,科学解释与科学证据理论,Scientific Explanation and Evidence Theory,15,15
+11,3,11.07.03,科学知识网络,Scientific Knowledge Networks,13,8
+11,4,11.07.10,学科演化与跨学科发现机制,Disciplinary Evolution and Interdisciplinary Discovery Mechanisms,10,7

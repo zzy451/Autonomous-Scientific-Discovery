@@ -1,0 +1,48 @@
+{
+  "snapshot_date": "2026-11-17",
+  "remote_base_commit": "60f8bad0e5f9be96fc24ae75f0cfdbbe26a51cc8",
+  "upstream_local_commit": "36eaa291f7f631dca126d1c2df62ef5668daa9c9",
+  "upstream_local_commit_is_public": false,
+  "sources": {
+    "figure_population": {
+      "source_sha256": "5a99609d5c1c6865caf9656315006fcad435d5a6de6049575876a379307b057b",
+      "repository_path": null,
+      "origin": "local statistical extraction; minimal resolved snapshot is bundled here"
+    },
+    "combined_manifest": {
+      "source_sha256": "bad1bdfd52f35a26c34959c1058fc929828e214d1f5e7880e62c88de0cdcf191",
+      "repository_path": null,
+      "origin": "local statistical extraction; minimal resolved snapshot is bundled here"
+    },
+    "ais_master": {
+      "source_sha256": "8a3713858aeefd8bca3048c1ca999d6b2ffd62a9896f8fc9929a41ac5abfea61",
+      "repository_path": "AI_Science_Literature/Paper_Lists/ai_science_master_paper_list.md",
+      "available_on_remote_base": false,
+      "matches_remote_base": false
+    },
+    "asd_master": {
+      "source_sha256": "9ee97e4f36b12c3d52744fbcd308f946b53fc22f392ad840c6dc4fde3978ec5f",
+      "repository_path": "Autonomous Scientific Discovery/Paper_Lists/agent_master_paper_list.md",
+      "available_on_remote_base": true,
+      "matches_remote_base": false
+    },
+    "module_taxonomy_owner": {
+      "source_sha256": "e4fcb3f60140a85691e16027c7adba2875146968361cb63113fe6e7af61aff64",
+      "repository_path": "Autonomous Scientific Discovery/Data/paper_module_taxonomy_assignments.jsonl",
+      "available_on_remote_base": true,
+      "matches_remote_base": false
+    },
+    "taxonomy_index": {
+      "source_sha256": "39130f41f554023de5e2d068e4963b9eb0ea7ad135b5414fe61c3b6603132dd2",
+      "repository_path": "Autonomous Scientific Discovery/Data/classification_code_index.json",
+      "available_on_remote_base": true,
+      "matches_remote_base": false
+    },
+    "taxonomy_tree": {
+      "source_sha256": "0c1afa9065336792a43da9d5515d3f9516d5abbcec66009e36650c430f7f4774",
+      "repository_path": "Autonomous Scientific Discovery/science_domain_taxonomy.md",
+      "available_on_remote_base": true,
+      "matches_remote_base": false
+    }
+  }
+}

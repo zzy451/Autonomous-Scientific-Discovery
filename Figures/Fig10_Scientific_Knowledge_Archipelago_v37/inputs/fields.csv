@@ -1,0 +1,12 @@
+field_code,name_zh,name_en,display_records,layout_reference_records,color,title_lines
+01,形式与计算,Formal and Computational Sciences,130,130,#6F9FCE,"[""Formal and"", ""Computational Sciences""]"
+02,物理与天文,Physics and Astronomy,193,193,#81A8C7,"[""Physics and"", ""Astronomy""]"
+03,化学,Chemistry,214,213,#62B2A6,"[""Chemistry""]"
+04,材料,Materials Science,257,254,#A8C46A,"[""Materials"", ""Science""]"
+05,地球与环境,Earth and Environmental Sciences,161,160,#D7B66A,"[""Earth and"", ""Environmental Sciences""]"
+06,生命科学,Life Sciences,392,392,#D99762,"[""Life Sciences""]"
+07,医学健康,Medicine and Health,310,307,#C97D8E,"[""Medicine and"", ""Health""]"
+08,农业食品,Agriculture and Food,50,48,#AA83C9,"[""Agriculture"", ""and Food""]"
+09,工程制造,Engineering and Manufacturing,147,146,#7B8FD2,"[""Engineering and"", ""Manufacturing""]"
+10,航空交通,Aerospace and Transportation,50,50,#7FA9B4,"[""Aerospace and"", ""Transportation""]"
+11,社会知识,Society and Knowledge,77,77,#9B9EA9,"[""Society and"", ""Knowledge""]"

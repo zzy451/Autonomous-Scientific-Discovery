@@ -1,0 +1,14 @@
+{
+  "python": "3.13.5",
+  "os": "Windows-11-10.0.26100-SP0",
+  "packages": {
+    "playwright": "1.61.0",
+    "greenlet": "3.5.3",
+    "pyee": "13.0.1"
+  },
+  "fonts": {
+    "arial.ttf": "74d696e666f696e93db685a85c94bfbfcc0796dfcf8a2e2e2e2c908a54e82949",
+    "arialbd.ttf": "9e77165c7bfb4a5436f1ab683f1592bb2a9826e15aecad8dc9ed278ce03e8882"
+  },
+  "chromium": "149.0.7827.55"
+}

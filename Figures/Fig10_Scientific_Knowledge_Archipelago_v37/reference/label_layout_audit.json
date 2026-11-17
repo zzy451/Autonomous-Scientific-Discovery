@@ -1,0 +1,2242 @@
+{
+  "classes": [
+    {
+      "field_code": "11",
+      "tertiary_code": "11.07.10",
+      "name": "Disciplinary Evolution and Interdisciplinary Discovery Mechanisms",
+      "all_records": 10,
+      "peak": [
+        -0.3693526007118889,
+        0.30801317879507917
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -480.00262451171875,
+        "y": 326.01318359375,
+        "width": 103.923583984375,
+        "height": 43.90704345703125
+      }
+    },
+    {
+      "field_code": "04",
+      "tertiary_code": "04.01.04",
+      "name": "Computational Materials Science and Materials Informatics",
+      "all_records": 91,
+      "peak": [
+        -0.2829143889511941,
+        0.29424544276861875
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -332.5879211425781,
+        "y": 242.33843994140625,
+        "width": 99.3470458984375,
+        "height": 43.907012939453125
+      }
+    },
+    {
+      "field_code": "11",
+      "tertiary_code": "11.07.09",
+      "name": "Scientific Explanation and Evidence Theory",
+      "all_records": 15,
+      "peak": [
+        -0.3752377310732401,
+        0.20606828032561186
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -439.29071044921875,
+        "y": 165.16127014160156,
+        "width": 96.10598754882812,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "field_code": "03",
+      "tertiary_code": "03.02.11",
+      "name": "Theoretical and Computational Chemistry",
+      "all_records": 35,
+      "peak": [
+        -0.04582942168356625,
+        0.35956617454831297
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -96.6313705444336,
+        "y": 307.6591491699219,
+        "width": 69.6039047241211,
+        "height": 43.90704345703125
+      }
+    },
+    {
+      "field_code": "01",
+      "tertiary_code": "01.01.12",
+      "name": "Discrete Mathematics and Combinatorics",
+      "all_records": 9,
+      "peak": [
+        -0.3077260562885508,
+        0.07700985824719721
+      ],
+      "layout": {
+        "font_size": 9.6,
+        "overlap_penalty": 0,
+        "other_domain_samples": 4
+      },
+      "label_box": {
+        "x": -329.7260437011719,
+        "y": 86.00985717773438,
+        "width": 73.09307861328125,
+        "height": 43.33296203613281
+      }
+    },
+    {
+      "field_code": "09",
+      "tertiary_code": "09.01.01",
+      "name": "Engineering Mathematics and Modeling",
+      "all_records": 40,
+      "peak": [
+        -0.21450135153216282,
+        -0.25371013889981053
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -271.52923583984375,
+        "y": -294.6171569824219,
+        "width": 114.05572509765625,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "field_code": "03",
+      "tertiary_code": "03.04.02",
+      "name": "Small-Molecule Property Optimization",
+      "all_records": 26,
+      "peak": [
+        0.05275569697819493,
+        0.30570163772363684
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -11.849512100219727,
+        "y": 264.7946472167969,
+        "width": 97.21041870117188,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "field_code": "10",
+      "tertiary_code": "10.04.05",
+      "name": "Intelligent Transportation Systems",
+      "all_records": 13,
+      "peak": [
+        0.43396703326766156,
+        -0.13885527213204515
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 2
+      },
+      "label_box": {
+        "x": 273.261962890625,
+        "y": -170.30877685546875,
+        "width": 110.70504760742188,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "field_code": "02",
+      "tertiary_code": "02.01.04",
+      "name": "Galaxies and Galaxy Evolution",
+      "all_records": 36,
+      "peak": [
+        -0.4236858726044745,
+        -0.37779566884504384
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -470.6172180175781,
+        "y": -418.7026672363281,
+        "width": 93.8626708984375,
+        "height": 32.906982421875
+      }
+    },
+    {
+      "field_code": "11",
+      "tertiary_code": "11.07.03",
+      "name": "Scientific Knowledge Networks",
+      "all_records": 13,
+      "peak": [
+        -0.43194221829183477,
+        0.27584024593661777
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -489.9422302246094,
+        "y": 281.8402404785156,
+        "width": 93.30056762695312,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "field_code": "09",
+      "tertiary_code": "09.04.02",
+      "name": "Process Systems Engineering",
+      "all_records": 9,
+      "peak": [
+        -0.07234168856396365,
+        -0.1519983103304465
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -95.39801788330078,
+        "y": -192.9053192138672,
+        "width": 78.11265563964844,
+        "height": 32.90699768066406
+      }
+    },
+    {
+      "field_code": "04",
+      "tertiary_code": "04.01.03",
+      "name": "Materials Characterization",
+      "all_records": 20,
+      "peak": [
+        -0.27433239770518963,
+        0.4058545693136376
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -333.0401306152344,
+        "y": 413.8545837402344,
+        "width": 117.41545104980469,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "04",
+      "tertiary_code": "04.04.05",
+      "name": "Optoelectronic Materials",
+      "all_records": 24,
+      "peak": [
+        -0.20961490043106715,
+        0.3286019795683354
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -264.1109619140625,
+        "y": 298.6949768066406,
+        "width": 108.99209594726562,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "08",
+      "tertiary_code": "08.01.08",
+      "name": "Agricultural Meteorology",
+      "all_records": 4,
+      "peak": [
+        0.4631771483449641,
+        -0.24989446070147053
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 434.7611389160156,
+        "y": -241.89443969726562,
+        "width": 56.832061767578125,
+        "height": 32.90699768066406
+      }
+    },
+    {
+      "field_code": "01",
+      "tertiary_code": "01.02.12",
+      "name": "Artificial Intelligence",
+      "all_records": 13,
+      "peak": [
+        -0.42020814076401836,
+        0.08712546074244967
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 5
+      },
+      "label_box": {
+        "x": -488.2081298828125,
+        "y": 104.12545776367188,
+        "width": 89.9351806640625,
+        "height": 21.907005310058594
+      }
+    },
+    {
+      "field_code": "01",
+      "tertiary_code": "01.01.06",
+      "name": "Differential Equations",
+      "all_records": 26,
+      "peak": [
+        -0.34597643422594376,
+        -0.015598325753056048
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -393.9346923828125,
+        "y": -45.50532531738281,
+        "width": 95.91650390625,
+        "height": 21.906999588012695
+      }
+    },
+    {
+      "field_code": "10",
+      "tertiary_code": "10.02.03",
+      "name": "Deep-Space Exploration",
+      "all_records": 19,
+      "peak": [
+        0.3635959207181002,
+        -0.12220679843265825
+      ],
+      "layout": {
+        "font_size": 9.6,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 371.5959167480469,
+        "y": -132.87327575683594,
+        "width": 104.04708862304688,
+        "height": 21.33295440673828
+      }
+    },
+    {
+      "field_code": "11",
+      "tertiary_code": "11.07.08",
+      "name": "Scientific Methodology",
+      "all_records": 17,
+      "peak": [
+        -0.4617051012293259,
+        0.18954724910003473
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -488.0050964355469,
+        "y": 132.99725341796875,
+        "width": 101.72177124023438,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "field_code": "07",
+      "tertiary_code": "07.03.08",
+      "name": "Medical Informatics",
+      "all_records": 76,
+      "peak": [
+        0.041680487564686265,
+        -0.1005328987720045
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -1.8674761056900024,
+        "y": -130.4398956298828,
+        "width": 87.0959243774414,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "field_code": "02",
+      "tertiary_code": "02.02.16",
+      "name": "Computational Physics",
+      "all_records": 28,
+      "peak": [
+        -0.34382018567925793,
+        -0.41065691932844145
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -363.23223876953125,
+        "y": -440.56390380859375,
+        "width": 102.8240966796875,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "04",
+      "tertiary_code": "04.02.05",
+      "name": "Crystalline Materials",
+      "all_records": 19,
+      "peak": [
+        -0.1468369885075961,
+        0.42271301438351916
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -224.3472900390625,
+        "y": 442.7130126953125,
+        "width": 91.02058410644531,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "06",
+      "tertiary_code": "06.03.04",
+      "name": "Single-Cell Biology",
+      "all_records": 57,
+      "peak": [
+        0.18385972325911462,
+        0.006404923549922502
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 141.13902282714844,
+        "y": 14.404923439025879,
+        "width": 85.44142150878906,
+        "height": 21.907005310058594
+      }
+    },
+    {
+      "field_code": "09",
+      "tertiary_code": "09.01.02",
+      "name": "Engineering Mechanics",
+      "all_records": 13,
+      "peak": [
+        -0.19861633034586892,
+        -0.18051687046159068
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -251.15745544433594,
+        "y": -172.51686096191406,
+        "width": 105.08226013183594,
+        "height": 21.906982421875
+      }
+    },
+    {
+      "field_code": "10",
+      "tertiary_code": "10.02.02",
+      "name": "Satellite Engineering",
+      "all_records": 4,
+      "peak": [
+        0.38375073690385336,
+        -0.04673275920091494
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 337.3765563964844,
+        "y": -38.732757568359375,
+        "width": 92.74835205078125,
+        "height": 21.90700340270996
+      }
+    },
+    {
+      "field_code": "06",
+      "tertiary_code": "06.03.06",
+      "name": "Protein Science",
+      "all_records": 113,
+      "peak": [
+        0.15595345289316237,
+        -0.08240260092398498
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 152.52981567382812,
+        "y": -112.30960083007812,
+        "width": 70.84725952148438,
+        "height": 21.907005310058594
+      }
+    },
+    {
+      "field_code": "06",
+      "tertiary_code": "06.03.05",
+      "name": "Structural Biology",
+      "all_records": 46,
+      "peak": [
+        0.27630184467657876,
+        0.024909444468710632
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 236.3890380859375,
+        "y": 32.90944290161133,
+        "width": 79.82562255859375,
+        "height": 21.907001495361328
+      }
+    },
+    {
+      "field_code": "03",
+      "tertiary_code": "03.04.05",
+      "name": "Medicinal Chemistry",
+      "all_records": 22,
+      "peak": [
+        0.09266924531849006,
+        0.44175584416292646
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 46.87193298339844,
+        "y": 411.8488464355469,
+        "width": 91.59461975097656,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "02",
+      "tertiary_code": "02.02.03",
+      "name": "Classical Mechanics",
+      "all_records": 17,
+      "peak": [
+        -0.2904425718259561,
+        -0.3112579293487938
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -368.236328125,
+        "y": -291.2579345703125,
+        "width": 91.58758544921875,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "07",
+      "tertiary_code": "07.04.01",
+      "name": "Drug Discovery",
+      "all_records": 87,
+      "peak": [
+        -0.057697739057213364,
+        -0.05704222036797554
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -76.5519027709961,
+        "y": -86.94921875,
+        "width": 69.70832061767578,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "field_code": "09",
+      "tertiary_code": "09.02.01",
+      "name": "Mechanical Design",
+      "all_records": 19,
+      "peak": [
+        -0.13146463713441772,
+        -0.2920242470451651
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -174.18287658691406,
+        "y": -321.93121337890625,
+        "width": 85.43649291992188,
+        "height": 21.906982421875
+      }
+    },
+    {
+      "field_code": "01",
+      "tertiary_code": "01.02.13",
+      "name": "Machine Learning",
+      "all_records": 36,
+      "peak": [
+        -0.42885834462214634,
+        0.01933353473633214
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -469.05712890625,
+        "y": -10.573468208312988,
+        "width": 80.39755249023438,
+        "height": 21.90700340270996
+      }
+    },
+    {
+      "field_code": "02",
+      "tertiary_code": "02.02.14",
+      "name": "Particle Physics",
+      "all_records": 24,
+      "peak": [
+        -0.40149848623149437,
+        -0.2919759375701892
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -453.18975830078125,
+        "y": -283.9759521484375,
+        "width": 71.38253784179688,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "05",
+      "tertiary_code": "05.02.02",
+      "name": "Climate Science",
+      "all_records": 28,
+      "peak": [
+        0.34878289257739054,
+        0.34741734002561386
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 312.2425231933594,
+        "y": 355.4173278808594,
+        "width": 73.08078002929688,
+        "height": 21.906982421875
+      }
+    },
+    {
+      "field_code": "08",
+      "tertiary_code": "08.01.06",
+      "name": "Plant Protection",
+      "all_records": 4,
+      "peak": [
+        0.3387473902328529,
+        -0.22972924689269192
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 303.042724609375,
+        "y": -221.729248046875,
+        "width": 71.4093017578125,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "field_code": "03",
+      "tertiary_code": "03.03.02",
+      "name": "Reaction Design",
+      "all_records": 22,
+      "peak": [
+        0.011906565367744154,
+        0.39800920173728815
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -41.20081329345703,
+        "y": 418.00921630859375,
+        "width": 74.21475982666016,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "05",
+      "tertiary_code": "05.04.04",
+      "name": "Remote Sensing",
+      "all_records": 31,
+      "peak": [
+        0.3326895712863104,
+        0.26723965864912136
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 311.3011474609375,
+        "y": 237.3326416015625,
+        "width": 74.77682495117188,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "08",
+      "tertiary_code": "08.01.01",
+      "name": "Crop Science",
+      "all_records": 35,
+      "peak": [
+        0.3237401535005257,
+        -0.2863457840573697
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 277.3702392578125,
+        "y": -316.2527770996094,
+        "width": 60.739837646484375,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "06",
+      "tertiary_code": "06.03.01",
+      "name": "Genomics",
+      "all_records": 108,
+      "peak": [
+        0.2478421581620083,
+        -0.10410680175471908
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 240.99032592773438,
+        "y": -96.10679626464844,
+        "width": 45.703643798828125,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "field_code": "05",
+      "tertiary_code": "05.02.01",
+      "name": "Meteorology",
+      "all_records": 31,
+      "peak": [
+        0.4185364354357974,
+        0.23755327483368047
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 390.40740966796875,
+        "y": 207.64625549316406,
+        "width": 56.258026123046875,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "field_code": "08",
+      "tertiary_code": "08.01.03",
+      "name": "Soil Science",
+      "all_records": 4,
+      "peak": [
+        0.42390761781520175,
+        -0.34430700287484595
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 396.0621032714844,
+        "y": -374.2139892578125,
+        "width": 55.6910400390625,
+        "height": 21.906982421875
+      }
+    },
+    {
+      "field_code": "10",
+      "tertiary_code": "10.01.02",
+      "name": "Aerodynamics",
+      "all_records": 4,
+      "peak": [
+        0.44712954765359675,
+        -0.00722973536148066
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 414.79486083984375,
+        "y": 0.7702644467353821,
+        "width": 64.66940307617188,
+        "height": 21.90700340270996
+      }
+    },
+    {
+      "field_code": "05",
+      "tertiary_code": "05.01.03",
+      "name": "Geophysics",
+      "all_records": 15,
+      "peak": [
+        0.43329990929354645,
+        0.3687655089580354
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 406.86309814453125,
+        "y": 376.7655029296875,
+        "width": 52.873626708984375,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "field_code": "07",
+      "tertiary_code": "07.01.04",
+      "name": "Pathology",
+      "all_records": 34,
+      "peak": [
+        -0.03155318454020809,
+        -0.0032621085984544506
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": -70.3548355102539,
+        "y": 4.73789119720459,
+        "width": 45.60329818725586,
+        "height": 21.907001495361328
+      }
+    },
+    {
+      "field_code": "07",
+      "tertiary_code": "07.01.01",
+      "name": "Anatomy",
+      "all_records": 29,
+      "peak": [
+        0.085261516392716,
+        0.05197068457251048
+      ],
+      "layout": {
+        "font_size": 10.1,
+        "overlap_penalty": 0,
+        "other_domain_samples": 0
+      },
+      "label_box": {
+        "x": 64.51393127441406,
+        "y": 22.06368064880371,
+        "width": 41.49518585205078,
+        "height": 21.906999588012695
+      }
+    }
+  ],
+  "seas": [
+    {
+      "members": [
+        5,
+        6
+      ],
+      "member_names": [
+        "Life Sciences",
+        "Medicine and Health"
+      ],
+      "shared_records": 100,
+      "valid": true,
+      "connected": true,
+      "center": [
+        0.15936107738889568,
+        -0.1558212243059537
+      ],
+      "cell_count": 55,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        2,
+        3
+      ],
+      "member_names": [
+        "Chemistry",
+        "Materials Science"
+      ],
+      "shared_records": 39,
+      "valid": true,
+      "connected": true,
+      "center": [
+        -0.12027542913441623,
+        0.3817078644039275
+      ],
+      "cell_count": 21,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        2,
+        6
+      ],
+      "member_names": [
+        "Chemistry",
+        "Medicine and Health"
+      ],
+      "shared_records": 35,
+      "valid": true,
+      "connected": true,
+      "center": [
+        0.0013642125009511073,
+        0.1912042210885313
+      ],
+      "cell_count": 19,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        3,
+        8
+      ],
+      "member_names": [
+        "Materials Science",
+        "Engineering and Manufacturing"
+      ],
+      "shared_records": 14,
+      "valid": true,
+      "connected": true,
+      "center": [
+        -0.1728614848239908,
+        0.004392718603878492
+      ],
+      "cell_count": 8,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        4,
+        9
+      ],
+      "member_names": [
+        "Earth and Environmental Sciences",
+        "Aerospace and Transportation"
+      ],
+      "shared_records": 14,
+      "valid": true,
+      "connected": true,
+      "center": [
+        0.3875647048638173,
+        0.10568672547326072
+      ],
+      "cell_count": 8,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        1,
+        8
+      ],
+      "member_names": [
+        "Physics and Astronomy",
+        "Engineering and Manufacturing"
+      ],
+      "shared_records": 13,
+      "valid": true,
+      "connected": true,
+      "center": [
+        -0.23720666136746302,
+        -0.3139198285521716
+      ],
+      "cell_count": 7,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        0,
+        1
+      ],
+      "member_names": [
+        "Formal and Computational Sciences",
+        "Physics and Astronomy"
+      ],
+      "shared_records": 12,
+      "valid": true,
+      "connected": true,
+      "center": [
+        -0.41484021084391365,
+        -0.10815455131288353
+      ],
+      "cell_count": 7,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        0,
+        8
+      ],
+      "member_names": [
+        "Formal and Computational Sciences",
+        "Engineering and Manufacturing"
+      ],
+      "shared_records": 11,
+      "valid": true,
+      "connected": true,
+      "center": [
+        -0.2785237584275709,
+        -0.05638520232494557
+      ],
+      "cell_count": 6,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        0,
+        10
+      ],
+      "member_names": [
+        "Formal and Computational Sciences",
+        "Society and Knowledge"
+      ],
+      "shared_records": 11,
+      "valid": true,
+      "connected": true,
+      "center": [
+        -0.4103584600992038,
+        0.09251584192740443
+      ],
+      "cell_count": 6,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        0,
+        1,
+        8
+      ],
+      "member_names": [
+        "Formal and Computational Sciences",
+        "Physics and Astronomy",
+        "Engineering and Manufacturing"
+      ],
+      "shared_records": 6,
+      "valid": true,
+      "connected": true,
+      "center": [
+        -0.32027244734313126,
+        -0.15699308706351328
+      ],
+      "cell_count": 9,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    },
+    {
+      "members": [
+        2,
+        3,
+        5
+      ],
+      "member_names": [
+        "Chemistry",
+        "Materials Science",
+        "Life Sciences"
+      ],
+      "shared_records": 5,
+      "valid": true,
+      "connected": true,
+      "center": [
+        0.029757747246679817,
+        0.2512147713367533
+      ],
+      "cell_count": 28,
+      "size": 1,
+      "stretch": 1,
+      "angle": 0
+    }
+  ],
+  "labels": [
+    {
+      "kind": "shared-sea-label",
+      "text": "100",
+      "code": null,
+      "box": {
+        "x": 151.014892578125,
+        "y": -161.0060577392578,
+        "width": 16.692378997802734,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "39",
+      "code": null,
+      "box": {
+        "x": -125.84104919433594,
+        "y": 376.52301025390625,
+        "width": 11.131242752075195,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "35",
+      "code": null,
+      "box": {
+        "x": -4.201408386230469,
+        "y": 186.01937866210938,
+        "width": 11.302050590515137,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "14",
+      "code": null,
+      "box": {
+        "x": -178.42709350585938,
+        "y": -0.7921267151832581,
+        "width": 11.302050590515137,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "14",
+      "code": null,
+      "box": {
+        "x": 381.99908447265625,
+        "y": 100.50187683105469,
+        "width": 11.302050590515137,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "13",
+      "code": null,
+      "box": {
+        "x": -242.7722930908203,
+        "y": -319.1046447753906,
+        "width": 11.131242752075195,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "12",
+      "code": null,
+      "box": {
+        "x": -420.40582275390625,
+        "y": -113.33939361572266,
+        "width": 11.131242752075195,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "11",
+      "code": null,
+      "box": {
+        "x": -283.81134033203125,
+        "y": -61.570045471191406,
+        "width": 10.575129508972168,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "11",
+      "code": null,
+      "box": {
+        "x": -415.6460266113281,
+        "y": 87.33098602294922,
+        "width": 10.575129508972168,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "6",
+      "code": null,
+      "box": {
+        "x": -323.0574951171875,
+        "y": -162.17791748046875,
+        "width": 5.570106029510498,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "shared-sea-label",
+      "text": "5",
+      "code": null,
+      "box": {
+        "x": 26.972694396972656,
+        "y": 246.0299072265625,
+        "width": 5.740528106689453,
+        "height": 11.481056213378906
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Formal andComputational Sciences",
+      "code": null,
+      "box": {
+        "x": -463.63592529296875,
+        "y": 36.993003845214844,
+        "width": 191.60806274414062,
+        "height": 36.36968231201172
+      }
+    },
+    {
+      "kind": "count",
+      "text": "130 records",
+      "code": null,
+      "box": {
+        "x": -399.512451171875,
+        "y": 82.01136779785156,
+        "width": 63.361080169677734,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Machine Learning36 records",
+      "code": "01.02.13",
+      "box": {
+        "x": -469.05712890625,
+        "y": -10.573468208312988,
+        "width": 80.39755249023438,
+        "height": 21.90700340270996
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Differential Equations26 records",
+      "code": "01.01.06",
+      "box": {
+        "x": -393.9346923828125,
+        "y": -45.50532531738281,
+        "width": 95.91650390625,
+        "height": 21.906999588012695
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Artificial Intelligence13 records",
+      "code": "01.02.12",
+      "box": {
+        "x": -488.2081298828125,
+        "y": 104.12545776367188,
+        "width": 89.9351806640625,
+        "height": 21.907005310058594
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "DiscreteMathematics andCombinatorics9 records",
+      "code": "01.01.12",
+      "box": {
+        "x": -329.7260437011719,
+        "y": 86.00985717773438,
+        "width": 73.09307861328125,
+        "height": 43.33296203613281
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Physics andAstronomy",
+      "code": null,
+      "box": {
+        "x": -405.9187316894531,
+        "y": -360.0569763183594,
+        "width": 96.28839111328125,
+        "height": 36.369720458984375
+      }
+    },
+    {
+      "kind": "count",
+      "text": "193 records",
+      "code": null,
+      "box": {
+        "x": -389.455078125,
+        "y": -315.0386047363281,
+        "width": 63.361080169677734,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Galaxies and GalaxyEvolution36 records",
+      "code": "02.01.04",
+      "box": {
+        "x": -470.6172180175781,
+        "y": -418.7026672363281,
+        "width": 93.8626708984375,
+        "height": 32.906982421875
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Computational Physics28 records",
+      "code": "02.02.16",
+      "box": {
+        "x": -363.23223876953125,
+        "y": -440.56390380859375,
+        "width": 102.8240966796875,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Particle Physics24 records",
+      "code": "02.02.14",
+      "box": {
+        "x": -453.18975830078125,
+        "y": -283.9759521484375,
+        "width": 71.38253784179688,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Classical Mechanics17 records",
+      "code": "02.02.03",
+      "box": {
+        "x": -368.236328125,
+        "y": -291.2579345703125,
+        "width": 91.58758544921875,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Chemistry",
+      "code": null,
+      "box": {
+        "x": -15.756939888000488,
+        "y": 356.0460510253906,
+        "width": 80.69612884521484,
+        "height": 18.36968994140625
+      }
+    },
+    {
+      "kind": "count",
+      "text": "214 records",
+      "code": null,
+      "box": {
+        "x": -7.092328071594238,
+        "y": 392.064453125,
+        "width": 63.361080169677734,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Theoretical andComputationalChemistry35 records",
+      "code": "03.02.11",
+      "box": {
+        "x": -96.6313705444336,
+        "y": 307.6591491699219,
+        "width": 69.6039047241211,
+        "height": 43.90704345703125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Small-MoleculeProperty Optimization26 records",
+      "code": "03.04.02",
+      "box": {
+        "x": -11.849512100219727,
+        "y": 264.7946472167969,
+        "width": 97.21041870117188,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Reaction Design22 records",
+      "code": "03.03.02",
+      "box": {
+        "x": -41.20081329345703,
+        "y": 418.00921630859375,
+        "width": 74.21475982666016,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Medicinal Chemistry22 records",
+      "code": "03.04.05",
+      "box": {
+        "x": 46.87193298339844,
+        "y": 411.8488464355469,
+        "width": 91.59461975097656,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "MaterialsScience",
+      "code": null,
+      "box": {
+        "x": -258.2451477050781,
+        "y": 329.8929748535156,
+        "width": 71.53236389160156,
+        "height": 36.369720458984375
+      }
+    },
+    {
+      "kind": "count",
+      "text": "257 records",
+      "code": null,
+      "box": {
+        "x": -254.15951538085938,
+        "y": 374.9113464355469,
+        "width": 63.361080169677734,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "ComputationalMaterials Science andMaterials Informatics91 records",
+      "code": "04.01.04",
+      "box": {
+        "x": -332.5879211425781,
+        "y": 242.33843994140625,
+        "width": 99.3470458984375,
+        "height": 43.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Optoelectronic Materials24 records",
+      "code": "04.04.05",
+      "box": {
+        "x": -264.1109619140625,
+        "y": 298.6949768066406,
+        "width": 108.99209594726562,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Materials Characterization20 records",
+      "code": "04.01.03",
+      "box": {
+        "x": -333.0401306152344,
+        "y": 413.8545837402344,
+        "width": 117.41545104980469,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Crystalline Materials19 records",
+      "code": "04.02.05",
+      "box": {
+        "x": -224.3472900390625,
+        "y": 442.7130126953125,
+        "width": 91.02058410644531,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Earth andEnvironmental Sciences",
+      "code": null,
+      "box": {
+        "x": 294.302001953125,
+        "y": 291.3652038574219,
+        "width": 190.72906494140625,
+        "height": 36.36968994140625
+      }
+    },
+    {
+      "kind": "count",
+      "text": "161 records",
+      "code": null,
+      "box": {
+        "x": 357.9859619140625,
+        "y": 336.383544921875,
+        "width": 63.361080169677734,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Remote Sensing31 records",
+      "code": "05.04.04",
+      "box": {
+        "x": 311.3011474609375,
+        "y": 237.3326416015625,
+        "width": 74.77682495117188,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Meteorology31 records",
+      "code": "05.02.01",
+      "box": {
+        "x": 390.40740966796875,
+        "y": 207.64625549316406,
+        "width": 56.258026123046875,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Climate Science28 records",
+      "code": "05.02.02",
+      "box": {
+        "x": 312.2425231933594,
+        "y": 355.4173278808594,
+        "width": 73.08078002929688,
+        "height": 21.906982421875
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Geophysics15 records",
+      "code": "05.01.03",
+      "box": {
+        "x": 406.86309814453125,
+        "y": 376.7655029296875,
+        "width": 52.873626708984375,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Life Sciences",
+      "code": null,
+      "box": {
+        "x": 168.79583740234375,
+        "y": -40.541561126708984,
+        "width": 105.46426391601562,
+        "height": 18.36968994140625
+      }
+    },
+    {
+      "kind": "count",
+      "text": "392 records",
+      "code": null,
+      "box": {
+        "x": 189.84744262695312,
+        "y": -4.523187637329102,
+        "width": 63.361080169677734,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Protein Science113 records",
+      "code": "06.03.06",
+      "box": {
+        "x": 152.52981567382812,
+        "y": -112.30960083007812,
+        "width": 70.84725952148438,
+        "height": 21.907005310058594
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Genomics108 records",
+      "code": "06.03.01",
+      "box": {
+        "x": 240.99032592773438,
+        "y": -96.10679626464844,
+        "width": 45.703643798828125,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Single-Cell Biology57 records",
+      "code": "06.03.04",
+      "box": {
+        "x": 141.13902282714844,
+        "y": 14.404923439025879,
+        "width": 85.44142150878906,
+        "height": 21.907005310058594
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Structural Biology46 records",
+      "code": "06.03.05",
+      "box": {
+        "x": 236.3890380859375,
+        "y": 32.90944290161133,
+        "width": 79.82562255859375,
+        "height": 21.907001495361328
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Medicine andHealth",
+      "code": null,
+      "box": {
+        "x": -37.1058349609375,
+        "y": -47.97789764404297,
+        "width": 104.51348876953125,
+        "height": 36.369686126708984
+      }
+    },
+    {
+      "kind": "count",
+      "text": "310 records",
+      "code": null,
+      "box": {
+        "x": -16.52962875366211,
+        "y": -2.959533929824829,
+        "width": 63.361080169677734,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Drug Discovery87 records",
+      "code": "07.04.01",
+      "box": {
+        "x": -76.5519027709961,
+        "y": -86.94921875,
+        "width": 69.70832061767578,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Medical Informatics76 records",
+      "code": "07.03.08",
+      "box": {
+        "x": -1.8674761056900024,
+        "y": -130.4398956298828,
+        "width": 87.0959243774414,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Pathology34 records",
+      "code": "07.01.04",
+      "box": {
+        "x": -70.3548355102539,
+        "y": 4.73789119720459,
+        "width": 45.60329818725586,
+        "height": 21.907001495361328
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Anatomy29 records",
+      "code": "07.01.01",
+      "box": {
+        "x": 64.51393127441406,
+        "y": 22.06368064880371,
+        "width": 41.49518585205078,
+        "height": 21.906999588012695
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Agricultureand Food",
+      "code": null,
+      "box": {
+        "x": 347.49932861328125,
+        "y": -294.1952209472656,
+        "width": 88.5848388671875,
+        "height": 36.369659423828125
+      }
+    },
+    {
+      "kind": "count",
+      "text": "50 records",
+      "code": null,
+      "box": {
+        "x": 363.7342529296875,
+        "y": -249.1768798828125,
+        "width": 56.687713623046875,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Crop Science35 records",
+      "code": "08.01.01",
+      "box": {
+        "x": 277.3702392578125,
+        "y": -316.2527770996094,
+        "width": 60.739837646484375,
+        "height": 21.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Soil Science4 records",
+      "code": "08.01.03",
+      "box": {
+        "x": 396.0621032714844,
+        "y": -374.2139892578125,
+        "width": 55.6910400390625,
+        "height": 21.906982421875
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Plant Protection4 records",
+      "code": "08.01.06",
+      "box": {
+        "x": 303.042724609375,
+        "y": -221.729248046875,
+        "width": 71.4093017578125,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "AgriculturalMeteorology4 records",
+      "code": "08.01.08",
+      "box": {
+        "x": 434.7611389160156,
+        "y": -241.89443969726562,
+        "width": 56.832061767578125,
+        "height": 32.90699768066406
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Engineering andManufacturing",
+      "code": null,
+      "box": {
+        "x": -210.2171630859375,
+        "y": -238.3979034423828,
+        "width": 129.25157165527344,
+        "height": 36.36967468261719
+      }
+    },
+    {
+      "kind": "count",
+      "text": "147 records",
+      "code": null,
+      "box": {
+        "x": -177.27191162109375,
+        "y": -193.37953186035156,
+        "width": 63.361080169677734,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Engineering Mathematicsand Modeling40 records",
+      "code": "09.01.01",
+      "box": {
+        "x": -271.52923583984375,
+        "y": -294.6171569824219,
+        "width": 114.05572509765625,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Mechanical Design19 records",
+      "code": "09.02.01",
+      "box": {
+        "x": -174.18287658691406,
+        "y": -321.93121337890625,
+        "width": 85.43649291992188,
+        "height": 21.906982421875
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Engineering Mechanics13 records",
+      "code": "09.01.02",
+      "box": {
+        "x": -251.15745544433594,
+        "y": -172.51686096191406,
+        "width": 105.08226013183594,
+        "height": 21.906982421875
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Process SystemsEngineering9 records",
+      "code": "09.04.02",
+      "box": {
+        "x": -95.39801788330078,
+        "y": -192.9053192138672,
+        "width": 78.11265563964844,
+        "height": 32.90699768066406
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Aerospace andTransportation",
+      "code": null,
+      "box": {
+        "x": 347.60919189453125,
+        "y": -105.90474700927734,
+        "width": 118.86480712890625,
+        "height": 36.36968994140625
+      }
+    },
+    {
+      "kind": "count",
+      "text": "50 records",
+      "code": null,
+      "box": {
+        "x": 378.9847717285156,
+        "y": -60.88637924194336,
+        "width": 56.687713623046875,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Deep-Space Exploration19 records",
+      "code": "10.02.03",
+      "box": {
+        "x": 371.5959167480469,
+        "y": -132.87327575683594,
+        "width": 104.04708862304688,
+        "height": 21.33295440673828
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Intelligent TransportationSystems13 records",
+      "code": "10.04.05",
+      "box": {
+        "x": 273.261962890625,
+        "y": -170.30877685546875,
+        "width": 110.70504760742188,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Satellite Engineering4 records",
+      "code": "10.02.02",
+      "box": {
+        "x": 337.3765563964844,
+        "y": -38.732757568359375,
+        "width": 92.74835205078125,
+        "height": 21.90700340270996
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Aerodynamics4 records",
+      "code": "10.01.02",
+      "box": {
+        "x": 414.79486083984375,
+        "y": 0.7702644467353821,
+        "width": 64.66940307617188,
+        "height": 21.90700340270996
+      }
+    },
+    {
+      "kind": "domain",
+      "text": "Society andKnowledge",
+      "code": null,
+      "box": {
+        "x": -460.79443359375,
+        "y": 208.33567810058594,
+        "width": 92.60189819335938,
+        "height": 36.36967468261719
+      }
+    },
+    {
+      "kind": "count",
+      "text": "77 records",
+      "code": null,
+      "box": {
+        "x": -442.83734130859375,
+        "y": 253.35403442382812,
+        "width": 56.687713623046875,
+        "height": 13.203214645385742
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Scientific Methodology17 records",
+      "code": "11.07.08",
+      "box": {
+        "x": -488.0050964355469,
+        "y": 132.99725341796875,
+        "width": 101.72177124023438,
+        "height": 21.906997680664062
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Scientific Explanationand Evidence Theory15 records",
+      "code": "11.07.09",
+      "box": {
+        "x": -439.29071044921875,
+        "y": 165.16127014160156,
+        "width": 96.10598754882812,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Scientific KnowledgeNetworks13 records",
+      "code": "11.07.03",
+      "box": {
+        "x": -489.9422302246094,
+        "y": 281.8402404785156,
+        "width": 93.30056762695312,
+        "height": 32.907012939453125
+      }
+    },
+    {
+      "kind": "theme",
+      "text": "Disciplinary Evolutionand InterdisciplinaryDiscovery Mechanisms10 records",
+      "code": "11.07.10",
+      "box": {
+        "x": -480.00262451171875,
+        "y": 326.01318359375,
+        "width": 103.923583984375,
+        "height": 43.90704345703125
+      }
+    }
+  ],
+  "page_errors": [],
+  "text_overlaps": [],
+  "cropped_labels": [],
+  "non_english_labels": [],
+  "unchanged_base_cells": 16384,
+  "unchanged_contour_paths": 68,
+  "markers": [
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    },
+    {
+      "radius": "2.4",
+      "fill": "none",
+      "stroke": "rgb(101, 113, 116)"
+    }
+  ]
+}
