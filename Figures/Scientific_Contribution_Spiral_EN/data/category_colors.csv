@@ -1,0 +1,49 @@
+﻿domain,secondary_code,secondary_name,color_hex,reference_base_hex,mix_amount
+Formal & Computational Sciences,01.01,Mathematics,#1F78B4,#1F78B4,0.0
+Formal & Computational Sciences,01.02,Computer Science,#B2DF8A,#B2DF8A,0.0
+Formal & Computational Sciences,01.03,"Systems, Information & Complexity Science",#E31A1C,#E31A1C,0.0
+Physics & Astronomy,02.01,Astronomy & Astrophysics,#A6CEE3,#A6CEE3,0.0
+Physics & Astronomy,02.02,Physics,#33A02C,#33A02C,0.0
+Chemistry,03.01,General Chemistry & Chemical Methods,#FB9A99,#FB9A99,0.0
+Chemistry,03.02,Fundamental Chemistry,#FDBF6F,#FDBF6F,0.0
+Chemistry,03.03,"Synthesis, Reactions & Catalysis",#438EC0,#1F78B4,0.16
+Chemistry,03.04,Molecular Design & Chemical Space Exploration,#BEE49D,#B2DF8A,0.16
+Materials Science,04.01,Fundamentals of Materials Science,#E73F40,#E31A1C,0.16
+Materials Science,04.02,Structural & Inorganic Materials,#B4D6E7,#A6CEE3,0.16
+Materials Science,04.03,Soft Matter & Functional Materials,#54AF4E,#33A02C,0.16
+Materials Science,04.04,"Energy, Electronic & Device Materials",#FCAAA9,#FB9A99,0.16
+Earth & Environmental Sciences,05.01,Fundamentals of Earth Science,#FDC986,#FDBF6F,0.16
+Earth & Environmental Sciences,05.02,"Atmospheric, Oceanic & Hydrological Sciences",#1B679B,#1F78B4,-0.14
+Earth & Environmental Sciences,05.03,Environmental Science,#99C077,#B2DF8A,-0.14
+Earth & Environmental Sciences,05.04,Geography & Geospatial Information,#C31618,#E31A1C,-0.14
+Life Sciences,06.01,Fundamentals of Biology,#8FB1C3,#A6CEE3,-0.14
+Life Sciences,06.02,Organismal Biology,#2C8A26,#33A02C,-0.14
+Life Sciences,06.03,Biotechnology-Related Sciences,#D88484,#FB9A99,-0.14
+Medicine & Health,07.01,Basic Medical Sciences,#DAA45F,#FDBF6F,-0.14
+Medicine & Health,07.02,Clinical Medicine,#67A3CC,#1F78B4,0.32
+Medicine & Health,07.03,Public Health & Health Sciences,#CBE9AF,#B2DF8A,0.32
+Medicine & Health,07.04,Pharmaceutical Sciences & Biomedicine,#EC6365,#E31A1C,0.32
+Agriculture & Food,08.01,Agronomy,#C2DEEC,#A6CEE3,0.32
+Agriculture & Food,08.02,Forestry,#74BE70,#33A02C,0.32
+Agriculture & Food,08.03,Animal Science,#FCBABA,#FB9A99,0.32
+Agriculture & Food,08.04,Fisheries Science,#FED39D,#FDBF6F,0.32
+Agriculture & Food,08.05,Food Science,#175985,#1F78B4,-0.26
+Engineering & Manufacturing,09.01,Engineering Fundamentals,#84A566,#B2DF8A,-0.26
+Engineering & Manufacturing,09.02,Mechanical & Manufacturing Engineering,#A81315,#E31A1C,-0.26
+Engineering & Manufacturing,09.03,"Electrical, Electronic & Information Engineering",#7B98A8,#A6CEE3,-0.26
+Engineering & Manufacturing,09.04,Chemical & Process Engineering,#267621,#33A02C,-0.26
+Engineering & Manufacturing,09.05,"Civil, Architectural & Hydraulic Engineering",#BA7271,#FB9A99,-0.26
+Engineering & Manufacturing,09.06,Energy Engineering,#BB8D52,#FDBF6F,-0.26
+Engineering & Manufacturing,09.07,Biomedical Engineering,#82B3D5,#1F78B4,0.44
+Engineering & Manufacturing,09.08,Materials & Device Engineering,#D4EDBD,#B2DF8A,0.44
+Aerospace & Transportation,10.01,Aeronautical Science,#EF7F80,#E31A1C,0.44
+Aerospace & Transportation,10.02,Astronautical Science,#CDE4EF,#A6CEE3,0.44
+Aerospace & Transportation,10.03,Marine Engineering,#8DCA89,#33A02C,0.44
+Aerospace & Transportation,10.04,Transportation Science,#FDC6C6,#FB9A99,0.44
+Society & Knowledge,11.01,Economics,#FEDBAE,#FDBF6F,0.44
+Society & Knowledge,11.02,Sociology & Population Studies,#1D71A9,#1F78B4,-0.06
+Society & Knowledge,11.03,Political Science & Public Administration,#A7D282,#B2DF8A,-0.06
+Society & Knowledge,11.04,Psychology & Cognitive Science,#D5181A,#E31A1C,-0.06
+Society & Knowledge,11.05,Education & Learning Sciences,#9CC2D5,#A6CEE3,-0.06
+Society & Knowledge,11.06,Anthropology & Archaeology,#309629,#33A02C,-0.06
+Society & Knowledge,11.07,Science Systems & Knowledge Production Studies,#EC9190,#FB9A99,-0.06

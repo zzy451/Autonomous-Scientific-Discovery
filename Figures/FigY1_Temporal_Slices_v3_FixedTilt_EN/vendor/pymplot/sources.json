@@ -1,0 +1,14 @@
+[
+  {
+    "file": "pymplot_projection.py",
+    "url": "https://github.com/lanl/pymplot/blob/main/src/module_projection.py"
+  },
+  {
+    "file": "pymplot_LICENSE",
+    "url": "https://github.com/lanl/pymplot/blob/main/LICENSE"
+  },
+  {
+    "file": "pymplot_projection_adapter.py",
+    "description": "Unchanged extracted isometric_projection function used by the figure."
+  }
+]

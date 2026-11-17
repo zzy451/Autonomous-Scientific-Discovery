@@ -1,0 +1,1181 @@
+﻿paper_id,domain,domain_index,score,rci,disclosure_year,era_index,synthetic,example_label,generation_group,source_simulation_id,scenario_pattern
+SIM-V3-0001,Formal & Computational Sciences,0,71.308,29.144,2024,3,True,,structural_scenario_only,SIM-0001,contribution_leads_recognition
+SIM-V3-0002,Formal & Computational Sciences,0,69.951,41.61,2017,1,True,,structural_scenario_only,SIM-0002,contribution_leads_recognition
+SIM-V3-0003,Formal & Computational Sciences,0,62.502,56.518,2017,1,True,,structural_scenario_only,SIM-0003,contribution_leads_recognition
+SIM-V3-0004,Formal & Computational Sciences,0,56.567,44.166,2017,1,True,,structural_scenario_only,SIM-0004,contribution_leads_recognition
+SIM-V3-0005,Formal & Computational Sciences,0,70.4,31.266,2021,2,True,,structural_scenario_only,SIM-0005,contribution_leads_recognition
+SIM-V3-0006,Formal & Computational Sciences,0,68.42,38.044,2017,1,True,,structural_scenario_only,SIM-0006,contribution_leads_recognition
+SIM-V3-0007,Formal & Computational Sciences,0,86.174,39.75,2023,2,True,,structural_scenario_only,SIM-0007,contribution_leads_recognition
+SIM-V3-0008,Formal & Computational Sciences,0,67.787,35.663,2023,2,True,,structural_scenario_only,SIM-0008,contribution_leads_recognition
+SIM-V3-0009,Formal & Computational Sciences,0,46.774,42.831,2017,1,True,,structural_scenario_only,SIM-0009,contribution_leads_recognition
+SIM-V3-0010,Formal & Computational Sciences,0,91.505,41.732,2025,3,True,,structural_scenario_only,SIM-0010,contribution_leads_recognition
+SIM-V3-0011,Formal & Computational Sciences,0,88.749,28.308,2025,3,True,,structural_scenario_only,SIM-0011,contribution_leads_recognition
+SIM-V3-0012,Formal & Computational Sciences,0,69.584,37.762,2020,1,True,,structural_scenario_only,SIM-0012,contribution_leads_recognition
+SIM-V3-0013,Formal & Computational Sciences,0,81.663,39.658,2024,3,True,,structural_scenario_only,SIM-0013,contribution_leads_recognition
+SIM-V3-0014,Formal & Computational Sciences,0,79.866,33.53,2022,2,True,,structural_scenario_only,SIM-0014,contribution_leads_recognition
+SIM-V3-0015,Formal & Computational Sciences,0,68.113,45.808,2022,2,True,,structural_scenario_only,SIM-0015,contribution_leads_recognition
+SIM-V3-0016,Formal & Computational Sciences,0,73.723,35.095,2025,3,True,,structural_scenario_only,SIM-0016,contribution_leads_recognition
+SIM-V3-0017,Formal & Computational Sciences,0,69.73,46.673,2025,3,True,,structural_scenario_only,SIM-0017,contribution_leads_recognition
+SIM-V3-0018,Formal & Computational Sciences,0,80.556,45.149,2022,2,True,,structural_scenario_only,SIM-0018,contribution_leads_recognition
+SIM-V3-0019,Formal & Computational Sciences,0,64.998,50.182,2014,0,True,,structural_scenario_only,SIM-0019,contribution_leads_recognition
+SIM-V3-0020,Formal & Computational Sciences,0,94.74,18.034,2025,3,True,,structural_scenario_only,SIM-0020,contribution_leads_recognition
+SIM-V3-0021,Formal & Computational Sciences,0,53.013,38.338,2012,0,True,,structural_scenario_only,SIM-0021,contribution_leads_recognition
+SIM-V3-0022,Formal & Computational Sciences,0,60.429,36.877,2025,3,True,,structural_scenario_only,SIM-0022,contribution_leads_recognition
+SIM-V3-0023,Formal & Computational Sciences,0,83.986,40.934,2024,3,True,,structural_scenario_only,SIM-0023,contribution_leads_recognition
+SIM-V3-0024,Formal & Computational Sciences,0,80.908,38.502,2026,3,True,,structural_scenario_only,SIM-0024,contribution_leads_recognition
+SIM-V3-0025,Formal & Computational Sciences,0,86.014,46.432,2025,3,True,,structural_scenario_only,SIM-0025,contribution_leads_recognition
+SIM-V3-0026,Formal & Computational Sciences,0,77.436,40.349,2026,3,True,,structural_scenario_only,SIM-0026,contribution_leads_recognition
+SIM-V3-0027,Formal & Computational Sciences,0,73.448,43.458,2026,3,True,,structural_scenario_only,SIM-0027,contribution_leads_recognition
+SIM-V3-0028,Formal & Computational Sciences,0,55.668,70.395,2013,0,True,,structural_scenario_only,SIM-0028,contribution_leads_recognition
+SIM-V3-0029,Formal & Computational Sciences,0,83.223,32.545,2023,2,True,,structural_scenario_only,SIM-0029,contribution_leads_recognition
+SIM-V3-0030,Formal & Computational Sciences,0,75.709,21.939,2024,3,True,,structural_scenario_only,SIM-0030,contribution_leads_recognition
+SIM-V3-0031,Formal & Computational Sciences,0,78.276,41.793,2024,3,True,,structural_scenario_only,SIM-0031,contribution_leads_recognition
+SIM-V3-0032,Formal & Computational Sciences,0,62.397,51.964,2018,1,True,,structural_scenario_only,SIM-0032,contribution_leads_recognition
+SIM-V3-0033,Formal & Computational Sciences,0,66.39,42.067,2022,2,True,,structural_scenario_only,SIM-0033,contribution_leads_recognition
+SIM-V3-0034,Formal & Computational Sciences,0,70.457,45.358,2021,2,True,,structural_scenario_only,SIM-0034,contribution_leads_recognition
+SIM-V3-0035,Formal & Computational Sciences,0,81.681,39.539,2026,3,True,,structural_scenario_only,SIM-0035,contribution_leads_recognition
+SIM-V3-0036,Formal & Computational Sciences,0,84.282,25.842,2024,3,True,,structural_scenario_only,SIM-0036,contribution_leads_recognition
+SIM-V3-0037,Formal & Computational Sciences,0,60.374,40.903,2016,1,True,,structural_scenario_only,SIM-0037,contribution_leads_recognition
+SIM-V3-0038,Formal & Computational Sciences,0,69.043,48.123,2026,3,True,,structural_scenario_only,SIM-0038,contribution_leads_recognition
+SIM-V3-0039,Formal & Computational Sciences,0,82.963,43.037,2023,2,True,,structural_scenario_only,SIM-0039,contribution_leads_recognition
+SIM-V3-0040,Formal & Computational Sciences,0,54.009,37.734,2007,0,True,,structural_scenario_only,SIM-0040,contribution_leads_recognition
+SIM-V3-0041,Formal & Computational Sciences,0,74.941,48.88,2023,2,True,,structural_scenario_only,SIM-0041,contribution_leads_recognition
+SIM-V3-0042,Formal & Computational Sciences,0,82.852,31.674,2022,2,True,,structural_scenario_only,SIM-0042,contribution_leads_recognition
+SIM-V3-0043,Formal & Computational Sciences,0,68.218,44.633,2023,2,True,,structural_scenario_only,SIM-0043,contribution_leads_recognition
+SIM-V3-0044,Formal & Computational Sciences,0,78.909,41.187,2024,3,True,,structural_scenario_only,SIM-0044,contribution_leads_recognition
+SIM-V3-0045,Formal & Computational Sciences,0,86.4,37.556,2023,2,True,,structural_scenario_only,SIM-0045,contribution_leads_recognition
+SIM-V3-0046,Formal & Computational Sciences,0,65.116,53.769,2013,0,True,,structural_scenario_only,SIM-0046,contribution_leads_recognition
+SIM-V3-0047,Formal & Computational Sciences,0,74.426,34.92,2023,2,True,,structural_scenario_only,SIM-0047,contribution_leads_recognition
+SIM-V3-0048,Formal & Computational Sciences,0,66.842,51.934,2022,2,True,,structural_scenario_only,SIM-0048,contribution_leads_recognition
+SIM-V3-0049,Formal & Computational Sciences,0,76.997,42.257,2024,3,True,,structural_scenario_only,SIM-0049,contribution_leads_recognition
+SIM-V3-0050,Formal & Computational Sciences,0,70.776,57.787,2023,2,True,,structural_scenario_only,SIM-0050,contribution_leads_recognition
+SIM-V3-0051,Formal & Computational Sciences,0,71.112,49.224,2020,1,True,,structural_scenario_only,SIM-0051,contribution_leads_recognition
+SIM-V3-0052,Formal & Computational Sciences,0,62.595,46.068,2014,0,True,,structural_scenario_only,SIM-0052,contribution_leads_recognition
+SIM-V3-0053,Formal & Computational Sciences,0,86.762,32.906,2024,3,True,,structural_scenario_only,SIM-0053,contribution_leads_recognition
+SIM-V3-0054,Formal & Computational Sciences,0,73.893,56.307,2023,2,True,,structural_scenario_only,SIM-0054,contribution_leads_recognition
+SIM-V3-0055,Formal & Computational Sciences,0,71.786,36.324,2025,3,True,,structural_scenario_only,SIM-0055,contribution_leads_recognition
+SIM-V3-0056,Formal & Computational Sciences,0,89.65,33.027,2026,3,True,,structural_scenario_only,SIM-0056,contribution_leads_recognition
+SIM-V3-0057,Formal & Computational Sciences,0,53.496,57.386,2019,1,True,,structural_scenario_only,SIM-0057,contribution_leads_recognition
+SIM-V3-0058,Formal & Computational Sciences,0,69.164,44.391,2016,1,True,,structural_scenario_only,SIM-0058,contribution_leads_recognition
+SIM-V3-0059,Formal & Computational Sciences,0,73.478,23.404,2025,3,True,,structural_scenario_only,SIM-0059,contribution_leads_recognition
+SIM-V3-0060,Formal & Computational Sciences,0,63.796,35.333,2023,2,True,,structural_scenario_only,SIM-0060,contribution_leads_recognition
+SIM-V3-0061,Formal & Computational Sciences,0,78.225,30.164,2026,3,True,,structural_scenario_only,SIM-0061,contribution_leads_recognition
+SIM-V3-0062,Formal & Computational Sciences,0,79.126,34.461,2024,3,True,,structural_scenario_only,SIM-0062,contribution_leads_recognition
+SIM-V3-0063,Formal & Computational Sciences,0,89.212,35.529,2024,3,True,,structural_scenario_only,SIM-0063,contribution_leads_recognition
+SIM-V3-0064,Formal & Computational Sciences,0,71.26,51.378,2019,1,True,,structural_scenario_only,SIM-0064,contribution_leads_recognition
+SIM-V3-0065,Formal & Computational Sciences,0,69.163,40.057,2023,2,True,,structural_scenario_only,SIM-0065,contribution_leads_recognition
+SIM-V3-0066,Formal & Computational Sciences,0,84.591,30.26,2026,3,True,,structural_scenario_only,SIM-0066,contribution_leads_recognition
+SIM-V3-0067,Formal & Computational Sciences,0,56.778,50.478,2019,1,True,,structural_scenario_only,SIM-0067,contribution_leads_recognition
+SIM-V3-0068,Formal & Computational Sciences,0,78.133,37.09,2026,3,True,,structural_scenario_only,SIM-0068,contribution_leads_recognition
+SIM-V3-0069,Formal & Computational Sciences,0,55.712,59.404,2012,0,True,,structural_scenario_only,SIM-0069,contribution_leads_recognition
+SIM-V3-0070,Formal & Computational Sciences,0,70.48,43.283,2026,3,True,,structural_scenario_only,SIM-0070,contribution_leads_recognition
+SIM-V3-0071,Formal & Computational Sciences,0,53.576,41.264,2023,2,True,,structural_scenario_only,SIM-0071,contribution_leads_recognition
+SIM-V3-0072,Formal & Computational Sciences,0,76.003,26.922,2026,3,True,,structural_scenario_only,SIM-0072,contribution_leads_recognition
+SIM-V3-0073,Formal & Computational Sciences,0,81.195,42.989,2026,3,True,,structural_scenario_only,SIM-0073,contribution_leads_recognition
+SIM-V3-0074,Formal & Computational Sciences,0,79.017,35.059,2021,2,True,,structural_scenario_only,SIM-0074,contribution_leads_recognition
+SIM-V3-0075,Formal & Computational Sciences,0,67.565,38.79,2022,2,True,,structural_scenario_only,SIM-0075,contribution_leads_recognition
+SIM-V3-0076,Physics & Astronomy,1,75.66,75.898,2024,3,True,,structural_scenario_only,SIM-0076,joint_change
+SIM-V3-0077,Physics & Astronomy,1,72.054,67.534,2023,2,True,,structural_scenario_only,SIM-0077,joint_change
+SIM-V3-0078,Physics & Astronomy,1,69.719,64.54,2026,3,True,,structural_scenario_only,SIM-0078,joint_change
+SIM-V3-0079,Physics & Astronomy,1,61.718,78.032,2012,0,True,,structural_scenario_only,SIM-0079,joint_change
+SIM-V3-0080,Physics & Astronomy,1,69.45,71.083,2023,2,True,,structural_scenario_only,SIM-0080,joint_change
+SIM-V3-0081,Physics & Astronomy,1,79.147,70.219,2023,2,True,,structural_scenario_only,SIM-0081,joint_change
+SIM-V3-0082,Physics & Astronomy,1,81.261,66.443,2025,3,True,,structural_scenario_only,SIM-0082,joint_change
+SIM-V3-0083,Physics & Astronomy,1,62.245,69.165,2019,1,True,,structural_scenario_only,SIM-0083,joint_change
+SIM-V3-0084,Physics & Astronomy,1,76.09,53.566,2020,1,True,,structural_scenario_only,SIM-0084,joint_change
+SIM-V3-0085,Physics & Astronomy,1,85.181,71.196,2024,3,True,,structural_scenario_only,SIM-0085,joint_change
+SIM-V3-0086,Physics & Astronomy,1,67.115,53.882,2018,1,True,,structural_scenario_only,SIM-0086,joint_change
+SIM-V3-0087,Physics & Astronomy,1,64.197,61.538,2008,0,True,,structural_scenario_only,SIM-0087,joint_change
+SIM-V3-0088,Physics & Astronomy,1,76.271,78.895,2021,2,True,,structural_scenario_only,SIM-0088,joint_change
+SIM-V3-0089,Physics & Astronomy,1,72.715,51.796,2025,3,True,,structural_scenario_only,SIM-0089,joint_change
+SIM-V3-0090,Physics & Astronomy,1,73.173,82.209,2016,1,True,,structural_scenario_only,SIM-0090,joint_change
+SIM-V3-0091,Physics & Astronomy,1,66.013,82.456,2025,3,True,,structural_scenario_only,SIM-0091,joint_change
+SIM-V3-0092,Physics & Astronomy,1,80.321,59.881,2020,1,True,,structural_scenario_only,SIM-0092,joint_change
+SIM-V3-0093,Physics & Astronomy,1,70.736,65.677,2021,2,True,,structural_scenario_only,SIM-0093,joint_change
+SIM-V3-0094,Physics & Astronomy,1,70.224,70.475,2018,1,True,,structural_scenario_only,SIM-0094,joint_change
+SIM-V3-0095,Physics & Astronomy,1,81.884,68.987,2021,2,True,,structural_scenario_only,SIM-0095,joint_change
+SIM-V3-0096,Physics & Astronomy,1,84.424,62.737,2026,3,True,,structural_scenario_only,SIM-0096,joint_change
+SIM-V3-0097,Physics & Astronomy,1,66.84,55.154,2022,2,True,,structural_scenario_only,SIM-0097,joint_change
+SIM-V3-0098,Physics & Astronomy,1,57.361,70.624,2021,2,True,,structural_scenario_only,SIM-0098,joint_change
+SIM-V3-0099,Physics & Astronomy,1,66.245,61.141,2018,1,True,,structural_scenario_only,SIM-0099,joint_change
+SIM-V3-0100,Physics & Astronomy,1,70.171,65.078,2024,3,True,,structural_scenario_only,SIM-0100,joint_change
+SIM-V3-0101,Physics & Astronomy,1,71.093,67.051,2023,2,True,,structural_scenario_only,SIM-0101,joint_change
+SIM-V3-0102,Physics & Astronomy,1,77.122,72.399,2020,1,True,,structural_scenario_only,SIM-0102,joint_change
+SIM-V3-0103,Physics & Astronomy,1,35.11,75.837,2019,1,True,,structural_scenario_only,SIM-0103,joint_change
+SIM-V3-0104,Physics & Astronomy,1,79.707,74.058,2022,2,True,,structural_scenario_only,SIM-0104,joint_change
+SIM-V3-0105,Physics & Astronomy,1,74.297,57.126,2017,1,True,,structural_scenario_only,SIM-0105,joint_change
+SIM-V3-0106,Physics & Astronomy,1,63.832,70.278,2021,2,True,,structural_scenario_only,SIM-0106,joint_change
+SIM-V3-0107,Physics & Astronomy,1,81.172,69.723,2024,3,True,,structural_scenario_only,SIM-0107,joint_change
+SIM-V3-0108,Physics & Astronomy,1,64.239,70.218,2014,0,True,,structural_scenario_only,SIM-0108,joint_change
+SIM-V3-0109,Physics & Astronomy,1,80.428,68.623,2022,2,True,,structural_scenario_only,SIM-0109,joint_change
+SIM-V3-0110,Physics & Astronomy,1,83.748,55.841,2026,3,True,,structural_scenario_only,SIM-0110,joint_change
+SIM-V3-0111,Physics & Astronomy,1,67.757,53.846,2024,3,True,,structural_scenario_only,SIM-0111,joint_change
+SIM-V3-0112,Physics & Astronomy,1,75.361,53.963,2022,2,True,,structural_scenario_only,SIM-0112,joint_change
+SIM-V3-0113,Physics & Astronomy,1,70.18,71.084,2024,3,True,,structural_scenario_only,SIM-0113,joint_change
+SIM-V3-0114,Physics & Astronomy,1,67.241,64.778,2017,1,True,,structural_scenario_only,SIM-0114,joint_change
+SIM-V3-0115,Physics & Astronomy,1,73.356,63.672,2024,3,True,,structural_scenario_only,SIM-0115,joint_change
+SIM-V3-0116,Physics & Astronomy,1,77.559,66.407,2024,3,True,,structural_scenario_only,SIM-0116,joint_change
+SIM-V3-0117,Physics & Astronomy,1,68.908,63.457,2022,2,True,,structural_scenario_only,SIM-0117,joint_change
+SIM-V3-0118,Physics & Astronomy,1,85.404,46.364,2022,2,True,,structural_scenario_only,SIM-0118,joint_change
+SIM-V3-0119,Physics & Astronomy,1,66.297,71.801,2024,3,True,,structural_scenario_only,SIM-0119,joint_change
+SIM-V3-0120,Physics & Astronomy,1,67.315,64.52,2010,0,True,,structural_scenario_only,SIM-0120,joint_change
+SIM-V3-0121,Physics & Astronomy,1,83.853,65.331,2026,3,True,,structural_scenario_only,SIM-0121,joint_change
+SIM-V3-0122,Physics & Astronomy,1,72.615,61.489,2020,1,True,,structural_scenario_only,SIM-0122,joint_change
+SIM-V3-0123,Physics & Astronomy,1,64.643,65.582,2025,3,True,,structural_scenario_only,SIM-0123,joint_change
+SIM-V3-0124,Physics & Astronomy,1,47.797,63.3,2023,2,True,,structural_scenario_only,SIM-0124,joint_change
+SIM-V3-0125,Physics & Astronomy,1,75.071,58.767,2021,2,True,,structural_scenario_only,SIM-0125,joint_change
+SIM-V3-0126,Physics & Astronomy,1,83.486,66.059,2024,3,True,,structural_scenario_only,SIM-0126,joint_change
+SIM-V3-0127,Physics & Astronomy,1,70.702,69.795,2023,2,True,,structural_scenario_only,SIM-0127,joint_change
+SIM-V3-0128,Physics & Astronomy,1,63.106,80.123,2019,1,True,,structural_scenario_only,SIM-0128,joint_change
+SIM-V3-0129,Physics & Astronomy,1,80.224,70.695,2025,3,True,,structural_scenario_only,SIM-0129,joint_change
+SIM-V3-0130,Physics & Astronomy,1,61.744,60.88,2021,2,True,,structural_scenario_only,SIM-0130,joint_change
+SIM-V3-0131,Physics & Astronomy,1,60.775,60.119,2024,3,True,,structural_scenario_only,SIM-0131,joint_change
+SIM-V3-0132,Physics & Astronomy,1,79.26,76.438,2025,3,True,,structural_scenario_only,SIM-0132,joint_change
+SIM-V3-0133,Physics & Astronomy,1,75.198,57.202,2025,3,True,,structural_scenario_only,SIM-0133,joint_change
+SIM-V3-0134,Physics & Astronomy,1,60.124,44.62,2017,1,True,,structural_scenario_only,SIM-0134,joint_change
+SIM-V3-0135,Physics & Astronomy,1,85.983,73.159,2025,3,True,,structural_scenario_only,SIM-0135,joint_change
+SIM-V3-0136,Physics & Astronomy,1,73.135,76.03,2025,3,True,,structural_scenario_only,SIM-0136,joint_change
+SIM-V3-0137,Physics & Astronomy,1,82.652,82.202,2024,3,True,,structural_scenario_only,SIM-0137,joint_change
+SIM-V3-0138,Physics & Astronomy,1,70.087,69.464,2026,3,True,,structural_scenario_only,SIM-0138,joint_change
+SIM-V3-0139,Physics & Astronomy,1,58.921,65.195,2019,1,True,,structural_scenario_only,SIM-0139,joint_change
+SIM-V3-0140,Physics & Astronomy,1,81.813,72.419,2022,2,True,,structural_scenario_only,SIM-0140,joint_change
+SIM-V3-0141,Physics & Astronomy,1,67.201,69.959,2014,0,True,,structural_scenario_only,SIM-0141,joint_change
+SIM-V3-0142,Physics & Astronomy,1,71.326,55.576,2020,1,True,,structural_scenario_only,SIM-0142,joint_change
+SIM-V3-0143,Physics & Astronomy,1,76.883,74.818,2025,3,True,,structural_scenario_only,SIM-0143,joint_change
+SIM-V3-0144,Physics & Astronomy,1,65.325,64.636,2026,3,True,,structural_scenario_only,SIM-0144,joint_change
+SIM-V3-0145,Physics & Astronomy,1,65.513,68.49,2019,1,True,,structural_scenario_only,SIM-0145,joint_change
+SIM-V3-0146,Physics & Astronomy,1,59.567,85.298,2021,2,True,,structural_scenario_only,SIM-0146,joint_change
+SIM-V3-0147,Physics & Astronomy,1,75.861,61.713,2023,2,True,,structural_scenario_only,SIM-0147,joint_change
+SIM-V3-0148,Physics & Astronomy,1,60.755,72.21,2016,1,True,,structural_scenario_only,SIM-0148,joint_change
+SIM-V3-0149,Physics & Astronomy,1,63.302,74.724,2021,2,True,,structural_scenario_only,SIM-0149,joint_change
+SIM-V3-0150,Physics & Astronomy,1,77.766,61.64,2019,1,True,,structural_scenario_only,SIM-0150,joint_change
+SIM-V3-0151,Physics & Astronomy,1,77.849,70.823,2022,2,True,,structural_scenario_only,SIM-0151,joint_change
+SIM-V3-0152,Physics & Astronomy,1,74.282,78.037,2016,1,True,,structural_scenario_only,SIM-0152,joint_change
+SIM-V3-0153,Physics & Astronomy,1,78.152,53.117,2022,2,True,,structural_scenario_only,SIM-0153,joint_change
+SIM-V3-0154,Physics & Astronomy,1,56.319,76.689,2010,0,True,,structural_scenario_only,SIM-0154,joint_change
+SIM-V3-0155,Physics & Astronomy,1,73.32,73.572,2023,2,True,,structural_scenario_only,SIM-0155,joint_change
+SIM-V3-0156,Physics & Astronomy,1,68.087,66.214,2023,2,True,,structural_scenario_only,SIM-0156,joint_change
+SIM-V3-0157,Physics & Astronomy,1,58.957,68.949,2024,3,True,,structural_scenario_only,SIM-0157,joint_change
+SIM-V3-0158,Physics & Astronomy,1,67.789,57.974,2017,1,True,,structural_scenario_only,SIM-0158,joint_change
+SIM-V3-0159,Physics & Astronomy,1,76.796,68.72,2023,2,True,,structural_scenario_only,SIM-0159,joint_change
+SIM-V3-0160,Physics & Astronomy,1,68.578,87.309,2024,3,True,,structural_scenario_only,SIM-0160,joint_change
+SIM-V3-0161,Chemistry,2,69.087,73.287,2019,1,True,,structural_scenario_only,SIM-0161,joint_change
+SIM-V3-0162,Chemistry,2,74.052,74.043,2025,3,True,,structural_scenario_only,SIM-0162,joint_change
+SIM-V3-0163,Chemistry,2,59.815,37.699,2016,1,True,,structural_scenario_only,SIM-0163,joint_change
+SIM-V3-0164,Chemistry,2,76.015,70.087,2026,3,True,,structural_scenario_only,SIM-0164,joint_change
+SIM-V3-0165,Chemistry,2,81.366,63.34,2021,2,True,,structural_scenario_only,SIM-0165,joint_change
+SIM-V3-0166,Chemistry,2,54.575,70.922,2019,1,True,,structural_scenario_only,SIM-0166,joint_change
+SIM-V3-0167,Chemistry,2,50.641,49.364,2008,0,True,,structural_scenario_only,SIM-0167,joint_change
+SIM-V3-0168,Chemistry,2,79.043,78.993,2024,3,True,,structural_scenario_only,SIM-0168,joint_change
+SIM-V3-0169,Chemistry,2,71.278,68.933,2023,2,True,,structural_scenario_only,SIM-0169,joint_change
+SIM-V3-0170,Chemistry,2,71.602,76.315,2021,2,True,,structural_scenario_only,SIM-0170,joint_change
+SIM-V3-0171,Chemistry,2,82.953,69.128,2025,3,True,,structural_scenario_only,SIM-0171,joint_change
+SIM-V3-0172,Chemistry,2,77.653,86.649,2026,3,True,,structural_scenario_only,SIM-0172,joint_change
+SIM-V3-0173,Chemistry,2,74.41,77.343,2024,3,True,,structural_scenario_only,SIM-0173,joint_change
+SIM-V3-0174,Chemistry,2,78.931,74.447,2025,3,True,,structural_scenario_only,SIM-0174,joint_change
+SIM-V3-0175,Chemistry,2,86.856,84.454,2022,2,True,,structural_scenario_only,SIM-0175,joint_change
+SIM-V3-0176,Chemistry,2,64.969,59.969,2023,2,True,,structural_scenario_only,SIM-0176,joint_change
+SIM-V3-0177,Chemistry,2,71.854,80.911,2025,3,True,,structural_scenario_only,SIM-0177,joint_change
+SIM-V3-0178,Chemistry,2,54.335,60.528,2022,2,True,,structural_scenario_only,SIM-0178,joint_change
+SIM-V3-0179,Chemistry,2,79.155,77.975,2026,3,True,,structural_scenario_only,SIM-0179,joint_change
+SIM-V3-0180,Chemistry,2,75.573,73.506,2023,2,True,,structural_scenario_only,SIM-0180,joint_change
+SIM-V3-0181,Chemistry,2,56.16,89.772,2024,3,True,,structural_scenario_only,SIM-0181,joint_change
+SIM-V3-0182,Chemistry,2,75.94,84.144,2025,3,True,,structural_scenario_only,SIM-0182,joint_change
+SIM-V3-0183,Chemistry,2,69.313,41.981,2019,1,True,,structural_scenario_only,SIM-0183,joint_change
+SIM-V3-0184,Chemistry,2,66.367,60.144,2021,2,True,,structural_scenario_only,SIM-0184,joint_change
+SIM-V3-0185,Chemistry,2,52.432,64.602,2017,1,True,,structural_scenario_only,SIM-0185,joint_change
+SIM-V3-0186,Chemistry,2,82.728,73.532,2024,3,True,,structural_scenario_only,SIM-0186,joint_change
+SIM-V3-0187,Chemistry,2,60.832,48.993,2019,1,True,,structural_scenario_only,SIM-0187,joint_change
+SIM-V3-0188,Chemistry,2,56.987,68.364,2018,1,True,,structural_scenario_only,SIM-0188,joint_change
+SIM-V3-0189,Chemistry,2,57.807,56.096,2018,1,True,,structural_scenario_only,SIM-0189,joint_change
+SIM-V3-0190,Chemistry,2,70.171,53.849,2009,0,True,,structural_scenario_only,SIM-0190,joint_change
+SIM-V3-0191,Chemistry,2,82.217,70.376,2025,3,True,,structural_scenario_only,SIM-0191,joint_change
+SIM-V3-0192,Chemistry,2,87.071,87.959,2026,3,True,,structural_scenario_only,SIM-0192,joint_change
+SIM-V3-0193,Chemistry,2,84.435,73.083,2024,3,True,,structural_scenario_only,SIM-0193,joint_change
+SIM-V3-0194,Chemistry,2,71.511,59.851,2022,2,True,,structural_scenario_only,SIM-0194,joint_change
+SIM-V3-0195,Chemistry,2,81.487,67.49,2024,3,True,,structural_scenario_only,SIM-0195,joint_change
+SIM-V3-0196,Chemistry,2,75.72,81.777,2024,3,True,,structural_scenario_only,SIM-0196,joint_change
+SIM-V3-0197,Chemistry,2,61.597,62.204,2022,2,True,,structural_scenario_only,SIM-0197,joint_change
+SIM-V3-0198,Chemistry,2,54.442,63.59,2011,0,True,,structural_scenario_only,SIM-0198,joint_change
+SIM-V3-0199,Chemistry,2,69.289,76.572,2024,3,True,,structural_scenario_only,SIM-0199,joint_change
+SIM-V3-0200,Chemistry,2,76.221,67.616,2022,2,True,,structural_scenario_only,SIM-0200,joint_change
+SIM-V3-0201,Chemistry,2,74.32,79.779,2026,3,True,,structural_scenario_only,SIM-0201,joint_change
+SIM-V3-0202,Chemistry,2,77.356,72.83,2020,1,True,,structural_scenario_only,SIM-0202,joint_change
+SIM-V3-0203,Chemistry,2,72.692,69.462,2025,3,True,,structural_scenario_only,SIM-0203,joint_change
+SIM-V3-0204,Chemistry,2,84.121,74.328,2025,3,True,,structural_scenario_only,SIM-0204,joint_change
+SIM-V3-0205,Chemistry,2,71.703,67.162,2020,1,True,,structural_scenario_only,SIM-0205,joint_change
+SIM-V3-0206,Chemistry,2,78.624,78.175,2023,2,True,,structural_scenario_only,SIM-0206,joint_change
+SIM-V3-0207,Chemistry,2,63.007,61.429,2019,1,True,,structural_scenario_only,SIM-0207,joint_change
+SIM-V3-0208,Chemistry,2,50.212,53.261,2017,1,True,,structural_scenario_only,SIM-0208,joint_change
+SIM-V3-0209,Chemistry,2,66.828,70.116,2023,2,True,,structural_scenario_only,SIM-0209,joint_change
+SIM-V3-0210,Chemistry,2,77.815,84.949,2024,3,True,,structural_scenario_only,SIM-0210,joint_change
+SIM-V3-0211,Chemistry,2,56.549,74.068,2022,2,True,,structural_scenario_only,SIM-0211,joint_change
+SIM-V3-0212,Chemistry,2,59.791,63.448,2021,2,True,,structural_scenario_only,SIM-0212,joint_change
+SIM-V3-0213,Chemistry,2,68.965,74.154,2022,2,True,,structural_scenario_only,SIM-0213,joint_change
+SIM-V3-0214,Chemistry,2,82.195,76.017,2025,3,True,,structural_scenario_only,SIM-0214,joint_change
+SIM-V3-0215,Chemistry,2,84.394,85.345,2024,3,True,,structural_scenario_only,SIM-0215,joint_change
+SIM-V3-0216,Chemistry,2,46.973,46.564,2006,0,True,,structural_scenario_only,SIM-0216,joint_change
+SIM-V3-0217,Chemistry,2,74.442,53.798,2023,2,True,,structural_scenario_only,SIM-0217,joint_change
+SIM-V3-0218,Chemistry,2,66.126,77.97,2024,3,True,,structural_scenario_only,SIM-0218,joint_change
+SIM-V3-0219,Chemistry,2,79.147,71.915,2024,3,True,,structural_scenario_only,SIM-0219,joint_change
+SIM-V3-0220,Chemistry,2,87.506,82.888,2024,3,True,,structural_scenario_only,SIM-0220,joint_change
+SIM-V3-0221,Chemistry,2,34.012,56.519,2006,0,True,,structural_scenario_only,SIM-0221,joint_change
+SIM-V3-0222,Chemistry,2,64.466,78.403,2023,2,True,,structural_scenario_only,SIM-0222,joint_change
+SIM-V3-0223,Chemistry,2,75.949,70.367,2025,3,True,,structural_scenario_only,SIM-0223,joint_change
+SIM-V3-0224,Chemistry,2,68.968,62.042,2023,2,True,,structural_scenario_only,SIM-0224,joint_change
+SIM-V3-0225,Chemistry,2,61.499,66.113,2021,2,True,,structural_scenario_only,SIM-0225,joint_change
+SIM-V3-0226,Chemistry,2,76.911,62.609,2021,2,True,,structural_scenario_only,SIM-0226,joint_change
+SIM-V3-0227,Chemistry,2,48.324,56.494,2023,2,True,,structural_scenario_only,SIM-0227,joint_change
+SIM-V3-0228,Chemistry,2,64.079,75.879,2024,3,True,,structural_scenario_only,SIM-0228,joint_change
+SIM-V3-0229,Chemistry,2,67.952,74.646,2023,2,True,,structural_scenario_only,SIM-0229,joint_change
+SIM-V3-0230,Chemistry,2,40.494,55.863,2009,0,True,,structural_scenario_only,SIM-0230,joint_change
+SIM-V3-0231,Chemistry,2,68.991,77.475,2025,3,True,,structural_scenario_only,SIM-0231,joint_change
+SIM-V3-0232,Chemistry,2,81.133,76.815,2026,3,True,,structural_scenario_only,SIM-0232,joint_change
+SIM-V3-0233,Chemistry,2,62.613,79.939,2026,3,True,,structural_scenario_only,SIM-0233,joint_change
+SIM-V3-0234,Chemistry,2,47.093,57.819,2017,1,True,,structural_scenario_only,SIM-0234,joint_change
+SIM-V3-0235,Chemistry,2,62.453,82.51,2026,3,True,,structural_scenario_only,SIM-0235,joint_change
+SIM-V3-0236,Chemistry,2,72.379,57.409,2021,2,True,,structural_scenario_only,SIM-0236,joint_change
+SIM-V3-0237,Chemistry,2,69.189,74.108,2024,3,True,,structural_scenario_only,SIM-0237,joint_change
+SIM-V3-0238,Chemistry,2,70.095,59.573,2022,2,True,,structural_scenario_only,SIM-0238,joint_change
+SIM-V3-0239,Chemistry,2,57.556,66.057,2017,1,True,,structural_scenario_only,SIM-0239,joint_change
+SIM-V3-0240,Chemistry,2,73.686,60.463,2022,2,True,,structural_scenario_only,SIM-0240,joint_change
+SIM-V3-0241,Chemistry,2,57.784,37.598,2019,1,True,,structural_scenario_only,SIM-0241,joint_change
+SIM-V3-0242,Chemistry,2,63.872,80.285,2024,3,True,,structural_scenario_only,SIM-0242,joint_change
+SIM-V3-0243,Chemistry,2,57.14,68.951,2023,2,True,,structural_scenario_only,SIM-0243,joint_change
+SIM-V3-0244,Chemistry,2,83.371,83.783,2024,3,True,,structural_scenario_only,SIM-0244,joint_change
+SIM-V3-0245,Chemistry,2,54.166,66.349,2021,2,True,,structural_scenario_only,SIM-0245,joint_change
+SIM-V3-0246,Chemistry,2,73.563,69.568,2024,3,True,,structural_scenario_only,SIM-0246,joint_change
+SIM-V3-0247,Chemistry,2,65.901,66.045,2021,2,True,,structural_scenario_only,SIM-0247,joint_change
+SIM-V3-0248,Chemistry,2,52.39,52.791,2021,2,True,,structural_scenario_only,SIM-0248,joint_change
+SIM-V3-0249,Chemistry,2,68.352,61.554,2016,1,True,,structural_scenario_only,SIM-0249,joint_change
+SIM-V3-0250,Chemistry,2,76.574,83.492,2024,3,True,,structural_scenario_only,SIM-0250,joint_change
+SIM-V3-0251,Chemistry,2,78.877,88.623,2026,3,True,,structural_scenario_only,SIM-0251,joint_change
+SIM-V3-0252,Chemistry,2,68.753,55.004,2020,1,True,,structural_scenario_only,SIM-0252,joint_change
+SIM-V3-0253,Chemistry,2,84.496,85.804,2025,3,True,,structural_scenario_only,SIM-0253,joint_change
+SIM-V3-0254,Chemistry,2,73.257,78.884,2024,3,True,,structural_scenario_only,SIM-0254,joint_change
+SIM-V3-0255,Chemistry,2,49.437,53.892,2016,1,True,,structural_scenario_only,SIM-0255,joint_change
+SIM-V3-0256,Chemistry,2,62.232,54.905,2015,0,True,,structural_scenario_only,SIM-0256,joint_change
+SIM-V3-0257,Chemistry,2,68.553,79.266,2026,3,True,,structural_scenario_only,SIM-0257,joint_change
+SIM-V3-0258,Chemistry,2,72.256,76.074,2023,2,True,,structural_scenario_only,SIM-0258,joint_change
+SIM-V3-0259,Chemistry,2,72.624,58.954,2017,1,True,,structural_scenario_only,SIM-0259,joint_change
+SIM-V3-0260,Chemistry,2,85.69,78.895,2026,3,True,,structural_scenario_only,SIM-0260,joint_change
+SIM-V3-0261,Chemistry,2,84.432,71.908,2024,3,True,,structural_scenario_only,SIM-0261,joint_change
+SIM-V3-0262,Chemistry,2,73.012,67.456,2023,2,True,,structural_scenario_only,SIM-0262,joint_change
+SIM-V3-0263,Chemistry,2,72.756,55.128,2022,2,True,,structural_scenario_only,SIM-0263,joint_change
+SIM-V3-0264,Chemistry,2,55.578,28.178,2016,1,True,,structural_scenario_only,SIM-0264,joint_change
+SIM-V3-0265,Chemistry,2,68.781,77.237,2022,2,True,,structural_scenario_only,SIM-0265,joint_change
+SIM-V3-0266,Chemistry,2,71.944,66.894,2021,2,True,,structural_scenario_only,SIM-0266,joint_change
+SIM-V3-0267,Chemistry,2,76.42,73.837,2026,3,True,,structural_scenario_only,SIM-0267,joint_change
+SIM-V3-0268,Chemistry,2,57.319,62.723,2021,2,True,,structural_scenario_only,SIM-0268,joint_change
+SIM-V3-0269,Chemistry,2,84.928,78.408,2024,3,True,,structural_scenario_only,SIM-0269,joint_change
+SIM-V3-0270,Chemistry,2,80.437,73.962,2024,3,True,,structural_scenario_only,SIM-0270,joint_change
+SIM-V3-0271,Chemistry,2,85.643,81.327,2025,3,True,,structural_scenario_only,SIM-0271,joint_change
+SIM-V3-0272,Chemistry,2,78.335,68.667,2026,3,True,,structural_scenario_only,SIM-0272,joint_change
+SIM-V3-0273,Chemistry,2,60.685,62.542,2020,1,True,,structural_scenario_only,SIM-0273,joint_change
+SIM-V3-0274,Chemistry,2,67.988,65.472,2023,2,True,,structural_scenario_only,SIM-0274,joint_change
+SIM-V3-0275,Chemistry,2,48.538,66.609,2013,0,True,,structural_scenario_only,SIM-0275,joint_change
+SIM-V3-0276,Materials Science,3,82.028,54.745,2026,3,True,,structural_scenario_only,SIM-0276,contribution_leads_recognition
+SIM-V3-0277,Materials Science,3,67.037,56.454,2020,1,True,,structural_scenario_only,SIM-0277,contribution_leads_recognition
+SIM-V3-0278,Materials Science,3,76.798,37.264,2024,3,True,,structural_scenario_only,SIM-0278,contribution_leads_recognition
+SIM-V3-0279,Materials Science,3,76.612,48.281,2024,3,True,,structural_scenario_only,SIM-0279,contribution_leads_recognition
+SIM-V3-0280,Materials Science,3,86.759,55.494,2025,3,True,,structural_scenario_only,SIM-0280,contribution_leads_recognition
+SIM-V3-0281,Materials Science,3,86.255,44.094,2021,2,True,,structural_scenario_only,SIM-0281,contribution_leads_recognition
+SIM-V3-0282,Materials Science,3,86.598,41.005,2022,2,True,,structural_scenario_only,SIM-0282,contribution_leads_recognition
+SIM-V3-0283,Materials Science,3,89.169,66.6,2026,3,True,,structural_scenario_only,SIM-0283,contribution_leads_recognition
+SIM-V3-0284,Materials Science,3,87.005,43.633,2025,3,True,,structural_scenario_only,SIM-0284,contribution_leads_recognition
+SIM-V3-0285,Materials Science,3,72.455,47.284,2021,2,True,,structural_scenario_only,SIM-0285,contribution_leads_recognition
+SIM-V3-0286,Materials Science,3,90.337,41.122,2024,3,True,,structural_scenario_only,SIM-0286,contribution_leads_recognition
+SIM-V3-0287,Materials Science,3,91.454,41.812,2024,3,True,,structural_scenario_only,SIM-0287,contribution_leads_recognition
+SIM-V3-0288,Materials Science,3,66.87,58.978,2018,1,True,,structural_scenario_only,SIM-0288,contribution_leads_recognition
+SIM-V3-0289,Materials Science,3,96.103,41.81,2026,3,True,,structural_scenario_only,SIM-0289,contribution_leads_recognition
+SIM-V3-0290,Materials Science,3,62.193,56.237,2018,1,True,,structural_scenario_only,SIM-0290,contribution_leads_recognition
+SIM-V3-0291,Materials Science,3,69.577,47.662,2015,0,True,,structural_scenario_only,SIM-0291,contribution_leads_recognition
+SIM-V3-0292,Materials Science,3,80.536,43.93,2021,2,True,,structural_scenario_only,SIM-0292,contribution_leads_recognition
+SIM-V3-0293,Materials Science,3,59.808,46.008,2016,1,True,,structural_scenario_only,SIM-0293,contribution_leads_recognition
+SIM-V3-0294,Materials Science,3,93.194,48.634,2024,3,True,,structural_scenario_only,SIM-0294,contribution_leads_recognition
+SIM-V3-0295,Materials Science,3,56.595,39.826,2013,0,True,,structural_scenario_only,SIM-0295,contribution_leads_recognition
+SIM-V3-0296,Materials Science,3,66.729,51.828,2022,2,True,,structural_scenario_only,SIM-0296,contribution_leads_recognition
+SIM-V3-0297,Materials Science,3,67.487,62.125,2025,3,True,,structural_scenario_only,SIM-0297,contribution_leads_recognition
+SIM-V3-0298,Materials Science,3,73.724,44.69,2013,0,True,,structural_scenario_only,SIM-0298,contribution_leads_recognition
+SIM-V3-0299,Materials Science,3,84.629,38.386,2025,3,True,,structural_scenario_only,SIM-0299,contribution_leads_recognition
+SIM-V3-0300,Materials Science,3,71.921,61.857,2016,1,True,,structural_scenario_only,SIM-0300,contribution_leads_recognition
+SIM-V3-0301,Materials Science,3,58.983,43.852,2019,1,True,,structural_scenario_only,SIM-0301,contribution_leads_recognition
+SIM-V3-0302,Materials Science,3,75.131,54.908,2020,1,True,,structural_scenario_only,SIM-0302,contribution_leads_recognition
+SIM-V3-0303,Materials Science,3,90.959,47.92,2025,3,True,,structural_scenario_only,SIM-0303,contribution_leads_recognition
+SIM-V3-0304,Materials Science,3,78.642,47.558,2020,1,True,,structural_scenario_only,SIM-0304,contribution_leads_recognition
+SIM-V3-0305,Materials Science,3,83.363,49.332,2024,3,True,,structural_scenario_only,SIM-0305,contribution_leads_recognition
+SIM-V3-0306,Materials Science,3,93.643,48.124,2026,3,True,,structural_scenario_only,SIM-0306,contribution_leads_recognition
+SIM-V3-0307,Materials Science,3,74.886,61.049,2024,3,True,,structural_scenario_only,SIM-0307,contribution_leads_recognition
+SIM-V3-0308,Materials Science,3,84.622,53.115,2022,2,True,,structural_scenario_only,SIM-0308,contribution_leads_recognition
+SIM-V3-0309,Materials Science,3,75.24,35.818,2018,1,True,,structural_scenario_only,SIM-0309,contribution_leads_recognition
+SIM-V3-0310,Materials Science,3,82.528,36.682,2023,2,True,,structural_scenario_only,SIM-0310,contribution_leads_recognition
+SIM-V3-0311,Materials Science,3,64.732,46.204,2008,0,True,,structural_scenario_only,SIM-0311,contribution_leads_recognition
+SIM-V3-0312,Materials Science,3,85.062,46.115,2022,2,True,,structural_scenario_only,SIM-0312,contribution_leads_recognition
+SIM-V3-0313,Materials Science,3,89.688,48.56,2026,3,True,,structural_scenario_only,SIM-0313,contribution_leads_recognition
+SIM-V3-0314,Materials Science,3,82.644,59.189,2025,3,True,,structural_scenario_only,SIM-0314,contribution_leads_recognition
+SIM-V3-0315,Materials Science,3,92.52,51.832,2025,3,True,,structural_scenario_only,SIM-0315,contribution_leads_recognition
+SIM-V3-0316,Materials Science,3,78.799,57.5,2025,3,True,,structural_scenario_only,SIM-0316,contribution_leads_recognition
+SIM-V3-0317,Materials Science,3,65.247,45.769,2019,1,True,,structural_scenario_only,SIM-0317,contribution_leads_recognition
+SIM-V3-0318,Materials Science,3,67.5,56.265,2023,2,True,,structural_scenario_only,SIM-0318,contribution_leads_recognition
+SIM-V3-0319,Materials Science,3,61.214,56.985,2014,0,True,,structural_scenario_only,SIM-0319,contribution_leads_recognition
+SIM-V3-0320,Materials Science,3,65.169,39.112,2019,1,True,,structural_scenario_only,SIM-0320,contribution_leads_recognition
+SIM-V3-0321,Materials Science,3,82.448,47.339,2023,2,True,,structural_scenario_only,SIM-0321,contribution_leads_recognition
+SIM-V3-0322,Materials Science,3,75.025,52.079,2024,3,True,,structural_scenario_only,SIM-0322,contribution_leads_recognition
+SIM-V3-0323,Materials Science,3,77.394,42.332,2022,2,True,,structural_scenario_only,SIM-0323,contribution_leads_recognition
+SIM-V3-0324,Materials Science,3,76.428,55.257,2025,3,True,,structural_scenario_only,SIM-0324,contribution_leads_recognition
+SIM-V3-0325,Materials Science,3,76.443,43.862,2026,3,True,,structural_scenario_only,SIM-0325,contribution_leads_recognition
+SIM-V3-0326,Materials Science,3,58.624,57.63,2019,1,True,,structural_scenario_only,SIM-0326,contribution_leads_recognition
+SIM-V3-0327,Materials Science,3,82.422,47.941,2026,3,True,,structural_scenario_only,SIM-0327,contribution_leads_recognition
+SIM-V3-0328,Materials Science,3,74.739,46.296,2022,2,True,,structural_scenario_only,SIM-0328,contribution_leads_recognition
+SIM-V3-0329,Materials Science,3,85.01,51.047,2026,3,True,,structural_scenario_only,SIM-0329,contribution_leads_recognition
+SIM-V3-0330,Materials Science,3,71.913,48.655,2018,1,True,,structural_scenario_only,SIM-0330,contribution_leads_recognition
+SIM-V3-0331,Materials Science,3,83.536,43.261,2020,1,True,,structural_scenario_only,SIM-0331,contribution_leads_recognition
+SIM-V3-0332,Materials Science,3,56.129,65.825,2016,1,True,,structural_scenario_only,SIM-0332,contribution_leads_recognition
+SIM-V3-0333,Materials Science,3,64.872,53.492,2023,2,True,,structural_scenario_only,SIM-0333,contribution_leads_recognition
+SIM-V3-0334,Materials Science,3,84.786,66.422,2026,3,True,,structural_scenario_only,SIM-0334,contribution_leads_recognition
+SIM-V3-0335,Materials Science,3,64.892,55.745,2018,1,True,,structural_scenario_only,SIM-0335,contribution_leads_recognition
+SIM-V3-0336,Materials Science,3,56.912,58.013,2011,0,True,,structural_scenario_only,SIM-0336,contribution_leads_recognition
+SIM-V3-0337,Materials Science,3,85.003,53.867,2026,3,True,,structural_scenario_only,SIM-0337,contribution_leads_recognition
+SIM-V3-0338,Materials Science,3,73.571,39.561,2018,1,True,,structural_scenario_only,SIM-0338,contribution_leads_recognition
+SIM-V3-0339,Materials Science,3,84.064,67.6,2022,2,True,,structural_scenario_only,SIM-0339,contribution_leads_recognition
+SIM-V3-0340,Materials Science,3,78.648,52.229,2023,2,True,,structural_scenario_only,SIM-0340,contribution_leads_recognition
+SIM-V3-0341,Materials Science,3,46.618,58.407,2008,0,True,,structural_scenario_only,SIM-0341,contribution_leads_recognition
+SIM-V3-0342,Materials Science,3,85.488,53.837,2025,3,True,,structural_scenario_only,SIM-0342,contribution_leads_recognition
+SIM-V3-0343,Materials Science,3,66.013,55.452,2019,1,True,,structural_scenario_only,SIM-0343,contribution_leads_recognition
+SIM-V3-0344,Materials Science,3,82.193,52.043,2025,3,True,,structural_scenario_only,SIM-0344,contribution_leads_recognition
+SIM-V3-0345,Materials Science,3,93.488,49.907,2024,3,True,,structural_scenario_only,SIM-0345,contribution_leads_recognition
+SIM-V3-0346,Materials Science,3,93.868,47.34,2025,3,True,,structural_scenario_only,SIM-0346,contribution_leads_recognition
+SIM-V3-0347,Materials Science,3,89.531,51.317,2025,3,True,,structural_scenario_only,SIM-0347,contribution_leads_recognition
+SIM-V3-0348,Materials Science,3,67.027,45.261,2019,1,True,,structural_scenario_only,SIM-0348,contribution_leads_recognition
+SIM-V3-0349,Materials Science,3,57.069,58.696,2013,0,True,,structural_scenario_only,SIM-0349,contribution_leads_recognition
+SIM-V3-0350,Materials Science,3,67.673,63.192,2017,1,True,,structural_scenario_only,SIM-0350,contribution_leads_recognition
+SIM-V3-0351,Materials Science,3,91.736,49.397,2026,3,True,,structural_scenario_only,SIM-0351,contribution_leads_recognition
+SIM-V3-0352,Materials Science,3,79.973,48.795,2018,1,True,,structural_scenario_only,SIM-0352,contribution_leads_recognition
+SIM-V3-0353,Materials Science,3,62.547,47.533,2014,0,True,,structural_scenario_only,SIM-0353,contribution_leads_recognition
+SIM-V3-0354,Materials Science,3,88.191,51.427,2026,3,True,,structural_scenario_only,SIM-0354,contribution_leads_recognition
+SIM-V3-0355,Materials Science,3,86.397,51.474,2024,3,True,,structural_scenario_only,SIM-0355,contribution_leads_recognition
+SIM-V3-0356,Materials Science,3,73.42,57.503,2023,2,True,,structural_scenario_only,SIM-0356,contribution_leads_recognition
+SIM-V3-0357,Materials Science,3,56.34,45.027,2017,1,True,,structural_scenario_only,SIM-0357,contribution_leads_recognition
+SIM-V3-0358,Materials Science,3,82.367,45.555,2026,3,True,,structural_scenario_only,SIM-0358,contribution_leads_recognition
+SIM-V3-0359,Materials Science,3,80.574,26.115,2008,0,True,,structural_scenario_only,SIM-0359,contribution_leads_recognition
+SIM-V3-0360,Materials Science,3,67.1,56.973,2022,2,True,,structural_scenario_only,SIM-0360,contribution_leads_recognition
+SIM-V3-0361,Materials Science,3,86.187,38.219,2026,3,True,,structural_scenario_only,SIM-0361,contribution_leads_recognition
+SIM-V3-0362,Materials Science,3,84.994,61.476,2024,3,True,,structural_scenario_only,SIM-0362,contribution_leads_recognition
+SIM-V3-0363,Materials Science,3,53.31,48.61,2018,1,True,,structural_scenario_only,SIM-0363,contribution_leads_recognition
+SIM-V3-0364,Materials Science,3,91.148,40.953,2016,1,True,,structural_scenario_only,SIM-0364,contribution_leads_recognition
+SIM-V3-0365,Materials Science,3,74.551,52.065,2022,2,True,,structural_scenario_only,SIM-0365,contribution_leads_recognition
+SIM-V3-0366,Materials Science,3,67.028,54.198,2023,2,True,,structural_scenario_only,SIM-0366,contribution_leads_recognition
+SIM-V3-0367,Materials Science,3,72.758,46.884,2023,2,True,,structural_scenario_only,SIM-0367,contribution_leads_recognition
+SIM-V3-0368,Materials Science,3,77.602,62.703,2025,3,True,,structural_scenario_only,SIM-0368,contribution_leads_recognition
+SIM-V3-0369,Materials Science,3,73.701,41.185,2011,0,True,,structural_scenario_only,SIM-0369,contribution_leads_recognition
+SIM-V3-0370,Materials Science,3,95.66,45.275,2024,3,True,,structural_scenario_only,SIM-0370,contribution_leads_recognition
+SIM-V3-0371,Materials Science,3,95.106,48.973,2025,3,True,,structural_scenario_only,SIM-0371,contribution_leads_recognition
+SIM-V3-0372,Materials Science,3,75.557,48.051,2021,2,True,,structural_scenario_only,SIM-0372,contribution_leads_recognition
+SIM-V3-0373,Materials Science,3,89.191,44.544,2024,3,True,,structural_scenario_only,SIM-0373,contribution_leads_recognition
+SIM-V3-0374,Materials Science,3,71.826,65.624,2021,2,True,,structural_scenario_only,SIM-0374,contribution_leads_recognition
+SIM-V3-0375,Materials Science,3,79.543,60.967,2025,3,True,,structural_scenario_only,SIM-0375,contribution_leads_recognition
+SIM-V3-0376,Materials Science,3,65.399,52.686,2014,0,True,,structural_scenario_only,SIM-0376,contribution_leads_recognition
+SIM-V3-0377,Materials Science,3,77.96,53.739,2019,1,True,,structural_scenario_only,SIM-0377,contribution_leads_recognition
+SIM-V3-0378,Materials Science,3,88.576,48.918,2024,3,True,,structural_scenario_only,SIM-0378,contribution_leads_recognition
+SIM-V3-0379,Materials Science,3,82.382,54.097,2025,3,True,,structural_scenario_only,SIM-0379,contribution_leads_recognition
+SIM-V3-0380,Materials Science,3,66.021,54.078,2018,1,True,,structural_scenario_only,SIM-0380,contribution_leads_recognition
+SIM-V3-0381,Materials Science,3,96.097,47.615,2026,3,True,,structural_scenario_only,SIM-0381,contribution_leads_recognition
+SIM-V3-0382,Materials Science,3,73.036,58.157,2025,3,True,,structural_scenario_only,SIM-0382,contribution_leads_recognition
+SIM-V3-0383,Materials Science,3,89.004,53.966,2024,3,True,,structural_scenario_only,SIM-0383,contribution_leads_recognition
+SIM-V3-0384,Materials Science,3,86.046,52.259,2021,2,True,,structural_scenario_only,SIM-0384,contribution_leads_recognition
+SIM-V3-0385,Materials Science,3,82.965,47.539,2025,3,True,,structural_scenario_only,SIM-0385,contribution_leads_recognition
+SIM-V3-0386,Life Sciences,4,59.612,56.268,2025,3,True,,structural_scenario_only,SIM-0386,partial_recognition_lag
+SIM-V3-0387,Life Sciences,4,64.107,64.752,2022,2,True,,structural_scenario_only,SIM-0387,partial_recognition_lag
+SIM-V3-0388,Life Sciences,4,65.402,59.989,2022,2,True,,structural_scenario_only,SIM-0388,partial_recognition_lag
+SIM-V3-0389,Life Sciences,4,80.374,55.201,2025,3,True,,structural_scenario_only,SIM-0389,partial_recognition_lag
+SIM-V3-0390,Life Sciences,4,75.158,49.27,2026,3,True,,structural_scenario_only,SIM-0390,partial_recognition_lag
+SIM-V3-0391,Life Sciences,4,64.214,54.775,2026,3,True,,structural_scenario_only,SIM-0391,partial_recognition_lag
+SIM-V3-0392,Life Sciences,4,66.999,42.809,2024,3,True,,structural_scenario_only,SIM-0392,partial_recognition_lag
+SIM-V3-0393,Life Sciences,4,78.366,53.472,2026,3,True,,structural_scenario_only,SIM-0393,partial_recognition_lag
+SIM-V3-0394,Life Sciences,4,80.165,50.017,2025,3,True,,structural_scenario_only,SIM-0394,partial_recognition_lag
+SIM-V3-0395,Life Sciences,4,51.237,74.595,2019,1,True,,structural_scenario_only,SIM-0395,partial_recognition_lag
+SIM-V3-0396,Life Sciences,4,81.987,54.879,2021,2,True,,structural_scenario_only,SIM-0396,partial_recognition_lag
+SIM-V3-0397,Life Sciences,4,68.089,56.845,2025,3,True,,structural_scenario_only,SIM-0397,partial_recognition_lag
+SIM-V3-0398,Life Sciences,4,58.251,52.186,2013,0,True,,structural_scenario_only,SIM-0398,partial_recognition_lag
+SIM-V3-0399,Life Sciences,4,62.32,54.334,2026,3,True,,structural_scenario_only,SIM-0399,partial_recognition_lag
+SIM-V3-0400,Life Sciences,4,58.964,55.07,2016,1,True,,structural_scenario_only,SIM-0400,partial_recognition_lag
+SIM-V3-0401,Life Sciences,4,68.914,50.923,2022,2,True,,structural_scenario_only,SIM-0401,partial_recognition_lag
+SIM-V3-0402,Life Sciences,4,80.743,59.493,2021,2,True,,structural_scenario_only,SIM-0402,partial_recognition_lag
+SIM-V3-0403,Life Sciences,4,55.991,51.005,2021,2,True,,structural_scenario_only,SIM-0403,partial_recognition_lag
+SIM-V3-0404,Life Sciences,4,84.526,41.021,2024,3,True,,structural_scenario_only,SIM-0404,partial_recognition_lag
+SIM-V3-0405,Life Sciences,4,90.654,60.362,2025,3,True,,structural_scenario_only,SIM-0405,partial_recognition_lag
+SIM-V3-0406,Life Sciences,4,63.666,56.955,2022,2,True,,structural_scenario_only,SIM-0406,partial_recognition_lag
+SIM-V3-0407,Life Sciences,4,68.467,68.583,2025,3,True,,structural_scenario_only,SIM-0407,partial_recognition_lag
+SIM-V3-0408,Life Sciences,4,75.316,54.185,2021,2,True,,structural_scenario_only,SIM-0408,partial_recognition_lag
+SIM-V3-0409,Life Sciences,4,64.436,40.136,2025,3,True,,structural_scenario_only,SIM-0409,partial_recognition_lag
+SIM-V3-0410,Life Sciences,4,66.219,40.942,2018,1,True,,structural_scenario_only,SIM-0410,partial_recognition_lag
+SIM-V3-0411,Life Sciences,4,72.366,56.344,2021,2,True,,structural_scenario_only,SIM-0411,partial_recognition_lag
+SIM-V3-0412,Life Sciences,4,49.6,53.167,2021,2,True,,structural_scenario_only,SIM-0412,partial_recognition_lag
+SIM-V3-0413,Life Sciences,4,47.528,64.851,2016,1,True,,structural_scenario_only,SIM-0413,partial_recognition_lag
+SIM-V3-0414,Life Sciences,4,79.818,50.184,2025,3,True,,structural_scenario_only,SIM-0414,partial_recognition_lag
+SIM-V3-0415,Life Sciences,4,62.947,46.384,2026,3,True,,structural_scenario_only,SIM-0415,partial_recognition_lag
+SIM-V3-0416,Life Sciences,4,67.865,53.279,2022,2,True,,structural_scenario_only,SIM-0416,partial_recognition_lag
+SIM-V3-0417,Life Sciences,4,83.98,47.471,2025,3,True,,structural_scenario_only,SIM-0417,partial_recognition_lag
+SIM-V3-0418,Life Sciences,4,72.509,49.271,2026,3,True,,structural_scenario_only,SIM-0418,partial_recognition_lag
+SIM-V3-0419,Life Sciences,4,54.655,60.302,2015,0,True,,structural_scenario_only,SIM-0419,partial_recognition_lag
+SIM-V3-0420,Life Sciences,4,69.626,53.694,2022,2,True,,structural_scenario_only,SIM-0420,partial_recognition_lag
+SIM-V3-0421,Life Sciences,4,82.049,46.63,2024,3,True,,structural_scenario_only,SIM-0421,partial_recognition_lag
+SIM-V3-0422,Life Sciences,4,76.211,44.918,2023,2,True,,structural_scenario_only,SIM-0422,partial_recognition_lag
+SIM-V3-0423,Life Sciences,4,55.384,43.295,2017,1,True,,structural_scenario_only,SIM-0423,partial_recognition_lag
+SIM-V3-0424,Life Sciences,4,74.846,67.74,2025,3,True,,structural_scenario_only,SIM-0424,partial_recognition_lag
+SIM-V3-0425,Life Sciences,4,81.034,38.517,2026,3,True,,structural_scenario_only,SIM-0425,partial_recognition_lag
+SIM-V3-0426,Life Sciences,4,60.392,43.489,2016,1,True,,structural_scenario_only,SIM-0426,partial_recognition_lag
+SIM-V3-0427,Life Sciences,4,67.608,57.011,2016,1,True,,structural_scenario_only,SIM-0427,partial_recognition_lag
+SIM-V3-0428,Life Sciences,4,61.732,51.288,2026,3,True,,structural_scenario_only,SIM-0428,partial_recognition_lag
+SIM-V3-0429,Life Sciences,4,71.001,61.938,2025,3,True,,structural_scenario_only,SIM-0429,partial_recognition_lag
+SIM-V3-0430,Life Sciences,4,50.534,76.083,2012,0,True,,structural_scenario_only,SIM-0430,partial_recognition_lag
+SIM-V3-0431,Life Sciences,4,64.398,61.859,2021,2,True,,structural_scenario_only,SIM-0431,partial_recognition_lag
+SIM-V3-0432,Life Sciences,4,81.398,51.662,2024,3,True,,structural_scenario_only,SIM-0432,partial_recognition_lag
+SIM-V3-0433,Life Sciences,4,60.747,73.215,2020,1,True,,structural_scenario_only,SIM-0433,partial_recognition_lag
+SIM-V3-0434,Life Sciences,4,78.363,49.934,2026,3,True,,structural_scenario_only,SIM-0434,partial_recognition_lag
+SIM-V3-0435,Life Sciences,4,74.806,49.81,2023,2,True,,structural_scenario_only,SIM-0435,partial_recognition_lag
+SIM-V3-0436,Life Sciences,4,70.698,62.69,2022,2,True,,structural_scenario_only,SIM-0436,partial_recognition_lag
+SIM-V3-0437,Life Sciences,4,62.599,55.819,2018,1,True,,structural_scenario_only,SIM-0437,partial_recognition_lag
+SIM-V3-0438,Life Sciences,4,51.694,63.783,2019,1,True,,structural_scenario_only,SIM-0438,partial_recognition_lag
+SIM-V3-0439,Life Sciences,4,60.479,61.026,2021,2,True,,structural_scenario_only,SIM-0439,partial_recognition_lag
+SIM-V3-0440,Life Sciences,4,63.044,77.087,2017,1,True,,structural_scenario_only,SIM-0440,partial_recognition_lag
+SIM-V3-0441,Life Sciences,4,72.59,49.246,2023,2,True,,structural_scenario_only,SIM-0441,partial_recognition_lag
+SIM-V3-0442,Life Sciences,4,85.459,47.91,2024,3,True,,structural_scenario_only,SIM-0442,partial_recognition_lag
+SIM-V3-0443,Life Sciences,4,78.776,62.036,2024,3,True,,structural_scenario_only,SIM-0443,partial_recognition_lag
+SIM-V3-0444,Life Sciences,4,72.482,40.298,2025,3,True,,structural_scenario_only,SIM-0444,partial_recognition_lag
+SIM-V3-0445,Life Sciences,4,52.245,60.373,2006,0,True,,structural_scenario_only,SIM-0445,partial_recognition_lag
+SIM-V3-0446,Life Sciences,4,77.802,51.521,2024,3,True,,structural_scenario_only,SIM-0446,partial_recognition_lag
+SIM-V3-0447,Life Sciences,4,81.129,66.336,2021,2,True,,structural_scenario_only,SIM-0447,partial_recognition_lag
+SIM-V3-0448,Life Sciences,4,65.328,61.311,2023,2,True,,structural_scenario_only,SIM-0448,partial_recognition_lag
+SIM-V3-0449,Life Sciences,4,61.254,54.397,2019,1,True,,structural_scenario_only,SIM-0449,partial_recognition_lag
+SIM-V3-0450,Life Sciences,4,61.191,65.057,2023,2,True,,structural_scenario_only,SIM-0450,partial_recognition_lag
+SIM-V3-0451,Life Sciences,4,75.57,65.535,2026,3,True,,structural_scenario_only,SIM-0451,partial_recognition_lag
+SIM-V3-0452,Life Sciences,4,81.421,61.541,2026,3,True,,structural_scenario_only,SIM-0452,partial_recognition_lag
+SIM-V3-0453,Life Sciences,4,62.707,48.781,2026,3,True,,structural_scenario_only,SIM-0453,partial_recognition_lag
+SIM-V3-0454,Life Sciences,4,77.179,58.496,2026,3,True,,structural_scenario_only,SIM-0454,partial_recognition_lag
+SIM-V3-0455,Life Sciences,4,69.221,42.622,2021,2,True,,structural_scenario_only,SIM-0455,partial_recognition_lag
+SIM-V3-0456,Life Sciences,4,60.034,77.755,2016,1,True,,structural_scenario_only,SIM-0456,partial_recognition_lag
+SIM-V3-0457,Life Sciences,4,74.028,47.284,2024,3,True,,structural_scenario_only,SIM-0457,partial_recognition_lag
+SIM-V3-0458,Life Sciences,4,74.781,58.114,2025,3,True,,structural_scenario_only,SIM-0458,partial_recognition_lag
+SIM-V3-0459,Life Sciences,4,69.536,54.196,2017,1,True,,structural_scenario_only,SIM-0459,partial_recognition_lag
+SIM-V3-0460,Life Sciences,4,64.606,47.878,2024,3,True,,structural_scenario_only,SIM-0460,partial_recognition_lag
+SIM-V3-0461,Life Sciences,4,72.096,51.698,2022,2,True,,structural_scenario_only,SIM-0461,partial_recognition_lag
+SIM-V3-0462,Life Sciences,4,69.34,41.601,2025,3,True,,structural_scenario_only,SIM-0462,partial_recognition_lag
+SIM-V3-0463,Life Sciences,4,71.865,54.364,2022,2,True,,structural_scenario_only,SIM-0463,partial_recognition_lag
+SIM-V3-0464,Life Sciences,4,83.692,39.559,2024,3,True,,structural_scenario_only,SIM-0464,partial_recognition_lag
+SIM-V3-0465,Life Sciences,4,74.808,58.774,2023,2,True,,structural_scenario_only,SIM-0465,partial_recognition_lag
+SIM-V3-0466,Life Sciences,4,70.962,54.706,2021,2,True,,structural_scenario_only,SIM-0466,partial_recognition_lag
+SIM-V3-0467,Life Sciences,4,68.98,49.275,2022,2,True,,structural_scenario_only,SIM-0467,partial_recognition_lag
+SIM-V3-0468,Life Sciences,4,61.937,62.822,2013,0,True,,structural_scenario_only,SIM-0468,partial_recognition_lag
+SIM-V3-0469,Life Sciences,4,47.418,57.199,2012,0,True,,structural_scenario_only,SIM-0469,partial_recognition_lag
+SIM-V3-0470,Life Sciences,4,63.13,61.049,2023,2,True,,structural_scenario_only,SIM-0470,partial_recognition_lag
+SIM-V3-0471,Life Sciences,4,89.613,48.434,2026,3,True,,structural_scenario_only,SIM-0471,partial_recognition_lag
+SIM-V3-0472,Life Sciences,4,61.155,59.842,2010,0,True,,structural_scenario_only,SIM-0472,partial_recognition_lag
+SIM-V3-0473,Life Sciences,4,69.769,58.644,2025,3,True,,structural_scenario_only,SIM-0473,partial_recognition_lag
+SIM-V3-0474,Life Sciences,4,80.266,58.922,2025,3,True,,structural_scenario_only,SIM-0474,partial_recognition_lag
+SIM-V3-0475,Life Sciences,4,71.552,45.077,2021,2,True,,structural_scenario_only,SIM-0475,partial_recognition_lag
+SIM-V3-0476,Life Sciences,4,71.381,44.131,2024,3,True,,structural_scenario_only,SIM-0476,partial_recognition_lag
+SIM-V3-0477,Life Sciences,4,80.559,41.645,2024,3,True,,structural_scenario_only,SIM-0477,partial_recognition_lag
+SIM-V3-0478,Life Sciences,4,62.367,66.177,2017,1,True,,structural_scenario_only,SIM-0478,partial_recognition_lag
+SIM-V3-0479,Life Sciences,4,67.757,59.869,2023,2,True,,structural_scenario_only,SIM-0479,partial_recognition_lag
+SIM-V3-0480,Life Sciences,4,55.846,55.927,2017,1,True,,structural_scenario_only,SIM-0480,partial_recognition_lag
+SIM-V3-0481,Life Sciences,4,55.423,58.197,2010,0,True,,structural_scenario_only,SIM-0481,partial_recognition_lag
+SIM-V3-0482,Life Sciences,4,77.785,66.119,2021,2,True,,structural_scenario_only,SIM-0482,partial_recognition_lag
+SIM-V3-0483,Life Sciences,4,44.137,64.975,2011,0,True,,structural_scenario_only,SIM-0483,partial_recognition_lag
+SIM-V3-0484,Life Sciences,4,76.355,56.337,2022,2,True,,structural_scenario_only,SIM-0484,partial_recognition_lag
+SIM-V3-0485,Life Sciences,4,74.485,44.436,2016,1,True,,structural_scenario_only,SIM-0485,partial_recognition_lag
+SIM-V3-0486,Life Sciences,4,71.369,47.084,2026,3,True,,structural_scenario_only,SIM-0486,partial_recognition_lag
+SIM-V3-0487,Life Sciences,4,48.245,61.761,2007,0,True,,structural_scenario_only,SIM-0487,partial_recognition_lag
+SIM-V3-0488,Life Sciences,4,76.1,56.922,2020,1,True,,structural_scenario_only,SIM-0488,partial_recognition_lag
+SIM-V3-0489,Life Sciences,4,77.104,59.324,2026,3,True,,structural_scenario_only,SIM-0489,partial_recognition_lag
+SIM-V3-0490,Life Sciences,4,78.283,60.748,2025,3,True,,structural_scenario_only,SIM-0490,partial_recognition_lag
+SIM-V3-0491,Life Sciences,4,71.674,60.437,2011,0,True,,structural_scenario_only,SIM-0491,partial_recognition_lag
+SIM-V3-0492,Life Sciences,4,51.56,57.22,2009,0,True,,structural_scenario_only,SIM-0492,partial_recognition_lag
+SIM-V3-0493,Life Sciences,4,66.705,63.574,2021,2,True,,structural_scenario_only,SIM-0493,partial_recognition_lag
+SIM-V3-0494,Life Sciences,4,69.696,61.607,2023,2,True,,structural_scenario_only,SIM-0494,partial_recognition_lag
+SIM-V3-0495,Life Sciences,4,79.839,64.359,2022,2,True,,structural_scenario_only,SIM-0495,partial_recognition_lag
+SIM-V3-0496,Life Sciences,4,66.744,61.775,2024,3,True,,structural_scenario_only,SIM-0496,partial_recognition_lag
+SIM-V3-0497,Life Sciences,4,56.259,56.967,2025,3,True,,structural_scenario_only,SIM-0497,partial_recognition_lag
+SIM-V3-0498,Life Sciences,4,68.779,71.317,2022,2,True,,structural_scenario_only,SIM-0498,partial_recognition_lag
+SIM-V3-0499,Life Sciences,4,83.414,50.419,2025,3,True,,structural_scenario_only,SIM-0499,partial_recognition_lag
+SIM-V3-0500,Life Sciences,4,51.741,77.849,2018,1,True,,structural_scenario_only,SIM-0500,partial_recognition_lag
+SIM-V3-0501,Life Sciences,4,79.688,52.24,2026,3,True,,structural_scenario_only,SIM-0501,partial_recognition_lag
+SIM-V3-0502,Life Sciences,4,59.425,55.491,2022,2,True,,structural_scenario_only,SIM-0502,partial_recognition_lag
+SIM-V3-0503,Life Sciences,4,84.58,57.837,2024,3,True,,structural_scenario_only,SIM-0503,partial_recognition_lag
+SIM-V3-0504,Life Sciences,4,95.17,73.053,2025,3,True,,structural_scenario_only,SIM-0504,partial_recognition_lag
+SIM-V3-0505,Life Sciences,4,56.977,47.905,2022,2,True,,structural_scenario_only,SIM-0505,partial_recognition_lag
+SIM-V3-0506,Life Sciences,4,61.296,75.529,2017,1,True,,structural_scenario_only,SIM-0506,partial_recognition_lag
+SIM-V3-0507,Life Sciences,4,46.063,65.681,2006,0,True,,structural_scenario_only,SIM-0507,partial_recognition_lag
+SIM-V3-0508,Life Sciences,4,67.203,51.533,2023,2,True,,structural_scenario_only,SIM-0508,partial_recognition_lag
+SIM-V3-0509,Life Sciences,4,63.916,62.589,2022,2,True,,structural_scenario_only,SIM-0509,partial_recognition_lag
+SIM-V3-0510,Life Sciences,4,71.429,55.413,2026,3,True,,structural_scenario_only,SIM-0510,partial_recognition_lag
+SIM-V3-0511,Life Sciences,4,72.338,56.071,2023,2,True,,structural_scenario_only,SIM-0511,partial_recognition_lag
+SIM-V3-0512,Life Sciences,4,76.958,66.631,2026,3,True,,structural_scenario_only,SIM-0512,partial_recognition_lag
+SIM-V3-0513,Life Sciences,4,77.957,48.147,2024,3,True,,structural_scenario_only,SIM-0513,partial_recognition_lag
+SIM-V3-0514,Life Sciences,4,52.169,69.309,2008,0,True,,structural_scenario_only,SIM-0514,partial_recognition_lag
+SIM-V3-0515,Life Sciences,4,46.964,49.962,2023,2,True,,structural_scenario_only,SIM-0515,partial_recognition_lag
+SIM-V3-0516,Life Sciences,4,75.735,57.638,2025,3,True,,structural_scenario_only,SIM-0516,partial_recognition_lag
+SIM-V3-0517,Life Sciences,4,54.168,70.273,2019,1,True,,structural_scenario_only,SIM-0517,partial_recognition_lag
+SIM-V3-0518,Life Sciences,4,60.272,46.704,2020,1,True,,structural_scenario_only,SIM-0518,partial_recognition_lag
+SIM-V3-0519,Life Sciences,4,86.428,52.578,2026,3,True,,structural_scenario_only,SIM-0519,partial_recognition_lag
+SIM-V3-0520,Life Sciences,4,72.286,64.558,2023,2,True,,structural_scenario_only,SIM-0520,partial_recognition_lag
+SIM-V3-0521,Life Sciences,4,53.701,62.433,2017,1,True,,structural_scenario_only,SIM-0521,partial_recognition_lag
+SIM-V3-0522,Life Sciences,4,67.101,54.175,2026,3,True,,structural_scenario_only,SIM-0522,partial_recognition_lag
+SIM-V3-0523,Life Sciences,4,50.881,45.237,2021,2,True,,structural_scenario_only,SIM-0523,partial_recognition_lag
+SIM-V3-0524,Life Sciences,4,67.905,49.581,2025,3,True,,structural_scenario_only,SIM-0524,partial_recognition_lag
+SIM-V3-0525,Life Sciences,4,60.708,51.176,2007,0,True,,structural_scenario_only,SIM-0525,partial_recognition_lag
+SIM-V3-0526,Life Sciences,4,80.138,59.278,2026,3,True,,structural_scenario_only,SIM-0526,partial_recognition_lag
+SIM-V3-0527,Life Sciences,4,68.905,35.403,2025,3,True,,structural_scenario_only,SIM-0527,partial_recognition_lag
+SIM-V3-0528,Life Sciences,4,80.995,62.222,2026,3,True,,structural_scenario_only,SIM-0528,partial_recognition_lag
+SIM-V3-0529,Life Sciences,4,57.898,63.425,2018,1,True,,structural_scenario_only,SIM-0529,partial_recognition_lag
+SIM-V3-0530,Life Sciences,4,64.005,61.149,2026,3,True,,structural_scenario_only,SIM-0530,partial_recognition_lag
+SIM-V3-0531,Life Sciences,4,31.238,72.307,2009,0,True,,structural_scenario_only,SIM-0531,partial_recognition_lag
+SIM-V3-0532,Life Sciences,4,70.088,58.209,2025,3,True,,structural_scenario_only,SIM-0532,partial_recognition_lag
+SIM-V3-0533,Life Sciences,4,58.241,54.938,2016,1,True,,structural_scenario_only,SIM-0533,partial_recognition_lag
+SIM-V3-0534,Life Sciences,4,73.972,42.309,2017,1,True,,structural_scenario_only,SIM-0534,partial_recognition_lag
+SIM-V3-0535,Life Sciences,4,75.827,65.248,2024,3,True,,structural_scenario_only,SIM-0535,partial_recognition_lag
+SIM-V3-0536,Life Sciences,4,75.852,56.245,2022,2,True,,structural_scenario_only,SIM-0536,partial_recognition_lag
+SIM-V3-0537,Life Sciences,4,75.261,66.3,2026,3,True,,structural_scenario_only,SIM-0537,partial_recognition_lag
+SIM-V3-0538,Life Sciences,4,65.653,68.435,2025,3,True,,structural_scenario_only,SIM-0538,partial_recognition_lag
+SIM-V3-0539,Life Sciences,4,70.053,58.634,2024,3,True,,structural_scenario_only,SIM-0539,partial_recognition_lag
+SIM-V3-0540,Life Sciences,4,70.761,45.125,2023,2,True,,structural_scenario_only,SIM-0540,partial_recognition_lag
+SIM-V3-0541,Medicine & Health,5,60.237,59.12,2012,0,True,,structural_scenario_only,SIM-0541,recognition_leads_contribution
+SIM-V3-0542,Medicine & Health,5,47.709,80.192,2025,3,True,,structural_scenario_only,SIM-0542,recognition_leads_contribution
+SIM-V3-0543,Medicine & Health,5,50.337,78.297,2024,3,True,,structural_scenario_only,SIM-0543,recognition_leads_contribution
+SIM-V3-0544,Medicine & Health,5,65.308,79.46,2022,2,True,,structural_scenario_only,SIM-0544,recognition_leads_contribution
+SIM-V3-0545,Medicine & Health,5,58.356,76.559,2007,0,True,,structural_scenario_only,SIM-0545,recognition_leads_contribution
+SIM-V3-0546,Medicine & Health,5,44.568,64.909,2025,3,True,,structural_scenario_only,SIM-0546,recognition_leads_contribution
+SIM-V3-0547,Medicine & Health,5,38.758,66.436,2018,1,True,,structural_scenario_only,SIM-0547,recognition_leads_contribution
+SIM-V3-0548,Medicine & Health,5,49.681,83.839,2026,3,True,,structural_scenario_only,SIM-0548,recognition_leads_contribution
+SIM-V3-0549,Medicine & Health,5,56.953,76.883,2026,3,True,,structural_scenario_only,SIM-0549,recognition_leads_contribution
+SIM-V3-0550,Medicine & Health,5,59.285,80.945,2026,3,True,,structural_scenario_only,SIM-0550,recognition_leads_contribution
+SIM-V3-0551,Medicine & Health,5,68.34,76.826,2026,3,True,,structural_scenario_only,SIM-0551,recognition_leads_contribution
+SIM-V3-0552,Medicine & Health,5,60.84,69.91,2025,3,True,,structural_scenario_only,SIM-0552,recognition_leads_contribution
+SIM-V3-0553,Medicine & Health,5,53.781,83.59,2021,2,True,,structural_scenario_only,SIM-0553,recognition_leads_contribution
+SIM-V3-0554,Medicine & Health,5,55.783,56.811,2018,1,True,,structural_scenario_only,SIM-0554,recognition_leads_contribution
+SIM-V3-0555,Medicine & Health,5,55.571,60.425,2011,0,True,,structural_scenario_only,SIM-0555,recognition_leads_contribution
+SIM-V3-0556,Medicine & Health,5,49.716,77.699,2020,1,True,,structural_scenario_only,SIM-0556,recognition_leads_contribution
+SIM-V3-0557,Medicine & Health,5,47.522,82.582,2022,2,True,,structural_scenario_only,SIM-0557,recognition_leads_contribution
+SIM-V3-0558,Medicine & Health,5,61.124,68.68,2026,3,True,,structural_scenario_only,SIM-0558,recognition_leads_contribution
+SIM-V3-0559,Medicine & Health,5,56.741,78.042,2025,3,True,,structural_scenario_only,SIM-0559,recognition_leads_contribution
+SIM-V3-0560,Medicine & Health,5,45.218,83.806,2025,3,True,,structural_scenario_only,SIM-0560,recognition_leads_contribution
+SIM-V3-0561,Medicine & Health,5,46.382,73.991,2009,0,True,,structural_scenario_only,SIM-0561,recognition_leads_contribution
+SIM-V3-0562,Medicine & Health,5,59.044,75.81,2026,3,True,,structural_scenario_only,SIM-0562,recognition_leads_contribution
+SIM-V3-0563,Medicine & Health,5,60.832,59.959,2022,2,True,,structural_scenario_only,SIM-0563,recognition_leads_contribution
+SIM-V3-0564,Medicine & Health,5,51.78,77.597,2022,2,True,,structural_scenario_only,SIM-0564,recognition_leads_contribution
+SIM-V3-0565,Medicine & Health,5,38.454,86.901,2018,1,True,,structural_scenario_only,SIM-0565,recognition_leads_contribution
+SIM-V3-0566,Medicine & Health,5,59.921,85.24,2025,3,True,,structural_scenario_only,SIM-0566,recognition_leads_contribution
+SIM-V3-0567,Medicine & Health,5,50.688,78.658,2026,3,True,,structural_scenario_only,SIM-0567,recognition_leads_contribution
+SIM-V3-0568,Medicine & Health,5,58.644,89.164,2025,3,True,,structural_scenario_only,SIM-0568,recognition_leads_contribution
+SIM-V3-0569,Medicine & Health,5,62.433,77.997,2021,2,True,,structural_scenario_only,SIM-0569,recognition_leads_contribution
+SIM-V3-0570,Medicine & Health,5,65.874,78.889,2024,3,True,,structural_scenario_only,SIM-0570,recognition_leads_contribution
+SIM-V3-0571,Medicine & Health,5,33.001,78.199,2023,2,True,,structural_scenario_only,SIM-0571,recognition_leads_contribution
+SIM-V3-0572,Medicine & Health,5,45.185,76.405,2026,3,True,,structural_scenario_only,SIM-0572,recognition_leads_contribution
+SIM-V3-0573,Medicine & Health,5,42.996,67.226,2016,1,True,,structural_scenario_only,SIM-0573,recognition_leads_contribution
+SIM-V3-0574,Medicine & Health,5,58.786,80.973,2026,3,True,,structural_scenario_only,SIM-0574,recognition_leads_contribution
+SIM-V3-0575,Medicine & Health,5,57.485,60.643,2009,0,True,,structural_scenario_only,SIM-0575,recognition_leads_contribution
+SIM-V3-0576,Medicine & Health,5,45.398,75.014,2023,2,True,,structural_scenario_only,SIM-0576,recognition_leads_contribution
+SIM-V3-0577,Medicine & Health,5,58.509,93.046,2025,3,True,,structural_scenario_only,SIM-0577,recognition_leads_contribution
+SIM-V3-0578,Medicine & Health,5,65.759,68.081,2022,2,True,,structural_scenario_only,SIM-0578,recognition_leads_contribution
+SIM-V3-0579,Medicine & Health,5,56.38,62.653,2021,2,True,,structural_scenario_only,SIM-0579,recognition_leads_contribution
+SIM-V3-0580,Medicine & Health,5,64.752,77.45,2024,3,True,,structural_scenario_only,SIM-0580,recognition_leads_contribution
+SIM-V3-0581,Medicine & Health,5,50.049,76.569,2025,3,True,,structural_scenario_only,SIM-0581,recognition_leads_contribution
+SIM-V3-0582,Medicine & Health,5,53.047,92.769,2025,3,True,,structural_scenario_only,SIM-0582,recognition_leads_contribution
+SIM-V3-0583,Medicine & Health,5,60.292,52.92,2023,2,True,,structural_scenario_only,SIM-0583,recognition_leads_contribution
+SIM-V3-0584,Medicine & Health,5,54.065,64.64,2023,2,True,,structural_scenario_only,SIM-0584,recognition_leads_contribution
+SIM-V3-0585,Medicine & Health,5,61.554,62.252,2025,3,True,,structural_scenario_only,SIM-0585,recognition_leads_contribution
+SIM-V3-0586,Medicine & Health,5,50.364,59.167,2008,0,True,,structural_scenario_only,SIM-0586,recognition_leads_contribution
+SIM-V3-0587,Medicine & Health,5,57.713,82.561,2026,3,True,,structural_scenario_only,SIM-0587,recognition_leads_contribution
+SIM-V3-0588,Medicine & Health,5,51.887,74.501,2023,2,True,,structural_scenario_only,SIM-0588,recognition_leads_contribution
+SIM-V3-0589,Medicine & Health,5,46.622,82.24,2022,2,True,,structural_scenario_only,SIM-0589,recognition_leads_contribution
+SIM-V3-0590,Medicine & Health,5,46.463,63.41,2007,0,True,,structural_scenario_only,SIM-0590,recognition_leads_contribution
+SIM-V3-0591,Medicine & Health,5,44.422,90.71,2017,1,True,,structural_scenario_only,SIM-0591,recognition_leads_contribution
+SIM-V3-0592,Medicine & Health,5,57.046,72.936,2018,1,True,,structural_scenario_only,SIM-0592,recognition_leads_contribution
+SIM-V3-0593,Medicine & Health,5,43.787,55.672,2007,0,True,,structural_scenario_only,SIM-0593,recognition_leads_contribution
+SIM-V3-0594,Medicine & Health,5,41.747,71.239,2022,2,True,,structural_scenario_only,SIM-0594,recognition_leads_contribution
+SIM-V3-0595,Medicine & Health,5,43.813,48.631,2006,0,True,,structural_scenario_only,SIM-0595,recognition_leads_contribution
+SIM-V3-0596,Medicine & Health,5,48.745,68.477,2023,2,True,,structural_scenario_only,SIM-0596,recognition_leads_contribution
+SIM-V3-0597,Medicine & Health,5,47.741,86.707,2023,2,True,,structural_scenario_only,SIM-0597,recognition_leads_contribution
+SIM-V3-0598,Medicine & Health,5,47.683,70.562,2016,1,True,,structural_scenario_only,SIM-0598,recognition_leads_contribution
+SIM-V3-0599,Medicine & Health,5,50.938,72.763,2023,2,True,,structural_scenario_only,SIM-0599,recognition_leads_contribution
+SIM-V3-0600,Medicine & Health,5,73.074,67.66,2024,3,True,,structural_scenario_only,SIM-0600,recognition_leads_contribution
+SIM-V3-0601,Medicine & Health,5,26.77,63.955,2008,0,True,,structural_scenario_only,SIM-0601,recognition_leads_contribution
+SIM-V3-0602,Medicine & Health,5,59.343,72.897,2025,3,True,,structural_scenario_only,SIM-0602,recognition_leads_contribution
+SIM-V3-0603,Medicine & Health,5,42.974,69.88,2023,2,True,,structural_scenario_only,SIM-0603,recognition_leads_contribution
+SIM-V3-0604,Medicine & Health,5,49.558,62.654,2017,1,True,,structural_scenario_only,SIM-0604,recognition_leads_contribution
+SIM-V3-0605,Medicine & Health,5,43.818,61.332,2023,2,True,,structural_scenario_only,SIM-0605,recognition_leads_contribution
+SIM-V3-0606,Medicine & Health,5,64.716,84.526,2025,3,True,,structural_scenario_only,SIM-0606,recognition_leads_contribution
+SIM-V3-0607,Medicine & Health,5,63.136,62.211,2022,2,True,,structural_scenario_only,SIM-0607,recognition_leads_contribution
+SIM-V3-0608,Medicine & Health,5,35.622,64.845,2016,1,True,,structural_scenario_only,SIM-0608,recognition_leads_contribution
+SIM-V3-0609,Medicine & Health,5,43.655,72.279,2023,2,True,,structural_scenario_only,SIM-0609,recognition_leads_contribution
+SIM-V3-0610,Medicine & Health,5,58.039,84.988,2024,3,True,,structural_scenario_only,SIM-0610,recognition_leads_contribution
+SIM-V3-0611,Medicine & Health,5,56.356,75.174,2022,2,True,,structural_scenario_only,SIM-0611,recognition_leads_contribution
+SIM-V3-0612,Medicine & Health,5,58.339,76.036,2023,2,True,,structural_scenario_only,SIM-0612,recognition_leads_contribution
+SIM-V3-0613,Medicine & Health,5,60.373,64.751,2025,3,True,,structural_scenario_only,SIM-0613,recognition_leads_contribution
+SIM-V3-0614,Medicine & Health,5,32.602,44.42,2009,0,True,,structural_scenario_only,SIM-0614,recognition_leads_contribution
+SIM-V3-0615,Medicine & Health,5,57.505,77.344,2023,2,True,,structural_scenario_only,SIM-0615,recognition_leads_contribution
+SIM-V3-0616,Medicine & Health,5,51.906,75.66,2023,2,True,,structural_scenario_only,SIM-0616,recognition_leads_contribution
+SIM-V3-0617,Medicine & Health,5,45.292,71.578,2016,1,True,,structural_scenario_only,SIM-0617,recognition_leads_contribution
+SIM-V3-0618,Medicine & Health,5,50.646,76.724,2024,3,True,,structural_scenario_only,SIM-0618,recognition_leads_contribution
+SIM-V3-0619,Medicine & Health,5,42.98,65.924,2020,1,True,,structural_scenario_only,SIM-0619,recognition_leads_contribution
+SIM-V3-0620,Medicine & Health,5,48.395,81.015,2021,2,True,,structural_scenario_only,SIM-0620,recognition_leads_contribution
+SIM-V3-0621,Medicine & Health,5,58.112,78.838,2025,3,True,,structural_scenario_only,SIM-0621,recognition_leads_contribution
+SIM-V3-0622,Medicine & Health,5,64.06,67.08,2026,3,True,,structural_scenario_only,SIM-0622,recognition_leads_contribution
+SIM-V3-0623,Medicine & Health,5,47.166,80.747,2025,3,True,,structural_scenario_only,SIM-0623,recognition_leads_contribution
+SIM-V3-0624,Medicine & Health,5,64.476,84.39,2023,2,True,,structural_scenario_only,SIM-0624,recognition_leads_contribution
+SIM-V3-0625,Medicine & Health,5,63.986,85.813,2026,3,True,,structural_scenario_only,SIM-0625,recognition_leads_contribution
+SIM-V3-0626,Medicine & Health,5,64.948,68.581,2006,0,True,,structural_scenario_only,SIM-0626,recognition_leads_contribution
+SIM-V3-0627,Medicine & Health,5,48.944,64.686,2023,2,True,,structural_scenario_only,SIM-0627,recognition_leads_contribution
+SIM-V3-0628,Medicine & Health,5,56.442,65.326,2021,2,True,,structural_scenario_only,SIM-0628,recognition_leads_contribution
+SIM-V3-0629,Medicine & Health,5,56.357,79.704,2024,3,True,,structural_scenario_only,SIM-0629,recognition_leads_contribution
+SIM-V3-0630,Medicine & Health,5,49.104,65.606,2016,1,True,,structural_scenario_only,SIM-0630,recognition_leads_contribution
+SIM-V3-0631,Medicine & Health,5,56.151,68.777,2024,3,True,,structural_scenario_only,SIM-0631,recognition_leads_contribution
+SIM-V3-0632,Medicine & Health,5,59.248,74.835,2022,2,True,,structural_scenario_only,SIM-0632,recognition_leads_contribution
+SIM-V3-0633,Medicine & Health,5,45.761,78.966,2020,1,True,,structural_scenario_only,SIM-0633,recognition_leads_contribution
+SIM-V3-0634,Medicine & Health,5,48.831,86.044,2019,1,True,,structural_scenario_only,SIM-0634,recognition_leads_contribution
+SIM-V3-0635,Medicine & Health,5,63.905,68.155,2016,1,True,,structural_scenario_only,SIM-0635,recognition_leads_contribution
+SIM-V3-0636,Medicine & Health,5,51.027,75.591,2026,3,True,,structural_scenario_only,SIM-0636,recognition_leads_contribution
+SIM-V3-0637,Medicine & Health,5,52.353,90.735,2021,2,True,,structural_scenario_only,SIM-0637,recognition_leads_contribution
+SIM-V3-0638,Medicine & Health,5,59.058,67.751,2017,1,True,,structural_scenario_only,SIM-0638,recognition_leads_contribution
+SIM-V3-0639,Medicine & Health,5,53.09,68.931,2020,1,True,,structural_scenario_only,SIM-0639,recognition_leads_contribution
+SIM-V3-0640,Medicine & Health,5,61.534,78.463,2026,3,True,,structural_scenario_only,SIM-0640,recognition_leads_contribution
+SIM-V3-0641,Medicine & Health,5,49.12,80.612,2025,3,True,,structural_scenario_only,SIM-0641,recognition_leads_contribution
+SIM-V3-0642,Medicine & Health,5,48.326,93.849,2026,3,True,,structural_scenario_only,SIM-0642,recognition_leads_contribution
+SIM-V3-0643,Medicine & Health,5,53.461,65.79,2026,3,True,,structural_scenario_only,SIM-0643,recognition_leads_contribution
+SIM-V3-0644,Medicine & Health,5,53.915,81.231,2024,3,True,,structural_scenario_only,SIM-0644,recognition_leads_contribution
+SIM-V3-0645,Medicine & Health,5,58.389,70.453,2020,1,True,,structural_scenario_only,SIM-0645,recognition_leads_contribution
+SIM-V3-0646,Medicine & Health,5,53.994,73.578,2024,3,True,,structural_scenario_only,SIM-0646,recognition_leads_contribution
+SIM-V3-0647,Medicine & Health,5,51.599,80.671,2023,2,True,,structural_scenario_only,SIM-0647,recognition_leads_contribution
+SIM-V3-0648,Medicine & Health,5,46.283,65.546,2010,0,True,,structural_scenario_only,SIM-0648,recognition_leads_contribution
+SIM-V3-0649,Medicine & Health,5,51.539,79.017,2026,3,True,,structural_scenario_only,SIM-0649,recognition_leads_contribution
+SIM-V3-0650,Medicine & Health,5,48.849,69.457,2023,2,True,,structural_scenario_only,SIM-0650,recognition_leads_contribution
+SIM-V3-0651,Medicine & Health,5,54.446,80.974,2024,3,True,,structural_scenario_only,SIM-0651,recognition_leads_contribution
+SIM-V3-0652,Medicine & Health,5,58.523,62.763,2023,2,True,,structural_scenario_only,SIM-0652,recognition_leads_contribution
+SIM-V3-0653,Medicine & Health,5,60.4,64.239,2024,3,True,,structural_scenario_only,SIM-0653,recognition_leads_contribution
+SIM-V3-0654,Medicine & Health,5,42.822,84.279,2016,1,True,,structural_scenario_only,SIM-0654,recognition_leads_contribution
+SIM-V3-0655,Medicine & Health,5,56.538,77.164,2026,3,True,,structural_scenario_only,SIM-0655,recognition_leads_contribution
+SIM-V3-0656,Medicine & Health,5,46.707,71.629,2026,3,True,,structural_scenario_only,SIM-0656,recognition_leads_contribution
+SIM-V3-0657,Medicine & Health,5,55.016,68.149,2022,2,True,,structural_scenario_only,SIM-0657,recognition_leads_contribution
+SIM-V3-0658,Medicine & Health,5,52.927,78.092,2026,3,True,,structural_scenario_only,SIM-0658,recognition_leads_contribution
+SIM-V3-0659,Medicine & Health,5,46.356,65.968,2023,2,True,,structural_scenario_only,SIM-0659,recognition_leads_contribution
+SIM-V3-0660,Medicine & Health,5,35.321,64.645,2006,0,True,,structural_scenario_only,SIM-0660,recognition_leads_contribution
+SIM-V3-0661,Medicine & Health,5,43.531,78.792,2016,1,True,,structural_scenario_only,SIM-0661,recognition_leads_contribution
+SIM-V3-0662,Medicine & Health,5,45.044,77.945,2023,2,True,,structural_scenario_only,SIM-0662,recognition_leads_contribution
+SIM-V3-0663,Medicine & Health,5,56.074,79.404,2017,1,True,,structural_scenario_only,SIM-0663,recognition_leads_contribution
+SIM-V3-0664,Medicine & Health,5,63.735,80.819,2016,1,True,,structural_scenario_only,SIM-0664,recognition_leads_contribution
+SIM-V3-0665,Medicine & Health,5,31.059,64.051,2021,2,True,,structural_scenario_only,SIM-0665,recognition_leads_contribution
+SIM-V3-0666,Medicine & Health,5,57.281,67.14,2024,3,True,,structural_scenario_only,SIM-0666,recognition_leads_contribution
+SIM-V3-0667,Medicine & Health,5,53.929,61.741,2021,2,True,,structural_scenario_only,SIM-0667,recognition_leads_contribution
+SIM-V3-0668,Medicine & Health,5,57.161,65.338,2007,0,True,,structural_scenario_only,SIM-0668,recognition_leads_contribution
+SIM-V3-0669,Medicine & Health,5,51.483,68.758,2008,0,True,,structural_scenario_only,SIM-0669,recognition_leads_contribution
+SIM-V3-0670,Medicine & Health,5,50.683,73.658,2019,1,True,,structural_scenario_only,SIM-0670,recognition_leads_contribution
+SIM-V3-0671,Medicine & Health,5,56.126,71.078,2016,1,True,,structural_scenario_only,SIM-0671,recognition_leads_contribution
+SIM-V3-0672,Medicine & Health,5,42.493,72.865,2006,0,True,,structural_scenario_only,SIM-0672,recognition_leads_contribution
+SIM-V3-0673,Medicine & Health,5,40.533,51.045,2010,0,True,,structural_scenario_only,SIM-0673,recognition_leads_contribution
+SIM-V3-0674,Medicine & Health,5,55.378,52.212,2016,1,True,,structural_scenario_only,SIM-0674,recognition_leads_contribution
+SIM-V3-0675,Medicine & Health,5,53.31,63.43,2023,2,True,,structural_scenario_only,SIM-0675,recognition_leads_contribution
+SIM-V3-0676,Earth & Environmental Sciences,6,67.042,77.556,2025,3,True,,structural_scenario_only,SIM-0676,joint_change
+SIM-V3-0677,Earth & Environmental Sciences,6,60.504,60.861,2024,3,True,,structural_scenario_only,SIM-0677,joint_change
+SIM-V3-0678,Earth & Environmental Sciences,6,66.936,65.541,2026,3,True,,structural_scenario_only,SIM-0678,joint_change
+SIM-V3-0679,Earth & Environmental Sciences,6,57.571,30.731,2018,1,True,,structural_scenario_only,SIM-0679,joint_change
+SIM-V3-0680,Earth & Environmental Sciences,6,51.044,60.354,2024,3,True,,structural_scenario_only,SIM-0680,joint_change
+SIM-V3-0681,Earth & Environmental Sciences,6,77.995,70.814,2026,3,True,,structural_scenario_only,SIM-0681,joint_change
+SIM-V3-0682,Earth & Environmental Sciences,6,68.828,53.74,2021,2,True,,structural_scenario_only,SIM-0682,joint_change
+SIM-V3-0683,Earth & Environmental Sciences,6,52.81,63.379,2022,2,True,,structural_scenario_only,SIM-0683,joint_change
+SIM-V3-0684,Earth & Environmental Sciences,6,69.609,59.761,2026,3,True,,structural_scenario_only,SIM-0684,joint_change
+SIM-V3-0685,Earth & Environmental Sciences,6,75.041,63.935,2024,3,True,,structural_scenario_only,SIM-0685,joint_change
+SIM-V3-0686,Earth & Environmental Sciences,6,49.069,43.596,2011,0,True,,structural_scenario_only,SIM-0686,joint_change
+SIM-V3-0687,Earth & Environmental Sciences,6,58.61,61.214,2025,3,True,,structural_scenario_only,SIM-0687,joint_change
+SIM-V3-0688,Earth & Environmental Sciences,6,51.286,49.709,2017,1,True,,structural_scenario_only,SIM-0688,joint_change
+SIM-V3-0689,Earth & Environmental Sciences,6,60.727,54.011,2023,2,True,,structural_scenario_only,SIM-0689,joint_change
+SIM-V3-0690,Earth & Environmental Sciences,6,48.852,58.746,2021,2,True,,structural_scenario_only,SIM-0690,joint_change
+SIM-V3-0691,Earth & Environmental Sciences,6,64.91,56.626,2023,2,True,,structural_scenario_only,SIM-0691,joint_change
+SIM-V3-0692,Earth & Environmental Sciences,6,48.511,64.599,2024,3,True,,structural_scenario_only,SIM-0692,joint_change
+SIM-V3-0693,Earth & Environmental Sciences,6,73.855,56.908,2022,2,True,,structural_scenario_only,SIM-0693,joint_change
+SIM-V3-0694,Earth & Environmental Sciences,6,72.651,63.867,2026,3,True,,structural_scenario_only,SIM-0694,joint_change
+SIM-V3-0695,Earth & Environmental Sciences,6,55.198,61.429,2019,1,True,,structural_scenario_only,SIM-0695,joint_change
+SIM-V3-0696,Earth & Environmental Sciences,6,75.855,67.827,2025,3,True,,structural_scenario_only,SIM-0696,joint_change
+SIM-V3-0697,Earth & Environmental Sciences,6,50.704,75.967,2024,3,True,,structural_scenario_only,SIM-0697,joint_change
+SIM-V3-0698,Earth & Environmental Sciences,6,47.775,79.935,2026,3,True,,structural_scenario_only,SIM-0698,joint_change
+SIM-V3-0699,Earth & Environmental Sciences,6,59.543,56.157,2026,3,True,,structural_scenario_only,SIM-0699,joint_change
+SIM-V3-0700,Earth & Environmental Sciences,6,47.494,48.368,2015,0,True,,structural_scenario_only,SIM-0700,joint_change
+SIM-V3-0701,Earth & Environmental Sciences,6,58.014,53.598,2022,2,True,,structural_scenario_only,SIM-0701,joint_change
+SIM-V3-0702,Earth & Environmental Sciences,6,62.451,53.92,2023,2,True,,structural_scenario_only,SIM-0702,joint_change
+SIM-V3-0703,Earth & Environmental Sciences,6,34.052,49.01,2007,0,True,,structural_scenario_only,SIM-0703,joint_change
+SIM-V3-0704,Earth & Environmental Sciences,6,69.502,58.451,2024,3,True,,structural_scenario_only,SIM-0704,joint_change
+SIM-V3-0705,Earth & Environmental Sciences,6,60.144,73.754,2025,3,True,,structural_scenario_only,SIM-0705,joint_change
+SIM-V3-0706,Earth & Environmental Sciences,6,55.79,34.575,2007,0,True,,structural_scenario_only,SIM-0706,joint_change
+SIM-V3-0707,Earth & Environmental Sciences,6,72.849,68.946,2024,3,True,,structural_scenario_only,SIM-0707,joint_change
+SIM-V3-0708,Earth & Environmental Sciences,6,68.77,62.367,2022,2,True,,structural_scenario_only,SIM-0708,joint_change
+SIM-V3-0709,Earth & Environmental Sciences,6,54.848,69.949,2021,2,True,,structural_scenario_only,SIM-0709,joint_change
+SIM-V3-0710,Earth & Environmental Sciences,6,80.418,70.981,2024,3,True,,structural_scenario_only,SIM-0710,joint_change
+SIM-V3-0711,Earth & Environmental Sciences,6,44.722,40.685,2008,0,True,,structural_scenario_only,SIM-0711,joint_change
+SIM-V3-0712,Earth & Environmental Sciences,6,51.73,54.691,2018,1,True,,structural_scenario_only,SIM-0712,joint_change
+SIM-V3-0713,Earth & Environmental Sciences,6,43.694,62.697,2020,1,True,,structural_scenario_only,SIM-0713,joint_change
+SIM-V3-0714,Earth & Environmental Sciences,6,52.892,50.836,2022,2,True,,structural_scenario_only,SIM-0714,joint_change
+SIM-V3-0715,Earth & Environmental Sciences,6,52.915,56.893,2019,1,True,,structural_scenario_only,SIM-0715,joint_change
+SIM-V3-0716,Earth & Environmental Sciences,6,58.564,54.192,2022,2,True,,structural_scenario_only,SIM-0716,joint_change
+SIM-V3-0717,Earth & Environmental Sciences,6,64.595,53.022,2018,1,True,,structural_scenario_only,SIM-0717,joint_change
+SIM-V3-0718,Earth & Environmental Sciences,6,60.713,76.471,2024,3,True,,structural_scenario_only,SIM-0718,joint_change
+SIM-V3-0719,Earth & Environmental Sciences,6,72.031,50.935,2023,2,True,,structural_scenario_only,SIM-0719,joint_change
+SIM-V3-0720,Earth & Environmental Sciences,6,70.613,67.717,2024,3,True,,structural_scenario_only,SIM-0720,joint_change
+SIM-V3-0721,Earth & Environmental Sciences,6,40.92,57.034,2020,1,True,,structural_scenario_only,SIM-0721,joint_change
+SIM-V3-0722,Earth & Environmental Sciences,6,67.262,69.447,2023,2,True,,structural_scenario_only,SIM-0722,joint_change
+SIM-V3-0723,Earth & Environmental Sciences,6,65.381,57.571,2026,3,True,,structural_scenario_only,SIM-0723,joint_change
+SIM-V3-0724,Earth & Environmental Sciences,6,52.774,61.203,2020,1,True,,structural_scenario_only,SIM-0724,joint_change
+SIM-V3-0725,Earth & Environmental Sciences,6,61.697,50.545,2020,1,True,,structural_scenario_only,SIM-0725,joint_change
+SIM-V3-0726,Earth & Environmental Sciences,6,46.055,56.734,2018,1,True,,structural_scenario_only,SIM-0726,joint_change
+SIM-V3-0727,Earth & Environmental Sciences,6,74.957,56.117,2026,3,True,,structural_scenario_only,SIM-0727,joint_change
+SIM-V3-0728,Earth & Environmental Sciences,6,56.429,66.122,2024,3,True,,structural_scenario_only,SIM-0728,joint_change
+SIM-V3-0729,Earth & Environmental Sciences,6,49.448,59.227,2009,0,True,,structural_scenario_only,SIM-0729,joint_change
+SIM-V3-0730,Earth & Environmental Sciences,6,59.483,56.49,2023,2,True,,structural_scenario_only,SIM-0730,joint_change
+SIM-V3-0731,Earth & Environmental Sciences,6,64.148,52.834,2022,2,True,,structural_scenario_only,SIM-0731,joint_change
+SIM-V3-0732,Earth & Environmental Sciences,6,69.192,51.31,2022,2,True,,structural_scenario_only,SIM-0732,joint_change
+SIM-V3-0733,Earth & Environmental Sciences,6,62.054,29.633,2008,0,True,,structural_scenario_only,SIM-0733,joint_change
+SIM-V3-0734,Earth & Environmental Sciences,6,69.812,53.682,2025,3,True,,structural_scenario_only,SIM-0734,joint_change
+SIM-V3-0735,Earth & Environmental Sciences,6,36.161,52.519,2006,0,True,,structural_scenario_only,SIM-0735,joint_change
+SIM-V3-0736,Earth & Environmental Sciences,6,56.909,74.552,2025,3,True,,structural_scenario_only,SIM-0736,joint_change
+SIM-V3-0737,Earth & Environmental Sciences,6,67.393,54.393,2024,3,True,,structural_scenario_only,SIM-0737,joint_change
+SIM-V3-0738,Earth & Environmental Sciences,6,62.258,64.953,2026,3,True,,structural_scenario_only,SIM-0738,joint_change
+SIM-V3-0739,Earth & Environmental Sciences,6,60.271,54.662,2026,3,True,,structural_scenario_only,SIM-0739,joint_change
+SIM-V3-0740,Earth & Environmental Sciences,6,56.63,47.61,2016,1,True,,structural_scenario_only,SIM-0740,joint_change
+SIM-V3-0741,Earth & Environmental Sciences,6,43.046,56.698,2019,1,True,,structural_scenario_only,SIM-0741,joint_change
+SIM-V3-0742,Earth & Environmental Sciences,6,65.972,60.044,2024,3,True,,structural_scenario_only,SIM-0742,joint_change
+SIM-V3-0743,Earth & Environmental Sciences,6,57.12,73.546,2024,3,True,,structural_scenario_only,SIM-0743,joint_change
+SIM-V3-0744,Earth & Environmental Sciences,6,57.456,37.572,2017,1,True,,structural_scenario_only,SIM-0744,joint_change
+SIM-V3-0745,Earth & Environmental Sciences,6,58.351,55.417,2020,1,True,,structural_scenario_only,SIM-0745,joint_change
+SIM-V3-0746,Earth & Environmental Sciences,6,62.96,68.975,2026,3,True,,structural_scenario_only,SIM-0746,joint_change
+SIM-V3-0747,Earth & Environmental Sciences,6,77.52,59.749,2025,3,True,,structural_scenario_only,SIM-0747,joint_change
+SIM-V3-0748,Earth & Environmental Sciences,6,52.513,52.136,2023,2,True,,structural_scenario_only,SIM-0748,joint_change
+SIM-V3-0749,Earth & Environmental Sciences,6,59.285,71.117,2024,3,True,,structural_scenario_only,SIM-0749,joint_change
+SIM-V3-0750,Earth & Environmental Sciences,6,51.728,72.588,2026,3,True,,structural_scenario_only,SIM-0750,joint_change
+SIM-V3-0751,Earth & Environmental Sciences,6,55.081,46.691,2024,3,True,,structural_scenario_only,SIM-0751,joint_change
+SIM-V3-0752,Earth & Environmental Sciences,6,54.764,69.528,2024,3,True,,structural_scenario_only,SIM-0752,joint_change
+SIM-V3-0753,Earth & Environmental Sciences,6,54.27,74.48,2026,3,True,,structural_scenario_only,SIM-0753,joint_change
+SIM-V3-0754,Earth & Environmental Sciences,6,57.435,45.767,2021,2,True,,structural_scenario_only,SIM-0754,joint_change
+SIM-V3-0755,Earth & Environmental Sciences,6,53.863,45.748,2014,0,True,,structural_scenario_only,SIM-0755,joint_change
+SIM-V3-0756,Earth & Environmental Sciences,6,56.76,41.066,2012,0,True,,structural_scenario_only,SIM-0756,joint_change
+SIM-V3-0757,Earth & Environmental Sciences,6,41.659,62.737,2014,0,True,,structural_scenario_only,SIM-0757,joint_change
+SIM-V3-0758,Earth & Environmental Sciences,6,60.962,49.438,2022,2,True,,structural_scenario_only,SIM-0758,joint_change
+SIM-V3-0759,Earth & Environmental Sciences,6,64.694,63.788,2024,3,True,,structural_scenario_only,SIM-0759,joint_change
+SIM-V3-0760,Earth & Environmental Sciences,6,57.345,69.845,2026,3,True,,structural_scenario_only,SIM-0760,joint_change
+SIM-V3-0761,Earth & Environmental Sciences,6,50.278,53.55,2015,0,True,,structural_scenario_only,SIM-0761,joint_change
+SIM-V3-0762,Earth & Environmental Sciences,6,46.935,62.475,2021,2,True,,structural_scenario_only,SIM-0762,joint_change
+SIM-V3-0763,Earth & Environmental Sciences,6,44.204,66.963,2020,1,True,,structural_scenario_only,SIM-0763,joint_change
+SIM-V3-0764,Earth & Environmental Sciences,6,56.444,48.708,2023,2,True,,structural_scenario_only,SIM-0764,joint_change
+SIM-V3-0765,Earth & Environmental Sciences,6,49.803,63.46,2025,3,True,,structural_scenario_only,SIM-0765,joint_change
+SIM-V3-0766,Engineering & Manufacturing,7,57.181,40.369,2023,2,True,,structural_scenario_only,SIM-0766,contribution_leads_recognition
+SIM-V3-0767,Engineering & Manufacturing,7,49.267,35.052,2018,1,True,,structural_scenario_only,SIM-0767,contribution_leads_recognition
+SIM-V3-0768,Engineering & Manufacturing,7,67.917,24.329,2022,2,True,,structural_scenario_only,SIM-0768,contribution_leads_recognition
+SIM-V3-0769,Engineering & Manufacturing,7,79.549,43.347,2021,2,True,,structural_scenario_only,SIM-0769,contribution_leads_recognition
+SIM-V3-0770,Engineering & Manufacturing,7,57.32,28.509,2023,2,True,,structural_scenario_only,SIM-0770,contribution_leads_recognition
+SIM-V3-0771,Engineering & Manufacturing,7,63.402,25.399,2023,2,True,,structural_scenario_only,SIM-0771,contribution_leads_recognition
+SIM-V3-0772,Engineering & Manufacturing,7,67.645,17.617,2025,3,True,,structural_scenario_only,SIM-0772,contribution_leads_recognition
+SIM-V3-0773,Engineering & Manufacturing,7,76.453,32.634,2024,3,True,,structural_scenario_only,SIM-0773,contribution_leads_recognition
+SIM-V3-0774,Engineering & Manufacturing,7,68.961,8.821,2021,2,True,,structural_scenario_only,SIM-0774,contribution_leads_recognition
+SIM-V3-0775,Engineering & Manufacturing,7,64.919,36.437,2022,2,True,,structural_scenario_only,SIM-0775,contribution_leads_recognition
+SIM-V3-0776,Engineering & Manufacturing,7,66.302,26.567,2021,2,True,,structural_scenario_only,SIM-0776,contribution_leads_recognition
+SIM-V3-0777,Engineering & Manufacturing,7,54.086,11.37,2018,1,True,,structural_scenario_only,SIM-0777,contribution_leads_recognition
+SIM-V3-0778,Engineering & Manufacturing,7,74.947,29.269,2025,3,True,,structural_scenario_only,SIM-0778,contribution_leads_recognition
+SIM-V3-0779,Engineering & Manufacturing,7,56.347,20.659,2022,2,True,,structural_scenario_only,SIM-0779,contribution_leads_recognition
+SIM-V3-0780,Engineering & Manufacturing,7,72.664,36.16,2017,1,True,,structural_scenario_only,SIM-0780,contribution_leads_recognition
+SIM-V3-0781,Engineering & Manufacturing,7,75.566,32.337,2024,3,True,,structural_scenario_only,SIM-0781,contribution_leads_recognition
+SIM-V3-0782,Engineering & Manufacturing,7,65.142,31.0,2025,3,True,,structural_scenario_only,SIM-0782,contribution_leads_recognition
+SIM-V3-0783,Engineering & Manufacturing,7,53.15,30.449,2014,0,True,,structural_scenario_only,SIM-0783,contribution_leads_recognition
+SIM-V3-0784,Engineering & Manufacturing,7,72.894,26.008,2024,3,True,,structural_scenario_only,SIM-0784,contribution_leads_recognition
+SIM-V3-0785,Engineering & Manufacturing,7,61.15,34.236,2023,2,True,,structural_scenario_only,SIM-0785,contribution_leads_recognition
+SIM-V3-0786,Engineering & Manufacturing,7,64.022,19.654,2022,2,True,,structural_scenario_only,SIM-0786,contribution_leads_recognition
+SIM-V3-0787,Engineering & Manufacturing,7,46.29,18.338,2010,0,True,,structural_scenario_only,SIM-0787,contribution_leads_recognition
+SIM-V3-0788,Engineering & Manufacturing,7,76.278,29.133,2024,3,True,,structural_scenario_only,SIM-0788,contribution_leads_recognition
+SIM-V3-0789,Engineering & Manufacturing,7,75.202,18.148,2021,2,True,,structural_scenario_only,SIM-0789,contribution_leads_recognition
+SIM-V3-0790,Engineering & Manufacturing,7,86.414,12.546,2024,3,True,,structural_scenario_only,SIM-0790,contribution_leads_recognition
+SIM-V3-0791,Engineering & Manufacturing,7,62.303,42.413,2021,2,True,,structural_scenario_only,SIM-0791,contribution_leads_recognition
+SIM-V3-0792,Engineering & Manufacturing,7,70.083,34.744,2022,2,True,,structural_scenario_only,SIM-0792,contribution_leads_recognition
+SIM-V3-0793,Engineering & Manufacturing,7,77.509,31.082,2026,3,True,,structural_scenario_only,SIM-0793,contribution_leads_recognition
+SIM-V3-0794,Engineering & Manufacturing,7,77.099,44.826,2024,3,True,,structural_scenario_only,SIM-0794,contribution_leads_recognition
+SIM-V3-0795,Engineering & Manufacturing,7,82.047,24.555,2026,3,True,,structural_scenario_only,SIM-0795,contribution_leads_recognition
+SIM-V3-0796,Engineering & Manufacturing,7,62.917,32.522,2026,3,True,,structural_scenario_only,SIM-0796,contribution_leads_recognition
+SIM-V3-0797,Engineering & Manufacturing,7,73.42,26.267,2025,3,True,,structural_scenario_only,SIM-0797,contribution_leads_recognition
+SIM-V3-0798,Engineering & Manufacturing,7,70.452,31.888,2025,3,True,,structural_scenario_only,SIM-0798,contribution_leads_recognition
+SIM-V3-0799,Engineering & Manufacturing,7,77.869,38.401,2024,3,True,,structural_scenario_only,SIM-0799,contribution_leads_recognition
+SIM-V3-0800,Engineering & Manufacturing,7,57.089,31.623,2018,1,True,,structural_scenario_only,SIM-0800,contribution_leads_recognition
+SIM-V3-0801,Engineering & Manufacturing,7,80.388,26.26,2024,3,True,,structural_scenario_only,SIM-0801,contribution_leads_recognition
+SIM-V3-0802,Engineering & Manufacturing,7,80.265,33.581,2021,2,True,,structural_scenario_only,SIM-0802,contribution_leads_recognition
+SIM-V3-0803,Engineering & Manufacturing,7,53.399,54.003,2022,2,True,,structural_scenario_only,SIM-0803,contribution_leads_recognition
+SIM-V3-0804,Engineering & Manufacturing,7,56.741,44.679,2019,1,True,,structural_scenario_only,SIM-0804,contribution_leads_recognition
+SIM-V3-0805,Engineering & Manufacturing,7,58.134,22.581,2022,2,True,,structural_scenario_only,SIM-0805,contribution_leads_recognition
+SIM-V3-0806,Engineering & Manufacturing,7,76.192,38.991,2023,2,True,,structural_scenario_only,SIM-0806,contribution_leads_recognition
+SIM-V3-0807,Engineering & Manufacturing,7,41.109,19.593,2006,0,True,,structural_scenario_only,SIM-0807,contribution_leads_recognition
+SIM-V3-0808,Engineering & Manufacturing,7,65.046,24.962,2021,2,True,,structural_scenario_only,SIM-0808,contribution_leads_recognition
+SIM-V3-0809,Engineering & Manufacturing,7,70.533,22.974,2019,1,True,,structural_scenario_only,SIM-0809,contribution_leads_recognition
+SIM-V3-0810,Engineering & Manufacturing,7,86.951,28.037,2026,3,True,,structural_scenario_only,SIM-0810,contribution_leads_recognition
+SIM-V3-0811,Engineering & Manufacturing,7,64.023,26.253,2024,3,True,,structural_scenario_only,SIM-0811,contribution_leads_recognition
+SIM-V3-0812,Engineering & Manufacturing,7,72.985,13.209,2025,3,True,,structural_scenario_only,SIM-0812,contribution_leads_recognition
+SIM-V3-0813,Engineering & Manufacturing,7,73.639,42.042,2023,2,True,,structural_scenario_only,SIM-0813,contribution_leads_recognition
+SIM-V3-0814,Engineering & Manufacturing,7,88.346,21.739,2026,3,True,,structural_scenario_only,SIM-0814,contribution_leads_recognition
+SIM-V3-0815,Engineering & Manufacturing,7,91.013,37.291,2025,3,True,,structural_scenario_only,SIM-0815,contribution_leads_recognition
+SIM-V3-0816,Engineering & Manufacturing,7,70.426,37.779,2026,3,True,,structural_scenario_only,SIM-0816,contribution_leads_recognition
+SIM-V3-0817,Engineering & Manufacturing,7,75.034,25.386,2024,3,True,,structural_scenario_only,SIM-0817,contribution_leads_recognition
+SIM-V3-0818,Engineering & Manufacturing,7,85.465,27.787,2024,3,True,,structural_scenario_only,SIM-0818,contribution_leads_recognition
+SIM-V3-0819,Engineering & Manufacturing,7,43.047,36.27,2011,0,True,,structural_scenario_only,SIM-0819,contribution_leads_recognition
+SIM-V3-0820,Engineering & Manufacturing,7,82.577,11.598,2024,3,True,,structural_scenario_only,SIM-0820,contribution_leads_recognition
+SIM-V3-0821,Engineering & Manufacturing,7,70.263,24.104,2023,2,True,,structural_scenario_only,SIM-0821,contribution_leads_recognition
+SIM-V3-0822,Engineering & Manufacturing,7,92.255,35.493,2024,3,True,,structural_scenario_only,SIM-0822,contribution_leads_recognition
+SIM-V3-0823,Engineering & Manufacturing,7,66.198,37.634,2023,2,True,,structural_scenario_only,SIM-0823,contribution_leads_recognition
+SIM-V3-0824,Engineering & Manufacturing,7,67.001,18.733,2025,3,True,,structural_scenario_only,SIM-0824,contribution_leads_recognition
+SIM-V3-0825,Engineering & Manufacturing,7,69.237,26.236,2025,3,True,,structural_scenario_only,SIM-0825,contribution_leads_recognition
+SIM-V3-0826,Engineering & Manufacturing,7,86.837,31.56,2024,3,True,,structural_scenario_only,SIM-0826,contribution_leads_recognition
+SIM-V3-0827,Engineering & Manufacturing,7,70.311,25.821,2025,3,True,,structural_scenario_only,SIM-0827,contribution_leads_recognition
+SIM-V3-0828,Engineering & Manufacturing,7,78.899,36.418,2026,3,True,,structural_scenario_only,SIM-0828,contribution_leads_recognition
+SIM-V3-0829,Engineering & Manufacturing,7,56.955,32.57,2022,2,True,,structural_scenario_only,SIM-0829,contribution_leads_recognition
+SIM-V3-0830,Engineering & Manufacturing,7,72.87,31.904,2025,3,True,,structural_scenario_only,SIM-0830,contribution_leads_recognition
+SIM-V3-0831,Engineering & Manufacturing,7,72.642,4.945,2021,2,True,,structural_scenario_only,SIM-0831,contribution_leads_recognition
+SIM-V3-0832,Engineering & Manufacturing,7,70.103,21.093,2024,3,True,,structural_scenario_only,SIM-0832,contribution_leads_recognition
+SIM-V3-0833,Engineering & Manufacturing,7,44.306,38.129,2011,0,True,,structural_scenario_only,SIM-0833,contribution_leads_recognition
+SIM-V3-0834,Engineering & Manufacturing,7,51.921,33.105,2017,1,True,,structural_scenario_only,SIM-0834,contribution_leads_recognition
+SIM-V3-0835,Engineering & Manufacturing,7,76.109,8.687,2020,1,True,,structural_scenario_only,SIM-0835,contribution_leads_recognition
+SIM-V3-0836,Engineering & Manufacturing,7,59.786,30.255,2023,2,True,,structural_scenario_only,SIM-0836,contribution_leads_recognition
+SIM-V3-0837,Engineering & Manufacturing,7,68.571,31.893,2022,2,True,,structural_scenario_only,SIM-0837,contribution_leads_recognition
+SIM-V3-0838,Engineering & Manufacturing,7,61.136,27.832,2022,2,True,,structural_scenario_only,SIM-0838,contribution_leads_recognition
+SIM-V3-0839,Engineering & Manufacturing,7,82.234,28.602,2026,3,True,,structural_scenario_only,SIM-0839,contribution_leads_recognition
+SIM-V3-0840,Engineering & Manufacturing,7,46.084,28.87,2008,0,True,,structural_scenario_only,SIM-0840,contribution_leads_recognition
+SIM-V3-0841,Engineering & Manufacturing,7,85.636,29.725,2026,3,True,,structural_scenario_only,SIM-0841,contribution_leads_recognition
+SIM-V3-0842,Engineering & Manufacturing,7,62.513,36.48,2022,2,True,,structural_scenario_only,SIM-0842,contribution_leads_recognition
+SIM-V3-0843,Engineering & Manufacturing,7,61.857,39.971,2018,1,True,,structural_scenario_only,SIM-0843,contribution_leads_recognition
+SIM-V3-0844,Engineering & Manufacturing,7,75.316,33.685,2022,2,True,,structural_scenario_only,SIM-0844,contribution_leads_recognition
+SIM-V3-0845,Engineering & Manufacturing,7,67.376,36.322,2020,1,True,,structural_scenario_only,SIM-0845,contribution_leads_recognition
+SIM-V3-0846,Engineering & Manufacturing,7,46.029,22.171,2019,1,True,,structural_scenario_only,SIM-0846,contribution_leads_recognition
+SIM-V3-0847,Engineering & Manufacturing,7,48.526,39.078,2019,1,True,,structural_scenario_only,SIM-0847,contribution_leads_recognition
+SIM-V3-0848,Engineering & Manufacturing,7,75.901,38.156,2026,3,True,,structural_scenario_only,SIM-0848,contribution_leads_recognition
+SIM-V3-0849,Engineering & Manufacturing,7,81.157,38.891,2024,3,True,,structural_scenario_only,SIM-0849,contribution_leads_recognition
+SIM-V3-0850,Engineering & Manufacturing,7,68.639,27.651,2022,2,True,,structural_scenario_only,SIM-0850,contribution_leads_recognition
+SIM-V3-0851,Agriculture & Food,8,52.215,28.95,2026,3,True,,structural_scenario_only,SIM-0851,bounded_change
+SIM-V3-0852,Agriculture & Food,8,41.169,49.472,2022,2,True,,structural_scenario_only,SIM-0852,bounded_change
+SIM-V3-0853,Agriculture & Food,8,48.503,51.609,2024,3,True,,structural_scenario_only,SIM-0853,bounded_change
+SIM-V3-0854,Agriculture & Food,8,57.522,46.886,2025,3,True,,structural_scenario_only,SIM-0854,bounded_change
+SIM-V3-0855,Agriculture & Food,8,61.015,66.83,2024,3,True,,structural_scenario_only,SIM-0855,bounded_change
+SIM-V3-0856,Agriculture & Food,8,54.832,52.311,2025,3,True,,structural_scenario_only,SIM-0856,bounded_change
+SIM-V3-0857,Agriculture & Food,8,47.403,46.748,2026,3,True,,structural_scenario_only,SIM-0857,bounded_change
+SIM-V3-0858,Agriculture & Food,8,44.192,55.864,2025,3,True,,structural_scenario_only,SIM-0858,bounded_change
+SIM-V3-0859,Agriculture & Food,8,54.368,55.755,2025,3,True,,structural_scenario_only,SIM-0859,bounded_change
+SIM-V3-0860,Agriculture & Food,8,47.23,36.282,2016,1,True,,structural_scenario_only,SIM-0860,bounded_change
+SIM-V3-0861,Agriculture & Food,8,28.6,46.175,2013,0,True,,structural_scenario_only,SIM-0861,bounded_change
+SIM-V3-0862,Agriculture & Food,8,46.61,48.694,2025,3,True,,structural_scenario_only,SIM-0862,bounded_change
+SIM-V3-0863,Agriculture & Food,8,31.792,35.285,2016,1,True,,structural_scenario_only,SIM-0863,bounded_change
+SIM-V3-0864,Agriculture & Food,8,47.297,56.906,2020,1,True,,structural_scenario_only,SIM-0864,bounded_change
+SIM-V3-0865,Agriculture & Food,8,72.012,36.532,2024,3,True,,structural_scenario_only,SIM-0865,bounded_change
+SIM-V3-0866,Agriculture & Food,8,70.474,52.024,2025,3,True,,structural_scenario_only,SIM-0866,bounded_change
+SIM-V3-0867,Agriculture & Food,8,48.771,39.531,2024,3,True,,structural_scenario_only,SIM-0867,bounded_change
+SIM-V3-0868,Agriculture & Food,8,60.922,48.531,2023,2,True,,structural_scenario_only,SIM-0868,bounded_change
+SIM-V3-0869,Agriculture & Food,8,48.354,44.367,2016,1,True,,structural_scenario_only,SIM-0869,bounded_change
+SIM-V3-0870,Agriculture & Food,8,41.285,46.328,2016,1,True,,structural_scenario_only,SIM-0870,bounded_change
+SIM-V3-0871,Agriculture & Food,8,58.048,49.877,2026,3,True,,structural_scenario_only,SIM-0871,bounded_change
+SIM-V3-0872,Agriculture & Food,8,49.486,41.988,2020,1,True,,structural_scenario_only,SIM-0872,bounded_change
+SIM-V3-0873,Agriculture & Food,8,36.871,47.492,2023,2,True,,structural_scenario_only,SIM-0873,bounded_change
+SIM-V3-0874,Agriculture & Food,8,60.48,44.401,2023,2,True,,structural_scenario_only,SIM-0874,bounded_change
+SIM-V3-0875,Agriculture & Food,8,57.158,45.756,2024,3,True,,structural_scenario_only,SIM-0875,bounded_change
+SIM-V3-0876,Agriculture & Food,8,35.056,46.617,2016,1,True,,structural_scenario_only,SIM-0876,bounded_change
+SIM-V3-0877,Agriculture & Food,8,70.427,55.607,2026,3,True,,structural_scenario_only,SIM-0877,bounded_change
+SIM-V3-0878,Agriculture & Food,8,55.323,48.16,2024,3,True,,structural_scenario_only,SIM-0878,bounded_change
+SIM-V3-0879,Agriculture & Food,8,52.194,37.691,2024,3,True,,structural_scenario_only,SIM-0879,bounded_change
+SIM-V3-0880,Agriculture & Food,8,55.2,38.76,2023,2,True,,structural_scenario_only,SIM-0880,bounded_change
+SIM-V3-0881,Agriculture & Food,8,51.925,40.986,2021,2,True,,structural_scenario_only,SIM-0881,bounded_change
+SIM-V3-0882,Agriculture & Food,8,52.447,45.334,2025,3,True,,structural_scenario_only,SIM-0882,bounded_change
+SIM-V3-0883,Agriculture & Food,8,37.449,54.777,2023,2,True,,structural_scenario_only,SIM-0883,bounded_change
+SIM-V3-0884,Agriculture & Food,8,57.931,55.068,2026,3,True,,structural_scenario_only,SIM-0884,bounded_change
+SIM-V3-0885,Agriculture & Food,8,56.559,38.721,2023,2,True,,structural_scenario_only,SIM-0885,bounded_change
+SIM-V3-0886,Agriculture & Food,8,73.936,52.387,2024,3,True,,structural_scenario_only,SIM-0886,bounded_change
+SIM-V3-0887,Agriculture & Food,8,53.778,55.851,2026,3,True,,structural_scenario_only,SIM-0887,bounded_change
+SIM-V3-0888,Agriculture & Food,8,65.207,58.519,2024,3,True,,structural_scenario_only,SIM-0888,bounded_change
+SIM-V3-0889,Agriculture & Food,8,31.588,39.765,2012,0,True,,structural_scenario_only,SIM-0889,bounded_change
+SIM-V3-0890,Agriculture & Food,8,48.493,58.148,2025,3,True,,structural_scenario_only,SIM-0890,bounded_change
+SIM-V3-0891,Agriculture & Food,8,42.686,56.041,2026,3,True,,structural_scenario_only,SIM-0891,bounded_change
+SIM-V3-0892,Agriculture & Food,8,56.055,30.795,2021,2,True,,structural_scenario_only,SIM-0892,bounded_change
+SIM-V3-0893,Agriculture & Food,8,57.033,46.432,2007,0,True,,structural_scenario_only,SIM-0893,bounded_change
+SIM-V3-0894,Agriculture & Food,8,49.538,53.515,2021,2,True,,structural_scenario_only,SIM-0894,bounded_change
+SIM-V3-0895,Agriculture & Food,8,48.994,57.027,2024,3,True,,structural_scenario_only,SIM-0895,bounded_change
+SIM-V3-0896,Aerospace & Transportation,9,69.877,64.004,2023,2,True,,structural_scenario_only,SIM-0896,bounded_change
+SIM-V3-0897,Aerospace & Transportation,9,67.378,63.137,2024,3,True,,structural_scenario_only,SIM-0897,bounded_change
+SIM-V3-0898,Aerospace & Transportation,9,52.925,69.787,2024,3,True,,structural_scenario_only,SIM-0898,bounded_change
+SIM-V3-0899,Aerospace & Transportation,9,57.038,52.895,2009,0,True,,structural_scenario_only,SIM-0899,bounded_change
+SIM-V3-0900,Aerospace & Transportation,9,51.952,61.586,2020,1,True,,structural_scenario_only,SIM-0900,bounded_change
+SIM-V3-0901,Aerospace & Transportation,9,57.149,59.599,2023,2,True,,structural_scenario_only,SIM-0901,bounded_change
+SIM-V3-0902,Aerospace & Transportation,9,62.402,49.532,2024,3,True,,structural_scenario_only,SIM-0902,bounded_change
+SIM-V3-0903,Aerospace & Transportation,9,55.179,56.469,2017,1,True,,structural_scenario_only,SIM-0903,bounded_change
+SIM-V3-0904,Aerospace & Transportation,9,68.969,52.724,2026,3,True,,structural_scenario_only,SIM-0904,bounded_change
+SIM-V3-0905,Aerospace & Transportation,9,68.811,56.626,2026,3,True,,structural_scenario_only,SIM-0905,bounded_change
+SIM-V3-0906,Aerospace & Transportation,9,49.314,76.395,2020,1,True,,structural_scenario_only,SIM-0906,bounded_change
+SIM-V3-0907,Aerospace & Transportation,9,58.534,65.921,2024,3,True,,structural_scenario_only,SIM-0907,bounded_change
+SIM-V3-0908,Aerospace & Transportation,9,61.233,45.91,2026,3,True,,structural_scenario_only,SIM-0908,bounded_change
+SIM-V3-0909,Aerospace & Transportation,9,71.078,44.189,2026,3,True,,structural_scenario_only,SIM-0909,bounded_change
+SIM-V3-0910,Aerospace & Transportation,9,52.261,47.353,2013,0,True,,structural_scenario_only,SIM-0910,bounded_change
+SIM-V3-0911,Aerospace & Transportation,9,60.162,63.119,2026,3,True,,structural_scenario_only,SIM-0911,bounded_change
+SIM-V3-0912,Aerospace & Transportation,9,57.599,57.539,2023,2,True,,structural_scenario_only,SIM-0912,bounded_change
+SIM-V3-0913,Aerospace & Transportation,9,58.493,76.004,2019,1,True,,structural_scenario_only,SIM-0913,bounded_change
+SIM-V3-0914,Aerospace & Transportation,9,42.396,63.907,2016,1,True,,structural_scenario_only,SIM-0914,bounded_change
+SIM-V3-0915,Aerospace & Transportation,9,67.081,48.728,2022,2,True,,structural_scenario_only,SIM-0915,bounded_change
+SIM-V3-0916,Aerospace & Transportation,9,69.42,62.04,2024,3,True,,structural_scenario_only,SIM-0916,bounded_change
+SIM-V3-0917,Aerospace & Transportation,9,68.151,70.953,2023,2,True,,structural_scenario_only,SIM-0917,bounded_change
+SIM-V3-0918,Aerospace & Transportation,9,61.687,52.639,2024,3,True,,structural_scenario_only,SIM-0918,bounded_change
+SIM-V3-0919,Aerospace & Transportation,9,67.908,52.981,2022,2,True,,structural_scenario_only,SIM-0919,bounded_change
+SIM-V3-0920,Aerospace & Transportation,9,53.218,57.411,2012,0,True,,structural_scenario_only,SIM-0920,bounded_change
+SIM-V3-0921,Aerospace & Transportation,9,57.243,62.398,2020,1,True,,structural_scenario_only,SIM-0921,bounded_change
+SIM-V3-0922,Aerospace & Transportation,9,57.618,63.631,2023,2,True,,structural_scenario_only,SIM-0922,bounded_change
+SIM-V3-0923,Aerospace & Transportation,9,64.498,64.8,2023,2,True,,structural_scenario_only,SIM-0923,bounded_change
+SIM-V3-0924,Aerospace & Transportation,9,69.006,64.68,2026,3,True,,structural_scenario_only,SIM-0924,bounded_change
+SIM-V3-0925,Aerospace & Transportation,9,73.155,62.883,2025,3,True,,structural_scenario_only,SIM-0925,bounded_change
+SIM-V3-0926,Aerospace & Transportation,9,66.757,62.231,2025,3,True,,structural_scenario_only,SIM-0926,bounded_change
+SIM-V3-0927,Aerospace & Transportation,9,76.893,46.813,2022,2,True,,structural_scenario_only,SIM-0927,bounded_change
+SIM-V3-0928,Aerospace & Transportation,9,55.651,58.494,2019,1,True,,structural_scenario_only,SIM-0928,bounded_change
+SIM-V3-0929,Aerospace & Transportation,9,56.473,63.568,2014,0,True,,structural_scenario_only,SIM-0929,bounded_change
+SIM-V3-0930,Aerospace & Transportation,9,62.485,47.847,2023,2,True,,structural_scenario_only,SIM-0930,bounded_change
+SIM-V3-0931,Aerospace & Transportation,9,75.064,66.526,2026,3,True,,structural_scenario_only,SIM-0931,bounded_change
+SIM-V3-0932,Aerospace & Transportation,9,67.938,51.254,2026,3,True,,structural_scenario_only,SIM-0932,bounded_change
+SIM-V3-0933,Aerospace & Transportation,9,62.233,66.548,2024,3,True,,structural_scenario_only,SIM-0933,bounded_change
+SIM-V3-0934,Aerospace & Transportation,9,70.891,58.53,2025,3,True,,structural_scenario_only,SIM-0934,bounded_change
+SIM-V3-0935,Aerospace & Transportation,9,68.72,72.314,2022,2,True,,structural_scenario_only,SIM-0935,bounded_change
+SIM-V3-0936,Society & Knowledge,10,42.66,69.614,2016,1,True,,structural_scenario_only,SIM-0936,stable_or_mixed
+SIM-V3-0937,Society & Knowledge,10,39.021,43.902,2026,3,True,,structural_scenario_only,SIM-0937,stable_or_mixed
+SIM-V3-0938,Society & Knowledge,10,34.677,49.355,2025,3,True,,structural_scenario_only,SIM-0938,stable_or_mixed
+SIM-V3-0939,Society & Knowledge,10,26.262,56.598,2019,1,True,,structural_scenario_only,SIM-0939,stable_or_mixed
+SIM-V3-0940,Society & Knowledge,10,34.754,40.215,2006,0,True,,structural_scenario_only,SIM-0940,stable_or_mixed
+SIM-V3-0941,Society & Knowledge,10,29.226,30.981,2007,0,True,,structural_scenario_only,SIM-0941,stable_or_mixed
+SIM-V3-0942,Society & Knowledge,10,57.759,54.748,2025,3,True,,structural_scenario_only,SIM-0942,stable_or_mixed
+SIM-V3-0943,Society & Knowledge,10,41.72,50.73,2016,1,True,,structural_scenario_only,SIM-0943,stable_or_mixed
+SIM-V3-0944,Society & Knowledge,10,51.238,39.469,2024,3,True,,structural_scenario_only,SIM-0944,stable_or_mixed
+SIM-V3-0945,Society & Knowledge,10,59.957,41.316,2024,3,True,,structural_scenario_only,SIM-0945,stable_or_mixed
+SIM-V3-0946,Society & Knowledge,10,45.407,59.487,2021,2,True,,structural_scenario_only,SIM-0946,stable_or_mixed
+SIM-V3-0947,Society & Knowledge,10,43.059,47.716,2024,3,True,,structural_scenario_only,SIM-0947,stable_or_mixed
+SIM-V3-0948,Society & Knowledge,10,40.37,59.755,2016,1,True,,structural_scenario_only,SIM-0948,stable_or_mixed
+SIM-V3-0949,Society & Knowledge,10,42.28,40.405,2024,3,True,,structural_scenario_only,SIM-0949,stable_or_mixed
+SIM-V3-0950,Society & Knowledge,10,32.74,41.812,2024,3,True,,structural_scenario_only,SIM-0950,stable_or_mixed
+SIM-V3-0951,Society & Knowledge,10,35.063,63.309,2007,0,True,,structural_scenario_only,SIM-0951,stable_or_mixed
+SIM-V3-0952,Society & Knowledge,10,51.388,57.136,2024,3,True,,structural_scenario_only,SIM-0952,stable_or_mixed
+SIM-V3-0953,Society & Knowledge,10,45.557,47.253,2024,3,True,,structural_scenario_only,SIM-0953,stable_or_mixed
+SIM-V3-0954,Society & Knowledge,10,34.909,64.27,2015,0,True,,structural_scenario_only,SIM-0954,stable_or_mixed
+SIM-V3-0955,Society & Knowledge,10,28.615,55.105,2023,2,True,,structural_scenario_only,SIM-0955,stable_or_mixed
+SIM-V3-0956,Society & Knowledge,10,27.641,46.733,2025,3,True,,structural_scenario_only,SIM-0956,stable_or_mixed
+SIM-V3-0957,Society & Knowledge,10,30.929,53.501,2022,2,True,,structural_scenario_only,SIM-0957,stable_or_mixed
+SIM-V3-0958,Society & Knowledge,10,25.61,64.939,2007,0,True,,structural_scenario_only,SIM-0958,stable_or_mixed
+SIM-V3-0959,Society & Knowledge,10,36.578,39.122,2026,3,True,,structural_scenario_only,SIM-0959,stable_or_mixed
+SIM-V3-0960,Society & Knowledge,10,42.697,35.897,2020,1,True,,structural_scenario_only,SIM-0960,stable_or_mixed
+SIM-V3-0961,Society & Knowledge,10,48.175,47.419,2025,3,True,,structural_scenario_only,SIM-0961,stable_or_mixed
+SIM-V3-0962,Society & Knowledge,10,29.615,60.346,2022,2,True,,structural_scenario_only,SIM-0962,stable_or_mixed
+SIM-V3-0963,Society & Knowledge,10,49.694,39.405,2022,2,True,,structural_scenario_only,SIM-0963,stable_or_mixed
+SIM-V3-0964,Society & Knowledge,10,38.412,62.773,2017,1,True,,structural_scenario_only,SIM-0964,stable_or_mixed
+SIM-V3-0965,Society & Knowledge,10,50.512,51.286,2020,1,True,,structural_scenario_only,SIM-0965,stable_or_mixed
+SIM-V3-0966,Society & Knowledge,10,53.276,46.594,2026,3,True,,structural_scenario_only,SIM-0966,stable_or_mixed
+SIM-V3-0967,Society & Knowledge,10,33.185,42.621,2024,3,True,,structural_scenario_only,SIM-0967,stable_or_mixed
+SIM-V3-0968,Society & Knowledge,10,43.981,47.316,2021,2,True,,structural_scenario_only,SIM-0968,stable_or_mixed
+SIM-V3-0969,Society & Knowledge,10,40.776,57.543,2025,3,True,,structural_scenario_only,SIM-0969,stable_or_mixed
+SIM-V3-0970,Society & Knowledge,10,28.222,56.227,2024,3,True,,structural_scenario_only,SIM-0970,stable_or_mixed
+SIM-V3-0971,Society & Knowledge,10,33.016,64.767,2026,3,True,,structural_scenario_only,SIM-0971,stable_or_mixed
+SIM-V3-0972,Society & Knowledge,10,41.243,44.483,2022,2,True,,structural_scenario_only,SIM-0972,stable_or_mixed
+SIM-V3-0973,Society & Knowledge,10,45.324,50.39,2024,3,True,,structural_scenario_only,SIM-0973,stable_or_mixed
+SIM-V3-0974,Society & Knowledge,10,20.884,47.133,2018,1,True,,structural_scenario_only,SIM-0974,stable_or_mixed
+SIM-V3-0975,Society & Knowledge,10,37.783,45.025,2021,2,True,,structural_scenario_only,SIM-0975,stable_or_mixed
+SIM-V3-0976,Society & Knowledge,10,48.535,36.445,2020,1,True,,structural_scenario_only,SIM-0976,stable_or_mixed
+SIM-V3-0977,Society & Knowledge,10,34.108,56.437,2022,2,True,,structural_scenario_only,SIM-0977,stable_or_mixed
+SIM-V3-0978,Society & Knowledge,10,39.922,56.106,2024,3,True,,structural_scenario_only,SIM-0978,stable_or_mixed
+SIM-V3-0979,Society & Knowledge,10,42.569,44.231,2020,1,True,,structural_scenario_only,SIM-0979,stable_or_mixed
+SIM-V3-0980,Society & Knowledge,10,38.89,61.319,2025,3,True,,structural_scenario_only,SIM-0980,stable_or_mixed
+SIM-V3-0981,Society & Knowledge,10,40.697,51.626,2025,3,True,,structural_scenario_only,SIM-0981,stable_or_mixed
+SIM-V3-0982,Society & Knowledge,10,55.991,53.202,2025,3,True,,structural_scenario_only,SIM-0982,stable_or_mixed
+SIM-V3-0983,Society & Knowledge,10,41.915,68.005,2024,3,True,,structural_scenario_only,SIM-0983,stable_or_mixed
+SIM-V3-0984,Society & Knowledge,10,30.97,57.119,2019,1,True,,structural_scenario_only,SIM-0984,stable_or_mixed
+SIM-V3-0985,Society & Knowledge,10,43.522,57.722,2024,3,True,,structural_scenario_only,SIM-0985,stable_or_mixed
+SIM-V3-0986,Society & Knowledge,10,42.616,44.529,2024,3,True,,structural_scenario_only,SIM-0986,stable_or_mixed
+SIM-V3-0987,Society & Knowledge,10,39.655,34.734,2023,2,True,,structural_scenario_only,SIM-0987,stable_or_mixed
+SIM-V3-0988,Society & Knowledge,10,38.759,54.385,2017,1,True,,structural_scenario_only,SIM-0988,stable_or_mixed
+SIM-V3-0989,Society & Knowledge,10,46.041,38.707,2023,2,True,,structural_scenario_only,SIM-0989,stable_or_mixed
+SIM-V3-0990,Society & Knowledge,10,39.251,50.977,2025,3,True,,structural_scenario_only,SIM-0990,stable_or_mixed
+SIM-V3-0991,Society & Knowledge,10,44.256,34.851,2026,3,True,,structural_scenario_only,SIM-0991,stable_or_mixed
+SIM-V3-0992,Society & Knowledge,10,43.468,60.085,2022,2,True,,structural_scenario_only,SIM-0992,stable_or_mixed
+SIM-V3-0993,Society & Knowledge,10,32.437,49.495,2022,2,True,,structural_scenario_only,SIM-0993,stable_or_mixed
+SIM-V3-0994,Society & Knowledge,10,56.4,48.818,2025,3,True,,structural_scenario_only,SIM-0994,stable_or_mixed
+SIM-V3-0995,Society & Knowledge,10,34.165,42.03,2026,3,True,,structural_scenario_only,SIM-0995,stable_or_mixed
+SIM-V3-0996,Society & Knowledge,10,39.254,52.974,2026,3,True,,structural_scenario_only,SIM-0996,stable_or_mixed
+SIM-V3-0997,Society & Knowledge,10,57.294,47.852,2026,3,True,,structural_scenario_only,SIM-0997,stable_or_mixed
+SIM-V3-0998,Society & Knowledge,10,34.343,41.728,2017,1,True,,structural_scenario_only,SIM-0998,stable_or_mixed
+SIM-V3-0999,Society & Knowledge,10,55.797,50.269,2023,2,True,,structural_scenario_only,SIM-0999,stable_or_mixed
+SIM-V3-1000,Society & Knowledge,10,38.941,36.217,2021,2,True,,structural_scenario_only,SIM-1000,stable_or_mixed
+SIM-V3-1001,Formal & Computational Sciences,0,53.949,58.942,1956,,True,,structural_scenario_only,SIM-HIST-0001,contribution_leads_recognition
+SIM-V3-1002,Engineering & Manufacturing,7,47.763,17.854,1972,,True,,structural_scenario_only,SIM-HIST-0002,contribution_leads_recognition
+SIM-V3-1003,Medicine & Health,5,40.404,60.155,1967,,True,,structural_scenario_only,SIM-HIST-0003,recognition_leads_contribution
+SIM-V3-1004,Medicine & Health,5,59.266,73.075,1982,,True,,structural_scenario_only,SIM-HIST-0004,recognition_leads_contribution
+SIM-V3-1005,Aerospace & Transportation,9,49.181,62.07,1970,,True,,structural_scenario_only,SIM-HIST-0005,bounded_change
+SIM-V3-1006,Society & Knowledge,10,22.974,51.102,1975,,True,,structural_scenario_only,SIM-HIST-0006,stable_or_mixed
+SIM-V3-1007,Materials Science,3,45.72,43.495,1967,,True,,structural_scenario_only,SIM-HIST-0007,contribution_leads_recognition
+SIM-V3-1008,Medicine & Health,5,39.708,57.722,1968,,True,,structural_scenario_only,SIM-HIST-0008,recognition_leads_contribution
+SIM-V3-1009,Chemistry,2,48.755,43.42,1975,,True,,structural_scenario_only,SIM-HIST-0009,joint_change
+SIM-V3-1010,Earth & Environmental Sciences,6,30.095,36.793,1995,,True,,structural_scenario_only,SIM-HIST-0010,joint_change
+SIM-V3-1011,Medicine & Health,5,41.905,80.158,1971,,True,,structural_scenario_only,SIM-HIST-0011,recognition_leads_contribution
+SIM-V3-1012,Society & Knowledge,10,28.591,68.024,1968,,True,,structural_scenario_only,SIM-HIST-0012,stable_or_mixed
+SIM-V3-1013,Aerospace & Transportation,9,49.559,34.351,1971,,True,,structural_scenario_only,SIM-HIST-0013,bounded_change
+SIM-V3-1014,Materials Science,3,48.412,45.653,1992,,True,,structural_scenario_only,SIM-HIST-0014,contribution_leads_recognition
+SIM-V3-1015,Agriculture & Food,8,29.126,36.262,1980,,True,,structural_scenario_only,SIM-HIST-0015,bounded_change
+SIM-V3-1016,Medicine & Health,5,36.796,68.673,1989,,True,,structural_scenario_only,SIM-HIST-0016,recognition_leads_contribution
+SIM-V3-1017,Chemistry,2,34.605,47.551,1997,,True,,structural_scenario_only,SIM-HIST-0017,joint_change
+SIM-V3-1018,Medicine & Health,5,36.372,62.841,1965,,True,,structural_scenario_only,SIM-HIST-0018,recognition_leads_contribution
+SIM-V3-1019,Medicine & Health,5,44.632,44.348,1995,,True,,structural_scenario_only,SIM-HIST-0019,recognition_leads_contribution
+SIM-V3-1020,Materials Science,3,61.218,51.227,1971,,True,,structural_scenario_only,SIM-HIST-0020,contribution_leads_recognition
+SIM-V3-1021,Materials Science,3,61.509,52.966,1959,,True,,structural_scenario_only,SIM-HIST-0021,contribution_leads_recognition
+SIM-V3-1022,Earth & Environmental Sciences,6,33.243,61.537,1973,,True,,structural_scenario_only,SIM-HIST-0022,joint_change
+SIM-V3-1023,Aerospace & Transportation,9,43.097,39.071,1962,,True,,structural_scenario_only,SIM-HIST-0023,bounded_change
+SIM-V3-1024,Aerospace & Transportation,9,59.172,53.649,1985,,True,,structural_scenario_only,SIM-HIST-0024,bounded_change
+SIM-V3-1025,Materials Science,3,46.621,38.827,1997,,True,,structural_scenario_only,SIM-HIST-0025,contribution_leads_recognition
+SIM-V3-1026,Materials Science,3,56.666,39.075,1964,,True,,structural_scenario_only,SIM-HIST-0026,contribution_leads_recognition
+SIM-V3-1027,Materials Science,3,57.43,41.571,1970,,True,,structural_scenario_only,SIM-HIST-0027,contribution_leads_recognition
+SIM-V3-1028,Life Sciences,4,43.604,42.18,1975,,True,,structural_scenario_only,SIM-HIST-0028,partial_recognition_lag
+SIM-V3-1029,Chemistry,2,45.289,30.787,1975,,True,,structural_scenario_only,SIM-HIST-0029,joint_change
+SIM-V3-1030,Physics & Astronomy,1,50.371,80.094,1977,,True,,structural_scenario_only,SIM-HIST-0030,joint_change
+SIM-V3-1031,Formal & Computational Sciences,0,60.933,46.279,1959,,True,,structural_scenario_only,SIM-HIST-0031,contribution_leads_recognition
+SIM-V3-1032,Chemistry,2,24.949,33.485,1968,,True,,structural_scenario_only,SIM-HIST-0032,joint_change
+SIM-V3-1033,Chemistry,2,46.482,36.474,1996,,True,,structural_scenario_only,SIM-HIST-0033,joint_change
+SIM-V3-1034,Materials Science,3,49.99,41.774,1984,,True,,structural_scenario_only,SIM-HIST-0034,contribution_leads_recognition
+SIM-V3-1035,Physics & Astronomy,1,59.643,68.069,1964,,True,,structural_scenario_only,SIM-HIST-0035,joint_change
+SIM-V3-1036,Physics & Astronomy,1,56.378,69.505,1967,,True,,structural_scenario_only,SIM-HIST-0036,joint_change
+SIM-V3-1037,Chemistry,2,36.907,55.662,1993,,True,,structural_scenario_only,SIM-HIST-0037,joint_change
+SIM-V3-1038,Life Sciences,4,24.39,54.274,1968,,True,,structural_scenario_only,SIM-HIST-0038,partial_recognition_lag
+SIM-V3-1039,Physics & Astronomy,1,49.139,58.087,1994,,True,,structural_scenario_only,SIM-HIST-0039,joint_change
+SIM-V3-1040,Medicine & Health,5,32.84,56.746,1979,,True,,structural_scenario_only,SIM-HIST-0040,recognition_leads_contribution
+SIM-V3-1041,Life Sciences,4,51.859,70.129,1989,,True,,structural_scenario_only,SIM-HIST-0041,partial_recognition_lag
+SIM-V3-1042,Materials Science,3,25.372,43.036,1958,,True,,structural_scenario_only,SIM-HIST-0042,contribution_leads_recognition
+SIM-V3-1043,Earth & Environmental Sciences,6,46.713,40.975,1967,,True,,structural_scenario_only,SIM-HIST-0043,joint_change
+SIM-V3-1044,Earth & Environmental Sciences,6,36.923,48.749,1969,,True,,structural_scenario_only,SIM-HIST-0044,joint_change
+SIM-V3-1045,Engineering & Manufacturing,7,53.424,28.698,1995,,True,,structural_scenario_only,SIM-HIST-0045,contribution_leads_recognition
+SIM-V3-1046,Formal & Computational Sciences,0,42.236,40.847,1996,,True,,structural_scenario_only,SIM-HIST-0046,contribution_leads_recognition
+SIM-V3-1047,Formal & Computational Sciences,0,41.248,62.961,1969,,True,,structural_scenario_only,SIM-HIST-0047,contribution_leads_recognition
+SIM-V3-1048,Agriculture & Food,8,34.997,46.927,1984,,True,,structural_scenario_only,SIM-HIST-0048,bounded_change
+SIM-V3-1049,Engineering & Manufacturing,7,42.112,29.802,1989,,True,,structural_scenario_only,SIM-HIST-0049,contribution_leads_recognition
+SIM-V3-1050,Engineering & Manufacturing,7,31.904,43.334,1958,,True,,structural_scenario_only,SIM-HIST-0050,contribution_leads_recognition
+SIM-V3-1051,Earth & Environmental Sciences,6,38.87,50.627,1976,,True,,structural_scenario_only,SIM-HIST-0051,joint_change
+SIM-V3-1052,Engineering & Manufacturing,7,42.672,30.846,1968,,True,,structural_scenario_only,SIM-HIST-0052,contribution_leads_recognition
+SIM-V3-1053,Medicine & Health,5,54.099,67.831,1994,,True,,structural_scenario_only,SIM-HIST-0053,recognition_leads_contribution
+SIM-V3-1054,Chemistry,2,41.919,39.652,1975,,True,,structural_scenario_only,SIM-HIST-0054,joint_change
+SIM-V3-1055,Medicine & Health,5,35.408,72.864,1957,,True,,structural_scenario_only,SIM-HIST-0055,recognition_leads_contribution
+SIM-V3-1056,Medicine & Health,5,36.734,63.352,1989,,True,,structural_scenario_only,SIM-HIST-0056,recognition_leads_contribution
+SIM-V3-1057,Life Sciences,4,60.95,64.569,1963,,True,,structural_scenario_only,SIM-HIST-0057,partial_recognition_lag
+SIM-V3-1058,Physics & Astronomy,1,54.559,49.807,1976,,True,,structural_scenario_only,SIM-HIST-0058,joint_change
+SIM-V3-1059,Life Sciences,4,47.697,53.102,1974,,True,,structural_scenario_only,SIM-HIST-0059,partial_recognition_lag
+SIM-V3-1060,Aerospace & Transportation,9,58.167,44.891,1979,,True,,structural_scenario_only,SIM-HIST-0060,bounded_change
+SIM-V3-1061,Medicine & Health,5,31.823,67.515,1996,,True,,structural_scenario_only,SIM-HIST-0061,recognition_leads_contribution
+SIM-V3-1062,Medicine & Health,5,40.747,57.238,1964,,True,,structural_scenario_only,SIM-HIST-0062,recognition_leads_contribution
+SIM-V3-1063,Earth & Environmental Sciences,6,26.994,37.052,1982,,True,,structural_scenario_only,SIM-HIST-0063,joint_change
+SIM-V3-1064,Medicine & Health,5,39.768,56.988,1967,,True,,structural_scenario_only,SIM-HIST-0064,recognition_leads_contribution
+SIM-V3-1065,Materials Science,3,43.682,45.236,1987,,True,,structural_scenario_only,SIM-HIST-0065,contribution_leads_recognition
+SIM-V3-1066,Formal & Computational Sciences,0,58.892,49.177,1963,,True,,structural_scenario_only,SIM-HIST-0066,contribution_leads_recognition
+SIM-V3-1067,Materials Science,3,51.62,34.328,1977,,True,,structural_scenario_only,SIM-HIST-0067,contribution_leads_recognition
+SIM-V3-1068,Agriculture & Food,8,33.694,23.749,1958,,True,,structural_scenario_only,SIM-HIST-0068,bounded_change
+SIM-V3-1069,Materials Science,3,55.147,30.947,1971,,True,,structural_scenario_only,SIM-HIST-0069,contribution_leads_recognition
+SIM-V3-1070,Life Sciences,4,47.588,70.823,1969,,True,,structural_scenario_only,SIM-HIST-0070,partial_recognition_lag
+SIM-V3-1071,Engineering & Manufacturing,7,36.099,37.278,1995,,True,,structural_scenario_only,SIM-HIST-0071,contribution_leads_recognition
+SIM-V3-1072,Aerospace & Transportation,9,57.633,38.023,1981,,True,,structural_scenario_only,SIM-HIST-0072,bounded_change
+SIM-V3-1073,Materials Science,3,60.254,51.747,1959,,True,,structural_scenario_only,SIM-HIST-0073,contribution_leads_recognition
+SIM-V3-1074,Earth & Environmental Sciences,6,33.739,58.913,1993,,True,,structural_scenario_only,SIM-HIST-0074,joint_change
+SIM-V3-1075,Physics & Astronomy,1,64.542,69.866,1983,,True,,structural_scenario_only,SIM-HIST-0075,joint_change
+SIM-V3-1076,Society & Knowledge,10,37.984,60.268,1975,,True,,structural_scenario_only,SIM-HIST-0076,stable_or_mixed
+SIM-V3-1077,Materials Science,3,38.444,32.55,1967,,True,,structural_scenario_only,SIM-HIST-0077,contribution_leads_recognition
+SIM-V3-1078,Life Sciences,4,47.751,44.884,1969,,True,,structural_scenario_only,SIM-HIST-0078,partial_recognition_lag
+SIM-V3-1079,Life Sciences,4,58.306,57.77,1964,,True,,structural_scenario_only,SIM-HIST-0079,partial_recognition_lag
+SIM-V3-1080,Earth & Environmental Sciences,6,44.171,35.085,1975,,True,,structural_scenario_only,SIM-HIST-0080,joint_change
+SIM-V3-1081,Chemistry,2,40.866,33.025,1969,,True,,structural_scenario_only,SIM-HIST-0081,joint_change
+SIM-V3-1082,Physics & Astronomy,1,56.905,51.172,1979,,True,,structural_scenario_only,SIM-HIST-0082,joint_change
+SIM-V3-1083,Physics & Astronomy,1,51.396,62.804,1993,,True,,structural_scenario_only,SIM-HIST-0083,joint_change
+SIM-V3-1084,Materials Science,3,40.017,53.814,1971,,True,,structural_scenario_only,SIM-HIST-0084,contribution_leads_recognition
+SIM-V3-1085,Engineering & Manufacturing,7,42.893,20.611,1977,,True,,structural_scenario_only,SIM-HIST-0085,contribution_leads_recognition
+SIM-V3-1086,Earth & Environmental Sciences,6,38.304,33.501,1997,,True,,structural_scenario_only,SIM-HIST-0086,joint_change
+SIM-V3-1087,Earth & Environmental Sciences,6,36.253,32.264,1985,,True,,structural_scenario_only,SIM-HIST-0087,joint_change
+SIM-V3-1088,Chemistry,2,34.841,33.183,1993,,True,,structural_scenario_only,SIM-HIST-0088,joint_change
+SIM-V3-1089,Society & Knowledge,10,42.891,41.575,1977,,True,,structural_scenario_only,SIM-HIST-0089,stable_or_mixed
+SIM-V3-1090,Materials Science,3,38.826,48.422,1979,,True,,structural_scenario_only,SIM-HIST-0090,contribution_leads_recognition
+SIM-V3-1091,Chemistry,2,43.32,28.357,1971,,True,,structural_scenario_only,SIM-HIST-0091,joint_change
+SIM-V3-1092,Physics & Astronomy,1,79.157,57.318,1976,,True,,structural_scenario_only,SIM-HIST-0092,joint_change
+SIM-V3-1093,Life Sciences,4,35.266,66.764,1967,,True,,structural_scenario_only,SIM-HIST-0093,partial_recognition_lag
+SIM-V3-1094,Life Sciences,4,50.181,69.25,1983,,True,,structural_scenario_only,SIM-HIST-0094,partial_recognition_lag
+SIM-V3-1095,Formal & Computational Sciences,0,47.525,48.255,1969,,True,,structural_scenario_only,SIM-HIST-0095,contribution_leads_recognition
+SIM-V3-1096,Life Sciences,4,49.602,43.928,1993,,True,,structural_scenario_only,SIM-HIST-0096,partial_recognition_lag
+SIM-V3-1097,Chemistry,2,35.973,26.808,1994,,True,,structural_scenario_only,SIM-HIST-0097,joint_change
+SIM-V3-1098,Medicine & Health,5,46.832,78.097,1980,,True,,structural_scenario_only,SIM-HIST-0098,recognition_leads_contribution
+SIM-V3-1099,Physics & Astronomy,1,61.19,58.281,1975,,True,,structural_scenario_only,SIM-HIST-0099,joint_change
+SIM-V3-1100,Chemistry,2,39.671,40.972,1991,,True,,structural_scenario_only,SIM-HIST-0100,joint_change
+SIM-V3-1101,Chemistry,2,55.701,51.021,2000,,True,,structural_scenario_only,SIM-HIST-0101,joint_change
+SIM-V3-1102,Materials Science,3,45.5,61.304,2005,,True,,structural_scenario_only,SIM-HIST-0102,contribution_leads_recognition
+SIM-V3-1103,Chemistry,2,27.372,61.053,2000,,True,,structural_scenario_only,SIM-HIST-0103,joint_change
+SIM-V3-1104,Aerospace & Transportation,9,54.621,54.067,1998,,True,,structural_scenario_only,SIM-HIST-0104,bounded_change
+SIM-V3-1105,Formal & Computational Sciences,0,59.4,46.367,2000,,True,,structural_scenario_only,SIM-HIST-0105,contribution_leads_recognition
+SIM-V3-1106,Medicine & Health,5,48.031,50.056,2000,,True,,structural_scenario_only,SIM-HIST-0106,recognition_leads_contribution
+SIM-V3-1107,Materials Science,3,71.16,30.986,1998,,True,,structural_scenario_only,SIM-HIST-0107,contribution_leads_recognition
+SIM-V3-1108,Medicine & Health,5,63.369,50.068,2001,,True,,structural_scenario_only,SIM-HIST-0108,recognition_leads_contribution
+SIM-V3-1109,Life Sciences,4,61.527,60.616,2004,,True,,structural_scenario_only,SIM-HIST-0109,partial_recognition_lag
+SIM-V3-1110,Life Sciences,4,51.272,59.993,2004,,True,,structural_scenario_only,SIM-HIST-0110,partial_recognition_lag
+SIM-V3-1111,Earth & Environmental Sciences,6,42.361,36.006,1999,,True,,structural_scenario_only,SIM-HIST-0111,joint_change
+SIM-V3-1112,Engineering & Manufacturing,7,42.714,29.198,1999,,True,,structural_scenario_only,SIM-HIST-0112,contribution_leads_recognition
+SIM-V3-1113,Life Sciences,4,51.965,52.236,2000,,True,,structural_scenario_only,SIM-HIST-0113,partial_recognition_lag
+SIM-V3-1114,Materials Science,3,55.477,49.769,1999,,True,,structural_scenario_only,SIM-HIST-0114,contribution_leads_recognition
+SIM-V3-1115,Physics & Astronomy,1,63.711,58.709,1998,,True,,structural_scenario_only,SIM-HIST-0115,joint_change
+SIM-V3-1116,Materials Science,3,34.817,54.77,2000,,True,,structural_scenario_only,SIM-HIST-0116,contribution_leads_recognition
+SIM-V3-1117,Engineering & Manufacturing,7,49.564,31.94,1998,,True,,structural_scenario_only,SIM-HIST-0117,contribution_leads_recognition
+SIM-V3-1118,Medicine & Health,5,40.957,78.553,1998,,True,,structural_scenario_only,SIM-HIST-0118,recognition_leads_contribution
+SIM-V3-1119,Life Sciences,4,57.34,61.251,2001,,True,,structural_scenario_only,SIM-HIST-0119,partial_recognition_lag
+SIM-V3-1120,Agriculture & Food,8,41.899,44.761,2002,,True,,structural_scenario_only,SIM-HIST-0120,bounded_change
+SIM-V3-1121,Agriculture & Food,8,55.038,48.983,1998,,True,,structural_scenario_only,SIM-HIST-0121,bounded_change
+SIM-V3-1122,Materials Science,3,57.473,63.985,1999,,True,,structural_scenario_only,SIM-HIST-0122,contribution_leads_recognition
+SIM-V3-1123,Earth & Environmental Sciences,6,46.653,32.687,2001,,True,,structural_scenario_only,SIM-HIST-0123,joint_change
+SIM-V3-1124,Engineering & Manufacturing,7,60.641,44.477,2004,,True,,structural_scenario_only,SIM-HIST-0124,contribution_leads_recognition
+SIM-V3-1125,Agriculture & Food,8,46.72,23.951,1999,,True,,structural_scenario_only,SIM-HIST-0125,bounded_change
+SIM-V3-1126,Physics & Astronomy,1,59.609,79.601,1998,,True,,structural_scenario_only,SIM-HIST-0126,joint_change
+SIM-V3-1127,Materials Science,3,56.619,50.793,2002,,True,,structural_scenario_only,SIM-HIST-0127,contribution_leads_recognition
+SIM-V3-1128,Materials Science,3,59.406,50.199,2000,,True,,structural_scenario_only,SIM-HIST-0128,contribution_leads_recognition
+SIM-V3-1129,Physics & Astronomy,1,56.948,66.556,2000,,True,,structural_scenario_only,SIM-HIST-0129,joint_change
+SIM-V3-1130,Medicine & Health,5,51.487,82.656,2004,,True,,structural_scenario_only,SIM-HIST-0130,recognition_leads_contribution
+SIM-V3-1131,Aerospace & Transportation,9,44.137,77.215,2002,,True,,structural_scenario_only,SIM-HIST-0131,bounded_change
+SIM-V3-1132,Physics & Astronomy,1,71.502,64.77,1998,,True,,structural_scenario_only,SIM-HIST-0132,joint_change
+SIM-V3-1133,Medicine & Health,5,51.095,75.755,2000,,True,,structural_scenario_only,SIM-HIST-0133,recognition_leads_contribution
+SIM-V3-1134,Engineering & Manufacturing,7,60.719,35.512,2002,,True,,structural_scenario_only,SIM-HIST-0134,contribution_leads_recognition
+SIM-V3-1135,Formal & Computational Sciences,0,52.128,58.246,2005,,True,,structural_scenario_only,SIM-HIST-0135,contribution_leads_recognition
+SIM-V3-1136,Life Sciences,4,61.435,46.807,2000,,True,,structural_scenario_only,SIM-HIST-0136,partial_recognition_lag
+SIM-V3-1137,Earth & Environmental Sciences,6,52.696,59.587,2005,,True,,structural_scenario_only,SIM-HIST-0137,joint_change
+SIM-V3-1138,Life Sciences,4,56.246,50.225,2004,,True,,structural_scenario_only,SIM-HIST-0138,partial_recognition_lag
+SIM-V3-1139,Life Sciences,4,59.138,74.816,2004,,True,,structural_scenario_only,SIM-HIST-0139,partial_recognition_lag
+SIM-V3-1140,Chemistry,2,52.28,45.227,2004,,True,,structural_scenario_only,SIM-HIST-0140,joint_change
+SIM-V3-1141,Agriculture & Food,8,27.817,47.906,2003,,True,,structural_scenario_only,SIM-HIST-0141,bounded_change
+SIM-V3-1142,Formal & Computational Sciences,0,42.276,64.529,2005,,True,,structural_scenario_only,SIM-HIST-0142,contribution_leads_recognition
+SIM-V3-1143,Formal & Computational Sciences,0,46.435,73.235,2004,,True,,structural_scenario_only,SIM-HIST-0143,contribution_leads_recognition
+SIM-V3-1144,Aerospace & Transportation,9,59.023,49.861,2005,,True,,structural_scenario_only,SIM-HIST-0144,bounded_change
+SIM-V3-1145,Physics & Astronomy,1,70.621,59.719,2004,,True,,structural_scenario_only,SIM-HIST-0145,joint_change
+SIM-V3-1146,Formal & Computational Sciences,0,31.557,52.852,1998,,True,,structural_scenario_only,SIM-HIST-0146,contribution_leads_recognition
+SIM-V3-1147,Life Sciences,4,44.242,58.172,2000,,True,,structural_scenario_only,SIM-HIST-0147,partial_recognition_lag
+SIM-V3-1148,Earth & Environmental Sciences,6,25.93,38.886,2003,,True,,structural_scenario_only,SIM-HIST-0148,joint_change
+SIM-V3-1149,Chemistry,2,56.407,50.595,2000,,True,,structural_scenario_only,SIM-HIST-0149,joint_change
+SIM-V3-1150,Formal & Computational Sciences,0,38.706,45.884,2000,,True,,structural_scenario_only,SIM-HIST-0150,contribution_leads_recognition
+SIM-V3-1151,Medicine & Health,5,49.445,72.216,2005,,True,,structural_scenario_only,SIM-HIST-0151,recognition_leads_contribution
+SIM-V3-1152,Physics & Astronomy,1,55.556,46.403,2005,,True,,structural_scenario_only,SIM-HIST-0152,joint_change
+SIM-V3-1153,Chemistry,2,54.503,73.722,2004,,True,,structural_scenario_only,SIM-HIST-0153,joint_change
+SIM-V3-1154,Life Sciences,4,72.372,60.961,2001,,True,,structural_scenario_only,SIM-HIST-0154,partial_recognition_lag
+SIM-V3-1155,Society & Knowledge,10,40.123,57.883,2002,,True,,structural_scenario_only,SIM-HIST-0155,stable_or_mixed
+SIM-V3-1156,Materials Science,3,49.333,40.422,1999,,True,,structural_scenario_only,SIM-HIST-0156,contribution_leads_recognition
+SIM-V3-1157,Earth & Environmental Sciences,6,55.048,52.114,2004,,True,,structural_scenario_only,SIM-HIST-0157,joint_change
+SIM-V3-1158,Engineering & Manufacturing,7,56.938,41.485,2003,,True,,structural_scenario_only,SIM-HIST-0158,contribution_leads_recognition
+SIM-V3-1159,Chemistry,2,34.423,33.633,2000,,True,,structural_scenario_only,SIM-HIST-0159,joint_change
+SIM-V3-1160,Life Sciences,4,59.83,60.888,1998,,True,,structural_scenario_only,SIM-HIST-0160,partial_recognition_lag
+SIM-V3-1161,Life Sciences,4,49.273,55.684,1999,,True,,structural_scenario_only,SIM-HIST-0161,partial_recognition_lag
+SIM-V3-1162,Chemistry,2,63.134,48.764,1998,,True,,structural_scenario_only,SIM-HIST-0162,joint_change
+SIM-V3-1163,Formal & Computational Sciences,0,43.618,72.058,2003,,True,,structural_scenario_only,SIM-HIST-0163,contribution_leads_recognition
+SIM-V3-1164,Physics & Astronomy,1,54.58,53.962,2003,,True,,structural_scenario_only,SIM-HIST-0164,joint_change
+SIM-V3-1165,Medicine & Health,5,46.867,84.169,2000,,True,,structural_scenario_only,SIM-HIST-0165,recognition_leads_contribution
+SIM-V3-1166,Physics & Astronomy,1,71.598,37.672,2001,,True,,structural_scenario_only,SIM-HIST-0166,joint_change
+SIM-V3-1167,Medicine & Health,5,33.589,64.79,2002,,True,,structural_scenario_only,SIM-HIST-0167,recognition_leads_contribution
+SIM-V3-1168,Medicine & Health,5,45.176,51.696,2005,,True,,structural_scenario_only,SIM-HIST-0168,recognition_leads_contribution
+SIM-V3-1169,Formal & Computational Sciences,0,49.51,75.089,2004,,True,,structural_scenario_only,SIM-HIST-0169,contribution_leads_recognition
+SIM-V3-1170,Medicine & Health,5,52.05,62.437,2000,,True,,structural_scenario_only,SIM-HIST-0170,recognition_leads_contribution
+SIM-V3-1171,Life Sciences,4,41.918,78.3,1998,,True,,structural_scenario_only,SIM-HIST-0171,partial_recognition_lag
+SIM-V3-1172,Earth & Environmental Sciences,6,53.95,48.142,1998,,True,,structural_scenario_only,SIM-HIST-0172,joint_change
+SIM-V3-1173,Chemistry,2,33.343,37.007,2003,,True,,structural_scenario_only,SIM-HIST-0173,joint_change
+SIM-V3-1174,Materials Science,3,51.552,50.835,2000,,True,,structural_scenario_only,SIM-HIST-0174,contribution_leads_recognition
+SIM-V3-1175,Life Sciences,4,42.026,56.335,1999,,True,,structural_scenario_only,SIM-HIST-0175,partial_recognition_lag
+SIM-V3-1176,Medicine & Health,5,42.721,61.53,2000,,True,,structural_scenario_only,SIM-HIST-0176,recognition_leads_contribution
+SIM-V3-1177,Materials Science,3,57.309,69.727,2004,,True,,structural_scenario_only,SIM-HIST-0177,contribution_leads_recognition
+SIM-V3-1178,Engineering & Manufacturing,7,31.581,20.826,2003,,True,,structural_scenario_only,SIM-HIST-0178,contribution_leads_recognition
+SIM-V3-1179,Chemistry,2,67.579,61.543,2004,,True,,structural_scenario_only,SIM-HIST-0179,joint_change
+SIM-V3-1180,Formal & Computational Sciences,0,56.694,49.093,2001,,True,,structural_scenario_only,SIM-HIST-0180,contribution_leads_recognition

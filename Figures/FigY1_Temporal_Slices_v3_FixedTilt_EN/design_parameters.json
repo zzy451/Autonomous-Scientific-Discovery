@@ -1,0 +1,76 @@
+{
+  "source_csv": "data/scenario_papers_1956_2026_EN.csv",
+  "source_manifest": "data/domain_manifest_EN.json",
+  "projection_angles_deg": [
+    16.0,
+    -4.0
+  ],
+  "local_score_axis_length": 288.0,
+  "local_rci_axis_length": 278.0,
+  "projected_gap": 58.0,
+  "era_vertical_step": 8.0,
+  "origin": [
+    92.0,
+    204.0
+  ],
+  "canvas": [
+    1810.0,
+    750.0
+  ],
+  "cloud_grid_size": 280,
+  "cloud_bandwidth_score_units": 5.8,
+  "cloud_opacity": 0.28,
+  "cloud_color_exponent": 1.7,
+  "point_area_pt2": 15.0,
+  "point_alpha": 0.79,
+  "paper_background": "#ffffff",
+  "sheet_background": "#fbfcfa",
+  "domain_colors": [
+    "#326fb2",
+    "#279fb5",
+    "#21977d",
+    "#879b26",
+    "#cf923a",
+    "#c4517c",
+    "#9b6b47",
+    "#7662b2",
+    "#559b59",
+    "#567f91",
+    "#a25497"
+  ],
+  "dpi": 240,
+  "preview_dpi": 110,
+  "eras": [
+    {
+      "label": "Up to 1997",
+      "start": 1900,
+      "end": 1997,
+      "name": "Rules and Search"
+    },
+    {
+      "label": "1998–2012",
+      "start": 1998,
+      "end": 2012,
+      "name": "Statistical Learning"
+    },
+    {
+      "label": "2013–2019",
+      "start": 2013,
+      "end": 2019,
+      "name": "Deep Learning"
+    },
+    {
+      "label": "2020–2023",
+      "start": 2020,
+      "end": 2023,
+      "name": "Foundation Models"
+    },
+    {
+      "label": "2024–2026",
+      "start": 2024,
+      "end": 2026,
+      "name": "Scientific Agents"
+    }
+  ],
+  "output_stem": "outputs/FigY1_v3_fixed_tilt_EN"
+}

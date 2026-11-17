@@ -1,0 +1,149 @@
+{
+  "synthetic": true,
+  "seed": 20261117,
+  "n": 1180,
+  "reference": "User proposal Fig.1: integrated scene, individual cases, labels, restrained palette.",
+  "encoding": {
+    "x": "scientific contribution score",
+    "y": "Reference Context Index",
+    "hue": "domain",
+    "sheet": "first public disclosure period",
+    "background": "smoothed local paper density"
+  },
+  "domains": [
+    {
+      "name": "Formal & Computational Sciences",
+      "n": 90,
+      "color": "#326fb2"
+    },
+    {
+      "name": "Physics & Astronomy",
+      "n": 103,
+      "color": "#279fb5"
+    },
+    {
+      "name": "Chemistry",
+      "n": 136,
+      "color": "#21977d"
+    },
+    {
+      "name": "Materials Science",
+      "n": 136,
+      "color": "#879b26"
+    },
+    {
+      "name": "Life Sciences",
+      "n": 179,
+      "color": "#cf923a"
+    },
+    {
+      "name": "Medicine & Health",
+      "n": 161,
+      "color": "#c4517c"
+    },
+    {
+      "name": "Earth & Environmental Sciences",
+      "n": 106,
+      "color": "#9b6b47"
+    },
+    {
+      "name": "Engineering & Manufacturing",
+      "n": 98,
+      "color": "#7662b2"
+    },
+    {
+      "name": "Agriculture & Food",
+      "n": 52,
+      "color": "#559b59"
+    },
+    {
+      "name": "Aerospace & Transportation",
+      "n": 49,
+      "color": "#567f91"
+    },
+    {
+      "name": "Society & Knowledge",
+      "n": 70,
+      "color": "#a25497"
+    }
+  ],
+  "eras": [
+    {
+      "label": "Up to 1997",
+      "start": 1900,
+      "end": 1997,
+      "name": "Rules and Search"
+    },
+    {
+      "label": "1998–2012",
+      "start": 1998,
+      "end": 2012,
+      "name": "Statistical Learning"
+    },
+    {
+      "label": "2013–2019",
+      "start": 2013,
+      "end": 2019,
+      "name": "Deep Learning"
+    },
+    {
+      "label": "2020–2023",
+      "start": 2020,
+      "end": 2023,
+      "name": "Foundation Models"
+    },
+    {
+      "label": "2024–2026",
+      "start": 2024,
+      "end": 2026,
+      "name": "Scientific Agents"
+    }
+  ],
+  "density": {
+    "method": "scipy.stats.gaussian_kde",
+    "bandwidth": 0.19,
+    "grid": [
+      480,
+      480
+    ],
+    "domain": [
+      0,
+      100,
+      0,
+      100
+    ],
+    "contour_enclosed_mass": [
+      0.98,
+      0.95,
+      0.9,
+      0.8,
+      0.65,
+      0.5,
+      0.35,
+      0.2,
+      0.08
+    ],
+    "thresholds": [
+      2.202133871159131e-05,
+      4.5355041689570485e-05,
+      8.013310484096284e-05,
+      0.00013400672329023672,
+      0.0002006281167936159,
+      0.0002554473407921124,
+      0.0003219017613951507,
+      0.00045528237673975663,
+      0.0006051289272707987
+    ],
+    "note": "Mass normalized on plotted 0-100 square; relief has no additional scoring meaning."
+  },
+  "observation_year": 2026,
+  "note": "Single-domain labels and age effects are synthetic design choices, not empirical findings.",
+  "original_n": 1000,
+  "added_n": 180,
+  "year_range": [
+    1956,
+    2026
+  ],
+  "seed_historical": 2026111702,
+  "domain_color_policy": "Actual figure colors are defined in design_parameters.json, unchanged from the source rendering."
+}

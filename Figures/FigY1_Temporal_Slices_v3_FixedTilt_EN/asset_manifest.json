@@ -1,0 +1,114 @@
+{
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 187,
+      "sha256": "3bf8a2da29128298bb49e7d409afd59a6924d4c57b1baa48b5dbeeefd0220067"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 40,
+      "sha256": "8d29cb3457ff021d782d2e9308231281f4d228002ec4dce1b05f965a08b584fa"
+    },
+    {
+      "path": "captions/caption_bilingual.md",
+      "bytes": 2247,
+      "sha256": "a4d4f40d6907a86b5a2675521c5289b184abaa2a307ca83f71ea25f901462213"
+    },
+    {
+      "path": "captions/caption_en.txt",
+      "bytes": 1204,
+      "sha256": "ffa1ef80c772e1450429664613a782e515499373aa52abf8f39484a5f7bb913f"
+    },
+    {
+      "path": "captions/caption_zh.txt",
+      "bytes": 1005,
+      "sha256": "5ceb6a1081bc36957826a3a82603eecf5e239549936b061e16aaf24901ab71bb"
+    },
+    {
+      "path": "data/domain_manifest_EN.json",
+      "bytes": 3094,
+      "sha256": "2a05517a3d9a04f6fee8de5ce379f8bcc9ef6e60ae3110add83651e8fd6b40bb"
+    },
+    {
+      "path": "data/scenario_papers_1956_2026_EN.csv",
+      "bytes": 139531,
+      "sha256": "4b2b9e2629d5c4682878b1b5f3485a79840237b491bddb036c82c6c4051c38e1"
+    },
+    {
+      "path": "design_parameters.json",
+      "bytes": 1479,
+      "sha256": "8277e0084098e20c77cc917c1508042143a0b423a6f4400810cae6241b84ec26"
+    },
+    {
+      "path": "outputs/FigY1_v3_fixed_tilt_EN.png",
+      "bytes": 888354,
+      "sha256": "fb58f68ebe07b8088644f87fa8194cc6ae5e06ba4df0223a2c1fdcc7c93cb84b"
+    },
+    {
+      "path": "outputs/FigY1_v3_fixed_tilt_EN.svg",
+      "bytes": 575934,
+      "sha256": "5651b0cf5111125c64a9e629433342c3a95158a0ecf55dbb2f0d3bbaeba797e9"
+    },
+    {
+      "path": "outputs/FigY1_v3_fixed_tilt_EN_data.csv",
+      "bytes": 155981,
+      "sha256": "ad11817907167ede89cf8c2a467c334779ba372244a6b211348bf5ad626f82bb"
+    },
+    {
+      "path": "outputs/FigY1_v3_fixed_tilt_EN_manifest.json",
+      "bytes": 2699,
+      "sha256": "3a604ebe650985de51809e147de42366d93a4b71f91f85d84caf9b207b076f49"
+    },
+    {
+      "path": "outputs/FigY1_v3_fixed_tilt_EN_preview.png",
+      "bytes": 323543,
+      "sha256": "8d097f4700973f55c73439c3bec08f44bff4a77d48e94f895b892ff735f63563"
+    },
+    {
+      "path": "outputs/reproduction_checks.json",
+      "bytes": 211,
+      "sha256": "7fe20ebb20860d0d9f5a447ad3edbc68500140cef64d6f5decdc584b66844c90"
+    },
+    {
+      "path": "outputs/text_qa.json",
+      "bytes": 95,
+      "sha256": "25a73c7edfe9f052c927baf42a2013911a33336cff69cabd43c3e3bd9f1f919a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2643,
+      "sha256": "2019cabf0cdd832f2bf6966d52de05e1ad9247cb0dc963aacbd1fb8a25b65d1b"
+    },
+    {
+      "path": "render_temporal_slices.py",
+      "bytes": 16878,
+      "sha256": "1b9a86bce2b9861ea335fcf1d3f75539367abc4a476a12ca7d9313af1b4584e6"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 46,
+      "sha256": "f0643825c67bb84d4e0de30fb17955651d313a3f8cd50a7b04230413dea4edbe"
+    },
+    {
+      "path": "vendor/pymplot/pymplot_LICENSE",
+      "bytes": 1543,
+      "sha256": "4bc9db955a90ab9dcdf9b3182c8e6d629b2fbae6896eb02ecbf209c13267ecbd"
+    },
+    {
+      "path": "vendor/pymplot/pymplot_projection.py",
+      "bytes": 12619,
+      "sha256": "74856a0a3a5b04e571641b9f669ea3203b42c81c4639902ba78d14ea7d61f8a1"
+    },
+    {
+      "path": "vendor/pymplot/pymplot_projection_adapter.py",
+      "bytes": 465,
+      "sha256": "11ce3e8d4366cffd67fc864cd177b24bd280fea1aa4cd0675ac069aeddb6bd84"
+    },
+    {
+      "path": "vendor/pymplot/sources.json",
+      "bytes": 377,
+      "sha256": "00bc7a14919b2eaa230e9aa44abd36fd99deca7f54cfb5295886240cc334f1de"
+    }
+  ]
+}

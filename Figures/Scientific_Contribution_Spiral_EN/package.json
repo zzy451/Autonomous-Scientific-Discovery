@@ -1,0 +1,13 @@
+{
+  "name": "ai4s-scientific-contribution-spiral",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node draw_spiral.mjs",
+    "render": "python render_spiral.py"
+  }
+}

@@ -1,0 +1,3182 @@
+{
+  "simulated": true,
+  "random_seed": 20261118,
+  "periods": [
+    "≤1997",
+    "1998–2012",
+    "2013–2019",
+    "2020–2023",
+    "2024–2026"
+  ],
+  "fields": [
+    {
+      "field_code": "01",
+      "field_name": "Formal & Computational Sciences",
+      "classes": [
+        {
+          "code": "01.01",
+          "name": "Mathematics",
+          "color": "#1F78B4",
+          "palette_base": "#1F78B4",
+          "palette_mix": 0.0,
+          "display_font_size": 17
+        },
+        {
+          "code": "01.02",
+          "name": "Computer Science",
+          "color": "#B2DF8A",
+          "palette_base": "#B2DF8A",
+          "palette_mix": 0.0,
+          "display_font_size": 17
+        },
+        {
+          "code": "01.03",
+          "name": "Systems, Information & Complexity Science",
+          "color": "#E31A1C",
+          "palette_base": "#E31A1C",
+          "palette_mix": 0.0,
+          "display_font_size": 12.4562
+        }
+      ]
+    },
+    {
+      "field_code": "02",
+      "field_name": "Physics & Astronomy",
+      "classes": [
+        {
+          "code": "02.01",
+          "name": "Astronomy & Astrophysics",
+          "color": "#A6CEE3",
+          "palette_base": "#A6CEE3",
+          "palette_mix": 0.0,
+          "display_font_size": 17
+        },
+        {
+          "code": "02.02",
+          "name": "Physics",
+          "color": "#33A02C",
+          "palette_base": "#33A02C",
+          "palette_mix": 0.0,
+          "display_font_size": 17
+        }
+      ]
+    },
+    {
+      "field_code": "03",
+      "field_name": "Chemistry",
+      "classes": [
+        {
+          "code": "03.01",
+          "name": "General Chemistry & Chemical Methods",
+          "color": "#FB9A99",
+          "palette_base": "#FB9A99",
+          "palette_mix": 0.0,
+          "display_font_size": 13.565
+        },
+        {
+          "code": "03.02",
+          "name": "Fundamental Chemistry",
+          "color": "#FDBF6F",
+          "palette_base": "#FDBF6F",
+          "palette_mix": 0.0,
+          "display_font_size": 17
+        },
+        {
+          "code": "03.03",
+          "name": "Synthesis, Reactions & Catalysis",
+          "color": "#438EC0",
+          "palette_base": "#1F78B4",
+          "palette_mix": 0.16,
+          "display_font_size": 16.5543
+        },
+        {
+          "code": "03.04",
+          "name": "Molecular Design & Chemical Space Exploration",
+          "color": "#BEE49D",
+          "palette_base": "#B2DF8A",
+          "palette_mix": 0.16,
+          "display_font_size": 11.2337
+        }
+      ]
+    },
+    {
+      "field_code": "04",
+      "field_name": "Materials Science",
+      "classes": [
+        {
+          "code": "04.01",
+          "name": "Fundamentals of Materials Science",
+          "color": "#E73F40",
+          "palette_base": "#E31A1C",
+          "palette_mix": 0.16,
+          "display_font_size": 15.4626
+        },
+        {
+          "code": "04.02",
+          "name": "Structural & Inorganic Materials",
+          "color": "#B4D6E7",
+          "palette_base": "#A6CEE3",
+          "palette_mix": 0.16,
+          "display_font_size": 17
+        },
+        {
+          "code": "04.03",
+          "name": "Soft Matter & Functional Materials",
+          "color": "#54AF4E",
+          "palette_base": "#33A02C",
+          "palette_mix": 0.16,
+          "display_font_size": 16.0661
+        },
+        {
+          "code": "04.04",
+          "name": "Energy, Electronic & Device Materials",
+          "color": "#FCAAA9",
+          "palette_base": "#FB9A99",
+          "palette_mix": 0.16,
+          "display_font_size": 14.5307
+        }
+      ]
+    },
+    {
+      "field_code": "05",
+      "field_name": "Earth & Environmental Sciences",
+      "classes": [
+        {
+          "code": "05.01",
+          "name": "Fundamentals of Earth Science",
+          "color": "#FDC986",
+          "palette_base": "#FDBF6F",
+          "palette_mix": 0.16,
+          "display_font_size": 17
+        },
+        {
+          "code": "05.02",
+          "name": "Atmospheric, Oceanic & Hydrological Sciences",
+          "color": "#1B679B",
+          "palette_base": "#1F78B4",
+          "palette_mix": -0.14,
+          "display_font_size": 11.5565
+        },
+        {
+          "code": "05.03",
+          "name": "Environmental Science",
+          "color": "#99C077",
+          "palette_base": "#B2DF8A",
+          "palette_mix": -0.14,
+          "display_font_size": 17
+        },
+        {
+          "code": "05.04",
+          "name": "Geography & Geospatial Information",
+          "color": "#C31618",
+          "palette_base": "#E31A1C",
+          "palette_mix": -0.14,
+          "display_font_size": 14.8799
+        }
+      ]
+    },
+    {
+      "field_code": "06",
+      "field_name": "Life Sciences",
+      "classes": [
+        {
+          "code": "06.01",
+          "name": "Fundamentals of Biology",
+          "color": "#8FB1C3",
+          "palette_base": "#A6CEE3",
+          "palette_mix": -0.14,
+          "display_font_size": 17
+        },
+        {
+          "code": "06.02",
+          "name": "Organismal Biology",
+          "color": "#2C8A26",
+          "palette_base": "#33A02C",
+          "palette_mix": -0.14,
+          "display_font_size": 17
+        },
+        {
+          "code": "06.03",
+          "name": "Biotechnology-Related Sciences",
+          "color": "#D88484",
+          "palette_base": "#FB9A99",
+          "palette_mix": -0.14,
+          "display_font_size": 16.8079
+        }
+      ]
+    },
+    {
+      "field_code": "07",
+      "field_name": "Medicine & Health",
+      "classes": [
+        {
+          "code": "07.01",
+          "name": "Basic Medical Sciences",
+          "color": "#DAA45F",
+          "palette_base": "#FDBF6F",
+          "palette_mix": -0.14,
+          "display_font_size": 17
+        },
+        {
+          "code": "07.02",
+          "name": "Clinical Medicine",
+          "color": "#67A3CC",
+          "palette_base": "#1F78B4",
+          "palette_mix": 0.32,
+          "display_font_size": 17
+        },
+        {
+          "code": "07.03",
+          "name": "Public Health & Health Sciences",
+          "color": "#CBE9AF",
+          "palette_base": "#B2DF8A",
+          "palette_mix": 0.32,
+          "display_font_size": 17
+        },
+        {
+          "code": "07.04",
+          "name": "Pharmaceutical Sciences & Biomedicine",
+          "color": "#EC6365",
+          "palette_base": "#E31A1C",
+          "palette_mix": 0.32,
+          "display_font_size": 13.4973
+        }
+      ]
+    },
+    {
+      "field_code": "08",
+      "field_name": "Agriculture & Food",
+      "classes": [
+        {
+          "code": "08.01",
+          "name": "Agronomy",
+          "color": "#C2DEEC",
+          "palette_base": "#A6CEE3",
+          "palette_mix": 0.32,
+          "display_font_size": 17
+        },
+        {
+          "code": "08.02",
+          "name": "Forestry",
+          "color": "#74BE70",
+          "palette_base": "#33A02C",
+          "palette_mix": 0.32,
+          "display_font_size": 17
+        },
+        {
+          "code": "08.03",
+          "name": "Animal Science",
+          "color": "#FCBABA",
+          "palette_base": "#FB9A99",
+          "palette_mix": 0.32,
+          "display_font_size": 17
+        },
+        {
+          "code": "08.04",
+          "name": "Fisheries Science",
+          "color": "#FED39D",
+          "palette_base": "#FDBF6F",
+          "palette_mix": 0.32,
+          "display_font_size": 17
+        },
+        {
+          "code": "08.05",
+          "name": "Food Science",
+          "color": "#175985",
+          "palette_base": "#1F78B4",
+          "palette_mix": -0.26,
+          "display_font_size": 17
+        }
+      ]
+    },
+    {
+      "field_code": "09",
+      "field_name": "Engineering & Manufacturing",
+      "classes": [
+        {
+          "code": "09.01",
+          "name": "Engineering Fundamentals",
+          "color": "#84A566",
+          "palette_base": "#B2DF8A",
+          "palette_mix": -0.26,
+          "display_font_size": 17
+        },
+        {
+          "code": "09.02",
+          "name": "Mechanical & Manufacturing Engineering",
+          "color": "#A81315",
+          "palette_base": "#E31A1C",
+          "palette_mix": -0.26,
+          "display_font_size": 13.2494
+        },
+        {
+          "code": "09.03",
+          "name": "Electrical, Electronic & Information Engineering",
+          "color": "#7B98A8",
+          "palette_base": "#A6CEE3",
+          "palette_mix": -0.26,
+          "display_font_size": 11.5926
+        },
+        {
+          "code": "09.04",
+          "name": "Chemical & Process Engineering",
+          "color": "#267621",
+          "palette_base": "#33A02C",
+          "palette_mix": -0.26,
+          "display_font_size": 15.5423
+        },
+        {
+          "code": "09.05",
+          "name": "Civil, Architectural & Hydraulic Engineering",
+          "color": "#BA7271",
+          "palette_base": "#FB9A99",
+          "palette_mix": -0.26,
+          "display_font_size": 11.9938
+        },
+        {
+          "code": "09.06",
+          "name": "Energy Engineering",
+          "color": "#BB8D52",
+          "palette_base": "#FDBF6F",
+          "palette_mix": -0.26,
+          "display_font_size": 17
+        },
+        {
+          "code": "09.07",
+          "name": "Biomedical Engineering",
+          "color": "#82B3D5",
+          "palette_base": "#1F78B4",
+          "palette_mix": 0.44,
+          "display_font_size": 17
+        },
+        {
+          "code": "09.08",
+          "name": "Materials & Device Engineering",
+          "color": "#D4EDBD",
+          "palette_base": "#B2DF8A",
+          "palette_mix": 0.44,
+          "display_font_size": 17
+        }
+      ]
+    },
+    {
+      "field_code": "10",
+      "field_name": "Aerospace & Transportation",
+      "classes": [
+        {
+          "code": "10.01",
+          "name": "Aeronautical Science",
+          "color": "#EF7F80",
+          "palette_base": "#E31A1C",
+          "palette_mix": 0.44,
+          "display_font_size": 17
+        },
+        {
+          "code": "10.02",
+          "name": "Astronautical Science",
+          "color": "#CDE4EF",
+          "palette_base": "#A6CEE3",
+          "palette_mix": 0.44,
+          "display_font_size": 17
+        },
+        {
+          "code": "10.03",
+          "name": "Marine Engineering",
+          "color": "#8DCA89",
+          "palette_base": "#33A02C",
+          "palette_mix": 0.44,
+          "display_font_size": 17
+        },
+        {
+          "code": "10.04",
+          "name": "Transportation Science",
+          "color": "#FDC6C6",
+          "palette_base": "#FB9A99",
+          "palette_mix": 0.44,
+          "display_font_size": 17
+        }
+      ]
+    },
+    {
+      "field_code": "11",
+      "field_name": "Society & Knowledge",
+      "classes": [
+        {
+          "code": "11.01",
+          "name": "Economics",
+          "color": "#FEDBAE",
+          "palette_base": "#FDBF6F",
+          "palette_mix": 0.44,
+          "display_font_size": 17
+        },
+        {
+          "code": "11.02",
+          "name": "Sociology & Population Studies",
+          "color": "#1D71A9",
+          "palette_base": "#1F78B4",
+          "palette_mix": -0.06,
+          "display_font_size": 17
+        },
+        {
+          "code": "11.03",
+          "name": "Political Science & Public Administration",
+          "color": "#A7D282",
+          "palette_base": "#B2DF8A",
+          "palette_mix": -0.06,
+          "display_font_size": 13.5816
+        },
+        {
+          "code": "11.04",
+          "name": "Psychology & Cognitive Science",
+          "color": "#D5181A",
+          "palette_base": "#E31A1C",
+          "palette_mix": -0.06,
+          "display_font_size": 16.3321
+        },
+        {
+          "code": "11.05",
+          "name": "Education & Learning Sciences",
+          "color": "#9CC2D5",
+          "palette_base": "#A6CEE3",
+          "palette_mix": -0.06,
+          "display_font_size": 16.49
+        },
+        {
+          "code": "11.06",
+          "name": "Anthropology & Archaeology",
+          "color": "#309629",
+          "palette_base": "#33A02C",
+          "palette_mix": -0.06,
+          "display_font_size": 17
+        },
+        {
+          "code": "11.07",
+          "name": "Science Systems & Knowledge Production Studies",
+          "color": "#EC9190",
+          "palette_base": "#FB9A99",
+          "palette_mix": -0.06,
+          "display_font_size": 10.7497
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.01",
+      "secondary_name": "Mathematics",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 63.6,
+      "color_hex": "#1F78B4",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.01",
+      "secondary_name": "Mathematics",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 70.5,
+      "color_hex": "#1F78B4",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.01",
+      "secondary_name": "Mathematics",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 80.7,
+      "color_hex": "#1F78B4",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.01",
+      "secondary_name": "Mathematics",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 73.6,
+      "color_hex": "#1F78B4",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.01",
+      "secondary_name": "Mathematics",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 63.1,
+      "color_hex": "#1F78B4",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.02",
+      "secondary_name": "Computer Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 45.9,
+      "color_hex": "#B2DF8A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.02",
+      "secondary_name": "Computer Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 80.5,
+      "color_hex": "#B2DF8A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.02",
+      "secondary_name": "Computer Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 48.7,
+      "color_hex": "#B2DF8A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.02",
+      "secondary_name": "Computer Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 50.4,
+      "color_hex": "#B2DF8A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.02",
+      "secondary_name": "Computer Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 50.8,
+      "color_hex": "#B2DF8A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.03",
+      "secondary_name": "Systems, Information & Complexity Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 25.5,
+      "color_hex": "#E31A1C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.03",
+      "secondary_name": "Systems, Information & Complexity Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 39.0,
+      "color_hex": "#E31A1C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.03",
+      "secondary_name": "Systems, Information & Complexity Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 52.8,
+      "color_hex": "#E31A1C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.03",
+      "secondary_name": "Systems, Information & Complexity Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 58.9,
+      "color_hex": "#E31A1C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "01",
+      "domain_name": "Formal & Computational Sciences",
+      "secondary_code": "01.03",
+      "secondary_name": "Systems, Information & Complexity Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 50.1,
+      "color_hex": "#E31A1C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.01",
+      "secondary_name": "Astronomy & Astrophysics",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 59.5,
+      "color_hex": "#A6CEE3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.01",
+      "secondary_name": "Astronomy & Astrophysics",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 64.5,
+      "color_hex": "#A6CEE3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.01",
+      "secondary_name": "Astronomy & Astrophysics",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 51.7,
+      "color_hex": "#A6CEE3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.01",
+      "secondary_name": "Astronomy & Astrophysics",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 58.7,
+      "color_hex": "#A6CEE3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.01",
+      "secondary_name": "Astronomy & Astrophysics",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 36.8,
+      "color_hex": "#A6CEE3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.02",
+      "secondary_name": "Physics",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 67.0,
+      "color_hex": "#33A02C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.02",
+      "secondary_name": "Physics",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 79.4,
+      "color_hex": "#33A02C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.02",
+      "secondary_name": "Physics",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 70.1,
+      "color_hex": "#33A02C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.02",
+      "secondary_name": "Physics",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 64.7,
+      "color_hex": "#33A02C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "02",
+      "domain_name": "Physics & Astronomy",
+      "secondary_code": "02.02",
+      "secondary_name": "Physics",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 64.2,
+      "color_hex": "#33A02C",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.01",
+      "secondary_name": "General Chemistry & Chemical Methods",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 49.3,
+      "color_hex": "#FB9A99",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.01",
+      "secondary_name": "General Chemistry & Chemical Methods",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 48.0,
+      "color_hex": "#FB9A99",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.01",
+      "secondary_name": "General Chemistry & Chemical Methods",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 72.3,
+      "color_hex": "#FB9A99",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.01",
+      "secondary_name": "General Chemistry & Chemical Methods",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 55.2,
+      "color_hex": "#FB9A99",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.01",
+      "secondary_name": "General Chemistry & Chemical Methods",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 68.6,
+      "color_hex": "#FB9A99",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.02",
+      "secondary_name": "Fundamental Chemistry",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 60.5,
+      "color_hex": "#FDBF6F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.02",
+      "secondary_name": "Fundamental Chemistry",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 56.7,
+      "color_hex": "#FDBF6F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.02",
+      "secondary_name": "Fundamental Chemistry",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 68.7,
+      "color_hex": "#FDBF6F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.02",
+      "secondary_name": "Fundamental Chemistry",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 79.5,
+      "color_hex": "#FDBF6F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.02",
+      "secondary_name": "Fundamental Chemistry",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 74.3,
+      "color_hex": "#FDBF6F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.03",
+      "secondary_name": "Synthesis, Reactions & Catalysis",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 57.6,
+      "color_hex": "#438EC0",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.03",
+      "secondary_name": "Synthesis, Reactions & Catalysis",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 64.7,
+      "color_hex": "#438EC0",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.03",
+      "secondary_name": "Synthesis, Reactions & Catalysis",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 67.9,
+      "color_hex": "#438EC0",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.03",
+      "secondary_name": "Synthesis, Reactions & Catalysis",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 69.7,
+      "color_hex": "#438EC0",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.03",
+      "secondary_name": "Synthesis, Reactions & Catalysis",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 63.0,
+      "color_hex": "#438EC0",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.04",
+      "secondary_name": "Molecular Design & Chemical Space Exploration",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 51.6,
+      "color_hex": "#BEE49D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.04",
+      "secondary_name": "Molecular Design & Chemical Space Exploration",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 84.1,
+      "color_hex": "#BEE49D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.04",
+      "secondary_name": "Molecular Design & Chemical Space Exploration",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 62.9,
+      "color_hex": "#BEE49D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.04",
+      "secondary_name": "Molecular Design & Chemical Space Exploration",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 61.2,
+      "color_hex": "#BEE49D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "03",
+      "domain_name": "Chemistry",
+      "secondary_code": "03.04",
+      "secondary_name": "Molecular Design & Chemical Space Exploration",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 60.5,
+      "color_hex": "#BEE49D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.01",
+      "secondary_name": "Fundamentals of Materials Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 50.6,
+      "color_hex": "#E73F40",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.01",
+      "secondary_name": "Fundamentals of Materials Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 37.4,
+      "color_hex": "#E73F40",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.01",
+      "secondary_name": "Fundamentals of Materials Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 43.2,
+      "color_hex": "#E73F40",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.01",
+      "secondary_name": "Fundamentals of Materials Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 38.6,
+      "color_hex": "#E73F40",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.01",
+      "secondary_name": "Fundamentals of Materials Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 25.7,
+      "color_hex": "#E73F40",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.02",
+      "secondary_name": "Structural & Inorganic Materials",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 51.0,
+      "color_hex": "#B4D6E7",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.02",
+      "secondary_name": "Structural & Inorganic Materials",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 61.1,
+      "color_hex": "#B4D6E7",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.02",
+      "secondary_name": "Structural & Inorganic Materials",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 58.0,
+      "color_hex": "#B4D6E7",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.02",
+      "secondary_name": "Structural & Inorganic Materials",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 51.4,
+      "color_hex": "#B4D6E7",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.02",
+      "secondary_name": "Structural & Inorganic Materials",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 55.2,
+      "color_hex": "#B4D6E7",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.03",
+      "secondary_name": "Soft Matter & Functional Materials",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 57.5,
+      "color_hex": "#54AF4E",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.03",
+      "secondary_name": "Soft Matter & Functional Materials",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 85.9,
+      "color_hex": "#54AF4E",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.03",
+      "secondary_name": "Soft Matter & Functional Materials",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 54.9,
+      "color_hex": "#54AF4E",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.03",
+      "secondary_name": "Soft Matter & Functional Materials",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 47.5,
+      "color_hex": "#54AF4E",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.03",
+      "secondary_name": "Soft Matter & Functional Materials",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 70.7,
+      "color_hex": "#54AF4E",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.04",
+      "secondary_name": "Energy, Electronic & Device Materials",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 61.0,
+      "color_hex": "#FCAAA9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.04",
+      "secondary_name": "Energy, Electronic & Device Materials",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 36.2,
+      "color_hex": "#FCAAA9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.04",
+      "secondary_name": "Energy, Electronic & Device Materials",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 60.9,
+      "color_hex": "#FCAAA9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.04",
+      "secondary_name": "Energy, Electronic & Device Materials",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 51.6,
+      "color_hex": "#FCAAA9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "04",
+      "domain_name": "Materials Science",
+      "secondary_code": "04.04",
+      "secondary_name": "Energy, Electronic & Device Materials",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 36.4,
+      "color_hex": "#FCAAA9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.01",
+      "secondary_name": "Fundamentals of Earth Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 54.5,
+      "color_hex": "#FDC986",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.01",
+      "secondary_name": "Fundamentals of Earth Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 54.5,
+      "color_hex": "#FDC986",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.01",
+      "secondary_name": "Fundamentals of Earth Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 63.4,
+      "color_hex": "#FDC986",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.01",
+      "secondary_name": "Fundamentals of Earth Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 60.1,
+      "color_hex": "#FDC986",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.01",
+      "secondary_name": "Fundamentals of Earth Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 59.5,
+      "color_hex": "#FDC986",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.02",
+      "secondary_name": "Atmospheric, Oceanic & Hydrological Sciences",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 47.6,
+      "color_hex": "#1B679B",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.02",
+      "secondary_name": "Atmospheric, Oceanic & Hydrological Sciences",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 58.0,
+      "color_hex": "#1B679B",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.02",
+      "secondary_name": "Atmospheric, Oceanic & Hydrological Sciences",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 52.2,
+      "color_hex": "#1B679B",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.02",
+      "secondary_name": "Atmospheric, Oceanic & Hydrological Sciences",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 54.4,
+      "color_hex": "#1B679B",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.02",
+      "secondary_name": "Atmospheric, Oceanic & Hydrological Sciences",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 77.2,
+      "color_hex": "#1B679B",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.03",
+      "secondary_name": "Environmental Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 17.5,
+      "color_hex": "#99C077",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.03",
+      "secondary_name": "Environmental Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 24.1,
+      "color_hex": "#99C077",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.03",
+      "secondary_name": "Environmental Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 39.4,
+      "color_hex": "#99C077",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.03",
+      "secondary_name": "Environmental Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 55.5,
+      "color_hex": "#99C077",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.03",
+      "secondary_name": "Environmental Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 62.7,
+      "color_hex": "#99C077",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.04",
+      "secondary_name": "Geography & Geospatial Information",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 42.3,
+      "color_hex": "#C31618",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.04",
+      "secondary_name": "Geography & Geospatial Information",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 56.5,
+      "color_hex": "#C31618",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.04",
+      "secondary_name": "Geography & Geospatial Information",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 25.7,
+      "color_hex": "#C31618",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.04",
+      "secondary_name": "Geography & Geospatial Information",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 45.1,
+      "color_hex": "#C31618",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "05",
+      "domain_name": "Earth & Environmental Sciences",
+      "secondary_code": "05.04",
+      "secondary_name": "Geography & Geospatial Information",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 44.5,
+      "color_hex": "#C31618",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.01",
+      "secondary_name": "Fundamentals of Biology",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 91.7,
+      "color_hex": "#8FB1C3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.01",
+      "secondary_name": "Fundamentals of Biology",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 66.9,
+      "color_hex": "#8FB1C3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.01",
+      "secondary_name": "Fundamentals of Biology",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 73.3,
+      "color_hex": "#8FB1C3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.01",
+      "secondary_name": "Fundamentals of Biology",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 90.7,
+      "color_hex": "#8FB1C3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.01",
+      "secondary_name": "Fundamentals of Biology",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 56.3,
+      "color_hex": "#8FB1C3",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.02",
+      "secondary_name": "Organismal Biology",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 40.9,
+      "color_hex": "#2C8A26",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.02",
+      "secondary_name": "Organismal Biology",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 46.9,
+      "color_hex": "#2C8A26",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.02",
+      "secondary_name": "Organismal Biology",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 37.6,
+      "color_hex": "#2C8A26",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.02",
+      "secondary_name": "Organismal Biology",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 59.9,
+      "color_hex": "#2C8A26",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.02",
+      "secondary_name": "Organismal Biology",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 40.3,
+      "color_hex": "#2C8A26",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.03",
+      "secondary_name": "Biotechnology-Related Sciences",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 64.7,
+      "color_hex": "#D88484",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.03",
+      "secondary_name": "Biotechnology-Related Sciences",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 71.5,
+      "color_hex": "#D88484",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.03",
+      "secondary_name": "Biotechnology-Related Sciences",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 56.8,
+      "color_hex": "#D88484",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.03",
+      "secondary_name": "Biotechnology-Related Sciences",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 59.7,
+      "color_hex": "#D88484",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "06",
+      "domain_name": "Life Sciences",
+      "secondary_code": "06.03",
+      "secondary_name": "Biotechnology-Related Sciences",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 68.7,
+      "color_hex": "#D88484",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.01",
+      "secondary_name": "Basic Medical Sciences",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 30.5,
+      "color_hex": "#DAA45F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.01",
+      "secondary_name": "Basic Medical Sciences",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 36.8,
+      "color_hex": "#DAA45F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.01",
+      "secondary_name": "Basic Medical Sciences",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 47.2,
+      "color_hex": "#DAA45F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.01",
+      "secondary_name": "Basic Medical Sciences",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 36.4,
+      "color_hex": "#DAA45F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.01",
+      "secondary_name": "Basic Medical Sciences",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 68.0,
+      "color_hex": "#DAA45F",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.02",
+      "secondary_name": "Clinical Medicine",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 81.7,
+      "color_hex": "#67A3CC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.02",
+      "secondary_name": "Clinical Medicine",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 79.5,
+      "color_hex": "#67A3CC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.02",
+      "secondary_name": "Clinical Medicine",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 79.2,
+      "color_hex": "#67A3CC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.02",
+      "secondary_name": "Clinical Medicine",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 60.5,
+      "color_hex": "#67A3CC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.02",
+      "secondary_name": "Clinical Medicine",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 61.0,
+      "color_hex": "#67A3CC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.03",
+      "secondary_name": "Public Health & Health Sciences",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 62.7,
+      "color_hex": "#CBE9AF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.03",
+      "secondary_name": "Public Health & Health Sciences",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 63.6,
+      "color_hex": "#CBE9AF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.03",
+      "secondary_name": "Public Health & Health Sciences",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 42.5,
+      "color_hex": "#CBE9AF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.03",
+      "secondary_name": "Public Health & Health Sciences",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 62.5,
+      "color_hex": "#CBE9AF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.03",
+      "secondary_name": "Public Health & Health Sciences",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 57.5,
+      "color_hex": "#CBE9AF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.04",
+      "secondary_name": "Pharmaceutical Sciences & Biomedicine",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 62.6,
+      "color_hex": "#EC6365",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.04",
+      "secondary_name": "Pharmaceutical Sciences & Biomedicine",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 65.0,
+      "color_hex": "#EC6365",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.04",
+      "secondary_name": "Pharmaceutical Sciences & Biomedicine",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 67.6,
+      "color_hex": "#EC6365",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.04",
+      "secondary_name": "Pharmaceutical Sciences & Biomedicine",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 54.4,
+      "color_hex": "#EC6365",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "07",
+      "domain_name": "Medicine & Health",
+      "secondary_code": "07.04",
+      "secondary_name": "Pharmaceutical Sciences & Biomedicine",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 63.0,
+      "color_hex": "#EC6365",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.01",
+      "secondary_name": "Agronomy",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 46.5,
+      "color_hex": "#C2DEEC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.01",
+      "secondary_name": "Agronomy",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 45.1,
+      "color_hex": "#C2DEEC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.01",
+      "secondary_name": "Agronomy",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 47.2,
+      "color_hex": "#C2DEEC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.01",
+      "secondary_name": "Agronomy",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 26.3,
+      "color_hex": "#C2DEEC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.01",
+      "secondary_name": "Agronomy",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 42.6,
+      "color_hex": "#C2DEEC",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.02",
+      "secondary_name": "Forestry",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 18.5,
+      "color_hex": "#74BE70",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.02",
+      "secondary_name": "Forestry",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 50.2,
+      "color_hex": "#74BE70",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.02",
+      "secondary_name": "Forestry",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 45.2,
+      "color_hex": "#74BE70",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.02",
+      "secondary_name": "Forestry",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 41.2,
+      "color_hex": "#74BE70",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.02",
+      "secondary_name": "Forestry",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 46.3,
+      "color_hex": "#74BE70",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.03",
+      "secondary_name": "Animal Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 44.2,
+      "color_hex": "#FCBABA",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.03",
+      "secondary_name": "Animal Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 50.8,
+      "color_hex": "#FCBABA",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.03",
+      "secondary_name": "Animal Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 61.6,
+      "color_hex": "#FCBABA",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.03",
+      "secondary_name": "Animal Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 57.4,
+      "color_hex": "#FCBABA",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.03",
+      "secondary_name": "Animal Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 75.9,
+      "color_hex": "#FCBABA",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.04",
+      "secondary_name": "Fisheries Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 66.0,
+      "color_hex": "#FED39D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.04",
+      "secondary_name": "Fisheries Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 65.2,
+      "color_hex": "#FED39D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.04",
+      "secondary_name": "Fisheries Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 55.6,
+      "color_hex": "#FED39D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.04",
+      "secondary_name": "Fisheries Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 66.0,
+      "color_hex": "#FED39D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.04",
+      "secondary_name": "Fisheries Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 32.5,
+      "color_hex": "#FED39D",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.05",
+      "secondary_name": "Food Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 43.9,
+      "color_hex": "#175985",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.05",
+      "secondary_name": "Food Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 43.0,
+      "color_hex": "#175985",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.05",
+      "secondary_name": "Food Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 39.3,
+      "color_hex": "#175985",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.05",
+      "secondary_name": "Food Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 52.1,
+      "color_hex": "#175985",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "08",
+      "domain_name": "Agriculture & Food",
+      "secondary_code": "08.05",
+      "secondary_name": "Food Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 66.9,
+      "color_hex": "#175985",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.01",
+      "secondary_name": "Engineering Fundamentals",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 77.8,
+      "color_hex": "#84A566",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.01",
+      "secondary_name": "Engineering Fundamentals",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 86.8,
+      "color_hex": "#84A566",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.01",
+      "secondary_name": "Engineering Fundamentals",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 90.9,
+      "color_hex": "#84A566",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.01",
+      "secondary_name": "Engineering Fundamentals",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 68.2,
+      "color_hex": "#84A566",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.01",
+      "secondary_name": "Engineering Fundamentals",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 69.3,
+      "color_hex": "#84A566",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.02",
+      "secondary_name": "Mechanical & Manufacturing Engineering",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 69.4,
+      "color_hex": "#A81315",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.02",
+      "secondary_name": "Mechanical & Manufacturing Engineering",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 57.8,
+      "color_hex": "#A81315",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.02",
+      "secondary_name": "Mechanical & Manufacturing Engineering",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 46.2,
+      "color_hex": "#A81315",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.02",
+      "secondary_name": "Mechanical & Manufacturing Engineering",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 34.1,
+      "color_hex": "#A81315",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.02",
+      "secondary_name": "Mechanical & Manufacturing Engineering",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 53.0,
+      "color_hex": "#A81315",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.03",
+      "secondary_name": "Electrical, Electronic & Information Engineering",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 59.6,
+      "color_hex": "#7B98A8",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.03",
+      "secondary_name": "Electrical, Electronic & Information Engineering",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 46.6,
+      "color_hex": "#7B98A8",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.03",
+      "secondary_name": "Electrical, Electronic & Information Engineering",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 29.8,
+      "color_hex": "#7B98A8",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.03",
+      "secondary_name": "Electrical, Electronic & Information Engineering",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 52.2,
+      "color_hex": "#7B98A8",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.03",
+      "secondary_name": "Electrical, Electronic & Information Engineering",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 47.6,
+      "color_hex": "#7B98A8",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.04",
+      "secondary_name": "Chemical & Process Engineering",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 76.3,
+      "color_hex": "#267621",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.04",
+      "secondary_name": "Chemical & Process Engineering",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 57.5,
+      "color_hex": "#267621",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.04",
+      "secondary_name": "Chemical & Process Engineering",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 76.3,
+      "color_hex": "#267621",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.04",
+      "secondary_name": "Chemical & Process Engineering",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 56.9,
+      "color_hex": "#267621",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.04",
+      "secondary_name": "Chemical & Process Engineering",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 68.6,
+      "color_hex": "#267621",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.05",
+      "secondary_name": "Civil, Architectural & Hydraulic Engineering",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 64.2,
+      "color_hex": "#BA7271",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.05",
+      "secondary_name": "Civil, Architectural & Hydraulic Engineering",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 70.2,
+      "color_hex": "#BA7271",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.05",
+      "secondary_name": "Civil, Architectural & Hydraulic Engineering",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 66.2,
+      "color_hex": "#BA7271",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.05",
+      "secondary_name": "Civil, Architectural & Hydraulic Engineering",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 68.3,
+      "color_hex": "#BA7271",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.05",
+      "secondary_name": "Civil, Architectural & Hydraulic Engineering",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 71.2,
+      "color_hex": "#BA7271",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.06",
+      "secondary_name": "Energy Engineering",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 80.5,
+      "color_hex": "#BB8D52",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.06",
+      "secondary_name": "Energy Engineering",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 58.6,
+      "color_hex": "#BB8D52",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.06",
+      "secondary_name": "Energy Engineering",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 66.9,
+      "color_hex": "#BB8D52",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.06",
+      "secondary_name": "Energy Engineering",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 41.1,
+      "color_hex": "#BB8D52",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.06",
+      "secondary_name": "Energy Engineering",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 49.6,
+      "color_hex": "#BB8D52",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.07",
+      "secondary_name": "Biomedical Engineering",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 66.6,
+      "color_hex": "#82B3D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.07",
+      "secondary_name": "Biomedical Engineering",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 65.1,
+      "color_hex": "#82B3D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.07",
+      "secondary_name": "Biomedical Engineering",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 68.6,
+      "color_hex": "#82B3D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.07",
+      "secondary_name": "Biomedical Engineering",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 53.3,
+      "color_hex": "#82B3D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.07",
+      "secondary_name": "Biomedical Engineering",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 73.7,
+      "color_hex": "#82B3D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.08",
+      "secondary_name": "Materials & Device Engineering",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 32.9,
+      "color_hex": "#D4EDBD",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.08",
+      "secondary_name": "Materials & Device Engineering",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 65.2,
+      "color_hex": "#D4EDBD",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.08",
+      "secondary_name": "Materials & Device Engineering",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 62.6,
+      "color_hex": "#D4EDBD",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.08",
+      "secondary_name": "Materials & Device Engineering",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 40.9,
+      "color_hex": "#D4EDBD",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "09",
+      "domain_name": "Engineering & Manufacturing",
+      "secondary_code": "09.08",
+      "secondary_name": "Materials & Device Engineering",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 58.7,
+      "color_hex": "#D4EDBD",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.01",
+      "secondary_name": "Aeronautical Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 45.1,
+      "color_hex": "#EF7F80",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.01",
+      "secondary_name": "Aeronautical Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 38.0,
+      "color_hex": "#EF7F80",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.01",
+      "secondary_name": "Aeronautical Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 45.6,
+      "color_hex": "#EF7F80",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.01",
+      "secondary_name": "Aeronautical Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 42.4,
+      "color_hex": "#EF7F80",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.01",
+      "secondary_name": "Aeronautical Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 72.5,
+      "color_hex": "#EF7F80",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.02",
+      "secondary_name": "Astronautical Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 59.9,
+      "color_hex": "#CDE4EF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.02",
+      "secondary_name": "Astronautical Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 59.4,
+      "color_hex": "#CDE4EF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.02",
+      "secondary_name": "Astronautical Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 65.8,
+      "color_hex": "#CDE4EF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.02",
+      "secondary_name": "Astronautical Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 72.9,
+      "color_hex": "#CDE4EF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.02",
+      "secondary_name": "Astronautical Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 73.6,
+      "color_hex": "#CDE4EF",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.03",
+      "secondary_name": "Marine Engineering",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 52.4,
+      "color_hex": "#8DCA89",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.03",
+      "secondary_name": "Marine Engineering",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 61.3,
+      "color_hex": "#8DCA89",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.03",
+      "secondary_name": "Marine Engineering",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 76.6,
+      "color_hex": "#8DCA89",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.03",
+      "secondary_name": "Marine Engineering",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 69.6,
+      "color_hex": "#8DCA89",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.03",
+      "secondary_name": "Marine Engineering",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 54.5,
+      "color_hex": "#8DCA89",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.04",
+      "secondary_name": "Transportation Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 62.9,
+      "color_hex": "#FDC6C6",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.04",
+      "secondary_name": "Transportation Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 55.4,
+      "color_hex": "#FDC6C6",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.04",
+      "secondary_name": "Transportation Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 37.1,
+      "color_hex": "#FDC6C6",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.04",
+      "secondary_name": "Transportation Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 62.3,
+      "color_hex": "#FDC6C6",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "10",
+      "domain_name": "Aerospace & Transportation",
+      "secondary_code": "10.04",
+      "secondary_name": "Transportation Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 66.6,
+      "color_hex": "#FDC6C6",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.01",
+      "secondary_name": "Economics",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 47.4,
+      "color_hex": "#FEDBAE",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.01",
+      "secondary_name": "Economics",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 35.9,
+      "color_hex": "#FEDBAE",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.01",
+      "secondary_name": "Economics",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 49.1,
+      "color_hex": "#FEDBAE",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.01",
+      "secondary_name": "Economics",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 60.9,
+      "color_hex": "#FEDBAE",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.01",
+      "secondary_name": "Economics",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 36.9,
+      "color_hex": "#FEDBAE",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.02",
+      "secondary_name": "Sociology & Population Studies",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 48.5,
+      "color_hex": "#1D71A9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.02",
+      "secondary_name": "Sociology & Population Studies",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 78.8,
+      "color_hex": "#1D71A9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.02",
+      "secondary_name": "Sociology & Population Studies",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 68.4,
+      "color_hex": "#1D71A9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.02",
+      "secondary_name": "Sociology & Population Studies",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 54.2,
+      "color_hex": "#1D71A9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.02",
+      "secondary_name": "Sociology & Population Studies",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 64.4,
+      "color_hex": "#1D71A9",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.03",
+      "secondary_name": "Political Science & Public Administration",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 76.4,
+      "color_hex": "#A7D282",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.03",
+      "secondary_name": "Political Science & Public Administration",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 49.1,
+      "color_hex": "#A7D282",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.03",
+      "secondary_name": "Political Science & Public Administration",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 52.2,
+      "color_hex": "#A7D282",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.03",
+      "secondary_name": "Political Science & Public Administration",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 55.5,
+      "color_hex": "#A7D282",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.03",
+      "secondary_name": "Political Science & Public Administration",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 47.9,
+      "color_hex": "#A7D282",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.04",
+      "secondary_name": "Psychology & Cognitive Science",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 75.3,
+      "color_hex": "#D5181A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.04",
+      "secondary_name": "Psychology & Cognitive Science",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 66.1,
+      "color_hex": "#D5181A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.04",
+      "secondary_name": "Psychology & Cognitive Science",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 49.6,
+      "color_hex": "#D5181A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.04",
+      "secondary_name": "Psychology & Cognitive Science",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 33.4,
+      "color_hex": "#D5181A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.04",
+      "secondary_name": "Psychology & Cognitive Science",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 28.9,
+      "color_hex": "#D5181A",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.05",
+      "secondary_name": "Education & Learning Sciences",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 71.9,
+      "color_hex": "#9CC2D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.05",
+      "secondary_name": "Education & Learning Sciences",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 69.3,
+      "color_hex": "#9CC2D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.05",
+      "secondary_name": "Education & Learning Sciences",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 70.0,
+      "color_hex": "#9CC2D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.05",
+      "secondary_name": "Education & Learning Sciences",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 47.4,
+      "color_hex": "#9CC2D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.05",
+      "secondary_name": "Education & Learning Sciences",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 59.8,
+      "color_hex": "#9CC2D5",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.06",
+      "secondary_name": "Anthropology & Archaeology",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 44.0,
+      "color_hex": "#309629",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.06",
+      "secondary_name": "Anthropology & Archaeology",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 61.6,
+      "color_hex": "#309629",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.06",
+      "secondary_name": "Anthropology & Archaeology",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 46.7,
+      "color_hex": "#309629",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.06",
+      "secondary_name": "Anthropology & Archaeology",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 55.1,
+      "color_hex": "#309629",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.06",
+      "secondary_name": "Anthropology & Archaeology",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 69.7,
+      "color_hex": "#309629",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.07",
+      "secondary_name": "Science Systems & Knowledge Production Studies",
+      "period_index": 0,
+      "period": "≤1997",
+      "mean_score": 47.2,
+      "color_hex": "#EC9190",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.07",
+      "secondary_name": "Science Systems & Knowledge Production Studies",
+      "period_index": 1,
+      "period": "1998–2012",
+      "mean_score": 43.5,
+      "color_hex": "#EC9190",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.07",
+      "secondary_name": "Science Systems & Knowledge Production Studies",
+      "period_index": 2,
+      "period": "2013–2019",
+      "mean_score": 63.5,
+      "color_hex": "#EC9190",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.07",
+      "secondary_name": "Science Systems & Knowledge Production Studies",
+      "period_index": 3,
+      "period": "2020–2023",
+      "mean_score": 63.5,
+      "color_hex": "#EC9190",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    },
+    {
+      "domain_code": "11",
+      "domain_name": "Society & Knowledge",
+      "secondary_code": "11.07",
+      "secondary_name": "Science Systems & Knowledge Production Studies",
+      "period_index": 4,
+      "period": "2024–2026",
+      "mean_score": 62.8,
+      "color_hex": "#EC9190",
+      "data_status": "SIMULATED_CATEGORY_MEAN"
+    }
+  ],
+  "palette": {
+    "base_colors": [
+      "#1F78B4",
+      "#B2DF8A",
+      "#E31A1C",
+      "#A6CEE3",
+      "#33A02C",
+      "#FB9A99",
+      "#FDBF6F"
+    ],
+    "expansion": [
+      0.0,
+      0.16,
+      -0.14,
+      0.32,
+      -0.26,
+      0.44,
+      -0.06
+    ],
+    "colors": [
+      "#1F78B4",
+      "#B2DF8A",
+      "#E31A1C",
+      "#A6CEE3",
+      "#33A02C",
+      "#FB9A99",
+      "#FDBF6F",
+      "#438EC0",
+      "#BEE49D",
+      "#E73F40",
+      "#B4D6E7",
+      "#54AF4E",
+      "#FCAAA9",
+      "#FDC986",
+      "#1B679B",
+      "#99C077",
+      "#C31618",
+      "#8FB1C3",
+      "#2C8A26",
+      "#D88484",
+      "#DAA45F",
+      "#67A3CC",
+      "#CBE9AF",
+      "#EC6365",
+      "#C2DEEC",
+      "#74BE70",
+      "#FCBABA",
+      "#FED39D",
+      "#175985",
+      "#84A566",
+      "#A81315",
+      "#7B98A8",
+      "#267621",
+      "#BA7271",
+      "#BB8D52",
+      "#82B3D5",
+      "#D4EDBD",
+      "#EF7F80",
+      "#CDE4EF",
+      "#8DCA89",
+      "#FDC6C6",
+      "#FEDBAE",
+      "#1D71A9",
+      "#A7D282",
+      "#D5181A",
+      "#9CC2D5",
+      "#309629",
+      "#EC9190"
+    ],
+    "reference": "https://donghaoren.org/charticulator/images/gallery/fitbit_spiral.png",
+    "description": "Seven original flat-fill colors, extended by documented white/black mixing to 48 unique hex codes."
+  },
+  "notice": "All 240 values are synthetic category-level means, including categories without corpus records. No paper was scored.",
+  "display_language": "en",
+  "localization_source_sha256": "9eba0e9df47e1336a78a01885469e455e6e67cf3272fc62e4b5c58296e3cec3d",
+  "category_definition": "taxonomy_translations.csv; 11 domains and 48 fixed second-level categories",
+  "source_figure_data_sha256": "f3eabba36d6c1f5c5850b7e07eed70322dd6862eba88ee548c309ddc64326936"
+}

@@ -1,0 +1,18 @@
+{
+  "width": 2400,
+  "height": 2580,
+  "center_x": 1200,
+  "center_y": 1320,
+  "inner_radius": 520,
+  "turn_spacing": 100,
+  "max_bar_height": 72,
+  "sector_padding_deg": 1.8,
+  "bar_fill_fraction": 0.84,
+  "secondary_font_size": 17,
+  "secondary_label_radius": 486,
+  "domain_font_size": 28,
+  "domain_label_radius": 1156,
+  "domain_bracket_radius": 1120,
+  "show_full_scale_background": true,
+  "show_sector_guides": true
+}

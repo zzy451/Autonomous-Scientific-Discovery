@@ -1,0 +1,144 @@
+{
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 187,
+      "sha256": "3bf8a2da29128298bb49e7d409afd59a6924d4c57b1baa48b5dbeeefd0220067"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 40,
+      "sha256": "8d29cb3457ff021d782d2e9308231281f4d228002ec4dce1b05f965a08b584fa"
+    },
+    {
+      "path": "captions/caption_bilingual.md",
+      "bytes": 2120,
+      "sha256": "fe18a0ca04a35813565359404fd07ee96680fe7937341fc4b40735679e51ad3a"
+    },
+    {
+      "path": "captions/caption_en.txt",
+      "bytes": 1179,
+      "sha256": "626a2b4e346a6fe79a45bba82d8ade17ddea299826bbbdec6547f27762a2589a"
+    },
+    {
+      "path": "captions/caption_zh.txt",
+      "bytes": 903,
+      "sha256": "7c604c172ad88285afd3cc172f9d596607c31e40e60210b65b929f00da2168fc"
+    },
+    {
+      "path": "data/category_colors.csv",
+      "bytes": 3782,
+      "sha256": "01bd01819940c8f90cf96eac2d980468629d1f57084499be1f603bf2cf521950"
+    },
+    {
+      "path": "data/figure_data.json",
+      "bytes": 93904,
+      "sha256": "2676b12dd5193062a98cc5f780dc6ce89f40349459d54c90c609c0d8b9fa7740"
+    },
+    {
+      "path": "data/simulated_category_means.csv",
+      "bytes": 26283,
+      "sha256": "18318c57776b1ec528c44bb4db319c03c0716b85454e0b23d6e9b9ef3d30733f"
+    },
+    {
+      "path": "data/taxonomy_translations.csv",
+      "bytes": 3600,
+      "sha256": "acc3a8e715baa4cc90667017af2dd16ef62ec259ec075f1101c6f0f9ead81d52"
+    },
+    {
+      "path": "draw_spiral.mjs",
+      "bytes": 14605,
+      "sha256": "46573c979f5e5b069b70068fd619af2f38d262bc4bb979765b25371ac3a5bfd9"
+    },
+    {
+      "path": "figure_config.json",
+      "bytes": 425,
+      "sha256": "61123481a096f693910f22f38cae3633c9f3e0a8c7f74e40daa46af0f7f6d46b"
+    },
+    {
+      "path": "outputs/geometry_checks.json",
+      "bytes": 73508,
+      "sha256": "ed9073ae3227b688390c4115484fb238b2e6c1a9e1ad6744e9de91374790efaa"
+    },
+    {
+      "path": "outputs/render_checks.json",
+      "bytes": 139,
+      "sha256": "94fd5d44b3ab86450514818b6d9e147aaff16532fe197f32a84916553f8d3e72"
+    },
+    {
+      "path": "outputs/reproduction_checks.json",
+      "bytes": 211,
+      "sha256": "1834a6841b3626768072de0981a6136e37c851b337fcc7f7b09b12201f1231c2"
+    },
+    {
+      "path": "outputs/scientific_contribution_spiral_EN.html",
+      "bytes": 232038,
+      "sha256": "0bcf29f76e263a465ac3d5e385560ef234efda1e1a201f6b9a07f04c7a5ea1bb"
+    },
+    {
+      "path": "outputs/scientific_contribution_spiral_EN.png",
+      "bytes": 1149365,
+      "sha256": "dd9a174a796bb916af840a96db1e590b0b47b37ad0e888a7ca21ea3ed696d750"
+    },
+    {
+      "path": "outputs/scientific_contribution_spiral_EN.svg",
+      "bytes": 216894,
+      "sha256": "37ac9848e2698482f5b2dce6c1342c6f133816e431e8302ee6c866da93f3af06"
+    },
+    {
+      "path": "outputs/scientific_contribution_spiral_EN_preview.png",
+      "bytes": 596439,
+      "sha256": "f8ca1531b268cac4c97edcd4e4389017ea4908115d4e867550a49a42efa1dc62"
+    },
+    {
+      "path": "package.json",
+      "bytes": 249,
+      "sha256": "5925cbd4c82d05749c44d6d427b13ca0f2f152cd6c4e50ee6238482bb997d153"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3018,
+      "sha256": "7382de3537ce213cec4c43d37463d9e4adf06db2c9fd90a3063d36babce6cef9"
+    },
+    {
+      "path": "render_spiral.py",
+      "bytes": 2177,
+      "sha256": "fd42e582fc1c0766711ebf63a82f18a0c78e83c3b10cb331932951fc29d0f46a"
+    },
+    {
+      "path": "requirements-render.txt",
+      "bytes": 19,
+      "sha256": "1275e2cd682da90f5df2dd2094aa09aaeb19a2397e2c258b6fc4aac0a08256c8"
+    },
+    {
+      "path": "vendor/charticulator/LICENSE.txt",
+      "bytes": 1185,
+      "sha256": "1c2f001eef4fc48ce2fac195c74d9d54469f31d5171fedf8201de181556a6a0a"
+    },
+    {
+      "path": "vendor/charticulator/native_geometry.mjs",
+      "bytes": 25510,
+      "sha256": "36537be9728dc80a7af4ddfa158c7639f2a008c4228dbb80ac88c68317b1f8be"
+    },
+    {
+      "path": "vendor/charticulator/src/core/common/math.ts",
+      "bytes": 4408,
+      "sha256": "26f9ebd0386f29e634d16ea0b21bd08f312a5b3dc93fa1d7eb2c2f320340e3c4"
+    },
+    {
+      "path": "vendor/charticulator/src/core/graphics/bezier_curve.ts",
+      "bytes": 7283,
+      "sha256": "daafcfc9b008218c7c9f9237029ed4f04bc11f12b9e5a11d710a5ae2fe771d1d"
+    },
+    {
+      "path": "vendor/charticulator/src/core/graphics/coordinate_system.ts",
+      "bytes": 10360,
+      "sha256": "77c675061f0652643dc1751d340696027bcae5c03a41df007b01f99659e9ab43"
+    },
+    {
+      "path": "vendor/charticulator/src/core/graphics/elements.ts",
+      "bytes": 12083,
+      "sha256": "8da51167cced4d7e111731fc5a8aa407d8717ca5a6137a5cc128e27e9d141b29"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "approved_image_pixels_identical": true,
+  "approved_geometry_identical": true,
+  "image_dimensions": [
+    4800,
+    1988
+  ],
+  "python_version": "3.13.5",
+  "simulated_data_only": true
+}

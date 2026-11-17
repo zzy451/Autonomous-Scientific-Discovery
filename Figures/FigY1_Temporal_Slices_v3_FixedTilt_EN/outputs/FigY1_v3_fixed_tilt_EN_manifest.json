@@ -1,0 +1,113 @@
+{
+  "synthetic": true,
+  "source_data_sha256": "442a1532233a80160ecd4df38b18da32ed3cc68ce5a5fa08c566faa1a80b2244",
+  "dataset_variant": "scenario",
+  "source_file": "data/scenario_papers_1956_2026_EN.csv",
+  "data_change_policy": "Uses supplied fixed synthetic inputs; does not resimulate or score papers",
+  "n_unique_papers": 1180,
+  "era_counts": [
+    {
+      "label": "Up to 1997",
+      "start": 1900,
+      "end": 1997,
+      "name": "Rules and Search",
+      "n": 100
+    },
+    {
+      "label": "1998–2012",
+      "start": 1998,
+      "end": 2012,
+      "name": "Statistical Learning",
+      "n": 150
+    },
+    {
+      "label": "2013–2019",
+      "start": 2013,
+      "end": 2019,
+      "name": "Deep Learning",
+      "n": 175
+    },
+    {
+      "label": "2020–2023",
+      "start": 2020,
+      "end": 2023,
+      "name": "Foundation Models",
+      "n": 326
+    },
+    {
+      "label": "2024–2026",
+      "start": 2024,
+      "end": 2026,
+      "name": "Scientific Agents",
+      "n": 429
+    }
+  ],
+  "encoding": {
+    "x_in_each_slice": "score",
+    "y_in_each_slice": "rci",
+    "point_color": "domain",
+    "slice": "first_public_disclosure_era",
+    "cloud": "local domain-density wash, hue-preserving compositor; no point glow"
+  },
+  "geometry": {
+    "projection_angles_deg": [
+      16.0,
+      -4.0
+    ],
+    "within_sheet_score_axis_angle_deg": 16.000000000000004,
+    "era_vertical_step": 8.0,
+    "projected_sheet_boxes": [
+      [
+        92.0,
+        368.84336843023584,
+        204.0,
+        561.3835584752958
+      ],
+      [
+        426.84336843023584,
+        703.6867368604717,
+        212.0,
+        569.3835584752958
+      ],
+      [
+        761.6867368604717,
+        1038.5301052907075,
+        220.0,
+        577.3835584752958
+      ],
+      [
+        1096.5301052907075,
+        1373.3734737209434,
+        228.0,
+        585.3835584752958
+      ],
+      [
+        1431.3734737209434,
+        1708.2168421511792,
+        236.0,
+        593.3835584752958
+      ]
+    ],
+    "projected_gaps": [
+      58.0,
+      58.0,
+      58.0,
+      58.0
+    ],
+    "cloud_normalization": 0.011683287459547057,
+    "all_sheets_non_occluding": true
+  },
+  "upstream_code_used": [
+    {
+      "repository": "https://github.com/lanl/pymplot",
+      "function": "isometric_projection",
+      "license": "BSD-3-Clause",
+      "usage": "Unchanged extracted function called for all coordinates."
+    }
+  ],
+  "caveats": [
+    "All 1180 records are simulated, not empirical observations.",
+    "Period labels follow Fig.1; intervals are ordered, not a linear year scale.",
+    "No contour lines or arbitrary background stars; every plotted core dot is one input paper."
+  ]
+}

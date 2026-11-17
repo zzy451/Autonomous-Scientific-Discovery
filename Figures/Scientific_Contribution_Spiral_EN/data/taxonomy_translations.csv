@@ -1,0 +1,60 @@
+﻿level,code,chinese,english
+domain,01,形式与计算,Formal & Computational Sciences
+secondary,01.01,数学,Mathematics
+secondary,01.02,计算机科学,Computer Science
+secondary,01.03,系统、信息与复杂性科学,"Systems, Information & Complexity Science"
+domain,02,物理与天文,Physics & Astronomy
+secondary,02.01,天文学与天体物理学,Astronomy & Astrophysics
+secondary,02.02,物理学,Physics
+domain,03,化学,Chemistry
+secondary,03.01,化学总论与化学方法,General Chemistry & Chemical Methods
+secondary,03.02,基础化学,Fundamental Chemistry
+secondary,03.03,合成、反应与催化,"Synthesis, Reactions & Catalysis"
+secondary,03.04,分子设计与化学空间探索,Molecular Design & Chemical Space Exploration
+domain,04,材料,Materials Science
+secondary,04.01,材料基础,Fundamentals of Materials Science
+secondary,04.02,结构材料与无机材料,Structural & Inorganic Materials
+secondary,04.03,软物质与功能材料,Soft Matter & Functional Materials
+secondary,04.04,能源、电子与器件材料,"Energy, Electronic & Device Materials"
+domain,05,地球与环境,Earth & Environmental Sciences
+secondary,05.01,地球科学基础,Fundamentals of Earth Science
+secondary,05.02,大气、海洋与水文科学,"Atmospheric, Oceanic & Hydrological Sciences"
+secondary,05.03,环境科学,Environmental Science
+secondary,05.04,地理科学与空间信息,Geography & Geospatial Information
+domain,06,生命科学,Life Sciences
+secondary,06.01,生物学基础,Fundamentals of Biology
+secondary,06.02,生物类群科学,Organismal Biology
+secondary,06.03,生物技术相关科学,Biotechnology-Related Sciences
+domain,07,医学健康,Medicine & Health
+secondary,07.01,医学基础,Basic Medical Sciences
+secondary,07.02,临床医学,Clinical Medicine
+secondary,07.03,公共卫生与健康科学,Public Health & Health Sciences
+secondary,07.04,药学与生物医药,Pharmaceutical Sciences & Biomedicine
+domain,08,农业食品,Agriculture & Food
+secondary,08.01,农学,Agronomy
+secondary,08.02,林学,Forestry
+secondary,08.03,动物科学,Animal Science
+secondary,08.04,水产科学,Fisheries Science
+secondary,08.05,食品科学,Food Science
+domain,09,工程制造,Engineering & Manufacturing
+secondary,09.01,工程基础,Engineering Fundamentals
+secondary,09.02,机械与制造工程,Mechanical & Manufacturing Engineering
+secondary,09.03,电气、电子与信息工程,"Electrical, Electronic & Information Engineering"
+secondary,09.04,化学工程与过程工程,Chemical & Process Engineering
+secondary,09.05,土木、建筑与水利工程,"Civil, Architectural & Hydraulic Engineering"
+secondary,09.06,能源工程,Energy Engineering
+secondary,09.07,生物医学工程,Biomedical Engineering
+secondary,09.08,材料与器件工程,Materials & Device Engineering
+domain,10,航空交通,Aerospace & Transportation
+secondary,10.01,航空科学,Aeronautical Science
+secondary,10.02,航天科学,Astronautical Science
+secondary,10.03,海洋工程,Marine Engineering
+secondary,10.04,交通运输科学,Transportation Science
+domain,11,社会知识,Society & Knowledge
+secondary,11.01,经济学,Economics
+secondary,11.02,社会学与人口研究,Sociology & Population Studies
+secondary,11.03,政治学与公共管理,Political Science & Public Administration
+secondary,11.04,心理学与认知科学,Psychology & Cognitive Science
+secondary,11.05,教育学与学习科学,Education & Learning Sciences
+secondary,11.06,人类学与考古学,Anthropology & Archaeology
+secondary,11.07,科学系统与知识生产研究,Science Systems & Knowledge Production Studies

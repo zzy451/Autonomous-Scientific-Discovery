@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.png binary
+# Generated SVG paths and unchanged upstream notices keep their original spaces.
+outputs/*.svg whitespace=-blank-at-eol
+vendor/** whitespace=-blank-at-eol
