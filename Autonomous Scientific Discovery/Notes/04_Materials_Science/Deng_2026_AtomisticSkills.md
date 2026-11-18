@@ -300,3 +300,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/01_Formal_Information_and_Computational_Sciences/Deng_2026_AtomisticSkills.pdf; PDF p.4; By decomposing the computational workflows reported in each manuscript into their constituent skills (see Methods IV C), we sys- tematically compared the literature-used skills against our library and quantitatively evaluated how effectively AtomisticSkills supports real-world materials research。
 - 判定：atomistic materials simulation/informatics
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在Li-ion固态电解质、MOFs、Fe-oxide催化剂等预定义任务上评测 | “Li-ion solid-state electrolytes；MOFs；XRD/materials tasks；Fe-oxide OER catalyst campaigns” · L41 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过benchmark和仿真验证，无真实实验闭环 | “是” · L43 |
+| 系统自主性 | L1 任务助手 | 系统把atomistic research tasks封装成skills并由Agent编排执行，主要是任务助手 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

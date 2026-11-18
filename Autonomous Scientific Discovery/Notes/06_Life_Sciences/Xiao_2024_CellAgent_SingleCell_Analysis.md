@@ -136,3 +136,17 @@ source_limited：no
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 单细胞数据分析基准任务，有标准流程和评估方法 | “scRNA-seq 与 spatial transcriptomics datasets” · L79 |
+| 验证强度 | V1 基准/内部评测 | 基准测试与专家效率对比，无生物学发现验证 | “benchmark；expert_evaluation” · L78 |
+| 系统自主性 | L2 闭环执行者 | 系统自主将自然语言转为端到端单细胞分析工作流 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

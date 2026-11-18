@@ -151,3 +151,17 @@ first_hand_source_checked：official arXiv PDF archived locally and checked: Aut
 source_limited：no
 confidence：high
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 虚拟细胞机制解释任务在基准上可评测 | “使用 Tahoe-100M / VC-TRACES / TahoeQA 等任务检查解释质量与下游表现” · L34 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算验证与基准测试，无湿实验 | “主要仍是计算与 benchmark 层验证，而非湿实验发现” · L112 |
+| 系统自主性 | L2 闭环执行者 | 系统自主生成并验证生物机制解释 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

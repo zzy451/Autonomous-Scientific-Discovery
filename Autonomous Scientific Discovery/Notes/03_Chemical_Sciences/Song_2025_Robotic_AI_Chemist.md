@@ -258,3 +258,17 @@ Frozen round-5 note: keep `03;04`, keep `primary_module_for_filing=03`, and keep
   - 位置：Author institutional repository, Abstract；来源：https://research.birmingham.ac.uk/en/publications/a-multi-agent-driven-robotic-ai-chemist-enabling-autonomous-chemi/
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 系统产出功能材料发现与优化，需物理实验检验 | “functional materials discovery/optimization” · L196 |
+| 验证强度 | V3 物理实验 | 有机器人实验和官方supporting information支持 | “机器人实验与官方 supporting information 支持” · L206 |
+| 系统自主性 | L2 闭环执行者 | 多Agent在化学研究任务内自主分解、设计、执行实验 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

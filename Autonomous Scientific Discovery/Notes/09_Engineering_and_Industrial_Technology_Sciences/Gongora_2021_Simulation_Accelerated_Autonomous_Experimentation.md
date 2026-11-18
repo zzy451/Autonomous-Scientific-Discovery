@@ -247,3 +247,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在人给定的机械性能目标内优化增材制造结构，答案可由FEA和机械测试检验 | “crossed barrel structures” · L176 |
+| 验证强度 | V3 物理实验 | 真实3D打印、机器人转运和压缩测试覆盖核心结论 | “在 resilience / toughness 任务中显著减少实验数并提升性能搜索效率” · L23 |
+| 系统自主性 | L2 闭环执行者 | 系统在人设定的力学目标内自主规划多轮FEA与实验闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

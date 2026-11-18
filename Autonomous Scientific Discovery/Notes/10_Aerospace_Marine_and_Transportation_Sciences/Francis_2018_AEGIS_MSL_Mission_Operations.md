@@ -310,3 +310,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
   - 位置：official NASA target-paper abstract, record 20210008310；来源：https://ntrs.nasa.gov/citations/20210008310
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | ChemCam目标选择在任务流程中可评估 | “NTRS record 支持其已被纳入真实 MSL mission operations” · L221 |
+| 验证强度 | V2 计算/仿真/回顾性 | 真实任务部署，但细节需全文 | “来自真实 mission operations 部署” · L228 |
+| 系统自主性 | L2 闭环执行者 | AEGIS在rover上自主选择ChemCam目标 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

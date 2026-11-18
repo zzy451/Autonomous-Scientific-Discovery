@@ -151,3 +151,17 @@ first_hand_source_checked：official arXiv PDF archived locally and checked: Aut
 source_limited：no
 confidence：high
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 病理诊断任务带参考答案或评分标准 | “覆盖 text-only、ROI、WSI 等任务，并报告病理医生使用时的表现提升” · L34 |
+| 验证强度 | V1 基准/内部评测 | 基准测试加专家评估，无核心科学结论的物理验证 | “提升病理医生或病理任务使用场景下的准确率、置信度与证据可解释性” · L102 |
+| 系统自主性 | L1 任务助手 | co-pilot执行病理诊断辅助任务，人决定研究流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

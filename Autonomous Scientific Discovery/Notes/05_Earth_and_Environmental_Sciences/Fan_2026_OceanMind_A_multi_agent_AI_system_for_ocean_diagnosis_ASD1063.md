@@ -160,3 +160,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.7,9。
 - 判定：Concrete experiment/task evidence supports 05.02.05 (物理海洋学). required by such a multi-step workflow. We selected the China Seas circulation study of Gan et al. [21, 18] the authors identified vertically alternating rotating circulation through a connected sequence of transport stream function, Stokes’ theorem, and vorticity dynamics. This case, therefore, evaluated whether OceanMind could reconstruct a multi-step physical diagnosis rather than generate isolated plots. We appli
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 240题海洋诊断查询benchmark，属预定义任务集合 | “benchmark of 240 queries” · L38 |
+| 验证强度 | V2 计算/仿真/回顾性 | 规则检查工作流输出及与现场卫星观测比对，非前瞻实验 | “Independent checks against in situ and satellite remote sensing observations” · L42 |
+| 系统自主性 | L2 闭环执行者 | Agent构建诊断工作流并迭代修正，在技能库内自主规划 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

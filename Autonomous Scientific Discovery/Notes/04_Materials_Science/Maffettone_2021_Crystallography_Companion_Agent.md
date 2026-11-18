@@ -248,3 +248,17 @@ Agent 类型：Tool-using Agent; Human-in-the-loop Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：普通引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 高通量材料发现中的晶相识别，答案可由数据核对 | “BaTiO3, ADTA, Ni-Co-Al 等材料体系” · L20 |
+| 验证强度 | V2 计算/仿真/回顾性 | 专家评估支撑，但更像辅助工具非主闭环发现 | “可支持高通量材料发现中的实时分析” · L180 |
+| 系统自主性 | L1 任务助手 | 作为companion辅助判相，scientist remains sovereign | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

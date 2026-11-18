@@ -301,3 +301,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 - `note_revision_required`: `yes`
 
 This writeback makes the multi-module evidence explicit. The paper should not be described as `06`-only or as an independent `01.04`-style general-method note, because the reported tasks cover chemical-reaction extraction (`03`), biological knowledge extraction (`06`), and pharmacological / biomedical property extraction (`07`).
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 从2250万篇文献中自主构建结构化生物医学数据集，答案可由数据和对照数据库核对 | “六个 biomedical tasks” · L68 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过与widely used curated counterparts对照和frontier-model rejection验证 | “frontier-model rejection `0.6-7.7%`” · L221 |
+| 系统自主性 | L2 闭环执行者 | 系统自主设计检索过滤器、归纳抽取schema并输出结构化记录 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

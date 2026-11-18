@@ -213,3 +213,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在标注好的化学论文基准上重发现假设 | “51 篇高影响力 chemistry papers” · L143 |
+| 验证强度 | V2 计算/仿真/回顾性 | 基准和PhD化学家标注支撑，无湿实验 | “benchmark 与 PhD chemist annotations 支撑” · L151 |
+| 系统自主性 | L1 任务助手 | 系统执行假设重发现任务，基准和目标由人设定 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -1,0 +1,663 @@
+paper_id,title,year,era,source,venue_class,decision_class,mechanism,confidence,modules,n_modules,general_method
+ASD-0001,"Toward Greater Autonomy in Materials Discovery Agents: Unifying Planning, Physics, and Scientists",2025,2025,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0002,HealthFlow: A Self-Evolving AI Agent with Meta Planning for Autonomous Healthcare Research,2025,2025,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0003,CheMatAgent: Enhancing LLMs for Chemistry and Materials Science through Tree-Search Based Tool Learning,2025,2025,arXiv,preprint,D5,llm,medium,03;04,2,none
+ASD-0004,InternAgent: When Agent Becomes the Scientist -- Building Closed-Loop System from Hypothesis to Verification,2025,2025,arXiv,preprint,D5,llm,high,01;03;06;09;10,5,none
+ASD-0005,A Multiagent-Driven Robotic AI Chemist Enabling Autonomous Chemical Research On Demand,2025,2025,JACS,journal,D5,llm,low,03;04,2,none
+ASD-0006,DORA AI Scientist: Multi-agent Virtual Research Team for Scientific Exploration Discovery and Automated Report Generation,2025,2025,bioRxiv,preprint,D5,llm,high,11,1,none
+ASD-0007,Hypothesis Generation for Materials Discovery and Design Using Goal-Driven and Constraint-Guided LLM Agents,2025,2025,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0008,Accelerating Drug Discovery Through Agentic AI: A Multi-Agent Approach to Laboratory Automation in the DMTA Cycle,2025,2025,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0009,Agent-based learning of materials datasets from the scientific literature,2024,2024,Digital Discovery,journal,D5,llm,high,04,1,none
+ASD-0010,El Agente: An Autonomous Agent for Quantum Chemistry,2025,2025,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0012,Large language models for chemistry robotics,2023,2020–2023,Unknown,unknown,D5,llm,high,03;09,2,none
+ASD-0013,The ai scientist-v2: Workshop-level automated scientific discovery via agentic tree search,2025,2025,arXiv,preprint,D5,llm,medium,01;08,2,none
+ASD-0014,Spatialagent: An autonomous ai agent for spatial biology,2025,2025,bioRxiv,preprint,D5,llm,high,06,1,none
+ASD-0016,An autonomous laboratory for the accelerated synthesis of novel materials,2023,2020–2023,Nature,journal,D3,optimization,medium,04,1,none
+ASD-0017,Can ai agents design and implement drug discovery pipelines?,2025,2025,arXiv,preprint,D5,llm,medium,07,1,none
+ASD-0018,Agent laboratory: Using llm agents as research assistants,2025,2025,arXiv,preprint,D5,llm,high,01,1,none
+ASD-0019,Agentrxiv: Towards collaborative autonomous research,2025,2025,arXiv,preprint,D5,llm,high,01,1,none
+ASD-0020,Biodiscoveryagent: An ai agent for designing genetic perturbation experiments,2025,2025,arXiv,preprint,D5,llm,high,06;07,2,none
+ASD-0022,Chemgraph: An agentic framework for computational chemistry workflows,2025,2025,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0024,Large language model agent for modular task execution in drug discovery,2025,2025,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0025,Cactus: Chemistry agent connecting tool usage to science,2024,2024,Unknown,unknown,D5,llm,high,03,1,none
+ASD-0028,Drugagent: Automating ai-aided drug discovery programming through llm multi-agent collaboration,2024,2024,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0029,Chemhas: Hierarchical agent stacking for enhancing chemistry tools,2025,2025,arXiv,preprint,D5,llm,medium,03,1,none
+ASD-0030,Rag-enhanced collaborative llm agents for drug discovery,2025,2025,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0031,Llmatdesign: Autonomous materials discovery with large language models,2024,2024,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0032,Codescientist: End-to-end semi-automated scientific discovery with code-based experimentation,2025,2025,arXiv,preprint,D5,llm,high,01,1,none
+ASD-0033,Omnicellagent: Towards ai co-scientists for scientific discovery in precision medicine,2025,2025,Unknown,unknown,D5,llm,high,06,1,none
+ASD-0034,Perturboagent: A self-planning agent for boosting sequential perturb-seq experiments,2025,2025,PMLR 311 (Machine Learning in Computational Biology),conference,D5,llm,medium,06,1,none
+ASD-0035,Sciagents: automating scientific discovery through bioinspired multi-agent intelligent graph reasoning,2025,2025,Advanced Materials,journal,D5,llm,medium,04,1,none
+ASD-0036,Organa: A robotic assistant for automated chemistry experimentation and characterization,2024,2024,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0037,Autonomous mobile robots for exploratory synthetic chemistry,2024,2024,Nature,journal,D1,classical,high,03,1,none
+ASD-0038,An autonomous large language model agent for chemical literature data mining,2024,2024,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0040,"Researchagent: Iterative research idea generation over scientific literature with large language models, 2025",2025,2025,Unknown,unknown,D5,llm,high,,0,01.04_general_asd_methods_without_concrete_object_experiments
+ASD-0041,Liddia: Language-based intelligent drug discovery agent,2025,2025,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0044,Bridging literature and the universe via a multi-agent large language model system,2025,2025,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0045,Honeycomb: A flexible llm-based agent system for materials science,2024,2024,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0046,Topomas: Large language model driven topological materials multiagent system,2025,2025,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0047,Foam-agent: Towards automated intelligent cfd workflows,2026,2026,arXiv,preprint,D5,llm,high,02;09,2,none
+ASD-0048,"Dolphin: Closed-loop open-ended auto-research through thinking, practice, and feedback",2025,2025,arXiv,preprint,D5,llm,high,01,1,none
+ASD-0049,Bioinformatics agent (bia): Unleashing the power of large language models to reshape bioinformatics workflow,2024,2024,bioRxiv,preprint,D5,llm,medium,06,1,none
+ASD-0051,Geneagent: Self-verification language agent for gene set knowledge discovery using domain databases,2024,2024,arXiv,preprint,D5,llm,high,06,1,none
+ASD-0052,Optimizing collaboration of large language model based agents for autonomous finite element analysis,2025,2025,SSRN,preprint,D5,llm,high,09,1,none
+ASD-0053,Towards autonomous hypothesis verification via language models with minimal guidance,2023,2020–2023,arXiv,preprint,D5,llm,high,01,1,none
+ASD-0054,The virtual lab: Ai agents design new sars-cov-2 nanobodies with experimental validation,2025,2025,Nature,journal,D5,llm,high,07;06,2,none
+ASD-0055,Biomaster: Multi-agent system for automated bioinformatics analysis workflow,2025,2025,bioRxiv,preprint,D5,llm,high,06,1,none
+ASD-0056,"Delocalized, asynchronous, closed-loop discovery of organic laser emitters",2024,2024,Science,journal,D3,optimization,high,03;04,2,none
+ASD-0057,"Autochemschematic ai: A closed-loop, physics-aware agentic framework for auto-generating chemical process and instrumentation diagrams",2025,2025,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0058,Astroagents: A multi-agent ai for hypothesis generation from mass spectrometry data,2025,2025,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0059,"Iterative hypothesis generation for scientific discovery with monte carlo nash equilibrium self-refining trees, 2025",2025,2025,Unknown,unknown,D6,hybrid,medium,,0,01.04_general_asd_methods_without_concrete_object_experiments
+ASD-0060,Piflow: Principle-aware scientific discovery with multi-agent collaboration,2025,2025,arXiv,preprint,D6,hybrid,high,03;04;07,3,none
+ASD-0061,xchemagents: Agentic ai for explainable quantum chemistry,2025,2025,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0062,Empowering scientific workflows with federated agents,2025,2025,arXiv,preprint,D2,classical,low,01;02;04,3,none
+ASD-0063,Alphaevolve: A coding agent for scientific and algorithmic discovery,2025,2025,arXiv,preprint,D6,hybrid,high,01;09,2,none
+ASD-0064,Phenograph: A multi-agent framework for phenotype-driven discovery in spatial transcriptomics data augmented with knowledge graphs,2025,2025,bioRxiv,preprint,D5,llm,high,06;07,2,none
+ASD-0065,Matpilot: an llm-enabled ai materials scientist under the framework of human-machine collaboration,2024,2024,arXiv,preprint,D5,llm,medium,04,1,none
+ASD-0068,An agentic framework for autonomous metamaterial modeling and inverse design,2025,2025,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0069,The ai scientist: Towards fully automated open-ended scientific discovery,2024,2024,arXiv,preprint,D5,llm,high,01;11,2,none
+ASD-0070,Moose-chem3: Toward experiment-guided hypothesis ranking via simulated experimental feedback,2025,2025,arXiv,preprint,D5,llm,high,03;04,2,none
+ASD-0071,Toward a team of ai-made scientists for scientific discovery from gene expression data,2024,2024,arXiv,preprint,D5,llm,high,06;07,2,none
+ASD-0075,Prim: Principle-inspired material discovery through multi-agent collaboration,2025,2025,AI for Accelerated Materials Design at ICLR 2025 (OpenReview),conference,D6,hybrid,medium,04,1,none
+ASD-0076,Mt-mol: Multi agent system with tool-based reasoning for molecular optimization,2025,2025,Findings of ACL: EMNLP 2025,conference,D5,llm,high,03,1,none
+ASD-0077,Stella: Self-evolving llm agent for biomedical research,2025,2025,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0079,DrugAgent: Multi-Agent Large Language Model-Based Reasoning for Drug-Target Interaction Prediction,2024,2024,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0080,System of agentic ai for the discovery of metal-organic frameworks,2025,2025,arXiv,preprint,D5,llm,medium,04,1,none
+ASD-0084,Automating alloy design and discovery with physics-aware multimodal multiagent ai,2025,2025,PNAS,journal,D5,llm,high,04,1,none
+ASD-0085,Protagents: protein discovery via large language model multi-agent collaborations combining physics and machine learning,2024,2024,Digital Discovery,journal,D5,llm,high,04;06,2,none
+ASD-0089,Researchcodeagent: An llm multi-agent system for automated codification of research methodologies,2025,2025,arXiv,preprint,D5,llm,high,01,1,none
+ASD-0090,Agents for self-driving laboratories applied to quantum computing,2024,2024,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0091,Agentic mixture-of-workflows for multi-modal chemical search,2025,2025,arXiv,preprint,D5,llm,high,03;04,2,none
+ASD-0093,Augmenting large language models with chemistry tools,2024,2024,Nature Machine Intelligence,journal,D5,llm,high,03;04;07,3,none
+ASD-0094,Autonomous chemical research with large language models,2023,2020–2023,Nature,journal,D5,llm,high,03,1,none
+ASD-0095,Multicrossmodal automated agent for integrating diverse materials science data,2025,2025,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0096,dziner: Rational inverse design of materials with ai agents,2024,2024,arXiv,preprint,D5,llm,high,03;04;07,3,none
+ASD-0097,Cellvoyager: Ai compbio agent generates new insights by autonomously analyzing biological data,2026,2026,Nature Methods,journal,D5,llm,high,06,1,none
+ASD-0100,Scireplicate-bench: Benchmarking llms in agent-driven algorithmic reproduction from research papers,2025,2025,arXiv,preprint,D5,llm,high,01,1,none
+ASD-0111,"SciMaster: Towards general-purpose scientific AI agents, Part I. X-Master as foundation: Can we lead on Humanity's Last Exam?",2025,2025,arXiv,preprint,D5,llm,medium,01;02;06;07,4,none
+ASD-0112,CSSTep: Step-by-step exploration of the chemical space of drug molecules via multi-agent and multi-stage reinforcement learning,2025,2025,Chemical Engineering Science,journal,D4,classical,high,03,1,none
+ASD-0113,PharmAgents: Building a virtual pharma with large language model agents,2025,2025,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0114,Sparks: Multi-agent artificial intelligence model discovers protein design principles,2025,2025,arXiv,preprint,D5,llm,medium,06,1,none
+ASD-0115,Towards an AI co-scientist,2025,2025,arXiv,preprint,D5,llm,medium,06;07,2,none
+ASD-0116,Electromagnetic metamaterial agent,2025,2025,Light: Science & Applications,journal,D5,llm,medium,04;09,2,none
+ASD-0117,OSDA agent: Leveraging large language models for de novo design of organic structure directing agents,2025,2025,ICLR,conference,D5,llm,medium,03;04,2,none
+ASD-0118,Biomni: A general-purpose biomedical AI agent,2025,2025,bioRxiv,preprint,D5,llm,high,06;07,2,none
+ASD-0119,ChatMOF: An autonomous AI system for predicting and generating metal-organic frameworks,2023,2020–2023,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0120,AI agents for ground-based gamma astronomy,2025,2025,arXiv,preprint,D5,llm,medium,02,1,none
+ASD-0121,Multi-agent system for cosmological parameter analysis,2024,2024,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0124,A large language model-empowered agent for reliable and robust structural analysis,2025,2025,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0125,Physics-informed LLM-agent for automated modulation design in power electronics systems,2024,2024,arXiv,preprint,D5,llm,medium,09,1,none
+ASD-0126,BioAgents: Democratizing bioinformatics analysis with multi-agent systems,2025,2025,arXiv,preprint,D5,llm,high,06,1,none
+ASD-0127,The AI Cosmologist I: An agentic system for automated data analysis,2025,2025,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0128,"MechAgents: Large language model multi-agent collaborations can solve mechanics problems, generate new data, and integrate knowledge",2024,2024,Extreme Mechanics Letters,journal,D5,llm,high,04;09,2,none
+ASD-0129,OpenFOAMGPT: a RAG-augmented LLM agent for OpenFOAM-based computational fluid dynamics,2025,2025,arXiv,preprint,D5,llm,high,02;09,2,none
+ASD-0132,Many heads are better than one: Improved scientific idea generation by a LLM-based multi-agent system,2025,2025,ACL,conference,D5,llm,high,11,1,none
+ASD-0133,Interpreting multi-band galaxy observations with large language model-based agents,2024,2024,arXiv,preprint,D5,llm,medium,02,1,none
+ASD-0134,ChemAgent: Self-updating library in large language models improves chemical reasoning,2025,2025,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0135,A multi-agent framework integrating large language models and generative AI for accelerated metamaterial design,2025,2025,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0136,StarWhisper Telescope: An AI framework for automating end-to-end astronomical observations,2025,2025,arXiv,preprint,D5,llm,medium,02,1,none
+ASD-0137,Accelerating primer design for amplicon sequencing using large language model-powered agents,2026,2026,Nature Biomedical Engineering,journal,D5,llm,high,06;07,2,none
+ASD-0138,CellAgent: LLM-Driven Multi-Agent Framework for Natural Language-Based Single-Cell Analysis,2024,2024,bioRxiv,preprint,D5,llm,high,06,1,none
+ASD-0139,Advancing AI-scientist understanding: Making LLM think like a physicist with interpretable reasoning,2025,2025,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0140,Large language models for automated open-domain scientific hypotheses discovery,2024,2024,ACL Findings,conference,D5,llm,high,11,1,none
+ASD-0141,TransAgent: Dynamizing transcriptional regulation analysis via multi-omics-aware AI agent,2025,2025,bioRxiv,preprint,D5,llm,medium,06;07,2,none
+ASD-0145,CycleResearcher: Improving automated research via automated review,2025,2025,ICLR,conference,D5,llm,high,01;11,2,none
+ASD-0146,AIGS: Generating Science from AI-Powered Automated Falsification,2024,2024,arXiv,preprint,D5,llm,high,01,1,none
+ASD-0147,Nova: An iterative planning and search approach to enhance novelty and diversity of LLM-generated ideas,2024,2024,arXiv,preprint,D5,llm,high,01,1,none
+ASD-0149,A flexible and affordable self-driving laboratory for automated reaction optimization,2026,2026,Nature Synthesis,journal,D3,optimization,high,03;09,2,none
+ASD-0150,A dynamic knowledge graph approach to distributed self-driving laboratories,2024,2024,Nature Communications,journal,D3,optimization,high,03,1,none
+ASD-0151,Self-driving lab discovers principles for steering spontaneous emission beyond conventional Fourier optics,2026,2026,Nature Communications,journal,D3,optimization,high,02;04,2,none
+ASD-0152,An agentic AI framework for ingestion and standardization of single-cell RNA-seq data analysis,2026,2026,npj Artificial Intelligence,journal,D5,llm,high,06;07,2,none
+ASD-0154,Real-time experiment-theory closed-loop interaction for autonomous materials science,2025,2025,Science Advances,journal,D3,optimization,high,04,1,none
+ASD-0155,"A multi-agentic framework for real-time, autonomous freeform metasurface design",2025,2025,Science Advances,journal,D5,llm,medium,04,1,none
+ASD-0156,Bridging electron microscopy and materials analysis with an autonomous agentic platform,2026,2026,Science Advances,journal,D5,llm,high,04,1,none
+ASD-0158,A robotic platform for flow synthesis of organic compounds informed by AI planning,2019,2004–2019,Science,journal,D2,classical,high,03,1,none
+ASD-0179,Chemist-x: Large language model-empowered agent for reaction condition recommendation in chemical synthesis,2023,2020–2023,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0186,MARG: Multi-Agent Review Generation for Scientific Papers,2024,2024,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0189,Automating exploratory proteomics research via language models,2024,2024,arXiv,preprint,D5,llm,high,06;07,2,none
+ASD-0254,From intention to implementation: automating biomedical research via llms,2025,2025,Science China Information Sciences / arXiv,journal,D5,llm,high,06;07,2,none
+ASD-0276,Automating exploratory multiomics research via language models,2025,2025,arXiv,preprint,D5,llm,high,06;07,2,none
+ASD-0280,An automatic end-to-end chemical synthesis development platform powered by large language models,2024,2024,Nature Communications,journal,D5,llm,high,03,1,none
+ASD-0290,ChemReasoner: Heuristic search over a large language model's knowledge space using quantum-chemical feedback,2024,2024,arXiv,preprint,D6,hybrid,medium,03,1,none
+ASD-0333,MOOSE-Chem: Large language models for rediscovering unseen chemistry scientific hypotheses,2024,2024,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0357,Origene: A self-evolving virtual disease biologist automating therapeutic target discovery,2025,2025,bioRxiv,preprint,D5,llm,high,07,1,none
+ASD-0370,Self-driving laboratories to autonomously navigate the protein fitness landscape,2024,2024,Nature Chemical Engineering,journal,D3,optimization,medium,06,1,none
+ASD-0379,A self-driving laboratory advances the Pareto front for material properties,2022,2020–2023,Nature Communications,journal,D3,optimization,high,04,1,none
+ASD-0381,Autonomous reaction Pareto-front mapping with a self-driving catalysis laboratory,2024,2024,Nature Chemical Engineering,journal,D3,optimization,high,03,1,none
+ASD-0385,AlphaFlow: autonomous discovery and optimization of multi-step chemistry using a self-driven fluidic lab guided by reinforcement learning,2023,2020–2023,Nature Communications,journal,D4,classical,high,03;04,2,none
+ASD-0388,Crystallography companion agent for high-throughput materials discovery,2021,2020–2023,Nature Computational Science,journal,D3,optimization,low,04,1,none
+ASD-0389,Autonomous discovery of optically active chiral inorganic perovskite nanocrystals through an intelligent cloud lab,2020,2020–2023,Nature Communications,journal,D3,optimization,medium,04,1,none
+ASD-0390,A self-driving laboratory designed to accelerate the discovery of adhesive materials,2022,2020–2023,Digital Discovery,journal,D3,optimization,high,04,1,none
+ASD-0410,On-the-fly closed-loop materials discovery via Bayesian active learning,2020,2020–2023,Nature Communications,journal,D3,optimization,high,04,1,none
+ASD-0415,Autonomous polymer synthesis delivered by multi-objective closed-loop optimisation,2022,2020–2023,Polymer Chemistry,journal,D3,optimization,high,04,1,none
+ASD-0417,Autonomous optimization of non-aqueous Li-ion battery electrolytes via robotic experimentation and machine learning coupling,2022,2020–2023,Nature Communications,journal,D3,optimization,high,04,1,none
+ASD-0418,Data-science driven autonomous process optimization,2021,2020–2023,Communications Chemistry,journal,D3,optimization,medium,03,1,none
+ASD-0421,Closed-loop superconducting materials discovery,2023,2020–2023,npj Computational Materials,journal,D3,optimization,medium,04,1,none
+ASD-0422,Autonomous closed-loop mechanistic investigation of molecular electrochemistry via automation,2024,2024,Nature Communications,journal,D3,optimization,high,03,1,none
+ASD-0425,Efficient Closed-loop Maximization of Carbon Nanotube Growth Rate using Bayesian Optimization,2020,2020–2023,Scientific Reports,journal,D3,optimization,high,04,1,none
+ASD-0428,Discovering New Chemistry with an Autonomous Robotic Platform Driven by a Reactivity-Seeking Neural Network,2021,2020–2023,ACS Central Science,journal,D3,optimization,high,03,1,none
+ASD-0429,Toward autonomous additive manufacturing: Bayesian optimization on a 3D printer,2021,2020–2023,MRS Bulletin,journal,D3,optimization,high,09,1,none
+ASD-0447,An autonomous portable platform for universal chemical synthesis,2022,2020–2023,Nature Chemistry,journal,D2,classical,medium,03,1,none
+ASD-0455,A mobile robotic chemist,2020,2020–2023,Nature,journal,D3,optimization,high,03;04,2,none
+ASD-0463,AI-driven robotic chemist for autonomous synthesis of organic molecules,2023,2020–2023,Science Advances,journal,D6,hybrid,medium,03,1,none
+ASD-0466,Discovery of Wall-Selective Carbon Nanotube Growth Conditions <i>via</i> Automated Experimentation,2014,2004–2019,ACS Nano,journal,D3,optimization,low,04,1,none
+ASD-0478,NIMS-OS: an automation software to implement a closed loop between artificial intelligence and robotic experiments in materials science,2023,2020–2023,Science and Technology of Advanced Materials Methods,journal,D3,optimization,medium,04,1,none
+ASD-0484,Evolution-guided Bayesian optimization for constrained multi-objective optimization in self-driving labs,2024,2024,npj Computational Materials,journal,D3,optimization,high,01;04,2,none
+ASD-0487,Autonomous Discovery of Battery Electrolytes with Robotic Experimentation and Machine Learning,2020,2020–2023,Cell Reports Physical Science,journal,D3,optimization,high,04,1,none
+ASD-0491,Optimizing Perovskite Thin-Film Parameter Spaces with Machine Learning-Guided Robotic Platform for High-Performance Perovskite Solar Cells,2023,2020–2023,Advanced Energy Materials,journal,D3,optimization,high,04,1,none
+ASD-0501,Functional genomic hypothesis generation and experimentation by a robot scientist,2004,2004–2019,Nature,journal,D1,classical,high,06,1,none
+ASD-0503,Self-driving laboratory for accelerated discovery of thin-film materials,2020,2020–2023,Science Advances,journal,D3,optimization,high,04,1,none
+ASD-0504,A Bayesian experimental autonomous researcher for mechanical design,2020,2020–2023,Science Advances,journal,D3,optimization,high,09,1,none
+ASD-0505,Autonomous and dynamic precursor selection for solid-state materials synthesis,2023,2020–2023,Nature Communications,journal,D3,optimization,high,03;04,2,none
+ASD-0506,Closed-loop transfer enables artificial intelligence to yield chemical knowledge,2024,2024,Nature,journal,D3,optimization,medium,03,1,none
+ASD-0507,Identifying general reaction conditions by bandit optimization,2024,2024,Nature,journal,D3,optimization,high,03,1,none
+ASD-0508,"Autonomous, multiproperty-driven molecular discovery: From predictions to measurements and back",2023,2020–2023,Science,journal,D3,optimization,high,03,1,none
+ASD-0510,A conversational multi-agent AI system for automated plant phenotyping,2026,2026,Nature Communications,journal,D5,llm,high,06;08,2,none
+ASD-0511,Operating advanced scientific instruments with AI agents that learn on the job,2026,2026,npj Computational Materials,journal,D5,llm,high,04;09,2,none
+ASD-0512,Mathematical discoveries from program search with large language models,2024,2024,Nature,journal,D6,hybrid,high,01,1,none
+ASD-0513,Networking autonomous material exploration systems through transfer learning,2025,2025,npj Computational Materials,journal,D3,optimization,medium,04,1,none
+ASD-0514,Autonomous phase mapping of gold nanoparticles synthesis with differentiable models of spectral shape,2025,2025,npj Computational Materials,journal,D3,optimization,high,04,1,none
+ASD-0515,Autonomous closed-loop exploration of composition-spread films for the anomalous Hall effect,2025,2025,npj Computational Materials,journal,D3,optimization,high,04,1,none
+ASD-0516,A self-driving physical vapor deposition system making sample-specific decisions on the fly,2025,2025,npj Computational Materials,journal,D3,optimization,high,04;09,2,none
+ASD-0517,Self-driving lab for the photochemical synthesis of plasmonic nanoparticles with targeted structural and optical properties,2025,2025,Nature Communications,journal,D3,optimization,high,04,1,none
+ASD-0518,A generalized platform for artificial intelligence-powered autonomous enzyme engineering,2025,2025,Nature Communications,journal,D3,optimization,high,06,1,none
+ASD-0519,A high-throughput experimentation platform for data-driven discovery in electrochemistry,2025,2025,Science Advances,journal,D3,optimization,low,03;04,2,none
+ASD-0520,Bayesian learning-assisted catalyst discovery for efficient iridium utilization in electrochemical water splitting,2025,2025,Science Advances,journal,D3,optimization,high,03;04,2,none
+ASD-0521,CRISPR-GPT for agentic automation of gene-editing experiments,2025,2025,Nature Biomedical Engineering,journal,D5,llm,high,06,1,none
+ASD-0522,Evaluating large language model agents for automation of atomic force microscopy,2025,2025,Nature Communications,journal,D5,llm,high,04;09,2,none
+ASD-0523,Towards end-to-end automation of AI research,2026,2026,Nature,journal,D5,llm,high,01;11,2,none
+ASD-0524,AgenticSciML: collaborative multi-agent systems for emergent discovery in scientific machine learning,2026,2026,npj Artificial Intelligence,journal,D5,llm,medium,01,1,none
+ASD-0525,TeLLAgent: a dual-agent framework for reliable scientific discovery with tool-enhanced LLMs,2026,2026,Chemical Science,journal,D5,llm,high,03;04,2,none
+ASD-0526,Constitutive scientific generative agent (CSGA): Leveraging large language models for automated constitutive model discovery,2025,2025,Machine Learning for Computational Science and Engineering,journal,D5,llm,high,09,1,none
+ASD-0528,AutoSciLab: A Self-Driving Laboratory for Interpretable Scientific Discovery,2025,2025,Proceedings of the AAAI Conference on Artificial Intelligence,conference,D3,optimization,high,02,1,none
+ASD-0529,RAISE: a self-driving laboratory for interfacial property formulation discovery,2026,2026,Digital Discovery,journal,D3,optimization,high,04,1,none
+ASD-0531,GALILEO: Embodied AI scientist for autonomous therapeutic discovery in dynamic membrane systems,2026,2026,Research Square Preprint,preprint,D5,llm,high,06;07,2,none
+ASD-0535,Accelerated inorganic materials design with generative AI agents,2025,2025,Cell Reports Physical Science,journal,D5,llm,medium,04,1,none
+ASD-0536,TCM-Agent: Advancing Network Pharmacology and Herbal Medicine Discovery with LLM-Based Multi-Agent Systems,2026,2026,Journal of Pharmaceutical Analysis,journal,D5,llm,high,07,1,none
+ASD-0537,Medea: An omics AI agent for therapeutic discovery,2026,2026,bioRxiv / PMC,preprint,D5,llm,high,06;07,2,none
+ASD-0538,Masgent: an AI-assisted materials simulation agent,2026,2026,Digital Discovery,journal,D5,llm,high,04,1,none
+ASD-0539,Accelerating materials discovery via AI-Agent integration of large language models and simulation tools,2026,2026,Journal of Materials Informatics,journal,D5,llm,high,03;04,2,none
+ASD-0540,A multi-agent system for automating scientific discovery,2026,2026,Nature,journal,D5,llm,high,06;07,2,none
+ASD-0541,PromptBio: A Multi-Agent AI Platform for Bioinformatics Data Analysis,2025,2025,bioRxiv,preprint,D5,llm,high,06;07,2,none
+ASD-0542,MADD: Multi-Agent Drug Discovery Orchestra,2025,2025,Findings of the Association for Computational Linguistics: EMNLP 2025,conference,D5,llm,high,07,1,none
+ASD-0543,Machine Learning Copilot Agent: An LLM-Guided Workflow for Prognostic Gene Discovery,2025,2025,SSRN Electronic Journal,preprint,D5,llm,low,06;07,2,none
+ASD-0544,LLM-Agent Powered Automated Literature Review and Hypothesis Generation for Cancer Biomarker Discovery,2025,2025,2025 IEEE 19th International Conference on Open Source Systems and Technologies (ICOSST),conference,D5,llm,high,07,1,none
+ASD-0545,IMMUNIA: A Multi-LLM Reasoning Agent for Immunoregulatory Surfaceome Discovery,2025,2025,bioRxiv,preprint,D5,llm,high,06;07,2,none
+ASD-0547,Closed-loop experimental AI for pixelated metasurface design,2026,2026,Photonic and Phononic Properties of Engineered Nanostructures XVI,journal,D3,optimization,medium,04,1,none
+ASD-0548,OpenScientist: evaluating an open agentic AI co-scientist to accelerate biomedical discovery,2026,2026,medRxiv / PMC mirror,preprint,D5,llm,high,06;07,2,none
+ASD-0549,DeepInflation: An AI Agent for Research and Model Discovery of Inflation,2026,2026,Research in Astronomy and Astrophysics,journal,D5,llm,medium,02,1,none
+ASD-0552,Multi agent large language models for biomedical hypothesis generation in drug combination discovery,2025,2025,iScience,journal,D5,llm,high,07,1,none
+ASD-0553,ToolsGenie 2.0: A Scalable and Extensible Multi-Agent System for Bioinformatics Automation,2026,2026,Research Square Preprint,preprint,D5,llm,high,06;07,2,none
+ASD-0554,BioAgent: An Auditable Multi-Agent Framework for Reproducible Translational Bioinformatics,2026,2026,Research Square Preprint,preprint,D5,llm,high,06;07,2,none
+ASD-0556,DrugPilot: LLM-based Parameterized Reasoning Agent for Drug Discovery,2025,2025,Research Square Preprint,preprint,D5,llm,high,07,1,none
+ASD-0557,"Unlocking azobenzene isomerization mechanisms via an LLM agent-driven workflow integrating simulation, experiment, and machine learning",2026,2026,Chemical Science,journal,D5,llm,high,03,1,none
+ASD-0558,Closed-Loop AI Enables Organic Continuous-Wave Laser,2025,2025,Research Square Preprint,preprint,D3,optimization,medium,04,1,none
+ASD-0564,An agentic framework for autonomous scientific discovery in cancer pathology,2026,2026,Nature Medicine,journal,D5,llm,high,07;06,2,none
+ASD-0565,Agentic AI for autonomous discovery of radiation-tolerant CoCrFeMnNi high entropy alloys,2026,2026,Scripta Materialia,journal,D3,optimization,low,04,1,none
+ASD-0567,Egent: An Autonomous Agent for Equivalent Width Measurement,2026,2026,The Open Journal of Astrophysics,journal,D5,llm,high,02,1,none
+ASD-0568,Multi-Agent-Network-Based Idea Generator for Zinc-Ion Battery Electrolyte Discovery: A Case Study on Zinc Tetrafluoroborate Hydrate-Based Deep Eutectic Electrolytes,2025,2025,Advanced Materials,journal,D5,llm,high,04,1,none
+ASD-0569,Autonomous Nanocrystal Doping by Self-Driving Fluidic Micro-Processors,2022,2020–2023,Advanced Intelligent Systems,journal,D3,optimization,high,04,1,none
+ASD-0570,Knowledge-driven autonomous materials research via collaborative multi-agent and robotic system,2026,2026,Matter,journal,D5,llm,high,04,1,none
+ASD-0571,CRYSTAL: a multi-agent AI system for automated mapping of materials' crystal structures,2019,2004–2019,MRS Communications,journal,D6,hybrid,medium,04,1,none
+ASD-0572,Autonomous discovery of functional random heteropolymer blends through evolutionary formulation optimization,2025,2025,Matter,journal,D3,optimization,high,04;06,2,none
+ASD-0573,A Self-Driving Fluidic Lab for Data-Driven Synthesis of Lead-Free Perovskite Nanocrystals,2025,2025,Digital Discovery,journal,D3,optimization,high,04,1,none
+ASD-0574,GeneAgent: self-verification language agent for gene-set analysis using domain databases,2025,2025,Nature Methods,journal,D5,llm,high,06,1,none
+ASD-0575,A curious formulation robot enables the discovery of a novel protocell behavior,2020,2020–2023,Science Advances,journal,D3,optimization,medium,03,1,none
+ASD-0576,Towards a fully automated algorithm driven platform for biosystems design,2019,2004–2019,Nature Communications,journal,D3,optimization,high,06,1,none
+ASD-0577,Autonomous multi-robot synthesis and optimization of metal halide perovskite nanocrystals,2025,2025,Nature Communications,journal,D3,optimization,high,04,1,none
+ASD-0579,A Bayesian active learning platform for scalable combination drug screens,2025,2025,Nature Communications,journal,D3,optimization,high,07,1,none
+ASD-0581,A chemical autonomous robotic platform for end-to-end synthesis of nanoparticles,2025,2025,Nature Communications,journal,D3,optimization,medium,04,1,none
+ASD-0582,Autonomous platform for solution processing of electronic polymers,2025,2025,Nature Communications,journal,D3,optimization,high,04,1,none
+ASD-0586,A virtual platform for automated hybrid organic-enzymatic synthesis planning,2025,2025,Nature Communications,journal,D5,llm,high,03,1,none
+ASD-0587,Collective intelligence for AI-assisted chemical synthesis,2026,2026,Nature,journal,D5,llm,medium,03,1,none
+ASD-0589,An integrated self-optimizing programmable chemical synthesis and reaction engine,2024,2024,Nature Communications,journal,D3,optimization,medium,03,1,none
+ASD-0590,A robotic platform for the synthesis of colloidal nanocrystals,2023,2020–2023,Nature Synthesis,journal,D3,optimization,medium,04,1,none
+ASD-0591,Self-optimizing parallel millifluidic reactor for scaling nanoparticle synthesis,2020,2020–2023,Chemical Communications,journal,D3,optimization,high,04,1,none
+ASD-0592,Autonomous materials synthesis by machine learning and robotics,2020,2020–2023,APL Materials,journal,D3,optimization,high,04,1,none
+ASD-0617,An industrial automated laboratory for programmable protein evolution,2025,2025,Nature Chemical Engineering,journal,D2,classical,medium,06,1,none
+ASD-0618,Integrating protein language models and automatic biofoundry for enhanced protein evolution,2025,2025,Nature Communications,journal,D3,optimization,medium,06,1,none
+ASD-0596,Operate a Cell-Free Biofoundry using Large Language Models,2024,2024,bioRxiv,preprint,D3,optimization,high,06,1,none
+ASD-0597,Verification and execution of the scientific literature via chemputation augmented by large language models,2026,2026,Communications Chemistry,journal,D5,llm,high,03,1,none
+ASD-0598,A Self-Driving Lab for Nano- and Advanced Materials Synthesis,2025,2025,ACS Nano,journal,D2,classical,medium,04,1,none
+ASD-0599,An AI-Native Biofoundry for Autonomous Enzyme Engineering: Integrating Active Learning with Automated Experimentation,2026,2026,bioRxiv,preprint,D3,optimization,medium,06,1,none
+ASD-0600,A universal system for digitization and automatic execution of the chemical synthesis literature,2020,2020–2023,Science,journal,D2,classical,high,03,1,none
+ASD-0601,"Automated self-optimization, intensification, and scale-up of photocatalysis in flow",2024,2024,Science,journal,D3,optimization,high,03,1,none
+ASD-0603,Reconfigurable system for automated optimization of diverse chemical reactions,2018,2004–2019,Science,journal,D3,optimization,medium,03,1,none
+ASD-0605,Evolution of oil droplets in a chemorobotic platform,2014,2004–2019,Nature Communications,journal,D3,optimization,high,03,1,none
+ASD-0606,Accelerate Synthesis of Metal-Organic Frameworks by a Robotic Platform and Bayesian Optimization,2021,2020–2023,ACS Applied Materials & Interfaces,journal,D3,optimization,high,04,1,none
+ASD-0607,Organic synthesis in a modular robotic system driven by a chemical programming language,2019,2004–2019,Science,journal,D2,classical,high,03,1,none
+ASD-0608,Autonomous Battery Optimization by Deploying Distributed Experiments and Simulations,2024,2024,Advanced Energy Materials,journal,D3,optimization,high,04,1,none
+ASD-0609,Automated pH Adjustment Driven by Robotic Workflows and Active Machine Learning,2023,2020–2023,Chemical Engineering Journal,journal,D3,optimization,high,03,1,none
+ASD-0610,Autonomous retrosynthesis of gold nanoparticles via spectral shape matching,2022,2020–2023,Digital Discovery,journal,D3,optimization,high,04,1,none
+ASD-0611,Autonomous materials synthesis via hierarchical active learning of nonequilibrium phase diagrams,2021,2020–2023,Science Advances,journal,D3,optimization,high,04,1,none
+ASD-0612,Navigating phase diagram complexity to guide robotic inorganic materials synthesis,2024,2024,Nature Synthesis,journal,D3,optimization,high,04,1,none
+ASD-0613,Physics Discovery in Nanoplasmonic Systems via Autonomous Experiments in Scanning Transmission Electron Microscopy,2022,2020–2023,Advanced Science,journal,D3,optimization,high,02;04,2,none
+ASD-0614,"Modular, Multi-Robot Integration of Laboratories: An Autonomous Solid-State Workflow for Powder X-Ray Diffraction",2023,2020–2023,arXiv,preprint,D2,classical,medium,04,1,none
+ASD-0615,Using simulation to accelerate autonomous experimentation: A case study using mechanics,2021,2020–2023,iScience,journal,D3,optimization,high,09,1,none
+ASD-0621,An integrated high-throughput robotic platform and active learning approach for accelerated discovery of optimal electrolyte formulations,2024,2024,Nature Communications,journal,D3,optimization,high,03;04,2,none
+ASD-0622,Active learning accelerates electrolyte solvent screening for anode-free lithium metal batteries,2025,2025,Nature Communications,journal,D3,optimization,high,04,1,none
+ASD-0623,ClimAgent: LLM as Agents for Autonomous Open-ended Climate Science Analysis,2026,2026,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0624,SciSciGPT: advancing human-AI collaboration in the science of science,2026,2026,Nature Computational Science,journal,D5,llm,medium,11,1,none
+ASD-0625,ReviewAgents: Bridging the Gap Between Human and AI-Generated Paper Reviews,2025,2025,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0626,From Passive Generation to Investigation: A Proactive Scientific Peer Review Agent,2026,2026,arXiv,preprint,D5,llm,medium,11,1,none
+ASD-0627,Adaptive Science Operations in Deep Space Missions Using Offline Belief State Planning,2025,2025,arXiv,preprint,D2,classical,high,02;10,2,none
+ASD-0628,ScholarPeer: A Context-Aware Multi-Agent Framework for Automated Peer Review,2026,2026,arXiv,preprint,D5,llm,medium,11,1,none
+ASD-0629,CiteME: Can Language Models Accurately Cite Scientific Claims?,2024,2024,NeurIPS 2024 Datasets and Benchmarks / OpenReview,conference,D5,llm,high,11,1,none
+ASD-0630,Autonomous robotic experimentation system for powder X-ray diffraction,2024,2024,Digital Discovery,journal,D2,classical,medium,04,1,none
+ASD-0631,Autonomous Discovery of Polymer Electrolyte Formulations with Warm-Start Batch Bayesian Optimization,2025,2025,Chemistry of Materials,journal,D3,optimization,high,04,1,none
+ASD-0632,A Hierarchical Multi-Agent System for Autonomous Discovery in Geoscientific Data Archives,2026,2026,arXiv,preprint,D5,llm,high,05;06,2,none
+ASD-0633,A Self-Evolving AI Agent System for Climate Science,2025,2025,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0634,Aleks: AI powered Multi Agent System for Autonomous Scientific Discovery via Data-Driven Approaches in Plant Science,2025,2025,arXiv,preprint,D5,llm,high,08,1,none
+ASD-0635,TianJi: An autonomous AI meteorologist for discovering physical mechanisms in atmospheric science,2026,2026,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0636,EGTR-Review: Efficient Evidence-Grounded Scientific Peer Review,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0637,Leveraging LLM-based agents for social science research: insights from citation network simulations,2025,2025,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0644,LLM Agents as Social Scientists: A Human-AI Collaborative Platform for Social Science Automation,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0645,The Autonomous Sciencecraft Experiment Onboard the EO-1 Spacecraft,2004,2004–2019,AAAI,conference,D2,classical,high,10,1,none
+ASD-0647,Autonomous Small Body Science Operations Using Reinforcement Learning,2024,2024,Journal of Aerospace Information Systems,journal,D4,classical,high,10,1,none
+ASD-0648,Reinforcement Learning For Earth-Observing Satellite Autonomy With Event-Based Task Intervals,2024,2024,AAS Rocky Mountain GN&C Conference preprint,conference,D4,classical,high,10,1,none
+ASD-0649,"CMIP-Forge: An Agentic System that Retrieves, Computes, and Self-Reviews Climate Science",2026,2026,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0650,OpenEarth-Agent: From Tool Calling to Tool Creation for Open-Environment Earth Observation,2026,2026,arXiv,preprint,D5,llm,high,05;08;11,3,none
+ASD-0651,AI Driven Discovery of Bio Ecological Mediation in Cascading Heatwave Risks,2025,2025,arXiv / ICLR 2026 FM4Science workshop poster,conference,D5,llm,high,05;06;07;11,4,none
+ASD-0652,ResearchTown: Simulator of Human Research Community,2025,2025,arXiv / ICML 2025,conference,D5,llm,high,11,1,none
+ASD-0653,Earth-Agent: Unlocking the Full Landscape of Earth Observation with Agents,2025,2025,arXiv / ICLR 2026 conference paper,conference,D5,llm,high,05,1,none
+ASD-0654,HLER: Human-in-the-Loop Economic Research via Multi-Agent Pipelines for Empirical Discovery,2026,2026,arXiv / SSRN,preprint,D5,llm,high,11,1,none
+ASD-0655,TreeReview: A Dynamic Tree of Questions Framework for Deep and Efficient LLM-based Scientific Peer Review,2025,2025,arXiv / EMNLP 2025 Main,conference,D5,llm,high,11,1,none
+ASD-0656,AI-Assisted Peer Review at Scale: The AAAI-26 AI Review Pilot,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0658,"Read the Paper, Write the Code: Agentic Reproduction of Social-Science Results",2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0659,Autonomous Agents Coordinating Distributed Discovery Through Emergent Artifact Exchange,2026,2026,arXiv,preprint,D5,llm,high,04;06;07;11,4,none
+ASD-0660,S1-NexusAgent: a Self-Evolving Agent Framework for Multidisciplinary Scientific Research,2026,2026,arXiv,preprint,D5,llm,high,03;04;06;07,4,none
+ASD-0662,Mimosa Framework: Toward Evolving Multi-Agent Systems for Scientific Research,2026,2026,arXiv,preprint,D5,llm,medium,03;05;06;11,4,none
+ASD-0663,AutoScientists: Self-Organizing Agent Teams for Long-Running Scientific Experimentation,2026,2026,arXiv,preprint,D5,llm,high,01;06;07,3,none
+ASD-0664,Autonomous computational catalysis through an agentic research system,2026,2026,arXiv,preprint,D5,llm,high,03;04,2,none
+ASD-0665,TSAgent: An Agentic Workflow for Autonomous Transition State Search,2026,2026,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0666,MatClaw: An Autonomous Code-First LLM Agent for End-to-End Materials Exploration,2026,2026,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0667,From Natural Language to Materials Discovery: The Materials Knowledge Navigation Agent,2026,2026,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0668,Autonomous Multi-Agent AI for High-Throughput Polymer Informatics: From Property Prediction to Generative Design Across Synthetic and Bio-Polymers,2026,2026,arXiv,preprint,D5,llm,high,04;06,2,none
+ASD-0669,MARBLE: Multi-Agent Reasoning for Bioinformatics Learning and Evolution,2026,2026,arXiv,preprint,D5,llm,high,06;07,2,none
+ASD-0670,Mozi: Governed Autonomy for Drug Discovery LLM Agents,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0671,AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration,2026,2026,arXiv,preprint,D5,llm,high,01;02;06,3,none
+ASD-0672,Polymer-Agent: Large Language Model Agent for Polymer Design,2026,2026,Journal of Chemical Information and Modeling / arXiv,journal,D5,llm,high,04,1,none
+ASD-0673,Harnessing AtomisticSkills for Agentic Atomistic Research,2026,2026,arXiv,preprint,D5,llm,high,03;04;07,3,none
+ASD-0674,GraphAgents: Knowledge Graph-Guided Agentic AI for Cross-Domain Materials Design,2026,2026,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0675,"MolClaw: An Autonomous Agent with Hierarchical Skills for Drug Molecule Evaluation, Screening, and Optimization",2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0676,AutoSci: A Memory-Centric Agentic System for the Full Scientific Research Lifecycle,2026,2026,arXiv,preprint,D5,llm,high,01;06;07,3,none
+ASD-0677,DeepRoot: A KG-Coordinated Multi-Agent System for Therapeutic Reasoning over Historical Medical Texts,2026,2026,arXiv / OpenReview GenBio 2026 Poster,conference,D5,llm,high,07,1,none
+ASD-0678,Latent-Y: A Lab-Validated Autonomous Agent for De Novo Drug Design,2026,2026,arXiv,preprint,D5,llm,high,06;07,2,none
+ASD-0679,Rhizome OS-1: Rhizome's Semi-Autonomous Operating System for Small Molecule Drug Discovery,2026,2026,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0680,Agentic Fusion of Large Atomic and Language Models to Accelerate Superconductor Discovery,2026,2026,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0681,Agentic LLM Reasoning in a Self-Driving Laboratory for Air-Sensitive Lithium Halide Spinel Conductors,2026,2026,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0682,El Agente S锟斤拷lido: A New Age(nt) for Solid State Simulations,2026,2026,arXiv,preprint,D5,llm,high,03;04,2,none
+ASD-0683,PeroMAS: A Multi-agent System of Perovskite Material Discovery,2026,2026,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0684,ChemNavigator: Agentic AI Discovery of Design Rules for Organic Photocatalysts,2026,2026,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0687,Agentic AI for Multi-Stage Physics Experiments at a Large-Scale User Facility Particle Accelerator,2025,2025,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0688,"OpenFOAMGPT 2.0: end-to-end, trustworthy automation for computational fluid dynamics",2025,2025,arXiv,preprint,D5,llm,high,02;09,2,none
+ASD-0691,OASIS: Onboard Autonomous Science Investigation System for Opportunistic Rover Science,2007,2004–2019,Journal of Field Robotics,journal,D2,classical,high,05;10,2,none
+ASD-0693,Enabling Onboard Detection of Events of Scientific Interest for the Europa Clipper Spacecraft,2019,2004–2019,KDD '19,conference,D3,optimization,medium,05;10,2,none
+ASD-0695,FoodPuzzle: Developing Large Language Model Agents as Flavor Scientists,2024,2024,arXiv,preprint,D5,llm,high,03;08,2,none
+ASD-0696,AEGIS Automated Science Targeting for the MER Opportunity Rover,2012,2004–2019,ACM Transactions on Intelligent Systems and Technology,journal,D3,optimization,high,05;10,2,none
+ASD-0697,AEGIS autonomous targeting for ChemCam on Mars Science Laboratory: Deployment and results of initial science team use,2017,2004–2019,Science Robotics,journal,D3,optimization,high,05;10,2,none
+ASD-0698,APRES: An Agentic Paper Revision and Evaluation System,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0699,ARA: Agentic Reproducibility Assessment For Scalable Support Of Scientific Peer-Review,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0701,Automating Computational Reproducibility in Social Science: Comparing Prompt-Based and Agent-Based Approaches,2026,2026,arXiv / WWW Companion 2026,conference,D5,llm,high,11,1,none
+ASD-0702,Rover-Based Autonomous Science by Probabilistic Identification and Evaluation,2013,2004–2019,Journal of Intelligent & Robotic Systems,journal,D3,optimization,medium,10,1,none
+ASD-0703,Autonomous Science Agents and Sensor Webs: EO-1 and Beyond,2006,2004–2019,IEEE Aerospace Conference,conference,D2,classical,high,05;10,2,none
+ASD-0704,PaperRepro: Automated Computational Reproducibility Assessment for Social Science Papers,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0705,Automated reproducibility assessments in the social and behavioral sciences using large language models,2026,2026,arXiv,preprint,D5,llm,medium,11,1,none
+ASD-0706,aiXiv: A Next-Generation Open Access Ecosystem for Scientific Discovery Generated by AI Scientists,2025,2025,arXiv,preprint,D5,llm,medium,11,1,none
+ASD-0707,ArgoLOOM: agentic AI for fundamental physics from quarks to cosmos,2025,2025,arXiv,preprint,D5,llm,medium,02,1,none
+ASD-0708,GenoMAS: A Multi-Agent Framework for Scientific Discovery via Code-Driven Gene Expression Analysis,2025,2025,arXiv,preprint,D5,llm,high,06,1,none
+ASD-0709,Automated Targeting for the MSL Rover ChemCam Spectrometer,2014,2004–2019,i-SAIRAS 2014,conference,D3,optimization,high,05;10,2,none
+ASD-0710,AEGIS Autonomous Targeting for the SuperCam Instrument on the Mars 2020 Perseverance Rover,2024,2024,i-SAIRAS 2024,conference,D3,optimization,high,05;10,2,none
+ASD-0711,Developing Autonomous Science Technology for the MSL Rover Mission,2015,2004–2019,IJCAI Workshop / JPL paper,conference,D3,optimization,high,05;10,2,none
+ASD-0712,Enabling Autonomous Rover Science Through Dynamic Planning and Scheduling,2005,2004–2019,IEEE Aerospace Conference,conference,D2,classical,high,10,1,none
+ASD-0713,Demonstrating Autonomy for Complex Space Missions: A Europa Lander Mission Autonomy Prototype,2024,2024,Journal of Aerospace Information Systems,journal,D2,classical,high,10,1,none
+ASD-0714,K-Dense Analyst: Towards Fully Automated Scientific Analysis,2025,2025,arXiv,preprint,D5,llm,high,06;07,2,none
+ASD-0715,"BioDisco: Multi-agent hypothesis generation with dual-mode evidence, iterative feedback and temporal evaluation",2025,2025,arXiv,preprint,D5,llm,high,07;06,2,none
+ASD-0716,"Bio AI Agent: A Multi-Agent Artificial Intelligence System for Autonomous CAR-T Cell Therapy Development with Integrated Target Discovery, Toxicity Prediction, and Rational Molecular Design",2025,2025,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0717,Paper Circle: An Open-source Multi-agent Research Discovery and Analysis Framework,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0719,Mission Operations of Earth Observing-1 with Onboard Autonomy,2006,2004–2019,2nd IEEE International Conference on Space Mission Challenges for Information Technology,conference,D2,classical,high,05;10,2,none
+ASD-0721,Integrated AI in Space: The Autonomous Sciencecraft on Earth Observing One,2006,2004–2019,AAAI 2006,conference,D2,classical,high,05;10,2,none
+ASD-0722,An Autonomous Earth-Observing Sensorweb,2005,2004–2019,IEEE Intelligent Systems,journal,D2,classical,high,05;10,2,none
+ASD-0723,CASSIA: a multi-agent large language model for automated and interpretable cell annotation,2026,2026,Nature Communications,journal,D5,llm,high,06,1,none
+ASD-0724,Autonomous seeking and mapping coral reef biodiversity hotspots with a multimodal AUV,2026,2026,Science Robotics,journal,D2,classical,low,06,1,none
+ASD-0725,TianJi-Environ: An Autonomous AI Scientist for Atmospheric Environmental Research,2026,2026,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0726,AutoClimDS: Climate Data Science Agentic AI -- A Knowledge Graph is All You Need,2026,2026,IEEE CAI 2026 / arXiv,conference,D5,llm,high,05,1,none
+ASD-0727,GeoAgentic-RAG: A Multi-Agent framework for autonomous geospatial reasoning and visual insight generation with LLM,2026,2026,International Journal of Applied Earth Observation and Geoinformation,journal,D5,llm,high,05,1,none
+ASD-0728,CellForge: Agentic Design of Virtual Cell Models,2025,2025,arXiv / OpenReview,preprint,D5,llm,high,06,1,none
+ASD-0729,Self-evolving AI agents for protein discovery and directed evolution,2026,2026,arXiv,preprint,D5,llm,high,06,1,none
+ASD-0731,Self-Driving Datasets: From 20 Million Papers to Nuanced Biomedical Knowledge at Scale,2026,2026,arXiv,preprint,D5,llm,high,03;06;07,3,none
+ASD-0733,"Increased Mars Rover Autonomy using AI Planning, Scheduling and Execution",2007,2004–2019,IEEE ICRA 2007,conference,D2,classical,high,10,1,none
+ASD-0734,Controlling an organic synthesis robot with machine learning to search for new reactivity,2018,2004–2019,Nature,journal,D3,optimization,medium,03,1,none
+ASD-0735,Artificial Chemist: An Autonomous Quantum Dot Synthesis Bot,2020,2020–2023,Advanced Materials,journal,D3,optimization,high,04,1,none
+ASD-0736,AI-Researcher: Autonomous Scientific Innovation,2025,2025,NeurIPS 2025 Datasets and Benchmarks / OpenReview,conference,D5,llm,high,01,1,none
+ASD-0737,ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence Verification,2026,2026,arXiv,preprint,D5,llm,medium,01,1,none
+ASD-0738,AutoSOTA: An End-to-End Automated Research System for State-of-the-Art AI Model Discovery,2026,2026,arXiv,preprint,D5,llm,medium,01,1,none
+ASD-0739,Autonomous microfluidic experimentation for exploring reaction inference and synthesizing double perovskite nanoplatelets,2026,2026,Nature Communications,journal,D3,optimization,high,03;04,2,none
+ASD-0740,Discovery of tunable and soluble organic emitters for solid-state lasers with a self-driving laboratory,2026,2026,Nature Communications,journal,D3,optimization,medium,03;04,2,none
+ASD-0741,Spatial transcriptomics AI agent charts hPSC-pancreas maturation in vivo,2025,2025,bioRxiv,preprint,D5,llm,medium,06,1,none
+ASD-0742,Talk2Biomodels: AI agent-based open-source LLM initiative for kinetic biological models,2025,2025,BMC Bioinformatics,journal,D5,llm,high,06;07,2,none
+ASD-0743,STAT: A multi-agent framework for integrated and interactive spatial transcriptomics analysis,2026,2026,Research Square,preprint,D5,llm,high,06;07,2,none
+ASD-0744,"BioGAIP: A Scalable, User-Friendly and Robust LLM-Powered Multi-Agent System for Automated Bioinformatics Tasks",2026,2026,bioRxiv,preprint,D5,llm,high,06;07,2,none
+ASD-0745,BioLab: End-to-End Autonomous Life Sciences Research with Multi-Agents System Integrating Biological Foundation Models,2025,2025,bioRxiv,preprint,D5,llm,high,06;07,2,none
+ASD-0747,VFEAgent: A Multimodal Agent Framework for End-to-End Automated Finite Element Analysis,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0748,ASTER -- Agentic Science Toolkit for Exoplanet Research,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0749,Self-Refining Topology Optimization via an LLM-Based Multi-Agent Framework,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0750,GRACE: an Agentic AI for Particle Physics Experiment Design and Simulation,2026,2026,arXiv,preprint,D5,llm,high,02;04,2,none
+ASD-0751,Beyond AI as Assistants: Toward Autonomous Discovery in Cosmology,2026,2026,arXiv / Rencontres de Moriond contribution,conference,D5,llm,low,02,1,none
+ASD-0752,Integrating Large Language Models for Automated Structural Analysis,2025,2025,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0753,A Lightweight Large Language Model-Based Multi-Agent System for 2D Frame Structural Analysis,2025,2025,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0754,Automating Structural Engineering Workflows with Large Language Model Agents,2025,2025,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0755,Automating Structural Analysis Across Multiple Software Platforms Using Large Language Models,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0756,Agentic Large Language Models for Automated Structural Analysis of 3D Frame Systems,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0757,CADSmith: Multi-Agent CAD Generation with Programmatic Geometric Validation,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0758,Self-Improving CAD Generation Agents with Finite Element Analysis as Feedback,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0759,PhysMaster: Building an Autonomous AI Physicist for Theoretical and Computational Physics Research,2025,2025,arXiv,preprint,D6,hybrid,high,02,1,none
+ASD-0760,Towards autonomous quantum physics research using LLM agents with access to intelligent tools,2025,2025,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0761,AI Agents for Variational Quantum Circuit Design,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0762,LLM-based Multi-Agent Copilot for Quantum Sensor,2025,2025,arXiv,preprint,D6,hybrid,medium,02,1,none
+ASD-0763,From Experimental Limits to Physical Insight: A Retrieval-Augmented Multi-Agent Framework for Interpreting Searches Beyond the Standard Model,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0764,An agentic framework for gravitational-wave counterpart association in the multi-messenger era,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0765,CLIMATEAGENT: Multi-Agent Orchestration for Complex Climate Data Science Workflows,2025,2025,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0766,"ReviewGrounder: Improving Review Substantiveness with Rubric-Guided, Tool-Integrated Agents",2026,2026,arXiv,preprint,D5,llm,low,11,1,none
+ASD-0768,When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews,2026,2026,ACL 2026 / arXiv,conference,D5,llm,high,11,1,none
+ASD-0769,DeepER-Med: Advancing Deep Evidence-Based Research in Medicine Through Agentic AI,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0770,Progressive Multi-Agent Reasoning for Biological Perturbation Prediction,2026,2026,arXiv,preprint,D5,llm,high,06;07,2,none
+ASD-0771,Process-Supervised Multi-Agent Reinforcement Learning for Reliable Clinical Reasoning,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0772,TRACE: A Multi-Agent System for Autonomous Physical Reasoning for Seismology,2026,2026,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0773,Skill-Augmented AI Agents for Medical Research Analysis: An Exploratory Multi-Model Human Evaluation in an NSCLC Transcriptomic Biomarker Task,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0774,Causal-Enhanced AI Agents for Medical Research Screening,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0775,Owl-AuraID 1.0: An Intelligent System for Autonomous Scientific Instrumentation and Scientific Data Analysis,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0779,From Text to Simulation: A Multi-Agent LLM Workflow for Automated Chemical Process Design,2026,2026,arXiv,preprint,D6,hybrid,high,09,1,none
+ASD-0780,Context is all you need: Towards autonomous model-based process design using agentic AI in flowsheet simulations,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0781,Large Language Model Agent for User-friendly Chemical Process Simulations,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0782,"CFDagent: A Language-Guided, Zero-Shot Multi-Agent System for Complex Flow Simulation",2025,2025,Physics of Fluids,journal,D5,llm,high,02;09,2,none
+ASD-0783,RemoteAgent: Bridging Vague Human Intents and Earth Observation with RL-based Agentic MLLMs,2026,2026,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0784,GISclaw: A Comprehensive Open-Source LLM Agent System for Realistic Multi-Step Geospatial Analysis,2026,2026,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0786,AgentReview: Exploring Peer Review Dynamics with LLM Agents,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0787,SciToolAgent: a knowledge-graph-driven scientific agent for multitool integration,2025,2025,Nature Computational Science,journal,D5,llm,high,03;04;06,3,none
+ASD-0789,TEM Agent: enhancing transmission electron microscopy with modern AI tools,2026,2026,npj Computational Materials,journal,D5,llm,high,09,1,none
+ASD-0790,Hierarchical Multi-agent Large Language Model Reasoning for Autonomous Heterogeneous Catalyst Discovery,2026,2026,npj Computational Materials,journal,D5,llm,high,03;04,2,none
+ASD-0791,Escaping the hydrolysis trap: a react agent for inverse design of durable photocatalytic covalent organic frameworks,2026,2026,npj Computational Materials,journal,D5,llm,high,04,1,none
+ASD-0792,Autonomous heterogeneous catalyst discovery with a self-evolving multi-agent digital twin,2026,2026,arXiv,preprint,D5,llm,high,03;04,2,none
+ASD-0793,Adsorb-Agent: Autonomous Identification of Stable Adsorption Configurations via Large Language Model Agent,2024,2024,arXiv,preprint,D5,llm,high,03,1,none
+ASD-0794,The HTC-Claw: Automating Discovery through High-Throughput Computational Campaigns,2026,2026,arXiv,preprint,D5,llm,high,04,1,none
+ASD-0796,Bridging Perception and Action: A Lightweight Multimodal Meta-Planner Framework for Robust Earth Observation Agents,2026,2026,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0797,CP-Agent: Context-Aware Multimodal Reasoning for Cellular Morphological Profiling under Chemical Perturbations,2026,2026,arXiv / ICLR 2026 Poster,conference,D5,llm,medium,06,1,none
+ASD-0798,Molecular Lead Optimization via Agentic Tool Planning,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0799,CeProAgents: A Hierarchical Agents System for Automated Chemical Process Development,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0800,Risk-Aware LLM Agents for Geospatial Data Retrieval: Design and Preliminary Adversarial Evaluation,2026,2026,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0801,Advancing Subsurface Discovery and Geothermal Monitoring with an Agentic Artificial Intelligence Framework,2025,2025,arXiv,preprint,D5,llm,high,05,1,none
+ASD-0803,ClimateAgents: A Multi-Agent Research Assistant for Social-Climate Dynamics Analysis,2026,2026,arXiv,preprint,D5,llm,high,05;11,2,none
+ASD-0804,Sketch2Simulation: Automating Flowsheet Generation via Multi Agent Large Language Models,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0805,TurboAgent: An LLM-Driven Autonomous Multi-Agent Framework for Turbomachinery Aerodynamic Design,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0806,Agentic Language-to-Objective Synthesis for Optofluidic Assembly,2026,2026,arXiv,preprint,D6,hybrid,medium,09,1,none
+ASD-0807,Large Language Models based Multi-Agent Framework for Objective Oriented Control Design in Power Electronics,2024,2024,arXiv,preprint,D5,llm,medium,09,1,none
+ASD-0808,InvDesMobility: a reliability-gated first-principles feedback framework for closed-loop materials discovery,2026,2026,arXiv,preprint,D3,optimization,medium,04,1,none
+ASD-0809,Battery-Sim-Agent: Leveraging LLM-Agent for Inverse Battery Parameter Estimation,2026,2026,arXiv,preprint,D5,llm,high,09,1,none
+ASD-0810,My Chemical Harness: Evolutionary Molecular Design over Synthetic Pathways with Large Language Model Agents,2026,2026,arXiv,preprint,D6,hybrid,high,03,1,none
+ASD-0811,Closed-Loop Molecular Design with Calibrated Deference,2026,2026,arXiv,preprint,D5,llm,high,03;04,2,none
+ASD-0812,BioResearcher: Scenario-Guided Multi-Agent for Translational Medicine,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0813,ELISA: An Interpretable Hybrid Generative AI Agent for Expression-Grounded Discovery in Single-Cell Genomics,2026,2026,arXiv,preprint,D5,llm,high,06,1,none
+ASD-0814,Towards a Virtual Neuroscientist: Autonomous Neuroimaging Analysis via Multi-Agent Collaboration,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0815,CoDaS: AI Co-Data-Scientist for Biomarker Discovery via Wearable Sensors,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0816,TSAssistant: A Human-in-the-Loop Agentic Framework for Automated Target Safety Assessment,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0817,Probe Before You Edit: Probing-Guided Molecular Optimization for LLM Agents in Structure-Based Drug Design,2026,2026,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0818,MolMem: Memory-Augmented Agentic Reinforcement Learning for Sample-Efficient Molecular Optimization,2026,2026,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0819,SEISMO: Increasing Sample Efficiency in Molecular Optimization with a Trajectory-Aware LLM Agent,2026,2026,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0820,Reinforcement Learning with LLM-Guided Action Spaces for Synthesizable Lead Optimization,2026,2026,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0821,Agentic reinforcement learning empowers next-generation chemical language models for molecular design and synthesis,2026,2026,arXiv,preprint,D5,llm,high,03;07,2,none
+ASD-0822,Contextual Invertible World Models: A Neuro-Symbolic Agentic Framework for Colorectal Cancer Drug Response,2026,2026,arXiv,preprint,D5,llm,high,06;07,2,none
+ASD-0826,ToolMol: Evolutionary Agentic Framework for Multi-objective Drug Discovery,2026,2026,arXiv,preprint,D6,hybrid,high,03;07,2,none
+ASD-0827,A Multi-modal Agentic Co-pilot for Evidence Grounded Computational Pathology,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0828,SAGE: Agentic Framework for Interpretable and Clinically Translatable Computational Pathology Biomarker Discovery,2026,2026,arXiv,preprint,D5,llm,high,07,1,none
+ASD-0829,DarkAgents,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0824,FRAGMENTA: End-to-end Fragmentation-based Generative Model with Agentic Tuning for Drug Lead Optimization,2025,2025,arXiv,preprint,D6,hybrid,high,07,1,none
+ASD-0825,ReACT-Drug: Reaction-Template Guided Reinforcement Learning for de novo Drug Design,2025,2025,arXiv,preprint,D4,classical,high,07,1,none
+ASD-0830,Dr.Sai: An agentic AI for real-world physics analysis at BESIII,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0831,Frontier LLM-based agents can overcome the ontology curation bottleneck for natural phenotypes,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0832,Nikolas: AI Agent for Semi-Autonomous Catalyst Discovery Using the PRISM Meta-Cognitive Architecture,2026,2026,ChemRxiv,preprint,D5,llm,medium,03,1,none
+ASD-0833,Towards Autonomous Mechanistic Reasoning in Virtual Cells,2026,2026,arXiv,preprint,D5,llm,high,06,1,none
+ASD-0838,Discovery Science with Autonomous ML-Driven Continuous Flow Chemistry,2026,2026,ChemRxiv,preprint,D3,optimization,low,03,1,none
+ASD-0839,First head-to-head comparison of agentic AI applied to the analysis of simulated data of the Einstein Telescope,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0840,Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0844,Science Earth: Towards A Planet-Scale Operating System for AI-Native Scientific Discovery,2026,2026,arXiv,preprint,D5,llm,high,01;06,2,none
+ASD-0845,SciDER: Scientific Data-centric End-to-end Researcher,2026,2026,arXiv,preprint,D5,llm,high,01;02;11,3,none
+ASD-0848,PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing,2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0849,OmniScientist: Toward a Co-evolving Ecosystem of Human and AI Scientists,2025,2025,arXiv,preprint,D5,llm,medium,01;11,2,none
+ASD-0850,OR-Agent: Bridging Evolutionary Search and Structured Research for Automated Algorithm Discovery,2026,2026,arXiv,preprint,D6,hybrid,high,01;10,2,none
+ASD-0851,GeoEvolve: Automating Geospatial Model Discovery via Multi-Agent Large Language Models,2025,2025,arXiv,preprint,D6,hybrid,medium,05,1,none
+ASD-0852,Autonomous science for an ExoMars Rover-like mission,2009,2004–2019,Journal of Field Robotics,journal,D3,optimization,medium,05;10,2,none
+ASD-0853,Onboard Autonomous Rover Science,2007,2004–2019,IEEE Aerospace Conference,conference,D2,classical,high,10,1,none
+ASD-0854,Enabling Autonomous Science for a Mars Rover,2008,2004–2019,SpaceOps Conference,conference,D2,classical,high,10,1,none
+ASD-0855,Automating Scientific Evaluation: A Multi-Agent Framework for Transparent and Trustworthy Peer Review,2025,2025,IFAC-PapersOnLine,journal,D5,llm,medium,11,1,none
+ASD-0856,AutoDiscovery: Open-ended Scientific Discovery via Bayesian Surprise,2025,2025,arXiv,preprint,D6,hybrid,high,06;07;11,3,none
+ASD-0857,Machine Collective Intelligence for Explainable Scientific Discovery,2026,2026,arXiv,preprint,D5,llm,medium,02;03;04;06;09,5,none
+ASD-0858,Incorporating AEGIS autonomous science into Mars Science Laboratory rover mission operations,2018,2004–2019,SpaceOps Conference,conference,D3,optimization,medium,10,1,none
+ASD-0859,Monitoring active volcanism with the Autonomous Sciencecraft Experiment on EO-1,2006,2004–2019,Remote Sensing of Environment,journal,D2,classical,high,05,1,none
+ASD-0860,Autonomous detection of cryospheric change with hyperion on-board Earth Observing-1,2006,2004–2019,Remote Sensing of Environment,journal,D2,classical,high,05,1,none
+ASD-0861,Flood detection and monitoring with the Autonomous Sciencecraft Experiment onboard EO-1,2006,2004–2019,Remote Sensing of Environment,journal,D2,classical,medium,05,1,none
+ASD-0862,AI Agents Can Already Autonomously Perform Experimental High Energy Physics,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0863,HEPTAPOD: Orchestrating High Energy Physics Workflows Towards Autonomous Agency,2025,2025,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0864,MadAgents,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0866,Accelerating Scientific Discovery with Autonomous Goal-evolving Agents,2025,2025,arXiv,preprint,D6,hybrid,high,03;04;06;07;09,5,none
+ASD-0867,Swarms of Large Language Model Agents for Protein Sequence Design with Experimental Validation,2025,2025,arXiv,preprint,D5,llm,high,06,1,none
+ASD-0868,Think like a Scientist: Physics-guided LLM Agent for Equation Discovery,2026,2026,arXiv,preprint,D5,llm,high,02,1,none
+ASD-0869,STRIDE: A Self-Reflective Agent Framework for Reliable Automatic Equation Discovery,2026,2026,arXiv,preprint,D5,llm,high,02;03;04;06,4,none
+ASD-0870,SR-Scientist: Scientific Equation Discovery With Agentic AI,2025,2025,arXiv,preprint,D5,llm,high,02;03;04;06,4,none
+ASD-0871,The Denario project: Deep knowledge AI agents for scientific discovery,2025,2025,arXiv,preprint,D5,llm,medium,02;03;04;06;07,5,none
+ASD-0872,PantheonOS: An Evolvable Multi-Agent Framework for Automatic Genomics Discovery,2026,2026,bioRxiv,preprint,D6,hybrid,medium,06;07,2,none
+ASD-0873,Large Knowledge Model: A Knowledge Foundation for Agentic Science at Scale,2026,2026,arXiv,preprint,D5,llm,medium,03;07;11,3,none
+ASD-0874,"Auditing Discovery Claims: A Two-Sided Criterion for Agentic Science, with the Negative Side Decidable",2026,2026,arXiv,preprint,D3,optimization,low,06,1,none
+ASD-0875,Science sandboxes measure the scientific capability of AI agents,2026,2026,arXiv,preprint,D5,llm,high,06,1,none
+ASD-0876,CausalDS: Benchmarking Causal Reasoning in Data-Science Agents,2026,2026,arXiv,preprint,D5,llm,medium,01,1,none
+ASD-0877,The Silent Failures in Agentic Data Science,2026,2026,arXiv,preprint,D5,llm,low,01,1,none
+ASD-0878,SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?,2026,2026,arXiv,preprint,D5,llm,medium,01,1,none
+ASD-0879,"CrossAudit: A Git-Native, Cross-Vendor Audit Loop for Agentic Science",2026,2026,arXiv,preprint,D5,llm,high,11,1,none
+ASD-0880,Can Autonomous LLM Agents Execute Multireference Quantum Chemistry Calculations?,2026,2026,arXiv preprint,preprint,D5,llm,high,03,1,none
+ASD-0881,Autonomous Chemical Mechanistic Discovery through Agentic Reasoning and Validation,2026,2026,arXiv preprint,preprint,D5,llm,high,03,1,none
+ASD-0882,Hypothesis-Driven Autonomous Materials Synthesis with Multimodal LLM Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0883,GBClaw: An agentic AI framework for atomistic grain boundary research and mechanistic discovery,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0884,AutoXRD: Autonomous LLM Agents and Comprehensive Evaluation for Powder Diffraction Analysis,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0885,An Open-Source Hardware and Software Toolkit to Enable Agentic RHEED-Guided Thin-Film Synthesis,2026,2026,arXiv preprint,preprint,D5,llm,medium,04,1,none
+ASD-0886,Autonomous discovery of new structure-plausibility laws for explainable and rapid crystal diagnosis and screening,2026,2026,arXiv preprint,preprint,D5,llm,medium,04,1,none
+ASD-0887,Evaluating a 4B open-weights local LLM for agentic DFT workflows: a literature reproducibility audit,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0888,SQD-Agent: LLM-driven agentic framework for Quantum Chemistry workflows,2026,2026,arXiv preprint,preprint,D5,llm,high,03,1,none
+ASD-0889,RaspAssistant as an Agentic Framework for Automating Adsorption Simulation Research in Porous Materials,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0892,The Virtual Biotech: A multi-agent AI framework for therapeutic discovery and development,2026,2026,"Science (New York, N.Y.)",journal,D5,llm,high,06;07,2,none
+ASD-0893,Agentomics: an agentic system that autonomously develops novel state-of-the-art solutions for biomedical machine learning tasks,2026,2026,"Bioinformatics (Oxford, England)",journal,D5,llm,high,03;06;07,3,none
+ASD-0894,AutoScreen: AI Co-Scientist System for Target Discovery in Functional Genomics,2026,2026,openRxiv (preprint),preprint,D5,llm,high,06;07,2,none
+ASD-0895,"Omics data discovery agents: Agent-supported retrieval, reanalysis, and synthesis of published omics data",2026,2026,PLoS computational biology,journal,D5,llm,high,06;07,2,none
+ASD-0896,BioPathfinder: Evidence-guided multi-agent platform enables hypothesis discovery for CAR-T engineering,2026,2026,openRxiv (preprint),preprint,D5,llm,high,06;07,2,none
+ASD-0897,Distributed AI agents enable comprehensive discovery of biological insights at scale,2026,2026,openRxiv (preprint),preprint,D5,llm,high,06,1,none
+ASD-0898,scACORN: Context-engineered agent orchestration of specialized small language models for single-cell transcriptomic interpretation,2026,2026,openRxiv (preprint),preprint,D5,llm,high,06,1,none
+ASD-0899,Mind the alignment gap: a spatial transcriptomics benchmark for scientific coding agents,2026,2026,openRxiv (preprint),preprint,D5,llm,high,01;06,2,none
+ASD-0900,Multi-agentic system for primer design in qPCR and LAMP diagnostics tests,2026,2026,openRxiv (preprint),preprint,D1,classical,high,06,1,none
+ASD-0901,"scBaseCount: An AI agent-curated, standardized, auto-updated single-cell data repository",2026,2026,Cell,journal,D5,llm,high,06,1,none
+ASD-0902,Perturb-ME: Scalable mechanism discovery from phenotype-enriched genome-wide screens,2026,2026,openRxiv (preprint),preprint,D5,llm,high,06;07,2,none
+ASD-0903,CLVisc Agent for autonomous relativistic hydrodynamics studies,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-0904,Autonomous Quantum Transport Measurements of 2D Semiconductors by an AI Agent,2026,2026,arXiv preprint,preprint,D5,llm,high,02;04,2,none
+ASD-0905,ORBIT-Q: Dual-axis benchmarking of autonomous agents in scientific quantum programming,2026,2026,arXiv preprint,preprint,D5,llm,medium,01;02,2,none
+ASD-0906,Advancing mathematics research with AI-driven formal proof search,2026,2026,Science,journal,D6,hybrid,high,01,1,none
+ASD-0907,SciExam for ENSO: Can AI Agents Build Climate Models?,2026,2026,arXiv preprint,preprint,D5,llm,medium,05,1,none
+ASD-0908,Bringing Agentic Search to Earth Observation Data Discovery,2026,2026,arXiv preprint,preprint,D5,llm,high,05,1,none
+ASD-0909,CABAL: Multi-Agent Simulacra for Tracing the Effects of Collusive Bidding in Peer Review,2026,2026,arXiv preprint,preprint,D5,llm,high,11,1,none
+ASD-0910,InternReviewer & InternAdvocate: Objective Reward and Evaluation for Agentic Reinforcement Learning in Peer Review and Rebuttal,2026,2026,arXiv preprint,preprint,D5,llm,high,11,1,none
+ASD-0912,AgentIdeaBench: Benchmarking Scientific Ideation in the Agent Era,2026,2026,arXiv preprint,preprint,D5,llm,high,11,1,none
+ASD-0913,AutoSciBench: Autonomous Benchmark Generation for Evaluating Scientific Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,04;06;07,3,none
+ASD-0914,Autonomous Science Bench: Evaluating AI Agents for Autonomous Scientific Discovery,2026,2026,arXiv preprint,preprint,D5,llm,medium,03;04;06,3,none
+ASD-0915,Into the Unknown: Benchmarking AI agents on open scientific research problems,2026,2026,arXiv preprint,preprint,D5,llm,medium,01;02;03;04;11,5,none
+ASD-0916,EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards,2026,2026,arXiv preprint,preprint,D5,llm,medium,05,1,none
+ASD-0917,PHREEQC-MCQ-200: A Diagnostic Benchmark for Tool-Augmented Scientific Simulator Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,03;05,2,none
+ASD-0918,DeepInstructor: An Agentic AI Instructor for Experience-Driven Idea Evaluation,2026,2026,arXiv preprint,preprint,D5,llm,high,11,1,none
+ASD-0919,Scaling Scientific Discovery Environments for Turn-Level Agentic RL,2026,2026,arXiv preprint,preprint,D5,llm,high,05;06;07;11,4,none
+ASD-0920,Behavior is Not Enough: A Mechanism-Based Evaluation of Social Norm Emergence in LLM Societies,2026,2026,arXiv preprint,preprint,D5,llm,high,11,1,none
+ASD-0922,QuantumNovelty: A Skill-Orchestrating Language Agent for Referee-Style Review and Patentability Screening of Quantum Papers and Patents,2026,2026,arXiv preprint,preprint,D5,llm,high,02;11,2,none
+ASD-0923,Training AI Scientists to Replicate Research,2026,2026,arXiv preprint,preprint,D5,llm,high,01;11,2,none
+ASD-0924,SGHA: Evidence-Grounded Research Problem Discovery with Local Language Models,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0925,Beyond Execution: Auditing Experimental Fidelity in LLM-Driven Scientific Research,2026,2026,arXiv preprint,preprint,D5,llm,high,01;02;06;11,4,none
+ASD-0926,AutoData: Agentic Search for Pre-training Data Selection,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0927,ScientistTwo: Pioneering the Human Knowledge Frontier with Autonomous AI,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0928,EviGraph: Evidence-Guided Autonomous Research Agents,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0929,Learning What to Investigate Next: Meta-Reasoning for Long-Horizon Research Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0930,ExpEvolve: Structuring and Reusing Experience for Open-Ended Discovery,2026,2026,arXiv preprint,preprint,D6,hybrid,medium,01,1,none
+ASD-0931,Can AI agents conduct open-ended AI research? Early evidence from two case studies,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0932,The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0933,JANUS: Enhancing Long-Horizon Autonomous Research with Co-Evolving World Models,2026,2026,arXiv preprint,preprint,D6,hybrid,high,01;06;08,3,none
+ASD-0934,YouRA: A Persistent-State Architecture for Evidence-Traceable Autonomous Research Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0935,DataSense-Bench: The First Step Toward an AI Scientist,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0936,PaperGym: Rubric-Centered Evolution for Research-Plan Generation,2026,2026,arXiv preprint,preprint,D5,llm,medium,11,1,none
+ASD-0937,AppliedScientist: Automated Scientific Revision Through Iterative AI Reviewing,2026,2026,arXiv preprint,preprint,D5,llm,high,01;11,2,none
+ASD-0938,Learning to Evaluate Before Improving: Automatic Rubric Induction for Automatic Research Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0939,HypoForge: A Self-Improving Multi-Agent Framework for Automated Hypothesis Generation and Testing via Scientific Skill Learning,2026,2026,arXiv preprint,preprint,D5,llm,high,11,1,none
+ASD-0940,OmniScientist: An Omni-Modal Omni-Discipline AI Scientist,2026,2026,arXiv preprint,preprint,D5,llm,high,01;02;03;04;05;06;07;08;09;10,10,none
+ASD-0941,Can AI Agents Make Open-Ended Scientific Discovery? Evidence from Station,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0943,"Epi: Towards a Persistent, Self-Improving Agent for Autonomous Research",2026,2026,arXiv preprint,preprint,D5,llm,medium,01;09;10,3,none
+ASD-0945,MMPostTrainBench: Benchmarking Autonomous Research for Multimodal Post-Training,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0946,PrimeScientist: Strategic Allocation of Research Effort in Autonomous Research,2026,2026,arXiv preprint,preprint,D2,classical,high,01,1,none
+ASD-0947,Experimental Experience Modeling for Autonomous Research,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0948,Collaborative Principle Evolution via Evidence Transfer for Scientific Discovery,2026,2026,arXiv preprint,preprint,D3,optimization,high,03;04;06;07,4,none
+ASD-0949,TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,01;02;03;04;05;06;09,7,none
+ASD-0950,Dr. Claw: An AI Scientist Workspace for Vibe Research,2026,2026,arXiv preprint,preprint,D5,llm,high,07,1,none
+ASD-0951,Reward Hacking Challenges Oversight of Autonomous Research Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,01;11,2,none
+ASD-0952,"AutoResearch: Insight In, Hallucination Out",2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0953,"ScienceFlow: A long-horizon agent for ML research, scientific discovery and beyond",2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0954,Project2Task: Graph-Guided Project-Level Planning for Autonomous Research,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0955,AutoWorldModel-Bench: A State-Centric Benchmark for Automated World-Model Research,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0956,Beneath the Diff: Diagnosing and Mitigating Algorithmic Mode Collapse in Code-Level Autonomous Research Loops,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0957,Beyond Final Scores: A Systematic Evaluation of Agents for Long-Horizon AI Research and Development,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0958,Beyond Solution-Centric Search: Adaptive Inquiry and Knowledge Revision for Autonomous ML Engineering,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0959,Long-Horizon Autonomous Architecture Research with a Language-Model Agent: A Behavioural Case Study,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0960,"CausalSmith: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0961,XScientist: A Git-Like Research Protocol for Long-Running Autonomous Scientific Discovery,2026,2026,arXiv preprint,preprint,D5,llm,medium,01;11,2,none
+ASD-0962,Triage-PiEvo: Evidence Admission for Principle-Evolving Scientific Agents,2026,2026,arXiv preprint,preprint,D5,llm,medium,03;04;07,3,none
+ASD-0963,"EvoSim: Learning to Model, Modeling to Learn",2026,2026,arXiv preprint,preprint,D5,llm,high,03;04,2,none
+ASD-0964,Are We Measuring Scientific Intelligence? Rethinking the Evaluation of AI Scientists,2026,2026,arXiv preprint,preprint,D5,llm,high,06,1,none
+ASD-0965,Can AI Scientists Change Their Minds? Prior-Evidence Conflict in Synthetic Universes,2026,2026,arXiv preprint,preprint,D5,llm,medium,02,1,none
+ASD-0966,AI for Science with GPT-6 Astra: Thermal Design and Electrothermal Analysis of 2D CFET,2026,2026,arXiv preprint,preprint,D5,llm,high,09,1,none
+ASD-0967,An immune world model for multiscale forecasting and therapeutic hypothesis generation,2026,2026,arXiv preprint,preprint,D5,llm,medium,06;07,2,none
+ASD-0968,Online Surrogate Repair: Decoupling High-Fidelity Feedback from Search Length in Closed-Loop Discovery,2026,2026,arXiv preprint,preprint,D6,hybrid,high,04,1,none
+ASD-0969,Mechanist: AI as a Scientific Instrument for Discovering the Mechanisms of Intelligence,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-0971,Sci$螤$vot: Benchmarking Principal-Investigator Judgment at Pivotal Moments of Scientific AutoResearch Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,11,1,none
+ASD-0972,EvoCast: Reliable Autonomous Research Agents for Iterative Forecasting Architecture Evolution,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0973,Large-Scale Autonomous Discovery of Kissing Number Constructions,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-0975,A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms,2026,2026,arXiv preprint,preprint,D5,llm,high,01;11,2,none
+ASD-0976,Andy: A Mathematical Agent for Rigorous Proof and Autonomous Research,2026,2026,arXiv preprint,preprint,D5,llm,high,01;09,2,none
+ASD-0977,AgonAlpha: Autonomous Alpha Discovery via Prompt Economy and Scalable Agentic Search,2026,2026,arXiv preprint,preprint,D5,llm,medium,11,1,none
+ASD-0978,OpenDiscoveryTrace: Process Traces for Evaluating AI Scientist Workflows,2026,2026,arXiv preprint,preprint,D5,llm,high,04;06;07;11,4,none
+ASD-0979,Autonomous in-silico inorganic materials discovery via multi-agent physics-aware scientific reasoning,2026,2026,npj Computational Materials,journal,D5,llm,high,04,1,none
+ASD-0980,Experiment automation agents: automating materials characterization with vision language model agents,2026,2026,npj Computational Materials,journal,D5,llm,medium,04,1,none
+ASD-0981,A collaborative agent with two lightweight synergistic models for autonomous crystal materials research,2026,2026,Nature Machine Intelligence,journal,D5,llm,high,04,1,none
+ASD-0982,Large-language-model-driven adaptive search space definition for autonomous closed-loop materials exploration,2026,2026,Communications Materials,journal,D6,hybrid,high,04,1,none
+ASD-0983,Autonomous adaptive spectral analysis with an LLM agent for self-driving laboratories,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0984,A self-learning scientific agent for X-ray diffraction,2026,2026,arXiv preprint,preprint,D5,llm,high,03;04,2,none
+ASD-0985,Agent-E2MD: Autonomous Translation of Interatomic Potential Equations into Physically Validated Pair Styles for Molecular Dynamics in LAMMPS,2026,2026,arXiv preprint,preprint,D5,llm,high,03;04,2,none
+ASD-0986,Hierarchical automation of scanning probe microscopy through agentic orchestration and algorithmic control,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0987,Diagnosing and narrowing the simulation-to-real gap in powder X-ray diffraction with a wet-dry agentic loop,2026,2026,arXiv preprint,preprint,D5,llm,medium,04,1,none
+ASD-0988,PACE-SIMS: Checkpoint-Gated Autonomous SIMS Characterization with AI-Agent Quality Control,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0989,Agent-MD: Selective LLM Intervention with Event-Driven Escalation for Stateful GCMC--MD Campaigns,2026,2026,arXiv preprint,preprint,D1,classical,medium,04;05,2,none
+ASD-0990,An LLM agent for end-to-end computational materials discovery,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0991,ALKEMIE Agent: an autonomous platform for computational materials design,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0992,ElectrolyteMD-Bench: How Well Do AI Agents Conduct Molecular Dynamics Studies across Electrolyte Solvation Regimes?,2026,2026,arXiv preprint,preprint,D5,llm,medium,03;04,2,none
+ASD-0993,Vibe-FDTR: An agent-oriented framework for reproducible frequency-domain thermoreflectance data analysis,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0994,AEcroscopyWave: Towards Self-Driving Characterization Platforms for Agentic AI,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-0995,Quality-controlled active learning via Gaussian processes for robust structure鈥損roperty learning in autonomous microscopy,2026,2026,npj Computational Materials,journal,D3,optimization,high,04,1,none
+ASD-0996,ChemGraph-XANES: an agentic framework for XANES simulation and curation,2026,2026,RSC Advances,journal,D5,llm,high,03;04,2,none
+ASD-0999,Interpretable self-driving sputtering epitaxy reveals human-usable growth rules for 尾-Ga2O3 films,2026,2026,Nature Communications,journal,D3,optimization,high,04,1,none
+ASD-1001,CompMat-Bench: Benchmarking AI Agents for Computational Materials Science,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-1002,ERAF4XRD: A multimodal agentic framework for constructing validated experimental X-ray diffraction databases from scientific literature,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-1003,Human-agent discovery of reconfigurable in-plane ferroelectric superdomain control,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-1004,Crystal-structure design by agentic AI in a language of motifs,2026,2026,arXiv preprint,preprint,D6,hybrid,high,04,1,none
+ASD-1005,LATHE: LAnguage-driven Toolkit for Hypothesis-based crystal Editing,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-1006,Enabling large language model agents for high-fidelity many-body perturbation theory calculations,2026,2026,arXiv preprint,preprint,D5,llm,high,02;04,2,none
+ASD-1007,Agentic schema-guided extraction of materials process knowledge from scientific literature,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-1008,Scaling LLM Agents for Materials Design through Hierarchical Collective Reasoning,2026,2026,arXiv preprint,preprint,D5,llm,high,04,1,none
+ASD-1009,Agentic self-driving microscopy benchmarks support qualification but do not necessarily generalize to unseen tasks,2026,2026,arXiv preprint,preprint,D5,llm,high,01;04,2,none
+ASD-1011,Stress-testing large language model agents in a robotic chemistry laboratory,2026,2026,arXiv preprint,preprint,D5,llm,high,03,1,none
+ASD-1012,HealthFlow: automating electronic health record analysis via a strategically self-evolving multi-agent framework,2026,2026,npj Digital Medicine,journal,D5,llm,high,07,1,none
+ASD-1013,From quantitative features to imaging signs: agentic AI-driven autonomous discovery in glioblastoma,2026,2026,npj Digital Medicine,journal,D5,llm,high,07,1,none
+ASD-1014,An AI-powered self-driving microscope for low-cost acute leukemia detection,2026,2026,Nature Communications,journal,D2,classical,low,07,1,none
+ASD-1015,MR-MAS: an end-to-end multi-agent system for autonomous Mendelian randomization analysis,2026,2026,Bioinformatics,journal,D5,llm,high,07,1,none
+ASD-1016,DDA: a traceable multi-agent framework for automated structure-based drug design,2026,2026,Frontiers in Chemistry,journal,D5,llm,high,06;07,2,none
+ASD-1017,DynaMate: An Autonomous Agent for Protein-Ligand Molecular Dynamics Simulations,2026,2026,Research Square preprint,preprint,D5,llm,high,06;07,2,none
+ASD-1018,GENIE: a multi-agent system for closed-loop autonomous microscopy,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06,1,none
+ASD-1019,A Conversational Multi-Agent AI System for Integrated Multi-Omics Analysis and Biomedical Discovery,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06;07,2,none
+ASD-1020,PromptBio: An Agentic Platform for End-to-End Computational Biomedical Research,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06,1,none
+ASD-1021,TRACEDD: A Tool-grounded Reasoning and Agentic Coordination for Explainable Drug Design,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06;07,2,none
+ASD-1022,Agentic campaign control for high-throughput de novo binder design,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06,1,none
+ASD-1023,Reliable and Efficient Agentic Protein Design with Toolset Harnessing,2026,2026,bioRxiv preprint,preprint,D5,llm,medium,06,1,none
+ASD-1024,Detailed curation of biological samples and experimental designs for genomics using LLM-supported agentic workflows,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06,1,none
+ASD-1025,From Prompt to Pipeline: A Comparative Evaluation of Large Language Model Coding Agents for Reproducible Bioinformatics Pipeline Construction,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06,1,none
+ASD-1026,ACCREDIT: A Quality-Aware Agentic Engine for Cell-resolved Cross-modal Image Registration with Dynamic Iterative Tuning,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06;07,2,none
+ASD-1027,Human-Guided Agentic AI for End-to-End EHR Research: Sequential Antibody-Drug Conjugate Pathways in Breast Cancer,2026,2026,medRxiv preprint,preprint,D5,llm,high,07,1,none
+ASD-1028,From seven combination hypotheses to one testable interaction: a gated agentic AI鈥換SP workflow applied to healthy-ageing interventions,2026,2026,bioRxiv preprint,preprint,D5,llm,medium,07,1,none
+ASD-1029,inClinico Agent for clinical trial endpoint prediction and prospective evaluation,2026,2026,medRxiv preprint,preprint,D5,llm,high,07,1,none
+ASD-1030,MedKGent: a large language model agent framework for constructing temporally evolving medical knowledge graph,2026,2026,npj Digital Medicine,journal,D5,llm,high,07,1,none
+ASD-1031,OntoCodex: a multi-agent biomedical ontology enrichment framework,2026,2026,npj Health Systems,journal,D5,llm,high,07,1,none
+ASD-1032,RelAgent: a multi-agent solution for molecular relationship grounding,2026,2026,Bioinformatics,journal,D5,llm,high,03,1,none
+ASD-1036,Verification Debt in Automated Biological Research Workflows: A Proof-of-Concept,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06;07,2,none
+ASD-1037,hvantk: an agentic multi-omics framework for variant annotation and analysis,2026,2026,bioRxiv preprint,preprint,D5,llm,high,06;07,2,none
+ASD-1038,Auto-MD-bench: Evaluating Autoresearch Agents for Real-World Medical Tasks,2026,2026,arXiv preprint,preprint,D5,llm,high,07,1,none
+ASD-1039,DrugTargetWorld: A Synthetic Biobank for Training and Benchmarking AI Scientists,2026,2026,arXiv preprint,preprint,D5,llm,medium,06;07,2,none
+ASD-1040,Can Coding Agents Build Robust Baselines? A Skill-Based Approach for Automating the Medical Imaging Model-Development Pipeline,2026,2026,arXiv preprint,preprint,D5,llm,high,07,1,none
+ASD-1041,NeuroAct: Advancing EEG Analysis and Decoding via Dual-Loop Autonomous Research,2026,2026,arXiv preprint,preprint,D5,llm,high,06;07,2,none
+ASD-1043,Solver Agent: an Agentic AI Framework for Theoretical Physics Computations Applied to F-theory Uplifts of O3-planes and S-folds,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1044,VortexChat: An agentic framework for autonomous multi-objective integrated photonic design,2026,2026,arXiv preprint,preprint,D5,llm,high,09,1,none
+ASD-1045,CFD Forge: A Physics-Constrained Agentic Framework for Autonomous CFD,2026,2026,arXiv preprint,preprint,D5,llm,high,09,1,none
+ASD-1046,AI Agents as a Research Team: A Human-Supervised Case Study in Stellar Spectroscopy,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1047,OPERA: Operator-residual feedback for reliable autonomous optical experiments with language-model agents,2026,2026,arXiv preprint,preprint,D5,llm,high,02;09,2,none
+ASD-1048,Photonics-GCCE: group collaborative-competitive evolution multi-agent framework for universal and autonomous optical design,2026,2026,arXiv preprint,preprint,D6,hybrid,medium,09,1,none
+ASD-1049,El Agente Potente: High-Throughput Agentic Atomistic Simulations,2026,2026,arXiv preprint,preprint,D5,llm,high,03;04,2,none
+ASD-1050,HALO: A Physics-Aware LLM Agent Framework for Nanophotonic Design,2026,2026,arXiv preprint,preprint,D5,llm,high,02;09,2,none
+ASD-1051,Agentic AI for Density-Functional Development: Revisiting r2SCAN,2026,2026,arXiv preprint,preprint,D5,llm,high,03;04,2,none
+ASD-1052,"SolutionsX: supergravity theories/solutions as code, with an agentic workflow for machine-verifiable physics",2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1053,Agentic TCAD Calibration Workflow for Oxide Semiconductor Transistors,2026,2026,arXiv preprint,preprint,D5,llm,high,04;09,2,none
+ASD-1054,Automated Discovery of Physically Interpretable Subgrid Length Scales for Detached Eddy Simulation via Agentic AI,2026,2026,arXiv preprint,preprint,D5,llm,high,02;09,2,none
+ASD-1055,Demonstration of a Structured Agentic Workflow for Applied Quantum Computing Research,2026,2026,arXiv preprint,preprint,D5,llm,medium,03,1,none
+ASD-1056,LaMET-Agent: An Agent Framework for Large-Momentum Effective Theory Analysis,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1057,SeisEvo: Evolution of Seismic Data Reconstruction Algorithms by Agents,2026,2026,arXiv preprint,preprint,D5,llm,medium,05,1,none
+ASD-1058,CosmoAgent: AI Agent for Theoretical Cosmology,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1059,Automated Many-Body Simulations of Strongly Correlated Systems Using a Correlation-Aware Agentic Framework,2026,2026,arXiv preprint,preprint,D5,llm,high,02;03,2,none
+ASD-1060,AstroGenesis: A Domain-Specific Multi-Agent AI for Astrophysical Research,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1061,Agentic AI for operating scientific instruments for nanoscale characterization,2026,2026,arXiv preprint,preprint,D5,llm,high,09,1,none
+ASD-1062,Vision-Language Agents for Active Perception in Optics Laboratories,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1063,OceanMind: A multi-agent AI system for ocean diagnosis,2026,2026,arXiv preprint,preprint,D5,llm,high,05,1,none
+ASD-1064,Agent-assisted experimental strategy transfer across quantum processors,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1065,Agentic Active Learning Meets Visual Embeddings: Finding Anomalies among 370 000 Variable Stars from ASAS-SN,2026,2026,arXiv preprint,preprint,D3,optimization,high,02,1,none
+ASD-1066,Multi-agent discovery of practical quantum LDPC codes,2026,2026,arXiv preprint,preprint,D5,llm,high,01;02,2,none
+ASD-1067,How AI Agents Discover Scientific Equations: From Hydrotope Rediscovery to New Water-Wave Amplitudes,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1068,Brilliance: toward autonomous computational research in particle accelerator physics,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1069,Jianmu-Q: Bridging Quantum Field Theory and Quantum Hardware with AI Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1070,FUSION: a skill-based research agent for publicly obtainable nuclear-physics codes,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1071,From Earth to Mars and Beyond: AI-Driven Cosmic-Ray Validation and Prediction with CorsikaAgent,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1072,HEPLocalAgent 1.0: Running Collider Simulations from Plain-Language Requests on Your Own Computer,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1073,PTagent: An LLM-assisted tool for finite-temperature model construction in cosmological phase transitions,2026,2026,arXiv preprint,preprint,D5,llm,high,02,1,none
+ASD-1074,VALG: An Agentic System for ML Theory Research,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-1075,ProofLoom: Proof-Obligation-Driven Theory Construction for Autoformalizing Research-Level Stochastic Optimization,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-1076,FormaTheoria: Constructing Large-Scale Lean Theories from Mathematical Literature $-$ Toward the Formalization of the Classification of Finite Simple Groups,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-1078,An AI-Assisted Formalization of the Poincar茅 Conjecture,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-1079,AI Discovery in Combinatorics: From Problems to Solutions and Back to Bigger Problems,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-1080,Euler: Towards Human-Centered Multi-Agent Mathematical Discovery,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-1081,The AI Theorist reveals excitonic structure in $\alpha$-RuCl$_3$,2026,2026,arXiv preprint,preprint,D5,llm,high,02;04,2,none
+ASD-1082,Beyond Equation Search: Conjecture-Guided Discovery with SCOPE and ClosureBench,2026,2026,arXiv preprint,preprint,D5,llm,high,01;02;09,3,none
+ASD-1083,OptScientist: Automated Discovery of Optimization Laws,2026,2026,arXiv preprint,preprint,D6,hybrid,medium,01;02;11,3,none
+ASD-1084,Towards autonomous urban drainage modelling: evaluating AI agent architectures for automated SWMM calibration,2026,2026,npj Clean Water,journal,D5,llm,medium,05;09,2,none
+ASD-1085,Multi-agent AI for end-to-end air quality analysis and decision support,2026,2026,npj Clean Air,journal,D5,llm,high,05,1,none
+ASD-1086,An LLM-agent interface for end-to-end probabilistic seismic hazard and risk analysis,2026,2026,npj Natural Hazards,journal,D5,llm,high,05;09,2,none
+ASD-1087,LeakAgent: a multi-agent system for leak detection using multi-modal large language model coordination in water distribution network,2026,2026,Communications AI &amp; Computing,journal,D5,llm,high,09,1,none
+ASD-1088,A RAG-enhanced multi-agent LLM/VLM framework for auditable and region-aware structural health monitoring of a historic masonry structure,2026,2026,Scientific Reports,journal,D5,llm,high,09,1,none
+ASD-1090,RingMoClaw: An Experience-Inspired Multi-Agent Framework for Self-Evolving Research in Remote Sensing,2026,2026,arXiv preprint,preprint,D5,llm,high,05,1,none
+ASD-1091,Autonomous Research Project Management as an Agent Skill: A Case Study in Exact Spectral Spatial Regression,2026,2026,arXiv preprint,preprint,D5,llm,high,01;05,2,none
+ASD-1093,WhatWorkedBench: Benchmarking Experimental Understanding in AI Agents,2026,2026,arXiv preprint,preprint,D5,llm,medium,01;02;05;07;08;09,6,none
+ASD-1094,IdeaScientist: Orchestrating Agents for Grounded Scientific Ideation,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-1096,Science Edge Evaluation: SEE the Missing Step Toward Real Scientific Discovery,2026,2026,arXiv preprint,preprint,D5,llm,high,03;04;06,3,none
+ASD-1097,SAIL: Scientific Agentic Intelligence via a Science-Aware Loop,2026,2026,arXiv preprint,preprint,D5,llm,high,01;11,2,none
+ASD-1100,A Society of Researchers: Designing Institutions for Populations of Autonomous Research Agents,2026,2026,arXiv preprint,preprint,D5,llm,high,01;11,2,none
+ASD-1105,From Search to Research: Exploring Search Scaling in Autonomous Quantitative Factor Mining,2026,2026,arXiv preprint,preprint,D5,llm,high,11,1,none
+ASD-1106,AutoResearch at Production Scale: Failure Modes and a Multi-Agent Framework,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-1107,Autonomous Research for Open-Ended Problems: A Case Study on Telecom Ticket Retrieval,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-1108,Auto-RecSys: Harnessing Autonomous Research Agents for Industry-Scale Recommender System,2026,2026,arXiv preprint,preprint,D5,llm,high,01,1,none
+ASD-1109,AutoLR: Automating the Path from Research to Launch Review in Industrial Recommender Systems,2026,2026,arXiv preprint,preprint,D5,llm,medium,01,1,none
+ASD-1111,Autonomous Floquet engineering of bosonic codes via reinforcement learning,2026,2026,Communications Physics,journal,D4,classical,high,02,1,none
+ASD-1120,MacroRisk-agent: a retrieval-augmented multi-agent framework with deterministic validation gates for auditable stress testing,2026,2026,Scientific Reports,journal,D5,llm,high,11,1,none
+ASD-1126,A multimodal agent for ceramic management via LLM-driven knowledge and visual synergy,2026,2026,npj Heritage Science,journal,D5,llm,high,11,1,none
+ASD-1133,RAVA: a robust recurrent active vision agent for plant disease diagnosis under severe environmental noise,2026,2026,Scientific Reports,journal,D4,classical,high,08,1,none

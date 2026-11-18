@@ -277,3 +277,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O5 开放数学 | Agent自主产生并提交workshop-level机器学习研究论文 | “足以通过 workshop peer review 的科学论文” · L97 |
+| 验证强度 | V3 物理实验 | 通过正式workshop peer review验证 | “真实 peer review / benchmark” · L219 |
+| 系统自主性 | L3 自主研究者 | 系统自主提出研究问题并推动从问题到论文的流程 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：待专家复核：双编码不一致（验证强度）

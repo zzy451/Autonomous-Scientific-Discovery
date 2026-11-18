@@ -259,3 +259,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Stephenson_2024_Earth_Observing_Satellite_Autonomy.pdf; PDF p.1; (Preprint) AAS 24-012 REINFORCEMENT LEARNING FOR EARTH-OBSERVING SATELLITE AUTONOMY WITH EVENT-BASED TASK INTERVALS Mark Stephenson* and Hanspeter Schaub† Advances in target scheduling algorithms are necessary to fully utilize the capa- bilities of agile Earth-observing satellites.。
 - 判定：Earth-observing satellite autonomy and event-based task intervals
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在EO卫星任务中优化目标选择，任务成功可由仿真核对 | “agile Earth-observing satellite scheduling scenarios” · L179 |
+| 验证强度 | V2 计算/仿真/回顾性 | 高保真仿真验证，无真实飞行部署 | “PPO 与 pseudo-optimal 解差距有限，并能学会 anticipatory charging” · L183 |
+| 系统自主性 | L2 闭环执行者 | 系统在动态目标和资源约束内自主执行闭环任务选择 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

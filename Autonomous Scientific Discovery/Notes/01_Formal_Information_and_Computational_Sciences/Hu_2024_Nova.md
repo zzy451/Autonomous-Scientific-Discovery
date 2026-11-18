@@ -148,3 +148,16 @@ An iterative planning-and-search Agent for computational research idea generatio
 - Kept `source_limited: no`
 - Restored a fuller structured note while preserving the corrected evidence and boundary wording
 
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 研究想法生成在固定语料与评估框架下进行 | “170 seed papers” · L23 |
+| 验证强度 | V1 基准/内部评测 | 自动与人工评估想法质量，无后续研究验证 | “automated and human assessment” · L24 |
+| 系统自主性 | L2 闭环执行者 | 系统通过迭代规划与搜索自主生成并优化想法 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

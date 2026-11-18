@@ -179,3 +179,17 @@ fulltext_followup_required=false
 - 下载来源：https://arxiv.org/pdf/2608.05990
 - 版本：official arXiv preprint PDF; version as downloaded。
 - 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 光学实验协议在数字孪生中优化 | “three optical tasks” · L45 |
+| 验证强度 | V3 物理实验 | 协议迁移到三台真实光学仪器并重复实验 | “transferred to three optical instruments” · L62 |
+| 系统自主性 | L2 闭环执行者 | 依据残差反馈自主选择或组合算子 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

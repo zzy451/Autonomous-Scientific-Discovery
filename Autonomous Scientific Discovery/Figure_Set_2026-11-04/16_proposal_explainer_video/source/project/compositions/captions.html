@@ -1,0 +1,267 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;pointer-events:none;}
+#root .cap{position:absolute;left:0;right:0;bottom:64px;text-align:center;opacity:0;
+  font:700 42px/1.3 "HFSans";color:#1F2A36;}
+#root .cap span{background:rgba(244,241,234,0.92);padding:6px 22px;border-radius:8px;}
+</style>
+  <div id="root" data-composition-id="captions" data-width="1920" data-height="1080" data-layout-allow-caption-zone>
+    <div id="cap-0" class="cap"><span>各位好</span></div>
+    <div id="cap-1" class="cap"><span>今天为您解读一份研究提案</span></div>
+    <div id="cap-2" class="cap"><span>《从可计算任务到开放科学——人工智能解题编年史》</span></div>
+    <div id="cap-3" class="cap"><span>它试图回答一个看似简单、实则棘手的问题</span></div>
+    <div id="cap-4" class="cap"><span>人工智能，究竟真正解决了哪些科学问题？</span></div>
+    <div id="cap-5" class="cap"><span>当下，我们评判人工智能的进展</span></div>
+    <div id="cap-6" class="cap"><span>主要依靠两把尺子</span></div>
+    <div id="cap-7" class="cap"><span>第一把，是发布：发布会、预印本摘要</span></div>
+    <div id="cap-8" class="cap"><span>演示视频</span></div>
+    <div id="cap-9" class="cap"><span>它无法区分一次受控条件下的偶然成功</span></div>
+    <div id="cap-10" class="cap"><span>和一个被独立复现的可靠结果</span></div>
+    <div id="cap-11" class="cap"><span>第二把，是基准分数</span></div>
+    <div id="cap-12" class="cap"><span>它只是代理指标，而且其效度正受到直接质疑</span></div>
+    <div id="cap-13" class="cap"><span>一项针对四百四十五个大模型基准的综述发现</span></div>
+    <div id="cap-14" class="cap"><span>几乎每一个都至少存在一处缺陷</span></div>
+    <div id="cap-15" class="cap"><span>只有百分之十六使用了不确定性估计或统计检验</span></div>
+    <div id="cap-16" class="cap"><span>因此，本研究换用第三把尺子</span></div>
+    <div id="cap-17" class="cap"><span>那些真正被解决了的科学问题</span></div>
+    <div id="cap-18" class="cap"><span>对每一个案例，只追问三件事</span></div>
+    <div id="cap-19" class="cap"><span>解决的是哪一个具体问题？</span></div>
+    <div id="cap-20" class="cap"><span>解决到了什么程度？</span></div>
+    <div id="cap-21" class="cap"><span>依据的是什么证据？</span></div>
+    <div id="cap-22" class="cap"><span>代价是，每一个案例都必须人工核查</span></div>
+    <div id="cap-23" class="cap"><span>无法从排行榜上直接汇总</span></div>
+    <div id="cap-24" class="cap"><span>要使用这把尺子，必须先回答一个前置问题</span></div>
+    <div id="cap-25" class="cap"><span>什么才算“解决”？</span></div>
+    <div id="cap-26" class="cap"><span>目前已发表的至少六套分类体系</span></div>
+    <div id="cap-27" class="cap"><span>评的都是系统有多自主</span></div>
+    <div id="cap-28" class="cap"><span>却没有一套评的是问题解决到了什么程度</span></div>
+    <div id="cap-29" class="cap"><span>经过了怎样的验证</span></div>
+    <div id="cap-30" class="cap"><span>于是</span></div>
+    <div id="cap-31" class="cap"><span>“在基准上超越人类”和“得出前所未知的结构并被独立复现”</span></div>
+    <div id="cap-32" class="cap"><span>被装进了同一个词里，无法放进同一张表</span></div>
+    <div id="cap-33" class="cap"><span>提案的核心贡献，是把被混为一谈的维度拆开</span></div>
+    <div id="cap-34" class="cap"><span>第一条轴，是问题开放度，从O1到O6</span></div>
+    <div id="cap-35" class="cap"><span>从封闭的规则世界、预先定义的基准</span></div>
+    <div id="cap-36" class="cap"><span>一直到开放的数学与计算问题、开放的科学问题</span></div>
+    <div id="cap-37" class="cap"><span>第二条轴，是验证强度，从V0到V4</span></div>
+    <div id="cap-38" class="cap"><span>从仅有声明，一直到形式化证明</span></div>
+    <div id="cap-39" class="cap"><span>物理实验或第三方复现</span></div>
+    <div id="cap-40" class="cap"><span>系统自主性保留为第三条轴</span></div>
+    <div id="cap-41" class="cap"><span>但不再代替“解决程度”</span></div>
+    <div id="cap-42" class="cap"><span>拆开之后</span></div>
+    <div id="cap-43" class="cap"><span>每一个结果都有了可以相互比较的坐标</span></div>
+    <div id="cap-44" class="cap"><span>坐标一旦拆开</span></div>
+    <div id="cap-45" class="cap"><span>两个此前看不见的结构便浮出水面</span></div>
+    <div id="cap-46" class="cap"><span>第一，自主性与验证强度方向相反</span></div>
+    <div id="cap-47" class="cap"><span>在最自主的L3层级，十二个案例中</span></div>
+    <div id="cap-48" class="cap"><span>没有一个达到强验证</span></div>
+    <div id="cap-49" class="cap"><span>而在L1层级的五十九个案例中</span></div>
+    <div id="cap-50" class="cap"><span>有二十四个达到了</span></div>
+    <div id="cap-51" class="cap"><span>也就是说，系统越自主</span></div>
+    <div id="cap-52" class="cap"><span>其结果被独立验证的频率反而越低</span></div>
+    <div id="cap-53" class="cap"><span>用自主性代替解决程度</span></div>
+    <div id="cap-54" class="cap"><span>指向的恰恰是错误的方向</span></div>
+    <div id="cap-55" class="cap"><span>第二，证据正在随时间变薄</span></div>
+    <div id="cap-56" class="cap"><span>按时代划分，弱验证案例的数量依次为零、一</span></div>
+    <div id="cap-57" class="cap"><span>四、十三；而强验证所占的比例，从七分之五</span></div>
+    <div id="cap-58" class="cap"><span>下降到四十一分之十二</span></div>
+    <div id="cap-59" class="cap"><span>案例数量增长很快</span></div>
+    <div id="cap-60" class="cap"><span>仅二零二四到二零二六年就有四十一个</span></div>
+    <div id="cap-61" class="cap"><span>但支撑“已解决”这一说法的证据，却在变弱</span></div>
+    <div id="cap-62" class="cap"><span>在全部八十四个案例中，已验证六十三个</span></div>
+    <div id="cap-63" class="cap"><span>仅有声明十个，存在争议十个，已被推翻一个</span></div>
+    <div id="cap-64" class="cap"><span>争议与被推翻的案例，全部保留在数据库中</span></div>
+    <div id="cap-65" class="cap"><span>这套框架带来了四种新的可能</span></div>
+    <div id="cap-66" class="cap"><span>其一，一条可以检验的前沿曲线</span></div>
+    <div id="cap-67" class="cap"><span>任何案例若在复核中达不到V3，边界就会后退</span></div>
+    <div id="cap-68" class="cap"><span>因而它是可证伪的</span></div>
+    <div id="cap-69" class="cap"><span>其二，被精确定位的空白</span></div>
+    <div id="cap-70" class="cap"><span>其三，一个可以计算的速率</span></div>
+    <div id="cap-71" class="cap"><span>前沿每个时代推进了几级，哪些领域最快</span></div>
+    <div id="cap-72" class="cap"><span>哪些领域二十年未动</span></div>
+    <div id="cap-73" class="cap"><span>其四，一份可以复查的记录：每一个层级判定</span></div>
+    <div id="cap-74" class="cap"><span>至少附有一个独立来源</span></div>
+    <div id="cap-75" class="cap"><span>这是提案的主图</span></div>
+    <div id="cap-76" class="cap"><span>人工智能已解决问题的前沿版图</span></div>
+    <div id="cap-77" class="cap"><span>横轴是十二个领域，纵轴是问题开放度</span></div>
+    <div id="cap-78" class="cap"><span>陆地</span></div>
+    <div id="cap-79" class="cap"><span>代表至少拥有一个强验证解决方案的问题类别</span></div>
+    <div id="cap-80" class="cap"><span>每一层色阶，是一个时代结束时的前沿</span></div>
+    <div id="cap-81" class="cap"><span>水面以上，尚未得到验证</span></div>
+    <div id="cap-82" class="cap"><span>图的顶端，列出了各领域仍未解决的开放问题</span></div>
+    <div id="cap-83" class="cap"><span>黎曼猜想与P对NP、聚变控制、常压室温超导</span></div>
+    <div id="cap-84" class="cap"><span>生命起源，以及人工智能自主选择问题</span></div>
+    <div id="cap-85" class="cap"><span>闭合科研回路</span></div>
+    <div id="cap-86" class="cap"><span>目前，调研已经完成了大部分基础工作</span></div>
+    <div id="cap-87" class="cap"><span>收集了九百七十四条记录</span></div>
+    <div id="cap-88" class="cap"><span>来源包括陶哲轩整理的人工智能对埃尔德什问题的贡献表</span></div>
+    <div id="cap-89" class="cap"><span>智能体实验室清单</span></div>
+    <div id="cap-90" class="cap"><span>以及一九五六到二零二六年的里程碑合集</span></div>
+    <div id="cap-91" class="cap"><span>其中八十四个案例已在三条轴上完成编码</span></div>
+    <div id="cap-92" class="cap"><span>覆盖从博弈、数学、物理到生物</span></div>
+    <div id="cap-93" class="cap"><span>医学与科研过程本身的十二个领域</span></div>
+    <div id="cap-94" class="cap"><span>但下一步，不是更多的检索</span></div>
+    <div id="cap-95" class="cap"><span>三条轴中，开放度可以从问题陈述中读出</span></div>
+    <div id="cap-96" class="cap"><span>自主性可以从方法描述中读出，唯独验证强度</span></div>
+    <div id="cap-97" class="cap"><span>无法靠文献检索来确定</span></div>
+    <div id="cap-98" class="cap"><span>瓶颈在于四项判断：V3与V2的边界</span></div>
+    <div id="cap-99" class="cap"><span>人工智能的实际贡献；O6的空白是否真实</span></div>
+    <div id="cap-100" class="cap"><span>以及对争议案例的裁定</span></div>
+    <div id="cap-101" class="cap"><span>每一项，都需要领域内的研究者去阅读原始证据</span></div>
+    <div id="cap-102" class="cap"><span>因此，提案的请求十分具体：每个领域</span></div>
+    <div id="cap-103" class="cap"><span>邀请一位研究者，审阅十五到二十个案例</span></div>
+    <div id="cap-104" class="cap"><span>判定其验证等级与人工智能的实际贡献</span></div>
+    <div id="cap-105" class="cap"><span>并回答本领域在O6层级是否存在强验证案例</span></div>
+    <div id="cap-106" class="cap"><span>每人大约半天</span></div>
+    <div id="cap-107" class="cap"><span>没有这一步，这部编年史只是一份文献汇编</span></div>
+    <div id="cap-108" class="cap"><span>有了这一步，它才成为一组可以被引用的判断</span></div>
+    <div id="cap-109" class="cap"><span>整体计划为期三个月</span></div>
+    <div id="cap-110" class="cap"><span>第一个月，人工智能筛选：智能体扫描全部记录</span></div>
+    <div id="cap-111" class="cap"><span>扩展到两百个以上候选</span></div>
+    <div id="cap-112" class="cap"><span>并先行报告漏检率与抽取错误率</span></div>
+    <div id="cap-113" class="cap"><span>第二个月，专家审阅</span></div>
+    <div id="cap-114" class="cap"><span>报告机器筛选与专家判断的一致率</span></div>
+    <div id="cap-115" class="cap"><span>逐案归因分歧</span></div>
+    <div id="cap-116" class="cap"><span>第三个月，形成词典：最终确定三轴坐标</span></div>
+    <div id="cap-117" class="cap"><span>产出一部可检索的问题词典</span></div>
+    <div id="cap-118" class="cap"><span>前沿曲线必须能从案例表中重新计算</span></div>
+    <div id="cap-119" class="cap"><span>不看发布，不看榜单，只看问题被解决到了哪里</span></div>
+    <div id="cap-120" class="cap"><span>凭什么证据</span></div>
+    <div id="cap-121" class="cap"><span>这</span></div>
+    <div id="cap-122" class="cap"><span>就是这部人工智能解题编年史想要建立的标尺</span></div>
+    <div id="cap-123" class="cap"><span>感谢收看</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cap-0",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},0.50);tl.to("#cap-0",{opacity:0,duration:0.1},1.60);tl.set("#cap-0",{visibility:"hidden"},1.70);
+tl.fromTo("#cap-1",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},1.65);tl.to("#cap-1",{opacity:0,duration:0.1},3.93);tl.set("#cap-1",{visibility:"hidden"},4.03);
+tl.fromTo("#cap-2",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},4.03);tl.to("#cap-2",{opacity:0,duration:0.1},8.50);tl.set("#cap-2",{visibility:"hidden"},8.60);
+tl.fromTo("#cap-3",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},8.60);tl.to("#cap-3",{opacity:0,duration:0.1},12.66);tl.set("#cap-3",{visibility:"hidden"},12.76);
+tl.fromTo("#cap-4",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},12.76);tl.to("#cap-4",{opacity:0,duration:0.1},16.61);tl.set("#cap-4",{visibility:"hidden"},16.71);
+tl.fromTo("#cap-5",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},17.87);tl.to("#cap-5",{opacity:0,duration:0.1},20.90);tl.set("#cap-5",{visibility:"hidden"},21.00);
+tl.fromTo("#cap-6",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},21.00);tl.to("#cap-6",{opacity:0,duration:0.1},22.78);tl.set("#cap-6",{visibility:"hidden"},22.88);
+tl.fromTo("#cap-7",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},22.83);tl.to("#cap-7",{opacity:0,duration:0.1},26.56);tl.set("#cap-7",{visibility:"hidden"},26.66);
+tl.fromTo("#cap-8",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},26.66);tl.to("#cap-8",{opacity:0,duration:0.1},27.63);tl.set("#cap-8",{visibility:"hidden"},27.73);
+tl.fromTo("#cap-9",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},27.73);tl.to("#cap-9",{opacity:0,duration:0.1},31.25);tl.set("#cap-9",{visibility:"hidden"},31.35);
+tl.fromTo("#cap-10",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},31.35);tl.to("#cap-10",{opacity:0,duration:0.1},34.06);tl.set("#cap-10",{visibility:"hidden"},34.16);
+tl.fromTo("#cap-11",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},34.16);tl.to("#cap-11",{opacity:0,duration:0.1},36.44);tl.set("#cap-11",{visibility:"hidden"},36.54);
+tl.fromTo("#cap-12",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},36.54);tl.to("#cap-12",{opacity:0,duration:0.1},40.54);tl.set("#cap-12",{visibility:"hidden"},40.64);
+tl.fromTo("#cap-13",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},40.64);tl.to("#cap-13",{opacity:0,duration:0.1},44.64);tl.set("#cap-13",{visibility:"hidden"},44.74);
+tl.fromTo("#cap-14",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},44.74);tl.to("#cap-14",{opacity:0,duration:0.1},47.56);tl.set("#cap-14",{visibility:"hidden"},47.66);
+tl.fromTo("#cap-15",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},47.66);tl.to("#cap-15",{opacity:0,duration:0.1},51.86);tl.set("#cap-15",{visibility:"hidden"},51.96);
+tl.fromTo("#cap-16",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},53.12);tl.to("#cap-16",{opacity:0,duration:0.1},55.86);tl.set("#cap-16",{visibility:"hidden"},55.96);
+tl.fromTo("#cap-17",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},55.96);tl.to("#cap-17",{opacity:0,duration:0.1},58.71);tl.set("#cap-17",{visibility:"hidden"},58.81);
+tl.fromTo("#cap-18",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},58.76);tl.to("#cap-18",{opacity:0,duration:0.1},61.46);tl.set("#cap-18",{visibility:"hidden"},61.56);
+tl.fromTo("#cap-19",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},61.56);tl.to("#cap-19",{opacity:0,duration:0.1},63.85);tl.set("#cap-19",{visibility:"hidden"},63.95);
+tl.fromTo("#cap-20",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},63.95);tl.to("#cap-20",{opacity:0,duration:0.1},65.79);tl.set("#cap-20",{visibility:"hidden"},65.89);
+tl.fromTo("#cap-21",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},65.89);tl.to("#cap-21",{opacity:0,duration:0.1},67.82);tl.set("#cap-21",{visibility:"hidden"},67.92);
+tl.fromTo("#cap-22",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},67.92);tl.to("#cap-22",{opacity:0,duration:0.1},71.39);tl.set("#cap-22",{visibility:"hidden"},71.49);
+tl.fromTo("#cap-23",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},71.49);tl.to("#cap-23",{opacity:0,duration:0.1},73.91);tl.set("#cap-23",{visibility:"hidden"},74.00);
+tl.fromTo("#cap-24",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},75.16);tl.to("#cap-24",{opacity:0,duration:0.1},78.67);tl.set("#cap-24",{visibility:"hidden"},78.77);
+tl.fromTo("#cap-25",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},78.77);tl.to("#cap-25",{opacity:0,duration:0.1},80.29);tl.set("#cap-25",{visibility:"hidden"},80.39);
+tl.fromTo("#cap-26",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},80.34);tl.to("#cap-26",{opacity:0,duration:0.1},83.22);tl.set("#cap-26",{visibility:"hidden"},83.32);
+tl.fromTo("#cap-27",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},83.32);tl.to("#cap-27",{opacity:0,duration:0.1},85.41);tl.set("#cap-27",{visibility:"hidden"},85.51);
+tl.fromTo("#cap-28",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},85.51);tl.to("#cap-28",{opacity:0,duration:0.1},89.19);tl.set("#cap-28",{visibility:"hidden"},89.29);
+tl.fromTo("#cap-29",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},89.29);tl.to("#cap-29",{opacity:0,duration:0.1},90.98);tl.set("#cap-29",{visibility:"hidden"},91.08);
+tl.fromTo("#cap-30",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},91.08);tl.to("#cap-30",{opacity:0,duration:0.1},91.53);tl.set("#cap-30",{visibility:"hidden"},91.63);
+tl.fromTo("#cap-31",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},91.63);tl.to("#cap-31",{opacity:0,duration:0.1},96.89);tl.set("#cap-31",{visibility:"hidden"},96.99);
+tl.fromTo("#cap-32",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},96.99);tl.to("#cap-32",{opacity:0,duration:0.1},100.39);tl.set("#cap-32",{visibility:"hidden"},100.49);
+tl.fromTo("#cap-33",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},101.65);tl.to("#cap-33",{opacity:0,duration:0.1},105.90);tl.set("#cap-33",{visibility:"hidden"},106.00);
+tl.fromTo("#cap-34",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},105.95);tl.to("#cap-34",{opacity:0,duration:0.1},109.63);tl.set("#cap-34",{visibility:"hidden"},109.73);
+tl.fromTo("#cap-35",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},109.73);tl.to("#cap-35",{opacity:0,duration:0.1},113.01);tl.set("#cap-35",{visibility:"hidden"},113.11);
+tl.fromTo("#cap-36",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},113.11);tl.to("#cap-36",{opacity:0,duration:0.1},117.39);tl.set("#cap-36",{visibility:"hidden"},117.49);
+tl.fromTo("#cap-37",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},117.49);tl.to("#cap-37",{opacity:0,duration:0.1},121.29);tl.set("#cap-37",{visibility:"hidden"},121.39);
+tl.fromTo("#cap-38",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},121.39);tl.to("#cap-38",{opacity:0,duration:0.1},124.54);tl.set("#cap-38",{visibility:"hidden"},124.64);
+tl.fromTo("#cap-39",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},124.64);tl.to("#cap-39",{opacity:0,duration:0.1},126.92);tl.set("#cap-39",{visibility:"hidden"},127.02);
+tl.fromTo("#cap-40",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},127.02);tl.to("#cap-40",{opacity:0,duration:0.1},129.60);tl.set("#cap-40",{visibility:"hidden"},129.70);
+tl.fromTo("#cap-41",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},129.70);tl.to("#cap-41",{opacity:0,duration:0.1},132.08);tl.set("#cap-41",{visibility:"hidden"},132.18);
+tl.fromTo("#cap-42",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},132.18);tl.to("#cap-42",{opacity:0,duration:0.1},133.01);tl.set("#cap-42",{visibility:"hidden"},133.11);
+tl.fromTo("#cap-43",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},133.11);tl.to("#cap-43",{opacity:0,duration:0.1},136.36);tl.set("#cap-43",{visibility:"hidden"},136.46);
+tl.fromTo("#cap-44",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},137.62);tl.to("#cap-44",{opacity:0,duration:0.1},139.00);tl.set("#cap-44",{visibility:"hidden"},139.10);
+tl.fromTo("#cap-45",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},139.10);tl.to("#cap-45",{opacity:0,duration:0.1},142.39);tl.set("#cap-45",{visibility:"hidden"},142.49);
+tl.fromTo("#cap-46",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},142.44);tl.to("#cap-46",{opacity:0,duration:0.1},146.04);tl.set("#cap-46",{visibility:"hidden"},146.14);
+tl.fromTo("#cap-47",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},146.14);tl.to("#cap-47",{opacity:0,duration:0.1},149.37);tl.set("#cap-47",{visibility:"hidden"},149.47);
+tl.fromTo("#cap-48",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},149.47);tl.to("#cap-48",{opacity:0,duration:0.1},151.33);tl.set("#cap-48",{visibility:"hidden"},151.43);
+tl.fromTo("#cap-49",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},151.43);tl.to("#cap-49",{opacity:0,duration:0.1},154.27);tl.set("#cap-49",{visibility:"hidden"},154.37);
+tl.fromTo("#cap-50",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},154.37);tl.to("#cap-50",{opacity:0,duration:0.1},156.04);tl.set("#cap-50",{visibility:"hidden"},156.14);
+tl.fromTo("#cap-51",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},156.14);tl.to("#cap-51",{opacity:0,duration:0.1},158.35);tl.set("#cap-51",{visibility:"hidden"},158.45);
+tl.fromTo("#cap-52",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},158.45);tl.to("#cap-52",{opacity:0,duration:0.1},161.72);tl.set("#cap-52",{visibility:"hidden"},161.82);
+tl.fromTo("#cap-53",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},161.82);tl.to("#cap-53",{opacity:0,duration:0.1},164.13);tl.set("#cap-53",{visibility:"hidden"},164.23);
+tl.fromTo("#cap-54",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},164.23);tl.to("#cap-54",{opacity:0,duration:0.1},166.77);tl.set("#cap-54",{visibility:"hidden"},166.87);
+tl.fromTo("#cap-55",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},168.04);tl.to("#cap-55",{opacity:0,duration:0.1},171.11);tl.set("#cap-55",{visibility:"hidden"},171.21);
+tl.fromTo("#cap-56",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},171.16);tl.to("#cap-56",{opacity:0,duration:0.1},175.64);tl.set("#cap-56",{visibility:"hidden"},175.74);
+tl.fromTo("#cap-57",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},175.74);tl.to("#cap-57",{opacity:0,duration:0.1},180.22);tl.set("#cap-57",{visibility:"hidden"},180.32);
+tl.fromTo("#cap-58",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},180.32);tl.to("#cap-58",{opacity:0,duration:0.1},182.62);tl.set("#cap-58",{visibility:"hidden"},182.72);
+tl.fromTo("#cap-59",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},182.72);tl.to("#cap-59",{opacity:0,duration:0.1},184.36);tl.set("#cap-59",{visibility:"hidden"},184.46);
+tl.fromTo("#cap-60",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},184.46);tl.to("#cap-60",{opacity:0,duration:0.1},187.82);tl.set("#cap-60",{visibility:"hidden"},187.92);
+tl.fromTo("#cap-61",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},187.92);tl.to("#cap-61",{opacity:0,duration:0.1},191.87);tl.set("#cap-61",{visibility:"hidden"},191.97);
+tl.fromTo("#cap-62",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},191.97);tl.to("#cap-62",{opacity:0,duration:0.1},195.65);tl.set("#cap-62",{visibility:"hidden"},195.75);
+tl.fromTo("#cap-63",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},195.75);tl.to("#cap-63",{opacity:0,duration:0.1},199.84);tl.set("#cap-63",{visibility:"hidden"},199.94);
+tl.fromTo("#cap-64",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},199.94);tl.to("#cap-64",{opacity:0,duration:0.1},204.11);tl.set("#cap-64",{visibility:"hidden"},204.21);
+tl.fromTo("#cap-65",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},205.38);tl.to("#cap-65",{opacity:0,duration:0.1},208.86);tl.set("#cap-65",{visibility:"hidden"},208.96);
+tl.fromTo("#cap-66",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},208.91);tl.to("#cap-66",{opacity:0,duration:0.1},211.82);tl.set("#cap-66",{visibility:"hidden"},211.92);
+tl.fromTo("#cap-67",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},211.92);tl.to("#cap-67",{opacity:0,duration:0.1},216.24);tl.set("#cap-67",{visibility:"hidden"},216.34);
+tl.fromTo("#cap-68",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},216.34);tl.to("#cap-68",{opacity:0,duration:0.1},218.04);tl.set("#cap-68",{visibility:"hidden"},218.14);
+tl.fromTo("#cap-69",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},218.14);tl.to("#cap-69",{opacity:0,duration:0.1},220.79);tl.set("#cap-69",{visibility:"hidden"},220.89);
+tl.fromTo("#cap-70",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},220.89);tl.to("#cap-70",{opacity:0,duration:0.1},223.28);tl.set("#cap-70",{visibility:"hidden"},223.38);
+tl.fromTo("#cap-71",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},223.38);tl.to("#cap-71",{opacity:0,duration:0.1},226.91);tl.set("#cap-71",{visibility:"hidden"},227.01);
+tl.fromTo("#cap-72",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},227.01);tl.to("#cap-72",{opacity:0,duration:0.1},228.83);tl.set("#cap-72",{visibility:"hidden"},228.93);
+tl.fromTo("#cap-73",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},228.93);tl.to("#cap-73",{opacity:0,duration:0.1},232.76);tl.set("#cap-73",{visibility:"hidden"},232.86);
+tl.fromTo("#cap-74",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},232.86);tl.to("#cap-74",{opacity:0,duration:0.1},234.81);tl.set("#cap-74",{visibility:"hidden"},234.91);
+tl.fromTo("#cap-75",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},236.09);tl.to("#cap-75",{opacity:0,duration:0.1},237.64);tl.set("#cap-75",{visibility:"hidden"},237.74);
+tl.fromTo("#cap-76",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},237.74);tl.to("#cap-76",{opacity:0,duration:0.1},240.73);tl.set("#cap-76",{visibility:"hidden"},240.83);
+tl.fromTo("#cap-77",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},240.78);tl.to("#cap-77",{opacity:0,duration:0.1},244.62);tl.set("#cap-77",{visibility:"hidden"},244.72);
+tl.fromTo("#cap-78",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},244.72);tl.to("#cap-78",{opacity:0,duration:0.1},245.21);tl.set("#cap-78",{visibility:"hidden"},245.31);
+tl.fromTo("#cap-79",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},245.31);tl.to("#cap-79",{opacity:0,duration:0.1},249.38);tl.set("#cap-79",{visibility:"hidden"},249.48);
+tl.fromTo("#cap-80",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},249.48);tl.to("#cap-80",{opacity:0,duration:0.1},252.96);tl.set("#cap-80",{visibility:"hidden"},253.06);
+tl.fromTo("#cap-81",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},253.06);tl.to("#cap-81",{opacity:0,duration:0.1},255.64);tl.set("#cap-81",{visibility:"hidden"},255.74);
+tl.fromTo("#cap-82",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},255.74);tl.to("#cap-82",{opacity:0,duration:0.1},259.88);tl.set("#cap-82",{visibility:"hidden"},259.98);
+tl.fromTo("#cap-83",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},259.98);tl.to("#cap-83",{opacity:0,duration:0.1},264.32);tl.set("#cap-83",{visibility:"hidden"},264.42);
+tl.fromTo("#cap-84",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},264.42);tl.to("#cap-84",{opacity:0,duration:0.1},267.96);tl.set("#cap-84",{visibility:"hidden"},268.06);
+tl.fromTo("#cap-85",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},268.06);tl.to("#cap-85",{opacity:0,duration:0.1},269.37);tl.set("#cap-85",{visibility:"hidden"},269.47);
+tl.fromTo("#cap-86",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},270.64);tl.to("#cap-86",{opacity:0,duration:0.1},273.89);tl.set("#cap-86",{visibility:"hidden"},273.99);
+tl.fromTo("#cap-87",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},273.99);tl.to("#cap-87",{opacity:0,duration:0.1},276.11);tl.set("#cap-87",{visibility:"hidden"},276.21);
+tl.fromTo("#cap-88",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},276.21);tl.to("#cap-88",{opacity:0,duration:0.1},280.94);tl.set("#cap-88",{visibility:"hidden"},281.04);
+tl.fromTo("#cap-89",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},281.04);tl.to("#cap-89",{opacity:0,duration:0.1},282.61);tl.set("#cap-89",{visibility:"hidden"},282.71);
+tl.fromTo("#cap-90",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},282.71);tl.to("#cap-90",{opacity:0,duration:0.1},286.14);tl.set("#cap-90",{visibility:"hidden"},286.24);
+tl.fromTo("#cap-91",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},286.24);tl.to("#cap-91",{opacity:0,duration:0.1},290.31);tl.set("#cap-91",{visibility:"hidden"},290.41);
+tl.fromTo("#cap-92",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},290.41);tl.to("#cap-92",{opacity:0,duration:0.1},293.60);tl.set("#cap-92",{visibility:"hidden"},293.70);
+tl.fromTo("#cap-93",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},293.70);tl.to("#cap-93",{opacity:0,duration:0.1},297.11);tl.set("#cap-93",{visibility:"hidden"},297.21);
+tl.fromTo("#cap-94",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},298.38);tl.to("#cap-94",{opacity:0,duration:0.1},301.09);tl.set("#cap-94",{visibility:"hidden"},301.19);
+tl.fromTo("#cap-95",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},301.14);tl.to("#cap-95",{opacity:0,duration:0.1},305.15);tl.set("#cap-95",{visibility:"hidden"},305.25);
+tl.fromTo("#cap-96",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},305.25);tl.to("#cap-96",{opacity:0,duration:0.1},309.68);tl.set("#cap-96",{visibility:"hidden"},309.78);
+tl.fromTo("#cap-97",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},309.78);tl.to("#cap-97",{opacity:0,duration:0.1},312.06);tl.set("#cap-97",{visibility:"hidden"},312.16);
+tl.fromTo("#cap-98",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},312.16);tl.to("#cap-98",{opacity:0,duration:0.1},315.72);tl.set("#cap-98",{visibility:"hidden"},315.82);
+tl.fromTo("#cap-99",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},315.82);tl.to("#cap-99",{opacity:0,duration:0.1},319.78);tl.set("#cap-99",{visibility:"hidden"},319.88);
+tl.fromTo("#cap-100",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},319.88);tl.to("#cap-100",{opacity:0,duration:0.1},322.02);tl.set("#cap-100",{visibility:"hidden"},322.12);
+tl.fromTo("#cap-101",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},322.12);tl.to("#cap-101",{opacity:0,duration:0.1},326.60);tl.set("#cap-101",{visibility:"hidden"},326.70);
+tl.fromTo("#cap-102",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},327.87);tl.to("#cap-102",{opacity:0,duration:0.1},331.42);tl.set("#cap-102",{visibility:"hidden"},331.52);
+tl.fromTo("#cap-103",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},331.52);tl.to("#cap-103",{opacity:0,duration:0.1},335.27);tl.set("#cap-103",{visibility:"hidden"},335.37);
+tl.fromTo("#cap-104",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},335.37);tl.to("#cap-104",{opacity:0,duration:0.1},338.93);tl.set("#cap-104",{visibility:"hidden"},339.03);
+tl.fromTo("#cap-105",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},339.03);tl.to("#cap-105",{opacity:0,duration:0.1},343.19);tl.set("#cap-105",{visibility:"hidden"},343.29);
+tl.fromTo("#cap-106",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},343.24);tl.to("#cap-106",{opacity:0,duration:0.1},344.92);tl.set("#cap-106",{visibility:"hidden"},345.02);
+tl.fromTo("#cap-107",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},345.02);tl.to("#cap-107",{opacity:0,duration:0.1},348.71);tl.set("#cap-107",{visibility:"hidden"},348.81);
+tl.fromTo("#cap-108",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},348.81);tl.to("#cap-108",{opacity:0,duration:0.1},352.69);tl.set("#cap-108",{visibility:"hidden"},352.79);
+tl.fromTo("#cap-109",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},353.95);tl.to("#cap-109",{opacity:0,duration:0.1},356.31);tl.set("#cap-109",{visibility:"hidden"},356.41);
+tl.fromTo("#cap-110",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},356.36);tl.to("#cap-110",{opacity:0,duration:0.1},360.58);tl.set("#cap-110",{visibility:"hidden"},360.68);
+tl.fromTo("#cap-111",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},360.68);tl.to("#cap-111",{opacity:0,duration:0.1},362.73);tl.set("#cap-111",{visibility:"hidden"},362.83);
+tl.fromTo("#cap-112",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},362.83);tl.to("#cap-112",{opacity:0,duration:0.1},365.67);tl.set("#cap-112",{visibility:"hidden"},365.77);
+tl.fromTo("#cap-113",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},365.77);tl.to("#cap-113",{opacity:0,duration:0.1},367.67);tl.set("#cap-113",{visibility:"hidden"},367.77);
+tl.fromTo("#cap-114",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},367.77);tl.to("#cap-114",{opacity:0,duration:0.1},370.87);tl.set("#cap-114",{visibility:"hidden"},370.97);
+tl.fromTo("#cap-115",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},370.97);tl.to("#cap-115",{opacity:0,duration:0.1},372.26);tl.set("#cap-115",{visibility:"hidden"},372.36);
+tl.fromTo("#cap-116",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},372.36);tl.to("#cap-116",{opacity:0,duration:0.1},376.32);tl.set("#cap-116",{visibility:"hidden"},376.42);
+tl.fromTo("#cap-117",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},376.42);tl.to("#cap-117",{opacity:0,duration:0.1},379.09);tl.set("#cap-117",{visibility:"hidden"},379.19);
+tl.fromTo("#cap-118",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},379.19);tl.to("#cap-118",{opacity:0,duration:0.1},382.72);tl.set("#cap-118",{visibility:"hidden"},382.82);
+tl.fromTo("#cap-119",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},383.99);tl.to("#cap-119",{opacity:0,duration:0.1},388.22);tl.set("#cap-119",{visibility:"hidden"},388.32);
+tl.fromTo("#cap-120",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},388.32);tl.to("#cap-120",{opacity:0,duration:0.1},389.40);tl.set("#cap-120",{visibility:"hidden"},389.50);
+tl.fromTo("#cap-121",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},389.45);tl.to("#cap-121",{opacity:0,duration:0.1},389.75);tl.set("#cap-121",{visibility:"hidden"},389.85);
+tl.fromTo("#cap-122",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},389.85);tl.to("#cap-122",{opacity:0,duration:0.1},394.02);tl.set("#cap-122",{visibility:"hidden"},394.12);
+tl.fromTo("#cap-123",{opacity:0,y:8},{opacity:1,y:0,duration:0.15},394.12);tl.to("#cap-123",{opacity:0,duration:0.1},395.44);tl.set("#cap-123",{visibility:"hidden"},395.54);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

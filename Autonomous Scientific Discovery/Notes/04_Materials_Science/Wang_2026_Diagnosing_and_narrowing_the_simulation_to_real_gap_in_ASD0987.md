@@ -172,3 +172,17 @@ fulltext_followup_required=false
   - 位置：PDF p.5 reliability gates / bounded replan; pp.1?3 abstract/object; p.6 measured Si example；来源：https://arxiv.org/abs/2608.22400
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | PXRD留出数据和衍射仪实验，答案可由重扫与分析验证 | “冻结留出分区包含534条样本” · L101 |
+| 验证强度 | V2 计算/仿真/回顾性 | 留出集模块验证和湿实验硅标准与多金属合金重扫再分析 | “硅标准样从未通过转为门控通过，多金属合金中的次相判定也发生变化” · L101 |
+| 系统自主性 | L2 闭环执行者 | Agent编排物相识别精修预测，在真实仪器给出建议重扫再次分析 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

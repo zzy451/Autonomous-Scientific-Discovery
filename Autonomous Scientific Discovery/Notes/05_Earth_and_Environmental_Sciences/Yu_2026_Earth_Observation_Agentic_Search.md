@@ -149,3 +149,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在NASA-EO-Bench（47k查询-数据集对）上评测数据发现检索系统，属预定义基准 | “从NASA Earth Observation Knowledge Graph构造NASA-EO-Bench” · L34 |
+| 验证强度 | V1 基准/内部评测 | 报告Recall@10、MRR、MAP等检索指标，与baseline比较 | “融合检索的Recall@10与MRR超过未适配cosine基线5倍” · L96 |
+| 系统自主性 | L1 任务助手 |  | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

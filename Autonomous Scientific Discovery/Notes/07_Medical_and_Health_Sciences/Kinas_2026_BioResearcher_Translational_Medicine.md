@@ -295,3 +295,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：普通引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 转化医学证据整合和靶点安全性评估，可通过文献和临床数据验证 | “109 tests，BixBench/BaisBench，30-query clinical benchmark” · L47 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过benchmark和专家评估验证证据整合质量 | “在多层级评测中表现优于基线” · L216 |
+| 系统自主性 | L1 任务助手 | 系统执行证据检索和整合任务，最终综合由人审核 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

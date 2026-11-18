@@ -160,3 +160,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.1。
 - 判定：Michelson干涉仪与光学腔的真实对准实验，归光学。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 光路对准成功与否可由图像直接检验 | “two motorized mirrors, and a beam detection camera” · L21 |
+| 验证强度 | V3 物理实验 | 真实Michelson干涉仪物理实验验证对准 | “The Michelson interferometer setup consists of a HeNe laser at 633nm” · L21 |
+| 系统自主性 | L2 闭环执行者 | Agent自主读取图像并迭代调整镜面完成对准 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

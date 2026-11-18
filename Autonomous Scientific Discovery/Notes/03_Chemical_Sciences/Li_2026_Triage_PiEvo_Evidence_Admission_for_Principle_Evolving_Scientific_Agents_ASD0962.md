@@ -179,3 +179,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.6,7,8。
 - 判定：Concrete experiment/task evidence supports 03.02.07 (配位化学). we evaluate TRIAGE-PIEVO on four optimization tasks ... Transition Metal Complex (TMC); Table 1 ... Triage-PiEvo ... TMC 81.50±4.02
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 四类科学优化任务的候选可由打分器计算验证 | “在四类科学优化任务及三种LLM骨干上测量质量、效率” · L115 |
+| 验证强度 | V2 计算/仿真/回顾性 | 构造测试和压力测试评估证据门控机制 | “另设评价器污染、隐藏异常源、机制反转、代理指标利用等压力测试” · L115 |
+| 系统自主性 | L2 闭环执行者 | 系统自主搜索并更新持久原则，在人给定任务内闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -215,3 +215,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在约1800篇ICLR投稿的固定集合上评测 | “ICLR 2020-2025 submissions 语境下的科研投稿、审稿与文献核验任务” · L146 |
+| 验证强度 | V1 基准/内部评测 | 通过large-scale benchmark和side-by-side evaluation验证 | “~1,800 篇 ICLR 2020-2025 submissions 上的 large-scale benchmark 与 side-by-side evaluation” · L142 |
+| 系统自主性 | L1 任务助手 | 系统执行审稿和核验任务，人决定研究流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

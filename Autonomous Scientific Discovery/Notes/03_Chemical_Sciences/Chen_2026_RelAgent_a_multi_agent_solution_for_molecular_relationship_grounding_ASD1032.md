@@ -174,3 +174,17 @@ fulltext_followup_required=false
   - 位置：Original cached fulltext TXT L31,L35,L139; Tables 1?2 L207?217; Methods4.4 L221；来源：https://doi.org/10.1093/bioinformatics/btag541
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 分子描述到子结构关系的定位可由工具检验 | “entity extraction, substructure localization” · L22 |
+| 验证强度 | V2 计算/仿真/回顾性 | MolGround基准和RDKit程序验证化学有效性 | “programmatically verified using RDKit” · L42 |
+| 系统自主性 | L1 任务助手 | 多Agent流程执行grounding任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -151,3 +151,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 研究计划生成在既有基准上评测 | “We construct held-out benchmarks from papers released after January 2026” · L42 |
+| 验证强度 | V1 基准/内部评测 | LLM-as-judge按rubric标准打分 | “All responses are scored by DeepSeek-V4-Flash via an LLM-as-a-judge protocol” · L42 |
+| 系统自主性 | L1 任务助手 | 系统执行研究计划生成任务但不决定研究什么 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

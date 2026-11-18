@@ -139,3 +139,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 本轮已读原始全文并完成对象分类；无需为纳入/分类另做全文补读。具体引用时仍需回查相应原文位置。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在whole-brain Perturb-seq atlas数据上重建来源论文结论、预测留出扰动效应，答案可由数据集和原文核对 | “隐藏来源稿件及结论后评估重建” · L89 |
+| 验证强度 | V2 计算/仿真/回顾性 | 与来源论文结论、专家评价和held-out扰动预测比对，属回顾性数据分析验证 | “盲法专家偏好distributed interpretations over single-agent output” · L29 |
+| 系统自主性 | L1 任务助手 |  | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

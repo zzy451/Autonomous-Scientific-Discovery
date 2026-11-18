@@ -1,0 +1,62 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;background:#F4F1EA;color:#1F2A36;font-family:"HFSans",sans-serif;overflow:hidden;}
+#root .tag{position:absolute;left:150px;top:96px;font:700 28px "HFSans";letter-spacing:4px;color:#8A6A2F;}
+#root .h{position:absolute;left:150px;top:140px;right:150px;font:900 64px/1.25 "HFSerif";color:#1F2A36;}
+#root .abs{position:absolute;}
+#root .prog{position:absolute;left:0;top:0;width:1920px;height:6px;background:#8A6A2F;}
+#root .mono{font-family:"JetBrains Mono",monospace;}
+
+#s04-chips{left:150px;top:300px;width:1620px;}
+#root .chip{display:inline-block;margin:0 18px 18px 0;padding:14px 26px;border:3px solid #546A86;font:700 30px "HFSans";color:#2E4057;}
+#s04-ax1{left:150px;top:480px;font:900 44px "HFSerif";color:#2E4057;}
+#s04-ax2{left:960px;top:480px;font:900 44px "HFSerif";color:#B23A3A;}
+#s04-empty{left:960px;top:550px;width:810px;height:96px;border:3px dashed #B23A3A;}
+#s04-e0{left:990px;top:574px;font:700 34px "HFSans";color:#B23A3A;}
+#s04-full{left:150px;top:550px;width:740px;height:96px;background:#546A86;}
+#s04-f0{left:180px;top:574px;font:700 34px "HFSans";color:#F4F1EA;}
+#s04-a{left:150px;top:740px;font:700 40px "HFSans";}
+#s04-eq{left:880px;top:724px;font:900 70px "HFSerif";color:#B23A3A;}
+#s04-b{left:1000px;top:740px;font:700 40px "HFSans";}
+#s04-note{left:150px;top:830px;font:400 30px "HFSans";color:#546A86;}
+</style>
+  <div id="root" data-composition-id="s04" data-width="1920" data-height="1080">
+
+<div class="tag" id="s04-tag">01 · 背景</div>
+<div class="h" id="s04-h">前置问题：什么才算“解决”？</div>
+<div id="s04-chips" class="abs"><span class="chip">自动驾驶实验室 L1–L5</span><span class="chip">智能体自主等级</span><span class="chip">发现系统能力分层</span><span class="chip">……至少六套</span></div>
+<div id="s04-ax1" class="abs">它们都在评：系统有多自主</div>
+<div id="s04-full" class="abs"></div><div id="s04-f0" class="abs">已有 6+ 套分类体系</div>
+<div id="s04-ax2" class="abs">没人评：问题解决到什么程度</div>
+<div id="s04-empty" class="abs"></div><div id="s04-e0" class="abs">0 套</div>
+<div id="s04-a" class="abs">“在基准上超越人类”</div><div id="s04-eq" class="abs">≟</div>
+<div id="s04-b" class="abs">“前所未知的结构 + 独立复现”</div>
+<div id="s04-note" class="abs">同一个“解决”，装不进同一张表</div>
+
+    <div id="s04-prog" class="prog"></div>
+    <div id="s04-out" class="abs" style="inset:0;background:#F4F1EA;opacity:0"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const C = [0.5, 5.67, 16.41], END = 26.49;
+    const IN = (s, t, y = 24) => tl.fromTo(s, {opacity:0, y}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, t);
+    const NUM = (s, to, t, d = 1.2, suf = "") => { const o = {v:0};
+      tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out",
+        onUpdate:() => { document.querySelector(s).textContent = Math.round(o.v) + suf; }}, t); };
+    const GROW = (s, t, d = 0.9, origin = "left center") => tl.fromTo(s, {scaleX:0, transformOrigin:origin}, {scaleX:1, duration:d, ease:"power3.inOut"}, t);
+
+IN("#s04-tag",0.2); IN("#s04-h",0.4);
+IN("#s04-chips",C[1]+0.5); IN("#s04-ax1",C[1]+4); GROW("#s04-full",C[1]+4.6); IN("#s04-f0",C[1]+5.2);
+IN("#s04-ax2",C[1]+7); IN("#s04-empty",C[1]+7.6); IN("#s04-e0",C[1]+8.2);
+IN("#s04-a",C[2]+1); IN("#s04-b",C[2]+3.5); IN("#s04-eq",C[2]+5.5); IN("#s04-note",C[2]+7);
+
+    tl.fromTo("#s04-prog", {scaleX:0, transformOrigin:"left center"}, {scaleX:1, duration:END, ease:"none"}, 0);
+    tl.fromTo("#s04-out", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.in"}, END - 0.4);
+    window.__timelines["s04"] = tl;
+  </script>
+</template>

@@ -285,3 +285,17 @@ safety_access_status: accessed_no_safety_issue
 final_reason: The object is medicinal lead optimization toward viable drug candidates, so 07 remains stronger than generic chemistry framing.
 refresh_focus: stabilize 07 and reject 03 drift
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在给定先导分子基础上优化ADMET性质，结果可由计算评估器验证 | “五个 ADMET-related lead refinement tasks” · L198 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过计算性质评估器验证，有专家对具体结论的核对 | “TRACE 在多个任务上优于 baselines” · L201 |
+| 系统自主性 | L2 闭环执行者 | 系统迭代调用工具、评估并根据失败轨迹自我修正 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

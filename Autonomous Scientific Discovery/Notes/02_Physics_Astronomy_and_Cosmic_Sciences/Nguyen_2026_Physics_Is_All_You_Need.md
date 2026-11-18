@@ -163,3 +163,17 @@ first_hand_source_checked：official arXiv PDF checked locally: Reference_PDF/02
 source_limited：no
 confidence：high
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 宇宙学计算模块对已有参考实现有标准可对照 | “对既有参考实现 CLASS-PT 达到约 1% 精度” · L112 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算验证与专家监督，对照参考实现 | “主要产出是科学软件模块，不直接对应新的物理发现” · L124 |
+| 系统自主性 | L1 任务助手 | agent在物理学家监督下执行软件开发任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

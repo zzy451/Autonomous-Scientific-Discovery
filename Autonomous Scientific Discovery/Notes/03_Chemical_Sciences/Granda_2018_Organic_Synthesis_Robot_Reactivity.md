@@ -279,3 +279,17 @@ This writeback keeps the reaction-discovery framing explicit: the robot is used 
 - 原文位置：Reference_PDF/03_Chemical_Sciences/Granda_2018_Organic_Synthesis_Robot_Reactivity.pdf; PDF p.1; Here we present an organic synthesis robot that can perform chemical reactions and analysis faster than they can be performed manually, as well as predict the reactivity of possible reagent combinations after conducting a small number of experiments, thus effectively navigating chemical reaction space.。
 - 判定：organic synthesis robot searches reaction reactivity
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O6 开放科学 | 自主探索化学反应空间并发现新反应 | “new reactivity discovery” · L32 |
+| 验证强度 | V3 物理实验 | 机器人湿实验发现四个新反应并经化学家确认 | “discovered four reactions” · L35 |
+| 系统自主性 | L2 闭环执行者 | 系统在人设定目标内自主迭代实验闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

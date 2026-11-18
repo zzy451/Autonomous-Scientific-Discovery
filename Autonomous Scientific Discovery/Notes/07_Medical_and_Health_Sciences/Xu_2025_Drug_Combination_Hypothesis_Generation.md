@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Retrieval-augmented Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 生成阿尔茨海默病药物组合假设并进行体外验证，产生需实验检验的新对象 | “候选组合进入体外测试” · L31 |
+| 验证强度 | V3 物理实验 | M266+Gypenoside XVII经体外实验验证能降低amyloid aggregation | “经体外验证能显著降低 amyloid aggregation” · L189 |
+| 系统自主性 | L2 闭环执行者 | 系统通过多角色推理、反馈与共识自主预测有效组合并筛选候选 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

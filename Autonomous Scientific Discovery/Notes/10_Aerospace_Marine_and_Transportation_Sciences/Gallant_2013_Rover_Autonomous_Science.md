@@ -206,3 +206,17 @@ closeout: This round retires the earlier abstract-only conservative wording. The
 - 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Gallant_2013_Rover_Autonomous_Science.pdf; PDF p.1; J Intell Robot Syst (2013) 72:591–613 DOI 10.1007/s10846-013-9818-6 Rover-Based Autonomous Science by Probabilistic Identification and Evaluation Marc J.。
 - 判定：rover probabilistic science identification/evaluation
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | rover自主识别、评估并前往高科学价值目标 | “识别、评价与路径规划可组合成 rover autonomous science loop” · L177 |
+| 验证强度 | V2 计算/仿真/回顾性 | 在实验室与仿真环境中验证，非真实任务部署 | “laboratory validation + simulation” · L176 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成识别、评估、规划与导航的闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

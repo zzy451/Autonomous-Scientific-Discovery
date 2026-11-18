@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/04_Materials_Science/Liu_2026_ElementsClaw_Superconductors.pdf; PDF p.11; These results establish the generative branch of ElementsClaw as the central prospective discovery step: the agent uses structure generation, Tc prediction and physical stability filters to identify experimentally realizable superconductors beyond the original MPDS/Kagome entries.。
 - 判定：superconductor discovery and materials-property prediction
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 发现需要合成验证的新超导材料候选 | “验证 4 个 novel superconductors” · L180 |
+| 验证强度 | V3 物理实验 | 通过实验合成并验证了四个新超导体 | “实验合成并验证 4 个 novel superconductors” · L22 |
+| 系统自主性 | L2 闭环执行者 | 系统自主在大规模晶体空间中筛选排序提名 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

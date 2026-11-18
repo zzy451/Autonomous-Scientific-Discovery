@@ -206,3 +206,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Retrieval-augmen
 纳入置信度：high_source_limited
 推荐引用强度：core_with_source_limit_note
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 自主设计需实验验证的抗体分子 | “macrophage-targeting antibody design” · L53 |
+| 验证强度 | V3 物理实验 | IC50检测和功能验证湿实验覆盖核心结论 | “IC50 assays” · L53 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成从靶点挖掘到优化验证的闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

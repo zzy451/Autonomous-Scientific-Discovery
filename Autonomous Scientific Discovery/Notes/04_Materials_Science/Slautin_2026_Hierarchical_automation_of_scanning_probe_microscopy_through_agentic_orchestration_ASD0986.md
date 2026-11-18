@@ -159,3 +159,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.11。
 - 判定：Concrete experiment/task evidence supports 04.03.04 (智能材料). in the end-to-end autonomous experiment The complete workflow was evaluated on a PLZT relaxor ferroelectric with a single instruction – determine how local domain structure affects polarization switching dynamics. The context stated that this was a DART-PFM measurement on PLZT with complex domain structure. No spatial criteria, measurement locations, spectroscopy waveform, experimental trajectory, or stopping rule we
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 压电响应力显微镜局部测量，答案可由仪器采集和数据分析验证 | “局部滞回测量与适应性实验路径” · L101 |
+| 验证强度 | V2 计算/仿真/回顾性 | 作者报告发现极化状态与畴壁距离的混杂关系并识别对比 | “发现极化状态与畴壁距离的混杂关系” · L101 |
+| 系统自主性 | L2 闭环执行者 | Agent构造空间描述选择后续测量，新测量返回Agent更新判断并决定终止 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

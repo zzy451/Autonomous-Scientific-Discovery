@@ -311,3 +311,17 @@ Agent 类型：Planning Agent; Hybrid Agent
   - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1117/12.3091089
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 闭环设计像素化超表面，可由实验测量验证 | “闭环设计、制备、测量与优化” · L227 |
+| 验证强度 | V2 计算/仿真/回顾性 | 有实验闭环迹象，但证据不完整 | “有实验闭环迹象，但证据不完整” · L237 |
+| 系统自主性 | L2 闭环执行者 | 闭环框架连接制备、测量与优化 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：low；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：低置信度；需全文复核

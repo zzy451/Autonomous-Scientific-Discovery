@@ -176,3 +176,17 @@ fulltext_followup_required=false
 - 下载来源：https://arxiv.org/pdf/2607.00436
 - 版本：official arXiv preprint PDF; version as downloaded。
 - 本轮为来源文件归档，不自动改变既有科学分类或将未决PR意见标记为已结案。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 200道源自21个经验证PHREEQC场景的选择题，属预定义基准 | “benchmark含200道选择题，源自21个经验证情景” · L45 |
+| 验证强度 | V1 基准/内部评测 | Agent运行模拟器后选择答案，报告准确率和置信区间 | “200题准确率（未解析/缺失回答计错）、Wilson 95% CI” · L114 |
+| 系统自主性 | L1 任务助手 |  | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

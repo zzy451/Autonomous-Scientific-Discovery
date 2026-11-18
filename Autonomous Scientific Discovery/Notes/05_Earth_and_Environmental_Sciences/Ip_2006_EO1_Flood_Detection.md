@@ -297,3 +297,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
   - 位置：publisher API target-paper title metadata; no methods/results delivered；来源：https://www.sciencedirect.com/science/article/pii/S0034425706000228/pdfft?isDTMRedir=true&download=true
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 机载自主检测洪水变化并触发后续观测，答案可由观测核对 | “change classification -> trigger -> follow-up scene acquisition” · L43 |
+| 验证强度 | V3 物理实验 | 真实EO-1洪水监测应用，在轨运行完成物理观测 | “真实场景部署：是” · L199 |
+| 系统自主性 | L2 闭环执行者 | 系统自主识别洪水事件并触发额外观测，无需人逐步介入 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

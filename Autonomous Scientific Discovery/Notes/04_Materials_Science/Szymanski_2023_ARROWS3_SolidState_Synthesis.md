@@ -158,3 +158,17 @@ Agent 类型：Planning Agent; Hybrid Agent
 纳入置信度：high
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 自主选择前驱体加速固相材料合成，产生需实验验证的新材料 | “target material formation、phase selection” · L51 |
+| 验证强度 | V3 物理实验 | 包含200+合成程序的实验验证 | “包含 200+ synthesis procedures 的实验验证” · L53 |
+| 系统自主性 | L2 闭环执行者 | 根据实验结果识别不利中间相并更新后续实验 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

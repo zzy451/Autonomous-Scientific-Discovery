@@ -160,3 +160,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.2。
 - 判定：水分子质子转移量子化学模型与电子相关能垒，归理论计算化学。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 构建质子转移最小模型并实现SQD量子算法，答案可由FCI和DFT参考方法计算核对 | “proton-transfer problem” · L37 |
+| 验证强度 | V2 计算/仿真/回顾性 | 与FCI精确对角化和DFT经典参考方法计算比较，无物理化学实验 | “FCI (exact diagonalization) and density functional theory (DFT)” · L26 |
+| 系统自主性 | L2 闭环执行者 | 以项目图控制Agent在给定任务内自主拆解并执行多步计算 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

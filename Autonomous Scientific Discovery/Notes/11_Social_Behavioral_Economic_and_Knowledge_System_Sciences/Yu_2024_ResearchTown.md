@@ -267,3 +267,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Hybrid Agent
 - 原文位置：Reference_PDF/11_Social_Behavioral_Economic_and_Knowledge_System_Sciences/Yu_2024_ResearchTown.pdf; PDF p.1; Our experiments reveal three key findings: (1) RESEARCHTOWN can provide a realistic simulation of collaborative research activities, including paper writing and re- view writing; (2) RESEARCHTOWN can maintain robust simulation with multiple researchers and diverse papers; (3) RESEARCHTOWN can gener- ate interdisciplinary research ideas that potentially inspire pioneering research directions.。
 - 判定：simulator of human research community/knowledge-production ecosystem
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在RESEARCHBENCH固定任务集上评测 | “RESEARCHBENCH” · L187 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过仿真和benchmark验证研究活动模拟质量 | “系统能模拟 collaborative research activities，而不只是文本生成” · L191 |
+| 系统自主性 | L1 任务助手 | 系统模拟研究共同体活动但由人设定任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

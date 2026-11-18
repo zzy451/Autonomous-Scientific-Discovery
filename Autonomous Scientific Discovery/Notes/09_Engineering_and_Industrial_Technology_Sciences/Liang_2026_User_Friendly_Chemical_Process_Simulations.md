@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Human-in-the-loop Agent; Hybrid Agen
 - 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Liang_2026_User_Friendly_Chemical_Process_Simulations.pdf; PDF p.38; Would you like me to run the simulation or make any additional configurations?。
 - 判定：chemical process simulation
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 化工过程仿真操作，答案可由APS仿真验证 | “analysis、optimization、flowsheet synthesis” · L179 |
+| 验证强度 | V2 计算/仿真/回顾性 | APS仿真验证物理一致性 | “是否完成正确 simulation operations，物理一致性” · L181 |
+| 系统自主性 | L1 任务助手 | 系统执行过程仿真任务，需要专家监督 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

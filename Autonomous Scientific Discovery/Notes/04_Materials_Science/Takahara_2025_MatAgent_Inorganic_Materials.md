@@ -301,3 +301,17 @@ source_limited：no
 safety_access_status：no_safety_blocker_open_publisher_or_arXiv_available
 是否仍需全文复核：可补细节，但不是当前 04 裁决所必需
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 在目标性质约束下加速无机材料设计，产出需验证的新材料 | “inorganic crystalline materials” · L214 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算评估层验证，能执行面向无机材料的目标导向生成与评估流程 | “当前一手来源支持其能执行面向无机材料的目标导向生成与评估流程” · L218 |
+| 系统自主性 | L2 闭环执行者 | 多步agent loop，proposal结构估计性质评估等串联步骤 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

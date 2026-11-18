@@ -200,3 +200,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 自动发现constitutive models，答案可由计算严格检验 | “three benchmark constitutive-model problems” · L137 |
+| 验证强度 | V2 计算/仿真/回顾性 | 仿真验证，CSGA在多个问题上提升自动发现能力 | “CSGA 在多个问题上提升自动发现能力” · L140 |
+| 系统自主性 | L2 闭环执行者 | LLM生成优化比较，自动产生并评估模型候选 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

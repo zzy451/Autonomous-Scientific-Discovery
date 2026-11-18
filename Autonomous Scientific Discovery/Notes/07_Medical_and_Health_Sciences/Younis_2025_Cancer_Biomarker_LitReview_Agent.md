@@ -293,3 +293,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
   - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1109/ICOSST69113.2025.11315415
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 从大规模文献中自动发现并组织biomarker假设，可由文献和知识库核对 | “生成结构化 biomarker 候选与证据链” · L209 |
+| 验证强度 | V1 基准/内部评测 | 基准评测，文献层grounded validation | “benchmark：是” · L194 |
+| 系统自主性 | L1 任务助手 | 自动完成文献收集、索引、分析和假设生成 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

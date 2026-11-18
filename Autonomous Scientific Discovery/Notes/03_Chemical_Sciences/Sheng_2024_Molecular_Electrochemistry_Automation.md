@@ -252,3 +252,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 纳入置信度：高
 推荐引用强度：standard_to_core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 自动定位参数组合并追踪电化学反应机理，答案可由已知方法计算验证 | “系统自动寻找 parameter combinations 并 investigate mechanism” · L22 |
+| 验证强度 | V3 物理实验 | 针对cobalt tetraphenylporphyrin与organohalide electrophiles进行真实自动化实验 | “proof-of-concept 针对 cobalt tetraphenylporphyrin 与 organohalide electrophiles” · L23 |
+| 系统自主性 | L2 闭环执行者 | 系统自主定位关键参数组合并推进机理理解，具备闭环决策能力 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

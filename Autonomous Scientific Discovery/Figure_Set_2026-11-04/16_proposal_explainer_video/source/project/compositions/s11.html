@@ -1,0 +1,59 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;background:#F4F1EA;color:#1F2A36;font-family:"HFSans",sans-serif;overflow:hidden;}
+#root .tag{position:absolute;left:150px;top:96px;font:700 28px "HFSans";letter-spacing:4px;color:#8A6A2F;}
+#root .h{position:absolute;left:150px;top:140px;right:150px;font:900 64px/1.25 "HFSerif";color:#1F2A36;}
+#root .abs{position:absolute;}
+#root .prog{position:absolute;left:0;top:0;width:1920px;height:6px;background:#8A6A2F;}
+#root .mono{font-family:"JetBrains Mono",monospace;}
+
+#root .ax{left:150px;width:1000px;height:70px;font:700 36px/70px "HFSans";}
+#root .ax span{display:inline-block;width:240px;font-family:"HFSerif";font-weight:900;}
+#root .ok{color:#2E4057;} #root .no{color:#B23A3A;}
+#s11-a1{top:290px;} #s11-a2{top:370px;} #s11-a3{top:450px;}
+#s11-jt{left:150px;top:580px;font:900 40px "HFSerif";}
+#root .j{width:390px;height:190px;top:650px;border-left:6px solid #B23A3A;padding-left:22px;box-sizing:border-box;font:700 32px/1.4 "HFSans";}
+#root .j i{display:block;font-style:normal;font:400 28px/1.45 "HFSans";color:#546A86;margin-top:6px;}
+#s11-j1{left:150px;} #s11-j2{left:560px;} #s11-j3{left:970px;} #s11-j4{left:1380px;}
+#s11-need{left:150px;top:870px;font:900 40px "HFSerif";color:#B23A3A;}
+</style>
+  <div id="root" data-composition-id="s11" data-width="1920" data-height="1080">
+
+<div class="tag" id="s11-tag">03 · 瓶颈</div>
+<div class="h" id="s11-h">下一步，不是更多的检索</div>
+<div class="abs ax ok" id="s11-a1"><span>开放度</span>← 问题陈述 ✓</div>
+<div class="abs ax ok" id="s11-a2"><span>自主性</span>← 方法描述 ✓</div>
+<div class="abs ax no" id="s11-a3"><span>验证强度</span>← 文献检索 ✕　须读原始证据</div>
+<div id="s11-jt" class="abs">四项判断构成瓶颈</div>
+<div class="abs j" id="s11-j1">V3 / V2 边界<i>复现是否第三方？实验是否覆盖核心主张？</i></div>
+<div class="abs j" id="s11-j2">AI 的实际贡献<i>产出核心结果，还是在人给的候选中挑选？</i></div>
+<div class="abs j" id="s11-j3">O6 空白是否真实<i>确实没有，还是没收集到？</i></div>
+<div class="abs j" id="s11-j4">争议案例裁定<i>争议 10 · 推翻 1，需要判断而非计数</i></div>
+<div id="s11-need" class="abs">→ 需要领域内的研究者</div>
+
+    <div id="s11-prog" class="prog"></div>
+    <div id="s11-out" class="abs" style="inset:0;background:#F4F1EA;opacity:0"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const C = [0.5, 3.26, 14.28, 24.24], END = 29.49;
+    const IN = (s, t, y = 24) => tl.fromTo(s, {opacity:0, y}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, t);
+    const NUM = (s, to, t, d = 1.2, suf = "") => { const o = {v:0};
+      tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out",
+        onUpdate:() => { document.querySelector(s).textContent = Math.round(o.v) + suf; }}, t); };
+    const GROW = (s, t, d = 0.9, origin = "left center") => tl.fromTo(s, {scaleX:0, transformOrigin:origin}, {scaleX:1, duration:d, ease:"power3.inOut"}, t);
+
+IN("#s11-tag",0.2); IN("#s11-h",0.4);
+IN("#s11-a1",C[1]+1.5); IN("#s11-a2",C[1]+4.5); IN("#s11-a3",C[1]+7);
+IN("#s11-jt",C[2]); IN("#s11-j1",C[2]+2); IN("#s11-j2",C[2]+4); IN("#s11-j3",C[2]+6); IN("#s11-j4",C[2]+8); IN("#s11-need",C[3]);
+
+    tl.fromTo("#s11-prog", {scaleX:0, transformOrigin:"left center"}, {scaleX:1, duration:END, ease:"none"}, 0);
+    tl.fromTo("#s11-out", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.in"}, END - 0.4);
+    window.__timelines["s11"] = tl;
+  </script>
+</template>

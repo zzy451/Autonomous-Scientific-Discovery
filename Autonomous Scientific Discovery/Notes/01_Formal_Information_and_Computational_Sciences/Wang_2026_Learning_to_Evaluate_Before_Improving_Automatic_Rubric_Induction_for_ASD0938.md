@@ -159,3 +159,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.1。
 - 判定：研究Agent的可执行rubric诱导及对照实验直接测量AI研究能力。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在ResearchClawBench的40项任务和AstaBench的20项任务上评估 | “all 40 tasks in ResearchClawBench” · L42 |
+| 验证强度 | V1 基准/内部评测 | 使用自动诱导的rubric评分，属基准评测 | “average improvement of 2.08 points across three backbone LLMs” · L42 |
+| 系统自主性 | L2 闭环执行者 | 系统先诱导rubric再据此指导执行和迭代修订，形成闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

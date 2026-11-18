@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 - 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2026_Text_to_Simulation_Process_Design.pdf; PDF p.7; While the overall process topologies appear similar, the economic performance differs dramatically, demonstrat- ing the value of our chemical process design agent workﬂow.。
 - 判定：chemical process flowsheet design/simulation
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 化工流程设计，答案可由仿真收敛性验证 | “文本到可执行 process simulation” · L179 |
+| 验证强度 | V2 计算/仿真/回顾性 | Simona数据集仿真验证，SCR提升约31.1% | “SCR 提升约 31.1%” · L182 |
+| 系统自主性 | L2 闭环执行者 | 系统通过E-MCTS和仿真反馈自主迭代提升流程设计 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

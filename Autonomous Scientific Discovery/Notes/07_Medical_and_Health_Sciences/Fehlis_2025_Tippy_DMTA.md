@@ -282,3 +282,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：核心引用 / 普通引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | DMTA循环中的分子设计和实验工作流协调，答案可计算验证 | “分子设计、synthesis job、HPLC analysis” · L211 |
+| 验证强度 | V1 基准/内部评测 | 系统demo和synthetic use cases验证，科学发现证据较弱 | “平台演示 + synthetic use cases” · L224 |
+| 系统自主性 | L2 闭环执行者 | 多Agent协调DMTA循环内的设计、合成、测试和分析 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：待专家复核：双编码不一致（开放度、验证强度、自主性）

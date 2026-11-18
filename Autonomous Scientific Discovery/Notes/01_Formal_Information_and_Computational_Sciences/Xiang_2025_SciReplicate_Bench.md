@@ -137,3 +137,17 @@ source_limited：no
 - 原文位置：PDF pp.1,2,4,7,8。
 - 判定：Concrete experiment/task evidence supports 01.02.04 (软件工程). a benchmark of 100 tasks from 36 NLP papers published in 2024; repository-level code generation; Test environment: isolated Python execution environment containing validation cases and automated verification scripts
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 算法复现benchmark，预定义任务集 | “100 个来自 36 篇 2024 NLP 论文的 algorithmic reproduction tasks” · L83 |
+| 验证强度 | V1 基准/内部评测 | benchmark验证算法实现 | “benchmark” · L85 |
+| 系统自主性 | L1 任务助手 | 系统执行代码复现任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

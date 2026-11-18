@@ -254,3 +254,17 @@ Agent 类型：Robot / Embodied Agent; Planning Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 沉积过程中自治获得目标薄膜性质，产出需验证的新材料 | “silver thin films” · L184 |
+| 验证强度 | V3 物理实验 | 真实沉积实验，系统可在沉积过程中做样品级决策 | “系统可在沉积过程中做样品级决策” · L187 |
+| 系统自主性 | L2 闭环执行者 | 原位表征闭环，calibration加in-situ spectroscopy加贝叶斯ML构成闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

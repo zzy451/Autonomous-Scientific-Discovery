@@ -281,3 +281,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 - 原文位置：PDF pp.5,6。
 - 判定：Concrete experiment/task evidence supports 03.04.02 (小分子性质优化). Molecule Optimization ... Physicochemical Properties (LogP, QED, Solubility) ... Protein-Ligand Binding Affinities (DRD2, GSK3-β, JNK3) ... Property Improvement score
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在分子优化、反应预测、逆合成等任务中搜索化学解决方案，答案可由计算验证 | “分子结构分析、分子优化、forward prediction、retrosynthesis、condition recommendation” · L192 |
+| 验证强度 | V2 计算/仿真/回顾性 | 在ChemCoTBench及下游任务上系统评测，通过计算验证 | “在分子优化、反应预测和条件推荐上的系统对比与可视化结果” · L195 |
+| 系统自主性 | L2 闭环执行者 | 系统在chemical sandbox中自主执行多步工具编排并通过RL学习策略 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

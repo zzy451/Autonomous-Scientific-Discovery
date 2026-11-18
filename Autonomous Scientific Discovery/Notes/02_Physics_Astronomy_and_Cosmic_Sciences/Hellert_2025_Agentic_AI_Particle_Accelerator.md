@@ -255,3 +255,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在真实粒子加速器上执行多阶段物理实验，结果可由仿真与物理测量验证 | “production synchrotron light source 上的 representative machine physics task” · L183 |
+| 验证强度 | V2 计算/仿真/回顾性 | 摘要报告真实部署但未明确核心物理实验结果的完整测量 | “摘要级真实部署证据” · L197 |
+| 系统自主性 | L2 闭环执行者 | 系统在人设定目标内自主完成多阶段实验的规划与执行 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

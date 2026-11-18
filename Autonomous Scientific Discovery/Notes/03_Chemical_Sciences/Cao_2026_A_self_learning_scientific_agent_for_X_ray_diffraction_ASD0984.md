@@ -178,3 +178,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.4,13。
 - 判定：Concrete experiment/task evidence supports 03.02.03 (分析化学). ections (𝑅p = 2.753%, 𝑅wp = 5.926%). b, Five-phase analysis of an ancient Egyptian cosmetic powder containing gypsum, phosgenite, cerussite, galena and laurionite (𝑅p = 6.600%, 𝑅wp = 13.079%). c, Operando analysis of an O3-type Li(Ni0.8Co0.1Mn0.1)O2 cathode. The voltage–time trace (left), diffraction waterfall (centre; colour indicates scan order) and refined 𝑐axis (right) connect electrochemical cycling to lattice e
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 新样品衍射鉴定答案可由数据库核对 | “On DeltaXRDbench” · L61 |
+| 验证强度 | V2 计算/仿真/回顾性 | 与参考实现及数据库已知结论比对 | “Skills selected using development data and frozen before held-out evaluation” · L44 |
+| 系统自主性 | L2 闭环执行者 | Agent自主诊断失败并修改技能 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

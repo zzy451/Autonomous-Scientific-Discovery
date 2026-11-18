@@ -1,0 +1,60 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;background:#F4F1EA;color:#1F2A36;font-family:"HFSans",sans-serif;overflow:hidden;}
+#root .tag{position:absolute;left:150px;top:96px;font:700 28px "HFSans";letter-spacing:4px;color:#8A6A2F;}
+#root .h{position:absolute;left:150px;top:140px;right:150px;font:900 64px/1.25 "HFSerif";color:#1F2A36;}
+#root .abs{position:absolute;}
+#root .prog{position:absolute;left:0;top:0;width:1920px;height:6px;background:#8A6A2F;}
+#root .mono{font-family:"JetBrains Mono",monospace;}
+
+#root .row{left:150px;width:1620px;height:170px;}
+#root .lab{position:absolute;left:0;top:0;font:900 50px "HFSerif";}
+#root .sub{position:absolute;left:0;top:76px;font:400 30px "HFSans";color:#546A86;}
+#root .bar{position:absolute;left:760px;top:40px;width:860px;height:22px;background:#2E4057;}
+#root .tick{position:absolute;top:62px;width:2px;height:18px;background:#2E4057;}
+#root .x{position:absolute;left:760px;top:92px;font:700 30px "HFSans";color:#B23A3A;}
+#s02-r1{top:290px;} #s02-r2{top:480px;}
+#s02-n{left:150px;top:690px;font:900 150px/1 "HFSerif";color:#2E4057;}
+#s02-nl{left:150px;top:860px;font:400 30px "HFSans";color:#546A86;}
+#s02-p{left:1000px;top:690px;font:900 150px/1 "HFSerif";color:#B23A3A;}
+#s02-pl{left:1000px;top:860px;font:400 30px "HFSans";color:#546A86;}
+</style>
+  <div id="root" data-composition-id="s02" data-width="1920" data-height="1080">
+
+<div class="tag" id="s02-tag">01 · 背景</div>
+<div class="h" id="s02-h">评判 AI 进展的两把尺子，都不可靠</div>
+<div class="abs row" id="s02-r1"><div class="lab">尺子一 · 发布</div><div class="sub">发布会 · 预印本摘要 · 演示</div>
+  <div class="bar" id="s02-b1"></div><div class="x" id="s02-x1">✕ 分不清“偶然成功一次”与“被独立复现”</div></div>
+<div class="abs row" id="s02-r2"><div class="lab">尺子二 · 基准分数</div><div class="sub">代理指标，而非结果本身</div>
+  <div class="bar" id="s02-b2"></div><div class="x" id="s02-x2">✕ 效度本身正受到质疑</div></div>
+<div id="s02-n" class="abs">0</div><div id="s02-nl" class="abs">个大模型基准被审查，几乎每一个都至少有一处缺陷</div>
+<div id="s02-p" class="abs">0%</div><div id="s02-pl" class="abs">使用了不确定性估计或统计检验 · arXiv 2511.04703</div>
+
+    <div id="s02-prog" class="prog"></div>
+    <div id="s02-out" class="abs" style="inset:0;background:#F4F1EA;opacity:0"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const C = [0.5, 5.47, 10.36, 16.79, 19.18], END = 35.25;
+    const IN = (s, t, y = 24) => tl.fromTo(s, {opacity:0, y}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, t);
+    const NUM = (s, to, t, d = 1.2, suf = "") => { const o = {v:0};
+      tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out",
+        onUpdate:() => { document.querySelector(s).textContent = Math.round(o.v) + suf; }}, t); };
+    const GROW = (s, t, d = 0.9, origin = "left center") => tl.fromTo(s, {scaleX:0, transformOrigin:origin}, {scaleX:1, duration:d, ease:"power3.inOut"}, t);
+
+IN("#s02-tag",0.2); IN("#s02-h",0.4);
+IN("#s02-r1",C[1]); GROW("#s02-b1",C[1]+0.4); IN("#s02-x1",C[2]+1);
+IN("#s02-r2",C[3]); GROW("#s02-b2",C[3]+0.4); IN("#s02-x2",C[4]+1.5);
+IN("#s02-n",C[4]+4); NUM("#s02-n",445,C[4]+4,1.4); IN("#s02-nl",C[4]+4.5);
+IN("#s02-p",C[4]+10); NUM("#s02-p",16,C[4]+10,1,"%"); IN("#s02-pl",C[4]+10.4);
+
+    tl.fromTo("#s02-prog", {scaleX:0, transformOrigin:"left center"}, {scaleX:1, duration:END, ease:"none"}, 0);
+    tl.fromTo("#s02-out", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.in"}, END - 0.4);
+    window.__timelines["s02"] = tl;
+  </script>
+</template>

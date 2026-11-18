@@ -1,0 +1,52 @@
+<template>
+  <style>
+@font-face{font-family:"HFSerif";font-weight:700;src:local("Noto Serif CJK SC Bold"),local("NotoSerifCJKsc-Bold");}
+@font-face{font-family:"HFSerif";font-weight:900;src:local("Noto Serif CJK SC Black"),local("NotoSerifCJKsc-Black");}
+@font-face{font-family:"HFSans";font-weight:400;src:local("Noto Sans CJK SC Regular"),local("NotoSansCJKsc-Regular"),local("Noto Sans CJK SC");}
+@font-face{font-family:"HFSans";font-weight:700;src:local("Noto Sans CJK SC Bold"),local("NotoSansCJKsc-Bold");}
+
+#root{position:absolute;inset:0;background:#F4F1EA;color:#1F2A36;font-family:"HFSans",sans-serif;overflow:hidden;}
+#root .tag{position:absolute;left:150px;top:96px;font:700 28px "HFSans";letter-spacing:4px;color:#8A6A2F;}
+#root .h{position:absolute;left:150px;top:140px;right:150px;font:900 64px/1.25 "HFSerif";color:#1F2A36;}
+#root .abs{position:absolute;}
+#root .prog{position:absolute;left:0;top:0;width:1920px;height:6px;background:#8A6A2F;}
+#root .mono{font-family:"JetBrains Mono",monospace;}
+
+#s03-bar{left:150px;top:330px;width:1620px;height:30px;background:#B23A3A;}
+#s03-bl{left:150px;top:380px;font:900 46px "HFSerif";color:#B23A3A;}
+#root .q{left:150px;font:900 62px "HFSerif";}
+#root .q b{display:inline-block;width:110px;color:#8A9BB0;font-family:"HFSerif";}
+#s03-q1{top:500px;} #s03-q2{top:600px;} #s03-q3{top:700px;}
+#s03-cost{left:150px;top:850px;font:400 32px "HFSans";color:#546A86;}
+</style>
+  <div id="root" data-composition-id="s03" data-width="1920" data-height="1080">
+
+<div class="tag" id="s03-tag">01 · 背景</div>
+<div class="h" id="s03-h">第三把尺子：真正被解决了的科学问题</div>
+<div id="s03-bar" class="abs"></div>
+<div id="s03-bl" class="abs">不问发布了什么，不问榜单第几</div>
+<div id="s03-q1" class="abs q"><b>①</b>解决的是哪一个具体问题？</div>
+<div id="s03-q2" class="abs q"><b>②</b>解决到了什么程度？</div>
+<div id="s03-q3" class="abs q"><b>③</b>依据的是什么证据？</div>
+<div id="s03-cost" class="abs">代价：每个案例都须人工核查，无法从排行榜汇总</div>
+
+    <div id="s03-prog" class="prog"></div>
+    <div id="s03-out" class="abs" style="inset:0;background:#F4F1EA;opacity:0"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const C = [0.5, 6.14, 11.34, 13.28, 15.31], END = 22.05;
+    const IN = (s, t, y = 24) => tl.fromTo(s, {opacity:0, y}, {opacity:1, y:0, duration:0.6, ease:"power3.out"}, t);
+    const NUM = (s, to, t, d = 1.2, suf = "") => { const o = {v:0};
+      tl.fromTo(o, {v:0}, {v:to, duration:d, ease:"power2.out",
+        onUpdate:() => { document.querySelector(s).textContent = Math.round(o.v) + suf; }}, t); };
+    const GROW = (s, t, d = 0.9, origin = "left center") => tl.fromTo(s, {scaleX:0, transformOrigin:origin}, {scaleX:1, duration:d, ease:"power3.inOut"}, t);
+
+IN("#s03-tag",0.2); IN("#s03-h",0.4); GROW("#s03-bar",1.2,1.2); IN("#s03-bl",2.4);
+IN("#s03-q1",C[1]+2.2); IN("#s03-q2",C[2]); IN("#s03-q3",C[3]); IN("#s03-cost",C[4]);
+
+    tl.fromTo("#s03-prog", {scaleX:0, transformOrigin:"left center"}, {scaleX:1, duration:END, ease:"none"}, 0);
+    tl.fromTo("#s03-out", {opacity:0}, {opacity:1, duration:0.35, ease:"power1.in"}, END - 0.4);
+    window.__timelines["s03"] = tl;
+  </script>
+</template>

@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 推荐引用强度：standard
 是否仍需进一步全文复核：不需要用于当前模块判定
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 论文写作任务有质量评测标准 | “PaperWritingBench 基于 200 top-tier AI conference papers” · L24 |
+| 验证强度 | V1 基准/内部评测 | 基准测试加人类评估，非科学真理发现验证 | “验证重点是写作质量，不是 scientific truth discovery” · L209 |
+| 系统自主性 | L2 闭环执行者 | 系统自主将原材料组织成完整论文 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

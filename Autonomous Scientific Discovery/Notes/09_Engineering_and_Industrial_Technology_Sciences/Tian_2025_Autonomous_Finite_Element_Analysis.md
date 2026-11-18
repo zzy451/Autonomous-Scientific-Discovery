@@ -150,3 +150,17 @@ pdf_path: Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Tian_2
 pdf_version: approved arXiv fallback PDF; local archive copy; `%PDF` header verified
 推荐引用强度: standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在线弹性有限元工程分析benchmark上对比不同协作配置 | “线弹性有限元问题；比较不同协作配置成功率” · L91 |
+| 验证强度 | V2 计算/仿真/回顾性 | 工程仿真比较，评估成功率与稳健性 | “对不同协作配置进行了多次随机试验比较，评估成功率与稳健性” · L44 |
+| 系统自主性 | L2 闭环执行者 | 多代理协作自动完成问题规划、执行、纠错与求解闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

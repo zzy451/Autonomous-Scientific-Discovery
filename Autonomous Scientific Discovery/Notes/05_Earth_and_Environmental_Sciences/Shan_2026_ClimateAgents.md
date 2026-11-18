@@ -273,3 +273,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 - 原文位置：PDF p.1。
 - 判定：社会—气候耦合分析的目标对象是气候变化。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 分析社会经济变量与气候结果关系，可通过数据分析验证 | “clean-fuel access、urbanization、inequality” · L183 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过案例分析和reviewer评分验证，有专家对具体分析的确认 | “能生成结构化 social-climate 分析” · L186 |
+| 系统自主性 | L1 任务助手 | 更像research assistant，执行社会气候数据分析任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：low；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：低置信度；需全文复核

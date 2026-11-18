@@ -288,3 +288,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
 - 已核验并归档：`Reference_PDF/04_Materials_Science/ASD-0631_Autonomous_Discovery_of_Polymer_Electrolyte_Formulations_with_Warm_Start_Batch_Bayesian_Optimization_user_supplied.pdf`，共21页。
 - 来源：用户提供文件`chemrxiv-2025-2cjbg.pdf`；版本：ChemRxiv preprint supplied by user; version not peer-reviewed。
 - 本次只补充来源文件，不改变论文分类。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 产生需要真实材料表征检验的聚合物电解质配方 | “在数月内得到接近顶级 PEO benchmark 的配方” · L192 |
+| 验证强度 | V3 物理实验 | 真实配方制备和离子电导率表征覆盖核心材料发现 | “5 个 optimization batches、18 种 lithium salts” · L23 |
+| 系统自主性 | L2 闭环执行者 | 系统在人设定的电导率目标内自主执行配方优化闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -258,3 +258,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 推荐引用强度：standard
 是否仍需进一步全文复核：不需要用于当前模块判定
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在MadGraph环境执行LHC仿真任务，答案可由仿真核对 | “LHC / MadGraph simulation tasks” · L184 |
+| 验证强度 | V2 计算/仿真/回顾性 | 仿真验证，系统执行autonomous simulation campaign | “仿真验证：是” · L174 |
+| 系统自主性 | L2 闭环执行者 | 系统从论文PDF出发运行autonomous simulation campaign | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

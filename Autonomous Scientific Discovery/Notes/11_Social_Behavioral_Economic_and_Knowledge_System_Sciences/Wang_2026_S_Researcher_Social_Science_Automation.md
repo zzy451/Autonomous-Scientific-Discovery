@@ -264,3 +264,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 - 原文位置：PDF pp.7,8,10,12。
 - 判定：Concrete experiment/task evidence supports 11.02.02 (社会调查与社会统计). S-Researcher autonomously designs a complete simulation protocol ... 100 rounds across three independent replicates; China Education Panel Survey (CEPS); human experiments (N=120)
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在多个社会科学案例上评测研究自动化能力，属于预定义实验设置 | “cultural dissemination、teacher attention、public goods games 等” · L185 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过N=120人类实验和r=0.915对照表现支持系统有效性 | “`N=120` 人类实验与 `r=0.915` 对照表现支持系统有效性” · L189 |
+| 系统自主性 | L1 任务助手 | 系统协助研究者完成实验设计、人类行为模拟和结果分析，仍是human-AI collaborative | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

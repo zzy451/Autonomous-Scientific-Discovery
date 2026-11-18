@@ -246,3 +246,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：high
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在固定的EO benchmark套件上评测 | “EarthBench; ThinkGeo; GeoScenario-116” · L163 |
+| 验证强度 | V1 基准/内部评测 | 通过benchmark得分和任务完成率评测，无真实科学发现验证 | “在多个 EO benchmark 上提升流程质量与最终性能” · L167 |
+| 系统自主性 | L1 任务助手 | 更像planning layer，执行人委派的EO任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

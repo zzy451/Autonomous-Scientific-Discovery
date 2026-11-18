@@ -282,3 +282,17 @@ safety_access_status: accessed_no_safety_issue
 final_reason: The direct objects are theoretical/computational physics research tasks, not a domain-agnostic workflow.
 refresh_focus: stabilize as 02 only
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 理论与计算物理研究任务，答案可由计算验证 | “理论与计算物理研究中的长程科研任务” · L81 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过benchmark和仿真验证，声称压缩研究时间从months到hours | “把 labor-intensive research 从 months 压缩到 hours” · L200 |
+| 系统自主性 | L2 闭环执行者 | 系统自主执行假设检验与探索，但仍需人设定总体框架 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

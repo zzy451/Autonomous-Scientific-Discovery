@@ -272,3 +272,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
   - 位置：abstract_inverted_index (aggregated metadata, not first-hand text)；来源：https://doi.org/10.1016/j.cej.2022.139099
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在给定化学样品上优化pH值，答案可测量核对 | “多缓冲、多质子化学样品” · L188 |
+| 验证强度 | V3 物理实验 | 机器人液体处理平台真实湿实验验证 | “机器人成功完成调节” · L192 |
+| 系统自主性 | L2 闭环执行者 | 系统在pH目标内自主主动学习闭环实验 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

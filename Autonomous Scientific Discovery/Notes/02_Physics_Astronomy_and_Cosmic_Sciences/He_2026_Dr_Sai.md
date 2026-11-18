@@ -151,3 +151,17 @@ first_hand_source_checked：official arXiv PDF archived locally and checked: Aut
 source_limited：no
 confidence：high
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | BESIII物理分析任务有参考结果可对照 | “系统可完成真实分析流程并复现关键结果或与专家流程对照” · L102 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算验证与专家评估，复现已知结果 | “重点是 real-world physics analysis workflow 的完成度与结果一致性” · L34 |
+| 系统自主性 | L2 闭环执行者 | 系统在物理目标内自主执行分析工作流 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

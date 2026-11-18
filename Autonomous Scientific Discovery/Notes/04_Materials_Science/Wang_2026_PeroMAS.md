@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 - 原文位置：Reference_PDF/04_Materials_Science/Wang_2026_PeroMAS.pdf; PDF p.5; PeroMAS: A Multi-agent System of Perovskite Material Discovery Design a low lead perovskite solar cell with a photoelectric conversion efficiency of not less than 20% and T80 exceeding 1000h.。
 - 判定：perovskite materials discovery
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 提出需要合成验证的钙钛矿材料候选 | “perovskite materials” · L176 |
+| 验证强度 | V3 物理实验 | 通过真实合成实验验证了系统有效性 | “湿实验：是” · L169 |
+| 系统自主性 | L2 闭环执行者 | 多Agent自主规划从文献到合成的完整流程 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

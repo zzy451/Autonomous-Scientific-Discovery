@@ -281,3 +281,17 @@ note_revision_required：no
 - 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Barkley_2026_CADSmith.pdf; PDF p.1; We present CADSmith, a multi-agent pipeline that generates CadQuery code from natural language.。
 - 判定：CAD generation and geometric validation
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 从自然语言生成CAD几何，答案可由几何验证器检验 | “从自然语言直接生成 CAD 几何” · L189 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过OpenCASCADE精确测量和VLM Judge验证几何正确性 | “执行率提升到 100%，几何指标全面改善” · L192 |
+| 系统自主性 | L2 闭环执行者 | 系统通过两层纠错循环自主迭代修正CAD设计 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

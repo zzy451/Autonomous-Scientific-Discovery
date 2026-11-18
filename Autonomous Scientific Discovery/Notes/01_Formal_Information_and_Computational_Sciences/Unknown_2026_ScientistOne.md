@@ -275,3 +275,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/01_Formal_Information_and_Computational_Sciences/Unknown_2026_ScientistOne.pdf; PDF p.1; ScientistOne generalizes to six additional tasks spanning medical imaging, fine-grained recognition, 3D perception, and parameter-constrained language modeling.。
 - 判定：chain-of-evidence verification general research agent; no concrete object tertiary
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在预定义计算研究任务上评测 | “75 papers / 5 systems / 5 tasks” · L57 |
+| 验证强度 | V1 基准/内部评测 | 证据链审计式基准评测 | “CoE audit” · L57 |
+| 系统自主性 | L1 任务助手 | 系统执行人委派的多步研究任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

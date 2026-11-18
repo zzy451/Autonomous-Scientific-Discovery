@@ -261,3 +261,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 提名治疗靶点，需要实验验证是否成立 | “therapeutic target nomination” · L75 |
+| 验证强度 | V2 计算/仿真/回顾性 | 有病例与实验支撑但笔记未确认湿实验覆盖核心结论 | “organoid / mouse 等验证语境” · L193 |
+| 系统自主性 | L2 闭环执行者 | 系统自主推断机制并提名靶点，在人设定疾病目标内 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

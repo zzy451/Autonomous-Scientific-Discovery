@@ -113,3 +113,17 @@ confidence：medium_high
 - 原文位置：本地PDF pp.5–6，Exemplar 3: Open-Ended Nanophotonics Problem；可调光学超表面泵浦图案实现自发发射光束转向。。
 - 判定：纳米光子/光束操控对象直接支持02.02.09光学；02.02.14是高能粒子物理，必须拒绝此前误码。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O5 开放数学 | 通过闭环推进可解释科学发现，答案事先未知但可被形式化或计算严格检验 | “projectile motion; Ising system; nanophotonic device design” · L65 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算或模型化科学任务，通过具体对象支撑科学发现主张 | “projectile motion; Ising system; nanophotonic device design” · L65 |
+| 系统自主性 | L2 闭环执行者 | 多步self-driving laboratory workflow，闭环提出测试修正候选科学解释或设计 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

@@ -271,3 +271,17 @@ Agent 类型：LLM Agent; Planning Agent; Retrieval-augmented Agent; Multi-Agent
 纳入置信度：高
 推荐引用强度：core
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 提出Zn(BF4)2·xH2O-EC电解质体系，需实验验证 | “10.6 mS cm−1 conductivity、2.37 V 窗口、4000 cycles” · L203 |
+| 验证强度 | V3 物理实验 | 湿实验验证，有光谱/模拟支撑 | “湿实验：是” · L192 |
+| 系统自主性 | L1 任务助手 | Multi-agent network提出新DEE组成方案，但多Agent决策链细节待核查 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

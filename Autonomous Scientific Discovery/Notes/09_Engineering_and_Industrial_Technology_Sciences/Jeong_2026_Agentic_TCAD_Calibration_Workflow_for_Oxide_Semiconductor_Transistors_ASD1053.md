@@ -171,3 +171,17 @@ fulltext_followup_required=false
 ### 全文后续要求
 
 纳入与当前分类依据已核对；如需补读其他细节，按第7节继续追踪。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 对实测IWO晶体管校准TCAD模型参数，答案可由器件仿真计算验证 | “fabricated bottom-gate In–W–O (BG-IWO) transistor” · L56 |
+| 验证强度 | V2 计算/仿真/回顾性 | TCAD仿真与实测转移特性比较，未报告新的物理器件制造验证 | “measurement–TCAD residuals” · L60 |
+| 系统自主性 | L2 闭环执行者 | Agent在给定目标内自主选择参数修正并迭代校准模型 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

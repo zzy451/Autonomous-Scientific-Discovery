@@ -262,3 +262,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：普通引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 规划混合有机-酶路线，答案可由已知工具和专家评估 | “hybrid organic-enzymatic synthesis routes” · L21 |
+| 验证强度 | V1 基准/内部评测 | 主要是基准指标与专家案例评估无湿实验闭环 | “path recovery、AUC、Top-k” · L23 |
+| 系统自主性 | L1 任务助手 | 系统执行路线规划任务但人决定研究流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -287,3 +287,17 @@ Agent 类型：Hybrid Agent
   - 位置：metadata / mirrored abstract; not first-hand task verification；来源：https://doi.org/10.1016/j.scriptamat.2026.117286
 
 逐条引文、来源文件和限制见 `Coverage_Check/pr1_82_recheck_2026-10-29/final_review.json`。保留现有分类不等于全部分类边界已消除。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 自主发现辐照耐受高熵合金候选，可由仿真验证 | “论文报告了具体高熵合金发现结果” · L192 |
+| 验证强度 | V2 计算/仿真/回顾性 | 仿真验证，具体高熵合金发现 | “仿真验证：部分是” · L178 |
+| 系统自主性 | L2 闭环执行者 | Agentic AI驱动的自主材料发现流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

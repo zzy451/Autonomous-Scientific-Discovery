@@ -264,3 +264,17 @@ Agent 类型：LLM Agent; Tool-using Agent; Hybrid Agent
 - `note_revision_required`: `no`
 
 This writeback records a clean source-limited first-hand state. No local PDF or full-text archive is currently available in the workspace, but this is a source-availability issue rather than any safety restriction.
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在给定空间转录组数据上执行新分析 | “hPSC-pancreas maturation” · L32 |
+| 验证强度 | V2 计算/仿真/回顾性 | 基于生物学案例的计算工作流验证 | “computational workflow” · L28 |
+| 系统自主性 | L1 任务助手 | 系统执行人委派的空间转录组分析任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

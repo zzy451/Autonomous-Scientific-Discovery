@@ -280,3 +280,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 - 原文位置：PDF pp.9–13,21–22。
 - 判定：Executed GPU-kernel optimization and PTM-aware protein-degrader case study; 22 complexes investigated, no corrected surviving drug candidate; no wet-lab discovery claim.
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在GPU-kernel optimization和PROTAC评价等预定义案例上评测 | “TritonBench；PyTorch workloads；DeepTernary；PROTAC-STAN” · L190 |
+| 验证强度 | V1 基准/内部评测 | 主要是benchmark和case-study级别验证，无真实闭环实验 | “是” · L43 |
+| 系统自主性 | L2 闭环执行者 | 系统用memory-centric Agent覆盖多阶段科研流程，在给定目标内自主迭代 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

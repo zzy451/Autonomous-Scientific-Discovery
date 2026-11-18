@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 为给定光谱设计超材料结构，可由数值仿真验证 | “ADM unit-cell / all-dielectric metasurface” · L185 |
+| 验证强度 | V2 计算/仿真/回顾性 | 数值仿真和re-simulation验证，无物理实验 | “计算验证 / 仿真支持” · L199 |
+| 系统自主性 | L2 闭环执行者 | 自主规划并开发forward model，调用工具完成inverse design闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -179,3 +179,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.7。
 - 判定：Concrete experiment/task evidence supports 01.02.13 (机器学习). Table 1: Overall performance on MLS-Bench-Lite. Beat Any, Beat Median, and Beat All denote the percentages of tasks that outperform at least one, the median-performing, and all provided human baselines, respectively.
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在MLS-Bench-Lite的30项预定义研究任务上评估 | “30 research tasks across 12 domains” · L62 |
+| 验证强度 | V1 基准/内部评测 | 以基准得分和对基线的改进比例评估，属基准评测 | “achieves 100.0% valid improvements upon its weakest human baseline” · L45 |
+| 系统自主性 | L2 闭环执行者 | Agent提出候选，world model预测价值并据反馈演化，形成闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

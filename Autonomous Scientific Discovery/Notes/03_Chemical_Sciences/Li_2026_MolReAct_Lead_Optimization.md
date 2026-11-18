@@ -305,3 +305,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：普通引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 可合成约束下的先导优化，结果可由性质和合成性评估器验证 | “13 TDC tasks + 1 structure-based docking task” · L225 |
+| 验证强度 | V1 基准/内部评测 | 仅通过benchmark评测验证，无湿实验 | “覆盖 DRD2、GSK3_beta、JNK3 等治疗相关任务” · L229 |
+| 系统自主性 | L2 闭环执行者 | 系统通过RL在合成约束的MDP中自主迭代优化 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

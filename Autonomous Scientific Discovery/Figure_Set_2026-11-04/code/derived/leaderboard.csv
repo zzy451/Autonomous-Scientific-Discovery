@@ -1,0 +1,663 @@
+field,paper_id,year,system,problem,evidence_tier,loop_reach,mechanism,venue,link
+01;08,ASD-0013,2025,The ai scientist-v2,Agent 能否自主产生足以通过 workshop peer review 的科学论文。,E3,L3,D5,arXiv,https://arxiv.org/abs/2504.08066
+01,ASD-0032,2025,Codescientist,Agent 能否端到端提出、实现、运行和验证代码实验型发现。,E3,L3,D5,arXiv,https://arxiv.org/abs/2503.22708
+01;04,ASD-0484,2024,Evolution-guided Bayesian optimization for constrained multi,如何在约束条件下自动优化 AgNP synthesis outcome,E3,L2,D3,npj Computational Materials,https://doi.org/10.1038/s41524-024-01274-x
+01;09,ASD-0063,2025,Alphaevolve,能否用 coding agent 发现超越 SOTA 的算法/构造。,E3,L2,D6,arXiv,https://arxiv.org/abs/2506.13131
+01,ASD-0906,2026,Advancing mathematics research with AI-driven formal proof s,,E3,L2,D6,Science,https://doi.org/10.1126/science.aej2213
+01,ASD-0960,2026,CausalSmith,,E3,L2,D5,arXiv preprint,https://arxiv.org/abs/2607.22511
+01;09,ASD-0976,2026,Andy,,E2,L3,D5,arXiv preprint,https://arxiv.org/abs/2608.15052
+01;11,ASD-1100,2026,A Society of Researchers,,E2,L3,D5,arXiv preprint,https://arxiv.org/abs/2610.10468
+01,ASD-0512,2024,Mathematical discoveries from program search with large lang,如何通过程序搜索发现新的数学构造与下界,E2,L2,D6,Nature,https://doi.org/10.1038/s41586-023-06924-6
+01;06,ASD-0844,2026,Science Earth,如何让可连接的 scientific capabilities 围绕具体问题自组织协作，并在真实对象案例中产出可检验结果,E2,L2,D5,arXiv,https://arxiv.org/abs/2606.01316
+01;02;11,ASD-0845,2026,SciDER,多 Agent 系统能否把科研流程自动化到跨 benchmark 与真实案例层面,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.01421
+01;10,ASD-0850,2026,OR-Agent,如何用结构化多 Agent 研究框架提升 automated algorithm discovery 在 OR 与交通场景中的表现,E2,L2,D6,arXiv,https://arxiv.org/abs/2602.13769
+01,ASD-0926,2026,AutoData,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.19754
+01;02;03;04;05;06;07;08;09;10,ASD-0940,2026,OmniScientist,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.13558
+01;09;10,ASD-0943,2026,Epi,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.24944
+01,ASD-0973,2026,Large-Scale Autonomous Discovery of Kissing Number Construct,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.35051
+01;02,ASD-1066,2026,Multi-agent discovery of practical quantum LDPC codes,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.08996
+01,ASD-1075,2026,ProofLoom,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.34960
+01,ASD-1076,2026,FormaTheoria,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.10894
+01,ASD-1079,2026,AI Discovery in Combinatorics,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.16555
+01;02;09,ASD-1082,2026,Beyond Equation Search,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.18938
+01;05,ASD-1091,2026,Autonomous Research Project Management as an Agent Skill,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.31683
+01,ASD-1106,2026,AutoResearch at Production Scale,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.30541
+01,ASD-1107,2026,Autonomous Research for Open-Ended Problems,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.13073
+01,ASD-1108,2026,Auto-RecSys,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.10922
+01,ASD-1109,2026,AutoLR,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.04871
+01;02;04,ASD-0062,2025,Empowering scientific workflows with federated agents,如何让 autonomous agents 在跨 HPC、设施和数据仓库的科研环境中稳定执行、通信、保存状态并协同推进 scientific workflows,E2,L1,D2,arXiv,https://arxiv.org/abs/2505.05428
+01;04,ASD-1009,2026,Agentic self-driving microscopy benchmarks support qualifica,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2608.05266
+01,ASD-1078,2026,An AI-Assisted Formalization of the Poincar茅 Conjecture,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.08329
+01,ASD-0146,2024,AIGS,,E1,L3,D5,arXiv,https://arxiv.org/abs/2411.11910
+01;03;06;09;10,ASD-0004,2025,InternAgent,Agent 能否在多个对象域中从研究想法推进到方法、代码、实验与验证。,E1,L3,D5,arXiv,https://arxiv.org/abs/2505.16938
+01;11,ASD-0069,2024,The ai scientist,LLM Agent 能否自动完成从想法到论文的科研闭环。,E1,L2,D5,arXiv,https://www.arxiv.org/abs/2408.06292v3
+01,ASD-0147,2024,Nova,,E1,L2,D5,arXiv,https://arxiv.org/abs/2410.14255
+01,ASD-0018,2025,Agent laboratory,Agent 能否把研究想法转化为代码、实验结果和论文报告。,E1,L2,D5,arXiv,https://arxiv.org/abs/2501.04227
+01,ASD-0019,2025,Agentrxiv,Agent 是否能像科研共同体一样通过共享成果产生累积改进。,E1,L2,D5,arXiv,https://arxiv.org/abs/2503.18102
+01,ASD-0048,2025,Dolphin,LLM Agent 能否在实验反馈闭环中自动改进研究 idea。,E1,L2,D5,arXiv,https://arxiv.org/abs/2501.03916
+01;11,ASD-0145,2025,CycleResearcher,如何用 automated review 反馈迭代提升自动化科研代理的研究能力,E1,L2,D5,ICLR,https://openreview.net/forum?id=bjcsVLoHYs
+01;11,ASD-0849,2025,OmniScientist,如何让 AI scientists 进入真实科学共同体的协作、评审、归因和知识网络结构,E1,L2,D5,arXiv,https://arxiv.org/abs/2511.16931
+01;11,ASD-0523,2026,Towards end-to-end automation of AI research,,E1,L2,D5,Nature,https://doi.org/10.1038/s41586-026-10265-5
+01,ASD-0524,2026,AgenticSciML,,E1,L2,D5,npj Artificial Intelligence,https://doi.org/10.1038/s44387-026-00102-5
+01;06;07,ASD-0663,2026,AutoScientists,如何让自组织 Agent 团队持续推进长程科研实验,E1,L2,D5,arXiv,https://arxiv.org/abs/2605.28655
+01;02;06,ASD-0671,2026,AutoResearchClaw,如何构建可自强化、可自修复的人机协作科研 Agent 系统,E1,L2,D5,arXiv,https://arxiv.org/abs/2605.20025
+01;06;07,ASD-0676,2026,AutoSci,如何用 memory-centric Agent 覆盖完整科研生命周期,E1,L2,D5,arXiv,https://arxiv.org/abs/2605.31468
+01;11,ASD-0923,2026,Training AI Scientists to Replicate Research,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.13331
+01;02;06;11,ASD-0925,2026,Beyond Execution,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.26753
+01,ASD-0927,2026,ScientistTwo,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.19644
+01,ASD-0928,2026,EviGraph,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.04738
+01,ASD-0929,2026,Learning What to Investigate Next,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.02525
+01,ASD-0930,2026,ExpEvolve,,E1,L2,D6,arXiv preprint,https://arxiv.org/abs/2610.29303
+01,ASD-0931,2026,Can AI agents conduct open-ended AI research? Early evidence,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2607.27191
+01,ASD-0932,2026,The Agentic Scientist,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.18933
+01;06;08,ASD-0933,2026,JANUS,,E1,L2,D6,arXiv preprint,https://arxiv.org/abs/2610.13194
+01,ASD-0934,2026,YouRA,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.01097
+01;11,ASD-0937,2026,AppliedScientist,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.14738
+01,ASD-0938,2026,Learning to Evaluate Before Improving,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.31076
+01,ASD-0941,2026,Can AI Agents Make Open-Ended Scientific Discovery? Evidence,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.08927
+01,ASD-0945,2026,MMPostTrainBench,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.05398
+01,ASD-0946,2026,PrimeScientist,,E1,L2,D2,arXiv preprint,https://arxiv.org/abs/2609.17846
+01,ASD-0947,2026,Experimental Experience Modeling for Autonomous Research,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.39392
+01,ASD-0952,2026,AutoResearch,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.17906
+01,ASD-0953,2026,ScienceFlow,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.14354
+01,ASD-0955,2026,AutoWorldModel-Bench,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.11216
+01,ASD-0956,2026,Beneath the Diff,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.00077
+01,ASD-0957,2026,Beyond Final Scores,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.13417
+01,ASD-0958,2026,Beyond Solution-Centric Search,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.02143
+01,ASD-0959,2026,Long-Horizon Autonomous Architecture Research with a Languag,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.01995
+01,ASD-0969,2026,Mechanist,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.12036
+01,ASD-0972,2026,EvoCast,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.04517
+01;11,ASD-0975,2026,A Case Study on Emergent Cheating and Whistleblowing in Auto,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.04170
+01,ASD-1074,2026,VALG,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.13060
+01,ASD-1080,2026,Euler,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.19864
+01;02;11,ASD-1083,2026,OptScientist,,E1,L2,D6,arXiv preprint,https://arxiv.org/abs/2610.28562
+01,ASD-1094,2026,IdeaScientist,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.04074
+01,ASD-0053,2023,Towards autonomous hypothesis verification via language mode,LLM 是否能在最少指导下生成并验证科研假设。,E1,L1,D5,arXiv,https://arxiv.org/abs/2311.09706
+01,ASD-0089,2025,Researchcodeagent,Agent 能否把论文方法自动 codify 为可运行代码。,E1,L1,D5,arXiv,https://arxiv.org/abs/2504.20117
+01,ASD-0100,2025,Scireplicate-bench,Agent 能否从研究论文中稳定恢复可运行的算法实现,E1,L1,D5,arXiv,https://arxiv.org/abs/2504.00255
+01;02;06;07,ASD-0111,2025,SciMaster,能否构建可泛化的 general-purpose scientific AI agent,E1,L1,D5,arXiv,https://arxiv.org/abs/2507.05241
+01,ASD-0736,2025,AI-Researcher,论文试图通过 Agent 系统推进“autonomous scientific innovation system”相关研究任务。,E1,L1,D5,NeurIPS 2025 Datasets and Benchmarks / OpenReview,https://openreview.net/forum?id=4TdmQaGzxk
+01,ASD-0737,2026,ScientistOne,如何让 autonomous research system 在 AI / computational research tasks 上完成多步证据链生成与核验,E1,L1,D5,arXiv,https://arxiv.org/abs/2605.26340
+01,ASD-0738,2026,AutoSOTA,论文试图通过 Agent 系统推进“automated AI-model discovery and research system”相关研究任务。,E1,L1,D5,arXiv,https://arxiv.org/abs/2604.05550
+01,ASD-0876,2026,CausalDS,,E1,L1,D5,arXiv,https://arxiv.org/abs/2607.08093
+01,ASD-0877,2026,The Silent Failures in Agentic Data Science,,E1,L1,D5,arXiv,https://arxiv.org/abs/2610.14115
+01,ASD-0878,2026,SWE-bench Science,,E1,L1,D5,arXiv,https://arxiv.org/abs/2608.19799
+01;06,ASD-0899,2026,Mind the alignment gap,,E1,L1,D5,openRxiv (preprint),https://doi.org/10.64898/2026.07.05.736638
+01;02,ASD-0905,2026,ORBIT-Q,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2607.03105
+01,ASD-0924,2026,SGHA,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2608.17501
+01,ASD-0935,2026,DataSense-Bench,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.12190
+01;02;03;04;05;06;09,ASD-0949,2026,TruthInsightBench,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.05079
+01;11,ASD-0951,2026,Reward Hacking Challenges Oversight of Autonomous Research A,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.28614
+01,ASD-0954,2026,Project2Task,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2608.05225
+01;11,ASD-0961,2026,XScientist,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2607.12301
+01;02;05;07;08;09,ASD-1093,2026,WhatWorkedBench,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.27490
+01;11,ASD-1097,2026,SAIL,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.11451
+01;02;03;04;11,ASD-0915,2026,Into the Unknown,,E0,L3,D5,arXiv preprint,https://arxiv.org/abs/2610.19159
+02;04,ASD-0613,2022,Physics Discovery in Nanoplasmonic Systems via Autonomous Ex,如何通过自主显微实验更高效地发现关键物理响应区域,E3,L2,D3,Advanced Science,https://doi.org/10.1002/advs.202203422
+02,ASD-0090,2024,Agents for self-driving laboratories applied to quantum comp,如何用 Agent 管理实验室知识并自主完成量子实验校准和操作。,E3,L2,D5,arXiv,https://arxiv.org/abs/2412.07978
+02,ASD-0762,2025,LLM-based Multi-Agent Copilot for Quantum Sensor,是否能让多 Agent 系统自主优化并诊断量子传感实验,E3,L2,D6,arXiv,https://arxiv.org/abs/2508.05421
+02;04,ASD-0151,2026,Self-driving lab discovers principles for steering spontaneo,,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-025-66916-0
+02;04,ASD-0904,2026,Autonomous Quantum Transport Measurements of 2D Semiconducto,,E3,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.26661
+02;09,ASD-1047,2026,OPERA,,E3,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.05990
+02,ASD-1062,2026,Vision-Language Agents for Active Perception in Optics Labor,,E3,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.32918
+02,ASD-1064,2026,Agent-assisted experimental strategy transfer across quantum,,E3,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.21047
+02;09,ASD-0129,2025,OpenFOAMGPT,如何让 Agent 更自主地组织与修正 CFD 工程仿真工作流,E2,L2,D5,arXiv,https://arxiv.org/abs/2501.06327
+02,ASD-0136,2025,StarWhisper Telescope,如何用 Agent 自动化端到端天文观测并提高瞬变事件发现与跟进效率,E2,L2,D5,arXiv,https://arxiv.org/abs/2412.06412
+02,ASD-0528,2025,AutoSciLab,,E2,L2,D3,Proceedings of the AAAI Conference on Artificial Intelligence,https://doi.org/10.1609/aaai.v39i1.31990
+02;10,ASD-0627,2025,Adaptive Science Operations in Deep Space Missions Using Off,如何在深空生命探测任务中自主决定科学仪器的使用顺序,E2,L2,D2,arXiv,https://arxiv.org/abs/2510.08812
+02,ASD-0687,2025,Agentic AI for Multi-Stage Physics Experiments at a Large-Sc,如何在真实粒子加速器设施上自主执行多阶段物理实验,E2,L2,D5,arXiv,https://arxiv.org/abs/2509.17255
+02;09,ASD-0688,2025,OpenFOAMGPT 2.0,如何让 Agent 自主完成从自然语言到 CFD simulation result 的全过程,E2,L2,D5,arXiv,https://arxiv.org/abs/2504.19338
+02,ASD-0759,2025,PhysMaster,如何让 Agent 承担理论与计算物理研究中的长程科研任务,E2,L2,D6,arXiv,https://arxiv.org/abs/2512.19799
+02;09,ASD-0782,2025,CFDagent,如何让多 Agent 系统从自然语言自动完成 geometry generation、solver execution 和 postprocessing,E2,L2,D5,Physics of Fluids,https://doi.org/10.1063/5.0294696
+02,ASD-0863,2025,HEPTAPOD,如何让 agent 可靠编排 HEP 专有工具链并执行可审计工作流,E2,L2,D5,arXiv,https://arxiv.org/abs/2512.15867
+02;09,ASD-0047,2026,Foam-agent,如何用 multi-agent system 自动完成复杂 CFD 仿真流程。,E2,L2,D5,arXiv,https://arxiv.org/abs/2505.04997
+02,ASD-0549,2026,DeepInflation,如何自动发现并验证满足观测约束的 inflation models,E2,L2,D5,Research in Astronomy and Astrophysics,https://doi.org/10.1088/1674-4527/ae6ad8
+02,ASD-0567,2026,Egent,如何自治地完成大规模高一致性的谱线 EW 测量,E2,L2,D5,The Open Journal of Astrophysics,https://doi.org/10.33232/001c.161879
+02;04,ASD-0750,2026,GRACE,如何让 Agent 在物理约束下自主生成并评估粒子物理实验设计改动,E2,L2,D5,arXiv,https://arxiv.org/abs/2602.15039
+02,ASD-0751,2026,Beyond AI as Assistants,如何让 Agent 自主完成 cosmology 中的量化目标优化与开放式数据分析,E2,L2,D5,arXiv / Rencontres de Moriond contribution,https://arxiv.org/abs/2605.14791
+02,ASD-0761,2026,AI Agents for Variational Quantum Circuit Design,Agent 是否能在闭环中自主搜索和改进量子线路设计,E2,L2,D5,arXiv,https://arxiv.org/abs/2602.19387
+02,ASD-0829,2026,DarkAgents,如何用多 Agent 组织复杂理论物理研究流程并审计物理假设,E2,L2,D5,arXiv,https://arxiv.org/abs/2606.11157
+02,ASD-0830,2026,Dr.Sai,如何让 Agent 在真实高能物理分析环境中从目标理解走到执行与核验,E2,L2,D5,arXiv,https://arxiv.org/abs/2604.22541
+02,ASD-0839,2026,First head-to-head comparison of agentic AI applied to the a,Agent 能否在具体引力波分析任务上自主完成端到端数据处理与结果生成,E2,L2,D5,arXiv,https://arxiv.org/abs/2605.28916
+02;03;04;06;09,ASD-0857,2026,Machine Collective Intelligence for Explainable Scientific D,如何从多类经验系统中恢复可解释 governing equations,E2,L2,D5,arXiv,https://arxiv.org/abs/2604.27297
+02,ASD-0862,2026,AI Agents Can Already Autonomously Perform Experimental High,能否让 agent 在真实 HEP 分析链路中自主完成从事件选择到统计推断与写作的大部分工作,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.20179
+02,ASD-0864,2026,MadAgents,如何用多 Agent 系统降低 MadGraph 使用门槛、支持仿真任务并运行 autonomous simulation campaign,E2,L2,D5,arXiv,https://arxiv.org/abs/2601.21015
+02,ASD-0903,2026,CLVisc Agent for autonomous relativistic hydrodynamics studi,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2607.27822
+02;04,ASD-1006,2026,Enabling large language model agents for high-fidelity many-,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.20779
+02,ASD-1043,2026,Solver Agent,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.35958
+02;09,ASD-1050,2026,HALO,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.28877
+02;09,ASD-1054,2026,Automated Discovery of Physically Interpretable Subgrid Leng,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.29850
+02,ASD-1058,2026,CosmoAgent,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.16536
+02;03,ASD-1059,2026,Automated Many-Body Simulations of Strongly Correlated Syste,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.00943
+02,ASD-1065,2026,Agentic Active Learning Meets Visual Embeddings,,E2,L2,D3,arXiv preprint,https://arxiv.org/abs/2608.23688
+02,ASD-1067,2026,How AI Agents Discover Scientific Equations,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.00435
+02,ASD-1068,2026,Brilliance,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.15615
+02,ASD-1071,2026,From Earth to Mars and Beyond,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.16607
+02;04,ASD-1081,2026,The AI Theorist reveals excitonic structure in $\alpha$-RuCl,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.02417
+02,ASD-1111,2026,Autonomous Floquet engineering of bosonic codes via reinforc,,E2,L2,D4,Communications Physics,https://doi.org/10.1038/s42005-026-02875-2
+02,ASD-0121,2024,Multi-agent system for cosmological parameter analysis,,E2,L1,D5,arXiv,https://arxiv.org/abs/2412.00431
+02,ASD-0044,2025,Bridging literature and the universe via a multi-agent large,如何把宇宙学论文转化为可执行仿真并完成初步科学分析。,E2,L1,D5,arXiv,https://arxiv.org/abs/2507.08958
+02,ASD-0120,2025,AI agents for ground-based gamma astronomy,,E2,L1,D5,arXiv,https://arxiv.org/abs/2503.00821
+02,ASD-0707,2025,ArgoLOOM,如何用 Agent 系统统一 fundamental physics computational discovery pipelines,E2,L1,D5,arXiv,https://arxiv.org/abs/2510.02426
+02;03;04;06,ASD-0870,2025,SR-Scientist,如何让 autonomous AI scientist 通过长程工具交互恢复科学方程,E2,L1,D5,arXiv,https://arxiv.org/abs/2510.11661
+02;03;04;06;07,ASD-0871,2025,The Denario project,能否让多 agent scientific assistant 在多个学科中完成实际研究任务,E2,L1,D5,arXiv,https://arxiv.org/abs/2510.26887
+02,ASD-0748,2026,ASTER -- Agentic Science Toolkit for Exoplanet Research,如何让 Agent 编排 exoplanet atmospheric characterization 所需的多步领域工具链,E2,L1,D5,arXiv,https://arxiv.org/abs/2603.26953
+02,ASD-0763,2026,From Experimental Limits to Physical Insight,如何让 Agent 自动整合分散证据并解释高能物理实验约束,E2,L1,D5,arXiv,https://arxiv.org/abs/2605.02491
+02,ASD-0764,2026,An agentic framework for gravitational-wave counterpart asso,如何让 Agent 自主执行引力波事件与电磁候选的关联分析,E2,L1,D5,arXiv,https://arxiv.org/abs/2605.10584
+02,ASD-0840,2026,Physics Is All You Need? A Case Study in Physicist-Supervise,AI agent 在物理学家监督下能否可靠构建高精度的宇宙学 / 物理学计算工具,E2,L1,D5,arXiv,https://arxiv.org/abs/2605.30353
+02,ASD-0868,2026,Think like a Scientist,能否让 agent 像科学家那样先提取物理结构，再恢复目标方程,E2,L1,D5,arXiv,https://arxiv.org/abs/2602.12259
+02;03;04;06,ASD-0869,2026,STRIDE,如何让自反式 agent workflow 更可靠地恢复不同科学对象的方程,E2,L1,D5,arXiv,https://arxiv.org/abs/2605.17790
+02,ASD-1046,2026,AI Agents as a Research Team,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.05424
+02,ASD-1052,2026,SolutionsX,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.07826
+02,ASD-1056,2026,LaMET-Agent,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.32225
+02,ASD-1069,2026,Jianmu-Q,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.21942
+02,ASD-1070,2026,FUSION,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.04742
+02,ASD-1072,2026,HEPLocalAgent 1.0,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2608.28244
+02,ASD-1073,2026,PTagent,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.21118
+02,ASD-0760,2025,Towards autonomous quantum physics research using LLM agents,能否让 Agent 从文献中提出并实现有科学意义的量子物理研究想法,E1,L3,D5,arXiv,https://arxiv.org/abs/2511.11752
+02,ASD-0133,2024,Interpreting multi-band galaxy observations with large langu,如何借助 Agent 系统更高效地解释复杂星系观测并缩小物理情景空间,E1,L2,D5,arXiv,https://arxiv.org/abs/2409.14807
+02,ASD-0058,2025,Astroagents,如何从复杂质谱数据和文献中提出 plausible and novel astrobiological hypotheses。,E1,L2,D5,arXiv,https://arxiv.org/abs/2503.23170
+02,ASD-0127,2025,The AI Cosmologist I,,E1,L2,D5,arXiv,https://arxiv.org/abs/2504.03424
+02;11,ASD-0922,2026,QuantumNovelty,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.16900
+02,ASD-1060,2026,AstroGenesis,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.28579
+02,ASD-0139,2025,Advancing AI-scientist understanding,如何让面向物理学的 LLM reasoning 在 mechanics、electrodynamics 和教材级 physics benchmark 中更透明、可验证,E1,L1,D5,arXiv,https://arxiv.org/abs/2504.01911
+02,ASD-0965,2026,Can AI Scientists Change Their Minds? Prior-Evidence Conflic,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.36726
+03,ASD-0605,2014,Evolution of oil droplets in a chemorobotic platform,如何通过机器人闭环实验在配方空间中演化出目标行为,E3,L2,D3,Nature Communications,https://doi.org/10.1038/ncomms6571
+03,ASD-0603,2018,Reconfigurable system for automated optimization of diverse ,如何用可重构自动化系统更高效优化不同化学反应,E3,L2,D3,Science,https://doi.org/10.1126/science.aat0650
+03,ASD-0734,2018,Controlling an organic synthesis robot with machine learning,如何用闭环机器人更高效发现新的有机反应性,E3,L2,D3,Nature,https://doi.org/10.1038/s41586-018-0307-8
+03,ASD-0158,2019,A robotic platform for flow synthesis of organic compounds i,如何用 AI planning 与自治平台更高效地执行有机合成,E3,L2,D2,Science,https://doi.org/10.1126/science.aax1566
+03,ASD-0607,2019,Organic synthesis in a modular robotic system driven by a ch,如何把化学 protocol 编译并交给机器人稳定执行多步合成,E3,L2,D2,Science,https://doi.org/10.1126/science.aav2211
+03;04,ASD-0455,2020,A mobile robotic chemist,如何用机器人闭环实验高效找到更优光催化材料组合,E3,L2,D3,Nature,https://doi.org/10.1038/s41586-020-2442-2
+03,ASD-0575,2020,A curious formulation robot enables the discovery of a novel,如何自主探索复杂配方空间并发现新的温度相关化学行为,E3,L2,D3,Science Advances,https://doi.org/10.1126/sciadv.aay4237
+03,ASD-0600,2020,A universal system for digitization and automatic execution ,如何把化学文献中的合成步骤可靠地数字化并自动执行,E3,L2,D2,Science,https://doi.org/10.1126/science.abc2986
+03,ASD-0418,2021,Data-science driven autonomous process optimization,如何自治地找到高产率高选择性的反应条件,E3,L2,D3,Communications Chemistry,https://doi.org/10.1038/s42004-021-00550-x
+03,ASD-0428,2021,Discovering New Chemistry with an Autonomous Robotic Platfor,如何让机器人平台在未知化学空间中自主发现更有价值的反应性,E3,L2,D3,ACS Central Science,https://doi.org/10.1021/acscentsci.1c00435
+03,ASD-0447,2022,An autonomous portable platform for universal chemical synth,如何把文献中的文本合成方案自动编译为可执行化学合成流程，并在真实化学对象上完成多步合成,E3,L2,D2,Nature Chemistry,https://doi.org/10.1038/s41557-022-01016-w
+03,ASD-0094,2023,Autonomous chemical research with large language models,,E3,L2,D5,Nature,https://doi.org/10.1038/s41586-023-06792-0
+03,ASD-0179,2023,Chemist-x,如何用 Agent 自动推荐并验证更优的化学反应条件,E3,L2,D5,arXiv,https://arxiv.org/abs/2311.10776
+03;04,ASD-0385,2023,AlphaFlow,如何让自驱流体实验室自主发现更优的纳米材料壳层生长路线,E3,L2,D4,Nature Communications,https://doi.org/10.1038/s41467-023-37139-y
+03,ASD-0463,2023,AI-driven robotic chemist for autonomous synthesis of organi,如何让机器人化学家自主完成目标有机分子的路线规划、条件选择和实验反馈优化,E3,L2,D6,Science Advances,https://doi.org/10.1126/sciadv.adj0461
+03;04,ASD-0505,2023,Autonomous and dynamic precursor selection for solid-state m,如何自主选择更优前驱体并加速固相材料合成,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-023-42329-9
+03,ASD-0508,2023,"Autonomous, multiproperty-driven molecular discovery",如何通过自治闭环在多属性约束下发现新分子,E3,L2,D3,Science,https://doi.org/10.1126/science.adi1407
+03,ASD-0609,2023,Automated pH Adjustment Driven by Robotic Workflows and Acti,如何通过主动学习与机器人实验高效完成 pH 调节,E3,L2,D3,Chemical Engineering Journal,https://doi.org/10.1016/j.cej.2022.139099
+03,ASD-0036,2024,Organa,机器人 Agent 能否可靠、灵活地自动执行和表征化学实验。,E3,L2,D5,arXiv,https://arxiv.org/abs/2401.06949
+03,ASD-0037,2024,Autonomous mobile robots for exploratory synthetic chemistry,,E3,L2,D1,Nature,https://doi.org/10.1038/s41586-024-08173-7
+03;04,ASD-0056,2024,"Delocalized, asynchronous, closed-loop discovery of organic ",,E3,L2,D3,Science,https://doi.org/10.1126/science.adk9227
+03,ASD-0150,2024,A dynamic knowledge graph approach to distributed self-drivi,,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-023-44599-9
+03,ASD-0280,2024,An automatic end-to-end chemical synthesis development platf,如何让多 Agent 系统自动完成真实 chemical synthesis development 全流程,E3,L2,D5,Nature Communications,https://doi.org/10.1038/s41467-024-54457-x
+03,ASD-0381,2024,Autonomous reaction Pareto-front mapping with a self-driving,如何用自驱实验室自主导航催化反应参数空间并绘制 Pareto 前沿,E3,L2,D3,Nature Chemical Engineering,https://doi.org/10.1038/s44286-024-00033-5
+03,ASD-0422,2024,Autonomous closed-loop mechanistic investigation of molecula,如何通过自治闭环实验更快定位并解释电化学反应机理,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-024-47210-x
+03,ASD-0506,2024,Closed-loop transfer enables artificial intelligence to yiel,如何通过闭环实验从分子空间中提炼可转移化学知识,E3,L2,D3,Nature,https://doi.org/10.1038/s41586-024-07892-1
+03,ASD-0507,2024,Identifying general reaction conditions by bandit optimizati,如何用 bandit-guided 实验闭环高效找到更通用的反应条件,E3,L2,D3,Nature,https://doi.org/10.1038/s41586-024-07021-y
+03,ASD-0589,2024,An integrated self-optimizing programmable chemical synthesi,如何让可编程平台自主执行并优化化学合成,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-024-45444-3
+03,ASD-0601,2024,"Automated self-optimization, intensification, and scale-up o",如何用闭环自动化平台更高效地找到优质 photocatalysis 工艺条件,E3,L2,D3,Science,https://doi.org/10.1126/science.adj1817
+03;04,ASD-0621,2024,An integrated high-throughput robotic platform and active le,如何通过机器人 + active learning 更快找到高溶解度电解液配方,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-024-47070-5
+03;04,ASD-0005,2025,A Multiagent-Driven Robotic AI Chemist Enabling Autonomous C,多 Agent 机器人系统能否按需完成化学研究并推动材料发现/优化,E3,L2,D5,JACS,https://doi.org/10.1021/jacs.4c17738
+03;04,ASD-0519,2025,A high-throughput experimentation platform for data-driven d,如何通过高通量实验与数据驱动分析加速电化学发现，并在具体电池电解液添加剂对象上实现筛选与验证,E3,L2,D3,Science Advances,https://doi.org/10.1126/sciadv.adu4391
+03;04,ASD-0520,2025,Bayesian learning-assisted catalyst discovery for efficient ,如何以更少 iridium 获得更优 water-splitting electrocatalyst performance,E3,L2,D3,Science Advances,https://doi.org/10.1126/sciadv.adw0894
+03;04;06;07;09,ASD-0866,2025,Accelerating Scientific Discovery with Autonomous Goal-evolv,如何让 agent 自动演化科学目标函数，从而改进具体对象设计任务,E3,L2,D6,arXiv,https://arxiv.org/abs/2512.21782
+03;09,ASD-0149,2026,A flexible and affordable self-driving laboratory for automa,,E3,L2,D3,Nature Synthesis,https://doi.org/10.1038/s44160-026-01053-0
+03;04,ASD-0525,2026,TeLLAgent,,E3,L2,D5,Chemical Science,https://doi.org/10.1039/d5sc09883a
+03,ASD-0557,2026,Unlocking azobenzene isomerization mechanisms via an LLM age,如何揭示偶氮苯分子的微观异构化机理与结构-光谱映射,E3,L2,D5,Chemical Science,https://doi.org/10.1039/D5SC08794E
+03,ASD-0587,2026,Collective intelligence for AI-assisted chemical synthesis,如何把海量反应知识转成成功率更高的可执行化学合成方案,E3,L2,D5,Nature,https://doi.org/10.1038/s41586-026-10131-4
+03,ASD-0597,2026,Verification and execution of the scientific literature via ,如何把合成文献可靠转为机器人可执行的化学程序并完成实验验证,E3,L2,D5,Communications Chemistry,https://doi.org/10.1038/s42004-026-01993-w
+03;04,ASD-0739,2026,Autonomous microfluidic experimentation for exploring reacti,如何通过 autonomous microfluidic experimentation 更快探索 precursor 反应性并找到性能更优的 double perovskite nanoplatelet materials,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-026-72765-2
+03;04,ASD-0740,2026,Discovery of tunable and soluble organic emitters for solid-,如何通过 self-driving lab 在分子空间中找到既可调又可溶、并能在固态激光场景中表现优良的有机发射体,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-026-69233-2
+03;04,ASD-0811,2026,Closed-Loop Molecular Design with Calibrated Deference,论文试图通过 Agent 系统推进“aqueous organic redox-flow-battery negolyte design agent”相关研究任务。,E3,L2,D5,arXiv,https://arxiv.org/abs/2606.02618
+03;09,ASD-0012,2023,Large language models for chemistry robotics,机器人能否从自然语言化学实验描述生成安全可执行的多步实验计划。,E3,L1,D5,Unknown,https://link.springer.com/article/10.1007/s10514-023-10136-2
+03;04;07,ASD-0096,2024,dziner,如何利用文献知识与评估模型，在多种对象上执行目标性质驱动的 rational inverse design。,E2,L2,D5,arXiv,https://arxiv.org/abs/2410.03963
+03,ASD-0290,2024,ChemReasoner,如何把 LLM 推理与 quantum-chemical feedback 结合起来，更高效地发现催化剂,E2,L2,D6,arXiv,https://arxiv.org/abs/2402.10980
+03,ASD-0793,2024,Adsorb-Agent,如何更高效地在催化表面上定位低能吸附构型,E2,L2,D5,arXiv,https://arxiv.org/abs/2410.16658
+03,ASD-0010,2025,El Agente,Agent 能否自动构建和运行复杂量子化学计算流程。,E2,L2,D5,arXiv,https://arxiv.org/abs/2505.02484
+03;04;07,ASD-0060,2025,Piflow,如何让 MAS 基于科学原则高效探索假设空间。,E2,L2,D6,arXiv,https://arxiv.org/abs/2505.15047
+03;04,ASD-0070,2025,Moose-chem3,如何用少量实验反馈更快定位最优假设。,E2,L2,D5,arXiv,https://arxiv.org/abs/2505.17873
+03,ASD-0112,2025,CSSTep,作者试图通过 multi-agent、multi-stage reinforcement learning 流程，更高效地探索与优化药物分子化学空间。,E2,L2,D4,Chemical Engineering Science,https://doi.org/10.1016/j.ces.2025.122048
+03;07,ASD-0113,2025,PharmAgents,如何用多代理系统组织药物研发中的关键决策、优化与风险评估流程,E2,L2,D5,arXiv,https://arxiv.org/abs/2503.22164
+03;04,ASD-0117,2025,OSDA agent,,E2,L2,D5,ICLR,https://openreview.net/forum?id=9YNyiCJE3k
+03;04,ASD-0664,2026,Autonomous computational catalysis through an agentic resear,如何用 Agent 自主推进计算催化建模、机理分析与催化剂设计,E2,L2,D5,arXiv,https://arxiv.org/abs/2601.13508
+03,ASD-0665,2026,TSAgent,如何用 Agent 自动完成 DFT 级 TS search 并复现关键机理关系,E2,L2,D5,arXiv,https://arxiv.org/abs/2605.14154
+03;07,ASD-0679,2026,Rhizome OS-1,如何用 semi-autonomous agent team 执行快速、可扩展的早期药物发现,E2,L2,D5,arXiv,https://arxiv.org/abs/2604.07512
+03;04,ASD-0682,2026,El Agente S锟斤拷lido,如何将自然语言研究目标自动转化为可执行的固态材料模拟流程,E2,L2,D5,arXiv,https://arxiv.org/abs/2602.17886
+03,ASD-0684,2026,ChemNavigator,如何自主发现影响 frontier orbital energies 的可解释化学规则,E2,L2,D5,arXiv,https://arxiv.org/abs/2601.17084
+03;06;07,ASD-0731,2026,Self-Driving Datasets,如何从生物医学文献中自动构建高质量结构化知识数据集,E2,L2,D5,arXiv,https://arxiv.org/abs/2605.07022
+03;04,ASD-0790,2026,Hierarchical Multi-agent Large Language Model Reasoning for ,如何用 hierarchical agentic reasoning 更高效地搜索满足目标 adsorption window 的 catalyst materials,E2,L2,D5,npj Computational Materials,https://doi.org/10.1038/s41524-026-02139-1
+03;04,ASD-0792,2026,Autonomous heterogeneous catalyst discovery with a self-evol,如何自动构建 condition-aware catalyst digital twin，并据此发现更优异相催化材料,E2,L2,D5,arXiv,https://arxiv.org/abs/2606.05050
+03;07,ASD-0821,2026,Agentic reinforcement learning empowers next-generation chem,如何让 chemical language model 在工具环境中稳定完成分子设计与合成相关多步推理,E2,L2,D5,arXiv,https://arxiv.org/abs/2601.17687
+03;07,ASD-0826,2026,ToolMol,如何在多目标约束下自主优化可药化的小分子候选,E2,L2,D6,arXiv,https://arxiv.org/abs/2605.12784
+03,ASD-0832,2026,Nikolas,如何用半自主 Agent 生成、筛选并验证高潜力催化剂候选,E2,L2,D5,ChemRxiv,https://doi.org/10.26434/chemrxiv.15000226/v2
+03,ASD-0838,2026,Discovery Science with Autonomous ML-Driven Continuous Flow ,如何通过自治闭环实验加速连续流化学中的探索与优化,E2,L2,D3,ChemRxiv,https://doi.org/10.26434/chemrxiv.15000295
+03,ASD-0880,2026,Can Autonomous LLM Agents Execute Multireference Quantum Che,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.13357
+03,ASD-0881,2026,Autonomous Chemical Mechanistic Discovery through Agentic Re,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.11147
+03,ASD-0888,2026,SQD-Agent,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.39302
+03;04;06,ASD-0914,2026,Autonomous Science Bench,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.18449
+03;04;07,ASD-0962,2026,Triage-PiEvo,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.14683
+03;04,ASD-0963,2026,EvoSim,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.11344
+03;04,ASD-0984,2026,A self-learning scientific agent for X-ray diffraction,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.07862
+03;04,ASD-0985,2026,Agent-E2MD,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.26657
+03;04,ASD-0992,2026,ElectrolyteMD-Bench,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.31743
+03;04,ASD-0996,2026,ChemGraph-XANES,,E2,L2,D5,RSC Advances,https://pubs.rsc.org/en/content/articlelanding/2026/ra/d6ra06166d
+03,ASD-1011,2026,Stress-testing large language model agents in a robotic chem,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2607.23045
+03;04,ASD-1049,2026,El Agente Potente,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.14840
+03;04,ASD-1051,2026,Agentic AI for Density-Functional Development,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.19419
+03,ASD-1055,2026,Demonstration of a Structured Agentic Workflow for Applied Q,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.05304
+03,ASD-0038,2024,An autonomous large language model agent for chemical litera,如何从复杂化学文献中自动抽取高保真反应数据。,E2,L1,D5,arXiv,https://arxiv.org/abs/2402.12993
+03,ASD-0333,2024,MOOSE-Chem,如何用 Agent 化流程在 unseen chemistry papers 背景下重发现高质量化学假设,E2,L1,D5,arXiv,https://arxiv.org/abs/2410.07076
+03;07,ASD-0024,2025,Large language model agent for modular task execution in dru,LLM Agent 能否自动协调药物发现中的多个计算任务模块。,E2,L1,D5,arXiv,https://arxiv.org/abs/2507.02925
+03;04,ASD-0539,2026,Accelerating materials discovery via AI-Agent integration of,如何利用 AI-Agent 自动组装并执行面向材料发现与分子设计的 workflow,E2,L1,D5,Journal of Materials Informatics,https://doi.org/10.20517/jmi.2025.69
+03;04;07,ASD-0673,2026,Harnessing AtomisticSkills for Agentic Atomistic Research,如何把 atomistic research tasks 组织成可复用 Agent skills,E2,L1,D5,arXiv,https://arxiv.org/abs/2605.24002
+03,ASD-1032,2026,RelAgent,,E2,L1,D5,Bioinformatics,https://doi.org/10.1093/bioinformatics/btag541
+03;07,ASD-0008,2025,Accelerating Drug Discovery Through Agentic AI,多 Agent 能否协调药物发现中的设计、合成、测试和分析。,E1,L2,D5,arXiv,https://arxiv.org/abs/2507.09023
+03;04;06;07,ASD-0660,2026,S1-NexusAgent,如何用可自演化 Agent 框架推进多学科科研任务,E1,L2,D5,arXiv,https://arxiv.org/abs/2602.01550
+03;05;06;11,ASD-0662,2026,Mimosa Framework,如何让 evolving multi-agent framework 在多类具体科学研究任务上稳定执行并通过对象级成功标准检验,E1,L2,D5,arXiv,https://arxiv.org/abs/2603.28986
+03,ASD-0810,2026,My Chemical Harness,如何在可执行合成约束下进行更有效的分子设计搜索,E1,L2,D6,arXiv,https://arxiv.org/abs/2606.11256
+03;07,ASD-0817,2026,Probe Before You Edit,如何在结构基础药物设计中更有效地提升 ligand affinity 与 druggability,E1,L2,D5,arXiv,https://arxiv.org/abs/2606.00555
+03;07,ASD-0818,2026,MolMem,如何利用记忆增强的多轮 Agent 机制，提高 lead compound optimization 的样本效率与成功率,E1,L2,D5,arXiv,https://arxiv.org/abs/2604.12237
+03;07,ASD-0819,2026,SEISMO,如何利用完整优化轨迹与解释反馈提升分子优化样本效率,E1,L2,D5,arXiv,https://arxiv.org/abs/2602.00663
+03;07,ASD-0820,2026,Reinforcement Learning with LLM-Guided Action Spaces for Syn,如何在可合成约束下高效优化候选 lead 的性质,E1,L2,D5,arXiv,https://arxiv.org/abs/2604.07669
+03;06;07,ASD-0893,2026,Agentomics,,E1,L2,D5,"Bioinformatics (Oxford, England)",https://doi.org/10.1093/bioinformatics/btag250
+03;04;06;07,ASD-0948,2026,Collaborative Principle Evolution via Evidence Transfer for ,,E1,L2,D3,arXiv preprint,https://arxiv.org/abs/2609.35315
+03,ASD-0025,2024,Cactus,如何用 LLM Agent 调用 cheminformatics 工具辅助分子发现。,E1,L1,D5,Unknown,https://arxiv.org/abs/2405.00972
+03;04;07,ASD-0093,2024,Augmenting large language models with chemistry tools,,E1,L1,D5,Nature Machine Intelligence,https://doi.org/10.1038/s42256-024-00832-8
+03;08,ASD-0695,2024,FoodPuzzle,论文试图通过 Agent 系统推进“flavor science / food science hypothesis generation agents”相关研究任务。,E1,L1,D5,arXiv,https://arxiv.org/abs/2409.12832
+03;04,ASD-0003,2025,CheMatAgent,如何让 LLM Agent 可靠调用化学工具完成复杂化学问题求解。,E1,L1,D5,arXiv,https://arxiv.org/abs/2506.07551
+03,ASD-0022,2025,Chemgraph,Agent 能否自动选择和执行计算化学工具链。,E1,L1,D5,arXiv,https://arxiv.org/abs/2506.06363
+03,ASD-0029,2025,Chemhas,如何通过 Agent 组合提升化学工具在单任务内的能力。,E1,L1,D5,arXiv,https://arxiv.org/abs/2505.21569
+03;07,ASD-0030,2025,Rag-enhanced collaborative llm agents for drug discovery,如何用多源外部知识和 Agent 协作改进药物发现中的零样本分子问答/预测。,E1,L1,D5,arXiv,https://arxiv.org/abs/2502.17506
+03,ASD-0061,2025,xchemagents,如何用物理约束 agent 选择 descriptor，提高可解释分子性质预测。,E1,L1,D5,arXiv,https://arxiv.org/abs/2505.20574
+03,ASD-0076,2025,Mt-mol,如何生成满足目标性质/相似性约束的分子。,E1,L1,D5,Findings of ACL: EMNLP 2025,https://aclanthology.org/2025.findings-emnlp.619/
+03;04,ASD-0091,2025,Agentic mixture-of-workflows for multi-modal chemical search,如何构建可解释、可比较的 Agentic chemical/material search workflow。,E1,L1,D5,arXiv,https://arxiv.org/abs/2502.19629
+03,ASD-0134,2025,ChemAgent,如何让 LLM 更稳定地完成多步 chemical reasoning,E1,L1,D5,arXiv,https://arxiv.org/abs/2501.06590
+03,ASD-0586,2025,A virtual platform for automated hybrid organic-enzymatic sy,如何更有效地找到可执行的混合有机-酶催化路线,E1,L1,D5,Nature Communications,https://doi.org/10.1038/s41467-025-65898-3
+03;04;06,ASD-0787,2025,SciToolAgent,论文试图通过 Agent 系统推进“knowledge-graph-driven scientific multitool integration agent”相关研究任务。,E1,L1,D5,Nature Computational Science,https://doi.org/10.1038/s43588-025-00849-y
+03;07;11,ASD-0873,2026,Large Knowledge Model,,E1,L1,D5,arXiv,https://arxiv.org/abs/2609.27297
+03;05,ASD-0917,2026,PHREEQC-MCQ-200,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2607.00436
+03;04;06,ASD-1096,2026,Science Edge Evaluation,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2608.06931
+04,ASD-0389,2020,Autonomous discovery of optically active chiral inorganic pe,如何用智能云实验室自主发现并优化具手性光学活性的钙钛矿纳米晶,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-020-15728-5
+04,ASD-0410,2020,On-the-fly closed-loop materials discovery via Bayesian acti,如何用闭环 active learning 系统在真实 beamline 上更快完成材料发现与优化,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-020-19597-w
+04,ASD-0425,2020,Efficient Closed-loop Maximization of Carbon Nanotube Growth,如何用闭环优化更快找到最优 CNT 生长条件,E3,L2,D3,Scientific Reports,https://doi.org/10.1038/s41598-020-64397-3
+04,ASD-0487,2020,Autonomous Discovery of Battery Electrolytes with Robotic Ex,如何通过机器人实验和机器学习自主找到更优电解液材料,E3,L2,D3,Cell Reports Physical Science,https://doi.org/10.1016/j.xcrp.2020.100264
+04,ASD-0503,2020,Self-driving laboratory for accelerated discovery of thin-fi,如何在真实实验环境中自主优化薄膜材料搜索,E3,L2,D3,Science Advances,https://doi.org/10.1126/sciadv.aaz8867
+04,ASD-0591,2020,Self-optimizing parallel millifluidic reactor for scaling na,如何在规模化连续合成中维持高质量量子点材料,E3,L2,D3,Chemical Communications,https://doi.org/10.1039/D0CC00064G
+04,ASD-0592,2020,Autonomous materials synthesis by machine learning and robot,如何通过自动化闭环找到更优沉积条件以最小化电阻,E3,L2,D3,APL Materials,https://doi.org/10.1063/5.0020370
+04,ASD-0735,2020,Artificial Chemist,如何自主寻找满足目标带隙与性能要求的量子点材料组成,E3,L2,D3,Advanced Materials,https://doi.org/10.1002/adma.202001626
+04,ASD-0606,2021,Accelerate Synthesis of Metal-Organic Frameworks by a Roboti,如何用机器人实验平台和 BO 更快找到更优 MOF 合成条件,E3,L2,D3,ACS Applied Materials & Interfaces,https://doi.org/10.1021/acsami.1c16506
+04,ASD-0611,2021,Autonomous materials synthesis via hierarchical active learn,如何自治地找到关键相界并发现可稳定的新材料状态,E3,L2,D3,Science Advances,https://doi.org/10.1126/sciadv.abg4930
+04,ASD-0379,2022,A self-driving laboratory advances the Pareto front for mate,如何在材料性能多目标之间找到更优 Pareto front,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-022-28580-6
+04,ASD-0390,2022,A self-driving laboratory designed to accelerate the discove,如何通过自驱实验室更快找到更优粘接材料配方和性能,E3,L2,D3,Digital Discovery,https://doi.org/10.1039/d2dd00029f
+04,ASD-0415,2022,Autonomous polymer synthesis delivered by multi-objective cl,如何让闭环系统自主找到更优聚合物材料配方和性质组合,E3,L2,D3,Polymer Chemistry,https://doi.org/10.1039/d2py00040g
+04,ASD-0417,2022,Autonomous optimization of non-aqueous Li-ion battery electr,如何用自驱实验系统快速找到更优快充电解液,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-022-32938-1
+04,ASD-0569,2022,Autonomous Nanocrystal Doping by Self-Driving Fluidic Micro-,如何通过自主实验平台高效完成纳米晶掺杂与处理参数优化,E3,L2,D3,Advanced Intelligent Systems,https://doi.org/10.1002/aisy.202200017
+04,ASD-0610,2022,Autonomous retrosynthesis of gold nanoparticles via spectral,如何从目标谱形反推金纳米颗粒合成条件,E3,L2,D3,Digital Discovery,https://doi.org/10.1039/D2DD00025C
+04,ASD-0016,2023,An autonomous laboratory for the accelerated synthesis of no,如何把大规模计算筛出的候选材料更高效地实验实现。,E3,L2,D3,Nature,https://doi.org/10.1038/s41586-023-06734-w
+04,ASD-0421,2023,Closed-loop superconducting materials discovery,如何通过闭环机器学习与实验验证发现新超导材料,E3,L2,D3,npj Computational Materials,https://doi.org/10.1038/s41524-023-01131-3
+04,ASD-0478,2023,NIMS-OS,如何把 AI 与 robotic experiments 标准化连接成可复用的材料闭环,E3,L2,D3,Science and Technology of Advanced Materials Methods,https://doi.org/10.1080/27660400.2023.2232297
+04,ASD-0491,2023,Optimizing Perovskite Thin-Film Parameter Spaces with Machin,如何让机器人平台自主优化钙钛矿薄膜参数空间并提升材料 / 器件表现,E3,L2,D3,Advanced Energy Materials,https://doi.org/10.1002/aenm.202302594
+04,ASD-0590,2023,A robotic platform for the synthesis of colloidal nanocrysta,如何通过自动合成与表征高效找到目标纳米晶形貌,E3,L2,D3,Nature Synthesis,https://doi.org/10.1038/s44160-023-00250-5
+04,ASD-0614,2023,"Modular, Multi-Robot Integration of Laboratories",如何让多机器人系统自主完成固态材料 PXRD 实验链,E3,L2,D2,arXiv,https://doi.org/10.48550/arXiv.2309.00544
+04,ASD-0608,2024,Autonomous Battery Optimization by Deploying Distributed Exp,如何通过自治实验与仿真联合优化电解液配方和相关性能,E3,L2,D3,Advanced Energy Materials,https://doi.org/10.1002/aenm.202403263
+04,ASD-0612,2024,Navigating phase diagram complexity to guide robotic inorgan,如何在复杂相图中选择更优前驱体以提高材料合成成功率,E3,L2,D3,Nature Synthesis,https://doi.org/10.1038/s44160-024-00502-y
+04,ASD-0630,2024,Autonomous robotic experimentation system for powder X-ray d,如何自主完成 PXRD 制样、测量和结果解析,E3,L2,D2,Digital Discovery,https://doi.org/10.1039/D4DD00190G
+04,ASD-0080,2025,System of agentic ai for the discovery of metal-organic fram,如何自动发现并真实合成新 MOF 材料。,E3,L2,D5,arXiv,https://arxiv.org/abs/2504.14110
+04;09,ASD-0116,2025,Electromagnetic metamaterial agent,,E3,L2,D5,Light: Science & Applications,https://doi.org/10.1038/s41377-024-01678-w
+04,ASD-0154,2025,Real-time experiment-theory closed-loop interaction for auto,如何以更少实验探索材料相图并加速材料发现,E3,L2,D3,Science Advances,https://doi.org/10.1126/sciadv.adu7426
+04,ASD-0514,2025,Autonomous phase mapping of gold nanoparticles synthesis wit,如何自治地学习结构相图并反推出目标纳米颗粒,E3,L2,D3,npj Computational Materials,https://doi.org/10.1038/s41524-025-01822-z
+04,ASD-0515,2025,Autonomous closed-loop exploration of composition-spread fil,如何自治地找到具有更优 anomalous Hall effect 的材料组合,E3,L2,D3,npj Computational Materials,https://doi.org/10.1038/s41524-025-01828-7
+04;09,ASD-0516,2025,A self-driving physical vapor deposition system making sampl,如何在沉积过程中自治地获得目标薄膜性质并理解参数作用,E3,L2,D3,npj Computational Materials,https://doi.org/10.1038/s41524-025-01805-0
+04,ASD-0517,2025,Self-driving lab for the photochemical synthesis of plasmoni,如何自治地得到目标结构与目标光学性质的纳米颗粒,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-025-56788-9
+04;09,ASD-0522,2025,Evaluating large language model agents for automation of ato,LLM Agent 能否管理复杂 AFM 实验 workflow。,E3,L2,D5,Nature Communications,https://doi.org/10.1038/s41467-025-64105-7
+04,ASD-0558,2025,Closed-Loop AI Enables Organic Continuous-Wave Laser,如何在大分子空间中快速找到可支撑连续波有机激光发射的高性能材料,E3,L2,D3,Research Square Preprint,https://doi.org/10.21203/rs.3.rs-6802885/v1
+04;06,ASD-0572,2025,Autonomous discovery of functional random heteropolymer blen,如何自主发现同时具备优异功能表现的聚合物共混材料，并在生物分子稳定任务上验证其效果,E3,L2,D3,Matter,https://doi.org/10.1016/j.matt.2025.102336
+04,ASD-0573,2025,A Self-Driving Fluidic Lab for Data-Driven Synthesis of Lead,如何自主发现更优纳米晶配方与更高 PLQY,E3,L2,D3,Digital Discovery,https://doi.org/10.1039/D5DD00062A
+04,ASD-0577,2025,Autonomous multi-robot synthesis and optimization of metal h,如何在多目标条件下高效找到满足目标发光性能的纳米晶配方,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-025-63209-4
+04,ASD-0581,2025,A chemical autonomous robotic platform for end-to-end synthe,如何高效找到满足目标形貌和性能的纳米颗粒合成条件,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-025-62994-2
+04,ASD-0582,2025,Autonomous platform for solution processing of electronic po,如何在复杂加工空间中找到高导电、低缺陷薄膜配方,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-024-55655-3
+04,ASD-0598,2025,A Self-Driving Lab for Nano- and Advanced Materials Synthesi,如何以统一自动化平台提高材料合成、纯化与表征效率,E3,L2,D2,ACS Nano,https://doi.org/10.1021/acsnano.4c17504
+04,ASD-0622,2025,Active learning accelerates electrolyte solvent screening fo,如何用 active learning 更快发现高性能电解液溶剂,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-025-63303-7
+04,ASD-0631,2025,Autonomous Discovery of Polymer Electrolyte Formulations wit,如何在真实实验约束下更快找到高 ionic conductivity 的聚合物电解质配方,E3,L2,D3,Chemistry of Materials,https://doi.org/10.1021/acs.chemmater.5c01209
+04,ASD-0529,2026,RAISE,,E3,L2,D3,Digital Discovery,https://doi.org/10.1039/d5dd00531k
+04,ASD-0570,2026,Knowledge-driven autonomous materials research via collabora,如何让多 Agent 与机器人系统自主执行并优化材料研究闭环,E3,L2,D5,Matter,https://doi.org/10.1016/j.matt.2025.102577
+04,ASD-0680,2026,Agentic Fusion of Large Atomic and Language Models to Accele,如何从大规模晶体空间中自动发现更有希望的超导材料,E3,L2,D5,arXiv,https://arxiv.org/abs/2604.23758
+04,ASD-0681,2026,Agentic LLM Reasoning in a Self-Driving Laboratory for Air-S,如何在空气隔绝条件下自主发现复杂固态离子导体,E3,L2,D5,arXiv,https://arxiv.org/abs/2604.11957
+04,ASD-0683,2026,PeroMAS,如何在多目标约束下发现更优的钙钛矿材料候选,E3,L2,D5,arXiv,https://arxiv.org/abs/2602.13312
+04,ASD-0882,2026,Hypothesis-Driven Autonomous Materials Synthesis with Multim,,E3,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.18598
+04,ASD-0981,2026,A collaborative agent with two lightweight synergistic model,,E3,L2,D5,Nature Machine Intelligence,https://www.nature.com/articles/s42256-026-01298-6
+04,ASD-0999,2026,Interpretable self-driving sputtering epitaxy reveals human-,,E3,L2,D3,Nature Communications,https://www.nature.com/articles/s41467-026-76533-0
+04,ASD-1003,2026,Human-agent discovery of reconfigurable in-plane ferroelectr,,E3,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.06887
+04,ASD-0568,2025,Multi-Agent-Network-Based Idea Generator for Zinc-Ion Batter,如何用 LLM multi-agent network 更快提出高性能锌离子电池电解质组合,E3,L1,D5,Advanced Materials,https://doi.org/10.1002/adma.202502649
+04,ASD-0886,2026,Autonomous discovery of new structure-plausibility laws for ,,E2,L3,D5,arXiv preprint,https://arxiv.org/abs/2609.01209
+04,ASD-0466,2014,Discovery of Wall-Selective Carbon Nanotube Growth Condition,如何通过自动实验更高效地定位 CNT 选择性生长条件,E2,L2,D3,ACS Nano,https://doi.org/10.1021/nn503347a
+04,ASD-0571,2019,CRYSTAL,如何自动生成物理上有意义的材料相图并辅助材料发现,E2,L2,D6,MRS Communications,https://doi.org/10.1557/mrc.2019.50
+04,ASD-0119,2023,ChatMOF,如何把自然语言材料需求转化为 MOF 检索、预测与生成工作流。,E2,L2,D5,arXiv,https://arxiv.org/abs/2308.01423
+04,ASD-0031,2024,Llmatdesign,LLM Agent 能否在少数据条件下设计满足目标性质的新材料。,E2,L2,D5,arXiv,https://arxiv.org/abs/2406.13163
+04,ASD-0065,2024,Matpilot,如何通过 LLM multi-agent 与自动实验平台协同加速材料发现。,E2,L2,D5,arXiv,https://arxiv.org/abs/2411.08063
+04;09,ASD-0128,2024,MechAgents,如何通过多代理协作自动理解、构建、执行并验证 mechanics / FEM 求解流程。,E2,L2,D5,Extreme Mechanics Letters,https://doi.org/10.1016/j.eml.2024.102131
+04,ASD-0001,2025,Toward Greater Autonomy in Materials Discovery Agents,如何让 Agent 面向材料发现目标自主规划并执行计算发现工作流。,E2,L2,D5,arXiv,https://arxiv.org/abs/2506.05616
+04,ASD-0046,2025,Topomas,多 Agent 系统能否自动完成拓扑材料发现 pipeline 并指导新材料相识别。,E2,L2,D5,arXiv,https://arxiv.org/abs/2507.04053
+04,ASD-0068,2025,An agentic framework for autonomous metamaterial modeling an,如何自动构建 surrogate model 并反推出满足目标光谱的材料结构。,E2,L2,D5,arXiv,https://arxiv.org/abs/2506.06935
+04,ASD-0075,2025,Prim,如何用科学原则指导 Agent 高效探索材料结构-性能空间。,E2,L2,D6,AI for Accelerated Materials Design at ICLR 2025 (OpenReview),https://openreview.net/forum?id=lhobZk76wX
+04,ASD-0084,2025,Automating alloy design and discovery with physics-aware mul,,E2,L2,D5,PNAS,https://doi.org/10.1073/pnas.2414074122
+04,ASD-0135,2025,A multi-agent framework integrating large language models an,如何通过多代理 + 生成模型协同，更快地产生可仿真、可制造的超材料设计候选。,E2,L2,D5,arXiv,https://arxiv.org/abs/2503.19889
+04,ASD-0155,2025,"A multi-agentic framework for real-time, autonomous freeform",如何自动设计满足多目标与多波长要求的 metasurface 布局,E2,L2,D5,Science Advances,https://doi.org/10.1126/sciadv.adx8006
+04,ASD-0513,2025,Networking autonomous material exploration systems through t,如何通过 transfer learning 提高材料发现效率,E2,L2,D3,npj Computational Materials,https://doi.org/10.1038/s41524-025-01851-8
+04,ASD-0535,2025,Accelerated inorganic materials design with generative AI ag,如何利用 generative AI agents 在目标性质约束下加速无机材料设计,E2,L2,D5,Cell Reports Physical Science,https://doi.org/10.1016/j.xcrp.2025.103019
+04,ASD-0156,2026,Bridging electron microscopy and materials analysis with an ,如何自动把 EM 图像转译为材料结构、性质与文献支撑的材料理解,E2,L2,D5,Science Advances,https://doi.org/10.1126/sciadv.aed0583
+04;09,ASD-0511,2026,Operating advanced scientific instruments with AI agents tha,如何让 AI agents 在真实复杂仪器与用户设施上安全、可复现地执行操作,E2,L2,D5,npj Computational Materials,https://doi.org/10.1038/s41524-026-02005-0
+04,ASD-0538,2026,Masgent,如何把材料研究意图自动翻译为可执行的材料模拟 workflow，并在具体材料对象上完成分析与发现支持,E2,L2,D5,Digital Discovery,https://doi.org/10.1039/d6dd00043f
+04,ASD-0547,2026,Closed-loop experimental AI for pixelated metasurface design,如何通过闭环实验更快找到满足目标性能的超表面结构,E2,L2,D3,Photonic and Phononic Properties of Engineered Nanostructures XVI,https://doi.org/10.1117/12.3091089
+04,ASD-0565,2026,Agentic AI for autonomous discovery of radiation-tolerant Co,如何用 agentic AI 更高效地发现具有辐照耐受性的高熵合金,E2,L2,D3,Scripta Materialia,https://doi.org/10.1016/j.scriptamat.2026.117286
+04;06;07;11,ASD-0659,2026,Autonomous Agents Coordinating Distributed Discovery Through,如何让多个自治 agent 通过 artifact exchange、need broadcasting 与 discourse governance 在具体科研对象上形成可追溯协作,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.14312
+04,ASD-0666,2026,MatClaw,如何让 Agent 执行端到端计算材料工作流并探索具体材料性质,E2,L2,D5,arXiv,https://arxiv.org/abs/2604.02688
+04,ASD-0667,2026,From Natural Language to Materials Discovery,如何从自然语言目标出发自动提取规则、生成候选并评估材料稳定性,E2,L2,D5,arXiv,https://arxiv.org/abs/2602.11123
+04;06,ASD-0668,2026,Autonomous Multi-Agent AI for High-Throughput Polymer Inform,如何自动化聚合物早期发现中的预测、生成和筛选流程,E2,L2,D5,arXiv,https://arxiv.org/abs/2602.00103
+04,ASD-0672,2026,Polymer-Agent,如何用 LLM agent 自动生成并筛选满足目标性质的 polymer candidates,E2,L2,D5,Journal of Chemical Information and Modeling / arXiv,https://doi.org/10.1021/acs.jcim.6c00343
+04,ASD-0674,2026,GraphAgents,如何跨知识域生成满足复杂约束的材料候选,E2,L2,D5,arXiv,https://arxiv.org/abs/2602.07491
+04,ASD-0791,2026,Escaping the hydrolysis trap,如何在 COF 设计空间中高效找到兼顾活性与稳定性的光催化材料,E2,L2,D5,npj Computational Materials,https://doi.org/10.1038/s41524-026-02168-w
+04,ASD-0794,2026,The HTC-Claw,如何自动化执行高通量计算以更快发现满足目标性质约束的材料候选,E2,L2,D5,arXiv,https://arxiv.org/abs/2604.06076
+04,ASD-0808,2026,InvDesMobility,如何在第一性原理闭环中安全利用可靠反馈发现更优材料候选,E2,L2,D3,arXiv,https://arxiv.org/abs/2606.16133
+04,ASD-0884,2026,AutoXRD,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.00070
+04,ASD-0887,2026,Evaluating a 4B open-weights local LLM for agentic DFT workf,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.29665
+04,ASD-0889,2026,RaspAssistant as an Agentic Framework for Automating Adsorpt,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.27572
+04,ASD-0980,2026,Experiment automation agents,,E2,L2,D5,npj Computational Materials,https://www.nature.com/articles/s41524-026-02213-8
+04,ASD-0986,2026,Hierarchical automation of scanning probe microscopy through,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.04015
+04,ASD-0987,2026,Diagnosing and narrowing the simulation-to-real gap in powde,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.22400
+04,ASD-0988,2026,PACE-SIMS,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.12277
+04;05,ASD-0989,2026,Agent-MD,,E2,L2,D1,arXiv preprint,https://arxiv.org/abs/2608.07637
+04,ASD-0990,2026,An LLM agent for end-to-end computational materials discover,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.20434
+04,ASD-0991,2026,ALKEMIE Agent,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.15776
+04,ASD-0993,2026,Vibe-FDTR,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2607.28200
+04,ASD-0994,2026,AEcroscopyWave,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2607.22975
+04,ASD-0995,2026,Quality-controlled active learning via Gaussian processes fo,,E2,L2,D3,npj Computational Materials,https://www.nature.com/articles/s41524-026-02248-x
+04,ASD-1002,2026,ERAF4XRD,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.18583
+04,ASD-1004,2026,Crystal-structure design by agentic AI in a language of moti,,E2,L2,D6,arXiv preprint,https://arxiv.org/abs/2608.15900
+04,ASD-1005,2026,LATHE,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.02671
+04,ASD-1008,2026,Scaling LLM Agents for Materials Design through Hierarchical,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.16466
+04;09,ASD-1053,2026,Agentic TCAD Calibration Workflow for Oxide Semiconductor Tr,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.12184
+04,ASD-0388,2021,Crystallography companion agent for high-throughput material,如何在高通量材料发现中自动解释 XRD 并支持判相,E2,L1,D3,Nature Computational Science,https://doi.org/10.1038/s43588-021-00059-2
+04;06,ASD-0085,2024,Protagents,如何用多 Agent 协作自动化蛋白设计和结构/物性分析。,E2,L1,D5,Digital Discovery,https://doi.org/10.1039/D4DD00013G; https://arxiv.org/abs/2402.04268
+04,ASD-0095,2025,Multicrossmodal automated agent for integrating diverse mate,,E2,L1,D5,arXiv,https://arxiv.org/abs/2505.15132
+04,ASD-0883,2026,GBClaw,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.28629
+04,ASD-0983,2026,Autonomous adaptive spectral analysis with an LLM agent for ,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.25619
+04,ASD-1007,2026,Agentic schema-guided extraction of materials process knowle,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.06322
+04,ASD-0035,2025,Sciagents,,E1,L2,D5,Advanced Materials,https://doi.org/10.1002/adma.202413523
+04;06;07,ASD-0913,2026,AutoSciBench,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.05140
+04,ASD-0968,2026,Online Surrogate Repair,,E1,L2,D6,arXiv preprint,https://arxiv.org/abs/2609.07655
+04,ASD-0979,2026,Autonomous in-silico inorganic materials discovery via multi,,E1,L2,D5,npj Computational Materials,https://www.nature.com/articles/s41524-026-02205-8
+04,ASD-0982,2026,Large-language-model-driven adaptive search space definition,,E1,L2,D6,Communications Materials,https://www.nature.com/articles/s43246-026-01304-9
+04,ASD-0009,2024,Agent-based learning of materials datasets from the scientif,如何从材料文献中自动抽取可用于机器学习的结构化数据。,E1,L1,D5,Digital Discovery,https://doi.org/10.1039/D4DD00252K
+04,ASD-0045,2024,Honeycomb,如何让 LLM 更可靠地解决材料科学知识和计算问题。,E1,L1,D5,arXiv,https://arxiv.org/abs/2409.00135
+04,ASD-0007,2025,Hypothesis Generation for Materials Discovery and Design Usi,能否自动生成满足目标和约束的材料设计假设。,E1,L1,D5,arXiv,https://arxiv.org/abs/2501.13299
+04,ASD-0885,2026,An Open-Source Hardware and Software Toolkit to Enable Agent,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.15922
+04;06;07;11,ASD-0978,2026,OpenDiscoveryTrace,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.09203
+04,ASD-1001,2026,CompMat-Bench,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.00636
+05;10,ASD-0722,2005,An Autonomous Earth-Observing Sensorweb,如何让多源观测资产围绕 volcano、flood、cryosphere 等瞬态 Earth-science events 形成自动响应 mission system,E3,L2,D2,IEEE Intelligent Systems,https://doi.org/10.1109/MIS.2005.40
+05;10,ASD-0703,2006,Autonomous Science Agents and Sensor Webs,卫星如何在轨检测 Earth-science events 并自主重规划观测,E3,L2,D2,IEEE Aerospace Conference,https://ai.jpl.nasa.gov/public/papers/sherwood-ieeeaero06-beyond.pdf
+05;10,ASD-0719,2006,Mission Operations of Earth Observing-1 with Onboard Autonom,如何让 Earth-observing spacecraft 在轨自主识别事件、重规划后续观测并提升 science return,E3,L2,D2,2nd IEEE International Conference on Space Mission Challenges for Information Technology,https://doi.org/10.1109/SMC-IT.2006.48
+05;10,ASD-0721,2006,Integrated AI in Space,如何通过 onboard event detection、planning 与 execution 提升航天任务 science return,E3,L2,D2,AAAI 2006,https://aaai.org/papers/0108-ss06-08-108-integrated-ai-in-space-the-autonomous-sciencecraft-on-earth-observing-one/
+05,ASD-0860,2006,Autonomous detection of cryospheric change with hyperion on-,如何利用机载自主处理快速识别冰冻圈变化并触发更及时的观测,E3,L2,D2,Remote Sensing of Environment,https://doi.org/10.1016/j.rse.2005.11.014
+05,ASD-0861,2006,Flood detection and monitoring with the Autonomous Sciencecr,如何在机载条件下实现近实时洪水识别与持续跟踪,E3,L2,D2,Remote Sensing of Environment,https://doi.org/10.1016/j.rse.2005.12.018
+05;10,ASD-0691,2007,OASIS,如何让 rover 在任务中自主识别并跟进行星科学高价值目标，同时把这些机会转化为 mission-science actions,E3,L2,D2,Journal of Field Robotics,https://ai.jpl.nasa.gov/public/documents/papers/castano-jfr07-oasis.pdf
+05;10,ASD-0696,2012,AEGIS Automated Science Targeting for the MER Opportunity Ro,如何让 rover 自主获取高价值 mission-science targets，并在行星表面地质目标上执行具体科学观测,E3,L2,D3,ACM Transactions on Intelligent Systems and Technology,https://doi.org/10.1145/2168752.2168764
+05;10,ASD-0709,2014,Automated Targeting for the MSL Rover ChemCam Spectrometer,漫游车如何机载识别科学目标并自动触发 ChemCam follow-up,E3,L2,D3,i-SAIRAS 2014,https://ai.jpl.nasa.gov/public/documents/papers/estlin-isairas2014-automated.pdf
+05;10,ASD-0711,2015,Developing Autonomous Science Technology for the MSL Rover M,如何把自动选靶与任务技术集成进 Curiosity mission workflow，并在具体地质对象上执行高价值观测,E3,L2,D3,IJCAI Workshop / JPL paper,https://ai.jpl.nasa.gov/public/documents/papers/estlin-ijcai2015-autonomous.pdf
+05;10,ASD-0697,2017,AEGIS autonomous targeting for ChemCam on Mars Science Labor,如何在火星车上自主选择并修正高价值科学观测目标，并将其落实到 Mars geological / geochemical target observations,E3,L2,D3,Science Robotics,https://doi.org/10.1126/scirobotics.aan4582
+05;10,ASD-0710,2024,AEGIS Autonomous Targeting for the SuperCam Instrument on th,如何让漫游车在任务流程中自主筛选并执行高价值 SuperCam 观测，同时获得具体行星地质/地球化学对象观测,E3,L2,D3,i-SAIRAS 2024,https://ai.jpl.nasa.gov/public/documents/papers/francis-isairas-2024.pdf
+05,ASD-0635,2026,TianJi,如何自主提出并验证大气科学中的物理机制假设,E2,L3,D5,arXiv,https://arxiv.org/abs/2603.27738
+05,ASD-0859,2006,Monitoring active volcanism with the Autonomous Sciencecraft,如何利用机载自主分析和重规划实现更高效的火山活动监测,E2,L2,D2,Remote Sensing of Environment,https://doi.org/10.1016/j.rse.2005.08.007
+05;10,ASD-0852,2009,Autonomous science for an ExoMars Rover-like mission,如何在 rover mission 中实现 opportunistic science、提高 science return，并以 geological practice 指导自主评估,E2,L2,D3,Journal of Field Robotics,https://doi.org/10.1002/rob.20289
+05;10,ASD-0693,2019,Enabling Onboard Detection of Events of Scientific Interest ,航天器如何自主识别 Europa 高价值科学事件，并据此调整观测/下传策略,E2,L2,D3,KDD '19,https://doi.org/10.1145/3292500.3330656
+05,ASD-0633,2025,A Self-Evolving AI Agent System for Climate Science,如何让 agent 系统在气候科学中完成开放式分析与机制发现,E2,L2,D5,arXiv,https://arxiv.org/abs/2507.17311
+05,ASD-0653,2025,Earth-Agent,如何让 Agent 处理多模态 EO 数据并完成量化时空分析,E2,L2,D5,arXiv / ICLR 2026 conference paper,https://arxiv.org/abs/2509.23141
+05,ASD-0801,2025,Advancing Subsurface Discovery and Geothermal Monitoring wit,如何借助 agentic workflow 提升地热地下结构发现与监测效率,E2,L2,D5,arXiv,https://arxiv.org/abs/2511.03852
+05,ASD-0851,2025,GeoEvolve,如何用多 Agent LLM 框架自动发现和改进 geospatial algorithms,E2,L2,D6,arXiv,https://arxiv.org/abs/2509.21593
+05,ASD-0649,2026,CMIP-Forge,如何让 Agent 自主完成气候数据检索、分析、可视化与方法审查,E2,L2,D5,arXiv,https://arxiv.org/abs/2606.17076
+05;08;11,ASD-0650,2026,OpenEarth-Agent,如何在复杂 EO 场景下让 Agent 自主完成多源数据探索、分析和结果校验,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.22148
+05,ASD-0725,2026,TianJi-Environ,如何自动生成并检验大气环境研究中的机制性假设,E2,L2,D5,arXiv,https://arxiv.org/abs/2606.07697
+05,ASD-0907,2026,SciExam for ENSO,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.10513
+05,ASD-0916,2026,EarthVerse,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.23525
+05;06;07;11,ASD-0919,2026,Scaling Scientific Discovery Environments for Turn-Level Age,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2607.28990
+05,ASD-1057,2026,SeisEvo,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.18272
+05,ASD-1063,2026,OceanMind,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.03780
+05;09,ASD-1084,2026,Towards autonomous urban drainage modelling,,E2,L2,D5,npj Clean Water,https://www.nature.com/articles/s41545-026-00638-8
+05,ASD-1085,2026,Multi-agent AI for end-to-end air quality analysis and decis,,E2,L2,D5,npj Clean Air,https://www.nature.com/articles/s44407-026-00102-4
+05;06;07;11,ASD-0651,2025,AI Driven Discovery of Bio Ecological Mediation in Cascading,热浪灾害如何通过生物生态中介转化为更广泛的系统性风险,E2,L1,D5,arXiv / ICLR 2026 FM4Science workshop poster,https://arxiv.org/abs/2509.25112
+05,ASD-0726,2026,AutoClimDS,如何让 Agent 自动完成面向气候数据科学任务的数据发现、获取、处理、分析和结果输出,E2,L1,D5,IEEE CAI 2026 / arXiv,https://doi.org/10.1109/CAI68641.2026.11536364
+05,ASD-0772,2026,TRACE,如何让 multi-agent system 在物理约束下完成地震学机制推理,E2,L1,D5,arXiv,https://arxiv.org/abs/2603.21152
+05;11,ASD-0803,2026,ClimateAgents,如何用多 Agent 系统分析社会行为与社会经济变量如何影响气候相关结果,E2,L1,D5,arXiv,https://arxiv.org/abs/2603.13840
+05;09,ASD-1086,2026,An LLM-agent interface for end-to-end probabilistic seismic ,,E2,L1,D5,npj Natural Hazards,https://www.nature.com/articles/s44304-026-00262-z
+05,ASD-0623,2026,ClimAgent,如何让 agent 在气候科学中自主完成多步分析与发现流程,E1,L2,D5,arXiv,https://arxiv.org/abs/2604.16922
+05,ASD-0784,2026,GISclaw,如何让 Agent 更自主地完成现实 GIS 工作流中的多步空间分析与解释,E1,L2,D5,arXiv,https://arxiv.org/abs/2603.26845
+05,ASD-1090,2026,RingMoClaw,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.00814
+05,ASD-0765,2025,CLIMATEAGENT,如何让 Agent 端到端自动化完成 climate data analytic workflows,E1,L1,D5,arXiv,https://arxiv.org/abs/2511.20109
+05;06,ASD-0632,2026,A Hierarchical Multi-Agent System for Autonomous Discovery i,如何用多 Agent 系统更高效地发现、分析和组织地球科学数据,E1,L1,D5,arXiv,https://arxiv.org/abs/2602.21351
+05,ASD-0727,2026,GeoAgentic-RAG,如何让 Agent 更自主地完成 geospatial data 上的多步分析与解释,E1,L1,D5,International Journal of Applied Earth Observation and Geoinformation,https://doi.org/10.1016/j.jag.2026.105195
+05,ASD-0783,2026,RemoteAgent,如何让 agent 把模糊 EO 查询桥接到可执行的遥感分析动作与工具链,E1,L1,D5,arXiv,https://arxiv.org/abs/2604.07765
+05,ASD-0796,2026,Bridging Perception and Action,如何让 EO agents 更稳健地完成多步感知-规划-执行任务,E1,L1,D5,arXiv,https://arxiv.org/abs/2605.04777
+05,ASD-0800,2026,Risk-Aware LLM Agents for Geospatial Data Retrieval,如何让 agent 安全、稳健地执行面向地理空间科学数据的检索与访问任务,E1,L1,D5,arXiv,https://arxiv.org/abs/2606.15077
+05,ASD-0908,2026,Bringing Agentic Search to Earth Observation Data Discovery,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2607.02387
+06,ASD-0501,2004,Functional genomic hypothesis generation and experimentation,如何自动生成并验证 gene-function hypotheses,E3,L3,D1,Nature,https://doi.org/10.1038/nature02236
+06,ASD-0576,2019,Towards a fully automated algorithm driven platform for bios,如何自动优化合成生物学通路设计,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-019-13189-z
+06,ASD-0370,2024,Self-driving laboratories to autonomously navigate the prote,如何让自驱实验室自动探索蛋白序列-功能空间并发现更优酶,E3,L2,D3,Nature Chemical Engineering,https://doi.org/10.1038/s44286-023-00002-4
+06,ASD-0596,2024,Operate a Cell-Free Biofoundry using Large Language Models,如何用自动化 DBTL 与 active learning 提升 cell-free protein synthesis 效率,E3,L2,D3,bioRxiv,https://doi.org/10.1101/2024.10.28.619828
+06;07,ASD-0115,2025,Towards an AI co-scientist,,E3,L2,D5,arXiv,https://arxiv.org/abs/2502.18864
+06,ASD-0518,2025,A generalized platform for artificial intelligence-powered a,如何自治地迭代优化酶活性与底物偏好,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-025-61209-y
+06,ASD-0617,2025,An industrial automated laboratory for programmable protein ,如何在自动化平台上长期、可编程地执行 protein evolution,E3,L2,D2,Nature Chemical Engineering,https://doi.org/10.1038/s44286-025-00303-w
+06,ASD-0618,2025,Integrating protein language models and automatic biofoundry,如何通过 PLM + biofoundry 更高效完成蛋白进化,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-025-56751-8
+06;07,ASD-0745,2025,BioLab,,E3,L2,D5,bioRxiv,https://doi.org/10.1101/2025.09.03.674085
+06,ASD-0867,2025,Swarms of Large Language Model Agents for Protein Sequence D,如何让多 agent 在巨大序列空间中协作完成目标导向的蛋白设计,E3,L2,D5,arXiv,https://arxiv.org/abs/2511.22311
+06;07,ASD-0137,2026,Accelerating primer design for amplicon sequencing using lar,如何用 Agent 系统自动完成大规模 targeted NGS 引物设计并提高设计质量,E3,L2,D5,Nature Biomedical Engineering,https://doi.org/10.1038/s41551-025-01455-z
+06;07,ASD-0531,2026,GALILEO,如何自主发现并验证具有治疗潜力的膜系统干预肽,E3,L2,D5,Research Square Preprint,https://doi.org/10.64898/2026.06.10.731360
+06;07,ASD-0540,2026,A multi-agent system for automating scientific discovery,能否发现并验证 dry AMD 的治疗候选及机制线索。,E3,L2,D5,Nature,https://doi.org/10.1038/s41586-026-10652-y
+06,ASD-0599,2026,An AI-Native Biofoundry for Autonomous Enzyme Engineering,如何通过 AI-native biofoundry 更高效地找到更优酶变体,E3,L2,D3,bioRxiv,https://doi.org/10.64898/2026.02.01.703093
+06;07,ASD-0678,2026,Latent-Y,如何自主执行从靶点理解到 lab-ready binders 生成的完整药物设计 campaign,E3,L2,D5,arXiv,https://arxiv.org/abs/2603.29727
+06,ASD-0724,2026,Autonomous seeking and mapping coral reef biodiversity hotsp,如何在复杂海洋环境中自主寻找、定位并绘制生物多样性热点,E3,L2,D2,Science Robotics,https://doi.org/10.1126/scirobotics.adx9939
+06;07,ASD-0894,2026,AutoScreen,,E3,L2,D5,openRxiv (preprint),https://doi.org/10.64898/2026.09.06.749678
+06;07,ASD-0896,2026,BioPathfinder,,E3,L2,D5,openRxiv (preprint),https://doi.org/10.64898/2026.07.15.738646
+06,ASD-0114,2025,Sparks,多代理系统能否自主发现新的蛋白设计原则与稳定性规律,E2,L3,D5,arXiv,https://arxiv.org/abs/2504.19017
+06;07,ASD-0189,2024,Automating exploratory proteomics research via language mode,如何用 Agent 自动完成探索性蛋白质组学研究并提出可检验的生物学假设,E2,L2,D5,arXiv,https://arxiv.org/abs/2411.03743
+06;07,ASD-0020,2025,Biodiscoveryagent,如何高效设计 CRISPR / genetic perturbation experiment 来找到目标 phenotype 相关基因。,E2,L2,D5,arXiv,https://arxiv.org/abs/2405.17631
+06,ASD-0034,2025,Perturboagent,如何在有限实验资源下优先设计下一轮 Perturb-seq 实验，提升对基因调控和扰动效应的认识。,E2,L2,D5,PMLR 311 (Machine Learning in Computational Biology),https://proceedings.mlr.press/v311/hao25b.html
+06;07,ASD-0064,2025,Phenograph,如何自动发现与临床 phenotype 相关的空间组织区域和解释性基因/通路关系。,E2,L2,D5,bioRxiv,https://doi.org/10.1101/2025.06.06.658341
+06;07,ASD-0141,2025,TransAgent,如何让 Agent 自动化从原始数据到调控网络分析的生命科学研究流程,E2,L2,D5,bioRxiv,https://doi.org/10.1101/2025.04.27.650826
+06;07,ASD-0276,2025,Automating exploratory multiomics research via language mode,如何用 Agent 在复杂临床多组学数据中自动提出并验证高质量假设,E2,L2,D5,arXiv,https://arxiv.org/abs/2506.07591
+06,ASD-0708,2025,GenoMAS,如何让多 Agent 系统从原始 transcriptomic data 中提出可靠生物学关联,E2,L2,D5,arXiv,https://arxiv.org/abs/2507.21035
+06;07,ASD-0714,2025,K-Dense Analyst,如何让多 Agent 系统在安全计算环境中自主完成复杂生命科学与生物医学分析,E2,L2,D5,arXiv,https://arxiv.org/abs/2508.07043
+06,ASD-0728,2025,CellForge,如何让 Agent 自主设计可用于单细胞扰动预测的计算生物学模型,E2,L2,D5,arXiv / OpenReview,https://arxiv.org/abs/2508.02276
+06,ASD-0097,2026,Cellvoyager,Agent 能否自主分析复杂生物数据并提出值得继续验证的 biological insights。,E2,L2,D5,Nature Methods,https://doi.org/10.1038/s41592-026-03029-6
+06;07,ASD-0152,2026,An agentic AI framework for ingestion and standardization of,如何自动摄取和标准化分析单细胞数据资源，并把该流程稳定迁移到肿瘤患者场景,E2,L2,D5,npj Artificial Intelligence,https://doi.org/10.1038/s44387-025-00064-0
+06;07,ASD-0548,2026,OpenScientist,如何用 agentic AI co-scientist 生成和验证临床相关生物医学洞见,E2,L2,D5,medRxiv / PMC mirror,https://doi.org/10.64898/2026.03.15.26348338
+06;07,ASD-0669,2026,MARBLE,如何通过多 Agent 闭环稳定提升生物信息学模型表现,E2,L2,D5,arXiv,https://arxiv.org/abs/2601.14349
+06,ASD-0729,2026,Self-evolving AI agents for protein discovery and directed e,如何让 Agent 更自主地组织蛋白发现与优化流程,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.27303
+06,ASD-0833,2026,Towards Autonomous Mechanistic Reasoning in Virtual Cells,如何自主生成并验证生物机制解释，以支持虚拟细胞理解与下游预测,E2,L2,D5,arXiv,https://arxiv.org/abs/2604.11661
+06;07,ASD-0872,2026,PantheonOS,如何用可演化多 Agent 系统自动推进 genomics / single-cell discovery，并在人类胎儿心脏数据上解析疾病相关分子程序、调控网络与扰动效应,E2,L2,D6,bioRxiv,https://doi.org/10.64898/2026.02.26.707870
+06,ASD-0874,2026,Auditing Discovery Claims,,E2,L2,D3,arXiv,https://arxiv.org/abs/2608.00981
+06;07,ASD-0892,2026,The Virtual Biotech,,E2,L2,D5,"Science (New York, N.Y.)",https://doi.org/10.1126/science.aeg6779
+06,ASD-0901,2026,scBaseCount,,E2,L2,D5,Cell,https://doi.org/10.1016/j.cell.2026.08.025
+06;07,ASD-0967,2026,An immune world model for multiscale forecasting and therape,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.14709
+06;07,ASD-1016,2026,DDA,,E2,L2,D5,Frontiers in Chemistry,https://doi.org/10.3389/fchem.2026.1914886
+06;07,ASD-1017,2026,DynaMate,,E2,L2,D5,Research Square preprint,https://doi.org/10.21203/rs.3.rs-10243410/v1
+06,ASD-1018,2026,GENIE,,E2,L2,D5,bioRxiv preprint,https://doi.org/10.64898/2026.10.12.758370
+06;07,ASD-1019,2026,A Conversational Multi-Agent AI System for Integrated Multi-,,E2,L2,D5,bioRxiv preprint,https://doi.org/10.64898/2026.08.08.743577
+06;07,ASD-1021,2026,TRACEDD,,E2,L2,D5,bioRxiv preprint,https://doi.org/10.64898/2026.09.12.751167
+06,ASD-1022,2026,Agentic campaign control for high-throughput de novo binder ,,E2,L2,D5,bioRxiv preprint,https://doi.org/10.64898/2026.09.22.753604
+06;07,ASD-1026,2026,ACCREDIT,,E2,L2,D5,bioRxiv preprint,https://doi.org/10.64898/2026.08.08.743602
+06;07,ASD-1039,2026,DrugTargetWorld,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.09558
+06,ASD-0051,2024,Geneagent,如何用自验证 Agent 提高基因集功能解释的准确性并降低 LLM hallucination。,E2,L1,D5,arXiv,https://arxiv.org/abs/2405.16205
+06;07,ASD-0254,2025,From intention to implementation,如何用多 Agent 系统自动完成具体 biomedical research objectives 的文献、设计与协议执行流程,E2,L1,D5,Science China Information Sciences / arXiv,https://arxiv.org/abs/2412.09429
+06,ASD-0521,2025,CRISPR-GPT for agentic automation of gene-editing experiment,如何设计可执行、可验证的基因编辑实验。,E2,L1,D5,Nature Biomedical Engineering,https://doi.org/10.1038/s41551-025-01463-z
+06;07,ASD-0543,2025,Machine Learning Copilot Agent,如何通过 LLM-guided workflow 发现与疾病预后相关的基因特征，并在患者级生存终点上形成可用分析,E2,L1,D5,SSRN Electronic Journal,https://doi.org/10.2139/ssrn.5343855
+06;07,ASD-0545,2025,IMMUNIA,如何用 reasoning-centric AI 识别具有临床相关性的免疫治疗 biomarker 候选,E2,L1,D5,bioRxiv,https://doi.org/10.1101/2025.11.02.686138
+06,ASD-0574,2025,GeneAgent,如何更准确解释基因集功能并减少 LLM 幻觉,E2,L1,D5,Nature Methods,https://doi.org/10.1038/s41592-025-02748-6
+06,ASD-0741,2025,Spatial transcriptomics AI agent charts hPSC-pancreas matura,如何用 Agent 更自主地完成空间转录组分析并支撑发育生物学解释,E2,L1,D5,bioRxiv,https://doi.org/10.1101/2025.04.01.646731
+06;07,ASD-0742,2025,Talk2Biomodels,如何让 Agent 更自然地查询、解释和使用系统生物学动力学模型,E2,L1,D5,BMC Bioinformatics,https://doi.org/10.1186/s12859-025-06310-1
+06;07,ASD-0744,2026,BioGAIP,如何把复杂的生物信息分析流程转成更可及的自然语言驱动 Agent 系统,E2,L1,D5,bioRxiv,https://doi.org/10.64898/2026.05.16.720484
+06,ASD-0813,2026,ELISA,如何把表达嵌入、检索和 LLM 解释结合起来支持单细胞生物发现,E2,L1,D5,arXiv,https://arxiv.org/abs/2603.11872
+06;07,ASD-0822,2026,Contextual Invertible World Models,如何在 precision oncology 中生成可解释的药物反应机制与分层判断,E2,L1,D5,arXiv,https://arxiv.org/abs/2603.02274
+06;07,ASD-0895,2026,Omics data discovery agents,,E2,L1,D5,PLoS computational biology,https://doi.org/10.1371/journal.pcbi.1014822
+06,ASD-0897,2026,Distributed AI agents enable comprehensive discovery of biol,,E2,L1,D5,openRxiv (preprint),https://doi.org/10.64898/2026.10.15.759436
+06;07,ASD-0902,2026,Perturb-ME,,E2,L1,D5,openRxiv (preprint),https://doi.org/10.64898/2026.08.17.745330
+06,ASD-1023,2026,Reliable and Efficient Agentic Protein Design with Toolset H,,E2,L1,D5,bioRxiv preprint,https://doi.org/10.64898/2026.10.19.759896
+06,ASD-1024,2026,Detailed curation of biological samples and experimental des,,E2,L1,D5,bioRxiv preprint,https://doi.org/10.64898/2026.07.30.741874
+06,ASD-1025,2026,From Prompt to Pipeline,,E2,L1,D5,bioRxiv preprint,https://doi.org/10.64898/2026.09.11.751004
+06;07,ASD-1037,2026,hvantk,,E2,L1,D5,bioRxiv preprint,https://doi.org/10.64898/2026.10.19.760196
+06,ASD-0138,2024,CellAgent,如何让 Agent 系统自动把自然语言需求转成单细胞分析工作流,E1,L2,D5,bioRxiv,https://doi.org/10.1101/2024.05.13.593861
+06,ASD-0014,2025,Spatialagent,Agent 能否自主完成空间生物学实验设计、数据分析和假设生成。,E1,L2,D5,bioRxiv,https://doi.org/10.1101/2025.04.03.646459
+06,ASD-0055,2025,Biomaster,如何用 multi-agent system 自动完成复杂、跨工具、可调试的 bioinformatics analysis。,E1,L2,D5,bioRxiv,https://doi.org/10.1101/2025.01.23.634608
+06;07;11,ASD-0856,2025,AutoDiscovery,如何在多类真实科学数据集上进行开放式、surprise-driven hypothesis exploration,E1,L2,D6,arXiv,https://arxiv.org/abs/2507.00310
+06,ASD-0875,2026,Science sandboxes measure the scientific capability of AI ag,,E1,L2,D5,arXiv,https://arxiv.org/abs/2608.30165
+06,ASD-0900,2026,Multi-agentic system for primer design in qPCR and LAMP diag,,E1,L2,D1,openRxiv (preprint),https://doi.org/10.64898/2026.09.15.751771
+06,ASD-1020,2026,PromptBio,,E1,L2,D5,bioRxiv preprint,https://doi.org/10.64898/2026.09.02.748774
+06;07,ASD-1036,2026,Verification Debt in Automated Biological Research Workflows,,E1,L2,D5,bioRxiv preprint,https://doi.org/10.64898/2026.09.29.755250
+06;07,ASD-1041,2026,NeuroAct,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.25211
+06,ASD-0049,2024,Bioinformatics agent (bia),如何用 LLM Agent 降低生物信息分析门槛并自动化 workflow。,E1,L1,D5,bioRxiv,https://doi.org/10.1101/2024.05.22.595240
+06;07,ASD-0071,2024,Toward a team of ai-made scientists for scientific discovery,如何自动化发现某疾病在特定条件影响下的显著基因。,E1,L1,D5,arXiv,https://arxiv.org/abs/2402.12391
+06,ASD-0033,2025,Omnicellagent,如何让 Agent 自动整合 scRNA-seq、知识图谱和文献来发现疾病机制与治疗线索。,E1,L1,D5,Unknown,http://dx.doi.org/10.1101/2025.07.31.667797
+06;07,ASD-0118,2025,Biomni,,E1,L1,D5,bioRxiv,https://doi.org/10.1101/2025.05.30.656746
+06,ASD-0126,2025,BioAgents,,E1,L1,D5,arXiv,https://arxiv.org/abs/2501.06314
+06;07,ASD-0541,2025,PromptBio,如何用多 Agent 平台降低生物信息学分析门槛、自动生成与编排可复现 workflow,E1,L1,D5,bioRxiv,https://doi.org/10.1101/2025.07.05.663295
+06;08,ASD-0510,2026,A conversational multi-agent AI system for automated plant p,论文试图通过 Agent 系统推进“automated plant phenotyping agent system”相关研究任务。,E1,L1,D5,Nature Communications,https://doi.org/10.1038/s41467-026-71090-y
+06;07,ASD-0537,2026,Medea,,E1,L1,D5,bioRxiv / PMC,https://doi.org/10.64898/2026.01.16.696667
+06;07,ASD-0553,2026,ToolsGenie 2.0,如何让多 Agent 稳定执行可扩展的 bioinformatics workflows,E1,L1,D5,Research Square Preprint,https://doi.org/10.64898/2026.01.06.697527
+06;07,ASD-0554,2026,BioAgent,"如何提升具体 translational bioinformatics analyses 的 resilience, auditability, and provenance",E1,L1,D5,Research Square Preprint,https://doi.org/10.21203/rs.3.rs-9535691/v1
+06,ASD-0723,2026,CASSIA,如何让多 Agent LLM 更自动、更可解释地完成复杂单细胞数据的细胞类型注释,E1,L1,D5,Nature Communications,https://doi.org/10.1038/s41467-025-67084-x
+06;07,ASD-0743,2026,STAT,如何让多 Agent 系统更自主地完成 integrated and interactive spatial transcriptomics analysis,E1,L1,D5,Research Square,https://doi.org/10.64898/2026.05.01.722244
+06;07,ASD-0770,2026,Progressive Multi-Agent Reasoning for Biological Perturbatio,如何借助多 Agent 推理预测并解释复杂生物扰动后的基因反应,E1,L1,D5,arXiv,https://arxiv.org/abs/2602.07408
+06,ASD-0797,2026,CP-Agent,如何借助 agentic multimodal workflow 更可解释地分析化学扰动下的细胞表型,E1,L1,D5,arXiv / ICLR 2026 Poster,https://arxiv.org/abs/2606.03435
+06,ASD-0898,2026,scACORN,,E1,L1,D5,openRxiv (preprint),https://doi.org/10.64898/2026.09.10.750801
+06,ASD-0964,2026,Are We Measuring Scientific Intelligence? Rethinking the Eva,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.04915
+07;06,ASD-0054,2025,The virtual lab,多 Agent AI-human 团队能否设计并实验验证对近期 SARS-CoV-2 变体有效的功能性 nanobody。,E3,L2,D5,Nature,https://doi.org/10.1038/s41586-025-09442-9
+07,ASD-0552,2025,Multi agent large language models for biomedical hypothesis ,如何更高效生成并筛选具有疗效潜力的药物组合假设,E3,L2,D5,iScience,https://doi.org/10.1016/j.isci.2025.113984
+07,ASD-0579,2025,A Bayesian active learning platform for scalable combination,如何在极大组合空间中高效找到有效药物组合,E3,L2,D3,Nature Communications,https://doi.org/10.1038/s41467-024-55287-7
+07,ASD-0017,2025,Can ai agents design and implement drug discovery pipelines?,Agent 能否在资源受限条件下设计并执行药物筛选 pipeline。,E2,L2,D5,arXiv,https://arxiv.org/abs/2504.19912
+07,ASD-0041,2025,Liddia,能否让 LLM Agent 自主导航 pre-clinical drug discovery 的生成、优化和筛选流程。,E2,L2,D5,arXiv,https://arxiv.org/abs/2502.13959
+07,ASD-0357,2025,Origene,如何自动推断 disease mechanism 并提名可验证的 therapeutic targets,E2,L2,D5,bioRxiv,https://www.biorxiv.org/content/10.1101/2025.06.03.657658v1
+07;06,ASD-0715,2025,BioDisco,如何用双证据多 Agent 系统自动生成、修正并排序有价值的 biomedical hypotheses,E2,L2,D5,arXiv,https://arxiv.org/abs/2508.01285
+07,ASD-0716,2025,Bio AI Agent,如何用多 Agent 系统自主推进 CAR-T 疗法开发与 precision-oncology translation,E2,L2,D5,arXiv,https://arxiv.org/abs/2511.08649
+07,ASD-0825,2025,ReACT-Drug,如何在可合成的化学变换空间内生成高亲和力、高新颖性的 target-specific drug candidates,E2,L2,D4,arXiv,https://arxiv.org/abs/2512.20958
+07;06,ASD-0564,2026,An agentic framework for autonomous scientific discovery in ,如何让 agentic framework 自主提出并验证与肿瘤病理相关的可解释分析概念,E2,L2,D5,Nature Medicine,https://doi.org/10.1038/s41591-026-04357-y
+07,ASD-0670,2026,Mozi,如何在受治理约束下可靠执行长程药物发现 Agent 流程,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.03655
+07,ASD-0675,2026,MolClaw,如何让 autonomous agent 在复杂药物发现 workflow 中稳定完成分子筛选、评估与优化,E2,L2,D5,arXiv,https://arxiv.org/abs/2604.21937
+07,ASD-0677,2026,DeepRoot,如何从历史医学文本中系统挖掘可验证的治疗线索,E2,L2,D5,arXiv / OpenReview GenBio 2026 Poster,https://arxiv.org/abs/2606.15931
+07,ASD-0798,2026,Molecular Lead Optimization via Agentic Tool Planning,如何通过 agentic planning 更有效地执行 lead refinement 并获得更好的药物候选,E2,L2,D5,arXiv,https://arxiv.org/abs/2605.28862
+07,ASD-0814,2026,Towards a Virtual Neuroscientist,如何用多 Agent 闭环自动化神经影像分析并支持临床相关预测,E2,L2,D5,arXiv,https://arxiv.org/abs/2605.09366
+07,ASD-0815,2026,CoDaS,如何用多 Agent 系统从可穿戴数据中提出、筛选和验证健康相关 biomarker,E2,L2,D5,arXiv,https://arxiv.org/abs/2604.14615
+07,ASD-0828,2026,SAGE,如何自主生成、筛选并验证可解释的 pathology biomarkers,E2,L2,D5,arXiv,https://arxiv.org/abs/2602.00953
+07,ASD-1013,2026,From quantitative features to imaging signs,,E2,L2,D5,npj Digital Medicine,https://doi.org/10.1038/s41746-026-03331-9
+07,ASD-1014,2026,An AI-powered self-driving microscope for low-cost acute leu,,E2,L2,D2,Nature Communications,https://doi.org/10.1038/s41467-026-77130-x
+07,ASD-1015,2026,MR-MAS,,E2,L2,D5,Bioinformatics,https://doi.org/10.1093/bioinformatics/btag722
+07,ASD-1027,2026,Human-Guided Agentic AI for End-to-End EHR Research,,E2,L2,D5,medRxiv preprint,https://doi.org/10.64898/2026.10.13.26365479
+07,ASD-1028,2026,From seven combination hypotheses to one testable interactio,,E2,L2,D5,bioRxiv preprint,https://doi.org/10.64898/2026.09.29.755460
+07,ASD-1030,2026,MedKGent,,E2,L2,D5,npj Digital Medicine,https://doi.org/10.1038/s41746-026-03058-7
+07,ASD-1040,2026,Can Coding Agents Build Robust Baselines? A Skill-Based Appr,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.23336
+07,ASD-0542,2025,MADD,如何从自然语言需求出发自动构建并执行 hit identification / drug discovery workflow,E2,L1,D5,Findings of the Association for Computational Linguistics: EMNLP 2025,https://doi.org/10.18653/v1/2025.findings-emnlp.367
+07,ASD-0812,2026,BioResearcher,如何把复杂生物医学问题组织成可追溯、可比较、可审计的转化医学研究流程,E2,L1,D5,arXiv,https://arxiv.org/abs/2605.05985
+07,ASD-0816,2026,TSAssistant,如何自动化整合多域生物医学证据以评估 target safety,E2,L1,D5,arXiv,https://arxiv.org/abs/2604.23938
+07,ASD-1029,2026,inClinico Agent for clinical trial endpoint prediction and p,,E2,L1,D5,medRxiv preprint,https://doi.org/10.64898/2026.10.13.26365373
+07,ASD-1031,2026,OntoCodex,,E2,L1,D5,npj Health Systems,https://doi.org/10.1038/s44401-026-00117-9
+07,ASD-0028,2024,Drugagent,能否自动构建药物发现 ML 管线并取得可靠预测性能。,E1,L2,D5,arXiv,https://arxiv.org/abs/2411.15692
+07,ASD-0002,2025,HealthFlow,Agent 能否自主完成复杂医疗数据研究 pipeline，并从经验中改进。,E1,L2,D5,arXiv,https://arxiv.org/abs/2508.02621
+07,ASD-0077,2025,Stella,AI Agent 能否在生物医学研究中自动扩展工具与推理能力。,E1,L2,D5,arXiv,https://arxiv.org/abs/2507.02004
+07,ASD-0824,2025,FRAGMENTA,如何通过多 Agent 调参与反馈闭环更高效地优化药物先导候选,E1,L2,D6,arXiv,https://arxiv.org/abs/2511.20510
+07,ASD-0950,2026,Dr. Claw,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.00365
+07,ASD-1012,2026,HealthFlow,,E1,L2,D5,npj Digital Medicine,https://doi.org/10.1038/s41746-026-03097-0
+07,ASD-1038,2026,Auto-MD-bench,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.25069
+07,ASD-0079,2024,DrugAgent,如何提高 DTI prediction 的准确性和可解释性。,E1,L1,D5,arXiv,https://arxiv.org/abs/2408.13378
+07,ASD-0544,2025,LLM-Agent Powered Automated Literature Review and Hypothesis,如何在大规模生物医学文献中自动发现并组织 biomarker hypotheses,E1,L1,D5,2025 IEEE 19th International Conference on Open Source Systems and Technologies (ICOSST),https://doi.org/10.1109/ICOSST69113.2025.11315415
+07,ASD-0556,2025,DrugPilot,如何把自然语言科研请求转换成多轮药物发现工具调用与结果整合,E1,L1,D5,Research Square Preprint,https://doi.org/10.21203/rs.3.rs-7489358/v1
+07,ASD-0536,2026,TCM-Agent,如何利用多 Agent 系统提升中医药与草药发现、网络药理分析和相关研究验证的效率,E1,L1,D5,Journal of Pharmaceutical Analysis,https://doi.org/10.1016/j.jpha.2026.101581
+07,ASD-0769,2026,DeepER-Med,如何通过 agentic AI 提升 evidence-based medical research 的深度与可靠性,E1,L1,D5,arXiv,https://arxiv.org/abs/2604.15456
+07,ASD-0771,2026,Process-Supervised Multi-Agent Reinforcement Learning for Re,如何让 multi-agent system 在临床 SOP 下生成更可靠、可审计的推理与证据判断,E1,L1,D5,arXiv,https://arxiv.org/abs/2602.14160
+07,ASD-0773,2026,Skill-Augmented AI Agents for Medical Research Analysis,如何让 AI agent 在疾病导向的 biomarker 研究任务中完成更可信的多步分析,E1,L1,D5,arXiv,https://arxiv.org/abs/2606.11830
+07,ASD-0774,2026,Causal-Enhanced AI Agents for Medical Research Screening,如何让 AI agent 更可靠地完成 systematic review screening 与医学证据整合,E1,L1,D5,arXiv,https://arxiv.org/abs/2601.02814
+07,ASD-0827,2026,A Multi-modal Agentic Co-pilot for Evidence Grounded Computa,如何用 agentic co-pilot 生成 evidence-grounded pathology 判断,E1,L1,D5,arXiv,https://arxiv.org/abs/2606.08093
+08,ASD-0634,2025,Aleks,论文试图通过 Agent 系统推进植物科学中的病害相关特征发现、解释与候选方案筛选任务。,E2,L2,D5,arXiv,https://arxiv.org/abs/2508.19383
+08,ASD-1133,2026,RAVA,,E1,L2,D4,Scientific Reports,https://www.nature.com/articles/s41598-026-67160-2
+09,ASD-0504,2020,A Bayesian experimental autonomous researcher for mechanical,如何通过自主实验系统高效优化机械设计,E3,L2,D3,Science Advances,https://doi.org/10.1126/sciadv.aaz1708
+09,ASD-0429,2021,Toward autonomous additive manufacturing,如何在闭环中自主优化增材制造过程,E3,L2,D3,MRS Bulletin,https://doi.org/10.1557/s43577-021-00051-1
+09,ASD-0615,2021,Using simulation to accelerate autonomous experimentation,如何把仿真纳入自治实验闭环以更快优化机械结构性能,E3,L2,D3,iScience,https://doi.org/10.1016/j.isci.2021.102262
+09,ASD-0806,2026,Agentic Language-to-Objective Synthesis for Optofluidic Asse,如何把自然语言意图变成实验可执行的 objective 并闭环控制微粒装配,E3,L2,D6,arXiv,https://arxiv.org/abs/2605.27643
+09,ASD-1044,2026,VortexChat,,E3,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.20688
+09,ASD-0807,2024,Large Language Models based Multi-Agent Framework for Object,如何自动完成电力电子控制器建模、算法选择、参数优化与验证,E2,L2,D5,arXiv,https://arxiv.org/abs/2406.12628
+09,ASD-0052,2025,Optimizing collaboration of large language model based agent,如何通过多代理协作提高工程仿真求解流程自动化与稳健性,E2,L2,D5,SSRN,https://doi.org/10.2139/ssrn.5107557
+09,ASD-0526,2025,Constitutive scientific generative agent (CSGA),如何自动发现更可解释、表现更优的 constitutive models,E2,L2,D5,Machine Learning for Computational Science and Engineering,https://doi.org/10.1007/s44379-025-00022-2
+09,ASD-0749,2026,Self-Refining Topology Optimization via an LLM-Based Multi-A,如何自动化工程师在拓扑优化流程中的关键决策,E2,L2,D5,arXiv,https://arxiv.org/abs/2605.23273
+09,ASD-0757,2026,CADSmith,如何让 Agent 稳定生成并验证几何正确的 CAD 模型,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.26512
+09,ASD-0758,2026,Self-Improving CAD Generation Agents with Finite Element Ana,如何让 Agent 在工程反馈约束下生成更可用的 CAD design artifacts,E2,L2,D5,arXiv,https://arxiv.org/abs/2605.17448
+09,ASD-0775,2026,Owl-AuraID 1.0,如何让 agent 在无统一 API 的真实仪器与 GUI 环境中完成自主表征与数据分析,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.29828
+09,ASD-0779,2026,From Text to Simulation,如何把自然语言工艺需求自动转换为可执行、可收敛的 process simulation,E2,L2,D6,arXiv,https://arxiv.org/abs/2601.06776
+09,ASD-0780,2026,Context is all you need,如何让 agent 在工业流程模拟环境中完成从过程推理到可运行模型实现的全过程,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.12813
+09,ASD-0789,2026,TEM Agent,如何让 agent 更自主地连接、控制并编排显微仪器、数据平台和 HPC,E2,L2,D5,npj Computational Materials,https://doi.org/10.1038/s41524-026-02103-z
+09,ASD-0799,2026,CeProAgents,如何借助 hierarchical agents 自动化 chemical process lifecycle 的知识、概念与参数开发,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.01654
+09,ASD-0804,2026,Sketch2Simulation,如何把流程图自动转成可执行的 Aspen HYSYS 过程模拟模型,E2,L2,D5,arXiv,https://arxiv.org/abs/2603.24629
+09,ASD-0805,2026,TurboAgent,如何用多 Agent 与物理仿真闭环自动完成复杂气动设计任务,E2,L2,D5,arXiv,https://arxiv.org/abs/2604.06747
+09,ASD-0809,2026,Battery-Sim-Agent,如何利用 simulator-in-the-loop agent 推理更高效地识别电池模型参数,E2,L2,D5,arXiv,https://arxiv.org/abs/2605.29560
+09,ASD-1045,2026,CFD Forge,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2610.14104
+09,ASD-1048,2026,Photonics-GCCE,,E2,L2,D6,arXiv preprint,https://arxiv.org/abs/2609.28045
+09,ASD-1087,2026,LeakAgent,,E2,L2,D5,Communications AI &amp; Computing,https://www.nature.com/articles/s44488-026-00024-w
+09,ASD-1088,2026,A RAG-enhanced multi-agent LLM/VLM framework for auditable a,,E2,L2,D5,Scientific Reports,https://www.nature.com/articles/s41598-026-57424-2
+09,ASD-0057,2025,Autochemschematic ai,如何把 AI-discovered chemicals 转化为可模拟、可制造的工程流程设计。,E2,L1,D5,arXiv,https://arxiv.org/abs/2505.24584
+09,ASD-0124,2025,A large language model-empowered agent for reliable and robu,,E2,L1,D5,arXiv,https://arxiv.org/abs/2507.02938
+09,ASD-0752,2025,Integrating Large Language Models for Automated Structural A,如何把自然语言结构题目稳定地转为可执行的结构分析工作流,E2,L1,D5,arXiv,https://arxiv.org/abs/2504.09754
+09,ASD-0753,2025,A Lightweight Large Language Model-Based Multi-Agent System ,如何把自然语言结构题述自动转成可执行的结构有限元模型,E2,L1,D5,arXiv,https://arxiv.org/abs/2510.05414
+09,ASD-0754,2025,Automating Structural Engineering Workflows with Large Langu,如何用多 Agent 自动化真实结构工程工作流,E2,L1,D5,arXiv,https://arxiv.org/abs/2510.11004
+09,ASD-0747,2026,VFEAgent,如何从工程图像和问题描述自动生成可执行且物理有效的 FEA 仿真,E2,L1,D5,arXiv,https://arxiv.org/abs/2605.28978
+09,ASD-0755,2026,Automating Structural Analysis Across Multiple Software Plat,如何让 Agent 稳定完成跨 ETABS、SAP2000、OpenSees 的结构分析,E2,L1,D5,arXiv,https://arxiv.org/abs/2604.09866
+09,ASD-0756,2026,Agentic Large Language Models for Automated Structural Analy,如何让 Agent 从自然语言描述稳定构建并分析三维框架结构,E2,L1,D5,arXiv,https://arxiv.org/abs/2606.06525
+09,ASD-0781,2026,Large Language Model Agent for User-friendly Chemical Proces,如何让自然语言 agent 稳定操控 APS 完成 process-simulation workflows,E2,L1,D5,arXiv,https://arxiv.org/abs/2601.11650
+09,ASD-0966,2026,AI for Science with GPT-6 Astra,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.17123
+09,ASD-0125,2024,Physics-informed LLM-agent for automated modulation design i,,E1,L2,D5,arXiv,https://arxiv.org/abs/2411.14214
+09,ASD-1061,2026,Agentic AI for operating scientific instruments for nanoscal,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.26198
+10,ASD-0645,2004,The Autonomous Sciencecraft Experiment Onboard the EO-1 Spac,如何让航天器在轨自主识别高价值科学事件并动态调整观测计划,E3,L2,D2,AAAI,https://cdn.aaai.org/AAAI/2004/AAAI04-168.pdf
+10,ASD-0733,2007,"Increased Mars Rover Autonomy using AI Planning, Scheduling ",如何让 rover 在远程受限任务环境中更自主地完成科学操作,E3,L2,D2,IEEE ICRA 2007,https://doi.org/10.1109/ROBOT.2007.364236
+10,ASD-0712,2005,Enabling Autonomous Rover Science Through Dynamic Planning a,如何在火星车上基于 science alerts 动态重规划科学任务,E2,L2,D2,IEEE Aerospace Conference,https://ai.jpl.nasa.gov/public/documents/papers/estlin-ieeeaero2005-EnablingAutonomous.pdf
+10,ASD-0853,2007,Onboard Autonomous Rover Science,rover 如何在 traverse 中自主发现、排序并跟进高价值科学目标,E2,L2,D2,IEEE Aerospace Conference,https://doi.org/10.1109/AERO.2007.352700
+10,ASD-0854,2008,Enabling Autonomous Science for a Mars Rover,如何在 rover 上实现 onboard science-data analysis、mission retasking 与 science opportunity response,E2,L2,D2,SpaceOps Conference,https://doi.org/10.2514/6.2008-3241
+10,ASD-0702,2013,Rover-Based Autonomous Science by Probabilistic Identificati,漫游车如何自主识别、评估并前往高科学价值目标，同时把对象级行星表面特征转化为 mission-science decision loop,E2,L2,D3,Journal of Intelligent & Robotic Systems,https://doi.org/10.1007/s10846-013-9818-6
+10,ASD-0858,2018,Incorporating AEGIS autonomous science into Mars Science Lab,如何把 AEGIS 融入 MSL 日常任务流程并提升 autonomous science return,E2,L2,D3,SpaceOps Conference,https://doi.org/10.2514/6.2018-2576
+10,ASD-0647,2024,Autonomous Small Body Science Operations Using Reinforcement,如何让探测器在小天体任务阶段自主安排 mapping、imaging、downlink 与 navigation updates 的任务级规划与调度,E2,L2,D4,Journal of Aerospace Information Systems,https://doi.org/10.2514/1.I011376
+10,ASD-0648,2024,Reinforcement Learning For Earth-Observing Satellite Autonom,如何让 EO satellite 在动态 target requests、资源约束与 flight-mode 切换条件下闭环做 onboard tasking,E2,L2,D4,AAS Rocky Mountain GN&C Conference preprint,https://hanspeterschaub.info/Papers/Stephenson2024a.pdf
+10,ASD-0713,2024,Demonstrating Autonomy for Complex Space Missions,如何让深空着陆器在资源与通信受限条件下自主完成科学任务,E2,L2,D2,Journal of Aerospace Information Systems,https://doi.org/10.2514/1.I011294
+11,ASD-0701,2026,Automating Computational Reproducibility in Social Science,Agent 能否自动诊断、修复并重新执行复现失败的研究代码,E2,L2,D5,arXiv / WWW Companion 2026,https://arxiv.org/abs/2602.08561
+11,ASD-0977,2026,AgonAlpha,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.11250
+11,ASD-1105,2026,From Search to Research,,E2,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.35559
+11,ASD-1120,2026,MacroRisk-agent,,E2,L2,D5,Scientific Reports,https://doi.org/10.1038/s41598-026-73453-3
+11,ASD-0637,2025,Leveraging LLM-based agents for social science research,如何用 agent simulation 解释和研究 scientific citation behavior,E2,L1,D5,arXiv,https://arxiv.org/abs/2511.03758
+11,ASD-0652,2025,ResearchTown,如何用多 Agent 逼真模拟科研共同体中的协作、写作、审稿与想法生成,E2,L1,D5,arXiv / ICML 2025,https://arxiv.org/abs/2412.17767
+11,ASD-0644,2026,LLM Agents as Social Scientists,如何让 agent 平台协助研究者开展社会科学研究,E2,L1,D5,arXiv,https://arxiv.org/abs/2604.01520
+11,ASD-0705,2026,Automated reproducibility assessments in the social and beha,如何自动重分析数据并判断结论是否可复现,E2,L1,D5,arXiv,https://arxiv.org/abs/2606.13670
+11,ASD-0786,2026,AgentReview,如何用 agent-based simulation disentangle peer-review latent factors，并分析评审偏差如何影响科学知识生产,E2,L1,D5,arXiv,https://arxiv.org/abs/2406.12708
+11,ASD-0879,2026,CrossAudit,,E2,L1,D5,arXiv,https://arxiv.org/abs/2608.28631
+11,ASD-0909,2026,CABAL,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.05227
+11,ASD-0920,2026,Behavior is Not Enough,,E2,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.26481
+11,ASD-0140,2024,Large language models for automated open-domain scientific h,,E1,L2,D5,ACL Findings,https://aclanthology.org/2024.findings-acl.804/
+11,ASD-0186,2024,MARG,论文试图通过多 Agent 系统提升科学论文评审意见的具体性、帮助性与覆盖度。,E1,L2,D5,arXiv,https://arxiv.org/abs/2401.04259
+11,ASD-0132,2025,Many heads are better than one,如何通过多 Agent 协作提升科研想法生成质量,E1,L2,D5,ACL,https://aclanthology.org/2025.acl-long.1368/
+11,ASD-0706,2025,aiXiv,如何构造下一代开放科学出版基础设施，并让 AI scientist 在其中执行生成、评审、核验与传播任务,E1,L2,D5,arXiv,https://arxiv.org/abs/2508.15126
+11,ASD-0855,2025,Automating Scientific Evaluation,如何用多 Agent 协作提升科研评审的透明性、可信度与可审计性,E1,L2,D5,IFAC-PapersOnLine,https://doi.org/10.1016/j.ifacol.2025.12.440
+11,ASD-0654,2026,HLER,如何围绕真实数据结构生成并执行可行的经济学经验研究,E1,L2,D5,arXiv / SSRN,https://arxiv.org/abs/2603.07444
+11,ASD-0658,2026,"Read the Paper, Write the Code",Agent 能否在严格信息隔离下重现已发表研究结果，并诊断失败来源,E1,L2,D5,arXiv,https://arxiv.org/abs/2604.21965
+11,ASD-0704,2026,PaperRepro,如何自动执行、抓取并评估论文复现结果,E1,L2,D5,arXiv,https://arxiv.org/abs/2603.00058
+11,ASD-0831,2026,Frontier LLM-based agents can overcome the ontology curation,如何用 Agent 缓解自然表型知识组织与本体维护的人力瓶颈,E1,L2,D5,arXiv,https://arxiv.org/abs/2605.28965
+11,ASD-0848,2026,PaperOrchestra,如何用 multi-agent framework 将非结构化科研原材料转化为高质量学术论文,E1,L2,D5,arXiv,https://arxiv.org/abs/2604.05018
+11,ASD-0912,2026,AgentIdeaBench,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2609.07611
+11,ASD-0939,2026,HypoForge,,E1,L2,D5,arXiv preprint,https://arxiv.org/abs/2608.25770
+11,ASD-0629,2024,CiteME,语言模型能否为科学断言准确找到支撑性文献,E1,L1,D5,NeurIPS 2024 Datasets and Benchmarks / OpenReview,https://openreview.net/forum?id=S9Qrrxpy6z
+11,ASD-0006,2025,DORA AI Scientist,多 Agent 虚拟科研团队能否通过模板化 workflow、工具调用与资料检索辅助科学探索并自动生成研究文稿。,E1,L1,D5,bioRxiv,https://doi.org/10.1101/2025.03.06.641840
+11,ASD-0625,2025,ReviewAgents,如何用多角色 LLM reviewer agents 生成更接近人类审稿的 paper reviews，并系统评测其质量,E1,L1,D5,arXiv,https://arxiv.org/abs/2503.08506
+11,ASD-0655,2025,TreeReview,如何让 Agent 更深、更高效地完成科学论文同行评审,E1,L1,D5,arXiv / EMNLP 2025 Main,https://arxiv.org/abs/2506.07642
+11,ASD-0624,2026,SciSciGPT,如何用 AI collaborator 加速并提高 SciSci 研究 workflow 的可复现性,E1,L1,D5,Nature Computational Science,https://doi.org/10.1038/s43588-025-00906-6
+11,ASD-0626,2026,From Passive Generation to Investigation,如何让 review agent 像人类 reviewer 一样主动核查可疑 claims，并据此生成更扎实的 critique,E1,L1,D5,arXiv,https://arxiv.org/abs/2606.13349
+11,ASD-0628,2026,ScholarPeer,论文试图通过 Agent 系统推进面向科研投稿与审稿流程的自动化审查、证据核验与评审生成任务。,E1,L1,D5,arXiv,https://arxiv.org/abs/2601.22638
+11,ASD-0636,2026,EGTR-Review,论文试图通过 Agent 系统推进“evidence-grounded scientific peer-review generation system”相关研究任务。,E1,L1,D5,arXiv,https://arxiv.org/abs/2606.06025
+11,ASD-0656,2026,AI-Assisted Peer Review at Scale,论文试图通过 Agent 系统推进“conference-scale deployed scientific peer-review pipeline”相关研究任务。,E1,L1,D5,arXiv,https://arxiv.org/abs/2604.13940
+11,ASD-0698,2026,APRES,论文试图通过 Agent 系统改进科学论文修订与评估流程，并量化其对知识传播与潜在影响力的作用。,E1,L1,D5,arXiv,https://arxiv.org/abs/2603.03142
+11,ASD-0699,2026,ARA,论文试图通过 Agent 系统推进“scientific reproducibility assessment for scalable peer review support”相关研究任务。,E1,L1,D5,arXiv,https://arxiv.org/abs/2605.02651
+11,ASD-0717,2026,Paper Circle,如何用多 Agent 系统改进 scientific knowledge production 相关任务,E1,L1,D5,arXiv,https://arxiv.org/abs/2604.06170
+11,ASD-0766,2026,ReviewGrounder,论文试图通过 Agent 系统推进“rubric-guided、tool-integrated scientific peer-review agents”相关研究任务。,E1,L1,D5,arXiv,https://arxiv.org/abs/2604.14261
+11,ASD-0768,2026,When Reviews Disagree,论文试图通过 Agent 系统推进“contradiction analysis in scientific peer reviews”相关研究任务。,E1,L1,D5,ACL 2026 / arXiv,https://arxiv.org/abs/2605.10171
+11,ASD-0910,2026,InternReviewer & InternAdvocate,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2608.28612
+11,ASD-0918,2026,DeepInstructor,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2609.22104
+11,ASD-0936,2026,PaperGym,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2608.31119
+11,ASD-0971,2026,Sci$螤$vot,,E1,L1,D5,arXiv preprint,https://arxiv.org/abs/2610.21082
+11,ASD-1126,2026,A multimodal agent for ceramic management via LLM-driven kno,,E1,L1,D5,npj Heritage Science,https://doi.org/10.1038/s40494-026-02868-y
+,ASD-0040,2025,Researchagent,LLM Agent 能否基于文献和跨领域实体知识产生更好的研究 idea。,E1,L1,D5,Unknown,https://arxiv.org/abs/2404.07738
+,ASD-0059,2025,Iterative hypothesis generation for scientific discovery wit,如何生成 novel、clear、significant、verifiable 的科研假设。,E1,L1,D6,Unknown,https://arxiv.org/abs/2503.19309

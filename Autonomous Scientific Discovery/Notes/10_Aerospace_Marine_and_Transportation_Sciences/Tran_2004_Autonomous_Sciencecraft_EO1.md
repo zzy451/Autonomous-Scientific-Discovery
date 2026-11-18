@@ -258,3 +258,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Tran_2004_Autonomous_Sciencecraft_EO1.pdf; PDF p.1; Uploaded in the Fall of 2003, ASE has successfully commanded EO-1 operations and enabled autonomous retargeting to capture dynamic science events.。
 - 判定：EO-1 spacecraft autonomous science and mission operations
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在轨自主识别科学事件并重规划观测，任务成功可直接核对 | “EO-1 在轨遥感观测与星上事件检测” · L178 |
+| 验证强度 | V3 物理实验 | 真实在轨飞行部署覆盖核心自主观测能力 | “系统成功在轨执行自主科学分析、重规划与 retargeting” · L182 |
+| 系统自主性 | L2 闭环执行者 | 系统在任务目标内自主执行事件检测-重规划闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

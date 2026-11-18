@@ -273,3 +273,17 @@ first_hand_sources_checked：pdf; arxiv
 classification_evidence_source_level：first_hand_full_text
 note_revision_required：no
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O6 开放科学 | 从文献生成量子物理研究想法并实现，184个想法中2个发展为论文 | “从量子物理文献中提出研究 idea” · L28 |
+| 验证强度 | V1 基准/内部评测 | 专家确认想法可实现，但尚未完成强实验闭环 | “184 个 successfully implemented ideas” · L192 |
+| 系统自主性 | L3 自主研究者 | 系统自主从文献提出研究问题并实现为实验设计 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -298,3 +298,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/09_Engineering_and_Industrial_Technology_Sciences/Feng_2025_OpenFOAMGPT_2_0.pdf; PDF p.1; OpenFOAMGPT 2.0: end-to-end, trustworthy automation for computational fluid dynamics Jingsen Feng Department of Engineering University of Exeter Ran Xu Cluster of Excellence SimTech University of Stuttgart Xu Chu Department of Engineering University of Exeter x.chu@exeter.ac.uk Abstract We propose the first multi-agent framework for computational fluid dynamics that enables fully automated, end-to-end simulations directly from natural-language queries.。
 - 判定：computational fluid dynamics automation and simulation
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在CFD仿真案例上自动完成从需求到结果的全流程，结果可由仿真验证 | “Poiseuille flow、porous media flow、motorbike aerodynamics 等 CFD cases” · L218 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过仿真验证系统在over 450 simulations上的表现 | “over 450 simulations 上的高成功率与复现性” · L222 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成从自然语言到仿真结果的多步闭环 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

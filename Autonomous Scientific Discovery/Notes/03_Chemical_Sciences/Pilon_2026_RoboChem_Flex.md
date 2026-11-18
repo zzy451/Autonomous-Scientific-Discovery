@@ -169,3 +169,16 @@ A self-driving chemistry lab platform validated on six reaction-optimization cas
 - Kept `source_limited: no`
 - Restored a fuller structured note while preserving the corrected object-first classification wording
 
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 化学反应优化产生需湿实验验证的反应条件 | “six reaction-optimization case studies” · L42 |
+| 验证强度 | V3 物理实验 | 六个反应优化案例的直接湿实验验证 | “direct wet-lab chemistry evidence” · L42 |
+| 系统自主性 | L2 闭环执行者 | 自驱动实验室在人设定目标内自主优化反应条件 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

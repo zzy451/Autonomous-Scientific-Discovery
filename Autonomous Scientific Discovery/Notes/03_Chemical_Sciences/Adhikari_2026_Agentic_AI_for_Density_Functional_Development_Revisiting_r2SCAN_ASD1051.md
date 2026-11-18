@@ -179,3 +179,17 @@ fulltext_followup_required=false
 - 原文位置：PDF p.1。
 - 判定：r2SCAN交换关联泛函的Agent修正与确定性验证，理论计算化学。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 在固定基准外搜索r2SCAN修正项并在24固体带隙等benchmark验证，答案可由DFT计算核对 | “benchmark comprising 24 solids” · L42 |
+| 验证强度 | V2 计算/仿真/回顾性 | DFT计算验证修正泛函在固体带隙和分子反应能基准上的表现 | “benchmark comprising 24 solids” · L42 |
+| 系统自主性 | L2 闭环执行者 | Agent在物理约束内自主搜索并评估泛函修正候选，迭代优化 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

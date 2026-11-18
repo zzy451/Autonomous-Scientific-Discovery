@@ -295,3 +295,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - 原文位置：Reference_PDF/10_Aerospace_Marine_and_Transportation_Sciences/Francis_2017_AEGIS_ChemCam_MSL.pdf; PDF p.1; LA-UR-17-27687 Accepted Manuscript AEGIS autonomous targeting for ChemCam on Mars Science Laboratory: Deployment and results of initial science team use Francis, Raymond; Estlin, Tara; Doran, G.; Johnstone, Stephen E.; Gaines, Daniel; Verma, Vandi; Burl, M.; Frydenvang, Jens; Montano, Suzanne Ruth; Wiens, Roger Craig; Schaffer, S.; Gasnault, Olivier; Deflores, Lauren; Blaney, Diana; Bornstein, Ben Provided by the author(s) and the Los Alamos National Laboratory (2022-11-28).。
 - 判定：ChemCam Mars rover science targeting and deployment
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | Curiosity火星车在unexplored terrain中自主选择地质目标并修正指向 | “unexplored terrain 中的地质目标” · L215 |
+| 验证强度 | V3 物理实验 | 系统自2016年起routine use，相关观测全部成功 | “系统自 2016 年起 routine use，命中表现高，相关观测全部成功” · L219 |
+| 系统自主性 | L2 闭环执行者 | 系统自主完成目标选择与指向修正的闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

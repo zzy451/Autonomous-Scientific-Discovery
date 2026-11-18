@@ -249,3 +249,16 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 推荐引用强度：standard
 ```
 
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 化学反应条件推荐产生需湿实验验证的合成方案 | “chemical synthesis reaction condition recommendation” · L176 |
+| 验证强度 | V3 物理实验 | 自动机器人湿实验验证推荐条件 | “experimentally_validated” · L190 |
+| 系统自主性 | L2 闭环执行者 | 端到端系统从检索到推荐再到机器人验证的闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

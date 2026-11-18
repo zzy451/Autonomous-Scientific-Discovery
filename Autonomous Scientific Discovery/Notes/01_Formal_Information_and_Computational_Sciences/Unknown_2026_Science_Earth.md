@@ -269,3 +269,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 - 原文位置：PDF p.5。
 - 判定：实际完成高阶Kuramoto同步研究并修正Ott–Antonsen近似；须由01.04对齐01.01；单细胞实验另有06覆盖，不应删除。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 理论纠错与单细胞分析可由计算与已有知识核对 | “30 分钟内识别并修正 Ott-Antonsen 假设问题” · L191 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算与分析验证，加局部湿实验锚定 | “对象级计算 / 分析验证，外加局部 wet-lab anchor” · L201 |
+| 系统自主性 | L2 闭环执行者 | 多能力agents自组织协作完成研究任务 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

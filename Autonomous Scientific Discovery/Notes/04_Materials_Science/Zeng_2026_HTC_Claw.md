@@ -277,3 +277,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Hybrid Agent
 - 原文位置：Reference_PDF/04_Materials_Science/Zeng_2026_HTC_Claw.pdf; PDF p.1; Case studies demonstrate that HTC-Claw enables an intelligent, end- to-end workflow from user intent to final reporting in materials exploration 1.。
 - 判定：high-throughput computational materials campaign
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 从材料数据库中筛选满足性质约束的材料候选，可由计算验证 | “材料数据库中的 spinel、corundum 等材料家族” · L187 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过高通量第一性原理计算验证材料性质 | “成功完成大规模材料性质筛选” · L191 |
+| 系统自主性 | L2 闭环执行者 | 系统自动完成任务分解、计算调度、结果分析并基于中间结果扩展 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

@@ -160,3 +160,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.1。
 - 判定：First-hand evidence supports 02.02.06; When evaluated under code-capacity depolarizing noise using a common BP?OSD decoding protocol, the discovered codes also exhibit low logical failure rates.
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O5 开放数学 | 发现超越已知最优的量子LDPC码构造，答案事先未知但可严格检验 | “发现新的实用量子LDPC码构造与参数” · L109 |
+| 验证强度 | V2 计算/仿真/回顾性 | 固定评价器计算码参数并严格确立距离，属计算验证 | “以固定评价器计算码参数，并报告距离经严格确立的实例” · L101 |
+| 系统自主性 | L2 闭环执行者 | 三Agent与评价器形成闭环，自主提出方向并迭代搜索 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

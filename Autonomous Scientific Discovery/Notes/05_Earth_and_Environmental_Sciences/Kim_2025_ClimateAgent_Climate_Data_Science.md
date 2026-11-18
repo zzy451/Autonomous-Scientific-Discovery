@@ -288,3 +288,17 @@ Agent 类型：LLM Agent; Multi-Agent System; Tool-using Agent; Hybrid Agent
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 气候数据分析工作流，答案可由计算和数据验证 | “85 个真实气候任务，覆盖 6 个气候领域” · L204 |
+| 验证强度 | V1 基准/内部评测 | benchmark评测，100%任务完成和report quality评分 | “100% task completion；report quality 8.32” · L207 |
+| 系统自主性 | L1 任务助手 | 系统执行气候数据分析任务，人决定研究问题 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

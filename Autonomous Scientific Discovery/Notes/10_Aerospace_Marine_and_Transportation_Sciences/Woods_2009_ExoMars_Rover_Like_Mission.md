@@ -194,3 +194,17 @@ confidence：medium
 - 原文位置：PDF p.2。
 - 判定：ExoMars火星车科学自主任务，属于深空探测。
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | rover任务中地质目标选择可由评估方法核对 | “系统在 representative robotic platform 上演示 autonomous opportunistic science concept” · L134 |
+| 验证强度 | V2 计算/仿真/回顾性 | 机器人演示与评估方法论 | “主体仍是 platform / mission concept demonstration” · L145 |
+| 系统自主性 | L2 闭环执行者 | rover自主选择科学目标并执行数据采集 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

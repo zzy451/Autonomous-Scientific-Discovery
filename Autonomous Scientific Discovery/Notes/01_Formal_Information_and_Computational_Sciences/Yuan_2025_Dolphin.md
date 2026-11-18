@@ -257,3 +257,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Retrieval-augmented 
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 在固定机器学习benchmark上迭代改进方法 | “ModelNet40、CIFAR-100、SST-2、MLE-bench 子任务” · L174 |
+| 验证强度 | V1 基准/内部评测 | benchmark性能指标验证 | “通过 benchmark 性能验证” · L196 |
+| 系统自主性 | L2 闭环执行者 | 在给定topic内自主生成idea、实现代码、调试并迭代改进 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

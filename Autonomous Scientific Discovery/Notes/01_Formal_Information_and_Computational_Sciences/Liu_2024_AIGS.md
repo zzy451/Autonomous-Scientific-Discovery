@@ -162,3 +162,16 @@ A falsification-centered multi-agent autonomous research system whose concrete v
 - Kept `source_limited: no`
 - Restored a fuller structured note while preserving the corrected evidence and boundary wording
 
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | 计算研究任务基准，在已知评估标准下完成 | “computational research tasks” · L24 |
+| 验证强度 | V1 基准/内部评测 | 基准对比与人工审阅，无独立科学发现验证 | “benchmark + human review” · L25 |
+| 系统自主性 | L3 自主研究者 | 系统自主提出研究问题并通过自动证伪推动研究流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

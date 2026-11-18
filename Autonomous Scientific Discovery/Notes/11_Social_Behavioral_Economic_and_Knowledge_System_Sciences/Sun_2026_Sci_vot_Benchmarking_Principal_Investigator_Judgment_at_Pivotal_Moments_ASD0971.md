@@ -159,3 +159,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.3,4,5,8。
 - 判定：Concrete experiment/task evidence supports 11.07.08 (科学方法论). Its 248 cases from 26 projects pair original LLM plans with human-corrected alternatives reconstructed from completed project histories; Planning; Adapting; Anomaly awareness; Evidence sufficiency
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O2 既定基准 | PI判断基准为预构建的案例选择任务 | “理论、模拟、计算和已有科学数据分析项目的回顾性轨迹” · L101 |
+| 验证强度 | V1 基准/内部评测 | 模型判断与人类标注比较，无新科学发现验证 | “模型判断与人类PI标注比较” · L101 |
+| 系统自主性 | L1 任务助手 | 模型在给定决策点上评估计划，不执行研究 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

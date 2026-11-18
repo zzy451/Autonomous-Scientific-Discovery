@@ -256,3 +256,17 @@ Agent 类型：LLM Agent; Planning Agent; Tool-using Agent; Multi-Agent System; 
 纳入置信度：高
 推荐引用强度：standard
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O6 开放科学 | 自主提出并验证大气物理机制假设，答案事先未知 | “多类 atmospheric dynamics 场景” · L185 |
+| 验证强度 | V2 计算/仿真/回顾性 | 通过WRF仿真验证假设，无真实观测实验 | “假设生成与 WRF-based verification” · L186 |
+| 系统自主性 | L3 自主研究者 | 系统自主提出大气科学假设并推动验证流程 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：medium；需全文复核：否；争议记录：无
+- 复核状态：无需复核

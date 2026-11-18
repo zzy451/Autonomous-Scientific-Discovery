@@ -178,3 +178,17 @@ fulltext_followup_required=false
 - 原文位置：PDF pp.2。
 - 判定：Concrete experiment/task evidence supports 04.01.04 (材料计算与材料信息学). Single-point calculations show close energy and force agreement between the generated and reference implementations for all seven models. Five crystalline many-body benchmarks additionally recover reference relaxed lattice properties, vacancy formation energies, and elastic constants.
 - 台账：[本轮决策记录](../../Coverage_Check/tertiary_145_decisions_2026-10-29.json)。保留其他有证据的科学对象模块；归档分类不表示全文只涉及单一对象。
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O3 新实例 | 生成代码的物理性质可由模拟验证 | “Single-point calculations show close energy and force agreement” · L179 |
+| 验证强度 | V2 计算/仿真/回顾性 | 计算验证与参考实现比对 | “We evaluate Agent-E2MD using seven material-potential pairs” · L43 |
+| 系统自主性 | L2 闭环执行者 | 系统自主循环编译测试并修复 | — |
+
+- 强验证（V3–V4）：否
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核

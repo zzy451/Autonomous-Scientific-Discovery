@@ -281,3 +281,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Robot / Embodied Agent; Hybrid 
 - 补充文件：`Reference_PDF/06_Life_Sciences/ASD-0617_Industrial_Automated_Protein_Evolution_Supplementary.pdf`。
 - 补充材料来源：https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs44286-025-00303-w/MediaObjects/44286_2025_303_MOESM1_ESM.pdf
 - 主文PDF入口：https://www.nature.com/articles/s44286-025-00303-w.pdf
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 产生需要湿实验检验的蛋白功能进化对象 | “CapT7 从 inactive precursors 演化为 functional entity” · L189 |
+| 验证强度 | V3 物理实验 | 真实蛋白进化实验覆盖多个蛋白系统的功能演化 | “多个蛋白系统得到真实进化” · L189 |
+| 系统自主性 | L2 闭环执行者 | 平台在人设定的蛋白目标内自主执行长期进化闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：medium；需全文复核：是；争议记录：无
+- 复核状态：待专家复核：需全文复核

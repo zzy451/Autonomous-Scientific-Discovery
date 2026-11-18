@@ -268,3 +268,17 @@ Agent 类型：Planning Agent; Tool-using Agent; Retrieval-augmented Agent; Robo
 纳入置信度：高
 推荐引用强度：核心引用
 ```
+
+## 10. 问题开放度 · 验证强度 · 系统自主性
+
+编码日期：2026-11-04；依据：`Coverage_Check/openness_verification_increment_2026-11-04/RUBRIC.md`（以提案为准）。编码者：Claude Sonnet 5.5（H20）。引文均为本笔记原文，已用脚本逐字核对行号。
+
+| 轴 | 等级 | 理由 | 证据（本笔记原文 · 行号） |
+|---|---|---|---|
+| 问题开放度 | O4 需物理检验 | 自主合成新材料并进行XRD表征，需物理实验检验 | “41 of 58 targets synthesized” · L22 |
+| 验证强度 | V3 物理实验 | 真实机器人材料合成与XRD实验验证 | “实验验证” · L201 |
+| 系统自主性 | L2 闭环执行者 | 在人设定目标材料集合内自主规划并迭代实验闭环 | — |
+
+- 强验证（V3–V4）：是
+- 置信度：high；需全文复核：否；争议记录：无
+- 复核状态：无需复核
