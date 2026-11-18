@@ -1,0 +1,16 @@
+{
+  "source_figure": "FigY1_Temporal_Slices_v3_FixedTilt_EN/FigY1_v3_fixed_tilt_EN.png",
+  "source_csv": "FigY1_Temporal_Slices_v3_FixedTilt_EN/scenario_papers_1956_2026_EN.csv",
+  "source_sha256": "442a1532233a80160ecd4df38b18da32ed3cc68ce5a5fa08c566faa1a80b2244",
+  "n_records": 1180,
+  "scores_unchanged": true,
+  "colors_from": "Temporal-slice design_parameters.json domain_colors",
+  "periods_pooled": [
+    "Up to 1997",
+    "1998\u20132012",
+    "2013\u20132019",
+    "2020\u20132023",
+    "2024\u20132026"
+  ],
+  "simulated": true
+}

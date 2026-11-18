@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.png binary
+data/temporal_slice_simulated_data.csv -text whitespace=cr-at-eol
+outputs/*.svg whitespace=-blank-at-eol

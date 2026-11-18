@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.venv/
+outputs/domain_score_summary.csv
+outputs/plotted_point_positions.csv

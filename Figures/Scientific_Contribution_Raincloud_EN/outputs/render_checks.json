@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "synthetic": true,
+  "n_unique_papers": 1180,
+  "n_points_plotted": 1180,
+  "domain_counts": [
+    {
+      "name": "Formal & Computational Sciences",
+      "n": 90,
+      "color": "#326fb2"
+    },
+    {
+      "name": "Physics & Astronomy",
+      "n": 103,
+      "color": "#279fb5"
+    },
+    {
+      "name": "Chemistry",
+      "n": 136,
+      "color": "#21977d"
+    },
+    {
+      "name": "Materials Science",
+      "n": 136,
+      "color": "#879b26"
+    },
+    {
+      "name": "Life Sciences",
+      "n": 179,
+      "color": "#cf923a"
+    },
+    {
+      "name": "Medicine & Health",
+      "n": 161,
+      "color": "#c4517c"
+    },
+    {
+      "name": "Earth & Environmental Sciences",
+      "n": 106,
+      "color": "#9b6b47"
+    },
+    {
+      "name": "Engineering & Manufacturing",
+      "n": 98,
+      "color": "#7662b2"
+    },
+    {
+      "name": "Agriculture & Food",
+      "n": 52,
+      "color": "#559b59"
+    },
+    {
+      "name": "Aerospace & Transportation",
+      "n": 49,
+      "color": "#567f91"
+    },
+    {
+      "name": "Society & Knowledge",
+      "n": 70,
+      "color": "#a25497"
+    }
+  ],
+  "all_figure_text_english": true,
+  "labels_outside_canvas": [],
+  "text_overlap_candidates": [],
+  "score_limits": [
+    0,
+    100
+  ],
+  "kde_bandwidth_score_units": 5.0,
+  "density_definition": "Reflected Gaussian KDE normalized to unit probability on 0–100, using one shared width scale across domains.",
+  "jitter_changes": "Horizontal position only; no score or group change.",
+  "source_data_sha256": "442a1532233a80160ecd4df38b18da32ed3cc68ce5a5fa08c566faa1a80b2244"
+}

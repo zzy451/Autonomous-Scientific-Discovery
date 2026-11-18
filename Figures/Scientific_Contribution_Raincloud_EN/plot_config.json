@@ -1,0 +1,81 @@
+{
+  "figure_size_inches": [
+    20,
+    9.5
+  ],
+  "dpi": 240,
+  "preview_dpi": 110,
+  "kde_bandwidth_score_units": 5.0,
+  "maximum_cloud_width": 0.34,
+  "point_area_pt2": 12.0,
+  "point_alpha": 0.62,
+  "jitter_seed": 2026111803,
+  "domains": [
+    {
+      "name": "Formal & Computational Sciences",
+      "color": "#326fb2",
+      "n": 90,
+      "wrapped_label": "Formal &\nComputational\nSciences"
+    },
+    {
+      "name": "Physics & Astronomy",
+      "color": "#279fb5",
+      "n": 103,
+      "wrapped_label": "Physics &\nAstronomy"
+    },
+    {
+      "name": "Chemistry",
+      "color": "#21977d",
+      "n": 136,
+      "wrapped_label": "Chemistry"
+    },
+    {
+      "name": "Materials Science",
+      "color": "#879b26",
+      "n": 136,
+      "wrapped_label": "Materials\nScience"
+    },
+    {
+      "name": "Life Sciences",
+      "color": "#cf923a",
+      "n": 179,
+      "wrapped_label": "Life\nSciences"
+    },
+    {
+      "name": "Medicine & Health",
+      "color": "#c4517c",
+      "n": 161,
+      "wrapped_label": "Medicine &\nHealth"
+    },
+    {
+      "name": "Earth & Environmental Sciences",
+      "color": "#9b6b47",
+      "n": 106,
+      "wrapped_label": "Earth &\nEnvironmental\nSciences"
+    },
+    {
+      "name": "Engineering & Manufacturing",
+      "color": "#7662b2",
+      "n": 98,
+      "wrapped_label": "Engineering &\nManufacturing"
+    },
+    {
+      "name": "Agriculture & Food",
+      "color": "#559b59",
+      "n": 52,
+      "wrapped_label": "Agriculture &\nFood"
+    },
+    {
+      "name": "Aerospace & Transportation",
+      "color": "#567f91",
+      "n": 49,
+      "wrapped_label": "Aerospace &\nTransportation"
+    },
+    {
+      "name": "Society & Knowledge",
+      "color": "#a25497",
+      "n": 70,
+      "wrapped_label": "Society &\nKnowledge"
+    }
+  ]
+}
