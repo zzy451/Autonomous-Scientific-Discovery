@@ -1,0 +1,1253 @@
+{
+ "fields": [
+  {
+   "code": "01",
+   "name": "Formal and Computational Sciences",
+   "n": 130,
+   "color": "#6F9FCE"
+  },
+  {
+   "code": "02",
+   "name": "Physics and Astronomy",
+   "n": 193,
+   "color": "#81A8C7"
+  },
+  {
+   "code": "03",
+   "name": "Chemistry",
+   "n": 214,
+   "color": "#62B2A6"
+  },
+  {
+   "code": "04",
+   "name": "Materials Science",
+   "n": 257,
+   "color": "#A8C46A"
+  },
+  {
+   "code": "05",
+   "name": "Earth and Environmental Sciences",
+   "n": 161,
+   "color": "#D7B66A"
+  },
+  {
+   "code": "06",
+   "name": "Life Sciences",
+   "n": 392,
+   "color": "#D99762"
+  },
+  {
+   "code": "07",
+   "name": "Medicine and Health",
+   "n": 310,
+   "color": "#C97D8E"
+  },
+  {
+   "code": "08",
+   "name": "Agriculture and Food",
+   "n": 50,
+   "color": "#AA83C9"
+  },
+  {
+   "code": "09",
+   "name": "Engineering and Manufacturing",
+   "n": 147,
+   "color": "#7B8FD2"
+  },
+  {
+   "code": "10",
+   "name": "Aerospace and Transportation",
+   "n": 50,
+   "color": "#7FA9B4"
+  },
+  {
+   "code": "11",
+   "name": "Society and Knowledge",
+   "n": 77,
+   "color": "#9B9EA9"
+  }
+ ],
+ "themes": [
+  {
+   "field": "01",
+   "rank": 1,
+   "name": "Machine Learning",
+   "n": 36
+  },
+  {
+   "field": "01",
+   "rank": 2,
+   "name": "Differential Equations",
+   "n": 26
+  },
+  {
+   "field": "01",
+   "rank": 3,
+   "name": "Artificial Intelligence",
+   "n": 13
+  },
+  {
+   "field": "01",
+   "rank": 4,
+   "name": "Discrete Mathematics and Combinatorics",
+   "n": 9
+  },
+  {
+   "field": "02",
+   "rank": 1,
+   "name": "Galaxies and Galaxy Evolution",
+   "n": 36
+  },
+  {
+   "field": "02",
+   "rank": 2,
+   "name": "Computational Physics",
+   "n": 28
+  },
+  {
+   "field": "02",
+   "rank": 3,
+   "name": "Particle Physics",
+   "n": 24
+  },
+  {
+   "field": "02",
+   "rank": 4,
+   "name": "Classical Mechanics",
+   "n": 17
+  },
+  {
+   "field": "03",
+   "rank": 1,
+   "name": "Theoretical and Computational Chemistry",
+   "n": 35
+  },
+  {
+   "field": "03",
+   "rank": 2,
+   "name": "Small-Molecule Property Optimization",
+   "n": 26
+  },
+  {
+   "field": "03",
+   "rank": 3,
+   "name": "Reaction Design",
+   "n": 22
+  },
+  {
+   "field": "03",
+   "rank": 4,
+   "name": "Medicinal Chemistry",
+   "n": 22
+  },
+  {
+   "field": "04",
+   "rank": 1,
+   "name": "Computational Materials Science and Materials Informatics",
+   "n": 91
+  },
+  {
+   "field": "04",
+   "rank": 2,
+   "name": "Optoelectronic Materials",
+   "n": 24
+  },
+  {
+   "field": "04",
+   "rank": 3,
+   "name": "Materials Characterization",
+   "n": 20
+  },
+  {
+   "field": "04",
+   "rank": 4,
+   "name": "Crystalline Materials",
+   "n": 19
+  },
+  {
+   "field": "05",
+   "rank": 1,
+   "name": "Remote Sensing",
+   "n": 31
+  },
+  {
+   "field": "05",
+   "rank": 2,
+   "name": "Meteorology",
+   "n": 31
+  },
+  {
+   "field": "05",
+   "rank": 3,
+   "name": "Climate Science",
+   "n": 28
+  },
+  {
+   "field": "05",
+   "rank": 4,
+   "name": "Geophysics",
+   "n": 15
+  },
+  {
+   "field": "06",
+   "rank": 1,
+   "name": "Protein Science",
+   "n": 113
+  },
+  {
+   "field": "06",
+   "rank": 2,
+   "name": "Genomics",
+   "n": 108
+  },
+  {
+   "field": "06",
+   "rank": 3,
+   "name": "Single-Cell Biology",
+   "n": 57
+  },
+  {
+   "field": "06",
+   "rank": 4,
+   "name": "Structural Biology",
+   "n": 46
+  },
+  {
+   "field": "07",
+   "rank": 1,
+   "name": "Drug Discovery",
+   "n": 87
+  },
+  {
+   "field": "07",
+   "rank": 2,
+   "name": "Medical Informatics",
+   "n": 76
+  },
+  {
+   "field": "07",
+   "rank": 3,
+   "name": "Pathology",
+   "n": 34
+  },
+  {
+   "field": "07",
+   "rank": 4,
+   "name": "Anatomy",
+   "n": 29
+  },
+  {
+   "field": "08",
+   "rank": 1,
+   "name": "Crop Science",
+   "n": 35
+  },
+  {
+   "field": "08",
+   "rank": 2,
+   "name": "Soil Science",
+   "n": 4
+  },
+  {
+   "field": "08",
+   "rank": 3,
+   "name": "Plant Protection",
+   "n": 4
+  },
+  {
+   "field": "08",
+   "rank": 4,
+   "name": "Agricultural Meteorology",
+   "n": 4
+  },
+  {
+   "field": "09",
+   "rank": 1,
+   "name": "Engineering Mathematics and Modeling",
+   "n": 40
+  },
+  {
+   "field": "09",
+   "rank": 2,
+   "name": "Mechanical Design",
+   "n": 19
+  },
+  {
+   "field": "09",
+   "rank": 3,
+   "name": "Engineering Mechanics",
+   "n": 13
+  },
+  {
+   "field": "09",
+   "rank": 4,
+   "name": "Process Systems Engineering",
+   "n": 9
+  },
+  {
+   "field": "10",
+   "rank": 1,
+   "name": "Deep-Space Exploration",
+   "n": 19
+  },
+  {
+   "field": "10",
+   "rank": 2,
+   "name": "Intelligent Transportation Systems",
+   "n": 13
+  },
+  {
+   "field": "10",
+   "rank": 3,
+   "name": "Satellite Engineering",
+   "n": 4
+  },
+  {
+   "field": "10",
+   "rank": 4,
+   "name": "Aerodynamics",
+   "n": 4
+  },
+  {
+   "field": "11",
+   "rank": 1,
+   "name": "Scientific Methodology",
+   "n": 17
+  },
+  {
+   "field": "11",
+   "rank": 2,
+   "name": "Scientific Explanation and Evidence Theory",
+   "n": 15
+  },
+  {
+   "field": "11",
+   "rank": 3,
+   "name": "Scientific Knowledge Networks",
+   "n": 13
+  },
+  {
+   "field": "11",
+   "rank": 4,
+   "name": "Disciplinary Evolution and Interdisciplinary Discovery Mechanisms",
+   "n": 10
+  }
+ ],
+ "pairs": [
+  {
+   "a": "06",
+   "b": "07",
+   "n": 121
+  },
+  {
+   "a": "03",
+   "b": "04",
+   "n": 63
+  },
+  {
+   "a": "03",
+   "b": "07",
+   "n": 53
+  },
+  {
+   "a": "01",
+   "b": "02",
+   "n": 31
+  },
+  {
+   "a": "03",
+   "b": "06",
+   "n": 30
+  },
+  {
+   "a": "02",
+   "b": "09",
+   "n": 27
+  },
+  {
+   "a": "01",
+   "b": "09",
+   "n": 25
+  },
+  {
+   "a": "04",
+   "b": "06",
+   "n": 25
+  },
+  {
+   "a": "04",
+   "b": "09",
+   "n": 22
+  },
+  {
+   "a": "02",
+   "b": "04",
+   "n": 19
+  },
+  {
+   "a": "04",
+   "b": "07",
+   "n": 17
+  },
+  {
+   "a": "03",
+   "b": "09",
+   "n": 16
+  },
+  {
+   "a": "05",
+   "b": "10",
+   "n": 16
+  },
+  {
+   "a": "05",
+   "b": "06",
+   "n": 15
+  },
+  {
+   "a": "01",
+   "b": "11",
+   "n": 15
+  },
+  {
+   "a": "01",
+   "b": "06",
+   "n": 14
+  },
+  {
+   "a": "06",
+   "b": "09",
+   "n": 14
+  },
+  {
+   "a": "02",
+   "b": "06",
+   "n": 13
+  },
+  {
+   "a": "09",
+   "b": "10",
+   "n": 12
+  },
+  {
+   "a": "02",
+   "b": "03",
+   "n": 12
+  },
+  {
+   "a": "05",
+   "b": "09",
+   "n": 12
+  },
+  {
+   "a": "05",
+   "b": "08",
+   "n": 10
+  },
+  {
+   "a": "06",
+   "b": "08",
+   "n": 10
+  },
+  {
+   "a": "01",
+   "b": "04",
+   "n": 9
+  },
+  {
+   "a": "03",
+   "b": "05",
+   "n": 9
+  },
+  {
+   "a": "01",
+   "b": "07",
+   "n": 8
+  },
+  {
+   "a": "02",
+   "b": "07",
+   "n": 8
+  },
+  {
+   "a": "05",
+   "b": "07",
+   "n": 8
+  },
+  {
+   "a": "07",
+   "b": "09",
+   "n": 8
+  },
+  {
+   "a": "06",
+   "b": "11",
+   "n": 8
+  },
+  {
+   "a": "08",
+   "b": "09",
+   "n": 7
+  },
+  {
+   "a": "01",
+   "b": "03",
+   "n": 7
+  },
+  {
+   "a": "01",
+   "b": "05",
+   "n": 7
+  },
+  {
+   "a": "02",
+   "b": "05",
+   "n": 7
+  },
+  {
+   "a": "04",
+   "b": "05",
+   "n": 7
+  },
+  {
+   "a": "05",
+   "b": "11",
+   "n": 7
+  },
+  {
+   "a": "01",
+   "b": "08",
+   "n": 6
+  },
+  {
+   "a": "07",
+   "b": "11",
+   "n": 6
+  },
+  {
+   "a": "02",
+   "b": "08",
+   "n": 5
+  },
+  {
+   "a": "03",
+   "b": "08",
+   "n": 5
+  },
+  {
+   "a": "07",
+   "b": "08",
+   "n": 5
+  },
+  {
+   "a": "01",
+   "b": "10",
+   "n": 5
+  },
+  {
+   "a": "02",
+   "b": "11",
+   "n": 5
+  },
+  {
+   "a": "04",
+   "b": "08",
+   "n": 4
+  },
+  {
+   "a": "03",
+   "b": "11",
+   "n": 4
+  },
+  {
+   "a": "08",
+   "b": "10",
+   "n": 3
+  },
+  {
+   "a": "02",
+   "b": "10",
+   "n": 3
+  },
+  {
+   "a": "03",
+   "b": "10",
+   "n": 3
+  },
+  {
+   "a": "06",
+   "b": "10",
+   "n": 3
+  },
+  {
+   "a": "04",
+   "b": "11",
+   "n": 3
+  },
+  {
+   "a": "04",
+   "b": "10",
+   "n": 2
+  },
+  {
+   "a": "07",
+   "b": "10",
+   "n": 2
+  },
+  {
+   "a": "08",
+   "b": "11",
+   "n": 1
+  }
+ ],
+ "exact": [
+  {
+   "fields": [
+    "06",
+    "07"
+   ],
+   "n": 100
+  },
+  {
+   "fields": [
+    "03",
+    "04"
+   ],
+   "n": 39
+  },
+  {
+   "fields": [
+    "03",
+    "07"
+   ],
+   "n": 35
+  },
+  {
+   "fields": [
+    "04",
+    "09"
+   ],
+   "n": 14
+  },
+  {
+   "fields": [
+    "05",
+    "10"
+   ],
+   "n": 14
+  },
+  {
+   "fields": [
+    "02",
+    "09"
+   ],
+   "n": 13
+  },
+  {
+   "fields": [
+    "01",
+    "02"
+   ],
+   "n": 12
+  },
+  {
+   "fields": [
+    "01",
+    "09"
+   ],
+   "n": 11
+  },
+  {
+   "fields": [
+    "01",
+    "11"
+   ],
+   "n": 11
+  },
+  {
+   "fields": [
+    "02",
+    "04"
+   ],
+   "n": 7
+  },
+  {
+   "fields": [
+    "03",
+    "09"
+   ],
+   "n": 7
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "09"
+   ],
+   "n": 6
+  },
+  {
+   "fields": [
+    "09",
+    "10"
+   ],
+   "n": 6
+  },
+  {
+   "fields": [
+    "03",
+    "06"
+   ],
+   "n": 6
+  },
+  {
+   "fields": [
+    "06",
+    "08"
+   ],
+   "n": 5
+  },
+  {
+   "fields": [
+    "03",
+    "04",
+    "06"
+   ],
+   "n": 5
+  },
+  {
+   "fields": [
+    "05",
+    "09"
+   ],
+   "n": 5
+  },
+  {
+   "fields": [
+    "06",
+    "09"
+   ],
+   "n": 5
+  },
+  {
+   "fields": [
+    "05",
+    "06"
+   ],
+   "n": 5
+  },
+  {
+   "fields": [
+    "03",
+    "04",
+    "07"
+   ],
+   "n": 5
+  },
+  {
+   "fields": [
+    "05",
+    "08"
+   ],
+   "n": 4
+  },
+  {
+   "fields": [
+    "04",
+    "06"
+   ],
+   "n": 4
+  },
+  {
+   "fields": [
+    "03",
+    "06",
+    "07"
+   ],
+   "n": 3
+  },
+  {
+   "fields": [
+    "08",
+    "09",
+    "10"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "03",
+    "05",
+    "06",
+    "11"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "05",
+    "11"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "01",
+    "04"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "05",
+    "06",
+    "07",
+    "11"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "04",
+    "06",
+    "07",
+    "11"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "03",
+    "04",
+    "06",
+    "07"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "01",
+    "06",
+    "07"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "01",
+    "06"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "11"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "02",
+    "03",
+    "04",
+    "06"
+   ],
+   "n": 2
+  },
+  {
+   "fields": [
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "09",
+    "10"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "07",
+    "09"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "03",
+    "06",
+    "09",
+    "10"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "08"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "04"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "06",
+    "07"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "02",
+    "10"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "05",
+    "08",
+    "11"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "06"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "03",
+    "08"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "10"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "06",
+    "07",
+    "11"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "02",
+    "03",
+    "04",
+    "06",
+    "09"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "03",
+    "04",
+    "06",
+    "07",
+    "09"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "02",
+    "03",
+    "04",
+    "06",
+    "07"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "03",
+    "07",
+    "11"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "04",
+    "06",
+    "07"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "11"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "03",
+    "05"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "02",
+    "11"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "06",
+    "11"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "06",
+    "08"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "09",
+    "10"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "09"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "04",
+    "05"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "02",
+    "03"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "05"
+   ],
+   "n": 1
+  },
+  {
+   "fields": [
+    "01",
+    "02",
+    "05",
+    "07",
+    "08",
+    "09"
+   ],
+   "n": 1
+  }
+ ],
+ "seas": [
+  {
+   "sea_id": "S01",
+   "members": "06;07",
+   "records": "100",
+   "anchor_x": "0.15699554979799146",
+   "anchor_y": "-0.15402088509052414",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S02",
+   "members": "03;04",
+   "records": "39",
+   "anchor_x": "-0.1216170571336692",
+   "anchor_y": "0.38",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S03",
+   "members": "03;07",
+   "records": "35",
+   "anchor_x": "0",
+   "anchor_y": "0.19220098985271647",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S04",
+   "members": "04;09",
+   "records": "14",
+   "anchor_x": "",
+   "anchor_y": "",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S05",
+   "members": "05;10",
+   "records": "14",
+   "anchor_x": "",
+   "anchor_y": "",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S06",
+   "members": "02;09",
+   "records": "13",
+   "anchor_x": "",
+   "anchor_y": "",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S07",
+   "members": "01;02",
+   "records": "12",
+   "anchor_x": "",
+   "anchor_y": "",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S08",
+   "members": "01;09",
+   "records": "11",
+   "anchor_x": "",
+   "anchor_y": "",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S09",
+   "members": "01;11",
+   "records": "11",
+   "anchor_x": "",
+   "anchor_y": "",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S10",
+   "members": "01;02;09",
+   "records": "6",
+   "anchor_x": "",
+   "anchor_y": "",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  },
+  {
+   "sea_id": "S11",
+   "members": "03;04;06",
+   "records": "5",
+   "anchor_x": "0.03",
+   "anchor_y": "0.3",
+   "size": "1",
+   "stretch": "1",
+   "angle": ""
+  }
+ ]
+}
