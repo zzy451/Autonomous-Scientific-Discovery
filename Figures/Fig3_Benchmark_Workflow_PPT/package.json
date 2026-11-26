@@ -1,0 +1,15 @@
+{
+  "name": "fig3-benchmark-workflow-ppt",
+  "private": true,
+  "description": "Builds Fig. 3 (fig:benchmark) as one editable PowerPoint slide",
+  "scripts": {
+    "build": "node build_fig3.js outputs/fig3_benchmark.pptx"
+  },
+  "dependencies": {
+    "pptxgenjs": "4.0.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-icons": "5.7.0",
+    "sharp": "0.35.5"
+  }
+}
